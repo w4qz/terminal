@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-30T22:05:22.640198Z",
+ "generated_at": "2026-10-30T23:04:09.630650Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -15,10 +15,10 @@
    "vol": 165923799
   },
   "ASTS": {
-   "p": 40.99,
+   "p": 40.97,
    "prev": 43.07,
-   "chg": -2.08,
-   "pct": -4.83,
+   "chg": -2.1,
+   "pct": -4.88,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-10-30T19:30:00Z",
@@ -192,7 +192,7 @@
    "prev": 1.1156,
    "chg": 0.001,
    "pct": 0.09,
-   "st": "DELAYED_15M",
+   "st": "EOD",
    "src": "Yahoo Finance via yfinance (EURUSD=X)",
    "ts": "2026-10-30T21:00:00Z",
    "open": 1.1181,
@@ -216,7 +216,7 @@
    "prev": 1.3328,
    "chg": 0.0061,
    "pct": 0.46,
-   "st": "DELAYED_15M",
+   "st": "EOD",
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
    "ts": "2026-10-30T21:00:00Z",
    "open": 1.3375,
@@ -275,17 +275,17 @@
    "vol": 37539
   },
   "BTC": {
-   "p": 76729.6016,
+   "p": 76880.4297,
    "prev": 77775.1094,
-   "chg": -1045.5078,
-   "pct": -1.34,
+   "chg": -894.6797,
+   "pct": -1.15,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-10-30T22:00:00Z",
+   "ts": "2026-10-30T23:00:00Z",
    "open": 77791.375,
    "lo": 76264.7422,
    "hi": 78564.9375,
-   "vol": 50075017216
+   "vol": 47904206848
   }
  },
  "fundamentals": {
@@ -334,20 +334,66 @@
  ],
  "news": [
   {
+   "h": "Alaska Senate election: DOJ wants to 'segregate' all ballots for 2nd Sullivan candidate",
+   "w": "The winner of the Alaska election could determine whether Republicans retain their majority in the U.S. Senate or if Democrats take control of the chamber.",
+   "syms": [
+    "XAU"
+   ],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-30T22:57:55Z",
+   "url": "https://www.cnbc.com/2026/10/30/alaska-senate-election-doj-lawsuit-sullivan-peltola.html"
+  },
+  {
+   "h": "Jim Cramer says it's time to look beyond tech. Here are 4 consumer stocks he likes",
+   "w": "Cramer said investors looking to diversify beyond the struggling AI trade should consider consumer staples.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-30T22:52:04Z",
+   "url": "https://www.cnbc.com/2026/10/30/jim-cramer-consumer-staples-stocks.html"
+  },
+  {
+   "h": "Meta outlook revised downward by S&P on cash flow and capex concerns",
+   "w": "Meta has been given a negative outlook by S&amp;P Global Ratings due to the company's hefty capital expenditures and concerns about free cash flow.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-30T22:42:26Z",
+   "url": "https://www.cnbc.com/2026/10/30/meta-outlook-to-revised-to-negative-by-sp-after-cash-flow-negative.html"
+  },
+  {
+   "h": "$6.3bn in 30 minutes: how the world’s biggest heist unfolded",
+   "w": "North Korean hackers’ attack on Binance takes crypto theft to an unprecedented scale",
+   "syms": [
+    "BTC"
+   ],
+   "src": "Financial Times — Marchés",
+   "ts": "2026-10-30T22:17:15Z",
+   "url": "https://www.ft.com/content/e84eceda-040b-4e5f-b906-09768085933a?syn-25a6b1a6=1"
+  },
+  {
+   "h": "Cramer’s week ahead: Expect more volatility as tech earnings, midterms loom",
+   "w": "Investors await earnings from Apple, AMD, and other major companies, as well as the midterm elections and the monthly jobs report.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-30T22:17:13Z",
+   "url": "https://www.cnbc.com/2026/10/30/jim-cramer-week-ahead-apple-amd-jobs-report.html"
+  },
+  {
+   "h": "Binance rushes to recover customer money after $6.3bn heist",
+   "w": "World’s largest crypto exchange says an engineer’s laptop was compromised in major security breach",
+   "syms": [
+    "BTC"
+   ],
+   "src": "Financial Times — Marchés",
+   "ts": "2026-10-30T22:12:58Z",
+   "url": "https://www.ft.com/content/c7f5e395-c3a9-430e-b757-5014527b4d49?syn-25a6b1a6=1"
+  },
+  {
    "h": "Gamble on democracy: Inside suspicious election-contracts trading on prediction markets",
    "w": "CNBC examines unusual price spikes in election prediction markets and how low-volume contracts can be moved by relatively small trades.",
    "syms": [],
    "src": "CNBC — Marchés",
    "ts": "2026-10-30T22:00:53Z",
    "url": "https://www.cnbc.com/2026/10/30/gamble-on-democracy-inside-suspicious-election-contracts-trading-on-prediction-markets-.html"
-  },
-  {
-   "h": "Fed officials are already saying they’ll need to get back to hiking rates",
-   "w": "The comments from Federal Reserve Presidents Alberto Musalem and Lorie Logan offer the first morsels of insight into what leaders at the Fed see happening next.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-30T21:53:10Z",
-   "url": "https://www.cnbc.com/2026/10/30/musalem-fed-monetary-policy-tightening.html"
   },
   {
    "h": "Binance loses $6.3 billion in crypto heist—what happens to your money when an exchange gets hacked",
@@ -378,16 +424,6 @@
    "src": "BBC — Business",
    "ts": "2026-10-30T21:13:14Z",
    "url": "https://www.bbc.co.uk/news/articles/cwe8lp7zy07zo?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "Criminal investigation of Alaska Senate race is 'ongoing,' U.S. Attorney says",
-   "w": "The winner of the Alaska election could determine whether Republicans retain their majority in the U.S. Senate or if Democrats take control of the chamber.",
-   "syms": [
-    "XAU"
-   ],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-30T20:46:04Z",
-   "url": "https://www.cnbc.com/2026/10/30/alaska-senate-election-doj-lawsuit-sullivan-peltola.html"
   },
   {
    "h": "US tech stocks see sharp falls as AI spending nears $1tn",
@@ -434,16 +470,6 @@
    "src": "CNBC — Marchés",
    "ts": "2026-10-30T19:27:03Z",
    "url": "https://www.cnbc.com/2026/10/30/binance-hack-stolen-crypto-recovery.html"
-  },
-  {
-   "h": "$6.3bn in 30 minutes: how the world’s biggest heist unfolded",
-   "w": "North Korean hackers’ attack on Binance takes crypto theft to an unprecedented scale",
-   "syms": [
-    "BTC"
-   ],
-   "src": "Financial Times — Marchés",
-   "ts": "2026-10-30T18:44:53Z",
-   "url": "https://www.ft.com/content/e84eceda-040b-4e5f-b906-09768085933a?syn-25a6b1a6=1"
   },
   {
    "h": "Reid Hoffman gives millions to Dems in late spending spree as Epstein fight spills into election",
@@ -531,32 +557,6 @@
    "src": "Financial Times — Marchés",
    "ts": "2026-10-30T17:10:22Z",
    "url": "https://www.ft.com/content/da16af06-4431-4ced-9c3e-a0753d8c45c9?syn-25a6b1a6=1"
-  },
-  {
-   "h": "Binance rushes to recover customer money after $6.3bn heist",
-   "w": "World’s largest crypto exchange says an engineer’s laptop was compromised in major security breach",
-   "syms": [
-    "BTC"
-   ],
-   "src": "Financial Times — Marchés",
-   "ts": "2026-10-30T16:59:33Z",
-   "url": "https://www.ft.com/content/c7f5e395-c3a9-430e-b757-5014527b4d49?syn-25a6b1a6=1"
-  },
-  {
-   "h": "Halloween gets pricier as chocolate costs climb — Hershey may feel the pinch",
-   "w": "Higher cocoa and sugar prices are fueling above-average cost inflation for candy",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-30T16:55:41Z",
-   "url": "https://www.cnbc.com/2026/10/30/halloween-gets-pricier-as-chocolate-costs-rise-hershey-could-feel-it.html"
-  },
-  {
-   "h": "Chevron and Exxon hit all-time highs as refining profits soar in reaction to Iran and Ukraine wars",
-   "w": "Global diesel prices surged as Ukraine and Iran struck refineries in Russia and the Middle East.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-30T16:44:31Z",
-   "url": "https://www.cnbc.com/2026/10/30/chevron-exxon-cvx-xom-earnings-q3-2026.html"
   }
  ],
  "summary": null
