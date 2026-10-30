@@ -1,77 +1,77 @@
 {
- "generated_at": "2026-10-30T20:30:06.824130Z",
+ "generated_at": "2026-10-30T21:13:55.729158Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
    "prev": 213.66,
    "chg": -8.85,
    "pct": -4.14,
-   "st": "DELAYED_15M",
+   "st": "EOD",
    "src": "Yahoo Finance via yfinance (NVDA)",
    "ts": "2026-10-30T19:30:00Z",
-   "open": 208.88,
+   "open": 208.94,
    "lo": 200.9199,
    "hi": 209.05,
-   "vol": 165193666
+   "vol": 165923799
   },
   "ASTS": {
-   "p": 40.99,
+   "p": 40.97,
    "prev": 43.07,
-   "chg": -2.08,
-   "pct": -4.83,
-   "st": "DELAYED_15M",
+   "chg": -2.1,
+   "pct": -4.88,
+   "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-10-30T19:30:00Z",
-   "open": 41.07,
+   "open": 41.0,
    "lo": 39.2127,
    "hi": 42.36,
-   "vol": 13637986
+   "vol": 13655779
   },
   "SPX": {
    "p": 7580.9502,
    "prev": 7720.3901,
    "chg": -139.4399,
    "pct": -1.81,
-   "st": "DELAYED_15M",
+   "st": "EOD",
    "src": "Yahoo Finance via yfinance (^GSPC)",
    "ts": "2026-10-30T19:30:00Z",
    "open": 7631.0698,
    "lo": 7527.5601,
    "hi": 7637.48,
-   "vol": 4257412000
+   "vol": 4268617000
   },
   "NDX": {
    "p": 28385.748,
    "prev": 29402.5098,
    "chg": -1016.7617,
    "pct": -3.46,
-   "st": "DELAYED_15M",
+   "st": "EOD",
    "src": "Yahoo Finance via yfinance (^NDX)",
    "ts": "2026-10-30T19:30:00Z",
    "open": 28604.916,
    "lo": 28093.2441,
    "hi": 28713.4453,
-   "vol": 2180944000
+   "vol": 2200590000
   },
   "DJI": {
    "p": 51774.1797,
    "prev": 52342.5586,
    "chg": -568.3789,
    "pct": -1.09,
-   "st": "DELAYED_15M",
+   "st": "EOD",
    "src": "Yahoo Finance via yfinance (^DJI)",
    "ts": "2026-10-30T19:30:00Z",
    "open": 52383.8984,
    "lo": 51563.7617,
    "hi": 52383.8984,
-   "vol": 657440949
+   "vol": 659029846
   },
   "RUT": {
    "p": 2812.0413,
    "prev": 2859.22,
    "chg": -47.1787,
    "pct": -1.65,
-   "st": "DELAYED_15M",
+   "st": "EOD",
    "src": "Yahoo Finance via yfinance (^RUT)",
    "ts": "2026-10-30T19:30:00Z",
    "open": 2838.7732,
@@ -95,8 +95,8 @@
    "prev": 64659.4688,
    "chg": -1577.1992,
    "pct": -2.44,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^N225)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^N225) — échec de la dernière mise à jour",
    "ts": "2026-10-30T06:00:00Z",
    "open": 64344.3711,
    "lo": 62711.4219,
@@ -188,22 +188,22 @@
    "hi": 6179.29
   },
   "EURUSD": {
-   "p": 1.1171,
+   "p": 1.1166,
    "prev": 1.1156,
-   "chg": 0.0015,
-   "pct": 0.13,
+   "chg": 0.001,
+   "pct": 0.09,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (EURUSD=X)",
-   "ts": "2026-10-30T20:00:00Z",
+   "ts": "2026-10-30T21:00:00Z",
    "open": 1.1181,
    "lo": 1.114,
    "hi": 1.1217
   },
   "USDJPY": {
-   "p": 157.561,
+   "p": 157.519,
    "prev": 157.833,
-   "chg": -0.272,
-   "pct": -0.17,
+   "chg": -0.314,
+   "pct": -0.2,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (JPY=X)",
    "ts": "2026-10-30T20:00:00Z",
@@ -212,22 +212,22 @@
    "hi": 157.898
   },
   "GBPUSD": {
-   "p": 1.3397,
+   "p": 1.3389,
    "prev": 1.3328,
-   "chg": 0.0069,
-   "pct": 0.52,
+   "chg": 0.0061,
+   "pct": 0.46,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
-   "ts": "2026-10-30T20:00:00Z",
+   "ts": "2026-10-30T21:00:00Z",
    "open": 1.3375,
    "lo": 1.3375,
    "hi": 1.3433
   },
   "DXY": {
-   "p": 101.914,
+   "p": 101.964,
    "prev": 102.04,
-   "chg": -0.126,
-   "pct": -0.12,
+   "chg": -0.076,
+   "pct": -0.07,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (DX-Y.NYB)",
    "ts": "2026-10-30T20:00:00Z",
@@ -236,56 +236,56 @@
    "hi": 102.089
   },
   "XAU": {
-   "p": 3889.8999,
+   "p": 3884.8999,
    "prev": 4031.3999,
-   "chg": -141.5,
-   "pct": -3.51,
+   "chg": -146.5,
+   "pct": -3.63,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GC=F)",
    "ts": "2026-10-30T20:00:00Z",
    "open": 4033.6001,
    "lo": 3879.3,
    "hi": 4038.2,
-   "vol": 227480
+   "vol": 230038
   },
   "CL": {
-   "p": 103.02,
+   "p": 102.95,
    "prev": 102.0,
-   "chg": 1.02,
-   "pct": 1.0,
+   "chg": 0.95,
+   "pct": 0.93,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (CL=F)",
    "ts": "2026-10-30T20:00:00Z",
    "open": 102.8,
    "lo": 102.43,
    "hi": 104.99,
-   "vol": 245772
+   "vol": 248668
   },
   "BRENT": {
-   "p": 112.42,
+   "p": 112.33,
    "prev": 114.88,
-   "chg": -2.46,
-   "pct": -2.14,
+   "chg": -2.55,
+   "pct": -2.22,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-10-30T20:00:00Z",
    "open": 111.28,
    "lo": 111.05,
    "hi": 114.29,
-   "vol": 37242
+   "vol": 37539
   },
   "BTC": {
-   "p": 76813.4922,
+   "p": 76548.9922,
    "prev": 77775.1094,
-   "chg": -961.6172,
-   "pct": -1.24,
+   "chg": -1226.1172,
+   "pct": -1.58,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-10-30T20:00:00Z",
+   "ts": "2026-10-30T21:00:00Z",
    "open": 77791.375,
    "lo": 76264.7422,
    "hi": 78564.9375,
-   "vol": 58759430144
+   "vol": 53011873792
   }
  },
  "fundamentals": {
@@ -334,14 +334,42 @@
  ],
  "news": [
   {
+   "h": "Crypto giant Binance attempting to recover $6.3bn stolen in hack linked to North Korea",
+   "w": "The cyber-attack, which the company describes as complex, is believed to be the largest ever of its kind.",
+   "syms": [
+    "BTC"
+   ],
+   "src": "BBC — Business",
+   "ts": "2026-10-30T21:13:14Z",
+   "url": "https://www.bbc.co.uk/news/articles/cwe8lp7zy07zo?at_medium=RSS&at_campaign=rss"
+  },
+  {
    "h": "Criminal investigation of Alaska Senate race is 'ongoing,' U.S. Attorney says",
    "w": "The winner of the Alaska election could determine whether Republicans retain their majority in the U.S. Senate or if Democrats take control of the chamber.",
    "syms": [
     "XAU"
    ],
    "src": "CNBC — Marchés",
-   "ts": "2026-10-30T20:29:44Z",
+   "ts": "2026-10-30T20:46:04Z",
    "url": "https://www.cnbc.com/2026/10/30/alaska-senate-election-doj-lawsuit-sullivan-peltola.html"
+  },
+  {
+   "h": "US tech stocks see sharp falls as AI spending nears $1tn",
+   "w": "Shares in Intel continue to fall while the tech-heavy Nasdaq opens at its lowest level in more than two months.",
+   "syms": [
+    "NDX"
+   ],
+   "src": "BBC — Business",
+   "ts": "2026-10-30T20:34:46Z",
+   "url": "https://www.bbc.co.uk/news/articles/cvwy72e0n72yo?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "Intel stock has worst day since 1970s, wiping about $12 billion off government's stake",
+   "w": "Investors are nervous about the massive AI spending from the tech giants and whether that will pay off.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-30T20:30:57Z",
+   "url": "https://www.cnbc.com/2026/10/30/amazon-intel-earnings-big-tech-ai-spending-concerns.html"
   },
   {
    "h": "US affordability tracker: the data that could decide the 2026 midterm elections",
@@ -350,24 +378,6 @@
    "src": "Financial Times — Économie mondiale",
    "ts": "2026-10-30T20:16:47Z",
    "url": "https://www.ft.com/content/71dccbca-4a1f-485a-9790-28cc527cdb82?syn-25a6b1a6=1"
-  },
-  {
-   "h": "Crypto giant Binance attempting to recover $6.3bn stolen in hack linked to North Korea",
-   "w": "The cyber-attack, which the company describes as complex, is believed to be the largest ever of its kind.",
-   "syms": [
-    "BTC"
-   ],
-   "src": "BBC — Business",
-   "ts": "2026-10-30T20:10:56Z",
-   "url": "https://www.bbc.co.uk/news/articles/cwe8lp7zy07zo?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "Intel stock has worst day since 1970s, wiping about $12 billion off government's stake",
-   "w": "Investors are nervous about the massive AI spending from the tech giants and whether that will pay off.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-30T20:02:48Z",
-   "url": "https://www.cnbc.com/2026/10/30/amazon-intel-earnings-big-tech-ai-spending-concerns.html"
   },
   {
    "h": "'Bad time to troll': Binance co-founder Zhao asks Musk for support after hack",
@@ -479,16 +489,6 @@
    "src": "Financial Times — Marchés",
    "ts": "2026-10-30T18:00:05Z",
    "url": "https://www.ft.com/content/be6723d6-ab63-41ab-ac46-dc870c449da0?syn-25a6b1a6=1"
-  },
-  {
-   "h": "US tech stocks see sharp falls as AI spending nears $1tn",
-   "w": "Shares in Intel continue to fall while the tech-heavy Nasdaq opens at its lowest level in more than two months.",
-   "syms": [
-    "NDX"
-   ],
-   "src": "BBC — Business",
-   "ts": "2026-10-30T17:47:01Z",
-   "url": "https://www.bbc.co.uk/news/articles/cvwy72e0n72yo?at_medium=RSS&at_campaign=rss"
   },
   {
    "h": "Stick or treat",
