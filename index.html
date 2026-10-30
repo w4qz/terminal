@@ -160,6 +160,16 @@ align-items:center;gap:16px;padding:0 12px;font-size:10px;color:var(--txt3);flex
 .warn{border-left:2px solid var(--hot);background:#1a1408;padding:7px 9px;font-size:10px;
 color:#c9b183;line-height:1.5}
 
+/* ---------- recherche ---------- */
+#sq{width:100%;padding:9px 11px;font-size:14px;background:var(--bg);border:1px solid var(--line);border-radius:2px}
+#sq:focus{border-color:#4d8fd6}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chip{font-size:10px;border:1px solid var(--line);padding:2px 8px;border-radius:2px;color:var(--txt2)}
+.chip.on{background:var(--sel);color:var(--txt);border-color:#3a5a7c}
+.rng{display:flex;gap:4px}
+.rng button{font-size:10px;border:1px solid var(--line);padding:1px 7px;border-radius:2px;color:var(--txt2)}
+.rng button.on{background:var(--sel);color:var(--txt)}
+
 /* ---------- accessibility helpers ---------- */
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
 clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -185,6 +195,7 @@ transition-duration:0.001ms !important;scroll-behavior:auto !important}
 <button class="navbtn on" data-v="mkt" aria-current="page">Marchés <kbd aria-hidden="true">M</kbd><span class="sr-only">(raccourci M)</span></button>
 <button class="navbtn" data-v="wl">Watchlist <kbd aria-hidden="true">W</kbd><span class="sr-only">(raccourci W)</span></button>
 <button class="navbtn" data-v="pf">Portefeuille <kbd aria-hidden="true">P</kbd><span class="sr-only">(raccourci P)</span></button>
+<button class="navbtn" data-v="srch">Recherche <kbd aria-hidden="true">R</kbd><span class="sr-only">(raccourci R)</span></button>
 <button class="navbtn" data-v="sec">Titre <kbd aria-hidden="true">S</kbd><span class="sr-only">(raccourci S)</span></button>
 <button class="navbtn" data-v="val">Valorisation <kbd aria-hidden="true">V</kbd><span class="sr-only">(raccourci V)</span></button>
 <button class="navbtn" data-v="news">News <kbd aria-hidden="true">N</kbd><span class="sr-only">(raccourci N)</span></button>
@@ -198,6 +209,7 @@ transition-duration:0.001ms !important;scroll-behavior:auto !important}
 <div class="view on" id="v-mkt" role="tabpanel" aria-label="Marchés"></div>
 <div class="view" id="v-wl" role="tabpanel" aria-label="Watchlist"></div>
 <div class="view" id="v-pf" role="tabpanel" aria-label="Portefeuille"></div>
+<div class="view" id="v-srch" role="tabpanel" aria-label="Recherche"></div>
 <div class="view" id="v-sec" role="tabpanel" aria-label="Titre"></div>
 <div class="view" id="v-val" role="tabpanel" aria-label="Valorisation"></div>
 <div class="view" id="v-news" role="tabpanel" aria-label="News"></div>
@@ -491,7 +503,7 @@ return ax-bx;
 async getMacroSeries(){ return SNAPSHOT.macro; }
 async health(){
 if(LIVE) return {up:true, latencyMs:0, rateLimitRemaining:Infinity,
-note:'data.json généré le '+fmtDT(LIVE.generated_at)+' par GitHub Actions (toutes les heures). Prix : Yahoo Finance via yfinance, différés. Taux : FRED. News : flux RSS publics. Synthèse : '+(LIVE.summary?LIVE.summary.model:'désactivée')+'. Les titres en échec gardent leur dernière valeur, marquée Périmé.'};
+note:'data.json généré le '+fmtDT(LIVE.generated_at)+' par GitHub Actions (toutes les 30 minutes). Prix : Yahoo Finance via yfinance, différés. Taux : FRED. News : flux RSS publics. Synthèse : '+(LIVE.summary?LIVE.summary.model:'désactivée')+'. Les titres en échec gardent leur dernière valeur, marquée Périmé.'};
 return {up:true, latencyMs:0, rateLimitRemaining:Infinity,
 note:'Source locale, actualisée le 31/10 via les newsletters FT du 20 au 30/10. S&P 500 et Nasdaq 100 à la clôture du 29/10. Nikkei, Hang Seng, FTSE, change, pétrole, or et taux 10 ans US au relevé FT du 30/10. NVDA, ASTS, Dow, Russell, VIX, DXY, TOPIX, Shanghai, STI, DAX, CAC et SX5E non couverts par les newsletters : derniers relevés conservés, marqués Périmé.'};
 }
@@ -602,11 +614,35 @@ health(){ return this.current.health(); }
 const DATA = new ProviderRouter();
 
 /*───────────────────────────────────────────────────────────────────────
-2d. Données live — data.json, produit toutes les heures par GitHub Actions
+2d. Données live — data.json, produit toutes les 30 minutes par GitHub Actions
 (scripts/update_data.py). Si le fichier est absent (ouverture en local),
 le terminal reste sur le snapshot figé ci-dessus : rien n'est inventé.
 ───────────────────────────────────────────────────────────────────────*/
 let LIVE = null;
+/* Adresse de ton relais Cloudflare Worker (voir worker.js). Laisse vide pour
+   n'utiliser que le catalogue préchargé. Exemple :
+   const WORKER_URL = 'https://terminal-relais.tonpseudo.workers.dev'; */
+const WORKER_URL = '';
+let UNIV = null, UNIV_TS = null;
+async function loadUniverse(){
+try{
+const r = await fetch('universe.json?t='+Date.now(), {cache:'no-store'});
+if(!r.ok) throw new Error('HTTP '+r.status);
+const d = await r.json();
+if(UNIV_TS===d.generated_at) return false;
+UNIV = d.items; UNIV_TS = d.generated_at;
+// Taux directeurs officiels → panneau « Banques centrales » de l'onglet Marchés
+const fr = v => v.toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2});
+for(const it of UNIV.filter(x=>x.cb && x.p!=null)){
+const row = SNAPSHOT.rates.find(r=>r.cb===it.cb); if(!row) continue;
+row.v = it.lo!=null ? fr(it.lo)+' – '+fr(it.p)+' %' : fr(it.p)+' %';
+row.st = it.st; row.src = it.src; row.ts = it.ts;
+row.note = 'Valeur officielle au '+new Date(it.ts+'T12:00:00').toLocaleDateString('fr-FR')+' — source : '+it.src+'. Mise à jour automatique toutes les 30 min.';
+row.next = '—';
+}
+return true;
+}catch(e){ console.info('universe.json indisponible ('+e.message+')'); return false; }
+}
 const fmtDT = iso => new Date(iso).toLocaleString('fr-FR',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});
 async function loadLive(){
 try{
@@ -849,17 +885,17 @@ return `<tr>
 
 el.innerHTML = `
 <div class="warn" style="margin-bottom:9px">
-${LIVE ? `Fournisseur actif : <b>Pipeline automatique</b>. Données générées le <b>${fmtDT(LIVE.generated_at)}</b> par GitHub Actions — prix Yahoo Finance différés, taux FRED, news RSS. Rafraîchissement toutes les heures ; la page vérifie toutes les 10 minutes. Badge Périmé = source en échec, dernière valeur conservée.` : `Fournisseur actif : <b>Snapshot</b>. Actualisé le 31/10/2026 à partir des 25 newsletters Financial Times du dossier FT News (20-30/10).
+${LIVE ? `Fournisseur actif : <b>Pipeline automatique</b>. Données générées le <b>${fmtDT(LIVE.generated_at)}</b> par GitHub Actions — prix Yahoo Finance différés, taux FRED, news RSS. Rafraîchissement toutes les 30 minutes ; la page vérifie toutes les 10 minutes. Badge Périmé = source en échec, dernière valeur conservée.` : `Fournisseur actif : <b>Snapshot</b>. Actualisé le 31/10/2026 à partir des 25 newsletters Financial Times du dossier FT News (20-30/10).
 <b>Semaine dominée par le doute sur l'IA</b> : Alphabet −13 % (−500 Md$), Big Tech −900 Md$, Intel −21 % ; prospectus d'IPO d'Anthropic ; Binance piraté pour 6,3 Md$.
 Fed et BCE inchangées (3,75-4,00 % et 2,50 %), Lagarde partira en février. S&P 500 et Nasdaq 100 à la clôture du 29/10 ; Asie, FTSE, change, pétrole et or au relevé FT du 30/10.
 NVDA, ASTS, Dow, VIX, DXY et indices européens continentaux ne figurent pas dans les newsletters : marqués Périmé.
 `}
 </div>
 <div class="g g2">
-<div class="pnl"><h3>Actions — États-Unis<span class="rt">${LIVE?"Yahoo Finance, MAJ horaire":"S&amp;P / Nasdaq 100 clôture 29/10, reste périmé"}</span></h3><div class="pbody flush">${T(us,'Actions États-Unis')}</div></div>
-<div class="pnl"><h3>Actions — Europe<span class="rt">${LIVE?"Yahoo Finance, MAJ horaire":"FTSE via FT 30/10, reste périmé (11/09)"}</span></h3><div class="pbody flush">${T(eu,'Actions Europe')}</div></div>
-<div class="pnl"><h3>Actions — Asie<span class="rt">${LIVE?"Yahoo Finance, MAJ horaire":"Nikkei/HSI via FT 30/10"}</span></h3><div class="pbody flush">${T(as,'Actions Asie')}</div></div>
-<div class="pnl"><h3>Change et matières premières<span class="rt">${LIVE?"Yahoo Finance, MAJ horaire":"FX, pétrole, or via FT 30/10"}</span></h3><div class="pbody flush">${T(fx,'Change et matières premières')}</div></div>
+<div class="pnl"><h3>Actions — États-Unis<span class="rt">${LIVE?"Yahoo Finance, MAJ toutes les 30 min":"S&amp;P / Nasdaq 100 clôture 29/10, reste périmé"}</span></h3><div class="pbody flush">${T(us,'Actions États-Unis')}</div></div>
+<div class="pnl"><h3>Actions — Europe<span class="rt">${LIVE?"Yahoo Finance, MAJ toutes les 30 min":"FTSE via FT 30/10, reste périmé (11/09)"}</span></h3><div class="pbody flush">${T(eu,'Actions Europe')}</div></div>
+<div class="pnl"><h3>Actions — Asie<span class="rt">${LIVE?"Yahoo Finance, MAJ toutes les 30 min":"Nikkei/HSI via FT 30/10"}</span></h3><div class="pbody flush">${T(as,'Actions Asie')}</div></div>
+<div class="pnl"><h3>Change et matières premières<span class="rt">${LIVE?"Yahoo Finance, MAJ toutes les 30 min":"FX, pétrole, or via FT 30/10"}</span></h3><div class="pbody flush">${T(fx,'Change et matières premières')}</div></div>
 <div class="pnl span2"><h3>Banques centrales</h3><div class="pbody flush"><table><caption class="sr-only">Taux directeurs des banques centrales</caption><tbody>${rates}</tbody></table></div></div>
 <div class="pnl"><h3>Courbe des taux US</h3><div class="pbody flush">
 <table><caption class="sr-only">Courbe des taux US</caption><tbody>${curve}</tbody></table>
@@ -1413,6 +1449,162 @@ wireSymbolClicks(el);
 }
 
 /*═══════════════════════════════════════════════════════════════════════
+11b. VUE — RECHERCHE
+Deux sources : le catalogue préchargé (universe.json, ~900 actions + indices,
+devises, matières premières, taux, crypto) pour une recherche instantanée,
+et le relais Cloudflare (WORKER_URL) pour n'importe quel ticker au monde,
+avec historique et graphique.
+═══════════════════════════════════════════════════════════════════════*/
+const SR = {q:'', cls:'Tout', sel:null, range:'6mo', timer:null, seq:0};
+const CLASSES = ['Tout','Action','Indice','Devise','Matière première','Taux','Crypto'];
+const CLS_LABEL = {'Tout':'Tout','Action':'Actions','Indice':'Indices','Devise':'Devises',
+'Matière première':'Matières premières','Taux':'Taux','Crypto':'Crypto'};
+
+function localItems(){
+if(UNIV) return UNIV;
+// Repli : les instruments du snapshot, si universe.json n'est pas encore généré.
+return SNAPSHOT.securities.map(x=>{ const q=SNAPSHOT.quotes[x.sym]||{};
+return {s:x.sym, n:x.name, c:x.cls==='Change'?'Devise':x.cls, l:[], p:q.p??null, pct:q.pct??null, st:q.st||null, ts:q.ts||null}; });
+}
+function localSearch(){
+const q=SR.q.trim().toLowerCase();
+let it=localItems().filter(x=>SR.cls==='Tout'||x.c===SR.cls);
+if(q){
+it=it.filter(x=>x.s.toLowerCase().includes(q)||(x.n||'').toLowerCase().includes(q))
+.sort((a,b)=>{ const r=x=>x.s.toLowerCase()===q?0:x.s.toLowerCase().startsWith(q)?1:(x.n||'').toLowerCase().startsWith(q)?2:3;
+return r(a)-r(b); });
+}else{
+it=[...it].sort((a,b)=>Math.abs(b.pct??0)-Math.abs(a.pct??0));
+}
+return it;
+}
+function srRows(list){
+return list.map(x=>`<tr class="clk" data-s="${esc(x.s)}" tabindex="0" role="button" aria-label="Ouvrir ${esc(x.n)} (${esc(x.s)})">
+<th scope="row" class="sym">${esc(x.s)}<div class="mut" style="font-size:10px;font-weight:400;max-width:260px;overflow:hidden;text-overflow:ellipsis">${esc(x.n||'')}</div></th>
+<td class="mut" style="font-size:10px;text-align:left">${esc(x.c)}${x.l&&x.l.length?' · '+esc(x.l.join(', ')):''}</td>
+<td>${x.p!=null?nf(x.p,x.p>1000?0:2)+(x.c==='Taux'?' %':'')+badge(x.st):'<span class="na">n/d</span>'}</td>
+<td class="${cls(x.pct)}">${x.pct!=null?pct(x.pct):'—'}</td></tr>`).join('');
+}
+function renderLocal(){
+const box=document.getElementById('srloc'); if(!box) return;
+const all=localSearch(), list=all.slice(0,80);
+const head=SR.q?`${all.length} résultat${all.length>1?'s':''} dans le catalogue`:`Plus fortes variations — ${CLS_LABEL[SR.cls]}`;
+box.innerHTML=`<div class="note" style="border-bottom:1px solid var(--line)">${head}${all.length>80?' (80 premiers affichés)':''}</div>
+${list.length?`<table><caption class="sr-only">Résultats du catalogue</caption><thead><tr><th scope="col">Titre</th><th scope="col" style="text-align:left">Classe</th><th scope="col">Dernier</th><th scope="col">Var.</th></tr></thead><tbody>${srRows(list)}</tbody></table>`
+:'<div class="note na">Aucun instrument du catalogue ne correspond.'+(WORKER_URL?' Regardez la recherche mondiale ci-dessous.':'')+'</div>'}`;
+wireSr(box);
+}
+function wireSr(root){
+root.querySelectorAll('[data-s]').forEach(e=>{
+const go_=()=>showDetail(e.dataset.s, e.dataset.n||null);
+e.onclick=go_; e.onkeydown=ev=>{ if(ev.key==='Enter'||ev.key===' '){ ev.preventDefault(); go_(); } };
+});
+}
+async function remoteSearch(){
+const box=document.getElementById('srrem'); if(!box) return;
+if(!WORKER_URL){ box.innerHTML=`<div class="note">Recherche mondiale désactivée : renseignez <code>WORKER_URL</code> dans index.html
+après avoir déployé <code>worker.js</code> sur Cloudflare. Le catalogue ci-dessus reste disponible.</div>`; return; }
+const q=SR.q.trim();
+if(q.length<2){ box.innerHTML='<div class="note">Tapez au moins 2 caractères pour chercher sur tous les marchés (actions, ETF, fonds, indices, devises, crypto).</div>'; return; }
+const my=++SR.seq;
+box.innerHTML='<div class="note">Recherche en cours…</div>';
+try{
+const r=await fetch(`${WORKER_URL}/search?q=${encodeURIComponent(q)}`);
+const d=await r.json(); if(my!==SR.seq) return;
+if(!r.ok) throw new Error(d.error||'HTTP '+r.status);
+const qs=(d.quotes||[]).filter(x=>x.symbol);
+box.innerHTML=qs.length?`<table><caption class="sr-only">Résultats mondiaux</caption><thead><tr><th scope="col">Ticker</th><th scope="col" style="text-align:left">Nom</th><th scope="col" style="text-align:left">Type</th><th scope="col" style="text-align:left">Place</th></tr></thead><tbody>
+${qs.map(x=>`<tr class="clk" data-s="${esc(x.symbol)}" data-n="${esc(x.longname||x.shortname||'')}" tabindex="0" role="button">
+<th scope="row" class="sym">${esc(x.symbol)}</th><td style="text-align:left">${esc(x.longname||x.shortname||'—')}</td>
+<td class="mut" style="text-align:left">${esc(x.typeDisp||x.quoteType||'—')}</td><td class="mut" style="text-align:left">${esc(x.exchDisp||x.exchange||'—')}</td></tr>`).join('')}
+</tbody></table>`:'<div class="note na">Aucun résultat sur les marchés mondiaux.</div>';
+wireSr(box);
+}catch(e){ if(my===SR.seq) box.innerHTML=`<div class="warn">Relais indisponible : ${esc(e.message)}. Le catalogue préchargé reste utilisable.</div>`; }
+}
+async function showDetail(sym, nameHint){
+SR.sel=sym;
+const el=document.getElementById('srdet'); if(!el) return;
+const loc=localItems().find(x=>x.s===sym);
+const K=(l,v)=>`<div class="kv"><span class="k">${l}</span><span class="v">${v}</span></div>`;
+const localHtml = loc ? `${K(loc.nw?'Taux':'Dernier', loc.p!=null?nf(loc.p, loc.p>1000?0:2)+(loc.nw?' %':'')+badge(loc.st):'<span class="na">n/d</span>')}
+${loc.lo!=null?K('Fourchette', nf(loc.lo)+' – '+nf(loc.p)+' %'):''}${loc.nw?'':K('Variation', loc.pct!=null?`<span class="${cls(loc.pct)}">${pct(loc.pct)}</span>`:'—')}
+${K('Classe', esc(loc.c))}${loc.l&&loc.l.length?K('Indices', esc(loc.l.join(', '))):''}
+${K('Relevé', esc(loc.ts||'—'))}` : '';
+el.innerHTML=`<h3>${esc(sym)}<span class="rt">${esc(nameHint||(loc&&loc.n)||'')}</span></h3><div class="pbody" id="srdetb">
+${WORKER_URL&&!(loc&&loc.nw)?'<div class="note" style="padding:0">Chargement des données de marché…</div>':localHtml+'<div class="note" style="padding:8px 0 0">Source : catalogue préchargé (Yahoo Finance, '+(UNIV_TS?fmtDT(UNIV_TS):'snapshot')+'). Déployez le relais Cloudflare pour le graphique et l\'historique.</div>'}</div>`;
+if(!WORKER_URL||(loc&&loc.nw)){ if(loc&&loc.nw){ const b=document.getElementById('srdetb'); if(b) b.innerHTML=localHtml+'<div class="note" style="padding:8px 0 0">Source : '+esc(loc.src||'')+'. Taux publié par la banque centrale, pas de graphique intraday.</div>'; } return; }
+try{
+const r=await fetch(`${WORKER_URL}/chart?s=${encodeURIComponent(sym)}&range=${SR.range}`);
+const d=await r.json(); if(SR.sel!==sym) return;
+const res=d.chart&&d.chart.result&&d.chart.result[0];
+if(!r.ok||!res) throw new Error((d.chart&&d.chart.error&&d.chart.error.description)||d.error||'aucune donnée');
+const m=res.meta, ts=res.timestamp||[], cl=(res.indicators.quote[0].close||[]);
+const pts=ts.map((t,i)=>[t*1000,cl[i]]).filter(x=>x[1]!=null);
+const price=m.regularMarketPrice, prev=pts.length>1?pts[pts.length-2][1]:m.chartPreviousClose;
+const chg=price-prev, chp=prev?chg/prev*100:null;
+const t0=pts.length?pts[0][1]:null, perf=t0?(price/t0-1)*100:null;
+const b=document.getElementById('srdetb');
+b.innerHTML=`<div class="statrow" style="padding:0 0 10px;border:none">
+<div class="stat"><span class="l">${esc(m.fullExchangeName||m.exchangeName||'')}</span><span class="n">${nf(price, price>1000?0:2)}</span><span class="s">${esc(m.currency||'')} ${badge('DELAYED_15M')}</span></div>
+<div class="stat"><span class="l">VARIATION</span><span class="n ${cls(chg)}">${pct(chp)}</span><span class="s">${nf(chg)} ${esc(m.currency||'')}</span></div>
+<div class="stat"><span class="l">PERF. ${SR.range.toUpperCase()}</span><span class="n ${cls(perf)}">${pct(perf,1)}</span><span class="s">sur la période</span></div></div>
+<div class="rng" role="group" aria-label="Période du graphique">${['1mo','6mo','1y','5y'].map(x=>`<button type="button" data-r="${x}" class="${x===SR.range?'on':''}">${{'1mo':'1M','6mo':'6M','1y':'1A','5y':'5A'}[x]}</button>`).join('')}</div>
+<canvas id="srcv" height="190" role="img" aria-label="Évolution du cours de ${esc(sym)} sur la période ${SR.range} : ${pct(perf,1)}."></canvas>
+${K('Plus haut 52 semaines', m.fiftyTwoWeekHigh!=null?nf(m.fiftyTwoWeekHigh):'—')}
+${K('Plus bas 52 semaines', m.fiftyTwoWeekLow!=null?nf(m.fiftyTwoWeekLow):'—')}
+${K('Type', esc(m.instrumentType||'—'))}
+${K('Dernière cotation', m.regularMarketTime?fmtDT(new Date(m.regularMarketTime*1000).toISOString()):'—')}
+<div class="note" style="padding:8px 0 0">Source : Yahoo Finance via relais Cloudflare, cours différés. Le graphique utilise les clôtures ${SR.range==='5y'?'hebdomadaires':'quotidiennes'}.</div>`;
+b.querySelectorAll('[data-r]').forEach(x=>x.onclick=()=>{ SR.range=x.dataset.r; showDetail(sym,nameHint); });
+drawSr(pts);
+}catch(e){
+const b=document.getElementById('srdetb'); if(!b||SR.sel!==sym) return;
+b.innerHTML=(localHtml||'')+`<div class="warn" style="margin-top:8px">Données détaillées indisponibles : ${esc(e.message)}.${localHtml?' Valeurs du catalogue affichées ci-dessus.':''}</div>`;
+}
+}
+function drawSr(pts){
+const cv=document.getElementById('srcv'); if(!cv||pts.length<2) return;
+const r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1;
+cv.width=r.width*dpr; cv.height=190*dpr;
+const x=cv.getContext('2d'); x.scale(dpr,dpr);
+const W=r.width, H=190, pl=46, pb=18;
+const vs=pts.map(p=>p[1]), mn=Math.min(...vs), mx=Math.max(...vs);
+const X=i=>pl+i/(pts.length-1)*(W-pl-6), Y=v=>8+(1-(v-mn)/(mx-mn||1))*(H-8-pb);
+x.strokeStyle='#232830'; x.fillStyle='#8a93a0'; x.font='9px monospace'; x.textAlign='right';
+[0,.5,1].forEach(f=>{ const v=mn+(mx-mn)*f, y=Y(v); x.beginPath(); x.moveTo(pl,y); x.lineTo(W-6,y); x.stroke(); x.fillText(nf(v,v>1000?0:2),pl-4,y+3); });
+const up=vs[vs.length-1]>=vs[0];
+x.strokeStyle=up?'#2fbf6b':'#e04a4a'; x.lineWidth=1.4; x.beginPath();
+pts.forEach((p,i)=>i?x.lineTo(X(i),Y(p[1])):x.moveTo(X(i),Y(p[1]))); x.stroke();
+const d=t=>new Date(t).toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'2-digit'});
+x.textAlign='left'; x.fillText(d(pts[0][0]),pl,H-4); x.textAlign='right'; x.fillText(d(pts[pts.length-1][0]),W-6,H-4);
+}
+function viewSearch(){
+const el=document.getElementById('v-srch');
+const n=localItems().length;
+el.innerHTML=`<div class="pnl" style="margin-bottom:9px"><div class="pbody">
+<label for="sq" class="sr-only">Rechercher un ticker ou un nom</label>
+<input id="sq" placeholder="Ticker ou nom — ex. MC.PA, LVMH, ^TNX, EURCHF, or, Nestlé…" autocomplete="off" spellcheck="false" value="${esc(SR.q)}">
+<div class="chips" role="group" aria-label="Filtrer par classe d'actif">${CLASSES.map(c=>`<button type="button" class="chip ${c===SR.cls?'on':''}" data-c="${esc(c)}" aria-pressed="${c===SR.cls}">${esc(CLS_LABEL[c])}</button>`).join('')}</div>
+<div class="note" style="padding:8px 0 0">${UNIV?`Catalogue : <b>${n}</b> instruments, cours du ${fmtDT(UNIV_TS)} (Yahoo Finance, mis à jour toutes les 30 min).`:`Catalogue complet pas encore généré : ${n} instruments du snapshot disponibles.`}
+${WORKER_URL?' Recherche mondiale active via le relais Cloudflare.':' Recherche mondiale : relais Cloudflare non configuré.'}</div>
+</div></div>
+<div class="g g23">
+<div style="display:flex;flex-direction:column;gap:9px;min-width:0">
+<div class="pnl"><h3>Catalogue<span class="rt">instantané</span></h3><div class="pbody flush" id="srloc"></div></div>
+<div class="pnl"><h3>Marchés mondiaux<span class="rt">via relais Cloudflare</span></h3><div class="pbody flush" id="srrem"></div></div>
+</div>
+<div class="pnl" id="srdet"><h3>Fiche</h3><div class="pbody"><div class="note" style="padding:0">Sélectionnez un résultat pour afficher son cours${WORKER_URL?', son graphique et ses plus hauts et plus bas':''}.</div></div></div>
+</div>`;
+const inp=document.getElementById('sq');
+inp.oninput=e=>{ SR.q=e.target.value; renderLocal(); clearTimeout(SR.timer); SR.timer=setTimeout(remoteSearch,300); };
+el.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{ SR.cls=c.dataset.c;
+el.querySelectorAll('.chip').forEach(z=>{ z.classList.toggle('on',z===c); z.setAttribute('aria-pressed',z===c); }); renderLocal(); });
+renderLocal(); remoteSearch();
+if(SR.sel) showDetail(SR.sel);
+setTimeout(()=>inp.focus(),0);
+}
+
+/*═══════════════════════════════════════════════════════════════════════
 12. VUE — DIAGNOSTIC
 ═══════════════════════════════════════════════════════════════════════*/
 async function viewDiag(){
@@ -1513,10 +1705,10 @@ function openSym(sym){ closePal(); S.focus=sym; go('sec'); }
 /*═══════════════════════════════════════════════════════════════════════
 14. NAVIGATION
 ═══════════════════════════════════════════════════════════════════════*/
-const RENDER={mkt:viewMarkets, wl:viewWatchlist, pf:viewPortfolio,
+const RENDER={mkt:viewMarkets, wl:viewWatchlist, pf:viewPortfolio, srch:viewSearch,
 sec:viewSecurity, val:viewValuation, news:viewNews, diag:viewDiag};
 
-const VIEW_LABEL={mkt:'Marchés', wl:'Watchlist', pf:'Portefeuille',
+const VIEW_LABEL={mkt:'Marchés', wl:'Watchlist', pf:'Portefeuille', srch:'Recherche',
 sec:'Titre', val:'Valorisation', news:'News', diag:'Diagnostic'};
 
 async function go(v){
@@ -1550,7 +1742,7 @@ document.getElementById('hprov').textContent=DATA.current.name;
 document.getElementById('hup').textContent=h.up?' — disponible':' — indisponible';
 document.getElementById('hccy').textContent=S.ccy;
 document.getElementById('hstat').textContent=
-LIVE ? 'différées — rafraîchies toutes les heures' : 'instantané — non rafraîchissable';
+LIVE ? 'différées — rafraîchies toutes les 30 min' : 'instantané — non rafraîchissable';
 document.getElementById('hmsg').textContent=
 S.view==='sec' ? S.focus+' — appuyez sur ⌘K pour changer de titre' : '';
 }
@@ -1587,7 +1779,7 @@ else if(e.key==='Enter' && palList[palIdx]) openSym(palList[palIdx].sym);
 return;
 }
 if(e.target.tagName==='INPUT' || e.metaKey || e.ctrlKey || e.altKey) return;
-const map={m:'mkt', w:'wl', p:'pf', s:'sec', v:'val', n:'news', d:'diag'};
+const map={m:'mkt', w:'wl', p:'pf', r:'srch', s:'sec', v:'val', n:'news', d:'diag'};
 const t=map[e.key.toLowerCase()];
 if(t){ e.preventDefault(); go(t); }
 });
@@ -1595,8 +1787,9 @@ window.addEventListener('resize',()=>{ if(S.view==='pf') runMC(); });
 
 tick(); setInterval(tick,1000);
 go('mkt');
-loadLive().then(ch=>{ if(ch) go(S.view); });
-setInterval(()=>loadLive().then(ch=>{ if(ch) go(S.view); }), 10*60*1000);
+const refresh=()=>Promise.all([loadLive(),loadUniverse()]).then(([a,b])=>{ if(a||b){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
+refresh();
+setInterval(refresh, 10*60*1000);
 
 </script>
 </body>
