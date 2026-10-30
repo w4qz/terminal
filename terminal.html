@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terminal</title>
+<style>
+:root{
+--bg:#000; --surface:#0d0f11; --raised:#15181c; --line:#232830;
+--txt:#dde3ea; --txt2:#79838f; --txt3:#4a525c;
+--pos:#2fbf6b; --neg:#e04a4a; --hot:#e8a33d; --sel:#1d3a5c;
+--mono:ui-monospace,'SF Mono','Cascadia Mono','Roboto Mono',Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--txt);font-family:var(--mono);font-size:12px;line-height:1.35;
+-webkit-font-smoothing:antialiased;overflow:hidden}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+input{font:inherit;color:inherit;background:none;border:none;outline:none}
+:focus-visible{outline:1px solid #4d8fd6;outline-offset:1px}
+::-webkit-scrollbar{width:9px;height:9px}
+::-webkit-scrollbar-thumb{background:#2a3038}
+::-webkit-scrollbar-track{background:transparent}
+
+/* ---------- chrome ---------- */
+#app{display:flex;flex-direction:column;height:100%}
+#top{display:flex;align-items:center;gap:0;height:30px;border-bottom:1px solid var(--line);
+background:var(--surface);flex:none;padding-right:10px}
+#brand{padding:0 12px;font-weight:700;letter-spacing:2px;font-size:11px;color:var(--txt)}
+.navbtn{padding:0 12px;height:30px;font-size:11px;color:var(--txt2);border-right:1px solid var(--line);
+display:flex;align-items:center;gap:6px}
+.navbtn:first-of-type{border-left:1px solid var(--line)}
+.navbtn kbd{font-size:9px;color:var(--txt3);border:1px solid var(--line);padding:0 3px;border-radius:2px}
+.navbtn:hover{background:var(--raised);color:var(--txt)}
+.navbtn.on{background:var(--raised);color:var(--txt);box-shadow:inset 0 -2px 0 #4d8fd6}
+#clocks{margin-left:auto;display:flex;gap:14px;font-size:10px;color:var(--txt2)}
+#clocks b{color:var(--txt);font-weight:500}
+#searchbtn{margin-left:14px;font-size:10px;color:var(--txt3);border:1px solid var(--line);
+padding:2px 8px;border-radius:3px}
+#searchbtn:hover{color:var(--txt);border-color:#3a424c}
+
+#main{flex:1;overflow:auto;padding:10px}
+.view{display:none}
+.view.on{display:block}
+
+/* ---------- grid + panels ---------- */
+.g{display:grid;gap:9px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g23{grid-template-columns:2fr 1fr}
+.span2{grid-column:span 2}
+@media(max-width:1100px){.g2,.g3,.g23{grid-template-columns:1fr}.span2{grid-column:span 1}}
+
+.pnl{background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;min-width:0}
+.pnl>h3{font-size:10px;font-weight:600;letter-spacing:1px;color:var(--txt2);padding:6px 9px;
+border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;flex:none}
+.pnl>h3 .rt{margin-left:auto;font-weight:400;letter-spacing:0;color:var(--txt3);font-size:9px}
+.pbody{padding:8px 9px;overflow:auto}
+.pbody.flush{padding:0}
+
+/* ---------- tables ---------- */
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+th{font-size:9px;font-weight:500;color:var(--txt3);text-align:right;padding:4px 9px;
+border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--surface);letter-spacing:.5px}
+th:first-child{text-align:left}
+td{padding:3px 9px;text-align:right;border-bottom:1px solid #14171b;white-space:nowrap}
+td:first-child{text-align:left;color:var(--txt)}
+th.symh{text-align:left;color:var(--txt);font-weight:600;font-size:12px;padding:3px 9px;
+border-bottom:1px solid #14171b;position:static;letter-spacing:normal;background:none}
+tbody tr:hover{background:var(--raised)}
+tbody tr.clk{cursor:pointer}
+tbody tr.clk:focus-within{background:var(--sel)}
+tbody tr:last-child td{border-bottom:none}
+.sym{font-weight:600}
+.mut{color:var(--txt2)}
+.pos{color:var(--pos)} .neg{color:var(--neg)} .zero{color:var(--txt2)}
+.num{font-variant-numeric:tabular-nums}
+
+/* ---------- data status ---------- */
+.st{font-size:8px;letter-spacing:.5px;padding:0 3px;border-radius:2px;border:1px solid;
+vertical-align:middle;margin-left:5px;font-weight:600;white-space:nowrap}
+.st-REALTIME{color:var(--pos);border-color:#1e5c39;background:#0d2418}
+.st-DELAYED_15M{color:#6ba3e0;border-color:#254a70;background:#0d1a26}
+.st-EOD{color:var(--txt2);border-color:var(--line);background:var(--raised)}
+.st-SNAPSHOT{color:var(--txt2);border-color:var(--line);background:var(--raised)}
+.st-INDICATIVE{color:var(--hot);border-color:#6b4a15;background:#241a08}
+.st-SIMULATED{color:#bb98e6;border-color:#4a3268;background:#1a1226}
+.st-STALE{color:var(--neg);border-color:#5c2020;background:#240d0d}
+.na{color:var(--txt3);font-style:italic}
+
+/* ---------- controls ---------- */
+.ctl{display:flex;flex-wrap:wrap;gap:7px 14px;padding:8px 9px;border-bottom:1px solid var(--line);
+background:var(--raised)}
+.f{display:flex;flex-direction:column;gap:2px;min-width:0}
+.f label{font-size:9px;color:var(--txt3);letter-spacing:.5px}
+.f input{width:76px;background:var(--bg);border:1px solid var(--line);padding:2px 5px;
+font-size:11px;text-align:right;border-radius:2px}
+.f input:focus{border-color:#4d8fd6}
+.f.w input{width:104px}
+.btn{border:1px solid var(--line);padding:3px 11px;font-size:10px;color:var(--txt2);border-radius:2px;
+align-self:flex-end;letter-spacing:.5px}
+.btn:hover{background:var(--sel);color:var(--txt);border-color:#3a5a7c}
+.btn.go{color:var(--txt);border-color:#3a5a7c;background:#132437}
+
+/* ---------- kv rows ---------- */
+.kv{display:flex;justify-content:space-between;gap:12px;padding:3px 0;border-bottom:1px solid #14171b}
+.kv:last-child{border:none}
+.kv .k{color:var(--txt2);font-size:11px}
+.kv .v{font-weight:600;font-variant-numeric:tabular-nums;text-align:right}
+
+/* ---------- big stat ---------- */
+.stat{display:flex;flex-direction:column;gap:1px}
+.stat .l{font-size:9px;color:var(--txt3);letter-spacing:.5px}
+.stat .n{font-size:19px;font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-.5px}
+.stat .s{font-size:10px;color:var(--txt2)}
+.statrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:14px;
+padding:10px 9px;border-bottom:1px solid var(--line)}
+
+/* ---------- news ---------- */
+.nw{padding:8px 9px;border-bottom:1px solid #14171b}
+.nw:last-child{border:none}
+.nw h4{font-size:12px;font-weight:600;margin-bottom:3px}
+.nw p{font-size:11px;color:#a4adb8;line-height:1.5;margin-bottom:4px}
+.nw .meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:9px;color:var(--txt3)}
+.nw a{color:#6ba3e0;text-decoration:none}
+.nw a:hover,.nw a:focus-visible{text-decoration:underline}
+.tag{font-size:9px;border:1px solid var(--line);padding:0 4px;border-radius:2px;color:var(--txt2);cursor:pointer}
+.tag:hover,.tag:focus-visible{background:var(--sel);color:var(--txt)}
+
+/* ---------- canvas ---------- */
+canvas{display:block;width:100%}
+
+/* ---------- heat ---------- */
+.heat td{text-align:center;font-size:10px;padding:4px 6px}
+.heat td:first-child{text-align:left;color:var(--txt2)}
+
+/* ---------- palette ---------- */
+#pal{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;z-index:100;
+align-items:flex-start;justify-content:center;padding-top:12vh}
+#pal.on{display:flex}
+#palbox{width:min(600px,92vw);background:var(--surface);border:1px solid #3a424c;
+box-shadow:0 20px 60px rgba(0,0,0,.7)}
+#palin{width:100%;padding:12px 14px;font-size:14px;border-bottom:1px solid var(--line)}
+#palres{max-height:46vh;overflow:auto}
+.pr{padding:7px 14px;display:flex;gap:10px;align-items:center;cursor:pointer;border-bottom:1px solid #14171b}
+.pr.sel{background:var(--sel)}
+.pr .s{font-weight:700;width:74px;flex:none}
+.pr .n{color:var(--txt2);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pr .c{font-size:9px;color:var(--txt3);border:1px solid var(--line);padding:0 4px;border-radius:2px}
+#palhint{padding:6px 14px;font-size:9px;color:var(--txt3);border-top:1px solid var(--line);
+display:flex;gap:14px}
+
+/* ---------- status bar ---------- */
+#bot{height:24px;border-top:1px solid var(--line);background:var(--surface);display:flex;
+align-items:center;gap:16px;padding:0 12px;font-size:10px;color:var(--txt3);flex:none}
+#bot .dot{width:6px;height:6px;border-radius:50%;background:var(--txt2);display:inline-block;margin-right:5px}
+#bot .dot.up{background:var(--pos)} #bot .dot.down{background:var(--neg)}
+#bot b{color:var(--txt2);font-weight:500}
+.note{font-size:10px;color:var(--txt2);line-height:1.55;padding:8px 9px}
+.warn{border-left:2px solid var(--hot);background:#1a1408;padding:7px 9px;font-size:10px;
+color:#c9b183;line-height:1.5}
+
+/* ---------- accessibility helpers ---------- */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+clip:rect(0,0,0,0);white-space:nowrap;border:0}
+#skiplink{position:fixed;top:-40px;left:6px;z-index:200;background:#132437;color:var(--txt);
+border:1px solid #3a5a7c;padding:6px 12px;border-radius:2px;font-size:11px;transition:top .12s ease}
+#skiplink:focus{top:6px}
+[role="button"]:focus-visible,.tag:focus-visible,.pr:focus-visible{outline:1px solid #4d8fd6;outline-offset:1px}
+@media (prefers-reduced-motion: reduce){
+*{animation-duration:0.001ms !important;animation-iteration-count:1 !important;
+transition-duration:0.001ms !important;scroll-behavior:auto !important}
+#skiplink{transition:none}
+}
+</style>
+</head>
+<body>
+
+<a href="#main" id="skiplink">Aller au contenu principal</a>
+
+<div id="app">
+<div id="top">
+<div id="brand">TERMINAL</div>
+<nav aria-label="Navigation principale" style="display:flex;height:100%">
+<button class="navbtn on" data-v="mkt" aria-current="page">Marchés <kbd aria-hidden="true">M</kbd><span class="sr-only">(raccourci M)</span></button>
+<button class="navbtn" data-v="wl">Watchlist <kbd aria-hidden="true">W</kbd><span class="sr-only">(raccourci W)</span></button>
+<button class="navbtn" data-v="pf">Portefeuille <kbd aria-hidden="true">P</kbd><span class="sr-only">(raccourci P)</span></button>
+<button class="navbtn" data-v="sec">Titre <kbd aria-hidden="true">S</kbd><span class="sr-only">(raccourci S)</span></button>
+<button class="navbtn" data-v="val">Valorisation <kbd aria-hidden="true">V</kbd><span class="sr-only">(raccourci V)</span></button>
+<button class="navbtn" data-v="news">News <kbd aria-hidden="true">N</kbd><span class="sr-only">(raccourci N)</span></button>
+<button class="navbtn" data-v="diag">Diagnostic <kbd aria-hidden="true">D</kbd><span class="sr-only">(raccourci D)</span></button>
+</nav>
+<button id="searchbtn" aria-haspopup="dialog">⌘K Rechercher un titre</button>
+<div id="clocks" aria-label="Horloges des places de marché"></div>
+</div>
+
+<main id="main" tabindex="-1">
+<div class="view on" id="v-mkt" role="tabpanel" aria-label="Marchés"></div>
+<div class="view" id="v-wl" role="tabpanel" aria-label="Watchlist"></div>
+<div class="view" id="v-pf" role="tabpanel" aria-label="Portefeuille"></div>
+<div class="view" id="v-sec" role="tabpanel" aria-label="Titre"></div>
+<div class="view" id="v-val" role="tabpanel" aria-label="Valorisation"></div>
+<div class="view" id="v-news" role="tabpanel" aria-label="News"></div>
+<div class="view" id="v-diag" role="tabpanel" aria-label="Diagnostic"></div>
+</main>
+
+<div id="bot">
+<span><span class="dot" id="hdot" aria-hidden="true"></span><b id="hprov">—</b><span id="hup" class="sr-only"></span></span>
+<span>Devise <b id="hccy">USD</b></span>
+<span>Données <b id="hstat">—</b></span>
+<span id="hmsg" style="margin-left:auto" aria-live="polite"></span>
+</div>
+</div>
+
+<div id="pal" role="dialog" aria-modal="true" aria-label="Rechercher un titre">
+<div id="palbox">
+<label for="palin" class="sr-only">Rechercher un titre par ticker, nom, indice ou devise</label>
+<input id="palin" placeholder="Ticker, nom, indice, devise…" autocomplete="off" spellcheck="false"
+role="combobox" aria-expanded="true" aria-controls="palres" aria-autocomplete="list">
+<div id="palres" role="listbox" aria-label="Résultats de recherche"></div>
+<div id="palhint"><span>↑↓ naviguer</span><span>↵ ouvrir</span><span>esc fermer</span></div>
+</div></div>
+
+<div id="live-status" class="sr-only" role="status" aria-live="polite"></div>
+
+<script>
+"use strict";
+/*═══════════════════════════════════════════════════════════════════════
+1. MODÈLE DE DONNÉE
+Toute valeur qui atteint l'UI est un DataPoint. Un nombre nu ne peut pas
+traverser cette couche — c'est ce qui rend le statut de donnée structurel
+et non déclaratif.
+═══════════════════════════════════════════════════════════════════════*/
+const STATUS = {
+REALTIME:'REALTIME', DELAYED_15M:'DELAYED_15M', EOD:'EOD',
+SNAPSHOT:'SNAPSHOT', INDICATIVE:'INDICATIVE', SIMULATED:'SIMULATED', STALE:'STALE'
+};
+const STATUS_LABEL = {
+REALTIME:'Temps réel', DELAYED_15M:'Différé 15 min', EOD:'Clôture',
+SNAPSHOT:'Instantané', INDICATIVE:'Indicatif', SIMULATED:'Simulé', STALE:'Périmé'
+};
+
+function dp(value, {ts, source, status, currency='USD', unit=null}={}){
+return {value, ts, source, status, currency, unit, __dp:true};
+}
+const NA = Object.freeze({value:null, ts:null, source:null, status:null, __dp:true, na:true});
+
+/*═══════════════════════════════════════════════════════════════════════
+2. COUCHE PROVIDER
+Interface unique. L'UI ignore quel provider la sert.
+═══════════════════════════════════════════════════════════════════════*/
+class MarketDataProvider{
+get name(){ throw new Error('not implemented'); }
+async getQuote(){ throw new Error('not implemented'); }
+async getFundamentals(){ throw new Error('not implemented'); }
+async searchSecurity(){ throw new Error('not implemented'); }
+async getMacroSeries(){ throw new Error('not implemented'); }
+async health(){ throw new Error('not implemented'); }
+}
+
+/*───────────────────────────────────────────────────────────────────────
+2a. SnapshotProvider — actif par défaut.
+Sert des données vérifiées, horodatées et sourcées, capturées le
+31/08/2026. Ne prétend jamais être du temps réel : chaque champ porte
+son statut réel et son horodatage d'origine.
+───────────────────────────────────────────────────────────────────────*/
+const SNAP_TS = '2026-09-16T20:00:00Z';
+const SA = 'StockAnalysis.com / CBOE';
+
+const SNAPSHOT = {
+securities:[
+{sym:'NVDA', name:'NVIDIA Corporation', cls:'Action', exch:'NASDAQ', ccy:'USD', ctry:'US', sect:'Technologie'},
+{sym:'ASTS', name:'AST SpaceMobile, Inc.', cls:'Action', exch:'NASDAQ', ccy:'USD', ctry:'US', sect:'Technologie'},
+{sym:'SPX', name:'S&P 500', cls:'Indice', exch:'—', ccy:'USD', ctry:'US', sect:'—'},
+{sym:'NDX', name:'Nasdaq 100', cls:'Indice', exch:'—', ccy:'USD', ctry:'US', sect:'—'},
+{sym:'DJI', name:'Dow Jones Industrial Average', cls:'Indice', exch:'—', ccy:'USD', ctry:'US', sect:'—'},
+{sym:'RUT', name:'Russell 2000', cls:'Indice', exch:'—', ccy:'USD', ctry:'US', sect:'—'},
+{sym:'VIX', name:'CBOE Volatility Index', cls:'Indice', exch:'—', ccy:'USD', ctry:'US', sect:'—'},
+{sym:'N225', name:'Nikkei 225', cls:'Indice', exch:'—', ccy:'JPY', ctry:'JP', sect:'—'},
+{sym:'TOPX', name:'TOPIX', cls:'Indice', exch:'—', ccy:'JPY', ctry:'JP', sect:'—'},
+{sym:'HSI', name:'Hang Seng Index', cls:'Indice', exch:'—', ccy:'HKD', ctry:'HK', sect:'—'},
+{sym:'SHCOMP',name:'Shanghai Composite', cls:'Indice', exch:'—', ccy:'CNY', ctry:'CN', sect:'—'},
+{sym:'STI', name:'Straits Times Index', cls:'Indice', exch:'—', ccy:'SGD', ctry:'SG', sect:'—'},
+{sym:'UKX', name:'FTSE 100', cls:'Indice', exch:'—', ccy:'GBP', ctry:'UK', sect:'—'},
+{sym:'DAX', name:'DAX', cls:'Indice', exch:'—', ccy:'EUR', ctry:'DE', sect:'—'},
+{sym:'CAC', name:'CAC 40', cls:'Indice', exch:'—', ccy:'EUR', ctry:'FR', sect:'—'},
+{sym:'SX5E', name:'EURO STOXX 50', cls:'Indice', exch:'—', ccy:'EUR', ctry:'EU', sect:'—'},
+{sym:'EURUSD',name:'Euro / Dollar US', cls:'Change', exch:'FX', ccy:'USD', ctry:'—', sect:'—'},
+{sym:'USDJPY',name:'Dollar US / Yen', cls:'Change', exch:'FX', ccy:'JPY', ctry:'—', sect:'—'},
+{sym:'GBPUSD',name:'Livre sterling / Dollar US', cls:'Change', exch:'FX', ccy:'USD', ctry:'—', sect:'—'},
+{sym:'DXY', name:'Indice Dollar US', cls:'Change', exch:'FX', ccy:'—', ctry:'—', sect:'—'},
+{sym:'XAU', name:'Or (spot)', cls:'Matière première', exch:'—', ccy:'USD', ctry:'—', sect:'—'},
+{sym:'CL', name:'Pétrole WTI', cls:'Matière première', exch:'NYMEX', ccy:'USD', ctry:'—', sect:'—'},
+{sym:'BRENT',name:'Pétrole Brent', cls:'Matière première', exch:'ICE', ccy:'USD', ctry:'—', sect:'—'},
+{sym:'BTC', name:'Bitcoin', cls:'Crypto', exch:'—', ccy:'USD', ctry:'—', sect:'—'}
+],
+quotes:{
+// Actualisation 31/10/2026 via les newsletters FT (dossier « FT News », 20-30/10).
+// Titres individuels : aucun cours dans les newsletters → derniers relevés conservés, marqués Périmé.
+NVDA:{p:215.98, chg:3.81, pct:1.80, prev:212.17, open:214.14, lo:213.31, hi:215.50,
+st:STATUS.STALE, src:'StockAnalysis.com — dernier relevé du 16/09 (non actualisé)', ts:'2026-09-16T20:00:00Z'},
+ASTS:{p:58.77, chg:-1.23, pct:-2.05, prev:60.00, open:59.71, lo:57.81, hi:60.76,
+st:STATUS.STALE, src:'StockAnalysis.com — dernier relevé du 15/09 (non actualisé)', ts:'2026-09-15T20:00:00Z'},
+// Indices US — clôture du 29/10 (séance Alphabet -13 %, Big Tech -900 Md$)
+SPX:{p:7720.00, pct:-0.30, st:STATUS.EOD, src:'Financial Times (FirstFT Americas, relevé 0630 GMT-4 30/10) — clôture 29/10', ts:'2026-10-29T20:00:00Z'},
+NDX:{p:29403.00, pct:-1.38, st:STATUS.EOD, src:'Financial Times (FirstFT Americas, relevé 0630 GMT-4 30/10) — clôture 29/10', ts:'2026-10-29T20:00:00Z'},
+DJI:{p:51461.00, chg:-632.11, pct:-1.21, st:STATUS.STALE, src:'Kiplinger — dernier relevé du 16/09', ts:'2026-09-16T20:00:00Z'},
+RUT:{p:2903.94, chg:12.99, pct:0.45, st:STATUS.STALE, src:'Yahoo Finance — dernier relevé du 11/09', ts:'2026-09-11T20:00:00Z'},
+VIX:{p:17.71, chg:0.51, pct:2.97, st:STATUS.STALE, src:'Yahoo Finance — dernier relevé du 16/09', ts:'2026-09-16T20:00:00Z'},
+// Asie — clôtures du 30/10
+N225:{p:63290.00, pct:-2.12, st:STATUS.EOD, src:'Financial Times (FirstFT Americas, relevé 0630 GMT-4 30/10)', ts:'2026-10-30T10:30:00Z'},
+TOPX:{p:4069.02, pct:0.79, st:STATUS.STALE, src:'Business Recorder — dernier relevé du 16/09', ts:'2026-09-16T02:00:00Z'},
+HSI:{p:23294.00, pct:1.46, st:STATUS.EOD, src:'Financial Times (FirstFT Americas, relevé 0630 GMT-4 30/10)', ts:'2026-10-30T10:30:00Z'},
+SHCOMP:{p:3864.00, pct:-0.54, st:STATUS.STALE, src:'NordFX — dernier relevé du 15/09', ts:'2026-09-15T07:00:00Z'},
+STI:{p:5695.93, chg:6.18, pct:0.11, st:STATUS.STALE, src:'TheCloseReport — dernier relevé du 11/09', ts:'2026-09-11T09:00:00Z'},
+// Europe — FTSE en séance le 30/10 ; DAX/CAC/SX5E non couverts par les newsletters
+UKX:{p:10735.00, pct:0.13, st:STATUS.DELAYED_15M, src:'Financial Times (FirstFT Americas, relevé 0630 GMT-4 30/10)', ts:'2026-10-30T10:30:00Z'},
+DAX:{p:25568.56, chg:207.36, pct:0.82, st:STATUS.STALE, src:'Yahoo Finance — dernier relevé du 11/09', ts:'2026-09-11T16:30:00Z'},
+CAC:{p:8179.77, chg:63.01, pct:0.78, st:STATUS.STALE, src:'Yahoo Finance — dernier relevé du 11/09', ts:'2026-09-11T16:30:00Z'},
+SX5E:{p:6325.13, chg:56.16, pct:0.90, st:STATUS.STALE, src:'TheCloseReport — dernier relevé du 11/09', ts:'2026-09-11T16:50:00Z'},
+// FX
+EURUSD:{p:1.1195, pct:0.13, st:STATUS.DELAYED_15M, src:'Financial Times (FirstFT Americas, relevé 0630 GMT-4 30/10)', ts:'2026-10-30T10:30:00Z'},
+USDJPY:{p:157.25, pct:-0.29, st:STATUS.DELAYED_15M, src:'Financial Times (FirstFT Americas, relevé 0630 GMT-4 30/10)', ts:'2026-10-30T10:30:00Z'},
+GBPUSD:{p:1.3425, pct:0.36, st:STATUS.DELAYED_15M, src:'Financial Times (FirstFT Americas, relevé 0630 GMT-4 30/10)', ts:'2026-10-30T10:30:00Z'},
+DXY:{p:100.34, pct:0.62, st:STATUS.STALE, src:'ABC News — dernier relevé du 16/09', ts:'2026-09-16T22:00:00Z'},
+// Matières premières et crypto
+XAU:{p:3988.70, pct:-0.72, st:STATUS.DELAYED_15M, src:'Financial Times (FirstFT Americas, relevé 0630 GMT-4 30/10) — Comex', ts:'2026-10-30T10:30:00Z'},
+CL:{p:104.15, pct:2.11, st:STATUS.DELAYED_15M, src:'Financial Times (FirstFT Americas, relevé 0630 GMT-4 30/10)', ts:'2026-10-30T10:30:00Z'},
+BRENT:{p:117.76, pct:2.51, st:STATUS.DELAYED_15M, src:'Financial Times (FirstFT Americas, relevé 0630 GMT-4 30/10)', ts:'2026-10-30T10:30:00Z'},
+BTC:{p:78000.00, st:STATUS.INDICATIVE, src:'Financial Times (FirstFT Americas 30/10) — « au-dessus de 78 000 $ » après le piratage de Binance, niveau arrondi', ts:'2026-10-30T10:30:00Z'}
+},
+fundamentals:{
+NVDA:{mcap:5.22e12, pe:26.82, fpe:17.51, eps:7.91, shares:24.15e9, revTTM:302.97e9,
+netIncome:192.88e9, w52lo:164.27, w52hi:236.54, beta:2.22, target:342.74,
+rating:'Strong Buy', analysts:60, div:1.00, divYield:0.47,
+revFY26:215.94e9, revGrowth:83.4, epsGrowth:125.3, earnings:'2026-08-26',
+src:'Benzinga / StockAnalysis.com', ts:SNAP_TS},
+ASTS:{mcap:22.87e9, pe:null, fpe:null, eps:-2.16, shares:389.17e6, revTTM:115.30e6,
+netIncome:-618.76e6, w52lo:39.50, w52hi:133.86, beta:2.73, target:79.61,
+rating:'Hold', analysts:14, div:0, divYield:0,
+rev2025:70.92e6, revGrowth:2256.9, earnings:'2026-08-10',
+backlog:1.3e9, cash:3.7e9, guidLo:150e6, guidHi:200e6,
+src:'StockAnalysis.com', ts:'2026-09-15T20:00:00Z'}
+},
+rates:[
+{cb:'Fed', name:'Fed Funds Target', v:'3,75 – 4,00 %', next:'déc. 2026 (date non relevée)',
+note:'Maintenu le 28/10, à quelques jours des midterms, malgré la flambée des carburants liée à la guerre en Iran. Kevin Warsh préside la Fed ; nouvelles hausses possibles pour ramener le PCE vers 2,3 %.',
+st:STATUS.SNAPSHOT, src:'Financial Times (FirstFT, 29/10)', ts:'2026-10-28'},
+{cb:'BCE', name:'Taux directeur', v:'2,50 %', next:'déc. 2026',
+note:'Maintenu le 29/10, mais la BCE laisse entendre une hausse en décembre face au retour de l\'inflation. Christine Lagarde quittera la présidence en février 2027, neuf mois avant la fin de son mandat.',
+st:STATUS.SNAPSHOT, src:'Financial Times (FirstFT Asia, 30/10)', ts:'2026-10-29'},
+{cb:'BoE', name:'Bank Rate', v:'3,75 %', next:'non relevé',
+note:'Dernière valeur relevée le 30/07 — la décision du 17/09 n\'a pas été capturée. À vérifier.',
+st:STATUS.STALE, src:'BoE / Trading Economics', ts:'2026-07-30'},
+{cb:'BoJ', name:'Taux directeur court', v:'1,25 %', next:'—',
+note:'Relevé à 1,25 % le 18/09. Maintien attendu le 30/10 ; la BoJ déclare que l\'inflation sous-jacente a atteint sa cible de 2 % — fin symbolique de la guerre contre la déflation.',
+st:STATUS.SNAPSHOT, src:'Financial Times (FirstFT, 18/09 et 30/10)', ts:'2026-10-30'},
+{cb:'PBoC', name:'LPR 1 an', v:'3,00 %', next:'—',
+note:'LPR 5 ans à 3,50 %. Dernier relevé en août. Pékin soutient la bourse via sa « national team » plutôt que par les taux.',
+st:STATUS.STALE, src:'PBoC', ts:'2026-08-20'},
+{cb:'SNB', name:'Taux directeur', v:null, next:'—',
+note:'Non relevé lors de la capture. Aucune valeur affichée plutôt qu\'une estimation.',
+st:null, src:null, ts:null}
+],
+curve:[
+{t:'2A', y:4.30, st:STATUS.STALE, src:'Fortune (post-Jackson Hole, 28/08)', ts:'2026-08-28'},
+{t:'5A', y:null},
+{t:'10A', y:4.935, st:STATUS.DELAYED_15M, src:'Financial Times (FirstFT Americas, relevé 0630 GMT-4 30/10)', ts:'2026-10-30T10:30:00Z'},
+{t:'30A', y:null}
+],
+macro:[
+{k:'PIB US T3 (annualisé)', v:'3,4 %', prev:'2,2 % au T2',
+note:'Au-dessus des attentes, porté par l\'investissement IA et la consommation',
+st:STATUS.SNAPSHOT, src:'BEA via Financial Times', ts:'2026-10-29'},
+{k:'PIB France T3 (estimation flash)', v:'−0,1 %', prev:'—',
+note:'Sous les attentes : coûts d\'emprunt, énergie, instabilité politique',
+st:STATUS.SNAPSHOT, src:'Insee via Financial Times', ts:'2026-10-30'},
+{k:'OAT 10 ans', v:'~5 %', prev:'4,98 % le 21/10',
+note:'Plus haut depuis 2002',
+st:STATUS.SNAPSHOT, src:'Financial Times (FirstFT, 21/10)', ts:'2026-10-21'},
+{k:'Inflation sous-jacente Japon', v:'2 %', prev:'—',
+note:'Cible BoJ atteinte, annoncée dans le rapport trimestriel du 30/10',
+st:STATUS.SNAPSHOT, src:'BoJ via Financial Times', ts:'2026-10-30'},
+{k:'Rendement US 10 ans', v:'4,94 %', prev:'5,12 % le 21/10',
+note:'Repli via la fuite vers la qualité pendant le décrochage tech',
+st:STATUS.DELAYED_15M, src:'Financial Times (FirstFT, 30/10)', ts:'2026-10-30'},
+{k:'Real brésilien (26/10)', v:'−8 % vs USD', prev:'—',
+note:'Pire séance depuis 1999 après la réélection de Lula ; Bovespa −13,9 %',
+st:STATUS.SNAPSHOT, src:'Financial Times (FirstFT, 27/10)', ts:'2026-10-26'},
+{k:'Volume CDS sur les valeurs IA', v:'>9 Md$/sem.', prev:'<2 Md$ en juillet',
+note:'Oracle, SpaceX, Alphabet, Amazon, Meta, Broadcom, Nvidia — couverture contre un dégonflement de l\'IA',
+st:STATUS.SNAPSHOT, src:'Morgan Stanley Research via FT', ts:'2026-10-20'},
+{k:'PCE core US (juil., a/a)', v:'3,3 %', prev:'—', note:'Ancien relevé',
+st:STATUS.STALE, src:'BEA via CNBC', ts:'2026-08-26'},
+{k:'PMI manufacturier Chine (août)', v:'49,8', prev:'49,2', note:'Ancien relevé',
+st:STATUS.STALE, src:'Bureau national des statistiques', ts:'2026-08-31'}
+],
+news:[
+{h:'Binance suspend retraits et dépôts après un piratage record de 6,3 Md$',
+w:"La plus grande plateforme crypto au monde a gelé 3 Md$ d'actifs touchés après la compromission de l'ordinateur d'un ingénieur. TRM Labs attribue l'attaque à l'unité nord-coréenne TraderTraitor : ce serait le plus gros vol de crypto jamais enregistré. Le bitcoin a perdu environ 4 % avant de repasser au-dessus de 78 000 $.",
+syms:['BTC'], src:'Financial Times (FirstFT Americas)', ts:'2026-10-30T10:30:14Z'},
+{h:'Big Tech perd près de 900 Md$ ; Alphabet efface un record de 500 Md$',
+w:"Alphabet a chuté de 13 % après une consommation de cash record (plus de 50 Md$ de dépenses IA au trimestre) et l'aveu que son « AI mode » pèse sur la recherche traditionnelle. Intel a perdu environ 21 % après des prévisions décevantes (marge brute attendue à 37 %), et Amazon a aussi déçu sur ses prévisions de Noël.",
+syms:['NDX', 'SPX'], src:'Financial Times (FirstFT / Breaking News)', ts:'2026-10-30T10:30:14Z'},
+{h:'Christine Lagarde quittera la BCE en février, la BCE maintient à 2,5 %',
+w:"La présidente de la BCE part neuf mois avant la fin de son mandat, ouvrant une course à la succession au moment où l'inflation revient. La banque centrale a laissé ses taux inchangés à 2,5 % mais a suggéré une hausse dès décembre.",
+syms:['EURUSD'], src:'Financial Times (Breaking News / FirstFT Asia)', ts:'2026-10-29T10:18:00Z'},
+{h:'La Banque du Japon déclare la victoire contre la déflation',
+w:"Dans son rapport trimestriel, la BoJ indique que l'inflation sous-jacente a atteint sa cible de 2 %, mettant fin à des décennies de lutte contre la déflation.",
+syms:['N225', 'USDJPY'], src:'Financial Times (FirstFT Americas)', ts:'2026-10-30T10:30:14Z'},
+{h:'Croissance US à 3,4 % au T3, la Fed maintient ses taux',
+w:"Le PIB américain accélère (après 2,2 % au T2) grâce à l'investissement massif dans l'IA et à la consommation. La Fed de Kevin Warsh a laissé ses taux à 3,75-4 % à une semaine des midterms, malgré la hausse des prix de l'énergie.",
+syms:['SPX'], src:'Financial Times (Breaking News / FirstFT)', ts:'2026-10-29T12:40:50Z'},
+{h:"Anthropic publie son prospectus d'IPO : 16,3 Md$ de CA semestriel",
+w:"Cotation prévue sur le Nasdaq sous le ticker ANT. CA S1 2026 de 16,3 Md$ (contre 1,2 Md$), perte nette de 81 Md$ dont plus de 72 Md$ liés à la revalorisation de convertibles, 800 Md$ d'engagements de dépenses jusqu'en 2045. Les sept cofondateurs conserveraient 50,1 % des droits de vote.",
+syms:['NDX'], src:'Financial Times (FirstFT Asia)', ts:'2026-10-26T22:00:00Z'},
+{h:"Meta prépare une émission d'actions de 95 Md$ pour financer l'IA",
+w:"Nvidia, AMD et Broadcom seraient investisseurs d'ancrage. Quelques jours plus tôt, Meta avait chuté de 7 % en évoquant un environnement de financement « de plus en plus difficile » et des besoins de « centaines de milliards ».",
+syms:['NDX'], src:'Financial Times (Breaking News)', ts:'2026-10-26T11:19:00Z'},
+{h:'Choc au Brésil : Lula réélu, le real plonge de 8 %',
+w:"Lula l'emporte avec 51,8 % face à Flávio Bolsonaro, qui s'est ensuite réfugié aux États-Unis. Le real a connu sa pire séance depuis 1999 et le Bovespa a perdu 13,9 %, les investisseurs craignant pour les finances publiques.",
+syms:[], src:'Financial Times (FirstFT)', ts:'2026-10-27T10:31:00Z'},
+{h:'Le pétrole reste au-dessus de 115 $ avec la guerre en Iran',
+w:"Les attaques houthies contre l'Arabie saoudite et les projets de Netanyahu de reprendre les frappes sur l'Iran maintiennent le Brent entre 110 et 118 $. L'élection israélienne n'a pas dégagé de majorité claire.",
+syms:['BRENT', 'CL'], src:'Financial Times (FirstFT)', ts:'2026-10-30T10:30:14Z'},
+{h:"Le débat sur la bulle IA s'intensifie : CDS, valorisations en baisse",
+w:"Les volumes de CDS sur les valeurs IA ont quintuplé depuis juillet. OpenAI a ramené son objectif de valorisation de 1 400 à 1 250 Md$. Ken Griffin juge qu'on est « presque certainement » dans une bulle ; Scott Bessent n'y voit « pas de problème systémique ».",
+syms:['NDX'], src:'Financial Times (FirstFT)', ts:'2026-10-23T04:31:00Z'},
+{h:"Musk étudie une fusion SpaceX-Tesla d'environ 3 600 Md$",
+w:"Des comités spéciaux examinent le rapprochement, qui serait la plus grosse fusion de l'histoire. SpaceX a publié un chiffre d'affaires en hausse de 161 % (14,6 Md$) et un bénéfice net de 4,4 Md$.",
+syms:[], src:'Financial Times (FirstFT)', ts:'2026-10-21T04:30:32Z'},
+{h:'France : PIB en recul de 0,1 %, OAT à 5 %',
+w:"L'économie française s'est contractée au T3. Les taux à 10 ans ont touché 5 %, une première depuis 2002, sur fond d'émeutes, de couvre-feux et d'incertitude budgétaire.",
+syms:['CAC', 'EURUSD'], src:'Financial Times (FirstFT)', ts:'2026-10-30T10:30:14Z'},
+{h:'Weil, Gotshal & Manges va être dissous après 95 ans',
+w:"La direction recommande une liquidation ordonnée du cabinet (environ 2 Md$ de CA, 1 200 avocats), miné par une vague de départs d'associés et l'échec d'une fusion.",
+syms:[], src:'Financial Times (FirstFT)', ts:'2026-10-29T10:30:00Z'}
+],
+calendar:[
+{d:'2026-10-28', ev:'Décision Fed (FOMC)', ctry:'US', act:'Maintien à 3,75-4,00 %', cons:null, prev:'3,75-4,00 %', imp:3},
+{d:'2026-10-28', ev:'Budget britannique (John Healey)', ctry:'UK', act:'Présenté', cons:'Mesures « coût de la vie »', prev:'—', imp:2},
+{d:'2026-10-29', ev:'PIB US T3 (estimation avancée)', ctry:'US', act:'3,4 %', cons:'Sous 3,4 %', prev:'2,2 %', imp:3},
+{d:'2026-10-29', ev:'Décision BCE', ctry:'EU', act:'Maintien à 2,50 %', cons:null, prev:'2,50 %', imp:3},
+{d:'2026-10-30', ev:'Décision BoJ + rapport trimestriel', ctry:'JP', act:null, cons:'Maintien', prev:'1,25 %', imp:3},
+{d:'2026-10-30', ev:'PIB France T3 (flash)', ctry:'FR', act:'−0,1 %', cons:'Au-dessus', prev:'—', imp:2},
+{d:'2026-11-01', ev:'Réunion Opep+', ctry:'—', act:null, cons:'Quotas inchangés', prev:'—', imp:2},
+{d:'2026-11-03', ev:'Élections de mi-mandat US', ctry:'US', act:null, cons:'Démocrates favoris à la Chambre', prev:'—', imp:3}
+]
+};
+
+class SnapshotProvider extends MarketDataProvider{
+get name(){ return LIVE ? 'Pipeline GitHub Actions (MAJ '+fmtDT(LIVE.generated_at)+')' : 'Snapshot (actualisé 31/10/2026)'; }
+async getQuote(sym){
+const q = SNAPSHOT.quotes[sym];
+if(!q) return NA;
+const meta = SNAPSHOT.securities.find(s=>s.sym===sym);
+return {
+symbol:sym,
+price:dp(q.p,{ts:q.ts,source:q.src,status:q.st,currency:meta?meta.ccy:'USD'}),
+change:q.chg!=null?dp(q.chg,{ts:q.ts,source:q.src,status:q.st}):NA,
+changePct:q.pct!=null
+? dp(q.pct,{ts:q.ts,source:q.src,status:q.intraday?STATUS.INDICATIVE:q.st,unit:'%'})
+: NA,
+prevClose:q.prev!=null?dp(q.prev,{ts:q.ts,source:q.src,status:STATUS.EOD}):NA,
+open:q.open!=null?dp(q.open,{ts:q.ts,source:q.src,status:q.st}):NA,
+dayLow:q.lo!=null?dp(q.lo,{ts:q.ts,source:q.src,status:q.st}):NA,
+dayHigh:q.hi!=null?dp(q.hi,{ts:q.ts,source:q.src,status:q.st}):NA,
+volume:q.vol!=null?dp(q.vol,{ts:q.ts,source:q.src,status:q.st}):NA
+};
+}
+async getFundamentals(sym){
+const f = SNAPSHOT.fundamentals[sym];
+if(!f) return null;
+const wrap = {};
+for(const k in f){
+if(k==='src'||k==='ts') continue;
+wrap[k] = f[k]==null ? NA : dp(f[k],{ts:f.ts,source:f.src,status:STATUS.SNAPSHOT});
+}
+return wrap;
+}
+async searchSecurity(q){
+const s = q.trim().toLowerCase();
+if(!s) return SNAPSHOT.securities.slice(0,12);
+return SNAPSHOT.securities.filter(x=>
+x.sym.toLowerCase().includes(s) || x.name.toLowerCase().includes(s)
+).sort((a,b)=>{
+const ax = a.sym.toLowerCase().startsWith(s)?0:1, bx = b.sym.toLowerCase().startsWith(s)?0:1;
+return ax-bx;
+}).slice(0,12);
+}
+async getMacroSeries(){ return SNAPSHOT.macro; }
+async health(){
+if(LIVE) return {up:true, latencyMs:0, rateLimitRemaining:Infinity,
+note:'data.json généré le '+fmtDT(LIVE.generated_at)+' par GitHub Actions (toutes les heures). Prix : Yahoo Finance via yfinance, différés. Taux : FRED. News : flux RSS publics. Synthèse : '+(LIVE.summary?LIVE.summary.model:'désactivée')+'. Les titres en échec gardent leur dernière valeur, marquée Périmé.'};
+return {up:true, latencyMs:0, rateLimitRemaining:Infinity,
+note:'Source locale, actualisée le 31/10 via les newsletters FT du 20 au 30/10. S&P 500 et Nasdaq 100 à la clôture du 29/10. Nikkei, Hang Seng, FTSE, change, pétrole, or et taux 10 ans US au relevé FT du 30/10. NVDA, ASTS, Dow, Russell, VIX, DXY, TOPIX, Shanghai, STI, DAX, CAC et SX5E non couverts par les newsletters : derniers relevés conservés, marqués Périmé.'};
+}
+}
+
+/*───────────────────────────────────────────────────────────────────────
+2b. Adapters HTTP réels — écrits, inertes tant que le proxy n'est pas
+lancé. Ils ne sont PAS appelés depuis le navigateur en direct : CORS les
+rejetterait et §6 interdit d'exposer une clé côté client. Ils visent
+server/proxy.js, qui porte les clés côté serveur.
+───────────────────────────────────────────────────────────────────────*/
+class HttpProvider extends MarketDataProvider{
+constructor(base='/api'){ super(); this.base=base; this._lat=[]; }
+async _get(path, {retries=2, timeoutMs=6000}={}){
+let lastErr;
+for(let i=0;i<=retries;i++){
+const ctrl = new AbortController();
+const timer = setTimeout(()=>ctrl.abort(), timeoutMs);
+const t0 = performance.now();
+try{
+const r = await fetch(this.base+path, {signal:ctrl.signal});
+clearTimeout(timer);
+this._lat.push(performance.now()-t0);
+if(r.status===429){ // rate limit → backoff exponentiel
+await new Promise(res=>setTimeout(res, 2**i * 800));
+lastErr = new Error('rate limit'); continue;
+}
+if(!r.ok) throw new Error('HTTP '+r.status);
+return await r.json();
+}catch(e){
+clearTimeout(timer);
+lastErr = e;
+if(i<retries) await new Promise(res=>setTimeout(res, 2**i * 400));
+}
+}
+throw lastErr;
+}
+async health(){
+try{
+const h = await this._get('/health',{retries:0,timeoutMs:2500});
+const avg = this._lat.length ? this._lat.reduce((a,b)=>a+b,0)/this._lat.length : 0;
+return {up:true, latencyMs:Math.round(avg), rateLimitRemaining:h.rateLimitRemaining ?? null};
+}catch(e){ return {up:false, latencyMs:null, rateLimitRemaining:null, error:String(e.message)}; }
+}
+}
+
+class FMPProvider extends HttpProvider{
+get name(){ return 'Financial Modeling Prep'; }
+async getQuote(sym){
+const [d] = await this._get(`/fmp/quote/${encodeURIComponent(sym)}`);
+const meta = {ts:new Date().toISOString(), source:'FMP', status:STATUS.DELAYED_15M};
+return {
+symbol:sym,
+price:dp(d.price,meta), change:dp(d.change,meta),
+changePct:dp(d.changesPercentage,{...meta,unit:'%'}),
+prevClose:dp(d.previousClose,{...meta,status:STATUS.EOD}),
+open:dp(d.open,meta), dayLow:dp(d.dayLow,meta), dayHigh:dp(d.dayHigh,meta),
+volume:dp(d.volume,meta)
+};
+}
+async getFundamentals(sym){
+const d = await this._get(`/fmp/profile/${encodeURIComponent(sym)}`);
+const meta = {ts:new Date().toISOString(), source:'FMP', status:STATUS.SNAPSHOT};
+return {mcap:dp(d.mktCap,meta), pe:dp(d.pe,meta), beta:dp(d.beta,meta),
+eps:dp(d.eps,meta), w52lo:dp(d.yearLow,meta), w52hi:dp(d.yearHigh,meta)};
+}
+async searchSecurity(q){
+const r = await this._get(`/fmp/search?q=${encodeURIComponent(q)}`);
+return r.map(x=>({sym:x.symbol, name:x.name, cls:'Action',
+exch:x.exchangeShortName, ccy:x.currency, ctry:'—', sect:'—'}));
+}
+}
+
+class FREDProvider extends HttpProvider{
+get name(){ return 'FRED (Federal Reserve)'; }
+async getMacroSeries(id){
+const d = await this._get(`/fred/series/${encodeURIComponent(id)}`);
+return d.observations.map(o=>dp(parseFloat(o.value),
+{ts:o.date, source:'FRED '+id, status:STATUS.EOD}));
+}
+}
+
+/*───────────────────────────────────────────────────────────────────────
+2c. Façade — routing, cache TTL, health. L'UI ne parle qu'à ceci.
+───────────────────────────────────────────────────────────────────────*/
+class ProviderRouter{
+constructor(){
+this.providers = {snapshot:new SnapshotProvider()};
+this.active = 'snapshot';
+this.cache = new Map();
+this.ttl = {quote:15000, fundamentals:3600000, search:300000};
+}
+get current(){ return this.providers[this.active]; }
+register(key, provider){ this.providers[key] = provider; }
+async _cached(kind, key, fn){
+const ck = `${this.active}:${kind}:${key}`, now = Date.now();
+const hit = this.cache.get(ck);
+if(hit && now - hit.t < (this.ttl[kind]||30000)) return hit.v;
+const v = await fn();
+this.cache.set(ck,{t:now, v});
+return v;
+}
+getQuote(s){ return this._cached('quote', s, ()=>this.current.getQuote(s)); }
+getFundamentals(s){ return this._cached('fundamentals', s, ()=>this.current.getFundamentals(s)); }
+searchSecurity(q){ return this._cached('search', q, ()=>this.current.searchSecurity(q)); }
+health(){ return this.current.health(); }
+}
+const DATA = new ProviderRouter();
+
+/*───────────────────────────────────────────────────────────────────────
+2d. Données live — data.json, produit toutes les heures par GitHub Actions
+(scripts/update_data.py). Si le fichier est absent (ouverture en local),
+le terminal reste sur le snapshot figé ci-dessus : rien n'est inventé.
+───────────────────────────────────────────────────────────────────────*/
+let LIVE = null;
+const fmtDT = iso => new Date(iso).toLocaleString('fr-FR',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});
+async function loadLive(){
+try{
+const r = await fetch('data.json?t='+Date.now(), {cache:'no-store'});
+if(!r.ok) throw new Error('HTTP '+r.status);
+const d = await r.json();
+if(LIVE && LIVE.generated_at===d.generated_at) return false;
+for(const [sym,q] of Object.entries(d.quotes||{})) SNAPSHOT.quotes[sym] = q;
+for(const [sym,f] of Object.entries(d.fundamentals||{})){
+if(SNAPSHOT.fundamentals[sym]) Object.assign(SNAPSHOT.fundamentals[sym], f, {src:'Yahoo Finance via yfinance', ts:d.generated_at});
+}
+if((d.curve||[]).some(c=>c.y!=null)) SNAPSHOT.curve = d.curve;
+if((d.news||[]).length){
+const old = SNAPSHOT.archive || SNAPSHOT.news;
+SNAPSHOT.archive = old;
+SNAPSHOT.news = [...d.news, ...old];
+}
+SNAPSHOT.summary = d.summary || null;
+LIVE = d;
+DATA.cache.clear();
+return true;
+}catch(e){ console.info('data.json indisponible — snapshot figé utilisé ('+e.message+')'); return false; }
+}
+// Pour activer le live : lancer server/proxy.js puis décommenter —
+// DATA.register('fmp', new FMPProvider('/api')); DATA.active = 'fmp';
+</script>
+
+<script>
+"use strict";
+/*═══════════════════════════════════════════════════════════════════════
+3. FORMATAGE
+Rend un DataPoint. Une valeur absente s'affiche "n/d" — jamais une
+estimation. Un statut absent n'affiche aucun badge.
+═══════════════════════════════════════════════════════════════════════*/
+const nf = (v,d=2)=>v==null||!isFinite(v)?'—':v.toLocaleString('fr-FR',
+{minimumFractionDigits:d,maximumFractionDigits:d});
+const pct = (v,d=2)=>v==null||!isFinite(v)?'—':(v>=0?'+':'')+nf(v,d)+' %';
+function big(v){
+if(v==null||!isFinite(v)) return '—';
+const a=Math.abs(v);
+if(a>=1e12) return nf(v/1e12,2)+' T';
+if(a>=1e9) return nf(v/1e9,2)+' Md';
+if(a>=1e6) return nf(v/1e6,2)+' M';
+if(a>=1e3) return nf(v/1e3,1)+' k';
+return nf(v,0);
+}
+const esc = s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const cls = v=>v==null?'zero':v>0?'pos':v<0?'neg':'zero';
+
+function badge(status){
+if(!status) return '';
+return `<span class="st st-${status}" title="${STATUS_LABEL[status]}">${STATUS_LABEL[status]}</span>`;
+}
+/** Affiche un DataPoint. `f` formate la valeur. */
+function V(d, f=x=>nf(x), opts={}){
+if(!d || d.na || d.value==null) return '<span class="na">n/d</span>';
+const b = opts.badge===false ? '' : badge(d.status);
+const t = d.source ? ` title="${esc(d.source)}${d.ts?' — '+esc(d.ts):''}"` : '';
+return `<span${t}>${f(d.value)}</span>${b}`;
+}
+function ago(iso){
+if(!iso) return 'horodatage inconnu';
+const s = Math.floor((Date.now()-new Date(iso))/1000);
+if(s<90) return 'il y a '+s+' s';
+if(s<5400) return 'il y a '+Math.floor(s/60)+' min';
+if(s<172800) return 'il y a '+Math.floor(s/3600)+' h';
+return 'il y a '+Math.floor(s/86400)+' j';
+}
+
+/*═══════════════════════════════════════════════════════════════════════
+4. MOTEUR QUANTITATIF
+Tous les calculs sont réels. Aucune valeur affichée dans les vues
+Portefeuille et Valorisation n'est codée en dur.
+═══════════════════════════════════════════════════════════════════════*/
+const Q = {
+mean:a=>a.reduce((x,y)=>x+y,0)/a.length,
+std(a){ if(a.length<2) return NaN;
+const m=Q.mean(a); return Math.sqrt(a.reduce((s,x)=>s+(x-m)**2,0)/(a.length-1)); },
+cov(a,b){ if(a.length<2) return NaN;
+const ma=Q.mean(a), mb=Q.mean(b);
+return a.reduce((s,_,i)=>s+(a[i]-ma)*(b[i]-mb),0)/(a.length-1); },
+corr(a,b){ const s=Q.std(a)*Q.std(b); return s?Q.cov(a,b)/s:NaN; },
+beta(r,m){ const v=Q.cov(m,m); return v?Q.cov(r,m)/v:NaN; },
+
+/** Volatilité annualisée à partir de rendements périodiques. */
+volAnn(r,ppy=252){ return Q.std(r)*Math.sqrt(ppy); },
+
+/** CAGR depuis une série de valeurs de portefeuille. */
+cagr(series,years){
+if(series.length<2||years<=0) return NaN;
+const tot = series[series.length-1]/series[0];
+return tot<=0?NaN:(Math.pow(tot,1/years)-1)*100;
+},
+sharpe(r,rf=0,ppy=252){
+const s=Q.std(r); if(!s) return NaN;
+return (Q.mean(r)-rf/ppy)/s*Math.sqrt(ppy);
+},
+/** Sortino : ne pénalise que la volatilité baissière. */
+sortino(r,rf=0,ppy=252){
+const t=rf/ppy, dn=r.filter(x=>x<t).map(x=>(x-t)**2);
+if(!dn.length) return Infinity;
+const dd=Math.sqrt(dn.reduce((a,b)=>a+b,0)/r.length);
+return dd?(Q.mean(r)-t)/dd*Math.sqrt(ppy):NaN;
+},
+maxDD(series){
+let peak=series[0], mx=0;
+for(const v of series){ if(v>peak) peak=v; const d=(peak-v)/peak; if(d>mx) mx=d; }
+return mx*100;
+},
+/** VaR historique — quantile empirique, pas d'hypothèse de normalité. */
+varHist(r,conf=0.95){
+const s=[...r].sort((a,b)=>a-b);
+return -s[Math.floor((1-conf)*s.length)]*100;
+},
+/** CVaR : perte moyenne conditionnelle au-delà de la VaR. */
+cvarHist(r,conf=0.95){
+const s=[...r].sort((a,b)=>a-b), n=Math.max(1,Math.floor((1-conf)*s.length));
+return -Q.mean(s.slice(0,n))*100;
+},
+/** Alpha de Jensen, annualisé, en points de %. */
+jensen(rp,rm,rf=0,ppy=252){
+const b=Q.beta(rp,rm);
+return ((Q.mean(rp)-rf/ppy) - b*(Q.mean(rm)-rf/ppy))*ppy*100;
+},
+trackingError(rp,rm,ppy=252){ return Q.volAnn(rp.map((x,i)=>x-rm[i]),ppy)*100; },
+infoRatio(rp,rm,ppy=252){
+const d=rp.map((x,i)=>x-rm[i]), s=Q.std(d);
+return s?Q.mean(d)/s*Math.sqrt(ppy):NaN;
+},
+
+/** Cholesky sur matrice de corrélation. Retourne null si non définie positive. */
+chol(M){
+const n=M.length, L=Array.from({length:n},()=>new Float64Array(n));
+for(let i=0;i<n;i++) for(let j=0;j<=i;j++){
+let s=M[i][j];
+for(let k=0;k<j;k++) s-=L[i][k]*L[j][k];
+if(i===j){ if(s<=1e-12) return null; L[i][i]=Math.sqrt(s); }
+else L[i][j]=s/L[j][j];
+}
+return L;
+},
+/** Deux normales standard indépendantes (Box-Muller). */
+gauss2(){
+let u=0,v=0; while(u===0)u=Math.random(); while(v===0)v=Math.random();
+const r=Math.sqrt(-2*Math.log(u));
+return [r*Math.cos(2*Math.PI*v), r*Math.sin(2*Math.PI*v)];
+},
+quantile(sorted,p){
+const i=(sorted.length-1)*p, lo=Math.floor(i), hi=Math.ceil(i);
+return lo===hi?sorted[lo]:sorted[lo]+(sorted[hi]-sorted[lo])*(i-lo);
+}
+};
+
+/*═══════════════════════════════════════════════════════════════════════
+5. ÉTAT
+═══════════════════════════════════════════════════════════════════════*/
+const S = {
+view:'mkt',
+focus:'NVDA',
+ccy:'USD',
+positions:[
+{sym:'NVDA', qty:40, cost:142.50, ccy:'USD', date:'2025-11-14'},
+{sym:'ASTS', qty:180, cost:41.20, ccy:'USD', date:'2026-02-03'}
+],
+cash:4200,
+watchlists:{
+'Cœur de portefeuille':['NVDA','ASTS'],
+'Indices':['SPX','NDX','DJI','RUT','VIX'],
+'Asie':['N225','TOPX','HSI','SHCOMP','STI'],
+'Europe':['UKX','DAX','CAC','SX5E'],
+'Macro':['EURUSD','USDJPY','GBPUSD','DXY','XAU','CL','BRENT','BTC']
+},
+mc:null, dcf:null
+};
+
+/*═══════════════════════════════════════════════════════════════════════
+6. VUE — MARCHÉS
+═══════════════════════════════════════════════════════════════════════*/
+async function rowsFor(syms){
+let h='';
+for(const s of syms){
+const q = await DATA.getQuote(s);
+const meta = SNAPSHOT.securities.find(x=>x.sym===s) || {name:s,ccy:''};
+if(!q || q.na){
+h += `<tr><th scope="row" class="sym">${s}</th><td colspan="4" class="na">indisponible chez ce fournisseur</td></tr>`;
+continue;
+}
+const p = q.changePct;
+const pctTxt = p&&!p.na ? pct(p.value) : 'n/d';
+h += `<tr class="clk" data-sym="${s}" tabindex="0" role="button"
+aria-label="Ouvrir la fiche ${esc(meta.name)} (${s}), dernier cours ${nf(q.price.value)}, variation ${pctTxt}">
+<th scope="row" class="sym">${s}<div class="mut" style="font-size:10px;font-weight:400">${esc(meta.name)}</div></th>
+<td>${V(q.price, x=>nf(x, x>1000?0:2))}</td>
+<td class="${p&&!p.na?cls(p.value):''}">${V(p, x=>pct(x))}</td>
+<td class="mut">${q.volume&&!q.volume.na?big(q.volume.value):'—'}</td>
+<td class="mut" style="font-size:10px">${ago(q.price.ts)}</td>
+</tr>`;
+}
+return h;
+}
+
+async function viewMarkets(){
+const el = document.getElementById('v-mkt');
+const T = (h,caption) => `<table><caption class="sr-only">${esc(caption)}</caption><thead><tr><th scope="col">Titre</th><th scope="col">Dernier</th><th scope="col">Var.</th><th scope="col">Volume</th><th scope="col">Âge</th></tr></thead><tbody>${h}</tbody></table>`;
+
+const [us, eu, as, fx] = await Promise.all([
+rowsFor(['SPX','NDX','DJI','RUT','VIX']),
+rowsFor(['UKX','DAX','CAC','SX5E']),
+rowsFor(['N225','TOPX','HSI','SHCOMP','STI']),
+rowsFor(['EURUSD','USDJPY','GBPUSD','DXY','XAU','CL','BRENT','BTC'])
+]);
+
+const rates = SNAPSHOT.rates.map(r=>`<tr>
+<th scope="row" class="sym">${r.cb}<div class="mut" style="font-size:10px;font-weight:400">${esc(r.name)}</div></th>
+<td style="font-size:13px;font-weight:600">${r.v ? esc(r.v)+badge(r.st) : '<span class="na">non relevé</span>'}</td>
+<td class="mut" style="font-size:10px;text-align:left;white-space:normal;max-width:290px">${esc(r.note)}</td>
+<td class="mut">${esc(r.next)}</td>
+</tr>`).join('');
+
+const curve = SNAPSHOT.curve.map(c=>`<tr><th scope="row" class="sym">${c.t}</th>
+<td>${c.y!=null?nf(c.y,2)+' %'+badge(c.st):'<span class="na">non relevé</span>'}</td></tr>`).join('');
+
+const macro = SNAPSHOT.macro.map(m=>`<tr>
+<th scope="row" style="text-align:left;font-weight:400;color:var(--txt)">${esc(m.k)}</th><td style="font-weight:600">${esc(m.v)}${badge(m.st)}</td>
+<td class="mut">${esc(m.prev)}</td>
+<td class="mut" style="text-align:left;font-size:10px">${esc(m.note)}</td></tr>`).join('');
+
+const cal = SNAPSHOT.calendar.map(c=>{
+const d = new Date(c.d+'T12:00:00');
+const dateTxt = d.toLocaleDateString('fr-FR',{weekday:'short',day:'2-digit',month:'short'});
+return `<tr>
+<th scope="row" style="font-weight:400;color:var(--txt)">${dateTxt}</th>
+<td style="text-align:left">${esc(c.ev)} <span class="mut">${c.ctry}</span></td>
+<td><span class="sr-only">Impact : ${c.imp} sur 3.</span><span aria-hidden="true">${'●'.repeat(c.imp)}</span></td>
+<td>${c.cons?esc(c.cons):'<span class="na">—</span>'}</td>
+<td>${c.prev?esc(c.prev):'<span class="na">—</span>'}</td>
+<td style="font-weight:600">${c.act?esc(c.act):'<span class="na">à venir</span>'}</td>
+</tr>`;
+}).join('');
+
+el.innerHTML = `
+<div class="warn" style="margin-bottom:9px">
+${LIVE ? `Fournisseur actif : <b>Pipeline automatique</b>. Données générées le <b>${fmtDT(LIVE.generated_at)}</b> par GitHub Actions — prix Yahoo Finance différés, taux FRED, news RSS. Rafraîchissement toutes les heures ; la page vérifie toutes les 10 minutes. Badge Périmé = source en échec, dernière valeur conservée.` : `Fournisseur actif : <b>Snapshot</b>. Actualisé le 31/10/2026 à partir des 25 newsletters Financial Times du dossier FT News (20-30/10).
+<b>Semaine dominée par le doute sur l'IA</b> : Alphabet −13 % (−500 Md$), Big Tech −900 Md$, Intel −21 % ; prospectus d'IPO d'Anthropic ; Binance piraté pour 6,3 Md$.
+Fed et BCE inchangées (3,75-4,00 % et 2,50 %), Lagarde partira en février. S&P 500 et Nasdaq 100 à la clôture du 29/10 ; Asie, FTSE, change, pétrole et or au relevé FT du 30/10.
+NVDA, ASTS, Dow, VIX, DXY et indices européens continentaux ne figurent pas dans les newsletters : marqués Périmé.
+`}
+</div>
+<div class="g g2">
+<div class="pnl"><h3>Actions — États-Unis<span class="rt">${LIVE?"Yahoo Finance, MAJ horaire":"S&amp;P / Nasdaq 100 clôture 29/10, reste périmé"}</span></h3><div class="pbody flush">${T(us,'Actions États-Unis')}</div></div>
+<div class="pnl"><h3>Actions — Europe<span class="rt">${LIVE?"Yahoo Finance, MAJ horaire":"FTSE via FT 30/10, reste périmé (11/09)"}</span></h3><div class="pbody flush">${T(eu,'Actions Europe')}</div></div>
+<div class="pnl"><h3>Actions — Asie<span class="rt">${LIVE?"Yahoo Finance, MAJ horaire":"Nikkei/HSI via FT 30/10"}</span></h3><div class="pbody flush">${T(as,'Actions Asie')}</div></div>
+<div class="pnl"><h3>Change et matières premières<span class="rt">${LIVE?"Yahoo Finance, MAJ horaire":"FX, pétrole, or via FT 30/10"}</span></h3><div class="pbody flush">${T(fx,'Change et matières premières')}</div></div>
+<div class="pnl span2"><h3>Banques centrales</h3><div class="pbody flush"><table><caption class="sr-only">Taux directeurs des banques centrales</caption><tbody>${rates}</tbody></table></div></div>
+<div class="pnl"><h3>Courbe des taux US</h3><div class="pbody flush">
+<table><caption class="sr-only">Courbe des taux US</caption><tbody>${curve}</tbody></table>
+<div class="note">Deux points relevés : le 10 ans (4,94 %, 30/10, FT) et le 2 ans (4,30 %, 28/08, périmé).
+La pente 2s10s n'est pas calculée : soustraire deux taux relevés à deux mois d'écart produirait une pente fictive.
+FRED fournit la courbe complète gratuitement — séries <b>DGS2</b>, <b>DGS10</b>, <b>DGS30</b> — c'est la première chose à brancher en phase 2.</div>
+</div></div>
+<div class="pnl"><h3>Indicateurs macro</h3><div class="pbody flush"><table><caption class="sr-only">Indicateurs macroéconomiques</caption><tbody>${macro}</tbody></table></div></div>
+<div class="pnl span2"><h3>Calendrier économique</h3><div class="pbody flush">
+<table><caption class="sr-only">Calendrier économique</caption><thead><tr><th scope="col">Date</th><th scope="col" style="text-align:left">Événement</th><th scope="col">Impact</th>
+<th scope="col">Consensus</th><th scope="col">Précédent</th><th scope="col">Publié</th></tr></thead><tbody>${cal}</tbody></table></div></div>
+</div>`;
+wireSymbolClicks(el);
+}
+
+/*═══════════════════════════════════════════════════════════════════════
+7. VUE — WATCHLISTS
+═══════════════════════════════════════════════════════════════════════*/
+async function viewWatchlist(){
+const el = document.getElementById('v-wl');
+let h = '<div class="g g2">';
+for(const [name,syms] of Object.entries(S.watchlists)){
+const r = await rowsFor(syms);
+h += `<div class="pnl"><h3>${esc(name)}<span class="rt">${syms.length} titres</span></h3>
+<div class="pbody flush"><table><caption class="sr-only">${esc(name)}</caption><thead><tr><th scope="col">Titre</th><th scope="col">Dernier</th><th scope="col">Var.</th>
+<th scope="col">Volume</th><th scope="col">Âge</th></tr></thead><tbody>${r}</tbody></table></div></div>`;
+}
+el.innerHTML = h + '</div>';
+wireSymbolClicks(el);
+}
+
+/*═══════════════════════════════════════════════════════════════════════
+8. VUE — PORTEFEUILLE
+P&L et pondérations calculés depuis les positions et les cotations.
+Les métriques de risque proviennent du Monte Carlo, pas d'un historique :
+ce provider ne fournit aucune série de prix, et une Sharpe calculée sur
+des données absentes serait fausse. C'est dit explicitement.
+═══════════════════════════════════════════════════════════════════════*/
+async function viewPortfolio(){
+const el = document.getElementById('v-pf');
+let nav = S.cash, cost = 0, dayPL = 0, rows = '';
+
+const enriched = [];
+for(const p of S.positions){
+const q = await DATA.getQuote(p.sym);
+const px = q.price.value, mv = px*p.qty, cb = p.cost*p.qty;
+const upl = mv-cb, uplPct = cb?upl/cb*100:0;
+const dpl = (q.change && !q.change.na) ? q.change.value*p.qty : null;
+nav += mv; cost += cb; if(dpl!=null) dayPL += dpl;
+enriched.push({...p, px, mv, cb, upl, uplPct, dpl, status:q.price.status});
+}
+const inv = nav - S.cash;
+
+for(const e of enriched){
+rows += `<tr class="clk" data-sym="${e.sym}" tabindex="0" role="button"
+aria-label="Ouvrir la fiche ${e.sym}, valeur de position ${nf(e.mv,0)}, plus ou moins-value ${pct(e.uplPct,1)}">
+<th scope="row" class="sym">${e.sym}</th>
+<td>${nf(e.qty,0)}</td>
+<td>${nf(e.cost)}</td>
+<td>${nf(e.px)}${badge(e.status)}</td>
+<td>${nf(e.mv,0)}</td>
+<td class="${cls(e.upl)}">${nf(e.upl,0)}</td>
+<td class="${cls(e.uplPct)}">${pct(e.uplPct)}</td>
+<td class="${cls(e.dpl)}">${e.dpl!=null?nf(e.dpl,0):'<span class="na">n/d</span>'}</td>
+<td>${pct(e.mv/nav*100,1)}</td></tr>`;
+}
+
+const totPL = nav - (cost + S.cash);
+el.innerHTML = `
+<div class="pnl" style="margin-bottom:9px">
+<div class="statrow">
+<div class="stat"><span class="l">NAV TOTALE</span><span class="n">${nf(nav,0)}</span><span class="s">USD</span></div>
+<div class="stat"><span class="l">P&L DU JOUR</span><span class="n ${cls(dayPL)}">${nf(dayPL,0)}</span>
+<span class="s">${pct(dayPL/(nav-dayPL)*100)}</span></div>
+<div class="stat"><span class="l">P&L LATENT</span><span class="n ${cls(totPL)}">${nf(totPL,0)}</span>
+<span class="s">${pct(totPL/cost*100)}</span></div>
+<div class="stat"><span class="l">INVESTI</span><span class="n">${nf(inv,0)}</span>
+<span class="s">${pct(inv/nav*100,1)} de la NAV</span></div>
+<div class="stat"><span class="l">LIQUIDITÉS</span><span class="n">${nf(S.cash,0)}</span>
+<span class="s">${pct(S.cash/nav*100,1)} de la NAV</span></div>
+<div class="stat"><span class="l">LIGNES</span><span class="n">${S.positions.length}</span>
+<span class="s">concentration élevée</span></div>
+</div>
+<div class="pbody flush">
+<table><caption class="sr-only">Positions du portefeuille</caption><thead><tr><th scope="col">Titre</th><th scope="col">Qté</th><th scope="col">PRU</th><th scope="col">Cours</th><th scope="col">Valeur</th>
+<th scope="col">P&L</th><th scope="col">P&L %</th><th scope="col">Jour</th><th scope="col">Poids</th></tr></thead><tbody>${rows}</tbody></table>
+</div>
+</div>
+
+<div class="pnl">
+<h3>Simulation Monte Carlo — projection du portefeuille</h3>
+<form class="ctl" id="mcform">
+<div class="f"><label for="mw0">Poids NVDA %</label><input id="mw0" type="number" step="1" value="${nf(enriched[0].mv/inv*100,0)}"></div>
+<div class="f"><label for="mw1">Poids ASTS %</label><input id="mw1" type="number" step="1" value="${nf(enriched[1].mv/inv*100,0)}"></div>
+<div class="f"><label for="mu0">μ NVDA % an</label><input id="mu0" type="number" step="1" value="18"></div>
+<div class="f"><label for="mu1">μ ASTS % an</label><input id="mu1" type="number" step="1" value="12"></div>
+<div class="f"><label for="sg0">σ NVDA % an</label><input id="sg0" type="number" step="1" value="45"></div>
+<div class="f"><label for="sg1">σ ASTS % an</label><input id="sg1" type="number" step="1" value="75"></div>
+<div class="f"><label for="mrho">Corrélation</label><input id="mrho" type="number" step="0.05" value="0.55"></div>
+<div class="f"><label for="mb0">β NVDA</label><input id="mb0" type="number" step="0.05" value="2.21"></div>
+<div class="f"><label for="mb1">β ASTS</label><input id="mb1" type="number" step="0.05" value="2.74"></div>
+<div class="f"><label for="mub">μ indice % an</label><input id="mub" type="number" step="1" value="8"></div>
+<div class="f"><label for="sgb">σ indice % an</label><input id="sgb" type="number" step="1" value="16"></div>
+<div class="f"><label for="mrf">Taux sans risque %</label><input id="mrf" type="number" step="0.25" value="3.6"></div>
+<div class="f"><label for="mhz">Horizon (années)</label><input id="mhz" type="number" step="1" value="3"></div>
+<div class="f"><label for="mpath">Trajectoires</label><input id="mpath" type="number" step="500" value="3000"></div>
+<button class="btn go" type="submit" id="mcrun">Lancer</button>
+</form>
+<div id="mcout" aria-live="polite"></div>
+</div>`;
+wireSymbolClicks(el);
+document.getElementById('mcform').onsubmit = e=>{ e.preventDefault(); runMC(); };
+runMC();
+}
+
+/*── Monte Carlo : GBM à 3 facteurs (2 actifs + indice) corrélés par Cholesky.
+Les corrélations actif/indice sont dérivées des bêtas observés :
+ρᵢₘ = βᵢ · σₘ / σᵢ. Sans cela, l'indice serait indépendant du portefeuille
+et le bêta, l'alpha, la tracking error et le ratio d'information simulés
+seraient dénués de sens. ────────────────────────────────────────────────*/
+function runMC(){
+const g = id => parseFloat(document.getElementById(id).value);
+let w0=g('mw0')/100, w1=g('mw1')/100;
+const sum=w0+w1; if(sum>0){ w0/=sum; w1/=sum; } // renormalisation
+const mu=[g('mu0')/100,g('mu1')/100], sg=[g('sg0')/100,g('sg1')/100];
+const rho01=Math.max(-0.99,Math.min(0.99,g('mrho')));
+const mub=g('mub')/100, sgb=g('sgb')/100, rf=g('mrf')/100;
+const bt=[g('mb0'),g('mb1')];
+const yrs=Math.max(1,g('mhz')), N=Math.max(200,Math.min(20000,g('mpath')));
+const steps=Math.round(yrs*252), dt=1/252, sq=Math.sqrt(dt);
+const out=document.getElementById('mcout');
+const live=document.getElementById('live-status');
+
+// ρᵢₘ = βᵢ σₘ / σᵢ, borné pour rester une corrélation valide
+const rm=[0,1].map(i=>{
+const r=bt[i]*sgb/sg[i];
+return Math.max(-0.99,Math.min(0.99,r));
+});
+
+const L=Q.chol([[1,rho01,rm[0]],[rho01,1,rm[1]],[rm[0],rm[1],1]]);
+if(!L){
+out.innerHTML=`<div class="warn"><b>Jeu d'hypothèses incohérent.</b>
+La matrice de corrélation implicite — ρ(actifs) = ${nf(rho01,2)},
+ρ(NVDA, indice) = ${nf(rm[0],2)}, ρ(ASTS, indice) = ${nf(rm[1],2)} — n'est pas
+définie positive : la décomposition de Cholesky échoue et aucune trajectoire n'est générée.
+Concrètement, les bêtas et volatilités saisis décrivent un monde qui ne peut pas exister.
+Baissez la corrélation entre actifs, ou réduisez un bêta, ou augmentez une volatilité.
+<br><br>Le modèle refuse de produire un chiffre plutôt que d'en produire un faux.</div>`;
+if(live) live.textContent='Simulation impossible : hypothèses de corrélation incohérentes.';
+return;
+}
+
+const finals=[], benchFinals=[], dds=[];
+const pRet=[], bRet=[]; // séries appariées pour bêta / alpha / TE / IR
+let sampleP=null, sampleB=null;
+const drift=[mu[0]-sg[0]**2/2, mu[1]-sg[1]**2/2], driftB=mub-sgb**2/2;
+
+for(let n=0;n<N;n++){
+let v=1, b=1, peak=1, mdd=0;
+const keep=n===0, ps=keep?[1]:null, bs=keep?[1]:null;
+const track=n<40; // 40 trajectoires ≈ 10k points appariés
+for(let t=0;t<steps;t++){
+const [z1,z2]=Q.gauss2(), [z3]=Q.gauss2();
+const e0=L[0][0]*z1;
+const e1=L[1][0]*z1+L[1][1]*z2;
+const e2=L[2][0]*z1+L[2][1]*z2+L[2][2]*z3; // choc de l'indice, corrélé aux actifs
+const r0=Math.exp(drift[0]*dt+sg[0]*sq*e0)-1;
+const r1=Math.exp(drift[1]*dt+sg[1]*sq*e1)-1;
+const rb=Math.exp(driftB*dt+sgb*sq*e2)-1;
+const rp=w0*r0+w1*r1; // rééquilibrage quotidien aux poids cibles
+v*=(1+rp); b*=(1+rb);
+if(v>peak) peak=v;
+const d=(peak-v)/peak; if(d>mdd) mdd=d;
+if(track){ pRet.push(rp); bRet.push(rb); }
+if(keep){ ps.push(v); bs.push(b); }
+}
+finals.push(v); benchFinals.push(b); dds.push(mdd*100);
+if(keep){ sampleP=ps; sampleB=bs; }
+}
+
+const beatCount=finals.filter((x,i)=>x>benchFinals[i]).length; // appariement avant tri
+const lossCount=finals.filter(x=>x<1).length;
+
+finals.sort((a,b)=>a-b); benchFinals.sort((a,b)=>a-b); dds.sort((a,b)=>a-b);
+const med=Q.quantile(finals,0.5), p10=Q.quantile(finals,0.10), p90=Q.quantile(finals,0.90);
+const bmed=Q.quantile(benchFinals,0.5);
+const cagr=(Math.pow(med,1/yrs)-1)*100, bcagr=(Math.pow(bmed,1/yrs)-1)*100;
+const volP=Q.volAnn(pRet)*100, volB=Q.volAnn(bRet)*100;
+const sharpe=Q.sharpe(pRet,rf), sortino=Q.sortino(pRet,rf);
+const beta=Q.beta(pRet,bRet), alpha=Q.jensen(pRet,bRet,rf), corrPB=Q.corr(pRet,bRet);
+const te=Q.trackingError(pRet,bRet), ir=Q.infoRatio(pRet,bRet);
+const varP=Q.varHist(pRet), cvarP=Q.cvarHist(pRet);
+const pLoss=lossCount/N*100, pBeat=beatCount/N*100;
+const betaTheo=w0*bt[0]+w1*bt[1];
+
+const K=(l,v,c='')=>`<div class="kv"><span class="k">${l}</span><span class="v ${c}">${v}</span></div>`;
+out.innerHTML=`
+<div class="statrow">
+<div class="stat"><span class="l">MÉDIANE À ${yrs} ANS</span><span class="n">×${nf(med,2)}</span>
+<span class="s">CAGR ${pct(cagr,1)}</span></div>
+<div class="stat"><span class="l">P10 — SCÉNARIO BAS</span><span class="n neg">×${nf(p10,2)}</span>
+<span class="s">${pct((Math.pow(p10,1/yrs)-1)*100,1)} par an</span></div>
+<div class="stat"><span class="l">P90 — SCÉNARIO HAUT</span><span class="n pos">×${nf(p90,2)}</span>
+<span class="s">${pct((Math.pow(p90,1/yrs)-1)*100,1)} par an</span></div>
+<div class="stat"><span class="l">INDICE (MÉDIANE)</span><span class="n">×${nf(bmed,2)}</span>
+<span class="s">CAGR ${pct(bcagr,1)}</span></div>
+<div class="stat"><span class="l">PROBA. DE PERTE</span><span class="n">${nf(pLoss,1)} %</span>
+<span class="s">valeur finale sous la mise</span></div>
+<div class="stat"><span class="l">BAT L'INDICE</span><span class="n">${nf(pBeat,1)} %</span>
+<span class="s">des trajectoires</span></div>
+</div>
+<canvas id="mccv" height="200" role="img"
+aria-label="Trajectoire simulée d'exemple sur ${yrs} ans : le portefeuille termine à un multiple de ${nf(sampleP[sampleP.length-1],2)} contre ${nf(sampleB[sampleB.length-1],2)} pour l'indice. Résumé chiffré complet ci-dessus et ci-dessous."></canvas>
+<div class="g g3" style="padding:9px">
+<div><div style="font-size:9px;color:var(--txt3);margin-bottom:5px">PERFORMANCE</div>
+${K('CAGR médian',pct(cagr,2),cls(cagr))}
+${K('Volatilité ann.',nf(volP,1)+' %')}
+${K('Ratio de Sharpe',nf(sharpe,2),sharpe>1?'pos':sharpe<0?'neg':'')}
+${K('Ratio de Sortino',isFinite(sortino)?nf(sortino,2):'∞')}
+</div>
+<div><div style="font-size:9px;color:var(--txt3);margin-bottom:5px">RISQUE</div>
+${K('Drawdown max médian',nf(Q.quantile(dds,0.5),1)+' %','neg')}
+${K('Drawdown max P90',nf(Q.quantile(dds,0.9),1)+' %','neg')}
+${K('VaR 95 % (1 jour)',nf(varP,2)+' %','neg')}
+${K('CVaR 95 % (1 jour)',nf(cvarP,2)+' %','neg')}
+</div>
+<div><div style="font-size:9px;color:var(--txt3);margin-bottom:5px">FACE À L'INDICE</div>
+${K('Bêta simulé',nf(beta,2))}
+${K('Bêta théorique (Σwᵢβᵢ)',nf(betaTheo,2),'mut')}
+${K('Alpha de Jensen',pct(alpha,2),cls(alpha))}
+${K('Tracking error',nf(te,1)+' %')}
+${K('Ratio d\'information',nf(ir,2),cls(ir))}
+${K('Corrélation au marché',nf(corrPB,2),'mut')}
+</div>
+</div>
+<div class="warn" style="margin:0 9px 9px">
+<b>Ce que ces chiffres sont, et ce qu'ils ne sont pas.</b>
+${nf(N,0)} trajectoires, mouvement brownien géométrique à trois facteurs, chocs corrélés par
+décomposition de Cholesky, rééquilibrage quotidien. L'indice n'est pas indépendant du portefeuille :
+les corrélations actif/marché sont déduites des bêtas (ρ = βσₘ/σᵢ), soit ${nf(rm[0],2)} pour NVDA
+et ${nf(rm[1],2)} pour ASTS. C'est ce qui rend le bêta et l'alpha ci-dessus interprétables — le bêta
+simulé de ${nf(beta,2)} recoupe le bêta théorique de ${nf(betaTheo,2)}, ce qui valide la simulation.
+<br><br>
+Les calculs sont exacts. Les <b>hypothèses ne le sont pas</b> : μ et σ sont saisis à la main, jamais
+estimés — ce fournisseur ne livre aucune série de prix. Et un GBM suppose des rendements log-normaux
+indépendants, ce qui sous-estime structurellement les queues de distribution. Sur ASTS, dont l'amplitude
+52 semaines va de 36 $ à 134 $, cette sous-estimation est sévère : traitez le P10 comme un scénario
+optimiste, pas comme un plancher. <span class="st st-SIMULATED">Simulé</span>
+</div>`;
+if(live) live.textContent=`Simulation terminée. Médiane à ${yrs} ans : ×${nf(med,2)}, CAGR ${pct(cagr,1)}. Probabilité de perte ${nf(pLoss,1)} %.`;
+drawMC(sampleP,sampleB,yrs);
+}
+
+function drawMC(p,b,yrs){
+const cv=document.getElementById('mccv'); if(!cv||!p) return;
+const r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1;
+cv.width=r.width*dpr; cv.height=200*dpr;
+const x=cv.getContext('2d'); x.scale(dpr,dpr);
+const W=r.width, H=200, pad=30;
+x.clearRect(0,0,W,H);
+const all=[...p,...b], mn=Math.min(...all), mx=Math.max(...all);
+const X=i=>pad+(i/(p.length-1))*(W-pad-8);
+const Y=v=>H-18-((v-mn)/(mx-mn||1))*(H-32);
+x.strokeStyle='#232830'; x.lineWidth=1;
+[0,0.5,1].forEach(f=>{ const v=mn+(mx-mn)*f, y=Y(v);
+x.beginPath(); x.moveTo(pad,y); x.lineTo(W-8,y); x.stroke();
+x.fillStyle='#8a93a0'; x.font='9px monospace'; x.textAlign='right';
+x.fillText('×'+v.toFixed(2), pad-4, y+3); });
+const line=(s,c,w)=>{ x.strokeStyle=c; x.lineWidth=w; x.beginPath();
+s.forEach((v,i)=>i?x.lineTo(X(i),Y(v)):x.moveTo(X(i),Y(v))); x.stroke(); };
+line(b,'#5b6672',1); line(p,'#6ba3e0',1.4);
+x.fillStyle='#8a93a0'; x.font='9px monospace'; x.textAlign='left';
+x.fillText('Trajectoire d\'exemple — portefeuille (bleu) contre indice (gris) sur '+yrs+' ans', pad, 11);
+}
+
+/*═══════════════════════════════════════════════════════════════════════
+9. VUE — TITRE
+═══════════════════════════════════════════════════════════════════════*/
+async function viewSecurity(){
+const el=document.getElementById('v-sec'), sym=S.focus;
+const meta=SNAPSHOT.securities.find(s=>s.sym===sym);
+const q=await DATA.getQuote(sym), f=await DATA.getFundamentals(sym);
+
+if(!meta||!q||q.na){
+el.innerHTML=`<div class="pnl"><div class="note">Aucune donnée pour <b>${esc(sym)}</b> chez ce fournisseur.</div></div>`;
+return;
+}
+const K=(l,v)=>`<div class="kv"><span class="k">${l}</span><span class="v">${v}</span></div>`;
+
+// Position dans l'amplitude 52 semaines
+let rangeBar='';
+if(f && f.w52lo && !f.w52lo.na){
+const lo=f.w52lo.value, hi=f.w52hi.value, p=q.price.value;
+const posn=Math.max(0,Math.min(100,(p-lo)/(hi-lo)*100));
+rangeBar=`<div style="padding:8px 0">
+<div style="display:flex;justify-content:space-between;font-size:10px;color:var(--txt3)">
+<span>${nf(lo)}</span><span>amplitude 52 semaines</span><span>${nf(hi)}</span></div>
+<div style="height:5px;background:#1a1e23;margin-top:4px;position:relative;border-radius:2px"
+role="img" aria-label="Position dans l'amplitude 52 semaines : ${nf(posn,0)} %, entre ${nf(lo)} et ${nf(hi)}">
+<div style="position:absolute;left:${posn}%;top:-3px;width:2px;height:11px;background:#6ba3e0"></div></div>
+<div style="font-size:10px;color:var(--txt2);margin-top:4px">${nf(posn,0)} % de l'amplitude —
+${posn>80?'proche des plus hauts':posn<20?'proche des plus bas':'en milieu de range'}</div></div>`;
+}
+
+const nws=SNAPSHOT.news.filter(n=>n.syms.includes(sym));
+el.innerHTML=`
+<div class="pnl" style="margin-bottom:9px">
+<div class="statrow">
+<div class="stat"><span class="l">${sym} · ${esc(meta.exch)}</span>
+<span class="n">${V(q.price)}</span><span class="s">${esc(meta.name)}</span></div>
+<div class="stat"><span class="l">VARIATION</span>
+<span class="n ${cls(q.changePct.value)}">${V(q.changePct,x=>pct(x),{badge:false})}</span>
+<span class="s">${q.change&&!q.change.na?nf(q.change.value):'—'} ${meta.ccy}</span></div>
+<div class="stat"><span class="l">CAPITALISATION</span>
+<span class="n">${f&&f.mcap?big(f.mcap.value):'—'}</span><span class="s">${meta.ccy}</span></div>
+<div class="stat"><span class="l">VOLUME</span>
+<span class="n">${q.volume&&!q.volume.na?big(q.volume.value):'—'}</span>
+<span class="s">titres échangés</span></div>
+<div class="stat"><span class="l">OBJECTIF CONSENSUS</span>
+<span class="n">${f&&f.target?nf(f.target.value):'—'}</span>
+<span class="s">${f&&f.target?pct((f.target.value/q.price.value-1)*100,1)+' de potentiel':''}</span></div>
+<div class="stat"><span class="l">RECOMMANDATION</span>
+<span class="n" style="font-size:15px">${f&&f.rating?esc(f.rating.value):'—'}</span>
+<span class="s">${f&&f.analysts?f.analysts.value+' analystes':''}</span></div>
+</div>
+</div>
+<div class="g g3">
+<div class="pnl"><h3>Cotation</h3><div class="pbody">
+${K('Ouverture',V(q.open,x=>nf(x),{badge:false}))}
+${K('Clôture précédente',V(q.prevClose,x=>nf(x),{badge:false}))}
+${K('Plus bas du jour',V(q.dayLow,x=>nf(x),{badge:false}))}
+${K('Plus haut du jour',V(q.dayHigh,x=>nf(x),{badge:false}))}
+${K('Fourchette bid/ask','<span class="na">non fournie</span>')}
+${K('Devise',meta.ccy)}
+${rangeBar}
+<div class="note" style="padding:6px 0 0">Source : ${esc(q.price.source||'—')} · ${ago(q.price.ts)} · statut ${STATUS_LABEL[q.price.status]}.</div>
+</div></div>
+<div class="pnl"><h3>Fondamentaux</h3><div class="pbody">
+${f?`
+${K('PER (TTM)',f.pe&&!f.pe.na?nf(f.pe.value):'<span class="na">non applicable — pertes</span>')}
+${K('PER prospectif',f.fpe&&!f.fpe.na?nf(f.fpe.value):'<span class="na">n/d</span>')}
+${K('BPA (TTM)',V(f.eps,x=>nf(x),{badge:false}))}
+${K('Chiffre d\'affaires (TTM)',V(f.revTTM,big,{badge:false}))}
+${K('Résultat net',`<span class="${cls(f.netIncome.value)}">${big(f.netIncome.value)}</span>`)}
+${K('Titres en circulation',V(f.shares,big,{badge:false}))}
+${K('Bêta',V(f.beta,x=>nf(x),{badge:false}))}
+${K('Dividende',f.divYield&&f.divYield.value?nf(f.div.value)+' ('+nf(f.divYield.value)+' %)':'<span class="na">aucun</span>')}
+${K('Derniers résultats',esc(f.earnings.value))}
+`:'<div class="na">Fondamentaux non fournis pour ce titre.</div>'}
+</div></div>
+<div class="pnl"><h3>Éléments notables</h3><div class="pbody">
+${sym==='NVDA'?`
+${K('Croissance CA (TTM)',`<span class="pos">${pct(f.revGrowth.value,1)}</span>`)}
+${K('Croissance BPA',`<span class="pos">${pct(f.epsGrowth.value,1)}</span>`)}
+${K('CA exercice 2026',big(f.revFY26.value))}
+<div class="note" style="padding:8px 0 0">Le PER prospectif à ${nf(f.fpe.value)} contre ${nf(f.pe.value)} en TTM
+indique un consensus qui table sur une poursuite de la croissance des résultats. C'est là que se situe
+le risque : le titre n'est pas cher <i>si</i> les estimations tiennent. Le deal MediaTek de 3,5 Md$ et la
+question du financement circulaire portent précisément sur la qualité de ces revenus futurs.</div>
+`:sym==='ASTS'?`
+${K('Carnet de commandes',big(f.backlog.value))}
+${K('Trésorerie',big(f.cash.value))}
+${K('Guidance CA 2026',big(f.guidLo.value)+' – '+big(f.guidHi.value))}
+${K('Croissance CA',`<span class="pos">${pct(f.revGrowth.value,0)}</span>`)}
+<div class="note" style="padding:8px 0 0">Société pré-revenus au sens opérationnel : ${big(f.revTTM.value)}
+de CA pour ${big(Math.abs(f.netIncome.value))} de pertes. Aucun multiple de résultat n'a de sens ici — la
+valorisation repose entièrement sur l'exécution du déploiement de la constellation. La dispersion des
+objectifs analystes (78 $ chez UBS, 98 $ chez Piper Sandler) mesure ce désaccord mieux que la moyenne.</div>
+`:'<div class="na">Pas d\'analyse détaillée disponible pour ce titre.</div>'}
+</div></div>
+<div class="pnl span2"><h3>Graphique</h3><div class="pbody">
+<div class="note">Aucune série de prix historique n'est disponible auprès du fournisseur Snapshot.
+Un graphique tracé sans données serait une décoration, pas une information — il n'est donc pas affiché.
+Les chandeliers, moyennes mobiles, RSI, MACD, Bollinger et VWAP sont implémentables dès que
+<code>getOHLCV()</code> renvoie des barres réelles ; FMP et Twelve Data fournissent tous deux l'historique
+quotidien dans leur tier de base.</div>
+</div></div>
+<div class="pnl"><h3>News liées</h3><div class="pbody flush">
+${nws.length?nws.map(n=>`<div class="nw"><h4>${esc(n.h)}</h4><p>${esc(n.w)}</p>
+<div class="meta"><span>${esc(n.src)}</span><span>${ago(n.ts)}</span>
+${n.url?`<a href="${n.url}" target="_blank" rel="noopener">Ouvrir la source<span class="sr-only"> (nouvel onglet)</span></a>`:''}</div></div>`).join('')
+:'<div class="note na">Aucune actualité liée à ce titre dans la capture.</div>'}
+</div></div>
+</div>`;
+}
+
+/*═══════════════════════════════════════════════════════════════════════
+10. VUE — VALORISATION (DCF + sensibilité)
+═══════════════════════════════════════════════════════════════════════*/
+function viewValuation(){
+const el=document.getElementById('v-val');
+el.innerHTML=`
+<div class="pnl">
+<h3>Modèle DCF — ${S.focus}<span class="rt">hypothèses saisies, entièrement visibles</span></h3>
+<form class="ctl" id="dcfform">
+<div class="f w"><label for="d_rev">CA de départ (M)</label><input id="d_rev" type="number" value="302970"></div>
+<div class="f"><label for="d_g">Croissance an 1-5 %</label><input id="d_g" type="number" step="1" value="28"></div>
+<div class="f"><label for="d_m">Marge EBIT %</label><input id="d_m" type="number" step="1" value="62"></div>
+<div class="f"><label for="d_t">Taux d'IS %</label><input id="d_t" type="number" step="1" value="15"></div>
+<div class="f"><label for="d_cx">CapEx % du CA</label><input id="d_cx" type="number" step="0.5" value="4"></div>
+<div class="f"><label for="d_da">D&A % du CA</label><input id="d_da" type="number" step="0.5" value="3"></div>
+<div class="f"><label for="d_wc">Δ BFR % du CA</label><input id="d_wc" type="number" step="0.5" value="2"></div>
+<div class="f"><label for="d_w">WACC %</label><input id="d_w" type="number" step="0.25" value="10"></div>
+<div class="f"><label for="d_tg">Croissance perpétuelle %</label><input id="d_tg" type="number" step="0.25" value="3"></div>
+<div class="f"><label for="d_nd">Dette nette (M)</label><input id="d_nd" type="number" value="-40000"></div>
+<div class="f w"><label for="d_sh">Titres (M)</label><input id="d_sh" type="number" value="24150"></div>
+<div class="f"><label for="d_px">Cours actuel</label><input id="d_px" type="number" step="0.01" value="215.98"></div>
+<button class="btn go" type="submit" id="dcfrun">Calculer</button>
+</form>
+<div id="dcfout" aria-live="polite"></div>
+</div>`;
+document.getElementById('dcfform').onsubmit=e=>{ e.preventDefault(); runDCF(); };
+runDCF();
+}
+
+function dcfValue(p){
+const {rev0,g,margin,tax,capex,da,wc,wacc,tg,netDebt,shares}=p;
+if(wacc<=tg) return {err:'Le WACC doit être strictement supérieur à la croissance perpétuelle. '+
+'Sinon la formule de Gordon donne une valeur terminale infinie ou négative — le modèle n\'a pas de solution.'};
+let rev=rev0, pv=0; const rows=[];
+for(let y=1;y<=5;y++){
+rev*=(1+g);
+const ebit=rev*margin, nopat=ebit*(1-tax);
+const fcf=nopat + rev*da - rev*capex - rev*wc;
+const df=Math.pow(1+wacc,y), d=fcf/df;
+pv+=d; rows.push({y,rev,ebit,fcf,df,d});
+}
+const last=rows[4];
+const tv=last.fcf*(1+tg)/(wacc-tg);
+const pvTV=tv/Math.pow(1+wacc,5);
+const ev=pv+pvTV, eq=ev-netDebt, ps=eq/shares;
+return {rows,pv,tv,pvTV,ev,eq,ps,tvShare:pvTV/ev*100};
+}
+
+function runDCF(){
+const g=id=>parseFloat(document.getElementById(id).value);
+const p={rev0:g('d_rev'), g:g('d_g')/100, margin:g('d_m')/100, tax:g('d_t')/100,
+capex:g('d_cx')/100, da:g('d_da')/100, wc:g('d_wc')/100,
+wacc:g('d_w')/100, tg:g('d_tg')/100, netDebt:g('d_nd'), shares:g('d_sh')};
+const px=g('d_px'), out=document.getElementById('dcfout'), r=dcfValue(p);
+const live=document.getElementById('live-status');
+
+if(r.err){ out.innerHTML=`<div class="warn">${r.err}</div>`; if(live) live.textContent=r.err; return; }
+const up=(r.ps/px-1)*100;
+
+// Sensibilité WACC × croissance perpétuelle
+const waccs=[p.wacc-0.02,p.wacc-0.01,p.wacc,p.wacc+0.01,p.wacc+0.02];
+const tgs=[p.tg-0.01,p.tg-0.005,p.tg,p.tg+0.005,p.tg+0.01];
+let head='<tr><th scope="col">WACC ＼ g∞</th>'+tgs.map(t=>`<th scope="col">${nf(t*100,2)} %</th>`).join('')+'</tr>';
+let body='';
+for(const w of waccs){
+body+=`<tr><th scope="row">${nf(w*100,2)} %</th>`;
+for(const t of tgs){
+const c=dcfValue({...p,wacc:w,tg:t});
+if(c.err){ body+='<td class="na">—</td>'; continue; }
+const u=(c.ps/px-1)*100;
+const bg=u>0?`rgba(47,191,107,${Math.min(0.32,Math.abs(u)/280)})`
+:`rgba(224,74,74,${Math.min(0.32,Math.abs(u)/280)})`;
+body+=`<td style="background:${bg}"><b>${nf(c.ps,0)}</b>
+<div style="font-size:9px" class="${cls(u)}">${pct(u,0)}</div></td>`;
+}
+body+='</tr>';
+}
+
+const proj=r.rows.map(x=>`<tr><th scope="row" style="font-weight:400;color:var(--txt)">Année ${x.y}</th><td>${big(x.rev*1e6)}</td>
+<td>${big(x.ebit*1e6)}</td><td>${big(x.fcf*1e6)}</td>
+<td class="mut">${nf(x.df,3)}</td><td>${big(x.d*1e6)}</td></tr>`).join('');
+
+out.innerHTML=`
+<div class="statrow">
+<div class="stat"><span class="l">VALEUR D'ENTREPRISE</span><span class="n">${big(r.ev*1e6)}</span></div>
+<div class="stat"><span class="l">VALEUR DES CAPITAUX PROPRES</span><span class="n">${big(r.eq*1e6)}</span></div>
+<div class="stat"><span class="l">VALEUR PAR TITRE</span><span class="n">${nf(r.ps)}</span>
+<span class="s">contre ${nf(px)} au marché</span></div>
+<div class="stat"><span class="l">POTENTIEL</span><span class="n ${cls(up)}">${pct(up,1)}</span></div>
+<div class="stat"><span class="l">POIDS DE LA VALEUR TERMINALE</span><span class="n">${nf(r.tvShare,0)} %</span>
+<span class="s">de la VE</span></div>
+</div>
+<div class="g g23" style="padding:9px">
+<div class="pnl"><h3>Projection des flux</h3><div class="pbody flush">
+<table><caption class="sr-only">Projection des flux de trésorerie</caption><thead><tr><th scope="col">Période</th><th scope="col">CA</th><th scope="col">EBIT</th><th scope="col">FCF</th>
+<th scope="col">Facteur</th><th scope="col">FCF actualisé</th></tr></thead><tbody>${proj}
+<tr style="border-top:1px solid var(--line)"><th scope="row"><b>Valeur terminale</b></th>
+<td colspan="3" class="mut" style="text-align:left">Gordon : FCF₅ × (1+g∞) / (WACC − g∞)</td>
+<td class="mut">${nf(1/Math.pow(1+p.wacc,5),3)}</td><td><b>${big(r.pvTV*1e6)}</b></td></tr>
+</tbody></table></div></div>
+<div class="pnl"><h3>Lecture</h3><div class="pbody">
+<div class="note" style="padding:0">
+La valeur terminale pèse <b>${nf(r.tvShare,0)} %</b> de la valeur d'entreprise.
+${r.tvShare>75?`Au-delà de 75 %, le modèle ne valorise plus vraiment cinq ans de flux : il valorise une
+hypothèse de croissance perpétuelle. Le résultat est alors très sensible au couple WACC / g∞ — regardez
+la table de sensibilité plutôt que le chiffre central.`
+:`Sous 75 %, la valeur repose majoritairement sur des flux explicites, ce qui rend le modèle plus robuste.`}
+<br><br>
+Un DCF n'est pas un prix cible, c'est un test de cohérence : il révèle quelles hypothèses de croissance et
+de marge le cours actuel implique déjà. Si atteindre le cours de marché exige une croissance que vous
+jugez irréaliste, c'est l'information utile — pas la valeur par titre.
+</div>
+</div></div>
+<div class="pnl span2"><h3>Sensibilité — WACC contre croissance perpétuelle</h3>
+<div class="pbody flush"><table class="heat"><caption class="sr-only">Sensibilité de la valeur par titre au WACC et à la croissance perpétuelle</caption><thead>${head}</thead><tbody>${body}</tbody></table>
+<div class="note">Valeur par titre et potentiel face au cours de ${nf(px)}. Les hypothèses restent
+affichées et modifiables ci-dessus — aucune n'est masquée dans le code.</div></div></div>
+</div>`;
+if(live) live.textContent=`Modèle calculé. Valeur par titre ${nf(r.ps)}, potentiel ${pct(up,1)} face au cours de ${nf(px)}.`;
+}
+
+/*═══════════════════════════════════════════════════════════════════════
+11. VUE — NEWS
+═══════════════════════════════════════════════════════════════════════*/
+function viewNews(){
+const el=document.getElementById('v-news');
+const items=SNAPSHOT.news.map(n=>`<div class="nw">
+<h4>${esc(n.h)}</h4><p>${esc(n.w)}</p>
+<div class="meta"><span>${esc(n.src)}</span><span>${ago(n.ts)}</span>
+${n.syms.map(s=>`<button class="tag" data-sym="${s}" type="button">${s}</button>`).join('')}
+${n.url?`<a href="${n.url}" target="_blank" rel="noopener">Ouvrir la source<span class="sr-only"> (nouvel onglet)</span></a>`:''}</div></div>`).join('');
+el.innerHTML=`<div class="g g23">
+<div class="pnl"><h3>Fil d'actualité<span class="rt">cliquez un ticker pour ouvrir sa fiche</span></h3>
+<div class="pbody flush">${items}</div></div>
+<div style="display:flex;flex-direction:column;gap:9px;min-width:0">${SNAPSHOT.summary?`<div class="pnl" ><h3>Lecture de marché — IA<span class="rt">${esc(SNAPSHOT.summary.model)} · ${fmtDT(SNAPSHOT.summary.ts)}</span></h3><div class="pbody"><div class="note" style="padding:0;white-space:pre-line">${esc(SNAPSHOT.summary.text)}</div><div class="warn" style="margin-top:8px">Synthèse générée automatiquement à partir des titres RSS et des cotations. Peut contenir des erreurs ; ne constitue pas un conseil en investissement. <span class="st st-SIMULATED">IA</span></div></div></div>`:''}
+<div class="pnl"><h3>Lecture de la semaine (archive FT)<span class="rt">actualisé 31/10 via les newsletters Financial Times du 20 au 30/10</span></h3><div class="pbody">
+<div class="note" style="padding:0">
+<b>Le marché doute de l'IA au moment même où l'IA entre en bourse.</b> Les résultats trimestriels ont transformé
+les champions du secteur en « incinérateurs de cash » : Alphabet a perdu 13 % (−500 Md$, deuxième plus forte
+destruction de valeur de l'histoire de Wall Street) après plus de 50 Md$ de dépenses IA et l'aveu que son « AI mode »
+cannibalise la publicité Search ; Intel a chuté d'environ 21 % ; Big Tech a perdu près de 900 Md$ en une séance.
+Les investisseurs se couvrent : les volumes de CDS sur les valeurs IA sont passés de moins de 2 Md$ à plus de
+9 Md$ par semaine. Dans ce contexte, Anthropic a publié son prospectus (16,3 Md$ de CA semestriel, ticker ANT),
+Meta prépare 95 Md$ d'actions nouvelles et OpenAI a dû ramener sa valorisation à 1 250 Md$.
+<br><br>
+<b>Les banques centrales temporisent, l'économie résiste.</b> La Fed (3,75-4,00 %) et la BCE (2,50 %) n'ont pas
+bougé, mais la BCE laisse entrevoir une hausse en décembre et Christine Lagarde partira en février. La BoJ déclare
+sa cible d'inflation de 2 % atteinte. Le PIB US surprend à la hausse (3,4 %), la France se contracte (−0,1 %) avec
+une OAT à 5 %. Le taux US à 10 ans recule à 4,94 % grâce à la fuite vers la qualité.
+<br><br>
+<b>Le pétrole reste la variable géopolitique.</b> La guerre en Iran maintient le Brent autour de 117 $ ; l'élection
+israélienne sans majorité laisse à Netanyahu, Premier ministre par intérim, la possibilité de nouvelles frappes.
+Ailleurs : choc au Brésil (real −8 % après la réélection de Lula), piratage record de Binance (6,3 Md$),
+dissolution du cabinet Weil, Gotshal & Manges.
+<br><br>
+<b>Portefeuille :</b> aucune cotation NVDA ni ASTS dans les newsletters — les cours restent au 16/09 et 15/09,
+marqués Périmé. Le décrochage des semi-conducteurs (indice SOX −7 % le 22/10) laisse penser que NVDA a reculé
+depuis : à vérifier avant toute décision.
+<br><br>
+<b>À suivre :</b> Opep+ dimanche 1er novembre, midterms américaines mardi 3 novembre, puis l'IPO d'Anthropic en novembre.</div>
+</div></div>
+</div>
+</div>`;
+wireSymbolClicks(el);
+}
+
+/*═══════════════════════════════════════════════════════════════════════
+12. VUE — DIAGNOSTIC
+═══════════════════════════════════════════════════════════════════════*/
+async function viewDiag(){
+const el=document.getElementById('v-diag');
+const h=await DATA.health();
+
+const counts={};
+for(const k in SNAPSHOT.quotes){ const s=SNAPSHOT.quotes[k].st; counts[s]=(counts[s]||0)+1; }
+const dist=Object.entries(counts).map(([k,v])=>
+`<tr><th scope="row" style="font-weight:400">${badge(k)}</th><td>${v} valeurs</td>
+<td class="mut" style="text-align:left;font-size:10px">${
+k==='STALE'?'Antérieures à la séance en cours — à ne pas utiliser pour décider':
+k==='EOD'?'Clôture ferme de la dernière séance du marché concerné':
+k==='DELAYED_15M'?'Relevées en séance, avec le décalage usuel du fournisseur':
+'Statut de capture'}</td></tr>`).join('');
+
+const provs=Object.entries(DATA.providers).map(([k,p])=>
+`<tr><th scope="row" class="sym">${k}</th><td>${esc(p.name)}</td>
+<td>${k===DATA.active?'<span class="pos">actif</span>':'<span class="mut">enregistré</span>'}</td></tr>`).join('');
+
+el.innerHTML=`<div class="g g2">
+<div class="pnl"><h3>Fournisseur actif</h3><div class="pbody">
+<div class="kv"><span class="k">Nom</span><span class="v">${esc(DATA.current.name)}</span></div>
+<div class="kv"><span class="k">Disponible</span><span class="v ${h.up?'pos':'neg'}">${h.up?'oui':'non'}</span></div>
+<div class="kv"><span class="k">Latence moyenne</span><span class="v">${h.latencyMs!=null?h.latencyMs+' ms':'—'}</span></div>
+<div class="kv"><span class="k">Quota restant</span><span class="v">${h.rateLimitRemaining===Infinity?'illimité':(h.rateLimitRemaining??'—')}</span></div>
+<div class="kv"><span class="k">Entrées en cache</span><span class="v">${DATA.cache.size}</span></div>
+<div class="note" style="padding:8px 0 0">${esc(h.note||'')}</div>
+</div></div>
+<div class="pnl"><h3>Fournisseurs enregistrés</h3><div class="pbody flush">
+<table><caption class="sr-only">Fournisseurs de données enregistrés</caption><thead><tr><th scope="col">Clé</th><th scope="col" style="text-align:left">Nom</th><th scope="col">État</th></tr></thead>
+<tbody>${provs}</tbody></table>
+<div class="note">Les adapters FMP, Finnhub et FRED sont écrits dans ce fichier mais non enregistrés :
+ils appellent <code>/api/*</code>, servi par le proxy qui porte les clés. Les activer depuis le navigateur
+seul échouerait sur CORS et exposerait la clé, ce que la règle §6 interdit.</div>
+</div></div>
+<div class="pnl"><h3>Répartition des statuts de donnée</h3><div class="pbody flush">
+<table><caption class="sr-only">Répartition des statuts de donnée</caption><tbody>${dist}</tbody></table></div></div>
+<div class="pnl"><h3>Ce qui manque et pourquoi</h3><div class="pbody">
+<div class="note" style="padding:0">
+<b>Séries de prix historiques.</b> Sans elles, ni graphique, ni indicateur technique, ni Sharpe calculée
+sur données réelles. C'est la lacune la plus coûteuse et la moins chère à combler : FMP l'inclut dans son tier de base.
+<br><br>
+<b>Courbe des taux.</b> Un seul point relevé, donc aucune pente calculée. FRED la fournit gratuitement
+et sans limite de requêtes.
+<br><br>
+<b>Bid, ask, spread, carnet.</b> Absents du snapshot. Le carnet et le tape ne sont pas prévus au
+programme : ils exigent un flux L2 licencié et n'apportent rien à une gestion long-only.
+<br><br>
+<b>Taux SNB, USD/CHF, USD/CNY.</b> Non relevés lors de la capture. Ils apparaissent
+en « n/d » plutôt qu'avec une valeur approximative — une valeur étiquetée douteuse reste une valeur que l'œil lit.
+</div>
+</div></div>
+</div>`;
+}
+
+/*═══════════════════════════════════════════════════════════════════════
+13. RECHERCHE GLOBALE
+═══════════════════════════════════════════════════════════════════════*/
+let palIdx=0, palList=[];
+async function palSearch(q){
+palList=await DATA.searchSecurity(q); palIdx=0;
+const box=document.getElementById('palres');
+box.innerHTML = palList.length
+? palList.map((s,i)=>`<div class="pr ${i===0?'sel':''}" id="pr-${i}" role="option" aria-selected="${i===0}" data-i="${i}">
+<span class="s">${s.sym}</span><span class="n">${esc(s.name)}</span>
+<span class="c">${esc(s.cls)}</span><span class="c">${esc(s.exch)}</span></div>`).join('')
+: `<div class="pr"><span class="n na">Aucun titre ne correspond. Le fournisseur Snapshot
+couvre ${SNAPSHOT.securities.length} instruments.</span></div>`;
+box.querySelectorAll('.pr[data-i]').forEach(r=>
+r.onclick=()=>openSym(palList[+r.dataset.i].sym));
+const palin=document.getElementById('palin');
+if(palList.length) palin.setAttribute('aria-activedescendant','pr-0');
+else palin.removeAttribute('aria-activedescendant');
+}
+function palMove(d){
+if(!palList.length) return;
+palIdx=(palIdx+d+palList.length)%palList.length;
+document.querySelectorAll('#palres .pr').forEach((r,i)=>{
+r.classList.toggle('sel',i===palIdx);
+r.setAttribute('aria-selected', i===palIdx ? 'true':'false');
+});
+document.getElementById('palin').setAttribute('aria-activedescendant','pr-'+palIdx);
+const s=document.querySelector('#palres .pr.sel'); if(s) s.scrollIntoView({block:'nearest'});
+}
+let palReturnFocus=null;
+function openPal(){
+palReturnFocus=document.activeElement;
+document.getElementById('pal').classList.add('on');
+const i=document.getElementById('palin'); i.value=''; i.focus(); palSearch('');
+}
+function closePal(){
+document.getElementById('pal').classList.remove('on');
+if(palReturnFocus && typeof palReturnFocus.focus==='function') palReturnFocus.focus();
+}
+function openSym(sym){ closePal(); S.focus=sym; go('sec'); }
+
+/*═══════════════════════════════════════════════════════════════════════
+14. NAVIGATION
+═══════════════════════════════════════════════════════════════════════*/
+const RENDER={mkt:viewMarkets, wl:viewWatchlist, pf:viewPortfolio,
+sec:viewSecurity, val:viewValuation, news:viewNews, diag:viewDiag};
+
+const VIEW_LABEL={mkt:'Marchés', wl:'Watchlist', pf:'Portefeuille',
+sec:'Titre', val:'Valorisation', news:'News', diag:'Diagnostic'};
+
+async function go(v){
+S.view=v;
+document.querySelectorAll('.view').forEach(e=>e.classList.toggle('on', e.id==='v-'+v));
+document.querySelectorAll('.navbtn').forEach(b=>{
+const active=b.dataset.v===v;
+b.classList.toggle('on', active);
+if(active) b.setAttribute('aria-current','page'); else b.removeAttribute('aria-current');
+});
+await RENDER[v]();
+document.getElementById('main').scrollTop=0;
+syncBar();
+const live=document.getElementById('live-status');
+if(live) live.textContent='Vue '+VIEW_LABEL[v]+' affichée.';
+}
+function wireSymbolClicks(root){
+root.querySelectorAll('[data-sym]').forEach(e=>{
+if(e.tagName==='BUTTON') { e.onclick=ev=>{ ev.stopPropagation(); openSym(e.dataset.sym); }; return; }
+e.style.cursor='pointer';
+e.onclick=ev=>{ ev.stopPropagation(); openSym(e.dataset.sym); };
+e.onkeydown=ev=>{
+if(ev.key==='Enter' || ev.key===' '){ ev.preventDefault(); ev.stopPropagation(); openSym(e.dataset.sym); }
+};
+});
+}
+async function syncBar(){
+const h=await DATA.health();
+document.getElementById('hdot').className='dot '+(h.up?'up':'down');
+document.getElementById('hprov').textContent=DATA.current.name;
+document.getElementById('hup').textContent=h.up?' — disponible':' — indisponible';
+document.getElementById('hccy').textContent=S.ccy;
+document.getElementById('hstat').textContent=
+LIVE ? 'différées — rafraîchies toutes les heures' : 'instantané — non rafraîchissable';
+document.getElementById('hmsg').textContent=
+S.view==='sec' ? S.focus+' — appuyez sur ⌘K pour changer de titre' : '';
+}
+
+/*═══════════════════════════════════════════════════════════════════════
+15. HORLOGES
+═══════════════════════════════════════════════════════════════════════*/
+const ZONES=[['Monaco','Europe/Paris'],['Londres','Europe/London'],['New York','America/New_York'],
+['Singapour','Asia/Singapore'],['Tokyo','Asia/Tokyo']];
+function tick(){
+document.getElementById('clocks').innerHTML=ZONES.map(([c,tz])=>{
+const t=new Date().toLocaleTimeString('fr-FR',
+{timeZone:tz,hour:'2-digit',minute:'2-digit',hour12:false});
+return `<span>${c} <b>${t}</b></span>`;
+}).join('');
+}
+
+/*═══════════════════════════════════════════════════════════════════════
+16. DÉMARRAGE
+═══════════════════════════════════════════════════════════════════════*/
+document.querySelectorAll('.navbtn').forEach(b=>b.onclick=()=>go(b.dataset.v));
+document.getElementById('searchbtn').onclick=openPal;
+document.getElementById('pal').onclick=e=>{ if(e.target.id==='pal') closePal(); };
+document.getElementById('palin').oninput=e=>palSearch(e.target.value);
+
+document.addEventListener('keydown',e=>{
+const open=document.getElementById('pal').classList.contains('on');
+if((e.metaKey||e.ctrlKey) && e.key.toLowerCase()==='k'){ e.preventDefault(); open?closePal():openPal(); return; }
+if(open){
+if(e.key==='Escape') closePal();
+else if(e.key==='ArrowDown'){ e.preventDefault(); palMove(1); }
+else if(e.key==='ArrowUp'){ e.preventDefault(); palMove(-1); }
+else if(e.key==='Enter' && palList[palIdx]) openSym(palList[palIdx].sym);
+return;
+}
+if(e.target.tagName==='INPUT' || e.metaKey || e.ctrlKey || e.altKey) return;
+const map={m:'mkt', w:'wl', p:'pf', s:'sec', v:'val', n:'news', d:'diag'};
+const t=map[e.key.toLowerCase()];
+if(t){ e.preventDefault(); go(t); }
+});
+window.addEventListener('resize',()=>{ if(S.view==='pf') runMC(); });
+
+tick(); setInterval(tick,1000);
+go('mkt');
+loadLive().then(ch=>{ if(ch) go(S.view); });
+setInterval(()=>loadLive().then(ch=>{ if(ch) go(S.view); }), 10*60*1000);
+
+</script>
+</body>
+</html>
