@@ -1,0 +1,557 @@
+{
+ "generated_at": "2026-10-30T18:53:00.144300Z",
+ "quotes": {
+  "NVDA": {
+   "p": 201.021,
+   "prev": 213.66,
+   "chg": -12.639,
+   "pct": -5.92,
+   "st": "DELAYED_15M",
+   "src": "Yahoo Finance via yfinance (NVDA)",
+   "ts": "2026-10-30T18:30:00Z",
+   "open": 208.88,
+   "lo": 200.9199,
+   "hi": 209.05,
+   "vol": 92494091
+  },
+  "ASTS": {
+   "p": 39.285,
+   "prev": 43.07,
+   "chg": -3.785,
+   "pct": -8.79,
+   "st": "DELAYED_15M",
+   "src": "Yahoo Finance via yfinance (ASTS)",
+   "ts": "2026-10-30T18:30:00Z",
+   "open": 41.0,
+   "lo": 39.235,
+   "hi": 42.36,
+   "vol": 9412774
+  },
+  "SPX": {
+   "p": 7527.9199,
+   "prev": 7720.3901,
+   "chg": -192.4702,
+   "pct": -2.49,
+   "st": "DELAYED_15M",
+   "src": "Yahoo Finance via yfinance (^GSPC)",
+   "ts": "2026-10-30T18:30:00Z",
+   "open": 7631.0698,
+   "lo": 7527.6499,
+   "hi": 7637.48,
+   "vol": 2429202000
+  },
+  "NDX": {
+   "p": 28095.6016,
+   "prev": 29402.5098,
+   "chg": -1306.9082,
+   "pct": -4.44,
+   "st": "DELAYED_15M",
+   "src": "Yahoo Finance via yfinance (^NDX)",
+   "ts": "2026-10-30T18:30:00Z",
+   "open": 28604.916,
+   "lo": 28094.832,
+   "hi": 28713.4453,
+   "vol": 1387601000
+  },
+  "DJI": {
+   "p": 51566.1094,
+   "prev": 52342.5586,
+   "chg": -776.4492,
+   "pct": -1.48,
+   "st": "DELAYED_15M",
+   "src": "Yahoo Finance via yfinance (^DJI)",
+   "ts": "2026-10-30T18:30:00Z",
+   "open": 52383.8984,
+   "lo": 51563.7617,
+   "hi": 52383.8984,
+   "vol": 386644306
+  },
+  "RUT": {
+   "p": 2787.8564,
+   "prev": 2859.22,
+   "chg": -71.3635,
+   "pct": -2.5,
+   "st": "DELAYED_15M",
+   "src": "Yahoo Finance via yfinance (^RUT)",
+   "ts": "2026-10-30T18:30:00Z",
+   "open": 2838.7732,
+   "lo": 2787.1216,
+   "hi": 2842.9998
+  },
+  "VIX": {
+   "p": 23.39,
+   "prev": 17.2,
+   "chg": 6.19,
+   "pct": 35.99,
+   "st": "DELAYED_15M",
+   "src": "Yahoo Finance via yfinance (^VIX)",
+   "ts": "2026-10-30T18:00:00Z",
+   "open": 18.43,
+   "lo": 18.03,
+   "hi": 23.93
+  },
+  "N225": {
+   "p": 63082.2695,
+   "prev": 64659.4688,
+   "chg": -1577.1992,
+   "pct": -2.44,
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^N225)",
+   "ts": "2026-10-30T06:00:00Z",
+   "open": 64344.3711,
+   "lo": 62711.4219,
+   "hi": 64589.0391
+  },
+  "HSI": {
+   "p": 23294.4199,
+   "prev": 22958.6504,
+   "chg": 335.7695,
+   "pct": 1.46,
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^HSI)",
+   "ts": "2026-10-30T07:30:00Z",
+   "open": 23011.2891,
+   "lo": 22947.9609,
+   "hi": 23400.0195
+  },
+  "SHCOMP": {
+   "p": 3596.6057,
+   "prev": 3651.4341,
+   "chg": -54.8284,
+   "pct": -1.5,
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (000001.SS)",
+   "ts": "2026-10-30T06:30:00Z",
+   "open": 3605.645,
+   "lo": 3595.2583,
+   "hi": 3660.2061,
+   "vol": 2552753744
+  },
+  "STI": {
+   "p": 5373.8799,
+   "prev": 5396.0298,
+   "chg": -22.1499,
+   "pct": -0.41,
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^STI)",
+   "ts": "2026-10-30T08:00:00Z",
+   "open": 5406.25,
+   "lo": 5365.1299,
+   "hi": 5406.25
+  },
+  "UKX": {
+   "p": 10736.1396,
+   "prev": 10722.0996,
+   "chg": 14.04,
+   "pct": 0.13,
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^FTSE)",
+   "ts": "2026-10-30T16:00:00Z",
+   "open": 10721.5098,
+   "lo": 10715.9297,
+   "hi": 10778.7197
+  },
+  "DAX": {
+   "p": 25817.4805,
+   "prev": 26039.6797,
+   "chg": -222.1992,
+   "pct": -0.85,
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^GDAXI)",
+   "ts": "2026-10-30T16:00:00Z",
+   "open": 25948.6094,
+   "lo": 25779.1504,
+   "hi": 26026.1992
+  },
+  "CAC": {
+   "p": 7962.1099,
+   "prev": 7970.0,
+   "chg": -7.8901,
+   "pct": -0.1,
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^FCHI)",
+   "ts": "2026-10-30T16:00:00Z",
+   "open": 7973.8599,
+   "lo": 7952.3901,
+   "hi": 7992.1699
+  },
+  "SX5E": {
+   "p": 6130.73,
+   "prev": 6207.0698,
+   "chg": -76.3398,
+   "pct": -1.23,
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^STOXX50E)",
+   "ts": "2026-10-30T16:00:00Z",
+   "open": 6179.29,
+   "lo": 6123.0,
+   "hi": 6179.29
+  },
+  "EURUSD": {
+   "p": 1.1169,
+   "prev": 1.1156,
+   "chg": 0.0014,
+   "pct": 0.12,
+   "st": "DELAYED_15M",
+   "src": "Yahoo Finance via yfinance (EURUSD=X)",
+   "ts": "2026-10-30T18:00:00Z",
+   "open": 1.1181,
+   "lo": 1.114,
+   "hi": 1.1217
+  },
+  "USDJPY": {
+   "p": 157.361,
+   "prev": 157.833,
+   "chg": -0.472,
+   "pct": -0.3,
+   "st": "DELAYED_15M",
+   "src": "Yahoo Finance via yfinance (JPY=X)",
+   "ts": "2026-10-30T18:00:00Z",
+   "open": 157.642,
+   "lo": 156.957,
+   "hi": 157.898
+  },
+  "GBPUSD": {
+   "p": 1.3391,
+   "prev": 1.3328,
+   "chg": 0.0063,
+   "pct": 0.48,
+   "st": "DELAYED_15M",
+   "src": "Yahoo Finance via yfinance (GBPUSD=X)",
+   "ts": "2026-10-30T18:00:00Z",
+   "open": 1.3375,
+   "lo": 1.3375,
+   "hi": 1.3433
+  },
+  "DXY": {
+   "p": 101.864,
+   "prev": 102.04,
+   "chg": -0.176,
+   "pct": -0.17,
+   "st": "DELAYED_15M",
+   "src": "Yahoo Finance via yfinance (DX-Y.NYB)",
+   "ts": "2026-10-30T18:00:00Z",
+   "open": 101.882,
+   "lo": 101.544,
+   "hi": 102.089
+  },
+  "XAU": {
+   "p": 3892.6001,
+   "prev": 4031.3999,
+   "chg": -138.7998,
+   "pct": -3.44,
+   "st": "DELAYED_15M",
+   "src": "Yahoo Finance via yfinance (GC=F)",
+   "ts": "2026-10-30T18:00:00Z",
+   "open": 4033.6001,
+   "lo": 3885.8999,
+   "hi": 4038.2,
+   "vol": 213022
+  },
+  "CL": {
+   "p": 104.07,
+   "prev": 102.0,
+   "chg": 2.07,
+   "pct": 2.03,
+   "st": "DELAYED_15M",
+   "src": "Yahoo Finance via yfinance (CL=F)",
+   "ts": "2026-10-30T18:00:00Z",
+   "open": 102.8,
+   "lo": 102.43,
+   "hi": 104.99,
+   "vol": 225235
+  },
+  "BRENT": {
+   "p": 113.32,
+   "prev": 114.88,
+   "chg": -1.56,
+   "pct": -1.36,
+   "st": "DELAYED_15M",
+   "src": "Yahoo Finance via yfinance (BZ=F)",
+   "ts": "2026-10-30T18:00:00Z",
+   "open": 111.28,
+   "lo": 111.05,
+   "hi": 114.29,
+   "vol": 35280
+  },
+  "BTC": {
+   "p": 76147.4375,
+   "prev": 77775.1094,
+   "chg": -1627.6719,
+   "pct": -2.09,
+   "st": "DELAYED_15M",
+   "src": "Yahoo Finance via yfinance (BTC-USD)",
+   "ts": "2026-10-30T18:00:00Z",
+   "open": 77791.375,
+   "lo": 76418.3359,
+   "hi": 78564.9375,
+   "vol": 59062259712
+  }
+ },
+ "fundamentals": {
+  "NVDA": {
+   "mcap": 4853547000000.0,
+   "w52lo": 164.27000427246094,
+   "w52hi": 243.3699951171875,
+   "shares": 24147000000.0
+  },
+  "ASTS": {
+   "mcap": 11763732831.386395,
+   "w52lo": 36.720001220703125,
+   "w52hi": 133.86000061035156,
+   "shares": 299789305.0
+  }
+ },
+ "curve": [
+  {
+   "t": "2A",
+   "y": 4.67,
+   "st": "EOD",
+   "src": "FRED DGS2",
+   "ts": "2026-10-28"
+  },
+  {
+   "t": "5A",
+   "y": 4.85,
+   "st": "EOD",
+   "src": "FRED DGS5",
+   "ts": "2026-10-28"
+  },
+  {
+   "t": "10A",
+   "y": 5.05,
+   "st": "EOD",
+   "src": "FRED DGS10",
+   "ts": "2026-10-28"
+  },
+  {
+   "t": "30A",
+   "y": 5.37,
+   "st": "EOD",
+   "src": "FRED DGS30",
+   "ts": "2026-10-28"
+  }
+ ],
+ "news": [
+  {
+   "h": "'Bad time to troll': Binance co-founder Zhao asks Musk for support after hack",
+   "w": "Binance co-founder Changpeng Zhao asked Elon Musk to stop “trolling” after a $6.3 billion hack, pointing to Binance’s $1 billion-plus SpaceX stake.",
+   "syms": [
+    "BTC"
+   ],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-30T18:47:42Z",
+   "url": "https://www.cnbc.com/2026/10/30/binance-hack-elon-musk-tesla-spacex.html"
+  },
+  {
+   "h": "Cheaper cars are selling considerably faster than at the beginning of the year",
+   "w": "Data indicates cheap cars are selling fast, but a few lower-priced segments still saw sales drop in the third quarter. Here's what might be happening.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-30T18:45:35Z",
+   "url": "https://www.cnbc.com/2026/10/30/cheap-cars-selling-fast.html"
+  },
+  {
+   "h": "Reid Hoffman gives millions to Dems in late spending spree as Epstein fight spills into election",
+   "w": "Reid Hoffman has given $8 million to Wisconsin Democrats backing David Crowley as Tom Tiffany attacks Hoffman's past ties to Jeffrey Epstein.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-30T18:32:17Z",
+   "url": "https://www.cnbc.com/2026/10/30/reid-hoffman-democrats-epstein-midterms-2026.html"
+  },
+  {
+   "h": "Tankers defy sharp escalation of Iranian attacks to keep crude oil flowing through Strait of Hormuz",
+   "w": "Soaring freight rates are giving tankers a big financial incentive to run the gauntlet through the Strait of Hormuz.",
+   "syms": [
+    "BRENT",
+    "CL"
+   ],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-30T18:28:09Z",
+   "url": "https://www.cnbc.com/2026/10/30/tanker-attack-strait-hormuz-iran-war-oil.html"
+  },
+  {
+   "h": "Alaska Senate: Judge fast tracks new bids to dismiss DOJ lawsuit over 2nd Sullivan candidacy",
+   "w": "The winner of the Alaska election could determine whether Republicans retain their majority in the U.S. Senate or if Democrats take control of the chamber.",
+   "syms": [
+    "XAU"
+   ],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-30T18:20:03Z",
+   "url": "https://www.cnbc.com/2026/10/30/alaska-senate-election-doj-lawsuit-sullivan-peltola.html"
+  },
+  {
+   "h": "Anthropic may not secure investment-grade rating after IPO, Blackstone says",
+   "w": "Private capital giant says AI group is expected to receive ‘high’ junk rating in shift from previous guidance",
+   "syms": [],
+   "src": "Financial Times — Marchés",
+   "ts": "2026-10-30T18:19:08Z",
+   "url": "https://www.ft.com/content/59383c7f-8d82-493f-bf01-d2e862a1018f?syn-25a6b1a6=1"
+  },
+  {
+   "h": "Fed officials are already saying they’ll need to get back to hiking rates",
+   "w": "The comments from Federal Reserve Presidents Alberto Musalem and Lorie Logan offer the first morsels of insight into what leaders at the Fed see happening next.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-30T18:18:17Z",
+   "url": "https://www.cnbc.com/2026/10/30/musalem-fed-monetary-policy-tightening.html"
+  },
+  {
+   "h": "Binance hack: Investigators in a 'cat and mouse game' to recover $6.3 billion in stolen funds",
+   "w": "More than $6 billion in crypto was stolen from Binance, setting off a race to recover the funds before North Korea-linked hackers can launder them into cash.",
+   "syms": [
+    "BTC"
+   ],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-30T18:08:07Z",
+   "url": "https://www.cnbc.com/2026/10/30/binance-hack-stolen-crypto-recovery.html"
+  },
+  {
+   "h": "Why bitcoin held up better after the record Binance hack",
+   "w": "Bitcoin was trading down about 4% on Friday afternoon, less than a day after the biggest crypto hack in history.",
+   "syms": [
+    "BTC"
+   ],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-30T18:07:00Z",
+   "url": "https://www.cnbc.com/2026/10/30/binance-hack-bitcoin-price.html"
+  },
+  {
+   "h": "City of London chief tops UK Black Powerlist",
+   "w": "Ian Thomas, who heads the City of London Corporation, tops the Black Powerlist in its 21st year.",
+   "syms": [],
+   "src": "BBC — Business",
+   "ts": "2026-10-30T18:00:24Z",
+   "url": "https://www.bbc.co.uk/news/articles/c98rz4pxm4ymo?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "How AI might be deployed for better bank supervision",
+   "w": "The technology could help tackle some of the cultural issues that contributed to the collapse of SVB",
+   "syms": [],
+   "src": "Financial Times — Marchés",
+   "ts": "2026-10-30T18:00:05Z",
+   "url": "https://www.ft.com/content/be6723d6-ab63-41ab-ac46-dc870c449da0?syn-25a6b1a6=1"
+  },
+  {
+   "h": "US tech stocks see sharp falls as AI spending nears $1tn",
+   "w": "Shares in Intel continue to fall while the tech-heavy Nasdaq opens at its lowest level in more than two months.",
+   "syms": [
+    "NDX"
+   ],
+   "src": "BBC — Business",
+   "ts": "2026-10-30T17:47:01Z",
+   "url": "https://www.bbc.co.uk/news/articles/cvwy72e0n72yo?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "US tech stocks tumble as earnings stoke AI spending fears",
+   "w": "Intel’s shares on track to plunge by the most since 1974 after chipmaker’s results spook investors",
+   "syms": [
+    "NDX"
+   ],
+   "src": "Financial Times — Marchés",
+   "ts": "2026-10-30T17:30:44Z",
+   "url": "https://www.ft.com/content/3ba953ae-84bb-4de4-959e-baec3e908fb3?syn-25a6b1a6=1"
+  },
+  {
+   "h": "Stick or treat",
+   "w": "Central banks stuck to the script and kept rates on hold at their October meetings while laying the groundwork for further rate rises to come",
+   "syms": [
+    "XAU"
+   ],
+   "src": "Financial Times — Économie mondiale",
+   "ts": "2026-10-30T17:30:04Z",
+   "url": "https://www.ft.com/content/db8bd441-431c-4f2f-8b98-0876b234c7bf"
+  },
+  {
+   "h": "Apollo and Thrive capitalise on private equity’s generational shift",
+   "w": "By leaning into their new role as debt financiers, the old guard still have a lucrative place in the new financial order",
+   "syms": [],
+   "src": "Financial Times — Marchés",
+   "ts": "2026-10-30T17:24:07Z",
+   "url": "https://www.ft.com/content/95480c09-5018-4400-b9c1-f2d53373a47c?syn-25a6b1a6=1"
+  },
+  {
+   "h": "Treasury Department announces new Series I bond rate of 5.51% for the next six months",
+   "w": "The U.S. Department of the Treasury has announced new Series I bond rates through April 2027.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-30T17:15:53Z",
+   "url": "https://www.cnbc.com/2026/10/30/treasury-i-bond-rate-through-april-2027.html"
+  },
+  {
+   "h": "CD&R pursues buyout of $40bn card processor Global Payments",
+   "w": "Deal for US company would rank among largest buyouts in history",
+   "syms": [],
+   "src": "Financial Times — Marchés",
+   "ts": "2026-10-30T17:10:22Z",
+   "url": "https://www.ft.com/content/da16af06-4431-4ced-9c3e-a0753d8c45c9?syn-25a6b1a6=1"
+  },
+  {
+   "h": "Binance rushes to recover customer money after $6.3bn heist",
+   "w": "World’s largest crypto exchange says an engineer’s laptop was compromised in major security breach",
+   "syms": [
+    "BTC"
+   ],
+   "src": "Financial Times — Marchés",
+   "ts": "2026-10-30T16:59:33Z",
+   "url": "https://www.ft.com/content/c7f5e395-c3a9-430e-b757-5014527b4d49?syn-25a6b1a6=1"
+  },
+  {
+   "h": "Halloween gets pricier as chocolate costs climb — Hershey may feel the pinch",
+   "w": "Higher cocoa and sugar prices are fueling above-average cost inflation for candy",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-30T16:55:41Z",
+   "url": "https://www.cnbc.com/2026/10/30/halloween-gets-pricier-as-chocolate-costs-rise-hershey-could-feel-it.html"
+  },
+  {
+   "h": "Chevron and Exxon hit all-time highs as refining profits soar in reaction to Iran and Ukraine wars",
+   "w": "Global diesel prices surged as Ukraine and Iran struck refineries in Russia and the Middle East.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-30T16:44:31Z",
+   "url": "https://www.cnbc.com/2026/10/30/chevron-exxon-cvx-xom-earnings-q3-2026.html"
+  },
+  {
+   "h": "Google lost nearly half a trillion this week. Here's how Mike Khouw is trading it",
+   "w": "Google lost nearly half a trillion this week. But the week's tech sell off might provide an opportunity, says Mike Khouw.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-30T16:41:34Z",
+   "url": "https://www.cnbc.com/2026/10/30/google-lost-about-half-a-trillion-this-week-how-mike-khouw-trades-it-.html"
+  },
+  {
+   "h": "The US midterms: the verdict on Donald Trump?",
+   "w": "Join FT journalists and guests for a subscriber webinar on November 10",
+   "syms": [],
+   "src": "Financial Times — Économie mondiale",
+   "ts": "2026-10-30T16:21:07Z",
+   "url": "https://www.ft.com/content/4a419040-0f8c-4078-bdf9-7c4a5fcd52f4"
+  },
+  {
+   "h": "Yorkshire Water boss resigns after firm downgraded",
+   "w": "Nicola Shaw, who has led the company since 2022, will step down in January, it is announced.",
+   "syms": [],
+   "src": "BBC — Business",
+   "ts": "2026-10-30T16:04:55Z",
+   "url": "https://www.bbc.co.uk/news/articles/ckzd623pldqgo?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "Trump rallies in Kansas and Iowa are back on after RNC said they were canceled: Source",
+   "w": "Trump and Vance had canceled planned appearances across three states, reducing in-person campaigning in the final days before the midterm election.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-30T15:52:35Z",
+   "url": "https://www.cnbc.com/2026/10/30/trump-vance-rally-midterm-elections-.html"
+  },
+  {
+   "h": "Gamble on democracy: Inside suspicious election-contracts trading on prediction markets",
+   "w": "Prediction markets' failure to call an LA primary correctly raised the possibility they can be manipulated to exaggerate the amount of support candidates have.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-30T15:33:00Z",
+   "url": "https://www.cnbc.com/2026/10/30/gamble-on-democracy-inside-suspicious-election-contracts-trading-on-prediction-markets-.html"
+  }
+ ],
+ "summary": null
+}
