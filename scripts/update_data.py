@@ -252,14 +252,28 @@ def ai_summary(quotes: dict, news: list, previous: dict) -> dict | None:
         "Pas de recommandation d'achat ou de vente.\n\n"
         f"COTATIONS :\n{mk}\n\nTITRES DE PRESSE :\n{hd}"
     )
+    base = "https://generativelanguage.googleapis.com/v1beta"
+    headers = {"x-goog-api-key": key, "Content-Type": "application/json"}
+    body = {"contents": [{"parts": [{"text": prompt}]}]}
+
+    def call(m):
+        return requests.post(f"{base}/models/{m}:generateContent", headers=headers, json=body, timeout=90)
+
     try:
-        r = requests.post(
-            f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
-            params={"key": key},
-            json={"contents": [{"parts": [{"text": prompt}]}]},
-            timeout=60,
-        )
-        r.raise_for_status()
+        r = call(model)
+        if r.status_code == 404:
+            # Modèle retiré ou renommé : on demande à Google la liste et on prend un « flash » disponible.
+            lst = requests.get(f"{base}/models", headers=headers, timeout=30).json().get("models", [])
+            names = [m["name"].split("/")[-1] for m in lst
+                     if "generateContent" in m.get("supportedGenerationMethods", [])]
+            log(f"  Gemini : '{model}' introuvable. Modèles disponibles : {', '.join(names[:15])}")
+            flash = [n for n in names if "flash" in n and "lite" not in n] or names
+            if not flash:
+                raise RuntimeError("aucun modèle disponible pour cette clé")
+            model = flash[0]
+            r = call(model)
+        if not r.ok:
+            raise RuntimeError(f"HTTP {r.status_code} : {r.text[:300]}")
         text = r.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
         log(f"Synthèse IA : {len(text)} caractères ({model})")
         return {"text": text, "model": model, "ts": NOW.isoformat().replace("+00:00", "Z")}
