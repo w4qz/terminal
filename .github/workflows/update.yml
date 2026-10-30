@@ -16,7 +16,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
@@ -34,11 +34,17 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python scripts/update_data.py
 
+      - name: Construire le catalogue de recherche
+        continue-on-error: true      # un échec ici ne bloque pas les prix
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: python scripts/build_universe.py
+
       - name: Publier data.json
         run: |
           git config user.name  "terminal-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data.json
+          git add data.json universe.json constituents.json 2>/dev/null || git add data.json
           git diff --staged --quiet || git commit -m "Données $(date -u +'%Y-%m-%d %H:%M') UTC"
           git pull --rebase --autostash
           git push
