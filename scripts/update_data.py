@@ -241,7 +241,7 @@ def ai_summary(quotes: dict, news: list, previous: dict) -> dict | None:
     key = os.getenv("GEMINI_API_KEY")
     if not key or not news:
         return previous.get("summary")
-    model = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
+    model = os.getenv("GEMINI_MODEL", "gemini-flash-latest")
     mk = "\n".join(f"{s}: {q['p']} ({q.get('pct')} %) [{q['st']}]" for s, q in quotes.items())
     hd = "\n".join(f"- {n['h']} ({n['src']})" for n in news[:20])
     prompt = (
