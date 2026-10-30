@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-30T21:13:55.729158Z",
+ "generated_at": "2026-10-30T22:05:22.640198Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -9,16 +9,16 @@
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (NVDA)",
    "ts": "2026-10-30T19:30:00Z",
-   "open": 208.94,
+   "open": 208.88,
    "lo": 200.9199,
    "hi": 209.05,
    "vol": 165923799
   },
   "ASTS": {
-   "p": 40.97,
+   "p": 40.99,
    "prev": 43.07,
-   "chg": -2.1,
-   "pct": -4.88,
+   "chg": -2.08,
+   "pct": -4.83,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-10-30T19:30:00Z",
@@ -51,7 +51,7 @@
    "open": 28604.916,
    "lo": 28093.2441,
    "hi": 28713.4453,
-   "vol": 2200590000
+   "vol": 2208196000
   },
   "DJI": {
    "p": 51774.1797,
@@ -83,7 +83,7 @@
    "prev": 17.2,
    "chg": 2.24,
    "pct": 13.02,
-   "st": "DELAYED_15M",
+   "st": "EOD",
    "src": "Yahoo Finance via yfinance (^VIX)",
    "ts": "2026-10-30T20:00:00Z",
    "open": 18.43,
@@ -95,8 +95,8 @@
    "prev": 64659.4688,
    "chg": -1577.1992,
    "pct": -2.44,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^N225) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^N225)",
    "ts": "2026-10-30T06:00:00Z",
    "open": 64344.3711,
    "lo": 62711.4219,
@@ -204,7 +204,7 @@
    "prev": 157.833,
    "chg": -0.314,
    "pct": -0.2,
-   "st": "DELAYED_15M",
+   "st": "EOD",
    "src": "Yahoo Finance via yfinance (JPY=X)",
    "ts": "2026-10-30T20:00:00Z",
    "open": 157.642,
@@ -228,7 +228,7 @@
    "prev": 102.04,
    "chg": -0.076,
    "pct": -0.07,
-   "st": "DELAYED_15M",
+   "st": "EOD",
    "src": "Yahoo Finance via yfinance (DX-Y.NYB)",
    "ts": "2026-10-30T20:00:00Z",
    "open": 101.882,
@@ -240,7 +240,7 @@
    "prev": 4031.3999,
    "chg": -146.5,
    "pct": -3.63,
-   "st": "DELAYED_15M",
+   "st": "EOD",
    "src": "Yahoo Finance via yfinance (GC=F)",
    "ts": "2026-10-30T20:00:00Z",
    "open": 4033.6001,
@@ -253,7 +253,7 @@
    "prev": 102.0,
    "chg": 0.95,
    "pct": 0.93,
-   "st": "DELAYED_15M",
+   "st": "EOD",
    "src": "Yahoo Finance via yfinance (CL=F)",
    "ts": "2026-10-30T20:00:00Z",
    "open": 102.8,
@@ -266,7 +266,7 @@
    "prev": 114.88,
    "chg": -2.55,
    "pct": -2.22,
-   "st": "DELAYED_15M",
+   "st": "EOD",
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-10-30T20:00:00Z",
    "open": 111.28,
@@ -275,17 +275,17 @@
    "vol": 37539
   },
   "BTC": {
-   "p": 76548.9922,
+   "p": 76729.6016,
    "prev": 77775.1094,
-   "chg": -1226.1172,
-   "pct": -1.58,
+   "chg": -1045.5078,
+   "pct": -1.34,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-10-30T21:00:00Z",
+   "ts": "2026-10-30T22:00:00Z",
    "open": 77791.375,
    "lo": 76264.7422,
    "hi": 78564.9375,
-   "vol": 53011873792
+   "vol": 50075017216
   }
  },
  "fundamentals": {
@@ -333,6 +333,42 @@
   }
  ],
  "news": [
+  {
+   "h": "Gamble on democracy: Inside suspicious election-contracts trading on prediction markets",
+   "w": "CNBC examines unusual price spikes in election prediction markets and how low-volume contracts can be moved by relatively small trades.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-30T22:00:53Z",
+   "url": "https://www.cnbc.com/2026/10/30/gamble-on-democracy-inside-suspicious-election-contracts-trading-on-prediction-markets-.html"
+  },
+  {
+   "h": "Fed officials are already saying they’ll need to get back to hiking rates",
+   "w": "The comments from Federal Reserve Presidents Alberto Musalem and Lorie Logan offer the first morsels of insight into what leaders at the Fed see happening next.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-30T21:53:10Z",
+   "url": "https://www.cnbc.com/2026/10/30/musalem-fed-monetary-policy-tightening.html"
+  },
+  {
+   "h": "Binance loses $6.3 billion in crypto heist—what happens to your money when an exchange gets hacked",
+   "w": "Crypto exchanges make it easier to buy, sell and store digital assets, but they come with risks, too.",
+   "syms": [
+    "BTC"
+   ],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-30T21:45:52Z",
+   "url": "https://www.cnbc.com/make-it/2026/10/30/binance-crypto-hack-customer-funds.html"
+  },
+  {
+   "h": "US tech stocks tumble as concerns over AI spending intensify",
+   "w": "Revelations that Anthropic could receive junk rating after IPO add to concerns over industry borrowing spree",
+   "syms": [
+    "NDX"
+   ],
+   "src": "Financial Times — Marchés",
+   "ts": "2026-10-30T21:13:50Z",
+   "url": "https://www.ft.com/content/3ba953ae-84bb-4de4-959e-baec3e908fb3?syn-25a6b1a6=1"
+  },
   {
    "h": "Crypto giant Binance attempting to recover $6.3bn stolen in hack linked to North Korea",
    "w": "The cyber-attack, which the company describes as complex, is believed to be the largest ever of its kind.",
@@ -390,26 +426,6 @@
    "url": "https://www.cnbc.com/2026/10/30/binance-hack-elon-musk-tesla-spacex.html"
   },
   {
-   "h": "US tech stocks tumble as concerns over AI spending intensify",
-   "w": "Revelations that Anthropic could receive junk rating after IPO add to concerns over Big Tech borrowing spree",
-   "syms": [
-    "NDX"
-   ],
-   "src": "Financial Times — Marchés",
-   "ts": "2026-10-30T20:02:30Z",
-   "url": "https://www.ft.com/content/3ba953ae-84bb-4de4-959e-baec3e908fb3?syn-25a6b1a6=1"
-  },
-  {
-   "h": "Binance loses $6.3 billion in crypto heist—what happens to your money when an exchange gets hacked",
-   "w": "Crypto exchanges make it easier to buy, sell and store digital assets, but they come with risks, too.",
-   "syms": [
-    "BTC"
-   ],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-30T19:39:46Z",
-   "url": "https://www.cnbc.com/make-it/2026/10/30/binance-crypto-hack-customer-funds.html"
-  },
-  {
    "h": "Binance hack: Investigators in a 'cat and mouse game' to recover $6.3 billion in stolen funds",
    "w": "More than $6 billion in crypto was stolen from Binance, setting off a race to recover the funds before North Korea-linked hackers can launder them into cash.",
    "syms": [
@@ -455,14 +471,6 @@
    "src": "Financial Times — Marchés",
    "ts": "2026-10-30T18:19:08Z",
    "url": "https://www.ft.com/content/59383c7f-8d82-493f-bf01-d2e862a1018f?syn-25a6b1a6=1"
-  },
-  {
-   "h": "Fed officials are already saying they’ll need to get back to hiking rates",
-   "w": "The comments from Federal Reserve Presidents Alberto Musalem and Lorie Logan offer the first morsels of insight into what leaders at the Fed see happening next.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-30T18:18:17Z",
-   "url": "https://www.cnbc.com/2026/10/30/musalem-fed-monetary-policy-tightening.html"
   },
   {
    "h": "Why bitcoin held up better after the record Binance hack",
@@ -549,14 +557,6 @@
    "src": "CNBC — Marchés",
    "ts": "2026-10-30T16:44:31Z",
    "url": "https://www.cnbc.com/2026/10/30/chevron-exxon-cvx-xom-earnings-q3-2026.html"
-  },
-  {
-   "h": "The US midterms: the verdict on Donald Trump?",
-   "w": "Join FT journalists and guests for a subscriber webinar on November 10",
-   "syms": [],
-   "src": "Financial Times — Économie mondiale",
-   "ts": "2026-10-30T16:21:07Z",
-   "url": "https://www.ft.com/content/4a419040-0f8c-4078-bdf9-7c4a5fcd52f4"
   }
  ],
  "summary": null
