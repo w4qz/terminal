@@ -1,0 +1,597 @@
+{
+ "generated_at": "2026-10-31T08:23:14.073011Z",
+ "eco": {
+  "prints": [
+   {
+    "k": "Inflation CPI (US, a/a)",
+    "v": 3.72,
+    "prev": 3.35,
+    "fmt": "%",
+    "ts": "2026-09-01",
+    "src": "FRED CPIAUCSL"
+   },
+   {
+    "k": "Inflation CPI core (US, a/a)",
+    "v": 2.57,
+    "prev": 2.45,
+    "fmt": "%",
+    "ts": "2026-09-01",
+    "src": "FRED CPILFESL"
+   },
+   {
+    "k": "PCE core (US, a/a) — cible Fed",
+    "v": 3.12,
+    "prev": 3.03,
+    "fmt": "%",
+    "ts": "2026-09-01",
+    "src": "FRED PCEPILFE"
+   },
+   {
+    "k": "Créations d'emplois NFP (US, k)",
+    "v": 29.0,
+    "prev": 133.0,
+    "fmt": "k",
+    "ts": "2026-09-01",
+    "src": "FRED PAYEMS"
+   },
+   {
+    "k": "Taux de chômage (US)",
+    "v": 4.2,
+    "prev": 4.1,
+    "fmt": "%",
+    "ts": "2026-09-01",
+    "src": "FRED UNRATE"
+   },
+   {
+    "k": "Inscriptions hebdo. au chômage (US)",
+    "v": 194000.0,
+    "prev": 195000.0,
+    "fmt": "n",
+    "ts": "2026-10-24",
+    "src": "FRED ICSA"
+   },
+   {
+    "k": "PIB réel (US, t/t annualisé)",
+    "v": 3.4,
+    "prev": 2.2,
+    "fmt": "%",
+    "ts": "2026-07-01",
+    "src": "FRED A191RL1Q225SBEA"
+   },
+   {
+    "k": "Ventes au détail (US, m/m)",
+    "v": 0.77,
+    "prev": 1.29,
+    "fmt": "%",
+    "ts": "2026-09-01",
+    "src": "FRED RSAFS"
+   },
+   {
+    "k": "Confiance consommateurs U. Michigan",
+    "v": 48.1,
+    "prev": 51.7,
+    "fmt": "n",
+    "ts": "2026-09-01",
+    "src": "FRED UMCSENT"
+   },
+   {
+    "k": "Inflation HICP (zone euro, a/a)",
+    "v": 3.75,
+    "prev": 3.23,
+    "fmt": "%",
+    "ts": "2026-09-01",
+    "src": "FRED CP0000EZ19M086NEST"
+   },
+   {
+    "k": "Taux de chômage (zone euro)",
+    "v": 6.7,
+    "prev": 6.7,
+    "fmt": "%",
+    "ts": "2023-01-01",
+    "src": "FRED LRHUTTTTEZM156S"
+   }
+  ],
+  "calendar": [
+   {
+    "d": "2026-10-27",
+    "ev": "Mises en chantier",
+    "ctry": "US",
+    "src": "FRED"
+   },
+   {
+    "d": "2026-10-28",
+    "ev": "Décision de la Fed (FOMC)",
+    "ctry": "US",
+    "src": "Federal Reserve",
+    "imp": 3
+   },
+   {
+    "d": "2026-10-29",
+    "ev": "PIB",
+    "ctry": "US",
+    "src": "FRED"
+   },
+   {
+    "d": "2026-10-29",
+    "ev": "Revenus et dépenses (PCE)",
+    "ctry": "US",
+    "src": "FRED"
+   },
+   {
+    "d": "2026-10-29",
+    "ev": "Inscriptions hebdo. au chômage",
+    "ctry": "US",
+    "src": "FRED"
+   },
+   {
+    "d": "2026-11-03",
+    "ev": "Offres d'emploi JOLTS",
+    "ctry": "US",
+    "src": "FRED"
+   },
+   {
+    "d": "2026-11-05",
+    "ev": "Inscriptions hebdo. au chômage",
+    "ctry": "US",
+    "src": "FRED"
+   },
+   {
+    "d": "2026-11-06",
+    "ev": "Emploi US (NFP, chômage)",
+    "ctry": "US",
+    "src": "FRED"
+   },
+   {
+    "d": "2026-11-10",
+    "ev": "Inflation CPI",
+    "ctry": "US",
+    "src": "FRED"
+   },
+   {
+    "d": "2026-11-12",
+    "ev": "Inscriptions hebdo. au chômage",
+    "ctry": "US",
+    "src": "FRED"
+   },
+   {
+    "d": "2026-11-13",
+    "ev": "Prix à la production PPI",
+    "ctry": "US",
+    "src": "FRED"
+   },
+   {
+    "d": "2026-11-17",
+    "ev": "Ventes au détail",
+    "ctry": "US",
+    "src": "FRED"
+   },
+   {
+    "d": "2026-11-18",
+    "ev": "Mises en chantier",
+    "ctry": "US",
+    "src": "FRED"
+   },
+   {
+    "d": "2026-11-19",
+    "ev": "Inscriptions hebdo. au chômage",
+    "ctry": "US",
+    "src": "FRED"
+   },
+   {
+    "d": "2026-11-20",
+    "ev": "Confiance U. Michigan",
+    "ctry": "US",
+    "src": "FRED"
+   },
+   {
+    "d": "2026-11-25",
+    "ev": "PIB",
+    "ctry": "US",
+    "src": "FRED"
+   },
+   {
+    "d": "2026-11-25",
+    "ev": "Mises en chantier",
+    "ctry": "US",
+    "src": "FRED"
+   },
+   {
+    "d": "2026-11-25",
+    "ev": "Revenus et dépenses (PCE)",
+    "ctry": "US",
+    "src": "FRED"
+   },
+   {
+    "d": "2026-11-25",
+    "ev": "Inscriptions hebdo. au chômage",
+    "ctry": "US",
+    "src": "FRED"
+   },
+   {
+    "d": "2026-12-09",
+    "ev": "Décision de la Fed (FOMC)",
+    "ctry": "US",
+    "src": "Federal Reserve",
+    "imp": 3
+   }
+  ]
+ },
+ "wirp": {
+  "effr": 3.88,
+  "effr_ts": "2026-10-29",
+  "range": [
+   3.75,
+   4.0
+  ],
+  "meetings": [
+   {
+    "d": "2026-12-09",
+    "pre": 3.88,
+    "post": 4.056,
+    "move_bp": 17.6,
+    "p_cut": 0,
+    "p_hike": 70
+   },
+   {
+    "d": "2027-01-27",
+    "pre": 4.056,
+    "post": 4.12,
+    "move_bp": 6.4,
+    "p_cut": 0,
+    "p_hike": 26
+   },
+   {
+    "d": "2027-03-17",
+    "pre": 4.12,
+    "post": 4.253,
+    "move_bp": 13.3,
+    "p_cut": 0,
+    "p_hike": 53
+   },
+   {
+    "d": "2027-04-28",
+    "pre": 4.253,
+    "post": 4.315,
+    "move_bp": 6.2,
+    "p_cut": 0,
+    "p_hike": 25
+   },
+   {
+    "d": "2027-06-09",
+    "pre": 4.315,
+    "post": 4.401,
+    "move_bp": 8.6,
+    "p_cut": 0,
+    "p_hike": 34
+   },
+   {
+    "d": "2027-07-28",
+    "pre": 4.401,
+    "post": 4.42,
+    "move_bp": 1.9,
+    "p_cut": 0,
+    "p_hike": 8
+   },
+   {
+    "d": "2027-09-15",
+    "pre": 4.42,
+    "post": 4.45,
+    "move_bp": 3.0,
+    "p_cut": 0,
+    "p_hike": 12
+   },
+   {
+    "d": "2027-10-27",
+    "pre": 4.45,
+    "post": 4.44,
+    "move_bp": -1.0,
+    "p_cut": 4,
+    "p_hike": 0
+   }
+  ],
+  "src": "Futures fed funds 30 jours CBOT (Yahoo) + EFFR (FRED) — méthode FedWatch simplifiée"
+ },
+ "gc": {
+  "us": {
+   "pts": [
+    {
+     "t": "1M",
+     "y": 4.06,
+     "y1m": 4.06,
+     "ts": "2026-10-29"
+    },
+    {
+     "t": "3M",
+     "y": 4.18,
+     "y1m": 4.17,
+     "ts": "2026-10-29"
+    },
+    {
+     "t": "6M",
+     "y": 4.28,
+     "y1m": 4.27,
+     "ts": "2026-10-29"
+    },
+    {
+     "t": "1A",
+     "y": 4.42,
+     "y1m": 4.44,
+     "ts": "2026-10-29"
+    },
+    {
+     "t": "2A",
+     "y": 4.61,
+     "y1m": 4.78,
+     "ts": "2026-10-29"
+    },
+    {
+     "t": "3A",
+     "y": 4.73,
+     "y1m": 4.91,
+     "ts": "2026-10-29"
+    },
+    {
+     "t": "5A",
+     "y": 4.78,
+     "y1m": 5.01,
+     "ts": "2026-10-29"
+    },
+    {
+     "t": "7A",
+     "y": 4.87,
+     "y1m": 5.12,
+     "ts": "2026-10-29"
+    },
+    {
+     "t": "10A",
+     "y": 4.98,
+     "y1m": 5.24,
+     "ts": "2026-10-29"
+    },
+    {
+     "t": "20A",
+     "y": 5.35,
+     "y1m": 5.64,
+     "ts": "2026-10-29"
+    },
+    {
+     "t": "30A",
+     "y": 5.32,
+     "y1m": 5.61,
+     "ts": "2026-10-29"
+    }
+   ],
+   "src": "Trésor US via FRED (taux constant maturity)"
+  },
+  "eu": {
+   "pts": [
+    {
+     "t": "3M",
+     "y": 2.573,
+     "y1m": 2.556,
+     "ts": "2026-10-29"
+    },
+    {
+     "t": "6M",
+     "y": 2.711,
+     "y1m": 2.761,
+     "ts": "2026-10-29"
+    },
+    {
+     "t": "1A",
+     "y": 2.881,
+     "y1m": 3.028,
+     "ts": "2026-10-29"
+    },
+    {
+     "t": "2A",
+     "y": 3.008,
+     "y1m": 3.251,
+     "ts": "2026-10-29"
+    },
+    {
+     "t": "3A",
+     "y": 3.044,
+     "y1m": 3.316,
+     "ts": "2026-10-29"
+    },
+    {
+     "t": "5A",
+     "y": 3.111,
+     "y1m": 3.378,
+     "ts": "2026-10-29"
+    },
+    {
+     "t": "7A",
+     "y": 3.212,
+     "y1m": 3.465,
+     "ts": "2026-10-29"
+    },
+    {
+     "t": "10A",
+     "y": 3.373,
+     "y1m": 3.615,
+     "ts": "2026-10-29"
+    },
+    {
+     "t": "20A",
+     "y": 3.65,
+     "y1m": 3.866,
+     "ts": "2026-10-29"
+    },
+    {
+     "t": "30A",
+     "y": 3.611,
+     "y1m": 3.787,
+     "ts": "2026-10-29"
+    }
+   ],
+   "src": "BCE — courbe des emprunts d'État AAA de la zone euro (taux zéro-coupon)"
+  }
+ },
+ "btmm": [
+  {
+   "k": "Fed funds — borne haute",
+   "v": 4.0,
+   "prev": 4.0,
+   "fmt": "%",
+   "ts": "2026-10-30",
+   "src": "FRED DFEDTARU"
+  },
+  {
+   "k": "Fed funds — borne basse",
+   "v": 3.75,
+   "prev": 3.75,
+   "fmt": "%",
+   "ts": "2026-10-30",
+   "src": "FRED DFEDTARL"
+  },
+  {
+   "k": "Taux effectif des fed funds (EFFR)",
+   "v": 3.88,
+   "prev": 3.88,
+   "fmt": "%",
+   "ts": "2026-10-29",
+   "src": "FRED EFFR"
+  },
+  {
+   "k": "SOFR",
+   "v": 3.94,
+   "prev": 3.94,
+   "fmt": "%",
+   "ts": "2026-10-29",
+   "src": "FRED SOFR"
+  },
+  {
+   "k": "Taux sur les réserves (IORB)",
+   "v": 3.9,
+   "prev": 3.9,
+   "fmt": "%",
+   "ts": "2026-11-02",
+   "src": "FRED IORB"
+  },
+  {
+   "k": "T-bill 3 mois",
+   "v": 4.0,
+   "prev": 4.01,
+   "fmt": "%",
+   "ts": "2026-10-29",
+   "src": "FRED DTB3"
+  },
+  {
+   "k": "T-bill 6 mois",
+   "v": 4.15,
+   "prev": 4.18,
+   "fmt": "%",
+   "ts": "2026-10-29",
+   "src": "FRED DTB6"
+  },
+  {
+   "k": "Trésor 2 ans",
+   "v": 4.61,
+   "prev": 4.67,
+   "fmt": "%",
+   "ts": "2026-10-29",
+   "src": "FRED DGS2"
+  },
+  {
+   "k": "Trésor 10 ans",
+   "v": 4.98,
+   "prev": 5.05,
+   "fmt": "%",
+   "ts": "2026-10-29",
+   "src": "FRED DGS10"
+  },
+  {
+   "k": "Pente 2s10s",
+   "v": 38.0,
+   "prev": 37.0,
+   "fmt": "pb",
+   "ts": "2026-10-30",
+   "src": "FRED T10Y2Y"
+  },
+  {
+   "k": "Pente 3m10a",
+   "v": 78.0,
+   "prev": 80.0,
+   "fmt": "pb",
+   "ts": "2026-10-30",
+   "src": "FRED T10Y3M"
+  },
+  {
+   "k": "Reverse repo de la Fed (Md$)",
+   "v": 4.375,
+   "prev": 0.353,
+   "fmt": "Md",
+   "ts": "2026-10-30",
+   "src": "FRED RRPONTSYD"
+  },
+  {
+   "k": "Bilan de la Fed (Md$)",
+   "v": 6745.635,
+   "prev": 6753.604,
+   "fmt": "Md",
+   "ts": "2026-10-28",
+   "src": "FRED WALCL"
+  }
+ ],
+ "fomc": [
+  "2021-01-27",
+  "2021-03-17",
+  "2021-04-28",
+  "2021-06-16",
+  "2021-07-28",
+  "2021-09-22",
+  "2021-11-03",
+  "2021-12-15",
+  "2022-01-26",
+  "2022-03-16",
+  "2022-05-04",
+  "2022-06-15",
+  "2022-07-27",
+  "2022-09-21",
+  "2022-11-02",
+  "2022-12-14",
+  "2023-02-01",
+  "2023-03-22",
+  "2023-05-03",
+  "2023-06-14",
+  "2023-07-26",
+  "2023-09-20",
+  "2023-11-01",
+  "2023-12-13",
+  "2024-01-31",
+  "2024-03-20",
+  "2024-05-01",
+  "2024-06-12",
+  "2024-07-31",
+  "2024-09-18",
+  "2024-11-07",
+  "2024-12-18",
+  "2025-01-29",
+  "2025-03-19",
+  "2025-05-07",
+  "2025-06-18",
+  "2025-07-30",
+  "2025-08-22",
+  "2025-09-17",
+  "2025-10-29",
+  "2025-12-10",
+  "2026-01-28",
+  "2026-03-18",
+  "2026-04-29",
+  "2026-06-17",
+  "2026-07-29",
+  "2026-09-16",
+  "2026-10-28",
+  "2026-12-09",
+  "2027-01-27",
+  "2027-03-17",
+  "2027-04-28",
+  "2027-06-09",
+  "2027-07-28",
+  "2027-09-15",
+  "2027-10-27",
+  "2027-12-08"
+ ]
+}

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T07:45:38.551310Z",
+ "generated_at": "2026-10-31T08:20:06.067700Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -45,8 +45,8 @@
    "prev": 29402.5098,
    "chg": -1016.7617,
    "pct": -3.46,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^NDX)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^NDX) — échec de la dernière mise à jour",
    "ts": "2026-10-30T19:30:00Z",
    "open": 28604.9102,
    "lo": 28093.2402,
@@ -71,8 +71,8 @@
    "prev": 2859.22,
    "chg": -47.1787,
    "pct": -1.65,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^RUT) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^RUT)",
    "ts": "2026-10-30T19:30:00Z",
    "open": 2838.77,
    "lo": 2787.1201,
@@ -257,10 +257,10 @@
    "vol": 142006
   },
   "CL": {
-   "p": 102.95,
+   "p": 104.12,
    "prev": 102.0,
-   "chg": 0.95,
-   "pct": 0.93,
+   "chg": 2.12,
+   "pct": 2.08,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (CL=F)",
    "ts": "2026-10-30T20:00:00Z",
@@ -270,10 +270,10 @@
    "vol": 262537
   },
   "BRENT": {
-   "p": 112.33,
+   "p": 113.43,
    "prev": 114.88,
-   "chg": -2.55,
-   "pct": -2.22,
+   "chg": -1.45,
+   "pct": -1.26,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-10-30T20:00:00Z",
@@ -283,17 +283,17 @@
    "vol": 6774
   },
   "BTC": {
-   "p": 77184.2969,
+   "p": 77311.1328,
    "prev": 77198.2109,
-   "chg": -13.9141,
-   "pct": -0.02,
+   "chg": 112.9219,
+   "pct": 0.15,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-10-31T07:00:00Z",
+   "ts": "2026-10-31T08:00:00Z",
    "open": 77202.3984,
    "lo": 77000.9219,
    "hi": 77434.1484,
-   "vol": 29776992256
+   "vol": 28691421184
   }
  },
  "fundamentals": {
@@ -341,6 +341,14 @@
   }
  ],
  "news": [
+  {
+   "h": "Pour Halloween, des bonbons sans sucre au goût amer",
+   "w": "Les confiseries étiquetées « peu caloriques » ou « sans sucre », dont certaines arborent un Nutri-Score A, ont trouvé leur place dans les rayons des supermarchés. Ils ne sont pas pour autant sans défaut ni à l’abri des critiques.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-10-31T08:00:20Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/10/31/pour-halloween-des-bonbons-sans-sucre-au-gout-amer_6803476_3234.html"
+  },
   {
    "h": "US approves $2.1bn sale of Patriot interceptors to Ukraine",
    "w": "Volodymyr Zelenskyy welcomes ‘strong decision’ but calls for the missiles to be provided immediately",
@@ -423,15 +431,6 @@
    "w": "Many first-time purchasers want three-bed houses but Your First Home price caps mean mostly flats will qualify in large parts of country",
    "syms": [],
    "src": "myFT — world",
-   "ts": "2026-10-31T05:00:40Z",
-   "url": "https://www.ft.com/content/a6cac59f-7344-4717-8164-a4cbfdd26db5?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "New scheme will struggle to deliver ‘the homes buyers want’",
-   "w": "Many first-time purchasers want three-bed houses but Your First Home price caps mean mostly flats will qualify in large parts of country",
-   "syms": [],
-   "src": "myFT — world uk",
    "ts": "2026-10-31T05:00:40Z",
    "url": "https://www.ft.com/content/a6cac59f-7344-4717-8164-a4cbfdd26db5?syn-25a6b1a6=1",
    "mine": 1
@@ -647,11 +646,11 @@
    "url": "https://www.lemonde.fr/economie/article/2026/10/31/penurie-de-navires-et-tarifs-record-comment-la-guerre-au-moyen-orient-fait-bondir-les-prix-du-transport-de-petrole_6803378_3234.html"
   },
   {
-   "h": "La Bourse de New York saisie d’effroi, à la veille d’Halloween",
+   "h": "La Bourse de New York saisie d’effroi, à la veille de Halloween",
    "w": "Alors que les inquiétudes s’accumulent sur la rentabilité des investissements massifs des entreprises du secteur de l’intelligence artificielle, les résultats trimestriels décevants de ces géants ont entraîné un fort repli des marchés actions.",
    "syms": [],
    "src": "Le Monde — Économie",
-   "ts": "2026-10-31T02:17:22Z",
+   "ts": "2026-10-31T02:17:19Z",
    "url": "https://www.lemonde.fr/economie/article/2026/10/31/la-bourse-de-new-york-saisie-d-effroi-a-la-veille-d-halloween_6803334_3234.html"
   },
   {
@@ -836,14 +835,6 @@
    "url": "https://www.cnbc.com/2026/10/30/binance-hack-stolen-crypto-recovery.html"
   },
   {
-   "h": "Reid Hoffman gives millions to Dems in late spending spree as Epstein fight spills into election",
-   "w": "Reid Hoffman has given $8 million to Wisconsin Democrats backing David Crowley as Tom Tiffany attacks Hoffman's past ties to Jeffrey Epstein.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-30T18:32:17Z",
-   "url": "https://www.cnbc.com/2026/10/30/reid-hoffman-democrats-epstein-midterms-2026.html"
-  },
-  {
    "h": "Healey buys time with ‘pray and delay’ Budget as tough decisions lie ahead",
    "w": "Chancellor will have to make hard choices on welfare and defence as he prepares for pivotal spending review",
    "syms": [],
@@ -897,6 +888,15 @@
    "src": "myFT — us",
    "ts": "2026-10-30T17:24:07Z",
    "url": "https://www.ft.com/content/95480c09-5018-4400-b9c1-f2d53373a47c?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "CD&R pursues buyout of $40bn card processor Global Payments",
+   "w": "Deal for US company would rank among largest buyouts in history",
+   "syms": [],
+   "src": "myFT — us",
+   "ts": "2026-10-30T17:10:22Z",
+   "url": "https://www.ft.com/content/da16af06-4431-4ced-9c3e-a0753d8c45c9?syn-25a6b1a6=1",
    "mine": 1
   }
  ],
