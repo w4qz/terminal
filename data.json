@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T22:00:54.552253Z",
+ "generated_at": "2026-10-31T22:59:54.369361Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -15,10 +15,10 @@
    "vol": 168039400
   },
   "ASTS": {
-   "p": 40.99,
+   "p": 40.97,
    "prev": 43.07,
-   "chg": -2.08,
-   "pct": -4.83,
+   "chg": -2.1,
+   "pct": -4.88,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-10-30T19:30:00Z",
@@ -236,8 +236,8 @@
    "prev": 102.04,
    "chg": -0.076,
    "pct": -0.07,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (DX-Y.NYB)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (DX-Y.NYB) — échec de la dernière mise à jour",
    "ts": "2026-10-30T20:00:00Z",
    "open": 101.88,
    "lo": 101.54,
@@ -283,17 +283,17 @@
    "vol": 6774
   },
   "BTC": {
-   "p": 77516.9062,
+   "p": 77405.4219,
    "prev": 77198.2109,
-   "chg": 318.6953,
-   "pct": 0.41,
+   "chg": 207.2109,
+   "pct": 0.27,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
    "ts": "2026-10-31T22:00:00Z",
    "open": 77202.3984,
    "lo": 77000.9219,
-   "hi": 77612.0938,
-   "vol": 12916984832
+   "hi": 77613.9766,
+   "vol": 12716959744
   }
  },
  "fundamentals": {
@@ -390,9 +390,9 @@
    "ccy": "USD",
    "mcap": 3875804807168,
    "pe": 27.2396,
-   "fpe": 21.6187,
+   "fpe": 21.6269,
    "eps": 19.16,
-   "feps": 24.1416,
+   "feps": 24.1324,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -557,9 +557,9 @@
    "ccy": "USD",
    "mcap": 1829640994816,
    "pe": 585.7391,
-   "fpe": 52.529,
+   "fpe": 56.9376,
    "eps": 0.23,
-   "feps": 2.5647,
+   "feps": 2.3661,
    "revTTM": 32042999808,
    "netIncome": -3431000064,
    "shares": 8246541218,
@@ -797,9 +797,9 @@
    "ccy": "USD",
    "mcap": 1262666776576,
    "pe": 46.0091,
-   "fpe": 28.7191,
+   "fpe": 28.6575,
    "eps": 30.81,
-   "feps": 49.3587,
+   "feps": 49.4649,
    "revTTM": 86461997056,
    "netIncome": 27580000256,
    "shares": 890745031,
@@ -957,14 +957,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 979897024512,
+   "mcap": 982902374400,
    "pe": 44.75,
    "fpe": 38.2805,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.578,
    "div": 0.99,
    "divYield": 0.8,
@@ -1042,9 +1042,9 @@
    "ccy": "USD",
    "mcap": 824073388032,
    "pe": 128.7755,
-   "fpe": 31.7366,
+   "fpe": 31.6623,
    "eps": 3.92,
-   "feps": 15.9059,
+   "feps": 15.9433,
    "revTTM": 41305001984,
    "netIncome": 6469000192,
    "shares": 1632475042,
@@ -1251,10 +1251,10 @@
    "industry": "Credit Services",
    "ccy": "USD",
    "mcap": 555819073536,
-   "pe": 35.0941,
-   "fpe": 27.6549,
-   "eps": 18.18,
-   "feps": 23.0705,
+   "pe": 33.3862,
+   "fpe": 27.5759,
+   "eps": 19.11,
+   "feps": 23.1365,
    "revTTM": 36288000000,
    "netIncome": 16958000128,
    "shares": 864657109,
@@ -1286,7 +1286,7 @@
    "exDiv": 1791504000,
    "divDate": 1794182400,
    "lastDiv": 0.87,
-   "trailDiv": 3.37
+   "trailDiv": 3.48
   },
   "ABBV": {
    "name": "AbbVie Inc.",
@@ -1294,10 +1294,10 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 521105244160,
-   "pe": 83.3023,
-   "fpe": 18.2013,
-   "eps": 3.54,
-   "feps": 16.2016,
+   "pe": 50.6684,
+   "fpe": 18.2448,
+   "eps": 5.82,
+   "feps": 16.163,
    "revTTM": 66013999104,
    "netIncome": 10302000128,
    "shares": 1767117285,
@@ -1322,7 +1322,7 @@
    "exDiv": 1799971200,
    "divDate": 1794787200,
    "lastDiv": 1.73,
-   "trailDiv": 6.83
+   "trailDiv": 1.73
   },
   "CVX": {
    "name": "Chevron Corporation",
@@ -1330,10 +1330,10 @@
    "industry": "Oil & Gas Integrated",
    "ccy": "USD",
    "mcap": 459499536384,
-   "pe": 22.668,
-   "fpe": 14.9859,
-   "eps": 10.39,
-   "feps": 15.7161,
+   "pe": 17.2922,
+   "fpe": 14.9045,
+   "eps": 13.62,
+   "feps": 15.802,
    "revTTM": 228955996160,
    "netIncome": 26976000000,
    "shares": 1951000000,
@@ -1359,7 +1359,7 @@
    "exDiv": 1794960000,
    "divDate": 1788998400,
    "lastDiv": 1.78,
-   "trailDiv": 6.98
+   "trailDiv": 1.71
   },
   "COST": {
    "name": "Costco Wholesale Corporation",
@@ -1411,9 +1411,9 @@
    "ccy": "USD",
    "mcap": 442427080704,
    "pe": 158.7155,
-   "fpe": 78.7903,
+   "fpe": 78.3347,
    "eps": 1.16,
-   "feps": 2.3367,
+   "feps": 2.3503,
    "revTTM": 6155940864,
    "netIncome": 3016691968,
    "shares": 2300713329,
@@ -1579,12 +1579,9 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 122.9082,
-   "shares": 572600000,
    "divYield": 4.19,
    "w52lo": 93.84,
-   "w52hi": 101.46,
-   "trailDiv": 2.48
+   "w52hi": 101.46
   },
   "GLD": {
    "name": "SPDR Gold Shares",
@@ -1641,7 +1638,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:00:54.552253+00:00",
+   "ts": "2026-10-31T22:59:54.369361+00:00",
    "url": "https://asia.nikkei.com/opinion/time-for-japan-to-develop-people-who-can-sell-content"
   },
   {
@@ -1652,7 +1649,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:00:54.552253+00:00",
+   "ts": "2026-10-31T22:59:54.369361+00:00",
    "url": "https://asia.nikkei.com/business/markets/bonds/yen-bond-offerings-hit-record-16bn-as-ai-funding-race-reaches-japan"
   },
   {
@@ -1662,7 +1659,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:00:54.552253+00:00",
+   "ts": "2026-10-31T22:59:54.369361+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/japan-weighs-taxing-real-estate-rental-operators-living-overseas"
   },
   {
@@ -1672,7 +1669,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:00:54.552253+00:00",
+   "ts": "2026-10-31T22:59:54.369361+00:00",
    "url": "https://asia.nikkei.com/business/health-care/japan-s-foreign-caregivers-face-exam-hurdle-as-grace-period-ends"
   },
   {
@@ -1680,7 +1677,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:00:54.552253+00:00",
+   "ts": "2026-10-31T22:59:54.369361+00:00",
    "url": "https://asia.nikkei.com/business/food-beverage/thai-highland-tribe-coffee-brews-following-at-home-and-in-tokyo"
   },
   {
@@ -1690,7 +1687,7 @@
     "HSI"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:00:54.552253+00:00",
+   "ts": "2026-10-31T22:59:54.369361+00:00",
    "url": "https://asia.nikkei.com/spotlight/society/fatal-dog-attacks-test-hong-kong-s-ambitions-for-a-pet-friendly-economy"
   },
   {
@@ -1698,7 +1695,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:00:54.552253+00:00",
+   "ts": "2026-10-31T22:59:54.369361+00:00",
    "url": "https://asia.nikkei.com/spotlight/comment/thailand-looks-west-after-30-years-of-struggles-over-dawei"
   },
   {
@@ -1706,7 +1703,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:00:54.552253+00:00",
+   "ts": "2026-10-31T22:59:54.369361+00:00",
    "url": "https://asia.nikkei.com/spotlight/my-personal-history/what-lies-ahead-stephen-schwarzman-30"
   },
   {
@@ -1716,7 +1713,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:00:54.552253+00:00",
+   "ts": "2026-10-31T22:59:54.369361+00:00",
    "url": "https://asia.nikkei.com/business/food-beverage/yakitori-chicken-from-japan-takes-a-stab-at-the-philippines-the-land-of-jollibee"
   },
   {
@@ -1724,7 +1721,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:00:54.552253+00:00",
+   "ts": "2026-10-31T22:59:54.369361+00:00",
    "url": "https://asia.nikkei.com/business/automobiles/electric-vehicles/foxconn-unveils-3-evs-to-grow-contract-manufacturing-business"
   },
   {
@@ -1734,7 +1731,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:00:54.552253+00:00",
+   "ts": "2026-10-31T22:59:54.369361+00:00",
    "url": "https://asia.nikkei.com/business/technology/japan-miner-to-address-labor-crunch-with-self-driving-dump-trucks"
   },
   {
@@ -1742,7 +1739,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:00:54.552253+00:00",
+   "ts": "2026-10-31T22:59:54.369361+00:00",
    "url": "https://asia.nikkei.com/business/retail/uniqlo-shakes-up-china-strategy-with-focus-on-store-profitability"
   },
   {
@@ -1752,7 +1749,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:00:54.552253+00:00",
+   "ts": "2026-10-31T22:59:54.369361+00:00",
    "url": "https://asia.nikkei.com/spotlight/supply-chain/japan-s-murata-to-invest-6.3bn-in-capacitor-production-for-ai-over-5-years"
   },
   {
@@ -1762,7 +1759,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:00:54.552253+00:00",
+   "ts": "2026-10-31T22:59:54.369361+00:00",
    "url": "https://asia.nikkei.com/business/health-care/japan-s-omron-eyes-india-as-export-base-for-blood-pressure-monitors"
   },
   {
@@ -1772,15 +1769,36 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:00:54.552253+00:00",
+   "ts": "2026-10-31T22:59:54.369361+00:00",
    "url": "https://asia.nikkei.com/spotlight/supply-chain/japan-s-sojitz-to-import-rare-earth-yttrium-from-malaysia"
+  },
+  {
+   "h": "Crypto exchanges rush to tighten security after $6.3bn Binance heist",
+   "w": "The FBI on Saturday blamed the cyber-theft on hackers linked to North Korea",
+   "syms": [
+    "BTC"
+   ],
+   "src": "myFT — technology",
+   "ts": "2026-10-31T22:34:50Z",
+   "url": "https://www.ft.com/content/c7062e37-86fd-45ef-8f58-573de0fcaaf0?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Binance says 90% of $6.3 billion hack losses are now covered, plans to resume withdrawals Sunday",
+   "w": "Binance says it has restored backing for 90% of assets affected by its $6.3 billion hack and is planning to resume withdrawals, subject to security checks.",
+   "syms": [
+    "BTC"
+   ],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-31T22:27:56Z",
+   "url": "https://www.cnbc.com/2026/10/31/binance-hack-asset-coverage-withdrawals.html"
   },
   {
    "h": "Marie Lavigne, spécialiste de l’économie de l’URSS et des pays socialistes, est morte",
    "w": "L’universitaire était à la pointe de la recherche en « soviétologie économique » puis sur la transition post-communiste vers l’économie de marché. Elle s’est éteinte le 28 octobre, à l’âge de 91 ans.",
    "syms": [],
    "src": "Le Monde — Économie",
-   "ts": "2026-10-31T22:00:46Z",
+   "ts": "2026-10-31T22:00:44Z",
    "url": "https://www.lemonde.fr/disparitions/article/2026/10/31/marie-lavigne-specialiste-de-l-economie-de-l-urss-et-des-pays-socialistes-est-morte_6803767_3382.html"
   },
   {
@@ -1840,16 +1858,6 @@
    "src": "MarketWatch",
    "ts": "2026-10-31T19:30:00Z",
    "url": "https://www.marketwatch.com/story/fancy-cars-hold-no-appeal-my-wife-and-i-have-a-99-chance-of-outliving-our-savings-why-dont-we-spend-it-all-932a2166?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Binance says 90% of $6.3 billion hack losses are now covered, plans to resume withdrawals Sunday",
-   "w": "Binance says it has restored backing for 90% of assets affected by its $6.3 billion hack and is planning to resume withdrawals, subject to security checks.",
-   "syms": [
-    "BTC"
-   ],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-31T19:16:25Z",
-   "url": "https://www.cnbc.com/2026/10/31/binance-hack-asset-coverage-withdrawals.html"
   },
   {
    "h": "This is where most people go wrong in their 30s and 40s",
@@ -2125,17 +2133,6 @@
    "src": "CNBC — Marchés",
    "ts": "2026-10-31T11:00:01Z",
    "url": "https://www.cnbc.com/2026/10/31/anthropic-ipo-ai-spending.html"
-  },
-  {
-   "h": "Crypto exchanges rush to tighten security after $6.3bn Binance heist",
-   "w": "Rival venues place ‘additional alerts and restrictions’ on the movement of funds",
-   "syms": [
-    "BTC"
-   ],
-   "src": "myFT — technology",
-   "ts": "2026-10-31T10:38:18Z",
-   "url": "https://www.ft.com/content/c7062e37-86fd-45ef-8f58-573de0fcaaf0?syn-25a6b1a6=1",
-   "mine": 1
   },
   {
    "h": "Chart of the Week: Bond investors may cheer gridlock",
