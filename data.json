@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T12:02:27.628374Z",
+ "generated_at": "2026-10-31T13:20:16.841815Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -71,8 +71,8 @@
    "prev": 2859.22,
    "chg": -47.1787,
    "pct": -1.65,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^RUT) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^RUT)",
    "ts": "2026-10-30T19:30:00Z",
    "open": 2838.77,
    "lo": 2787.1201,
@@ -283,17 +283,17 @@
    "vol": 6774
   },
   "BTC": {
-   "p": 77422.5391,
+   "p": 77357.2812,
    "prev": 77198.2109,
-   "chg": 224.3281,
-   "pct": 0.29,
+   "chg": 159.0703,
+   "pct": 0.21,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-10-31T12:00:00Z",
+   "ts": "2026-10-31T13:00:00Z",
    "open": 77202.3984,
    "lo": 77000.9219,
-   "hi": 77500.3203,
-   "vol": 24397633536
+   "hi": 77554.9219,
+   "vol": 22810431488
   }
  },
  "fundamentals": {
@@ -1377,6 +1377,104 @@
  ],
  "news": [
   {
+   "h": "In the wake of Weil, a legal recruiter's advice for surviving a company wind-down",
+   "w": "Legal recruiter Danielle Thompson shares her best advice for the employees of Weil, Gotshal & Manges and others who face a company wind-down or dissolution.",
+   "syms": [
+    "XAU"
+   ],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-31T13:07:01Z",
+   "url": "https://www.cnbc.com/make-it/2026/10/31/weil-wind-down-career-advice.html"
+  },
+  {
+   "h": "Crypto industry pours more than $200 million into 2026 midterms to pressure Congress on favorable rules",
+   "w": "Interest groups tied to cryptocurrency are spending millions to tilt the midterm elections. They had mixed success in 2024",
+   "syms": [
+    "BTC"
+   ],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-31T13:04:29Z",
+   "url": "https://www.cnbc.com/2026/10/31/crypto-industry-spends-more-than-200-million-to-sway-the-midterms.html"
+  },
+  {
+   "h": "« La seule manière de corriger le sous-investissement de la France est d’augmenter le montant de l’épargne disponible »",
+   "w": "Transition énergétique, innovation, numérique, IA, éducation… La France ne pourra rejoindre ses voisins européens dans ces domaines qu’en modifiant ses arbitrages, juge l’économiste Patrick Artus, dans sa chronique au « Monde ».",
+   "syms": [
+    "CAC"
+   ],
+   "src": "Le Monde — Économie",
+   "ts": "2026-10-31T13:00:04Z",
+   "url": "https://www.lemonde.fr/idees/article/2026/10/31/la-seule-maniere-de-corriger-le-sous-investissement-de-la-france-est-d-augmenter-le-montant-de-l-epargne-disponible_6803601_3232.html"
+  },
+  {
+   "h": "Trump promised to slash energy costs — but gasoline, diesel and jet fuel all soared instead",
+   "w": "President Donald Trump promised voters who were angry about inflation that he would slash gasoline prices below $2 a gallon in his first year in office.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-31T12:49:58Z",
+   "url": "https://www.cnbc.com/2026/10/31/trump-gas-diesel-price-midterm-election.html"
+  },
+  {
+   "h": "Binance’s $6.3 billion hack raises questions about crypto wallet safety",
+   "w": "Two high-profile security incidents this week, including the largest crypto theft in history, have raised custody and safety concerns.",
+   "syms": [
+    "BTC"
+   ],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-31T12:47:08Z",
+   "url": "https://www.cnbc.com/2026/10/31/binance-hack-crypto-wallet-safety.html"
+  },
+  {
+   "h": "Berkshire ekes out some new highs, but October rally stalls",
+   "w": "Berkshire Hathaway shares managed to set a few more all-time highs in an otherwise lackluster week of trading.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-31T12:26:00Z",
+   "url": "https://www.cnbc.com/2026/10/31/berkshire-ekes-out-some-new-highs-but-october-rally-stalls.html"
+  },
+  {
+   "h": "Qatari mediators held talks in Tehran aimed at restarting direct U.S.-Iran negotiations, source says",
+   "w": "Axios reported that Qatari mediators held more than 12 hours of talks in Tehran on Friday to reach a deal to avoid a resumption of American-led attacks on Iran.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-31T12:11:12Z",
+   "url": "https://www.cnbc.com/2026/10/31/qatar-iran-us-talks-mediation.html"
+  },
+  {
+   "h": "Steve Bannon: Republicans will erupt in ‘civil war’ after midterm elections",
+   "w": "Former White House chief strategist predicts ‘monster’ legislative battles before new Congress is sworn in",
+   "syms": [],
+   "src": "myFT — us",
+   "ts": "2026-10-31T12:00:01Z",
+   "url": "https://www.ft.com/content/a97de5ca-484e-4ed9-84e0-958b90b85ef8?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Budget frees London to go on £10bn borrowing spree, says Sadiq Khan",
+   "w": "UK capital’s mayor hails chancellor’s financial plan that will boost key infrastructure projects",
+   "syms": [],
+   "src": "myFT — world uk",
+   "ts": "2026-10-31T12:00:01Z",
+   "url": "https://www.ft.com/content/14a8ce6c-ef84-478a-993f-47db30a41d1d?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "‘Pop-up’ super PACs pour $637 million into 2026 midterm races",
+   "w": "Twenty-two late-forming super PACs spent about $637 million in 2026 congressional races, sometimes before voters could see their donors.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-31T12:00:01Z",
+   "url": "https://www.cnbc.com/2026/10/31/2026-midterm-election-super-pacs-donor-disclosure.html"
+  },
+  {
+   "h": "Automakers like Rivian and Ford are ‘democratizing 3D printing’ to reduce costs and increase speed",
+   "w": "Automakers including Ford, Rivian and GM are expanding 3D printing to make prototypes, factory tools and low-volume parts faster and at lower cost.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-31T12:00:01Z",
+   "url": "https://www.cnbc.com/2026/10/31/automakers-3d-printing-ford-rivian-gm.html"
+  },
+  {
    "h": "Poland suspends top judges as battle over rule of law escalates",
    "w": "President and prime minister are embroiled in a bitter dispute over appointments to country’s constitutional court",
    "syms": [],
@@ -1514,14 +1612,6 @@
    "src": "CNBC — Marchés",
    "ts": "2026-10-31T06:00:02Z",
    "url": "https://www.cnbc.com/2026/10/31/trump-big-oil-refining-profits.html"
-  },
-  {
-   "h": "AI is coming to construction sites. But does it make workers safer?",
-   "w": "AI is flagging hazards on construction sites, but researchers say evidence that the technology prevents injuries remains limited.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-31T06:00:02Z",
-   "url": "https://www.cnbc.com/2026/10/31/ai-construction-worker-safety.html"
   },
   {
    "h": "Fiscal drifting: why the Budget won’t leave you better off",
@@ -1783,14 +1873,6 @@
    "url": "https://www.lemonde.fr/economie/article/2026/10/31/penurie-de-navires-et-tarifs-record-comment-la-guerre-au-moyen-orient-fait-bondir-les-prix-du-transport-de-petrole_6803378_3234.html"
   },
   {
-   "h": "La Bourse de New York saisie d’effroi, à la veille de Halloween",
-   "w": "Alors que les inquiétudes s’accumulent sur la rentabilité des investissements massifs des entreprises du secteur de l’intelligence artificielle, les résultats trimestriels décevants de ces géants ont entraîné un fort repli des marchés actions.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-10-31T02:17:19Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/10/31/la-bourse-de-new-york-saisie-d-effroi-a-la-veille-d-halloween_6803334_3234.html"
-  },
-  {
    "h": "Muji takes its China playbook global",
    "w": "Localising products is key to minimalist Japanese retailer’s plan to expand in Europe and US",
    "syms": [
@@ -1809,42 +1891,6 @@
    "ts": "2026-10-31T00:05:08Z",
    "url": "https://www.ft.com/content/7a3ad950-1b3b-4d9e-8c15-65a61ae6180f?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "L’agence Fitch maintient la note de la dette souveraine de la France, mais dégrade sa perspective",
-   "w": "Relevant une détérioration de la situation budgétaire et des taux d’emprunt, l’agence de notation abaisse la perspective, de stable à négative. « Cette appréciation confirme l’absolue nécessité d’adopter d’ici à la fin de l’année un budget responsable », a réagi vendredi le ministre de l’économie, Roland Lescure.",
-   "syms": [
-    "CAC"
-   ],
-   "src": "Le Monde — Économie",
-   "ts": "2026-10-30T23:19:06Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/10/31/l-agence-fitch-maintient-la-note-de-la-dette-souveraine-de-la-france-mais-degrade-sa-perspective_6803235_3234.html"
-  },
-  {
-   "h": "Alaska Senate election: DOJ wants to 'segregate' all ballots for 2nd Sullivan candidate",
-   "w": "The winner of the Alaska election could determine whether Republicans retain their majority in the U.S. Senate or if Democrats take control of the chamber.",
-   "syms": [
-    "XAU"
-   ],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-30T22:57:55Z",
-   "url": "https://www.cnbc.com/2026/10/30/alaska-senate-election-doj-lawsuit-sullivan-peltola.html"
-  },
-  {
-   "h": "Jim Cramer says it's time to look beyond tech. Here are 4 consumer stocks he likes",
-   "w": "Cramer said investors looking to diversify beyond the struggling AI trade should consider consumer staples.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-30T22:52:04Z",
-   "url": "https://www.cnbc.com/2026/10/30/jim-cramer-consumer-staples-stocks.html"
-  },
-  {
-   "h": "Meta outlook revised downward by S&P on cash flow and capex concerns",
-   "w": "Meta has been given a negative outlook by S&amp;P Global Ratings due to the company's hefty capital expenditures and concerns about free cash flow.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-30T22:42:26Z",
-   "url": "https://www.cnbc.com/2026/10/30/meta-outlook-to-revised-to-negative-by-sp-after-cash-flow-negative.html"
   },
   {
    "h": "$6.3bn in 30 minutes: how the world’s biggest heist unfolded",
@@ -1869,24 +1915,6 @@
    "mine": 1
   },
   {
-   "h": "Gamble on democracy: Inside suspicious election-contracts trading on prediction markets",
-   "w": "CNBC examines unusual price spikes in election prediction markets and how low-volume contracts can be moved by relatively small trades.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-30T22:00:53Z",
-   "url": "https://www.cnbc.com/2026/10/30/gamble-on-democracy-inside-suspicious-election-contracts-trading-on-prediction-markets-.html"
-  },
-  {
-   "h": "Binance loses $6.3 billion in crypto heist—what happens to your money when an exchange gets hacked",
-   "w": "Crypto exchanges make it easier to buy, sell and store digital assets, but they come with risks, too.",
-   "syms": [
-    "BTC"
-   ],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-30T21:45:52Z",
-   "url": "https://www.cnbc.com/make-it/2026/10/30/binance-crypto-hack-customer-funds.html"
-  },
-  {
    "h": "US tech stocks tumble as concerns over AI spending intensify",
    "w": "Revelations that Anthropic could receive junk rating after IPO add to concerns over industry borrowing spree",
    "syms": [
@@ -1898,40 +1926,12 @@
    "mine": 1
   },
   {
-   "h": "Crypto giant Binance attempting to recover $6.3bn stolen in hack linked to North Korea",
-   "w": "The cyber-attack, which the company describes as complex, is believed to be the largest ever of its kind.",
-   "syms": [
-    "BTC"
-   ],
-   "src": "BBC — Business",
-   "ts": "2026-10-30T21:13:14Z",
-   "url": "https://www.bbc.co.uk/news/articles/cwe8lp7zy07zo?at_medium=RSS&at_campaign=rss"
-  },
-  {
    "h": "US affordability tracker: the data that could decide the 2026 midterm elections",
    "w": "The FT is tracking changes to the cost of living that will affect American voters",
    "syms": [],
    "src": "myFT — us",
    "ts": "2026-10-30T20:16:47Z",
    "url": "https://www.ft.com/content/71dccbca-4a1f-485a-9790-28cc527cdb82?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Healey buys time with ‘pray and delay’ Budget as tough decisions lie ahead",
-   "w": "Chancellor will have to make hard choices on welfare and defence as he prepares for pivotal spending review",
-   "syms": [],
-   "src": "myFT — world uk",
-   "ts": "2026-10-30T18:20:41Z",
-   "url": "https://www.ft.com/content/31a3c465-54ab-409c-a59d-873117f143e7?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Anthropic may not secure investment-grade rating after IPO, Blackstone says",
-   "w": "Private capital giant says AI group is expected to receive ‘high’ junk rating in shift from previous guidance",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-10-30T18:19:08Z",
-   "url": "https://www.ft.com/content/59383c7f-8d82-493f-bf01-d2e862a1018f?syn-25a6b1a6=1",
    "mine": 1
   }
  ],
