@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T22:59:54.369361Z",
+ "generated_at": "2026-10-31T23:34:47.268703Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -236,8 +236,8 @@
    "prev": 102.04,
    "chg": -0.076,
    "pct": -0.07,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (DX-Y.NYB) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (DX-Y.NYB)",
    "ts": "2026-10-30T20:00:00Z",
    "open": 101.88,
    "lo": 101.54,
@@ -283,17 +283,17 @@
    "vol": 6774
   },
   "BTC": {
-   "p": 77405.4219,
+   "p": 77395.2891,
    "prev": 77198.2109,
-   "chg": 207.2109,
-   "pct": 0.27,
+   "chg": 197.0781,
+   "pct": 0.26,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-10-31T22:00:00Z",
+   "ts": "2026-10-31T23:00:00Z",
    "open": 77202.3984,
    "lo": 77000.9219,
    "hi": 77613.9766,
-   "vol": 12716959744
+   "vol": 12410711040
   }
  },
  "fundamentals": {
@@ -1082,9 +1082,9 @@
    "ccy": "USD",
    "mcap": 773002166272,
    "pe": 33.5706,
-   "fpe": 24.1404,
+   "fpe": 24.1373,
    "eps": 12.32,
-   "feps": 17.1327,
+   "feps": 17.1349,
    "revTTM": 45902999552,
    "netIncome": 23503998976,
    "shares": 1728000000,
@@ -1632,13 +1632,21 @@
  ],
  "news": [
   {
+   "h": "China mega complex in Dalian puts spotlight on investment push",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-10-31T23:34:47.268703+00:00",
+   "url": "https://asia.nikkei.com/business/markets/property/china-mega-complex-in-dalian-puts-spotlight-on-investment-push"
+  },
+  {
    "h": "Time for Japan to develop people who can sell content",
    "w": "",
    "syms": [
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:59:54.369361+00:00",
+   "ts": "2026-10-31T23:34:47.268703+00:00",
    "url": "https://asia.nikkei.com/opinion/time-for-japan-to-develop-people-who-can-sell-content"
   },
   {
@@ -1649,7 +1657,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:59:54.369361+00:00",
+   "ts": "2026-10-31T23:34:47.268703+00:00",
    "url": "https://asia.nikkei.com/business/markets/bonds/yen-bond-offerings-hit-record-16bn-as-ai-funding-race-reaches-japan"
   },
   {
@@ -1659,7 +1667,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:59:54.369361+00:00",
+   "ts": "2026-10-31T23:34:47.268703+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/japan-weighs-taxing-real-estate-rental-operators-living-overseas"
   },
   {
@@ -1669,7 +1677,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:59:54.369361+00:00",
+   "ts": "2026-10-31T23:34:47.268703+00:00",
    "url": "https://asia.nikkei.com/business/health-care/japan-s-foreign-caregivers-face-exam-hurdle-as-grace-period-ends"
   },
   {
@@ -1677,7 +1685,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:59:54.369361+00:00",
+   "ts": "2026-10-31T23:34:47.268703+00:00",
    "url": "https://asia.nikkei.com/business/food-beverage/thai-highland-tribe-coffee-brews-following-at-home-and-in-tokyo"
   },
   {
@@ -1687,7 +1695,7 @@
     "HSI"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:59:54.369361+00:00",
+   "ts": "2026-10-31T23:34:47.268703+00:00",
    "url": "https://asia.nikkei.com/spotlight/society/fatal-dog-attacks-test-hong-kong-s-ambitions-for-a-pet-friendly-economy"
   },
   {
@@ -1695,7 +1703,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:59:54.369361+00:00",
+   "ts": "2026-10-31T23:34:47.268703+00:00",
    "url": "https://asia.nikkei.com/spotlight/comment/thailand-looks-west-after-30-years-of-struggles-over-dawei"
   },
   {
@@ -1703,7 +1711,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:59:54.369361+00:00",
+   "ts": "2026-10-31T23:34:47.268703+00:00",
    "url": "https://asia.nikkei.com/spotlight/my-personal-history/what-lies-ahead-stephen-schwarzman-30"
   },
   {
@@ -1713,7 +1721,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:59:54.369361+00:00",
+   "ts": "2026-10-31T23:34:47.268703+00:00",
    "url": "https://asia.nikkei.com/business/food-beverage/yakitori-chicken-from-japan-takes-a-stab-at-the-philippines-the-land-of-jollibee"
   },
   {
@@ -1721,7 +1729,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:59:54.369361+00:00",
+   "ts": "2026-10-31T23:34:47.268703+00:00",
    "url": "https://asia.nikkei.com/business/automobiles/electric-vehicles/foxconn-unveils-3-evs-to-grow-contract-manufacturing-business"
   },
   {
@@ -1731,7 +1739,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:59:54.369361+00:00",
+   "ts": "2026-10-31T23:34:47.268703+00:00",
    "url": "https://asia.nikkei.com/business/technology/japan-miner-to-address-labor-crunch-with-self-driving-dump-trucks"
   },
   {
@@ -1739,7 +1747,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:59:54.369361+00:00",
+   "ts": "2026-10-31T23:34:47.268703+00:00",
    "url": "https://asia.nikkei.com/business/retail/uniqlo-shakes-up-china-strategy-with-focus-on-store-profitability"
   },
   {
@@ -1749,7 +1757,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:59:54.369361+00:00",
+   "ts": "2026-10-31T23:34:47.268703+00:00",
    "url": "https://asia.nikkei.com/spotlight/supply-chain/japan-s-murata-to-invest-6.3bn-in-capacitor-production-for-ai-over-5-years"
   },
   {
@@ -1759,22 +1767,29 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:59:54.369361+00:00",
+   "ts": "2026-10-31T23:34:47.268703+00:00",
    "url": "https://asia.nikkei.com/business/health-care/japan-s-omron-eyes-india-as-export-base-for-blood-pressure-monitors"
   },
   {
-   "h": "Japan's Sojitz to import rare earth yttrium from Malaysia",
+   "h": "Les principales conclusions de l’enquête annuelle mondiale de Bernstein sur le sportswear",
    "w": "",
-   "syms": [
-    "N225"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-10-31T22:59:54.369361+00:00",
-   "url": "https://asia.nikkei.com/spotlight/supply-chain/japan-s-sojitz-to-import-rare-earth-yttrium-from-malaysia"
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-10-31T22:57:05Z",
+   "url": "https://fr.investing.com/news/stock-market-news/les-principales-conclusions-de-lenquete-annuelle-mondiale-de-bernstein-sur-le-sportswear-3667043"
   },
   {
-   "h": "Crypto exchanges rush to tighten security after $6.3bn Binance heist",
-   "w": "The FBI on Saturday blamed the cyber-theft on hackers linked to North Korea",
+   "h": "Tusk vows to press on with overhaul of Poland’s judiciary",
+   "w": "Prime minister defends suspension of constitutional court’s president as opposition accuses him of staging an institutional coup",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-10-31T22:51:11Z",
+   "url": "https://www.ft.com/content/d49a7943-fc11-45cb-bcf2-f5876c3c381d?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "FBI blames North Korean group for $6.3bn Binance cyber heist",
+   "w": "Crypto exchanges move to tighten security after record theft from world’s biggest digital assets venue",
    "syms": [
     "BTC"
    ],
@@ -2001,16 +2016,6 @@
    "ts": "2026-10-31T15:17:34Z",
    "url": "https://www.ft.com/content/55dfa145-4078-450f-a853-5f2d551260f1",
    "mine": 1
-  },
-  {
-   "h": "Citi explique ce que signifient vraiment « faucon » et « colombe » à la BCE",
-   "w": "",
-   "syms": [
-    "EURUSD"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-10-31T14:53:31Z",
-   "url": "https://fr.investing.com/news/stock-market-news/citi-explique-ce-que-signifient-vraiment--faucon--et--colombe--a-la-bce-3667025"
   },
   {
    "h": "Investors trim growth bets over fears of US economy’s AI exposure",
@@ -2430,15 +2435,6 @@
    "src": "myFT — europe",
    "ts": "2026-10-31T05:00:12Z",
    "url": "https://www.ft.com/content/628d9ab8-22e5-4a41-a74d-9693a67fcb79?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Switzerland’s cult architect creates a new temple for art",
-   "w": "The Wyss Museum, Peter Zumthor’s confident addition to Basel’s Fondation Beyeler, marries sublime interiors and ‘farmer’s concrete’",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-10-31T05:00:12Z",
-   "url": "https://www.ft.com/content/6ac7316d-79ef-4a41-8dab-5141a3836cca?syn-25a6b1a6=1",
    "mine": 1
   },
   {
