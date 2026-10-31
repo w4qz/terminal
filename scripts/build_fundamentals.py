@@ -22,10 +22,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import yfinance as yf
 from update_data import FUND_FIELDS, FUND_TICKERS, PCT_FIELDS, RATING_FR
+from peers import PEER_GROUPS, all_peer_tickers
 
 ROOT = Path(__file__).resolve().parent.parent
 UNIV = ROOT / "universe.json"
 OUT = ROOT / "fundamentals.json"
+PEERS_OUT = ROOT / "peers.json"
 NOW = datetime.now(timezone.utc)
 BATCH = 120          # titres actualisés par passage
 PAUSE = 0.4          # secondes entre deux requêtes Yahoo
@@ -57,6 +59,9 @@ def main() -> int:
     except Exception as e:
         log(f"universe.json illisible ({e}) : rien à faire")
         return 0
+    # Les groupes de pairs de la fonction RV rejoignent le roulement, même hors des indices du catalogue.
+    stocks += [s for s in all_peer_tickers() if s not in stocks]
+    PEERS_OUT.write_text(json.dumps({"groups": PEER_GROUPS}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     try:
         cache = json.loads(OUT.read_text(encoding="utf-8")).get("items", {})
     except Exception:
