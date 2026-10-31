@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T19:04:26.482149Z",
+ "generated_at": "2026-10-31T19:32:02.203220Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -15,10 +15,10 @@
    "vol": 168039400
   },
   "ASTS": {
-   "p": 40.97,
+   "p": 40.99,
    "prev": 43.07,
-   "chg": -2.1,
-   "pct": -4.88,
+   "chg": -2.08,
+   "pct": -4.83,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-10-30T19:30:00Z",
@@ -283,17 +283,17 @@
    "vol": 6774
   },
   "BTC": {
-   "p": 77502.5703,
+   "p": 77435.9531,
    "prev": 77198.2109,
-   "chg": 304.3594,
-   "pct": 0.39,
+   "chg": 237.7422,
+   "pct": 0.31,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
    "ts": "2026-10-31T19:00:00Z",
    "open": 77202.3984,
    "lo": 77000.9219,
    "hi": 77612.0938,
-   "vol": 15135830016
+   "vol": 14080065536
   }
  },
  "fundamentals": {
@@ -424,7 +424,7 @@
    "exDiv": 1795046400,
    "divDate": 1796860800,
    "lastDiv": 0.91,
-   "trailDiv": 3.71
+   "trailDiv": 3.64
   },
   "GOOGL": {
    "name": "Alphabet Inc.",
@@ -557,9 +557,9 @@
    "ccy": "USD",
    "mcap": 1829640994816,
    "pe": 585.7391,
-   "fpe": 56.9376,
+   "fpe": 52.529,
    "eps": 0.23,
-   "feps": 2.3661,
+   "feps": 2.5647,
    "revTTM": 32042999808,
    "netIncome": -3431000064,
    "shares": 8246541218,
@@ -806,7 +806,7 @@
    "beta": 0.453,
    "div": 6.92,
    "divYield": 0.49,
-   "target": 1397.0221,
+   "target": 1403.6427,
    "targetHi": 1650.0,
    "targetLo": 930.0,
    "rating": "Achat",
@@ -957,14 +957,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 982902374400,
+   "mcap": 979897024512,
    "pe": 44.75,
    "fpe": 38.2805,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.578,
    "div": 0.99,
    "divYield": 0.8,
@@ -1251,10 +1251,10 @@
    "industry": "Credit Services",
    "ccy": "USD",
    "mcap": 555819073536,
-   "pe": 33.3862,
-   "fpe": 27.5791,
-   "eps": 19.11,
-   "feps": 23.1338,
+   "pe": 35.0941,
+   "fpe": 27.6549,
+   "eps": 18.18,
+   "feps": 23.0705,
    "revTTM": 36288000000,
    "netIncome": 16958000128,
    "shares": 864657109,
@@ -1286,7 +1286,7 @@
    "exDiv": 1791504000,
    "divDate": 1794182400,
    "lastDiv": 0.87,
-   "trailDiv": 3.48
+   "trailDiv": 3.37
   },
   "ABBV": {
    "name": "AbbVie Inc.",
@@ -1295,9 +1295,9 @@
    "ccy": "USD",
    "mcap": 521105244160,
    "pe": 83.3023,
-   "fpe": 18.207,
+   "fpe": 18.2013,
    "eps": 3.54,
-   "feps": 16.1965,
+   "feps": 16.2016,
    "revTTM": 66013999104,
    "netIncome": 10302000128,
    "shares": 1767117285,
@@ -1330,10 +1330,10 @@
    "industry": "Oil & Gas Integrated",
    "ccy": "USD",
    "mcap": 459499536384,
-   "pe": 17.2922,
-   "fpe": 14.9045,
-   "eps": 13.62,
-   "feps": 15.802,
+   "pe": 22.668,
+   "fpe": 14.9859,
+   "eps": 10.39,
+   "feps": 15.7161,
    "revTTM": 228955996160,
    "netIncome": 26976000000,
    "shares": 1951000000,
@@ -1359,7 +1359,7 @@
    "exDiv": 1794960000,
    "divDate": 1788998400,
    "lastDiv": 1.78,
-   "trailDiv": 1.71
+   "trailDiv": 6.98
   },
   "COST": {
    "name": "Costco Wholesale Corporation",
@@ -1411,9 +1411,9 @@
    "ccy": "USD",
    "mcap": 442427080704,
    "pe": 158.7155,
-   "fpe": 78.3347,
+   "fpe": 78.7903,
    "eps": 1.16,
-   "feps": 2.3503,
+   "feps": 2.3367,
    "revTTM": 6155940864,
    "netIncome": 3016691968,
    "shares": 2300713329,
@@ -1579,9 +1579,12 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 122.9082,
+   "shares": 572600000,
    "divYield": 4.19,
    "w52lo": 93.84,
-   "w52hi": 101.46
+   "w52hi": 101.46,
+   "trailDiv": 2.48
   },
   "GLD": {
    "name": "SPDR Gold Shares",
@@ -1632,13 +1635,24 @@
  ],
  "news": [
   {
+   "h": "Yen bond offerings hit record $16bn as AI funding race reaches Japan",
+   "w": "",
+   "syms": [
+    "USDJPY",
+    "N225"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-10-31T19:32:02.203220+00:00",
+   "url": "https://asia.nikkei.com/business/markets/bonds/yen-bond-offerings-hit-record-16bn-as-ai-funding-race-reaches-japan"
+  },
+  {
    "h": "Japan weighs taxing real estate rental operators living overseas",
    "w": "",
    "syms": [
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:04:26.482149+00:00",
+   "ts": "2026-10-31T19:32:02.203220+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/japan-weighs-taxing-real-estate-rental-operators-living-overseas"
   },
   {
@@ -1648,7 +1662,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:04:26.482149+00:00",
+   "ts": "2026-10-31T19:32:02.203220+00:00",
    "url": "https://asia.nikkei.com/business/health-care/japan-s-foreign-caregivers-face-exam-hurdle-as-grace-period-ends"
   },
   {
@@ -1656,7 +1670,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:04:26.482149+00:00",
+   "ts": "2026-10-31T19:32:02.203220+00:00",
    "url": "https://asia.nikkei.com/business/food-beverage/thai-highland-tribe-coffee-brews-following-at-home-and-in-tokyo"
   },
   {
@@ -1666,7 +1680,7 @@
     "HSI"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:04:26.482149+00:00",
+   "ts": "2026-10-31T19:32:02.203220+00:00",
    "url": "https://asia.nikkei.com/spotlight/society/fatal-dog-attacks-test-hong-kong-s-ambitions-for-a-pet-friendly-economy"
   },
   {
@@ -1674,7 +1688,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:04:26.482149+00:00",
+   "ts": "2026-10-31T19:32:02.203220+00:00",
    "url": "https://asia.nikkei.com/spotlight/comment/thailand-looks-west-after-30-years-of-struggles-over-dawei"
   },
   {
@@ -1682,7 +1696,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:04:26.482149+00:00",
+   "ts": "2026-10-31T19:32:02.203220+00:00",
    "url": "https://asia.nikkei.com/spotlight/my-personal-history/what-lies-ahead-stephen-schwarzman-30"
   },
   {
@@ -1692,7 +1706,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:04:26.482149+00:00",
+   "ts": "2026-10-31T19:32:02.203220+00:00",
    "url": "https://asia.nikkei.com/business/food-beverage/yakitori-chicken-from-japan-takes-a-stab-at-the-philippines-the-land-of-jollibee"
   },
   {
@@ -1700,7 +1714,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:04:26.482149+00:00",
+   "ts": "2026-10-31T19:32:02.203220+00:00",
    "url": "https://asia.nikkei.com/business/automobiles/electric-vehicles/foxconn-unveils-3-evs-to-grow-contract-manufacturing-business"
   },
   {
@@ -1710,7 +1724,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:04:26.482149+00:00",
+   "ts": "2026-10-31T19:32:02.203220+00:00",
    "url": "https://asia.nikkei.com/business/technology/japan-miner-to-address-labor-crunch-with-self-driving-dump-trucks"
   },
   {
@@ -1718,7 +1732,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:04:26.482149+00:00",
+   "ts": "2026-10-31T19:32:02.203220+00:00",
    "url": "https://asia.nikkei.com/business/retail/uniqlo-shakes-up-china-strategy-with-focus-on-store-profitability"
   },
   {
@@ -1728,7 +1742,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:04:26.482149+00:00",
+   "ts": "2026-10-31T19:32:02.203220+00:00",
    "url": "https://asia.nikkei.com/spotlight/supply-chain/japan-s-murata-to-invest-6.3bn-in-capacitor-production-for-ai-over-5-years"
   },
   {
@@ -1738,7 +1752,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:04:26.482149+00:00",
+   "ts": "2026-10-31T19:32:02.203220+00:00",
    "url": "https://asia.nikkei.com/business/health-care/japan-s-omron-eyes-india-as-export-base-for-blood-pressure-monitors"
   },
   {
@@ -1748,7 +1762,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:04:26.482149+00:00",
+   "ts": "2026-10-31T19:32:02.203220+00:00",
    "url": "https://asia.nikkei.com/spotlight/supply-chain/japan-s-sojitz-to-import-rare-earth-yttrium-from-malaysia"
   },
   {
@@ -1756,16 +1770,26 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:04:26.482149+00:00",
+   "ts": "2026-10-31T19:32:02.203220+00:00",
    "url": "https://asia.nikkei.com/business/tech/semiconductors/memory-chip-makers-outearn-alphabet-other-tech-giants-on-ai-demand"
   },
   {
-   "h": "Daiwa fund buy of Blackstone Tokyo office complex include retail digital securities",
-   "w": "",
+   "h": "‘Showy jewelry and fancy cars hold no appeal’: We have a 99% chance of outliving our life savings. Why not spend it all?",
+   "w": "“I’m 68, she’s 74, and we’re both in good health. We married later in life and have no children.”",
    "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:04:26.482149+00:00",
-   "url": "https://asia.nikkei.com/business/business-deals/daiwa-fund-buy-of-blackstone-tokyo-office-complex-include-retail-digital-securities"
+   "src": "MarketWatch",
+   "ts": "2026-10-31T19:30:00Z",
+   "url": "https://www.marketwatch.com/story/fancy-cars-hold-no-appeal-my-wife-and-i-have-a-99-chance-of-outliving-our-savings-why-dont-we-spend-it-all-932a2166?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Binance says 90% of $6.3 billion hack losses are now covered, plans to resume withdrawals Sunday",
+   "w": "Binance says it has restored backing for 90% of assets affected by its $6.3 billion hack and is planning to resume withdrawals, subject to security checks.",
+   "syms": [
+    "BTC"
+   ],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-31T19:16:25Z",
+   "url": "https://www.cnbc.com/2026/10/31/binance-hack-asset-coverage-withdrawals.html"
   },
   {
    "h": "This is where most people go wrong in their 30s and 40s",
@@ -1794,6 +1818,14 @@
    "url": "https://www.cnbc.com/2026/10/31/xai-naacp-clean-air-act-lawsuit-dismissal.html"
   },
   {
+   "h": "La vente massive d’obligations françaises, un avertissement pour les gouvernements mondiaux",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-10-31T18:53:38Z",
+   "url": "https://fr.investing.com/news/stock-market-news/la-vente-massive-dobligations-francaises-un-avertissement-pour-les-gouvernements-mondiaux-3667036"
+  },
+  {
    "h": "‘He was heartbroken’: My husband’s kids abandoned him when he was dying. Was he right to leave everything to me?",
    "w": "“In the end, he left them a few sentimental mementos, some collectibles and old photographs.”",
    "syms": [],
@@ -1810,14 +1842,12 @@
    "url": "https://www.marketwatch.com/story/is-it-curtains-for-cola-saving-social-security-could-mean-changing-the-cost-of-living-adjustment-867c6bd8?mod=mw_rss_topstories"
   },
   {
-   "h": "Binance says 90% of $6.3 billion hack losses are now covered, plans to resume withdrawals Sunday",
-   "w": "Binance says it has restored backing for 90% of assets affected by its $6.3 billion hack and is planning to resume withdrawals, subject to security checks.",
-   "syms": [
-    "BTC"
-   ],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-31T18:12:09Z",
-   "url": "https://www.cnbc.com/2026/10/31/binance-hack-asset-coverage-withdrawals.html"
+   "h": "Un administrateur d’USCB Financial Holdings achète pour 20.000$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-10-31T18:32:11Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-duscb-financial-holdings-achete-pour-20000-dactions-93CH-3667034"
   },
   {
    "h": "Caregivers are now spending more than $11,000 a year out of pocket—up 60% in five years",
@@ -1912,14 +1942,6 @@
    "url": "https://www.marketwatch.com/story/there-may-be-better-investment-options-my-church-received-1-5-million-from-a-parishioner-is-3-75-interest-enough-5164d790?mod=mw_rss_topstories"
   },
   {
-   "h": "What gave this city its ‘best place to retire’ crown? You can actually afford to live there.",
-   "w": "Low cost of living, high quality of life and favorable taxes for retirees, for the win.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-10-31T15:25:00Z",
-   "url": "https://www.marketwatch.com/story/what-gave-this-city-its-best-place-to-retire-crown-you-can-actually-afford-to-live-there-a06f8f4d?mod=mw_rss_topstories"
-  },
-  {
    "h": "Evacuees from Russian-occupied city arrive in Ukraine",
    "w": "Complex humanitarian mission extracted hundreds of people from Oleshky during rare local ceasefire between Moscow and Kyiv",
    "syms": [],
@@ -1989,16 +2011,6 @@
    "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-medifast-achete-pour-68027-dactions-93CH-3667020"
   },
   {
-   "h": "La France déploie 70.000 policiers avant de nouveaux rassemblements",
-   "w": "",
-   "syms": [
-    "CAC"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-10-31T13:11:00Z",
-   "url": "https://fr.investing.com/news/world-news/la-france-deploie-70000-policiers-avant-de-nouveaux-rassemblements-3667019"
-  },
-  {
    "h": "« La seule manière de corriger le sous-investissement de la France est d’augmenter le montant de l’épargne disponible »",
    "w": "Transition énergétique, innovation, numérique, IA, éducation… La France ne pourra rejoindre ses voisins européens dans ces domaines qu’en modifiant ses arbitrages, juge l’économiste Patrick Artus, dans sa chronique au « Monde ».",
    "syms": [
@@ -2015,14 +2027,6 @@
    "src": "CNBC — Marchés",
    "ts": "2026-10-31T12:49:58Z",
    "url": "https://www.cnbc.com/2026/10/31/trump-gas-diesel-price-midterm-election.html"
-  },
-  {
-   "h": "Goldman Sachs identifie les taux d’intérêt et l’IA comme risques",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-10-31T12:27:33Z",
-   "url": "https://fr.investing.com/news/stock-market-news/goldman-sachs-identifie-les-taux-dinteret-et-lia-comme-risques-3667017"
   },
   {
    "h": "Berkshire ekes out some new highs, but October rally stalls",
