@@ -18,6 +18,9 @@ import sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+import warnings
+warnings.filterwarnings("ignore")  # masque les avertissements pandas de yfinance
+
 import feedparser
 import requests
 import yfinance as yf
@@ -44,11 +47,18 @@ FRED_SERIES = {"2A": "DGS2", "5A": "DGS5", "10A": "DGS10", "30A": "DGS30"}
 RSS_FEEDS = [
     ("Financial Times — Marchés", "https://www.ft.com/markets?format=rss"),
     ("Financial Times — Économie mondiale", "https://www.ft.com/global-economy?format=rss"),
+    ("Financial Times — Entreprises", "https://www.ft.com/companies?format=rss"),
+    ("Financial Times — Monde", "https://www.ft.com/world?format=rss"),
     ("CNBC — Marchés", "https://www.cnbc.com/id/100003114/device/rss/rss.html"),
     ("BBC — Business", "https://feeds.bbci.co.uk/news/business/rss.xml"),
-    ("Les Échos — Finance & Marchés", "https://syndication.lesechos.fr/rss/rss_finance-marches.xml"),
+    ("Le Monde — Économie", "https://www.lemonde.fr/economie/rss_full.xml"),
 ]
-MAX_NEWS = 25
+# Flux personnel myFT (sujets suivis sur ft.com), gardé dans le secret GitHub FT_MYFT_RSS.
+# Plusieurs adresses possibles, séparées par des virgules. Les articles payants y figurent
+# avec leur titre et leur chapô ; le lien ouvre ft.com, où l'abonné est connecté.
+for _i, _u in enumerate([u.strip() for u in os.getenv("FT_MYFT_RSS", "").split(",") if u.strip()]):
+    RSS_FEEDS.insert(_i, ("myFT — mes sujets", _u))
+MAX_NEWS = 40
 
 # Mots-clés → tickers, pour relier une news à une fiche du terminal.
 TAGS = {
@@ -223,7 +233,8 @@ def fetch_news(previous: dict) -> list:
                 text = (title + " " + _clean(e.get("summary", ""))).lower()
                 syms = [s for s, pat in TAGS.items() if re.search(pat, text)]
                 items.append({"h": title, "w": _clean(e.get("summary", "")), "syms": syms[:4],
-                              "src": name, "ts": ts, "url": e.get("link")})
+                              "src": name, "ts": ts, "url": e.get("link"),
+                              **({"mine": 1} if name.startswith("myFT") else {})})
                 n += 1
             log(f"News : {name} → {n}")
         except Exception as e:
@@ -231,7 +242,9 @@ def fetch_news(previous: dict) -> list:
     if not items:
         return previous.get("news", [])
     items.sort(key=lambda x: x["ts"], reverse=True)
-    return items[:MAX_NEWS]
+    mine = [x for x in items if x.get("mine")][:20]          # myFT : jusqu'à 20, toujours gardés
+    rest = [x for x in items if not x.get("mine")][:MAX_NEWS - len(mine)]
+    return sorted(mine + rest, key=lambda x: x["ts"], reverse=True)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -267,7 +280,8 @@ def ai_summary(quotes: dict, news: list, previous: dict) -> dict | None:
             names = [m["name"].split("/")[-1] for m in lst
                      if "generateContent" in m.get("supportedGenerationMethods", [])]
             log(f"  Gemini : '{model}' introuvable. Modèles disponibles : {', '.join(names[:15])}")
-            flash = [n for n in names if "flash" in n and "lite" not in n] or names
+            flash = ([n for n in names if n == "gemini-flash-latest"]
+                     + sorted([n for n in names if "flash" in n and "lite" not in n and "tts" not in n and "image" not in n], reverse=True)) or names
             if not flash:
                 raise RuntimeError("aucun modèle disponible pour cette clé")
             model = flash[0]
