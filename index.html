@@ -2769,7 +2769,7 @@ const freq=ev.filter(x=>x.t>Date.now()-730*864e5).length/2;
 const pY={}; ev.forEach(x=>{ const y=new Date(x.t).getFullYear(); (pY[y]=pY[y]||[]).push(x.a); });
 const mxY={}; for(const [y,a] of Object.entries(pY)){ const v=[...a].sort((p,q)=>p-q); mxY[y]=v.length%2?v[v.length>>1]:(v[v.length/2-1]+v[v.length/2])/2; }
 const ys=Object.keys(mxY).map(Number).sort(); let streak=0;
-let ups=0; for(let i=ys.length-1;i>0;i--){ if(ys[i]-ys[i-1]!==1) break; const r=mxY[ys[i]]/mxY[ys[i-1]]; if(r<0.995) break; if(ys[i]!==curY) streak++; if(r>1.001) ups++; }
+let ups=0; for(let i=ys.length-1;i>0;i--){ if(ys[i]-ys[i-1]!==1) break; const r=mxY[ys[i]]/mxY[ys[i-1]]; if(r<0.995) break; if(ys[i]!==curY){ streak++; if(r>1.001) ups++; } }
 const cg=k=>{ const a=full[full.length-1-k], b=full[full.length-1]; return a&&byY[a]>0?cagrOf(byY[a],byY[b],k):null; };
 box.innerHTML=`<h3>DVD — Dividendes<span class="rt">${ev.length} versements depuis ${new Date(ev[0].t).getFullYear()} · ${esc(ccy)} par action</span></h3>
 <div class="statrow">
