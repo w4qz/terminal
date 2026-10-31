@@ -1174,6 +1174,39 @@ const divRatio=hist.vol?w.reduce((a,wi,i)=>a+wi*sg[i],0)*100/hist.vol:null;
 return {syms, sg, bt, mu, w, hist, mc, shrink:lam-0.05>1e-9?lam-0.05:0, C, R, Rb, dates, wc, divRatio, base, ccys:hs.map(h=>h.ccy)};
 }
 
+/*── Calendrier des positions : résultats et dividendes (fondamentaux Yahoo) ─*/
+function pfEvents(rows,B){
+const now=Date.now()/1000, day=86400, ev=[], none=[]; let inc=0, incN=0;
+rows.filter(e=>e.ok).forEach(e=>{ const F=SNAPSHOT.fundamentals[e.sym]||{}, fx=(e.fx||1)/B; let any=false;
+const er=[F.earnStart,F.earnTs,F.earnEnd].filter(t=>t&&t>now-day).sort((a,b)=>a-b)[0];
+if(er){ any=true; const rng=F.earnStart&&F.earnEnd&&F.earnEnd-F.earnStart>day;
+ev.push({t:er, sym:e.sym, k:'Résultats', d:rng?`fenêtre ${dShort(F.earnStart)} – ${dShort(F.earnEnd)}`:(F.earnEst?'date estimée':'date confirmée')}); }
+const rate=F.div||F.trailDiv;
+if(rate){ inc+=rate*e.qty*fx; incN++; }
+if(F.exDiv&&F.exDiv>now-day){ any=true; const amt=F.lastDiv||(rate?rate/4:null);
+ev.push({t:F.exDiv, sym:e.sym, k:'Détachement du dividende', d:amt?`≈ ${nf(amt,amt<1?3:2)} ${esc(e.ccy)}/titre · ≈ ${nf(amt*e.qty*fx,amt*e.qty*fx<10?2:0)} ${PF_CCYS[S.pfccy]||S.pfccy} pour la ligne`:'montant non publié'}); }
+if(F.divDate&&F.divDate>now-day&&F.divDate!==F.exDiv){ any=true; ev.push({t:F.divDate, sym:e.sym, k:'Paiement du dividende', d:'versement sur le compte'}); }
+if(!any) none.push(e.sym+(F.earnTs&&F.earnTs<=now?` (dernière publication ${dShort(F.earnTs)})`:Object.keys(F).length<4?' (non couvert)':''));
+});
+return {ev:ev.sort((a,b)=>a.t-b.t), none, inc, incN};
+}
+const dShort=t=>new Date(t*1000).toLocaleDateString('fr-FR',{day:'2-digit',month:'short'});
+const dLong=t=>new Date(t*1000).toLocaleDateString('fr-FR',{weekday:'short',day:'2-digit',month:'short',year:'numeric'});
+function pfCalendarHtml(rows,nav,B){
+const {ev,none,inc,incN}=pfEvents(rows,B), CS=PF_CCYS[S.pfccy]||S.pfccy, now=Date.now()/1000;
+const jx=t=>{ const d=Math.round((t-now)/86400); return d<=0?'<span class="pos">aujourd\'hui</span>':d===1?'demain':`J-${d}`; };
+return `<div class="pnl" style="margin-bottom:9px"><h3>Calendrier — résultats et dividendes<span class="rt">positions du portefeuille · Yahoo Finance</span></h3>
+<div class="statrow">
+<div class="stat"><span class="l">PROCHAIN ÉVÉNEMENT</span><span class="n" style="font-size:15px">${ev[0]?esc(ev[0].sym)+' · '+dShort(ev[0].t):'—'}</span><span class="s">${ev[0]?esc(ev[0].k)+' · '+jx(ev[0].t):'aucune date connue'}</span></div>
+<div class="stat"><span class="l">ÉVÉNEMENTS À 90 JOURS</span><span class="n">${ev.filter(e=>e.t-now<90*86400).length}</span><span class="s">${ev.filter(e=>e.k==='Résultats').length} publications de résultats</span></div>
+<div class="stat"><span class="l">DIVIDENDES ESTIMÉS / AN</span><span class="n">${inc?nf(inc,0)+' '+CS:'—'}</span><span class="s">${inc&&nav?'rendement '+nf(inc/(nav/B)*100,2)+' % · '+incN+' ligne'+(incN>1?'s':''):'aucune ligne à dividende'}</span></div>
+</div>
+${ev.length?`<div class="pbody flush"><table><caption class="sr-only">Événements à venir</caption><thead><tr><th scope="col" style="text-align:left">Date</th><th scope="col">Échéance</th><th scope="col" style="text-align:left">Titre</th><th scope="col" style="text-align:left">Événement</th><th scope="col" style="text-align:left">Détail</th></tr></thead><tbody>
+${ev.map(e=>`<tr><th scope="row" style="text-align:left;font-weight:400">${dLong(e.t)}</th><td>${jx(e.t)}</td><td class="sym clk" data-sym="${esc(e.sym)}" style="text-align:left">${esc(e.sym)}</td>
+<td style="text-align:left">${e.k==='Résultats'?'<b>Résultats</b>':esc(e.k)}</td><td style="text-align:left;font-size:10px;color:var(--txt2)">${e.d}</td></tr>`).join('')}</tbody></table></div>`:''}
+<div class="note" style="padding:8px 9px">${none.length?`Sans date à venir : ${none.map(esc).join(', ')}. `:''}Dates issues des fondamentaux Yahoo (actualisés toutes les 30 min pour les titres prioritaires, en roulement sur ~4 h pour le reste du catalogue). Une date de résultats « estimée » n'est pas encore confirmée par la société ; le montant du dividende reprend le dernier versé. Dividendes convertis au change actuel, avant impôts.</div></div>`;
+}
+
 async function viewPortfolio(){
 const el=document.getElementById('v-pf');
 el.innerHTML='<div class="pnl"><div class="note" style="padding:12px">Chargement des cours et de l\'historique…</div></div>';
@@ -1232,6 +1265,8 @@ el.innerHTML=`
 </div>
 
 <div class="pnl" id="pfclient" style="margin-bottom:9px"></div>
+
+${pfCalendarHtml(rows,nav,B)}
 
 <div class="pnl" style="margin-bottom:9px">
 <h3>Profil de risque et adéquation<span class="rt">volatilité et pertes sur 2 ans d'historique · projection à ${P.yrs} ans</span></h3>
@@ -1627,6 +1662,7 @@ ${K(`Probabilité de perte à ${yrs} ans`,f1(m.pLoss)+' %',T?f1(T.mc.pLoss)+' %'
 <div class="mut" style="font-size:8.5px;margin-top:4px">${nf(m.N,0)} simulations Monte Carlo en ${base}, volatilités et corrélations (change compris) estimées sur 2 ans d'historique réel. Une projection n'est pas une prévision.</div></div>
 <div>${img?`<img src="${img}" alt="Trajectoire simulée">`:''}</div></div>
 
+${(()=>{ const E=pfEvents(rows,B).ev.filter(e=>e.t-Date.now()/1000<120*86400); return E.length?`<h2>Prochains événements</h2><table><tbody>${E.map(e=>`<tr><td>${dLong(e.t)}</td><td><b>${esc(e.sym)}</b></td><td>${esc(e.k)}</td><td class="mut">${e.d}</td></tr>`).join('')}</tbody></table>`:''; })()}
 <h2>6. Contexte de marché</h2>
 <div class="two"><table><tbody>${mk||'<tr><td class="mut">Cotations indisponibles</td></tr>'}</tbody></table><table><tbody>${ec||'<tr><td class="mut">Données économiques indisponibles</td></tr>'}</tbody></table></div>
 
