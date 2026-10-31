@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T19:32:02.203220Z",
+ "generated_at": "2026-10-31T20:27:37.335899Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -15,10 +15,10 @@
    "vol": 168039400
   },
   "ASTS": {
-   "p": 40.99,
+   "p": 40.97,
    "prev": 43.07,
-   "chg": -2.08,
-   "pct": -4.83,
+   "chg": -2.1,
+   "pct": -4.88,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-10-30T19:30:00Z",
@@ -224,8 +224,8 @@
    "prev": 1.3328,
    "chg": 0.0061,
    "pct": 0.46,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (GBPUSD=X)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (GBPUSD=X) — échec de la dernière mise à jour",
    "ts": "2026-10-30T21:00:00Z",
    "open": 1.3393,
    "lo": 1.3393,
@@ -283,17 +283,17 @@
    "vol": 6774
   },
   "BTC": {
-   "p": 77435.9531,
+   "p": 77444.9219,
    "prev": 77198.2109,
-   "chg": 237.7422,
-   "pct": 0.31,
+   "chg": 246.7109,
+   "pct": 0.32,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-10-31T19:00:00Z",
+   "ts": "2026-10-31T20:00:00Z",
    "open": 77202.3984,
    "lo": 77000.9219,
    "hi": 77612.0938,
-   "vol": 14080065536
+   "vol": 13518249984
   }
  },
  "fundamentals": {
@@ -399,7 +399,7 @@
    "beta": 1.099,
    "div": 3.92,
    "divYield": 0.75,
-   "target": 629.6884,
+   "target": 631.0924,
    "targetHi": 870.0,
    "targetLo": 440.0,
    "rating": "Achat fort",
@@ -424,7 +424,7 @@
    "exDiv": 1795046400,
    "divDate": 1796860800,
    "lastDiv": 0.91,
-   "trailDiv": 3.64
+   "trailDiv": 3.71
   },
   "GOOGL": {
    "name": "Alphabet Inc.",
@@ -557,9 +557,9 @@
    "ccy": "USD",
    "mcap": 1829640994816,
    "pe": 585.7391,
-   "fpe": 52.529,
+   "fpe": 56.9376,
    "eps": 0.23,
-   "feps": 2.5647,
+   "feps": 2.3661,
    "revTTM": 32042999808,
    "netIncome": -3431000064,
    "shares": 8246541218,
@@ -957,14 +957,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 979897024512,
+   "mcap": 982902374400,
    "pe": 44.75,
    "fpe": 38.2805,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.578,
    "div": 0.99,
    "divYield": 0.8,
@@ -1251,10 +1251,10 @@
    "industry": "Credit Services",
    "ccy": "USD",
    "mcap": 555819073536,
-   "pe": 35.0941,
-   "fpe": 27.6549,
-   "eps": 18.18,
-   "feps": 23.0705,
+   "pe": 33.3862,
+   "fpe": 27.5791,
+   "eps": 19.11,
+   "feps": 23.1338,
    "revTTM": 36288000000,
    "netIncome": 16958000128,
    "shares": 864657109,
@@ -1286,7 +1286,7 @@
    "exDiv": 1791504000,
    "divDate": 1794182400,
    "lastDiv": 0.87,
-   "trailDiv": 3.37
+   "trailDiv": 3.48
   },
   "ABBV": {
    "name": "AbbVie Inc.",
@@ -1294,10 +1294,10 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 521105244160,
-   "pe": 83.3023,
-   "fpe": 18.2013,
-   "eps": 3.54,
-   "feps": 16.2016,
+   "pe": 50.6684,
+   "fpe": 18.2448,
+   "eps": 5.82,
+   "feps": 16.163,
    "revTTM": 66013999104,
    "netIncome": 10302000128,
    "shares": 1767117285,
@@ -1322,7 +1322,7 @@
    "exDiv": 1799971200,
    "divDate": 1794787200,
    "lastDiv": 1.73,
-   "trailDiv": 6.83
+   "trailDiv": 1.73
   },
   "CVX": {
    "name": "Chevron Corporation",
@@ -1330,10 +1330,10 @@
    "industry": "Oil & Gas Integrated",
    "ccy": "USD",
    "mcap": 459499536384,
-   "pe": 22.668,
-   "fpe": 14.9859,
-   "eps": 10.39,
-   "feps": 15.7161,
+   "pe": 17.2922,
+   "fpe": 14.9045,
+   "eps": 13.62,
+   "feps": 15.802,
    "revTTM": 228955996160,
    "netIncome": 26976000000,
    "shares": 1951000000,
@@ -1359,7 +1359,7 @@
    "exDiv": 1794960000,
    "divDate": 1788998400,
    "lastDiv": 1.78,
-   "trailDiv": 6.98
+   "trailDiv": 1.71
   },
   "COST": {
    "name": "Costco Wholesale Corporation",
@@ -1411,9 +1411,9 @@
    "ccy": "USD",
    "mcap": 442427080704,
    "pe": 158.7155,
-   "fpe": 78.7903,
+   "fpe": 78.3347,
    "eps": 1.16,
-   "feps": 2.3367,
+   "feps": 2.3503,
    "revTTM": 6155940864,
    "netIncome": 3016691968,
    "shares": 2300713329,
@@ -1579,12 +1579,9 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 122.9082,
-   "shares": 572600000,
    "divYield": 4.19,
    "w52lo": 93.84,
-   "w52hi": 101.46,
-   "trailDiv": 2.48
+   "w52hi": 101.46
   },
   "GLD": {
    "name": "SPDR Gold Shares",
@@ -1635,6 +1632,16 @@
  ],
  "news": [
   {
+   "h": "Time for Japan to develop people who can sell content",
+   "w": "",
+   "syms": [
+    "N225"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-10-31T20:27:37.335899+00:00",
+   "url": "https://asia.nikkei.com/opinion/time-for-japan-to-develop-people-who-can-sell-content"
+  },
+  {
    "h": "Yen bond offerings hit record $16bn as AI funding race reaches Japan",
    "w": "",
    "syms": [
@@ -1642,7 +1649,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:32:02.203220+00:00",
+   "ts": "2026-10-31T20:27:37.335899+00:00",
    "url": "https://asia.nikkei.com/business/markets/bonds/yen-bond-offerings-hit-record-16bn-as-ai-funding-race-reaches-japan"
   },
   {
@@ -1652,7 +1659,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:32:02.203220+00:00",
+   "ts": "2026-10-31T20:27:37.335899+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/japan-weighs-taxing-real-estate-rental-operators-living-overseas"
   },
   {
@@ -1662,7 +1669,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:32:02.203220+00:00",
+   "ts": "2026-10-31T20:27:37.335899+00:00",
    "url": "https://asia.nikkei.com/business/health-care/japan-s-foreign-caregivers-face-exam-hurdle-as-grace-period-ends"
   },
   {
@@ -1670,7 +1677,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:32:02.203220+00:00",
+   "ts": "2026-10-31T20:27:37.335899+00:00",
    "url": "https://asia.nikkei.com/business/food-beverage/thai-highland-tribe-coffee-brews-following-at-home-and-in-tokyo"
   },
   {
@@ -1680,7 +1687,7 @@
     "HSI"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:32:02.203220+00:00",
+   "ts": "2026-10-31T20:27:37.335899+00:00",
    "url": "https://asia.nikkei.com/spotlight/society/fatal-dog-attacks-test-hong-kong-s-ambitions-for-a-pet-friendly-economy"
   },
   {
@@ -1688,7 +1695,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:32:02.203220+00:00",
+   "ts": "2026-10-31T20:27:37.335899+00:00",
    "url": "https://asia.nikkei.com/spotlight/comment/thailand-looks-west-after-30-years-of-struggles-over-dawei"
   },
   {
@@ -1696,7 +1703,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:32:02.203220+00:00",
+   "ts": "2026-10-31T20:27:37.335899+00:00",
    "url": "https://asia.nikkei.com/spotlight/my-personal-history/what-lies-ahead-stephen-schwarzman-30"
   },
   {
@@ -1706,7 +1713,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:32:02.203220+00:00",
+   "ts": "2026-10-31T20:27:37.335899+00:00",
    "url": "https://asia.nikkei.com/business/food-beverage/yakitori-chicken-from-japan-takes-a-stab-at-the-philippines-the-land-of-jollibee"
   },
   {
@@ -1714,7 +1721,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:32:02.203220+00:00",
+   "ts": "2026-10-31T20:27:37.335899+00:00",
    "url": "https://asia.nikkei.com/business/automobiles/electric-vehicles/foxconn-unveils-3-evs-to-grow-contract-manufacturing-business"
   },
   {
@@ -1724,7 +1731,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:32:02.203220+00:00",
+   "ts": "2026-10-31T20:27:37.335899+00:00",
    "url": "https://asia.nikkei.com/business/technology/japan-miner-to-address-labor-crunch-with-self-driving-dump-trucks"
   },
   {
@@ -1732,7 +1739,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:32:02.203220+00:00",
+   "ts": "2026-10-31T20:27:37.335899+00:00",
    "url": "https://asia.nikkei.com/business/retail/uniqlo-shakes-up-china-strategy-with-focus-on-store-profitability"
   },
   {
@@ -1742,7 +1749,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:32:02.203220+00:00",
+   "ts": "2026-10-31T20:27:37.335899+00:00",
    "url": "https://asia.nikkei.com/spotlight/supply-chain/japan-s-murata-to-invest-6.3bn-in-capacitor-production-for-ai-over-5-years"
   },
   {
@@ -1752,7 +1759,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:32:02.203220+00:00",
+   "ts": "2026-10-31T20:27:37.335899+00:00",
    "url": "https://asia.nikkei.com/business/health-care/japan-s-omron-eyes-india-as-export-base-for-blood-pressure-monitors"
   },
   {
@@ -1762,16 +1769,48 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:32:02.203220+00:00",
+   "ts": "2026-10-31T20:27:37.335899+00:00",
    "url": "https://asia.nikkei.com/spotlight/supply-chain/japan-s-sojitz-to-import-rare-earth-yttrium-from-malaysia"
   },
   {
-   "h": "Memory chip makers outearn Alphabet, other tech giants on AI demand",
+   "h": "My abusive ex-husband promised $20,000 for our kids’ education. Now he refuses to pay. Is he legally obligated?",
+   "w": "“Before our divorce, my former mother-in-law entrusted him with $20,000 for each of our daughters to invest on their behalf.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-10-31T20:15:00Z",
+   "url": "https://www.marketwatch.com/story/my-abusive-ex-husband-promised-20-000-for-our-kids-education-now-he-refuses-to-pay-is-he-legally-obligated-325ef50f?mod=mw_rss_topstories"
+  },
+  {
+   "h": "SpaceX loses bid to toss NAACP lawsuit over Memphis data center air pollution",
+   "w": "The Colossus data centers and a power plant that SpaceXAI is also building in Southaven, Mississippi, have faced community backlash for years.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-31T20:12:37Z",
+   "url": "https://www.cnbc.com/2026/10/31/xai-naacp-clean-air-act-lawsuit-dismissal.html"
+  },
+  {
+   "h": "Trump defamation suit against Murdoch, WSJ over Epstein letter dismissed with prejudice",
    "w": "",
    "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-10-31T19:32:02.203220+00:00",
-   "url": "https://asia.nikkei.com/business/tech/semiconductors/memory-chip-makers-outearn-alphabet-other-tech-giants-on-ai-demand"
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-31T20:10:39Z",
+   "url": "https://www.cnbc.com/2026/10/31/trump-murdoch-wsj-epstein-defamation-lawsuit-dismissed.html"
+  },
+  {
+   "h": "OpenAI pares fundraising goal, now seeking up to $20 billion in latest round",
+   "w": "The funding round is still in progress and has not closed, so the figures are subject to change, a person directly familiar with the deal told CNBC.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-31T19:56:23Z",
+   "url": "https://www.cnbc.com/2026/10/31/openai-fundraising-20-billion-valuation.html"
+  },
+  {
+   "h": "Citi prévoit une hausse des prix du gaz européen en 2027 face aux risques au Moyen-Orient",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-10-31T19:33:24Z",
+   "url": "https://fr.investing.com/news/commodities-news/citi-prevoit-une-hausse-des-prix-du-gaz-europeen-en-2027-face-aux-risques-au-moyenorient-3667038"
   },
   {
    "h": "‘Showy jewelry and fancy cars hold no appeal’: We have a 99% chance of outliving our life savings. Why not spend it all?",
@@ -1808,14 +1847,6 @@
    "src": "MarketWatch",
    "ts": "2026-10-31T19:00:00Z",
    "url": "https://www.marketwatch.com/story/we-are-in-our-70s-should-we-pay-off-our-2-5-mortgage-or-build-up-our-savings-5a35e9c1?mod=mw_rss_topstories"
-  },
-  {
-   "h": "SpaceX loses bid to toss NAACP lawsuit over Memphis data center air pollution",
-   "w": "The Colossus data centers and a power plant that SpaceXAI is also building in Southaven, Mississippi, have faced community backlash for years.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-31T18:56:37Z",
-   "url": "https://www.cnbc.com/2026/10/31/xai-naacp-clean-air-act-lawsuit-dismissal.html"
   },
   {
    "h": "La vente massive d’obligations françaises, un avertissement pour les gouvernements mondiaux",
@@ -1934,14 +1965,6 @@
    "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-desquire-financial-vend-des-actions-pour-256-millions--93CH-3667026"
   },
   {
-   "h": "Our church has a $1.5 million bequest earning 3.75% in a savings account. Are we throwing money away?",
-   "w": "“Given the size and long-term nature of this gift, we want to make sure the funds are managed prudently.”",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-10-31T15:30:00Z",
-   "url": "https://www.marketwatch.com/story/there-may-be-better-investment-options-my-church-received-1-5-million-from-a-parishioner-is-3-75-interest-enough-5164d790?mod=mw_rss_topstories"
-  },
-  {
    "h": "Evacuees from Russian-occupied city arrive in Ukraine",
    "w": "Complex humanitarian mission extracted hundreds of people from Oleshky during rare local ceasefire between Moscow and Kyiv",
    "syms": [],
@@ -1993,22 +2016,6 @@
    "ts": "2026-10-31T13:38:29Z",
    "url": "https://www.ft.com/content/77370477-62df-4499-9ab6-4063d3e361bd?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Automatic 401(k) rollovers reduce cash-outs, research finds — but few accounts reach new employer plans",
-   "w": "Workers with small 401(k) balances are cashing out less often under an automatic portability program, but most accounts remain in temporary IRAs.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-31T13:30:01Z",
-   "url": "https://www.cnbc.com/2026/10/31/401k-cash-outs-automatic-rollovers.html"
-  },
-  {
-   "h": "Un administrateur de Medifast achète pour 68.027$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-10-31T13:16:59Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-medifast-achete-pour-68027-dactions-93CH-3667020"
   },
   {
    "h": "« La seule manière de corriger le sous-investissement de la France est d’augmenter le montant de l’épargne disponible »",
@@ -2459,11 +2466,11 @@
    "mine": 1
   },
   {
-   "h": "A New York, le prix des crèches et des écoles et des structures de garde est si exorbitant qu’avoir un enfant est devenu un luxe",
+   "h": "A New York, le prix des crèches, des écoles et des structures de garde est si exorbitant qu’avoir un enfant est devenu un luxe",
    "w": "« L’Amérique hors de prix » (3/3). La garde des enfants en bas âge peut représenter de 30 % à 40 % du budget d’une famille new-yorkaise. Pour éviter de payer plusieurs dizaines de milliers de dollars par an, la plupart d’entre elles ont recours à l’aide publique mise en place depuis douze ans seulement.",
    "syms": [],
    "src": "Le Monde — Économie",
-   "ts": "2026-10-31T04:30:25Z",
+   "ts": "2026-10-31T04:30:15Z",
    "url": "https://www.lemonde.fr/economie/article/2026/10/31/a-new-york-le-prix-des-creches-et-des-ecoles-et-des-structures-de-garde-est-si-exorbitant-qu-avoir-un-enfant-est-devenu-un-luxe_6803386_3234.html"
   },
   {
@@ -2515,14 +2522,6 @@
    "url": "https://www.lemonde.fr/economie/article/2026/10/31/l-agence-fitch-maintient-la-note-de-la-dette-souveraine-de-la-france-mais-degrade-sa-perspective_6803235_3234.html"
   },
   {
-   "h": "Meta outlook revised downward by S&P on cash flow and capex concerns",
-   "w": "Meta has been given a negative outlook by S&amp;P Global Ratings due to the company's hefty capital expenditures and concerns about free cash flow.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-30T22:42:26Z",
-   "url": "https://www.cnbc.com/2026/10/30/meta-outlook-to-revised-to-negative-by-sp-after-cash-flow-negative.html"
-  },
-  {
    "h": "$6.3bn in 30 minutes: how the world’s biggest heist unfolded",
    "w": "North Korean hackers’ attack on Binance takes crypto theft to an unprecedented scale",
    "syms": [
@@ -2535,8 +2534,8 @@
   }
  ],
  "summary": {
-  "text": "Une nette aversion au risque pèse sur les actions mondiales, tirée par le repli technologique (NDX -3,46 %, NVDA -4,14 %). Aux États-Unis, le SPX cède 1,81 % tandis que la volatilité bondit (VIX +13,02 % à 19,44). Les indices asiatiques et européens sont majoritairement orientés à la baisse (N225 -2,44 %, SX5E -1,23 %), à l'exception notable du HSI (+1,46 %).\n\nSur les changes, le dollar fléchit légèrement (DXY à 101,964, -0,07 %), l'EUR/USD se fixant à 1,1166 (+0,09 %) et l'USD/JPY à 157,519 (-0,2 %). Côté matières premières, l'or recule (XAU -3,29 % à 3 898,90). Les cours pétroliers évoluent en ordre dispersé, le brut CL grimpant de 2,08 % à 104,12 alors que le Brent cède 1,26 % à 113,43. Le bitcoin ressort à 77 502,57 (+0,39 %).\n\nÀ surveiller : la chaîne de valeur de l'IA (investissement de 6,3 milliards de dollars annoncé par Murata) et les risques juridiques liés aux centres de données (poursuites contre SpaceX à Memphis).",
+  "text": "Une nette aversion au risque pèse sur les marchés, tirée par le recul marqué de la tech (NVDA -4,14 %, NDX -3,46 %) et le bond de la volatilité (VIX +13,02 % à 19,44). Les indices boursiers reculent largement (SPX -1,81 %, N225 -2,44 %), dans un contexte où OpenAI revoit sa levée de fonds à 20 milliards de dollars.\n\nLe dollar s'effrite légèrement (DXY à 101,964, -0,07 %), l'EUR/USD s'affiche à 1,1166 (+0,09 %) et l'USD/JPY à 157,519 (-0,2 %). Côté matières premières, l'or chute nettement (XAU -3,29 % à 3 898,90), tandis que le pétrole diverge entre le WTI (CL +2,08 % à 104,12) et le Brent (-1,26 % à 113,43).\n\nÀ surveiller : la course aux financements de l'IA (émissions obligataires record de 16 milliards de dollars en yens et 6,3 milliards d'investissements prévus par Murata), ainsi que les tensions énergétiques au Moyen-Orient soulignées par Citi.",
   "model": "gemini-flash-latest",
-  "ts": "2026-10-31T19:04:26.482149Z"
+  "ts": "2026-10-31T20:27:37.335899Z"
  }
 }
