@@ -1,0 +1,231 @@
+"""
+Données économiques façon TradingView « ECONOMICS: » (USINTR, USIRYY, EUUR…).
+
+Sources officielles et gratuites :
+  FRED (Réserve fédérale de St. Louis, clé FRED_API_KEY) · BCE (ECB Data Portal) · Bank of England (IADB)
+
+Chaque code liste une ou plusieurs sources candidates : la première qui répond avec un
+historique à jour est retenue. Une série périmée (dernière donnée trop ancienne) est écartée
+plutôt qu'affichée comme si elle était récente.
+
+Écrit economics.json. Lancé par GitHub Actions, mais ne s'actualise qu'une fois par 20 heures
+(ces chiffres sont publiés au plus une fois par mois) — sauf lancement manuel (ECON_FORCE=true).
+"""
+from __future__ import annotations
+
+import json
+import os
+import sys
+import time
+import warnings
+from datetime import datetime, timedelta, timezone
+from io import StringIO
+from pathlib import Path
+
+warnings.filterwarnings("ignore")
+
+import pandas as pd
+import requests
+
+ROOT = Path(__file__).resolve().parent.parent
+OUT = ROOT / "economics.json"
+NOW = datetime.now(timezone.utc)
+KEY = os.getenv("FRED_API_KEY", "")
+FORCE = os.getenv("ECON_FORCE", "").lower() == "true"
+UA = {"User-Agent": "Mozilla/5.0 (terminal-ia; projet personnel)"}
+YEARS = 25           # profondeur d'historique conservée
+REFRESH_H = 20       # pas plus d'une actualisation toutes les 20 heures
+
+# Sources : ("fred", id, unités FRED, fréquence agrégée ou None) · ("ecb", clé SDMX) · ("boe", code IADB)
+#   unités FRED : lin = niveau · pc1 = variation sur 1 an (%) · pch = variation sur la période (%) · chg = variation absolue
+F = lambda sid, units="lin", freq=None: ("fred", sid, units, freq)
+SPEC = [
+    # ── États-Unis
+    ("USINTR", "Taux directeur Fed (borne haute)", "États-Unis", "%", [F("DFEDTARU", freq="m"), F("FEDFUNDS")]),
+    ("USIRYY", "Inflation (IPC, a/a)", "États-Unis", "%", [F("CPIAUCSL", "pc1")]),
+    ("USCIR", "Inflation sous-jacente (IPC hors énergie et alimentation, a/a)", "États-Unis", "%", [F("CPILFESL", "pc1")]),
+    ("USIRMM", "Inflation (IPC, m/m)", "États-Unis", "%", [F("CPIAUCSL", "pch")]),
+    ("USPCE", "Inflation PCE sous-jacente (a/a)", "États-Unis", "%", [F("PCEPILFE", "pc1")]),
+    ("USPPI", "Prix à la production (a/a)", "États-Unis", "%", [F("PPIFIS", "pc1")]),
+    ("USGDPQQ", "Croissance du PIB (t/t annualisé)", "États-Unis", "%", [F("A191RL1Q225SBEA")]),
+    ("USGDPYY", "Croissance du PIB (a/a)", "États-Unis", "%", [F("GDPC1", "pc1")]),
+    ("USGDP", "PIB nominal", "États-Unis", "Md$", [F("GDP")]),
+    ("USUR", "Taux de chômage", "États-Unis", "%", [F("UNRATE")]),
+    ("USNFP", "Créations d'emplois non agricoles", "États-Unis", "milliers", [F("PAYEMS", "chg")]),
+    ("USJC", "Inscriptions hebdomadaires au chômage", "États-Unis", "inscriptions", [F("ICSA")]),
+    ("USJVAC", "Offres d'emploi (JOLTS)", "États-Unis", "milliers", [F("JTSJOL")]),
+    ("USWG", "Salaire horaire moyen (a/a)", "États-Unis", "%", [F("CES0500000003", "pc1")]),
+    ("USRSMM", "Ventes au détail (m/m)", "États-Unis", "%", [F("RSAFS", "pch")]),
+    ("USIPYY", "Production industrielle (a/a)", "États-Unis", "%", [F("INDPRO", "pc1")]),
+    ("USHST", "Mises en chantier (rythme annuel)", "États-Unis", "milliers", [F("HOUST")]),
+    ("USHPI", "Prix immobiliers Case-Shiller (a/a)", "États-Unis", "%", [F("CSUSHPISA", "pc1")]),
+    ("USMR", "Taux hypothécaire 30 ans", "États-Unis", "%", [F("MORTGAGE30US", freq="m")]),
+    ("USCCI", "Confiance des consommateurs (Michigan)", "États-Unis", "indice", [F("UMCSENT")]),
+    ("USM2", "Masse monétaire M2 (a/a)", "États-Unis", "%", [F("M2SL", "pc1")]),
+    ("USCBBS", "Bilan de la Fed", "États-Unis", "M$", [F("WALCL", freq="m")]),
+    ("USGDG", "Dette publique / PIB", "États-Unis", "%", [F("GFDEGDQ188S")]),
+    ("USBOT", "Balance commerciale", "États-Unis", "M$", [F("BOPGSTB")]),
+    ("US10Y", "Taux à 10 ans (Trésor)", "États-Unis", "%", [F("DGS10", freq="m")]),
+    ("US02Y", "Taux à 2 ans (Trésor)", "États-Unis", "%", [F("DGS2", freq="m")]),
+    ("USYC", "Pente 10 ans − 2 ans", "États-Unis", "pts", [F("T10Y2Y", freq="m")]),
+    # ── Zone euro
+    ("EUINTR", "Taux de dépôt BCE", "Zone euro", "%", [("ecb", "FM/D.U2.EUR.4F.KR.DFR.LEV"), F("ECBDFR", freq="m")]),
+    ("EUMRO", "Taux de refinancement BCE", "Zone euro", "%", [("ecb", "FM/D.U2.EUR.4F.KR.MRR_FR.LEV"), F("ECBMRRFR", freq="m")]),
+    ("EUIRYY", "Inflation (IPCH, a/a)", "Zone euro", "%", [("ecb", "ICP/M.U2.N.000000.4.ANR"), F("CP0000EZ19M086NEST", "pc1")]),
+    ("EUCIR", "Inflation sous-jacente (IPCH hors énergie et alimentation, a/a)", "Zone euro", "%", [("ecb", "ICP/M.U2.N.XEF000.4.ANR")]),
+    ("EUUR", "Taux de chômage", "Zone euro", "%", [F("LRHUTTTTEZM156S")]),
+    ("EUGDPYY", "Croissance du PIB (a/a)", "Zone euro", "%", [F("CLVMNACSCAB1GQEA19", "pc1"), F("CLVMNACSCAB1GQEA20", "pc1")]),
+    # ── Allemagne, France, Italie
+    ("DEIRYY", "Inflation (a/a)", "Allemagne", "%", [("ecb", "ICP/M.DE.N.000000.4.ANR"), F("CPALTT01DEM659N")]),
+    ("DEUR", "Taux de chômage", "Allemagne", "%", [F("LRHUTTTTDEM156S")]),
+    ("DEGDPYY", "Croissance du PIB (a/a)", "Allemagne", "%", [F("CLVMNACSCAB1GQDE", "pc1")]),
+    ("DE10Y", "Taux à 10 ans (Bund)", "Allemagne", "%", [F("IRLTLT01DEM156N")]),
+    ("FRIRYY", "Inflation (a/a)", "France", "%", [("ecb", "ICP/M.FR.N.000000.4.ANR"), F("CPALTT01FRM659N")]),
+    ("FRUR", "Taux de chômage", "France", "%", [F("LRHUTTTTFRM156S")]),
+    ("FRGDPYY", "Croissance du PIB (a/a)", "France", "%", [F("CLVMNACSCAB1GQFR", "pc1")]),
+    ("FR10Y", "Taux à 10 ans (OAT)", "France", "%", [F("IRLTLT01FRM156N")]),
+    ("ITIRYY", "Inflation (a/a)", "Italie", "%", [("ecb", "ICP/M.IT.N.000000.4.ANR")]),
+    ("IT10Y", "Taux à 10 ans (BTP)", "Italie", "%", [F("IRLTLT01ITM156N")]),
+    # ── Royaume-Uni
+    ("GBINTR", "Taux directeur BoE (Bank Rate)", "Royaume-Uni", "%", [("boe", "IUDBEDR"), F("IRSTCB01GBM156N")]),
+    ("GBIRYY", "Inflation (IPC, a/a)", "Royaume-Uni", "%", [F("CPALTT01GBM659N"), F("GBRCPIALLMINMEI", "pc1")]),
+    ("GBUR", "Taux de chômage", "Royaume-Uni", "%", [F("LRHUTTTTGBM156S")]),
+    ("GBGDPYY", "Croissance du PIB (a/a)", "Royaume-Uni", "%", [F("CLVMNACSCAB1GQUK", "pc1"), F("NGDPRSAXDCGBQ", "pc1")]),
+    ("GB10Y", "Taux à 10 ans (Gilt)", "Royaume-Uni", "%", [F("IRLTLT01GBM156N")]),
+    # ── Suisse (pertinent pour Monaco)
+    ("CHINTR", "Taux directeur BNS", "Suisse", "%", [F("IRSTCI01CHM156N"), F("IRSTCB01CHM156N")]),
+    ("CHIRYY", "Inflation (a/a)", "Suisse", "%", [F("CPALTT01CHM659N"), F("CHECPIALLMINMEI", "pc1")]),
+    ("CH10Y", "Taux à 10 ans (Confédération)", "Suisse", "%", [F("IRLTLT01CHM156N")]),
+    # ── Japon
+    ("JPINTR", "Taux directeur BoJ", "Japon", "%", [F("IRSTCB01JPM156N")]),
+    ("JPIRYY", "Inflation (a/a)", "Japon", "%", [F("CPALTT01JPM659N"), F("JPNCPIALLMINMEI", "pc1")]),
+    ("JPUR", "Taux de chômage", "Japon", "%", [F("LRUN64TTJPM156S"), F("LRHUTTTTJPM156S")]),
+    ("JPGDPYY", "Croissance du PIB (a/a)", "Japon", "%", [F("JPNRGDPEXP", "pc1")]),
+    ("JP10Y", "Taux à 10 ans (JGB)", "Japon", "%", [F("IRLTLT01JPM156N")]),
+    # ── Chine
+    ("CNIRYY", "Inflation (a/a)", "Chine", "%", [F("CPALTT01CNM659N"), F("CHNCPIALLMINMEI", "pc1")]),
+    ("CNGDPYY", "Croissance du PIB (a/a)", "Chine", "%", [F("CHNGDPNQDSMEI", "pc1")]),
+]
+
+SRC_LABEL = {"fred": "FRED (Fed de St. Louis)", "ecb": "BCE — ECB Data Portal", "boe": "Bank of England — IADB"}
+
+
+def log(msg):
+    print(f"[{datetime.now(timezone.utc):%H:%M:%S}] {msg}", flush=True)
+
+
+def _monthly(obs):
+    """Agrège une série quotidienne/hebdomadaire en fin de mois (dernière valeur du mois)."""
+    out = {}
+    for d, v in obs:
+        out[d[:7]] = (d, v)
+    return [(d[:7] + "-01", v) for d, v in out.values()]
+
+
+def get_fred(sid, units, freq):
+    if not KEY:
+        raise RuntimeError("pas de FRED_API_KEY")
+    p = {"series_id": sid, "api_key": KEY, "file_type": "json", "units": units,
+         "observation_start": (NOW - timedelta(days=365 * YEARS)).strftime("%Y-%m-%d")}
+    if freq:
+        p.update(frequency=freq, aggregation_method="eop")
+    for attempt in range(3):
+        time.sleep(0.4)                   # reste sous la limite FRED (120 requêtes / minute)
+        r = requests.get("https://api.stlouisfed.org/fred/series/observations", params=p, timeout=30)
+        if r.status_code == 429:          # limite de débit FRED : 120 requêtes / minute
+            time.sleep(5 * (attempt + 1)); continue
+        r.raise_for_status()
+        obs = [(o["date"], float(o["value"])) for o in r.json()["observations"] if o["value"] not in (".", "")]
+        return obs, f"https://fred.stlouisfed.org/series/{sid}"
+    raise RuntimeError("FRED : limite de débit")
+
+
+def get_ecb(key):
+    r = requests.get(f"https://data-api.ecb.europa.eu/service/data/{key}",
+                     params={"startPeriod": str(NOW.year - YEARS), "format": "csvdata"}, headers=UA, timeout=40)
+    r.raise_for_status()
+    df = pd.read_csv(StringIO(r.text)).dropna(subset=["OBS_VALUE"])
+    obs = []
+    for tp, v in zip(df["TIME_PERIOD"].astype(str), df["OBS_VALUE"]):
+        d = tp if len(tp) == 10 else tp + "-01" if len(tp) == 7 else tp
+        obs.append((d, float(v)))
+    if obs and len(obs[0][0]) == 10 and key.startswith("FM/D"):
+        obs = _monthly(obs)              # taux quotidiens → fin de mois
+    flow, series = key.split("/", 1)
+    return obs, f"https://data.ecb.europa.eu/data/datasets/{flow}/{flow}.{series}"
+
+
+def get_boe(code):
+    r = requests.get("https://www.bankofengland.co.uk/boeapps/database/_iadb-fromshowcolumns.asp",
+                     params={"csv.x": "yes", "Datefrom": f"01/Jan/{NOW.year - YEARS}", "Dateto": "now",
+                             "SeriesCodes": code, "CSVF": "TN", "UsingCodes": "Y", "VPD": "Y", "VFD": "N"},
+                     headers=UA, timeout=40)
+    r.raise_for_status()
+    df = pd.read_csv(StringIO(r.text)).dropna(subset=[code])
+    dates = pd.to_datetime(df[df.columns[0]], dayfirst=True).dt.strftime("%Y-%m-%d")
+    obs = _monthly(sorted(zip(dates, df[code].astype(float))))
+    return obs, "https://www.bankofengland.co.uk/boeapps/database/"
+
+
+def freq_of(obs):
+    if len(obs) < 3:
+        return "?"
+    ds = [datetime.fromisoformat(d) for d, _ in obs[-13:]]
+    gaps = sorted((b - a).days for a, b in zip(ds, ds[1:]))
+    g = gaps[len(gaps) // 2]
+    return "quotidienne" if g <= 3 else "hebdomadaire" if g <= 10 else "mensuelle" if g <= 40 else "trimestrielle" if g <= 120 else "annuelle"
+
+
+MAX_AGE = {"quotidienne": 120, "hebdomadaire": 120, "mensuelle": 200, "trimestrielle": 330, "annuelle": 800, "?": 400}
+
+
+def main() -> int:
+    if not FORCE and OUT.exists():
+        try:
+            prev = datetime.fromisoformat(json.loads(OUT.read_text(encoding="utf-8"))["generated_at"].replace("Z", "+00:00"))
+            if NOW - prev < timedelta(hours=REFRESH_H):
+                log(f"economics.json a {(NOW - prev).seconds // 3600} h : pas d'actualisation (une fois par {REFRESH_H} h)")
+                return 0
+        except Exception:
+            pass
+
+    items, skipped = [], []
+    for code, name, ctry, unit, sources in SPEC:
+        got = None
+        for src in sources:
+            kind = src[0]
+            try:
+                obs, url = (get_fred(*src[1:]) if kind == "fred" else get_ecb(src[1]) if kind == "ecb" else get_boe(src[1]))
+                obs = sorted(obs)
+                if len(obs) < 3:
+                    raise RuntimeError("historique vide")
+                fq = freq_of(obs)
+                age = (NOW.date() - datetime.fromisoformat(obs[-1][0]).date()).days
+                if age > MAX_AGE[fq]:
+                    raise RuntimeError(f"périmée (dernière donnée {obs[-1][0]})")
+                got = {"code": code, "n": name, "ctry": ctry, "unit": unit, "freq": fq,
+                       "src": SRC_LABEL[kind], "sid": src[1], "url": url,
+                       "last": round(obs[-1][1], 4), "prev": round(obs[-2][1], 4), "date": obs[-1][0],
+                       "h": [[d, round(v, 4)] for d, v in obs]}
+                break
+            except Exception as e:
+                log(f"  · {code} via {kind} {src[1]} : {str(e)[:90]}")
+            time.sleep(0.3)
+        if got:
+            items.append(got)
+            log(f"  ✓ {code:8} {got['last']:>12} {unit:8} au {got['date']} ({got['src'].split(' ')[0]})")
+        else:
+            skipped.append(code)
+
+    if not items:
+        log("Aucune série récupérée : economics.json inchangé")
+        return 0
+    OUT.write_text(json.dumps({"generated_at": NOW.isoformat().replace("+00:00", "Z"), "items": items,
+                               "skipped": skipped}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    log(f"Économie : {len(items)}/{len(SPEC)} séries ({OUT.stat().st_size // 1024} Ko)"
+        + (f" · écartées : {', '.join(skipped)}" if skipped else ""))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
