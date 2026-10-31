@@ -69,6 +69,9 @@ def curve_de():
 
 # ── Japon : ministère des Finances (JGB, maturités constantes) ──
 def curve_jp():
+    """Le fichier historique (jgbcme_all) s'arrête à la fin du mois précédent ; le fichier du mois
+    en cours (jgbcme) donne les derniers jours. On fusionne les deux."""
+    frames = []
     for url in ("https://www.mof.go.jp/english/policy/jgbs/reference/interest_rate/historical/jgbcme_all.csv",
                 "https://www.mof.go.jp/english/policy/jgbs/reference/interest_rate/jgbcme.csv"):
         try:
@@ -78,21 +81,24 @@ def curve_jp():
             h = next(i for i, l in enumerate(lines) if l.lower().startswith("date"))
             df = pd.read_csv(StringIO("\n".join(lines[h:])))
             df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
-            df = df.dropna(subset=["Date"]).sort_values("Date").tail(60)
-            pts = []
-            for col in df.columns[1:]:
-                m = re.fullmatch(r"(\d+)Y", str(col).strip())
-                if not m:
-                    continue
-                vals = pd.to_numeric(df[col], errors="coerce")
-                p = point(f"{m.group(1)}A", [(d.date().isoformat(), None if pd.isna(v) else float(v)) for d, v in zip(df["Date"], vals)])
-                if p:
-                    pts.append(p)
-            if pts:
-                return pts, "Ministère des Finances du Japon — JGB à maturité constante", "quotidien"
+            df = df.dropna(subset=["Date"])
+            frames.append(df)
+            log(f"  MOF Japon {url.rsplit('/', 1)[-1]} : {len(df)} lignes, dernière au {df['Date'].max().date()}")
         except Exception as e:
             log(f"  ! MOF Japon ({url.rsplit('/', 1)[-1]}) : {str(e)[:90]}")
-    return [], "", ""
+    if not frames:
+        return [], "", ""
+    df = pd.concat(frames).drop_duplicates(subset=["Date"], keep="last").sort_values("Date").tail(60)
+    pts = []
+    for col in df.columns[1:]:
+        m = re.fullmatch(r"(\d+)Y", str(col).strip())
+        if not m:
+            continue
+        vals = pd.to_numeric(df[col], errors="coerce")
+        p = point(f"{m.group(1)}A", [(d.date().isoformat(), None if pd.isna(v) else float(v)) for d, v in zip(df["Date"], vals)])
+        if p:
+            pts.append(p)
+    return pts, "Ministère des Finances du Japon — JGB à maturité constante", "quotidien"
 
 
 # ── Suisse : Banque nationale suisse (rendements de la Confédération) ──
