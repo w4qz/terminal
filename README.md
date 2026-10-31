@@ -1,6 +1,6 @@
 # Terminal — pipeline de données de marché automatisé
 
-Terminal de marché personnel (indices, change, matières premières, taux, news, portefeuille, DCF, Monte Carlo) alimenté toutes les 30 minutes par un pipeline gratuit.
+Terminal de marché personnel (indices, change, matières premières, taux, news, portefeuille, Monte Carlo) alimenté toutes les 30 minutes par un pipeline gratuit.
 
 ## Architecture
 
@@ -23,7 +23,11 @@ GitHub Actions (toutes les 30 minutes : h00 et h30 UTC)
         ├─ WIRP ............. probabilités des décisions de la Fed (futures fed funds)
         ├─ GC ............... courbes des taux US (FRED) et zone euro AAA (BCE)
         └─ BTMM ............. tableau de bord monétaire US (FRED)
-   └─ commit de data.json, universe.json, fundamentals.json et macro.json
+   └─ scripts/build_economics.py — une fois par jour
+        └─ ECONOMICS ........ ~55 indicateurs façon TradingView (USINTR, USIRYY, EUUR…)
+                              US, zone euro, Allemagne, France, Italie, Royaume-Uni, Suisse,
+                              Japon, Chine (FRED, BCE, Bank of England)
+   └─ commit de data.json, universe.json, fundamentals.json, macro.json et economics.json
 GitHub Pages
    └─ index.html lit data.json et universe.json à l'ouverture, puis toutes les 10 minutes
 Google Apps Script (apps_script_ft.gs), toutes les 30 minutes
