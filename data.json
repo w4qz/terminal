@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T13:20:16.841815Z",
+ "generated_at": "2026-10-31T14:06:34.036956Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -283,17 +283,17 @@
    "vol": 6774
   },
   "BTC": {
-   "p": 77357.2812,
+   "p": 77383.1328,
    "prev": 77198.2109,
-   "chg": 159.0703,
-   "pct": 0.21,
+   "chg": 184.9219,
+   "pct": 0.24,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-10-31T13:00:00Z",
+   "ts": "2026-10-31T14:00:00Z",
    "open": 77202.3984,
    "lo": 77000.9219,
    "hi": 77554.9219,
-   "vol": 22810431488
+   "vol": 20932294656
   }
  },
  "fundamentals": {
@@ -1377,14 +1377,48 @@
  ],
  "news": [
   {
-   "h": "In the wake of Weil, a legal recruiter's advice for surviving a company wind-down",
-   "w": "Legal recruiter Danielle Thompson shares her best advice for the employees of Weil, Gotshal & Manges and others who face a company wind-down or dissolution.",
+   "h": "Investors trim growth bets over fears of US economy’s AI exposure",
+   "w": "Return to bonds after long sell-off comes as concern rises about over-reliance on tech spending",
+   "syms": [],
+   "src": "myFT — economy",
+   "ts": "2026-10-31T14:00:02Z",
+   "url": "https://www.ft.com/content/56b0d5fa-829c-47b1-b07b-b4be18f60151?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Binance, crypto and hacks: What to know about keeping coin safe as cyber criminals advance",
+   "w": "The Binance hack of $6.3 billion, the largest crypto theft ever, is a wake-up call for investors to understand how coin is guarded and the risk of losing it.",
    "syms": [
-    "XAU"
+    "BTC"
    ],
    "src": "CNBC — Marchés",
-   "ts": "2026-10-31T13:07:01Z",
-   "url": "https://www.cnbc.com/make-it/2026/10/31/weil-wind-down-career-advice.html"
+   "ts": "2026-10-31T13:58:40Z",
+   "url": "https://www.cnbc.com/2026/10/31/binance-crypto-hack-safety.html"
+  },
+  {
+   "h": "Qatari mediators held talks in Tehran aimed at restarting direct U.S.-Iran negotiations, source says",
+   "w": "Axios reported that Qatari mediators held more than 12 hours of talks in Tehran on Friday to reach a deal to avoid a resumption of American-led attacks on Iran.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-31T13:47:03Z",
+   "url": "https://www.cnbc.com/2026/10/31/qatar-iran-us-talks-mediation.html"
+  },
+  {
+   "h": "Iran warns it will retaliate without ‘geographical limitations’ if attacked",
+   "w": "Ayatollah Khamenei tells military commanders response will be ‘immediate’ as Qatari mediators seek to avert a feared US-Israeli bombing campaign",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-10-31T13:38:29Z",
+   "url": "https://www.ft.com/content/77370477-62df-4499-9ab6-4063d3e361bd?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Automatic 401(k) rollovers reduce cash-outs, research finds — but few accounts reach new employer plans",
+   "w": "Workers with small 401(k) balances are cashing out less often under an automatic portability program, but most accounts remain in temporary IRAs.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-31T13:30:01Z",
+   "url": "https://www.cnbc.com/2026/10/31/401k-cash-outs-automatic-rollovers.html"
   },
   {
    "h": "Crypto industry pours more than $200 million into 2026 midterms to pressure Congress on favorable rules",
@@ -1433,18 +1467,10 @@
    "url": "https://www.cnbc.com/2026/10/31/berkshire-ekes-out-some-new-highs-but-october-rally-stalls.html"
   },
   {
-   "h": "Qatari mediators held talks in Tehran aimed at restarting direct U.S.-Iran negotiations, source says",
-   "w": "Axios reported that Qatari mediators held more than 12 hours of talks in Tehran on Friday to reach a deal to avoid a resumption of American-led attacks on Iran.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-31T12:11:12Z",
-   "url": "https://www.cnbc.com/2026/10/31/qatar-iran-us-talks-mediation.html"
-  },
-  {
    "h": "Steve Bannon: Republicans will erupt in ‘civil war’ after midterm elections",
    "w": "Former White House chief strategist predicts ‘monster’ legislative battles before new Congress is sworn in",
    "syms": [],
-   "src": "myFT — us",
+   "src": "myFT — world",
    "ts": "2026-10-31T12:00:01Z",
    "url": "https://www.ft.com/content/a97de5ca-484e-4ed9-84e0-958b90b85ef8?syn-25a6b1a6=1",
    "mine": 1
@@ -1453,7 +1479,7 @@
    "h": "Budget frees London to go on £10bn borrowing spree, says Sadiq Khan",
    "w": "UK capital’s mayor hails chancellor’s financial plan that will boost key infrastructure projects",
    "syms": [],
-   "src": "myFT — world uk",
+   "src": "myFT — world",
    "ts": "2026-10-31T12:00:01Z",
    "url": "https://www.ft.com/content/14a8ce6c-ef84-478a-993f-47db30a41d1d?syn-25a6b1a6=1",
    "mine": 1
@@ -1604,16 +1630,6 @@
    "url": "https://www.lemonde.fr/economie/article/2026/10/31/course-contre-la-montre-et-casse-tete-logistique-pour-faire-baisser-le-prix-du-gazole-a-la-pompe_6803469_3234.html"
   },
   {
-   "h": "Trump called out Big Oil profits. Here’s how much their refining earnings have surged since",
-   "w": "Trump criticized Big Oil for making “too much money,” but oil majors have since reported surging refining earnings as fuel supplies tightened.",
-   "syms": [
-    "BRENT"
-   ],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-31T06:00:02Z",
-   "url": "https://www.cnbc.com/2026/10/31/trump-big-oil-refining-profits.html"
-  },
-  {
    "h": "Fiscal drifting: why the Budget won’t leave you better off",
    "w": "Frozen thresholds and higher inflation forecasts mean thousands more could be dragged into the £100,000 tax trap than previously thought",
    "syms": [],
@@ -1684,7 +1700,7 @@
    "h": "Entrepreneurs question Budget rhetoric on relief and red tape",
    "w": "Small business bodies said higher taxes and reduced reliefs exposed chancellor’s pledge to back Britain’s ‘bloody-minded’ founders",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — world uk",
    "ts": "2026-10-31T05:00:39Z",
    "url": "https://www.ft.com/content/8a26c5ed-820b-4653-8bf0-d9ee4f20bdcd",
    "mine": 1
@@ -1708,23 +1724,23 @@
    "mine": 1
   },
   {
-   "h": "Bank of England explores easing key limit on riskier mortgage lending",
-   "w": "Central bank considers lifting threshold on higher-risk mortgages in response to calls from government and industry to boost home-ownership",
-   "syms": [
-    "UKX"
-   ],
-   "src": "myFT — world",
-   "ts": "2026-10-31T05:00:31Z",
-   "url": "https://www.ft.com/content/78363dc1-90fa-4a10-b84a-69be3d749f42?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Is this the first clear evidence of AI’s impact on the labour market?",
    "w": "Productivity is up and employment is down in the tech sector but elsewhere the picture is muddier",
    "syms": [],
    "src": "myFT — us",
    "ts": "2026-10-31T05:00:31Z",
    "url": "https://www.ft.com/content/7f27aa5f-5994-4f82-aed8-1cade18fb487?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Bank of England explores easing key limit on riskier mortgage lending",
+   "w": "Central bank considers lifting threshold on higher-risk mortgages in response to calls from government and industry to boost home-ownership",
+   "syms": [
+    "UKX"
+   ],
+   "src": "myFT — world uk",
+   "ts": "2026-10-31T05:00:31Z",
+   "url": "https://www.ft.com/content/78363dc1-90fa-4a10-b84a-69be3d749f42?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -1912,26 +1928,6 @@
    "src": "myFT — financials",
    "ts": "2026-10-30T22:12:58Z",
    "url": "https://www.ft.com/content/c7f5e395-c3a9-430e-b757-5014527b4d49?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "US tech stocks tumble as concerns over AI spending intensify",
-   "w": "Revelations that Anthropic could receive junk rating after IPO add to concerns over industry borrowing spree",
-   "syms": [
-    "NDX"
-   ],
-   "src": "myFT — us",
-   "ts": "2026-10-30T21:13:50Z",
-   "url": "https://www.ft.com/content/3ba953ae-84bb-4de4-959e-baec3e908fb3?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "US affordability tracker: the data that could decide the 2026 midterm elections",
-   "w": "The FT is tracking changes to the cost of living that will affect American voters",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-10-30T20:16:47Z",
-   "url": "https://www.ft.com/content/71dccbca-4a1f-485a-9790-28cc527cdb82?syn-25a6b1a6=1",
    "mine": 1
   }
  ],
