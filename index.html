@@ -2772,7 +2772,7 @@ box.innerHTML=`<h3>DVD — Dividendes<span class="rt">${ev.length} versements de
 <div class="stat"><span class="l">CROISSANCE 5 ANS</span><span class="n ${cls(cg(5))}">${cg(5)!=null?pct(cg(5),1)+'/an':'—'}</span><span class="s">10 ans : ${cg(10)!=null?pct(cg(10),1)+'/an':'—'}</span></div>
 <div class="stat"><span class="l">HAUSSES CONSÉCUTIVES</span><span class="n">${streak} an${streak>1?'s':''}</span><span class="s">${streak>=25?'« aristocrate du dividende »':streak>=10?'historique solide':'—'}</span></div></div>
 <div class="pbody" style="position:relative"><canvas id="dvdcv" height="170" role="img" aria-label="Dividendes annuels"></canvas></div>
-<div class="note" style="padding:4px 9px 8px">Totaux par année civile ; ${curY} en cours (barre claire). Montants bruts, ajustés des divisions d'actions par Yahoo.</div>`;
+<div class="note" style="padding:4px 9px 8px">Totaux par année civile ; ${curY} en cours (barre claire). Montants bruts, ajustés des divisions d'actions par Yahoo.${ev.some((x,i)=>i&&x.t-ev[i-1].t>800*864e5)?' <span class="neg">Historique Yahoo incomplet : certaines années sans versement sont des trous de données, pas des suspensions.</span>':''}</div>`;
 const draw=hv=>{ const cv=document.getElementById('dvdcv'); if(!cv) return; const yy=years.slice(-20), r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1, W=r.width, H=170;
 cv.width=W*dpr; cv.height=H*dpr; const x=cv.getContext('2d'); x.scale(dpr,dpr); const pl=8, pr=56, pt=10, pb=18, mx=Math.max(...yy.map(y=>byY[y]))*1.1||1;
 const bw=(W-pl-pr)/yy.length, Y=v=>pt+(1-v/mx)*(H-pt-pb);
