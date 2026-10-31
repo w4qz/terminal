@@ -925,8 +925,12 @@ function drawHeatmap(){
 const cv=document.getElementById('hmcv'); if(!cv) return;
 const list=(UNIV||[]).filter(u=>u.c==='Action'&&(u.l||[]).includes(HM.idx)&&u.p!=null);
 const caps=list.map(u=>(SNAPSHOT.fundamentals[u.s]||{}).mcap).filter(v=>v>0).sort((a,b)=>a-b), med=caps[caps.length>>1]||1;
-const by={}; let up=0, dn=0, known=0;
-list.forEach(u=>{ const F=SNAPSHOT.fundamentals[u.s]||{}, sec=SECT_FR[F.sector]||F.sector||'Autres'; if(F.mcap) known++;
+const by={}, seen=new Set(); let up=0, dn=0, known=0;
+// Une seule tuile par société : GOOG/GOOGL, FOX/FOXA, NWS/NWSA… (Yahoo donne la capitalisation totale à chaque classe d'actions)
+const SHARE_DUP=new Set(['GOOG','FOX','NWS','BRK-A','BF-A','LEN-B','HEI-A','UHAL-B']);
+list.forEach(u=>{ const F=SNAPSHOT.fundamentals[u.s]||{}, sec=SECT_FR[F.sector]||F.sector||'Autres';
+const nm=(F.name||u.n||'').toLowerCase().replace(/[^a-z0-9]/g,'');
+if(SHARE_DUP.has(u.s)||(nm&&seen.has(nm))) return; if(nm) seen.add(nm); if(F.mcap) known++;
 if(u.pct>0) up++; else if(u.pct<0) dn++;
 (by[sec]=by[sec]||[]).push({s:u.s, n:F.name||u.n, p:u.p, pct:u.pct, v:F.mcap||med, mcap:F.mcap, sec}); });
 const r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1, W=r.width, H=470; cv.width=W*dpr; cv.height=H*dpr;
