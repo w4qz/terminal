@@ -198,10 +198,11 @@ transition-duration:0.001ms !important;scroll-behavior:auto !important}
 <button class="navbtn" data-v="macro">Macro <kbd aria-hidden="true">E</kbd><span class="sr-only">(raccourci E)</span></button>
 <button class="navbtn" data-v="srch">Recherche <kbd aria-hidden="true">R</kbd><span class="sr-only">(raccourci R)</span></button>
 <button class="navbtn" data-v="sec">Titre <kbd aria-hidden="true">S</kbd><span class="sr-only">(raccourci S)</span></button>
+<button class="navbtn" data-v="comp">Comparer <kbd aria-hidden="true">C</kbd><span class="sr-only">(raccourci C)</span></button>
 <button class="navbtn" data-v="news">News <kbd aria-hidden="true">N</kbd><span class="sr-only">(raccourci N)</span></button>
 <button class="navbtn" data-v="diag">Diagnostic <kbd aria-hidden="true">D</kbd><span class="sr-only">(raccourci D)</span></button>
 </nav>
-<button id="searchbtn" aria-haspopup="dialog">⌘K Rechercher un titre</button>
+<button id="searchbtn" aria-haspopup="dialog" title="Titre ou commande Bloomberg : MC FP GP, AAPL RV, ECO, HELP">⌘K Commande</button>
 <div id="clocks" aria-label="Horloges des places de marché"></div>
 </div>
 
@@ -212,6 +213,7 @@ transition-duration:0.001ms !important;scroll-behavior:auto !important}
 <div class="view" id="v-macro" role="tabpanel" aria-label="Macro"></div>
 <div class="view" id="v-srch" role="tabpanel" aria-label="Recherche"></div>
 <div class="view" id="v-sec" role="tabpanel" aria-label="Titre"></div>
+<div class="view" id="v-comp" role="tabpanel" aria-label="Comparer"></div>
 <div class="view" id="v-news" role="tabpanel" aria-label="News"></div>
 <div class="view" id="v-diag" role="tabpanel" aria-label="Diagnostic"></div>
 </main>
@@ -227,10 +229,10 @@ transition-duration:0.001ms !important;scroll-behavior:auto !important}
 <div id="pal" role="dialog" aria-modal="true" aria-label="Rechercher un titre">
 <div id="palbox">
 <label for="palin" class="sr-only">Rechercher un titre par ticker, nom, indice ou devise</label>
-<input id="palin" placeholder="Ticker, nom, indice, devise…" autocomplete="off" spellcheck="false"
+<input id="palin" placeholder="Titre ou commande Bloomberg : MC FP GP · AAPL RV · MC RMS KER COMP · ECO · HELP" autocomplete="off" spellcheck="false"
 role="combobox" aria-expanded="true" aria-controls="palres" aria-autocomplete="list">
 <div id="palres" role="listbox" aria-label="Résultats de recherche"></div>
-<div id="palhint"><span>↑↓ naviguer</span><span>↵ ouvrir</span><span>esc fermer</span></div>
+<div id="palhint"><span>↑↓ naviguer</span><span>↵ exécuter</span><span>esc fermer</span><span>HELP : liste des fonctions</span><span>/ ou ⌘K : ouvrir</span></div>
 </div></div>
 
 <div id="live-status" class="sr-only" role="status" aria-live="polite"></div>
@@ -912,7 +914,7 @@ return Object.entries(c).filter(([,n])=>n>=10).sort((a,b)=>b[1]-a[1]).map(([l])=
 function hmPanelHtml(){
 const idx=hmIndices(); if(!idx.length) return '';
 if(!idx.includes(HM.idx)) HM.idx=idx[0];
-return `<div class="pnl" style="margin-bottom:9px"><h3>Carte des marchés<span class="rt">taille = capitalisation · couleur = variation du jour · cliquez pour ouvrir</span></h3>
+return `<div class="pnl" id="mkt-hm" style="margin-bottom:9px"><h3>Carte des marchés<span class="rt">taille = capitalisation · couleur = variation du jour · cliquez pour ouvrir</span></h3>
 <div class="ctl" style="align-items:center"><div class="rng" role="group" aria-label="Indice">${idx.map(l=>`<button type="button" data-hm="${esc(l)}" class="${l===HM.idx?'on':''}">${esc(l)}</button>`).join('')}</div>
 <span class="mut" style="font-size:10px;margin-left:auto" id="hminfo"></span></div>
 <div class="pbody" style="position:relative;padding:4px"><canvas id="hmcv" height="470" role="img" aria-label="Carte des variations du jour"></canvas>
@@ -1749,6 +1751,7 @@ el.innerHTML=`
 <div class="pbody" style="position:relative"><canvas id="seccv" height="380" role="img" aria-label="Graphique en chandeliers japonais de ${esc(sym)}"></canvas>
 <div id="sectip" style="position:absolute;top:14px;left:20px;font-size:10px;color:var(--txt2);pointer-events:none"></div>
 <div class="note" id="secmsg" style="padding:6px 0 0">${WORKER_URL?'Chargement…':'Renseignez WORKER_URL (relais Cloudflare) pour afficher le graphique.'}</div></div></div>
+${rvHtml(sym,F)}
 <div class="g g3">
 <div class="pnl"><h3>Valorisation et résultats<span class="rt">MAJ ${fundTs}</span></h3><div class="pbody">
 ${K('Chiffre d\'affaires (12 mois)',B(F.revTTM))}${K('Résultat net',B(F.netIncome))}${K('BPA (12 mois) / prévisionnel',N(F.eps)+' / '+N(F.feps))}
@@ -1771,10 +1774,11 @@ Graphique : clôtures ${SEC.range==='5A'?'hebdomadaires':'quotidiennes'} Yahoo F
 </div>`;
 el.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{ SEC.range=b.dataset.r; viewSecurity(); });
 el.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{ SEC[b.dataset.t]=!SEC[b.dataset.t]; viewSecurity(); });
+const rvb=document.getElementById('rvcomp'); if(rvb) rvb.onclick=()=>{ COMP.syms=[sym,...rvPeers(sym,F).slice(0,4)]; go('comp'); };
 if(WORKER_URL) loadCandles(sym, F, px);
 }
 
-const RANGE_CFG={'1M':{f:'1y',n:22},'3M':{f:'1y',n:66},'6M':{f:'2y',n:128},'1A':{f:'2y',n:252},'2A':{f:'2y',n:520},'5A':{f:'5y',n:9999}};
+const RANGE_CFG={'1J':{f:'1d',n:9999},'1M':{f:'1y',n:22},'3M':{f:'1y',n:66},'6M':{f:'2y',n:128},'1A':{f:'2y',n:252},'2A':{f:'2y',n:520},'5A':{f:'5y',n:9999}};
 const SEC={range:'6M', ma:true, vol:true, bars:null, sym:null, cache:new Map()};
 async function loadCandles(sym, F, px){
 const cfg=RANGE_CFG[SEC.range], key=sym+'|'+cfg.f, msg=document.getElementById('secmsg');
@@ -1789,7 +1793,8 @@ const qq=res.indicators.quote[0];
 bars=(res.timestamp||[]).map((t,i)=>({t:t*1000,o:qq.open[i],h:qq.high[i],l:qq.low[i],c:qq.close[i],v:qq.volume?qq.volume[i]:null}))
 .filter(b=>b.c!=null&&b.o!=null&&b.h!=null&&b.l!=null);
 if(isFX(sym)) bars=cleanFX(bars);
-bars.meta=res.meta; SEC.cache.set(key,bars);
+if(cfg.f==='1d'&&res.meta.dataGranularity!=='5m') throw new Error('intraday indisponible : mettez à jour le relais Cloudflare (worker.js)');
+bars.meta=res.meta; if(cfg.f!=='1d') SEC.cache.set(key,bars);
 }
 if(S.focus!==sym||S.view!=='sec') return;
 SEC.bars=bars; SEC.sym=sym;
@@ -1802,7 +1807,7 @@ const pc=document.getElementById('secpc'); if(pc){ pc.textContent=pct(p2); pc.cl
 msg.textContent=''; msg.style.display='none';
 const ss=document.getElementById('secsrc'); if(ss) ss.textContent=bars.cleaned?'Yahoo Finance via relais · forex : ouverture = clôture veille, mèches aberrantes plafonnées':'Yahoo Finance via relais';
 drawCandles();
-const rd=document.getElementById('secread'); if(rd) rd.innerHTML=secReading(F, px??m.regularMarketPrice, bars);
+const rd=document.getElementById('secread'); if(rd) rd.innerHTML=secReading(F, px??m.regularMarketPrice, SEC.range==='1J'?null:bars);
 }catch(e){ if(msg){ msg.style.display=''; msg.innerHTML=`<span class="neg">Graphique indisponible : ${esc(e.message)}.</span>`; } }
 }
 // Yahoo publie des bougies forex quotidiennes peu fiables : ouverture prise à une heure arbitraire
@@ -1835,7 +1840,7 @@ x.font='9px monospace'; x.strokeStyle='#1c2127'; x.fillStyle='#8a93a0'; x.textAl
 for(let k=0;k<=4;k++){ const v=lo+(hi-lo)*k/4, y=Y(v); x.beginPath(); x.moveTo(8,y); x.lineTo(W-pr,y); x.stroke(); x.fillText(dd(v),W-pr+4,y+3); }
 const ticks=Math.min(6,n); x.textAlign='center';
 for(let k=0;k<ticks;k++){ const i=Math.round(k*(n-1)/Math.max(1,ticks-1));
-x.fillText(new Date(bars[i].t).toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:SEC.range==='1M'||SEC.range==='3M'?undefined:'2-digit'}),X(i),H-5); }
+x.fillText(SEC.range==='1J'?new Date(bars[i].t).toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'}):new Date(bars[i].t).toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:SEC.range==='1M'||SEC.range==='3M'?undefined:'2-digit'}),X(i),H-5); }
 // volume
 if(SEC.vol&&bars.some(b=>b.v>0)){ const vmax=Math.max(...bars.map(b=>b.v||0))||1, vb=pt+priceH+gap+volH;
 bars.forEach((b,i)=>{ if(!b.v) return; const h=b.v/vmax*volH; x.fillStyle=b.c>=b.o?'rgba(47,191,107,.35)':'rgba(224,74,74,.35)'; x.fillRect(X(i)-cw/2,vb-h,cw,h); });
@@ -1848,11 +1853,11 @@ x.fillStyle=col; x.fillRect(X(i)-cw/2,top,cw,h); });
 // moyennes mobiles
 const line=(a,col)=>{ x.save(); x.beginPath(); x.rect(8,pt,W-pr-8,priceH); x.clip();
 x.strokeStyle=col; x.lineWidth=1.3; x.beginPath(); let s=false; a.forEach((v,i)=>{ if(v==null) return; s?x.lineTo(X(i),Y(v)):x.moveTo(X(i),Y(v)); s=true; }); x.stroke(); x.restore(); };
-if(SEC.ma){ line(m50,'#e8a33d'); line(m200,'#bb98e6'); }
+if(SEC.ma&&SEC.range!=='1J'){ line(m50,'#e8a33d'); line(m200,'#bb98e6'); }
 const lastMA=a=>{ for(let k=a.length-1;k>=0;k--) if(a[k]!=null) return a[k]; return null; };
 const out=(v)=>v!=null&&(v<lo||v>hi)?` ${v>hi?'↑':'↓'} ${dd(v)} hors cadre`:'';
 const unit=SEC.range==='5A'?'semaines':'séances';
-if(SEC.ma){ const l200='— MM200 ('+unit+')'+out(lastMA(m200)), l50='— MM50'+out(lastMA(m50));
+if(SEC.ma&&SEC.range!=='1J'){ const l200='— MM200 ('+unit+')'+out(lastMA(m200)), l50='— MM50'+out(lastMA(m50));
 x.textAlign='right'; x.fillStyle='#bb98e6'; x.fillText(l200,W-pr-4,pt-6);
 x.fillStyle='#e8a33d'; x.fillText(l50,W-pr-4-x.measureText(l200).width-12,pt-6); }
 // survol
@@ -1869,9 +1874,9 @@ if(inP){ const v=lo+(1-(my-pt)/priceH)*(hi-lo), last=bars[n-1].c, dv=(v/last-1)*
 tag(dd(v),0,my,'right');
 x.font='9px monospace'; x.textAlign='right'; x.fillStyle=dv>=0?'#2fbf6b':'#e04a4a';
 x.fillText(`${dv>=0?'+':''}${nf(dv,2)} % vs dernier`,W-pr-6,my-5); }
-tag(new Date(b.t).toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'2-digit'}),X(i),H-pb+9,'center');
+tag(SEC.range==='1J'?new Date(b.t).toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'}):new Date(b.t).toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'2-digit'}),X(i),H-pb+9,'center');
 const chg=i>0?(b.c/bars[i-1].c-1)*100:null;
-tip.innerHTML=`<b style="color:var(--txt)">${new Date(b.t).toLocaleDateString('fr-FR',{weekday:'short',day:'2-digit',month:'short',year:'numeric'})}</b> &nbsp; O ${dd(b.o)} &nbsp; H ${dd(b.h)} &nbsp; B ${dd(b.l)} &nbsp; C <b style="color:var(--txt)">${dd(b.c)}</b> ${chg!=null?`&nbsp; <span class="${cls(chg)}">${pct(chg)}</span>`:''} ${b.v?'&nbsp; Vol. '+big(b.v):''}${SEC.ma&&m50[i]?` &nbsp; <span style="color:#e8a33d">MM50 ${dd(m50[i])}</span>`:''}${SEC.ma&&m200[i]?` &nbsp; <span style="color:#bb98e6">MM200 ${dd(m200[i])}</span>`:''}`;
+tip.innerHTML=`<b style="color:var(--txt)">${SEC.range==='1J'?new Date(b.t).toLocaleString('fr-FR',{weekday:'short',hour:'2-digit',minute:'2-digit'}):new Date(b.t).toLocaleDateString('fr-FR',{weekday:'short',day:'2-digit',month:'short',year:'numeric'})}</b> &nbsp; O ${dd(b.o)} &nbsp; H ${dd(b.h)} &nbsp; B ${dd(b.l)} &nbsp; C <b style="color:var(--txt)">${dd(b.c)}</b> ${chg!=null?`&nbsp; <span class="${cls(chg)}">${pct(chg)}</span>`:''} ${b.v?'&nbsp; Vol. '+big(b.v):''}${SEC.ma&&m50[i]?` &nbsp; <span style="color:#e8a33d">MM50 ${dd(m50[i])}</span>`:''}${SEC.ma&&m200[i]?` &nbsp; <span style="color:#bb98e6">MM200 ${dd(m200[i])}</span>`:''}`;
 } else if(tip){ tip.innerHTML=''; }
 const perf=(bars[n-1].c/bars[0].o-1)*100, pe=document.getElementById('secperf');
 if(pe) pe.innerHTML=`${SEC.range} : <span class="${cls(perf)}">${pct(perf,1)}</span> · ${n} ${unit}`;
@@ -2171,15 +2176,15 @@ const bt=(M.btmm||[]).map(x=>`<tr><th scope="row" style="font-weight:400;color:v
 <td style="font-weight:600">${fmtMacro(x.v,x.fmt)}</td><td>${dlt(x.v,x.prev,x.fmt)}</td><td class="mut" style="font-size:10px">${esc(x.ts)}</td></tr>`).join('');
 el.innerHTML=`<div class="note" style="padding:0 0 8px">Équivalents gratuits des fonctions Bloomberg <b>ECO</b>, <b>WIRP</b>, <b>GC</b> et <b>BTMM</b>. Données du ${fmtDT(M.generated_at)} — FRED, BCE, Federal Reserve, Yahoo. Mise à jour toutes les 30 min.</div>
 <div class="g g2">
-<div class="pnl span2"><h3>ECO — Calendrier avec consensus<span class="rt">cette semaine et la suivante · heures locales · impact moyen et fort</span></h3><div class="pbody flush">
+<div class="pnl span2" id="m-eco"><h3>ECO — Calendrier avec consensus<span class="rt">cette semaine et la suivante · heures locales · impact moyen et fort</span></h3><div class="pbody flush">
 ${cons?`<table><caption class="sr-only">Calendrier économique avec consensus</caption><thead><tr><th scope="col">Date</th><th scope="col" style="text-align:left">Événement</th><th scope="col">Impact</th><th scope="col">Consensus</th><th scope="col">Publié</th><th scope="col">Surprise</th><th scope="col">Précédent</th></tr></thead><tbody>${cons}</tbody></table>`:'<div class="note na">Consensus indisponible pour le moment.</div>'}
 <div class="note">${esc((M.eco.consensus&&M.eco.consensus.src)||'')} Le chiffre publié n'est rapproché automatiquement que pour les principales statistiques américaines ; pour les autres, consultez la source.</div></div></div>
 <div class="pnl"><h3>ECO — Derniers chiffres<span class="rt">dernier · précédent · date</span></h3><div class="pbody flush"><table><caption class="sr-only">Derniers chiffres macroéconomiques</caption><tbody>${prints||'<tr><td class="na">indisponible</td></tr>'}</tbody></table>
 <div class="note">Le consensus des économistes n'est pas disponible gratuitement : seuls les chiffres publiés sont affichés.</div></div></div>
 <div class="pnl"><h3>ECO — Calendrier US à 4 semaines<span class="rt">FRED · Federal Reserve</span></h3><div class="pbody flush"><table><caption class="sr-only">Calendrier des publications</caption><tbody>${cal||'<tr><td class="na">aucune publication</td></tr>'}</tbody></table></div></div>
-<div class="pnl"><h3>WIRP — Probabilités des décisions de la Fed<span class="rt">futures fed funds</span></h3><div class="pbody">${wirp}</div></div>
-<div class="pnl"><h3>BTMM — Tableau de bord monétaire US<span class="rt">valeur · variation · date</span></h3><div class="pbody flush"><table><caption class="sr-only">Tableau de bord monétaire</caption><tbody>${bt}</tbody></table></div></div>
-<div class="pnl span2"><h3>GC — Courbes des taux<span class="rt">aujourd'hui (trait plein) · il y a 1 mois (pointillés)</span></h3><div class="pbody">
+<div class="pnl" id="m-wirp"><h3>WIRP — Probabilités des décisions de la Fed<span class="rt">futures fed funds</span></h3><div class="pbody">${wirp}</div></div>
+<div class="pnl" id="m-btmm"><h3>BTMM — Tableau de bord monétaire US<span class="rt">valeur · variation · date</span></h3><div class="pbody flush"><table><caption class="sr-only">Tableau de bord monétaire</caption><tbody>${bt}</tbody></table></div></div>
+<div class="pnl span2" id="m-gc"><h3>GC — Courbes des taux<span class="rt">aujourd'hui (trait plein) · il y a 1 mois (pointillés)</span></h3><div class="pbody">
 <div class="statrow" style="border:none;padding:0 0 8px">
 <div class="stat"><span class="l">US 2S10S</span><span class="n ${cls(slope(us,'2A','10A'))}">${slope(us,'2A','10A')!=null?nf(slope(us,'2A','10A'),0)+' pb':'n/d'}</span></div>
 <div class="stat"><span class="l">US 3M10A</span><span class="n ${cls(slope(us,'3M','10A'))}">${slope(us,'3M','10A')!=null?nf(slope(us,'3M','10A'),0)+' pb':'n/d'}</span></div>
@@ -2192,16 +2197,16 @@ ${cons?`<table><caption class="sr-only">Calendrier économique avec consensus</c
 drawGC(us,eu,tenors);
 el.insertAdjacentHTML('beforeend',ecoPanelHtml()); wireEco(el);
 }
-function drawGC(us,eu,tenors){
+function drawGC(us,eu,tenors,hover){
 const cv=document.getElementById('gccv'); if(!cv) return;
 const r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1;
 cv.width=r.width*dpr; cv.height=220*dpr;
 const x=cv.getContext('2d'); x.scale(dpr,dpr);
-const W=r.width,H=220,pl=40,pb=20;
+const W=r.width,H=220,pl=46,pb=20,pt=8;
 const all=[...us,...eu].flatMap(p=>[p.y,p.y1m]).filter(v=>v!=null);
 if(!all.length) return;
 const mn=Math.floor(Math.min(...all)*2)/2, mx=Math.ceil(Math.max(...all)*2)/2;
-const X=i=>pl+i/(tenors.length-1)*(W-pl-10), Y=v=>8+(1-(v-mn)/(mx-mn||1))*(H-8-pb);
+const X=i=>pl+i/(tenors.length-1)*(W-pl-10), Y=v=>pt+(1-(v-mn)/(mx-mn||1))*(H-pt-pb);
 x.font='9px monospace'; x.fillStyle='#8a93a0'; x.strokeStyle='#232830';
 for(let v=mn; v<=mx+1e-9; v+=0.5){ const y=Y(v); x.beginPath(); x.moveTo(pl,y); x.lineTo(W-10,y); x.stroke(); x.textAlign='right'; x.fillText(nf(v,1)+' %',pl-4,y+3); }
 x.textAlign='center'; tenors.forEach((t,i)=>x.fillText(t,X(i),H-5));
@@ -2209,6 +2214,23 @@ const line=(pts,key,col,dash)=>{ x.strokeStyle=col; x.lineWidth=1.5; x.setLineDa
 tenors.forEach((t,i)=>{ const p=pts.find(z=>z.t===t); if(!p||p[key]==null) return; st?x.lineTo(X(i),Y(p[key])):x.moveTo(X(i),Y(p[key])); st=true; }); x.stroke(); x.setLineDash([]); };
 line(us,'y1m','#3a5a7c',true); line(eu,'y1m','#7a5a2c',true); line(us,'y','#6ba3e0',false); line(eu,'y','#e8a33d',false);
 x.textAlign='left'; x.fillStyle='#6ba3e0'; x.fillText('■ US (Trésor)',pl+6,16); x.fillStyle='#e8a33d'; x.fillText('■ Zone euro AAA',pl+110,16);
+x.fillStyle='#8a93a0'; x.fillText('pointillés : il y a 1 mois',pl+230,16);
+if(hover){ const i=hover.i, t=tenors[i], my=hover.y, inP=my>=pt&&my<=H-pb;
+const pu=us.find(z=>z.t===t)||{}, pe=eu.find(z=>z.t===t)||{};
+x.strokeStyle='rgba(221,227,234,.4)'; x.setLineDash([3,3]); x.beginPath(); x.moveTo(X(i),pt); x.lineTo(X(i),H-pb); if(inP){ x.moveTo(pl,my); x.lineTo(W-10,my); } x.stroke(); x.setLineDash([]);
+[[pu.y,'#6ba3e0'],[pe.y,'#e8a33d'],[pu.y1m,'#3a5a7c'],[pe.y1m,'#7a5a2c']].forEach(([v,c])=>{ if(v==null) return; x.fillStyle=c; x.beginPath(); x.arc(X(i),Y(v),3,0,7); x.fill(); });
+if(inP){ const v=mn+(1-(my-pt)/(H-pt-pb))*(mx-mn); x.font='bold 10px monospace'; const tx=nf(v,2)+' %', w=x.measureText(tx).width+8;
+x.fillStyle='#dde3ea'; x.fillRect(pl-w-1,my-8,w,16); x.fillStyle='#0b0e11'; x.textAlign='left'; x.fillText(tx,pl-w+3,my+3.5); }
+const d=(a,b)=>a!=null&&b!=null?` (${a-b>=0?'+':''}${nf((a-b)*100,0)} pb / 1 mois)`:'';
+const L=[[`Maturité ${t}`,'#dde3ea'],[pu.y!=null?`US     ${nf(pu.y,2)} %${d(pu.y,pu.y1m)}`:'US     n/d','#6ba3e0'],
+[pe.y!=null?`Euro   ${nf(pe.y,2)} %${d(pe.y,pe.y1m)}`:'Euro   n/d','#e8a33d'],[pu.y!=null&&pe.y!=null?`Écart  ${nf((pu.y-pe.y)*100,0)} pb`:'','#8a93a0']].filter(l=>l[0]);
+x.font='10px monospace'; const bw=Math.max(...L.map(l=>x.measureText(l[0]).width))+14, bh=L.length*14+8;
+const bx=X(i)+12+bw>W-10?X(i)-bw-12:X(i)+12, by=pt+18;
+x.fillStyle='rgba(11,14,17,.92)'; x.fillRect(bx,by,bw,bh); x.strokeStyle='#2a3038'; x.strokeRect(bx,by,bw,bh);
+L.forEach(([s,c],j)=>{ x.fillStyle=c; x.textAlign='left'; x.fillText(s,bx+7,by+15+j*14); }); }
+cv.style.cursor='crosshair';
+cv.onmousemove=ev=>{ const rr=cv.getBoundingClientRect(), i=Math.round((ev.clientX-rr.left-pl)/(W-pl-10)*(tenors.length-1)); drawGC(us,eu,tenors,i>=0&&i<tenors.length?{i,y:ev.clientY-rr.top}:null); };
+cv.onmouseleave=()=>drawGC(us,eu,tenors,null);
 }
 
 /*═══════════════════════════════════════════════════════════════════════
@@ -2299,7 +2321,7 @@ const palin=document.getElementById('palin');
 if(palList.length) palin.setAttribute('aria-activedescendant','pr-'+palIdx);
 else palin.removeAttribute('aria-activedescendant');
 }
-function palOpen(it){ if(!it) return; if(it.nw){ closePal(); go('srch').then(()=>showDetail(it.sym)); } else openSym(it.sym); }
+function palOpen(it){ if(!it) return; if(it.cmd){ runCmd(it.cmd); return; } if(it.sym&&it.sym.startsWith('<')){ const i=document.getElementById('palin'); i.value=''; i.placeholder=it.exch; return; } if(it.nw){ closePal(); go('srch').then(()=>showDetail(it.sym)); } else openSym(it.sym); }
 async function palSearch(q){
 const t=q.trim().toLowerCase().replace(/^economics:/,''), my=++palSeq;
 // 1. Catalogue local (instantané) : ~900 actions, indices, devises, matières premières, taux, crypto
@@ -2309,6 +2331,10 @@ loc=loc.filter(x=>x.s.toLowerCase().includes(t)||(x.n||'').toLowerCase().include
 .sort((a,b)=>{ const r=x=>x.s.toLowerCase()===t?0:x.s.toLowerCase().startsWith(t)?1:(x.n||'').toLowerCase().startsWith(t)?2:3; return r(a)-r(b); });
 }
 palList=loc.slice(0,12).map(x=>({sym:x.s, name:x.n||x.s, cls:x.c, exch:(x.l&&x.l.length?x.l[0]:'catalogue'), nw:x.nw}));
+{ const up=q.trim().toUpperCase(), c=parseCmd(q);
+if(up==='HELP'||up==='?'){ palList=helpItems(); palIdx=0; palRender(); return; }
+if(c) palList.unshift({cmd:c, sym:'▶ '+cmdLabel(c), name:FUNCS[c.f].d, cls:'Fonction', exch:'↵ exécuter'});
+else if(!t) palList=helpItems().filter(h=>h.cmd).slice(0,6).concat(palList.slice(0,8)); }
 palIdx=0; palRender();
 // 2. Marchés mondiaux via le relais (complète la liste)
 clearTimeout(palTimer);
@@ -2453,7 +2479,7 @@ cv.onmouseleave=()=>drawEco(null);
 function ecoPanelHtml(){
 if(!ECON||!ECON.length) return `<div class="pnl" style="margin-top:9px"><h3>ECONOMICS — Indicateurs par pays</h3><div class="note">Données économiques pas encore générées (script <code>build_economics.py</code>, une fois par jour).</div></div>`;
 const by={}; ECON.forEach(e=>(by[e.ctry]=by[e.ctry]||[]).push(e));
-return `<div class="pnl" style="margin-top:9px"><h3>ECONOMICS — Indicateurs par pays<span class="rt">${ECON.length} séries · FRED, BCE, BoE · ${fmtDT(ECON_TS)} · tapez un code dans ⌘K, ex. USINTR</span></h3>
+return `<div class="pnl" id="m-econ" style="margin-top:9px"><h3>ECONOMICS — Indicateurs par pays<span class="rt">${ECON.length} séries · FRED, BCE, BoE · ${fmtDT(ECON_TS)} · tapez un code dans ⌘K, ex. USINTR</span></h3>
 <div class="g g3" style="padding:9px">${Object.entries(by).map(([c,l])=>`<div><div style="font-size:9px;color:var(--txt3);margin:0 0 4px;letter-spacing:.5px">${esc(c.toUpperCase())}</div>
 <table><caption class="sr-only">${esc(c)}</caption><tbody>${l.map(e=>{ const dv=e.last-e.prev;
 return `<tr class="clk" data-eco="${esc(e.code)}" tabindex="0" role="button" title="${esc(e.n)}"><th scope="row" class="sym" style="text-align:left">${esc(e.code)}</th>
@@ -2462,13 +2488,169 @@ return `<tr class="clk" data-eco="${esc(e.code)}" tabindex="0" role="button" tit
 }
 
 /*═══════════════════════════════════════════════════════════════════════
+13c. FONCTIONS FAÇON BLOOMBERG — ligne de commande, RV, COMP
+═══════════════════════════════════════════════════════════════════════*/
+const FUNCS={
+GP:{d:'Graphique du titre',t:1}, DES:{d:'Fiche descriptive du titre',t:1}, GIP:{d:'Graphique intraday (séance du jour)',t:1},
+RV:{d:'Valeur relative face aux pairs',t:1}, COMP:{d:'Comparaison de performances (base 100)',t:2},
+WEI:{d:'Marchés mondiaux',go:'mkt'}, IMAP:{d:'Carte des marchés',go:'mkt',a:'mkt-hm'},
+ECO:{d:'Calendrier et chiffres économiques',go:'macro',a:'m-eco'}, WIRP:{d:'Probabilités des décisions de la Fed',go:'macro',a:'m-wirp'},
+GC:{d:'Courbes des taux',go:'macro',a:'m-gc'}, BTMM:{d:'Tableau de bord monétaire US',go:'macro',a:'m-btmm'},
+ECST:{d:'Indicateurs économiques par pays',go:'macro',a:'m-econ'},
+PORT:{d:'Portefeuille, risque et adéquation',go:'pf'}, TOP:{d:'Principales actualités',go:'news'}, N:{d:'Actualités',go:'news'},
+SECF:{d:'Recherche de titres',go:'srch'}, HELP:{d:'Liste des fonctions',help:1}
+};
+const EXCH={US:'',UN:'',UW:'',UQ:'',FP:'.PA',GY:'.DE',GR:'.DE',LN:'.L',SW:'.SW',SE:'.SW',VX:'.SW',NA:'.AS',IM:'.MI',SM:'.MC',BB:'.BR',JT:'.T',JP:'.T',HK:'.HK',CT:'.TO',AU:'.AX'};
+function resolveTicker(t){
+if(ecoGet(t)) return ecoGet(t).code;
+const u=UNIV||[]; if(u.find(x=>x.s===t)||SNAPSHOT.quotes[t]) return t;
+const m=u.find(x=>x.c==='Action'&&x.s.split('.')[0]===t); return m?m.s:t;
+}
+function parseCmd(q){
+const tk=q.toUpperCase().replace(/<GO>/g,' ').split(/[\s,]+/).filter(t=>t&&!['EQUITY','INDEX','CURNCY','COMDTY','GO'].includes(t));
+if(!tk.length) return null;
+if(tk.length===1&&FUNCS[tk[0]]&&!FUNCS[tk[0]].t) return {f:tk[0]};
+let f=null;
+if(FUNCS[tk[tk.length-1]]&&FUNCS[tk[tk.length-1]].t) f=tk.pop(); else if(tk[0]==='COMP') f=tk.shift();
+if(!f||!tk.length) return null;
+const syms=[]; for(let i=0;i<tk.length;i++){ const t=tk[i], nx=tk[i+1];
+if(nx&&nx in EXCH&&!t.includes('.')){ syms.push(t+EXCH[nx]); i++; } else syms.push(resolveTicker(t)); }
+return FUNCS[f].t===1?{f,sym:syms[0]}:{f,syms:[...new Set(syms)]};
+}
+const cmdLabel=c=>c.sym?`${c.sym} ${c.f}`:c.syms?`${c.syms.join(' ')} ${c.f}`:c.f;
+async function runCmd(c){
+closePal(); const F=FUNCS[c.f];
+if(F.help){ openPal(); document.getElementById('palin').value='HELP'; palSearch('HELP'); return; }
+if(F.go){ await go(F.go); if(F.a){ const e=document.getElementById(F.a); if(e) e.scrollIntoView({behavior:'smooth',block:'start'}); } return; }
+if(c.f==='COMP'){ COMP.syms=c.syms.length>1?c.syms:[c.syms[0],'ACWI']; return go('comp'); }
+S.focus=c.sym;
+if(c.f==='GIP') SEC.range='1J'; else if(SEC.range==='1J') SEC.range='6M';
+await go('sec');
+if(c.f==='RV'){ const e=document.getElementById('sec-rv'); if(e) e.scrollIntoView({behavior:'smooth',block:'start'}); }
+}
+function helpItems(){ return Object.entries(FUNCS).filter(([k])=>k!=='HELP').map(([k,v])=>({cmd:v.t?null:{f:k}, sym:v.t===1?'<titre> '+k:v.t===2?'<titres> COMP':k, name:v.d, cls:'Fonction', exch:v.t?'ex. '+(v.t===2?'MC RMS KER COMP':'MC FP '+k):'↵'})); }
+
+/*── RV : valeur relative face aux pairs ─────────────────────────────*/
+function rvPeers(sym,F){
+if(!F||!F.sector) return [];
+const all=Object.entries(SNAPSHOT.fundamentals).filter(([s,f])=>s!==sym&&f&&f.sector===F.sector&&f.mcap>0);
+const ind=all.filter(([,f])=>F.industry&&f.industry===F.industry);
+const pool=ind.length>=4?ind:all, ref=F.mcap||1;
+return pool.sort((a,b)=>Math.abs(Math.log(a[1].mcap/ref))-Math.abs(Math.log(b[1].mcap/ref))).slice(0,8).map(([s])=>s);
+}
+function rvHtml(sym,F){
+const peers=rvPeers(sym,F);
+if(!peers.length) return `<div class="pnl" id="sec-rv" style="margin-bottom:9px"><h3>RV — Valeur relative</h3><div class="note">${F&&F.sector?'Aucun pair avec des fondamentaux dans le catalogue.':'Secteur inconnu : fondamentaux pas encore lus pour ce titre.'}</div></div>`;
+const cols=[['mcap','Capi.',v=>big(v),0],['pe','PER',v=>nf(v,1),-1],['fpe','PER prosp.',v=>nf(v,1),-1],['evEbitda','VE/EBITDA',v=>nf(v,1),-1],
+['opMargin','Marge op.',v=>nf(v,1)+' %',1],['revGrowth','Croiss. CA',v=>pct(v,1),1],['roe','ROE',v=>nf(v,1)+' %',1],['divYield','Rdt div.',v=>nf(v,2)+' %',1]];
+const row=s=>{ const f=SNAPSHOT.fundamentals[s]||{}, u=(UNIV||[]).find(x=>x.s===s)||{}, q=SNAPSHOT.quotes[s]||{}; return {s, f, n:f.name||u.n||s, pc:q.pct??u.pct}; };
+const rows=[row(sym),...peers.map(row)];
+const med=k=>{ const v=rows.slice(1).map(r=>r.f[k]).filter(x=>x!=null&&isFinite(x)&&(k.match(/pe|evEbitda/)?x>0:true)).sort((a,b)=>a-b); return v.length?v[v.length>>1]:null; };
+const M=Object.fromEntries(cols.map(([k])=>[k,med(k)]));
+const cell=(r,[k,,fmt,dir],me)=>{ const v=r.f[k]; if(v==null||!isFinite(v)) return '<td class="na">n/d</td>';
+let c=''; if(me&&dir&&M[k]!=null&&Math.abs(v-M[k])>1e-9){ const better=dir<0?(v>0&&v<M[k]):v>M[k]; c=better?'pos':'neg'; } return `<td class="${c}">${fmt(v)}</td>`; };
+return `<div class="pnl" id="sec-rv" style="margin-bottom:9px"><h3>RV — Valeur relative<span class="rt">${esc(F.industry||F.sector)} · ${peers.length} pairs de taille proche · vert = mieux que la médiane</span></h3>
+<div class="pbody flush"><table><caption class="sr-only">Comparaison avec les pairs</caption><thead><tr><th scope="col" style="text-align:left">Titre</th>${cols.map(c=>`<th scope="col">${c[1]}</th>`).join('')}<th scope="col">Var. jour</th></tr></thead><tbody>
+${rows.map((r,i)=>`<tr class="${i?'clk':''}" ${i?`data-sym="${esc(r.s)}" tabindex="0" role="button"`:''} style="${i?'':'background:var(--sel)'}">
+<th scope="row" style="text-align:left"><span class="sym">${esc(r.s)}</span> <span class="mut" style="font-size:10px;font-weight:400">${esc(r.n).slice(0,28)}</span></th>
+${cols.map(c=>cell(r,c,i===0)).join('')}<td class="${cls(r.pc)}">${r.pc!=null?pct(r.pc):'—'}</td></tr>`).join('')}
+<tr style="border-top:1px solid var(--line)"><th scope="row" style="text-align:left;color:var(--txt2)">Médiane des pairs</th>${cols.map(([k,,fmt])=>`<td class="mut">${M[k]!=null?fmt(M[k]):'—'}</td>`).join('')}<td></td></tr>
+</tbody></table></div>
+<div class="ctl" style="border-bottom:none;align-items:center"><button class="btn go" type="button" id="rvcomp">Comparer les cours (COMP)</button>
+<span class="note" style="padding:0">Pairs : même ${F.industry&&peers.every(p=>(SNAPSHOT.fundamentals[p]||{}).industry===F.industry)?'industrie':'secteur'} dans le catalogue, classés par capitalisation proche. Fondamentaux Yahoo Finance.</span></div></div>`;
+}
+
+/*── COMP : comparaison de performances en base 100 ──────────────────*/
+const COMP={syms:['MC.PA','RMS.PA','KER.PA','ACWI'], range:'1A', hover:null, data:null};
+const COMP_R={'1M':'1mo','3M':'3mo','6M':'6mo','1A':'1y','2A':'2y','5A':'5y'};
+const COMP_COL=['#6ba3e0','#e8a33d','#2fbf6b','#bb98e6','#e04a4a','#4fc1c9','#d8d36b','#c98a5f'];
+const COMP_CACHE=new Map();
+async function compFetch(sym,range){
+const k=sym+'|'+range; if(COMP_CACHE.has(k)) return COMP_CACHE.get(k);
+const pr=(async()=>{ const r=await fetch(`${WORKER_URL}/chart?s=${encodeURIComponent(sym)}&range=${range}`); const d=await r.json();
+const res=d.chart&&d.chart.result&&d.chart.result[0]; if(!r.ok||!res) throw new Error('introuvable');
+const c=res.indicators.quote[0].close, off=res.meta.gmtoffset||0, map=new Map();
+(res.timestamp||[]).forEach((t,i)=>{ if(c[i]!=null) map.set(new Date((t+off)*1000).toISOString().slice(0,10),c[i]); });
+return {map, meta:res.meta}; })();
+COMP_CACHE.set(k,pr); pr.catch(()=>COMP_CACHE.delete(k)); return pr;
+}
+async function viewComp(){
+const el=document.getElementById('v-comp');
+el.innerHTML=`<div class="pnl" style="margin-bottom:9px"><h3>COMP — Comparaison de performances<span class="rt">base 100 au début de la période · Yahoo Finance via relais</span></h3>
+<form class="ctl" id="compform" style="align-items:flex-end" novalidate>
+<div class="f w"><label for="compin">Titres (séparés par des espaces)</label><input id="compin" value="${esc(COMP.syms.join(' '))}" style="text-align:left;width:360px" autocomplete="off"></div>
+<button class="btn go" type="submit">Comparer</button>
+<div class="rng" role="group" aria-label="Période" style="margin-left:14px">${Object.keys(COMP_R).map(r=>`<button type="button" data-cr="${r}" class="${r===COMP.range?'on':''}">${r}</button>`).join('')}</div>
+<span class="note" style="padding:0;margin-left:auto">Bloomberg : MC RMS KER COMP · accepte MC FP, AAPL US…</span></form>
+<div class="pbody" style="position:relative"><canvas id="compcv" height="380" role="img" aria-label="Comparaison des performances"></canvas><div id="compmsg" class="note" style="padding:6px 0 0">Chargement…</div></div></div>
+<div class="pnl"><h3>Statistiques sur la période</h3><div class="pbody flush" id="comptab"></div></div>`;
+document.getElementById('compform').onsubmit=e=>{ e.preventDefault(); const c=parseCmd(document.getElementById('compin').value+' COMP'); if(c&&c.syms.length){ COMP.syms=c.syms.slice(0,8); viewComp(); } };
+el.querySelectorAll('[data-cr]').forEach(b=>b.onclick=()=>{ COMP.range=b.dataset.cr; viewComp(); });
+if(!WORKER_URL){ document.getElementById('compmsg').textContent='Relais Cloudflare non configuré.'; return; }
+const res=await Promise.all(COMP.syms.map(s=>compFetch(s,COMP_R[COMP.range]).then(d=>({s,d})).catch(()=>({s,d:null}))));
+if(S.view!=='comp') return;
+const ok=res.filter(r=>r.d&&r.d.map.size>2), bad=res.filter(r=>!r.d||r.d.map.size<=2).map(r=>r.s);
+if(!ok.length){ document.getElementById('compmsg').innerHTML=`<span class="neg">Aucune donnée pour ${bad.map(esc).join(', ')}.</span>`; return; }
+const start=ok.map(r=>[...r.d.map.keys()].sort()[0]).sort().pop();
+const dates=[...new Set(ok.flatMap(r=>[...r.d.map.keys()]))].filter(d=>d>=start).sort();
+const series=ok.map((r,i)=>{ const look=fxLookup(r.d), v0=look(dates[0]); const vals=dates.map(d=>look(d)/v0*100);
+const u=(UNIV||[]).find(x=>x.s===r.s);
+const rets=vals.slice(1).map((v,j)=>v/vals[j]-1);
+return {s:r.s, n:(u&&u.n)||r.d.meta.shortName||r.d.meta.longName||r.s, col:COMP_COL[i%COMP_COL.length], vals, rets, last:r.d.meta.regularMarketPrice, ccy:r.d.meta.currency}; });
+COMP.data={dates,series};
+document.getElementById('compmsg').innerHTML=bad.length?`<span class="neg">Introuvables : ${bad.map(esc).join(', ')}.</span> `:'';
+document.getElementById('compmsg').innerHTML+=`Du ${new Date(dates[0]+'T12:00:00').toLocaleDateString('fr-FR')} au ${new Date(dates[dates.length-1]+'T12:00:00').toLocaleDateString('fr-FR')} · cours dans la devise de cotation, dividendes non réinvestis.`;
+const ppy=COMP.range==='5A'?52:252, ref=series[0].rets;
+document.getElementById('comptab').innerHTML=`<table><caption class="sr-only">Statistiques comparées</caption><thead><tr><th scope="col" style="text-align:left">Titre</th><th scope="col">Dernier</th><th scope="col">Performance</th><th scope="col">Volatilité ann.</th><th scope="col">Perte max</th><th scope="col">Corrélation avec ${esc(series[0].s)}</th><th scope="col"></th></tr></thead><tbody>
+${series.map((x,i)=>{ const pf=x.vals[x.vals.length-1]-100, n=Math.min(ref.length,x.rets.length);
+return `<tr><th scope="row" style="text-align:left"><span style="display:inline-block;width:10px;height:3px;background:${x.col};vertical-align:middle;margin-right:6px"></span><span class="sym clk" data-sym="${esc(x.s)}">${esc(x.s)}</span> <span class="mut" style="font-size:10px;font-weight:400">${esc(x.n).slice(0,32)}</span></th>
+<td>${x.last!=null?npx(x.last,x.s)+' '+esc(x.ccy||''):'—'}</td><td class="${cls(pf)}"><b>${pct(pf,1)}</b></td><td>${nf(Q.volAnn(x.rets,ppy)*100,1)} %</td>
+<td class="neg">−${nf(Q.maxDD(x.vals),1)} %</td><td class="mut">${i?nf(Q.corr(ref.slice(-n),x.rets.slice(-n)),2):'—'}</td>
+<td><button class="btn" data-rm="${i}" aria-label="Retirer ${esc(x.s)}">✕</button></td></tr>`; }).join('')}</tbody></table>`;
+wireSymbolClicks(document.getElementById('comptab'));
+document.querySelectorAll('[data-rm]').forEach(b=>b.onclick=()=>{ COMP.syms=COMP.syms.filter(s=>s!==series[+b.dataset.rm].s); viewComp(); });
+drawComp();
+}
+function drawComp(hover){
+const cv=document.getElementById('compcv'), D=COMP.data; if(!cv||!D) return;
+const {dates,series}=D, n=dates.length, r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1, W=r.width, H=380;
+cv.width=W*dpr; cv.height=H*dpr; const x=cv.getContext('2d'); x.scale(dpr,dpr);
+const pl=8, pr=70, pt=30, pb=20, all=series.flatMap(s=>s.vals);
+let lo=Math.min(...all), hi=Math.max(...all); const pad=(hi-lo)*0.05||1; lo-=pad; hi+=pad;
+const X=i=>pl+i/(n-1)*(W-pl-pr), Y=v=>pt+(1-(v-lo)/(hi-lo))*(H-pt-pb), fp=v=>(v>=100?'+':'')+nf(v-100,1)+' %';
+x.font='9px monospace'; x.strokeStyle='#1c2127'; x.fillStyle='#8a93a0';
+for(let k=0;k<=5;k++){ const v=lo+(hi-lo)*k/5, y=Y(v); x.beginPath(); x.moveTo(pl,y); x.lineTo(W-pr,y); x.stroke(); x.textAlign='left'; x.fillText(fp(v),W-pr+4,y+3); }
+x.strokeStyle='#4a525c'; x.beginPath(); x.moveTo(pl,Y(100)); x.lineTo(W-pr,Y(100)); x.stroke();
+const fd=d=>new Date(d+'T12:00:00').toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'2-digit'});
+for(let k=0;k<6;k++){ const i=Math.round(k*(n-1)/5); x.textAlign=k===0?'left':k===5?'right':'center'; x.fillText(fd(dates[i]),k===0?pl:k===5?W-pr:X(i),H-5); }
+series.forEach(s=>{ x.strokeStyle=s.col; x.lineWidth=1.6; x.beginPath(); s.vals.forEach((v,i)=>i?x.lineTo(X(i),Y(v)):x.moveTo(X(i),Y(v))); x.stroke(); });
+// légende et étiquettes de fin
+let lx=pl+4; x.font='10px monospace'; x.textAlign='left';
+series.forEach(s=>{ const t=`${s.s} ${fp(s.vals[n-1])}`; x.fillStyle=s.col; x.fillRect(lx,10,12,3); x.fillText(t,lx+16,15); lx+=x.measureText(t).width+30; });
+const tag=(txt,y,bg,fg)=>{ x.font='bold 10px monospace'; const w=x.measureText(txt).width+10; x.fillStyle=bg; x.fillRect(W-pr+1,y-8,w,16); x.fillStyle=fg; x.textAlign='left'; x.fillText(txt,W-pr+6,y+3.5); x.font='9px monospace'; };
+if(hover==null) series.forEach(s=>tag(fp(s.vals[n-1]),Y(s.vals[n-1]),s.col,'#0b0e11'));
+if(hover){ const i=hover.i, my=hover.y, inP=my>=pt&&my<=H-pb;
+x.strokeStyle='rgba(221,227,234,.4)'; x.setLineDash([3,3]); x.beginPath(); x.moveTo(X(i),pt); x.lineTo(X(i),H-pb); if(inP){ x.moveTo(pl,my); x.lineTo(W-pr,my); } x.stroke(); x.setLineDash([]);
+series.forEach(s=>{ x.fillStyle=s.col; x.beginPath(); x.arc(X(i),Y(s.vals[i]),3,0,7); x.fill(); });
+if(inP) tag(fp(lo+(1-(my-pt)/(H-pt-pb))*(hi-lo)),my,'#dde3ea','#0b0e11');
+const lines=[fd(dates[i]),...series.map(s=>[s,`${s.s.padEnd(9)} ${fp(s.vals[i])}`])].map(l=>l);
+x.font='10px monospace'; const bw=Math.max(...lines.map(l=>x.measureText(typeof l==='string'?l:l[1]).width))+14, bh=lines.length*14+8;
+const bx=X(i)+12+bw>W-pr?X(i)-bw-12:X(i)+12, by=pt+6;
+x.fillStyle='rgba(11,14,17,.92)'; x.fillRect(bx,by,bw,bh); x.strokeStyle='#2a3038'; x.strokeRect(bx,by,bw,bh);
+lines.forEach((l,j)=>{ x.fillStyle=typeof l==='string'?'#dde3ea':l[0].col; x.fillText(typeof l==='string'?l:l[1],bx+7,by+15+j*14); }); }
+cv.style.cursor='crosshair';
+cv.onmousemove=ev=>{ const rr=cv.getBoundingClientRect(), i=Math.round((ev.clientX-rr.left-pl)/(W-pl-pr)*(n-1)); drawComp(i>=0&&i<n?{i,y:ev.clientY-rr.top}:null); };
+cv.onmouseleave=()=>drawComp(null);
+}
+
+/*═══════════════════════════════════════════════════════════════════════
 14. NAVIGATION
 ═══════════════════════════════════════════════════════════════════════*/
 const RENDER={mkt:viewMarkets, wl:viewWatchlist, pf:viewPortfolio, macro:viewMacro, srch:viewSearch,
-sec:viewSecurity, news:viewNews, diag:viewDiag};
+sec:viewSecurity, comp:viewComp, news:viewNews, diag:viewDiag};
 
 const VIEW_LABEL={mkt:'Marchés', wl:'Watchlist', pf:'Portefeuille', macro:'Macro', srch:'Recherche',
-sec:'Titre', news:'News', diag:'Diagnostic'};
+sec:'Titre', comp:'Comparer', news:'News', diag:'Diagnostic'};
 
 async function go(v){
 S.view=v;
@@ -2538,11 +2720,12 @@ else if(e.key==='Enter' && palList[palIdx]) palOpen(palList[palIdx]);
 return;
 }
 if(e.target.tagName==='INPUT' || e.metaKey || e.ctrlKey || e.altKey) return;
-const map={m:'mkt', w:'wl', p:'pf', e:'macro', r:'srch', s:'sec', n:'news', d:'diag'};
+const map={m:'mkt', w:'wl', p:'pf', e:'macro', r:'srch', s:'sec', c:'comp', n:'news', d:'diag'};
+if(e.key==='/'){ e.preventDefault(); openPal(); return; }
 const t=map[e.key.toLowerCase()];
 if(t){ e.preventDefault(); go(t); }
 });
-window.addEventListener('resize',()=>{ if(S.view==='pf'&&S.mc){ drawMC(S.mc.p,S.mc.b,S.mc.yrs); pfRenderPerf(); } if(S.view==='mkt') drawHeatmap(); if(S.view==='macro') viewMacro(); if(S.view==='sec'){ if(ecoGet(S.focus)) drawEco(); else drawCandles(); } });
+window.addEventListener('resize',()=>{ if(S.view==='pf'&&S.mc){ drawMC(S.mc.p,S.mc.b,S.mc.yrs); pfRenderPerf(); } if(S.view==='mkt') drawHeatmap(); if(S.view==='comp') drawComp(); if(S.view==='macro') viewMacro(); if(S.view==='sec'){ if(ecoGet(S.focus)) drawEco(); else drawCandles(); } });
 
 tick(); setInterval(tick,1000);
 go('mkt');
