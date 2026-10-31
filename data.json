@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T07:33:15.130148Z",
+ "generated_at": "2026-10-31T07:45:38.551310Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -15,10 +15,10 @@
    "vol": 168039400
   },
   "ASTS": {
-   "p": 40.99,
+   "p": 40.97,
    "prev": 43.07,
-   "chg": -2.08,
-   "pct": -4.83,
+   "chg": -2.1,
+   "pct": -4.88,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-10-30T19:30:00Z",
@@ -71,8 +71,8 @@
    "prev": 2859.22,
    "chg": -47.1787,
    "pct": -1.65,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^RUT)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^RUT) — échec de la dernière mise à jour",
    "ts": "2026-10-30T19:30:00Z",
    "open": 2838.77,
    "lo": 2787.1201,
@@ -244,10 +244,10 @@
    "hi": 102.09
   },
   "XAU": {
-   "p": 3898.8999,
+   "p": 3884.8999,
    "prev": 4031.3999,
-   "chg": -132.5,
-   "pct": -3.29,
+   "chg": -146.5,
+   "pct": -3.63,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (GC=F)",
    "ts": "2026-10-30T20:00:00Z",
@@ -257,10 +257,10 @@
    "vol": 142006
   },
   "CL": {
-   "p": 104.12,
+   "p": 102.95,
    "prev": 102.0,
-   "chg": 2.12,
-   "pct": 2.08,
+   "chg": 0.95,
+   "pct": 0.93,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (CL=F)",
    "ts": "2026-10-30T20:00:00Z",
@@ -270,10 +270,10 @@
    "vol": 262537
   },
   "BRENT": {
-   "p": 113.43,
+   "p": 112.33,
    "prev": 114.88,
-   "chg": -1.45,
-   "pct": -1.26,
+   "chg": -2.55,
+   "pct": -2.22,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-10-30T20:00:00Z",
@@ -283,17 +283,17 @@
    "vol": 6774
   },
   "BTC": {
-   "p": 77219.0234,
+   "p": 77184.2969,
    "prev": 77198.2109,
-   "chg": 20.8125,
-   "pct": 0.03,
+   "chg": -13.9141,
+   "pct": -0.02,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
    "ts": "2026-10-31T07:00:00Z",
    "open": 77202.3984,
    "lo": 77000.9219,
    "hi": 77434.1484,
-   "vol": 29933166592
+   "vol": 29776992256
   }
  },
  "fundamentals": {
@@ -423,6 +423,15 @@
    "w": "Many first-time purchasers want three-bed houses but Your First Home price caps mean mostly flats will qualify in large parts of country",
    "syms": [],
    "src": "myFT — world",
+   "ts": "2026-10-31T05:00:40Z",
+   "url": "https://www.ft.com/content/a6cac59f-7344-4717-8164-a4cbfdd26db5?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "New scheme will struggle to deliver ‘the homes buyers want’",
+   "w": "Many first-time purchasers want three-bed houses but Your First Home price caps mean mostly flats will qualify in large parts of country",
+   "syms": [],
+   "src": "myFT — world uk",
    "ts": "2026-10-31T05:00:40Z",
    "url": "https://www.ft.com/content/a6cac59f-7344-4717-8164-a4cbfdd26db5?syn-25a6b1a6=1",
    "mine": 1
@@ -675,8 +684,8 @@
    "mine": 1
   },
   {
-   "h": "L’agence Fitch maintient la note de la dette souveraine de la France mais dégrade sa perspective",
-   "w": "Relevant une détérioration de la situation budgétaire et des taux d’emprunts, l’agence de notation abaisse la perspective de stable à négative. « Cette appréciation confirme l’absolue nécessité d’adopter d’ici la fin de l’année un budget responsable », a réagi vendredi le ministre de l’économie, Roland Lescure.",
+   "h": "L’agence Fitch maintient la note de la dette souveraine de la France, mais dégrade sa perspective",
+   "w": "Relevant une détérioration de la situation budgétaire et des taux d’emprunt, l’agence de notation abaisse la perspective, de stable à négative. « Cette appréciation confirme l’absolue nécessité d’adopter d’ici à la fin de l’année un budget responsable », a réagi vendredi le ministre de l’économie, Roland Lescure.",
    "syms": [
     "CAC"
    ],
@@ -888,15 +897,6 @@
    "src": "myFT — us",
    "ts": "2026-10-30T17:24:07Z",
    "url": "https://www.ft.com/content/95480c09-5018-4400-b9c1-f2d53373a47c?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "CD&R pursues buyout of $40bn card processor Global Payments",
-   "w": "Deal for US company would rank among largest buyouts in history",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-10-30T17:10:22Z",
-   "url": "https://www.ft.com/content/da16af06-4431-4ced-9c3e-a0753d8c45c9?syn-25a6b1a6=1",
    "mine": 1
   }
  ],
