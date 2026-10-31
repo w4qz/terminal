@@ -195,6 +195,7 @@ transition-duration:0.001ms !important;scroll-behavior:auto !important}
 <button class="navbtn on" data-v="mkt" aria-current="page">Marchés <kbd aria-hidden="true">M</kbd><span class="sr-only">(raccourci M)</span></button>
 <button class="navbtn" data-v="wl">Watchlist <kbd aria-hidden="true">W</kbd><span class="sr-only">(raccourci W)</span></button>
 <button class="navbtn" data-v="pf">Portefeuille <kbd aria-hidden="true">P</kbd><span class="sr-only">(raccourci P)</span></button>
+<button class="navbtn" data-v="macro">Macro <kbd aria-hidden="true">E</kbd><span class="sr-only">(raccourci E)</span></button>
 <button class="navbtn" data-v="srch">Recherche <kbd aria-hidden="true">R</kbd><span class="sr-only">(raccourci R)</span></button>
 <button class="navbtn" data-v="sec">Titre <kbd aria-hidden="true">S</kbd><span class="sr-only">(raccourci S)</span></button>
 <button class="navbtn" data-v="val">Valorisation <kbd aria-hidden="true">V</kbd><span class="sr-only">(raccourci V)</span></button>
@@ -209,6 +210,7 @@ transition-duration:0.001ms !important;scroll-behavior:auto !important}
 <div class="view on" id="v-mkt" role="tabpanel" aria-label="Marchés"></div>
 <div class="view" id="v-wl" role="tabpanel" aria-label="Watchlist"></div>
 <div class="view" id="v-pf" role="tabpanel" aria-label="Portefeuille"></div>
+<div class="view" id="v-macro" role="tabpanel" aria-label="Macro"></div>
 <div class="view" id="v-srch" role="tabpanel" aria-label="Recherche"></div>
 <div class="view" id="v-sec" role="tabpanel" aria-label="Titre"></div>
 <div class="view" id="v-val" role="tabpanel" aria-label="Valorisation"></div>
@@ -624,6 +626,16 @@ let LIVE = null;
    const WORKER_URL = 'https://terminal-relais.tonpseudo.workers.dev'; */
 const WORKER_URL = 'https://terminal-relais.299z7d8df6.workers.dev';
 let UNIV = null, UNIV_TS = null;
+let MACRO = null;  // onglet Macro (macro.json : ECO, WIRP, GC, BTMM)
+async function loadMacro(){
+try{
+const r = await fetch('macro.json?t='+Date.now(), {cache:'no-store'});
+if(!r.ok) throw new Error('HTTP '+r.status);
+const d = await r.json();
+if(MACRO && MACRO.generated_at===d.generated_at) return false;
+MACRO = d; return true;
+}catch(e){ console.info('macro.json indisponible ('+e.message+')'); return false; }
+}
 let FTNL = null;   // newsletters FT (ft.json, écrit par Google Apps Script)
 async function loadFT(){
 try{
@@ -1623,6 +1635,98 @@ setTimeout(()=>inp.focus(),0);
 }
 
 /*═══════════════════════════════════════════════════════════════════════
+11c. VUE — MACRO : ECO, WIRP, GC, BTMM
+═══════════════════════════════════════════════════════════════════════*/
+function fmtMacro(v,f){
+if(v==null) return '<span class="na">n/d</span>';
+if(f==='%') return nf(v,2)+' %';
+if(f==='pb') return nf(v,0)+' pb';
+if(f==='k') return (v>0?'+':'')+nf(v,0)+' k';
+if(f==='Md') return nf(v,0)+' Md$';
+return nf(v, Math.abs(v)>=1000?0:1);
+}
+function dlt(v,p,f){
+if(v==null||p==null) return '<span class="mut">—</span>';
+let d=v-p; if(f==='%') d*=100;
+const u=f==='%'?' pb':f==='Md'?' Md$':f==='pb'?' pb':'';
+if(Math.abs(d)<1e-9) return '<span class="mut">=</span>';
+return `<span class="${d>0?'pos':'neg'}">${d>0?'+':''}${nf(d, f==='%'||f==='pb'||f==='Md'?0:1)}${u}</span>`;
+}
+const dfr=d=>new Date(d+'T12:00:00').toLocaleDateString('fr-FR',{weekday:'short',day:'2-digit',month:'short'});
+function viewMacro(){
+const el=document.getElementById('v-macro');
+if(!MACRO){ el.innerHTML=`<div class="pnl"><div class="note">Les données macro ne sont pas encore générées. Elles apparaîtront après le prochain passage du robot GitHub (fichier <code>macro.json</code>, script <code>build_macro.py</code>).</div></div>`; return; }
+const M=MACRO, today=new Date().toISOString().slice(0,10);
+// ECO
+const prints=(M.eco.prints||[]).map(x=>`<tr><th scope="row" style="font-weight:400;color:var(--txt);text-align:left">${esc(x.k)}</th>
+<td style="font-weight:600">${fmtMacro(x.v,x.fmt)}</td><td class="mut">${fmtMacro(x.prev,x.fmt)}</td>
+<td class="mut" style="font-size:10px">${esc(x.ts)}</td></tr>`).join('');
+const cal=(M.eco.calendar||[]).map(c=>{ const past=c.d<today, now=c.d===today;
+return `<tr style="${past?'opacity:.55':''}"><th scope="row" style="font-weight:${now?700:400};color:var(--txt)">${dfr(c.d)}</th>
+<td style="text-align:left">${c.imp===3?'<b>':''}${esc(c.ev)}${c.imp===3?'</b>':''} <span class="mut">${esc(c.ctry)}</span></td>
+<td class="mut" style="font-size:10px">${past?'publié':now?'<span class="pos">aujourd\'hui</span>':'à venir'}</td></tr>`; }).join('');
+// WIRP
+const W=M.wirp||{};
+const wirp=W.error?`<div class="warn">${esc(W.error)}.${W.range&&W.range[0]!=null?` Fourchette actuelle : ${nf(W.range[0])} – ${nf(W.range[1])} %.`:''}</div>`
+:`<div class="statrow" style="border:none;padding:4px 0 10px"><div class="stat"><span class="l">FOURCHETTE FED</span><span class="n">${W.range&&W.range[0]!=null?nf(W.range[0])+' – '+nf(W.range[1])+' %':'n/d'}</span></div>
+<div class="stat"><span class="l">EFFR</span><span class="n">${nf(W.effr)} %</span><span class="s">${esc(W.effr_ts||'')}</span></div></div>
+<table><caption class="sr-only">Probabilités implicites des réunions de la Fed</caption><thead><tr><th scope="col">Réunion</th><th scope="col">Taux implicite</th><th scope="col">Variation</th><th scope="col" style="text-align:left">Probabilité</th></tr></thead><tbody>
+${(W.meetings||[]).map(r=>{ const p=r.p_cut||r.p_hike, cut=r.p_cut>0;
+return `<tr><th scope="row" style="font-weight:400;color:var(--txt)">${dfr(r.d)}</th><td>${nf(r.post,3)} %</td>
+<td class="${r.move_bp<0?'neg':r.move_bp>0?'pos':'mut'}">${r.move_bp>0?'+':''}${nf(r.move_bp,1)} pb</td>
+<td style="text-align:left"><div style="display:flex;align-items:center;gap:6px"><div style="width:90px;height:6px;background:#1a1e23;border-radius:2px"><div style="width:${p}%;height:6px;border-radius:2px;background:${cut?'var(--neg)':'var(--pos)'}"></div></div>
+<span style="font-size:10px">${p?nf(p,0)+' % '+(cut?'baisse':'hausse')+' 25 pb':'statu quo'}</span></div></td></tr>`; }).join('')}
+</tbody></table><div class="note">${esc(W.src||'')}. Une probabilité de 100 % avec une variation supérieure à 25 pb signale qu'une baisse plus forte, ou plusieurs, est anticipée.</div>`;
+// GC
+const us=M.gc.us.pts||[], eu=M.gc.eu.pts||[];
+const yv=(pts,t)=>{ const p=pts.find(x=>x.t===t); return p&&p.y!=null?p.y:null; };
+const slope=(pts,a,b)=>{ const x=yv(pts,a), y=yv(pts,b); return x!=null&&y!=null?(y-x)*100:null; };
+const tenors=[...new Set([...us,...eu].map(p=>p.t))];
+const gcRows=tenors.map(t=>{ const u=us.find(x=>x.t===t)||{}, e=eu.find(x=>x.t===t)||{};
+return `<tr><th scope="row" class="sym">${t}</th><td>${u.y!=null?nf(u.y,2)+' %':'—'}</td><td>${dlt(u.y,u.y1m,'%')}</td>
+<td>${e.y!=null?nf(e.y,2)+' %':'—'}</td><td>${dlt(e.y,e.y1m,'%')}</td><td>${u.y!=null&&e.y!=null?nf((u.y-e.y)*100,0)+' pb':'—'}</td></tr>`; }).join('');
+// BTMM
+const bt=(M.btmm||[]).map(x=>`<tr><th scope="row" style="font-weight:400;color:var(--txt);text-align:left">${esc(x.k)}</th>
+<td style="font-weight:600">${fmtMacro(x.v,x.fmt)}</td><td>${dlt(x.v,x.prev,x.fmt)}</td><td class="mut" style="font-size:10px">${esc(x.ts)}</td></tr>`).join('');
+el.innerHTML=`<div class="note" style="padding:0 0 8px">Équivalents gratuits des fonctions Bloomberg <b>ECO</b>, <b>WIRP</b>, <b>GC</b> et <b>BTMM</b>. Données du ${fmtDT(M.generated_at)} — FRED, BCE, Federal Reserve, Yahoo. Mise à jour toutes les 30 min.</div>
+<div class="g g2">
+<div class="pnl"><h3>ECO — Derniers chiffres<span class="rt">dernier · précédent · date</span></h3><div class="pbody flush"><table><caption class="sr-only">Derniers chiffres macroéconomiques</caption><tbody>${prints||'<tr><td class="na">indisponible</td></tr>'}</tbody></table>
+<div class="note">Le consensus des économistes n'est pas disponible gratuitement : seuls les chiffres publiés sont affichés.</div></div></div>
+<div class="pnl"><h3>ECO — Calendrier<span class="rt">7 jours passés · 4 semaines à venir</span></h3><div class="pbody flush"><table><caption class="sr-only">Calendrier des publications</caption><tbody>${cal||'<tr><td class="na">aucune publication</td></tr>'}</tbody></table></div></div>
+<div class="pnl"><h3>WIRP — Probabilités des décisions de la Fed<span class="rt">futures fed funds</span></h3><div class="pbody">${wirp}</div></div>
+<div class="pnl"><h3>BTMM — Tableau de bord monétaire US<span class="rt">valeur · variation · date</span></h3><div class="pbody flush"><table><caption class="sr-only">Tableau de bord monétaire</caption><tbody>${bt}</tbody></table></div></div>
+<div class="pnl span2"><h3>GC — Courbes des taux<span class="rt">aujourd'hui (trait plein) · il y a 1 mois (pointillés)</span></h3><div class="pbody">
+<div class="statrow" style="border:none;padding:0 0 8px">
+<div class="stat"><span class="l">US 2S10S</span><span class="n ${cls(slope(us,'2A','10A'))}">${slope(us,'2A','10A')!=null?nf(slope(us,'2A','10A'),0)+' pb':'n/d'}</span></div>
+<div class="stat"><span class="l">US 3M10A</span><span class="n ${cls(slope(us,'3M','10A'))}">${slope(us,'3M','10A')!=null?nf(slope(us,'3M','10A'),0)+' pb':'n/d'}</span></div>
+<div class="stat"><span class="l">EURO 2S10S</span><span class="n ${cls(slope(eu,'2A','10A'))}">${slope(eu,'2A','10A')!=null?nf(slope(eu,'2A','10A'),0)+' pb':'n/d'}</span></div>
+<div class="stat"><span class="l">ÉCART US − EURO 10A</span><span class="n">${yv(us,'10A')!=null&&yv(eu,'10A')!=null?nf((yv(us,'10A')-yv(eu,'10A'))*100,0)+' pb':'n/d'}</span></div></div>
+<canvas id="gccv" height="220" role="img" aria-label="Courbes des taux US et zone euro, aujourd'hui et il y a un mois"></canvas>
+<table style="margin-top:8px"><caption class="sr-only">Courbes des taux par maturité</caption><thead><tr><th scope="col">Maturité</th><th scope="col">US</th><th scope="col">Var. 1 mois</th><th scope="col">Euro AAA</th><th scope="col">Var. 1 mois</th><th scope="col">Écart US − euro</th></tr></thead><tbody>${gcRows}</tbody></table>
+<div class="note">${esc(M.gc.us.src)}. ${esc(M.gc.eu.src)}.</div></div></div>
+</div>`;
+drawGC(us,eu,tenors);
+}
+function drawGC(us,eu,tenors){
+const cv=document.getElementById('gccv'); if(!cv) return;
+const r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1;
+cv.width=r.width*dpr; cv.height=220*dpr;
+const x=cv.getContext('2d'); x.scale(dpr,dpr);
+const W=r.width,H=220,pl=40,pb=20;
+const all=[...us,...eu].flatMap(p=>[p.y,p.y1m]).filter(v=>v!=null);
+if(!all.length) return;
+const mn=Math.floor(Math.min(...all)*2)/2, mx=Math.ceil(Math.max(...all)*2)/2;
+const X=i=>pl+i/(tenors.length-1)*(W-pl-10), Y=v=>8+(1-(v-mn)/(mx-mn||1))*(H-8-pb);
+x.font='9px monospace'; x.fillStyle='#8a93a0'; x.strokeStyle='#232830';
+for(let v=mn; v<=mx+1e-9; v+=0.5){ const y=Y(v); x.beginPath(); x.moveTo(pl,y); x.lineTo(W-10,y); x.stroke(); x.textAlign='right'; x.fillText(nf(v,1)+' %',pl-4,y+3); }
+x.textAlign='center'; tenors.forEach((t,i)=>x.fillText(t,X(i),H-5));
+const line=(pts,key,col,dash)=>{ x.strokeStyle=col; x.lineWidth=1.5; x.setLineDash(dash?[4,4]:[]); x.beginPath(); let st=false;
+tenors.forEach((t,i)=>{ const p=pts.find(z=>z.t===t); if(!p||p[key]==null) return; st?x.lineTo(X(i),Y(p[key])):x.moveTo(X(i),Y(p[key])); st=true; }); x.stroke(); x.setLineDash([]); };
+line(us,'y1m','#3a5a7c',true); line(eu,'y1m','#7a5a2c',true); line(us,'y','#6ba3e0',false); line(eu,'y','#e8a33d',false);
+x.textAlign='left'; x.fillStyle='#6ba3e0'; x.fillText('■ US (Trésor)',pl+6,16); x.fillStyle='#e8a33d'; x.fillText('■ Zone euro AAA',pl+110,16);
+}
+
+/*═══════════════════════════════════════════════════════════════════════
 12. VUE — DIAGNOSTIC
 ═══════════════════════════════════════════════════════════════════════*/
 async function viewDiag(){
@@ -1723,10 +1827,10 @@ function openSym(sym){ closePal(); S.focus=sym; go('sec'); }
 /*═══════════════════════════════════════════════════════════════════════
 14. NAVIGATION
 ═══════════════════════════════════════════════════════════════════════*/
-const RENDER={mkt:viewMarkets, wl:viewWatchlist, pf:viewPortfolio, srch:viewSearch,
+const RENDER={mkt:viewMarkets, wl:viewWatchlist, pf:viewPortfolio, macro:viewMacro, srch:viewSearch,
 sec:viewSecurity, val:viewValuation, news:viewNews, diag:viewDiag};
 
-const VIEW_LABEL={mkt:'Marchés', wl:'Watchlist', pf:'Portefeuille', srch:'Recherche',
+const VIEW_LABEL={mkt:'Marchés', wl:'Watchlist', pf:'Portefeuille', macro:'Macro', srch:'Recherche',
 sec:'Titre', val:'Valorisation', news:'News', diag:'Diagnostic'};
 
 async function go(v){
@@ -1797,15 +1901,15 @@ else if(e.key==='Enter' && palList[palIdx]) openSym(palList[palIdx].sym);
 return;
 }
 if(e.target.tagName==='INPUT' || e.metaKey || e.ctrlKey || e.altKey) return;
-const map={m:'mkt', w:'wl', p:'pf', r:'srch', s:'sec', v:'val', n:'news', d:'diag'};
+const map={m:'mkt', w:'wl', p:'pf', e:'macro', r:'srch', s:'sec', v:'val', n:'news', d:'diag'};
 const t=map[e.key.toLowerCase()];
 if(t){ e.preventDefault(); go(t); }
 });
-window.addEventListener('resize',()=>{ if(S.view==='pf') runMC(); });
+window.addEventListener('resize',()=>{ if(S.view==='pf') runMC(); if(S.view==='macro') viewMacro(); });
 
 tick(); setInterval(tick,1000);
 go('mkt');
-const refresh=()=>Promise.all([loadLive(),loadUniverse(),loadFT()]).then(([a,b,c])=>{ if(a||b||c){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
+const refresh=()=>Promise.all([loadLive(),loadUniverse(),loadFT(),loadMacro()]).then(([a,b,c,d])=>{ if(a||b||c||d){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
 refresh();
 setInterval(refresh, 10*60*1000);
 
