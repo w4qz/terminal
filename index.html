@@ -1144,11 +1144,11 @@ el.innerHTML=`
 
 <div class="pnl">
 <h3>Simulation Monte Carlo — portefeuille actuel</h3>
-<form class="ctl" id="mcform">
+<form class="ctl" id="mcform" novalidate>
 <div class="f"><label for="p_mub">μ indice % an</label><input id="p_mub" type="number" step="0.5" value="${P.mub}"></div>
 <div class="f"><label for="p_rf">Taux sans risque %</label><input id="p_rf" type="number" step="0.25" value="${P.rf}"></div>
-<div class="f"><label for="p_yrs">Horizon (années)</label><input id="p_yrs" type="number" step="1" min="1" max="30" value="${P.yrs}"></div>
-<div class="f"><label for="p_n">Trajectoires</label><input id="p_n" type="number" step="500" min="200" max="20000" value="${P.N}"></div>
+<div class="f"><label for="p_yrs">Horizon (années)</label><input id="p_yrs" type="number" step="any" min="1" max="30" value="${P.yrs}"></div>
+<div class="f"><label for="p_n">Trajectoires</label><input id="p_n" type="number" step="100" min="200" max="20000" value="${P.N}"></div>
 <button class="btn go" type="submit">Lancer</button>
 <button class="btn" type="button" id="p_capm">μ par défaut (MEDAF)</button>
 </form>
