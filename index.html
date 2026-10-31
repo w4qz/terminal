@@ -2545,7 +2545,7 @@ function helpItems(){ return Object.entries(FUNCS).filter(([k])=>k!=='HELP').map
 /*── RV : valeur relative face aux pairs ─────────────────────────────*/
 let PEER_GROUPS=null;
 async function loadPeers(){ try{ const r=await fetch('peers.json?t='+Date.now(),{cache:'no-store'}); if(!r.ok) throw new Error('HTTP '+r.status);
-PEER_GROUPS=(await r.json()).groups||null; }catch(e){ console.info('peers.json indisponible ('+e.message+')'); } return false; }
+const g=(await r.json()).groups||null, changed=JSON.stringify(g)!==JSON.stringify(PEER_GROUPS); PEER_GROUPS=g; return changed&&S.view==='sec'; }catch(e){ console.info('peers.json indisponible ('+e.message+')'); } return false; }
 const PEERS_KEY='terminal.peers.v1';
 let CUSTOM_PEERS=(()=>{ try{ return JSON.parse(localStorage.getItem(PEERS_KEY)||'{}'); }catch(e){ return {}; } })();
 function savePeers(){ try{ localStorage.setItem(PEERS_KEY,JSON.stringify(CUSTOM_PEERS)); }catch(e){} }
