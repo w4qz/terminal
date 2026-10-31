@@ -2765,7 +2765,9 @@ const ttm=ev.filter(x=>x.t>Date.now()-365*864e5).reduce((s,x)=>s+x.a,0), yld=px?
 const freq=ev.filter(x=>x.t>Date.now()-730*864e5).length/2;
 // Hausses consécutives : on compare le versement le plus élevé de chaque année (insensible au calendrier
 // de paiement, qui peut faire tomber 3 ou 5 versements dans une même année civile).
-const mxY={}; ev.forEach(x=>{ const y=new Date(x.t).getFullYear(); mxY[y]=Math.max(mxY[y]||0,x.a); });
+// Médiane des versements de l'année : insensible à un dividende exceptionnel ou à une ligne erronée de Yahoo.
+const pY={}; ev.forEach(x=>{ const y=new Date(x.t).getFullYear(); (pY[y]=pY[y]||[]).push(x.a); });
+const mxY={}; for(const [y,a] of Object.entries(pY)){ const v=[...a].sort((p,q)=>p-q); mxY[y]=v.length%2?v[v.length>>1]:(v[v.length/2-1]+v[v.length/2])/2; }
 const ys=Object.keys(mxY).map(Number).sort(); let streak=0;
 let ups=0; for(let i=ys.length-1;i>0;i--){ if(ys[i]-ys[i-1]!==1) break; const r=mxY[ys[i]]/mxY[ys[i-1]]; if(r<0.995) break; if(ys[i]!==curY) streak++; if(r>1.001) ups++; }
 const cg=k=>{ const a=full[full.length-1-k], b=full[full.length-1]; return a&&byY[a]>0?cagrOf(byY[a],byY[b],k):null; };
