@@ -1351,7 +1351,7 @@ x.fillStyle='#4a525c'; x.textAlign='left'; x.fillText('Volume',10,pt+priceH+gap+
 bars.forEach((b,i)=>{ const upc=b.c>=b.o, col=upc?'#2fbf6b':'#e04a4a';
 x.strokeStyle=col; x.lineWidth=1; x.beginPath(); x.moveTo(X(i),Y(b.h)); x.lineTo(X(i),Y(b.l)); x.stroke();
 const yo=Y(b.o), yc=Y(b.c), top=Math.min(yo,yc), h=Math.max(1,Math.abs(yc-yo));
-x.fillStyle=col; if(upc&&cw>3){ x.strokeRect(X(i)-cw/2,top,cw,h); } else x.fillRect(X(i)-cw/2,top,cw,h); });
+x.fillStyle=col; x.fillRect(X(i)-cw/2,top,cw,h); });
 // moyennes mobiles
 const line=(a,col)=>{ x.save(); x.beginPath(); x.rect(8,pt,W-pr-8,priceH); x.clip();
 x.strokeStyle=col; x.lineWidth=1.3; x.beginPath(); let s=false; a.forEach((v,i)=>{ if(v==null) return; s?x.lineTo(X(i),Y(v)):x.moveTo(X(i),Y(v)); s=true; }); x.stroke(); x.restore(); };
