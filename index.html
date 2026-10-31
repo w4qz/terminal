@@ -1363,15 +1363,27 @@ if(SEC.ma){ const l200='— MM200 ('+unit+')'+out(lastMA(m200)), l50='— MM50'+
 x.textAlign='right'; x.fillStyle='#bb98e6'; x.fillText(l200,W-pr-4,pt-6);
 x.fillStyle='#e8a33d'; x.fillText(l50,W-pr-4-x.measureText(l200).width-12,pt-6); }
 // survol
-const tip=document.getElementById('sectip'), i=hover;
+const tip=document.getElementById('sectip'), i=hover?hover.i:null, my=hover?hover.y:null;
 if(i!=null&&i>=0&&i<n){ const b=bars[i];
-x.strokeStyle='rgba(221,227,234,.35)'; x.setLineDash([3,3]); x.beginPath(); x.moveTo(X(i),pt); x.lineTo(X(i),H-pb); x.moveTo(8,Y(b.c)); x.lineTo(W-pr,Y(b.c)); x.stroke(); x.setLineDash([]);
+// Réticule façon TradingView : ligne verticale sur la séance, ligne horizontale qui suit la souris.
+const inP=my!=null&&my>=pt&&my<=pt+priceH;
+x.strokeStyle='rgba(221,227,234,.4)'; x.setLineDash([3,3]); x.beginPath(); x.moveTo(X(i),pt); x.lineTo(X(i),H-pb);
+if(inP){ x.moveTo(8,my); x.lineTo(W-pr,my); } x.stroke(); x.setLineDash([]);
+const tag=(txt,cx,cy,align)=>{ x.font='bold 10px monospace'; const w=x.measureText(txt).width+10, h=16;
+const lx=align==='right'?W-pr+1:Math.max(8,Math.min(W-pr-w,cx-w/2));
+x.fillStyle='#dde3ea'; x.fillRect(lx,cy-h/2,w,h); x.fillStyle='#0b0e11'; x.textAlign='left'; x.fillText(txt,lx+5,cy+3.5); x.font='9px monospace'; };
+if(inP){ const v=lo+(1-(my-pt)/priceH)*(hi-lo), last=bars[n-1].c, dv=(v/last-1)*100;
+tag(dd(v),0,my,'right');
+x.font='9px monospace'; x.textAlign='right'; x.fillStyle=dv>=0?'#2fbf6b':'#e04a4a';
+x.fillText(`${dv>=0?'+':''}${nf(dv,2)} % vs dernier`,W-pr-6,my-5); }
+tag(new Date(b.t).toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'2-digit'}),X(i),H-pb+9,'center');
 const chg=i>0?(b.c/bars[i-1].c-1)*100:null;
 tip.innerHTML=`<b style="color:var(--txt)">${new Date(b.t).toLocaleDateString('fr-FR',{weekday:'short',day:'2-digit',month:'short',year:'numeric'})}</b> &nbsp; O ${dd(b.o)} &nbsp; H ${dd(b.h)} &nbsp; B ${dd(b.l)} &nbsp; C <b style="color:var(--txt)">${dd(b.c)}</b> ${chg!=null?`&nbsp; <span class="${cls(chg)}">${pct(chg)}</span>`:''} ${b.v?'&nbsp; Vol. '+big(b.v):''}${SEC.ma&&m50[i]?` &nbsp; <span style="color:#e8a33d">MM50 ${dd(m50[i])}</span>`:''}${SEC.ma&&m200[i]?` &nbsp; <span style="color:#bb98e6">MM200 ${dd(m200[i])}</span>`:''}`;
 } else if(tip){ tip.innerHTML=''; }
 const perf=(bars[n-1].c/bars[0].o-1)*100, pe=document.getElementById('secperf');
 if(pe) pe.innerHTML=`${SEC.range} : <span class="${cls(perf)}">${pct(perf,1)}</span> · ${n} ${unit}`;
-cv.onmousemove=ev=>{ const rr=cv.getBoundingClientRect(); const k=Math.floor((ev.clientX-rr.left-8)/step); drawCandles(k>=0&&k<n?k:null); };
+cv.onmousemove=ev=>{ const rr=cv.getBoundingClientRect(); const k=Math.floor((ev.clientX-rr.left-8)/step); drawCandles(k>=0&&k<n?{i:k,y:ev.clientY-rr.top}:null); };
+cv.style.cursor='crosshair';
 cv.onmouseleave=()=>drawCandles(null);
 }
 function secReading(F,px,bars){
