@@ -1107,7 +1107,7 @@ const tr=rows.map((e,i)=>`<tr>
 <td class="${cls(e.dpl)}">${e.dpl!=null?nf(e.dpl,0):'<span class="na">n/d</span>'}</td>
 <td>${nav?pct(e.mv/nav*100,1):'—'}</td>
 <td><button class="btn" data-del="${i}" aria-label="Supprimer ${esc(e.sym)}" title="Supprimer">✕</button></td></tr>`).join('');
-const dl=(UNIV||[]).filter(u=>u.c!=='Taux').slice(0,3000).map(u=>`<option value="${esc(u.s)}">${esc(u.n||'')}</option>`).join('');
+const dl=(UNIV||[]).filter(u=>u.c!=='Taux').slice(0,1500).map(u=>`<option value="${esc(u.s)}">${esc(u.n||'')}</option>`).join('');
 const P=S.pfp;
 el.innerHTML=`
 <div class="pnl" style="margin-bottom:9px">
@@ -1124,7 +1124,7 @@ el.innerHTML=`
 <th scope="col">Titre</th><th scope="col">Qté</th><th scope="col">PRU</th><th scope="col">Cours</th><th scope="col">Valeur $</th>
 <th scope="col">P&L</th><th scope="col">P&L %</th><th scope="col">Jour</th><th scope="col">Poids</th><th scope="col"><span class="sr-only">Action</span></th></tr></thead>
 <tbody>${tr||'<tr><td colspan="10" class="na">Aucune position. Ajoutez un titre ci-dessous ou appliquez un profil type.</td></tr>'}</tbody></table></div>
-<form class="ctl" id="pfadd" style="border-top:1px solid var(--line);border-bottom:none">
+<form class="ctl" id="pfadd" novalidate style="border-top:1px solid var(--line);border-bottom:none">
 <div class="f w"><label for="pa_sym">Ticker (Yahoo)</label><input id="pa_sym" list="pfdl" placeholder="MC.PA" style="text-align:left" autocomplete="off" required></div>
 <div class="f"><label for="pa_qty">Quantité</label><input id="pa_qty" type="number" step="any" min="0" required></div>
 <div class="f"><label for="pa_cost">PRU (vide = cours)</label><input id="pa_cost" type="number" step="any" min="0"></div>
@@ -1132,7 +1132,7 @@ el.innerHTML=`
 <div class="f" style="margin-left:18px"><label for="pa_cash">Liquidités $</label><input id="pa_cash" type="number" step="any" value="${S.cash}"></div>
 <button class="btn" type="button" id="pa_cashbtn">Mettre à jour</button>
 <button class="btn" type="button" id="pa_reset" style="margin-left:auto">Revenir à l'exemple</button>
-<span id="pa_msg" class="note" style="align-self:flex-end;padding:0"></span>
+<div id="pa_msg" class="note" style="flex-basis:100%;padding:0;color:var(--hot)"></div>
 <datalist id="pfdl">${dl}</datalist>
 </form>
 </div>
@@ -1156,6 +1156,17 @@ el.innerHTML=`
 </div>`;
 wireSymbolClicks(el);
 const msg=t=>{ document.getElementById('pa_msg').textContent=t; };
+// Suggestions : catalogue local + recherche mondiale Yahoo via le relais (tous les tickers, ETF compris).
+const dlEl=document.getElementById('pfdl'), symIn=document.getElementById('pa_sym'); let sugT=null, sugSeq=0;
+symIn.addEventListener('input',()=>{ clearTimeout(sugT); const q=symIn.value.trim(); if(q.length<2||!WORKER_URL) return;
+sugT=setTimeout(async()=>{ const my=++sugSeq;
+try{ const r=await fetch(`${WORKER_URL}/search?q=${encodeURIComponent(q)}`); const d=await r.json(); if(my!==sugSeq) return;
+const qs=(d.quotes||[]).filter(x=>x.symbol);
+const loc=(UNIV||[]).filter(u=>u.s.toUpperCase().startsWith(q.toUpperCase())||(u.n||'').toUpperCase().includes(q.toUpperCase())).slice(0,10);
+const seen=new Set();
+dlEl.innerHTML=[...qs.map(x=>[x.symbol,`${x.longname||x.shortname||''} · ${x.exchDisp||x.exchange||''}`]),...loc.map(u=>[u.s,u.n||''])]
+.filter(([sy])=>!seen.has(sy)&&seen.add(sy)).map(([sy,n])=>`<option value="${esc(sy)}">${esc(n)}</option>`).join('');
+}catch(e){} },250); });
 el.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{ const p=S.positions[+b.dataset.del]; S.positions.splice(+b.dataset.del,1); delete S.pfp.mu[p.sym]; pfSave(); viewPortfolio(); });
 document.getElementById('pfadd').onsubmit=async ev=>{ ev.preventDefault();
 const sym=document.getElementById('pa_sym').value.trim().toUpperCase(), qty=parseFloat(document.getElementById('pa_qty').value);
