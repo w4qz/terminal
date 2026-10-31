@@ -1434,7 +1434,9 @@ x.font='9px monospace'; x.fillStyle='#8a93a0'; x.strokeStyle='#1c2127';
 for(let k=0;k<=3;k++){ const v=lo+(hi-lo)*k/3, y=Y(v); x.beginPath(); x.moveTo(pl,y); x.lineTo(W-prr,y); x.stroke(); x.textAlign='left'; x.fillText(pct((v-1)*100,0),W-prr+4,y+3); }
 x.strokeStyle='#4a525c'; x.beginPath(); x.moveTo(pl,Y(1)); x.lineTo(W-prr,Y(1)); x.stroke();
 const line=(s,c,w)=>{ x.strokeStyle=c; x.lineWidth=w; x.beginPath(); s.forEach((v,i)=>i?x.lineTo(X(i),Y(v)):x.moveTo(X(i),Y(v))); x.stroke(); };
-line(bv,'#5b6672',1.2); line(pv,'#6ba3e0',1.6);
+line(bv,'#8a93a0',1.2); line(pv,'#6ba3e0',1.8);
+x.font='10px monospace'; x.textAlign='left'; x.fillStyle='#6ba3e0'; x.fillRect(pl+4,pt+4,12,3); x.fillText('Portefeuille',pl+20,pt+9);
+x.fillStyle='#8a93a0'; x.fillRect(pl+110,pt+4,12,3); x.fillText('Indice monde (ACWI)',pl+126,pt+9); x.font='9px monospace';
 const fd=d=>new Date(d+'T12:00:00').toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'2-digit'});
 x.fillStyle='#8a93a0'; x.textAlign='left'; x.fillText(fd(cur.dates[off]),pl,H-4); x.textAlign='right'; x.fillText(fd(dts[dts.length-1]),W-prr,H-4);
 if(hover!=null&&hover>=0&&hover<N){ x.strokeStyle='rgba(221,227,234,.4)'; x.setLineDash([3,3]); x.beginPath(); x.moveTo(X(hover),pt); x.lineTo(X(hover),H-pb); x.stroke(); x.setLineDash([]);
@@ -1457,7 +1459,7 @@ const info=document.getElementById('pfperfinfo'); if(info) info.textContent=`en 
 /** Matrice de corrélation en carte de chaleur + ratio de diversification + exposition aux devises. */
 function pfRenderCorr(){
 const L=S.pfLast, cur=L&&L.cur, box=document.getElementById('pfcorr'); if(!cur||!box) return;
-const names=[...cur.syms,'ACWI'], C=cur.C, n=names.length;
+const names=[...cur.syms,'Indice'], C=cur.C, n=names.length;
 const col=v=>{ const a=Math.min(1,Math.abs(v)); return v>=0?`rgba(224,74,74,${0.12+a*0.75})`:`rgba(77,143,214,${0.12+a*0.75})`; };
 let avg=0, cnt=0; for(let i=0;i<cur.syms.length;i++) for(let j=i+1;j<cur.syms.length;j++){ avg+=C[i][j]; cnt++; } avg=cnt?avg/cnt:null;
 const ex={}; L.rows.filter(e=>e.ok).forEach(e=>{ const c=normCcy(e.ccy); ex[c]=(ex[c]||0)+e.mv/L.nav; });
