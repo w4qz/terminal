@@ -57,8 +57,10 @@ RSS_FEEDS = [
 # Plusieurs adresses possibles, séparées par des virgules. Les articles payants y figurent
 # avec leur titre et leur chapô ; le lien ouvre ft.com, où l'abonné est connecté.
 for _i, _u in enumerate([u.strip() for u in os.getenv("FT_MYFT_RSS", "").split(",") if u.strip()]):
-    RSS_FEEDS.insert(_i, ("myFT — mes sujets", _u))
-MAX_NEWS = 40
+    _slug = _u.split("ft.com/")[-1].split("?")[0].replace("stream/", "")
+    _slug = "sujet suivi" if re.fullmatch(r"[0-9a-f-]{36}", _slug) else _slug.replace("-", " ")
+    RSS_FEEDS.insert(_i, (f"myFT — {_slug}", _u))
+MAX_NEWS = 60
 
 # Mots-clés → tickers, pour relier une news à une fiche du terminal.
 TAGS = {
@@ -242,7 +244,7 @@ def fetch_news(previous: dict) -> list:
     if not items:
         return previous.get("news", [])
     items.sort(key=lambda x: x["ts"], reverse=True)
-    mine = [x for x in items if x.get("mine")][:20]          # myFT : jusqu'à 20, toujours gardés
+    mine = [x for x in items if x.get("mine")][:40]          # myFT : jusqu'à 40, toujours gardés
     rest = [x for x in items if not x.get("mine")][:MAX_NEWS - len(mine)]
     return sorted(mine + rest, key=lambda x: x["ts"], reverse=True)
 
