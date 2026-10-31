@@ -624,6 +624,16 @@ let LIVE = null;
    const WORKER_URL = 'https://terminal-relais.tonpseudo.workers.dev'; */
 const WORKER_URL = 'https://terminal-relais.299z7d8df6.workers.dev';
 let UNIV = null, UNIV_TS = null;
+let FTNL = null;   // newsletters FT (ft.json, écrit par Google Apps Script)
+async function loadFT(){
+try{
+const r = await fetch('ft.json?t='+Date.now(), {cache:'no-store'});
+if(!r.ok) throw new Error('HTTP '+r.status);
+const d = await r.json();
+if(FTNL && FTNL.generated_at===d.generated_at) return false;
+FTNL = d; return true;
+}catch(e){ console.info('ft.json indisponible ('+e.message+')'); return false; }
+}
 async function loadUniverse(){
 try{
 const r = await fetch('universe.json?t='+Date.now(), {cache:'no-store'});
@@ -1410,12 +1420,20 @@ function viewNews(){
 const el=document.getElementById('v-news');
 const items=SNAPSHOT.news.map(n=>`<div class="nw">
 <h4>${esc(n.h)}</h4><p>${esc(n.w)}</p>
-<div class="meta"><span>${esc(n.src)}</span><span>${ago(n.ts)}</span>
+<div class="meta"><span${n.mine?' style="color:#e8a33d"':''}>${esc(n.src)}</span><span>${ago(n.ts)}</span>
 ${n.syms.map(s=>`<button class="tag" data-sym="${s}" type="button">${s}</button>`).join('')}
-${n.url?`<a href="${n.url}" target="_blank" rel="noopener">Ouvrir la source<span class="sr-only"> (nouvel onglet)</span></a>`:''}</div></div>`).join('');
+${n.url?`<a href="${n.url}" target="_blank" rel="noopener">${n.mine?'Lire sur FT.com':'Ouvrir la source'}<span class="sr-only"> (nouvel onglet)</span></a>`:''}</div></div>`).join('');
+const nl=(FTNL&&FTNL.items||[]).slice(0,12).map(n=>`<div class="nw">
+<div class="meta" style="margin-bottom:3px"><span class="st st-EOD" style="margin-left:0">${esc(n.nl||'FT')}</span><span>${ago(n.ts)}</span></div>
+<h4>${esc(n.h)}</h4>${n.w?`<p>${esc(n.w)}</p>`:''}
+${(n.topics||[]).length?`<ul style="margin:0 0 5px 16px;font-size:11px;color:#a4adb8;line-height:1.55">${n.topics.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>`:''}
+<div class="meta"><a href="${esc(n.url)}" target="_blank" rel="noopener">Ouvrir la newsletter dans Gmail<span class="sr-only"> (nouvel onglet)</span></a></div></div>`).join('');
 el.innerHTML=`<div class="g g23">
-<div class="pnl"><h3>Fil d'actualité<span class="rt">cliquez un ticker pour ouvrir sa fiche</span></h3>
+<div style="display:flex;flex-direction:column;gap:9px;min-width:0">
+${nl?`<div class="pnl"><h3>Mes newsletters FT<span class="rt">depuis Gmail · MAJ ${fmtDT(FTNL.generated_at)}</span></h3><div class="pbody flush">${nl}</div></div>`:''}
+<div class="pnl"><h3>Fil d'actualité<span class="rt">myFT, FT, CNBC, BBC, Le Monde · cliquez un ticker</span></h3>
 <div class="pbody flush">${items}</div></div>
+</div>
 <div style="display:flex;flex-direction:column;gap:9px;min-width:0">${SNAPSHOT.summary?`<div class="pnl" ><h3>Lecture de marché — IA<span class="rt">${esc(SNAPSHOT.summary.model)} · ${fmtDT(SNAPSHOT.summary.ts)}</span></h3><div class="pbody"><div class="note" style="padding:0;white-space:pre-line">${esc(SNAPSHOT.summary.text)}</div><div class="warn" style="margin-top:8px">Synthèse générée automatiquement à partir des titres RSS et des cotations. Peut contenir des erreurs ; ne constitue pas un conseil en investissement. <span class="st st-SIMULATED">IA</span></div></div></div>`:''}
 <div class="pnl"><h3>Lecture de la semaine (archive FT)<span class="rt">actualisé 31/10 via les newsletters Financial Times du 20 au 30/10</span></h3><div class="pbody">
 <div class="note" style="padding:0">
@@ -1787,7 +1805,7 @@ window.addEventListener('resize',()=>{ if(S.view==='pf') runMC(); });
 
 tick(); setInterval(tick,1000);
 go('mkt');
-const refresh=()=>Promise.all([loadLive(),loadUniverse()]).then(([a,b])=>{ if(a||b){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
+const refresh=()=>Promise.all([loadLive(),loadUniverse(),loadFT()]).then(([a,b,c])=>{ if(a||b||c){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
 refresh();
 setInterval(refresh, 10*60*1000);
 
