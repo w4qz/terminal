@@ -2517,13 +2517,25 @@ const syms=[]; for(let i=0;i<tk.length;i++){ const t=tk[i], nx=tk[i+1];
 if(nx&&nx in EXCH&&!t.includes('.')){ syms.push(t+EXCH[nx]); i++; } else syms.push(resolveTicker(t)); }
 return FUNCS[f].t===1?{f,sym:syms[0]}:{f,syms:[...new Set(syms)]};
 }
+/** Titre inconnu (nom courant, ticker local…) : on demande à la recherche Yahoo le symbole le plus pertinent. */
+const KNOWN_SYM=s=>!!((UNIV||[]).find(x=>x.s===s)||SNAPSHOT.quotes[s]||SNAPSHOT.fundamentals[s]||ecoGet(s));
+const RESOLVE_CACHE=new Map();
+async function resolveRemote(t){
+if(!WORKER_URL||KNOWN_SYM(t)) return t;
+if(RESOLVE_CACHE.has(t)) return RESOLVE_CACHE.get(t);
+let out=t;
+try{ const r=await fetch(`${WORKER_URL}/search?q=${encodeURIComponent(t)}`); const d=await r.json();
+const qs=(d.quotes||[]).filter(x=>x.symbol&&['EQUITY','ETF','INDEX','CURRENCY','FUTURE','CRYPTOCURRENCY','MUTUALFUND'].includes(x.quoteType));
+const exact=qs.find(x=>x.symbol===t); out=exact?exact.symbol:qs[0]?qs[0].symbol:t; }catch(e){}
+RESOLVE_CACHE.set(t,out); return out;
+}
 const cmdLabel=c=>c.sym?`${c.sym} ${c.f}`:c.syms?`${c.syms.join(' ')} ${c.f}`:c.f;
 async function runCmd(c){
 closePal(); const F=FUNCS[c.f];
 if(F.help){ openPal(); document.getElementById('palin').value='HELP'; palSearch('HELP'); return; }
 if(F.go){ await go(F.go); if(F.a){ const e=document.getElementById(F.a); if(e) e.scrollIntoView({behavior:'smooth',block:'start'}); } return; }
-if(c.f==='COMP'){ COMP.syms=c.syms.length>1?c.syms:[c.syms[0],'ACWI']; return go('comp'); }
-S.focus=c.sym;
+if(c.f==='COMP'){ const sy=await Promise.all(c.syms.map(resolveRemote)); COMP.syms=sy.length>1?[...new Set(sy)]:[sy[0],'ACWI']; return go('comp'); }
+S.focus=await resolveRemote(c.sym);
 if(c.f==='GIP') SEC.range='1J'; else if(SEC.range==='1J') SEC.range='6M';
 await go('sec');
 if(c.f==='RV'){ const e=document.getElementById('sec-rv'); if(e) e.scrollIntoView({behavior:'smooth',block:'start'}); }
@@ -2625,10 +2637,14 @@ el.innerHTML=`<div class="pnl" style="margin-bottom:9px"><h3>COMP — Comparaiso
 <span class="note" style="padding:0;margin-left:auto">Bloomberg : MC RMS KER COMP · accepte MC FP, AAPL US…</span></form>
 <div class="pbody" style="position:relative"><canvas id="compcv" height="380" role="img" aria-label="Comparaison des performances"></canvas><div id="compmsg" class="note" style="padding:6px 0 0">Chargement…</div></div></div>
 <div class="pnl"><h3>Statistiques sur la période</h3><div class="pbody flush" id="comptab"></div></div>`;
-document.getElementById('compform').onsubmit=e=>{ e.preventDefault(); const c=parseCmd(document.getElementById('compin').value+' COMP'); if(c&&c.syms.length){ COMP.syms=c.syms.slice(0,8); viewComp(); } };
+document.getElementById('compform').onsubmit=async e=>{ e.preventDefault(); const c=parseCmd(document.getElementById('compin').value+' COMP'); if(c&&c.syms.length){ COMP.syms=[...new Set(await Promise.all(c.syms.slice(0,8).map(resolveRemote)))]; viewComp(); } };
 el.querySelectorAll('[data-cr]').forEach(b=>b.onclick=()=>{ COMP.range=b.dataset.cr; viewComp(); });
 if(!WORKER_URL){ document.getElementById('compmsg').textContent='Relais Cloudflare non configuré.'; return; }
-const res=await Promise.all(COMP.syms.map(s=>compFetch(s,COMP_R[COMP.range]).then(d=>({s,d})).catch(()=>({s,d:null}))));
+const renamed=[];
+const res=await Promise.all(COMP.syms.map(async s=>{ try{ return {s,d:await compFetch(s,COMP_R[COMP.range])}; }catch(e){
+const alt=await resolveRemote(s); if(alt!==s){ try{ const d=await compFetch(alt,COMP_R[COMP.range]); renamed.push(`${s} → ${alt}`); return {s:alt,d}; }catch(e2){} }
+return {s,d:null}; } }));
+if(renamed.length) COMP.syms=COMP.syms.map(s=>{ const r=renamed.find(x=>x.startsWith(s+' →')); return r?r.split(' → ')[1]:s; });
 if(S.view!=='comp') return;
 const ok=res.filter(r=>r.d&&r.d.map.size>2), bad=res.filter(r=>!r.d||r.d.map.size<=2).map(r=>r.s);
 if(!ok.length){ document.getElementById('compmsg').innerHTML=`<span class="neg">Aucune donnée pour ${bad.map(esc).join(', ')}.</span>`; return; }
@@ -2639,7 +2655,7 @@ const u=(UNIV||[]).find(x=>x.s===r.s);
 const rets=vals.slice(1).map((v,j)=>v/vals[j]-1);
 return {s:r.s, n:(u&&u.n)||r.d.meta.shortName||r.d.meta.longName||r.s, col:COMP_COL[i%COMP_COL.length], vals, rets, last:r.d.meta.regularMarketPrice, ccy:r.d.meta.currency}; });
 COMP.data={dates,series};
-document.getElementById('compmsg').innerHTML=bad.length?`<span class="neg">Introuvables : ${bad.map(esc).join(', ')}.</span> `:'';
+document.getElementById('compmsg').innerHTML=(renamed.length?`<span class="pos">Interprété : ${renamed.map(esc).join(', ')}.</span> `:'')+(bad.length?`<span class="neg">Introuvables : ${bad.map(esc).join(', ')}.</span> `:'');
 document.getElementById('compmsg').innerHTML+=`Du ${new Date(dates[0]+'T12:00:00').toLocaleDateString('fr-FR')} au ${new Date(dates[dates.length-1]+'T12:00:00').toLocaleDateString('fr-FR')} · cours dans la devise de cotation, dividendes non réinvestis.`;
 const ppy=COMP.range==='5A'?52:252, ref=series[0].rets;
 document.getElementById('comptab').innerHTML=`<table><caption class="sr-only">Statistiques comparées</caption><thead><tr><th scope="col" style="text-align:left">Titre</th><th scope="col">Dernier</th><th scope="col">Performance</th><th scope="col">Volatilité ann.</th><th scope="col">Perte max</th><th scope="col">Corrélation avec ${esc(series[0].s)}</th><th scope="col"></th></tr></thead><tbody>
