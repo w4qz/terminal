@@ -1569,7 +1569,7 @@ return it;
 function srRows(list){
 return list.map(x=>`<tr class="clk" data-s="${esc(x.s)}" tabindex="0" role="button" aria-label="Ouvrir ${esc(x.n)} (${esc(x.s)})">
 <th scope="row" class="sym">${esc(x.s)}<div class="mut" style="font-size:10px;font-weight:400;max-width:260px;overflow:hidden;text-overflow:ellipsis">${esc(x.n||'')}</div></th>
-<td class="mut" style="font-size:10px;text-align:left">${esc(x.c)}${x.l&&x.l.length?' · '+esc(x.l.join(', ')):''}</td>
+<td class="mut" style="font-size:10px;text-align:left">${esc(x.c)}${x.l&&x.l.length?' · '+esc(x.l.join(', ')):''}${x.c==='Action'?(SNAPSHOT.fundamentals[x.s]&&Object.keys(SNAPSHOT.fundamentals[x.s]).length>4?' <span class="st st-EOD" title="Fondamentaux disponibles">F</span>':' <span class="na" title="Fondamentaux pas encore lus">·</span>'):''}</td>
 <td>${x.p!=null?nf(x.p,x.p>1000?0:2)+(x.c==='Taux'?' %':'')+badge(x.st):'<span class="na">n/d</span>'}</td>
 <td class="${cls(x.pct)}">${x.pct!=null?pct(x.pct):'—'}</td></tr>`).join('');
 }
@@ -1821,7 +1821,25 @@ const provs=Object.entries(DATA.providers).map(([k,p])=>
 `<tr><th scope="row" class="sym">${k}</th><td>${esc(p.name)}</td>
 <td>${k===DATA.active?'<span class="pos">actif</span>':'<span class="mut">enregistré</span>'}</td></tr>`).join('');
 
+// Couverture des fondamentaux, par indice
+const stocks=(UNIV||[]).filter(x=>x.c==='Action');
+const hasF=sym=>{ const f=SNAPSHOT.fundamentals[sym]; return f&&Object.keys(f).length>4; };
+const lists={}; stocks.forEach(x=>(x.l&&x.l.length?x.l:['Autres']).forEach(l=>{ (lists[l]=lists[l]||{n:0,ok:0}); lists[l].n++; if(hasF(x.s)) lists[l].ok++; }));
+const tot=stocks.length, okT=stocks.filter(x=>hasF(x.s)).length;
+const bar=(ok,n)=>`<div style="display:flex;align-items:center;gap:8px;justify-content:flex-end"><div style="width:120px;height:6px;background:#1a1e23;border-radius:2px"><div style="width:${n?ok/n*100:0}%;height:6px;border-radius:2px;background:var(--pos)"></div></div><span style="min-width:70px">${ok} / ${n}</span></div>`;
+const covRows=Object.entries(lists).sort((a,b)=>b[1].n-a[1].n).map(([l,v])=>`<tr><th scope="row" style="font-weight:400;color:var(--txt);text-align:left">${esc(l)}</th><td>${bar(v.ok,v.n)}</td></tr>`).join('');
+const recent=Object.entries(SNAPSHOT.fundamentals).filter(([k,f])=>f.ts&&f.name).sort((a,b)=>b[1].ts.localeCompare(a[1].ts)).slice(0,8);
+const missing=stocks.filter(x=>!hasF(x.s)).slice(0,12);
 el.innerHTML=`<div class="g g2">
+<div class="pnl span2"><h3>Couverture des fondamentaux<span class="rt">roulement de 120 titres par passage · tout le catalogue en ~4 h</span></h3><div class="pbody">
+${tot?`<div class="statrow" style="border:none;padding:0 0 8px"><div class="stat"><span class="l">TITRES COUVERTS</span><span class="n">${okT} / ${tot}</span><span class="s">${nf(okT/tot*100,0)} % du catalogue</span></div>
+<div class="stat"><span class="l">DERNIER PASSAGE</span><span class="n" style="font-size:15px">${FUND_TS?fmtDT(FUND_TS):'—'}</span><span class="s">fundamentals.json</span></div>
+<div class="stat"><span class="l">RESTANTS</span><span class="n">${tot-okT}</span><span class="s">≈ ${Math.ceil((tot-okT)/120)} passage(s), soit ${Math.ceil((tot-okT)/120)*30} min</span></div></div>
+<div class="g g2"><div><table><caption class="sr-only">Couverture par indice</caption><tbody>${covRows}</tbody></table></div>
+<div><div class="note" style="padding:0 0 4px">Derniers actualisés : ${recent.map(([k,f])=>`<button type="button" class="tag" data-sym="${esc(k)}">${esc(k)}</button>`).join(' ')||'—'}</div>
+<div class="note" style="padding:4px 0 0">Prochains à lire : ${missing.map(x=>esc(x.s)).join(', ')||'aucun, tout est couvert'}${tot-okT>12?'…':''}</div></div></div>`
+:'<div class="note na" style="padding:0">Catalogue pas encore chargé.</div>'}
+</div></div>
 <div class="pnl"><h3>Fournisseur actif</h3><div class="pbody">
 <div class="kv"><span class="k">Nom</span><span class="v">${esc(DATA.current.name)}</span></div>
 <div class="kv"><span class="k">Disponible</span><span class="v ${h.up?'pos':'neg'}">${h.up?'oui':'non'}</span></div>
@@ -1841,20 +1859,16 @@ seul échouerait sur CORS et exposerait la clé, ce que la règle §6 interdit.<
 <table><caption class="sr-only">Répartition des statuts de donnée</caption><tbody>${dist}</tbody></table></div></div>
 <div class="pnl"><h3>Ce qui manque et pourquoi</h3><div class="pbody">
 <div class="note" style="padding:0">
-<b>Séries de prix historiques.</b> Sans elles, ni graphique, ni indicateur technique, ni Sharpe calculée
-sur données réelles. C'est la lacune la plus coûteuse et la moins chère à combler : FMP l'inclut dans son tier de base.
+<b>Temps réel.</b> Les cours sont différés (Yahoo Finance). Le temps réel exige une licence de données des Bourses, comme sur Bloomberg ou Refinitiv.
 <br><br>
-<b>Courbe des taux.</b> Un seul point relevé, donc aucune pente calculée. FRED la fournit gratuitement
-et sans limite de requêtes.
+<b>Consensus économique officiel.</b> Le consensus affiché vient d'une compilation gratuite (Forex Factory), proche mais distincte des sondages Bloomberg et Reuters.
 <br><br>
-<b>Bid, ask, spread, carnet.</b> Absents du snapshot. Le carnet et le tape ne sont pas prévus au
-programme : ils exigent un flux L2 licencié et n'apportent rien à une gestion long-only.
+<b>Bid, ask, carnet d'ordres.</b> Ils exigent un flux de niveau 2 licencié et n'apportent rien à une gestion long-only.
 <br><br>
-<b>Taux SNB, USD/CHF, USD/CNY.</b> Non relevés lors de la capture. Ils apparaissent
-en « n/d » plutôt qu'avec une valeur approximative — une valeur étiquetée douteuse reste une valeur que l'œil lit.
-</div>
-</div></div>
+<b>Messagerie, exécution, Excel.</b> Hors périmètre : ce sont les briques qui justifient le prix d'un terminal professionnel.
+</div></div></div>
 </div>`;
+wireSymbolClicks(el);
 }
 
 /*═══════════════════════════════════════════════════════════════════════
