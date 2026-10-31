@@ -157,6 +157,114 @@ def eco_calendar(fomc):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# ECO — consensus : flux public de Forex Factory (cette semaine et la suivante)
+#   Le consensus (« forecast ») est une compilation de Forex Factory, proche des sondages
+#   Bloomberg / Reuters sans être identique. Le chiffre publié vient de FRED (source officielle).
+# ─────────────────────────────────────────────────────────────────────────────
+FF_URLS = ["https://nfs.faireconomy.media/ff_calendar_thisweek.json",
+           "https://nfs.faireconomy.media/ff_calendar_nextweek.json"]
+FF_COUNTRIES = {"USD": "US", "EUR": "Zone euro", "GBP": "R.-U.", "JPY": "Japon", "CHF": "Suisse", "CNY": "Chine"}
+# Titre Forex Factory (USD) → (série FRED, unités FRED, conversion, suffixe affiché comme chez FF)
+FF_TO_FRED = {
+    "Non-Farm Employment Change": ("PAYEMS", "chg", 1, "K"),
+    "Unemployment Rate": ("UNRATE", "lin", 1, "%"),
+    "CPI m/m": ("CPIAUCSL", "pch", 1, "%"),
+    "CPI y/y": ("CPIAUCSL", "pc1", 1, "%"),
+    "Core CPI m/m": ("CPILFESL", "pch", 1, "%"),
+    "Core PCE Price Index m/m": ("PCEPILFE", "pch", 1, "%"),
+    "PPI m/m": ("PPIFIS", "pch", 1, "%"),
+    "Retail Sales m/m": ("RSAFS", "pch", 1, "%"),
+    "Unemployment Claims": ("ICSA", "lin", 0.001, "K"),
+    "Advance GDP q/q": ("A191RL1Q225SBEA", "lin", 1, "%"),
+    "Prelim GDP q/q": ("A191RL1Q225SBEA", "lin", 1, "%"),
+    "Final GDP q/q": ("A191RL1Q225SBEA", "lin", 1, "%"),
+    "Prelim UoM Consumer Sentiment": ("UMCSENT", "lin", 1, ""),
+    "Revised UoM Consumer Sentiment": ("UMCSENT", "lin", 1, ""),
+    "JOLTS Job Openings": ("JTSJOL", "lin", 0.001, "M"),
+    "Federal Funds Rate": ("DFEDTARU", "lin", 1, "%"),
+}
+TITLE_FR = {
+    "Non-Farm Employment Change": "Créations d'emplois NFP", "Unemployment Rate": "Taux de chômage",
+    "Unemployment Claims": "Inscriptions hebdo. au chômage", "Retail Sales m/m": "Ventes au détail m/m",
+    "Federal Funds Rate": "Décision de la Fed", "Main Refinancing Rate": "Décision de la BCE (refi)",
+    "Official Bank Rate": "Décision de la BoE", "BOJ Policy Rate": "Décision de la BoJ",
+    "SNB Policy Rate": "Décision de la BNS", "FOMC Statement": "Communiqué de la Fed",
+    "FOMC Meeting Minutes": "Compte rendu du FOMC", "Monetary Policy Statement": "Communiqué de politique monétaire",
+    "JOLTS Job Openings": "Offres d'emploi JOLTS", "Prelim UoM Consumer Sentiment": "Confiance U. Michigan (prélim.)",
+    "Revised UoM Consumer Sentiment": "Confiance U. Michigan (révisée)", "ISM Manufacturing PMI": "ISM manufacturier",
+    "ISM Services PMI": "ISM services", "German Prelim CPI m/m": "Inflation Allemagne (prélim.) m/m",
+    "Flash CPI y/y": "Inflation zone euro (flash) a/a", "Core CPI Flash Estimate y/y": "Inflation core zone euro (flash) a/a",
+}
+
+
+def _num(s):
+    """« 150K » → 150 ; « -0.2% » → -0.2 ; « 7.25M » → 7.25. None si non numérique."""
+    m = re.search(r"-?\d+(?:\.\d+)?", str(s or "").replace(",", ""))
+    return float(m.group()) if m else None
+
+
+def _fred_asof(sid, units, day):
+    """Dernière observation connue à une date donnée (vintage ALFRED) : (date de référence, valeur)."""
+    r = requests.get("https://api.stlouisfed.org/fred/series/observations", params={
+        "series_id": sid, "api_key": KEY, "file_type": "json", "units": units, "sort_order": "desc",
+        "limit": 1, "realtime_start": day, "realtime_end": day}, timeout=25)
+    r.raise_for_status()
+    o = next((o for o in r.json()["observations"] if o["value"] != "."), None)
+    return (o["date"], float(o["value"])) if o else None
+
+
+def _actual(title, when):
+    """Chiffre publié le jour de l'événement : la valeur que FRED ajoute ce jour-là, sinon None."""
+    sid, units, mult, suf = FF_TO_FRED[title]
+    day = when.date()
+    if when > NOW:
+        return None                       # pas encore publié
+    now = _fred_asof(sid, units, day.isoformat())
+    before = _fred_asof(sid, units, (day - timedelta(days=1)).isoformat())
+    if not now or (before and before[0] == now[0] and title != "Federal Funds Rate"):
+        return None                       # pas encore de nouvelle observation dans FRED
+    v = now[1] * mult
+    return f"{v:,.0f}{suf}".replace(",", " ") if suf in ("K",) else f"{v:.2f}{suf}" if suf == "M" else f"{v:.1f}{suf}"
+
+
+def eco_consensus():
+    rows, seen = [], set()
+    for url in FF_URLS:
+        try:
+            r = requests.get(url, headers=UA, timeout=25)
+            if r.status_code != 200:
+                continue
+            for e in r.json():
+                cur, imp = e.get("country"), e.get("impact")
+                if cur not in FF_COUNTRIES or imp not in ("High", "Medium"):
+                    continue
+                key = (e.get("title"), e.get("date"), cur)
+                if key in seen:
+                    continue
+                seen.add(key)
+                when = datetime.fromisoformat(e["date"]).astimezone(timezone.utc)
+                title = e.get("title", "")
+                actual = None
+                if cur == "USD" and title in FF_TO_FRED and KEY:
+                    actual = safe(lambda: _actual(title, when), f"publié {title}")
+                f, a = _num(e.get("forecast")), _num(actual)
+                rows.append({
+                    "ts": when.isoformat().replace("+00:00", "Z"),
+                    "ctry": FF_COUNTRIES[cur], "cur": cur,
+                    "ev": TITLE_FR.get(title, title), "ev_en": title,
+                    "imp": 3 if imp == "High" else 2,
+                    "cons": e.get("forecast") or None, "prev": e.get("previous") or None,
+                    "act": actual, "surp": round(a - f, 3) if a is not None and f is not None else None,
+                })
+        except Exception as ex:
+            log(f"  ! Forex Factory {url.rsplit('_', 1)[-1]} : {ex}")
+    rows.sort(key=lambda x: x["ts"])
+    log(f"ECO : {len(rows)} publications avec consensus ({sum(1 for x in rows if x['act'])} avec chiffre publié)")
+    return {"rows": rows, "src": "Consensus et précédent : Forex Factory (compilation non officielle, usage personnel). "
+                                "Chiffre publié : FRED (sources officielles BLS, BEA, Fed)."}
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # WIRP — probabilités implicites des décisions de la Fed (méthode CME FedWatch simplifiée)
 # ─────────────────────────────────────────────────────────────────────────────
 MCODE = "FGHJKMNQUVXZ"
@@ -297,7 +405,8 @@ def main():
     fomc = fomc_dates()
     data = {
         "generated_at": NOW.isoformat().replace("+00:00", "Z"),
-        "eco": {"prints": eco_prints(), "calendar": eco_calendar(fomc)},
+        "eco": {"prints": eco_prints(), "calendar": eco_calendar(fomc),
+                "consensus": safe(eco_consensus, "consensus") or {"rows": [], "src": ""}},
         "wirp": safe(lambda: wirp(fomc), "WIRP") or {"error": "calcul impossible"},
         "gc": {"us": curve_us(), "eu": curve_eu()},
         "btmm": btmm(),
