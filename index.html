@@ -1861,20 +1861,43 @@ en « n/d » plutôt qu'avec une valeur approximative — une valeur étiquetée
 13. RECHERCHE GLOBALE
 ═══════════════════════════════════════════════════════════════════════*/
 let palIdx=0, palList=[];
-async function palSearch(q){
-palList=await DATA.searchSecurity(q); palIdx=0;
+let palSeq=0, palTimer=null;
+function palRender(){
 const box=document.getElementById('palres');
 box.innerHTML = palList.length
-? palList.map((s,i)=>`<div class="pr ${i===0?'sel':''}" id="pr-${i}" role="option" aria-selected="${i===0}" data-i="${i}">
-<span class="s">${s.sym}</span><span class="n">${esc(s.name)}</span>
+? palList.map((s,i)=>`<div class="pr ${i===palIdx?'sel':''}" id="pr-${i}" role="option" aria-selected="${i===palIdx}" data-i="${i}">
+<span class="s">${esc(s.sym)}</span><span class="n">${esc(s.name)}</span>
 <span class="c">${esc(s.cls)}</span><span class="c">${esc(s.exch)}</span></div>`).join('')
-: `<div class="pr"><span class="n na">Aucun titre ne correspond. Le fournisseur Snapshot
-couvre ${SNAPSHOT.securities.length} instruments.</span></div>`;
-box.querySelectorAll('.pr[data-i]').forEach(r=>
-r.onclick=()=>openSym(palList[+r.dataset.i].sym));
+: `<div class="pr"><span class="n na">Aucun titre ne correspond dans le catalogue (${localItems().length} instruments)${WORKER_URL?' ni sur les marchés mondiaux':''}.</span></div>`;
+box.querySelectorAll('.pr[data-i]').forEach(r=>r.onclick=()=>palOpen(palList[+r.dataset.i]));
 const palin=document.getElementById('palin');
-if(palList.length) palin.setAttribute('aria-activedescendant','pr-0');
+if(palList.length) palin.setAttribute('aria-activedescendant','pr-'+palIdx);
 else palin.removeAttribute('aria-activedescendant');
+}
+function palOpen(it){ if(!it) return; if(it.nw){ closePal(); go('srch').then(()=>showDetail(it.sym)); } else openSym(it.sym); }
+async function palSearch(q){
+const t=q.trim().toLowerCase(), my=++palSeq;
+// 1. Catalogue local (instantané) : ~900 actions, indices, devises, matières premières, taux, crypto
+let loc=localItems();
+if(t){
+loc=loc.filter(x=>x.s.toLowerCase().includes(t)||(x.n||'').toLowerCase().includes(t))
+.sort((a,b)=>{ const r=x=>x.s.toLowerCase()===t?0:x.s.toLowerCase().startsWith(t)?1:(x.n||'').toLowerCase().startsWith(t)?2:3; return r(a)-r(b); });
+}
+palList=loc.slice(0,12).map(x=>({sym:x.s, name:x.n||x.s, cls:x.c, exch:(x.l&&x.l.length?x.l[0]:'catalogue'), nw:x.nw}));
+palIdx=0; palRender();
+// 2. Marchés mondiaux via le relais (complète la liste)
+clearTimeout(palTimer);
+if(!WORKER_URL||t.length<2) return;
+palTimer=setTimeout(async()=>{
+try{
+const r=await fetch(`${WORKER_URL}/search?q=${encodeURIComponent(q.trim())}`); const d=await r.json();
+if(my!==palSeq) return;
+const have=new Set(palList.map(x=>x.sym));
+const rem=(d.quotes||[]).filter(x=>x.symbol&&!have.has(x.symbol)).slice(0,10)
+.map(x=>({sym:x.symbol, name:x.longname||x.shortname||x.symbol, cls:x.typeDisp||x.quoteType||'—', exch:x.exchDisp||x.exchange||'monde'}));
+palList=palList.concat(rem).slice(0,20); palRender();
+}catch(e){}
+},250);
 }
 function palMove(d){
 if(!palList.length) return;
@@ -1971,7 +1994,7 @@ if(open){
 if(e.key==='Escape') closePal();
 else if(e.key==='ArrowDown'){ e.preventDefault(); palMove(1); }
 else if(e.key==='ArrowUp'){ e.preventDefault(); palMove(-1); }
-else if(e.key==='Enter' && palList[palIdx]) openSym(palList[palIdx].sym);
+else if(e.key==='Enter' && palList[palIdx]) palOpen(palList[palIdx]);
 return;
 }
 if(e.target.tagName==='INPUT' || e.metaKey || e.ctrlKey || e.altKey) return;
