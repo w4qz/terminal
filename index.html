@@ -2975,7 +2975,7 @@ ${sel.filter(c=>slope(c)!=null).slice(0,4).map(c=>`<div class="stat"><span class
 ${d10('FR')!=null?`<div class="stat"><span class="l">SPREAD OAT − BUND 10A</span><span class="n">${nf(d10('FR'),0)} pb</span></div>`:''}
 ${d10('IT')!=null?`<div class="stat"><span class="l">SPREAD BTP − BUND 10A</span><span class="n">${nf(d10('IT'),0)} pb</span></div>`:''}
 ${d10('US')!=null?`<div class="stat"><span class="l">US − BUND 10A</span><span class="n">${nf(d10('US'),0)} pb</span></div>`:''}</div>
-<canvas id="gccv" height="240" role="img" aria-label="Courbes des taux des pays sélectionnés, aujourd'hui et il y a un mois"></canvas>
+<canvas id="gccv" height="300" role="img" aria-label="Courbes des taux des pays sélectionnés, aujourd'hui et il y a un mois"></canvas>
 <table style="margin-top:8px"><caption class="sr-only">Courbes des taux par maturité</caption><thead><tr><th scope="col">Maturité</th>${sel.map(c=>`<th scope="col"><span style="color:${c.col}">■</span> ${esc(c.n)}</th>`).join('')}</tr></thead><tbody>
 ${tenors.map(t=>`<tr><th scope="row" class="sym">${t}</th>${sel.map(c=>{ const p=c.pts.find(x=>x.t===t); if(!p) return '<td class="na">—</td>';
 const dv=p.y1m!=null?(p.y-p.y1m)*100:null; return `<td>${nf(p.y,2)} % <span class="${cls(dv)}" style="font-size:9px">${dv!=null?(dv>0?'+':'')+nf(dv,0)+' pb':''}</span></td>`; }).join('')}</tr>`).join('')}</tbody></table>
@@ -2985,30 +2985,46 @@ function wireGC(root){ root.querySelectorAll('[data-gck]').forEach(b=>b.onclick=
 const box=document.getElementById('gcbody'); box.innerHTML=gcHtml(); wireGC(box); drawGC(); }); }
 function drawGC(hover){
 const cv=document.getElementById('gccv'); if(!cv) return;
-const C=allCurves().filter(c=>GC.sel.has(c.k)), tenors=TEN_ORD.filter(t=>C.some(c=>cy(c,t)!=null)); if(!tenors.length) return;
-const r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1, H=240; cv.width=r.width*dpr; cv.height=H*dpr;
-const x=cv.getContext('2d'); x.scale(dpr,dpr); const W=r.width, pl=46, pr=10, pb=20, pt=8;
+const C=allCurves().filter(c=>GC.sel.has(c.k)&&c.pts.length), tenors=TEN_ORD.filter(t=>C.some(c=>cy(c,t)!=null)); if(!tenors.length) return;
+const yrs=t=>t.endsWith('M')?parseInt(t)/12:parseInt(t);
+const r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1, H=300; cv.width=r.width*dpr; cv.height=H*dpr;
+const x=cv.getContext('2d'); x.scale(dpr,dpr); const W=r.width, pl=52, pr=96, pb=24, pt=30;
+// Échelle des maturités en racine carrée : les maturités courtes restent lisibles sans écraser le long terme.
+const s0=Math.sqrt(yrs(tenors[0])), s1=Math.sqrt(yrs(tenors[tenors.length-1]));
+const X=t=>pl+(s1>s0?(Math.sqrt(yrs(t))-s0)/(s1-s0):0.5)*(W-pl-pr);
 const all=C.flatMap(c=>c.pts.flatMap(p=>[p.y,p.y1m])).filter(v=>v!=null);
-const mn=Math.floor(Math.min(...all)*2)/2, mx=Math.ceil(Math.max(...all)*2)/2, stp=mx-mn>3?1:0.5;
-const X=i=>pl+i/Math.max(1,tenors.length-1)*(W-pl-pr), Y=v=>pt+(1-(v-mn)/(mx-mn||1))*(H-pt-pb);
-x.font='9px monospace'; x.fillStyle='#8a93a0'; x.strokeStyle='#232830';
-for(let v=mn; v<=mx+1e-9; v+=stp){ const y=Y(v); x.beginPath(); x.moveTo(pl,y); x.lineTo(W-pr,y); x.stroke(); x.textAlign='right'; x.fillText(nf(v,1)+' %',pl-4,y+3); }
-x.textAlign='center'; tenors.forEach((t,i)=>x.fillText(t,X(i),H-5));
-const line=(c,key,dash)=>{ x.strokeStyle=c.col; x.globalAlpha=dash?0.45:1; x.lineWidth=1.6; x.setLineDash(dash?[4,4]:[]); x.beginPath(); let st=false;
-tenors.forEach((t,i)=>{ const p=c.pts.find(z=>z.t===t); if(!p||p[key]==null) return; st?x.lineTo(X(i),Y(p[key])):x.moveTo(X(i),Y(p[key])); st=true; }); x.stroke();
-if(!dash) tenors.forEach((t,i)=>{ const p=c.pts.find(z=>z.t===t); if(p&&c.pts.length<3){ x.fillStyle=c.col; x.beginPath(); x.arc(X(i),Y(p.y),3,0,7); x.fill(); } });
-x.setLineDash([]); x.globalAlpha=1; };
-C.forEach(c=>line(c,'y1m',true)); C.forEach(c=>line(c,'y',false));
-if(hover){ const i=hover.i, t=tenors[i], my=hover.y, inP=my>=pt&&my<=H-pb;
-x.strokeStyle='rgba(221,227,234,.4)'; x.setLineDash([3,3]); x.beginPath(); x.moveTo(X(i),pt); x.lineTo(X(i),H-pb); if(inP){ x.moveTo(pl,my); x.lineTo(W-pr,my); } x.stroke(); x.setLineDash([]);
-if(inP){ const v=mn+(1-(my-pt)/(H-pt-pb))*(mx-mn); x.font='bold 10px monospace'; const tx=nf(v,2)+' %', w=x.measureText(tx).width+8; x.fillStyle='#dde3ea'; x.fillRect(pl-w-1,my-8,w,16); x.fillStyle='#0b0e11'; x.textAlign='left'; x.fillText(tx,pl-w+3,my+3.5); }
-const L=[[`Maturité ${t}`,'#dde3ea']]; C.forEach(c=>{ const p=c.pts.find(z=>z.t===t); if(!p) return; x.fillStyle=c.col; x.beginPath(); x.arc(X(i),Y(p.y),3,0,7); x.fill();
-L.push([`${c.n.padEnd(14)} ${nf(p.y,2)} %${p.y1m!=null?` (${p.y-p.y1m>=0?'+':''}${nf((p.y-p.y1m)*100,0)} pb)`:''}`,c.col]); });
-x.font='10px monospace'; const bw=Math.max(...L.map(l=>x.measureText(l[0]).width))+14, bh=L.length*14+8, bx=X(i)+12+bw>W-pr?X(i)-bw-12:X(i)+12;
-x.fillStyle='rgba(11,14,17,.92)'; x.fillRect(bx,pt+4,bw,bh); x.strokeStyle='#2a3038'; x.strokeRect(bx,pt+4,bw,bh);
-L.forEach(([s,c],j)=>{ x.fillStyle=c; x.textAlign='left'; x.fillText(s,bx+7,pt+19+j*14); }); }
+let lo=Math.min(...all), hi=Math.max(...all); const pad=Math.max(0.15,(hi-lo)*0.08); lo-=pad; hi+=pad;
+const span=hi-lo, stp=span>4?1:span>2?0.5:span>1?0.25:0.1; lo=Math.floor(lo/stp)*stp; hi=Math.ceil(hi/stp)*stp;
+const Y=v=>pt+(1-(v-lo)/(hi-lo))*(H-pt-pb);
+x.font='10px monospace'; x.strokeStyle='#1c2127'; x.fillStyle='#8a93a0'; x.lineWidth=1;
+for(let v=lo; v<=hi+1e-9; v+=stp){ const y=Y(v); x.beginPath(); x.moveTo(pl,y); x.lineTo(W-pr,y); x.stroke(); x.textAlign='right'; x.fillText(nf(v,stp<0.5?2:1)+' %',pl-6,y+3); }
+x.textAlign='center'; tenors.forEach(t=>{ x.strokeStyle='#14171b'; x.beginPath(); x.moveTo(X(t),pt); x.lineTo(X(t),H-pb); x.stroke(); x.fillStyle='#8a93a0'; x.fillText(t,X(t),H-7); });
+// Légende
+let lx=pl; x.textAlign='left'; x.font='10px monospace';
+C.forEach(c=>{ x.fillStyle=c.col; x.fillRect(lx,11,14,3); const t=c.n+(c.pts.length===1?` (${c.pts[0].t})`:''); x.fillText(t,lx+18,16); lx+=x.measureText(t).width+34; });
+x.fillStyle='#6c7783'; x.fillText('—— aujourd\'hui   - - - il y a 1 mois',Math.max(lx,W-pr-250),16);
+// Courbes
+C.forEach(c=>{ const P=tenors.map(t=>c.pts.find(p=>p.t===t)).filter(Boolean);
+if(P.length>1){ for(const [key,dash] of [['y1m',true],['y',false]]){ x.strokeStyle=c.col; x.globalAlpha=dash?0.4:1; x.lineWidth=dash?1.2:2; x.setLineDash(dash?[4,4]:[]); x.beginPath(); let st=false;
+P.forEach(p=>{ if(p[key]==null) return; st?x.lineTo(X(p.t),Y(p[key])):x.moveTo(X(p.t),Y(p[key])); st=true; }); x.stroke(); } x.setLineDash([]); x.globalAlpha=1;
+P.forEach(p=>{ x.fillStyle=c.col; x.beginPath(); x.arc(X(p.t),Y(p.y),2.2,0,7); x.fill(); }); }
+else if(P.length===1){ const p=P[0], cx=X(p.t), cy2=Y(p.y); x.fillStyle=c.col; x.beginPath(); x.moveTo(cx,cy2-6); x.lineTo(cx+6,cy2); x.lineTo(cx,cy2+6); x.lineTo(cx-6,cy2); x.closePath(); x.fill();
+if(p.y1m!=null){ x.strokeStyle=c.col; x.globalAlpha=0.5; x.setLineDash([2,2]); x.beginPath(); x.moveTo(cx,Y(p.y1m)); x.lineTo(cx,cy2); x.stroke(); x.setLineDash([]); x.globalAlpha=1; } } });
+// Étiquettes de fin de courbe, écartées pour ne pas se chevaucher
+const tags=C.map(c=>{ const P=c.pts.filter(p=>tenors.includes(p.t)); const last=P.reduce((a,p)=>yrs(p.t)>yrs(a.t)?p:a,P[0]); return {c,v:last.y,y:Y(last.y)}; }).sort((a,b)=>a.y-b.y);
+for(let i=1;i<tags.length;i++) if(tags[i].y-tags[i-1].y<15) tags[i].y=tags[i-1].y+15;
+x.font='bold 10px monospace'; tags.forEach(g=>{ const t=`${g.c.k} ${nf(g.v,2)} %`, w=x.measureText(t).width+8; x.fillStyle=g.c.col; x.fillRect(W-pr+6,g.y-8,w,16); x.fillStyle='#0b0e11'; x.textAlign='left'; x.fillText(t,W-pr+10,g.y+3.5); });
+x.font='10px monospace';
+if(hover){ const t=hover.t, my=hover.y, inP=my>=pt&&my<=H-pb;
+x.strokeStyle='rgba(221,227,234,.4)'; x.setLineDash([3,3]); x.beginPath(); x.moveTo(X(t),pt); x.lineTo(X(t),H-pb); if(inP){ x.moveTo(pl,my); x.lineTo(W-pr,my); } x.stroke(); x.setLineDash([]);
+if(inP){ const v=lo+(1-(my-pt)/(H-pt-pb))*(hi-lo); x.font='bold 10px monospace'; const tx=nf(v,2)+' %', w=x.measureText(tx).width+8; x.fillStyle='#dde3ea'; x.fillRect(pl-w-2,my-8,w,16); x.fillStyle='#0b0e11'; x.textAlign='left'; x.fillText(tx,pl-w+2,my+3.5); x.font='10px monospace'; }
+const L=[[`Maturité ${t}`,'#dde3ea']]; C.forEach(c=>{ const p=c.pts.find(z=>z.t===t); if(!p) return; x.fillStyle='#dde3ea'; x.beginPath(); x.arc(X(t),Y(p.y),3.5,0,7); x.fill(); x.fillStyle=c.col; x.beginPath(); x.arc(X(t),Y(p.y),2.5,0,7); x.fill();
+L.push([`${c.n.padEnd(14)} ${nf(p.y,2)} %${p.y1m!=null?`  ${p.y-p.y1m>=0?'+':''}${nf((p.y-p.y1m)*100,0)} pb / 1 mois`:''}`,c.col]); });
+const bw=Math.max(...L.map(l=>x.measureText(l[0]).width))+16, bh=L.length*15+8, bx=X(t)+14+bw>W-pr?X(t)-bw-14:X(t)+14;
+x.fillStyle='rgba(11,14,17,.94)'; x.fillRect(bx,pt+4,bw,bh); x.strokeStyle='#2a3038'; x.strokeRect(bx,pt+4,bw,bh);
+L.forEach(([s,c],j)=>{ x.fillStyle=c; x.textAlign='left'; x.fillText(s,bx+8,pt+20+j*15); }); }
 cv.style.cursor='crosshair';
-cv.onmousemove=ev=>{ const rr=cv.getBoundingClientRect(), i=Math.round((ev.clientX-rr.left-pl)/(W-pl-pr)*(tenors.length-1)); drawGC(i>=0&&i<tenors.length?{i,y:ev.clientY-rr.top}:null); };
+cv.onmousemove=ev=>{ const rr=cv.getBoundingClientRect(), mx=ev.clientX-rr.left; const t=tenors.reduce((a,b)=>Math.abs(X(b)-mx)<Math.abs(X(a)-mx)?b:a); drawGC({t,y:ev.clientY-rr.top}); };
 cv.onmouseleave=()=>drawGC(null);
 }
 /** Panneau « Taux souverains » de l'onglet Marchés : cliquer un pays ouvre sa courbe (GC). */
