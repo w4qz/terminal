@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T16:00:34.383209Z",
+ "generated_at": "2026-10-31T16:27:18.174605Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -15,10 +15,10 @@
    "vol": 168039400
   },
   "ASTS": {
-   "p": 40.97,
+   "p": 40.99,
    "prev": 43.07,
-   "chg": -2.1,
-   "pct": -4.88,
+   "chg": -2.08,
+   "pct": -4.83,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-10-30T19:30:00Z",
@@ -283,17 +283,17 @@
    "vol": 6774
   },
   "BTC": {
-   "p": 77422.7578,
+   "p": 77455.0078,
    "prev": 77198.2109,
-   "chg": 224.5469,
-   "pct": 0.29,
+   "chg": 256.7969,
+   "pct": 0.33,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
    "ts": "2026-10-31T16:00:00Z",
    "open": 77202.3984,
    "lo": 77000.9219,
    "hi": 77554.9219,
-   "vol": 17758226432
+   "vol": 17226610688
   }
  },
  "fundamentals": {
@@ -424,7 +424,7 @@
    "exDiv": 1795046400,
    "divDate": 1796860800,
    "lastDiv": 0.91,
-   "trailDiv": 3.71
+   "trailDiv": 3.64
   },
   "GOOGL": {
    "name": "Alphabet Inc.",
@@ -557,9 +557,9 @@
    "ccy": "USD",
    "mcap": 1829640994816,
    "pe": 585.7391,
-   "fpe": 56.9376,
+   "fpe": 52.529,
    "eps": 0.23,
-   "feps": 2.3661,
+   "feps": 2.5647,
    "revTTM": 32042999808,
    "netIncome": -3431000064,
    "shares": 8246541218,
@@ -957,14 +957,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 982902374400,
+   "mcap": 979897024512,
    "pe": 44.75,
    "fpe": 38.2805,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.578,
    "div": 0.99,
    "divYield": 0.8,
@@ -1251,10 +1251,10 @@
    "industry": "Credit Services",
    "ccy": "USD",
    "mcap": 555819073536,
-   "pe": 33.3862,
-   "fpe": 27.5839,
-   "eps": 19.11,
-   "feps": 23.1298,
+   "pe": 35.0941,
+   "fpe": 27.6549,
+   "eps": 18.18,
+   "feps": 23.0705,
    "revTTM": 36288000000,
    "netIncome": 16958000128,
    "shares": 864657109,
@@ -1286,7 +1286,7 @@
    "exDiv": 1791504000,
    "divDate": 1794182400,
    "lastDiv": 0.87,
-   "trailDiv": 3.15
+   "trailDiv": 3.37
   },
   "ABBV": {
    "name": "AbbVie Inc.",
@@ -1295,9 +1295,9 @@
    "ccy": "USD",
    "mcap": 521105244160,
    "pe": 83.3023,
-   "fpe": 18.207,
+   "fpe": 18.2013,
    "eps": 3.54,
-   "feps": 16.1965,
+   "feps": 16.2016,
    "revTTM": 66013999104,
    "netIncome": 10302000128,
    "shares": 1767117285,
@@ -1330,10 +1330,10 @@
    "industry": "Oil & Gas Integrated",
    "ccy": "USD",
    "mcap": 459499536384,
-   "pe": 17.2922,
-   "fpe": 14.9045,
-   "eps": 13.62,
-   "feps": 15.802,
+   "pe": 22.668,
+   "fpe": 14.9859,
+   "eps": 10.39,
+   "feps": 15.7161,
    "revTTM": 228955996160,
    "netIncome": 26976000000,
    "shares": 1951000000,
@@ -1359,7 +1359,7 @@
    "exDiv": 1794960000,
    "divDate": 1788998400,
    "lastDiv": 1.78,
-   "trailDiv": 1.71
+   "trailDiv": 6.98
   },
   "COST": {
    "name": "Costco Wholesale Corporation",
@@ -1411,9 +1411,9 @@
    "ccy": "USD",
    "mcap": 442427080704,
    "pe": 158.7155,
-   "fpe": 78.3347,
+   "fpe": 78.7903,
    "eps": 1.16,
-   "feps": 2.3503,
+   "feps": 2.3367,
    "revTTM": 6155940864,
    "netIncome": 3016691968,
    "shares": 2300713329,
@@ -1579,9 +1579,12 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 122.9082,
+   "shares": 572600000,
    "divYield": 4.19,
    "w52lo": 93.84,
-   "w52hi": 101.46
+   "w52hi": 101.46,
+   "trailDiv": 2.48
   },
   "GLD": {
    "name": "SPDR Gold Shares",
@@ -1632,6 +1635,16 @@
  ],
  "news": [
   {
+   "h": "Binance says 90% of $6.3 billion hack losses are now covered, plans to resume withdrawals Sunday",
+   "w": "Binance says it has restored backing for 90% of assets affected by its $6.3 billion hack and is planning to resume withdrawals, subject to security checks.",
+   "syms": [
+    "BTC"
+   ],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-31T16:06:44Z",
+   "url": "https://www.cnbc.com/2026/10/31/binance-hack-asset-coverage-withdrawals.html"
+  },
+  {
    "h": "Evacuees from Russian-occupied city arrive in Ukraine",
    "w": "Complex humanitarian mission extracted hundreds of people from Oleshky during rare local ceasefire between Moscow and Kyiv",
    "syms": [],
@@ -1639,16 +1652,6 @@
    "ts": "2026-10-31T15:17:34Z",
    "url": "https://www.ft.com/content/55dfa145-4078-450f-a853-5f2d551260f1",
    "mine": 1
-  },
-  {
-   "h": "Binance, crypto and hacks: What to know about keeping coin safe as cyber criminals advance",
-   "w": "The Binance hack of $6.3 billion, the largest crypto theft ever, is a wake-up call for investors to understand how coin is guarded and the risk of losing it.",
-   "syms": [
-    "BTC"
-   ],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-31T14:26:29Z",
-   "url": "https://www.cnbc.com/2026/10/31/binance-crypto-hack-safety.html"
   },
   {
    "h": "Investors trim growth bets over fears of US economy’s AI exposure",
@@ -1741,20 +1744,20 @@
    "mine": 1
   },
   {
-   "h": "Automakers like Rivian and Ford are ‘democratizing 3D printing’ to reduce costs and increase speed",
-   "w": "Automakers including Ford, Rivian and GM are expanding 3D printing to make prototypes, factory tools and low-volume parts faster and at lower cost.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-31T12:00:01Z",
-   "url": "https://www.cnbc.com/2026/10/31/automakers-3d-printing-ford-rivian-gm.html"
-  },
-  {
    "h": "‘Pop-up’ super PACs pour $637 million into 2026 midterm races",
    "w": "Twenty-two late-forming super PACs spent about $637 million in 2026 congressional races, sometimes before voters could see their donors.",
    "syms": [],
    "src": "CNBC — Marchés",
    "ts": "2026-10-31T12:00:01Z",
    "url": "https://www.cnbc.com/2026/10/31/2026-midterm-election-super-pacs-donor-disclosure.html"
+  },
+  {
+   "h": "Automakers like Rivian and Ford are ‘democratizing 3D printing’ to reduce costs and increase speed",
+   "w": "Automakers including Ford, Rivian and GM are expanding 3D printing to make prototypes, factory tools and low-volume parts faster and at lower cost.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-31T12:00:01Z",
+   "url": "https://www.cnbc.com/2026/10/31/automakers-3d-printing-ford-rivian-gm.html"
   },
   {
    "h": "Humans are still doing the work behind some AI agents",
