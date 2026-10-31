@@ -1135,9 +1135,16 @@ el.innerHTML=`
 </form>
 </div>
 
+<div class="pnl" id="pfclient" style="margin-bottom:9px"></div>
+
 <div class="pnl" style="margin-bottom:9px">
 <h3>Profil de risque et adéquation<span class="rt">volatilité et pertes sur 2 ans d'historique · projection à ${P.yrs} ans</span></h3>
 <div id="pfprof" aria-live="polite"><div class="note" style="padding:12px">Calcul des profils…</div></div>
+</div>
+
+<div class="pnl" style="margin-bottom:9px">
+<h3>Stress tests — scénarios historiques<span class="rt">impact estimé sur la valeur du portefeuille</span></h3>
+<div id="pfstress"><div class="note" style="padding:12px">Calcul…</div></div>
 </div>
 
 <div class="pnl">
@@ -1152,6 +1159,7 @@ el.innerHTML=`
 </form>
 <div id="mcout" aria-live="polite"><div class="note" style="padding:12px">Calcul en cours…</div></div>
 </div>`;
+renderClient();
 wireSymbolClicks(el);
 const msg=t=>{ document.getElementById('pa_msg').textContent=t; };
 // Suggestions : catalogue local + recherche mondiale Yahoo via le relais (tous les tickers, ETF compris).
@@ -1203,26 +1211,8 @@ if(S.view!=='pf') return;
 const profs={};
 await Promise.all(Object.entries(PROFILES).map(async([k,pr])=>{ try{ profs[k]=await pfAnalyze(pr.w,0,{...P,mu:{}},1500); }catch(e){ profs[k]={err:e.message}; } }));
 if(S.view!=='pf') return;
-const alloc=w=>Object.entries(w).sort((a,b)=>b[1]-a[1]).map(([s,v])=>`${s} ${nf(v*100,0)} %`).join(' · ');
-const fit=cur?(Object.entries(PROFILES).find(([,p])=>cur.hist.vol<=p.maxVol)||[null])[0]:null;
-const prow=(label,A,allocTxt,act,hl)=>A&&!A.err?`<tr${hl?' style="background:var(--sel)"':''}>
-<th scope="row" style="text-align:left">${label}</th><td style="text-align:left;font-size:10px;color:var(--txt2)">${allocTxt}</td>
-<td>${pct(A.mc.expRet,1)}</td><td>${nf(A.hist.vol,1)} %</td><td><b>${sriClass(A.hist.vol)}</b>/7</td>
-<td class="neg">−${nf(A.hist.mdd,1)} %</td><td class="neg">${nf(A.hist.var95,2)} %</td>
-<td class="${cls(A.mc.p10-1)}">${pct((A.mc.p10-1)*100,1)}</td><td>${nf(A.mc.pLoss,1)} %</td><td>${act}</td></tr>`
-:`<tr><th scope="row" style="text-align:left">${label}</th><td colspan="9" class="na">${esc(A?A.err:'indisponible')}</td></tr>`;
-let verdict='';
-if(cur){ const v=cur.hist.vol, sri=sriClass(v);
-verdict=fit?`Avec une volatilité historique de <b>${nf(v,1)} %</b> (classe de risque ${sri}/7), le portefeuille actuel est compatible avec le profil <b>${fit}</b> et au-delà.`
-:`Avec une volatilité historique de <b>${nf(v,1)} %</b> (classe de risque ${sri}/7), le portefeuille actuel <b class="neg">dépasse le profil Dynamique</b> (plafond indicatif ${PROFILES['Dynamique'].maxVol} %). Il ne conviendrait qu'à un investisseur averti, capable de supporter une perte de ${nf(cur.hist.mdd,0)} % comme sur les deux dernières années.`; }
-prof.innerHTML=`<div class="pbody flush"><table><caption class="sr-only">Comparaison du portefeuille et des profils types</caption><thead><tr>
-<th scope="col" style="text-align:left">Profil</th><th scope="col" style="text-align:left">Allocation</th><th scope="col">Rdt attendu</th><th scope="col">Volatilité</th>
-<th scope="col">Classe SRI</th><th scope="col">Perte max 2 ans</th><th scope="col">VaR 95 % 1 j</th><th scope="col">P10 à ${P.yrs} ans</th><th scope="col">Proba. perte</th><th scope="col"></th></tr></thead><tbody>
-${prow('Portefeuille actuel',cur||{err},cur?alloc({...wmap,...(wc>0?{Liquidités:wc}:{})}):'',fit?`<span class="pos">≤ ${fit}</span>`:cur?'<span class="neg">hors profils</span>':'',true)}
-${Object.entries(PROFILES).map(([k,p])=>prow(`${k}<div class="mut" style="font-size:9px;font-weight:400">${p.obj} · σ ≤ ${p.maxVol} %</div>`,profs[k],alloc(p.w),`<button class="btn" data-apply="${k}">Appliquer</button>`)).join('')}
-</tbody></table></div>
-<div class="note" style="padding:8px 9px">${verdict} Classe SRI approchée par la volatilité annualisée (grille PRIIPs : 1 &lt; 0,5 %, 2 &lt; 5 %, 3 &lt; 12 %, 4 &lt; 20 %, 5 &lt; 30 %, 6 &lt; 80 %, 7 au-delà). Bornes de profil indicatives, à confronter au questionnaire client. ETF : ${Object.entries(ETF_NAMES).map(([s,n])=>`${s} = ${n}`).join(' ; ')}.</div>`;
-prof.querySelectorAll('[data-apply]').forEach(b=>b.onclick=()=>pfApply(b.dataset.apply,nav));
+S.pfLast={rows,nav,cur,profs,wmap,wc,err};
+pfRenderAnalysis();
 // ── Monte Carlo du portefeuille actuel
 if(!cur){ out.innerHTML=`<div class="warn" style="margin:9px">Simulation impossible : ${esc(err)}.${missing.length?' Sans historique : '+missing.map(esc).join(', ')+'.':''}</div>`; return; }
 const m=cur.mc, h=cur.hist, yrs=P.yrs, K=(l,v,c='')=>`<div class="kv"><span class="k">${l}</span><span class="v ${c}">${v}</span></div>`;
@@ -1276,6 +1266,204 @@ out.querySelectorAll('[data-mu]').forEach(i=>i.addEventListener('keydown',e=>{ i
 S.mc={p:m.sample,b:m.bsample,yrs};
 drawMC(m.sample,m.bsample,yrs);
 if(live) live.textContent=`Simulation terminée. Médiane à ${yrs} ans ×${nf(m.med,2)}, probabilité de perte ${nf(m.pLoss,1)} %.`;
+}
+
+function pfRenderAnalysis(){
+const L=S.pfLast; if(!L) return;
+const {cur,profs,wmap,wc,err,nav}=L, P=S.pfp, prof=document.getElementById('pfprof'); if(!prof) return;
+const alloc=w=>Object.entries(w).sort((a,b)=>b[1]-a[1]).map(([s,v])=>`${s} ${nf(v*100,0)} %`).join(' · ');
+const fit=cur?(Object.entries(PROFILES).find(([,p])=>cur.hist.vol<=p.maxVol)||[null])[0]:null;
+const CP=clientProfile(CLIENT);
+const prow=(label,A,allocTxt,act,hl)=>A&&!A.err?`<tr${hl?' style="background:var(--sel)"':''}>
+<th scope="row" style="text-align:left">${label}</th><td style="text-align:left;font-size:10px;color:var(--txt2)">${allocTxt}</td>
+<td>${pct(A.mc.expRet,1)}</td><td>${nf(A.hist.vol,1)} %</td><td><b>${sriClass(A.hist.vol)}</b>/7</td>
+<td class="neg">−${nf(A.hist.mdd,1)} %</td><td class="neg">${nf(A.hist.var95,2)} %</td>
+<td class="${cls(A.mc.p10-1)}">${pct((A.mc.p10-1)*100,1)}</td><td>${nf(A.mc.pLoss,1)} %</td><td>${act}</td></tr>`
+:`<tr><th scope="row" style="text-align:left">${label}</th><td colspan="9" class="na">${esc(A?A.err:'indisponible')}</td></tr>`;
+let verdict='';
+if(cur){ const v=cur.hist.vol, sri=sriClass(v);
+verdict=fit?`Avec une volatilité historique de <b>${nf(v,1)} %</b> (classe de risque ${sri}/7), le portefeuille actuel est compatible avec le profil <b>${fit}</b> et au-delà.`
+:`Avec une volatilité historique de <b>${nf(v,1)} %</b> (classe de risque ${sri}/7), le portefeuille actuel <b class="neg">dépasse le profil Dynamique</b> (plafond indicatif ${PROFILES['Dynamique'].maxVol} %). Il ne conviendrait qu'à un investisseur averti, capable de supporter une perte de ${nf(cur.hist.mdd,0)} % comme sur les deux dernières années.`; }
+prof.innerHTML=`<div class="pbody flush"><table><caption class="sr-only">Comparaison du portefeuille et des profils types</caption><thead><tr>
+<th scope="col" style="text-align:left">Profil</th><th scope="col" style="text-align:left">Allocation</th><th scope="col">Rdt attendu</th><th scope="col">Volatilité</th>
+<th scope="col">Classe SRI</th><th scope="col">Perte max 2 ans</th><th scope="col">VaR 95 % 1 j</th><th scope="col">P10 à ${P.yrs} ans</th><th scope="col">Proba. perte</th><th scope="col"></th></tr></thead><tbody>
+${prow('Portefeuille actuel',cur||{err},cur?alloc({...wmap,...(wc>0?{Liquidités:wc}:{})}):'',fit?`<span class="pos">≤ ${fit}</span>`:cur?'<span class="neg">hors profils</span>':'',true)}
+${Object.entries(PROFILES).map(([k,p])=>prow(`${k}${CP&&CP.prof===k?' <span class="st st-EOD">profil client</span>':''}<div class="mut" style="font-size:9px;font-weight:400">${p.obj} · σ ≤ ${p.maxVol} %</div>`,profs[k],alloc(p.w),`<button class="btn${CP&&CP.prof===k?' go':''}" data-apply="${k}">Appliquer</button>`)).join('')}
+</tbody></table></div>
+<div class="note" style="padding:8px 9px">${verdict} Classe SRI approchée par la volatilité annualisée (grille PRIIPs : 1 &lt; 0,5 %, 2 &lt; 5 %, 3 &lt; 12 %, 4 &lt; 20 %, 5 &lt; 30 %, 6 &lt; 80 %, 7 au-delà). Bornes de profil indicatives, à confronter au questionnaire client. ETF : ${Object.entries(ETF_NAMES).map(([s,n])=>`${s} = ${n}`).join(' ; ')}.</div>`;
+prof.querySelectorAll('[data-apply]').forEach(b=>b.onclick=()=>pfApply(b.dataset.apply,nav));
+// ── Adéquation au profil du client
+const CPf=clientProfile(CLIENT), fitEl=document.getElementById('cl_fit');
+if(fitEl&&CPf&&cur){ const okV=cur.hist.vol<=CPf.maxVol, okL=cur.hist.mdd<=CPf.maxLoss*1.5, ok=okV&&okL;
+fitEl.innerHTML=`<span class="l">ADÉQUATION</span><span class="n ${ok?'pos':'neg'}">${ok?'Adéquat':'Non adéquat'}</span><span class="s">σ ${nf(cur.hist.vol,1)} % ${okV?'≤':'>'} ${CPf.maxVol} %${okL?'':' · pertes trop fortes'}</span>`; }
+else if(fitEl&&CPf){ fitEl.innerHTML='<span class="l">ADÉQUATION</span><span class="n mut">n/d</span><span class="s">portefeuille non analysable</span>'; }
+// ── Stress tests
+const sbox=document.getElementById('pfstress'); if(!sbox) return;
+if(!cur){ sbox.innerHTML='<div class="note">Stress tests indisponibles : portefeuille non analysable.</div>'; return; }
+const tgt=CPf?CPf.prof:null, cols=['Actuel',...Object.keys(PROFILES)];
+const A=k=>k==='Actuel'?{a:cur,wc}:profs[k]&&!profs[k].err?{a:profs[k],wc:0}:null;
+sbox.innerHTML=`<div class="pbody flush"><table><caption class="sr-only">Stress tests</caption><thead><tr><th scope="col" style="text-align:left">Scénario</th>
+${cols.map(k=>`<th scope="col">${k==='Actuel'?'Portefeuille actuel':k}${k===tgt?' ★':''}</th>`).join('')}<th scope="col">Impact actuel en $</th></tr></thead><tbody>
+${STRESS.map(sc=>{ const cells=cols.map(k=>{ const x=A(k); if(!x) return '<td class="na">n/d</td>'; const v=stressPortfolio(x.a,x.wc,sc), over=CPf&&-v>CPf.maxLoss;
+return `<td class="${cls(v)}"${over?' style="background:#2a1212;font-weight:700" title="Au-delà de la perte acceptable du client"':''}>${pct(v,1)}</td>`; }).join('');
+return `<tr><th scope="row" style="text-align:left">${sc.k}<div class="mut" style="font-size:9px;font-weight:400">${sc.per}</div></th>${cells}<td>${nf(nav*stressPortfolio(cur,wc,sc)/100,0)}</td></tr>`; }).join('')}
+</tbody></table></div>
+<div class="note" style="padding:8px 9px">Chocs subis par les indices de référence de chaque période (actions monde, obligations agrégées, or, monétaire) appliqués aux lignes actuelles. Pour une action, le choc vaut son bêta × le choc du marché, plafonné à −95 % : une approximation linéaire qui ignore les effets propres à chaque titre.${CPf?` Cases en rouge foncé : perte supérieure à la tolérance du client (${CPf.maxLoss>=35?'> 20':CPf.maxLoss} %). ★ = profil du client.`:' Renseignez le questionnaire client pour comparer à sa tolérance.'}</div>`;
+}
+/*── Profil client : questionnaire d'adéquation inspiré de MiFID II ─────*/
+const CLIENT_KEY='terminal.client.v1';
+const CQ=[
+{q:'Horizon de placement', a:['Moins de 2 ans','2 à 5 ans','5 à 8 ans','Plus de 8 ans']},
+{q:'Objectif principal', a:['Préserver le capital','Revenus réguliers','Croissance équilibrée','Croissance forte']},
+{q:'Perte maximale acceptable sur un an', a:['Moins de 5 %','5 à 10 %','10 à 20 %','Plus de 20 %']},
+{q:'Réaction à une baisse de 20 % en 3 mois', a:['Je vends tout','Je vends une partie','J\'attends','Je renforce']},
+{q:'Connaissance des marchés', a:['Aucune','Livrets et fonds','Actions et obligations','Produits complexes, dérivés']},
+{q:'Part du patrimoine financier investie ici', a:['Plus de 75 %','50 à 75 %','25 à 50 %','Moins de 25 %']},
+{q:'Besoin de récupérer les fonds', a:['Dans les 12 mois','Possible','Peu probable','Aucun']},
+{q:'Stabilité des revenus', a:['Instables','Variables','Stables','Stables avec épargne régulière']}
+];
+const LOSS_TOL=[5,10,20,35];
+let CLIENT=(()=>{ try{ return JSON.parse(localStorage.getItem(CLIENT_KEY)||'null'); }catch(e){ return null; } })();
+function clientSave(){ try{ localStorage.setItem(CLIENT_KEY,JSON.stringify(CLIENT)); }catch(e){} }
+/** Score 0–24 → profil, avec deux règles bloquantes (horizon court, faible tolérance aux pertes). */
+function clientProfile(c){
+if(!c||!c.a||c.a.some(x=>x==null)) return null;
+const score=c.a.reduce((s,x)=>s+x,0), flags=[];
+let prof=score<=8?'Prudent':score<=16?'Équilibré':'Dynamique';
+const cap=p=>{ const o=['Prudent','Équilibré','Dynamique']; if(o.indexOf(prof)>o.indexOf(p)) prof=p; };
+if(c.a[0]===0){ cap('Prudent'); flags.push('horizon inférieur à 2 ans : profil limité à Prudent'); }
+if(c.a[2]===0){ cap('Prudent'); flags.push('perte acceptable inférieure à 5 % : profil limité à Prudent'); }
+if(c.a[6]===0){ cap('Prudent'); flags.push('besoin de liquidité sous 12 mois : profil limité à Prudent'); }
+if(c.a[3]===0&&prof==='Dynamique'){ cap('Équilibré'); flags.push('vente en cas de baisse : profil limité à Équilibré'); }
+if(c.a[4]===0) flags.push('aucune expérience : produits complexes exclus, explication renforcée');
+return {score, prof, maxLoss:LOSS_TOL[c.a[2]], maxVol:PROFILES[prof].maxVol, flags};
+}
+function renderClient(){
+const box=document.getElementById('pfclient'); if(!box) return;
+const P=clientProfile(CLIENT), editing=!P||box.dataset.edit==='1';
+if(editing){
+const c=CLIENT||{name:'',adv:'',a:CQ.map(()=>null)};
+box.innerHTML=`<h3>Profil client — questionnaire d'adéquation<span class="rt">inspiré de MiFID II · enregistré dans ce navigateur</span></h3>
+<form id="cqform" class="pbody" novalidate>
+<div class="ctl" style="margin:-9px -9px 9px;border-top:none">
+<div class="f w"><label for="cq_name">Client</label><input id="cq_name" value="${esc(c.name||'')}" placeholder="M. Dupont" style="text-align:left;width:180px"></div>
+<div class="f w"><label for="cq_adv">Conseiller</label><input id="cq_adv" value="${esc(c.adv||'')}" placeholder="Votre nom" style="text-align:left;width:180px"></div></div>
+<div class="g g2" style="gap:6px 24px">${CQ.map((x,i)=>`<fieldset style="border:none;margin:0;padding:0 0 6px"><legend style="font-size:11px;color:var(--txt);margin-bottom:4px">${i+1}. ${esc(x.q)}</legend>
+<div class="rng" style="flex-wrap:wrap">${x.a.map((t,j)=>`<button type="button" data-q="${i}" data-v="${j}" class="${c.a[i]===j?'on':''}" aria-pressed="${c.a[i]===j}">${esc(t)}</button>`).join('')}</div></fieldset>`).join('')}</div>
+<div style="display:flex;gap:8px;align-items:center;margin-top:6px"><button class="btn go" type="submit">Calculer le profil</button>
+${P?'<button class="btn" type="button" id="cq_cancel">Annuler</button>':''}<span id="cq_msg" class="note" style="padding:0;color:var(--hot)"></span></div></form>`;
+const st={...c,a:[...c.a]};
+box.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{ const q=+b.dataset.q; st.a[q]=+b.dataset.v;
+box.querySelectorAll(`[data-q="${q}"]`).forEach(x=>{ const on=x===b; x.classList.toggle('on',on); x.setAttribute('aria-pressed',on); }); });
+const cancel=document.getElementById('cq_cancel'); if(cancel) cancel.onclick=()=>{ box.dataset.edit=''; renderClient(); };
+document.getElementById('cqform').onsubmit=ev=>{ ev.preventDefault();
+const miss=st.a.map((x,i)=>x==null?i+1:null).filter(Boolean);
+if(miss.length){ document.getElementById('cq_msg').textContent='Questions sans réponse : '+miss.join(', ')+'.'; return; }
+CLIENT={name:document.getElementById('cq_name').value.trim(),adv:document.getElementById('cq_adv').value.trim(),a:st.a,date:new Date().toISOString().slice(0,10)};
+clientSave(); box.dataset.edit=''; renderClient(); if(S.pfLast) pfRenderAnalysis(); };
+return;
+}
+box.innerHTML=`<h3>Profil client${CLIENT.name?' — '+esc(CLIENT.name):''}<span class="rt">questionnaire du ${esc(CLIENT.date||'')}</span></h3>
+<div class="statrow">
+<div class="stat"><span class="l">PROFIL RETENU</span><span class="n">${P.prof}</span><span class="s">score ${P.score}/24</span></div>
+<div class="stat"><span class="l">PERTE ACCEPTABLE</span><span class="n">${P.maxLoss>=35?'> 20':'≤ '+P.maxLoss} %</span><span class="s">sur un an</span></div>
+<div class="stat"><span class="l">VOLATILITÉ MAX.</span><span class="n">${P.maxVol} %</span><span class="s">borne du profil ${P.prof}</span></div>
+<div class="stat"><span class="l">HORIZON</span><span class="n" style="font-size:15px">${esc(CQ[0].a[CLIENT.a[0]])}</span><span class="s">${esc(CQ[1].a[CLIENT.a[1]])}</span></div>
+<div class="stat" id="cl_fit"><span class="l">ADÉQUATION</span><span class="n mut">…</span><span class="s">calcul en cours</span></div>
+</div>
+<div class="ctl" style="border-bottom:none;align-items:center">
+<button class="btn" type="button" id="cq_edit">Modifier le questionnaire</button>
+<button class="btn go" type="button" id="cq_pdf">Rapport client (PDF)</button>
+<span class="note" style="padding:0">${P.flags.length?'⚠ '+P.flags.map(esc).join(' · '):'Aucune restriction particulière.'}</span></div>`;
+document.getElementById('cq_edit').onclick=()=>{ box.dataset.edit='1'; renderClient(); };
+document.getElementById('cq_pdf').onclick=pfReport;
+}
+
+/*── Stress tests : scénarios historiques appliqués aux lignes actuelles ─*/
+const STRESS=[
+{k:'Crise financière',per:'oct. 2007 → mars 2009',eq:-58,bond:6,gold:23,cash:2},
+{k:'Bulle internet',per:'mars 2000 → oct. 2002',eq:-49,bond:28,gold:12,cash:8},
+{k:'Covid-19',per:'19 fév. → 23 mars 2020',eq:-34,bond:-2,gold:-3,cash:0},
+{k:'Hausse des taux',per:'janv. → oct. 2022',eq:-26,bond:-17,gold:-9,cash:1},
+{k:'Choc hypothétique',per:'actions −20 %, taux +1 pt',eq:-20,bond:-6,gold:5,cash:0}
+];
+const ASSET_CLASS={AGG:'bond',BND:'bond',IEF:'bond',TLT:'bond',IEAG:'bond','AGGH.AS':'bond','EUNA.DE':'bond',
+GLD:'gold',IAU:'gold','GC=F':'gold','SGLD.L':'gold','4GLD.DE':'gold','SI=F':'gold',BIL:'cash',SHV:'cash',SGOV:'cash','XEON.DE':'cash'};
+/** Choc d'une ligne : classe d'actif connue, sinon bêta × choc actions (plafonné à −95 %). */
+function stressOf(sym,beta,sc){ const c=ASSET_CLASS[sym]; if(c) return sc[c];
+return Math.max(-95,Math.min(150,(isFinite(beta)?beta:1)*sc.eq)); }
+function stressPortfolio(A,wc,sc){ return A.syms.reduce((s,sym,i)=>s+A.w[i]*stressOf(sym,A.bt[i],sc),0)+wc*sc.cash; }
+
+/*── Rapport client imprimable (Enregistrer en PDF depuis la fenêtre d'impression) ─*/
+function pfReport(){
+const L=S.pfLast, P=clientProfile(CLIENT);
+if(!L||!L.cur){ alert('Analyse du portefeuille pas encore prête : attendez la fin du calcul.'); return; }
+const {cur,profs,rows,nav,wc}=L, h=cur.hist, m=cur.mc, yrs=S.pfp.yrs, today=new Date().toLocaleDateString('fr-FR',{day:'2-digit',month:'long',year:'numeric'});
+const target=P?P.prof:null, T=target&&profs[target]&&!profs[target].err?profs[target]:null;
+const ok=P?h.vol<=P.maxVol&&h.mdd<=P.maxLoss*1.5:null;
+const f1=v=>nf(v,1), money=v=>nf(v,0)+' $';
+const img=(()=>{ try{ const c=document.getElementById('mccv'); return c?c.toDataURL('image/png'):''; }catch(e){ return ''; } })();
+const mk=[['SPX','S&P 500'],['SX5E','Euro Stoxx 50'],['CAC','CAC 40'],['EURUSD','EUR/USD'],['XAU','Or'],['BTC','Bitcoin']]
+.map(([s,n])=>{ const q=SNAPSHOT.quotes[s]; return q&&q.p!=null?`<tr><td>${n}</td><td class="r">${npx(q.p,s)}</td><td class="r ${cls(q.pct)}">${pct(q.pct)}</td></tr>`:''; }).join('');
+const ec=['USINTR','EUINTR','USIRYY','EUIRYY','US10Y','DE10Y'].map(c=>{ const e=ecoGet(c); return e?`<tr><td>${esc(e.n)} — ${esc(e.ctry)}</td><td class="r">${ecoFmt(e.last,e)}</td><td class="r mut">${ecoPeriod(e,e.date)}</td></tr>`:''; }).join('');
+const pos=rows.filter(e=>e.ok).map(e=>`<tr><td><b>${esc(e.sym)}</b> ${e.name&&e.name!==e.sym?`<span class="mut">${esc(e.name)}</span>`:''}</td><td class="r">${nf(e.qty,e.qty%1?2:0)}</td><td class="r">${npx(e.px,e.sym)} ${e.ccy!=='USD'?esc(e.ccy):''}</td><td class="r">${money(e.mv)}</td><td class="r">${f1(e.mv/nav*100)} %</td><td class="r ${cls(e.uplPct)}">${pct(e.uplPct,1)}</td></tr>`).join('')
++(S.cash?`<tr><td>Liquidités</td><td></td><td></td><td class="r">${money(S.cash)}</td><td class="r">${f1(wc*100)} %</td><td></td></tr>`:'');
+const stressRows=STRESS.map(sc=>{ const v=stressPortfolio(cur,wc,sc), t=T?stressPortfolio(T,0,sc):null, over=P&&-v>P.maxLoss;
+return `<tr><td><b>${sc.k}</b><br><span class="mut">${sc.per}</span></td><td class="r ${cls(v)}${over?' over':''}">${pct(v,1)}</td><td class="r">${money(nav*v/100)}</td>${T?`<td class="r ${cls(t)}">${pct(t,1)}</td>`:''}</tr>`; }).join('');
+const K=(l,a,b)=>`<tr><td>${l}</td><td class="r">${a}</td>${T?`<td class="r mut">${b}</td>`:''}</tr>`;
+const html=`<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><title>Rapport client${CLIENT&&CLIENT.name?' — '+esc(CLIENT.name):''} — ${today}</title><style>
+@page{size:A4;margin:14mm 13mm}*{box-sizing:border-box}body{font:10.5px/1.45 -apple-system,"Helvetica Neue",Arial,sans-serif;color:#1b1f24;margin:0}
+h1{font-size:19px;margin:0}h2{font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:#0b3d6b;border-bottom:1.5px solid #0b3d6b;padding-bottom:3px;margin:16px 0 7px}
+.hd{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid #0b3d6b;padding-bottom:8px}.mut{color:#6b7480}
+table{width:100%;border-collapse:collapse}td,th{padding:3.5px 5px;border-bottom:1px solid #e3e6ea;text-align:left;vertical-align:top}th{font-size:9px;color:#6b7480;text-transform:uppercase;font-weight:600}
+.r{text-align:right;font-variant-numeric:tabular-nums}.pos{color:#13804a}.neg{color:#c0392b}.over{background:#fdecea;font-weight:700}
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.kpi div{border:1px solid #d9dde2;border-radius:3px;padding:7px}.kpi b{display:block;font-size:16px;margin-top:2px}
+.verdict{padding:9px 11px;border-left:4px solid ${ok==null?'#6b7480':ok?'#13804a':'#c0392b'};background:${ok==null?'#f3f4f6':ok?'#eaf6ef':'#fdecea'};margin:8px 0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}.bar{height:7px;background:#0b3d6b;border-radius:2px}img{width:100%;border:1px solid #e3e6ea;margin-top:6px;background:#0b0e11}
+.foot{margin-top:18px;font-size:8.5px;color:#6b7480;border-top:1px solid #d9dde2;padding-top:6px}@media print{.noprint{display:none}}
+.noprint{position:fixed;bottom:14px;right:14px}.noprint button{font:12px sans-serif;padding:7px 14px;background:#0b3d6b;color:#fff;border:0;border-radius:3px;cursor:pointer}
+</style></head><body><div class="noprint"><button onclick="print()">Enregistrer en PDF</button></div>
+<div class="hd"><div><div class="mut" style="font-size:9px;letter-spacing:1px">RAPPORT DE PORTEFEUILLE</div><h1>${CLIENT&&CLIENT.name?esc(CLIENT.name):'Client'}</h1></div>
+<div class="r"><b>${today}</b><br><span class="mut">${CLIENT&&CLIENT.adv?'Conseiller : '+esc(CLIENT.adv):''}</span></div></div>
+
+<h2>1. Synthèse</h2>
+<div class="kpi"><div><span class="mut">Valeur du portefeuille</span><b>${money(nav)}</b></div><div><span class="mut">Profil du client</span><b>${P?P.prof:'non renseigné'}</b></div>
+<div><span class="mut">Classe de risque (SRI)</span><b>${sriClass(h.vol)} / 7</b></div><div><span class="mut">Volatilité annuelle</span><b>${f1(h.vol)} %</b></div></div>
+<div class="verdict">${P?(ok?`<b>Portefeuille adéquat.</b> Sa volatilité (${f1(h.vol)} %) respecte la borne du profil ${P.prof} (${P.maxVol} %) et sa perte maximale récente (${f1(h.mdd)} %) reste compatible avec la tolérance déclarée.`
+:`<b>Portefeuille non adéquat au profil ${P.prof}.</b> Volatilité de ${f1(h.vol)} % pour une borne de ${P.maxVol} % ; perte maximale de ${f1(h.mdd)} % sur 2 ans pour une perte acceptable ${P.maxLoss>=35?'supérieure à 20':'de '+P.maxLoss} %. Un rééquilibrage vers l'allocation ${P.prof} est à envisager.`)
+:'Questionnaire client non renseigné : adéquation non évaluée.'}${P&&P.flags.length?'<br><span class="mut">Points d\'attention : '+P.flags.map(esc).join(' ; ')+'.</span>':''}</div>
+
+<h2>2. Composition</h2>
+<table><thead><tr><th>Ligne</th><th class="r">Quantité</th><th class="r">Cours</th><th class="r">Valeur</th><th class="r">Poids</th><th class="r">Plus-value</th></tr></thead><tbody>${pos}</tbody></table>
+
+<div class="two"><div><h2>3. Risque${T?' — actuel / '+target:''}</h2><table><thead><tr><th></th><th class="r">Actuel</th>${T?`<th class="r">${target}</th>`:''}</tr></thead><tbody>
+${K('Rendement attendu (MEDAF)',pct(m.expRet,1),pct(T&&T.mc.expRet,1))}
+${K('Volatilité annuelle',f1(h.vol)+' %',T?f1(T.hist.vol)+' %':'')}
+${K('Perte maximale (2 ans)','−'+f1(h.mdd)+' %',T?'−'+f1(T.hist.mdd)+' %':'')}
+${K('VaR 95 % à 1 jour',nf(h.var95,2)+' %',T?nf(T.hist.var95,2)+' %':'')}
+${K('Ratio de Sharpe',nf(h.sharpe,2),T?nf(T.hist.sharpe,2):'')}
+${K('Bêta (indice monde)',nf(h.beta,2),T?nf(T.hist.beta,2):'')}
+${K(`Scénario bas à ${yrs} ans (P10)`,pct((m.p10-1)*100,1),T?pct((T.mc.p10-1)*100,1):'')}
+${K(`Probabilité de perte à ${yrs} ans`,f1(m.pLoss)+' %',T?f1(T.mc.pLoss)+' %':'')}
+</tbody></table></div>
+<div><h2>4. Stress tests</h2><table><thead><tr><th>Scénario</th><th class="r">Impact</th><th class="r">En $</th>${T?`<th class="r">${target}</th>`:''}</tr></thead><tbody>${stressRows}</tbody></table>
+<div class="mut" style="font-size:8.5px;margin-top:4px">Chocs des indices de référence de chaque période appliqués aux lignes actuelles (actions : bêta × choc du marché, plafonné à −95 %).${P?' En rouge : perte supérieure à la tolérance du client.':''}</div></div></div>
+
+<h2>5. Projection à ${yrs} ans</h2>
+<div class="two"><div><table><tbody><tr><td>Scénario médian</td><td class="r">×${nf(m.med,2)} (${money(nav*m.med)})</td></tr>
+<tr><td>Scénario défavorable (1 chance sur 10)</td><td class="r neg">×${nf(m.p10,2)} (${money(nav*m.p10)})</td></tr>
+<tr><td>Scénario favorable (1 chance sur 10)</td><td class="r pos">×${nf(m.p90,2)} (${money(nav*m.p90)})</td></tr>
+<tr><td>Probabilité de finir sous la mise</td><td class="r">${f1(m.pLoss)} %</td></tr></tbody></table>
+<div class="mut" style="font-size:8.5px;margin-top:4px">${nf(m.N,0)} simulations Monte Carlo, volatilités et corrélations estimées sur 2 ans d'historique réel. Une projection n'est pas une prévision.</div></div>
+<div>${img?`<img src="${img}" alt="Trajectoire simulée">`:''}</div></div>
+
+<h2>6. Contexte de marché</h2>
+<div class="two"><table><tbody>${mk||'<tr><td class="mut">Cotations indisponibles</td></tr>'}</tbody></table><table><tbody>${ec||'<tr><td class="mut">Données économiques indisponibles</td></tr>'}</tbody></table></div>
+
+<div class="foot">Document d'information établi à partir de données publiques différées (Yahoo Finance, FRED, BCE, Bank of England) au ${today}. Les performances passées ne préjugent pas des performances futures ; les projections et stress tests reposent sur des hypothèses simplifiées. Ce document ne constitue ni une recommandation personnalisée ni une offre. Profil établi à partir d'un questionnaire simplifié inspiré de MiFID II, à compléter par l'évaluation réglementaire de l'établissement.</div>
+</body></html>`;
+const w=window.open('','_blank'); if(!w){ alert('Autorisez les fenêtres pop-up pour ce site afin de générer le rapport.'); return; }
+w.document.open(); w.document.write(html); w.document.close();
 }
 
 async function pfApply(name,nav){
