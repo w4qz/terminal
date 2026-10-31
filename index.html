@@ -1295,6 +1295,7 @@ if(!r.ok||!res) throw new Error((d.chart&&d.chart.error&&d.chart.error.descripti
 const qq=res.indicators.quote[0];
 bars=(res.timestamp||[]).map((t,i)=>({t:t*1000,o:qq.open[i],h:qq.high[i],l:qq.low[i],c:qq.close[i],v:qq.volume?qq.volume[i]:null}))
 .filter(b=>b.c!=null&&b.o!=null&&b.h!=null&&b.l!=null);
+if(isFX(sym)) bars=cleanFX(bars);
 bars.meta=res.meta; SEC.cache.set(key,bars);
 }
 if(S.focus!==sym||S.view!=='sec') return;
@@ -1306,10 +1307,22 @@ const prev=bars.length>1?bars[bars.length-2].c:null, p2=prev?(m.regularMarketPri
 const pc=document.getElementById('secpc'); if(pc){ pc.textContent=pct(p2); pc.className='n '+cls(p2); }
 }
 msg.textContent=''; msg.style.display='none';
+const ss=document.getElementById('secsrc'); if(ss) ss.textContent=bars.cleaned?'Yahoo Finance via relais · forex : ouverture = clôture veille, mèches aberrantes plafonnées':'Yahoo Finance via relais';
 drawCandles();
 const rd=document.getElementById('secread'); if(rd) rd.innerHTML=secReading(F, px??m.regularMarketPrice, bars);
 }catch(e){ if(msg){ msg.style.display=''; msg.innerHTML=`<span class="neg">Graphique indisponible : ${esc(e.message)}.</span>`; } }
 }
+// Yahoo publie des bougies forex quotidiennes peu fiables : ouverture prise à une heure arbitraire
+// (corps quasi nuls) et plus hauts/plus bas pollués par des cotations aberrantes (mèches géantes).
+// Le change cote 24 h/24 : l'ouverture d'une séance = clôture de la précédente ; mèches plafonnées.
+function cleanFX(raw){
+if(raw.length<3) return raw;
+const rng=raw.map(b=>b.h-b.l).sort((a,b)=>a-b), med=rng[rng.length>>1]||0, cap=med*1.5;
+const out=raw.map((b,i)=>{ const o=i?raw[i-1].c:b.o, c=b.c, top=Math.max(o,c), bot=Math.min(o,c);
+let h=Math.max(b.h,top), l=Math.min(b.l,bot);
+if(cap>0){ h=Math.min(h,top+cap); l=Math.max(l,bot-cap); }
+return {...b,o,h,l,adj:1}; });
+out.cleaned=true; return out; }
 function sma(arr,n){ const out=new Array(arr.length).fill(null); let s=0;
 for(let i=0;i<arr.length;i++){ s+=arr[i]; if(i>=n) s-=arr[i-n]; if(i>=n-1) out[i]=s/n; } return out; }
 function drawCandles(hover){
