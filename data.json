@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T08:20:06.067700Z",
+ "generated_at": "2026-10-31T08:33:18.190182Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -15,10 +15,10 @@
    "vol": 168039400
   },
   "ASTS": {
-   "p": 40.97,
+   "p": 40.99,
    "prev": 43.07,
-   "chg": -2.1,
-   "pct": -4.88,
+   "chg": -2.08,
+   "pct": -4.83,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-10-30T19:30:00Z",
@@ -45,8 +45,8 @@
    "prev": 29402.5098,
    "chg": -1016.7617,
    "pct": -3.46,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^NDX) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^NDX)",
    "ts": "2026-10-30T19:30:00Z",
    "open": 28604.9102,
    "lo": 28093.2402,
@@ -71,8 +71,8 @@
    "prev": 2859.22,
    "chg": -47.1787,
    "pct": -1.65,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^RUT)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^RUT) — échec de la dernière mise à jour",
    "ts": "2026-10-30T19:30:00Z",
    "open": 2838.77,
    "lo": 2787.1201,
@@ -244,10 +244,10 @@
    "hi": 102.09
   },
   "XAU": {
-   "p": 3884.8999,
+   "p": 3898.8999,
    "prev": 4031.3999,
-   "chg": -146.5,
-   "pct": -3.63,
+   "chg": -132.5,
+   "pct": -3.29,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (GC=F)",
    "ts": "2026-10-30T20:00:00Z",
@@ -283,17 +283,17 @@
    "vol": 6774
   },
   "BTC": {
-   "p": 77311.1328,
+   "p": 77155.3984,
    "prev": 77198.2109,
-   "chg": 112.9219,
-   "pct": 0.15,
+   "chg": -42.8125,
+   "pct": -0.06,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
    "ts": "2026-10-31T08:00:00Z",
    "open": 77202.3984,
    "lo": 77000.9219,
    "hi": 77434.1484,
-   "vol": 28691421184
+   "vol": 28283330560
   }
  },
  "fundamentals": {
@@ -342,11 +342,29 @@
  ],
  "news": [
   {
+   "h": "Adrien Bilal, Prix du meilleur jeune économiste 2026 : « La croissance n’est pas l’adversaire de la politique climatique, c’est même l’inverse »",
+   "w": "Les dommages du réchauffement climatique sont considérables : ils rognent la croissance et, avec elle, les marges budgétaires de la France. Réduire nos émissions de CO₂ reste pourtant rentable, même sans la coopération du reste du monde, plaide le lauréat du Prix du meilleur jeune économiste 2026, dans une tribune au « Monde ».",
+   "syms": [
+    "CAC"
+   ],
+   "src": "Le Monde — Économie",
+   "ts": "2026-10-31T08:30:07Z",
+   "url": "https://www.lemonde.fr/idees/article/2026/10/31/adrien-bilal-prix-du-meilleur-jeune-economiste-2026-la-croissance-n-est-pas-l-adversaire-de-la-politique-climatique-c-est-meme-l-inverse_6803479_3232.html"
+  },
+  {
+   "h": "Les jeunes économistes distingués depuis 2000",
+   "w": "Voici la liste des lauréats du Prix du meilleur jeune économiste, une récompense créée en 2000 par « Le Monde » et le Cercle des économistes.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-10-31T08:30:00Z",
+   "url": "https://www.lemonde.fr/idees/article/2026/10/31/les-jeunes-economistes-distingues-depuis-2000_6803477_3232.html"
+  },
+  {
    "h": "Pour Halloween, des bonbons sans sucre au goût amer",
    "w": "Les confiseries étiquetées « peu caloriques » ou « sans sucre », dont certaines arborent un Nutri-Score A, ont trouvé leur place dans les rayons des supermarchés. Ils ne sont pas pour autant sans défaut ni à l’abri des critiques.",
    "syms": [],
    "src": "Le Monde — Économie",
-   "ts": "2026-10-31T08:00:20Z",
+   "ts": "2026-10-31T08:00:19Z",
    "url": "https://www.lemonde.fr/economie/article/2026/10/31/pour-halloween-des-bonbons-sans-sucre-au-gout-amer_6803476_3234.html"
   },
   {
@@ -813,26 +831,6 @@
    "ts": "2026-10-30T20:16:47Z",
    "url": "https://www.ft.com/content/71dccbca-4a1f-485a-9790-28cc527cdb82?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "'Bad time to troll': Binance co-founder Zhao asks Musk for support after hack",
-   "w": "Binance co-founder Changpeng Zhao asked Elon Musk to stop “trolling” after a $6.3 billion hack, pointing to Binance’s $1 billion-plus SpaceX stake.",
-   "syms": [
-    "BTC"
-   ],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-30T20:02:45Z",
-   "url": "https://www.cnbc.com/2026/10/30/binance-hack-elon-musk-tesla-spacex.html"
-  },
-  {
-   "h": "Binance hack: Investigators in a 'cat and mouse game' to recover $6.3 billion in stolen funds",
-   "w": "More than $6 billion in crypto was stolen from Binance, setting off a race to recover the funds before North Korea-linked hackers can launder them into cash.",
-   "syms": [
-    "BTC"
-   ],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-30T19:27:03Z",
-   "url": "https://www.cnbc.com/2026/10/30/binance-hack-stolen-crypto-recovery.html"
   },
   {
    "h": "Healey buys time with ‘pray and delay’ Budget as tough decisions lie ahead",
