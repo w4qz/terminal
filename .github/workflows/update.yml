@@ -61,6 +61,12 @@ jobs:
           OPT_FORCE: ${{ github.event_name == 'workflow_dispatch' }}
         run: python scripts/build_options.py
 
+      - name: Courbes des taux souveraines (GC)
+        continue-on-error: true
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: python scripts/build_curves.py
+
       - name: Données économiques (une fois par jour)
         continue-on-error: true
         env:
@@ -72,7 +78,7 @@ jobs:
         run: |
           git config user.name  "terminal-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for f in data.json universe.json constituents.json macro.json fundamentals.json economics.json peers.json financials.json options.json; do [ -f "$f" ] && git add "$f"; done
+          for f in data.json universe.json constituents.json macro.json fundamentals.json economics.json peers.json financials.json options.json curves.json; do [ -f "$f" ] && git add "$f"; done
           git diff --staged --quiet || git commit -m "Données $(date -u +'%Y-%m-%d %H:%M') UTC"
           # Si un autre passage a publié entre-temps, on garde nos fichiers (les plus récents) et on réessaie.
           for i in 1 2 3; do
