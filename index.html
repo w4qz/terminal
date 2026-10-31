@@ -27,15 +27,16 @@ input{font:inherit;color:inherit;background:none;border:none;outline:none}
 #top{display:flex;align-items:center;gap:0;height:30px;border-bottom:1px solid var(--line);
 background:var(--surface);flex:none;padding-right:10px}
 #brand{padding:0 12px;font-weight:700;letter-spacing:2px;font-size:11px;color:var(--txt)}
-.navbtn{padding:0 12px;height:30px;font-size:11px;color:var(--txt2);border-right:1px solid var(--line);
+.navbtn{padding:0 9px;white-space:nowrap;height:30px;font-size:11px;color:var(--txt2);border-right:1px solid var(--line);
 display:flex;align-items:center;gap:6px}
 .navbtn:first-of-type{border-left:1px solid var(--line)}
 .navbtn kbd{font-size:9px;color:var(--txt3);border:1px solid var(--line);padding:0 3px;border-radius:2px}
 .navbtn:hover{background:var(--raised);color:var(--txt)}
 .navbtn.on{background:var(--raised);color:var(--txt);box-shadow:inset 0 -2px 0 #4d8fd6}
-#clocks{margin-left:auto;display:flex;gap:14px;font-size:10px;color:var(--txt2)}
+#clocks{margin-left:auto;display:flex;gap:10px;font-size:10px;color:var(--txt2);white-space:nowrap}
+@media (max-width:1500px){ .navbtn kbd{display:none} }
 #clocks b{color:var(--txt);font-weight:500}
-#searchbtn{margin-left:14px;font-size:10px;color:var(--txt3);border:1px solid var(--line);
+#searchbtn{margin-left:14px;font-size:10px;white-space:nowrap;color:var(--txt3);border:1px solid var(--line);
 padding:2px 8px;border-radius:3px}
 #searchbtn:hover{color:var(--txt);border-color:#3a424c}
 
@@ -199,6 +200,7 @@ transition-duration:0.001ms !important;scroll-behavior:auto !important}
 <button class="navbtn" data-v="srch">Recherche <kbd aria-hidden="true">R</kbd><span class="sr-only">(raccourci R)</span></button>
 <button class="navbtn" data-v="sec">Titre <kbd aria-hidden="true">S</kbd><span class="sr-only">(raccourci S)</span></button>
 <button class="navbtn" data-v="comp">Comparer <kbd aria-hidden="true">C</kbd><span class="sr-only">(raccourci C)</span></button>
+<button class="navbtn" data-v="eqs">Filtre <kbd aria-hidden="true">F</kbd><span class="sr-only">(raccourci F)</span></button>
 <button class="navbtn" data-v="news">News <kbd aria-hidden="true">N</kbd><span class="sr-only">(raccourci N)</span></button>
 <button class="navbtn" data-v="diag">Diagnostic <kbd aria-hidden="true">D</kbd><span class="sr-only">(raccourci D)</span></button>
 </nav>
@@ -214,6 +216,7 @@ transition-duration:0.001ms !important;scroll-behavior:auto !important}
 <div class="view" id="v-srch" role="tabpanel" aria-label="Recherche"></div>
 <div class="view" id="v-sec" role="tabpanel" aria-label="Titre"></div>
 <div class="view" id="v-comp" role="tabpanel" aria-label="Comparer"></div>
+<div class="view" id="v-eqs" role="tabpanel" aria-label="Filtre d'actions"></div>
 <div class="view" id="v-news" role="tabpanel" aria-label="News"></div>
 <div class="view" id="v-diag" role="tabpanel" aria-label="Diagnostic"></div>
 </main>
@@ -1752,6 +1755,10 @@ el.innerHTML=`
 <div id="sectip" style="position:absolute;top:14px;left:20px;font-size:10px;color:var(--txt2);pointer-events:none"></div>
 <div class="note" id="secmsg" style="padding:6px 0 0">${WORKER_URL?'Chargement…':'Renseignez WORKER_URL (relais Cloudflare) pour afficher le graphique.'}</div></div></div>
 <div class="pnl" id="sec-rv" style="margin-bottom:9px"><h3>RV — Valeur relative</h3><div class="note">Chargement des pairs…</div></div>
+<div class="pnl" id="sec-fa" style="margin-bottom:9px"><h3>FA — Analyse financière</h3><div class="note">Chargement des états financiers…</div></div>
+<div class="g g2" style="margin-bottom:9px"><div class="pnl" id="sec-dvd"><h3>DVD — Dividendes</h3><div class="note">Chargement…</div></div>
+<div class="pnl" id="sec-cn"><h3>CN — Actualités du titre</h3><div class="note">Chargement…</div></div></div>
+${/[.=^]/.test(sym)?'':'<div class="pnl" id="sec-omon" style="margin-bottom:9px"><h3>OMON — Options</h3><div class="note">Chargement…</div></div>'}
 <div class="g g3">
 <div class="pnl"><h3>Valorisation et résultats<span class="rt">MAJ ${fundTs}</span></h3><div class="pbody">
 ${K('Chiffre d\'affaires (12 mois)',B(F.revTTM))}${K('Résultat net',B(F.netIncome))}${K('BPA (12 mois) / prévisionnel',N(F.eps)+' / '+N(F.feps))}
@@ -1764,9 +1771,6 @@ ${K('Croissance du CA (a/a)',P(F.revGrowth))}${K('Croissance des bénéfices (a/
 ${K('Trésorerie / dette',B(F.cash)+' / '+B(F.debt))}${K('Free cash flow',B(F.fcf))}
 </div></div>
 <div class="pnl"><h3>Lecture automatique<span class="rt">règles fixes · pas un conseil</span></h3><div class="pbody" id="secread">${secReading(F,px,null)}</div></div>
-<div class="pnl span2"><h3>News liées<span class="rt">${nws.length} article${nws.length>1?'s':''}</span></h3><div class="pbody flush">
-${nws.length?nws.map(n=>`<div class="nw"><h4>${esc(n.h)}</h4>${n.w?`<p>${esc(n.w)}</p>`:''}<div class="meta"><span>${esc(n.src)}</span><span>${ago(n.ts)}</span>${n.url?`<a href="${n.url}" target="_blank" rel="noopener">Ouvrir<span class="sr-only"> (nouvel onglet)</span></a>`:''}</div></div>`).join('')
-:'<div class="note na">Aucune actualité récente ne mentionne ce titre.</div>'}</div></div>
 <div class="pnl"><h3>Sources</h3><div class="pbody"><div class="note" style="padding:0">
 Cours : ${q?esc(q.src||''):loc?'catalogue Yahoo Finance':'relais Yahoo Finance'}.<br>
 Fondamentaux : ${Object.keys(F).length>3?'Yahoo Finance via yfinance, actualisés par le robot':'<b>pas encore lus</b> pour ce titre : le robot couvre tout le catalogue par roulement, en 4 heures environ. Pour un titre hors catalogue, ajoutez-le à <code>FUND_TICKERS</code> dans scripts/update_data.py'}.<br>
@@ -1774,7 +1778,7 @@ Graphique : clôtures ${SEC.range==='5A'?'hebdomadaires':'quotidiennes'} Yahoo F
 </div>`;
 el.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{ SEC.range=b.dataset.r; viewSecurity(); });
 el.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{ SEC[b.dataset.t]=!SEC[b.dataset.t]; viewSecurity(); });
-rvRender(sym,F);
+rvRender(sym,F); faRender(sym); dvdRender(sym); cnRender(sym,nws); omonRender(sym);
 if(WORKER_URL) loadCandles(sym, F, px);
 }
 
@@ -2492,7 +2496,8 @@ return `<tr class="clk" data-eco="${esc(e.code)}" tabindex="0" role="button" tit
 ═══════════════════════════════════════════════════════════════════════*/
 const FUNCS={
 GP:{d:'Graphique du titre',t:1}, DES:{d:'Fiche descriptive du titre',t:1}, GIP:{d:'Graphique intraday (séance du jour)',t:1},
-RV:{d:'Valeur relative face aux pairs',t:1}, COMP:{d:'Comparaison de performances (base 100)',t:2},
+RV:{d:'Valeur relative face aux pairs',t:1}, FA:{d:'Analyse financière sur 4 exercices',t:1}, DVD:{d:'Historique des dividendes',t:1},
+OMON:{d:'Chaîne d\'options (titres US)',t:1}, CN:{d:'Actualités du titre',t:1}, EQS:{d:'Filtre d\'actions (screener)',go:'eqs'}, COMP:{d:'Comparaison de performances (base 100)',t:2},
 WEI:{d:'Marchés mondiaux',go:'mkt'}, IMAP:{d:'Carte des marchés',go:'mkt',a:'mkt-hm'},
 ECO:{d:'Calendrier et chiffres économiques',go:'macro',a:'m-eco'}, WIRP:{d:'Probabilités des décisions de la Fed',go:'macro',a:'m-wirp'},
 GC:{d:'Courbes des taux',go:'macro',a:'m-gc'}, BTMM:{d:'Tableau de bord monétaire US',go:'macro',a:'m-btmm'},
@@ -2538,7 +2543,8 @@ if(c.f==='COMP'){ const sy=await Promise.all(c.syms.map(resolveRemote)); COMP.sy
 S.focus=await resolveRemote(c.sym);
 if(c.f==='GIP') SEC.range='1J'; else if(SEC.range==='1J') SEC.range='6M';
 await go('sec');
-if(c.f==='RV'){ const e=document.getElementById('sec-rv'); if(e) e.scrollIntoView({behavior:'smooth',block:'start'}); }
+const anc={RV:'sec-rv',FA:'sec-fa',DVD:'sec-dvd',OMON:'sec-omon',CN:'sec-cn'}[c.f];
+if(anc) setTimeout(()=>{ const e=document.getElementById(anc); if(e) e.scrollIntoView({behavior:'smooth',block:'start'}); },150);
 }
 function helpItems(){ return Object.entries(FUNCS).filter(([k])=>k!=='HELP').map(([k,v])=>({cmd:v.t?null:{f:k}, sym:v.t===1?'<titre> '+k:v.t===2?'<titres> COMP':k, name:v.d, cls:'Fonction', exch:v.t?'ex. '+(v.t===2?'MC RMS KER COMP':'MC FP '+k):'↵'})); }
 
@@ -2701,13 +2707,190 @@ cv.onmouseleave=()=>drawComp(null);
 }
 
 /*═══════════════════════════════════════════════════════════════════════
+13d. FA · DVD · OMON · CN · EQS
+═══════════════════════════════════════════════════════════════════════*/
+const lazyJSON=(()=>{ const m=new Map(); return f=>{ if(!m.has(f)) m.set(f,fetch(f+'?t='+Date.now(),{cache:'no-store'}).then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); }).catch(e=>{ m.delete(f); throw e; })); return m.get(f); }; })();
+const fyLabel=y=>'FY '+y.slice(0,4);
+const cagrOf=(a,b,n)=>a>0&&b>0&&n>0?(Math.pow(b/a,1/n)-1)*100:null;
+
+/*── FA : états financiers sur 4 exercices ───────────────────────────*/
+async function faRender(sym){
+const box=document.getElementById('sec-fa'); if(!box) return;
+let d; try{ d=(await lazyJSON('financials.json')).items[sym]; }catch(e){ box.innerHTML='<h3>FA — Analyse financière</h3><div class="note">financials.json pas encore généré par le robot GitHub.</div>'; return; }
+if(S.focus!==sym) return;
+if(!d||!d.years){ box.innerHTML=`<h3>FA — Analyse financière</h3><div class="note">États financiers pas encore lus pour ${esc(sym)} : le robot couvre le catalogue par roulement (environ 12 h pour tout le cycle, titres prioritaires chaque jour).</div>`; return; }
+const Y=d.years, n=Y.length, I=d.is||{}, B=d.bs||{}, C=d.cf||{};
+const at=(o,k,i)=>o[k]?o[k][i]:null, ratio=(a,b)=>a!=null&&b?a/b*100:null;
+const rows=[
+['h','Compte de résultat'],
+['v','Chiffre d\'affaires',i=>at(I,'rev',i),'cagr'],['p','Croissance',i=>i&&at(I,'rev',i-1)?(at(I,'rev',i)/at(I,'rev',i-1)-1)*100:null],
+['v','Marge brute',i=>at(I,'gross',i)],['p','en % du CA',i=>ratio(at(I,'gross',i),at(I,'rev',i))],
+['v','EBITDA',i=>at(I,'ebitda',i),'cagr'],['p','Marge d\'EBITDA',i=>ratio(at(I,'ebitda',i),at(I,'rev',i))],
+['v','Résultat opérationnel',i=>at(I,'ebit',i),'cagr'],['p','Marge opérationnelle',i=>ratio(at(I,'ebit',i),at(I,'rev',i))],
+['v','Résultat net',i=>at(I,'net',i),'cagr'],['p','Marge nette',i=>ratio(at(I,'net',i),at(I,'rev',i))],
+['n','BPA dilué',i=>at(I,'eps',i),'cagr'],
+['h','Bilan'],
+['v','Total de l\'actif',i=>at(B,'assets',i)],['v','Capitaux propres',i=>at(B,'equity',i)],['v','Trésorerie',i=>at(B,'cash',i)],
+['v','Dette financière',i=>at(B,'debt',i)],['v','Dette nette',i=>at(B,'netdebt',i)??(at(B,'debt',i)!=null&&at(B,'cash',i)!=null?at(B,'debt',i)-at(B,'cash',i):null)],
+['x','Dette nette / EBITDA',i=>{ const nd=at(B,'netdebt',i)??(at(B,'debt',i)!=null&&at(B,'cash',i)!=null?at(B,'debt',i)-at(B,'cash',i):null), e=at(I,'ebitda',i); return nd!=null&&e?nd/e:null; }],
+['p','ROE',i=>ratio(at(I,'net',i),at(B,'equity',i))],
+['h','Flux de trésorerie'],
+['v','Flux opérationnel',i=>at(C,'cfo',i)],['v','Investissements (capex)',i=>at(C,'capex',i)],
+['v','Free cash flow',i=>at(C,'fcf',i),'cagr'],['p','FCF en % du CA',i=>ratio(at(C,'fcf',i),at(I,'rev',i))],
+['v','Dividendes versés',i=>at(C,'div',i)],['v','Rachats d\'actions',i=>at(C,'buyback',i)],
+['p','Taux de distribution',i=>{ const dv=at(C,'div',i), nt=at(I,'net',i); return dv!=null&&nt>0?Math.abs(dv)/nt*100:null; }]];
+const fmt=(t,v)=>v==null||!isFinite(v)?'<span class="na">—</span>':t==='v'?big(v):t==='n'?nf(v,2):t==='x'?nf(v,1)+' x':nf(v,1)+' %';
+box.innerHTML=`<h3>FA — Analyse financière<span class="rt">exercices annuels · ${esc(d.ccy||'')} · Yahoo Finance · lu ${ago(d.ts)}</span></h3>
+<div class="pbody flush"><table><caption class="sr-only">États financiers</caption><thead><tr><th scope="col" style="text-align:left"></th>${Y.map(y=>`<th scope="col">${fyLabel(y)}</th>`).join('')}<th scope="col">TCAM</th></tr></thead><tbody>
+${rows.map(r=>{ if(r[0]==='h') return `<tr><th colspan="${n+2}" scope="colgroup" style="text-align:left;font-size:9px;color:var(--hot);letter-spacing:.8px;padding-top:9px">${r[1].toUpperCase()}</th></tr>`;
+const vals=Y.map((_,i)=>r[2](i)), f=vals.findIndex(v=>v!=null), l=vals.length-1-[...vals].reverse().findIndex(v=>v!=null);
+const cg=r[3]&&f>=0&&l>f?cagrOf(vals[f],vals[l],l-f):null, sub=r[0]==='p'||r[0]==='x';
+return `<tr><th scope="row" style="text-align:left;font-weight:${sub?400:600};${sub?'color:var(--txt2);padding-left:14px':''}">${r[1]}</th>${vals.map(v=>`<td${sub?' class="mut"':''}>${fmt(r[0],v)}</td>`).join('')}<td class="${cls(cg)}">${cg!=null?pct(cg,1):''}</td></tr>`; }).join('')}
+</tbody></table></div><div class="note" style="padding:6px 9px">TCAM = taux de croissance annuel moyen entre le premier et le dernier exercice disponibles. Montants dans la devise des comptes ; certaines lignes manquent selon le format comptable de la société (banques, assureurs).</div>`;
+}
+
+/*── DVD : historique des dividendes ─────────────────────────────────*/
+async function dvdRender(sym){
+const box=document.getElementById('sec-dvd'); if(!box||!WORKER_URL) return;
+let res;
+try{ const r=await fetch(`${WORKER_URL}/chart?s=${encodeURIComponent(sym)}&range=max&ev=div`); const d=await r.json(); res=d.chart&&d.chart.result&&d.chart.result[0]; if(!res) throw new Error('aucune donnée'); }
+catch(e){ box.innerHTML=`<h3>DVD — Dividendes</h3><div class="note">Historique indisponible (${esc(e.message)}). Si le message persiste, mettez à jour le relais Cloudflare (worker.js).</div>`; return; }
+if(S.focus!==sym) return;
+const ev=Object.values((res.events&&res.events.dividends)||{}).map(x=>({t:x.date*1000,a:x.amount})).sort((a,b)=>a.t-b.t);
+const px=res.meta.regularMarketPrice, ccy=res.meta.currency||'';
+if(!ev.length){ box.innerHTML=`<h3>DVD — Dividendes</h3><div class="note">${esc(sym)} ne verse pas de dividende (aucun versement dans l'historique Yahoo).</div>`; return; }
+const curY=new Date().getFullYear(), byY={}; ev.forEach(x=>{ const y=new Date(x.t).getFullYear(); byY[y]=(byY[y]||0)+x.a; });
+const years=Object.keys(byY).map(Number).sort(), full=years.filter(y=>y<curY);
+const ttm=ev.filter(x=>x.t>Date.now()-365*864e5).reduce((s,x)=>s+x.a,0), yld=px?ttm/px*100:null;
+const freq=ev.filter(x=>x.t>Date.now()-730*864e5).length/2;
+let streak=0; for(let i=full.length-1;i>0;i--){ if(byY[full[i]]>byY[full[i-1]]*1.001) streak++; else break; }
+const cg=k=>{ const a=full[full.length-1-k], b=full[full.length-1]; return a&&byY[a]>0?cagrOf(byY[a],byY[b],k):null; };
+box.innerHTML=`<h3>DVD — Dividendes<span class="rt">${ev.length} versements depuis ${new Date(ev[0].t).getFullYear()} · ${esc(ccy)} par action</span></h3>
+<div class="statrow">
+<div class="stat"><span class="l">RENDEMENT (12 MOIS)</span><span class="n">${yld!=null?nf(yld,2)+' %':'—'}</span><span class="s">${nf(ttm,2)} ${esc(ccy)} versés</span></div>
+<div class="stat"><span class="l">DERNIER VERSEMENT</span><span class="n">${nf(ev[ev.length-1].a,ev[ev.length-1].a<1?3:2)}</span><span class="s">${new Date(ev[ev.length-1].t).toLocaleDateString('fr-FR')} · ${freq>=3.5?'trimestriel':freq>=1.5?'semestriel':freq>=0.8?'annuel':'irrégulier'}</span></div>
+<div class="stat"><span class="l">CROISSANCE 5 ANS</span><span class="n ${cls(cg(5))}">${cg(5)!=null?pct(cg(5),1)+'/an':'—'}</span><span class="s">10 ans : ${cg(10)!=null?pct(cg(10),1)+'/an':'—'}</span></div>
+<div class="stat"><span class="l">HAUSSES CONSÉCUTIVES</span><span class="n">${streak} an${streak>1?'s':''}</span><span class="s">${streak>=25?'« aristocrate du dividende »':streak>=10?'historique solide':'—'}</span></div></div>
+<div class="pbody" style="position:relative"><canvas id="dvdcv" height="170" role="img" aria-label="Dividendes annuels"></canvas></div>
+<div class="note" style="padding:4px 9px 8px">Totaux par année civile ; ${curY} en cours (barre claire). Montants bruts, ajustés des divisions d'actions par Yahoo.</div>`;
+const draw=hv=>{ const cv=document.getElementById('dvdcv'); if(!cv) return; const yy=years.slice(-20), r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1, W=r.width, H=170;
+cv.width=W*dpr; cv.height=H*dpr; const x=cv.getContext('2d'); x.scale(dpr,dpr); const pl=8, pr=56, pt=10, pb=18, mx=Math.max(...yy.map(y=>byY[y]))*1.1||1;
+const bw=(W-pl-pr)/yy.length, Y=v=>pt+(1-v/mx)*(H-pt-pb);
+x.font='9px monospace'; x.fillStyle='#8a93a0'; x.strokeStyle='#1c2127';
+for(let k=0;k<=3;k++){ const v=mx*k/3, y=Y(v); x.beginPath(); x.moveTo(pl,y); x.lineTo(W-pr,y); x.stroke(); x.textAlign='left'; x.fillText(nf(v,2),W-pr+4,y+3); }
+yy.forEach((y,i)=>{ x.fillStyle=y===curY?'rgba(107,163,224,.35)':i===hv?'#9cc4ef':'#6ba3e0'; const bx=pl+i*bw+bw*0.15; x.fillRect(bx,Y(byY[y]),bw*0.7,H-pb-Y(byY[y]));
+if(yy.length<=12||i%2===0){ x.fillStyle='#8a93a0'; x.textAlign='center'; x.fillText(String(y).slice(yy.length>12?2:0),bx+bw*0.35,H-5); } });
+if(hv!=null&&yy[hv]!=null){ const y=yy[hv], prev=byY[y-1], t=`${y} : ${nf(byY[y],3)} ${ccy}${prev?'  '+pct((byY[y]/prev-1)*100,1):''}`;
+x.font='bold 10px monospace'; const w=x.measureText(t).width+10, bx=Math.min(Math.max(pl,pl+hv*bw-w/2),W-pr-w); x.fillStyle='#dde3ea'; x.fillRect(bx,pt,w,16); x.fillStyle='#0b0e11'; x.textAlign='left'; x.fillText(t,bx+5,pt+11.5); }
+cv.onmousemove=ev2=>{ const rr=cv.getBoundingClientRect(), i=Math.floor((ev2.clientX-rr.left-pl)/bw); draw(i>=0&&i<yy.length?i:null); }; cv.onmouseleave=()=>draw(null); };
+draw(null);
+}
+
+/*── CN : actualités du titre ────────────────────────────────────────*/
+async function cnRender(sym,local){
+const box=document.getElementById('sec-cn'); if(!box) return;
+let yh=[];
+if(WORKER_URL){ try{ const r=await fetch(`${WORKER_URL}/news?s=${encodeURIComponent(sym)}`); const d=await r.json(); yh=(d.news||[]).filter(n=>n.title&&n.link); }catch(e){} }
+if(S.focus!==sym) return;
+const items=[...local.map(n=>({h:n.h,w:n.w,src:n.src,ts:n.ts,url:n.url})),
+...yh.map(n=>({h:n.title,src:n.publisher||'Yahoo Finance',ts:new Date(n.providerPublishTime*1000).toISOString(),url:n.link}))]
+.filter((n,i,a)=>a.findIndex(m=>m.h===n.h)===i).sort((a,b)=>String(b.ts).localeCompare(String(a.ts))).slice(0,20);
+box.innerHTML=`<h3>CN — Actualités du titre<span class="rt">${items.length} article${items.length>1?'s':''} · flux du terminal + Yahoo Finance</span></h3><div class="pbody flush" style="max-height:420px;overflow-y:auto">
+${items.length?items.map(n=>`<div class="nw"><h4>${esc(n.h)}</h4>${n.w?`<p>${esc(n.w)}</p>`:''}<div class="meta"><span>${esc(n.src)}</span><span>${ago(n.ts)}</span>${n.url?`<a href="${esc(n.url)}" target="_blank" rel="noopener">Ouvrir<span class="sr-only"> (nouvel onglet)</span></a>`:''}</div></div>`).join('')
+:'<div class="note na">Aucune actualité trouvée pour ce titre.</div>'}</div>`;
+}
+
+/*── OMON : chaîne d'options ─────────────────────────────────────────*/
+const OMON={exp:0};
+async function omonRender(sym){
+const box=document.getElementById('sec-omon'); if(!box) return;
+let O; try{ O=await lazyJSON('options.json'); }catch(e){ box.style.display='none'; return; }
+const d=O.items&&O.items[sym]; if(S.focus!==sym) return;
+if(!d||!d.exps||!d.exps.length){ box.innerHTML=`<h3>OMON — Options</h3><div class="note">Pas de chaîne d'options pour ${esc(sym)} : seuls les titres américains prioritaires et les grands ETF (${Object.keys(O.items||{}).slice(0,12).map(esc).join(', ')}…) sont suivis, une fois par heure.</div>`; return; }
+const e=d.exps[Math.min(OMON.exp,d.exps.length-1)], spot=d.spot;
+const byK=new Map(); e.calls.forEach(c=>byK.set(c[0],{k:c[0],c})); e.puts.forEach(p=>{ const o=byK.get(p[0])||{k:p[0]}; o.p=p; byK.set(p[0],o); });
+const rows=[...byK.values()].sort((a,b)=>a.k-b.k), atm=rows.reduce((b,r)=>Math.abs(r.k-spot)<Math.abs(b.k-spot)?r:b,rows[0]);
+const sum=(arr,i)=>arr.reduce((s,x)=>s+(x[i]||0),0), pcV=sum(e.calls,4)?sum(e.puts,4)/sum(e.calls,4):null, pcOI=sum(e.calls,5)?sum(e.puts,5)/sum(e.calls,5):null;
+const mid=o=>o?(o[2]&&o[3]?(o[2]+o[3])/2:o[1]):null, straddle=atm&&mid(atm.c)!=null&&mid(atm.p)!=null?mid(atm.c)+mid(atm.p):null;
+const ivAtm=atm?[atm.c&&atm.c[6],atm.p&&atm.p[6]].filter(v=>v!=null):[], iv=ivAtm.length?ivAtm.reduce((a,b)=>a+b,0)/ivAtm.length:null;
+const days=Math.max(1,Math.round((new Date(e.d+'T21:00:00Z')-Date.now())/864e5));
+const side=(o,call)=>{ if(!o) return '<td class="na" colspan="5">—</td>'; const itm=call?o[0]<spot:o[0]>spot, st=itm?'background:rgba(107,163,224,.07)':'';
+return [o[1],o[2],o[3],o[4],o[6]].map((v,j)=>`<td style="${st}">${v==null?'—':j===3?nf(v,0):j===4?nf(v,1)+' %':nf(v,2)}</td>`).join(''); };
+box.innerHTML=`<h3>OMON — Chaîne d'options<span class="rt">cours ${nf(spot,2)} · Yahoo Finance, différé · lu ${ago(d.ts)}</span></h3>
+<div class="ctl" style="align-items:center"><div class="rng" role="group" aria-label="Échéance">${d.exps.map((x,i)=>`<button type="button" data-oe="${i}" class="${x===e?'on':''}">${new Date(x.d+'T12:00:00').toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'2-digit'})}</button>`).join('')}</div>
+<span class="mut" style="font-size:10px;margin-left:auto">${days} jours</span></div>
+<div class="statrow">
+<div class="stat"><span class="l">VOLATILITÉ IMPLICITE ATM</span><span class="n">${iv!=null?nf(iv,1)+' %':'—'}</span><span class="s">prix d'exercice ${atm?nf(atm.k,2):'—'}</span></div>
+<div class="stat"><span class="l">MOUVEMENT ATTENDU</span><span class="n">${straddle!=null?'± '+nf(straddle/spot*100,1)+' %':'—'}</span><span class="s">straddle ATM d'ici l'échéance${straddle!=null?' · ± '+nf(straddle,2):''}</span></div>
+<div class="stat"><span class="l">PUT / CALL (VOLUME)</span><span class="n ${pcV>1?'neg':pcV!=null?'pos':''}">${pcV!=null?nf(pcV,2):'—'}</span><span class="s">${pcV>1.2?'couverture marquée':pcV<0.7?'appétit pour les calls':'équilibré'}</span></div>
+<div class="stat"><span class="l">PUT / CALL (INTÉRÊT OUVERT)</span><span class="n">${pcOI!=null?nf(pcOI,2):'—'}</span><span class="s">positions ouvertes</span></div></div>
+<div class="pbody flush" style="max-height:460px;overflow-y:auto"><table><caption class="sr-only">Chaîne d'options</caption><thead>
+<tr><th colspan="5" scope="colgroup" style="text-align:center;color:var(--pos)">CALLS</th><th></th><th colspan="5" scope="colgroup" style="text-align:center;color:var(--neg)">PUTS</th></tr>
+<tr>${['Dernier','Bid','Ask','Volume','Vol. impl.'].map(h=>`<th scope="col">${h}</th>`).join('')}<th scope="col" style="text-align:center">Prix d'exercice</th>${['Dernier','Bid','Ask','Volume','Vol. impl.'].map(h=>`<th scope="col">${h}</th>`).join('')}</tr></thead><tbody>
+${rows.map(r=>`<tr${r===atm?' style="outline:1px solid var(--hot)"':''}>${side(r.c,true)}<th scope="row" style="text-align:center;background:#14171b;font-weight:700;color:var(--txt);font-size:11px">${nf(r.k,2)}</th>${side(r.p,false)}</tr>`).join('')}
+</tbody></table></div><div class="note" style="padding:6px 9px">Fond bleuté = dans la monnaie. Cadre orange = à la monnaie. Mouvement attendu = prix du straddle à la monnaie ÷ cours : l'amplitude que le marché anticipe d'ici l'échéance.</div>`;
+box.querySelectorAll('[data-oe]').forEach(b=>b.onclick=()=>{ OMON.exp=+b.dataset.oe; omonRender(sym); });
+}
+
+/*── EQS : filtre d'actions ──────────────────────────────────────────*/
+const EQS={f:{idx:'',sec:'',capMin:'',peMax:'',fpeMax:'',divMin:'',omMin:'',grMin:'',roeMin:'',deMax:'',upMin:''}, sort:'cap', dir:-1};
+const EQS_PRESETS={'Value':{peMax:15,divMin:2.5},'Qualité':{omMin:20,roeMin:15,deMax:100},'Croissance':{grMin:15,omMin:10},'Rendement':{divMin:4},'Potentiel analystes':{upMin:20,capMin:10}};
+async function viewEqs(){
+const el=document.getElementById('v-eqs');
+const F=EQS.f, secs=[...new Set(Object.values(SNAPSHOT.fundamentals).map(f=>f&&f.sector).filter(Boolean))].sort();
+const inp=(k,l,ph)=>`<div class="f"><label for="eq_${k}">${l}</label><input id="eq_${k}" data-k="${k}" type="number" step="any" value="${esc(F[k])}" placeholder="${ph}"></div>`;
+el.innerHTML=`<div class="pnl" style="margin-bottom:9px"><h3>EQS — Filtre d'actions<span class="rt">${Object.keys(SNAPSHOT.fundamentals).length} titres avec fondamentaux · Yahoo Finance</span></h3>
+<form class="ctl" id="eqform" novalidate style="align-items:flex-end">
+<div class="f w"><label for="eq_idx">Indice</label><select id="eq_idx" data-k="idx" style="background:var(--bg);border:1px solid var(--line);color:var(--txt);font-size:11px;padding:2px"><option value="">Tous</option>${hmIndices().map(l=>`<option${F.idx===l?' selected':''}>${esc(l)}</option>`).join('')}</select></div>
+<div class="f w"><label for="eq_sec">Secteur</label><select id="eq_sec" data-k="sec" style="background:var(--bg);border:1px solid var(--line);color:var(--txt);font-size:11px;padding:2px"><option value="">Tous</option>${secs.map(s=>`<option value="${esc(s)}"${F.sec===s?' selected':''}>${esc(SECT_FR[s]||s)}</option>`).join('')}</select></div>
+${inp('capMin','Capi. min (Md$)','10')}${inp('peMax','PER max','15')}${inp('fpeMax','PER prosp. max','')}${inp('divMin','Rdt div. min %','3')}
+${inp('omMin','Marge op. min %','20')}${inp('grMin','Croiss. CA min %','')}${inp('roeMin','ROE min %','15')}${inp('deMax','Dette/FP max %','')}${inp('upMin','Potentiel min %','')}
+<button class="btn go" type="submit">Filtrer</button><button class="btn" type="button" id="eq_clear">Effacer</button></form>
+<div class="ctl" style="align-items:center;border-bottom:none"><span class="mut" style="font-size:10px">Stratégies :</span>${Object.keys(EQS_PRESETS).map(k=>`<button class="btn" type="button" data-pre="${esc(k)}">${esc(k)}</button>`).join('')}</div></div>
+<div class="pnl"><h3>Résultats<span class="rt" id="eqcount"></span></h3><div class="pbody flush" id="eqres"><div class="note">Calcul…</div></div></div>`;
+const read=()=>el.querySelectorAll('[data-k]').forEach(i=>{ F[i.dataset.k]=i.value; });
+document.getElementById('eqform').onsubmit=e=>{ e.preventDefault(); read(); eqsRun(); };
+el.querySelectorAll('select[data-k]').forEach(s=>s.onchange=()=>{ read(); eqsRun(); });
+document.getElementById('eq_clear').onclick=()=>{ Object.keys(F).forEach(k=>F[k]=''); viewEqs(); };
+el.querySelectorAll('[data-pre]').forEach(b=>b.onclick=()=>{ Object.keys(F).forEach(k=>{ if(k!=='idx'&&k!=='sec') F[k]=''; }); Object.assign(F,EQS_PRESETS[b.dataset.pre]); viewEqs(); });
+eqsRun();
+}
+async function eqsRun(){
+const F=EQS.f, num=k=>F[k]===''||F[k]==null?null:parseFloat(F[k]);
+const U=new Map((UNIV||[]).map(u=>[u.s,u]));
+const ccys=[...new Set(Object.values(SNAPSHOT.fundamentals).map(f=>f&&f.ccy).filter(Boolean).map(normCcy))];
+const fx={}; await Promise.all(ccys.map(async c=>{ fx[c]=await pfFX(c).catch(()=>null); }));
+const list=[];
+for(const [s,f] of Object.entries(SNAPSHOT.fundamentals)){ if(!f||!f.mcap) continue; const u=U.get(s)||{};
+if(F.idx&&!(u.l||[]).includes(F.idx)) continue; if(F.sec&&f.sector!==F.sec) continue;
+const q=SNAPSHOT.quotes[s], px=q&&q.p!=null?q.p:u.p, rate=fx[normCcy(f.ccy||'USD')];
+const cap=rate?f.mcap*rate:null, up=f.target&&px?(f.target/px-1)*100:null;
+const r={s,n:f.name||u.n||s,sec:SECT_FR[f.sector]||f.sector||'',cap,pe:f.pe,fpe:f.fpe,div:f.divYield,om:f.opMargin,gr:f.revGrowth,roe:f.roe,de:f.debtEq,up,pc:q&&q.pct!=null?q.pct:u.pct};
+const ok=(v,min,max)=>(min==null||(v!=null&&v>=min))&&(max==null||(v!=null&&v>0&&v<=max));
+if(!ok(cap!=null?cap/1e9:null,num('capMin'),null)||!ok(r.pe,null,num('peMax'))||!ok(r.fpe,null,num('fpeMax'))||!ok(r.div,num('divMin'),null)
+||!ok(r.om,num('omMin'),null)||!ok(r.gr,num('grMin'),null)||!ok(r.roe,num('roeMin'),null)||!ok(r.de,null,num('deMax'))||!ok(up,num('upMin'),null)) continue;
+list.push(r); }
+const k=EQS.sort, d=EQS.dir; list.sort((a,b)=>{ const x=a[k], y=b[k]; if(x==null) return 1; if(y==null) return -1; return typeof x==='string'?d*x.localeCompare(y):d*(x-y); });
+const cols=[['s','Titre'],['sec','Secteur'],['cap','Capi. ($)'],['pe','PER'],['fpe','PER prosp.'],['div','Rdt div.'],['om','Marge op.'],['gr','Croiss. CA'],['roe','ROE'],['de','Dette/FP'],['up','Potentiel'],['pc','Var. jour']];
+const fm={cap:v=>big(v),pe:v=>nf(v,1),fpe:v=>nf(v,1),div:v=>nf(v,2)+' %',om:v=>nf(v,1)+' %',gr:v=>pct(v,1),roe:v=>nf(v,1)+' %',de:v=>nf(v,0)+' %',up:v=>pct(v,1),pc:v=>pct(v)};
+document.getElementById('eqcount').textContent=`${list.length} titre${list.length>1?'s':''}${list.length>200?' (200 premiers affichés)':''} · cliquez un en-tête pour trier`;
+const box=document.getElementById('eqres');
+box.innerHTML=list.length?`<table><caption class="sr-only">Résultats du filtre</caption><thead><tr>${cols.map(([c,l])=>`<th scope="col" data-sort="${c}" style="cursor:pointer;${c==='s'||c==='sec'?'text-align:left':''}">${l}${EQS.sort===c?(EQS.dir<0?' ▼':' ▲'):''}</th>`).join('')}</tr></thead><tbody>
+${list.slice(0,200).map(r=>`<tr class="clk" data-sym="${esc(r.s)}" tabindex="0" role="button"><th scope="row" style="text-align:left"><span class="sym">${esc(r.s)}</span> <span class="mut" style="font-size:10px;font-weight:400">${esc(r.n).slice(0,26)}</span></th>
+<td class="mut" style="text-align:left;font-size:10px">${esc(r.sec)}</td>${cols.slice(2).map(([c])=>`<td class="${c==='gr'||c==='up'||c==='pc'?cls(r[c]):''}">${r[c]!=null&&isFinite(r[c])?fm[c](r[c]):'<span class="na">—</span>'}</td>`).join('')}</tr>`).join('')}</tbody></table>`
+:'<div class="note">Aucun titre ne passe tous les filtres. Assouplissez un critère.</div>';
+box.querySelectorAll('[data-sort]').forEach(h=>h.onclick=()=>{ const c=h.dataset.sort; EQS.dir=EQS.sort===c?-EQS.dir:(c==='s'||c==='sec'?1:-1); EQS.sort=c; eqsRun(); });
+wireSymbolClicks(box);
+}
+
+/*═══════════════════════════════════════════════════════════════════════
 14. NAVIGATION
 ═══════════════════════════════════════════════════════════════════════*/
 const RENDER={mkt:viewMarkets, wl:viewWatchlist, pf:viewPortfolio, macro:viewMacro, srch:viewSearch,
-sec:viewSecurity, comp:viewComp, news:viewNews, diag:viewDiag};
+sec:viewSecurity, comp:viewComp, eqs:viewEqs, news:viewNews, diag:viewDiag};
 
 const VIEW_LABEL={mkt:'Marchés', wl:'Watchlist', pf:'Portefeuille', macro:'Macro', srch:'Recherche',
-sec:'Titre', comp:'Comparer', news:'News', diag:'Diagnostic'};
+sec:'Titre', comp:'Comparer', eqs:'Filtre', news:'News', diag:'Diagnostic'};
 
 async function go(v){
 S.view=v;
@@ -2777,7 +2960,7 @@ else if(e.key==='Enter' && palList[palIdx]) palOpen(palList[palIdx]);
 return;
 }
 if(e.target.tagName==='INPUT' || e.metaKey || e.ctrlKey || e.altKey) return;
-const map={m:'mkt', w:'wl', p:'pf', e:'macro', r:'srch', s:'sec', c:'comp', n:'news', d:'diag'};
+const map={m:'mkt', w:'wl', p:'pf', e:'macro', r:'srch', s:'sec', c:'comp', f:'eqs', n:'news', d:'diag'};
 if(e.key==='/'){ e.preventDefault(); openPal(); return; }
 const t=map[e.key.toLowerCase()];
 if(t){ e.preventDefault(); go(t); }
