@@ -32,6 +32,7 @@ jobs:
         env:
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          FT_MYFT_RSS: ${{ secrets.FT_MYFT_RSS }}
         run: python scripts/update_data.py
 
       - name: Construire le catalogue de recherche
