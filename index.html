@@ -2763,7 +2763,11 @@ const curY=new Date().getFullYear(), byY={}; ev.forEach(x=>{ const y=new Date(x.
 const years=Object.keys(byY).map(Number).sort(), full=years.filter(y=>y<curY);
 const ttm=ev.filter(x=>x.t>Date.now()-365*864e5).reduce((s,x)=>s+x.a,0), yld=px?ttm/px*100:null;
 const freq=ev.filter(x=>x.t>Date.now()-730*864e5).length/2;
-let streak=0; for(let i=full.length-1;i>0;i--){ if(byY[full[i]]>byY[full[i-1]]*1.001) streak++; else break; }
+// Hausses consécutives : on compare le versement le plus élevé de chaque année (insensible au calendrier
+// de paiement, qui peut faire tomber 3 ou 5 versements dans une même année civile).
+const mxY={}; ev.forEach(x=>{ const y=new Date(x.t).getFullYear(); mxY[y]=Math.max(mxY[y]||0,x.a); });
+const ys=Object.keys(mxY).map(Number).sort(); let streak=0;
+for(let i=ys.length-1;i>0;i--){ if(ys[i]-ys[i-1]!==1) break; if(mxY[ys[i]]>mxY[ys[i-1]]*1.001) streak++; else if(ys[i]===curY&&mxY[ys[i]]>=mxY[ys[i-1]]*0.999) continue; else break; }
 const cg=k=>{ const a=full[full.length-1-k], b=full[full.length-1]; return a&&byY[a]>0?cagrOf(byY[a],byY[b],k):null; };
 box.innerHTML=`<h3>DVD — Dividendes<span class="rt">${ev.length} versements depuis ${new Date(ev[0].t).getFullYear()} · ${esc(ccy)} par action</span></h3>
 <div class="statrow">
