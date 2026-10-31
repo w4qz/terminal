@@ -1315,6 +1315,7 @@ x.fillText('Trajectoire d\'exemple — portefeuille (bleu) contre indice monde A
 ═══════════════════════════════════════════════════════════════════════*/
 async function viewSecurity(){
 const el=document.getElementById('v-sec'), sym=S.focus;
+if(ecoGet(sym)) return viewEco(sym);
 const snap=SNAPSHOT.securities.find(s=>s.sym===sym);
 const loc=(UNIV||[]).find(x=>x.s===sym);
 const q=SNAPSHOT.quotes[sym]||null;
@@ -1555,18 +1556,18 @@ et le relais Cloudflare (WORKER_URL) pour n'importe quel ticker au monde,
 avec historique et graphique.
 ═══════════════════════════════════════════════════════════════════════*/
 const SR = {q:'', cls:'Tout', sel:null, range:'6mo', timer:null, seq:0};
-const CLASSES = ['Tout','Action','Indice','Devise','Matière première','Taux','Crypto'];
+const CLASSES = ['Tout','Action','Indice','Devise','Matière première','Taux','Crypto','Économie'];
 const CLS_LABEL = {'Tout':'Tout','Action':'Actions','Indice':'Indices','Devise':'Devises',
-'Matière première':'Matières premières','Taux':'Taux','Crypto':'Crypto'};
+'Matière première':'Matières premières','Taux':'Taux','Crypto':'Crypto','Économie':'Économie'};
 
 function localItems(){
-if(UNIV) return UNIV;
+if(UNIV) return ECON?UNIV.concat(ecoItems()):UNIV;
 // Repli : les instruments du snapshot, si universe.json n'est pas encore généré.
 return SNAPSHOT.securities.map(x=>{ const q=SNAPSHOT.quotes[x.sym]||{};
-return {s:x.sym, n:x.name, c:x.cls==='Change'?'Devise':x.cls, l:[], p:q.p??null, pct:q.pct??null, st:q.st||null, ts:q.ts||null}; });
+return {s:x.sym, n:x.name, c:x.cls==='Change'?'Devise':x.cls, l:[], p:q.p??null, pct:q.pct??null, st:q.st||null, ts:q.ts||null}; }).concat(ecoItems());
 }
 function localSearch(){
-const q=SR.q.trim().toLowerCase();
+const q=SR.q.trim().toLowerCase().replace(/^economics:/,'');
 let it=localItems().filter(x=>SR.cls==='Tout'||x.c===SR.cls);
 if(q){
 it=it.filter(x=>x.s.toLowerCase().includes(q)||(x.n||'').toLowerCase().includes(q))
@@ -1581,7 +1582,7 @@ function srRows(list){
 return list.map(x=>`<tr class="clk" data-s="${esc(x.s)}" tabindex="0" role="button" aria-label="Ouvrir ${esc(x.n)} (${esc(x.s)})">
 <th scope="row" class="sym">${esc(x.s)}<div class="mut" style="font-size:10px;font-weight:400;max-width:260px;overflow:hidden;text-overflow:ellipsis">${esc(x.n||'')}</div></th>
 <td class="mut" style="font-size:10px;text-align:left">${esc(x.c)}${x.l&&x.l.length?' · '+esc(x.l.join(', ')):''}${x.c==='Action'?(SNAPSHOT.fundamentals[x.s]&&Object.keys(SNAPSHOT.fundamentals[x.s]).length>4?' <span class="st st-EOD" title="Fondamentaux disponibles">F</span>':' <span class="na" title="Fondamentaux pas encore lus">·</span>'):''}</td>
-<td>${x.p!=null?(x.c==='Taux'?nf(x.p,2):npx(x.p,x.s))+(x.c==='Taux'?' %':'')+badge(x.st):'<span class="na">n/d</span>'}</td>
+<td>${x.eco?ecoFmt(x.p,ecoGet(x.s))+badge('EOD'):x.p!=null?(x.c==='Taux'?nf(x.p,2):npx(x.p,x.s))+(x.c==='Taux'?' %':'')+badge(x.st):'<span class="na">n/d</span>'}</td>
 <td class="${cls(x.pct)}">${x.pct!=null?pct(x.pct):'—'}</td></tr>`).join('');
 }
 function renderLocal(){
@@ -1724,7 +1725,7 @@ return `<span class="${d>0?'pos':'neg'}">${d>0?'+':''}${nf(d, f==='%'||f==='pb'|
 const dfr=d=>new Date(d+'T12:00:00').toLocaleDateString('fr-FR',{weekday:'short',day:'2-digit',month:'short'});
 function viewMacro(){
 const el=document.getElementById('v-macro');
-if(!MACRO){ el.innerHTML=`<div class="pnl"><div class="note">Les données macro ne sont pas encore générées. Elles apparaîtront après le prochain passage du robot GitHub (fichier <code>macro.json</code>, script <code>build_macro.py</code>).</div></div>`; return; }
+if(!MACRO){ el.innerHTML=`<div class="pnl"><div class="note">Les données macro ne sont pas encore générées. Elles apparaîtront après le prochain passage du robot GitHub (fichier <code>macro.json</code>, script <code>build_macro.py</code>).</div></div>`+ecoPanelHtml(); wireEco(el); return; }
 const M=MACRO, today=new Date().toISOString().slice(0,10);
 // ECO
 const prints=(M.eco.prints||[]).map(x=>`<tr><th scope="row" style="font-weight:400;color:var(--txt);text-align:left">${esc(x.k)}</th>
@@ -1791,6 +1792,7 @@ ${cons?`<table><caption class="sr-only">Calendrier économique avec consensus</c
 <div class="note">${esc(M.gc.us.src)}. ${esc(M.gc.eu.src)}.</div></div></div>
 </div>`;
 drawGC(us,eu,tenors);
+el.insertAdjacentHTML('beforeend',ecoPanelHtml()); wireEco(el);
 }
 function drawGC(us,eu,tenors){
 const cv=document.getElementById('gccv'); if(!cv) return;
@@ -1901,7 +1903,7 @@ else palin.removeAttribute('aria-activedescendant');
 }
 function palOpen(it){ if(!it) return; if(it.nw){ closePal(); go('srch').then(()=>showDetail(it.sym)); } else openSym(it.sym); }
 async function palSearch(q){
-const t=q.trim().toLowerCase(), my=++palSeq;
+const t=q.trim().toLowerCase().replace(/^economics:/,''), my=++palSeq;
 // 1. Catalogue local (instantané) : ~900 actions, indices, devises, matières premières, taux, crypto
 let loc=localItems();
 if(t){
@@ -1945,6 +1947,121 @@ document.getElementById('pal').classList.remove('on');
 if(palReturnFocus && typeof palReturnFocus.focus==='function') palReturnFocus.focus();
 }
 function openSym(sym){ closePal(); S.focus=sym; go('sec'); }
+
+/*═══════════════════════════════════════════════════════════════════════
+13b. ÉCONOMIE — codes façon TradingView « ECONOMICS: » (economics.json)
+═══════════════════════════════════════════════════════════════════════*/
+let ECON=null, ECON_TS=null;
+async function loadEcon(){
+try{
+const r=await fetch('economics.json?t='+Date.now(),{cache:'no-store'});
+if(!r.ok) throw new Error('HTTP '+r.status);
+const d=await r.json(); if(ECON_TS===d.generated_at) return false;
+ECON=d.items||[]; ECON_TS=d.generated_at; return true;
+}catch(e){ console.info('economics.json indisponible ('+e.message+')'); return false; }
+}
+const ecoGet=c=>(ECON||[]).find(e=>e.code===String(c||'').toUpperCase().replace(/^ECONOMICS:/,''));
+const ecoItems=()=>(ECON||[]).map(e=>({s:e.code, n:`${e.n} — ${e.ctry}`, c:'Économie', p:e.last, pct:null, st:'EOD', ts:e.date, eco:1}));
+function ecoFmt(v,e){ if(v==null||!isFinite(v)) return '—'; const u=e.unit, a=Math.abs(v);
+const d=a>=1000?0:u==='indice'?1:2;
+return nf(v,d)+(u==='%'?' %':u==='pts'?' pt':u&&u!=='inscriptions'?' '+u:''); }
+function ecoPeriod(e,d){ const t=new Date(d+'T12:00:00');
+if(e.freq==='trimestrielle') return `T${Math.floor(t.getMonth()/3)+1} ${t.getFullYear()}`;
+if(e.freq==='mensuelle') return t.toLocaleDateString('fr-FR',{month:'short',year:'numeric'});
+if(e.freq==='annuelle') return String(t.getFullYear());
+return t.toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'numeric'}); }
+const ECO_ST={range:'10A', code:null};
+const ECO_RANGES={'2A':2,'5A':5,'10A':10,'20A':20,'Max':99};
+
+function viewEco(code){
+const e=ecoGet(code), el=document.getElementById('v-sec'); ECO_ST.code=e.code;
+const dlt=e.last-e.prev, du=e.unit==='%'||e.unit==='pts'?' pt':'';
+const recent=[...e.h].reverse().slice(0,13);
+const same=(ECON||[]).filter(x=>x.ctry===e.ctry);
+el.innerHTML=`
+<div class="pnl" style="margin-bottom:9px"><div class="statrow">
+<div class="stat"><span class="l">ECONOMICS:${esc(e.code)}</span><span class="n">${ecoFmt(e.last,e)}</span><span class="s">${esc(e.ctry)} ${badge('EOD')}</span></div>
+<div class="stat"><span class="l">PRÉCÉDENT</span><span class="n">${ecoFmt(e.prev,e)}</span><span class="s">${ecoPeriod(e,e.h[e.h.length-2][0])}</span></div>
+<div class="stat"><span class="l">VARIATION</span><span class="n ${cls(dlt)}">${dlt>0?'+':''}${nf(dlt,Math.abs(dlt)>=100?0:2)}${du}</span><span class="s">sur la dernière publication</span></div>
+<div class="stat"><span class="l">PÉRIODE</span><span class="n" style="font-size:16px">${ecoPeriod(e,e.date)}</span><span class="s">série ${esc(e.freq)}</span></div>
+<div class="stat"><span class="l">SOURCE</span><span class="n" style="font-size:13px"><a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.src)}</a></span><span class="s">série ${esc(e.sid)}</span></div>
+</div></div>
+<div class="pnl" style="margin-bottom:9px"><h3>${esc(e.n)} — ${esc(e.ctry)}<span class="rt">${esc(e.unit)}</span></h3>
+<div class="ctl" style="align-items:center">
+<div class="rng" role="group" aria-label="Période">${Object.keys(ECO_RANGES).map(r=>`<button type="button" data-r="${r}" class="${r===ECO_ST.range?'on':''}">${r}</button>`).join('')}</div>
+<span class="mut" style="font-size:10px;margin-left:auto" id="ecoinfo"></span></div>
+<div class="pbody" style="position:relative"><canvas id="ecocv" height="340" role="img" aria-label="Historique de ${esc(e.n)}"></canvas>
+<div id="ecotip" style="position:absolute;top:14px;left:20px;font-size:10px;color:var(--txt2);pointer-events:none"></div></div></div>
+<div class="g g2">
+<div class="pnl"><h3>Dernières publications<span class="rt">${esc(e.freq)}</span></h3><div class="pbody flush"><table><caption class="sr-only">Dernières valeurs</caption>
+<thead><tr><th scope="col" style="text-align:left">Période</th><th scope="col">Valeur</th><th scope="col">Variation</th></tr></thead><tbody>
+${recent.slice(0,12).map((p,i)=>{ const pv=recent[i+1]; const dv=pv?p[1]-pv[1]:null;
+return `<tr><th scope="row" style="text-align:left;font-weight:400">${ecoPeriod(e,p[0])}</th><td>${ecoFmt(p[1],e)}</td><td class="${cls(dv)}">${dv!=null?(dv>0?'+':'')+nf(dv,Math.abs(dv)>=100?0:2):'—'}</td></tr>`; }).join('')}
+</tbody></table></div></div>
+<div class="pnl"><h3>Autres indicateurs — ${esc(e.ctry)}<span class="rt">cliquez pour ouvrir</span></h3><div class="pbody flush"><table><caption class="sr-only">Indicateurs du même pays</caption>
+<thead><tr><th scope="col" style="text-align:left">Code</th><th scope="col" style="text-align:left">Indicateur</th><th scope="col">Dernier</th><th scope="col">Période</th></tr></thead><tbody>
+${same.map(x=>`<tr class="clk" data-eco="${esc(x.code)}" tabindex="0" role="button"${x.code===e.code?' style="background:var(--sel)"':''}><th scope="row" class="sym" style="text-align:left">${esc(x.code)}</th>
+<td style="text-align:left;font-size:10px;color:var(--txt2)">${esc(x.n)}</td><td>${ecoFmt(x.last,x)}</td><td class="mut" style="font-size:10px">${ecoPeriod(x,x.date)}</td></tr>`).join('')}
+</tbody></table></div></div></div>`;
+el.querySelectorAll('.rng [data-r]').forEach(b=>b.onclick=()=>{ ECO_ST.range=b.dataset.r; viewEco(e.code); });
+wireEco(el);
+drawEco();
+}
+function wireEco(root){
+root.querySelectorAll('[data-eco]').forEach(r=>{ const f=()=>openSym(r.dataset.eco);
+r.onclick=f; r.onkeydown=ev=>{ if(ev.key==='Enter'||ev.key===' '){ ev.preventDefault(); f(); } }; });
+}
+function drawEco(hover){
+const e=ecoGet(ECO_ST.code), cv=document.getElementById('ecocv'); if(!e||!cv) return;
+const yrs=ECO_RANGES[ECO_ST.range], cut=new Date(); cut.setFullYear(cut.getFullYear()-yrs);
+const cs=cut.toISOString().slice(0,10);
+let pts=e.h.filter(p=>p[0]>=cs); if(pts.length<2) pts=e.h.slice(-2);
+const bars=/(MM|QQ)$|NFP$/.test(e.code)&&pts.length<=400;
+const r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1, W=r.width, H=340;
+cv.width=W*dpr; cv.height=H*dpr; const x=cv.getContext('2d'); x.scale(dpr,dpr);
+const pr=70, pt=28, pb=20, ph=H-pt-pb, vs=pts.map(p=>p[1]);
+let lo=Math.min(...vs), hi=Math.max(...vs); if(bars){ lo=Math.min(lo,0); hi=Math.max(hi,0); }
+const pad=(hi-lo)*0.06||Math.abs(hi)*0.05||1; lo-=pad; hi+=pad;
+const n=pts.length, step=(W-pr-8)/n, X=i=>8+step*(i+0.5), Y=v=>pt+(1-(v-lo)/(hi-lo))*ph;
+const dd=v=>ecoFmt(v,e);
+x.font='9px monospace'; x.strokeStyle='#1c2127'; x.fillStyle='#8a93a0'; x.textAlign='left';
+for(let k=0;k<=4;k++){ const v=lo+(hi-lo)*k/4, y=Y(v); x.beginPath(); x.moveTo(8,y); x.lineTo(W-pr,y); x.stroke(); x.fillText(dd(v),W-pr+4,y+3); }
+if(lo<0&&hi>0){ x.strokeStyle='#4a525c'; x.beginPath(); x.moveTo(8,Y(0)); x.lineTo(W-pr,Y(0)); x.stroke(); }
+const fmtX=d=>new Date(d+'T12:00:00').toLocaleDateString('fr-FR',{month:'short',year:'numeric'});
+x.textAlign='center'; x.fillStyle='#8a93a0';
+const ticks=Math.min(6,n); for(let k=0;k<ticks;k++){ const i=Math.round(k*(n-1)/Math.max(1,ticks-1)); x.textAlign=k===0?'left':k===ticks-1?'right':'center'; x.fillText(fmtX(pts[i][0]),k===0?8:k===ticks-1?W-pr:X(i),H-5); }
+if(bars){ const bw=Math.max(1,Math.min(10,step*0.7));
+pts.forEach((p,i)=>{ x.fillStyle=p[1]>=0?'#2fbf6b':'#e04a4a'; const y0=Y(0), y1=Y(p[1]); x.fillRect(X(i)-bw/2,Math.min(y0,y1),bw,Math.max(1,Math.abs(y1-y0))); }); }
+else{ x.strokeStyle='#6ba3e0'; x.lineWidth=1.5; x.beginPath(); pts.forEach((p,i)=>i?x.lineTo(X(i),Y(p[1])):x.moveTo(X(i),Y(p[1]))); x.stroke();
+x.lineTo(X(n-1),pt+ph); x.lineTo(X(0),pt+ph); x.closePath(); x.fillStyle='rgba(107,163,224,.08)'; x.fill(); }
+// dernière valeur sur l'axe
+const tag=(txt,y,bg,fg)=>{ x.font='bold 10px monospace'; const w=x.measureText(txt).width+10; x.fillStyle=bg; x.fillRect(W-pr+1,y-8,w,16); x.fillStyle=fg; x.textAlign='left'; x.fillText(txt,W-pr+6,y+3.5); x.font='9px monospace'; };
+tag(dd(pts[n-1][1]),Y(pts[n-1][1]),'#6ba3e0','#0b0e11');
+const info=document.getElementById('ecoinfo');
+if(info) info.textContent=`${ECO_ST.range} : min ${dd(Math.min(...vs))} · max ${dd(Math.max(...vs))} · ${n} points`;
+const tip=document.getElementById('ecotip'), i=hover?hover.i:null, my=hover?hover.y:null;
+if(i!=null&&i>=0&&i<n){ const p=pts[i], inP=my!=null&&my>=pt&&my<=pt+ph;
+x.strokeStyle='rgba(221,227,234,.4)'; x.setLineDash([3,3]); x.beginPath(); x.moveTo(X(i),pt); x.lineTo(X(i),H-pb); if(inP){ x.moveTo(8,my); x.lineTo(W-pr,my); } x.stroke(); x.setLineDash([]);
+x.fillStyle='#dde3ea'; x.beginPath(); x.arc(X(i),Y(p[1]),3,0,7); x.fill();
+if(inP) tag(dd(lo+(1-(my-pt)/ph)*(hi-lo)),my,'#dde3ea','#0b0e11');
+const pv=i>0?pts[i-1][1]:null;
+tip.innerHTML=`<b style="color:var(--txt)">${ecoPeriod(e,p[0])}</b> &nbsp; ${dd(p[1])}${pv!=null?` &nbsp; <span class="${cls(p[1]-pv)}">${p[1]-pv>0?'+':''}${nf(p[1]-pv,Math.abs(p[1]-pv)>=100?0:2)}</span>`:''}`;
+} else if(tip) tip.innerHTML='';
+cv.style.cursor='crosshair';
+cv.onmousemove=ev=>{ const rr=cv.getBoundingClientRect(), k=Math.floor((ev.clientX-rr.left-8)/step); drawEco(k>=0&&k<n?{i:k,y:ev.clientY-rr.top}:null); };
+cv.onmouseleave=()=>drawEco(null);
+}
+/** Panneau de l'onglet Macro : tous les indicateurs, par pays. */
+function ecoPanelHtml(){
+if(!ECON||!ECON.length) return `<div class="pnl" style="margin-top:9px"><h3>ECONOMICS — Indicateurs par pays</h3><div class="note">Données économiques pas encore générées (script <code>build_economics.py</code>, une fois par jour).</div></div>`;
+const by={}; ECON.forEach(e=>(by[e.ctry]=by[e.ctry]||[]).push(e));
+return `<div class="pnl" style="margin-top:9px"><h3>ECONOMICS — Indicateurs par pays<span class="rt">${ECON.length} séries · FRED, BCE, BoE · ${fmtDT(ECON_TS)} · tapez un code dans ⌘K, ex. USINTR</span></h3>
+<div class="g g3" style="padding:9px">${Object.entries(by).map(([c,l])=>`<div><div style="font-size:9px;color:var(--txt3);margin:0 0 4px;letter-spacing:.5px">${esc(c.toUpperCase())}</div>
+<table><caption class="sr-only">${esc(c)}</caption><tbody>${l.map(e=>{ const dv=e.last-e.prev;
+return `<tr class="clk" data-eco="${esc(e.code)}" tabindex="0" role="button" title="${esc(e.n)}"><th scope="row" class="sym" style="text-align:left">${esc(e.code)}</th>
+<td style="text-align:left;font-size:10px;color:var(--txt2);max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(e.n)}</td>
+<td>${ecoFmt(e.last,e)}</td><td class="${cls(dv)}" style="font-size:10px">${dv>0?'▲':dv<0?'▼':'='}</td></tr>`; }).join('')}</tbody></table></div>`).join('')}</div></div>`;
+}
 
 /*═══════════════════════════════════════════════════════════════════════
 14. NAVIGATION
@@ -2027,11 +2144,11 @@ const map={m:'mkt', w:'wl', p:'pf', e:'macro', r:'srch', s:'sec', n:'news', d:'d
 const t=map[e.key.toLowerCase()];
 if(t){ e.preventDefault(); go(t); }
 });
-window.addEventListener('resize',()=>{ if(S.view==='pf'&&S.mc) drawMC(S.mc.p,S.mc.b,S.mc.yrs); if(S.view==='macro') viewMacro(); if(S.view==='sec') drawCandles(); });
+window.addEventListener('resize',()=>{ if(S.view==='pf'&&S.mc) drawMC(S.mc.p,S.mc.b,S.mc.yrs); if(S.view==='macro') viewMacro(); if(S.view==='sec'){ if(ecoGet(S.focus)) drawEco(); else drawCandles(); } });
 
 tick(); setInterval(tick,1000);
 go('mkt');
-const refresh=()=>Promise.all([loadLive(),loadUniverse(),loadFT(),loadMacro(),loadFund()]).then(([a,b,c,d,e])=>{ if(a||b||c||d||e){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
+const refresh=()=>Promise.all([loadLive(),loadUniverse(),loadFT(),loadMacro(),loadFund(),loadEcon()]).then(([a,b,c,d,e,f])=>{ if(a||b||c||d||e||f){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
 refresh();
 setInterval(refresh, 10*60*1000);
 
