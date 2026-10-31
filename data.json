@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T11:06:22.492460Z",
+ "generated_at": "2026-10-31T12:02:27.628374Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -71,8 +71,8 @@
    "prev": 2859.22,
    "chg": -47.1787,
    "pct": -1.65,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^RUT)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^RUT) — échec de la dernière mise à jour",
    "ts": "2026-10-30T19:30:00Z",
    "open": 2838.77,
    "lo": 2787.1201,
@@ -122,8 +122,8 @@
    "prev": 3651.4341,
    "chg": -54.8284,
    "pct": -1.5,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (000001.SS) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (000001.SS)",
    "ts": "2026-10-30T06:30:00Z",
    "open": 3605.645,
    "lo": 3595.2581,
@@ -283,17 +283,17 @@
    "vol": 6774
   },
   "BTC": {
-   "p": 77260.9375,
+   "p": 77422.5391,
    "prev": 77198.2109,
-   "chg": 62.7266,
-   "pct": 0.08,
+   "chg": 224.3281,
+   "pct": 0.29,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-10-31T11:00:00Z",
+   "ts": "2026-10-31T12:00:00Z",
    "open": 77202.3984,
    "lo": 77000.9219,
-   "hi": 77434.1484,
-   "vol": 25138083840
+   "hi": 77500.3203,
+   "vol": 24397633536
   }
  },
  "fundamentals": {
@@ -442,14 +442,14 @@
    "sector": "Consumer Cyclical",
    "industry": "Internet Retail",
    "ccy": "USD",
-   "mcap": 2598423756800,
+   "mcap": 2598937821184,
    "pe": 19.4301,
    "fpe": 22.8043,
    "eps": 12.37,
    "feps": 10.5397,
    "revTTM": 797455024128,
    "netIncome": 134779002880,
-   "shares": 10811000000,
+   "shares": 10813138306,
    "divYield": 0.0,
    "target": 331.7714,
    "targetHi": 405.0,
@@ -737,7 +737,7 @@
    "cash": 4885000192,
    "debt": 49502998528,
    "fcf": 9343699968,
-   "w52lo": 834.19,
+   "w52lo": 850.51,
    "w52hi": 1449.68,
    "evEbitda": 28.12
   },
@@ -982,14 +982,14 @@
    "sector": "Energy",
    "industry": "Oil & Gas Integrated",
    "ccy": "USD",
-   "mcap": 769955528704,
+   "mcap": 763792785408,
    "pe": 19.2644,
    "fpe": 15.5869,
    "eps": 9.72,
    "feps": 12.0133,
    "revTTM": 388293984256,
    "netIncome": 40621998080,
-   "shares": 4111911960,
+   "shares": 4079000000,
    "div": 4.12,
    "divYield": 2.2,
    "target": 179.4091,
@@ -1149,14 +1149,14 @@
    "sector": "Energy",
    "industry": "Oil & Gas Integrated",
    "ccy": "USD",
-   "mcap": 461996818432,
+   "mcap": 459499536384,
    "pe": 17.2922,
    "fpe": 14.9045,
    "eps": 13.62,
    "feps": 15.802,
    "revTTM": 228955996160,
    "netIncome": 26976000000,
-   "shares": 1961603274,
+   "shares": 1951000000,
    "div": 7.12,
    "divYield": 3.02,
    "target": 232.5,
@@ -1377,10 +1377,19 @@
  ],
  "news": [
   {
+   "h": "Poland suspends top judges as battle over rule of law escalates",
+   "w": "President and prime minister are embroiled in a bitter dispute over appointments to country’s constitutional court",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-10-31T11:57:56Z",
+   "url": "https://www.ft.com/content/1be69ebe-0c55-446e-9abf-84ac9e99c51e?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "Serbia comes back into the fold",
    "w": "Decisive vote against autocratic leader Aleksandar Vučić will enable restoration of democratic checks and balances",
    "syms": [],
-   "src": "myFT — emerging markets",
+   "src": "myFT — europe",
    "ts": "2026-10-31T11:00:01Z",
    "url": "https://www.ft.com/content/80da9ebf-4057-4ccb-896f-c34929889726?syn-25a6b1a6=1",
    "mine": 1
@@ -1396,10 +1405,21 @@
    "url": "https://www.cnbc.com/2026/10/31/anthropic-ipo-ai-spending.html"
   },
   {
+   "h": "Crypto exchanges rush to tighten security after $6.3bn Binance heist",
+   "w": "Rival venues place ‘additional alerts and restrictions’ on the movement of funds",
+   "syms": [
+    "BTC"
+   ],
+   "src": "myFT — technology",
+   "ts": "2026-10-31T10:38:18Z",
+   "url": "https://www.ft.com/content/c7062e37-86fd-45ef-8f58-573de0fcaaf0?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "Chart of the Week: Bond investors may cheer gridlock",
    "w": "Midterms will have higher stakes for the bond market",
    "syms": [],
-   "src": "myFT — us",
+   "src": "myFT — world",
    "ts": "2026-10-31T10:30:01Z",
    "url": "https://www.ft.com/content/9570b122-5418-41e6-b91b-b95af96ec881?syn-25a6b1a6=1",
    "mine": 1
@@ -1421,7 +1441,7 @@
    "url": "https://www.lemonde.fr/idees/article/2026/10/31/les-economistes-abordent-l-environnement-avec-une-boite-a-outils-plus-riche-qu-il-y-a-vingt-ans_6803492_3232.html"
   },
   {
-   "h": "Rating agency Fitch hits France with surprise outlook downgrade",
+   "h": "Rating agency Fitch hits France with unscheduled outlook downgrade",
    "w": "Move comes hours after data showed an unexpected contraction in third-quarter economic output",
    "syms": [
     "CAC"
@@ -1609,21 +1629,21 @@
    "mine": 1
   },
   {
-   "h": "Lula’s surprise election victory sends agri-commodities tumbling",
-   "w": "Steep fall in Brazilian real has made the country’s exports more competitive, undermining pricing power for farmers in other countries",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-10-31T05:00:31Z",
-   "url": "https://www.ft.com/content/f0ca6771-20a2-4146-bd3f-4796d3c86094?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Is this the first clear evidence of AI’s impact on the labour market?",
    "w": "Productivity is up and employment is down in the tech sector but elsewhere the picture is muddier",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-10-31T05:00:31Z",
    "url": "https://www.ft.com/content/7f27aa5f-5994-4f82-aed8-1cade18fb487?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Lula’s surprise election victory sends agri-commodities tumbling",
+   "w": "Steep fall in Brazilian real has made the country’s exports more competitive, undermining pricing power for farmers in other countries",
+   "syms": [],
+   "src": "myFT — companies",
+   "ts": "2026-10-31T05:00:31Z",
+   "url": "https://www.ft.com/content/f0ca6771-20a2-4146-bd3f-4796d3c86094?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -1791,15 +1811,6 @@
    "mine": 1
   },
   {
-   "h": "Poland suspends top judges as battle over rule of law escalates",
-   "w": "President and prime minister are embroiled in a bitter dispute over appointments to country’s constitutional court",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-10-30T23:32:09Z",
-   "url": "https://www.ft.com/content/1be69ebe-0c55-446e-9abf-84ac9e99c51e?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "L’agence Fitch maintient la note de la dette souveraine de la France, mais dégrade sa perspective",
    "w": "Relevant une détérioration de la situation budgétaire et des taux d’emprunt, l’agence de notation abaisse la perspective, de stable à négative. « Cette appréciation confirme l’absolue nécessité d’adopter d’ici à la fin de l’année un budget responsable », a réagi vendredi le ministre de l’économie, Roland Lescure.",
    "syms": [
@@ -1921,15 +1932,6 @@
    "src": "myFT — us",
    "ts": "2026-10-30T18:19:08Z",
    "url": "https://www.ft.com/content/59383c7f-8d82-493f-bf01-d2e862a1018f?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "How AI might be deployed for better bank supervision",
-   "w": "The technology could help tackle some of the cultural issues that contributed to the collapse of SVB",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-10-30T18:00:05Z",
-   "url": "https://www.ft.com/content/be6723d6-ab63-41ab-ac46-dc870c449da0?syn-25a6b1a6=1",
    "mine": 1
   }
  ],
