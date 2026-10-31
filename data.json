@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T14:06:34.036956Z",
+ "generated_at": "2026-10-31T14:46:46.800615Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -283,17 +283,17 @@
    "vol": 6774
   },
   "BTC": {
-   "p": 77383.1328,
+   "p": 77406.8438,
    "prev": 77198.2109,
-   "chg": 184.9219,
-   "pct": 0.24,
+   "chg": 208.6328,
+   "pct": 0.27,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
    "ts": "2026-10-31T14:00:00Z",
    "open": 77202.3984,
    "lo": 77000.9219,
    "hi": 77554.9219,
-   "vol": 20932294656
+   "vol": 19772422144
   }
  },
  "fundamentals": {
@@ -330,7 +330,15 @@
    "fcf": 107721875456,
    "w52lo": 243.42,
    "w52hi": 351.73,
-   "evEbitda": 30.076
+   "evEbitda": 30.076,
+   "earnTs": 1793649600,
+   "earnStart": 1793649600,
+   "earnEnd": 1793649600,
+   "earnEst": false,
+   "exDiv": 1786320000,
+   "divDate": 1786579200,
+   "lastDiv": 0.27,
+   "trailDiv": 1.05
   },
   "NVDA": {
    "name": "NVIDIA Corporation",
@@ -365,7 +373,15 @@
    "fcf": 41809874944,
    "w52lo": 164.27,
    "w52hi": 243.37,
-   "evEbitda": 24.387
+   "evEbitda": 24.387,
+   "earnTs": 1794945600,
+   "earnStart": 1794945600,
+   "earnEnd": 1794945600,
+   "earnEst": false,
+   "exDiv": 1788998400,
+   "divDate": 1790812800,
+   "lastDiv": 0.25,
+   "trailDiv": 0.28
   },
   "MSFT": {
    "name": "Microsoft Corporation",
@@ -400,7 +416,15 @@
    "fcf": 2994125056,
    "w52lo": 349.2,
    "w52hi": 551.15,
-   "evEbitda": 19.18
+   "evEbitda": 19.18,
+   "earnTs": 1793217600,
+   "earnStart": 1801080000,
+   "earnEnd": 1801080000,
+   "earnEst": true,
+   "exDiv": 1795046400,
+   "divDate": 1796860800,
+   "lastDiv": 0.91,
+   "trailDiv": 3.71
   },
   "GOOGL": {
    "name": "Alphabet Inc.",
@@ -435,7 +459,15 @@
    "fcf": -1162499968,
    "w52lo": 270.7,
    "w52hi": 408.61,
-   "evEbitda": 18.023
+   "evEbitda": 18.023,
+   "earnTs": 1793217600,
+   "earnStart": 1793217600,
+   "earnEnd": 1793217600,
+   "earnEst": false,
+   "exDiv": 1788480000,
+   "divDate": 1789344000,
+   "lastDiv": 0.22,
+   "trailDiv": 0.86
   },
   "AMZN": {
    "name": "Amazon.com, Inc.",
@@ -468,7 +500,12 @@
    "fcf": -11545749504,
    "w52lo": 196.0,
    "w52hi": 287.2,
-   "evEbitda": 15.002
+   "evEbitda": 15.002,
+   "earnTs": 1793304000,
+   "earnStart": 1793304000,
+   "earnEnd": 1793304000,
+   "earnEst": false,
+   "trailDiv": 0.0
   },
   "TSM": {
    "name": "Taiwan Semiconductor Manufacturing Company Limited",
@@ -503,7 +540,15 @@
    "fcf": 1203071877120,
    "w52lo": 266.82,
    "w52hi": 487.47,
-   "evEbitda": 3.78
+   "evEbitda": 3.78,
+   "earnTs": 1792067400,
+   "earnStart": 1799929800,
+   "earnEnd": 1799929800,
+   "earnEst": true,
+   "exDiv": 1796860800,
+   "divDate": 1799280000,
+   "lastDiv": 1.107,
+   "trailDiv": 6.0
   },
   "SPCX": {
    "name": "Space Exploration Technologies Corp.",
@@ -533,7 +578,12 @@
    "debt": 39217999872,
    "w52lo": 104.83,
    "w52hi": 225.64,
-   "evEbitda": 151.585
+   "evEbitda": 151.585,
+   "earnTs": 1792526400,
+   "earnStart": 1792526400,
+   "earnEnd": 1792526400,
+   "earnEst": false,
+   "trailDiv": 0.0
   },
   "2222.SR": {
    "name": "Saudi Arabian Oil Company",
@@ -568,7 +618,14 @@
    "fcf": 375149985792,
    "w52lo": 23.29,
    "w52hi": 27.96,
-   "evEbitda": 7.405
+   "evEbitda": 7.405,
+   "earnTs": 1793707200,
+   "earnStart": 1793707200,
+   "earnEnd": 1793707200,
+   "earnEst": false,
+   "exDiv": 1787184000,
+   "lastDiv": 0.3393,
+   "trailDiv": 1.349
   },
   "META": {
    "name": "Meta Platforms, Inc.",
@@ -603,7 +660,15 @@
    "fcf": 16848499712,
    "w52lo": 520.26,
    "w52hi": 779.82,
-   "evEbitda": 13.809
+   "evEbitda": 13.809,
+   "earnTs": 1792612800,
+   "earnStart": 1792612800,
+   "earnEnd": 1792612800,
+   "earnEst": false,
+   "exDiv": 1789948800,
+   "divDate": 1790553600,
+   "lastDiv": 0.525,
+   "trailDiv": 2.1
   },
   "TSLA": {
    "name": "Tesla, Inc.",
@@ -637,7 +702,12 @@
    "fcf": 4967249920,
    "w52lo": 297.38,
    "w52hi": 498.83,
-   "evEbitda": 157.751
+   "evEbitda": 157.751,
+   "earnTs": 1792612800,
+   "earnStart": 1792612800,
+   "earnEnd": 1792612800,
+   "earnEst": false,
+   "trailDiv": 0.0
   },
   "AVGO": {
    "name": "Broadcom Inc.",
@@ -672,7 +742,15 @@
    "fcf": 30596499456,
    "w52lo": 289.96,
    "w52hi": 495.0,
-   "evEbitda": 30.464
+   "evEbitda": 30.464,
+   "earnTs": 1796846400,
+   "earnStart": 1796846400,
+   "earnEnd": 1796846400,
+   "earnEst": false,
+   "exDiv": 1789948800,
+   "divDate": 1790726400,
+   "lastDiv": 0.65,
+   "trailDiv": 2.6
   },
   "005930.KS": {
    "name": "Samsung Electronics Co., Ltd.",
@@ -704,7 +782,13 @@
    "fcf": 83820791463936,
    "w52lo": 94500.0,
    "w52hi": 374500.0,
-   "evEbitda": 3.95
+   "evEbitda": 3.95,
+   "earnTs": 1793167200,
+   "earnStart": 1801029600,
+   "earnEnd": 1801029600,
+   "earnEst": true,
+   "exDiv": 1782691200,
+   "lastDiv": 374.0
   },
   "LLY": {
    "name": "Eli Lilly and Company",
@@ -739,7 +823,15 @@
    "fcf": 9343699968,
    "w52lo": 850.51,
    "w52hi": 1449.68,
-   "evEbitda": 28.12
+   "evEbitda": 28.12,
+   "earnTs": 1793277000,
+   "earnStart": 1793277000,
+   "earnEnd": 1793277000,
+   "earnEst": false,
+   "exDiv": 1794528000,
+   "divDate": 1796860800,
+   "lastDiv": 1.73,
+   "trailDiv": 6.69
   },
   "BRK-B": {
    "name": "Berkshire Hathaway Inc.",
@@ -773,7 +865,12 @@
    "fcf": 71975247872,
    "w52lo": 464.01,
    "w52hi": 550.47,
-   "evEbitda": -1.79
+   "evEbitda": -1.79,
+   "earnTs": 1794081600,
+   "earnStart": 1794081600,
+   "earnEnd": 1794081600,
+   "earnEst": false,
+   "trailDiv": 0.0
   },
   "000660.KS": {
    "name": "SK hynix Inc.",
@@ -804,7 +901,13 @@
    "debt": 15799000498176,
    "w52lo": 501000.0,
    "w52hi": 2987000.0,
-   "evEbitda": 4.279
+   "evEbitda": 4.279,
+   "earnTs": 1793080800,
+   "earnStart": 1801029600,
+   "earnEnd": 1801029600,
+   "earnEst": true,
+   "exDiv": 1795737600,
+   "lastDiv": 20000.0
   },
   "MU": {
    "name": "Micron Technology, Inc.",
@@ -839,7 +942,15 @@
    "fcf": 29140250624,
    "w52lo": 192.59,
    "w52hi": 1255.0,
-   "evEbitda": 8.845
+   "evEbitda": 8.845,
+   "earnTs": 1790798400,
+   "earnStart": 1798056000,
+   "earnEnd": 1798056000,
+   "earnEst": true,
+   "exDiv": 1791936000,
+   "divDate": 1793232000,
+   "lastDiv": 0.15,
+   "trailDiv": 0.565
   },
   "WMT": {
    "name": "Walmart Inc.",
@@ -874,7 +985,15 @@
    "fcf": 7127625216,
    "w52lo": 98.88,
    "w52hi": 135.16,
-   "evEbitda": 23.825
+   "evEbitda": 23.825,
+   "earnTs": 1795091400,
+   "earnStart": 1795091400,
+   "earnEnd": 1795091400,
+   "earnEst": false,
+   "exDiv": 1796947200,
+   "divDate": 1799020800,
+   "lastDiv": 0.248,
+   "trailDiv": 0.965
   },
   "JPM": {
    "name": "JPMorgan Chase & Co.",
@@ -906,7 +1025,15 @@
    "cash": 1881473941504,
    "debt": 1326255046656,
    "w52lo": 279.1,
-   "w52hi": 366.5
+   "w52hi": 366.5,
+   "earnTs": 1799929800,
+   "earnStart": 1799929800,
+   "earnEnd": 1799929800,
+   "earnEst": false,
+   "exDiv": 1791244800,
+   "divDate": 1793404800,
+   "lastDiv": 1.65,
+   "trailDiv": 6.15
   },
   "AMD": {
    "name": "Advanced Micro Devices, Inc.",
@@ -940,7 +1067,13 @@
    "fcf": 8841499648,
    "w52lo": 188.22,
    "w52hi": 658.52,
-   "evEbitda": 85.258
+   "evEbitda": 85.258,
+   "earnTs": 1793736000,
+   "earnStart": 1793736000,
+   "earnEnd": 1793736000,
+   "earnEst": false,
+   "exDiv": 798940800,
+   "trailDiv": 0.0
   },
   "V": {
    "name": "Visa Inc.",
@@ -975,7 +1108,15 @@
    "fcf": 21118375936,
    "w52lo": 293.89,
    "w52hi": 417.0,
-   "evEbitda": 23.651
+   "evEbitda": 23.651,
+   "earnTs": 1793131200,
+   "earnStart": 1800993600,
+   "earnEnd": 1800993600,
+   "earnEst": true,
+   "exDiv": 1786406400,
+   "divDate": 1788220800,
+   "lastDiv": 0.67,
+   "trailDiv": 2.79
   },
   "XOM": {
    "name": "ExxonMobil Holdings Corporation",
@@ -1009,7 +1150,15 @@
    "fcf": 28357500928,
    "w52lo": 112.51,
    "w52hi": 188.5,
-   "evEbitda": 10.238
+   "evEbitda": 10.238,
+   "earnTs": 1793363400,
+   "earnStart": 1801225800,
+   "earnEnd": 1801225800,
+   "earnEst": true,
+   "exDiv": 1794787200,
+   "divDate": 1788998400,
+   "lastDiv": 1.03,
+   "trailDiv": 1.03
   },
   "JNJ": {
    "name": "Johnson & Johnson",
@@ -1044,7 +1193,15 @@
    "fcf": 18501875712,
    "w52lo": 185.12,
    "w52hi": 282.02,
-   "evEbitda": 19.857
+   "evEbitda": 19.857,
+   "earnTs": 1791894600,
+   "earnStart": 1791894600,
+   "earnEnd": 1791894600,
+   "earnEst": false,
+   "exDiv": 1795478400,
+   "divDate": 1796688000,
+   "lastDiv": 1.34,
+   "trailDiv": 5.28
   },
   "ASML.AS": {
    "name": "ASML Holding N.V.",
@@ -1079,7 +1236,14 @@
    "fcf": 10374124544,
    "w52lo": 822.2,
    "w52hi": 1741.0,
-   "evEbitda": 32.784
+   "evEbitda": 32.784,
+   "earnTs": 1791991800,
+   "earnStart": 1791991800,
+   "earnEnd": 1791991800,
+   "earnEst": false,
+   "exDiv": 1792972800,
+   "lastDiv": 1.88,
+   "trailDiv": 7.5
   },
   "MA": {
    "name": "Mastercard Incorporated",
@@ -1114,7 +1278,15 @@
    "fcf": 16629250048,
    "w52lo": 464.52,
    "w52hi": 644.24,
-   "evEbitda": 24.72
+   "evEbitda": 24.72,
+   "earnTs": 1793277000,
+   "earnStart": 1801139400,
+   "earnEnd": 1801139400,
+   "earnEst": true,
+   "exDiv": 1791504000,
+   "divDate": 1794182400,
+   "lastDiv": 0.87,
+   "trailDiv": 3.15
   },
   "ABBV": {
    "name": "AbbVie Inc.",
@@ -1142,7 +1314,15 @@
    "opMargin": 37.25,
    "netMargin": 15.666,
    "w52lo": 190.75,
-   "w52hi": 298.74
+   "w52hi": 298.74,
+   "earnTs": 1793363400,
+   "earnStart": 1793363400,
+   "earnEnd": 1793363400,
+   "earnEst": false,
+   "exDiv": 1799971200,
+   "divDate": 1794787200,
+   "lastDiv": 1.73,
+   "trailDiv": 6.83
   },
   "CVX": {
    "name": "Chevron Corporation",
@@ -1171,7 +1351,15 @@
    "netMargin": 11.782,
    "debtEq": 18.959,
    "w52lo": 146.49,
-   "w52hi": 236.48
+   "w52hi": 236.48,
+   "earnTs": 1793363400,
+   "earnStart": 1801225800,
+   "earnEnd": 1801225800,
+   "earnEst": true,
+   "exDiv": 1794960000,
+   "divDate": 1788998400,
+   "lastDiv": 1.78,
+   "trailDiv": 1.71
   },
   "COST": {
    "name": "Costco Wholesale Corporation",
@@ -1206,7 +1394,15 @@
    "fcf": 6752750080,
    "w52lo": 844.06,
    "w52hi": 1096.5,
-   "evEbitda": 30.839
+   "evEbitda": 30.839,
+   "earnTs": 1796932800,
+   "earnStart": 1796932800,
+   "earnEnd": 1796932800,
+   "earnEst": false,
+   "exDiv": 1793318400,
+   "divDate": 1794528000,
+   "lastDiv": 1.47,
+   "trailDiv": 5.54
   },
   "PLTR": {
    "name": "Palantir Technologies Inc.",
@@ -1240,7 +1436,12 @@
    "fcf": 2159104512,
    "w52lo": 106.37,
    "w52hi": 212.94,
-   "evEbitda": 162.749
+   "evEbitda": 162.749,
+   "earnTs": 1793649600,
+   "earnStart": 1793649600,
+   "earnEnd": 1793649600,
+   "earnEst": false,
+   "trailDiv": 0.0
   },
   "CSCO": {
    "name": "Cisco Systems, Inc.",
@@ -1275,7 +1476,15 @@
    "fcf": 11182624768,
    "w52lo": 70.54,
    "w52hi": 130.37,
-   "evEbitda": 22.922
+   "evEbitda": 22.922,
+   "earnTs": 1794513600,
+   "earnStart": 1794513600,
+   "earnEnd": 1794513600,
+   "earnEst": false,
+   "exDiv": 1790899200,
+   "divDate": 1792540800,
+   "lastDiv": 0.42,
+   "trailDiv": 1.66
   },
   "KO": {
    "name": "The Coca-Cola Company",
@@ -1310,7 +1519,15 @@
    "fcf": 4349000192,
    "w52lo": 67.27,
    "w52hi": 95.37,
-   "evEbitda": 24.809
+   "evEbitda": 24.809,
+   "earnTs": 1793104200,
+   "earnStart": 1793104200,
+   "earnEnd": 1793104200,
+   "earnEst": false,
+   "exDiv": 1796083200,
+   "divDate": 1797292800,
+   "lastDiv": 0.53,
+   "trailDiv": 2.1
   },
   "ASTS": {
    "name": "AST SpaceMobile, Inc.",
@@ -1342,7 +1559,45 @@
    "fcf": -1799572992,
    "w52lo": 36.72,
    "w52hi": 133.86,
-   "evEbitda": -33.204
+   "evEbitda": -33.204,
+   "earnTs": 1794254400,
+   "earnStart": 1794254400,
+   "earnEnd": 1794254400,
+   "earnEst": false,
+   "trailDiv": 0.0
+  },
+  "ACWI": {
+   "name": "iShares MSCI ACWI ETF",
+   "ccy": "USD",
+   "pe": 20.2873,
+   "divYield": 1.41,
+   "w52lo": 133.65,
+   "w52hi": 162.8,
+   "divDate": 1482883200,
+   "trailDiv": 0.0
+  },
+  "AGG": {
+   "name": "iShares Core U.S. Aggregate Bond ETF",
+   "ccy": "USD",
+   "divYield": 4.19,
+   "w52lo": 93.84,
+   "w52hi": 101.46
+  },
+  "GLD": {
+   "name": "SPDR Gold Shares",
+   "ccy": "USD",
+   "shares": 260300000,
+   "divYield": 0.0,
+   "w52lo": 354.67,
+   "w52hi": 509.7,
+   "trailDiv": 0.0
+  },
+  "BIL": {
+   "name": "State Street SPDR Bloomberg 1-3 Month T-Bill ETF",
+   "ccy": "USD",
+   "divYield": 3.71,
+   "w52lo": 91.26,
+   "w52hi": 91.73
   }
  },
  "curve": [
@@ -1377,6 +1632,16 @@
  ],
  "news": [
   {
+   "h": "Binance, crypto and hacks: What to know about keeping coin safe as cyber criminals advance",
+   "w": "The Binance hack of $6.3 billion, the largest crypto theft ever, is a wake-up call for investors to understand how coin is guarded and the risk of losing it.",
+   "syms": [
+    "BTC"
+   ],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-31T14:26:29Z",
+   "url": "https://www.cnbc.com/2026/10/31/binance-crypto-hack-safety.html"
+  },
+  {
    "h": "Investors trim growth bets over fears of US economy’s AI exposure",
    "w": "Return to bonds after long sell-off comes as concern rises about over-reliance on tech spending",
    "syms": [],
@@ -1384,16 +1649,6 @@
    "ts": "2026-10-31T14:00:02Z",
    "url": "https://www.ft.com/content/56b0d5fa-829c-47b1-b07b-b4be18f60151?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Binance, crypto and hacks: What to know about keeping coin safe as cyber criminals advance",
-   "w": "The Binance hack of $6.3 billion, the largest crypto theft ever, is a wake-up call for investors to understand how coin is guarded and the risk of losing it.",
-   "syms": [
-    "BTC"
-   ],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-31T13:58:40Z",
-   "url": "https://www.cnbc.com/2026/10/31/binance-crypto-hack-safety.html"
   },
   {
    "h": "Qatari mediators held talks in Tehran aimed at restarting direct U.S.-Iran negotiations, source says",
