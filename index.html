@@ -1665,6 +1665,19 @@ const cal=(M.eco.calendar||[]).map(c=>{ const past=c.d<today, now=c.d===today;
 return `<tr style="${past?'opacity:.55':''}"><th scope="row" style="font-weight:${now?700:400};color:var(--txt)">${dfr(c.d)}</th>
 <td style="text-align:left">${c.imp===3?'<b>':''}${esc(c.ev)}${c.imp===3?'</b>':''} <span class="mut">${esc(c.ctry)}</span></td>
 <td class="mut" style="font-size:10px">${past?'publié':now?'<span class="pos">aujourd\'hui</span>':'à venir'}</td></tr>`; }).join('');
+// ECO — consensus (Forex Factory) + publié (FRED)
+const C=(M.eco.consensus&&M.eco.consensus.rows)||[];
+const now=Date.now();
+const cons=C.map(c=>{ const t=new Date(c.ts), past=t.getTime()<now;
+const when=t.toLocaleString('fr-FR',{weekday:'short',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'});
+const sp=c.surp; const scls=sp==null?'mut':sp>0?'pos':sp<0?'neg':'mut';
+return `<tr style="${past&&!c.act?'opacity:.6':''}"><th scope="row" style="font-weight:400;color:var(--txt);white-space:nowrap">${when}</th>
+<td style="text-align:left">${c.imp===3?'<b>':''}${esc(c.ev)}${c.imp===3?'</b>':''} <span class="mut">${esc(c.ctry)}</span></td>
+<td><span class="sr-only">Impact ${c.imp} sur 3.</span><span aria-hidden="true" style="color:${c.imp===3?'var(--neg)':'var(--hot)'}">${'●'.repeat(c.imp)}</span></td>
+<td>${c.cons?esc(c.cons):'<span class="na">—</span>'}</td>
+<td style="font-weight:600">${c.act?esc(c.act):past?'<span class="na">n/d</span>':'<span class="na">à venir</span>'}</td>
+<td class="${scls}">${sp==null?'—':(sp>0?'+':'')+nf(sp,Math.abs(sp)>=10?0:2)}</td>
+<td class="mut">${c.prev?esc(c.prev):'—'}</td></tr>`; }).join('');
 // WIRP
 const W=M.wirp||{};
 const wirp=W.error?`<div class="warn">${esc(W.error)}.${W.range&&W.range[0]!=null?` Fourchette actuelle : ${nf(W.range[0])} – ${nf(W.range[1])} %.`:''}</div>`
@@ -1690,9 +1703,12 @@ const bt=(M.btmm||[]).map(x=>`<tr><th scope="row" style="font-weight:400;color:v
 <td style="font-weight:600">${fmtMacro(x.v,x.fmt)}</td><td>${dlt(x.v,x.prev,x.fmt)}</td><td class="mut" style="font-size:10px">${esc(x.ts)}</td></tr>`).join('');
 el.innerHTML=`<div class="note" style="padding:0 0 8px">Équivalents gratuits des fonctions Bloomberg <b>ECO</b>, <b>WIRP</b>, <b>GC</b> et <b>BTMM</b>. Données du ${fmtDT(M.generated_at)} — FRED, BCE, Federal Reserve, Yahoo. Mise à jour toutes les 30 min.</div>
 <div class="g g2">
+<div class="pnl span2"><h3>ECO — Calendrier avec consensus<span class="rt">cette semaine et la suivante · heures locales · impact moyen et fort</span></h3><div class="pbody flush">
+${cons?`<table><caption class="sr-only">Calendrier économique avec consensus</caption><thead><tr><th scope="col">Date</th><th scope="col" style="text-align:left">Événement</th><th scope="col">Impact</th><th scope="col">Consensus</th><th scope="col">Publié</th><th scope="col">Surprise</th><th scope="col">Précédent</th></tr></thead><tbody>${cons}</tbody></table>`:'<div class="note na">Consensus indisponible pour le moment.</div>'}
+<div class="note">${esc((M.eco.consensus&&M.eco.consensus.src)||'')} Le chiffre publié n'est rapproché automatiquement que pour les principales statistiques américaines ; pour les autres, consultez la source.</div></div></div>
 <div class="pnl"><h3>ECO — Derniers chiffres<span class="rt">dernier · précédent · date</span></h3><div class="pbody flush"><table><caption class="sr-only">Derniers chiffres macroéconomiques</caption><tbody>${prints||'<tr><td class="na">indisponible</td></tr>'}</tbody></table>
 <div class="note">Le consensus des économistes n'est pas disponible gratuitement : seuls les chiffres publiés sont affichés.</div></div></div>
-<div class="pnl"><h3>ECO — Calendrier<span class="rt">7 jours passés · 4 semaines à venir</span></h3><div class="pbody flush"><table><caption class="sr-only">Calendrier des publications</caption><tbody>${cal||'<tr><td class="na">aucune publication</td></tr>'}</tbody></table></div></div>
+<div class="pnl"><h3>ECO — Calendrier US à 4 semaines<span class="rt">FRED · Federal Reserve</span></h3><div class="pbody flush"><table><caption class="sr-only">Calendrier des publications</caption><tbody>${cal||'<tr><td class="na">aucune publication</td></tr>'}</tbody></table></div></div>
 <div class="pnl"><h3>WIRP — Probabilités des décisions de la Fed<span class="rt">futures fed funds</span></h3><div class="pbody">${wirp}</div></div>
 <div class="pnl"><h3>BTMM — Tableau de bord monétaire US<span class="rt">valeur · variation · date</span></h3><div class="pbody flush"><table><caption class="sr-only">Tableau de bord monétaire</caption><tbody>${bt}</tbody></table></div></div>
 <div class="pnl span2"><h3>GC — Courbes des taux<span class="rt">aujourd'hui (trait plein) · il y a 1 mois (pointillés)</span></h3><div class="pbody">
