@@ -1751,7 +1751,7 @@ el.innerHTML=`
 <div class="pbody" style="position:relative"><canvas id="seccv" height="380" role="img" aria-label="Graphique en chandeliers japonais de ${esc(sym)}"></canvas>
 <div id="sectip" style="position:absolute;top:14px;left:20px;font-size:10px;color:var(--txt2);pointer-events:none"></div>
 <div class="note" id="secmsg" style="padding:6px 0 0">${WORKER_URL?'Chargement…':'Renseignez WORKER_URL (relais Cloudflare) pour afficher le graphique.'}</div></div></div>
-${rvHtml(sym,F)}
+<div class="pnl" id="sec-rv" style="margin-bottom:9px"><h3>RV — Valeur relative</h3><div class="note">Chargement des pairs…</div></div>
 <div class="g g3">
 <div class="pnl"><h3>Valorisation et résultats<span class="rt">MAJ ${fundTs}</span></h3><div class="pbody">
 ${K('Chiffre d\'affaires (12 mois)',B(F.revTTM))}${K('Résultat net',B(F.netIncome))}${K('BPA (12 mois) / prévisionnel',N(F.eps)+' / '+N(F.feps))}
@@ -1774,7 +1774,7 @@ Graphique : clôtures ${SEC.range==='5A'?'hebdomadaires':'quotidiennes'} Yahoo F
 </div>`;
 el.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{ SEC.range=b.dataset.r; viewSecurity(); });
 el.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{ SEC[b.dataset.t]=!SEC[b.dataset.t]; viewSecurity(); });
-const rvb=document.getElementById('rvcomp'); if(rvb) rvb.onclick=()=>{ COMP.syms=[sym,...rvPeers(sym,F).slice(0,4)]; go('comp'); };
+rvRender(sym,F);
 if(WORKER_URL) loadCandles(sym, F, px);
 }
 
@@ -2531,33 +2531,74 @@ if(c.f==='RV'){ const e=document.getElementById('sec-rv'); if(e) e.scrollIntoVie
 function helpItems(){ return Object.entries(FUNCS).filter(([k])=>k!=='HELP').map(([k,v])=>({cmd:v.t?null:{f:k}, sym:v.t===1?'<titre> '+k:v.t===2?'<titres> COMP':k, name:v.d, cls:'Fonction', exch:v.t?'ex. '+(v.t===2?'MC RMS KER COMP':'MC FP '+k):'↵'})); }
 
 /*── RV : valeur relative face aux pairs ─────────────────────────────*/
+let PEER_GROUPS=null;
+async function loadPeers(){ try{ const r=await fetch('peers.json?t='+Date.now(),{cache:'no-store'}); if(!r.ok) throw new Error('HTTP '+r.status);
+PEER_GROUPS=(await r.json()).groups||null; }catch(e){ console.info('peers.json indisponible ('+e.message+')'); } return false; }
+const PEERS_KEY='terminal.peers.v1';
+let CUSTOM_PEERS=(()=>{ try{ return JSON.parse(localStorage.getItem(PEERS_KEY)||'{}'); }catch(e){ return {}; } })();
+function savePeers(){ try{ localStorage.setItem(PEERS_KEY,JSON.stringify(CUSTOM_PEERS)); }catch(e){} }
+/** Pairs d'un titre : liste personnelle > groupe métier (peers.json) > même industrie Yahoo > même secteur. */
 function rvPeers(sym,F){
-if(!F||!F.sector) return [];
+if(CUSTOM_PEERS[sym]&&CUSTOM_PEERS[sym].length) return {list:CUSTOM_PEERS[sym].filter(s=>s!==sym), src:'perso', label:'liste personnelle'};
+if(PEER_GROUPS){ const g=Object.entries(PEER_GROUPS).find(([,l])=>l.includes(sym));
+if(g) return {list:g[1].filter(s=>s!==sym), src:'groupe', label:g[0]}; }
+if(!F||!F.sector) return {list:[], src:'aucun', label:''};
 const all=Object.entries(SNAPSHOT.fundamentals).filter(([s,f])=>s!==sym&&f&&f.sector===F.sector&&f.mcap>0);
-const ind=all.filter(([,f])=>F.industry&&f.industry===F.industry);
-const pool=ind.length>=4?ind:all, ref=F.mcap||1;
-return pool.sort((a,b)=>Math.abs(Math.log(a[1].mcap/ref))-Math.abs(Math.log(b[1].mcap/ref))).slice(0,8).map(([s])=>s);
+const ind=all.filter(([,f])=>F.industry&&f.industry===F.industry), pool=ind.length>=4?ind:all, ref=F.mcap||1;
+return {list:pool.sort((a,b)=>Math.abs(Math.log(a[1].mcap/ref))-Math.abs(Math.log(b[1].mcap/ref))).slice(0,8).map(([s])=>s),
+src:ind.length>=4?'industrie':'secteur', label:ind.length>=4?F.industry:F.sector};
 }
-function rvHtml(sym,F){
-const peers=rvPeers(sym,F);
-if(!peers.length) return `<div class="pnl" id="sec-rv" style="margin-bottom:9px"><h3>RV — Valeur relative</h3><div class="note">${F&&F.sector?'Aucun pair avec des fondamentaux dans le catalogue.':'Secteur inconnu : fondamentaux pas encore lus pour ce titre.'}</div></div>`;
-const cols=[['mcap','Capi.',v=>big(v),0],['pe','PER',v=>nf(v,1),-1],['fpe','PER prosp.',v=>nf(v,1),-1],['evEbitda','VE/EBITDA',v=>nf(v,1),-1],
+/** Cours et variation d'un titre : pipeline, catalogue, sinon relais (5 jours). */
+async function quickQuote(s){
+const q=SNAPSHOT.quotes[s], u=(UNIV||[]).find(x=>x.s===s);
+if(q&&q.p!=null) return {p:q.p, pct:q.pct, n:u&&u.n};
+if(u&&u.p!=null) return {p:u.p, pct:u.pct, n:u.n};
+if(!WORKER_URL) return {};
+try{ const d=await compFetch(s,'5d'), v=[...d.map.values()]; return {p:d.meta.regularMarketPrice??v[v.length-1], pct:v.length>1?(v[v.length-1]/v[v.length-2]-1)*100:null, n:d.meta.longName||d.meta.shortName, ccy:d.meta.currency}; }
+catch(e){ return {}; }
+}
+/** Capitalisation en dollars : titres en circulation × cours (pence → livres), converti au change du jour. */
+async function capUSD(s,qq){
+const f=SNAPSHOT.fundamentals[s]||{}, c=f.ccy||qq.ccy||'USD', sub=['GBp','GBX','ZAc','ILA'].includes(c)?0.01:1;
+const loc=f.shares&&qq.p?f.shares*qq.p*sub:f.mcap; if(!loc) return null;
+const fx=await pfFX(normCcy(c)).catch(()=>null); return fx?loc*fx:null;
+}
+async function rvRender(sym,F){
+const box=document.getElementById('sec-rv'); if(!box) return;
+const P=rvPeers(sym,F), syms=[sym,...P.list].slice(0,14);
+const cols=[['cap','Capi. ($)',v=>big(v)+' $',0],['pe','PER',v=>nf(v,1),-1],['fpe','PER prosp.',v=>nf(v,1),-1],['evEbitda','VE/EBITDA',v=>nf(v,1),-1],
 ['opMargin','Marge op.',v=>nf(v,1)+' %',1],['revGrowth','Croiss. CA',v=>pct(v,1),1],['roe','ROE',v=>nf(v,1)+' %',1],['divYield','Rdt div.',v=>nf(v,2)+' %',1]];
-const row=s=>{ const f=SNAPSHOT.fundamentals[s]||{}, u=(UNIV||[]).find(x=>x.s===s)||{}, q=SNAPSHOT.quotes[s]||{}; return {s, f, n:f.name||u.n||s, pc:q.pct??u.pct}; };
-const rows=[row(sym),...peers.map(row)];
-const med=k=>{ const v=rows.slice(1).map(r=>r.f[k]).filter(x=>x!=null&&isFinite(x)&&(k.match(/pe|evEbitda/)?x>0:true)).sort((a,b)=>a-b); return v.length?v[v.length>>1]:null; };
+const rows=await Promise.all(syms.map(async s=>{ const f=SNAPSHOT.fundamentals[s]||{}, qq=await quickQuote(s), cap=await capUSD(s,qq);
+return {s, f:{...f,cap}, n:f.name||qq.n||s, pc:qq.pct, has:Object.keys(f).length>3}; }));
+if(S.focus!==sym||S.view!=='sec') return;
+const med=k=>{ const v=rows.slice(1).map(r=>r.f[k]).filter(x=>x!=null&&isFinite(x)&&(/pe|evEbitda/.test(k)?x>0:true)).sort((a,b)=>a-b); return v.length?v[v.length>>1]:null; };
 const M=Object.fromEntries(cols.map(([k])=>[k,med(k)]));
 const cell=(r,[k,,fmt,dir],me)=>{ const v=r.f[k]; if(v==null||!isFinite(v)) return '<td class="na">n/d</td>';
-let c=''; if(me&&dir&&M[k]!=null&&Math.abs(v-M[k])>1e-9){ const better=dir<0?(v>0&&v<M[k]):v>M[k]; c=better?'pos':'neg'; } return `<td class="${c}">${fmt(v)}</td>`; };
-return `<div class="pnl" id="sec-rv" style="margin-bottom:9px"><h3>RV — Valeur relative<span class="rt">${esc(F.industry||F.sector)} · ${peers.length} pairs de taille proche · vert = mieux que la médiane</span></h3>
-<div class="pbody flush"><table><caption class="sr-only">Comparaison avec les pairs</caption><thead><tr><th scope="col" style="text-align:left">Titre</th>${cols.map(c=>`<th scope="col">${c[1]}</th>`).join('')}<th scope="col">Var. jour</th></tr></thead><tbody>
+let c=''; if(me&&dir&&M[k]!=null&&Math.abs(v-M[k])>1e-9) c=(dir<0?(v>0&&v<M[k]):v>M[k])?'pos':'neg'; return `<td class="${c}">${fmt(v)}</td>`; };
+const missing=rows.slice(1).filter(r=>!r.has).map(r=>r.s);
+const srcTxt={perso:'votre liste',groupe:'groupe de comparables métier',industrie:'même industrie Yahoo (pas de groupe métier défini)',secteur:'même secteur Yahoo (pas de groupe métier défini)'}[P.src]||'';
+box.innerHTML=`<h3>RV — Valeur relative<span class="rt">${esc(P.label||'')}${P.label?' · ':''}${P.list.length} pairs · vert = mieux que la médiane</span></h3>
+${P.list.length?`<div class="pbody flush"><table><caption class="sr-only">Comparaison avec les pairs</caption><thead><tr><th scope="col" style="text-align:left">Titre</th>${cols.map(c=>`<th scope="col">${c[1]}</th>`).join('')}<th scope="col">Var. jour</th></tr></thead><tbody>
 ${rows.map((r,i)=>`<tr class="${i?'clk':''}" ${i?`data-sym="${esc(r.s)}" tabindex="0" role="button"`:''} style="${i?'':'background:var(--sel)'}">
-<th scope="row" style="text-align:left"><span class="sym">${esc(r.s)}</span> <span class="mut" style="font-size:10px;font-weight:400">${esc(r.n).slice(0,28)}</span></th>
+<th scope="row" style="text-align:left"><span class="sym">${esc(r.s)}</span> <span class="mut" style="font-size:10px;font-weight:400">${esc(r.n).slice(0,30)}</span></th>
 ${cols.map(c=>cell(r,c,i===0)).join('')}<td class="${cls(r.pc)}">${r.pc!=null?pct(r.pc):'—'}</td></tr>`).join('')}
 <tr style="border-top:1px solid var(--line)"><th scope="row" style="text-align:left;color:var(--txt2)">Médiane des pairs</th>${cols.map(([k,,fmt])=>`<td class="mut">${M[k]!=null?fmt(M[k]):'—'}</td>`).join('')}<td></td></tr>
-</tbody></table></div>
-<div class="ctl" style="border-bottom:none;align-items:center"><button class="btn go" type="button" id="rvcomp">Comparer les cours (COMP)</button>
-<span class="note" style="padding:0">Pairs : même ${F.industry&&peers.every(p=>(SNAPSHOT.fundamentals[p]||{}).industry===F.industry)?'industrie':'secteur'} dans le catalogue, classés par capitalisation proche. Fondamentaux Yahoo Finance.</span></div></div>`;
+</tbody></table></div>`:`<div class="note">${F&&F.sector?'Aucun pair trouvé.':'Secteur inconnu : fondamentaux pas encore lus.'} Définissez vos pairs ci-dessous.</div>`}
+<div class="ctl" style="border-bottom:none;align-items:center">
+${P.list.length?'<button class="btn go" type="button" id="rvcomp">Comparer les cours (COMP)</button>':''}
+<button class="btn" type="button" id="rvedit">Modifier les pairs</button>
+${P.src==='perso'?'<button class="btn" type="button" id="rvreset">Pairs par défaut</button>':''}
+<span class="note" style="padding:0">Source des pairs : ${srcTxt}. Capitalisations converties en dollars au change du jour.${missing.length?` Fondamentaux pas encore lus : ${missing.map(esc).join(', ')} (ajoutés au roulement, quelques heures).`:''}</span></div>
+<form class="ctl" id="rvform" style="display:none;border-bottom:none" novalidate>
+<div class="f w"><label for="rvin">Pairs de ${esc(sym)} (séparés par des espaces, format Yahoo ou Bloomberg : ENI.MI, ENI IM, SHEL LN…)</label>
+<input id="rvin" value="${esc(P.list.join(' '))}" style="text-align:left;width:560px" autocomplete="off"></div>
+<button class="btn go" type="submit">Enregistrer</button></form>`;
+wireSymbolClicks(box);
+const cb=document.getElementById('rvcomp'); if(cb) cb.onclick=()=>{ COMP.syms=[sym,...P.list.slice(0,5)]; go('comp'); };
+document.getElementById('rvedit').onclick=()=>{ const f=document.getElementById('rvform'); f.style.display=f.style.display==='none'?'flex':'none'; document.getElementById('rvin').focus(); };
+const rr=document.getElementById('rvreset'); if(rr) rr.onclick=()=>{ delete CUSTOM_PEERS[sym]; savePeers(); rvRender(sym,F); };
+document.getElementById('rvform').onsubmit=e=>{ e.preventDefault(); const c=parseCmd(document.getElementById('rvin').value+' COMP');
+CUSTOM_PEERS[sym]=c?c.syms.filter(s=>s!==sym).slice(0,13):[]; if(!CUSTOM_PEERS[sym].length) delete CUSTOM_PEERS[sym]; savePeers(); rvRender(sym,F); };
 }
 
 /*── COMP : comparaison de performances en base 100 ──────────────────*/
@@ -2729,7 +2770,7 @@ window.addEventListener('resize',()=>{ if(S.view==='pf'&&S.mc){ drawMC(S.mc.p,S.
 
 tick(); setInterval(tick,1000);
 go('mkt');
-const refresh=()=>Promise.all([loadLive(),loadUniverse(),loadFT(),loadMacro(),loadFund(),loadEcon()]).then(([a,b,c,d,e,f])=>{ if(a||b||c||d||e||f){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
+const refresh=()=>Promise.all([loadLive(),loadUniverse(),loadFT(),loadMacro(),loadFund(),loadEcon(),loadPeers()]).then(([a,b,c,d,e,f])=>{ if(a||b||c||d||e||f){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
 refresh();
 setInterval(refresh, 10*60*1000);
 
