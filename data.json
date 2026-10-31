@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T10:28:33.516873Z",
+ "generated_at": "2026-10-31T11:06:22.492460Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -15,10 +15,10 @@
    "vol": 168039400
   },
   "ASTS": {
-   "p": 40.99,
+   "p": 40.97,
    "prev": 43.07,
-   "chg": -2.08,
-   "pct": -4.83,
+   "chg": -2.1,
+   "pct": -4.88,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-10-30T19:30:00Z",
@@ -122,8 +122,8 @@
    "prev": 3651.4341,
    "chg": -54.8284,
    "pct": -1.5,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (000001.SS)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (000001.SS) — échec de la dernière mise à jour",
    "ts": "2026-10-30T06:30:00Z",
    "open": 3605.645,
    "lo": 3595.2581,
@@ -283,17 +283,17 @@
    "vol": 6774
   },
   "BTC": {
-   "p": 77372.6484,
+   "p": 77260.9375,
    "prev": 77198.2109,
-   "chg": 174.4375,
-   "pct": 0.23,
+   "chg": 62.7266,
+   "pct": 0.08,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-10-31T10:00:00Z",
+   "ts": "2026-10-31T11:00:00Z",
    "open": 77202.3984,
    "lo": 77000.9219,
    "hi": 77434.1484,
-   "vol": 25819707392
+   "vol": 25138083840
   }
  },
  "fundamentals": {
@@ -512,9 +512,9 @@
    "ccy": "USD",
    "mcap": 1829640994816,
    "pe": 585.7391,
-   "fpe": 52.529,
+   "fpe": 56.9376,
    "eps": 0.23,
-   "feps": 2.5647,
+   "feps": 2.3661,
    "revTTM": 32042999808,
    "netIncome": -3431000064,
    "shares": 8246541218,
@@ -846,14 +846,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 979897024512,
+   "mcap": 982902374400,
    "pe": 44.75,
    "fpe": 38.2805,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.578,
    "div": 0.99,
    "divYield": 0.8,
@@ -1087,10 +1087,10 @@
    "industry": "Credit Services",
    "ccy": "USD",
    "mcap": 555819073536,
-   "pe": 35.0941,
-   "fpe": 27.6549,
-   "eps": 18.18,
-   "feps": 23.0705,
+   "pe": 33.3862,
+   "fpe": 27.5839,
+   "eps": 19.11,
+   "feps": 23.1298,
    "revTTM": 36288000000,
    "netIncome": 16958000128,
    "shares": 864657109,
@@ -1123,9 +1123,9 @@
    "ccy": "USD",
    "mcap": 521105244160,
    "pe": 83.3023,
-   "fpe": 18.2013,
+   "fpe": 18.207,
    "eps": 3.54,
-   "feps": 16.2016,
+   "feps": 16.1965,
    "revTTM": 66013999104,
    "netIncome": 10302000128,
    "shares": 1767117285,
@@ -1150,10 +1150,10 @@
    "industry": "Oil & Gas Integrated",
    "ccy": "USD",
    "mcap": 461996818432,
-   "pe": 22.668,
-   "fpe": 14.9859,
-   "eps": 10.39,
-   "feps": 15.7161,
+   "pe": 17.2922,
+   "fpe": 14.9045,
+   "eps": 13.62,
+   "feps": 15.802,
    "revTTM": 228955996160,
    "netIncome": 26976000000,
    "shares": 1961603274,
@@ -1215,9 +1215,9 @@
    "ccy": "USD",
    "mcap": 442427080704,
    "pe": 158.7155,
-   "fpe": 78.7903,
+   "fpe": 78.3347,
    "eps": 1.16,
-   "feps": 2.3367,
+   "feps": 2.3503,
    "revTTM": 6155940864,
    "netIncome": 3016691968,
    "shares": 2300713329,
@@ -1283,10 +1283,10 @@
    "industry": "Beverages - Non-Alcoholic",
    "ccy": "USD",
    "mcap": 404722974720,
-   "pe": 28.2523,
-   "fpe": 26.7031,
-   "eps": 3.33,
-   "feps": 3.5232,
+   "pe": 27.7522,
+   "fpe": 26.668,
+   "eps": 3.39,
+   "feps": 3.5278,
    "revTTM": 51053998080,
    "netIncome": 14629000192,
    "shares": 4301902335,
@@ -1377,6 +1377,42 @@
  ],
  "news": [
   {
+   "h": "Serbia comes back into the fold",
+   "w": "Decisive vote against autocratic leader Aleksandar Vučić will enable restoration of democratic checks and balances",
+   "syms": [],
+   "src": "myFT — emerging markets",
+   "ts": "2026-10-31T11:00:01Z",
+   "url": "https://www.ft.com/content/80da9ebf-4057-4ccb-896f-c34929889726?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Anthropic's path to the Nasdaq just got a lot bumpier",
+   "w": "Concerning projections from hyperscalers this week punished tech stocks and pushed the Nasdaq to its first three-week losing streak since March.",
+   "syms": [
+    "NDX"
+   ],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-31T11:00:01Z",
+   "url": "https://www.cnbc.com/2026/10/31/anthropic-ipo-ai-spending.html"
+  },
+  {
+   "h": "Chart of the Week: Bond investors may cheer gridlock",
+   "w": "Midterms will have higher stakes for the bond market",
+   "syms": [],
+   "src": "myFT — us",
+   "ts": "2026-10-31T10:30:01Z",
+   "url": "https://www.ft.com/content/9570b122-5418-41e6-b91b-b95af96ec881?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "The rise of the 15-foot skeleton—how a viral novelty became a Halloween staple",
+   "w": "In just six years, giant skeletons have gone from an absurd viral novelty to the centerpiece of an expanding retail arms race for the front lawn.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-31T10:27:19Z",
+   "url": "https://www.cnbc.com/make-it/2026/10/23/giant-halloween-skeleton-decorations.html"
+  },
+  {
    "h": "« Les économistes abordent l’environnement avec une boîte à outils plus riche qu’il y a vingt ans »",
    "w": "La tentation est forte, pour les pays, de laisser les autres s’occuper de la lutte contre le réchauffement climatique. Un mauvais calcul, selon les économistes Hippolyte d’Albis et Patrice Geoffron : les travaux récents montrent que l’intérêt d’agir ne se réduit pas au bénéfice climatique mondial, expliquent-ils dans une tribune au « Monde ».",
    "syms": [],
@@ -1393,6 +1429,15 @@
    "src": "myFT — europe",
    "ts": "2026-10-31T09:36:34Z",
    "url": "https://www.ft.com/content/852b05a1-4090-4aee-afc6-4d4c353ef3cf?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Kane, Mbappé and the cost of star power",
+   "w": "Also in today’s newsletter: the courts loom for Kalshi and the WNBA’s season of chaos",
+   "syms": [],
+   "src": "myFT — companies",
+   "ts": "2026-10-31T09:00:01Z",
+   "url": "https://www.ft.com/content/6302c529-cf49-4795-937f-dc47ec89c05c?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -1852,24 +1897,6 @@
    "url": "https://www.bbc.co.uk/news/articles/cwe8lp7zy07zo?at_medium=RSS&at_campaign=rss"
   },
   {
-   "h": "US tech stocks see sharp falls as AI spending nears $1tn",
-   "w": "Shares in Intel continue to fall while the tech-heavy Nasdaq opens at its lowest level in more than two months.",
-   "syms": [
-    "NDX"
-   ],
-   "src": "BBC — Business",
-   "ts": "2026-10-30T20:34:46Z",
-   "url": "https://www.bbc.co.uk/news/articles/cvwy72e0n72yo?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "Intel stock has worst day since 1970s, wiping about $12 billion off government's stake",
-   "w": "Investors are nervous about the massive AI spending from the tech giants and whether that will pay off.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-30T20:30:57Z",
-   "url": "https://www.cnbc.com/2026/10/30/amazon-intel-earnings-big-tech-ai-spending-concerns.html"
-  },
-  {
    "h": "US affordability tracker: the data that could decide the 2026 midterm elections",
    "w": "The FT is tracking changes to the cost of living that will affect American voters",
    "syms": [],
@@ -1903,35 +1930,6 @@
    "src": "myFT — us",
    "ts": "2026-10-30T18:00:05Z",
    "url": "https://www.ft.com/content/be6723d6-ab63-41ab-ac46-dc870c449da0?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "How to return big cities to pedestrians",
-   "w": "By closing part of Oxford Street to traffic, London is joining a wider trend",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-10-30T17:45:17Z",
-   "url": "https://www.ft.com/content/e8b9c03f-5741-4c81-a103-d888db7f0242?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Stick or treat",
-   "w": "Central banks stuck to the script and kept rates on hold at their October meetings while laying the groundwork for further rate rises to come",
-   "syms": [
-    "XAU"
-   ],
-   "src": "myFT — us",
-   "ts": "2026-10-30T17:30:04Z",
-   "url": "https://www.ft.com/content/db8bd441-431c-4f2f-8b98-0876b234c7bf",
-   "mine": 1
-  },
-  {
-   "h": "Apollo and Thrive capitalise on private equity’s generational shift",
-   "w": "By leaning into their new role as debt financiers, the old guard still have a lucrative place in the new financial order",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-10-30T17:24:07Z",
-   "url": "https://www.ft.com/content/95480c09-5018-4400-b9c1-f2d53373a47c?syn-25a6b1a6=1",
    "mine": 1
   }
  ],
