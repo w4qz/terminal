@@ -174,6 +174,7 @@ FUND_TICKERS = [
     "AVGO", "005930.KS", "LLY", "BRK-B", "000660.KS", "MU", "WMT", "JPM", "AMD", "V",
     "XOM", "JNJ", "ASML.AS", "MA", "ABBV", "CVX", "COST", "PLTR", "CSCO", "KO",
     "ASTS",
+    "ACWI", "AGG", "GLD", "BIL",   # ETF des profils types (dividendes du rapport client)
 ]
 FUND_FIELDS = {   # clé du terminal ← clé Yahoo
     "name": "longName", "sector": "sector", "industry": "industry", "ccy": "currency",
@@ -186,6 +187,10 @@ FUND_FIELDS = {   # clé du terminal ← clé Yahoo
     "opMargin": "operatingMargins", "netMargin": "profitMargins", "roe": "returnOnEquity",
     "debtEq": "debtToEquity", "cash": "totalCash", "debt": "totalDebt", "fcf": "freeCashflow",
     "w52lo": "fiftyTwoWeekLow", "w52hi": "fiftyTwoWeekHigh", "evEbitda": "enterpriseToEbitda",
+    # Calendrier (horodatages Unix) : prochaine publication de résultats et prochain dividende
+    "earnTs": "earningsTimestamp", "earnStart": "earningsTimestampStart", "earnEnd": "earningsTimestampEnd",
+    "earnEst": "isEarningsDateEstimate", "exDiv": "exDividendDate", "divDate": "dividendDate",
+    "lastDiv": "lastDividendValue", "trailDiv": "trailingAnnualDividendRate",
 }
 PCT_FIELDS = {"divYield", "revGrowth", "epsGrowth", "grossMargin", "opMargin", "netMargin", "roe"}
 RATING_FR = {"strong_buy": "Achat fort", "buy": "Achat", "hold": "Conserver",
