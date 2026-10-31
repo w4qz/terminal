@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T01:30:23.039603Z",
+ "generated_at": "2026-10-31T02:40:20.490163Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -15,10 +15,10 @@
    "vol": 168039400
   },
   "ASTS": {
-   "p": 40.99,
+   "p": 40.97,
    "prev": 43.07,
-   "chg": -2.08,
-   "pct": -4.83,
+   "chg": -2.1,
+   "pct": -4.88,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-10-30T19:30:00Z",
@@ -266,7 +266,7 @@
    "open": 102.8,
    "lo": 102.43,
    "hi": 104.99,
-   "vol": 248667
+   "vol": 248668
   },
   "BRENT": {
    "p": 112.33,
@@ -282,17 +282,17 @@
    "vol": 37539
   },
   "BTC": {
-   "p": 77226.3984,
+   "p": 77296.9688,
    "prev": 77775.1094,
-   "chg": -548.7109,
-   "pct": -0.71,
+   "chg": -478.1406,
+   "pct": -0.61,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-10-31T01:00:00Z",
+   "ts": "2026-10-31T02:00:00Z",
    "open": 77202.3984,
    "lo": 77161.5859,
    "hi": 77434.1484,
-   "vol": 37939752960
+   "vol": 34769936384
   }
  },
  "fundamentals": {
@@ -566,5 +566,9 @@
    "url": "https://www.cnbc.com/2026/10/30/treasury-i-bond-rate-through-april-2027.html"
   }
  ],
- "summary": null
+ "summary": {
+  "text": "L’aversion au risque s’impose, alimentée par les doutes croissants sur la rentabilité des investissements massifs dans l'IA (Meta, OpenAI). Les indices américains décrochent nettement, tirés par le Nasdaq (-3,46 %) et Nvidia (-4,14 %), tandis que le VIX bondit à 19,44 (+13,02 %). L’Europe et l’Asie suivent largement cette tendance baissière (Nikkei à -2,44 %), à l’exception notable du Hang Seng (+1,46 %).\n\nSur les devises, le dollar s'effrite légèrement (DXY à 101,964 ; EUR/USD à 1,1166). Les matières premières évoluent sous pression : l’or chute de 3,63 % à 3 884,90, tandis que le pétrole diverge avec un Brent à 112,33 (-2,22 %) contre un brut léger (CL) en hausse à 102,95 (+0,93 %). Le Bitcoin résiste à 77 296,97 (-0,61 %) malgré le piratage record de 6,3 milliards de dollars subi par Binance.\n\nÀ surveiller : la publication des résultats technologiques, l'escalade des attaques iraniennes dans le détroit d’Ormuz et le climat politique américain autour des élections.",
+  "model": "gemini-flash-latest",
+  "ts": "2026-10-31T02:40:20.490163Z"
+ }
 }
