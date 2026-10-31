@@ -226,6 +226,11 @@ body.amber .pnl h3{color:#ffb000;background:#140d00}
 body.amber .btn.go,body.amber .rng button.on{background:#3d2a00;border-color:#8a5a00;color:#ffcf66}
 body.amber #secbar .t{color:#ff6a00}
 body.amber #tape .it b{color:#ffb000}
+
+/* ---------- mode intégré (panneau du Launchpad) ---------- */
+body.embed #top,body.embed #tape,body.embed #bot{display:none}
+body.embed #main{padding:6px}
+body.embed #secbar{top:-6px;margin:-6px -6px 6px}
 </style>
 </head>
 <body>
@@ -245,6 +250,7 @@ body.amber #tape .it b{color:#ffb000}
 <button class="navbtn" data-v="comp">Comparer <kbd aria-hidden="true">C</kbd><span class="sr-only">(raccourci C)</span></button>
 <button class="navbtn" data-v="eqs">Filtre <kbd aria-hidden="true">F</kbd><span class="sr-only">(raccourci F)</span></button>
 <button class="navbtn" data-v="news">News <kbd aria-hidden="true">N</kbd><span class="sr-only">(raccourci N)</span></button>
+<button class="navbtn" data-v="lp">Launchpad <kbd aria-hidden="true">L</kbd><span class="sr-only">(raccourci L)</span></button>
 <button class="navbtn" data-v="diag">Diagnostic <kbd aria-hidden="true">D</kbd><span class="sr-only">(raccourci D)</span></button>
 </nav>
 <button id="searchbtn" aria-haspopup="dialog" title="Titre ou commande Bloomberg : MC FP GP, AAPL RV, ECO, HELP">⌘K Commande</button>
@@ -263,6 +269,7 @@ body.amber #tape .it b{color:#ffb000}
 <div class="view" id="v-comp" role="tabpanel" aria-label="Comparer"></div>
 <div class="view" id="v-eqs" role="tabpanel" aria-label="Filtre d'actions"></div>
 <div class="view" id="v-news" role="tabpanel" aria-label="News"></div>
+<div class="view" id="v-lp" role="tabpanel" aria-label="Launchpad"></div>
 <div class="view" id="v-diag" role="tabpanel" aria-label="Diagnostic"></div>
 </main>
 
@@ -2550,7 +2557,7 @@ WEI:{d:'Marchés mondiaux',go:'mkt'}, IMAP:{d:'Carte des marchés',go:'mkt',a:'m
 ECO:{d:'Calendrier et chiffres économiques',go:'macro',a:'m-eco'}, WIRP:{d:'Probabilités des décisions de la Fed',go:'macro',a:'m-wirp'},
 GC:{d:'Courbes des taux',go:'macro',a:'m-gc'}, BTMM:{d:'Tableau de bord monétaire US',go:'macro',a:'m-btmm'},
 ECST:{d:'Indicateurs économiques par pays',go:'macro',a:'m-econ'},
-PORT:{d:'Portefeuille, risque et adéquation',go:'pf'}, TOP:{d:'Principales actualités',go:'news'}, N:{d:'Actualités',go:'news'},
+PORT:{d:'Portefeuille, risque et adéquation',go:'pf'}, BLP:{d:'Launchpad : écran divisé en 2 ou 4 panneaux',go:'lp'}, TOP:{d:'Principales actualités',go:'news'}, N:{d:'Actualités',go:'news'},
 SECF:{d:'Recherche de titres',go:'srch'}, HELP:{d:'Liste des fonctions',help:1}
 };
 const EXCH={US:'',UN:'',UW:'',UQ:'',FP:'.PA',GY:'.DE',GR:'.DE',LN:'.L',SW:'.SW',SE:'.SW',VX:'.SW',NA:'.AS',IM:'.MI',SM:'.MC',BB:'.BR',JT:'.T',JP:'.T',HK:'.HK',CT:'.TO',AU:'.AX'};
@@ -2659,11 +2666,12 @@ ${P.src==='perso'?'<button class="btn" type="button" id="rvreset">Pairs par déf
 <div class="f w"><label for="rvin">Pairs de ${esc(sym)} (séparés par des espaces, format Yahoo ou Bloomberg : ENI.MI, ENI IM, SHEL LN…)</label>
 <input id="rvin" value="${esc(P.list.join(' '))}" style="text-align:left;width:560px" autocomplete="off"></div>
 <button class="btn go" type="submit">Enregistrer</button></form>`;
+if(!box.isConnected) return;
 wireSymbolClicks(box);
-const cb=document.getElementById('rvcomp'); if(cb) cb.onclick=()=>{ COMP.syms=[sym,...P.list.slice(0,5)]; go('comp'); };
-document.getElementById('rvedit').onclick=()=>{ const f=document.getElementById('rvform'); f.style.display=f.style.display==='none'?'flex':'none'; document.getElementById('rvin').focus(); };
-const rr=document.getElementById('rvreset'); if(rr) rr.onclick=()=>{ delete CUSTOM_PEERS[sym]; savePeers(); rvRender(sym,F); };
-document.getElementById('rvform').onsubmit=e=>{ e.preventDefault(); const c=parseCmd(document.getElementById('rvin').value+' COMP');
+const cb=box.querySelector('#rvcomp'); if(cb) cb.onclick=()=>{ COMP.syms=[sym,...P.list.slice(0,5)]; go('comp'); };
+box.querySelector('#rvedit').onclick=()=>{ const f=box.querySelector('#rvform'); f.style.display=f.style.display==='none'?'flex':'none'; box.querySelector('#rvin').focus(); };
+const rr=box.querySelector('#rvreset'); if(rr) rr.onclick=()=>{ delete CUSTOM_PEERS[sym]; savePeers(); rvRender(sym,F); };
+box.querySelector('#rvform').onsubmit=e=>{ e.preventDefault(); const c=parseCmd(box.querySelector('#rvin').value+' COMP');
 CUSTOM_PEERS[sym]=c?c.syms.filter(s=>s!==sym).slice(0,13):[]; if(!CUSTOM_PEERS[sym].length) delete CUSTOM_PEERS[sym]; savePeers(); rvRender(sym,F); };
 }
 
@@ -2937,14 +2945,58 @@ box.querySelectorAll('[data-sort]').forEach(h=>h.onclick=()=>{ const c=h.dataset
 wireSymbolClicks(box);
 }
 
+/*── Launchpad : écran divisé en 2 ou 4 panneaux indépendants ─────────
+Chaque panneau est une instance du terminal en mode « intégré » (iframe),
+pilotée par sa propre commande : toutes les fonctions y marchent sans adaptation. */
+const LP_KEY='terminal.lp.v1';
+const LP_PRESETS={
+'Actions':{lay:'4',cmds:['MC FP GP','MC FP RV','MC RMS KER COMP','MC FP FA']},
+'Macro':{lay:'4',cmds:['ECO','GC','WIRP','EURUSD GP']},
+'Conseil':{lay:'4',cmds:['PORT','WEI','GC','EQS']},
+'Marchés':{lay:'2',cmds:['WEI','IMAP']}
+};
+let LP=(()=>{ try{ return JSON.parse(localStorage.getItem(LP_KEY)||'null')||null; }catch(e){ return null; } })()||{lay:'4',cmds:['MC FP GP','MC RMS KER COMP','GC','PORT']};
+function lpSave(){ try{ localStorage.setItem(LP_KEY,JSON.stringify(LP)); }catch(e){} }
+const lpSrc=c=>`${location.pathname}?embed=1&cmd=${encodeURIComponent(c||'WEI')}`;
+function viewLp(){
+const el=document.getElementById('v-lp'), n=LP.lay==='4'?4:2;
+if(document.body.classList.contains('embed')){ el.innerHTML='<div class="note">Le Launchpad ne s\'ouvre pas dans un panneau.</div>'; return; }
+while(LP.cmds.length<4) LP.cmds.push(['WEI','GC','ECO','PORT'][LP.cmds.length]);
+const grid=LP.lay==='4'?'grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr':LP.lay==='2v'?'grid-template-columns:1fr;grid-template-rows:1fr 1fr':'grid-template-columns:1fr 1fr;grid-template-rows:1fr';
+el.innerHTML=`<div class="ctl" style="align-items:center;margin-bottom:6px;border:1px solid var(--line)">
+<span class="mut" style="font-size:10px">Disposition :</span>
+<div class="rng" role="group" aria-label="Disposition">${[['2','2 côte à côte'],['2v','2 superposés'],['4','4 panneaux']].map(([k,l])=>`<button type="button" data-lay="${k}" class="${LP.lay===k?'on':''}">${l}</button>`).join('')}</div>
+<span class="mut" style="font-size:10px;margin-left:14px">Écrans types :</span>${Object.keys(LP_PRESETS).map(k=>`<button class="btn" type="button" data-lpp="${esc(k)}">${esc(k)}</button>`).join('')}
+<span class="note" style="padding:0;margin-left:auto">Chaque panneau accepte une commande : MC FP GP, AAPL US FA, GC, PORT… · disposition mémorisée</span></div>
+<div id="lpgrid" style="display:grid;${grid};gap:6px;height:calc(100vh - 140px);min-height:480px">
+${LP.cmds.slice(0,n).map((c,i)=>`<div class="pnl" style="min-height:0">
+<form class="lph" data-i="${i}" style="display:flex;align-items:center;gap:6px;padding:4px 6px;border-bottom:1px solid var(--line);background:var(--raised)">
+<span style="color:var(--hot);font-size:10px;font-weight:700">${i+1}</span>
+<input value="${esc(c)}" aria-label="Commande du panneau ${i+1}" style="flex:1;background:var(--bg);border:1px solid var(--line);padding:2px 6px;font-size:11px;text-transform:uppercase" autocomplete="off" spellcheck="false">
+<button class="btn go" type="submit">↵</button><button class="btn" type="button" data-big="${i}" title="Ouvrir en plein écran">⤢</button></form>
+<iframe src="${lpSrc(c)}" title="Panneau ${i+1} : ${esc(c)}" style="flex:1;width:100%;border:0;background:var(--bg);min-height:0"></iframe></div>`).join('')}
+</div>`;
+el.querySelectorAll('[data-lay]').forEach(b=>b.onclick=()=>{ LP.lay=b.dataset.lay; lpSave(); viewLp(); });
+el.querySelectorAll('[data-lpp]').forEach(b=>b.onclick=()=>{ const p=LP_PRESETS[b.dataset.lpp]; LP={lay:p.lay,cmds:[...p.cmds]}; lpSave(); viewLp(); });
+el.querySelectorAll('form.lph').forEach(f=>f.onsubmit=e=>{ e.preventDefault(); const i=+f.dataset.i, v=f.querySelector('input').value.trim().toUpperCase(); if(!v) return;
+LP.cmds[i]=v; lpSave(); const fr=f.parentElement.querySelector('iframe'); fr.src=lpSrc(v); fr.title=`Panneau ${i+1} : ${v}`; });
+el.querySelectorAll('[data-big]').forEach(b=>b.onclick=()=>runAny(LP.cmds[+b.dataset.big]));
+}
+/** Exécute une commande ou un ticker seul (ticker seul = GP). */
+async function runAny(q){
+const c=parseCmd(q); if(c) return runCmd(c);
+const t=q.trim().toUpperCase().split(/\s+/)[0]; if(!t) return go('mkt');
+S.focus=await resolveRemote(resolveTicker(t)); return go('sec');
+}
+
 /*═══════════════════════════════════════════════════════════════════════
 14. NAVIGATION
 ═══════════════════════════════════════════════════════════════════════*/
 const RENDER={mkt:viewMarkets, wl:viewWatchlist, pf:viewPortfolio, macro:viewMacro, srch:viewSearch,
-sec:viewSecurity, comp:viewComp, eqs:viewEqs, news:viewNews, diag:viewDiag};
+sec:viewSecurity, comp:viewComp, eqs:viewEqs, lp:viewLp, news:viewNews, diag:viewDiag};
 
 const VIEW_LABEL={mkt:'Marchés', wl:'Watchlist', pf:'Portefeuille', macro:'Macro', srch:'Recherche',
-sec:'Titre', comp:'Comparer', eqs:'Filtre', news:'News', diag:'Diagnostic'};
+sec:'Titre', comp:'Comparer', eqs:'Filtre', lp:'Launchpad', news:'News', diag:'Diagnostic'};
 
 async function go(v){
 S.view=v;
@@ -3020,7 +3072,7 @@ else if(e.key==='Enter' && palList[palIdx]) palOpen(palList[palIdx]);
 return;
 }
 if(e.target.tagName==='INPUT' || e.metaKey || e.ctrlKey || e.altKey) return;
-const map={m:'mkt', w:'wl', p:'pf', e:'macro', r:'srch', s:'sec', c:'comp', f:'eqs', n:'news', d:'diag'};
+const map={m:'mkt', w:'wl', p:'pf', e:'macro', r:'srch', s:'sec', c:'comp', f:'eqs', l:'lp', n:'news', d:'diag'};
 if(e.key==='/'){ e.preventDefault(); openPal(); return; }
 const t=map[e.key.toLowerCase()];
 if(t){ e.preventDefault(); go(t); }
@@ -3043,7 +3095,10 @@ b.textContent='Thème : '+(t==='amber'?'ambre':'bleu'); b.setAttribute('aria-pre
 try{ localStorage.setItem(THEME_KEY,t); }catch(e){} if(S.view==='sec'&&!ecoGet(S.focus)) drawCandles(); }
 setTheme((()=>{ try{ return localStorage.getItem(THEME_KEY)||'blue'; }catch(e){ return 'blue'; } })());
 document.getElementById('themebtn').onclick=()=>setTheme(document.body.classList.contains('amber')?'blue':'amber');
-go('mkt');
+const EMBED=new URLSearchParams(location.search);
+if(EMBED.get('embed')){ document.body.classList.add('embed'); const c=EMBED.get('cmd')||'WEI';
+S.view='mkt'; (async()=>{ if(/^(GC|ECO|WIRP|BTMM|ECST)$/.test(c.trim().toUpperCase())) await loadMacro(); if(!/^(BLP)$/i.test(c.trim())) runAny(c); else go('mkt'); })(); }
+else go('mkt');
 const refresh=()=>Promise.all([loadLive(),loadUniverse(),loadFT(),loadMacro(),loadFund(),loadEcon(),loadPeers()]).then(([a,b,c,d,e,f])=>{ renderTape(); if(a||b||c||d||e||f){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
 refresh();
 setInterval(refresh, 10*60*1000);
