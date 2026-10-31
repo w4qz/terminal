@@ -204,6 +204,28 @@ border-bottom:1px solid var(--line);display:flex;align-items:center;gap:16px}
 #secbar nav{margin-left:auto;display:flex;gap:2px}
 #secbar nav button{font-size:10px;padding:3px 9px;border:1px solid var(--line);color:var(--txt2);letter-spacing:.5px}
 #secbar nav button:hover{background:var(--sel);color:var(--txt);border-color:#3a5a7c}
+
+/* ---------- bandeau défilant des cours ---------- */
+#tape{flex:none;height:22px;overflow:hidden;border-bottom:1px solid var(--line);background:#07090b;position:relative;font-size:11px}
+#tape .trk{display:inline-flex;white-space:nowrap;animation:tape 90s linear infinite;line-height:22px}
+#tape:hover .trk{animation-play-state:paused}
+#tape .it{padding:0 14px;cursor:pointer;border-right:1px solid #14171b}
+#tape .it:hover{background:var(--raised)}
+#tape .it b{color:var(--hot);font-weight:600;margin-right:6px}
+@keyframes tape{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){#tape .trk{animation:none}}
+#themebtn{margin-left:8px;font-size:10px;color:var(--txt3);border:1px solid var(--line);padding:2px 8px;border-radius:3px;white-space:nowrap}
+#themebtn:hover{color:var(--txt)}
+/* ---------- thème ambre façon Bloomberg ---------- */
+body.amber{--bg:#000;--surface:#050505;--raised:#111;--line:#2a2210;--txt:#ffb000;--txt2:#d9962a;--txt3:#9c6d1e;--sel:#3d2a00;--hot:#ff6a00}
+body.amber td,body.amber .stat .n,body.amber .kv .v,body.amber #clocks b{color:#f2f2f2}
+body.amber td.pos,body.amber .n.pos,body.amber .v.pos,body.amber .pos{color:#3ddc6a}
+body.amber td.neg,body.amber .n.neg,body.amber .v.neg,body.amber .neg{color:#ff4d4d}
+body.amber .navbtn.on{box-shadow:inset 0 -2px 0 #ff6a00;color:#ffb000}
+body.amber .pnl h3{color:#ffb000;background:#140d00}
+body.amber .btn.go,body.amber .rng button.on{background:#3d2a00;border-color:#8a5a00;color:#ffcf66}
+body.amber #secbar .t{color:#ff6a00}
+body.amber #tape .it b{color:#ffb000}
 </style>
 </head>
 <body>
@@ -226,8 +248,10 @@ border-bottom:1px solid var(--line);display:flex;align-items:center;gap:16px}
 <button class="navbtn" data-v="diag">Diagnostic <kbd aria-hidden="true">D</kbd><span class="sr-only">(raccourci D)</span></button>
 </nav>
 <button id="searchbtn" aria-haspopup="dialog" title="Titre ou commande Bloomberg : MC FP GP, AAPL RV, ECO, HELP">⌘K Commande</button>
+<button id="themebtn" type="button" aria-pressed="false" title="Basculer le thème">Thème : bleu</button>
 <div id="clocks" aria-label="Horloges des places de marché"></div>
 </div>
+<div id="tape" aria-label="Bandeau des cours"></div>
 
 <main id="main" tabindex="-1">
 <div class="view on" id="v-mkt" role="tabpanel" aria-label="Marchés"></div>
@@ -3004,8 +3028,23 @@ if(t){ e.preventDefault(); go(t); }
 window.addEventListener('resize',()=>{ if(S.view==='pf'&&S.mc){ drawMC(S.mc.p,S.mc.b,S.mc.yrs); pfRenderPerf(); } if(S.view==='mkt') drawHeatmap(); if(S.view==='comp') drawComp(); if(S.view==='macro') viewMacro(); if(S.view==='sec'){ if(ecoGet(S.focus)) drawEco(); else drawCandles(); } });
 
 tick(); setInterval(tick,1000);
+/* Bandeau défilant + thème */
+const TAPE=['SPX','NDX','DJI','VIX','CAC','DAX','SX5E','UKX','N225','HSI','EURUSD','USDJPY','GBPUSD','DXY','XAU','CL','BRENT','BTC'];
+function renderTape(){ const el=document.getElementById('tape'); if(!el) return;
+const it=TAPE.map(s=>{ const q=SNAPSHOT.quotes[s]; if(!q||q.p==null) return ''; const nm=(SNAPSHOT.securities.find(x=>x.sym===s)||{}).name||s;
+return `<span class="it" data-tsym="${s}" title="${esc(nm)}"><b>${esc(s)}</b>${npx(q.p,s)} <span class="${cls(q.pct)}">${q.pct!=null?pct(q.pct):''}</span></span>`; }).join('')
++(()=>{ const e=ecoGet('US10Y'); return e?`<span class="it" data-tsym="US10Y"><b>US 10A</b>${nf(e.last,2)} %</span>`:''; })();
+el.innerHTML=it?`<div class="trk">${it}${it}</div>`:'';
+el.querySelectorAll('[data-tsym]').forEach(x=>x.onclick=()=>{ S.focus=x.dataset.tsym; go('sec'); }); }
+renderTape(); setInterval(renderTape,60000);
+const THEME_KEY='terminal.theme';
+function setTheme(t){ document.body.classList.toggle('amber',t==='amber'); const b=document.getElementById('themebtn');
+b.textContent='Thème : '+(t==='amber'?'ambre':'bleu'); b.setAttribute('aria-pressed',t==='amber');
+try{ localStorage.setItem(THEME_KEY,t); }catch(e){} if(S.view==='sec'&&!ecoGet(S.focus)) drawCandles(); }
+setTheme((()=>{ try{ return localStorage.getItem(THEME_KEY)||'blue'; }catch(e){ return 'blue'; } })());
+document.getElementById('themebtn').onclick=()=>setTheme(document.body.classList.contains('amber')?'blue':'amber');
 go('mkt');
-const refresh=()=>Promise.all([loadLive(),loadUniverse(),loadFT(),loadMacro(),loadFund(),loadEcon(),loadPeers()]).then(([a,b,c,d,e,f])=>{ if(a||b||c||d||e||f){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
+const refresh=()=>Promise.all([loadLive(),loadUniverse(),loadFT(),loadMacro(),loadFund(),loadEcon(),loadPeers()]).then(([a,b,c,d,e,f])=>{ renderTape(); if(a||b||c||d||e||f){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
 refresh();
 setInterval(refresh, 10*60*1000);
 
