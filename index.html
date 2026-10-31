@@ -33,7 +33,10 @@ display:flex;align-items:center;gap:6px}
 .navbtn kbd{font-size:9px;color:var(--txt3);border:1px solid var(--line);padding:0 3px;border-radius:2px}
 .navbtn:hover{background:var(--raised);color:var(--txt)}
 .navbtn.on{background:var(--raised);color:var(--txt);box-shadow:inset 0 -2px 0 #4d8fd6}
-#clocks{margin-left:auto;display:flex;gap:10px;font-size:10px;color:var(--txt2);white-space:nowrap}
+#clocks{margin-left:10px;flex:1;min-width:120px;overflow:hidden;font-size:10px;color:var(--txt2);white-space:nowrap;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12px,#000 calc(100% - 12px),transparent);mask-image:linear-gradient(90deg,transparent,#000 12px,#000 calc(100% - 12px),transparent)}
+#clocks .ctrk{display:inline-flex;gap:16px;padding-right:16px;animation:tape 40s linear infinite}
+#clocks:hover .ctrk{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){#clocks .ctrk{animation:none}}
 @media (max-width:1500px){ .navbtn kbd{display:none} }
 #clocks b{color:var(--txt);font-weight:500}
 #searchbtn{margin-left:14px;font-size:10px;white-space:nowrap;color:var(--txt3);border:1px solid var(--line);
@@ -214,7 +217,12 @@ border-bottom:1px solid var(--line);display:flex;align-items:center;gap:16px}
 #tape .it b{color:var(--hot);font-weight:600;margin-right:6px}
 @keyframes tape{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){#tape .trk{animation:none}}
-#themebtn{margin-left:8px;font-size:10px;color:var(--txt3);border:1px solid var(--line);padding:2px 8px;border-radius:3px;white-space:nowrap}
+#helpbtn{margin-left:8px;width:20px;height:20px;font-size:11px;color:var(--txt3);border:1px solid var(--line);border-radius:50%;flex:none}
+#helpbtn:hover{color:var(--txt)}
+#helpm{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;display:flex;align-items:center;justify-content:center}
+#helpm .hbox{background:var(--surface);border:1px solid var(--line);width:min(900px,92vw)}
+#helpm h3{display:flex;justify-content:space-between;padding:7px 10px;font-size:11px;letter-spacing:1px;border-bottom:1px solid var(--line)}
+#themebtn{margin-left:6px;flex:none;font-size:10px;color:var(--txt3);border:1px solid var(--line);padding:2px 8px;border-radius:3px;white-space:nowrap}
 #themebtn:hover{color:var(--txt)}
 /* ---------- thème ambre façon Bloomberg ---------- */
 body.amber{--bg:#000;--surface:#050505;--raised:#111;--line:#2a2210;--txt:#ffb000;--txt2:#d9962a;--txt3:#9c6d1e;--sel:#3d2a00;--hot:#ff6a00}
@@ -254,6 +262,7 @@ body.embed #secbar{top:-6px;margin:-6px -6px 6px}
 <button class="navbtn" data-v="diag">Diagnostic <kbd aria-hidden="true">D</kbd><span class="sr-only">(raccourci D)</span></button>
 </nav>
 <button id="searchbtn" aria-haspopup="dialog" title="Titre ou commande Bloomberg : MC FP GP, AAPL RV, ECO, HELP">⌘K Commande</button>
+<button id="helpbtn" type="button" title="Aide : liste des fonctions (touche ?)" aria-label="Aide">?</button>
 <button id="themebtn" type="button" aria-pressed="false" title="Basculer le thème">Thème : bleu</button>
 <div id="clocks" aria-label="Horloges des places de marché"></div>
 </div>
@@ -1072,19 +1081,14 @@ ${hmPanelHtml()}
 <div class="pnl"><h3>Actions — Asie<span class="rt">${LIVE?"Yahoo Finance, MAJ toutes les 30 min":"Nikkei/HSI via FT 30/10"}</span></h3><div class="pbody flush">${T(as,'Actions Asie')}</div></div>
 <div class="pnl"><h3>Change et matières premières<span class="rt">${LIVE?"Yahoo Finance, MAJ toutes les 30 min":"FX, pétrole, or via FT 30/10"}</span></h3><div class="pbody flush">${T(fx,'Change et matières premières')}</div></div>
 <div class="pnl span2"><h3>Banques centrales</h3><div class="pbody flush"><table><caption class="sr-only">Taux directeurs des banques centrales</caption><tbody>${rates}</tbody></table></div></div>
-<div class="pnl"><h3>Courbe des taux US</h3><div class="pbody flush">
-<table><caption class="sr-only">Courbe des taux US</caption><tbody>${curve}</tbody></table>
-<div class="note">Deux points relevés : le 10 ans (4,94 %, 30/10, FT) et le 2 ans (4,30 %, 28/08, périmé).
-La pente 2s10s n'est pas calculée : soustraire deux taux relevés à deux mois d'écart produirait une pente fictive.
-FRED fournit la courbe complète gratuitement — séries <b>DGS2</b>, <b>DGS10</b>, <b>DGS30</b> — c'est la première chose à brancher en phase 2.</div>
-</div></div>
+<div class="pnl span2" id="mkt-sov"><h3>Taux souverains<span class="rt">3M · 2A · 5A · 10A · 30A · cliquez un pays pour sa courbe (GC)</span></h3><div class="pbody flush">${sovHtml()}</div></div>
 <div class="pnl"><h3>Indicateurs macro</h3><div class="pbody flush"><table><caption class="sr-only">Indicateurs macroéconomiques</caption><tbody>${macro}</tbody></table></div></div>
 <div class="pnl span2"><h3>Calendrier économique</h3><div class="pbody flush">
 <table><caption class="sr-only">Calendrier économique</caption><thead><tr><th scope="col">Date</th><th scope="col" style="text-align:left">Événement</th><th scope="col">Impact</th>
 <th scope="col">Consensus</th><th scope="col">Précédent</th><th scope="col">Publié</th></tr></thead><tbody>${cal}</tbody></table></div></div>
 </div>`;
 wireSymbolClicks(el);
-wireHeatmap(el);
+wireHeatmap(el); wireSov(el);
 }
 
 /*═══════════════════════════════════════════════════════════════════════
@@ -2185,6 +2189,11 @@ if(Math.abs(d)<1e-9) return '<span class="mut">=</span>';
 return `<span class="${d>0?'pos':'neg'}">${d>0?'+':''}${nf(d, f==='%'||f==='pb'||f==='Md'?0:1)}${u}</span>`;
 }
 const dfr=d=>new Date(d+'T12:00:00').toLocaleDateString('fr-FR',{weekday:'short',day:'2-digit',month:'short'});
+/** Détail d'une réunion du FOMC : horaire, fourchette actuelle, anticipation du marché (WIRP), projections. */
+function fomcDetail(d,M){ const W=M.wirp||{}, rg=W.range||[], m=(W.meetings||[]).find(x=>x.d===d), mo=+d.slice(5,7), past=d<new Date().toISOString().slice(0,10);
+const rng=rg[0]!=null&&rg[1]!=null?`${nf(rg[0],2)} – ${nf(rg[1],2)} %`:null;
+let exp=''; if(m&&!past){ const p=Math.max(m.p_cut,m.p_hike); exp=m.p_cut>=50?`<span class="neg">baisse de 25 pb anticipée à ${m.p_cut} %</span>`:m.p_hike>=50?`<span class="pos">hausse de 25 pb anticipée à ${m.p_hike} %</span>`:`maintien anticipé à ${100-p} %${p?` (${m.p_cut?'baisse':'hausse'} : ${p} %)`:''}`; }
+return `<div class="mut" style="font-size:10px;margin-top:2px;line-height:1.5">Décision sur la fourchette des fed funds${rng?` (actuelle ${rng})`:''} · communiqué 14:00 New York (20:00 Paris), conférence de presse 14:30 (20:30)${[3,6,9,12].includes(mo)?' · <b>avec projections économiques et « dot plot »</b>':''}${exp?'<br>Marché (futures fed funds) : '+exp:''}</div>`; }
 function viewMacro(){
 const el=document.getElementById('v-macro');
 if(!MACRO){ el.innerHTML=`<div class="pnl"><div class="note">Les données macro ne sont pas encore générées. Elles apparaîtront après le prochain passage du robot GitHub (fichier <code>macro.json</code>, script <code>build_macro.py</code>).</div></div>`+ecoPanelHtml(); wireEco(el); return; }
@@ -2195,7 +2204,7 @@ const prints=(M.eco.prints||[]).map(x=>`<tr><th scope="row" style="font-weight:4
 <td class="mut" style="font-size:10px">${esc(x.ts)}</td></tr>`).join('');
 const cal=(M.eco.calendar||[]).map(c=>{ const past=c.d<today, now=c.d===today;
 return `<tr style="${past?'opacity:.55':''}"><th scope="row" style="font-weight:${now?700:400};color:var(--txt)">${dfr(c.d)}</th>
-<td style="text-align:left">${c.imp===3?'<b>':''}${esc(c.ev)}${c.imp===3?'</b>':''} <span class="mut">${esc(c.ctry)}</span></td>
+<td style="text-align:left;white-space:normal">${c.imp===3?'<b>':''}${esc(c.ev)}${c.imp===3?'</b>':''} <span class="mut">${esc(c.ctry)}</span>${/FOMC\)|Federal Funds Rate/i.test(c.ev)?fomcDetail(c.d||String(c.ts).slice(0,10),M):''}</td>
 <td class="mut" style="font-size:10px">${past?'publié':now?'<span class="pos">aujourd\'hui</span>':'à venir'}</td></tr>`; }).join('');
 // ECO — consensus (Forex Factory) + publié (FRED)
 const C=(M.eco.consensus&&M.eco.consensus.rows)||[];
@@ -2204,7 +2213,7 @@ const cons=C.map(c=>{ const t=new Date(c.ts), past=t.getTime()<now;
 const when=t.toLocaleString('fr-FR',{weekday:'short',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'});
 const sp=c.surp; const scls=sp==null?'mut':sp>0?'pos':sp<0?'neg':'mut';
 return `<tr style="${past&&!c.act?'opacity:.6':''}"><th scope="row" style="font-weight:400;color:var(--txt);white-space:nowrap">${when}</th>
-<td style="text-align:left">${c.imp===3?'<b>':''}${esc(c.ev)}${c.imp===3?'</b>':''} <span class="mut">${esc(c.ctry)}</span></td>
+<td style="text-align:left;white-space:normal">${c.imp===3?'<b>':''}${esc(c.ev)}${c.imp===3?'</b>':''} <span class="mut">${esc(c.ctry)}</span>${/FOMC\)|Federal Funds Rate/i.test(c.ev)?fomcDetail(c.d||String(c.ts).slice(0,10),M):''}</td>
 <td><span class="sr-only">Impact ${c.imp} sur 3.</span><span aria-hidden="true" style="color:${c.imp===3?'var(--neg)':'var(--hot)'}">${'●'.repeat(c.imp)}</span></td>
 <td>${c.cons?esc(c.cons):'<span class="na">—</span>'}</td>
 <td style="font-weight:600">${c.act?esc(c.act):past?'<span class="na">n/d</span>':'<span class="na">à venir</span>'}</td>
@@ -2222,14 +2231,6 @@ return `<tr><th scope="row" style="font-weight:400;color:var(--txt)">${dfr(r.d)}
 <td style="text-align:left"><div style="display:flex;align-items:center;gap:6px"><div style="width:90px;height:6px;background:#1a1e23;border-radius:2px"><div style="width:${p}%;height:6px;border-radius:2px;background:${cut?'var(--neg)':'var(--pos)'}"></div></div>
 <span style="font-size:10px">${p?nf(p,0)+' % '+(cut?'baisse':'hausse')+' 25 pb':'statu quo'}</span></div></td></tr>`; }).join('')}
 </tbody></table><div class="note">${esc(W.src||'')}. Une probabilité de 100 % avec une variation supérieure à 25 pb signale qu'une baisse plus forte, ou plusieurs, est anticipée.</div>`;
-// GC
-const us=M.gc.us.pts||[], eu=M.gc.eu.pts||[];
-const yv=(pts,t)=>{ const p=pts.find(x=>x.t===t); return p&&p.y!=null?p.y:null; };
-const slope=(pts,a,b)=>{ const x=yv(pts,a), y=yv(pts,b); return x!=null&&y!=null?(y-x)*100:null; };
-const tenors=[...new Set([...us,...eu].map(p=>p.t))];
-const gcRows=tenors.map(t=>{ const u=us.find(x=>x.t===t)||{}, e=eu.find(x=>x.t===t)||{};
-return `<tr><th scope="row" class="sym">${t}</th><td>${u.y!=null?nf(u.y,2)+' %':'—'}</td><td>${dlt(u.y,u.y1m,'%')}</td>
-<td>${e.y!=null?nf(e.y,2)+' %':'—'}</td><td>${dlt(e.y,e.y1m,'%')}</td><td>${u.y!=null&&e.y!=null?nf((u.y-e.y)*100,0)+' pb':'—'}</td></tr>`; }).join('');
 // BTMM
 const bt=(M.btmm||[]).map(x=>`<tr><th scope="row" style="font-weight:400;color:var(--txt);text-align:left">${esc(x.k)}</th>
 <td style="font-weight:600">${fmtMacro(x.v,x.fmt)}</td><td>${dlt(x.v,x.prev,x.fmt)}</td><td class="mut" style="font-size:10px">${esc(x.ts)}</td></tr>`).join('');
@@ -2243,55 +2244,11 @@ ${cons?`<table><caption class="sr-only">Calendrier économique avec consensus</c
 <div class="pnl"><h3>ECO — Calendrier US à 4 semaines<span class="rt">FRED · Federal Reserve</span></h3><div class="pbody flush"><table><caption class="sr-only">Calendrier des publications</caption><tbody>${cal||'<tr><td class="na">aucune publication</td></tr>'}</tbody></table></div></div>
 <div class="pnl" id="m-wirp"><h3>WIRP — Probabilités des décisions de la Fed<span class="rt">futures fed funds</span></h3><div class="pbody">${wirp}</div></div>
 <div class="pnl" id="m-btmm"><h3>BTMM — Tableau de bord monétaire US<span class="rt">valeur · variation · date</span></h3><div class="pbody flush"><table><caption class="sr-only">Tableau de bord monétaire</caption><tbody>${bt}</tbody></table></div></div>
-<div class="pnl span2" id="m-gc"><h3>GC — Courbes des taux<span class="rt">aujourd'hui (trait plein) · il y a 1 mois (pointillés)</span></h3><div class="pbody">
-<div class="statrow" style="border:none;padding:0 0 8px">
-<div class="stat"><span class="l">US 2S10S</span><span class="n ${cls(slope(us,'2A','10A'))}">${slope(us,'2A','10A')!=null?nf(slope(us,'2A','10A'),0)+' pb':'n/d'}</span></div>
-<div class="stat"><span class="l">US 3M10A</span><span class="n ${cls(slope(us,'3M','10A'))}">${slope(us,'3M','10A')!=null?nf(slope(us,'3M','10A'),0)+' pb':'n/d'}</span></div>
-<div class="stat"><span class="l">EURO 2S10S</span><span class="n ${cls(slope(eu,'2A','10A'))}">${slope(eu,'2A','10A')!=null?nf(slope(eu,'2A','10A'),0)+' pb':'n/d'}</span></div>
-<div class="stat"><span class="l">ÉCART US − EURO 10A</span><span class="n">${yv(us,'10A')!=null&&yv(eu,'10A')!=null?nf((yv(us,'10A')-yv(eu,'10A'))*100,0)+' pb':'n/d'}</span></div></div>
-<canvas id="gccv" height="220" role="img" aria-label="Courbes des taux US et zone euro, aujourd'hui et il y a un mois"></canvas>
-<table style="margin-top:8px"><caption class="sr-only">Courbes des taux par maturité</caption><thead><tr><th scope="col">Maturité</th><th scope="col">US</th><th scope="col">Var. 1 mois</th><th scope="col">Euro AAA</th><th scope="col">Var. 1 mois</th><th scope="col">Écart US − euro</th></tr></thead><tbody>${gcRows}</tbody></table>
-<div class="note">${esc(M.gc.us.src)}. ${esc(M.gc.eu.src)}.</div></div></div>
+<div class="pnl span2" id="m-gc"><h3>GC — Courbes des taux souveraines<span class="rt">US, zone euro, Allemagne, France, Italie, Royaume-Uni, Japon, Suisse · survolez la courbe</span></h3><div class="pbody" id="gcbody">${gcHtml()}</div></div>
 </div>`;
-drawGC(us,eu,tenors);
+wireGC(el); drawGC();
 el.insertAdjacentHTML('beforeend',ecoPanelHtml()); wireEco(el);
 }
-function drawGC(us,eu,tenors,hover){
-const cv=document.getElementById('gccv'); if(!cv) return;
-const r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1;
-cv.width=r.width*dpr; cv.height=220*dpr;
-const x=cv.getContext('2d'); x.scale(dpr,dpr);
-const W=r.width,H=220,pl=46,pb=20,pt=8;
-const all=[...us,...eu].flatMap(p=>[p.y,p.y1m]).filter(v=>v!=null);
-if(!all.length) return;
-const mn=Math.floor(Math.min(...all)*2)/2, mx=Math.ceil(Math.max(...all)*2)/2;
-const X=i=>pl+i/(tenors.length-1)*(W-pl-10), Y=v=>pt+(1-(v-mn)/(mx-mn||1))*(H-pt-pb);
-x.font='9px monospace'; x.fillStyle='#8a93a0'; x.strokeStyle='#232830';
-for(let v=mn; v<=mx+1e-9; v+=0.5){ const y=Y(v); x.beginPath(); x.moveTo(pl,y); x.lineTo(W-10,y); x.stroke(); x.textAlign='right'; x.fillText(nf(v,1)+' %',pl-4,y+3); }
-x.textAlign='center'; tenors.forEach((t,i)=>x.fillText(t,X(i),H-5));
-const line=(pts,key,col,dash)=>{ x.strokeStyle=col; x.lineWidth=1.5; x.setLineDash(dash?[4,4]:[]); x.beginPath(); let st=false;
-tenors.forEach((t,i)=>{ const p=pts.find(z=>z.t===t); if(!p||p[key]==null) return; st?x.lineTo(X(i),Y(p[key])):x.moveTo(X(i),Y(p[key])); st=true; }); x.stroke(); x.setLineDash([]); };
-line(us,'y1m','#3a5a7c',true); line(eu,'y1m','#7a5a2c',true); line(us,'y','#6ba3e0',false); line(eu,'y','#e8a33d',false);
-x.textAlign='left'; x.fillStyle='#6ba3e0'; x.fillText('■ US (Trésor)',pl+6,16); x.fillStyle='#e8a33d'; x.fillText('■ Zone euro AAA',pl+110,16);
-x.fillStyle='#8a93a0'; x.fillText('pointillés : il y a 1 mois',pl+230,16);
-if(hover){ const i=hover.i, t=tenors[i], my=hover.y, inP=my>=pt&&my<=H-pb;
-const pu=us.find(z=>z.t===t)||{}, pe=eu.find(z=>z.t===t)||{};
-x.strokeStyle='rgba(221,227,234,.4)'; x.setLineDash([3,3]); x.beginPath(); x.moveTo(X(i),pt); x.lineTo(X(i),H-pb); if(inP){ x.moveTo(pl,my); x.lineTo(W-10,my); } x.stroke(); x.setLineDash([]);
-[[pu.y,'#6ba3e0'],[pe.y,'#e8a33d'],[pu.y1m,'#3a5a7c'],[pe.y1m,'#7a5a2c']].forEach(([v,c])=>{ if(v==null) return; x.fillStyle=c; x.beginPath(); x.arc(X(i),Y(v),3,0,7); x.fill(); });
-if(inP){ const v=mn+(1-(my-pt)/(H-pt-pb))*(mx-mn); x.font='bold 10px monospace'; const tx=nf(v,2)+' %', w=x.measureText(tx).width+8;
-x.fillStyle='#dde3ea'; x.fillRect(pl-w-1,my-8,w,16); x.fillStyle='#0b0e11'; x.textAlign='left'; x.fillText(tx,pl-w+3,my+3.5); }
-const d=(a,b)=>a!=null&&b!=null?` (${a-b>=0?'+':''}${nf((a-b)*100,0)} pb / 1 mois)`:'';
-const L=[[`Maturité ${t}`,'#dde3ea'],[pu.y!=null?`US     ${nf(pu.y,2)} %${d(pu.y,pu.y1m)}`:'US     n/d','#6ba3e0'],
-[pe.y!=null?`Euro   ${nf(pe.y,2)} %${d(pe.y,pe.y1m)}`:'Euro   n/d','#e8a33d'],[pu.y!=null&&pe.y!=null?`Écart  ${nf((pu.y-pe.y)*100,0)} pb`:'','#8a93a0']].filter(l=>l[0]);
-x.font='10px monospace'; const bw=Math.max(...L.map(l=>x.measureText(l[0]).width))+14, bh=L.length*14+8;
-const bx=X(i)+12+bw>W-10?X(i)-bw-12:X(i)+12, by=pt+18;
-x.fillStyle='rgba(11,14,17,.92)'; x.fillRect(bx,by,bw,bh); x.strokeStyle='#2a3038'; x.strokeRect(bx,by,bw,bh);
-L.forEach(([s,c],j)=>{ x.fillStyle=c; x.textAlign='left'; x.fillText(s,bx+7,by+15+j*14); }); }
-cv.style.cursor='crosshair';
-cv.onmousemove=ev=>{ const rr=cv.getBoundingClientRect(), i=Math.round((ev.clientX-rr.left-pl)/(W-pl-10)*(tenors.length-1)); drawGC(us,eu,tenors,i>=0&&i<tenors.length?{i,y:ev.clientY-rr.top}:null); };
-cv.onmouseleave=()=>drawGC(us,eu,tenors,null);
-}
-
 /*═══════════════════════════════════════════════════════════════════════
 12. VUE — DIAGNOSTIC
 ═══════════════════════════════════════════════════════════════════════*/
@@ -2989,6 +2946,101 @@ const t=q.trim().toUpperCase().split(/\s+/)[0]; if(!t) return go('mkt');
 S.focus=await resolveRemote(resolveTicker(t)); return go('sec');
 }
 
+/*── Courbes souveraines multi-pays (GC + panneau Marchés) ───────────*/
+let CURVES=null, CURVES_TS=null;
+async function loadCurves(){ try{ const r=await fetch('curves.json?t='+Date.now(),{cache:'no-store'}); if(!r.ok) throw new Error('HTTP '+r.status);
+const d=await r.json(); if(CURVES_TS===d.generated_at) return false; CURVES=d.items||{}; CURVES_TS=d.generated_at; return true; }
+catch(e){ console.info('curves.json indisponible ('+e.message+')'); return false; } }
+const TEN_ORD=['1M','3M','6M','1A','2A','3A','4A','5A','6A','7A','8A','9A','10A','15A','20A','25A','30A','40A'];
+const GC_COL={US:'#6ba3e0',EU:'#e8a33d',DE:'#d8d36b',FR:'#4fc1c9',IT:'#2fbf6b',UK:'#e04a4a',JP:'#bb98e6',CH:'#c98a5f'};
+const GC_NAME={US:'États-Unis',EU:'Zone euro AAA',DE:'Allemagne',FR:'France',IT:'Italie',UK:'Royaume-Uni',JP:'Japon',CH:'Suisse'};
+const GC={sel:new Set(['US','EU','DE','UK','JP'])};
+function allCurves(){ const out=[];
+if(MACRO&&MACRO.gc){ if(MACRO.gc.us) out.push({k:'US',pts:MACRO.gc.us.pts||[],src:MACRO.gc.us.src,freq:'quotidien'}); if(MACRO.gc.eu) out.push({k:'EU',pts:MACRO.gc.eu.pts||[],src:MACRO.gc.eu.src,freq:'quotidien'}); }
+for(const k of ['DE','FR','IT','UK','JP','CH']){ const c=CURVES&&CURVES[k]; if(c) out.push({k,pts:c.pts||[],src:c.src,freq:c.freq,stale:c.stale}); }
+return out.map(c=>({...c,n:GC_NAME[c.k],col:GC_COL[c.k],pts:c.pts.filter(p=>p.y!=null)})); }
+const cy=(c,t)=>{ const p=c&&c.pts.find(x=>x.t===t); return p?p.y:null; };
+/** Taux le plus proche d'une maturité demandée (3M ← 1A au Japon, 30A ← 20A au Royaume-Uni…), signalé. */
+function nearY(c,t){ const v=cy(c,t); if(v!=null) return {v,t,exact:true}; const i=TEN_ORD.indexOf(t);
+for(let d=1;d<=2;d++) for(const j of [i-d,i+d]){ const tt=TEN_ORD[j]; const w=cy(c,tt); if(w!=null) return {v:w,t:tt,exact:false}; } return null; }
+function gcHtml(){
+const C=allCurves(); if(!C.length) return '<div class="note">Courbes pas encore générées.</div>';
+const sel=C.filter(c=>GC.sel.has(c.k)), tenors=TEN_ORD.filter(t=>sel.some(c=>cy(c,t)!=null));
+const bund=C.find(c=>c.k==='DE'), d10=(k)=>{ const a=cy(C.find(c=>c.k===k),'10A'), b=cy(bund,'10A'); return a!=null&&b!=null?(a-b)*100:null; };
+const slope=c=>{ const a=cy(c,'2A'), b=cy(c,'10A'); return a!=null&&b!=null?(b-a)*100:null; };
+return `<div class="ctl" style="align-items:center;margin:-9px -9px 9px;border-top:none"><span class="mut" style="font-size:10px">Pays :</span>
+${C.map(c=>`<button type="button" class="chip ${GC.sel.has(c.k)?'on':''}" data-gck="${c.k}" aria-pressed="${GC.sel.has(c.k)}" style="border-color:${GC.sel.has(c.k)?c.col:'var(--line)'}"><span style="color:${c.col}">■</span> ${esc(c.n)}${c.freq==='mensuel'?' <span class="mut">(10A)</span>':''}</button>`).join('')}</div>
+<div class="statrow" style="border:none;padding:0 0 8px">
+${sel.filter(c=>slope(c)!=null).slice(0,4).map(c=>`<div class="stat"><span class="l">${esc(c.n.toUpperCase())} 2S10S</span><span class="n ${cls(slope(c))}">${nf(slope(c),0)} pb</span></div>`).join('')}
+${d10('FR')!=null?`<div class="stat"><span class="l">SPREAD OAT − BUND 10A</span><span class="n">${nf(d10('FR'),0)} pb</span></div>`:''}
+${d10('IT')!=null?`<div class="stat"><span class="l">SPREAD BTP − BUND 10A</span><span class="n">${nf(d10('IT'),0)} pb</span></div>`:''}
+${d10('US')!=null?`<div class="stat"><span class="l">US − BUND 10A</span><span class="n">${nf(d10('US'),0)} pb</span></div>`:''}</div>
+<canvas id="gccv" height="240" role="img" aria-label="Courbes des taux des pays sélectionnés, aujourd'hui et il y a un mois"></canvas>
+<table style="margin-top:8px"><caption class="sr-only">Courbes des taux par maturité</caption><thead><tr><th scope="col">Maturité</th>${sel.map(c=>`<th scope="col"><span style="color:${c.col}">■</span> ${esc(c.n)}</th>`).join('')}</tr></thead><tbody>
+${tenors.map(t=>`<tr><th scope="row" class="sym">${t}</th>${sel.map(c=>{ const p=c.pts.find(x=>x.t===t); if(!p) return '<td class="na">—</td>';
+const dv=p.y1m!=null?(p.y-p.y1m)*100:null; return `<td>${nf(p.y,2)} % <span class="${cls(dv)}" style="font-size:9px">${dv!=null?(dv>0?'+':'')+nf(dv,0)+' pb':''}</span></td>`; }).join('')}</tr>`).join('')}</tbody></table>
+<div class="note">${sel.map(c=>`<b style="color:${c.col}">${esc(c.n)}</b> : ${esc(c.src||'')}${c.freq==='mensuel'?' (seul le 10 ans est disponible gratuitement)':''}${c.stale?' — <span class="neg">source en échec, dernière courbe conservée</span>':''}`).join(' · ')}. Variation sur 1 mois en points de base. Trait plein : aujourd'hui ; pointillés : il y a 1 mois.</div>`;
+}
+function wireGC(root){ root.querySelectorAll('[data-gck]').forEach(b=>b.onclick=()=>{ const k=b.dataset.gck; GC.sel.has(k)?GC.sel.delete(k):GC.sel.add(k); if(!GC.sel.size) GC.sel.add(k);
+const box=document.getElementById('gcbody'); box.innerHTML=gcHtml(); wireGC(box); drawGC(); }); }
+function drawGC(hover){
+const cv=document.getElementById('gccv'); if(!cv) return;
+const C=allCurves().filter(c=>GC.sel.has(c.k)), tenors=TEN_ORD.filter(t=>C.some(c=>cy(c,t)!=null)); if(!tenors.length) return;
+const r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1, H=240; cv.width=r.width*dpr; cv.height=H*dpr;
+const x=cv.getContext('2d'); x.scale(dpr,dpr); const W=r.width, pl=46, pr=10, pb=20, pt=8;
+const all=C.flatMap(c=>c.pts.flatMap(p=>[p.y,p.y1m])).filter(v=>v!=null);
+const mn=Math.floor(Math.min(...all)*2)/2, mx=Math.ceil(Math.max(...all)*2)/2, stp=mx-mn>3?1:0.5;
+const X=i=>pl+i/Math.max(1,tenors.length-1)*(W-pl-pr), Y=v=>pt+(1-(v-mn)/(mx-mn||1))*(H-pt-pb);
+x.font='9px monospace'; x.fillStyle='#8a93a0'; x.strokeStyle='#232830';
+for(let v=mn; v<=mx+1e-9; v+=stp){ const y=Y(v); x.beginPath(); x.moveTo(pl,y); x.lineTo(W-pr,y); x.stroke(); x.textAlign='right'; x.fillText(nf(v,1)+' %',pl-4,y+3); }
+x.textAlign='center'; tenors.forEach((t,i)=>x.fillText(t,X(i),H-5));
+const line=(c,key,dash)=>{ x.strokeStyle=c.col; x.globalAlpha=dash?0.45:1; x.lineWidth=1.6; x.setLineDash(dash?[4,4]:[]); x.beginPath(); let st=false;
+tenors.forEach((t,i)=>{ const p=c.pts.find(z=>z.t===t); if(!p||p[key]==null) return; st?x.lineTo(X(i),Y(p[key])):x.moveTo(X(i),Y(p[key])); st=true; }); x.stroke();
+if(!dash) tenors.forEach((t,i)=>{ const p=c.pts.find(z=>z.t===t); if(p&&c.pts.length<3){ x.fillStyle=c.col; x.beginPath(); x.arc(X(i),Y(p.y),3,0,7); x.fill(); } });
+x.setLineDash([]); x.globalAlpha=1; };
+C.forEach(c=>line(c,'y1m',true)); C.forEach(c=>line(c,'y',false));
+if(hover){ const i=hover.i, t=tenors[i], my=hover.y, inP=my>=pt&&my<=H-pb;
+x.strokeStyle='rgba(221,227,234,.4)'; x.setLineDash([3,3]); x.beginPath(); x.moveTo(X(i),pt); x.lineTo(X(i),H-pb); if(inP){ x.moveTo(pl,my); x.lineTo(W-pr,my); } x.stroke(); x.setLineDash([]);
+if(inP){ const v=mn+(1-(my-pt)/(H-pt-pb))*(mx-mn); x.font='bold 10px monospace'; const tx=nf(v,2)+' %', w=x.measureText(tx).width+8; x.fillStyle='#dde3ea'; x.fillRect(pl-w-1,my-8,w,16); x.fillStyle='#0b0e11'; x.textAlign='left'; x.fillText(tx,pl-w+3,my+3.5); }
+const L=[[`Maturité ${t}`,'#dde3ea']]; C.forEach(c=>{ const p=c.pts.find(z=>z.t===t); if(!p) return; x.fillStyle=c.col; x.beginPath(); x.arc(X(i),Y(p.y),3,0,7); x.fill();
+L.push([`${c.n.padEnd(14)} ${nf(p.y,2)} %${p.y1m!=null?` (${p.y-p.y1m>=0?'+':''}${nf((p.y-p.y1m)*100,0)} pb)`:''}`,c.col]); });
+x.font='10px monospace'; const bw=Math.max(...L.map(l=>x.measureText(l[0]).width))+14, bh=L.length*14+8, bx=X(i)+12+bw>W-pr?X(i)-bw-12:X(i)+12;
+x.fillStyle='rgba(11,14,17,.92)'; x.fillRect(bx,pt+4,bw,bh); x.strokeStyle='#2a3038'; x.strokeRect(bx,pt+4,bw,bh);
+L.forEach(([s,c],j)=>{ x.fillStyle=c; x.textAlign='left'; x.fillText(s,bx+7,pt+19+j*14); }); }
+cv.style.cursor='crosshair';
+cv.onmousemove=ev=>{ const rr=cv.getBoundingClientRect(), i=Math.round((ev.clientX-rr.left-pl)/(W-pl-pr)*(tenors.length-1)); drawGC(i>=0&&i<tenors.length?{i,y:ev.clientY-rr.top}:null); };
+cv.onmouseleave=()=>drawGC(null);
+}
+/** Panneau « Taux souverains » de l'onglet Marchés : cliquer un pays ouvre sa courbe (GC). */
+function sovHtml(){
+const C=allCurves(); const cols=['3M','2A','5A','10A','30A'];
+if(!C.length) return '<div class="note">Taux pas encore chargés.</div>';
+return `<table><caption class="sr-only">Taux souverains par maturité</caption><thead><tr><th scope="col" style="text-align:left">Pays</th>${cols.map(t=>`<th scope="col">${t}</th>`).join('')}<th scope="col">Var. 10A 1 mois</th></tr></thead><tbody>
+${C.map(c=>{ const p10=c.pts.find(p=>p.t==='10A'), dv=p10&&p10.y1m!=null?(p10.y-p10.y1m)*100:null;
+return `<tr class="clk" data-sov="${c.k}" tabindex="0" role="button" title="Ouvrir la courbe (GC)"><th scope="row" style="text-align:left"><span style="color:${c.col}">■</span> ${esc(c.n)}</th>
+${cols.map(t=>{ const n=nearY(c,t); return n?`<td${n.exact?'':' class="mut" title="maturité la plus proche : '+n.t+'"'}>${nf(n.v,2)} %${n.exact?'':'<sup>*</sup>'}</td>`:'<td class="na">—</td>'; }).join('')}
+<td class="${cls(dv)}">${dv!=null?(dv>0?'+':'')+nf(dv,0)+' pb':'—'}</td></tr>`; }).join('')}</tbody></table>
+<div class="note">Cliquez un pays pour ouvrir sa courbe. * maturité la plus proche disponible. France et Italie : 10 ans mensuel uniquement (pas de courbe gratuite).</div>`;
+}
+function wireSov(root){ root.querySelectorAll('[data-sov]').forEach(r=>{ const f=async()=>{ GC.sel=new Set([r.dataset.sov,'US']); if(r.dataset.sov!=='DE') GC.sel.add('DE'); await go('macro');
+const e=document.getElementById('m-gc'); if(e) e.scrollIntoView({behavior:'smooth',block:'start'}); };
+r.onclick=f; r.onkeydown=ev=>{ if(ev.key==='Enter'){ ev.preventDefault(); f(); } }; }); }
+
+/*── Aide : liste des fonctions (bouton « ? » discret) ───────────────*/
+function openHelp(){
+let m=document.getElementById('helpm'); if(m){ m.remove(); return; }
+m=document.createElement('div'); m.id='helpm'; m.setAttribute('role','dialog'); m.setAttribute('aria-label','Aide');
+const keys=[['/ ou ⌘K','Ligne de commande'],['M W P E R S C F N L D','Onglets (Marchés, Watchlist, Portefeuille, Macro, Recherche, Titre, Comparer, Filtre, News, Launchpad, Diagnostic)'],['?','Cette aide'],['Échap','Fermer']];
+m.innerHTML=`<div class="hbox"><h3>Aide — fonctions du terminal<span class="rt"><button type="button" id="helpx" aria-label="Fermer">✕</button></span></h3>
+<div class="pbody" style="overflow:auto;max-height:70vh"><table><thead><tr><th scope="col" style="text-align:left">Commande</th><th scope="col" style="text-align:left">Fonction</th><th scope="col" style="text-align:left">Exemple</th></tr></thead><tbody>
+${Object.entries(FUNCS).map(([k,v])=>`<tr><th scope="row" class="sym" style="text-align:left">${v.t===1?'&lt;titre&gt; ':v.t===2?'&lt;titres&gt; ':''}${k}</th><td style="text-align:left;white-space:normal">${esc(v.d)}</td><td class="mut" style="text-align:left">${v.t===1?`MC FP ${k}`:v.t===2?'MC RMS KER COMP':k}</td></tr>`).join('')}
+</tbody></table>
+<h4 style="margin:12px 0 4px;font-size:10px;color:var(--hot)">RACCOURCIS CLAVIER</h4>
+<table><tbody>${keys.map(([a,b])=>`<tr><th scope="row" class="sym" style="text-align:left">${a}</th><td style="text-align:left;white-space:normal">${b}</td></tr>`).join('')}</tbody></table>
+<div class="note" style="padding:8px 0 0">Suffixes de place Bloomberg acceptés : US, FP (Paris), GY (Francfort), LN (Londres), SW (Suisse), NA (Amsterdam), IM (Milan), SM (Madrid), JT (Tokyo), HK… Un nom courant (TSMC, Hermès) est converti en ticker.</div></div></div>`;
+document.body.appendChild(m); m.onclick=e=>{ if(e.target===m) m.remove(); }; document.getElementById('helpx').onclick=()=>m.remove();
+}
+
 /*═══════════════════════════════════════════════════════════════════════
 14. NAVIGATION
 ═══════════════════════════════════════════════════════════════════════*/
@@ -3039,12 +3091,13 @@ S.view==='sec' ? S.focus+' — appuyez sur ⌘K pour changer de titre' : '';
 ═══════════════════════════════════════════════════════════════════════*/
 const ZONES=[['Monaco','Europe/Paris'],['Londres','Europe/London'],['New York','America/New_York'],
 ['Singapour','Asia/Singapore'],['Tokyo','Asia/Tokyo']];
+/* Horloges : bandeau qui défile en boucle (comme les cours). Seules les heures sont mises à jour,
+   pour ne pas relancer l'animation chaque seconde. */
 function tick(){
-document.getElementById('clocks').innerHTML=ZONES.map(([c,tz])=>{
-const t=new Date().toLocaleTimeString('fr-FR',
-{timeZone:tz,hour:'2-digit',minute:'2-digit',hour12:false});
-return `<span>${c} <b>${t}</b></span>`;
-}).join('');
+const el=document.getElementById('clocks');
+if(!el.querySelector('.ctrk')){ const one=ZONES.map(([c,tz])=>`<span>${c} <b data-tz="${tz}"></b></span>`).join('');
+el.innerHTML=`<div class="ctrk">${one}${one}</div>`; }
+el.querySelectorAll('b[data-tz]').forEach(b=>{ b.textContent=new Date().toLocaleTimeString('fr-FR',{timeZone:b.dataset.tz,hour:'2-digit',minute:'2-digit',hour12:false}); });
 }
 
 /* Notes explicatives longues repliées derrière ⓘ (lisibilité) */
@@ -3063,6 +3116,7 @@ document.getElementById('palin').oninput=e=>palSearch(e.target.value);
 
 document.addEventListener('keydown',e=>{
 const open=document.getElementById('pal').classList.contains('on');
+if(e.key==='Escape'&&document.getElementById('helpm')){ document.getElementById('helpm').remove(); return; }
 if((e.metaKey||e.ctrlKey) && e.key.toLowerCase()==='k'){ e.preventDefault(); open?closePal():openPal(); return; }
 if(open){
 if(e.key==='Escape') closePal();
@@ -3074,6 +3128,7 @@ return;
 if(e.target.tagName==='INPUT' || e.metaKey || e.ctrlKey || e.altKey) return;
 const map={m:'mkt', w:'wl', p:'pf', e:'macro', r:'srch', s:'sec', c:'comp', f:'eqs', l:'lp', n:'news', d:'diag'};
 if(e.key==='/'){ e.preventDefault(); openPal(); return; }
+if(e.key==='?'){ e.preventDefault(); openHelp(); return; }
 const t=map[e.key.toLowerCase()];
 if(t){ e.preventDefault(); go(t); }
 });
@@ -3094,12 +3149,13 @@ function setTheme(t){ document.body.classList.toggle('amber',t==='amber'); const
 b.textContent='Thème : '+(t==='amber'?'ambre':'bleu'); b.setAttribute('aria-pressed',t==='amber');
 try{ localStorage.setItem(THEME_KEY,t); }catch(e){} if(S.view==='sec'&&!ecoGet(S.focus)) drawCandles(); }
 setTheme((()=>{ try{ return localStorage.getItem(THEME_KEY)||'blue'; }catch(e){ return 'blue'; } })());
+document.getElementById('helpbtn').onclick=openHelp;
 document.getElementById('themebtn').onclick=()=>setTheme(document.body.classList.contains('amber')?'blue':'amber');
 const EMBED=new URLSearchParams(location.search);
 if(EMBED.get('embed')){ document.body.classList.add('embed'); const c=EMBED.get('cmd')||'WEI';
 S.view='mkt'; (async()=>{ if(/^(GC|ECO|WIRP|BTMM|ECST)$/.test(c.trim().toUpperCase())) await loadMacro(); if(!/^(BLP)$/i.test(c.trim())) runAny(c); else go('mkt'); })(); }
 else go('mkt');
-const refresh=()=>Promise.all([loadLive(),loadUniverse(),loadFT(),loadMacro(),loadFund(),loadEcon(),loadPeers()]).then(([a,b,c,d,e,f])=>{ renderTape(); if(a||b||c||d||e||f){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
+const refresh=()=>Promise.all([loadLive(),loadUniverse(),loadFT(),loadMacro(),loadFund(),loadEcon(),loadPeers(),loadCurves()]).then(([a,b,c,d,e,f,g,h])=>{ renderTape(); if(a||b||c||d||e||f||h){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
 refresh();
 setInterval(refresh, 10*60*1000);
 
