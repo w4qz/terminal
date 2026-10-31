@@ -636,6 +636,21 @@ if(MACRO && MACRO.generated_at===d.generated_at) return false;
 MACRO = d; return true;
 }catch(e){ console.info('macro.json indisponible ('+e.message+')'); return false; }
 }
+let FUND_TS = null;  // fondamentaux du catalogue (fundamentals.json, par roulement)
+async function loadFund(){
+try{
+const r = await fetch('fundamentals.json?t='+Date.now(), {cache:'no-store'});
+if(!r.ok) throw new Error('HTTP '+r.status);
+const d = await r.json();
+if(FUND_TS===d.generated_at) return false;
+for(const [sym,f] of Object.entries(d.items||{})){
+const cur=SNAPSHOT.fundamentals[sym];
+if(cur && cur.ts && f.ts && cur.ts>f.ts) continue;   // garde la version la plus récente
+SNAPSHOT.fundamentals[sym]=Object.assign(cur||{}, f, {src:'Yahoo Finance via yfinance (roulement)'});
+}
+FUND_TS=d.generated_at; return true;
+}catch(e){ console.info('fundamentals.json indisponible ('+e.message+')'); return false; }
+}
 let FTNL = null;   // newsletters FT (ft.json, écrit par Google Apps Script)
 async function loadFT(){
 try{
@@ -674,7 +689,7 @@ const d = await r.json();
 if(LIVE && LIVE.generated_at===d.generated_at) return false;
 for(const [sym,q] of Object.entries(d.quotes||{})) SNAPSHOT.quotes[sym] = q;
 for(const [sym,f] of Object.entries(d.fundamentals||{})){
-if(SNAPSHOT.fundamentals[sym]) Object.assign(SNAPSHOT.fundamentals[sym], f, {src:'Yahoo Finance via yfinance', ts:d.generated_at});
+SNAPSHOT.fundamentals[sym] = Object.assign(SNAPSHOT.fundamentals[sym]||{}, f, {src:'Yahoo Finance via yfinance', ts:d.generated_at});
 }
 if((d.curve||[]).some(c=>c.y!=null)) SNAPSHOT.curve = d.curve;
 if((d.news||[]).length){
@@ -1198,110 +1213,153 @@ x.fillText('Trajectoire d\'exemple — portefeuille (bleu) contre indice (gris) 
 ═══════════════════════════════════════════════════════════════════════*/
 async function viewSecurity(){
 const el=document.getElementById('v-sec'), sym=S.focus;
-const meta=SNAPSHOT.securities.find(s=>s.sym===sym);
-const q=await DATA.getQuote(sym), f=await DATA.getFundamentals(sym);
-
-if(!meta||!q||q.na){
-el.innerHTML=`<div class="pnl"><div class="note">Aucune donnée pour <b>${esc(sym)}</b> chez ce fournisseur.</div></div>`;
-return;
-}
+const snap=SNAPSHOT.securities.find(s=>s.sym===sym);
+const loc=(UNIV||[]).find(x=>x.s===sym);
+const q=SNAPSHOT.quotes[sym]||null;
+const F=SNAPSHOT.fundamentals[sym]||{};
+const name=F.name||(snap&&snap.name)||(loc&&loc.n)||sym;
+const px=q?q.p:(loc?loc.p:null), pc=q?q.pct:(loc?loc.pct:null), st=q?q.st:(loc?loc.st:null);
+const ccy=F.ccy||(snap&&snap.ccy)||'';
 const K=(l,v)=>`<div class="kv"><span class="k">${l}</span><span class="v">${v}</span></div>`;
+const N=(v,d=2)=>v==null?'<span class="na">n/d</span>':nf(v,d);
+const P=(v,d=1)=>v==null?'<span class="na">n/d</span>':`<span class="${cls(v)}">${pct(v,d)}</span>`;
+const B=v=>v==null?'<span class="na">n/d</span>':big(v);
+const up=F.target&&px?(F.target/px-1)*100:null;
+const nm=(name.split(/[\s,.]/).find(w=>w.length>=4)||sym).toLowerCase();
+const nws=SNAPSHOT.news.filter(n=>(n.syms||[]).includes(sym)||(n.h||'').toLowerCase().includes(nm)).slice(0,8);
+const fundTs=F.ts?ago(F.ts):'—';
 
-// Position dans l'amplitude 52 semaines
-let rangeBar='';
-if(f && f.w52lo && !f.w52lo.na){
-const lo=f.w52lo.value, hi=f.w52hi.value, p=q.price.value;
-const posn=Math.max(0,Math.min(100,(p-lo)/(hi-lo)*100));
-rangeBar=`<div style="padding:8px 0">
-<div style="display:flex;justify-content:space-between;font-size:10px;color:var(--txt3)">
-<span>${nf(lo)}</span><span>amplitude 52 semaines</span><span>${nf(hi)}</span></div>
-<div style="height:5px;background:#1a1e23;margin-top:4px;position:relative;border-radius:2px"
-role="img" aria-label="Position dans l'amplitude 52 semaines : ${nf(posn,0)} %, entre ${nf(lo)} et ${nf(hi)}">
-<div style="position:absolute;left:${posn}%;top:-3px;width:2px;height:11px;background:#6ba3e0"></div></div>
-<div style="font-size:10px;color:var(--txt2);margin-top:4px">${nf(posn,0)} % de l'amplitude —
-${posn>80?'proche des plus hauts':posn<20?'proche des plus bas':'en milieu de range'}</div></div>`;
+el.innerHTML=`
+<div class="pnl" style="margin-bottom:9px"><div class="statrow">
+<div class="stat"><span class="l">${esc(sym)}${F.sector?' · '+esc(F.sector):''}</span><span class="n" id="secpx">${px!=null?nf(px,px>1000?0:2):'—'}${badge(st)}</span><span class="s">${esc(name)}</span></div>
+<div class="stat"><span class="l">VARIATION</span><span class="n ${cls(pc)}" id="secpc">${pc!=null?pct(pc):'—'}</span><span class="s">${esc(ccy)}</span></div>
+<div class="stat"><span class="l">CAPITALISATION</span><span class="n">${B(F.mcap)}</span><span class="s">${esc(ccy)}</span></div>
+<div class="stat"><span class="l">PER / PER PROSPECTIF</span><span class="n">${N(F.pe,1)} / ${N(F.fpe,1)}</span><span class="s">x les bénéfices</span></div>
+<div class="stat"><span class="l">OBJECTIF ANALYSTES</span><span class="n">${N(F.target)}</span><span class="s">${up!=null?pct(up,1)+' de potentiel':''}</span></div>
+<div class="stat"><span class="l">CONSENSUS</span><span class="n" style="font-size:15px">${F.rating?esc(F.rating):'—'}</span><span class="s">${F.analysts?F.analysts+' analystes':''}</span></div>
+</div></div>
+<div class="pnl" style="margin-bottom:9px"><h3>Graphique — chandeliers japonais<span class="rt" id="secsrc">${WORKER_URL?'Yahoo Finance via relais':'relais non configuré'}</span></h3>
+<div class="ctl" style="align-items:center">
+<div class="rng" role="group" aria-label="Période">${Object.keys(RANGE_CFG).map(r=>`<button type="button" data-r="${r}" class="${r===SEC.range?'on':''}">${r}</button>`).join('')}</div>
+<div class="rng" role="group" aria-label="Indicateurs">
+<button type="button" data-t="ma" class="${SEC.ma?'on':''}" aria-pressed="${SEC.ma}">MM50 / MM200</button>
+<button type="button" data-t="vol" class="${SEC.vol?'on':''}" aria-pressed="${SEC.vol}">Volume</button></div>
+<span class="mut" style="font-size:10px;margin-left:auto" id="secperf"></span></div>
+<div class="pbody" style="position:relative"><canvas id="seccv" height="380" role="img" aria-label="Graphique en chandeliers japonais de ${esc(sym)}"></canvas>
+<div id="sectip" style="position:absolute;top:14px;left:20px;font-size:10px;color:var(--txt2);pointer-events:none"></div>
+<div class="note" id="secmsg" style="padding:6px 0 0">${WORKER_URL?'Chargement…':'Renseignez WORKER_URL (relais Cloudflare) pour afficher le graphique.'}</div></div></div>
+<div class="g g3">
+<div class="pnl"><h3>Valorisation et résultats<span class="rt">MAJ ${fundTs}</span></h3><div class="pbody">
+${K('Chiffre d\'affaires (12 mois)',B(F.revTTM))}${K('Résultat net',B(F.netIncome))}${K('BPA (12 mois) / prévisionnel',N(F.eps)+' / '+N(F.feps))}
+${K('VE / EBITDA',N(F.evEbitda,1))}${K('Titres en circulation',B(F.shares))}${K('Bêta',N(F.beta))}
+${K('Dividende',F.div?nf(F.div)+(F.divYield!=null?' ('+nf(F.divYield)+' %)':''):'<span class="na">aucun</span>')}
+</div></div>
+<div class="pnl"><h3>Rentabilité et bilan</h3><div class="pbody">
+${K('Marge brute',P(F.grossMargin))}${K('Marge opérationnelle',P(F.opMargin))}${K('Marge nette',P(F.netMargin))}
+${K('Croissance du CA (a/a)',P(F.revGrowth))}${K('Croissance des bénéfices (a/a)',P(F.epsGrowth))}${K('ROE',P(F.roe))}
+${K('Trésorerie / dette',B(F.cash)+' / '+B(F.debt))}${K('Free cash flow',B(F.fcf))}
+</div></div>
+<div class="pnl"><h3>Lecture automatique<span class="rt">règles fixes · pas un conseil</span></h3><div class="pbody" id="secread">${secReading(F,px,null)}</div></div>
+<div class="pnl span2"><h3>News liées<span class="rt">${nws.length} article${nws.length>1?'s':''}</span></h3><div class="pbody flush">
+${nws.length?nws.map(n=>`<div class="nw"><h4>${esc(n.h)}</h4>${n.w?`<p>${esc(n.w)}</p>`:''}<div class="meta"><span>${esc(n.src)}</span><span>${ago(n.ts)}</span>${n.url?`<a href="${n.url}" target="_blank" rel="noopener">Ouvrir<span class="sr-only"> (nouvel onglet)</span></a>`:''}</div></div>`).join('')
+:'<div class="note na">Aucune actualité récente ne mentionne ce titre.</div>'}</div></div>
+<div class="pnl"><h3>Sources</h3><div class="pbody"><div class="note" style="padding:0">
+Cours : ${q?esc(q.src||''):loc?'catalogue Yahoo Finance':'relais Yahoo Finance'}.<br>
+Fondamentaux : ${Object.keys(F).length>3?'Yahoo Finance via yfinance, actualisés par le robot':'<b>pas encore lus</b> pour ce titre : le robot couvre tout le catalogue par roulement, en 4 heures environ. Pour un titre hors catalogue, ajoutez-le à <code>FUND_TICKERS</code> dans scripts/update_data.py'}.<br>
+Graphique : clôtures ${SEC.range==='5A'?'hebdomadaires':'quotidiennes'} Yahoo Finance, cours différés.</div></div></div>
+</div>`;
+el.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{ SEC.range=b.dataset.r; viewSecurity(); });
+el.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{ SEC[b.dataset.t]=!SEC[b.dataset.t]; viewSecurity(); });
+if(WORKER_URL) loadCandles(sym, F, px);
 }
 
-const nws=SNAPSHOT.news.filter(n=>n.syms.includes(sym));
-el.innerHTML=`
-<div class="pnl" style="margin-bottom:9px">
-<div class="statrow">
-<div class="stat"><span class="l">${sym} · ${esc(meta.exch)}</span>
-<span class="n">${V(q.price)}</span><span class="s">${esc(meta.name)}</span></div>
-<div class="stat"><span class="l">VARIATION</span>
-<span class="n ${cls(q.changePct.value)}">${V(q.changePct,x=>pct(x),{badge:false})}</span>
-<span class="s">${q.change&&!q.change.na?nf(q.change.value):'—'} ${meta.ccy}</span></div>
-<div class="stat"><span class="l">CAPITALISATION</span>
-<span class="n">${f&&f.mcap?big(f.mcap.value):'—'}</span><span class="s">${meta.ccy}</span></div>
-<div class="stat"><span class="l">VOLUME</span>
-<span class="n">${q.volume&&!q.volume.na?big(q.volume.value):'—'}</span>
-<span class="s">titres échangés</span></div>
-<div class="stat"><span class="l">OBJECTIF CONSENSUS</span>
-<span class="n">${f&&f.target?nf(f.target.value):'—'}</span>
-<span class="s">${f&&f.target?pct((f.target.value/q.price.value-1)*100,1)+' de potentiel':''}</span></div>
-<div class="stat"><span class="l">RECOMMANDATION</span>
-<span class="n" style="font-size:15px">${f&&f.rating?esc(f.rating.value):'—'}</span>
-<span class="s">${f&&f.analysts?f.analysts.value+' analystes':''}</span></div>
-</div>
-</div>
-<div class="g g3">
-<div class="pnl"><h3>Cotation</h3><div class="pbody">
-${K('Ouverture',V(q.open,x=>nf(x),{badge:false}))}
-${K('Clôture précédente',V(q.prevClose,x=>nf(x),{badge:false}))}
-${K('Plus bas du jour',V(q.dayLow,x=>nf(x),{badge:false}))}
-${K('Plus haut du jour',V(q.dayHigh,x=>nf(x),{badge:false}))}
-${K('Fourchette bid/ask','<span class="na">non fournie</span>')}
-${K('Devise',meta.ccy)}
-${rangeBar}
-<div class="note" style="padding:6px 0 0">Source : ${esc(q.price.source||'—')} · ${ago(q.price.ts)} · statut ${STATUS_LABEL[q.price.status]}.</div>
-</div></div>
-<div class="pnl"><h3>Fondamentaux</h3><div class="pbody">
-${f?`
-${K('PER (TTM)',f.pe&&!f.pe.na?nf(f.pe.value):'<span class="na">non applicable — pertes</span>')}
-${K('PER prospectif',f.fpe&&!f.fpe.na?nf(f.fpe.value):'<span class="na">n/d</span>')}
-${K('BPA (TTM)',V(f.eps,x=>nf(x),{badge:false}))}
-${K('Chiffre d\'affaires (TTM)',V(f.revTTM,big,{badge:false}))}
-${K('Résultat net',`<span class="${cls(f.netIncome.value)}">${big(f.netIncome.value)}</span>`)}
-${K('Titres en circulation',V(f.shares,big,{badge:false}))}
-${K('Bêta',V(f.beta,x=>nf(x),{badge:false}))}
-${K('Dividende',f.divYield&&f.divYield.value?nf(f.div.value)+' ('+nf(f.divYield.value)+' %)':'<span class="na">aucun</span>')}
-${K('Derniers résultats',esc(f.earnings.value))}
-`:'<div class="na">Fondamentaux non fournis pour ce titre.</div>'}
-</div></div>
-<div class="pnl"><h3>Éléments notables</h3><div class="pbody">
-${sym==='NVDA'?`
-${K('Croissance CA (TTM)',`<span class="pos">${pct(f.revGrowth.value,1)}</span>`)}
-${K('Croissance BPA',`<span class="pos">${pct(f.epsGrowth.value,1)}</span>`)}
-${K('CA exercice 2026',big(f.revFY26.value))}
-<div class="note" style="padding:8px 0 0">Le PER prospectif à ${nf(f.fpe.value)} contre ${nf(f.pe.value)} en TTM
-indique un consensus qui table sur une poursuite de la croissance des résultats. C'est là que se situe
-le risque : le titre n'est pas cher <i>si</i> les estimations tiennent. Le deal MediaTek de 3,5 Md$ et la
-question du financement circulaire portent précisément sur la qualité de ces revenus futurs.</div>
-`:sym==='ASTS'?`
-${K('Carnet de commandes',big(f.backlog.value))}
-${K('Trésorerie',big(f.cash.value))}
-${K('Guidance CA 2026',big(f.guidLo.value)+' – '+big(f.guidHi.value))}
-${K('Croissance CA',`<span class="pos">${pct(f.revGrowth.value,0)}</span>`)}
-<div class="note" style="padding:8px 0 0">Société pré-revenus au sens opérationnel : ${big(f.revTTM.value)}
-de CA pour ${big(Math.abs(f.netIncome.value))} de pertes. Aucun multiple de résultat n'a de sens ici — la
-valorisation repose entièrement sur l'exécution du déploiement de la constellation. La dispersion des
-objectifs analystes (78 $ chez UBS, 98 $ chez Piper Sandler) mesure ce désaccord mieux que la moyenne.</div>
-`:'<div class="na">Pas d\'analyse détaillée disponible pour ce titre.</div>'}
-</div></div>
-<div class="pnl span2"><h3>Graphique</h3><div class="pbody">
-<div class="note">Aucune série de prix historique n'est disponible auprès du fournisseur Snapshot.
-Un graphique tracé sans données serait une décoration, pas une information — il n'est donc pas affiché.
-Les chandeliers, moyennes mobiles, RSI, MACD, Bollinger et VWAP sont implémentables dès que
-<code>getOHLCV()</code> renvoie des barres réelles ; FMP et Twelve Data fournissent tous deux l'historique
-quotidien dans leur tier de base.</div>
-</div></div>
-<div class="pnl"><h3>News liées</h3><div class="pbody flush">
-${nws.length?nws.map(n=>`<div class="nw"><h4>${esc(n.h)}</h4><p>${esc(n.w)}</p>
-<div class="meta"><span>${esc(n.src)}</span><span>${ago(n.ts)}</span>
-${n.url?`<a href="${n.url}" target="_blank" rel="noopener">Ouvrir la source<span class="sr-only"> (nouvel onglet)</span></a>`:''}</div></div>`).join('')
-:'<div class="note na">Aucune actualité liée à ce titre dans la capture.</div>'}
-</div></div>
-</div>`;
+const RANGE_CFG={'1M':{f:'1y',n:22},'3M':{f:'1y',n:66},'6M':{f:'2y',n:128},'1A':{f:'2y',n:252},'2A':{f:'2y',n:520},'5A':{f:'5y',n:9999}};
+const SEC={range:'6M', ma:true, vol:true, bars:null, sym:null, cache:new Map()};
+async function loadCandles(sym, F, px){
+const cfg=RANGE_CFG[SEC.range], key=sym+'|'+cfg.f, msg=document.getElementById('secmsg');
+try{
+let bars=SEC.cache.get(key);
+if(!bars){
+const r=await fetch(`${WORKER_URL}/chart?s=${encodeURIComponent(sym)}&range=${cfg.f}`);
+const d=await r.json();
+const res=d.chart&&d.chart.result&&d.chart.result[0];
+if(!r.ok||!res) throw new Error((d.chart&&d.chart.error&&d.chart.error.description)||d.error||'aucune donnée');
+const qq=res.indicators.quote[0];
+bars=(res.timestamp||[]).map((t,i)=>({t:t*1000,o:qq.open[i],h:qq.high[i],l:qq.low[i],c:qq.close[i],v:qq.volume?qq.volume[i]:null}))
+.filter(b=>b.c!=null&&b.o!=null&&b.h!=null&&b.l!=null);
+bars.meta=res.meta; SEC.cache.set(key,bars);
+}
+if(S.focus!==sym||S.view!=='sec') return;
+SEC.bars=bars; SEC.sym=sym;
+const m=bars.meta||{};
+if(px==null&&m.regularMarketPrice!=null){
+const pe=document.getElementById('secpx'); if(pe) pe.innerHTML=nf(m.regularMarketPrice,m.regularMarketPrice>1000?0:2)+badge('DELAYED_15M');
+const prev=bars.length>1?bars[bars.length-2].c:null, p2=prev?(m.regularMarketPrice/prev-1)*100:null;
+const pc=document.getElementById('secpc'); if(pc){ pc.textContent=pct(p2); pc.className='n '+cls(p2); }
+}
+msg.textContent=''; msg.style.display='none';
+drawCandles();
+const rd=document.getElementById('secread'); if(rd) rd.innerHTML=secReading(F, px??m.regularMarketPrice, bars);
+}catch(e){ if(msg){ msg.style.display=''; msg.innerHTML=`<span class="neg">Graphique indisponible : ${esc(e.message)}.</span>`; } }
+}
+function sma(arr,n){ const out=new Array(arr.length).fill(null); let s=0;
+for(let i=0;i<arr.length;i++){ s+=arr[i]; if(i>=n) s-=arr[i-n]; if(i>=n-1) out[i]=s/n; } return out; }
+function drawCandles(hover){
+const cv=document.getElementById('seccv'), all=SEC.bars; if(!cv||!all||!all.length) return;
+const cfg=RANGE_CFG[SEC.range], n=Math.min(cfg.n, all.length), off=all.length-n, bars=all.slice(off);
+const closes=all.map(b=>b.c), m50=sma(closes,50).slice(off), m200=sma(closes,200).slice(off);
+const r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1, W=r.width, H=380;
+cv.width=W*dpr; cv.height=H*dpr; const x=cv.getContext('2d'); x.scale(dpr,dpr);
+const pr=56, pt=28, volH=SEC.vol?70:0, gap=SEC.vol?14:0, pb=18, priceH=H-pt-pb-volH-gap;
+let lo=Math.min(...bars.map(b=>b.l)), hi=Math.max(...bars.map(b=>b.h));
+if(SEC.ma){ [m50,m200].forEach(a=>a.forEach(v=>{ if(v!=null){ lo=Math.min(lo,v); hi=Math.max(hi,v); } })); }
+const padY=(hi-lo)*0.05||1; lo-=padY; hi+=padY;
+const step=(W-pr-8)/n, cw=Math.max(1,Math.min(14,step*0.7));
+const X=i=>8+step*(i+0.5), Y=v=>pt+(1-(v-lo)/(hi-lo))*priceH;
+x.font='9px monospace'; x.strokeStyle='#1c2127'; x.fillStyle='#8a93a0'; x.textAlign='left';
+for(let k=0;k<=4;k++){ const v=lo+(hi-lo)*k/4, y=Y(v); x.beginPath(); x.moveTo(8,y); x.lineTo(W-pr,y); x.stroke(); x.fillText(nf(v,v>1000?0:2),W-pr+4,y+3); }
+const ticks=Math.min(6,n); x.textAlign='center';
+for(let k=0;k<ticks;k++){ const i=Math.round(k*(n-1)/Math.max(1,ticks-1));
+x.fillText(new Date(bars[i].t).toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:SEC.range==='1M'||SEC.range==='3M'?undefined:'2-digit'}),X(i),H-5); }
+// volume
+if(SEC.vol){ const vmax=Math.max(...bars.map(b=>b.v||0))||1, vb=pt+priceH+gap+volH;
+bars.forEach((b,i)=>{ if(!b.v) return; const h=b.v/vmax*volH; x.fillStyle=b.c>=b.o?'rgba(47,191,107,.35)':'rgba(224,74,74,.35)'; x.fillRect(X(i)-cw/2,vb-h,cw,h); });
+x.fillStyle='#4a525c'; x.textAlign='left'; x.fillText('Volume',10,pt+priceH+gap+9); }
+// chandeliers
+bars.forEach((b,i)=>{ const upc=b.c>=b.o, col=upc?'#2fbf6b':'#e04a4a';
+x.strokeStyle=col; x.lineWidth=1; x.beginPath(); x.moveTo(X(i),Y(b.h)); x.lineTo(X(i),Y(b.l)); x.stroke();
+const yo=Y(b.o), yc=Y(b.c), top=Math.min(yo,yc), h=Math.max(1,Math.abs(yc-yo));
+x.fillStyle=col; if(upc&&cw>3){ x.strokeRect(X(i)-cw/2,top,cw,h); } else x.fillRect(X(i)-cw/2,top,cw,h); });
+// moyennes mobiles
+const line=(a,col)=>{ x.strokeStyle=col; x.lineWidth=1.3; x.beginPath(); let s=false; a.forEach((v,i)=>{ if(v==null) return; s?x.lineTo(X(i),Y(v)):x.moveTo(X(i),Y(v)); s=true; }); x.stroke(); };
+if(SEC.ma){ line(m50,'#e8a33d'); line(m200,'#bb98e6'); }
+const unit=SEC.range==='5A'?'semaines':'séances';
+if(SEC.ma){ x.textAlign='right'; x.fillStyle='#bb98e6'; x.fillText('— MM200 ('+unit+')',W-pr-4,pt-6);
+x.fillStyle='#e8a33d'; x.fillText('— MM50',W-pr-4-x.measureText('— MM200 ('+unit+')').width-12,pt-6); }
+// survol
+const tip=document.getElementById('sectip'), i=hover;
+if(i!=null&&i>=0&&i<n){ const b=bars[i];
+x.strokeStyle='rgba(221,227,234,.35)'; x.setLineDash([3,3]); x.beginPath(); x.moveTo(X(i),pt); x.lineTo(X(i),H-pb); x.moveTo(8,Y(b.c)); x.lineTo(W-pr,Y(b.c)); x.stroke(); x.setLineDash([]);
+const chg=i>0?(b.c/bars[i-1].c-1)*100:null;
+tip.innerHTML=`<b style="color:var(--txt)">${new Date(b.t).toLocaleDateString('fr-FR',{weekday:'short',day:'2-digit',month:'short',year:'numeric'})}</b> &nbsp; O ${nf(b.o)} &nbsp; H ${nf(b.h)} &nbsp; B ${nf(b.l)} &nbsp; C <b style="color:var(--txt)">${nf(b.c)}</b> ${chg!=null?`&nbsp; <span class="${cls(chg)}">${pct(chg)}</span>`:''} ${b.v?'&nbsp; Vol. '+big(b.v):''}${SEC.ma&&m50[i]?` &nbsp; <span style="color:#e8a33d">MM50 ${nf(m50[i])}</span>`:''}${SEC.ma&&m200[i]?` &nbsp; <span style="color:#bb98e6">MM200 ${nf(m200[i])}</span>`:''}`;
+} else if(tip){ tip.innerHTML=''; }
+const perf=(bars[n-1].c/bars[0].o-1)*100, pe=document.getElementById('secperf');
+if(pe) pe.innerHTML=`${SEC.range} : <span class="${cls(perf)}">${pct(perf,1)}</span> · ${n} ${unit}`;
+cv.onmousemove=ev=>{ const rr=cv.getBoundingClientRect(); const k=Math.floor((ev.clientX-rr.left-8)/step); drawCandles(k>=0&&k<n?k:null); };
+cv.onmouseleave=()=>drawCandles(null);
+}
+function secReading(F,px,bars){
+const out=[];
+if(F.pe&&F.fpe) out.push(F.fpe<F.pe?`Le PER prospectif (${nf(F.fpe,1)}) est inférieur au PER actuel (${nf(F.pe,1)}) : le consensus anticipe une hausse des bénéfices.`
+:`Le PER prospectif (${nf(F.fpe,1)}) dépasse le PER actuel (${nf(F.pe,1)}) : le consensus anticipe un recul des bénéfices.`);
+if(F.target&&px) out.push(`L'objectif moyen de ${F.analysts||'plusieurs'} analystes (${nf(F.target)}) implique ${pct((F.target/px-1)*100,1)} par rapport au cours${F.targetLo&&F.targetHi?`, dans une fourchette de ${nf(F.targetLo)} à ${nf(F.targetHi)}`:''}.`);
+if(F.w52lo&&F.w52hi&&px){ const p=(px-F.w52lo)/(F.w52hi-F.w52lo)*100; out.push(`Le cours se situe à ${nf(Math.max(0,Math.min(100,p)),0)} % de son amplitude sur 52 semaines (${nf(F.w52lo)} – ${nf(F.w52hi)}).`); }
+if(F.opMargin!=null) out.push(F.opMargin>30?`Marge opérationnelle élevée (${nf(F.opMargin,1)} %).`:F.opMargin<0?`Activité déficitaire au niveau opérationnel (${nf(F.opMargin,1)} %).`:`Marge opérationnelle de ${nf(F.opMargin,1)} %.`);
+if(F.cash!=null&&F.debt!=null) out.push(F.cash>=F.debt?`Trésorerie nette positive (${big(F.cash-F.debt)}).`:`Endettement net de ${big(F.debt-F.cash)}.`);
+if(bars&&bars.length>200){ const c=bars.map(b=>b.c), m=sma(c,200), last=c[c.length-1], mm=m[m.length-1];
+if(mm) out.push(`Le cours est ${last>=mm?'au-dessus':'en dessous'} de sa moyenne mobile 200 ${SEC.range==='5A'?'semaines':'séances'} (${nf(mm)}), signal de tendance ${last>=mm?'haussière':'baissière'} de long terme.`); }
+return out.length?`<ul style="margin:0 0 0 16px;font-size:11px;line-height:1.6;color:#a4adb8">${out.map(t=>`<li>${t}</li>`).join('')}</ul><div class="note" style="padding:8px 0 0">Constats calculés automatiquement à partir des données affichées. Ce n'est pas une recommandation.</div>`
+:'<div class="note na" style="padding:0">Pas assez de données pour une lecture automatique.</div>';
 }
 
 /*═══════════════════════════════════════════════════════════════════════
@@ -1526,7 +1584,7 @@ wireSr(box);
 }
 function wireSr(root){
 root.querySelectorAll('[data-s]').forEach(e=>{
-const go_=()=>showDetail(e.dataset.s, e.dataset.n||null);
+const go_=()=>{ const it=localItems().find(x=>x.s===e.dataset.s); if(it&&it.nw) showDetail(e.dataset.s, e.dataset.n||null); else openSym(e.dataset.s); };
 e.onclick=go_; e.onkeydown=ev=>{ if(ev.key==='Enter'||ev.key===' '){ ev.preventDefault(); go_(); } };
 });
 }
@@ -1623,7 +1681,7 @@ ${WORKER_URL?' Recherche mondiale active via le relais Cloudflare.':' Recherche 
 <div class="pnl"><h3>Catalogue<span class="rt">instantané</span></h3><div class="pbody flush" id="srloc"></div></div>
 <div class="pnl"><h3>Marchés mondiaux<span class="rt">via relais Cloudflare</span></h3><div class="pbody flush" id="srrem"></div></div>
 </div>
-<div class="pnl" id="srdet"><h3>Fiche</h3><div class="pbody"><div class="note" style="padding:0">Sélectionnez un résultat pour afficher son cours${WORKER_URL?', son graphique et ses plus hauts et plus bas':''}.</div></div></div>
+<div class="pnl" id="srdet"><h3>Fiche</h3><div class="pbody"><div class="note" style="padding:0">Cliquez sur un titre pour ouvrir sa fiche complète (onglet Titre : chandeliers, fondamentaux, news). Les taux directeurs s'affichent ici.</div></div></div>
 </div>`;
 const inp=document.getElementById('sq');
 inp.oninput=e=>{ SR.q=e.target.value; renderLocal(); clearTimeout(SR.timer); SR.timer=setTimeout(remoteSearch,300); };
@@ -1921,11 +1979,11 @@ const map={m:'mkt', w:'wl', p:'pf', e:'macro', r:'srch', s:'sec', v:'val', n:'ne
 const t=map[e.key.toLowerCase()];
 if(t){ e.preventDefault(); go(t); }
 });
-window.addEventListener('resize',()=>{ if(S.view==='pf') runMC(); if(S.view==='macro') viewMacro(); });
+window.addEventListener('resize',()=>{ if(S.view==='pf') runMC(); if(S.view==='macro') viewMacro(); if(S.view==='sec') drawCandles(); });
 
 tick(); setInterval(tick,1000);
 go('mkt');
-const refresh=()=>Promise.all([loadLive(),loadUniverse(),loadFT(),loadMacro()]).then(([a,b,c,d])=>{ if(a||b||c||d){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
+const refresh=()=>Promise.all([loadLive(),loadUniverse(),loadFT(),loadMacro(),loadFund()]).then(([a,b,c,d,e])=>{ if(a||b||c||d||e){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
 refresh();
 setInterval(refresh, 10*60*1000);
 
