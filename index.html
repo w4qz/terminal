@@ -1169,7 +1169,9 @@ dlEl.innerHTML=[...qs.map(x=>[x.symbol,`${x.longname||x.shortname||''} · ${x.ex
 }catch(e){} },250); });
 el.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{ const p=S.positions[+b.dataset.del]; S.positions.splice(+b.dataset.del,1); delete S.pfp.mu[p.sym]; pfSave(); viewPortfolio(); });
 document.getElementById('pfadd').onsubmit=async ev=>{ ev.preventDefault();
-const sym=document.getElementById('pa_sym').value.trim().toUpperCase(), qty=parseFloat(document.getElementById('pa_qty').value);
+const PF_ALIAS={XAUUSD:'GC=F',XAU:'GC=F',GOLD:'GC=F',OR:'GC=F',XAGUSD:'SI=F',XAG:'SI=F',WTI:'CL=F',BRENT:'BZ=F',BTC:'BTC-USD',BTCUSD:'BTC-USD',ETH:'ETH-USD',ETHUSD:'ETH-USD'};
+let sym=document.getElementById('pa_sym').value.trim().toUpperCase(); if(/^[A-Z]{6}$/.test(sym)&&!PF_ALIAS[sym]&&/^(EUR|USD|GBP|JPY|CHF|AUD|CAD|NZD)/.test(sym)) sym+='=X'; sym=PF_ALIAS[sym]||sym;
+const qty=parseFloat(document.getElementById('pa_qty').value);
 let cst=parseFloat(document.getElementById('pa_cost').value);
 if(!sym||!(qty>0)) return msg('Ticker et quantité requis.');
 msg('Vérification de '+sym+'…');
