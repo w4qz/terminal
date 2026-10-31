@@ -2809,7 +2809,7 @@ const d=O.items&&O.items[sym]; if(S.focus!==sym) return;
 if(!d||!d.exps||!d.exps.length){ box.innerHTML=`<h3>OMON — Options</h3><div class="note">Pas de chaîne d'options pour ${esc(sym)} : seuls les titres américains prioritaires et les grands ETF (${Object.keys(O.items||{}).slice(0,12).map(esc).join(', ')}…) sont suivis, une fois par heure.</div>`; return; }
 const e=d.exps[Math.min(OMON.exp,d.exps.length-1)], spot=d.spot;
 const byK=new Map(); e.calls.forEach(c=>byK.set(c[0],{k:c[0],c})); e.puts.forEach(p=>{ const o=byK.get(p[0])||{k:p[0]}; o.p=p; byK.set(p[0],o); });
-const rows=[...byK.values()].sort((a,b)=>a.k-b.k), atm=rows.reduce((b,r)=>Math.abs(r.k-spot)<Math.abs(b.k-spot)?r:b,rows[0]);
+const rowsAll=[...byK.values()].sort((a,b)=>a.k-b.k), both=rowsAll.filter(r=>r.c&&r.p), rows=both.length>=8?both:rowsAll, atm=rows.reduce((b,r)=>Math.abs(r.k-spot)<Math.abs(b.k-spot)?r:b,rows[0]);
 const sum=(arr,i)=>arr.reduce((s,x)=>s+(x[i]||0),0), pcV=sum(e.calls,4)?sum(e.puts,4)/sum(e.calls,4):null, pcOI=sum(e.calls,5)?sum(e.puts,5)/sum(e.calls,5):null;
 const mid=o=>o?(o[2]&&o[3]?(o[2]+o[3])/2:o[1]):null, straddle=atm&&mid(atm.c)!=null&&mid(atm.p)!=null?mid(atm.c)+mid(atm.p):null;
 const ivAtm=atm?[atm.c&&atm.c[6],atm.p&&atm.p[6]].filter(v=>v!=null):[], iv=ivAtm.length?ivAtm.reduce((a,b)=>a+b,0)/ivAtm.length:null;
