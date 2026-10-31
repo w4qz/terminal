@@ -62,7 +62,7 @@ jobs:
         run: |
           git config user.name  "terminal-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for f in data.json universe.json constituents.json macro.json fundamentals.json economics.json; do [ -f "$f" ] && git add "$f"; done
+          for f in data.json universe.json constituents.json macro.json fundamentals.json economics.json peers.json; do [ -f "$f" ] && git add "$f"; done
           git diff --staged --quiet || git commit -m "Données $(date -u +'%Y-%m-%d %H:%M') UTC"
           # Si un autre passage a publié entre-temps, on garde nos fichiers (les plus récents) et on réessaie.
           for i in 1 2 3; do
