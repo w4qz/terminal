@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T20:27:37.335899Z",
+ "generated_at": "2026-10-31T21:06:04.397685Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -15,10 +15,10 @@
    "vol": 168039400
   },
   "ASTS": {
-   "p": 40.97,
+   "p": 40.99,
    "prev": 43.07,
-   "chg": -2.1,
-   "pct": -4.88,
+   "chg": -2.08,
+   "pct": -4.83,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-10-30T19:30:00Z",
@@ -224,8 +224,8 @@
    "prev": 1.3328,
    "chg": 0.0061,
    "pct": 0.46,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (GBPUSD=X) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (GBPUSD=X)",
    "ts": "2026-10-30T21:00:00Z",
    "open": 1.3393,
    "lo": 1.3393,
@@ -283,17 +283,17 @@
    "vol": 6774
   },
   "BTC": {
-   "p": 77444.9219,
+   "p": 77322.9766,
    "prev": 77198.2109,
-   "chg": 246.7109,
-   "pct": 0.32,
+   "chg": 124.7656,
+   "pct": 0.16,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-10-31T20:00:00Z",
+   "ts": "2026-10-31T21:00:00Z",
    "open": 77202.3984,
    "lo": 77000.9219,
    "hi": 77612.0938,
-   "vol": 13518249984
+   "vol": 12989511680
   }
  },
  "fundamentals": {
@@ -476,14 +476,14 @@
    "ccy": "USD",
    "mcap": 2598937821184,
    "pe": 19.4301,
-   "fpe": 22.8043,
+   "fpe": 22.5665,
    "eps": 12.37,
-   "feps": 10.5397,
+   "feps": 10.6508,
    "revTTM": 797455024128,
    "netIncome": 134779002880,
    "shares": 10813138306,
    "divYield": 0.0,
-   "target": 331.7714,
+   "target": 327.6969,
    "targetHi": 405.0,
    "targetLo": 230.0,
    "rating": "Achat fort",
@@ -557,9 +557,9 @@
    "ccy": "USD",
    "mcap": 1829640994816,
    "pe": 585.7391,
-   "fpe": 56.9376,
+   "fpe": 52.529,
    "eps": 0.23,
-   "feps": 2.3661,
+   "feps": 2.5647,
    "revTTM": 32042999808,
    "netIncome": -3431000064,
    "shares": 8246541218,
@@ -957,14 +957,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 982902374400,
+   "mcap": 979897024512,
    "pe": 44.75,
    "fpe": 38.2805,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.578,
    "div": 0.99,
    "divYield": 0.8,
@@ -1133,11 +1133,11 @@
    "shares": 4079000000,
    "div": 4.12,
    "divYield": 2.2,
-   "target": 179.4091,
+   "target": 179.7143,
    "targetHi": 206.0,
    "targetLo": 142.0,
    "rating": "Achat",
-   "analysts": 22,
+   "analysts": 21,
    "revGrowth": 35.8,
    "epsGrowth": 111.4,
    "grossMargin": 29.82,
@@ -1251,17 +1251,17 @@
    "industry": "Credit Services",
    "ccy": "USD",
    "mcap": 555819073536,
-   "pe": 33.3862,
-   "fpe": 27.5791,
-   "eps": 19.11,
-   "feps": 23.1338,
+   "pe": 35.0941,
+   "fpe": 27.6549,
+   "eps": 18.18,
+   "feps": 23.0705,
    "revTTM": 36288000000,
    "netIncome": 16958000128,
    "shares": 864657109,
    "beta": 0.76,
    "div": 3.48,
    "divYield": 0.55,
-   "target": 686.7949,
+   "target": 697.2814,
    "targetHi": 775.0,
    "targetLo": 550.0,
    "rating": "Achat fort",
@@ -1286,7 +1286,7 @@
    "exDiv": 1791504000,
    "divDate": 1794182400,
    "lastDiv": 0.87,
-   "trailDiv": 3.48
+   "trailDiv": 3.37
   },
   "ABBV": {
    "name": "AbbVie Inc.",
@@ -1294,10 +1294,10 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 521105244160,
-   "pe": 50.6684,
-   "fpe": 18.2448,
-   "eps": 5.82,
-   "feps": 16.163,
+   "pe": 83.3023,
+   "fpe": 18.2013,
+   "eps": 3.54,
+   "feps": 16.2016,
    "revTTM": 66013999104,
    "netIncome": 10302000128,
    "shares": 1767117285,
@@ -1322,7 +1322,7 @@
    "exDiv": 1799971200,
    "divDate": 1794787200,
    "lastDiv": 1.73,
-   "trailDiv": 1.73
+   "trailDiv": 6.83
   },
   "CVX": {
    "name": "Chevron Corporation",
@@ -1330,10 +1330,10 @@
    "industry": "Oil & Gas Integrated",
    "ccy": "USD",
    "mcap": 459499536384,
-   "pe": 17.2922,
-   "fpe": 14.9045,
-   "eps": 13.62,
-   "feps": 15.802,
+   "pe": 22.668,
+   "fpe": 14.9859,
+   "eps": 10.39,
+   "feps": 15.7161,
    "revTTM": 228955996160,
    "netIncome": 26976000000,
    "shares": 1951000000,
@@ -1359,7 +1359,7 @@
    "exDiv": 1794960000,
    "divDate": 1788998400,
    "lastDiv": 1.78,
-   "trailDiv": 1.71
+   "trailDiv": 6.98
   },
   "COST": {
    "name": "Costco Wholesale Corporation",
@@ -1411,9 +1411,9 @@
    "ccy": "USD",
    "mcap": 442427080704,
    "pe": 158.7155,
-   "fpe": 78.3347,
+   "fpe": 78.7903,
    "eps": 1.16,
-   "feps": 2.3503,
+   "feps": 2.3367,
    "revTTM": 6155940864,
    "netIncome": 3016691968,
    "shares": 2300713329,
@@ -1579,9 +1579,12 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 122.9082,
+   "shares": 572600000,
    "divYield": 4.19,
    "w52lo": 93.84,
-   "w52hi": 101.46
+   "w52hi": 101.46,
+   "trailDiv": 2.48
   },
   "GLD": {
    "name": "SPDR Gold Shares",
@@ -1638,7 +1641,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T20:27:37.335899+00:00",
+   "ts": "2026-10-31T21:06:04.397685+00:00",
    "url": "https://asia.nikkei.com/opinion/time-for-japan-to-develop-people-who-can-sell-content"
   },
   {
@@ -1649,7 +1652,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T20:27:37.335899+00:00",
+   "ts": "2026-10-31T21:06:04.397685+00:00",
    "url": "https://asia.nikkei.com/business/markets/bonds/yen-bond-offerings-hit-record-16bn-as-ai-funding-race-reaches-japan"
   },
   {
@@ -1659,7 +1662,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T20:27:37.335899+00:00",
+   "ts": "2026-10-31T21:06:04.397685+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/japan-weighs-taxing-real-estate-rental-operators-living-overseas"
   },
   {
@@ -1669,7 +1672,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T20:27:37.335899+00:00",
+   "ts": "2026-10-31T21:06:04.397685+00:00",
    "url": "https://asia.nikkei.com/business/health-care/japan-s-foreign-caregivers-face-exam-hurdle-as-grace-period-ends"
   },
   {
@@ -1677,7 +1680,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T20:27:37.335899+00:00",
+   "ts": "2026-10-31T21:06:04.397685+00:00",
    "url": "https://asia.nikkei.com/business/food-beverage/thai-highland-tribe-coffee-brews-following-at-home-and-in-tokyo"
   },
   {
@@ -1687,7 +1690,7 @@
     "HSI"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T20:27:37.335899+00:00",
+   "ts": "2026-10-31T21:06:04.397685+00:00",
    "url": "https://asia.nikkei.com/spotlight/society/fatal-dog-attacks-test-hong-kong-s-ambitions-for-a-pet-friendly-economy"
   },
   {
@@ -1695,7 +1698,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T20:27:37.335899+00:00",
+   "ts": "2026-10-31T21:06:04.397685+00:00",
    "url": "https://asia.nikkei.com/spotlight/comment/thailand-looks-west-after-30-years-of-struggles-over-dawei"
   },
   {
@@ -1703,7 +1706,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T20:27:37.335899+00:00",
+   "ts": "2026-10-31T21:06:04.397685+00:00",
    "url": "https://asia.nikkei.com/spotlight/my-personal-history/what-lies-ahead-stephen-schwarzman-30"
   },
   {
@@ -1713,7 +1716,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T20:27:37.335899+00:00",
+   "ts": "2026-10-31T21:06:04.397685+00:00",
    "url": "https://asia.nikkei.com/business/food-beverage/yakitori-chicken-from-japan-takes-a-stab-at-the-philippines-the-land-of-jollibee"
   },
   {
@@ -1721,7 +1724,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T20:27:37.335899+00:00",
+   "ts": "2026-10-31T21:06:04.397685+00:00",
    "url": "https://asia.nikkei.com/business/automobiles/electric-vehicles/foxconn-unveils-3-evs-to-grow-contract-manufacturing-business"
   },
   {
@@ -1731,7 +1734,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T20:27:37.335899+00:00",
+   "ts": "2026-10-31T21:06:04.397685+00:00",
    "url": "https://asia.nikkei.com/business/technology/japan-miner-to-address-labor-crunch-with-self-driving-dump-trucks"
   },
   {
@@ -1739,7 +1742,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T20:27:37.335899+00:00",
+   "ts": "2026-10-31T21:06:04.397685+00:00",
    "url": "https://asia.nikkei.com/business/retail/uniqlo-shakes-up-china-strategy-with-focus-on-store-profitability"
   },
   {
@@ -1749,7 +1752,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T20:27:37.335899+00:00",
+   "ts": "2026-10-31T21:06:04.397685+00:00",
    "url": "https://asia.nikkei.com/spotlight/supply-chain/japan-s-murata-to-invest-6.3bn-in-capacitor-production-for-ai-over-5-years"
   },
   {
@@ -1759,7 +1762,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T20:27:37.335899+00:00",
+   "ts": "2026-10-31T21:06:04.397685+00:00",
    "url": "https://asia.nikkei.com/business/health-care/japan-s-omron-eyes-india-as-export-base-for-blood-pressure-monitors"
   },
   {
@@ -1769,8 +1772,26 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-10-31T20:27:37.335899+00:00",
+   "ts": "2026-10-31T21:06:04.397685+00:00",
    "url": "https://asia.nikkei.com/spotlight/supply-chain/japan-s-sojitz-to-import-rare-earth-yttrium-from-malaysia"
+  },
+  {
+   "h": "Trump defamation suit against Murdoch, WSJ over Epstein letter dismissed with prejudice",
+   "w": "By dismissing the suit with prejudice, Trump can't file another amended version in district court. Trump's legal team said the president plans to appeal.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-31T21:05:53Z",
+   "url": "https://www.cnbc.com/2026/10/31/trump-murdoch-wsj-epstein-defamation-lawsuit-dismissed.html"
+  },
+  {
+   "h": "L’OPEC+ devrait maintenir sa production pétrolière en décembre",
+   "w": "",
+   "syms": [
+    "BRENT"
+   ],
+   "src": "Investing.com France",
+   "ts": "2026-10-31T20:44:25Z",
+   "url": "https://fr.investing.com/news/commodities-news/lopec-devrait-maintenir-sa-production-petroliere-en-decembre-3667041"
   },
   {
    "h": "My abusive ex-husband promised $20,000 for our kids’ education. Now he refuses to pay. Is he legally obligated?",
@@ -1787,14 +1808,6 @@
    "src": "CNBC — Marchés",
    "ts": "2026-10-31T20:12:37Z",
    "url": "https://www.cnbc.com/2026/10/31/xai-naacp-clean-air-act-lawsuit-dismissal.html"
-  },
-  {
-   "h": "Trump defamation suit against Murdoch, WSJ over Epstein letter dismissed with prejudice",
-   "w": "",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-31T20:10:39Z",
-   "url": "https://www.cnbc.com/2026/10/31/trump-murdoch-wsj-epstein-defamation-lawsuit-dismissed.html"
   },
   {
    "h": "OpenAI pares fundraising goal, now seeking up to $20 billion in latest round",
@@ -1999,14 +2012,6 @@
    "src": "CNBC — Marchés",
    "ts": "2026-10-31T13:47:03Z",
    "url": "https://www.cnbc.com/2026/10/31/qatar-iran-us-talks-mediation.html"
-  },
-  {
-   "h": "La Russie prolonge son interdiction d’exportation de diesel jusqu’en janvier",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-10-31T13:43:46Z",
-   "url": "https://fr.investing.com/news/stock-market-news/la-russie-prolonge-son-interdiction-dexportation-de-diesel-jusquen-janvier-3667022"
   },
   {
    "h": "Iran warns it will retaliate without ‘geographical limitations’ if attacked",
