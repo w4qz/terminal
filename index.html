@@ -198,7 +198,6 @@ transition-duration:0.001ms !important;scroll-behavior:auto !important}
 <button class="navbtn" data-v="macro">Macro <kbd aria-hidden="true">E</kbd><span class="sr-only">(raccourci E)</span></button>
 <button class="navbtn" data-v="srch">Recherche <kbd aria-hidden="true">R</kbd><span class="sr-only">(raccourci R)</span></button>
 <button class="navbtn" data-v="sec">Titre <kbd aria-hidden="true">S</kbd><span class="sr-only">(raccourci S)</span></button>
-<button class="navbtn" data-v="val">Valorisation <kbd aria-hidden="true">V</kbd><span class="sr-only">(raccourci V)</span></button>
 <button class="navbtn" data-v="news">News <kbd aria-hidden="true">N</kbd><span class="sr-only">(raccourci N)</span></button>
 <button class="navbtn" data-v="diag">Diagnostic <kbd aria-hidden="true">D</kbd><span class="sr-only">(raccourci D)</span></button>
 </nav>
@@ -213,7 +212,6 @@ transition-duration:0.001ms !important;scroll-behavior:auto !important}
 <div class="view" id="v-macro" role="tabpanel" aria-label="Macro"></div>
 <div class="view" id="v-srch" role="tabpanel" aria-label="Recherche"></div>
 <div class="view" id="v-sec" role="tabpanel" aria-label="Titre"></div>
-<div class="view" id="v-val" role="tabpanel" aria-label="Valorisation"></div>
 <div class="view" id="v-news" role="tabpanel" aria-label="News"></div>
 <div class="view" id="v-diag" role="tabpanel" aria-label="Diagnostic"></div>
 </main>
@@ -760,7 +758,7 @@ return 'il y a '+Math.floor(s/86400)+' j';
 /*═══════════════════════════════════════════════════════════════════════
 4. MOTEUR QUANTITATIF
 Tous les calculs sont réels. Aucune valeur affichée dans les vues
-Portefeuille et Valorisation n'est codée en dur.
+Portefeuille n'est codée en dur.
 ═══════════════════════════════════════════════════════════════════════*/
 const Q = {
 mean:a=>a.reduce((x,y)=>x+y,0)/a.length,
@@ -1497,127 +1495,6 @@ return out.length?`<ul style="margin:0 0 0 16px;font-size:11px;line-height:1.6;c
 }
 
 /*═══════════════════════════════════════════════════════════════════════
-10. VUE — VALORISATION (DCF + sensibilité)
-═══════════════════════════════════════════════════════════════════════*/
-function viewValuation(){
-const el=document.getElementById('v-val');
-el.innerHTML=`
-<div class="pnl">
-<h3>Modèle DCF — ${S.focus}<span class="rt">hypothèses saisies, entièrement visibles</span></h3>
-<form class="ctl" id="dcfform">
-<div class="f w"><label for="d_rev">CA de départ (M)</label><input id="d_rev" type="number" value="302970"></div>
-<div class="f"><label for="d_g">Croissance an 1-5 %</label><input id="d_g" type="number" step="1" value="28"></div>
-<div class="f"><label for="d_m">Marge EBIT %</label><input id="d_m" type="number" step="1" value="62"></div>
-<div class="f"><label for="d_t">Taux d'IS %</label><input id="d_t" type="number" step="1" value="15"></div>
-<div class="f"><label for="d_cx">CapEx % du CA</label><input id="d_cx" type="number" step="0.5" value="4"></div>
-<div class="f"><label for="d_da">D&A % du CA</label><input id="d_da" type="number" step="0.5" value="3"></div>
-<div class="f"><label for="d_wc">Δ BFR % du CA</label><input id="d_wc" type="number" step="0.5" value="2"></div>
-<div class="f"><label for="d_w">WACC %</label><input id="d_w" type="number" step="0.25" value="10"></div>
-<div class="f"><label for="d_tg">Croissance perpétuelle %</label><input id="d_tg" type="number" step="0.25" value="3"></div>
-<div class="f"><label for="d_nd">Dette nette (M)</label><input id="d_nd" type="number" value="-40000"></div>
-<div class="f w"><label for="d_sh">Titres (M)</label><input id="d_sh" type="number" value="24150"></div>
-<div class="f"><label for="d_px">Cours actuel</label><input id="d_px" type="number" step="0.01" value="215.98"></div>
-<button class="btn go" type="submit" id="dcfrun">Calculer</button>
-</form>
-<div id="dcfout" aria-live="polite"></div>
-</div>`;
-document.getElementById('dcfform').onsubmit=e=>{ e.preventDefault(); runDCF(); };
-runDCF();
-}
-
-function dcfValue(p){
-const {rev0,g,margin,tax,capex,da,wc,wacc,tg,netDebt,shares}=p;
-if(wacc<=tg) return {err:'Le WACC doit être strictement supérieur à la croissance perpétuelle. '+
-'Sinon la formule de Gordon donne une valeur terminale infinie ou négative — le modèle n\'a pas de solution.'};
-let rev=rev0, pv=0; const rows=[];
-for(let y=1;y<=5;y++){
-rev*=(1+g);
-const ebit=rev*margin, nopat=ebit*(1-tax);
-const fcf=nopat + rev*da - rev*capex - rev*wc;
-const df=Math.pow(1+wacc,y), d=fcf/df;
-pv+=d; rows.push({y,rev,ebit,fcf,df,d});
-}
-const last=rows[4];
-const tv=last.fcf*(1+tg)/(wacc-tg);
-const pvTV=tv/Math.pow(1+wacc,5);
-const ev=pv+pvTV, eq=ev-netDebt, ps=eq/shares;
-return {rows,pv,tv,pvTV,ev,eq,ps,tvShare:pvTV/ev*100};
-}
-
-function runDCF(){
-const g=id=>parseFloat(document.getElementById(id).value);
-const p={rev0:g('d_rev'), g:g('d_g')/100, margin:g('d_m')/100, tax:g('d_t')/100,
-capex:g('d_cx')/100, da:g('d_da')/100, wc:g('d_wc')/100,
-wacc:g('d_w')/100, tg:g('d_tg')/100, netDebt:g('d_nd'), shares:g('d_sh')};
-const px=g('d_px'), out=document.getElementById('dcfout'), r=dcfValue(p);
-const live=document.getElementById('live-status');
-
-if(r.err){ out.innerHTML=`<div class="warn">${r.err}</div>`; if(live) live.textContent=r.err; return; }
-const up=(r.ps/px-1)*100;
-
-// Sensibilité WACC × croissance perpétuelle
-const waccs=[p.wacc-0.02,p.wacc-0.01,p.wacc,p.wacc+0.01,p.wacc+0.02];
-const tgs=[p.tg-0.01,p.tg-0.005,p.tg,p.tg+0.005,p.tg+0.01];
-let head='<tr><th scope="col">WACC ＼ g∞</th>'+tgs.map(t=>`<th scope="col">${nf(t*100,2)} %</th>`).join('')+'</tr>';
-let body='';
-for(const w of waccs){
-body+=`<tr><th scope="row">${nf(w*100,2)} %</th>`;
-for(const t of tgs){
-const c=dcfValue({...p,wacc:w,tg:t});
-if(c.err){ body+='<td class="na">—</td>'; continue; }
-const u=(c.ps/px-1)*100;
-const bg=u>0?`rgba(47,191,107,${Math.min(0.32,Math.abs(u)/280)})`
-:`rgba(224,74,74,${Math.min(0.32,Math.abs(u)/280)})`;
-body+=`<td style="background:${bg}"><b>${nf(c.ps,0)}</b>
-<div style="font-size:9px" class="${cls(u)}">${pct(u,0)}</div></td>`;
-}
-body+='</tr>';
-}
-
-const proj=r.rows.map(x=>`<tr><th scope="row" style="font-weight:400;color:var(--txt)">Année ${x.y}</th><td>${big(x.rev*1e6)}</td>
-<td>${big(x.ebit*1e6)}</td><td>${big(x.fcf*1e6)}</td>
-<td class="mut">${nf(x.df,3)}</td><td>${big(x.d*1e6)}</td></tr>`).join('');
-
-out.innerHTML=`
-<div class="statrow">
-<div class="stat"><span class="l">VALEUR D'ENTREPRISE</span><span class="n">${big(r.ev*1e6)}</span></div>
-<div class="stat"><span class="l">VALEUR DES CAPITAUX PROPRES</span><span class="n">${big(r.eq*1e6)}</span></div>
-<div class="stat"><span class="l">VALEUR PAR TITRE</span><span class="n">${nf(r.ps)}</span>
-<span class="s">contre ${nf(px)} au marché</span></div>
-<div class="stat"><span class="l">POTENTIEL</span><span class="n ${cls(up)}">${pct(up,1)}</span></div>
-<div class="stat"><span class="l">POIDS DE LA VALEUR TERMINALE</span><span class="n">${nf(r.tvShare,0)} %</span>
-<span class="s">de la VE</span></div>
-</div>
-<div class="g g23" style="padding:9px">
-<div class="pnl"><h3>Projection des flux</h3><div class="pbody flush">
-<table><caption class="sr-only">Projection des flux de trésorerie</caption><thead><tr><th scope="col">Période</th><th scope="col">CA</th><th scope="col">EBIT</th><th scope="col">FCF</th>
-<th scope="col">Facteur</th><th scope="col">FCF actualisé</th></tr></thead><tbody>${proj}
-<tr style="border-top:1px solid var(--line)"><th scope="row"><b>Valeur terminale</b></th>
-<td colspan="3" class="mut" style="text-align:left">Gordon : FCF₅ × (1+g∞) / (WACC − g∞)</td>
-<td class="mut">${nf(1/Math.pow(1+p.wacc,5),3)}</td><td><b>${big(r.pvTV*1e6)}</b></td></tr>
-</tbody></table></div></div>
-<div class="pnl"><h3>Lecture</h3><div class="pbody">
-<div class="note" style="padding:0">
-La valeur terminale pèse <b>${nf(r.tvShare,0)} %</b> de la valeur d'entreprise.
-${r.tvShare>75?`Au-delà de 75 %, le modèle ne valorise plus vraiment cinq ans de flux : il valorise une
-hypothèse de croissance perpétuelle. Le résultat est alors très sensible au couple WACC / g∞ — regardez
-la table de sensibilité plutôt que le chiffre central.`
-:`Sous 75 %, la valeur repose majoritairement sur des flux explicites, ce qui rend le modèle plus robuste.`}
-<br><br>
-Un DCF n'est pas un prix cible, c'est un test de cohérence : il révèle quelles hypothèses de croissance et
-de marge le cours actuel implique déjà. Si atteindre le cours de marché exige une croissance que vous
-jugez irréaliste, c'est l'information utile — pas la valeur par titre.
-</div>
-</div></div>
-<div class="pnl span2"><h3>Sensibilité — WACC contre croissance perpétuelle</h3>
-<div class="pbody flush"><table class="heat"><caption class="sr-only">Sensibilité de la valeur par titre au WACC et à la croissance perpétuelle</caption><thead>${head}</thead><tbody>${body}</tbody></table>
-<div class="note">Valeur par titre et potentiel face au cours de ${nf(px)}. Les hypothèses restent
-affichées et modifiables ci-dessus — aucune n'est masquée dans le code.</div></div></div>
-</div>`;
-if(live) live.textContent=`Modèle calculé. Valeur par titre ${nf(r.ps)}, potentiel ${pct(up,1)} face au cours de ${nf(px)}.`;
-}
-
-/*═══════════════════════════════════════════════════════════════════════
 11. VUE — NEWS
 ═══════════════════════════════════════════════════════════════════════*/
 function viewNews(){
@@ -2073,10 +1950,10 @@ function openSym(sym){ closePal(); S.focus=sym; go('sec'); }
 14. NAVIGATION
 ═══════════════════════════════════════════════════════════════════════*/
 const RENDER={mkt:viewMarkets, wl:viewWatchlist, pf:viewPortfolio, macro:viewMacro, srch:viewSearch,
-sec:viewSecurity, val:viewValuation, news:viewNews, diag:viewDiag};
+sec:viewSecurity, news:viewNews, diag:viewDiag};
 
 const VIEW_LABEL={mkt:'Marchés', wl:'Watchlist', pf:'Portefeuille', macro:'Macro', srch:'Recherche',
-sec:'Titre', val:'Valorisation', news:'News', diag:'Diagnostic'};
+sec:'Titre', news:'News', diag:'Diagnostic'};
 
 async function go(v){
 S.view=v;
@@ -2146,7 +2023,7 @@ else if(e.key==='Enter' && palList[palIdx]) palOpen(palList[palIdx]);
 return;
 }
 if(e.target.tagName==='INPUT' || e.metaKey || e.ctrlKey || e.altKey) return;
-const map={m:'mkt', w:'wl', p:'pf', e:'macro', r:'srch', s:'sec', v:'val', n:'news', d:'diag'};
+const map={m:'mkt', w:'wl', p:'pf', e:'macro', r:'srch', s:'sec', n:'news', d:'diag'};
 const t=map[e.key.toLowerCase()];
 if(t){ e.preventDefault(); go(t); }
 });
