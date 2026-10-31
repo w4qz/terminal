@@ -16,7 +16,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
@@ -41,6 +41,10 @@ jobs:
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
         run: python scripts/build_universe.py
 
+      - name: Fondamentaux du catalogue (par roulement)
+        continue-on-error: true
+        run: python scripts/build_fundamentals.py
+
       - name: Construire l'onglet Macro (ECO, WIRP, GC, BTMM)
         continue-on-error: true
         env:
@@ -51,7 +55,7 @@ jobs:
         run: |
           git config user.name  "terminal-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for f in data.json universe.json constituents.json macro.json; do [ -f "$f" ] && git add "$f"; done
+          for f in data.json universe.json constituents.json macro.json fundamentals.json; do [ -f "$f" ] && git add "$f"; done
           git diff --staged --quiet || git commit -m "Données $(date -u +'%Y-%m-%d %H:%M') UTC"
           git pull --rebase --autostash
           git push
