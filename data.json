@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T17:58:49.312389Z",
+ "generated_at": "2026-10-31T18:33:00.390176Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -148,8 +148,8 @@
    "prev": 10722.0996,
    "chg": 14.04,
    "pct": 0.13,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^FTSE) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^FTSE)",
    "ts": "2026-10-30T16:00:00Z",
    "open": 10721.5,
    "lo": 10715.9004,
@@ -283,17 +283,17 @@
    "vol": 6774
   },
   "BTC": {
-   "p": 77557.4297,
+   "p": 77559.4531,
    "prev": 77198.2109,
-   "chg": 359.2188,
+   "chg": 361.2422,
    "pct": 0.47,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-10-31T17:00:00Z",
+   "ts": "2026-10-31T18:00:00Z",
    "open": 77202.3984,
    "lo": 77000.9219,
    "hi": 77612.0938,
-   "vol": 16481595392
+   "vol": 16104502272
   }
  },
  "fundamentals": {
@@ -1632,12 +1632,140 @@
  ],
  "news": [
   {
-   "h": "Le parquet de Paris a ouvert une enquête pour provocation à la haine raciale en raison de menaces racistes visant des livreurs et chauffeurs sur X",
-   "w": "Sur le réseau social, un salon de discussion ouvert aux utilisateurs, intitulé « L’heure est à l’action face à la violence des islamo-collabos antifas », a été l’espace où ces propos racistes et d’incitation à la violence ont été tenus, au début d’octobre.",
+   "h": "Japan weighs taxing real estate rental operators living overseas",
+   "w": "",
+   "syms": [
+    "N225"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-10-31T18:33:00.390176+00:00",
+   "url": "https://asia.nikkei.com/business/markets/property/japan-weighs-taxing-real-estate-rental-operators-living-overseas"
+  },
+  {
+   "h": "Japan's foreign caregivers face exam hurdle as grace period ends",
+   "w": "",
+   "syms": [
+    "N225"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-10-31T18:33:00.390176+00:00",
+   "url": "https://asia.nikkei.com/business/health-care/japan-s-foreign-caregivers-face-exam-hurdle-as-grace-period-ends"
+  },
+  {
+   "h": "Thai highland tribe coffee brews following at home and in Tokyo",
+   "w": "",
    "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-10-31T16:24:37Z",
-   "url": "https://www.lemonde.fr/societe/article/2026/10/31/le-parquet-de-paris-a-ouvert-une-enquete-pour-provocation-a-la-haine-raciale-en-raison-de-menaces-racistes-visant-des-livreurs-et-chauffeurs-sur-x_6803720_3224.html"
+   "src": "Nikkei Asia",
+   "ts": "2026-10-31T18:33:00.390176+00:00",
+   "url": "https://asia.nikkei.com/business/food-beverage/thai-highland-tribe-coffee-brews-following-at-home-and-in-tokyo"
+  },
+  {
+   "h": "Fatal dog attacks test Hong Kong's ambitions for a pet-friendly economy",
+   "w": "",
+   "syms": [
+    "HSI"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-10-31T18:33:00.390176+00:00",
+   "url": "https://asia.nikkei.com/spotlight/society/fatal-dog-attacks-test-hong-kong-s-ambitions-for-a-pet-friendly-economy"
+  },
+  {
+   "h": "Thailand looks west after 30 years of struggles over Dawei",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-10-31T18:33:00.390176+00:00",
+   "url": "https://asia.nikkei.com/spotlight/comment/thailand-looks-west-after-30-years-of-struggles-over-dawei"
+  },
+  {
+   "h": "What Lies Ahead: Stephen Schwarzman (30)",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-10-31T18:33:00.390176+00:00",
+   "url": "https://asia.nikkei.com/spotlight/my-personal-history/what-lies-ahead-stephen-schwarzman-30"
+  },
+  {
+   "h": "Yakitori chicken from Japan takes a stab at the Philippines, the land of Jollibee",
+   "w": "",
+   "syms": [
+    "N225"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-10-31T18:33:00.390176+00:00",
+   "url": "https://asia.nikkei.com/business/food-beverage/yakitori-chicken-from-japan-takes-a-stab-at-the-philippines-the-land-of-jollibee"
+  },
+  {
+   "h": "Foxconn unveils 3 EVs to grow contract manufacturing business",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-10-31T18:33:00.390176+00:00",
+   "url": "https://asia.nikkei.com/business/automobiles/electric-vehicles/foxconn-unveils-3-evs-to-grow-contract-manufacturing-business"
+  },
+  {
+   "h": "Japan miner to address labor crunch with self-driving dump trucks",
+   "w": "",
+   "syms": [
+    "N225"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-10-31T18:33:00.390176+00:00",
+   "url": "https://asia.nikkei.com/business/technology/japan-miner-to-address-labor-crunch-with-self-driving-dump-trucks"
+  },
+  {
+   "h": "Uniqlo shakes up China strategy with focus on store profitability",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-10-31T18:33:00.390176+00:00",
+   "url": "https://asia.nikkei.com/business/retail/uniqlo-shakes-up-china-strategy-with-focus-on-store-profitability"
+  },
+  {
+   "h": "Japan's Murata to invest $6.3bn in capacitor production for AI over 5 years",
+   "w": "",
+   "syms": [
+    "N225"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-10-31T18:33:00.390176+00:00",
+   "url": "https://asia.nikkei.com/spotlight/supply-chain/japan-s-murata-to-invest-6.3bn-in-capacitor-production-for-ai-over-5-years"
+  },
+  {
+   "h": "Japan's Omron eyes India as export base for blood pressure monitors",
+   "w": "",
+   "syms": [
+    "N225"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-10-31T18:33:00.390176+00:00",
+   "url": "https://asia.nikkei.com/business/health-care/japan-s-omron-eyes-india-as-export-base-for-blood-pressure-monitors"
+  },
+  {
+   "h": "Japan's Sojitz to import rare earth yttrium from Malaysia",
+   "w": "",
+   "syms": [
+    "N225"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-10-31T18:33:00.390176+00:00",
+   "url": "https://asia.nikkei.com/spotlight/supply-chain/japan-s-sojitz-to-import-rare-earth-yttrium-from-malaysia"
+  },
+  {
+   "h": "Memory chip makers outearn Alphabet, other tech giants on AI demand",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-10-31T18:33:00.390176+00:00",
+   "url": "https://asia.nikkei.com/business/tech/semiconductors/memory-chip-makers-outearn-alphabet-other-tech-giants-on-ai-demand"
+  },
+  {
+   "h": "Daiwa fund buy of Blackstone Tokyo office complex include retail digital securities",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-10-31T18:33:00.390176+00:00",
+   "url": "https://asia.nikkei.com/business/business-deals/daiwa-fund-buy-of-blackstone-tokyo-office-complex-include-retail-digital-securities"
   },
   {
    "h": "Binance says 90% of $6.3 billion hack losses are now covered, plans to resume withdrawals Sunday",
@@ -1646,8 +1774,118 @@
     "BTC"
    ],
    "src": "CNBC — Marchés",
-   "ts": "2026-10-31T16:06:44Z",
+   "ts": "2026-10-31T18:12:09Z",
    "url": "https://www.cnbc.com/2026/10/31/binance-hack-asset-coverage-withdrawals.html"
+  },
+  {
+   "h": "Caregivers are now spending more than $11,000 a year out of pocket—up 60% in five years",
+   "w": "An AARP study shows the financial sacrifices families make and their long-term impacts.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-10-31T18:10:00Z",
+   "url": "https://www.marketwatch.com/story/were-spending-more-than-11-000-a-year-of-our-own-money-caring-for-our-aging-parents-and-loved-ones-8fc5b2dc?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Meta développe un robot humanoïde avec la startup chinoise Fourier",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-10-31T17:29:26Z",
+   "url": "https://fr.investing.com/news/stock-market-news/meta-developpe-un-robot-humanoide-avec-la-startup-chinoise-fourier-3667033"
+  },
+  {
+   "h": "Medicare used AI to pre-approve patient care, and it immediately led to a large drop in medical services",
+   "w": "Medicare is testing the use of AI to conduct prior authorizations to target wasteful medical spending",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-10-31T17:26:00Z",
+   "url": "https://www.marketwatch.com/story/medicare-used-ai-to-pre-approve-patient-care-and-it-immediately-led-to-a-large-drop-in-medical-services-dc38a210?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Binance a remplacé 90% des 6,3 milliards $ volés dans le plus grand piratage crypto",
+   "w": "",
+   "syms": [
+    "BTC"
+   ],
+   "src": "Investing.com France",
+   "ts": "2026-10-31T16:56:46Z",
+   "url": "https://fr.investing.com/news/cryptocurrency-news/binance-a-remplace-90-des-63-milliards--voles-dans-le-plus-grand-piratage-crypto-3667031"
+  },
+  {
+   "h": "80% of workers make this 401(k) mistake when they retire",
+   "w": "Other tax repercussions crop up down the road because balances build up, and RMDs get complicated",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-10-31T16:46:00Z",
+   "url": "https://www.marketwatch.com/story/whats-the-first-thing-most-people-do-with-their-401-k-after-they-retire-nothing-8a606518?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Reliance dépasse les attentes au T2 2026 grâce à l’énergie",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-10-31T16:27:22Z",
+   "url": "https://fr.investing.com/news/transcripts/reliance-depasse-les-attentes-au-t2-2026-grace-a-lenergie-93CH-3667029"
+  },
+  {
+   "h": "Le parquet de Paris a ouvert une enquête pour provocation à la haine raciale en raison de menaces racistes visant des livreurs et chauffeurs sur X",
+   "w": "Sur le réseau social, un salon de discussion ouvert aux utilisateurs, intitulé « L’heure est à l’action face à la violence des islamo-collabos antifas », a été l’espace où ces propos racistes et d’incitation à la violence ont été tenus, au début d’octobre.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-10-31T16:24:37Z",
+   "url": "https://www.lemonde.fr/societe/article/2026/10/31/le-parquet-de-paris-a-ouvert-une-enquete-pour-provocation-a-la-haine-raciale-en-raison-de-menaces-racistes-visant-des-livreurs-et-chauffeurs-sur-x_6803720_3224.html"
+  },
+  {
+   "h": "Want guaranteed income in retirement without an annuity? Try laddering I bonds.",
+   "w": "The new I-bond interest rate could be 5.5% or 5.4%, but that shouldn’t change your strategy.",
+   "syms": [
+    "XAU"
+   ],
+   "src": "MarketWatch",
+   "ts": "2026-10-31T16:02:00Z",
+   "url": "https://www.marketwatch.com/story/how-to-use-i-bonds-to-create-guaranteed-inflation-proof-income-in-retirement-50753fea?mod=mw_rss_topstories"
+  },
+  {
+   "h": "La Banque d’Angleterre envisage de relever le seuil des prêts hypothécaires à risque",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-10-31T16:00:28Z",
+   "url": "https://fr.investing.com/news/economy-news/la-banque-dangleterre-envisage-de-relever-le-seuil-des-prets-hypothecaires-a-risque-3667028"
+  },
+  {
+   "h": "We’re in our 70s. Should we pay off our 2.5% mortgage — or put the money in a high-yield savings account?",
+   "w": "“Let’s say 10 years from now, when I’m 84, we need a substantial amount of cash.”",
+   "syms": [
+    "XAU"
+   ],
+   "src": "MarketWatch",
+   "ts": "2026-10-31T16:00:00Z",
+   "url": "https://www.marketwatch.com/story/we-are-in-our-70s-should-we-pay-off-our-2-5-mortgage-or-build-up-our-savings-5a35e9c1?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Le directeur d’Esquire Financial vend des actions pour 2,56 millions $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-10-31T15:47:13Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-desquire-financial-vend-des-actions-pour-256-millions--93CH-3667026"
+  },
+  {
+   "h": "Our church has a $1.5 million bequest earning 3.75% in a savings account. Are we throwing money away?",
+   "w": "“Given the size and long-term nature of this gift, we want to make sure the funds are managed prudently.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-10-31T15:30:00Z",
+   "url": "https://www.marketwatch.com/story/there-may-be-better-investment-options-my-church-received-1-5-million-from-a-parishioner-is-3-75-interest-enough-5164d790?mod=mw_rss_topstories"
+  },
+  {
+   "h": "What gave this city its ‘best place to retire’ crown? You can actually afford to live there.",
+   "w": "Low cost of living, high quality of life and favorable taxes for retirees, for the win.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-10-31T15:25:00Z",
+   "url": "https://www.marketwatch.com/story/what-gave-this-city-its-best-place-to-retire-crown-you-can-actually-afford-to-live-there-a06f8f4d?mod=mw_rss_topstories"
   },
   {
    "h": "Evacuees from Russian-occupied city arrive in Ukraine",
@@ -1659,6 +1897,42 @@
    "mine": 1
   },
   {
+   "h": "My father has Alzheimer’s and his caregiver is using his debit card for DoorDash. Do I intervene?",
+   "w": "“I suspect the live-in caregiver is benefiting from my parent’s generosity.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-10-31T15:00:00Z",
+   "url": "https://www.marketwatch.com/story/theres-a-lot-of-hurt-between-us-my-fathers-caregiver-is-using-his-debit-card-for-doordash-orders-what-can-i-do-714de7a5?mod=mw_rss_topstories"
+  },
+  {
+   "h": "The S&P 500 isn’t the big winner you may think it is",
+   "w": "The index’s weakness may surprise a generation of investors raised on the cult of “stocks always go up.”",
+   "syms": [
+    "SPX"
+   ],
+   "src": "MarketWatch",
+   "ts": "2026-10-31T14:54:00Z",
+   "url": "https://www.marketwatch.com/story/you-cant-rely-on-the-s-p-500-as-much-as-you-may-think-a3ac0cb7?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Citi explique ce que signifient vraiment « faucon » et « colombe » à la BCE",
+   "w": "",
+   "syms": [
+    "EURUSD"
+   ],
+   "src": "Investing.com France",
+   "ts": "2026-10-31T14:53:31Z",
+   "url": "https://fr.investing.com/news/stock-market-news/citi-explique-ce-que-signifient-vraiment--faucon--et--colombe--a-la-bce-3667025"
+  },
+  {
+   "h": "Social Security’s fate — and your benefits — are in the hands of the candidates elected this year",
+   "w": "The program is expected to run out of money in the next six years, which is the same amount of time as a senator’s term.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-10-31T14:35:00Z",
+   "url": "https://www.marketwatch.com/story/the-midterms-are-crucial-to-the-future-of-social-security-no-matter-how-old-you-are-0f080a9c?mod=mw_rss_topstories"
+  },
+  {
    "h": "Investors trim growth bets over fears of US economy’s AI exposure",
    "w": "Return to bonds after long sell-off comes as concern rises about over-reliance on tech spending",
    "syms": [],
@@ -1666,6 +1940,22 @@
    "ts": "2026-10-31T14:00:02Z",
    "url": "https://www.ft.com/content/56b0d5fa-829c-47b1-b07b-b4be18f60151?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "Qatari mediators held talks in Tehran aimed at restarting direct U.S.-Iran negotiations, source says",
+   "w": "Axios reported that Qatari mediators held more than 12 hours of talks in Tehran on Friday to reach a deal to avoid a resumption of American-led attacks on Iran.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-31T13:47:03Z",
+   "url": "https://www.cnbc.com/2026/10/31/qatar-iran-us-talks-mediation.html"
+  },
+  {
+   "h": "La Russie prolonge son interdiction d’exportation de diesel jusqu’en janvier",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-10-31T13:43:46Z",
+   "url": "https://fr.investing.com/news/stock-market-news/la-russie-prolonge-son-interdiction-dexportation-de-diesel-jusquen-janvier-3667022"
   },
   {
    "h": "Iran warns it will retaliate without ‘geographical limitations’ if attacked",
@@ -1685,14 +1975,22 @@
    "url": "https://www.cnbc.com/2026/10/31/401k-cash-outs-automatic-rollovers.html"
   },
   {
-   "h": "Crypto industry pours more than $200 million into 2026 midterms to pressure Congress on favorable rules",
-   "w": "Interest groups tied to cryptocurrency are spending millions to tilt the midterm elections. They had mixed success in 2024",
+   "h": "Un administrateur de Medifast achète pour 68.027$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-10-31T13:16:59Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-medifast-achete-pour-68027-dactions-93CH-3667020"
+  },
+  {
+   "h": "La France déploie 70.000 policiers avant de nouveaux rassemblements",
+   "w": "",
    "syms": [
-    "BTC"
+    "CAC"
    ],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-31T13:04:29Z",
-   "url": "https://www.cnbc.com/2026/10/31/crypto-industry-spends-more-than-200-million-to-sway-the-midterms.html"
+   "src": "Investing.com France",
+   "ts": "2026-10-31T13:11:00Z",
+   "url": "https://fr.investing.com/news/world-news/la-france-deploie-70000-policiers-avant-de-nouveaux-rassemblements-3667019"
   },
   {
    "h": "« La seule manière de corriger le sous-investissement de la France est d’augmenter le montant de l’épargne disponible »",
@@ -1713,14 +2011,12 @@
    "url": "https://www.cnbc.com/2026/10/31/trump-gas-diesel-price-midterm-election.html"
   },
   {
-   "h": "Binance’s $6.3 billion hack raises questions about crypto wallet safety",
-   "w": "Two high-profile security incidents this week, including the largest crypto theft in history, have raised custody and safety concerns.",
-   "syms": [
-    "BTC"
-   ],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-31T12:47:08Z",
-   "url": "https://www.cnbc.com/2026/10/31/binance-hack-crypto-wallet-safety.html"
+   "h": "Goldman Sachs identifie les taux d’intérêt et l’IA comme risques",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-10-31T12:27:33Z",
+   "url": "https://fr.investing.com/news/stock-market-news/goldman-sachs-identifie-les-taux-dinteret-et-lia-comme-risques-3667017"
   },
   {
    "h": "Berkshire ekes out some new highs, but October rally stalls",
@@ -1900,6 +2196,16 @@
    "src": "Le Monde — Économie",
    "ts": "2026-10-31T07:00:06Z",
    "url": "https://www.lemonde.fr/economie/article/2026/10/31/course-contre-la-montre-et-casse-tete-logistique-pour-faire-baisser-le-prix-du-gazole-a-la-pompe_6803469_3234.html"
+  },
+  {
+   "h": "Trump called out Big Oil profits. Here’s how much their refining earnings have surged since",
+   "w": "Trump criticized Big Oil for making “too much money,” but oil majors have since reported surging refining earnings as fuel supplies tightened.",
+   "syms": [
+    "BRENT"
+   ],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-31T06:00:02Z",
+   "url": "https://www.cnbc.com/2026/10/31/trump-big-oil-refining-profits.html"
   },
   {
    "h": "Fiscal drifting: why the Budget won’t leave you better off",
@@ -2151,6 +2457,24 @@
    "url": "https://www.lemonde.fr/economie/article/2026/10/31/a-new-york-le-prix-des-creches-et-des-ecoles-et-des-structures-de-garde-est-si-exorbitant-qu-avoir-un-enfant-est-devenu-un-luxe_6803386_3234.html"
   },
   {
+   "h": "Pénurie de navires et tarifs record : comment la guerre au Moyen-Orient fait bondir les prix du transport de pétrole",
+   "w": "Le conflit se traduit par une raréfaction des navires pétroliers disponibles et un allongement des temps de transport, qui favorise l’envolée des tarifs du fret. Les chaînes logistiques se réorganisent et certains acteurs du marché tentent de profiter de cette nouvelle donne.",
+   "syms": [
+    "BRENT"
+   ],
+   "src": "Le Monde — Économie",
+   "ts": "2026-10-31T04:00:48Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/10/31/penurie-de-navires-et-tarifs-record-comment-la-guerre-au-moyen-orient-fait-bondir-les-prix-du-transport-de-petrole_6803378_3234.html"
+  },
+  {
+   "h": "La Bourse de New York saisie d’effroi, à la veille de Halloween",
+   "w": "Alors que les inquiétudes s’accumulent sur la rentabilité des investissements massifs des entreprises du secteur de l’intelligence artificielle, les résultats trimestriels décevants de ces géants ont entraîné un fort repli des marchés actions.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-10-31T02:17:19Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/10/31/la-bourse-de-new-york-saisie-d-effroi-a-la-veille-d-halloween_6803334_3234.html"
+  },
+  {
    "h": "Muji takes its China playbook global",
    "w": "Localising products is key to minimalist Japanese retailer’s plan to expand in Europe and US",
    "syms": [
@@ -2171,6 +2495,24 @@
    "mine": 1
   },
   {
+   "h": "L’agence Fitch maintient la note de la dette souveraine de la France, mais dégrade sa perspective",
+   "w": "Relevant une détérioration de la situation budgétaire et des taux d’emprunt, l’agence de notation abaisse la perspective, de stable à négative. « Cette appréciation confirme l’absolue nécessité d’adopter d’ici à la fin de l’année un budget responsable », a réagi vendredi le ministre de l’économie, Roland Lescure.",
+   "syms": [
+    "CAC"
+   ],
+   "src": "Le Monde — Économie",
+   "ts": "2026-10-30T23:19:06Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/10/31/l-agence-fitch-maintient-la-note-de-la-dette-souveraine-de-la-france-mais-degrade-sa-perspective_6803235_3234.html"
+  },
+  {
+   "h": "Meta outlook revised downward by S&P on cash flow and capex concerns",
+   "w": "Meta has been given a negative outlook by S&amp;P Global Ratings due to the company's hefty capital expenditures and concerns about free cash flow.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-30T22:42:26Z",
+   "url": "https://www.cnbc.com/2026/10/30/meta-outlook-to-revised-to-negative-by-sp-after-cash-flow-negative.html"
+  },
+  {
    "h": "$6.3bn in 30 minutes: how the world’s biggest heist unfolded",
    "w": "North Korean hackers’ attack on Binance takes crypto theft to an unprecedented scale",
    "syms": [
@@ -2180,6 +2522,14 @@
    "ts": "2026-10-30T22:17:15Z",
    "url": "https://www.ft.com/content/e84eceda-040b-4e5f-b906-09768085933a?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "Gamble on democracy: Inside suspicious election-contracts trading on prediction markets",
+   "w": "CNBC examines unusual price spikes in election prediction markets and how low-volume contracts can be moved by relatively small trades.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-30T22:00:53Z",
+   "url": "https://www.cnbc.com/2026/10/30/gamble-on-democracy-inside-suspicious-election-contracts-trading-on-prediction-markets-.html"
   }
  ],
  "summary": {
