@@ -52,6 +52,15 @@ RSS_FEEDS = [
     ("CNBC — Marchés", "https://www.cnbc.com/id/100003114/device/rss/rss.html"),
     ("BBC — Business", "https://feeds.bbci.co.uk/news/business/rss.xml"),
     ("Le Monde — Économie", "https://www.lemonde.fr/economie/rss_full.xml"),
+    ("Wall Street Journal — Marchés", "https://feeds.a.dj.com/rss/RSSMarketsMain.xml"),
+    ("Wall Street Journal — Monde", "https://feeds.a.dj.com/rss/RSSWorldNews.xml"),
+    ("MarketWatch", "https://feeds.content.dowjones.io/public/rss/mw_topstories"),
+    ("Yahoo Finance", "https://finance.yahoo.com/news/rssindex"),
+    ("Nikkei Asia", "https://asia.nikkei.com/rss/feed/nar"),
+    ("The Economist — Finance", "https://www.economist.com/finance-and-economics/rss.xml"),
+    ("Investing.com France", "https://fr.investing.com/rss/news.rss"),
+    ("Réserve fédérale — communiqués", "https://www.federalreserve.gov/feeds/press_all.xml"),
+    ("BCE — communiqués", "https://www.ecb.europa.eu/rss/press.html"),
 ]
 # Flux personnel myFT (sujets suivis sur ft.com), gardé dans le secret GitHub FT_MYFT_RSS.
 # Plusieurs adresses possibles, séparées par des virgules. Les articles payants y figurent
@@ -60,7 +69,7 @@ for _i, _u in enumerate([u.strip() for u in os.getenv("FT_MYFT_RSS", "").split("
     _slug = _u.split("ft.com/")[-1].split("?")[0].replace("stream/", "")
     _slug = "sujet suivi" if re.fullmatch(r"[0-9a-f-]{36}", _slug) else _slug.replace("-", " ")
     RSS_FEEDS.insert(_i, (f"myFT — {_slug}", _u))
-MAX_NEWS = 60
+MAX_NEWS = 100
 
 # Mots-clés → tickers, pour relier une news à une fiche du terminal.
 TAGS = {
