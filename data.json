@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T15:03:12.797293Z",
+ "generated_at": "2026-10-31T16:00:34.383209Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -283,17 +283,17 @@
    "vol": 6774
   },
   "BTC": {
-   "p": 77271.8594,
+   "p": 77422.7578,
    "prev": 77198.2109,
-   "chg": 73.6484,
-   "pct": 0.1,
+   "chg": 224.5469,
+   "pct": 0.29,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-10-31T15:00:00Z",
+   "ts": "2026-10-31T16:00:00Z",
    "open": 77202.3984,
    "lo": 77000.9219,
    "hi": 77554.9219,
-   "vol": 19279998976
+   "vol": 17758226432
   }
  },
  "fundamentals": {
@@ -1632,6 +1632,15 @@
  ],
  "news": [
   {
+   "h": "Evacuees from Russian-occupied city arrive in Ukraine",
+   "w": "Complex humanitarian mission extracted hundreds of people from Oleshky during rare local ceasefire between Moscow and Kyiv",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-10-31T15:17:34Z",
+   "url": "https://www.ft.com/content/55dfa145-4078-450f-a853-5f2d551260f1",
+   "mine": 1
+  },
+  {
    "h": "Binance, crypto and hacks: What to know about keeping coin safe as cyber criminals advance",
    "w": "The Binance hack of $6.3 billion, the largest crypto theft ever, is a wake-up call for investors to understand how coin is guarded and the risk of losing it.",
    "syms": [
@@ -1645,18 +1654,10 @@
    "h": "Investors trim growth bets over fears of US economy’s AI exposure",
    "w": "Return to bonds after long sell-off comes as concern rises about over-reliance on tech spending",
    "syms": [],
-   "src": "myFT — us",
+   "src": "myFT — world",
    "ts": "2026-10-31T14:00:02Z",
    "url": "https://www.ft.com/content/56b0d5fa-829c-47b1-b07b-b4be18f60151?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Qatari mediators held talks in Tehran aimed at restarting direct U.S.-Iran negotiations, source says",
-   "w": "Axios reported that Qatari mediators held more than 12 hours of talks in Tehran on Friday to reach a deal to avoid a resumption of American-led attacks on Iran.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-31T13:47:03Z",
-   "url": "https://www.cnbc.com/2026/10/31/qatar-iran-us-talks-mediation.html"
   },
   {
    "h": "Iran warns it will retaliate without ‘geographical limitations’ if attacked",
@@ -1740,6 +1741,14 @@
    "mine": 1
   },
   {
+   "h": "Automakers like Rivian and Ford are ‘democratizing 3D printing’ to reduce costs and increase speed",
+   "w": "Automakers including Ford, Rivian and GM are expanding 3D printing to make prototypes, factory tools and low-volume parts faster and at lower cost.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-10-31T12:00:01Z",
+   "url": "https://www.cnbc.com/2026/10/31/automakers-3d-printing-ford-rivian-gm.html"
+  },
+  {
    "h": "‘Pop-up’ super PACs pour $637 million into 2026 midterm races",
    "w": "Twenty-two late-forming super PACs spent about $637 million in 2026 congressional races, sometimes before voters could see their donors.",
    "syms": [],
@@ -1748,12 +1757,12 @@
    "url": "https://www.cnbc.com/2026/10/31/2026-midterm-election-super-pacs-donor-disclosure.html"
   },
   {
-   "h": "Automakers like Rivian and Ford are ‘democratizing 3D printing’ to reduce costs and increase speed",
-   "w": "Automakers including Ford, Rivian and GM are expanding 3D printing to make prototypes, factory tools and low-volume parts faster and at lower cost.",
+   "h": "Humans are still doing the work behind some AI agents",
+   "w": "AI agents from startups including Dazzle, Duckbill and Wajo still rely on human workers for calls and other real-world tasks when software falls short.",
    "syms": [],
    "src": "CNBC — Marchés",
    "ts": "2026-10-31T12:00:01Z",
-   "url": "https://www.cnbc.com/2026/10/31/automakers-3d-printing-ford-rivian-gm.html"
+   "url": "https://www.cnbc.com/2026/10/31/ai-agents-humans-dazzle-duckbill-meta.html"
   },
   {
    "h": "Poland suspends top judges as battle over rule of law escalates",
@@ -1934,21 +1943,21 @@
    "mine": 1
   },
   {
-   "h": "The bonkers business of tax breaks for entrepreneurs",
-   "w": "Encouraging start-ups and scale-ups is a good idea but is not best served by Healey’s new Founders’ Relief",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-10-31T05:00:39Z",
-   "url": "https://www.ft.com/content/636fd85e-2f5f-4b98-91ff-75300df69908",
-   "mine": 1
-  },
-  {
    "h": "US midterms loom over jittery investors",
    "w": "Caution certainly seems warranted for the coming weeks",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-10-31T05:00:39Z",
    "url": "https://www.ft.com/content/6c099dc6-1fb3-44fc-b011-70229e3755cb?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "The bonkers business of tax breaks for entrepreneurs",
+   "w": "Encouraging start-ups and scale-ups is a good idea but is not best served by Healey’s new Founders’ Relief",
+   "syms": [],
+   "src": "myFT — world uk",
+   "ts": "2026-10-31T05:00:39Z",
+   "url": "https://www.ft.com/content/636fd85e-2f5f-4b98-91ff-75300df69908",
    "mine": 1
   },
   {
@@ -2035,8 +2044,8 @@
    "mine": 1
   },
   {
-   "h": "Is there a way out of Britain’s ‘rejection economy’?",
-   "w": "In Rotherham, the town with the fewest entry-level jobs in the UK, young people are struggling to find a place in society",
+   "h": "How it feels to be young in the town with fewest starter jobs in Britain",
+   "w": "In Rotherham, making a life is not easy. Will Lloyd investigates the ‘rejection economy’",
    "syms": [],
    "src": "myFT — europe",
    "ts": "2026-10-31T05:00:20Z",
@@ -2172,17 +2181,6 @@
    "src": "myFT — financials",
    "ts": "2026-10-30T22:17:15Z",
    "url": "https://www.ft.com/content/e84eceda-040b-4e5f-b906-09768085933a?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Binance rushes to recover customer money after $6.3bn heist",
-   "w": "World’s largest crypto exchange says an engineer’s laptop was compromised in major security breach",
-   "syms": [
-    "BTC"
-   ],
-   "src": "myFT — financials",
-   "ts": "2026-10-30T22:12:58Z",
-   "url": "https://www.ft.com/content/c7f5e395-c3a9-430e-b757-5014527b4d49?syn-25a6b1a6=1",
    "mine": 1
   }
  ],
