@@ -183,6 +183,27 @@ border:1px solid #3a5a7c;padding:6px 12px;border-radius:2px;font-size:11px;trans
 transition-duration:0.001ms !important;scroll-behavior:auto !important}
 #skiplink{transition:none}
 }
+
+/* ---------- v2 : lisibilité ---------- */
+:root{--txt2:#9ba5b1;--txt3:#6c7783}
+th{font-size:10px;letter-spacing:.3px}
+tbody th{color:var(--txt)}
+.stat .l{font-size:10px}
+.kv .k{font-size:11.5px}
+#main>.view{max-width:1640px;margin:0 auto}
+details.nfo{padding:6px 9px;font-size:10px;color:var(--txt2)}
+details.nfo summary{cursor:pointer;color:var(--txt3);list-style:none;user-select:none}
+details.nfo summary::before{content:'ⓘ ';color:#4d8fd6}
+details.nfo[open] summary{margin-bottom:4px}
+details.nfo p{line-height:1.55}
+#secbar{position:sticky;top:-10px;z-index:20;margin:-10px -10px 9px;padding:7px 12px;background:rgba(13,15,17,.97);
+border-bottom:1px solid var(--line);display:flex;align-items:center;gap:16px}
+#secbar .t{font-weight:700;font-size:15px;color:var(--hot)}
+#secbar .px{font-size:15px;font-weight:600}
+#secbar .nm{color:var(--txt2);font-size:11px;max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#secbar nav{margin-left:auto;display:flex;gap:2px}
+#secbar nav button{font-size:10px;padding:3px 9px;border:1px solid var(--line);color:var(--txt2);letter-spacing:.5px}
+#secbar nav button:hover{background:var(--sel);color:var(--txt);border-color:#3a5a7c}
 </style>
 </head>
 <body>
@@ -1736,7 +1757,9 @@ const nws=SNAPSHOT.news.filter(n=>(n.syms||[]).includes(sym)||(n.h||'').toLowerC
 const fundTs=F.ts?ago(F.ts):'—';
 
 el.innerHTML=`
-<div class="pnl" style="margin-bottom:9px"><div class="statrow">
+<div id="secbar"><span class="t">${esc(sym)}</span><span class="px">${px!=null?npx(px,sym):'—'}</span><span class="${cls(pc)}" style="font-weight:600">${pc!=null?pct(pc):''}</span><span class="nm">${esc(name)}</span>
+<nav aria-label="Sections de la fiche">${[['GP','sec-gp'],['DES','sec-des'],['RV','sec-rv'],['FA','sec-fa'],['DVD','sec-dvd'],['CN','sec-cn'],...(/[.=^]/.test(sym)?[]:[['OMON','sec-omon']])].map(([k,a])=>`<button type="button" data-jump="${a}">${k}</button>`).join('')}</nav></div>
+<div class="pnl" id="sec-des" style="margin-bottom:9px"><div class="statrow">
 <div class="stat"><span class="l">${esc(sym)}${F.sector?' · '+esc(F.sector):''}</span><span class="n" id="secpx">${px!=null?npx(px,sym):'—'}${badge(st)}</span><span class="s">${esc(name)}</span></div>
 <div class="stat"><span class="l">VARIATION</span><span class="n ${cls(pc)}" id="secpc">${pc!=null?pct(pc):'—'}</span><span class="s">${esc(ccy)}</span></div>
 <div class="stat"><span class="l">CAPITALISATION</span><span class="n">${B(F.mcap)}</span><span class="s">${esc(ccy)}</span></div>
@@ -1744,7 +1767,7 @@ el.innerHTML=`
 <div class="stat"><span class="l">OBJECTIF ANALYSTES</span><span class="n">${N(F.target)}</span><span class="s">${up!=null?pct(up,1)+' de potentiel':''}</span></div>
 <div class="stat"><span class="l">CONSENSUS</span><span class="n" style="font-size:15px">${F.rating?esc(F.rating):'—'}</span><span class="s">${F.analysts?F.analysts+' analystes':''}</span></div>
 </div></div>
-<div class="pnl" style="margin-bottom:9px"><h3>Graphique — chandeliers japonais<span class="rt" id="secsrc">${WORKER_URL?'Yahoo Finance via relais':'relais non configuré'}</span></h3>
+<div class="pnl" id="sec-gp" style="margin-bottom:9px"><h3>Graphique — chandeliers japonais<span class="rt" id="secsrc">${WORKER_URL?'Yahoo Finance via relais':'relais non configuré'}</span></h3>
 <div class="ctl" style="align-items:center">
 <div class="rng" role="group" aria-label="Période">${Object.keys(RANGE_CFG).map(r=>`<button type="button" data-r="${r}" class="${r===SEC.range?'on':''}">${r}</button>`).join('')}</div>
 <div class="rng" role="group" aria-label="Indicateurs">
@@ -1778,6 +1801,7 @@ Graphique : clôtures ${SEC.range==='5A'?'hebdomadaires':'quotidiennes'} Yahoo F
 </div>`;
 el.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{ SEC.range=b.dataset.r; viewSecurity(); });
 el.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{ SEC[b.dataset.t]=!SEC[b.dataset.t]; viewSecurity(); });
+el.querySelectorAll('[data-jump]').forEach(b=>b.onclick=()=>{ const t=document.getElementById(b.dataset.jump); if(t){ const m=document.getElementById('main'); m.scrollTo({top:t.offsetTop-52,behavior:'smooth'}); } });
 rvRender(sym,F); faRender(sym); dvdRender(sym); cnRender(sym,nws); omonRender(sym);
 if(WORKER_URL) loadCandles(sym, F, px);
 }
@@ -2947,6 +2971,12 @@ return `<span>${c} <b>${t}</b></span>`;
 }).join('');
 }
 
+/* Notes explicatives longues repliées derrière ⓘ (lisibilité) */
+function collapseNotes(root){ root.querySelectorAll('.note:not([id]):not([data-nfo])').forEach(n=>{ const t=n.textContent.trim();
+if(t.length<140||n.closest('.statrow,#pal,form')||/Chargement|Calcul/.test(t)) return;
+const d=document.createElement('details'); d.className='nfo'; d.dataset.nfo=1;
+d.innerHTML=`<summary>Méthode et sources</summary><p>${n.innerHTML}</p>`; n.replaceWith(d); }); }
+new MutationObserver(()=>{ clearTimeout(window.__nfoT); window.__nfoT=setTimeout(()=>collapseNotes(document.getElementById('main')),60); }).observe(document.getElementById('main'),{childList:true,subtree:true});
 /*═══════════════════════════════════════════════════════════════════════
 16. DÉMARRAGE
 ═══════════════════════════════════════════════════════════════════════*/
