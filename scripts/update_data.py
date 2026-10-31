@@ -167,19 +167,53 @@ def fetch_quotes(previous: dict) -> dict:
     return out
 
 
+# Titres dont le robot actualise les fondamentaux (fiche Titre). Ajoute ou retire des tickers Yahoo ici.
+# Les 30 premières capitalisations mondiales au 30/10/2026 (StockTitan, Motley Fool), plus ASTS (portefeuille).
+FUND_TICKERS = [
+    "AAPL", "NVDA", "MSFT", "GOOGL", "AMZN", "TSM", "SPCX", "2222.SR", "META", "TSLA",
+    "AVGO", "005930.KS", "LLY", "BRK-B", "000660.KS", "MU", "WMT", "JPM", "AMD", "V",
+    "XOM", "JNJ", "ASML.AS", "MA", "ABBV", "CVX", "COST", "PLTR", "CSCO", "KO",
+    "ASTS",
+]
+FUND_FIELDS = {   # clé du terminal ← clé Yahoo
+    "name": "longName", "sector": "sector", "industry": "industry", "ccy": "currency",
+    "mcap": "marketCap", "pe": "trailingPE", "fpe": "forwardPE", "eps": "trailingEps",
+    "feps": "forwardEps", "revTTM": "totalRevenue", "netIncome": "netIncomeToCommon",
+    "shares": "sharesOutstanding", "beta": "beta", "div": "dividendRate", "divYield": "dividendYield",
+    "target": "targetMeanPrice", "targetHi": "targetHighPrice", "targetLo": "targetLowPrice",
+    "rating": "recommendationKey", "analysts": "numberOfAnalystOpinions",
+    "revGrowth": "revenueGrowth", "epsGrowth": "earningsGrowth", "grossMargin": "grossMargins",
+    "opMargin": "operatingMargins", "netMargin": "profitMargins", "roe": "returnOnEquity",
+    "debtEq": "debtToEquity", "cash": "totalCash", "debt": "totalDebt", "fcf": "freeCashflow",
+    "w52lo": "fiftyTwoWeekLow", "w52hi": "fiftyTwoWeekHigh", "evEbitda": "enterpriseToEbitda",
+}
+PCT_FIELDS = {"divYield", "revGrowth", "epsGrowth", "grossMargin", "opMargin", "netMargin", "roe"}
+RATING_FR = {"strong_buy": "Achat fort", "buy": "Achat", "hold": "Conserver",
+             "underperform": "Sous-performance", "sell": "Vente", "none": None}
+
+
 def fetch_fundamentals() -> dict:
     out = {}
-    for sym in ("NVDA", "ASTS"):
+    for sym in FUND_TICKERS:
         try:
-            fi = yf.Ticker(sym).fast_info
-            out[sym] = {
-                "mcap": float(fi["market_cap"]),
-                "w52lo": float(fi["year_low"]),
-                "w52hi": float(fi["year_high"]),
-                "shares": float(fi["shares"]),
-            }
+            info = yf.Ticker(sym).info or {}
+            f = {}
+            for k, yk in FUND_FIELDS.items():
+                v = info.get(yk)
+                if v is None or v == "" or (isinstance(v, float) and v != v):
+                    continue
+                if k in PCT_FIELDS and isinstance(v, (int, float)):
+                    # Yahoo donne des fractions (0,66 = 66 %) ; le rendement du dividende est parfois déjà en %.
+                    v = v * 100 if (k != "divYield" or v < 0.2) else v
+                if k == "rating":
+                    v = RATING_FR.get(v, v)
+                if v is not None:
+                    f[k] = round(v, 4) if isinstance(v, float) else v
+            if len(f) > 3:
+                out[sym] = f
         except Exception as e:
             log(f"  ! fondamentaux {sym} : {e}")
+    log(f"Fondamentaux : {len(out)}/{len(FUND_TICKERS)} titres")
     return out
 
 
