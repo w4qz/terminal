@@ -974,224 +974,307 @@ wireSymbolClicks(el);
 
 /*═══════════════════════════════════════════════════════════════════════
 8. VUE — PORTEFEUILLE
-P&L et pondérations calculés depuis les positions et les cotations.
-Les métriques de risque proviennent du Monte Carlo, pas d'un historique :
-ce provider ne fournit aucune série de prix, et une Sharpe calculée sur
-des données absentes serait fausse. C'est dit explicitement.
+Positions modifiables (enregistrées dans ce navigateur), risque estimé sur
+2 ans d'historique réel (Yahoo via relais), projection Monte Carlo à N actifs
+et comparaison avec trois profils types (adéquation MiFID II).
 ═══════════════════════════════════════════════════════════════════════*/
+const PF_KEY='terminal.pf.v1';
+const PF_DEFAULT={positions:[{sym:'NVDA',qty:40,cost:142.50},{sym:'ASTS',qty:180,cost:41.20}],cash:4200};
+const PF_BENCH='ACWI';
+const ETF_NAMES={ACWI:'Actions monde (iShares MSCI ACWI)',AGG:'Obligations (iShares Core US Aggregate)',
+GLD:'Or (SPDR Gold Shares)',BIL:'Monétaire (SPDR T-Bill 1-3 mois)'};
+// Allocations types, bornes de volatilité indicatives par profil.
+const PROFILES={
+'Prudent':  {w:{ACWI:.25,AGG:.60,GLD:.10,BIL:.05}, maxVol:8,  obj:'préserver le capital, horizon court'},
+'Équilibré':{w:{ACWI:.50,AGG:.40,GLD:.10},         maxVol:14, obj:'croissance modérée, horizon 5 ans'},
+'Dynamique':{w:{ACWI:.80,AGG:.15,GLD:.05},         maxVol:22, obj:'croissance, horizon long, pertes temporaires acceptées'}
+};
+S.pfp={mub:7, rf:3.6, yrs:3, N:3000, mu:{}};
+(function(){ try{ const d=JSON.parse(localStorage.getItem(PF_KEY)||'null');
+if(d&&Array.isArray(d.positions)){ S.positions=d.positions.filter(p=>p&&p.sym&&p.qty>0); S.cash=+d.cash||0; } }catch(e){} })();
+function pfSave(){ try{ localStorage.setItem(PF_KEY,JSON.stringify({positions:S.positions.map(p=>({sym:p.sym,qty:p.qty,cost:p.cost})),cash:S.cash})); }catch(e){} }
+
+/** Historique quotidien 2 ans via le relais, indexé par date locale de la bourse. */
+const PF_HIST=new Map();
+function pfHist(sym){
+if(PF_HIST.has(sym)) return PF_HIST.get(sym);
+const pr=(async()=>{
+if(!WORKER_URL) throw new Error('relais non configuré');
+const r=await fetch(`${WORKER_URL}/chart?s=${encodeURIComponent(sym)}&range=2y`);
+const d=await r.json(); const res=d.chart&&d.chart.result&&d.chart.result[0];
+if(!r.ok||!res) throw new Error((d.chart&&d.chart.error&&d.chart.error.description)||d.error||'aucune donnée');
+const c=res.indicators.quote[0].close, off=(res.meta&&res.meta.gmtoffset)||0, map=new Map();
+(res.timestamp||[]).forEach((t,i)=>{ if(c[i]!=null) map.set(new Date((t+off)*1000).toISOString().slice(0,10),c[i]); });
+const vals=[...map.values()];
+return {map, meta:res.meta||{}, last:vals[vals.length-1], prev:vals[vals.length-2]};
+})();
+PF_HIST.set(sym,pr); pr.catch(()=>PF_HIST.delete(sym)); return pr;
+}
+async function pfFX(ccy){
+if(!ccy||ccy==='USD') return 1;
+if(ccy==='GBp'||ccy==='GBX') return (await pfFX('GBP'))/100;
+if(ccy==='ZAc') return (await pfFX('ZAR'))/100;
+const h=await pfHist(`${ccy}USD=X`); return h.meta.regularMarketPrice||h.last;
+}
+/** Cours d'une ligne : pipeline d'abord (avec son statut), relais sinon. */
+async function pfQuote(sym){
+const h=await pfHist(sym).catch(()=>null);
+const q=SNAPSHOT.quotes[sym], u=(UNIV||[]).find(x=>x.s===sym);
+const px=q&&q.p!=null?q.p:u&&u.p!=null?u.p:h?(h.meta.regularMarketPrice??h.last):null;
+const pc=q&&q.pct!=null?q.pct:u&&u.pct!=null?u.pct:h&&h.prev?(h.last/h.prev-1)*100:null;
+const st=q?q.st:u?u.st:'DELAYED_15M';
+const ccy=(h&&h.meta.currency)||'USD';
+const fx=await pfFX(ccy).catch(()=>null);
+return {px,pc,st,ccy,fx,hist:h,name:(u&&u.n)||(h&&(h.meta.longName||h.meta.shortName))||sym};
+}
+const sriClass=v=>v<0.5?1:v<5?2:v<12?3:v<20?4:v<30?5:v<80?6:7;
+
+/** Analyse d'une allocation : risque historique + projection Monte Carlo.
+ wmap = {sym: poids}, wc = poids des liquidités. */
+async function pfAnalyze(wmap, wc, P, N){
+const syms=Object.keys(wmap).filter(s=>wmap[s]>0);
+const hs=await Promise.all([...syms,PF_BENCH].map(s=>pfHist(s)));
+const bench=hs.pop();
+const dates=[...bench.map.keys()].filter(d=>hs.every(h=>h.map.has(d))).sort();
+if(dates.length<60) throw new Error(`historique commun trop court (${dates.length} séances)`);
+const R=hs.map(h=>{ const a=[]; for(let t=1;t<dates.length;t++) a.push(h.map.get(dates[t])/h.map.get(dates[t-1])-1); return a; });
+const Rb=[]; for(let t=1;t<dates.length;t++) Rb.push(bench.map.get(dates[t])/bench.map.get(dates[t-1])-1);
+const rf=P.rf/100, mub=P.mub/100, T=Rb.length;
+const sg=R.map(r=>Q.volAnn(r)), bt=R.map(r=>Q.beta(r,Rb)), sgb=Q.volAnn(Rb);
+// Rendement attendu : MEDAF (rf + β × prime de marché), modifiable ligne à ligne.
+const mu=syms.map((s,i)=>P.mu[s]!=null?P.mu[s]/100:rf+bt[i]*(mub-rf));
+const w=syms.map(s=>wmap[s]);
+// Portefeuille historique, rééquilibré quotidiennement aux poids actuels
+const rp=Rb.map((_,t)=>w.reduce((a,wi,i)=>a+wi*R[i][t],0)+wc*rf/252);
+let v=1; const curve=[1]; rp.forEach(x=>{ v*=1+x; curve.push(v); });
+const yrsH=T/252;
+const hist={vol:Q.volAnn(rp)*100, ret:(Math.pow(v,1/yrsH)-1)*100, sharpe:Q.sharpe(rp,rf), sortino:Q.sortino(rp,rf),
+mdd:Q.maxDD(curve), var95:Q.varHist(rp), cvar95:Q.cvarHist(rp), beta:Q.beta(rp,Rb), alpha:Q.jensen(rp,Rb,rf),
+te:Q.trackingError(rp,Rb), ir:Q.infoRatio(rp,Rb), corr:Q.corr(rp,Rb), from:dates[0], to:dates[dates.length-1], n:T};
+// Matrice de corrélation (actifs + indice) ; rétrécie vers l'identité si non définie positive.
+const all=[...R,Rb], k=all.length, C=all.map(a=>all.map(b=>a===b?1:Q.corr(a,b)));
+let L=null, lam=0;
+for(;lam<=0.5&&!L;lam+=0.05) L=Q.chol(C.map((row,i)=>row.map((c,j)=>i===j?1:(1-lam)*c)));
+if(!L) throw new Error('corrélations inutilisables');
+// Monte Carlo hebdomadaire : n actifs + indice, chocs corrélés par Cholesky.
+const yrs=P.yrs, ppy=52, dt=1/ppy, sq=Math.sqrt(dt), steps=Math.round(yrs*ppy);
+const sgAll=[...sg,sgb], muAll=[...mu,mub], drift=muAll.map((m,i)=>(m-sgAll[i]**2/2)*dt), rcash=Math.exp(rf*dt)-1;
+const fin=[], bfin=[], dds=[]; let sample=null, bsample=null, beat=0, loss=0;
+const z=new Float64Array(k), e=new Float64Array(k);
+for(let n=0;n<N;n++){
+let pv=1, bv=1, peak=1, mdd=0; const keep=n===0, ps=keep?[1]:null, bs=keep?[1]:null;
+for(let t=0;t<steps;t++){
+for(let i=0;i<k;i+=2){ const g=Q.gauss2(); z[i]=g[0]; if(i+1<k) z[i+1]=g[1]; }
+for(let i=0;i<k;i++){ let s=0; for(let j=0;j<=i;j++) s+=L[i][j]*z[j]; e[i]=s; }
+let r=wc*rcash;
+for(let i=0;i<k-1;i++) r+=w[i]*(Math.exp(drift[i]+sgAll[i]*sq*e[i])-1);
+pv*=1+r; bv*=Math.exp(drift[k-1]+sgb*sq*e[k-1]);
+if(pv>peak) peak=pv; const d=(peak-pv)/peak; if(d>mdd) mdd=d;
+if(keep){ ps.push(pv); bs.push(bv); }
+}
+if(pv>bv) beat++; if(pv<1) loss++;
+fin.push(pv); bfin.push(bv); dds.push(mdd*100);
+if(keep){ sample=ps; bsample=bs; }
+}
+fin.sort((a,b)=>a-b); bfin.sort((a,b)=>a-b); dds.sort((a,b)=>a-b);
+const qt=p=>Q.quantile(fin,p);
+const mc={med:qt(.5), p10:qt(.1), p90:qt(.9), bmed:Q.quantile(bfin,.5), pLoss:loss/N*100, pBeat:beat/N*100,
+ddMed:Q.quantile(dds,.5), dd90:Q.quantile(dds,.9), sample, bsample, N, yrs,
+expRet:(w.reduce((a,wi,i)=>a+wi*mu[i],0)+wc*rf)*100};
+return {syms, sg, bt, mu, w, hist, mc, shrink:lam-0.05>1e-9?lam-0.05:0};
+}
+
 async function viewPortfolio(){
-const el = document.getElementById('v-pf');
-let nav = S.cash, cost = 0, dayPL = 0, rows = '';
-
-const enriched = [];
-for(const p of S.positions){
-const q = await DATA.getQuote(p.sym);
-const px = q.price.value, mv = px*p.qty, cb = p.cost*p.qty;
-const upl = mv-cb, uplPct = cb?upl/cb*100:0;
-const dpl = (q.change && !q.change.na) ? q.change.value*p.qty : null;
-nav += mv; cost += cb; if(dpl!=null) dayPL += dpl;
-enriched.push({...p, px, mv, cb, upl, uplPct, dpl, status:q.price.status});
+const el=document.getElementById('v-pf');
+el.innerHTML='<div class="pnl"><div class="note" style="padding:12px">Chargement des cours et de l\'historique…</div></div>';
+const rows=await Promise.all(S.positions.map(async p=>({...p, ...(await pfQuote(p.sym))})));
+let nav=S.cash, cost=0, dayPL=0;
+for(const e of rows){
+e.ok=e.px!=null&&e.fx!=null;
+e.mv=e.ok?e.px*e.qty*e.fx:0; e.cb=(e.cost??e.px??0)*e.qty*(e.fx||1);
+e.upl=e.mv-e.cb; e.uplPct=e.cb?e.upl/e.cb*100:0;
+e.dpl=e.ok&&e.pc!=null?e.mv-e.mv/(1+e.pc/100):null;
+nav+=e.mv; cost+=e.cb; if(e.dpl!=null) dayPL+=e.dpl;
 }
-const inv = nav - S.cash;
-
-for(const e of enriched){
-rows += `<tr class="clk" data-sym="${e.sym}" tabindex="0" role="button"
-aria-label="Ouvrir la fiche ${e.sym}, valeur de position ${nf(e.mv,0)}, plus ou moins-value ${pct(e.uplPct,1)}">
-<th scope="row" class="sym">${e.sym}</th>
-<td>${nf(e.qty,0)}</td>
-<td>${nf(e.cost)}</td>
-<td>${nf(e.px)}${badge(e.status)}</td>
-<td>${nf(e.mv,0)}</td>
-<td class="${cls(e.upl)}">${nf(e.upl,0)}</td>
-<td class="${cls(e.uplPct)}">${pct(e.uplPct)}</td>
+const inv=nav-S.cash, totPL=inv-cost, maxW=rows.reduce((m,e)=>Math.max(m,nav?e.mv/nav*100:0),0);
+const conc=!rows.length?'aucune ligne':maxW>25?`concentration élevée (${nf(maxW,0)} % max)`:maxW>10?'concentration modérée':'diversifié';
+const tr=rows.map((e,i)=>`<tr>
+<th scope="row" class="sym clk" data-sym="${esc(e.sym)}" tabindex="0" role="button" title="${esc(e.name)}">${esc(e.sym)}</th>
+<td>${nf(e.qty,e.qty%1?2:0)}</td><td>${e.cost!=null?npx(e.cost,e.sym):'—'}</td>
+<td>${e.px!=null?npx(e.px,e.sym)+badge(e.st):'<span class="na">n/d</span>'}${e.ccy!=='USD'?` <span class="mut" style="font-size:9px">${esc(e.ccy)}</span>`:''}</td>
+<td>${e.ok?nf(e.mv,0):'<span class="na">n/d</span>'}</td>
+<td class="${cls(e.upl)}">${e.ok?nf(e.upl,0):'—'}</td><td class="${cls(e.uplPct)}">${e.ok?pct(e.uplPct):'—'}</td>
 <td class="${cls(e.dpl)}">${e.dpl!=null?nf(e.dpl,0):'<span class="na">n/d</span>'}</td>
-<td>${pct(e.mv/nav*100,1)}</td></tr>`;
-}
-
-const totPL = nav - (cost + S.cash);
-el.innerHTML = `
+<td>${nav?pct(e.mv/nav*100,1):'—'}</td>
+<td><button class="btn" data-del="${i}" aria-label="Supprimer ${esc(e.sym)}" title="Supprimer">✕</button></td></tr>`).join('');
+const dl=(UNIV||[]).filter(u=>u.c!=='Taux').slice(0,3000).map(u=>`<option value="${esc(u.s)}">${esc(u.n||'')}</option>`).join('');
+const P=S.pfp;
+el.innerHTML=`
 <div class="pnl" style="margin-bottom:9px">
+<h3>Portefeuille<span class="rt">enregistré dans ce navigateur · valeurs en USD</span></h3>
 <div class="statrow">
 <div class="stat"><span class="l">NAV TOTALE</span><span class="n">${nf(nav,0)}</span><span class="s">USD</span></div>
-<div class="stat"><span class="l">P&L DU JOUR</span><span class="n ${cls(dayPL)}">${nf(dayPL,0)}</span>
-<span class="s">${pct(dayPL/(nav-dayPL)*100)}</span></div>
-<div class="stat"><span class="l">P&L LATENT</span><span class="n ${cls(totPL)}">${nf(totPL,0)}</span>
-<span class="s">${pct(totPL/cost*100)}</span></div>
-<div class="stat"><span class="l">INVESTI</span><span class="n">${nf(inv,0)}</span>
-<span class="s">${pct(inv/nav*100,1)} de la NAV</span></div>
-<div class="stat"><span class="l">LIQUIDITÉS</span><span class="n">${nf(S.cash,0)}</span>
-<span class="s">${pct(S.cash/nav*100,1)} de la NAV</span></div>
-<div class="stat"><span class="l">LIGNES</span><span class="n">${S.positions.length}</span>
-<span class="s">concentration élevée</span></div>
+<div class="stat"><span class="l">P&L DU JOUR</span><span class="n ${cls(dayPL)}">${nf(dayPL,0)}</span><span class="s">${nav-dayPL?pct(dayPL/(nav-dayPL)*100):'—'}</span></div>
+<div class="stat"><span class="l">P&L LATENT</span><span class="n ${cls(totPL)}">${nf(totPL,0)}</span><span class="s">${cost?pct(totPL/cost*100):'—'}</span></div>
+<div class="stat"><span class="l">INVESTI</span><span class="n">${nf(inv,0)}</span><span class="s">${nav?pct(inv/nav*100,1):'—'} de la NAV</span></div>
+<div class="stat"><span class="l">LIQUIDITÉS</span><span class="n">${nf(S.cash,0)}</span><span class="s">${nav?pct(S.cash/nav*100,1):'—'} de la NAV</span></div>
+<div class="stat"><span class="l">LIGNES</span><span class="n">${rows.length}</span><span class="s">${conc}</span></div>
 </div>
-<div class="pbody flush">
-<table><caption class="sr-only">Positions du portefeuille</caption><thead><tr><th scope="col">Titre</th><th scope="col">Qté</th><th scope="col">PRU</th><th scope="col">Cours</th><th scope="col">Valeur</th>
-<th scope="col">P&L</th><th scope="col">P&L %</th><th scope="col">Jour</th><th scope="col">Poids</th></tr></thead><tbody>${rows}</tbody></table>
+<div class="pbody flush"><table><caption class="sr-only">Positions du portefeuille</caption><thead><tr>
+<th scope="col">Titre</th><th scope="col">Qté</th><th scope="col">PRU</th><th scope="col">Cours</th><th scope="col">Valeur $</th>
+<th scope="col">P&L</th><th scope="col">P&L %</th><th scope="col">Jour</th><th scope="col">Poids</th><th scope="col"><span class="sr-only">Action</span></th></tr></thead>
+<tbody>${tr||'<tr><td colspan="10" class="na">Aucune position. Ajoutez un titre ci-dessous ou appliquez un profil type.</td></tr>'}</tbody></table></div>
+<form class="ctl" id="pfadd" style="border-top:1px solid var(--line);border-bottom:none">
+<div class="f w"><label for="pa_sym">Ticker (Yahoo)</label><input id="pa_sym" list="pfdl" placeholder="MC.PA" style="text-align:left" autocomplete="off" required></div>
+<div class="f"><label for="pa_qty">Quantité</label><input id="pa_qty" type="number" step="any" min="0" required></div>
+<div class="f"><label for="pa_cost">PRU (vide = cours)</label><input id="pa_cost" type="number" step="any" min="0"></div>
+<button class="btn go" type="submit">+ Ajouter</button>
+<div class="f" style="margin-left:18px"><label for="pa_cash">Liquidités $</label><input id="pa_cash" type="number" step="any" value="${S.cash}"></div>
+<button class="btn" type="button" id="pa_cashbtn">Mettre à jour</button>
+<button class="btn" type="button" id="pa_reset" style="margin-left:auto">Revenir à l'exemple</button>
+<span id="pa_msg" class="note" style="align-self:flex-end;padding:0"></span>
+<datalist id="pfdl">${dl}</datalist>
+</form>
 </div>
+
+<div class="pnl" style="margin-bottom:9px">
+<h3>Profil de risque et adéquation<span class="rt">volatilité et pertes sur 2 ans d'historique · projection à ${P.yrs} ans</span></h3>
+<div id="pfprof" aria-live="polite"><div class="note" style="padding:12px">Calcul des profils…</div></div>
 </div>
 
 <div class="pnl">
-<h3>Simulation Monte Carlo — projection du portefeuille</h3>
+<h3>Simulation Monte Carlo — portefeuille actuel</h3>
 <form class="ctl" id="mcform">
-<div class="f"><label for="mw0">Poids NVDA %</label><input id="mw0" type="number" step="1" value="${nf(enriched[0].mv/inv*100,0)}"></div>
-<div class="f"><label for="mw1">Poids ASTS %</label><input id="mw1" type="number" step="1" value="${nf(enriched[1].mv/inv*100,0)}"></div>
-<div class="f"><label for="mu0">μ NVDA % an</label><input id="mu0" type="number" step="1" value="18"></div>
-<div class="f"><label for="mu1">μ ASTS % an</label><input id="mu1" type="number" step="1" value="12"></div>
-<div class="f"><label for="sg0">σ NVDA % an</label><input id="sg0" type="number" step="1" value="45"></div>
-<div class="f"><label for="sg1">σ ASTS % an</label><input id="sg1" type="number" step="1" value="75"></div>
-<div class="f"><label for="mrho">Corrélation</label><input id="mrho" type="number" step="0.05" value="0.55"></div>
-<div class="f"><label for="mb0">β NVDA</label><input id="mb0" type="number" step="0.05" value="2.21"></div>
-<div class="f"><label for="mb1">β ASTS</label><input id="mb1" type="number" step="0.05" value="2.74"></div>
-<div class="f"><label for="mub">μ indice % an</label><input id="mub" type="number" step="1" value="8"></div>
-<div class="f"><label for="sgb">σ indice % an</label><input id="sgb" type="number" step="1" value="16"></div>
-<div class="f"><label for="mrf">Taux sans risque %</label><input id="mrf" type="number" step="0.25" value="3.6"></div>
-<div class="f"><label for="mhz">Horizon (années)</label><input id="mhz" type="number" step="1" value="3"></div>
-<div class="f"><label for="mpath">Trajectoires</label><input id="mpath" type="number" step="500" value="3000"></div>
-<button class="btn go" type="submit" id="mcrun">Lancer</button>
+<div class="f"><label for="p_mub">μ indice % an</label><input id="p_mub" type="number" step="0.5" value="${P.mub}"></div>
+<div class="f"><label for="p_rf">Taux sans risque %</label><input id="p_rf" type="number" step="0.25" value="${P.rf}"></div>
+<div class="f"><label for="p_yrs">Horizon (années)</label><input id="p_yrs" type="number" step="1" min="1" max="30" value="${P.yrs}"></div>
+<div class="f"><label for="p_n">Trajectoires</label><input id="p_n" type="number" step="500" min="200" max="20000" value="${P.N}"></div>
+<button class="btn go" type="submit">Lancer</button>
+<button class="btn" type="button" id="p_capm">μ par défaut (MEDAF)</button>
 </form>
-<div id="mcout" aria-live="polite"></div>
+<div id="mcout" aria-live="polite"><div class="note" style="padding:12px">Calcul en cours…</div></div>
 </div>`;
 wireSymbolClicks(el);
-document.getElementById('mcform').onsubmit = e=>{ e.preventDefault(); runMC(); };
-runMC();
+const msg=t=>{ document.getElementById('pa_msg').textContent=t; };
+el.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{ const p=S.positions[+b.dataset.del]; S.positions.splice(+b.dataset.del,1); delete S.pfp.mu[p.sym]; pfSave(); viewPortfolio(); });
+document.getElementById('pfadd').onsubmit=async ev=>{ ev.preventDefault();
+const sym=document.getElementById('pa_sym').value.trim().toUpperCase(), qty=parseFloat(document.getElementById('pa_qty').value);
+let cst=parseFloat(document.getElementById('pa_cost').value);
+if(!sym||!(qty>0)) return msg('Ticker et quantité requis.');
+msg('Vérification de '+sym+'…');
+try{ const h=await pfHist(sym); if(!(cst>0)) cst=h.meta.regularMarketPrice??h.last; }
+catch(e){ return msg(`${sym} introuvable (${e.message}). Utilisez le symbole Yahoo : MC.PA, 7203.T, SAP.DE…`); }
+const ex=S.positions.find(p=>p.sym===sym);
+if(ex){ ex.cost=(ex.cost*ex.qty+cst*qty)/(ex.qty+qty); ex.qty+=qty; } else S.positions.push({sym,qty,cost:cst});
+pfSave(); viewPortfolio(); };
+document.getElementById('pa_cashbtn').onclick=()=>{ const v=parseFloat(document.getElementById('pa_cash').value); if(isFinite(v)&&v>=0){ S.cash=v; pfSave(); viewPortfolio(); } };
+document.getElementById('pa_reset').onclick=()=>{ if(!confirm('Remplacer le portefeuille par l\'exemple NVDA / ASTS ?')) return;
+S.positions=PF_DEFAULT.positions.map(p=>({...p})); S.cash=PF_DEFAULT.cash; S.pfp.mu={}; pfSave(); viewPortfolio(); };
+const readP=()=>{ const g=id=>parseFloat(document.getElementById(id).value);
+Object.assign(S.pfp,{mub:g('p_mub'),rf:g('p_rf'),yrs:Math.max(1,Math.min(30,g('p_yrs')||3)),N:Math.max(200,Math.min(20000,g('p_n')||3000))});
+el.querySelectorAll('[data-mu]').forEach(i=>{ const v=parseFloat(i.value); if(isFinite(v)&&i.dataset.edited) S.pfp.mu[i.dataset.mu]=v; }); };
+document.getElementById('mcform').onsubmit=e=>{ e.preventDefault(); readP(); pfRun(rows,nav); };
+document.getElementById('p_capm').onclick=()=>{ S.pfp.mu={}; readP(); pfRun(rows,nav); };
+pfRun(rows,nav);
 }
 
-/*── Monte Carlo : GBM à 3 facteurs (2 actifs + indice) corrélés par Cholesky.
-Les corrélations actif/indice sont dérivées des bêtas observés :
-ρᵢₘ = βᵢ · σₘ / σᵢ. Sans cela, l'indice serait indépendant du portefeuille
-et le bêta, l'alpha, la tracking error et le ratio d'information simulés
-seraient dénués de sens. ────────────────────────────────────────────────*/
-function runMC(){
-const g = id => parseFloat(document.getElementById(id).value);
-let w0=g('mw0')/100, w1=g('mw1')/100;
-const sum=w0+w1; if(sum>0){ w0/=sum; w1/=sum; } // renormalisation
-const mu=[g('mu0')/100,g('mu1')/100], sg=[g('sg0')/100,g('sg1')/100];
-const rho01=Math.max(-0.99,Math.min(0.99,g('mrho')));
-const mub=g('mub')/100, sgb=g('sgb')/100, rf=g('mrf')/100;
-const bt=[g('mb0'),g('mb1')];
-const yrs=Math.max(1,g('mhz')), N=Math.max(200,Math.min(20000,g('mpath')));
-const steps=Math.round(yrs*252), dt=1/252, sq=Math.sqrt(dt);
-const out=document.getElementById('mcout');
+async function pfRun(rows,nav){
+const P=S.pfp, out=document.getElementById('mcout'), prof=document.getElementById('pfprof');
 const live=document.getElementById('live-status');
-
-// ρᵢₘ = βᵢ σₘ / σᵢ, borné pour rester une corrélation valide
-const rm=[0,1].map(i=>{
-const r=bt[i]*sgb/sg[i];
-return Math.max(-0.99,Math.min(0.99,r));
-});
-
-const L=Q.chol([[1,rho01,rm[0]],[rho01,1,rm[1]],[rm[0],rm[1],1]]);
-if(!L){
-out.innerHTML=`<div class="warn"><b>Jeu d'hypothèses incohérent.</b>
-La matrice de corrélation implicite — ρ(actifs) = ${nf(rho01,2)},
-ρ(NVDA, indice) = ${nf(rm[0],2)}, ρ(ASTS, indice) = ${nf(rm[1],2)} — n'est pas
-définie positive : la décomposition de Cholesky échoue et aucune trajectoire n'est générée.
-Concrètement, les bêtas et volatilités saisis décrivent un monde qui ne peut pas exister.
-Baissez la corrélation entre actifs, ou réduisez un bêta, ou augmentez une volatilité.
-<br><br>Le modèle refuse de produire un chiffre plutôt que d'en produire un faux.</div>`;
-if(live) live.textContent='Simulation impossible : hypothèses de corrélation incohérentes.';
-return;
-}
-
-const finals=[], benchFinals=[], dds=[];
-const pRet=[], bRet=[]; // séries appariées pour bêta / alpha / TE / IR
-let sampleP=null, sampleB=null;
-const drift=[mu[0]-sg[0]**2/2, mu[1]-sg[1]**2/2], driftB=mub-sgb**2/2;
-
-for(let n=0;n<N;n++){
-let v=1, b=1, peak=1, mdd=0;
-const keep=n===0, ps=keep?[1]:null, bs=keep?[1]:null;
-const track=n<40; // 40 trajectoires ≈ 10k points appariés
-for(let t=0;t<steps;t++){
-const [z1,z2]=Q.gauss2(), [z3]=Q.gauss2();
-const e0=L[0][0]*z1;
-const e1=L[1][0]*z1+L[1][1]*z2;
-const e2=L[2][0]*z1+L[2][1]*z2+L[2][2]*z3; // choc de l'indice, corrélé aux actifs
-const r0=Math.exp(drift[0]*dt+sg[0]*sq*e0)-1;
-const r1=Math.exp(drift[1]*dt+sg[1]*sq*e1)-1;
-const rb=Math.exp(driftB*dt+sgb*sq*e2)-1;
-const rp=w0*r0+w1*r1; // rééquilibrage quotidien aux poids cibles
-v*=(1+rp); b*=(1+rb);
-if(v>peak) peak=v;
-const d=(peak-v)/peak; if(d>mdd) mdd=d;
-if(track){ pRet.push(rp); bRet.push(rb); }
-if(keep){ ps.push(v); bs.push(b); }
-}
-finals.push(v); benchFinals.push(b); dds.push(mdd*100);
-if(keep){ sampleP=ps; sampleB=bs; }
-}
-
-const beatCount=finals.filter((x,i)=>x>benchFinals[i]).length; // appariement avant tri
-const lossCount=finals.filter(x=>x<1).length;
-
-finals.sort((a,b)=>a-b); benchFinals.sort((a,b)=>a-b); dds.sort((a,b)=>a-b);
-const med=Q.quantile(finals,0.5), p10=Q.quantile(finals,0.10), p90=Q.quantile(finals,0.90);
-const bmed=Q.quantile(benchFinals,0.5);
-const cagr=(Math.pow(med,1/yrs)-1)*100, bcagr=(Math.pow(bmed,1/yrs)-1)*100;
-const volP=Q.volAnn(pRet)*100, volB=Q.volAnn(bRet)*100;
-const sharpe=Q.sharpe(pRet,rf), sortino=Q.sortino(pRet,rf);
-const beta=Q.beta(pRet,bRet), alpha=Q.jensen(pRet,bRet,rf), corrPB=Q.corr(pRet,bRet);
-const te=Q.trackingError(pRet,bRet), ir=Q.infoRatio(pRet,bRet);
-const varP=Q.varHist(pRet), cvarP=Q.cvarHist(pRet);
-const pLoss=lossCount/N*100, pBeat=beatCount/N*100;
-const betaTheo=w0*bt[0]+w1*bt[1];
-
-const K=(l,v,c='')=>`<div class="kv"><span class="k">${l}</span><span class="v ${c}">${v}</span></div>`;
+const ok=rows.filter(e=>e.ok&&e.mv>0&&e.hist), missing=rows.filter(e=>!(e.ok&&e.hist)).map(e=>e.sym);
+const wmap={}; ok.forEach(e=>{ wmap[e.sym]=(wmap[e.sym]||0)+e.mv/nav; });
+const wc=nav?S.cash/nav:1;
+let cur=null, err=null;
+if(ok.length){ try{ cur=await pfAnalyze(wmap,wc,P,P.N); }catch(e){ err=e.message; } }
+else err='aucune ligne exploitable';
+if(S.view!=='pf') return;
+// ── Profils types
+const profs={};
+await Promise.all(Object.entries(PROFILES).map(async([k,pr])=>{ try{ profs[k]=await pfAnalyze(pr.w,0,{...P,mu:{}},1500); }catch(e){ profs[k]={err:e.message}; } }));
+if(S.view!=='pf') return;
+const alloc=w=>Object.entries(w).sort((a,b)=>b[1]-a[1]).map(([s,v])=>`${s} ${nf(v*100,0)} %`).join(' · ');
+const fit=cur?(Object.entries(PROFILES).find(([,p])=>cur.hist.vol<=p.maxVol)||[null])[0]:null;
+const prow=(label,A,allocTxt,act,hl)=>A&&!A.err?`<tr${hl?' style="background:var(--sel)"':''}>
+<th scope="row" style="text-align:left">${label}</th><td style="text-align:left;font-size:10px;color:var(--txt2)">${allocTxt}</td>
+<td>${pct(A.mc.expRet,1)}</td><td>${nf(A.hist.vol,1)} %</td><td><b>${sriClass(A.hist.vol)}</b>/7</td>
+<td class="neg">−${nf(A.hist.mdd,1)} %</td><td class="neg">${nf(A.hist.var95,2)} %</td>
+<td class="${cls(A.mc.p10-1)}">${pct((A.mc.p10-1)*100,1)}</td><td>${nf(A.mc.pLoss,1)} %</td><td>${act}</td></tr>`
+:`<tr><th scope="row" style="text-align:left">${label}</th><td colspan="9" class="na">${esc(A?A.err:'indisponible')}</td></tr>`;
+let verdict='';
+if(cur){ const v=cur.hist.vol, sri=sriClass(v);
+verdict=fit?`Avec une volatilité historique de <b>${nf(v,1)} %</b> (classe de risque ${sri}/7), le portefeuille actuel est compatible avec le profil <b>${fit}</b> et au-delà.`
+:`Avec une volatilité historique de <b>${nf(v,1)} %</b> (classe de risque ${sri}/7), le portefeuille actuel <b class="neg">dépasse le profil Dynamique</b> (plafond indicatif ${PROFILES['Dynamique'].maxVol} %). Il ne conviendrait qu'à un investisseur averti, capable de supporter une perte de ${nf(cur.hist.mdd,0)} % comme sur les deux dernières années.`; }
+prof.innerHTML=`<div class="pbody flush"><table><caption class="sr-only">Comparaison du portefeuille et des profils types</caption><thead><tr>
+<th scope="col" style="text-align:left">Profil</th><th scope="col" style="text-align:left">Allocation</th><th scope="col">Rdt attendu</th><th scope="col">Volatilité</th>
+<th scope="col">Classe SRI</th><th scope="col">Perte max 2 ans</th><th scope="col">VaR 95 % 1 j</th><th scope="col">P10 à ${P.yrs} ans</th><th scope="col">Proba. perte</th><th scope="col"></th></tr></thead><tbody>
+${prow('Portefeuille actuel',cur||{err},cur?alloc({...wmap,...(wc>0?{Liquidités:wc}:{})}):'',fit?`<span class="pos">≤ ${fit}</span>`:cur?'<span class="neg">hors profils</span>':'',true)}
+${Object.entries(PROFILES).map(([k,p])=>prow(`${k}<div class="mut" style="font-size:9px;font-weight:400">${p.obj} · σ ≤ ${p.maxVol} %</div>`,profs[k],alloc(p.w),`<button class="btn" data-apply="${k}">Appliquer</button>`)).join('')}
+</tbody></table></div>
+<div class="note" style="padding:8px 9px">${verdict} Classe SRI approchée par la volatilité annualisée (grille PRIIPs : 1 &lt; 0,5 %, 2 &lt; 5 %, 3 &lt; 12 %, 4 &lt; 20 %, 5 &lt; 30 %, 6 &lt; 80 %, 7 au-delà). Bornes de profil indicatives, à confronter au questionnaire client. ETF : ${Object.entries(ETF_NAMES).map(([s,n])=>`${s} = ${n}`).join(' ; ')}.</div>`;
+prof.querySelectorAll('[data-apply]').forEach(b=>b.onclick=()=>pfApply(b.dataset.apply,nav));
+// ── Monte Carlo du portefeuille actuel
+if(!cur){ out.innerHTML=`<div class="warn" style="margin:9px">Simulation impossible : ${esc(err)}.${missing.length?' Sans historique : '+missing.map(esc).join(', ')+'.':''}</div>`; return; }
+const m=cur.mc, h=cur.hist, yrs=P.yrs, K=(l,v,c='')=>`<div class="kv"><span class="k">${l}</span><span class="v ${c}">${v}</span></div>`;
+const cagr=x=>(Math.pow(x,1/yrs)-1)*100;
 out.innerHTML=`
+<div class="pbody flush"><table><caption class="sr-only">Hypothèses par ligne</caption><thead><tr><th scope="col" style="text-align:left">Hypothèses</th><th scope="col">Poids</th><th scope="col">σ historique</th><th scope="col">β vs ACWI</th><th scope="col">μ attendu % an</th></tr></thead><tbody>
+${cur.syms.map((s,i)=>`<tr><th scope="row" class="sym" style="text-align:left">${esc(s)}</th><td>${pct(cur.w[i]*100,1)}</td><td>${nf(cur.sg[i]*100,1)} %</td><td>${nf(cur.bt[i],2)}</td>
+<td><input data-mu="${esc(s)}" type="number" step="0.5" value="${nf(cur.mu[i]*100,1).replace(/\s/g,'').replace(',','.')}" style="width:70px;background:var(--bg);border:1px solid var(--line);text-align:right;font-size:11px;padding:1px 4px" oninput="this.dataset.edited=1"${P.mu[s]!=null?' data-edited="1"':''}>${P.mu[s]!=null?' <span class="mut" style="font-size:9px">saisi</span>':' <span class="mut" style="font-size:9px">MEDAF</span>'}</td></tr>`).join('')}
+${wc>0?`<tr><th scope="row" style="text-align:left">Liquidités</th><td>${pct(wc*100,1)}</td><td>0 %</td><td>0</td><td>${nf(P.rf,1)}</td></tr>`:''}
+</tbody></table></div>
 <div class="statrow">
-<div class="stat"><span class="l">MÉDIANE À ${yrs} ANS</span><span class="n">×${nf(med,2)}</span>
-<span class="s">CAGR ${pct(cagr,1)}</span></div>
-<div class="stat"><span class="l">P10 — SCÉNARIO BAS</span><span class="n neg">×${nf(p10,2)}</span>
-<span class="s">${pct((Math.pow(p10,1/yrs)-1)*100,1)} par an</span></div>
-<div class="stat"><span class="l">P90 — SCÉNARIO HAUT</span><span class="n pos">×${nf(p90,2)}</span>
-<span class="s">${pct((Math.pow(p90,1/yrs)-1)*100,1)} par an</span></div>
-<div class="stat"><span class="l">INDICE (MÉDIANE)</span><span class="n">×${nf(bmed,2)}</span>
-<span class="s">CAGR ${pct(bcagr,1)}</span></div>
-<div class="stat"><span class="l">PROBA. DE PERTE</span><span class="n">${nf(pLoss,1)} %</span>
-<span class="s">valeur finale sous la mise</span></div>
-<div class="stat"><span class="l">BAT L'INDICE</span><span class="n">${nf(pBeat,1)} %</span>
-<span class="s">des trajectoires</span></div>
+<div class="stat"><span class="l">MÉDIANE À ${yrs} ANS</span><span class="n">×${nf(m.med,2)}</span><span class="s">CAGR ${pct(cagr(m.med),1)}</span></div>
+<div class="stat"><span class="l">P10 — SCÉNARIO BAS</span><span class="n neg">×${nf(m.p10,2)}</span><span class="s">${pct(cagr(m.p10),1)} par an</span></div>
+<div class="stat"><span class="l">P90 — SCÉNARIO HAUT</span><span class="n pos">×${nf(m.p90,2)}</span><span class="s">${pct(cagr(m.p90),1)} par an</span></div>
+<div class="stat"><span class="l">INDICE ACWI (MÉDIANE)</span><span class="n">×${nf(m.bmed,2)}</span><span class="s">CAGR ${pct(cagr(m.bmed),1)}</span></div>
+<div class="stat"><span class="l">PROBA. DE PERTE</span><span class="n">${nf(m.pLoss,1)} %</span><span class="s">valeur finale sous la mise</span></div>
+<div class="stat"><span class="l">BAT L'INDICE</span><span class="n">${nf(m.pBeat,1)} %</span><span class="s">des trajectoires</span></div>
 </div>
-<canvas id="mccv" height="200" role="img"
-aria-label="Trajectoire simulée d'exemple sur ${yrs} ans : le portefeuille termine à un multiple de ${nf(sampleP[sampleP.length-1],2)} contre ${nf(sampleB[sampleB.length-1],2)} pour l'indice. Résumé chiffré complet ci-dessus et ci-dessous."></canvas>
+<canvas id="mccv" height="200" role="img" aria-label="Trajectoire simulée d'exemple sur ${yrs} ans"></canvas>
 <div class="g g3" style="padding:9px">
-<div><div style="font-size:9px;color:var(--txt3);margin-bottom:5px">PERFORMANCE</div>
-${K('CAGR médian',pct(cagr,2),cls(cagr))}
-${K('Volatilité ann.',nf(volP,1)+' %')}
-${K('Ratio de Sharpe',nf(sharpe,2),sharpe>1?'pos':sharpe<0?'neg':'')}
-${K('Ratio de Sortino',isFinite(sortino)?nf(sortino,2):'∞')}
+<div><div style="font-size:9px;color:var(--txt3);margin-bottom:5px">PROJECTION SIMULÉE (${yrs} ANS)</div>
+${K('Rendement attendu',pct(m.expRet,2),cls(m.expRet))}
+${K('CAGR médian',pct(cagr(m.med),2),cls(cagr(m.med)))}
+${K('Drawdown max médian',nf(m.ddMed,1)+' %','neg')}
+${K('Drawdown max P90',nf(m.dd90,1)+' %','neg')}
 </div>
-<div><div style="font-size:9px;color:var(--txt3);margin-bottom:5px">RISQUE</div>
-${K('Drawdown max médian',nf(Q.quantile(dds,0.5),1)+' %','neg')}
-${K('Drawdown max P90',nf(Q.quantile(dds,0.9),1)+' %','neg')}
-${K('VaR 95 % (1 jour)',nf(varP,2)+' %','neg')}
-${K('CVaR 95 % (1 jour)',nf(cvarP,2)+' %','neg')}
+<div><div style="font-size:9px;color:var(--txt3);margin-bottom:5px">RISQUE HISTORIQUE (${h.from} → ${h.to})</div>
+${K('Rendement annualisé',pct(h.ret,1),cls(h.ret))}
+${K('Volatilité ann.',nf(h.vol,1)+' %')}
+${K('Ratio de Sharpe',nf(h.sharpe,2),h.sharpe>1?'pos':h.sharpe<0?'neg':'')}
+${K('Ratio de Sortino',isFinite(h.sortino)?nf(h.sortino,2):'∞')}
+${K('Perte max (drawdown)',nf(h.mdd,1)+' %','neg')}
+${K('VaR 95 % (1 jour)',nf(h.var95,2)+' %','neg')}
+${K('CVaR 95 % (1 jour)',nf(h.cvar95,2)+' %','neg')}
 </div>
-<div><div style="font-size:9px;color:var(--txt3);margin-bottom:5px">FACE À L'INDICE</div>
-${K('Bêta simulé',nf(beta,2))}
-${K('Bêta théorique (Σwᵢβᵢ)',nf(betaTheo,2),'mut')}
-${K('Alpha de Jensen',pct(alpha,2),cls(alpha))}
-${K('Tracking error',nf(te,1)+' %')}
-${K('Ratio d\'information',nf(ir,2),cls(ir))}
-${K('Corrélation au marché',nf(corrPB,2),'mut')}
+<div><div style="font-size:9px;color:var(--txt3);margin-bottom:5px">FACE À L'INDICE MONDE (ACWI)</div>
+${K('Bêta',nf(h.beta,2))}
+${K('Alpha de Jensen',pct(h.alpha,2),cls(h.alpha))}
+${K('Corrélation',nf(h.corr,2),'mut')}
+${K('Tracking error',nf(h.te,1)+' %')}
+${K('Ratio d\'information',nf(h.ir,2),cls(h.ir))}
 </div>
 </div>
 <div class="warn" style="margin:0 9px 9px">
-<b>Ce que ces chiffres sont, et ce qu'ils ne sont pas.</b>
-${nf(N,0)} trajectoires, mouvement brownien géométrique à trois facteurs, chocs corrélés par
-décomposition de Cholesky, rééquilibrage quotidien. L'indice n'est pas indépendant du portefeuille :
-les corrélations actif/marché sont déduites des bêtas (ρ = βσₘ/σᵢ), soit ${nf(rm[0],2)} pour NVDA
-et ${nf(rm[1],2)} pour ASTS. C'est ce qui rend le bêta et l'alpha ci-dessus interprétables — le bêta
-simulé de ${nf(beta,2)} recoupe le bêta théorique de ${nf(betaTheo,2)}, ce qui valide la simulation.
-<br><br>
-Les calculs sont exacts. Les <b>hypothèses ne le sont pas</b> : μ et σ sont saisis à la main, jamais
-estimés — ce fournisseur ne livre aucune série de prix. Et un GBM suppose des rendements log-normaux
-indépendants, ce qui sous-estime structurellement les queues de distribution. Sur ASTS, dont l'amplitude
-52 semaines va de 36 $ à 134 $, cette sous-estimation est sévère : traitez le P10 comme un scénario
-optimiste, pas comme un plancher. <span class="st st-SIMULATED">Simulé</span>
-</div>`;
-if(live) live.textContent=`Simulation terminée. Médiane à ${yrs} ans : ×${nf(med,2)}, CAGR ${pct(cagr,1)}. Probabilité de perte ${nf(pLoss,1)} %.`;
-drawMC(sampleP,sampleB,yrs);
+<b>Méthode.</b> Volatilités, bêtas et corrélations estimés sur ${h.n} séances réelles (Yahoo Finance via relais), rendements en devise locale.
+Rendements attendus par le MEDAF : taux sans risque + β × (μ indice − taux sans risque), modifiables ligne à ligne : le rendement passé n'est pas une prévision.
+Projection : ${nf(m.N,0)} trajectoires, mouvement brownien géométrique à ${cur.syms.length+1} facteurs corrélés (Cholesky${cur.shrink?`, corrélations rétrécies de ${nf(cur.shrink*100,0)} % pour rester cohérentes`:''}), pas hebdomadaire, rééquilibrage permanent.
+Un GBM sous-estime les queues de distribution : le P10 n'est pas un plancher.${missing.length?` <span class="neg">Exclus faute d'historique : ${missing.map(esc).join(', ')}.</span>`:''}
+<span class="st st-SIMULATED">Simulé</span></div>`;
+out.querySelectorAll('[data-mu]').forEach(i=>i.addEventListener('keydown',e=>{ if(e.key==='Enter'){ e.preventDefault(); document.getElementById('mcform').requestSubmit(); } }));
+S.mc={p:m.sample,b:m.bsample,yrs};
+drawMC(m.sample,m.bsample,yrs);
+if(live) live.textContent=`Simulation terminée. Médiane à ${yrs} ans ×${nf(m.med,2)}, probabilité de perte ${nf(m.pLoss,1)} %.`;
+}
+
+async function pfApply(name,nav){
+const pr=PROFILES[name]; if(!pr||!nav) return;
+if(!confirm(`Remplacer le portefeuille par l'allocation ${name} (${nf(nav,0)} $ répartis selon le profil) ?`)) return;
+const pos=[]; let used=0;
+for(const [s,w] of Object.entries(pr.w)){ const h=await pfHist(s).catch(()=>null); if(!h) continue;
+const px=h.meta.regularMarketPrice??h.last, qty=Math.floor(w*nav/px); if(qty>0){ pos.push({sym:s,qty,cost:px}); used+=qty*px; } }
+if(!pos.length) return alert('Cours indisponibles, réessayez.');
+S.positions=pos; S.cash=Math.round((nav-used)*100)/100; S.pfp.mu={}; pfSave(); viewPortfolio();
 }
 
 function drawMC(p,b,yrs){
@@ -1213,7 +1296,7 @@ const line=(s,c,w)=>{ x.strokeStyle=c; x.lineWidth=w; x.beginPath();
 s.forEach((v,i)=>i?x.lineTo(X(i),Y(v)):x.moveTo(X(i),Y(v))); x.stroke(); };
 line(b,'#5b6672',1); line(p,'#6ba3e0',1.4);
 x.fillStyle='#8a93a0'; x.font='9px monospace'; x.textAlign='left';
-x.fillText('Trajectoire d\'exemple — portefeuille (bleu) contre indice (gris) sur '+yrs+' ans', pad, 11);
+x.fillText('Trajectoire d\'exemple — portefeuille (bleu) contre indice monde ACWI (gris) sur '+yrs+' ans', pad, 11);
 }
 
 /*═══════════════════════════════════════════════════════════════════════
@@ -2054,7 +2137,7 @@ const map={m:'mkt', w:'wl', p:'pf', e:'macro', r:'srch', s:'sec', v:'val', n:'ne
 const t=map[e.key.toLowerCase()];
 if(t){ e.preventDefault(); go(t); }
 });
-window.addEventListener('resize',()=>{ if(S.view==='pf') runMC(); if(S.view==='macro') viewMacro(); if(S.view==='sec') drawCandles(); });
+window.addEventListener('resize',()=>{ if(S.view==='pf'&&S.mc) drawMC(S.mc.p,S.mc.b,S.mc.yrs); if(S.view==='macro') viewMacro(); if(S.view==='sec') drawCandles(); });
 
 tick(); setInterval(tick,1000);
 go('mkt');
