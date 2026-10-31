@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T00:02:05.011674Z",
+ "generated_at": "2026-10-31T01:30:23.039603Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -9,10 +9,10 @@
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (NVDA)",
    "ts": "2026-10-30T19:30:00Z",
-   "open": 208.88,
-   "lo": 200.9199,
-   "hi": 209.05,
-   "vol": 165923799
+   "open": 208.94,
+   "lo": 200.92,
+   "hi": 209.06,
+   "vol": 168039400
   },
   "ASTS": {
    "p": 40.99,
@@ -22,10 +22,10 @@
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-10-30T19:30:00Z",
-   "open": 41.0,
-   "lo": 39.2127,
+   "open": 41.07,
+   "lo": 39.213,
    "hi": 42.36,
-   "vol": 13655779
+   "vol": 13676700
   },
   "SPX": {
    "p": 7580.9502,
@@ -100,7 +100,8 @@
    "ts": "2026-10-30T06:00:00Z",
    "open": 64344.3711,
    "lo": 62711.4219,
-   "hi": 64589.0391
+   "hi": 64589.0391,
+   "vol": 175100000
   },
   "HSI": {
    "p": 23294.4199,
@@ -112,7 +113,8 @@
    "ts": "2026-10-30T07:30:00Z",
    "open": 23011.2891,
    "lo": 22947.9609,
-   "hi": 23400.0195
+   "hi": 23400.0195,
+   "vol": 3936600000
   },
   "SHCOMP": {
    "p": 3596.6057,
@@ -123,9 +125,9 @@
    "src": "Yahoo Finance via yfinance (000001.SS)",
    "ts": "2026-10-30T06:30:00Z",
    "open": 3605.645,
-   "lo": 3595.2583,
+   "lo": 3595.2581,
    "hi": 3660.2061,
-   "vol": 2552753744
+   "vol": 498000
   },
   "STI": {
    "p": 5373.8799,
@@ -137,7 +139,8 @@
    "ts": "2026-10-30T08:00:00Z",
    "open": 5406.25,
    "lo": 5365.1299,
-   "hi": 5406.25
+   "hi": 5406.25,
+   "vol": 242069700
   },
   "UKX": {
    "p": 10736.1396,
@@ -147,9 +150,10 @@
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^FTSE)",
    "ts": "2026-10-30T16:00:00Z",
-   "open": 10721.5098,
-   "lo": 10715.9297,
-   "hi": 10778.7197
+   "open": 10721.5,
+   "lo": 10715.9004,
+   "hi": 10778.7002,
+   "vol": 866084300
   },
   "DAX": {
    "p": 25817.4805,
@@ -161,7 +165,8 @@
    "ts": "2026-10-30T16:00:00Z",
    "open": 25948.6094,
    "lo": 25779.1504,
-   "hi": 26026.1992
+   "hi": 26026.1992,
+   "vol": 53853200
   },
   "CAC": {
    "p": 7962.1099,
@@ -173,19 +178,21 @@
    "ts": "2026-10-30T16:00:00Z",
    "open": 7973.8599,
    "lo": 7952.3901,
-   "hi": 7992.1699
+   "hi": 7992.1699,
+   "vol": 78347100
   },
   "SX5E": {
    "p": 6130.73,
    "prev": 6207.0698,
    "chg": -76.3398,
    "pct": -1.23,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^STOXX50E) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^STOXX50E)",
    "ts": "2026-10-30T16:00:00Z",
    "open": 6179.29,
    "lo": 6123.0,
-   "hi": 6179.29
+   "hi": 6179.29,
+   "vol": 21922600
   },
   "EURUSD": {
    "p": 1.1166,
@@ -275,28 +282,28 @@
    "vol": 37539
   },
   "BTC": {
-   "p": 77167.7891,
+   "p": 77226.3984,
    "prev": 77775.1094,
-   "chg": -607.3203,
-   "pct": -0.78,
+   "chg": -548.7109,
+   "pct": -0.71,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-10-31T00:00:00Z",
-   "open": 77791.375,
-   "lo": 76264.7422,
-   "hi": 78564.9375,
-   "vol": 45905031168
+   "ts": "2026-10-31T01:00:00Z",
+   "open": 77202.3984,
+   "lo": 77161.5859,
+   "hi": 77434.1484,
+   "vol": 37939752960
   }
  },
  "fundamentals": {
   "NVDA": {
-   "mcap": 4941442080000.0,
+   "mcap": 4941442065261.841,
    "w52lo": 164.27000427246094,
    "w52hi": 243.3699951171875,
    "shares": 24147000000.0
   },
   "ASTS": {
-   "mcap": 12282367825.85,
+   "mcap": 12282368191.803741,
    "w52lo": 36.720001220703125,
    "w52hi": 133.86000061035156,
    "shares": 299789305.0
@@ -333,6 +340,14 @@
   }
  ],
  "news": [
+  {
+   "h": "OpenAI slashes funding target by $10bn as tech anxieties mount",
+   "w": "ChatGPT maker is now seeking about $20bn at a $1.25tn valuation as it tempers its ambitions",
+   "syms": [],
+   "src": "Financial Times — Marchés",
+   "ts": "2026-10-31T00:05:08Z",
+   "url": "https://www.ft.com/content/7a3ad950-1b3b-4d9e-8c15-65a61ae6180f?syn-25a6b1a6=1"
+  },
   {
    "h": "Alaska Senate election: DOJ wants to 'segregate' all ballots for 2nd Sullivan candidate",
    "w": "The winner of the Alaska election could determine whether Republicans retain their majority in the U.S. Senate or if Democrats take control of the chamber.",
@@ -549,14 +564,6 @@
    "src": "CNBC — Marchés",
    "ts": "2026-10-30T17:15:53Z",
    "url": "https://www.cnbc.com/2026/10/30/treasury-i-bond-rate-through-april-2027.html"
-  },
-  {
-   "h": "CD&R pursues buyout of $40bn card processor Global Payments",
-   "w": "Deal for US company would rank among largest buyouts in history",
-   "syms": [],
-   "src": "Financial Times — Marchés",
-   "ts": "2026-10-30T17:10:22Z",
-   "url": "https://www.ft.com/content/da16af06-4431-4ced-9c3e-a0753d8c45c9?syn-25a6b1a6=1"
   }
  ],
  "summary": null
