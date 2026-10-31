@@ -887,6 +887,76 @@ aria-label="Ouvrir la fiche ${esc(meta.name)} (${s}), dernier cours ${nf(q.price
 return h;
 }
 
+/*── Carte des marchés (treemap façon Finviz) ─────────────────────────*/
+const HM={idx:'S&P 500', rects:[], hover:null};
+const SECT_FR={'Technology':'Technologie','Healthcare':'Santé','Financial Services':'Finance','Consumer Cyclical':'Consommation cyclique',
+'Consumer Defensive':'Consommation de base','Industrials':'Industrie','Communication Services':'Communication','Energy':'Énergie',
+'Utilities':'Services publics','Real Estate':'Immobilier','Basic Materials':'Matériaux'};
+function squarify(items,x,y,w,h){
+const out=[], tot=items.reduce((a,b)=>a+b.v,0); if(!tot||w<=0||h<=0) return out;
+let rest=items.map(o=>({...o,a:o.v*w*h/tot}));
+while(rest.length){
+const short=Math.min(w,h)||1, worst=row=>{ const s=row.reduce((a,b)=>a+b.a,0); let mx=0, mn=Infinity; row.forEach(r=>{ mx=Math.max(mx,r.a); mn=Math.min(mn,r.a); });
+return Math.max(short*short*mx/(s*s), s*s/(short*short*mn)); };
+const row=[rest[0]]; let i=1;
+while(i<rest.length&&worst([...row,rest[i]])<=worst(row)){ row.push(rest[i]); i++; }
+const s=row.reduce((a,b)=>a+b.a,0);
+if(w>=h){ const cw=s/h; let yy=y; row.forEach(r=>{ const rh=r.a/cw; out.push({...r,x,y:yy,w:cw,h:rh}); yy+=rh; }); x+=cw; w-=cw; }
+else{ const rh=s/w; let xx=x; row.forEach(r=>{ const rw=r.a/rh; out.push({...r,x:xx,y,w:rw,h:rh}); xx+=rw; }); y+=rh; h-=rh; }
+rest=rest.slice(i);
+}
+return out;
+}
+function hmIndices(){ const c={}; (UNIV||[]).forEach(u=>{ if(u.c==='Action') (u.l||[]).forEach(l=>c[l]=(c[l]||0)+1); });
+return Object.entries(c).filter(([,n])=>n>=10).sort((a,b)=>b[1]-a[1]).map(([l])=>l); }
+function hmPanelHtml(){
+const idx=hmIndices(); if(!idx.length) return '';
+if(!idx.includes(HM.idx)) HM.idx=idx[0];
+return `<div class="pnl" style="margin-bottom:9px"><h3>Carte des marchés<span class="rt">taille = capitalisation · couleur = variation du jour · cliquez pour ouvrir</span></h3>
+<div class="ctl" style="align-items:center"><div class="rng" role="group" aria-label="Indice">${idx.map(l=>`<button type="button" data-hm="${esc(l)}" class="${l===HM.idx?'on':''}">${esc(l)}</button>`).join('')}</div>
+<span class="mut" style="font-size:10px;margin-left:auto" id="hminfo"></span></div>
+<div class="pbody" style="position:relative;padding:4px"><canvas id="hmcv" height="470" role="img" aria-label="Carte des variations du jour"></canvas>
+<div id="hmtip" style="position:absolute;display:none;pointer-events:none;background:#0b0e11;border:1px solid var(--line);padding:6px 8px;font-size:10px;z-index:5;min-width:170px"></div></div></div>`;
+}
+function hmColor(p){ if(p==null) return '#262b31'; const a=Math.min(1,Math.abs(p)/3);
+const mix=(c1,c2)=>`rgb(${c1.map((v,i)=>Math.round(v+(c2[i]-v)*a)).join(',')})`;
+return p>=0?mix([38,43,49],[22,140,72]):mix([38,43,49],[190,45,45]); }
+function drawHeatmap(){
+const cv=document.getElementById('hmcv'); if(!cv) return;
+const list=(UNIV||[]).filter(u=>u.c==='Action'&&(u.l||[]).includes(HM.idx)&&u.p!=null);
+const caps=list.map(u=>(SNAPSHOT.fundamentals[u.s]||{}).mcap).filter(v=>v>0).sort((a,b)=>a-b), med=caps[caps.length>>1]||1;
+const by={}; let up=0, dn=0, known=0;
+list.forEach(u=>{ const F=SNAPSHOT.fundamentals[u.s]||{}, sec=SECT_FR[F.sector]||F.sector||'Autres'; if(F.mcap) known++;
+if(u.pct>0) up++; else if(u.pct<0) dn++;
+(by[sec]=by[sec]||[]).push({s:u.s, n:F.name||u.n, p:u.p, pct:u.pct, v:F.mcap||med, mcap:F.mcap, sec}); });
+const r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1, W=r.width, H=470; cv.width=W*dpr; cv.height=H*dpr;
+const x=cv.getContext('2d'); x.scale(dpr,dpr); x.fillStyle='#0b0e11'; x.fillRect(0,0,W,H);
+const secs=Object.entries(by).map(([k,a])=>({k,v:a.reduce((s,b)=>s+b.v,0),items:a.sort((p,q)=>q.v-p.v)})).sort((a,b)=>b.v-a.v);
+HM.rects=[];
+squarify(secs,0,0,W,H).forEach(S_=>{ const hd=S_.h>40&&S_.w>60?13:0;
+x.fillStyle='#14171b'; x.fillRect(S_.x,S_.y,S_.w,S_.h);
+if(hd){ x.fillStyle='#8a93a0'; x.font='bold 9px monospace'; x.textAlign='left'; x.fillText(S_.k.toUpperCase().slice(0,Math.floor(S_.w/6)),S_.x+3,S_.y+10); }
+squarify(S_.items,S_.x+1,S_.y+hd+1,S_.w-2,S_.h-hd-2).forEach(t=>{ HM.rects.push(t);
+x.fillStyle=hmColor(t.pct); x.fillRect(t.x+.5,t.y+.5,Math.max(0,t.w-1),Math.max(0,t.h-1));
+if(HM.hover&&HM.hover.s===t.s){ x.strokeStyle='#dde3ea'; x.lineWidth=1.5; x.strokeRect(t.x+1,t.y+1,t.w-2,t.h-2); }
+if(t.w>28&&t.h>16){ const tk=t.s.replace(/\.[A-Z]+$/,''), fs=Math.max(8,Math.min(16,Math.min(t.w/(tk.length*0.75),t.h/2.6)));
+x.fillStyle='#fff'; x.textAlign='center'; x.font=`bold ${fs}px monospace`; x.fillText(tk,t.x+t.w/2,t.y+t.h/2+(t.h>fs*2.4?-1:fs/3));
+if(t.h>fs*2.4){ x.font=`${Math.max(8,fs*0.72)}px monospace`; x.fillStyle='rgba(255,255,255,.85)'; x.fillText(t.pct!=null?pct(t.pct):'—',t.x+t.w/2,t.y+t.h/2+fs*0.95); } } }); });
+const info=document.getElementById('hminfo'); if(info) info.innerHTML=`${list.length} titres · <span class="pos">${up} en hausse</span> · <span class="neg">${dn} en baisse</span>${known<list.length?` · capitalisation connue pour ${known}`:''}`;
+const tip=document.getElementById('hmtip'), hit=ev=>{ const rr=cv.getBoundingClientRect(), mx=ev.clientX-rr.left, my=ev.clientY-rr.top;
+return [HM.rects.find(t=>mx>=t.x&&mx<t.x+t.w&&my>=t.y&&my<t.y+t.h),mx,my]; };
+cv.style.cursor='pointer';
+cv.onmousemove=ev=>{ const [t,mx,my]=hit(ev); if((t&&t.s)!==(HM.hover&&HM.hover.s)){ HM.hover=t||null; drawHeatmap(); }
+if(!t){ tip.style.display='none'; return; }
+tip.innerHTML=`<b style="color:var(--txt)">${esc(t.s)}</b> <span class="mut">${esc(t.sec)}</span><div style="color:var(--txt2);margin:2px 0 4px">${esc(t.n||'')}</div>
+<div class="kv"><span class="k">Cours</span><span class="v">${npx(t.p,t.s)}</span></div><div class="kv"><span class="k">Variation</span><span class="v ${cls(t.pct)}">${pct(t.pct)}</span></div>
+<div class="kv"><span class="k">Capitalisation</span><span class="v">${t.mcap?big(t.mcap):'<span class="na">n/d</span>'}</span></div>`;
+tip.style.display='block'; tip.style.left=Math.min(mx+14,W-190)+'px'; tip.style.top=Math.min(my+14,H-90)+'px'; };
+cv.onmouseleave=()=>{ HM.hover=null; tip.style.display='none'; drawHeatmap(); };
+cv.onclick=ev=>{ const [t]=hit(ev); if(t) openSym(t.s); };
+}
+function wireHeatmap(el){ el.querySelectorAll('[data-hm]').forEach(b=>b.onclick=()=>{ HM.idx=b.dataset.hm; el.querySelectorAll('[data-hm]').forEach(x=>x.classList.toggle('on',x===b)); drawHeatmap(); }); drawHeatmap(); }
+
 async function viewMarkets(){
 const el = document.getElementById('v-mkt');
 const T = (h,caption) => `<table><caption class="sr-only">${esc(caption)}</caption><thead><tr><th scope="col">Titre</th><th scope="col">Dernier</th><th scope="col">Var.</th><th scope="col">Volume</th><th scope="col">Âge</th></tr></thead><tbody>${h}</tbody></table>`;
@@ -934,6 +1004,7 @@ Fed et BCE inchangées (3,75-4,00 % et 2,50 %), Lagarde partira en février. S&P
 NVDA, ASTS, Dow, VIX, DXY et indices européens continentaux ne figurent pas dans les newsletters : marqués Périmé.
 `}
 </div>
+${hmPanelHtml()}
 <div class="g g2">
 <div class="pnl"><h3>Actions — États-Unis<span class="rt">${LIVE?"Yahoo Finance, MAJ toutes les 30 min":"S&amp;P / Nasdaq 100 clôture 29/10, reste périmé"}</span></h3><div class="pbody flush">${T(us,'Actions États-Unis')}</div></div>
 <div class="pnl"><h3>Actions — Europe<span class="rt">${LIVE?"Yahoo Finance, MAJ toutes les 30 min":"FTSE via FT 30/10, reste périmé (11/09)"}</span></h3><div class="pbody flush">${T(eu,'Actions Europe')}</div></div>
@@ -952,6 +1023,7 @@ FRED fournit la courbe complète gratuitement — séries <b>DGS2</b>, <b>DGS10<
 <th scope="col">Consensus</th><th scope="col">Précédent</th><th scope="col">Publié</th></tr></thead><tbody>${cal}</tbody></table></div></div>
 </div>`;
 wireSymbolClicks(el);
+wireHeatmap(el);
 }
 
 /*═══════════════════════════════════════════════════════════════════════
@@ -988,9 +1060,28 @@ const PROFILES={
 'Dynamique':{w:{ACWI:.80,AGG:.15,GLD:.05},         maxVol:22, obj:'croissance, horizon long, pertes temporaires acceptées'}
 };
 S.pfp={mub:7, rf:3.6, yrs:3, N:3000, mu:{}};
+S.pfccy='USD'; S.cashCcy='USD';
 (function(){ try{ const d=JSON.parse(localStorage.getItem(PF_KEY)||'null');
-if(d&&Array.isArray(d.positions)){ S.positions=d.positions.filter(p=>p&&p.sym&&p.qty>0); S.cash=+d.cash||0; } }catch(e){} })();
-function pfSave(){ try{ localStorage.setItem(PF_KEY,JSON.stringify({positions:S.positions.map(p=>({sym:p.sym,qty:p.qty,cost:p.cost})),cash:S.cash})); }catch(e){} }
+if(d&&Array.isArray(d.positions)){ S.positions=d.positions.filter(p=>p&&p.sym&&p.qty>0); S.cash=+d.cash||0; S.cashCcy=d.cashCcy||'USD'; S.pfccy=d.ccy||'USD'; } }catch(e){} })();
+function pfSave(){ try{ localStorage.setItem(PF_KEY,JSON.stringify({positions:S.positions.map(p=>({sym:p.sym,qty:p.qty,cost:p.cost})),cash:S.cash,cashCcy:S.cashCcy,ccy:S.pfccy})); }catch(e){} }
+const PF_CCYS={USD:'$',EUR:'€',CHF:'CHF',GBP:'£'};
+const normCcy=c=>c==='GBp'||c==='GBX'?'GBP':c==='ZAc'?'ZAR':(c||'USD');
+/** Taux sans risque par défaut de la devise : dernier taux directeur publié, sinon valeur indicative. */
+function rfFor(ccy){ const code={USD:'USINTR',EUR:'EUINTR',CHF:'CHINTR',GBP:'GBINTR'}[ccy], e=code&&ecoGet(code);
+return e?Math.round(e.last*100)/100:({USD:3.6,EUR:2,CHF:0,GBP:4}[ccy]??3); }
+/** Série de cours convertie dans la devise de référence (change du jour, reporté sur les jours sans cotation). */
+const PF_CONV=new Map();
+function fxLookup(h){ const ks=[...h.map.keys()].sort(), vs=ks.map(k=>h.map.get(k));
+return d=>{ let lo=0, hi=ks.length-1, r=-1; while(lo<=hi){ const m=(lo+hi)>>1; if(ks[m]<=d){ r=m; lo=m+1; } else hi=m-1; } return r<0?vs[0]:vs[r]; }; }
+function pfSeries(sym,base){
+const key=sym+'|'+base; if(PF_CONV.has(key)) return PF_CONV.get(key);
+const pr=(async()=>{ const h=await pfHist(sym), c=normCcy(h.meta.currency);
+if(c===base) return {map:h.map, ccy:c};
+const from=c==='USD'?null:fxLookup(await pfHist(`${c}USD=X`)), to=base==='USD'?null:fxLookup(await pfHist(`${base}USD=X`));
+const map=new Map(); for(const [d,v] of h.map) map.set(d, v*(from?from(d):1)/(to?to(d):1));
+return {map, ccy:c}; })();
+PF_CONV.set(key,pr); pr.catch(()=>PF_CONV.delete(key)); return pr;
+}
 
 /** Historique quotidien 2 ans via le relais, indexé par date locale de la bourse. */
 const PF_HIST=new Map();
@@ -1031,7 +1122,7 @@ const sriClass=v=>v<0.5?1:v<5?2:v<12?3:v<20?4:v<30?5:v<80?6:7;
  wmap = {sym: poids}, wc = poids des liquidités. */
 async function pfAnalyze(wmap, wc, P, N){
 const syms=Object.keys(wmap).filter(s=>wmap[s]>0);
-const hs=await Promise.all([...syms,PF_BENCH].map(s=>pfHist(s)));
+const base=S.pfccy||'USD', hs=await Promise.all([...syms,PF_BENCH].map(s=>pfSeries(s,base)));
 const bench=hs.pop();
 const dates=[...bench.map.keys()].filter(d=>hs.every(h=>h.map.has(d))).sort();
 if(dates.length<60) throw new Error(`historique commun trop court (${dates.length} séances)`);
@@ -1079,14 +1170,18 @@ const qt=p=>Q.quantile(fin,p);
 const mc={med:qt(.5), p10:qt(.1), p90:qt(.9), bmed:Q.quantile(bfin,.5), pLoss:loss/N*100, pBeat:beat/N*100,
 ddMed:Q.quantile(dds,.5), dd90:Q.quantile(dds,.9), sample, bsample, N, yrs,
 expRet:(w.reduce((a,wi,i)=>a+wi*mu[i],0)+wc*rf)*100};
-return {syms, sg, bt, mu, w, hist, mc, shrink:lam-0.05>1e-9?lam-0.05:0};
+const divRatio=hist.vol?w.reduce((a,wi,i)=>a+wi*sg[i],0)*100/hist.vol:null;
+return {syms, sg, bt, mu, w, hist, mc, shrink:lam-0.05>1e-9?lam-0.05:0, C, R, Rb, dates, wc, divRatio, base, ccys:hs.map(h=>h.ccy)};
 }
 
 async function viewPortfolio(){
 const el=document.getElementById('v-pf');
 el.innerHTML='<div class="pnl"><div class="note" style="padding:12px">Chargement des cours et de l\'historique…</div></div>';
 const rows=await Promise.all(S.positions.map(async p=>({...p, ...(await pfQuote(p.sym))})));
-let nav=S.cash, cost=0, dayPL=0;
+const base=S.pfccy||'USD', B=await pfFX(base).catch(()=>1), CS=PF_CCYS[base]||base;
+const cashUSD=S.cash*(await pfFX(S.cashCcy||'USD').catch(()=>1)); S.pfCashUSD=cashUSD; S.pfB=B;
+const mb=(v,d=0)=>nf(v/B,d);
+let nav=cashUSD, cost=0, dayPL=0;
 for(const e of rows){
 e.ok=e.px!=null&&e.fx!=null;
 e.mv=e.ok?e.px*e.qty*e.fx:0; e.cb=(e.cost??e.px??0)*e.qty*(e.fx||1);
@@ -1094,32 +1189,33 @@ e.upl=e.mv-e.cb; e.uplPct=e.cb?e.upl/e.cb*100:0;
 e.dpl=e.ok&&e.pc!=null?e.mv-e.mv/(1+e.pc/100):null;
 nav+=e.mv; cost+=e.cb; if(e.dpl!=null) dayPL+=e.dpl;
 }
-const inv=nav-S.cash, totPL=inv-cost, maxW=rows.reduce((m,e)=>Math.max(m,nav?e.mv/nav*100:0),0);
+const inv=nav-cashUSD, totPL=inv-cost, maxW=rows.reduce((m,e)=>Math.max(m,nav?e.mv/nav*100:0),0);
 const conc=!rows.length?'aucune ligne':maxW>25?`concentration élevée (${nf(maxW,0)} % max)`:maxW>10?'concentration modérée':'diversifié';
 const tr=rows.map((e,i)=>`<tr>
 <th scope="row" class="sym clk" data-sym="${esc(e.sym)}" tabindex="0" role="button" title="${esc(e.name)}">${esc(e.sym)}</th>
 <td>${nf(e.qty,e.qty%1?2:0)}</td><td>${e.cost!=null?npx(e.cost,e.sym):'—'}</td>
 <td>${e.px!=null?npx(e.px,e.sym)+badge(e.st):'<span class="na">n/d</span>'}${e.ccy!=='USD'?` <span class="mut" style="font-size:9px">${esc(e.ccy)}</span>`:''}</td>
-<td>${e.ok?nf(e.mv,0):'<span class="na">n/d</span>'}</td>
-<td class="${cls(e.upl)}">${e.ok?nf(e.upl,0):'—'}</td><td class="${cls(e.uplPct)}">${e.ok?pct(e.uplPct):'—'}</td>
-<td class="${cls(e.dpl)}">${e.dpl!=null?nf(e.dpl,0):'<span class="na">n/d</span>'}</td>
+<td>${e.ok?mb(e.mv):'<span class="na">n/d</span>'}</td>
+<td class="${cls(e.upl)}">${e.ok?mb(e.upl):'—'}</td><td class="${cls(e.uplPct)}">${e.ok?pct(e.uplPct):'—'}</td>
+<td class="${cls(e.dpl)}">${e.dpl!=null?mb(e.dpl):'<span class="na">n/d</span>'}</td>
 <td>${nav?pct(e.mv/nav*100,1):'—'}</td>
 <td><button class="btn" data-del="${i}" aria-label="Supprimer ${esc(e.sym)}" title="Supprimer">✕</button></td></tr>`).join('');
 const dl=(UNIV||[]).filter(u=>u.c!=='Taux').slice(0,1500).map(u=>`<option value="${esc(u.s)}">${esc(u.n||'')}</option>`).join('');
 const P=S.pfp;
 el.innerHTML=`
 <div class="pnl" style="margin-bottom:9px">
-<h3>Portefeuille<span class="rt">enregistré dans ce navigateur · valeurs en USD</span></h3>
+<h3>Portefeuille<span class="rt" style="display:flex;gap:10px;align-items:center">devise de référence
+<span class="rng" role="group" aria-label="Devise de référence">${Object.keys(PF_CCYS).map(c=>`<button type="button" data-ccy="${c}" class="${c===base?'on':''}" aria-pressed="${c===base}">${c}</button>`).join('')}</span></span></h3>
 <div class="statrow">
-<div class="stat"><span class="l">NAV TOTALE</span><span class="n">${nf(nav,0)}</span><span class="s">USD</span></div>
-<div class="stat"><span class="l">P&L DU JOUR</span><span class="n ${cls(dayPL)}">${nf(dayPL,0)}</span><span class="s">${nav-dayPL?pct(dayPL/(nav-dayPL)*100):'—'}</span></div>
-<div class="stat"><span class="l">P&L LATENT</span><span class="n ${cls(totPL)}">${nf(totPL,0)}</span><span class="s">${cost?pct(totPL/cost*100):'—'}</span></div>
-<div class="stat"><span class="l">INVESTI</span><span class="n">${nf(inv,0)}</span><span class="s">${nav?pct(inv/nav*100,1):'—'} de la NAV</span></div>
-<div class="stat"><span class="l">LIQUIDITÉS</span><span class="n">${nf(S.cash,0)}</span><span class="s">${nav?pct(S.cash/nav*100,1):'—'} de la NAV</span></div>
+<div class="stat"><span class="l">NAV TOTALE</span><span class="n">${mb(nav)}</span><span class="s">${base}${base!=='USD'?` · 1 ${base} = ${nf(B,4)} USD`:''}</span></div>
+<div class="stat"><span class="l">P&L DU JOUR</span><span class="n ${cls(dayPL)}">${mb(dayPL)}</span><span class="s">${nav-dayPL?pct(dayPL/(nav-dayPL)*100):'—'}</span></div>
+<div class="stat"><span class="l">P&L LATENT</span><span class="n ${cls(totPL)}">${mb(totPL)}</span><span class="s">${cost?pct(totPL/cost*100):'—'}</span></div>
+<div class="stat"><span class="l">INVESTI</span><span class="n">${mb(inv)}</span><span class="s">${nav?pct(inv/nav*100,1):'—'} de la NAV</span></div>
+<div class="stat"><span class="l">LIQUIDITÉS</span><span class="n">${mb(cashUSD)}</span><span class="s">${nav?pct(cashUSD/nav*100,1):'—'} de la NAV${(S.cashCcy||'USD')!==base?` · détenues en ${S.cashCcy}`:''}</span></div>
 <div class="stat"><span class="l">LIGNES</span><span class="n">${rows.length}</span><span class="s">${conc}</span></div>
 </div>
 <div class="pbody flush"><table><caption class="sr-only">Positions du portefeuille</caption><thead><tr>
-<th scope="col">Titre</th><th scope="col">Qté</th><th scope="col">PRU</th><th scope="col">Cours</th><th scope="col">Valeur $</th>
+<th scope="col">Titre</th><th scope="col">Qté</th><th scope="col">PRU</th><th scope="col">Cours</th><th scope="col">Valeur ${CS}</th>
 <th scope="col">P&L</th><th scope="col">P&L %</th><th scope="col">Jour</th><th scope="col">Poids</th><th scope="col"><span class="sr-only">Action</span></th></tr></thead>
 <tbody>${tr||'<tr><td colspan="10" class="na">Aucune position. Ajoutez un titre ci-dessous ou appliquez un profil type.</td></tr>'}</tbody></table></div>
 <form class="ctl" id="pfadd" novalidate style="border-top:1px solid var(--line);border-bottom:none">
@@ -1127,7 +1223,7 @@ el.innerHTML=`
 <div class="f"><label for="pa_qty">Quantité</label><input id="pa_qty" type="number" step="any" min="0" required></div>
 <div class="f"><label for="pa_cost">PRU (vide = cours)</label><input id="pa_cost" type="number" step="any" min="0"></div>
 <button class="btn go" type="submit">+ Ajouter</button>
-<div class="f" style="margin-left:18px"><label for="pa_cash">Liquidités $</label><input id="pa_cash" type="number" step="any" value="${S.cash}"></div>
+<div class="f" style="margin-left:18px"><label for="pa_cash">Liquidités ${CS}</label><input id="pa_cash" type="number" step="any" value="${Math.round(cashUSD/B*100)/100}"></div>
 <button class="btn" type="button" id="pa_cashbtn">Mettre à jour</button>
 <button class="btn" type="button" id="pa_reset" style="margin-left:auto">Revenir à l'exemple</button>
 <div id="pa_msg" class="note" style="flex-basis:100%;padding:0;color:var(--hot)"></div>
@@ -1145,6 +1241,14 @@ el.innerHTML=`
 <div class="pnl" style="margin-bottom:9px">
 <h3>Stress tests — scénarios historiques<span class="rt">impact estimé sur la valeur du portefeuille</span></h3>
 <div id="pfstress"><div class="note" style="padding:12px">Calcul…</div></div>
+</div>
+
+<div class="g g2" style="margin-bottom:9px">
+<div class="pnl"><h3>Performance historique — poids actuels<span class="rt" id="pfperfinfo"></span></h3>
+<div class="ctl" style="align-items:center"><div class="rng" role="group" aria-label="Période">${['3M','6M','1A','2A'].map(r=>`<button type="button" data-pr="${r}" class="${r===(S.pfPerf||'1A')?'on':''}">${r}</button>`).join('')}</div>
+<span class="mut" style="font-size:10px;margin-left:auto" id="pfperfsum"></span></div>
+<div class="pbody"><canvas id="pfperfcv" height="200" role="img" aria-label="Performance du portefeuille contre l'indice monde"></canvas><div id="pfcontrib" style="margin-top:8px"></div></div></div>
+<div class="pnl"><h3>Diversification — corrélations<span class="rt">2 ans, rendements quotidiens</span></h3><div class="pbody" id="pfcorr"><div class="note" style="padding:0">Calcul…</div></div></div>
 </div>
 
 <div class="pnl">
@@ -1186,9 +1290,10 @@ catch(e){ return msg(`${sym} introuvable (${e.message}). Utilisez le symbole Yah
 const ex=S.positions.find(p=>p.sym===sym);
 if(ex){ ex.cost=(ex.cost*ex.qty+cst*qty)/(ex.qty+qty); ex.qty+=qty; } else S.positions.push({sym,qty,cost:cst});
 pfSave(); viewPortfolio(); };
-document.getElementById('pa_cashbtn').onclick=()=>{ const v=parseFloat(document.getElementById('pa_cash').value); if(isFinite(v)&&v>=0){ S.cash=v; pfSave(); viewPortfolio(); } };
+document.getElementById('pa_cashbtn').onclick=()=>{ const v=parseFloat(document.getElementById('pa_cash').value); if(isFinite(v)&&v>=0){ S.cash=v; S.cashCcy=base; pfSave(); viewPortfolio(); } };
+el.querySelectorAll('[data-ccy]').forEach(b=>b.onclick=()=>{ if(b.dataset.ccy===S.pfccy) return; S.pfccy=b.dataset.ccy; S.pfp.rf=rfFor(S.pfccy); S.pfp.mu={}; pfSave(); viewPortfolio(); });
 document.getElementById('pa_reset').onclick=()=>{ if(!confirm('Remplacer le portefeuille par l\'exemple NVDA / ASTS ?')) return;
-S.positions=PF_DEFAULT.positions.map(p=>({...p})); S.cash=PF_DEFAULT.cash; S.pfp.mu={}; pfSave(); viewPortfolio(); };
+S.positions=PF_DEFAULT.positions.map(p=>({...p})); S.cash=PF_DEFAULT.cash; S.cashCcy='USD'; S.pfp.mu={}; pfSave(); viewPortfolio(); };
 const readP=()=>{ const g=id=>parseFloat(document.getElementById(id).value);
 Object.assign(S.pfp,{mub:g('p_mub'),rf:g('p_rf'),yrs:Math.max(1,Math.min(30,g('p_yrs')||3)),N:Math.max(200,Math.min(20000,g('p_n')||3000))});
 el.querySelectorAll('[data-mu]').forEach(i=>{ const v=parseFloat(i.value); if(isFinite(v)&&i.dataset.edited) S.pfp.mu[i.dataset.mu]=v; }); };
@@ -1202,7 +1307,7 @@ const P=S.pfp, out=document.getElementById('mcout'), prof=document.getElementByI
 const live=document.getElementById('live-status');
 const ok=rows.filter(e=>e.ok&&e.mv>0&&e.hist), missing=rows.filter(e=>!(e.ok&&e.hist)).map(e=>e.sym);
 const wmap={}; ok.forEach(e=>{ wmap[e.sym]=(wmap[e.sym]||0)+e.mv/nav; });
-const wc=nav?S.cash/nav:1;
+const wc=nav?(S.pfCashUSD??S.cash)/nav:1;
 let cur=null, err=null;
 if(ok.length){ try{ cur=await pfAnalyze(wmap,wc,P,P.N); }catch(e){ err=e.message; } }
 else err='aucune ligne exploitable';
@@ -1257,7 +1362,7 @@ ${K('Ratio d\'information',nf(h.ir,2),cls(h.ir))}
 </div>
 </div>
 <div class="warn" style="margin:0 9px 9px">
-<b>Méthode.</b> Volatilités, bêtas et corrélations estimés sur ${h.n} séances réelles (Yahoo Finance via relais), rendements en devise locale.
+<b>Méthode.</b> Volatilités, bêtas et corrélations estimés sur ${h.n} séances réelles (Yahoo Finance via relais), rendements convertis en ${esc(cur.base)} (risque de change inclus).
 Rendements attendus par le MEDAF : taux sans risque + β × (μ indice − taux sans risque), modifiables ligne à ligne : le rendement passé n'est pas une prévision.
 Projection : ${nf(m.N,0)} trajectoires, mouvement brownien géométrique à ${cur.syms.length+1} facteurs corrélés (Cholesky${cur.shrink?`, corrélations rétrécies de ${nf(cur.shrink*100,0)} % pour rester cohérentes`:''}), pas hebdomadaire, rééquilibrage permanent.
 Un GBM sous-estime les queues de distribution : le P10 n'est pas un plancher.${missing.length?` <span class="neg">Exclus faute d'historique : ${missing.map(esc).join(', ')}.</span>`:''}
@@ -1303,12 +1408,71 @@ if(!cur){ sbox.innerHTML='<div class="note">Stress tests indisponibles : portefe
 const tgt=CPf?CPf.prof:null, cols=['Actuel',...Object.keys(PROFILES)];
 const A=k=>k==='Actuel'?{a:cur,wc}:profs[k]&&!profs[k].err?{a:profs[k],wc:0}:null;
 sbox.innerHTML=`<div class="pbody flush"><table><caption class="sr-only">Stress tests</caption><thead><tr><th scope="col" style="text-align:left">Scénario</th>
-${cols.map(k=>`<th scope="col">${k==='Actuel'?'Portefeuille actuel':k}${k===tgt?' ★':''}</th>`).join('')}<th scope="col">Impact actuel en $</th></tr></thead><tbody>
+${cols.map(k=>`<th scope="col">${k==='Actuel'?'Portefeuille actuel':k}${k===tgt?' ★':''}</th>`).join('')}<th scope="col">Impact actuel en ${S.pfccy||'USD'}</th></tr></thead><tbody>
 ${STRESS.map(sc=>{ const cells=cols.map(k=>{ const x=A(k); if(!x) return '<td class="na">n/d</td>'; const v=stressPortfolio(x.a,x.wc,sc), over=CPf&&-v>CPf.maxLoss;
 return `<td class="${cls(v)}"${over?' style="background:#2a1212;font-weight:700" title="Au-delà de la perte acceptable du client"':''}>${pct(v,1)}</td>`; }).join('');
-return `<tr><th scope="row" style="text-align:left">${sc.k}<div class="mut" style="font-size:9px;font-weight:400">${sc.per}</div></th>${cells}<td>${nf(nav*stressPortfolio(cur,wc,sc)/100,0)}</td></tr>`; }).join('')}
+return `<tr><th scope="row" style="text-align:left">${sc.k}<div class="mut" style="font-size:9px;font-weight:400">${sc.per}</div></th>${cells}<td>${nf(nav/(S.pfB||1)*stressPortfolio(cur,wc,sc)/100,0)}</td></tr>`; }).join('')}
 </tbody></table></div>
 <div class="note" style="padding:8px 9px">Chocs subis par les indices de référence de chaque période (actions monde, obligations agrégées, or, monétaire) appliqués aux lignes actuelles. Pour une action, le choc vaut son bêta × le choc du marché, plafonné à −95 % : une approximation linéaire qui ignore les effets propres à chaque titre.${CPf?` Cases en rouge foncé : perte supérieure à la tolérance du client (${CPf.maxLoss>=35?'> 20':CPf.maxLoss} %). ★ = profil du client.`:' Renseignez le questionnaire client pour comparer à sa tolérance.'}</div>`;
+pfRenderPerf(); pfRenderCorr();
+}
+/** Performance des poids actuels sur l'historique, contre l'indice monde, et contribution de chaque ligne. */
+function pfRenderPerf(hover){
+const L=S.pfLast, cur=L&&L.cur, cv=document.getElementById('pfperfcv'); if(!cur||!cv) return;
+const per=S.pfPerf||'1A', n=Math.min(cur.Rb.length,{'3M':63,'6M':126,'1A':252,'2A':9999}[per]), off=cur.Rb.length-n;
+const rf=S.pfp.rf/100, dts=cur.dates.slice(off), pv=[1], bv=[1]; const contrib=cur.syms.map(()=>0); let cc=0;
+for(let t=off;t<cur.Rb.length;t++){ let r=cur.wc*rf/252; cc+=cur.wc*rf/252;
+cur.R.forEach((a,i)=>{ r+=cur.w[i]*a[t]; contrib[i]+=cur.w[i]*a[t]; });
+pv.push(pv[pv.length-1]*(1+r)); bv.push(bv[bv.length-1]*(1+cur.Rb[t])); }
+const pr=(pv[pv.length-1]-1)*100, br=(bv[bv.length-1]-1)*100;
+const sum=document.getElementById('pfperfsum'); if(sum) sum.innerHTML=`Portefeuille <b class="${cls(pr)}">${pct(pr,1)}</b> · ACWI <b class="${cls(br)}">${pct(br,1)}</b> · écart <b class="${cls(pr-br)}">${pct(pr-br,1)}</b>`;
+const r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1, W=r.width, H=200; cv.width=W*dpr; cv.height=H*dpr;
+const x=cv.getContext('2d'); x.scale(dpr,dpr); const pl=8, prr=56, pt=10, pb=18;
+const all=[...pv,...bv], lo=Math.min(...all), hi=Math.max(...all), N=pv.length;
+const X=i=>pl+i/(N-1)*(W-pl-prr), Y=v=>pt+(1-(v-lo)/(hi-lo||1))*(H-pt-pb);
+x.font='9px monospace'; x.fillStyle='#8a93a0'; x.strokeStyle='#1c2127';
+for(let k=0;k<=3;k++){ const v=lo+(hi-lo)*k/3, y=Y(v); x.beginPath(); x.moveTo(pl,y); x.lineTo(W-prr,y); x.stroke(); x.textAlign='left'; x.fillText(pct((v-1)*100,0),W-prr+4,y+3); }
+x.strokeStyle='#4a525c'; x.beginPath(); x.moveTo(pl,Y(1)); x.lineTo(W-prr,Y(1)); x.stroke();
+const line=(s,c,w)=>{ x.strokeStyle=c; x.lineWidth=w; x.beginPath(); s.forEach((v,i)=>i?x.lineTo(X(i),Y(v)):x.moveTo(X(i),Y(v))); x.stroke(); };
+line(bv,'#5b6672',1.2); line(pv,'#6ba3e0',1.6);
+const fd=d=>new Date(d+'T12:00:00').toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'2-digit'});
+x.fillStyle='#8a93a0'; x.textAlign='left'; x.fillText(fd(cur.dates[off]),pl,H-4); x.textAlign='right'; x.fillText(fd(dts[dts.length-1]),W-prr,H-4);
+if(hover!=null&&hover>=0&&hover<N){ x.strokeStyle='rgba(221,227,234,.4)'; x.setLineDash([3,3]); x.beginPath(); x.moveTo(X(hover),pt); x.lineTo(X(hover),H-pb); x.stroke(); x.setLineDash([]);
+const d=hover?dts[hover-1]:cur.dates[off]; x.textAlign='left'; x.font='bold 10px monospace';
+const tx=`${fd(d)}  portefeuille ${pct((pv[hover]-1)*100,1)}  ACWI ${pct((bv[hover]-1)*100,1)}`, tw=x.measureText(tx).width+10, lx=Math.min(Math.max(pl,X(hover)-tw/2),W-prr-tw);
+x.fillStyle='#dde3ea'; x.fillRect(lx,pt,tw,16); x.fillStyle='#0b0e11'; x.fillText(tx,lx+5,pt+11.5); }
+cv.onmousemove=ev=>{ const rr=cv.getBoundingClientRect(); pfRenderPerf(Math.round((ev.clientX-rr.left-pl)/(W-pl-prr)*(N-1))); };
+cv.onmouseleave=()=>pfRenderPerf(null);
+if(hover!==undefined) return;
+document.querySelectorAll('[data-pr]').forEach(b=>b.onclick=()=>{ S.pfPerf=b.dataset.pr; document.querySelectorAll('[data-pr]').forEach(x=>x.classList.toggle('on',x===b)); pfRenderPerf(); });
+const items=cur.syms.map((s,i)=>[s,contrib[i]*100]).concat(cur.wc>0?[['Liquidités',cc*100]]:[]).sort((a,b)=>b[1]-a[1]);
+const mx=Math.max(...items.map(i=>Math.abs(i[1])),0.01);
+const cb=document.getElementById('pfcontrib');
+if(cb) cb.innerHTML=`<div style="font-size:9px;color:var(--txt3);margin-bottom:4px">CONTRIBUTION À LA PERFORMANCE (${per}, en points)</div>`+items.map(([s,v])=>`<div style="display:grid;grid-template-columns:80px 1fr 64px;gap:8px;align-items:center;font-size:11px;padding:1px 0">
+<span class="sym">${esc(s)}</span><div style="position:relative;height:10px;background:#14171b"><div style="position:absolute;top:0;bottom:0;${v>=0?'left:50%':'right:50%'};width:${Math.abs(v)/mx*50}%;background:${v>=0?'#2fbf6b':'#e04a4a'}"></div><div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:#4a525c"></div></div>
+<span class="${cls(v)}" style="text-align:right">${v>0?'+':''}${nf(v,1)}</span></div>`).join('')+
+`<div class="note" style="padding:6px 0 0">Poids actuels appliqués à l'historique en ${esc(cur.base)}, rééquilibrage quotidien : c'est ce qu'aurait fait ce portefeuille, pas la performance réellement obtenue. Contributions additives (somme des poids × rendements quotidiens).</div>`;
+const info=document.getElementById('pfperfinfo'); if(info) info.textContent=`en ${cur.base} · contre MSCI ACWI`;
+}
+/** Matrice de corrélation en carte de chaleur + ratio de diversification + exposition aux devises. */
+function pfRenderCorr(){
+const L=S.pfLast, cur=L&&L.cur, box=document.getElementById('pfcorr'); if(!cur||!box) return;
+const names=[...cur.syms,'ACWI'], C=cur.C, n=names.length;
+const col=v=>{ const a=Math.min(1,Math.abs(v)); return v>=0?`rgba(224,74,74,${0.12+a*0.75})`:`rgba(77,143,214,${0.12+a*0.75})`; };
+let avg=0, cnt=0; for(let i=0;i<cur.syms.length;i++) for(let j=i+1;j<cur.syms.length;j++){ avg+=C[i][j]; cnt++; } avg=cnt?avg/cnt:null;
+const ex={}; L.rows.filter(e=>e.ok).forEach(e=>{ const c=normCcy(e.ccy); ex[c]=(ex[c]||0)+e.mv/L.nav; });
+if(cur.wc>0){ const c=S.cashCcy||'USD'; ex[c]=(ex[c]||0)+cur.wc; }
+const foreign=Object.entries(ex).filter(([c])=>c!==cur.base).reduce((a,[,v])=>a+v,0)*100;
+box.innerHTML=`<div style="overflow-x:auto"><table style="width:auto;border-collapse:separate;border-spacing:2px"><caption class="sr-only">Matrice de corrélation</caption>
+<thead><tr><th></th>${names.map(s=>`<th scope="col" style="font-size:9px;text-align:center;padding:2px 4px">${esc(s)}</th>`).join('')}</tr></thead><tbody>
+${names.map((a,i)=>`<tr><th scope="row" class="sym" style="text-align:left;padding:2px 6px 2px 0">${esc(a)}</th>${names.map((b,j)=>`<td style="text-align:center;padding:5px 6px;min-width:46px;font-size:11px;background:${i===j?'#1c2127':col(C[i][j])};color:${i===j?'var(--txt3)':'var(--txt)'}" title="${esc(a)} / ${esc(b)} : ${nf(C[i][j],2)}">${nf(C[i][j],2)}</td>`).join('')}</tr>`).join('')}
+</tbody></table></div>
+<div class="statrow" style="border:none;padding:10px 0 0">
+<div class="stat"><span class="l">CORRÉLATION MOYENNE</span><span class="n">${avg!=null?nf(avg,2):'—'}</span><span class="s">${avg==null?'une seule ligne':avg>0.6?'<span class="neg">lignes très liées</span>':avg>0.3?'liaison modérée':'<span class="pos">bonne diversification</span>'}</span></div>
+<div class="stat"><span class="l">RATIO DE DIVERSIFICATION</span><span class="n">${cur.divRatio?nf(cur.divRatio,2):'—'}</span><span class="s">1 = aucun gain ; plus c'est haut, mieux c'est</span></div>
+<div class="stat"><span class="l">RISQUE DE CHANGE</span><span class="n ${foreign>50?'neg':''}">${nf(foreign,0)} %</span><span class="s">hors ${esc(cur.base)}</span></div></div>
+<div style="font-size:10px;color:var(--txt2);padding-top:4px">Exposition : ${Object.entries(ex).sort((a,b)=>b[1]-a[1]).map(([c,v])=>`<b>${esc(c)}</b> ${nf(v*100,0)} %`).join(' · ')}</div>
+<div class="note" style="padding:6px 0 0">Rouge = les deux lignes montent et baissent ensemble ; bleu = elles se compensent. Ratio de diversification = moyenne pondérée des volatilités ÷ volatilité du portefeuille.${foreign>0?` Les lignes hors ${esc(cur.base)} portent un risque de change non couvert, inclus dans la volatilité.`:''}</div>`;
 }
 /*── Profil client : questionnaire d'adéquation inspiré de MiFID II ─────*/
 const CLIENT_KEY='terminal.client.v1';
@@ -1401,13 +1565,15 @@ if(!L||!L.cur){ alert('Analyse du portefeuille pas encore prête : attendez la f
 const {cur,profs,rows,nav,wc}=L, h=cur.hist, m=cur.mc, yrs=S.pfp.yrs, today=new Date().toLocaleDateString('fr-FR',{day:'2-digit',month:'long',year:'numeric'});
 const target=P?P.prof:null, T=target&&profs[target]&&!profs[target].err?profs[target]:null;
 const ok=P?h.vol<=P.maxVol&&h.mdd<=P.maxLoss*1.5:null;
-const f1=v=>nf(v,1), money=v=>nf(v,0)+' $';
+const base=S.pfccy||'USD', B=S.pfB||1, CS=PF_CCYS[base]||base, f1=v=>nf(v,1), money=v=>nf(v/B,0)+' '+CS;
 const img=(()=>{ try{ const c=document.getElementById('mccv'); return c?c.toDataURL('image/png'):''; }catch(e){ return ''; } })();
 const mk=[['SPX','S&P 500'],['SX5E','Euro Stoxx 50'],['CAC','CAC 40'],['EURUSD','EUR/USD'],['XAU','Or'],['BTC','Bitcoin']]
 .map(([s,n])=>{ const q=SNAPSHOT.quotes[s]; return q&&q.p!=null?`<tr><td>${n}</td><td class="r">${npx(q.p,s)}</td><td class="r ${cls(q.pct)}">${pct(q.pct)}</td></tr>`:''; }).join('');
 const ec=['USINTR','EUINTR','USIRYY','EUIRYY','US10Y','DE10Y'].map(c=>{ const e=ecoGet(c); return e?`<tr><td>${esc(e.n)} — ${esc(e.ctry)}</td><td class="r">${ecoFmt(e.last,e)}</td><td class="r mut">${ecoPeriod(e,e.date)}</td></tr>`:''; }).join('');
 const pos=rows.filter(e=>e.ok).map(e=>`<tr><td><b>${esc(e.sym)}</b> ${e.name&&e.name!==e.sym?`<span class="mut">${esc(e.name)}</span>`:''}</td><td class="r">${nf(e.qty,e.qty%1?2:0)}</td><td class="r">${npx(e.px,e.sym)} ${e.ccy!=='USD'?esc(e.ccy):''}</td><td class="r">${money(e.mv)}</td><td class="r">${f1(e.mv/nav*100)} %</td><td class="r ${cls(e.uplPct)}">${pct(e.uplPct,1)}</td></tr>`).join('')
-+(S.cash?`<tr><td>Liquidités</td><td></td><td></td><td class="r">${money(S.cash)}</td><td class="r">${f1(wc*100)} %</td><td></td></tr>`:'');
++(wc>0?`<tr><td>Liquidités <span class="mut">${esc(S.cashCcy||'USD')}</span></td><td></td><td></td><td class="r">${money(wc*nav)}</td><td class="r">${f1(wc*100)} %</td><td></td></tr>`:'');
+const ex={}; rows.filter(e=>e.ok).forEach(e=>{ const c=normCcy(e.ccy); ex[c]=(ex[c]||0)+e.mv/nav; }); if(wc>0){ const c=S.cashCcy||'USD'; ex[c]=(ex[c]||0)+wc; }
+const exTxt=Object.entries(ex).sort((a,b)=>b[1]-a[1]).map(([c,v])=>`${c} ${f1(v*100)} %`).join(' · '), foreign=Object.entries(ex).filter(([c])=>c!==base).reduce((a,[,v])=>a+v,0)*100;
 const stressRows=STRESS.map(sc=>{ const v=stressPortfolio(cur,wc,sc), t=T?stressPortfolio(T,0,sc):null, over=P&&-v>P.maxLoss;
 return `<tr><td><b>${sc.k}</b><br><span class="mut">${sc.per}</span></td><td class="r ${cls(v)}${over?' over':''}">${pct(v,1)}</td><td class="r">${money(nav*v/100)}</td>${T?`<td class="r ${cls(t)}">${pct(t,1)}</td>`:''}</tr>`; }).join('');
 const K=(l,a,b)=>`<tr><td>${l}</td><td class="r">${a}</td>${T?`<td class="r mut">${b}</td>`:''}</tr>`;
@@ -1427,14 +1593,15 @@ table{width:100%;border-collapse:collapse}td,th{padding:3.5px 5px;border-bottom:
 <div class="r"><b>${today}</b><br><span class="mut">${CLIENT&&CLIENT.adv?'Conseiller : '+esc(CLIENT.adv):''}</span></div></div>
 
 <h2>1. Synthèse</h2>
-<div class="kpi"><div><span class="mut">Valeur du portefeuille</span><b>${money(nav)}</b></div><div><span class="mut">Profil du client</span><b>${P?P.prof:'non renseigné'}</b></div>
+<div class="kpi"><div><span class="mut">Valeur du portefeuille</span><b>${money(nav)}</b><span class="mut" style="font-size:8.5px">devise de référence : ${base}</span></div><div><span class="mut">Profil du client</span><b>${P?P.prof:'non renseigné'}</b></div>
 <div><span class="mut">Classe de risque (SRI)</span><b>${sriClass(h.vol)} / 7</b></div><div><span class="mut">Volatilité annuelle</span><b>${f1(h.vol)} %</b></div></div>
 <div class="verdict">${P?(ok?`<b>Portefeuille adéquat.</b> Sa volatilité (${f1(h.vol)} %) respecte la borne du profil ${P.prof} (${P.maxVol} %) et sa perte maximale récente (${f1(h.mdd)} %) reste compatible avec la tolérance déclarée.`
 :`<b>Portefeuille non adéquat au profil ${P.prof}.</b> Volatilité de ${f1(h.vol)} % pour une borne de ${P.maxVol} % ; perte maximale de ${f1(h.mdd)} % sur 2 ans pour une perte acceptable ${P.maxLoss>=35?'supérieure à 20':'de '+P.maxLoss} %. Un rééquilibrage vers l'allocation ${P.prof} est à envisager.`)
 :'Questionnaire client non renseigné : adéquation non évaluée.'}${P&&P.flags.length?'<br><span class="mut">Points d\'attention : '+P.flags.map(esc).join(' ; ')+'.</span>':''}</div>
 
 <h2>2. Composition</h2>
-<table><thead><tr><th>Ligne</th><th class="r">Quantité</th><th class="r">Cours</th><th class="r">Valeur</th><th class="r">Poids</th><th class="r">Plus-value</th></tr></thead><tbody>${pos}</tbody></table>
+<table><thead><tr><th>Ligne</th><th class="r">Quantité</th><th class="r">Cours</th><th class="r">Valeur (${base})</th><th class="r">Poids</th><th class="r">Plus-value</th></tr></thead><tbody>${pos}</tbody></table>
+<div style="margin-top:5px"><b>Exposition par devise :</b> ${exTxt}${foreign>0?` — <b>${f1(foreign)} %</b> du portefeuille exposé au risque de change face à l'${base==='EUR'?'euro':base==='USD'?'dollar':base==='CHF'?'franc suisse':'sterling'} (non couvert).`:' — aucun risque de change.'}</div>
 
 <div class="two"><div><h2>3. Risque${T?' — actuel / '+target:''}</h2><table><thead><tr><th></th><th class="r">Actuel</th>${T?`<th class="r">${target}</th>`:''}</tr></thead><tbody>
 ${K('Rendement attendu (MEDAF)',pct(m.expRet,1),pct(T&&T.mc.expRet,1))}
@@ -1443,10 +1610,11 @@ ${K('Perte maximale (2 ans)','−'+f1(h.mdd)+' %',T?'−'+f1(T.hist.mdd)+' %':''
 ${K('VaR 95 % à 1 jour',nf(h.var95,2)+' %',T?nf(T.hist.var95,2)+' %':'')}
 ${K('Ratio de Sharpe',nf(h.sharpe,2),T?nf(T.hist.sharpe,2):'')}
 ${K('Bêta (indice monde)',nf(h.beta,2),T?nf(T.hist.beta,2):'')}
+${K('Ratio de diversification',cur.divRatio?nf(cur.divRatio,2):'—',T&&T.divRatio?nf(T.divRatio,2):'')}
 ${K(`Scénario bas à ${yrs} ans (P10)`,pct((m.p10-1)*100,1),T?pct((T.mc.p10-1)*100,1):'')}
 ${K(`Probabilité de perte à ${yrs} ans`,f1(m.pLoss)+' %',T?f1(T.mc.pLoss)+' %':'')}
 </tbody></table></div>
-<div><h2>4. Stress tests</h2><table><thead><tr><th>Scénario</th><th class="r">Impact</th><th class="r">En $</th>${T?`<th class="r">${target}</th>`:''}</tr></thead><tbody>${stressRows}</tbody></table>
+<div><h2>4. Stress tests</h2><table><thead><tr><th>Scénario</th><th class="r">Impact</th><th class="r">En ${CS}</th>${T?`<th class="r">${target}</th>`:''}</tr></thead><tbody>${stressRows}</tbody></table>
 <div class="mut" style="font-size:8.5px;margin-top:4px">Chocs des indices de référence de chaque période appliqués aux lignes actuelles (actions : bêta × choc du marché, plafonné à −95 %).${P?' En rouge : perte supérieure à la tolérance du client.':''}</div></div></div>
 
 <h2>5. Projection à ${yrs} ans</h2>
@@ -1454,7 +1622,7 @@ ${K(`Probabilité de perte à ${yrs} ans`,f1(m.pLoss)+' %',T?f1(T.mc.pLoss)+' %'
 <tr><td>Scénario défavorable (1 chance sur 10)</td><td class="r neg">×${nf(m.p10,2)} (${money(nav*m.p10)})</td></tr>
 <tr><td>Scénario favorable (1 chance sur 10)</td><td class="r pos">×${nf(m.p90,2)} (${money(nav*m.p90)})</td></tr>
 <tr><td>Probabilité de finir sous la mise</td><td class="r">${f1(m.pLoss)} %</td></tr></tbody></table>
-<div class="mut" style="font-size:8.5px;margin-top:4px">${nf(m.N,0)} simulations Monte Carlo, volatilités et corrélations estimées sur 2 ans d'historique réel. Une projection n'est pas une prévision.</div></div>
+<div class="mut" style="font-size:8.5px;margin-top:4px">${nf(m.N,0)} simulations Monte Carlo en ${base}, volatilités et corrélations (change compris) estimées sur 2 ans d'historique réel. Une projection n'est pas une prévision.</div></div>
 <div>${img?`<img src="${img}" alt="Trajectoire simulée">`:''}</div></div>
 
 <h2>6. Contexte de marché</h2>
@@ -1468,12 +1636,12 @@ w.document.open(); w.document.write(html); w.document.close();
 
 async function pfApply(name,nav){
 const pr=PROFILES[name]; if(!pr||!nav) return;
-if(!confirm(`Remplacer le portefeuille par l'allocation ${name} (${nf(nav,0)} $ répartis selon le profil) ?`)) return;
+if(!confirm(`Remplacer le portefeuille par l'allocation ${name} (${nf(nav/(S.pfB||1),0)} ${S.pfccy||'USD'} répartis selon le profil) ?`)) return;
 const pos=[]; let used=0;
 for(const [s,w] of Object.entries(pr.w)){ const h=await pfHist(s).catch(()=>null); if(!h) continue;
-const px=h.meta.regularMarketPrice??h.last, qty=Math.floor(w*nav/px); if(qty>0){ pos.push({sym:s,qty,cost:px}); used+=qty*px; } }
+const px=h.meta.regularMarketPrice??h.last, fx=await pfFX(h.meta.currency).catch(()=>1), qty=Math.floor(w*nav/(px*fx)); if(qty>0){ pos.push({sym:s,qty,cost:px}); used+=qty*px*fx; } }
 if(!pos.length) return alert('Cours indisponibles, réessayez.');
-S.positions=pos; S.cash=Math.round((nav-used)*100)/100; S.pfp.mu={}; pfSave(); viewPortfolio();
+S.positions=pos; S.cash=Math.round((nav-used)/(S.pfB||1)*100)/100; S.cashCcy=S.pfccy||'USD'; S.pfp.mu={}; pfSave(); viewPortfolio();
 }
 
 function drawMC(p,b,yrs){
@@ -2332,7 +2500,7 @@ const map={m:'mkt', w:'wl', p:'pf', e:'macro', r:'srch', s:'sec', n:'news', d:'d
 const t=map[e.key.toLowerCase()];
 if(t){ e.preventDefault(); go(t); }
 });
-window.addEventListener('resize',()=>{ if(S.view==='pf'&&S.mc) drawMC(S.mc.p,S.mc.b,S.mc.yrs); if(S.view==='macro') viewMacro(); if(S.view==='sec'){ if(ecoGet(S.focus)) drawEco(); else drawCandles(); } });
+window.addEventListener('resize',()=>{ if(S.view==='pf'&&S.mc){ drawMC(S.mc.p,S.mc.b,S.mc.yrs); pfRenderPerf(); } if(S.view==='mkt') drawHeatmap(); if(S.view==='macro') viewMacro(); if(S.view==='sec'){ if(ecoGet(S.focus)) drawEco(); else drawCandles(); } });
 
 tick(); setInterval(tick,1000);
 go('mkt');
