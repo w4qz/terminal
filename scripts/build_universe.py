@@ -182,7 +182,7 @@ def fetch_prices(tickers: list[str]) -> dict:
     for i in range(0, len(tickers), 150):
         chunk = tickers[i:i + 150]
         try:
-            df = yf.download(chunk, period="5d", interval="1d", group_by="ticker",
+            df = yf.download(chunk, period="1mo", interval="1d", group_by="ticker",
                              auto_adjust=False, progress=False, threads=True)
         except Exception as e:
             log(f"  ! paquet {i // 150 + 1} : {e}")
@@ -201,6 +201,8 @@ def fetch_prices(tickers: list[str]) -> dict:
                     "pct": round((p / prev - 1) * 100, 2) if prev else None,
                     "st": "DELAYED_15M" if today else ("EOD" if NOW.date() - d.date() < timedelta(days=4) else "STALE"),
                     "ts": d.strftime("%Y-%m-%d"),
+                    # 22 dernières clôtures : mini-graphique sur 1 mois, à côté du nom
+                    "h": [round(float(v), 6 if v < 10 else 2) for v in c.tail(22)],
                 }
             except Exception:
                 pass
