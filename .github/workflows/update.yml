@@ -65,6 +65,7 @@ jobs:
         continue-on-error: true
         env:
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          WEBSTAT_API_KEY: ${{ secrets.WEBSTAT_API_KEY }}
         run: python scripts/build_curves.py
 
       - name: Données économiques (une fois par jour)
