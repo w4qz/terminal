@@ -376,6 +376,11 @@ def ai_summary(quotes: dict, news: list, previous: dict) -> dict | None:
 
 # ─────────────────────────────────────────────────────────────────────────────
 def main() -> int:
+    # ft.json est écrit par le Google Apps Script des newsletters FT. Tant qu'il n'est pas installé,
+    # un fichier vide évite une erreur 404 à chaque visite (le script le remplacera ensuite).
+    ft = ROOT / "ft.json"
+    if not ft.exists():
+        ft.write_text(json.dumps({"generated_at": None, "items": [], "note": "Apps Script des newsletters FT non installé"}), encoding="utf-8")
     previous = load_previous()
     quotes = fetch_quotes(previous)
     news = fetch_news(previous)
