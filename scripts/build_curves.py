@@ -34,6 +34,7 @@ TODAY = NOW.date()
 MONTH_AGO = (TODAY - timedelta(days=30)).isoformat()
 UA = {"User-Agent": "Mozilla/5.0 (terminal-ia; projet personnel)"}
 KEY = os.getenv("FRED_API_KEY", "")
+WEBSTAT_KEY = os.getenv("WEBSTAT_API_KEY", "")
 
 
 def log(msg):
@@ -144,6 +145,67 @@ def curve_uk():
         return [], "", ""
 
 
+# ── France : Banque de France, taux de l'échéance constante (TEC) des OAT (clé Webstat gratuite) ──
+WEBSTAT = "https://webstat.banque-france.fr/api/explore/v2.1/catalog/datasets"
+
+
+def _ws(path, params):
+    r = requests.get(f"{WEBSTAT}/{path}", params=params, headers={**UA, "Authorization": f"Apikey {WEBSTAT_KEY}"}, timeout=40)
+    r.raise_for_status()
+    return r.json()
+
+
+def _ws_series(key):
+    """Dernières observations d'une série Webstat → [(date, valeur)]. Noms de champs lus de façon tolérante."""
+    d = _ws("observations/records", {"where": f'series_key="{key}"', "order_by": "time_period_end desc", "limit": 45})
+    out = []
+    for rec in d.get("results", []):
+        date = next((str(v)[:10] for k, v in rec.items() if "time_period" in k and v), None)
+        val = next((v for k, v in rec.items() if k in ("obs_value", "value", "obs_value_num") and v not in (None, "")), None)
+        try:
+            out.append((date, float(str(val).replace(",", "."))))
+        except Exception:
+            pass
+    return sorted(x for x in out if x[0])
+
+
+def curve_fr():
+    if not WEBSTAT_KEY:
+        return ten_year("IRLTLT01FRM156N")
+    # 1) Recherche des séries TEC quotidiennes ; 2) à défaut, clés usuelles
+    keys = {}
+    try:
+        d = _ws("series/records", {"where": 'series_key like "FM.D.FR.EUR.FR2.BB.FR*"', "limit": 100})
+        for rec in d.get("results", []):
+            k = rec.get("series_key", "")
+            m = re.search(r"\.FR(\d{1,2})(M|Y|A)[A-Z_]*\.", k + ".")
+            if m and ("TEC" in json.dumps(rec, ensure_ascii=False).upper() or "YT" in k):
+                n = int(m.group(1)); t = f"{n}M" if m.group(2) == "M" else f"{n}A"
+                keys.setdefault(t, k)
+        log(f"  Webstat : {len(keys)} séries TEC trouvées ({', '.join(sorted(keys))})")
+    except Exception as e:
+        log(f"  ! Webstat recherche : {str(e)[:120]}")
+    if not keys:
+        for n in (1, 2, 3, 5, 7, 10, 15, 20, 30):
+            for k in (f"FM.D.FR.EUR.FR2.BB.FR{n}YT_RR.YLD", f"FM.D.FR.EUR.FR2.BB.FR{n:02d}YT_RR.YLD"):
+                keys.setdefault(f"{n}A", k)
+    pts = []
+    for t, k in sorted(keys.items(), key=lambda x: TEN_ORD_PY.index(x[0]) if x[0] in TEN_ORD_PY else 99):
+        try:
+            p = point(t, _ws_series(k))
+            if p:
+                pts.append(p)
+        except Exception as e:
+            log(f"  ! Webstat {k} : {str(e)[:100]}")
+    if pts:
+        return pts, "Banque de France (Webstat) — taux de l'échéance constante des OAT", "quotidien"
+    log("  Webstat sans résultat : repli sur le 10 ans OCDE")
+    return ten_year("IRLTLT01FRM156N")
+
+
+TEN_ORD_PY = ["1M", "3M", "6M", "1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "15A", "20A", "25A", "30A", "40A", "50A"]
+
+
 # ── France, Italie : OCDE via FRED (10 ans, mensuel) ──
 def ten_year(sid):
     if not KEY:
@@ -164,7 +226,7 @@ def ten_year(sid):
 
 
 COUNTRIES = [
-    ("DE", "Allemagne", curve_de), ("FR", "France", lambda: ten_year("IRLTLT01FRM156N")),
+    ("DE", "Allemagne", curve_de), ("FR", "France", curve_fr),
     ("IT", "Italie", lambda: ten_year("IRLTLT01ITM156N")), ("UK", "Royaume-Uni", curve_uk),
     ("JP", "Japon", curve_jp), ("CH", "Suisse", curve_ch),
 ]
