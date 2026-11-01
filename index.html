@@ -2580,7 +2580,7 @@ function announce(t){ const m=document.getElementById('hmsg'); if(!m) return; m.
 /* Panneau du Launchpad : n'afficher que le module demandé (ex. GC → les courbes, pas tout l'onglet Macro). */
 let EMBED_FOCUS=null;
 function focusOnly(id){ if(!document.body.classList.contains('embed')||!id) return; const t=document.getElementById(id); if(!t) return;
-const view=t.closest('.view'); view.querySelectorAll('.pnl,.note,.warn,.g').forEach(e=>{ e.style.display=(e===t||e.contains(t)||t.contains(e))?'':'none'; });
+const view=t.closest('.view'); view.querySelectorAll('.pnl,.note,.warn,.g,details.nfo').forEach(e=>{ e.style.display=(e===t||e.contains(t)||t.contains(e))?'':'none'; });
 let p=t.parentElement; while(p&&p!==view){ p.style.display=''; if(p.classList.contains('g')) p.style.gridTemplateColumns='1fr'; p=p.parentElement; } t.style.gridColumn='1/-1';  if(id==='m-gc'&&typeof drawGC==='function') drawGC(); }
 const cmdLabel=c=>c.sym?`${c.sym} ${c.f}`:c.syms?`${c.syms.join(' ')} ${c.f}`:c.f;
 async function runCmd(c){
@@ -2861,7 +2861,11 @@ draw(null);
 async function cnRender(sym,local){
 const box=document.getElementById('sec-cn'); if(!box) return;
 let yh=[];
-if(WORKER_URL){ try{ const r=await fetch(`${WORKER_URL}/news?s=${encodeURIComponent(sym)}`); const d=await r.json(); yh=(d.news||[]).filter(n=>n.title&&n.link); }catch(e){} }
+// Recherche Yahoo par ticker ET par nom de société : la recherche par ticker seul renvoie souvent des articles génériques.
+const nm0=String((SNAPSHOT.fundamentals[sym]||{}).name||((UNIV||[]).find(x=>x.s===sym)||{}).n||'').split(/[\s,.]/).find(w=>w.length>=3&&!/^(the|inc|corp)$/i.test(w));
+if(WORKER_URL){ for(const q of [sym, nm0].filter((v,i,a)=>v&&/^[A-Za-z0-9.\-^=]{1,20}$/.test(v)&&a.indexOf(v)===i)){
+try{ const r=await fetch(`${WORKER_URL}/news?s=${encodeURIComponent(q)}`); const d=await r.json(); yh.push(...(d.news||[]).filter(n=>n.title&&n.link)); }catch(e){} }
+yh=yh.filter((n,i,a)=>a.findIndex(m=>m.title===n.title)===i); }
 if(S.focus!==sym) return;
 // Pertinence : on ne garde que les articles Yahoo dont le titre cite le ticker ou le nom de la société.
 const Fn=SNAPSHOT.fundamentals[sym]||{}, un=(UNIV||[]).find(x=>x.s===sym)||{}, root=sym.replace(/[.\-=^].*$/,'');
@@ -3071,7 +3075,7 @@ const span=hi-lo, stp=span>4?1:span>2?0.5:span>1?0.25:0.1; lo=Math.floor(lo/stp)
 const Y=v=>pt+(1-(v-lo)/(hi-lo))*(H-pt-pb);
 x.font='10px monospace'; x.strokeStyle='#1c2127'; x.fillStyle='#8a93a0'; x.lineWidth=1;
 for(let v=lo; v<=hi+1e-9; v+=stp){ const y=Y(v); x.beginPath(); x.moveTo(pl,y); x.lineTo(W-pr,y); x.stroke(); x.textAlign='right'; x.fillText(nf(v,stp<0.5?2:1)+' %',pl-6,y+3); }
-x.textAlign='center'; tenors.forEach(t=>{ x.strokeStyle='#14171b'; x.beginPath(); x.moveTo(X(t),pt); x.lineTo(X(t),H-pb); x.stroke(); x.fillStyle='#8a93a0'; x.fillText(t,X(t),H-7); });
+x.textAlign='center'; let lastLx=-99; tenors.forEach((t,i)=>{ x.strokeStyle='#14171b'; x.beginPath(); x.moveTo(X(t),pt); x.lineTo(X(t),H-pb); x.stroke(); const w=x.measureText(t).width; if(X(t)-lastLx>w+6||i===tenors.length-1&&X(t)-lastLx>w/2+4){ x.fillStyle='#8a93a0'; x.fillText(t,X(t),H-7); lastLx=X(t); } });
 // Légende
 let lx=pl; x.textAlign='left'; x.font='10px monospace';
 C.forEach(c=>{ x.fillStyle=c.col; x.fillRect(lx,11,14,3); const t=c.n+(c.pts.length===1?` (${c.pts[0].t})`:''); x.fillText(t,lx+18,16); lx+=x.measureText(t).width+34; });
@@ -3228,7 +3232,7 @@ el.querySelectorAll('b[data-tz]').forEach(b=>{ b.textContent=new Date().toLocale
 function collapseNotes(root){ root.querySelectorAll('.note:not([id]):not([data-nfo]):not([data-keep])').forEach(n=>{ const t=n.textContent.trim();
 if(t.length<140||n.closest('.statrow,#pal,form')||/Chargement|Calcul/.test(t)) return;
 const d=document.createElement('details'); d.className='nfo'; d.dataset.nfo=1;
-d.innerHTML=`<summary>Méthode et sources</summary><p>${n.innerHTML}</p>`; n.replaceWith(d); }); }
+d.innerHTML=`<summary>Méthode et sources</summary><p>${n.innerHTML}</p>`; n.replaceWith(d); }); if(EMBED_FOCUS) focusOnly(EMBED_FOCUS); }
 new MutationObserver(()=>{ clearTimeout(window.__nfoT); window.__nfoT=setTimeout(()=>collapseNotes(document.getElementById('main')),60); }).observe(document.getElementById('main'),{childList:true,subtree:true});
 /*═══════════════════════════════════════════════════════════════════════
 16. DÉMARRAGE
