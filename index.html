@@ -986,7 +986,7 @@ if(!idx.includes(HM.idx)) HM.idx=idx[0];
 return `<div class="pnl" id="mkt-hm" style="margin-bottom:9px"><h3>Carte des marchés<span class="rt">taille = capitalisation · couleur = variation du jour · cliquez pour ouvrir</span></h3>
 <div class="ctl" style="align-items:center"><div class="rng" role="group" aria-label="Indice">${idx.map(l=>`<button type="button" data-hm="${esc(l)}" class="${l===HM.idx?'on':''}">${esc(l)}</button>`).join('')}</div>
 <span class="mut" style="font-size:10px;margin-left:auto" id="hminfo"></span></div>
-<div class="pbody" style="position:relative;padding:4px"><canvas id="hmcv" height="470" role="img" aria-label="Carte des variations du jour"></canvas>
+<div class="pbody" style="position:relative;padding:4px;overflow:hidden"><canvas id="hmcv" height="470" role="img" aria-label="Carte des variations du jour"></canvas>
 <div id="hmtip" style="position:absolute;display:none;pointer-events:none;background:#0b0e11;border:1px solid var(--line);padding:6px 8px;font-size:10px;z-index:5;min-width:170px"></div></div></div>`;
 }
 function hmColor(p){ if(p==null) return '#262b31'; const a=Math.min(1,Math.abs(p)/3);
@@ -1004,8 +1004,10 @@ const nm=(F.name||u.n||'').toLowerCase().replace(/[^a-z0-9]/g,'');
 if(SHARE_DUP.has(u.s)||(nm&&seen.has(nm))) return; if(nm) seen.add(nm); if(F.mcap) known++;
 if(u.pct>0) up++; else if(u.pct<0) dn++;
 (by[sec]=by[sec]||[]).push({s:u.s, n:F.name||u.n, p:u.p, pct:u.pct, v:F.mcap||med, mcap:F.mcap, sec}); });
-const r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1, W=r.width, H=470; cv.width=W*dpr; cv.height=H*dpr;
-const x=cv.getContext('2d'); x.scale(dpr,dpr); x.fillStyle='#0b0e11'; x.fillRect(0,0,W,H);
+// Largeur figée pendant le survol : l'infobulle ne doit pas pouvoir modifier la mise en page (barre de défilement).
+const r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1, W=HM.lockW||r.width, H=470;
+if(cv.width!==Math.round(W*dpr)||cv.height!==H*dpr){ cv.width=Math.round(W*dpr); cv.height=H*dpr; } cv.style.width=W+'px';
+const x=cv.getContext('2d'); x.setTransform(dpr,0,0,dpr,0,0); x.fillStyle='#0b0e11'; x.fillRect(0,0,W,H);
 const secs=Object.entries(by).map(([k,a])=>({k,v:a.reduce((s,b)=>s+b.v,0),items:a.sort((p,q)=>q.v-p.v)})).sort((a,b)=>b.v-a.v);
 HM.rects=[];
 squarify(secs,0,0,W,H).forEach(S_=>{ const hd=S_.h>40&&S_.w>60?13:0;
@@ -1021,13 +1023,13 @@ const info=document.getElementById('hminfo'); if(info) info.innerHTML=`${list.le
 const tip=document.getElementById('hmtip'), hit=ev=>{ const rr=cv.getBoundingClientRect(), mx=ev.clientX-rr.left, my=ev.clientY-rr.top;
 return [HM.rects.find(t=>mx>=t.x&&mx<t.x+t.w&&my>=t.y&&my<t.y+t.h),mx,my]; };
 cv.style.cursor='pointer';
-cv.onmousemove=ev=>{ const [t,mx,my]=hit(ev); if((t&&t.s)!==(HM.hover&&HM.hover.s)){ HM.hover=t||null; drawHeatmap(); }
+cv.onmousemove=ev=>{ HM.lockW=HM.lockW||W; const [t,mx,my]=hit(ev); if((t&&t.s)!==(HM.hover&&HM.hover.s)){ HM.hover=t||null; drawHeatmap(); }
 if(!t){ tip.style.display='none'; return; }
 tip.innerHTML=`<b style="color:var(--txt)">${esc(t.s)}</b> <span class="mut">${esc(t.sec)}</span><div style="color:var(--txt2);margin:2px 0 4px">${esc(t.n||'')}</div>
 <div class="kv"><span class="k">Cours</span><span class="v">${npx(t.p,t.s)}</span></div><div class="kv"><span class="k">Variation</span><span class="v ${cls(t.pct)}">${pct(t.pct)}</span></div>
 <div class="kv"><span class="k">Capitalisation</span><span class="v">${t.mcap?big(t.mcap):'<span class="na">n/d</span>'}</span></div>`;
 tip.style.display='block'; tip.style.left=Math.min(mx+14,W-190)+'px'; tip.style.top=Math.min(my+14,H-90)+'px'; };
-cv.onmouseleave=()=>{ HM.hover=null; tip.style.display='none'; drawHeatmap(); };
+cv.onmouseleave=()=>{ HM.hover=null; HM.lockW=null; tip.style.display='none'; cv.style.width=''; drawHeatmap(); };
 cv.onclick=ev=>{ const [t]=hit(ev); if(t) openSym(t.s); };
 }
 function wireHeatmap(el){ el.querySelectorAll('[data-hm]').forEach(b=>b.onclick=()=>{ HM.idx=b.dataset.hm; el.querySelectorAll('[data-hm]').forEach(x=>x.classList.toggle('on',x===b)); drawHeatmap(); }); drawHeatmap(); }
