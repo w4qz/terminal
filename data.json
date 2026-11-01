@@ -1,13 +1,13 @@
 {
- "generated_at": "2026-11-01T15:04:17.323612Z",
+ "generated_at": "2026-11-01T16:01:06.872650Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
    "prev": 213.66,
    "chg": -8.85,
    "pct": -4.14,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (NVDA)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (NVDA) — échec de la dernière mise à jour",
    "ts": "2026-10-30T19:30:00Z",
    "open": 208.94,
    "lo": 200.92,
@@ -15,10 +15,10 @@
    "vol": 168039400
   },
   "ASTS": {
-   "p": 40.99,
+   "p": 40.97,
    "prev": 43.07,
-   "chg": -2.08,
-   "pct": -4.83,
+   "chg": -2.1,
+   "pct": -4.88,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-10-30T19:30:00Z",
@@ -267,15 +267,15 @@
    "open": 102.8,
    "lo": 102.43,
    "hi": 104.99,
-   "vol": 248667
+   "vol": 248668
   },
   "BRENT": {
    "p": 113.43,
    "prev": 114.88,
    "chg": -1.45,
    "pct": -1.26,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (BZ=F) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-10-30T20:00:00Z",
    "open": 111.28,
    "lo": 111.05,
@@ -283,17 +283,17 @@
    "vol": 37539
   },
   "BTC": {
-   "p": 77921.9531,
+   "p": 77889.0234,
    "prev": 77434.75,
-   "chg": 487.2031,
-   "pct": 0.63,
+   "chg": 454.2734,
+   "pct": 0.59,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-01T15:00:00Z",
+   "ts": "2026-11-01T16:00:00Z",
    "open": 77440.9297,
    "lo": 77395.6953,
    "hi": 78126.9297,
-   "vol": 12435195904
+   "vol": 12222112768
   }
  },
  "fundamentals": {
@@ -390,9 +390,9 @@
    "ccy": "USD",
    "mcap": 3875804807168,
    "pe": 27.2396,
-   "fpe": 21.6187,
+   "fpe": 21.6233,
    "eps": 19.16,
-   "feps": 24.1416,
+   "feps": 24.1364,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -557,9 +557,9 @@
    "ccy": "USD",
    "mcap": 1829640994816,
    "pe": 585.7391,
-   "fpe": 52.529,
+   "fpe": 56.9376,
    "eps": 0.23,
-   "feps": 2.5647,
+   "feps": 2.3661,
    "revTTM": 32042999808,
    "netIncome": -3431000064,
    "shares": 8246541218,
@@ -676,9 +676,9 @@
    "ccy": "USD",
    "mcap": 1580341002240,
    "pe": 439.3516,
-   "fpe": 185.5,
+   "fpe": 185.1641,
    "eps": 0.91,
-   "feps": 2.1553,
+   "feps": 2.1592,
    "revTTM": 103569997824,
    "netIncome": 3220000000,
    "shares": 3952730153,
@@ -795,9 +795,9 @@
    "ccy": "USD",
    "mcap": 1262666776576,
    "pe": 46.0091,
-   "fpe": 28.6575,
+   "fpe": 28.4991,
    "eps": 30.81,
-   "feps": 49.4649,
+   "feps": 49.7399,
    "revTTM": 86461997056,
    "netIncome": 27580000256,
    "shares": 890745031,
@@ -954,14 +954,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 979897024512,
+   "mcap": 982902374400,
    "pe": 44.75,
    "fpe": 38.2805,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.578,
    "div": 0.99,
    "divYield": 0.802,
@@ -1039,9 +1039,9 @@
    "ccy": "USD",
    "mcap": 824073388032,
    "pe": 128.7755,
-   "fpe": 31.6623,
+   "fpe": 31.697,
    "eps": 3.92,
-   "feps": 15.9433,
+   "feps": 15.9258,
    "revTTM": 41305001984,
    "netIncome": 6469000192,
    "shares": 1632475042,
@@ -1155,7 +1155,7 @@
    "exDiv": 1794787200,
    "divDate": 1788998400,
    "lastDiv": 1.03,
-   "trailDiv": 1.03
+   "trailDiv": 4.12
   },
   "JNJ": {
    "name": "Johnson & Johnson",
@@ -1332,9 +1332,9 @@
    "ccy": "USD",
    "mcap": 459499536384,
    "pe": 17.2922,
-   "fpe": 14.8086,
+   "fpe": 14.9045,
    "eps": 13.62,
-   "feps": 15.9043,
+   "feps": 15.802,
    "revTTM": 226326003712,
    "netIncome": 26976000000,
    "shares": 1951000000,
@@ -1364,7 +1364,7 @@
    "exDiv": 1794960000,
    "divDate": 1788998400,
    "lastDiv": 1.78,
-   "trailDiv": 7.05
+   "trailDiv": 1.71
   },
   "COST": {
    "name": "Costco Wholesale Corporation",
@@ -1416,9 +1416,9 @@
    "ccy": "USD",
    "mcap": 442427080704,
    "pe": 158.7155,
-   "fpe": 78.7903,
+   "fpe": 78.3347,
    "eps": 1.16,
-   "feps": 2.3367,
+   "feps": 2.3503,
    "revTTM": 6155940864,
    "netIncome": 3016691968,
    "shares": 2300713329,
@@ -1581,13 +1581,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 122.9082,
-   "shares": 572600000,
-   "divYield": 2.574,
    "w52lo": 93.84,
-   "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48
+   "w52hi": 101.46
   },
   "GLD": {
    "name": "SPDR Gold Shares",
@@ -1640,7 +1635,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T15:04:17.323612+00:00",
+   "ts": "2026-11-01T16:01:06.872650+00:00",
    "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/ai-dubbing-to-help-japanese-companies-expand-global-outreach"
   },
   {
@@ -1648,7 +1643,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T15:04:17.323612+00:00",
+   "ts": "2026-11-01T16:01:06.872650+00:00",
    "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/indonesia-gdp-us-midterm-elections-hong-kong-financial-summit"
   },
   {
@@ -1656,7 +1651,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T15:04:17.323612+00:00",
+   "ts": "2026-11-01T16:01:06.872650+00:00",
    "url": "https://asia.nikkei.com/business/energy/pakistan-refineries-report-1-860-jump-in-profit-amid-war-windfall2"
   },
   {
@@ -1664,7 +1659,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T15:04:17.323612+00:00",
+   "ts": "2026-11-01T16:01:06.872650+00:00",
    "url": "https://asia.nikkei.com/spotlight/comment/after-us-midterms-democracy-will-face-test-of-ability-to-self-correct"
   },
   {
@@ -1672,7 +1667,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T15:04:17.323612+00:00",
+   "ts": "2026-11-01T16:01:06.872650+00:00",
    "url": "https://asia.nikkei.com/politics/thai-reformists-became-too-technocratic-party-ex-leader-pita-says"
   },
   {
@@ -1680,7 +1675,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T15:04:17.323612+00:00",
+   "ts": "2026-11-01T16:01:06.872650+00:00",
    "url": "https://asia.nikkei.com/business/companies/japan-bamboo-chopsticks-catch-on-in-south-korea"
   },
   {
@@ -1688,7 +1683,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T15:04:17.323612+00:00",
+   "ts": "2026-11-01T16:01:06.872650+00:00",
    "url": "https://asia.nikkei.com/life-arts/life/on-india-s-east-coast-tidepooling-inspires-marine-conservation"
   },
   {
@@ -1696,7 +1691,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T15:04:17.323612+00:00",
+   "ts": "2026-11-01T16:01:06.872650+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/china-mega-complex-in-dalian-puts-spotlight-on-investment-push"
   },
   {
@@ -1704,7 +1699,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T15:04:17.323612+00:00",
+   "ts": "2026-11-01T16:01:06.872650+00:00",
    "url": "https://asia.nikkei.com/opinion/time-for-japan-to-develop-people-who-can-sell-content"
   },
   {
@@ -1714,7 +1709,7 @@
     "USDJPY"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T15:04:17.323612+00:00",
+   "ts": "2026-11-01T16:01:06.872650+00:00",
    "url": "https://asia.nikkei.com/business/markets/bonds/yen-bond-offerings-hit-record-16bn-as-ai-funding-race-reaches-japan"
   },
   {
@@ -1722,7 +1717,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T15:04:17.323612+00:00",
+   "ts": "2026-11-01T16:01:06.872650+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/japan-weighs-taxing-real-estate-rental-operators-living-overseas"
   },
   {
@@ -1730,7 +1725,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T15:04:17.323612+00:00",
+   "ts": "2026-11-01T16:01:06.872650+00:00",
    "url": "https://asia.nikkei.com/business/health-care/japan-s-foreign-caregivers-face-exam-hurdle-as-grace-period-ends"
   },
   {
@@ -1738,7 +1733,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T15:04:17.323612+00:00",
+   "ts": "2026-11-01T16:01:06.872650+00:00",
    "url": "https://asia.nikkei.com/business/food-beverage/thai-highland-tribe-coffee-brews-following-at-home-and-in-tokyo"
   },
   {
@@ -1746,7 +1741,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T15:04:17.323612+00:00",
+   "ts": "2026-11-01T16:01:06.872650+00:00",
    "url": "https://asia.nikkei.com/spotlight/society/fatal-dog-attacks-test-hong-kong-s-ambitions-for-a-pet-friendly-economy"
   },
   {
@@ -1754,8 +1749,34 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T15:04:17.323612+00:00",
+   "ts": "2026-11-01T16:01:06.872650+00:00",
    "url": "https://asia.nikkei.com/spotlight/comment/thailand-looks-west-after-30-years-of-struggles-over-dawei"
+  },
+  {
+   "h": "Raymond James réduit son objectif de cours sur Oil States International",
+   "w": "",
+   "syms": [
+    "BRENT"
+   ],
+   "src": "Investing.com France",
+   "ts": "2026-11-01T15:42:02Z",
+   "url": "https://fr.investing.com/news/analyst-ratings/raymond-james-reduit-son-objectif-de-cours-sur-oil-states-international-93CH-3667255"
+  },
+  {
+   "h": "These Senate races may help determine the fate of Social Security",
+   "w": "Social Security's retirement trust fund may run out in 2032. Senators elected this November will be in office when that deadline comes.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-01T15:20:06Z",
+   "url": "https://www.cnbc.com/2026/11/01/social-security-senate-races.html"
+  },
+  {
+   "h": "Social Security may have to cut retirement benefits in six years. Here's how much money is at stake for beneficiaries",
+   "w": "The latest projections show Social Security may have to cut retirement benefits in six years. Here's what may happen if Congress doesn't prevent that.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-01T15:18:38Z",
+   "url": "https://www.cnbc.com/2026/11/01/social-security-benefit-cuts-2032.html"
   },
   {
    "h": "Apple’s new earnings era begins at a critical time for Big Tech",
@@ -1769,16 +1790,25 @@
    "h": "Junk debt rout sparks ‘bloodbath’ for credit investors",
    "w": "Aggressive tactics to shift assets beyond reach of creditors have added fuel to sell-off",
    "syms": [],
-   "src": "myFT — companies",
+   "src": "myFT — world",
    "ts": "2026-11-01T14:54:55Z",
    "url": "https://www.ft.com/content/fdc9a85d-d2c4-465f-99ca-609d68b6d443?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Trump makes final pitch to restive voters in midterms campaign",
+   "w": "Republican Party is defending its control of Congress against signs of a backlash to the president",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-01T14:51:29Z",
+   "url": "https://www.ft.com/content/75e8405b-124f-44aa-9c5e-0a33d0ee5b92?syn-25a6b1a6=1",
    "mine": 1
   },
   {
    "h": "Unions hit out after Healey signals delay to youth minimum wage pledge",
    "w": "Chancellor warned against pursuing ‘trade-offs’ between jobs and wages after he declines to commit to 2024 vow",
    "syms": [],
-   "src": "myFT — economy",
+   "src": "myFT — world",
    "ts": "2026-11-01T14:50:27Z",
    "url": "https://www.ft.com/content/97c97295-a35a-45b6-9e6b-29ca836fa3c2?syn-25a6b1a6=1",
    "mine": 1
@@ -1806,22 +1836,6 @@
    "src": "CNBC — Marchés",
    "ts": "2026-11-01T14:31:29Z",
    "url": "https://www.cnbc.com/2026/11/01/ai-meta-ads-google-search.html"
-  },
-  {
-   "h": "These Senate races may help determine the fate of Social Security",
-   "w": "Social Security's retirement trust fund may run out in 2032. Senators elected this November will be in office when that deadline comes.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-01T14:30:01Z",
-   "url": "https://www.cnbc.com/2026/11/01/social-security-senate-races.html"
-  },
-  {
-   "h": "Social Security may have to cut retirement benefits in six years. Here's how much money is at stake for beneficiaries",
-   "w": "The latest projections show Social Security may have to cut retirement benefits in six years. Here's what may happen if Congress doesn't prevent that.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-01T14:30:01Z",
-   "url": "https://www.cnbc.com/2026/11/01/social-security-benefit-cuts-2032.html"
   },
   {
    "h": "Economie et environnement : « Il faut donner une valeur à ce qui n’a pas de prix pour éclairer nos choix collectifs »",
@@ -2041,14 +2055,6 @@
    "url": "https://fr.investing.com/news/transcripts/liteon-affiche-un-benefice-record-au-t3-2026-porte-par-la-demande-en-ia-93CH-3667238"
   },
   {
-   "h": "Le chiffre d’affaires de TMX Group bat les prévisions au T3 2026, l’action bondit de 5,8%",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-01T11:42:04Z",
-   "url": "https://fr.investing.com/news/transcripts/le-chiffre-daffaires-de-tmx-group-bat-les-previsions-au-t3-2026-laction-bondit-de-58-93CH-3667237"
-  },
-  {
    "h": "Gen Z protests turn violent in Germany",
    "w": "Young demonstrators clash with police in Berlin and shops are looted in Frankfurt in echo of last month’s French riots",
    "syms": [],
@@ -2194,21 +2200,21 @@
    "mine": 1
   },
   {
-   "h": "New Zealand’s kingmaker could be a 38-year-old ex-KPMG consultant",
-   "w": "Fiji-born Qiulae Wong backs ‘land tax’ to fund universal basic income and push down housing prices",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-01T05:00:09Z",
-   "url": "https://www.ft.com/content/217e8187-7b57-40dc-9439-03266e6c900f?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Scrapping audits for UK start-ups is worth its weight in red tape",
    "w": "The move will help convey the message that the country’s stifling attitude to bureaucracy is changing",
    "syms": [],
    "src": "myFT — world uk",
    "ts": "2026-11-01T05:00:09Z",
    "url": "https://www.ft.com/content/bc51e3b9-f691-4cf2-a333-476a9c4a4a54?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "New Zealand’s kingmaker could be a 38-year-old ex-KPMG consultant",
+   "w": "Fiji-born Qiulae Wong backs ‘land tax’ to fund universal basic income and push down housing prices",
+   "syms": [],
+   "src": "myFT — asia pacific",
+   "ts": "2026-11-01T05:00:09Z",
+   "url": "https://www.ft.com/content/217e8187-7b57-40dc-9439-03266e6c900f?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2486,15 +2492,6 @@
    "src": "myFT — us",
    "ts": "2026-10-31T10:30:01Z",
    "url": "https://www.ft.com/content/9570b122-5418-41e6-b91b-b95af96ec881?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Rating agency Fitch hits France with unscheduled outlook downgrade",
-   "w": "Move comes hours after data showed an unexpected contraction in third-quarter economic output",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-10-31T09:36:34Z",
-   "url": "https://www.ft.com/content/852b05a1-4090-4aee-afc6-4d4c353ef3cf?syn-25a6b1a6=1",
    "mine": 1
   }
  ],
