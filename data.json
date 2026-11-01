@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T11:27:34.602185Z",
+ "generated_at": "2026-11-01T12:02:38.158573Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -15,10 +15,10 @@
    "vol": 168039400
   },
   "ASTS": {
-   "p": 40.97,
+   "p": 40.99,
    "prev": 43.07,
-   "chg": -2.1,
-   "pct": -4.88,
+   "chg": -2.08,
+   "pct": -4.83,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-10-30T19:30:00Z",
@@ -267,7 +267,7 @@
    "open": 102.8,
    "lo": 102.43,
    "hi": 104.99,
-   "vol": 248668
+   "vol": 248667
   },
   "BRENT": {
    "p": 113.43,
@@ -283,17 +283,17 @@
    "vol": 37539
   },
   "BTC": {
-   "p": 77862.1875,
+   "p": 77872.4922,
    "prev": 77434.75,
-   "chg": 427.4375,
-   "pct": 0.55,
+   "chg": 437.7422,
+   "pct": 0.57,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-01T11:00:00Z",
+   "ts": "2026-11-01T12:00:00Z",
    "open": 77440.9297,
    "lo": 77395.6953,
    "hi": 78126.9297,
-   "vol": 12262383616
+   "vol": 12314217472
   }
  },
  "fundamentals": {
@@ -390,9 +390,9 @@
    "ccy": "USD",
    "mcap": 3875804807168,
    "pe": 27.2396,
-   "fpe": 21.6233,
+   "fpe": 21.6187,
    "eps": 19.16,
-   "feps": 24.1364,
+   "feps": 24.1416,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -557,9 +557,9 @@
    "ccy": "USD",
    "mcap": 1829640994816,
    "pe": 585.7391,
-   "fpe": 56.9376,
+   "fpe": 52.529,
    "eps": 0.23,
-   "feps": 2.3661,
+   "feps": 2.5647,
    "revTTM": 32042999808,
    "netIncome": -3431000064,
    "shares": 8246541218,
@@ -589,9 +589,9 @@
    "sector": "Energy",
    "industry": "Oil & Gas Integrated",
    "ccy": "SAR",
-   "mcap": 6265401507840,
-   "pe": 15.3254,
-   "fpe": 15.509,
+   "mcap": 6260563378176,
+   "pe": 15.3136,
+   "fpe": 15.497,
    "eps": 1.69,
    "feps": 1.67,
    "revTTM": 1823482970112,
@@ -599,7 +599,7 @@
    "shares": 241907400000,
    "beta": 0.016,
    "div": 1.36,
-   "divYield": 5.251,
+   "divYield": 5.255,
    "target": 30.2444,
    "targetHi": 35.0,
    "targetLo": 27.0,
@@ -954,14 +954,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 982902374400,
+   "mcap": 979897024512,
    "pe": 44.75,
    "fpe": 38.2805,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.578,
    "div": 0.99,
    "divYield": 0.802,
@@ -1331,10 +1331,10 @@
    "industry": "Oil & Gas Integrated",
    "ccy": "USD",
    "mcap": 459499536384,
-   "pe": 17.2922,
-   "fpe": 14.9045,
-   "eps": 13.62,
-   "feps": 15.802,
+   "pe": 22.668,
+   "fpe": 14.9859,
+   "eps": 10.39,
+   "feps": 15.7161,
    "revTTM": 226326003712,
    "netIncome": 26976000000,
    "shares": 1951000000,
@@ -1364,7 +1364,7 @@
    "exDiv": 1794960000,
    "divDate": 1788998400,
    "lastDiv": 1.78,
-   "trailDiv": 1.71
+   "trailDiv": 6.98
   },
   "COST": {
    "name": "Costco Wholesale Corporation",
@@ -1416,9 +1416,9 @@
    "ccy": "USD",
    "mcap": 442427080704,
    "pe": 158.7155,
-   "fpe": 78.3347,
+   "fpe": 78.7903,
    "eps": 1.16,
-   "feps": 2.3503,
+   "feps": 2.3367,
    "revTTM": 6155940864,
    "netIncome": 3016691968,
    "shares": 2300713329,
@@ -1581,8 +1581,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 122.9082,
+   "shares": 572600000,
+   "divYield": 2.574,
    "w52lo": 93.84,
-   "w52hi": 101.46
+   "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48
   },
   "GLD": {
    "name": "SPDR Gold Shares",
@@ -1635,7 +1640,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T11:27:34.602185+00:00",
+   "ts": "2026-11-01T12:02:38.158573+00:00",
    "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/ai-dubbing-to-help-japanese-companies-expand-global-outreach"
   },
   {
@@ -1643,7 +1648,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T11:27:34.602185+00:00",
+   "ts": "2026-11-01T12:02:38.158573+00:00",
    "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/indonesia-gdp-us-midterm-elections-hong-kong-financial-summit"
   },
   {
@@ -1651,7 +1656,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T11:27:34.602185+00:00",
+   "ts": "2026-11-01T12:02:38.158573+00:00",
    "url": "https://asia.nikkei.com/business/energy/pakistan-refineries-report-1-860-jump-in-profit-amid-war-windfall2"
   },
   {
@@ -1659,7 +1664,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T11:27:34.602185+00:00",
+   "ts": "2026-11-01T12:02:38.158573+00:00",
    "url": "https://asia.nikkei.com/spotlight/comment/after-us-midterms-democracy-will-face-test-of-ability-to-self-correct"
   },
   {
@@ -1667,7 +1672,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T11:27:34.602185+00:00",
+   "ts": "2026-11-01T12:02:38.158573+00:00",
    "url": "https://asia.nikkei.com/politics/thai-reformists-became-too-technocratic-party-ex-leader-pita-says"
   },
   {
@@ -1675,7 +1680,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T11:27:34.602185+00:00",
+   "ts": "2026-11-01T12:02:38.158573+00:00",
    "url": "https://asia.nikkei.com/business/companies/japan-bamboo-chopsticks-catch-on-in-south-korea"
   },
   {
@@ -1683,7 +1688,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T11:27:34.602185+00:00",
+   "ts": "2026-11-01T12:02:38.158573+00:00",
    "url": "https://asia.nikkei.com/life-arts/life/on-india-s-east-coast-tidepooling-inspires-marine-conservation"
   },
   {
@@ -1691,7 +1696,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T11:27:34.602185+00:00",
+   "ts": "2026-11-01T12:02:38.158573+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/china-mega-complex-in-dalian-puts-spotlight-on-investment-push"
   },
   {
@@ -1699,7 +1704,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T11:27:34.602185+00:00",
+   "ts": "2026-11-01T12:02:38.158573+00:00",
    "url": "https://asia.nikkei.com/opinion/time-for-japan-to-develop-people-who-can-sell-content"
   },
   {
@@ -1709,7 +1714,7 @@
     "USDJPY"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T11:27:34.602185+00:00",
+   "ts": "2026-11-01T12:02:38.158573+00:00",
    "url": "https://asia.nikkei.com/business/markets/bonds/yen-bond-offerings-hit-record-16bn-as-ai-funding-race-reaches-japan"
   },
   {
@@ -1717,7 +1722,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T11:27:34.602185+00:00",
+   "ts": "2026-11-01T12:02:38.158573+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/japan-weighs-taxing-real-estate-rental-operators-living-overseas"
   },
   {
@@ -1725,7 +1730,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T11:27:34.602185+00:00",
+   "ts": "2026-11-01T12:02:38.158573+00:00",
    "url": "https://asia.nikkei.com/business/health-care/japan-s-foreign-caregivers-face-exam-hurdle-as-grace-period-ends"
   },
   {
@@ -1733,7 +1738,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T11:27:34.602185+00:00",
+   "ts": "2026-11-01T12:02:38.158573+00:00",
    "url": "https://asia.nikkei.com/business/food-beverage/thai-highland-tribe-coffee-brews-following-at-home-and-in-tokyo"
   },
   {
@@ -1741,7 +1746,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T11:27:34.602185+00:00",
+   "ts": "2026-11-01T12:02:38.158573+00:00",
    "url": "https://asia.nikkei.com/spotlight/society/fatal-dog-attacks-test-hong-kong-s-ambitions-for-a-pet-friendly-economy"
   },
   {
@@ -1749,88 +1754,99 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T11:27:34.602185+00:00",
+   "ts": "2026-11-01T12:02:38.158573+00:00",
    "url": "https://asia.nikkei.com/spotlight/comment/thailand-looks-west-after-30-years-of-struggles-over-dawei"
   },
   {
-   "h": "Les résultats de TFI International au T3 2026 déçoivent et font chuter l’action de 17%",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-01T11:18:23Z",
-   "url": "https://fr.investing.com/news/transcripts/les-resultats-de-tfi-international-au-t3-2026-decoivent-et-font-chuter-laction-de-17-93CH-3667219"
+   "h": "US critical minerals push delivers a gold rush — for Washington lobbyists",
+   "w": "Billions in government backing have produced a flurry of deals but little increase in domestic production",
+   "syms": [
+    "XAU"
+   ],
+   "src": "myFT — sujet suivi",
+   "ts": "2026-11-01T12:00:01Z",
+   "url": "https://www.ft.com/content/e89a420d-3a93-402f-ab0d-461476cf23ce?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
-   "h": "Un administrateur de First Financial Bankshares achète pour 24.698$ d’actions",
+   "h": "Alerte résultats : Erie Indemnity dépasse les attentes au T3 2026, le titre progresse",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-01T11:16:59Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-first-financial-bankshares-achete-pour-24698-dactions-93CH-3667218"
+   "ts": "2026-11-01T11:40:00Z",
+   "url": "https://fr.investing.com/news/transcripts/alerte-resultats--erie-indemnity-depasse-les-attentes-au-t3-2026-le-titre-progresse-93CH-3667236"
   },
   {
-   "h": "Erste Group affiche des résultats records au T3 2026 malgré un BPA décevant",
+   "h": "Avery Dennison dépasse les prévisions du T3 2026, l’action progresse légèrement",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-01T11:16:22Z",
-   "url": "https://fr.investing.com/news/transcripts/erste-group-affiche-des-resultats-records-au-t3-2026-malgre-un-bpa-decevant-93CH-3667217"
+   "ts": "2026-11-01T11:37:57Z",
+   "url": "https://fr.investing.com/news/transcripts/avery-dennison-depasse-les-previsions-du-t3-2026-laction-progresse-legerement-93CH-3667235"
   },
   {
-   "h": "Eastman Chemical rate sous les attentes au T3 2026, l’action recule",
+   "h": "Vale rate son BPA du T3 2026 sous la pression du minerai de fer",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-01T11:16:15Z",
-   "url": "https://fr.investing.com/news/transcripts/eastman-chemical-rate-sous-les-attentes-au-t3-2026-laction-recule-93CH-3667216"
+   "ts": "2026-11-01T11:36:09Z",
+   "url": "https://fr.investing.com/news/transcripts/vale-rate-son-bpa-du-t3-2026-sous-la-pression-du-minerai-de-fer-93CH-3667234"
   },
   {
-   "h": "Budweiser APAC T3 2026 : BPA supérieur aux attentes, mais la Chine pèse sur les perspectives",
+   "h": "Compte rendu des résultats de Phoenix Mills T2 2026 : croissance soutenue",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-01T11:16:07Z",
-   "url": "https://fr.investing.com/news/transcripts/budweiser-apac-t3-2026--bpa-superieur-aux-attentes-mais-la-chine-pese-sur-les-perspectives-93CH-3667215"
+   "ts": "2026-11-01T11:34:02Z",
+   "url": "https://fr.investing.com/news/transcripts/compte-rendu-des-resultats-de-phoenix-mills-t2-2026--croissance-soutenue-93CH-3667233"
   },
   {
-   "h": "Compte rendu d’appel sur les résultats : Teck dépasse les prévisions du T3 2026 malgré une baisse du titre",
+   "h": "Daiwa Securities : chiffre d’affaires en hausse au T2 2026, BPA en baisse",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-01T11:14:08Z",
-   "url": "https://fr.investing.com/news/transcripts/compte-rendu-dappel-sur-les-resultats--teck-depasse-les-previsions-du-t3-2026-malgre-une-baisse-du-titre-93CH-3667214"
+   "ts": "2026-11-01T11:33:46Z",
+   "url": "https://fr.investing.com/news/transcripts/daiwa-securities--chiffre-daffaires-en-hausse-au-t2-2026-bpa-en-baisse-93CH-3667232"
   },
   {
-   "h": "Veralto dépasse les prévisions du BPA au T3 2026 et relève ses perspectives",
+   "h": "TDK affiche des résultats records au premier semestre 2027, mais l’action chute de 7,2%",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-01T11:12:19Z",
-   "url": "https://fr.investing.com/news/transcripts/veralto-depasse-les-previsions-du-bpa-au-t3-2026-et-releve-ses-perspectives-93CH-3667213"
+   "ts": "2026-11-01T11:32:12Z",
+   "url": "https://fr.investing.com/news/transcripts/tdk-affiche-des-resultats-records-au-premier-semestre-2027-mais-laction-chute-de-72-93CH-3667231"
   },
   {
-   "h": "Sun Pharma dépasse les prévisions du T2 2026 et son action progresse",
+   "h": "Weyerhaeuser dépasse les prévisions de BPA au T3 2026, l’action progresse",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-01T11:12:18Z",
-   "url": "https://fr.investing.com/news/transcripts/sun-pharma-depasse-les-previsions-du-t2-2026-et-son-action-progresse-93CH-3667212"
+   "ts": "2026-11-01T11:31:55Z",
+   "url": "https://fr.investing.com/news/transcripts/weyerhaeuser-depasse-les-previsions-de-bpa-au-t3-2026-laction-progresse-93CH-3667230"
   },
   {
-   "h": "Millennium bcp dépasse les attentes de chiffre d’affaires au T3 2026",
+   "h": "Eurobank relève ses prévisions 2026 après un T3 solide",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-01T11:12:07Z",
-   "url": "https://fr.investing.com/news/transcripts/millennium-bcp-depasse-les-attentes-de-chiffre-daffaires-au-t3-2026-93CH-3667211"
+   "ts": "2026-11-01T11:30:07Z",
+   "url": "https://fr.investing.com/news/transcripts/eurobank-releve-ses-previsions-2026-apres-un-t3-solide-93CH-3667229"
   },
   {
-   "h": "Compte rendu de résultats : Murphy USA dépasse les prévisions du T3 2026",
+   "h": "Alpha Bank dépasse les prévisions du T3 2026 et relève ses perspectives de chiffre d’affaires",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-01T11:11:59Z",
-   "url": "https://fr.investing.com/news/transcripts/compte-rendu-de-resultats--murphy-usa-depasse-les-previsions-du-t3-2026-93CH-3667210"
+   "ts": "2026-11-01T11:28:29Z",
+   "url": "https://fr.investing.com/news/transcripts/alpha-bank-depasse-les-previsions-du-t3-2026-et-releve-ses-perspectives-de-chiffre-daffaires-93CH-3667228"
+  },
+  {
+   "h": "Exelon dépasse les prévisions du T3 2026 et affine ses perspectives",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-01T11:28:18Z",
+   "url": "https://fr.investing.com/news/transcripts/exelon-depasse-les-previsions-du-t3-2026-et-affine-ses-perspectives-93CH-3667227"
   },
   {
    "h": "Binance restarts customer withdrawals after $6.3bn heist",
@@ -2475,15 +2491,6 @@
    "src": "myFT — us",
    "ts": "2026-10-31T05:00:39Z",
    "url": "https://www.ft.com/content/6c099dc6-1fb3-44fc-b011-70229e3755cb?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "The bonkers business of tax breaks for entrepreneurs",
-   "w": "Encouraging start-ups and scale-ups is a good idea but is not best served by Healey’s new Founders’ Relief",
-   "syms": [],
-   "src": "myFT — world uk",
-   "ts": "2026-10-31T05:00:39Z",
-   "url": "https://www.ft.com/content/636fd85e-2f5f-4b98-91ff-75300df69908",
    "mine": 1
   }
  ],
