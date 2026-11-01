@@ -2789,7 +2789,7 @@ if(!ev.length){ box.innerHTML=`<h3>DVD — Dividendes</h3><div class="note">${es
 const curY=new Date().getFullYear(), byY={}; ev.forEach(x=>{ const y=new Date(x.t).getFullYear(); byY[y]=(byY[y]||0)+x.a; });
 const years=Object.keys(byY).map(Number).sort(), full=years.filter(y=>y<curY);
 const ttm=ev.filter(x=>x.t>Date.now()-365*864e5).reduce((s,x)=>s+x.a,0), yld=px?ttm/px*100:null;
-const freq=ev.filter(x=>x.t>Date.now()-730*864e5).length/2;
+const freq=ev.filter(x=>x.t>Date.now()-400*864e5).length;   // versements sur ~13 mois
 // Hausses consécutives : on compare le versement le plus élevé de chaque année (insensible au calendrier
 // de paiement, qui peut faire tomber 3 ou 5 versements dans une même année civile).
 // Médiane des versements de l'année : insensible à un dividende exceptionnel ou à une ligne erronée de Yahoo.
@@ -2797,15 +2797,16 @@ const pY={}; ev.forEach(x=>{ const y=new Date(x.t).getFullYear(); (pY[y]=pY[y]||
 const mxY={}; for(const [y,a] of Object.entries(pY)){ const v=[...a].sort((p,q)=>p-q); mxY[y]=v.length%2?v[v.length>>1]:(v[v.length/2-1]+v[v.length/2])/2; }
 const ys=Object.keys(mxY).map(Number).sort(); let streak=0;
 let ups=0; for(let i=ys.length-1;i>0;i--){ if(ys[i]-ys[i-1]!==1) break; const r=mxY[ys[i]]/mxY[ys[i-1]]; if(r<0.995) break; if(ys[i]!==curY){ streak++; if(r>1.001) ups++; } }
-const cg=k=>{ const a=full[full.length-1-k], b=full[full.length-1]; return a&&byY[a]>0?cagrOf(byY[a],byY[b],k):null; };
+// Croissance sur k années civiles réelles (et non k entrées de la liste : une suspension créerait un faux écart)
+const cg=k=>{ const b=full[full.length-1], a=b-k; return byY[a]>0&&byY[b]>0?cagrOf(byY[a],byY[b],k):null; };
 box.innerHTML=`<h3>DVD — Dividendes<span class="rt">${ev.length} versements depuis ${new Date(ev[0].t).getFullYear()} · ${esc(ccy)} par action</span></h3>
 <div class="statrow">
 <div class="stat"><span class="l">RENDEMENT (12 MOIS)</span><span class="n">${yld!=null?nf(yld,2)+' %':'—'}</span><span class="s">${nf(ttm,2)} ${esc(ccy)} versés</span></div>
-<div class="stat"><span class="l">DERNIER VERSEMENT</span><span class="n">${nf(ev[ev.length-1].a,ev[ev.length-1].a<1?3:2)}</span><span class="s">${new Date(ev[ev.length-1].t).toLocaleDateString('fr-FR')} · ${freq>=3.5?'trimestriel':freq>=1.5?'semestriel':freq>=0.8?'annuel':'irrégulier'}</span></div>
+<div class="stat"><span class="l">DERNIER VERSEMENT</span><span class="n">${nf(ev[ev.length-1].a,ev[ev.length-1].a<1?3:2)}</span><span class="s">${new Date(ev[ev.length-1].t).toLocaleDateString('fr-FR')} · ${freq>=3?'trimestriel':freq>=2?'semestriel':freq>=1?'annuel':'irrégulier'}</span></div>
 <div class="stat"><span class="l">CROISSANCE 5 ANS</span><span class="n ${cls(cg(5))}">${cg(5)!=null?pct(cg(5),1)+'/an':'—'}</span><span class="s">10 ans : ${cg(10)!=null?pct(cg(10),1)+'/an':'—'}</span></div>
 <div class="stat"><span class="l">ANNÉES SANS BAISSE</span><span class="n">${streak} an${streak>1?'s':''}</span><span class="s">dont ${ups} hausse${ups>1?'s':''}${streak>=25&&ups>=streak*0.8?' · « aristocrate du dividende »':streak>=10?' · historique solide':''}</span></div></div>
 <div class="pbody" style="position:relative"><canvas id="dvdcv" height="170" role="img" aria-label="Dividendes annuels"></canvas></div>
-<div class="note" style="padding:4px 9px 8px">Totaux par année civile ; ${curY} en cours (barre claire). Montants bruts, ajustés des divisions d'actions par Yahoo.${ev.some((x,i)=>i&&x.t-ev[i-1].t>800*864e5)?' <span class="neg">Historique Yahoo incomplet : certaines années sans versement sont des trous de données, pas des suspensions.</span>':''}</div>`;
+<div class="note" style="padding:4px 9px 8px">Totaux par année civile ; ${curY} en cours (barre claire). Montants bruts, ajustés des divisions d'actions par Yahoo.</div>${(()=>{ const g=ev.findIndex((x,i)=>i&&x.t-ev[i-1].t>800*864e5); return g>0?`<div class="warn" style="margin:0 9px 8px">Interruption des versements entre ${new Date(ev[g-1].t).getFullYear()} et ${new Date(ev[g].t).getFullYear()} : suspension du dividende par la société, ou trou dans l'historique Yahoo. La croissance est calculée sur des années effectivement comparables.</div>`:''; })()}`;
 const draw=hv=>{ const cv=document.getElementById('dvdcv'); if(!cv) return; const yy=years.slice(-20), r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1, W=r.width, H=170;
 cv.width=W*dpr; cv.height=H*dpr; const x=cv.getContext('2d'); x.scale(dpr,dpr); const pl=8, pr=56, pt=10, pb=18, mx=Math.max(...yy.map(y=>byY[y]))*1.1||1;
 const bw=(W-pl-pr)/yy.length, Y=v=>pt+(1-v/mx)*(H-pt-pb);
