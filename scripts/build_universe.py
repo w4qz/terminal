@@ -371,6 +371,10 @@ def main() -> int:
     prices = fetch_prices([x["s"] for x in catalog])
     for x in catalog:
         x.update(prices.get(x["s"], {"p": None, "pct": None, "st": "STALE", "ts": None}))
+    dead = [x["s"] for x in catalog if x["c"] == "Action" and x["p"] is None]
+    if dead:
+        catalog = [x for x in catalog if not (x["c"] == "Action" and x["p"] is None)]
+        log(f"Catalogue : {len(dead)} actions sans cotation retirées (ticker obsolète ou rachat) : {', '.join(dead[:15])}")
     catalog.extend(fetch_policy_rates())
 
     out = {"generated_at": NOW.isoformat().replace("+00:00", "Z"),
