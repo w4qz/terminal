@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T05:39:26.771791Z",
+ "generated_at": "2026-11-01T06:45:08.334181Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -15,10 +15,10 @@
    "vol": 168039400
   },
   "ASTS": {
-   "p": 40.97,
+   "p": 40.99,
    "prev": 43.07,
-   "chg": -2.1,
-   "pct": -4.88,
+   "chg": -2.08,
+   "pct": -4.83,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-10-30T19:30:00Z",
@@ -267,15 +267,15 @@
    "open": 102.8,
    "lo": 102.43,
    "hi": 104.99,
-   "vol": 248668
+   "vol": 248667
   },
   "BRENT": {
    "p": 113.43,
    "prev": 114.88,
    "chg": -1.45,
    "pct": -1.26,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (BZ=F)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (BZ=F) — échec de la dernière mise à jour",
    "ts": "2026-10-30T20:00:00Z",
    "open": 111.28,
    "lo": 111.05,
@@ -283,17 +283,17 @@
    "vol": 37539
   },
   "BTC": {
-   "p": 77686.2031,
+   "p": 77766.2188,
    "prev": 77198.2109,
-   "chg": 487.9922,
-   "pct": 0.63,
+   "chg": 568.0078,
+   "pct": 0.74,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-01T05:00:00Z",
+   "ts": "2026-11-01T06:00:00Z",
    "open": 77440.9297,
    "lo": 77395.6953,
-   "hi": 77734.6016,
-   "vol": 10749725696
+   "hi": 77882.4297,
+   "vol": 10680890368
   }
  },
  "fundamentals": {
@@ -390,9 +390,9 @@
    "ccy": "USD",
    "mcap": 3875804807168,
    "pe": 27.2396,
-   "fpe": 21.6233,
+   "fpe": 21.6187,
    "eps": 19.16,
-   "feps": 24.1364,
+   "feps": 24.1416,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -557,9 +557,9 @@
    "ccy": "USD",
    "mcap": 1829640994816,
    "pe": 585.7391,
-   "fpe": 56.9376,
+   "fpe": 52.529,
    "eps": 0.23,
-   "feps": 2.3661,
+   "feps": 2.5647,
    "revTTM": 32042999808,
    "netIncome": -3431000064,
    "shares": 8246541218,
@@ -957,14 +957,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 982902374400,
+   "mcap": 979897024512,
    "pe": 44.75,
    "fpe": 38.2805,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.578,
    "div": 0.99,
    "divYield": 0.8,
@@ -1330,10 +1330,10 @@
    "industry": "Oil & Gas Integrated",
    "ccy": "USD",
    "mcap": 459499536384,
-   "pe": 17.2922,
-   "fpe": 14.9045,
-   "eps": 13.62,
-   "feps": 15.802,
+   "pe": 22.668,
+   "fpe": 14.9859,
+   "eps": 10.39,
+   "feps": 15.7161,
    "revTTM": 228955996160,
    "netIncome": 26976000000,
    "shares": 1951000000,
@@ -1359,7 +1359,7 @@
    "exDiv": 1794960000,
    "divDate": 1788998400,
    "lastDiv": 1.78,
-   "trailDiv": 1.71
+   "trailDiv": 6.98
   },
   "COST": {
    "name": "Costco Wholesale Corporation",
@@ -1411,9 +1411,9 @@
    "ccy": "USD",
    "mcap": 442427080704,
    "pe": 158.7155,
-   "fpe": 78.3347,
+   "fpe": 78.7903,
    "eps": 1.16,
-   "feps": 2.3503,
+   "feps": 2.3367,
    "revTTM": 6155940864,
    "netIncome": 3016691968,
    "shares": 2300713329,
@@ -1579,9 +1579,12 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 122.9082,
+   "shares": 572600000,
    "divYield": 4.19,
    "w52lo": 93.84,
-   "w52hi": 101.46
+   "w52hi": 101.46,
+   "trailDiv": 2.48
   },
   "GLD": {
    "name": "SPDR Gold Shares",
@@ -1632,11 +1635,21 @@
  ],
  "news": [
   {
+   "h": "Indonesia GDP, US midterm elections, Hong Kong financial summit",
+   "w": "",
+   "syms": [
+    "HSI"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-01T06:45:08.334181+00:00",
+   "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/indonesia-gdp-us-midterm-elections-hong-kong-financial-summit"
+  },
+  {
    "h": "Pakistan refineries report 1,860% jump in profit amid war windfall",
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T05:39:26.771791+00:00",
+   "ts": "2026-11-01T06:45:08.334181+00:00",
    "url": "https://asia.nikkei.com/business/energy/pakistan-refineries-report-1-860-jump-in-profit-amid-war-windfall2"
   },
   {
@@ -1644,7 +1657,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T05:39:26.771791+00:00",
+   "ts": "2026-11-01T06:45:08.334181+00:00",
    "url": "https://asia.nikkei.com/spotlight/comment/after-us-midterms-democracy-will-face-test-of-ability-to-self-correct"
   },
   {
@@ -1652,7 +1665,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T05:39:26.771791+00:00",
+   "ts": "2026-11-01T06:45:08.334181+00:00",
    "url": "https://asia.nikkei.com/politics/thai-reformists-became-too-technocratic-party-ex-leader-pita-says"
   },
   {
@@ -1662,7 +1675,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T05:39:26.771791+00:00",
+   "ts": "2026-11-01T06:45:08.334181+00:00",
    "url": "https://asia.nikkei.com/business/companies/japan-bamboo-chopsticks-catch-on-in-south-korea"
   },
   {
@@ -1670,7 +1683,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T05:39:26.771791+00:00",
+   "ts": "2026-11-01T06:45:08.334181+00:00",
    "url": "https://asia.nikkei.com/life-arts/life/on-india-s-east-coast-tidepooling-inspires-marine-conservation"
   },
   {
@@ -1678,7 +1691,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T05:39:26.771791+00:00",
+   "ts": "2026-11-01T06:45:08.334181+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/china-mega-complex-in-dalian-puts-spotlight-on-investment-push"
   },
   {
@@ -1688,7 +1701,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T05:39:26.771791+00:00",
+   "ts": "2026-11-01T06:45:08.334181+00:00",
    "url": "https://asia.nikkei.com/opinion/time-for-japan-to-develop-people-who-can-sell-content"
   },
   {
@@ -1699,7 +1712,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T05:39:26.771791+00:00",
+   "ts": "2026-11-01T06:45:08.334181+00:00",
    "url": "https://asia.nikkei.com/business/markets/bonds/yen-bond-offerings-hit-record-16bn-as-ai-funding-race-reaches-japan"
   },
   {
@@ -1709,7 +1722,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T05:39:26.771791+00:00",
+   "ts": "2026-11-01T06:45:08.334181+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/japan-weighs-taxing-real-estate-rental-operators-living-overseas"
   },
   {
@@ -1719,7 +1732,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T05:39:26.771791+00:00",
+   "ts": "2026-11-01T06:45:08.334181+00:00",
    "url": "https://asia.nikkei.com/business/health-care/japan-s-foreign-caregivers-face-exam-hurdle-as-grace-period-ends"
   },
   {
@@ -1727,7 +1740,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T05:39:26.771791+00:00",
+   "ts": "2026-11-01T06:45:08.334181+00:00",
    "url": "https://asia.nikkei.com/business/food-beverage/thai-highland-tribe-coffee-brews-following-at-home-and-in-tokyo"
   },
   {
@@ -1737,7 +1750,7 @@
     "HSI"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T05:39:26.771791+00:00",
+   "ts": "2026-11-01T06:45:08.334181+00:00",
    "url": "https://asia.nikkei.com/spotlight/society/fatal-dog-attacks-test-hong-kong-s-ambitions-for-a-pet-friendly-economy"
   },
   {
@@ -1745,7 +1758,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T05:39:26.771791+00:00",
+   "ts": "2026-11-01T06:45:08.334181+00:00",
    "url": "https://asia.nikkei.com/spotlight/comment/thailand-looks-west-after-30-years-of-struggles-over-dawei"
   },
   {
@@ -1753,24 +1766,93 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T05:39:26.771791+00:00",
+   "ts": "2026-11-01T06:45:08.334181+00:00",
    "url": "https://asia.nikkei.com/spotlight/my-personal-history/what-lies-ahead-stephen-schwarzman-30"
   },
   {
-   "h": "Yakitori chicken from Japan takes a stab at the Philippines, the land of Jollibee",
+   "h": "Le PDG d’Actuate Therapeutics achète pour 49.999$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-01T06:32:10Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-dactuate-therapeutics-achete-pour-49999-dactions-93CH-3667068"
+  },
+  {
+   "h": "Binance reprendra les retraits crypto par phases après un piratage record de 6 milliards $",
    "w": "",
    "syms": [
-    "N225"
+    "BTC"
    ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-01T05:39:26.771791+00:00",
-   "url": "https://asia.nikkei.com/business/food-beverage/yakitori-chicken-from-japan-takes-a-stab-at-the-philippines-the-land-of-jollibee"
+   "src": "Investing.com France",
+   "ts": "2026-11-01T06:20:37Z",
+   "url": "https://fr.investing.com/news/cryptocurrency-news/binance-reprendra-les-retraits-crypto-par-phases-apres-un-piratage-record-de-6-milliards--3667067"
+  },
+  {
+   "h": "Un administrateur de Bank First Corp achète pour 59.348$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-01T06:16:34Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-bank-first-corp-achete-pour-59348-dactions-93CH-3667065"
+  },
+  {
+   "h": "Après un sinistre, le long parcours des assurés pour obtenir une indemnisation",
+   "w": "Incendie, fissures liées au retrait-gonflement des argiles… Deux témoignages, une victime et un expert assurés, illustrent les difficultés rencontrées par les assurés pour faire valoir leurs droits et l’importance de connaître ses garanties de contrat.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-01T06:00:01Z",
+   "url": "https://www.lemonde.fr/argent/article/2026/11/01/apres-un-sinistre-le-long-parcours-des-assures-pour-obtenir-une-indemnisation_6804089_1657007.html"
+  },
+  {
+   "h": "DeepSeek lance un agent de codage autonome pour défier Claude Code d’Anthropic",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-01T05:45:12Z",
+   "url": "https://fr.investing.com/news/company-news/deepseek-lance-un-agent-de-codage-autonome-pour-defier-claude-code-danthropic-3667063"
+  },
+  {
+   "h": "Le Bitcoin face à de nouveaux risques baissiers après le piratage de Binance",
+   "w": "",
+   "syms": [
+    "BTC"
+   ],
+   "src": "Investing.com France",
+   "ts": "2026-11-01T05:19:12Z",
+   "url": "https://fr.investing.com/news/cryptocurrency-news/le-bitcoin-face-a-de-nouveaux-risques-baissiers-apres-le-piratage-de-binance-3667062"
+  },
+  {
+   "h": "The new Bristol town that could give Burnham a blueprint for devolution",
+   "w": "Malaysian-owned development’s bid to transform a 450-acre former airfield will test whether local leaders can deliver",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-01T05:00:18Z",
+   "url": "https://www.ft.com/content/3da634d6-59de-4474-b2fc-b6b1b580b1dc?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "The age of prepping is here",
+   "w": "And it could seriously frazzle how we get along at work",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-01T05:00:18Z",
+   "url": "https://www.ft.com/content/395f68ac-a40b-4c2c-a4df-4db6fceef28a?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Quant hedge fund to spin out of Tudor in record $9bn launch",
+   "w": "Xantium to separate from company controlled by billionaire Paul Tudor Jones II next year",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-01T05:00:18Z",
+   "url": "https://www.ft.com/content/8ee19897-1d15-4dd7-8ca8-162c4ea22b3a?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "Does the Budget mark the end of Miliband-ism?",
    "w": "New emphasis on cutting energy costs marks shelving of former energy secretary’s ‘mission’ to deliver clean power by 2030",
    "syms": [],
-   "src": "myFT — energy",
+   "src": "myFT — companies",
    "ts": "2026-11-01T05:00:18Z",
    "url": "https://www.ft.com/content/bcea249e-249e-4b75-bd7c-bbd51b5b4579?syn-25a6b1a6=1",
    "mine": 1
@@ -1781,18 +1863,10 @@
    "syms": [
     "BRENT"
    ],
-   "src": "myFT — energy",
+   "src": "myFT — companies",
    "ts": "2026-11-01T05:00:18Z",
    "url": "https://www.ft.com/content/4d63f08d-3556-4d84-8e1d-40f866741d15?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Quant hedge fund to spin out of Tudor in record $9bn launch",
-   "w": "Xantium to separate from company controlled by billionaire Paul Tudor Jones II next year",
-   "syms": [],
-   "src": "Financial Times — Entreprises",
-   "ts": "2026-11-01T05:00:18Z",
-   "url": "https://www.ft.com/content/8ee19897-1d15-4dd7-8ca8-162c4ea22b3a?syn-25a6b1a6=1"
   },
   {
    "h": "Germany fails to meet Winter gas storage target",
@@ -1800,61 +1874,109 @@
    "syms": [
     "DAX"
    ],
-   "src": "myFT — energy",
+   "src": "myFT — europe",
    "ts": "2026-11-01T05:00:17Z",
    "url": "https://www.ft.com/content/99b0bbf1-4604-4e56-bc66-9f49d2814737?syn-25a6b1a6=1",
    "mine": 1
   },
   {
-   "h": "Military briefing: what would another US-Iran conflict look like?",
-   "w": "US and Israeli options to escalate range from maritime campaigns to attempting regime change but risk provoking retaliation",
+   "h": "Bond investors sit out ‘most consequential’ US midterm elections in years",
+   "w": "Big fund managers are pressing ‘pause’ as vote and economic data releases loom",
    "syms": [],
-   "src": "myFT — middle east north africa",
-   "ts": "2026-11-01T05:00:09Z",
-   "url": "https://www.ft.com/content/89e3ff89-c097-44cb-a290-0d46726e6075?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "No amount of money can make a war zone safe for seafarers",
-   "w": "The international community and shipping industry must act together to protect the people who keep world trade moving",
-   "syms": [],
-   "src": "myFT — middle east north africa",
-   "ts": "2026-11-01T05:00:09Z",
-   "url": "https://www.ft.com/content/650ac00d-1bb0-439e-aaee-1d43061b27a0",
-   "mine": 1
-  },
-  {
-   "h": "New Zealand’s kingmaker could be a 38-year-old ex-KPMG consultant",
-   "w": "Fiji-born Qiulae Wong backs ‘land tax’ to fund universal basic income and push down housing prices",
-   "syms": [],
-   "src": "myFT — asia pacific",
-   "ts": "2026-11-01T05:00:09Z",
-   "url": "https://www.ft.com/content/217e8187-7b57-40dc-9439-03266e6c900f?syn-25a6b1a6=1",
+   "src": "myFT — world",
+   "ts": "2026-11-01T05:00:17Z",
+   "url": "https://www.ft.com/content/937308d7-aa2e-4dac-b19b-423d83bc1253?syn-25a6b1a6=1",
    "mine": 1
   },
   {
    "h": "Falklands tensions spur fishing ‘free-for-all’ in south Atlantic",
    "w": "Stocks risk depletion as vessels from China and Spain among others step up activity near contested waters",
    "syms": [],
-   "src": "Financial Times — Entreprises",
+   "src": "myFT — europe",
    "ts": "2026-11-01T05:00:09Z",
-   "url": "https://www.ft.com/content/f58e93ef-cf97-4d5d-b4b1-9d0f6aa75218?syn-25a6b1a6=1"
+   "url": "https://www.ft.com/content/f58e93ef-cf97-4d5d-b4b1-9d0f6aa75218?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "EU to downgrade art market money-laundering risk despite heists",
+   "w": "European Commission experts cite ‘limited EU evidence’ linking high-profile museum thefts to criminal networks",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-01T05:00:09Z",
+   "url": "https://www.ft.com/content/a17489a4-71d2-493a-9ef6-20eb57b8bd5a?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "Europe’s independent hotels turn to global chains to attract wealthy visitors",
    "w": "Family-run businesses are signing up with brands to tap into lucrative business travel market in sign of continent’s growing ‘chainification’",
    "syms": [],
-   "src": "Financial Times — Entreprises",
+   "src": "myFT — europe",
    "ts": "2026-11-01T05:00:09Z",
-   "url": "https://www.ft.com/content/66ed1955-7a18-4d11-b7a6-eb567fac1534?syn-25a6b1a6=1"
+   "url": "https://www.ft.com/content/66ed1955-7a18-4d11-b7a6-eb567fac1534?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "EU leaders risk breaking their promise to help European start-ups",
+   "w": "The bloc is addressing the funding gap for innovators but going the wrong way on harmonising rules to help them stay in Europe",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-01T05:00:09Z",
+   "url": "https://www.ft.com/content/ce1e852d-c699-4cf6-b8a0-78fd283556f3?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "No amount of money can make a war zone safe for seafarers",
+   "w": "The international community and shipping industry must act together to protect the people who keep world trade moving",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-01T05:00:09Z",
+   "url": "https://www.ft.com/content/650ac00d-1bb0-439e-aaee-1d43061b27a0",
+   "mine": 1
+  },
+  {
+   "h": "Russia forced to ship grain via Arctic as Black Sea battles rage",
+   "w": "Farmers are exporting agricultural goods from ports thousands of miles away, driving up costs for overseas buyers",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-01T05:00:09Z",
+   "url": "https://www.ft.com/content/50aeab56-c5e3-44c5-9117-8fadc2f980fb?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Military briefing: what would another US-Iran conflict look like?",
+   "w": "US and Israeli options to escalate range from maritime campaigns to attempting regime change but risk provoking retaliation",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-01T05:00:09Z",
+   "url": "https://www.ft.com/content/89e3ff89-c097-44cb-a290-0d46726e6075?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "New Zealand’s kingmaker could be a 38-year-old ex-KPMG consultant",
+   "w": "Fiji-born Qiulae Wong backs ‘land tax’ to fund universal basic income and push down housing prices",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-01T05:00:09Z",
+   "url": "https://www.ft.com/content/217e8187-7b57-40dc-9439-03266e6c900f?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "Scrapping audits for UK start-ups is worth its weight in red tape",
    "w": "The move will help convey the message that the country’s stifling attitude to bureaucracy is changing",
    "syms": [],
-   "src": "Financial Times — Entreprises",
+   "src": "myFT — world",
    "ts": "2026-11-01T05:00:09Z",
-   "url": "https://www.ft.com/content/bc51e3b9-f691-4cf2-a333-476a9c4a4a54?syn-25a6b1a6=1"
+   "url": "https://www.ft.com/content/bc51e3b9-f691-4cf2-a333-476a9c4a4a54?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Trump loses Latino support",
+   "w": "Latino voters are shifting back to the Democrats ahead of the US midterm elections",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-01T05:00:00Z",
+   "url": "https://www.ft.com/video/fbc0f62e-50ea-4509-9fa7-32f00c98c424?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "Hanwha décroche un contrat naval de 269 millions $ avec l’US Navy",
@@ -1951,45 +2073,19 @@
    "h": "Toyota-backed truckmaker bets on aftersales service to fend off Chinese EV rivals",
    "w": "Archion chief says repair network offers competitive strength after Thai floods bring service quality to fore",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — companies",
    "ts": "2026-11-01T01:00:06Z",
    "url": "https://www.ft.com/content/7e749777-dcee-4c11-9bdc-7f81bee80455?syn-25a6b1a6=1",
    "mine": 1
   },
   {
-   "h": "Le FBI relie le vol crypto record de 6,3 milliards de dollars sur Binance à la Corée du Nord",
-   "w": "",
-   "syms": [
-    "BTC"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-11-01T00:38:48Z",
-   "url": "https://fr.investing.com/news/economy-news/le-fbi-relie-le-vol-crypto-record-de-63-milliards-de-dollars-sur-binance-a-la-coree-du-nord-3667048"
-  },
-  {
-   "h": "Le directeur informatique de Republic Bancorp cède des actions pour 75.769$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-01T00:17:22Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-informatique-de-republic-bancorp-cede-des-actions-pour-75769-93CH-3667047"
-  },
-  {
    "h": "Michigan feud threatens Democratic unity in key Senate race",
    "w": "Abdul El-Sayed disinvites former primary rival Haley Stevens from campaign event amid war of words over Israel",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-10-31T23:57:07Z",
    "url": "https://www.ft.com/content/d77e4c6f-0ac7-49ce-bca8-b30080bf9797?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Les pétroliers russes se dotent de défenses anti-drones artisanales",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-10-31T23:56:53Z",
-   "url": "https://fr.investing.com/news/economy-news/les-petroliers-russes-se-dotent-de-defenses-antidrones-artisanales-3667045"
   },
   {
    "h": "Trump defamation suit against Murdoch, WSJ over Epstein letter dismissed with prejudice",
@@ -2000,14 +2096,6 @@
    "src": "CNBC — Marchés",
    "ts": "2026-10-31T23:56:40Z",
    "url": "https://www.cnbc.com/2026/10/31/trump-murdoch-wsj-epstein-defamation-lawsuit-dismissed.html"
-  },
-  {
-   "h": "Les principales conclusions de l’enquête annuelle mondiale de Bernstein sur le sportswear",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-10-31T22:57:05Z",
-   "url": "https://fr.investing.com/news/stock-market-news/les-principales-conclusions-de-lenquete-annuelle-mondiale-de-bernstein-sur-le-sportswear-3667043"
   },
   {
    "h": "Tusk vows to press on with overhaul of Poland’s judiciary",
@@ -2035,16 +2123,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-10-31T22:00:44Z",
    "url": "https://www.lemonde.fr/disparitions/article/2026/10/31/marie-lavigne-specialiste-de-l-economie-de-l-urss-et-des-pays-socialistes-est-morte_6803767_3382.html"
-  },
-  {
-   "h": "L’OPEC+ devrait maintenir sa production pétrolière en décembre",
-   "w": "",
-   "syms": [
-    "BRENT"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-10-31T20:44:25Z",
-   "url": "https://fr.investing.com/news/commodities-news/lopec-devrait-maintenir-sa-production-petroliere-en-decembre-3667041"
   },
   {
    "h": "My abusive ex-husband promised $20,000 for our kids’ education. Now he refuses to pay. Is he legally obligated?",
@@ -2167,7 +2245,7 @@
    "h": "Investors trim growth bets over fears of US economy’s AI exposure",
    "w": "Return to bonds after long sell-off comes as concern rises about over-reliance on tech spending",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-10-31T14:00:02Z",
    "url": "https://www.ft.com/content/56b0d5fa-829c-47b1-b07b-b4be18f60151?syn-25a6b1a6=1",
    "mine": 1
@@ -2184,7 +2262,7 @@
    "h": "Iran warns it will retaliate without ‘geographical limitations’ if attacked",
    "w": "Ayatollah Khamenei tells military commanders response will be ‘immediate’ as Qatari mediators seek to avert a feared US-Israeli bombing campaign",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-10-31T13:38:29Z",
    "url": "https://www.ft.com/content/77370477-62df-4499-9ab6-4063d3e361bd?syn-25a6b1a6=1",
    "mine": 1
@@ -2219,7 +2297,7 @@
    "h": "Steve Bannon: Republicans will erupt in ‘civil war’ after midterm elections",
    "w": "Former White House chief strategist predicts ‘monster’ legislative battles before new Congress is sworn in",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-10-31T12:00:01Z",
    "url": "https://www.ft.com/content/a97de5ca-484e-4ed9-84e0-958b90b85ef8?syn-25a6b1a6=1",
    "mine": 1
@@ -2228,7 +2306,7 @@
    "h": "Budget frees London to go on £10bn borrowing spree, says Sadiq Khan",
    "w": "UK capital’s mayor hails chancellor’s financial plan that will boost key infrastructure projects",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — world uk",
    "ts": "2026-10-31T12:00:01Z",
    "url": "https://www.ft.com/content/14a8ce6c-ef84-478a-993f-47db30a41d1d?syn-25a6b1a6=1",
    "mine": 1
@@ -2289,7 +2367,7 @@
    "h": "Chart of the Week: Bond investors may cheer gridlock",
    "w": "Midterms will have higher stakes for the bond market",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-10-31T10:30:01Z",
    "url": "https://www.ft.com/content/9570b122-5418-41e6-b91b-b95af96ec881?syn-25a6b1a6=1",
    "mine": 1
@@ -2333,6 +2411,22 @@
    "url": "https://www.lemonde.fr/idees/article/2026/10/31/adrien-bilal-prix-du-meilleur-jeune-economiste-2026-la-croissance-n-est-pas-l-adversaire-de-la-politique-climatique-c-est-meme-l-inverse_6803479_3232.html"
   },
   {
+   "h": "Les jeunes économistes distingués depuis 2000",
+   "w": "Voici la liste des lauréats du Prix du meilleur jeune économiste, une récompense créée en 2000 par « Le Monde » et le Cercle des économistes.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-10-31T08:30:00Z",
+   "url": "https://www.lemonde.fr/idees/article/2026/10/31/les-jeunes-economistes-distingues-depuis-2000_6803477_3232.html"
+  },
+  {
+   "h": "Pour Halloween, des bonbons sans sucre qui ne sont pas sans défaut ni à l’abri des critiques",
+   "w": "Les confiseries étiquetées « peu caloriques » ou « sans sucre », dont certaines arborent un Nutri-Score A, ont trouvé leur place dans les rayons des supermarchés.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-10-31T08:00:19Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/10/31/pour-halloween-des-bonbons-sans-sucre-au-gout-amer_6803476_3234.html"
+  },
+  {
    "h": "US approves $2.1bn sale of Patriot interceptors to Ukraine",
    "w": "Volodymyr Zelenskyy welcomes ‘strong decision’ but calls for the missiles to be provided immediately",
    "syms": [],
@@ -2342,43 +2436,22 @@
    "mine": 1
   },
   {
+   "h": "Pour faire baisser le prix du gazole à la pompe, une course contre la montre et un casse-tête logistique",
+   "w": "Dans les stations-service, le prix du litre de diesel doit perdre jusqu’à 18 centimes d’euro dès dimanche 1ᵉʳ novembre, selon le gouvernement. Mais la remise devrait s’appliquer de façon disparate d’un distributeur à l’autre.",
+   "syms": [
+    "EURUSD"
+   ],
+   "src": "Le Monde — Économie",
+   "ts": "2026-10-31T07:00:06Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/10/31/course-contre-la-montre-et-casse-tete-logistique-pour-faire-baisser-le-prix-du-gazole-a-la-pompe_6803469_3234.html"
+  },
+  {
    "h": "Fiscal drifting: why the Budget won’t leave you better off",
    "w": "Frozen thresholds and higher inflation forecasts mean thousands more could be dragged into the £100,000 tax trap than previously thought",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — world uk",
    "ts": "2026-10-31T05:12:54Z",
    "url": "https://www.ft.com/content/2d7ef638-2efb-42ec-a433-bef55f61d2e1?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "French protests show BNP Paribas what’s in a name",
-   "w": "Despite a strong third quarter, a bumpy journey lies ahead for investors",
-   "syms": [
-    "CAC"
-   ],
-   "src": "myFT — europe",
-   "ts": "2026-10-31T05:00:40Z",
-   "url": "https://www.ft.com/content/5719a0b6-80cb-415c-b349-c1e07dd46c36?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "French banks’ rising profits fail to reverse sell-off as political fears bite",
-   "w": "BNP Paribas, SocGen and Crédit Agricole reported strong third-quarter earnings but have been hit by investor nerves over political and economic uncertainty",
-   "syms": [
-    "CAC"
-   ],
-   "src": "myFT — europe",
-   "ts": "2026-10-31T05:00:40Z",
-   "url": "https://www.ft.com/content/d1c2c34b-7bfb-470a-a51d-bbada1c6ccef?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "The rightward march of Israel",
-   "w": "Netanyahu lost his majority. Why is he so hard to defeat?",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-10-31T05:00:40Z",
-   "url": "https://www.ft.com/content/a4978448-b5ab-4890-9ce5-596f4883816e?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2388,6 +2461,37 @@
    "src": "myFT — world uk",
    "ts": "2026-10-31T05:00:40Z",
    "url": "https://www.ft.com/content/a6cac59f-7344-4717-8164-a4cbfdd26db5?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "French banks’ rising profits fail to reverse sell-off as political fears bite",
+   "w": "BNP Paribas, SocGen and Crédit Agricole reported strong third-quarter earnings but have been hit by investor nerves over political and economic uncertainty",
+   "syms": [
+    "CAC"
+   ],
+   "src": "myFT — economy",
+   "ts": "2026-10-31T05:00:40Z",
+   "url": "https://www.ft.com/content/d1c2c34b-7bfb-470a-a51d-bbada1c6ccef?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "The rightward march of Israel",
+   "w": "Netanyahu lost his majority. Why is he so hard to defeat?",
+   "syms": [],
+   "src": "myFT — middle east north africa",
+   "ts": "2026-10-31T05:00:40Z",
+   "url": "https://www.ft.com/content/a4978448-b5ab-4890-9ce5-596f4883816e?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "French protests show BNP Paribas what’s in a name",
+   "w": "Despite a strong third quarter, a bumpy journey lies ahead for investors",
+   "syms": [
+    "CAC"
+   ],
+   "src": "myFT — banks",
+   "ts": "2026-10-31T05:00:40Z",
+   "url": "https://www.ft.com/content/5719a0b6-80cb-415c-b349-c1e07dd46c36?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2415,109 +2519,6 @@
    "src": "myFT — world uk",
    "ts": "2026-10-31T05:00:39Z",
    "url": "https://www.ft.com/content/8a26c5ed-820b-4653-8bf0-d9ee4f20bdcd",
-   "mine": 1
-  },
-  {
-   "h": "17 splendid ways to spend it in November",
-   "w": "Christmas knits from the Highlands and Islands, Bloomsbury by the sea, a passage to Portofino – and more",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-10-31T05:00:31Z",
-   "url": "https://www.ft.com/content/6f85b836-ccb2-4968-8faa-abd311d56ae0",
-   "mine": 1
-  },
-  {
-   "h": "Saying nothing in Northern Ireland",
-   "w": "Beneath a carefully maintained peace, the region remains unwilling to confront its history",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-10-31T05:00:31Z",
-   "url": "https://www.ft.com/content/df052f2b-c2f2-4669-a852-dbe6e307ab81",
-   "mine": 1
-  },
-  {
-   "h": "Is this the first clear evidence of AI’s impact on the labour market?",
-   "w": "Productivity is up and employment is down in the tech sector but elsewhere the picture is muddier",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-10-31T05:00:31Z",
-   "url": "https://www.ft.com/content/7f27aa5f-5994-4f82-aed8-1cade18fb487?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Bank of England explores easing key limit on riskier mortgage lending",
-   "w": "Central bank considers lifting threshold on higher-risk mortgages in response to calls from government and industry to boost home-ownership",
-   "syms": [
-    "UKX"
-   ],
-   "src": "myFT — world uk",
-   "ts": "2026-10-31T05:00:31Z",
-   "url": "https://www.ft.com/content/78363dc1-90fa-4a10-b84a-69be3d749f42?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Lula’s surprise election victory sends agri-commodities tumbling",
-   "w": "Steep fall in Brazilian real has made the country’s exports more competitive, undermining pricing power for farmers in other countries",
-   "syms": [],
-   "src": "myFT — companies",
-   "ts": "2026-10-31T05:00:31Z",
-   "url": "https://www.ft.com/content/f0ca6771-20a2-4146-bd3f-4796d3c86094?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "How a £1 deal dragged Poundland’s owner into a political storm",
-   "w": "Gordon Brothers is under intense scrutiny over whether it could have prevented the UK retailer’s looming insolvency",
-   "syms": [],
-   "src": "myFT — companies",
-   "ts": "2026-10-31T05:00:31Z",
-   "url": "https://www.ft.com/content/da4ab443-d9e6-48cd-9476-1dff4563cd26?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Britain’s charity shops are fighting for survival",
-   "w": "Consumers are selling their best items on Vinted, Depop and other websites rather than donating them",
-   "syms": [],
-   "src": "myFT — companies",
-   "ts": "2026-10-31T05:00:31Z",
-   "url": "https://www.ft.com/content/e27fbf83-5223-4443-97dd-8cb70ae5e077?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Cash Isa changes can still foster a ‘nation of investors’",
-   "w": "The behavioural impact of a small incentive to invest in stocks-and-shares Isas could be huge",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-10-31T05:00:30Z",
-   "url": "https://www.ft.com/content/c5144486-17f9-40e6-a3d0-7c7e206dd9af?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "How it feels to be young in the town with fewest starter jobs in Britain",
-   "w": "In Rotherham, making a life is not easy. Will Lloyd investigates the ‘rejection economy’",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-10-31T05:00:20Z",
-   "url": "https://www.ft.com/content/f83803da-8c43-406d-aeef-c988bee2411f?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Bulgaria votes as Russian attacks in Black Sea reach its shores",
-   "w": "Moscow-friendly presidential incumbent Iliana Yotova is feeling the heat from liberal rival",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-10-31T05:00:20Z",
-   "url": "https://www.ft.com/content/b5a519d5-149c-45d3-8319-a9a40b601864?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Steven Isserlis on his extraordinary 300-year-old Stradivarius cello",
-   "w": "Named after an aristocrat guillotined during the French Revolution, the ‘Marquis de Corberon’ has inspired both cellists and composers for centuries",
-   "syms": [
-    "CAC"
-   ],
-   "src": "myFT — europe",
-   "ts": "2026-10-31T05:00:20Z",
-   "url": "https://www.ft.com/content/7ac2b373-01a6-4ac0-a88c-bbda57b337d7",
    "mine": 1
   }
  ],
