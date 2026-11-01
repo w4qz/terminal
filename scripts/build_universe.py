@@ -369,6 +369,18 @@ def main() -> int:
         log(f"  ! titres suivis hors indices : {e}")
 
     prices = fetch_prices([x["s"] for x in catalog])
+    # Les instruments du bandeau (data.json, écrit juste avant dans le même passage) font foi :
+    # le catalogue reprend exactement leur cours, leur variation et leur historique.
+    try:
+        from update_data import TICKERS
+        dq = json.loads((ROOT / "data.json").read_text(encoding="utf-8")).get("quotes", {})
+        for sym, yt in TICKERS.items():
+            q = dq.get(sym)
+            if q and q.get("p") is not None and yt in prices:
+                prices[yt].update({"p": q["p"], "pct": q.get("pct"), "ts": str(q.get("ts", ""))[:10] or prices[yt]["ts"],
+                                   **({"h": q["h"]} if q.get("h") else {})})
+    except Exception as e:
+        log(f"  ! alignement sur data.json : {e}")
     for x in catalog:
         x.update(prices.get(x["s"], {"p": None, "pct": None, "st": "STALE", "ts": None}))
     dead = [x["s"] for x in catalog if x["c"] == "Action" and x["p"] is None]
