@@ -233,6 +233,27 @@ def fix_div_yield(f: dict, info: dict) -> None:
         f.pop("divYield", None)            # valeur incohérente : écartée plutôt qu'affichée
 
 
+SECTOR_FIX = {"ML.PA": "Consumer Cyclical", "FISV": "Technology", "FI": "Technology"}   # trous connus de Yahoo
+
+
+def sanitize_fund(f: dict, sym: str, info: dict) -> None:
+    """Valeurs aberrantes corrigées avant publication : capitalisation nulle, PER non significatif,
+    secteur manquant (fonds et investment trusts regroupés, trous connus de Yahoo complétés)."""
+    if not (f.get("mcap") or 0) > 0:
+        f.pop("mcap", None)
+    for k in ("pe", "fpe"):
+        if isinstance(f.get(k), (int, float)) and (f[k] > 300 or f[k] <= 0):
+            f[k + "_ns"] = f.pop(k)
+    if not f.get("sector"):
+        qt = (info.get("quoteType") or "").upper()
+        if sym in SECTOR_FIX:
+            f["sector"] = SECTOR_FIX[sym]
+        elif qt in ("ETF", "MUTUALFUND") or re.search(r"\b(trust|fund|investment)\b", str(info.get("longName", "")), re.I):
+            f["sector"] = "Fonds et trusts"
+        elif len(f) > 3:
+            f["sector"] = "Non classé"
+
+
 def fetch_fundamentals() -> dict:
     out = {}
     for sym in FUND_TICKERS:
@@ -251,6 +272,7 @@ def fetch_fundamentals() -> dict:
                 if v is not None:
                     f[k] = round(v, 4) if isinstance(v, float) else v
             fix_div_yield(f, info)
+            sanitize_fund(f, sym, info)
             if len(f) > 3:
                 out[sym] = f
         except Exception as e:
