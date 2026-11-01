@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Terminal</title>
+<title>Terminal de marché — cours, macro, taux, portefeuille</title>
+<meta name="description" content="Terminal de marché personnel inspiré de Bloomberg : cours différés, courbes des taux, macroéconomie, actualités, comparables et analyse de portefeuille, mis à jour automatiquement.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23000'/%3E%3Cpath d='M5 22l7-8 5 5 10-11' fill='none' stroke='%23e8a33d' stroke-width='3'/%3E%3C/svg%3E">
 <style>
 :root{
 --bg:#000; --surface:#0d0f11; --raised:#15181c; --line:#232830;
@@ -244,6 +246,11 @@ body.embed #secbar{top:-6px;margin:-6px -6px 6px}
 /* badge de statut sous le chiffre dans les cartouches (évite le chevauchement en panneau étroit) */
 .stat .n .st{display:block;width:max-content;margin:3px 0 0;font-size:8px}
 .stat{min-width:0}
+
+/* ---------- barre d'onglets : défile si la fenêtre est étroite ---------- */
+#mainnav{overflow-x:auto;scrollbar-width:none;flex:0 1 auto;min-width:0;position:relative}
+#app{overflow:hidden}
+#mainnav::-webkit-scrollbar{display:none}
 </style>
 </head>
 <body>
@@ -252,8 +259,8 @@ body.embed #secbar{top:-6px;margin:-6px -6px 6px}
 
 <div id="app">
 <div id="top">
-<div id="brand">TERMINAL</div>
-<nav aria-label="Navigation principale" style="display:flex;height:100%">
+<h1 id="brand">TERMINAL<span class="sr-only"> — terminal de marché</span></h1>
+<nav id="mainnav" aria-label="Navigation principale" style="display:flex;height:100%">
 <button class="navbtn on" data-v="mkt" aria-current="page">Marchés <kbd aria-hidden="true">M</kbd><span class="sr-only">(raccourci M)</span></button>
 <button class="navbtn" data-v="wl">Watchlist <kbd aria-hidden="true">W</kbd><span class="sr-only">(raccourci W)</span></button>
 <button class="navbtn" data-v="pf">Portefeuille <kbd aria-hidden="true">P</kbd><span class="sr-only">(raccourci P)</span></button>
@@ -621,41 +628,7 @@ return {up:true, latencyMs:Math.round(avg), rateLimitRemaining:h.rateLimitRemain
 }
 }
 
-class FMPProvider extends HttpProvider{
-get name(){ return 'Financial Modeling Prep'; }
-async getQuote(sym){
-const [d] = await this._get(`/fmp/quote/${encodeURIComponent(sym)}`);
-const meta = {ts:new Date().toISOString(), source:'FMP', status:STATUS.DELAYED_15M};
-return {
-symbol:sym,
-price:dp(d.price,meta), change:dp(d.change,meta),
-changePct:dp(d.changesPercentage,{...meta,unit:'%'}),
-prevClose:dp(d.previousClose,{...meta,status:STATUS.EOD}),
-open:dp(d.open,meta), dayLow:dp(d.dayLow,meta), dayHigh:dp(d.dayHigh,meta),
-volume:dp(d.volume,meta)
-};
-}
-async getFundamentals(sym){
-const d = await this._get(`/fmp/profile/${encodeURIComponent(sym)}`);
-const meta = {ts:new Date().toISOString(), source:'FMP', status:STATUS.SNAPSHOT};
-return {mcap:dp(d.mktCap,meta), pe:dp(d.pe,meta), beta:dp(d.beta,meta),
-eps:dp(d.eps,meta), w52lo:dp(d.yearLow,meta), w52hi:dp(d.yearHigh,meta)};
-}
-async searchSecurity(q){
-const r = await this._get(`/fmp/search?q=${encodeURIComponent(q)}`);
-return r.map(x=>({sym:x.symbol, name:x.name, cls:'Action',
-exch:x.exchangeShortName, ccy:x.currency, ctry:'—', sect:'—'}));
-}
-}
-
-class FREDProvider extends HttpProvider{
-get name(){ return 'FRED (Federal Reserve)'; }
-async getMacroSeries(id){
-const d = await this._get(`/fred/series/${encodeURIComponent(id)}`);
-return d.observations.map(o=>dp(parseFloat(o.value),
-{ts:o.date, source:'FRED '+id, status:STATUS.EOD}));
-}
-}
+/* Fournisseurs FMP / FRED côté navigateur retirés : le relais n'expose pas ces routes, les données passent par le pipeline. */
 
 /*───────────────────────────────────────────────────────────────────────
 2c. Façade — routing, cache TTL, health. L'UI ne parle qu'à ceci.
@@ -721,14 +694,17 @@ FUND_TS=d.generated_at; return true;
 }catch(e){ console.info('fundamentals.json indisponible ('+e.message+')'); return false; }
 }
 let FTNL = null;   // newsletters FT (ft.json, écrit par Google Apps Script)
+let FT_MISSING=false;
 async function loadFT(){
+if(FT_MISSING) return false;   // newsletters FT non installées (Apps Script) : on ne réessaie pas à chaque rafraîchissement
 try{
 const r = await fetch('ft.json?t='+Date.now(), {cache:'no-store'});
 if(!r.ok) throw new Error('HTTP '+r.status);
 const d = await r.json();
+if(!d.generated_at||!(d.items||[]).length){ FT_MISSING=true; return false; }   // fichier vide : Apps Script non installé
 if(FTNL && FTNL.generated_at===d.generated_at) return false;
 FTNL = d; return true;
-}catch(e){ console.info('ft.json indisponible ('+e.message+')'); return false; }
+}catch(e){ if(/404/.test(e.message)) FT_MISSING=true; console.info('ft.json indisponible ('+e.message+')'); return false; }
 }
 async function loadUniverse(){
 try{
@@ -773,7 +749,6 @@ return true;
 }catch(e){ console.info('data.json indisponible — snapshot figé utilisé ('+e.message+')'); return false; }
 }
 // Pour activer le live : lancer server/proxy.js puis décommenter —
-// DATA.register('fmp', new FMPProvider('/api')); DATA.active = 'fmp';
 </script>
 
 <script>
@@ -795,7 +770,9 @@ if(a>=1e6) return nf(v/1e6,2)+' M';
 if(a>=1e3) return nf(v/1e3,1)+' k';
 return nf(v,0);
 }
-const esc = s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const esc = s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+/** Lien externe sûr : seuls http et https sont acceptés (pas de javascript:, data:…), puis échappement. */
+const safeUrl = u=>{ try{ const x=new URL(String(u||''),location.href); return /^https?:$/.test(x.protocol)?esc(x.href):'#'; }catch(e){ return '#'; } };
 const cls = v=>v==null?'zero':v>0?'pos':v<0?'neg':'zero';
 /** Nombre de décimales selon l'instrument : 4 pour les devises (3 si cotées en yen), 0 au-delà de 1 000. */
 const FX_SNAP = new Set(['EURUSD','USDJPY','GBPUSD','DXY']);
@@ -946,9 +923,9 @@ continue;
 }
 const p = q.changePct;
 const pctTxt = p&&!p.na ? pct(p.value) : 'n/d';
-h += `<tr class="clk" data-sym="${s}" tabindex="0" role="button"
+h += `<tr class="clk" data-sym="${esc(s)}" tabindex="0" role="button"
 aria-label="Ouvrir la fiche ${esc(meta.name)} (${s}), dernier cours ${nf(q.price.value)}, variation ${pctTxt}">
-<th scope="row" class="sym"><div style="display:flex;align-items:center;gap:10px"><div>${s}<div class="mut" style="font-size:10px;font-weight:400">${esc(meta.name)}</div></div><span style="margin-left:auto">${spark(sparkData(s))}</span></div></th>
+<th scope="row" class="sym"><div style="display:flex;align-items:center;gap:10px"><div>${esc(s)}<div class="mut" style="font-size:10px;font-weight:400">${esc(meta.name)}</div></div><span style="margin-left:auto">${spark(sparkData(s))}</span></div></th>
 <td>${V(q.price, x=>npx(x,s))}</td>
 <td class="${p&&!p.na?cls(p.value):''}">${V(p, x=>pct(x))}</td>
 <td class="mut">${q.volume&&!q.volume.na?big(q.volume.value):'—'}</td>
@@ -983,7 +960,7 @@ return Object.entries(c).filter(([,n])=>n>=10).sort((a,b)=>b[1]-a[1]).map(([l])=
 function hmPanelHtml(){
 const idx=hmIndices(); if(!idx.length) return '';
 if(!idx.includes(HM.idx)) HM.idx=idx[0];
-return `<div class="pnl" id="mkt-hm" style="margin-bottom:9px"><h3>Carte des marchés<span class="rt">taille = capitalisation · couleur = variation du jour · cliquez pour ouvrir</span></h3>
+return `<div class="pnl" id="mkt-hm" style="margin-bottom:9px"><h3>Carte des marchés<span class="rt">taille = capitalisation · couleur = variation ${sessionLbl()} · cliquez pour ouvrir · <button type="button" class="btn" style="padding:0 6px" onclick="go('srch')">voir en liste</button></span></h3>
 <div class="ctl" style="align-items:center"><div class="rng" role="group" aria-label="Indice">${idx.map(l=>`<button type="button" data-hm="${esc(l)}" class="${l===HM.idx?'on':''}">${esc(l)}</button>`).join('')}</div>
 <span class="mut" style="font-size:10px;margin-left:auto" id="hminfo"></span></div>
 <div class="pbody" style="position:relative;padding:4px;overflow:hidden"><canvas id="hmcv" height="470" role="img" aria-label="Carte des variations du jour"></canvas>
@@ -1075,7 +1052,7 @@ return `<tr>
 
 el.innerHTML = `
 <div class="warn" style="margin-bottom:9px">
-${LIVE ? `Fournisseur actif : <b>Pipeline automatique</b>. Données générées le <b>${fmtDT(LIVE.generated_at)}</b> par GitHub Actions — prix Yahoo Finance différés, taux FRED, news RSS. Rafraîchissement toutes les 30 minutes ; la page vérifie toutes les 10 minutes. Badge Périmé = source en échec, dernière valeur conservée.` : `Fournisseur actif : <b>Snapshot</b>. Actualisé le 31/10/2026 à partir des 25 newsletters Financial Times du dossier FT News (20-30/10).
+${LIVE ? `${sessionLbl()!=='du jour'?`<b style="color:var(--hot)">Marchés actions fermés : variations ${sessionLbl()} ; seules les cryptos évoluent.</b> `:''}Fournisseur actif : <b>Pipeline automatique</b>. Données générées le <b>${fmtDT(LIVE.generated_at)}</b> par GitHub Actions — prix Yahoo Finance différés, taux FRED, news RSS. Rafraîchissement toutes les 30 minutes ; la page vérifie toutes les 10 minutes. Badge Périmé = source en échec, dernière valeur conservée.` : `Fournisseur actif : <b>Snapshot</b>. Actualisé le 31/10/2026 à partir des 25 newsletters Financial Times du dossier FT News (20-30/10).
 <b>Semaine dominée par le doute sur l'IA</b> : Alphabet −13 % (−500 Md$), Big Tech −900 Md$, Intel −21 % ; prospectus d'IPO d'Anthropic ; Binance piraté pour 6,3 Md$.
 Fed et BCE inchangées (3,75-4,00 % et 2,50 %), Lagarde partira en février. S&P 500 et Nasdaq 100 à la clôture du 29/10 ; Asie, FTSE, change, pétrole et or au relevé FT du 30/10.
 NVDA, ASTS, Dow, VIX, DXY et indices européens continentaux ne figurent pas dans les newsletters : marqués Périmé.
@@ -1313,7 +1290,7 @@ el.innerHTML=`
 <span class="rng" role="group" aria-label="Devise de référence">${Object.keys(PF_CCYS).map(c=>`<button type="button" data-ccy="${c}" class="${c===base?'on':''}" aria-pressed="${c===base}">${c}</button>`).join('')}</span></span></h3>
 <div class="statrow">
 <div class="stat"><span class="l">NAV TOTALE</span><span class="n">${mb(nav)}</span><span class="s">${base}${base!=='USD'?` · 1 ${base} = ${nf(B,4)} USD`:''}</span></div>
-<div class="stat"><span class="l">P&L DU JOUR</span><span class="n ${cls(dayPL)}">${mb(dayPL)}</span><span class="s">${nav-dayPL?pct(dayPL/(nav-dayPL)*100):'—'}</span></div>
+<div class="stat"><span class="l">P&L ${sessionLbl().toUpperCase()}</span><span class="n ${cls(dayPL)}">${mb(dayPL)}</span><span class="s">${nav-dayPL?pct(dayPL/(nav-dayPL)*100):'—'}</span></div>
 <div class="stat"><span class="l">P&L LATENT</span><span class="n ${cls(totPL)}">${mb(totPL)}</span><span class="s">${cost?pct(totPL/cost*100):'—'}</span></div>
 <div class="stat"><span class="l">INVESTI</span><span class="n">${mb(inv)}</span><span class="s">${nav?pct(inv/nav*100,1):'—'} de la NAV</span></div>
 <div class="stat"><span class="l">LIQUIDITÉS</span><span class="n">${mb(cashUSD)}</span><span class="s">${nav?pct(cashUSD/nav*100,1):'—'} de la NAV${(S.cashCcy||'USD')!==base?` · détenues en ${S.cashCcy}`:''}</span></div>
@@ -1470,7 +1447,7 @@ ${K('Ratio d\'information',nf(h.ir,2),cls(h.ir))}
 </div>
 </div>
 <div class="warn" style="margin:0 9px 9px">
-<b>Méthode.</b> Volatilités, bêtas et corrélations estimés sur ${h.n} séances réelles (Yahoo Finance via relais), rendements convertis en ${esc(cur.base)} (risque de change inclus).
+<b>Méthode.</b> Volatilités, bêtas et corrélations estimés sur ${nf(h.n,0)} séances réelles (Yahoo Finance via relais), rendements convertis en ${esc(cur.base)} (risque de change inclus).
 Rendements attendus par le MEDAF : taux sans risque + β × (μ indice − taux sans risque), modifiables ligne à ligne : le rendement passé n'est pas une prévision.
 Projection : ${nf(m.N,0)} trajectoires, mouvement brownien géométrique à ${cur.syms.length+1} facteurs corrélés (Cholesky${cur.shrink?`, corrélations rétrécies de ${nf(cur.shrink*100,0)} % pour rester cohérentes`:''}), pas hebdomadaire, rééquilibrage permanent.
 Un GBM sous-estime les queues de distribution : le P10 n'est pas un plancher.${missing.length?` <span class="neg">Exclus faute d'historique : ${missing.map(esc).join(', ')}.</span>`:''}
@@ -1805,10 +1782,10 @@ el.innerHTML=`
 <div id="secbar"><span class="t">${esc(sym)}</span><span class="px">${px!=null?npx(px,sym):'—'}</span><span class="${cls(pc)}" style="font-weight:600">${pc!=null?pct(pc):''}</span><span class="nm">${esc(name)}</span>
 <nav aria-label="Sections de la fiche">${[['GP','sec-gp','Graphique'],['DES','sec-des','Résumé'],['RV','sec-rv','Comparables'],['FA','sec-fa','Comptes'],['DVD','sec-dvd','Dividendes'],['CN','sec-cn','Actualités'],...(/[.=^]/.test(sym)?[]:[['OMON','sec-omon','Options']])].map(([k,a,l])=>`<button type="button" data-jump="${a}" title="${l} (${k})">${l} <span style="color:var(--txt3);font-size:9px">${k}</span></button>`).join('')}</nav></div>
 <div class="pnl" id="sec-des" style="margin-bottom:9px"><div class="statrow">
-<div class="stat"><span class="l">${esc(sym)}${F.sector?' · '+esc(F.sector):''}</span><span class="n" id="secpx">${px!=null?npx(px,sym):'—'}${badge(st)}</span><span class="s">${esc(name)}</span></div>
+<div class="stat"><span class="l">${esc(sym)}${F.sector?' · '+esc(SECT_FR[F.sector]||F.sector):''}</span><span class="n" id="secpx">${px!=null?npx(px,sym):'—'}${badge(st)}</span><span class="s">${esc(name)}</span></div>
 <div class="stat"><span class="l">VARIATION</span><span class="n ${cls(pc)}" id="secpc">${pc!=null?pct(pc):'—'}</span><span class="s">${esc(ccy)}</span></div>
 <div class="stat"><span class="l">CAPITALISATION</span><span class="n">${B(F.mcap)}</span><span class="s">${esc(ccy)}</span></div>
-<div class="stat"><span class="l">PER / PER PROSPECTIF</span><span class="n">${N(F.pe,1)} / ${N(F.fpe,1)}</span><span class="s">x les bénéfices</span></div>
+<div class="stat"><span class="l">PER / PER PROSPECTIF</span><span class="n">${F.pe_ns?'<span class="mut" title="Bénéfice proche de zéro : PER de '+nf(F.pe_ns,0)+'">n/s</span>':N(F.pe,1)} / ${F.fpe_ns?'<span class="mut">n/s</span>':N(F.fpe,1)}</span><span class="s">x les bénéfices</span></div>
 <div class="stat"><span class="l">OBJECTIF ANALYSTES (12 MOIS)</span><span class="n">${N(F.target)}</span><span class="s">${up!=null?pct(up,1)+' de potentiel · ':''}moyenne du consensus${F.ts?', lu '+ago(F.ts):''}</span></div>
 <div class="stat"><span class="l">CONSENSUS</span><span class="n" style="font-size:15px">${F.rating?esc(F.rating):'—'}</span><span class="s">${F.analysts?F.analysts+' analystes':''}</span></div>
 </div></div>
@@ -1975,7 +1952,7 @@ return out.length?`<ul style="margin:0 0 0 16px;font-size:11px;line-height:1.6;c
 11. VUE — NEWS
 ═══════════════════════════════════════════════════════════════════════*/
 const NEWSF={src:'Toutes', scope:'all', lang:'all'};
-const newsProv=n=>String(n.src||'').split(' — ')[0];
+const newsProv=n=>String(n.src||'').split(' — ')[0].replace(/\s*\(.*\)\s*$/,'').replace(/^myFT\b.*/,'Financial Times').trim();
 const newsLang=n=>/Le Monde|Investing\.com France|Les Échos|BCE/.test(n.src||'')?'fr':'en';
 function viewNews(){
 const el=document.getElementById('v-news');
@@ -1989,13 +1966,13 @@ const shown=SNAPSHOT.news.filter(n=>(NEWSF.src==='Toutes'||newsProv(n)===NEWSF.s
 const items=shown.map(n=>`<div class="nw">
 <h4>${esc(n.h)}</h4><p>${esc(n.w)}</p>
 <div class="meta"><span${n.mine?' style="color:#e8a33d"':''}>${esc(n.src)}</span><span>${ago(n.ts)}</span>
-${n.syms.map(s=>`<button class="tag" data-sym="${s}" type="button">${s}</button>`).join('')}
-${n.url?`<a href="${n.url}" target="_blank" rel="noopener">${n.mine?'Lire sur FT.com':'Ouvrir la source'}<span class="sr-only"> (nouvel onglet)</span></a>`:''}</div></div>`).join('');
+${(n.syms||[]).map(s=>`<button class="tag" data-sym="${esc(s)}" type="button">${esc(s)}</button>`).join('')}
+${n.url?`<a href="${safeUrl(n.url)}" target="_blank" rel="noopener">${n.mine?'Lire sur FT.com':'Ouvrir la source'}<span class="sr-only"> (nouvel onglet)</span></a>`:''}</div></div>`).join('');
 const nl=(FTNL&&FTNL.items||[]).slice(0,12).map(n=>`<div class="nw">
 <div class="meta" style="margin-bottom:3px"><span class="st st-EOD" style="margin-left:0">${esc(n.nl||'FT')}</span><span>${ago(n.ts)}</span></div>
 <h4>${esc(n.h)}</h4>${n.w?`<p>${esc(n.w)}</p>`:''}
 ${(n.topics||[]).length?`<ul style="margin:0 0 5px 16px;font-size:11px;color:#a4adb8;line-height:1.55">${n.topics.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>`:''}
-<div class="meta"><a href="${esc(n.url)}" target="_blank" rel="noopener">Ouvrir la newsletter dans Gmail<span class="sr-only"> (nouvel onglet)</span></a></div></div>`).join('');
+<div class="meta"><a href="${safeUrl(n.url)}" target="_blank" rel="noopener">Ouvrir la newsletter dans Gmail<span class="sr-only"> (nouvel onglet)</span></a></div></div>`).join('');
 el.innerHTML=`<div class="g g23">
 <div style="display:flex;flex-direction:column;gap:9px;min-width:0">
 ${nl?`<div class="pnl"><h3>Mes newsletters FT<span class="rt">depuis Gmail · MAJ ${fmtDT(FTNL.generated_at)}</span></h3><div class="pbody flush">${nl}</div></div>`:''}
@@ -2237,7 +2214,7 @@ const M=MACRO, today=new Date().toISOString().slice(0,10);
 const perLbl=(d,f)=>{ const t=new Date(d+'T12:00:00'); return f==='Q'?`T${Math.floor(t.getMonth()/3)+1} ${t.getFullYear()}`:f==='W'||f==='D'?t.toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'numeric'}):t.toLocaleDateString('fr-FR',{month:'short',year:'numeric'}); };
 const prints=(M.eco.prints||[]).map(x=>`<tr><th scope="row" style="font-weight:400;color:var(--txt);text-align:left">${esc(x.k)}</th>
 <td style="font-weight:600">${fmtMacro(x.v,x.fmt)}</td><td class="mut">${fmtMacro(x.prev,x.fmt)}</td>
-<td style="font-size:10px;text-align:left"><b style="color:var(--txt)">${perLbl(x.ts,x.freq)}</b>${staleMark(x.ts,x.freq==='Q'?200:x.freq==='W'||x.freq==='D'?30:100)}<br><span class="mut">${x.pub?'publié/révisé le '+new Date(x.pub+'T12:00:00').toLocaleDateString('fr-FR'):''} · ${x.url?`<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.src)}</a>`:esc(x.src||'')}</span></td></tr>`).join('');
+<td style="font-size:10px;text-align:left"><b style="color:var(--txt)">${perLbl(x.ts,x.freq)}</b>${staleMark(x.ts,x.freq==='Q'?200:x.freq==='W'||x.freq==='D'?30:100)}<br><span class="mut">${x.pub?'publié/révisé le '+new Date(x.pub+'T12:00:00').toLocaleDateString('fr-FR'):''} · ${x.url?`<a href="${safeUrl(x.url)}" target="_blank" rel="noopener">${esc(x.src)}</a>`:esc(x.src||'')}</span></td></tr>`).join('');
 const cal=(M.eco.calendar||[]).map(c=>{ const past=c.d<today, now=c.d===today;
 return `<tr style="${past?'opacity:.55':''}"><th scope="row" style="font-weight:${now?700:400};color:var(--txt)">${dfr(c.d)}</th>
 <td style="text-align:left;white-space:normal">${c.imp===3?'<b>':''}${esc(c.ev)}${c.imp===3?'</b>':''} <span class="mut">${esc(c.ctry)}</span>${/FOMC\)|Federal Funds Rate/i.test(c.ev)?fomcDetail(c.d||String(c.ts).slice(0,10),M):''}</td>
@@ -2317,7 +2294,7 @@ const recent=Object.entries(SNAPSHOT.fundamentals).filter(([k,f])=>f.ts&&f.name)
 const missing=stocks.filter(x=>!hasF(x.s)).slice(0,12);
 el.innerHTML=`<div class="g g2">
 <div class="pnl span2"><h3>Couverture des fondamentaux<span class="rt">roulement de 120 titres par passage · tout le catalogue en ~4 h</span></h3><div class="pbody">
-${tot?`<div class="statrow" style="border:none;padding:0 0 8px"><div class="stat"><span class="l">TITRES COUVERTS</span><span class="n">${okT} / ${tot}</span><span class="s">${nf(okT/tot*100,0)} % du catalogue</span></div>
+${tot?`<div class="statrow" style="border:none;padding:0 0 8px"><div class="stat"><span class="l">TITRES COUVERTS</span><span class="n">${okT} / ${tot}</span><span class="s">${nf(Math.floor(okT/tot*1000)/10,1)} % des actions du catalogue</span></div>
 <div class="stat"><span class="l">DERNIER PASSAGE</span><span class="n" style="font-size:15px">${FUND_TS?fmtDT(FUND_TS):'—'}</span><span class="s">fundamentals.json</span></div>
 <div class="stat"><span class="l">RESTANTS</span><span class="n">${tot-okT}</span><span class="s">≈ ${Math.ceil((tot-okT)/120)} passage(s), soit ${Math.ceil((tot-okT)/120)*30} min</span></div></div>
 <div class="g g2"><div><table><caption class="sr-only">Couverture par indice</caption><tbody>${covRows}</tbody></table></div>
@@ -2437,7 +2414,7 @@ ECON=d.items||[]; ECON_TS=d.generated_at; return true;
 }catch(e){ console.info('economics.json indisponible ('+e.message+')'); return false; }
 }
 const ecoGet=c=>(ECON||[]).find(e=>e.code===String(c||'').toUpperCase().replace(/^ECONOMICS:/,''));
-const ecoItems=()=>(ECON||[]).map(e=>({s:e.code, n:`${e.n} — ${e.ctry}`, c:'Économie', p:e.last, pct:null, st:'EOD', ts:e.date, eco:1}));
+const ecoItems=()=>(ECON||[]).map(e=>({s:e.code, n:`${String(e.n)} — ${String(e.ctry)}`, c:'Économie', p:e.last, pct:null, st:'EOD', ts:e.date, eco:1}));
 function ecoFmt(v,e){ if(v==null||!isFinite(v)) return '—'; const u=e.unit, a=Math.abs(v);
 const d=a>=1000?0:u==='indice'?1:2;
 return nf(v,d)+(u==='%'?' %':u==='pts'?' pt':u&&u!=='inscriptions'?' '+u:''); }
@@ -2460,7 +2437,7 @@ el.innerHTML=`
 <div class="stat"><span class="l">PRÉCÉDENT</span><span class="n">${ecoFmt(e.prev,e)}</span><span class="s">${ecoPeriod(e,e.h[e.h.length-2][0])}</span></div>
 <div class="stat"><span class="l">VARIATION</span><span class="n ${cls(dlt)}">${dlt>0?'+':''}${nf(dlt,Math.abs(dlt)>=100?0:2)}${du}</span><span class="s">sur la dernière publication</span></div>
 <div class="stat"><span class="l">PÉRIODE</span><span class="n" style="font-size:16px">${ecoPeriod(e,e.date)}</span><span class="s">série ${esc(e.freq)}</span></div>
-<div class="stat"><span class="l">SOURCE</span><span class="n" style="font-size:13px"><a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.src)}</a></span><span class="s">série ${esc(e.sid)}</span></div>
+<div class="stat"><span class="l">SOURCE</span><span class="n" style="font-size:13px"><a href="${safeUrl(e.url)}" target="_blank" rel="noopener">${esc(e.src)}</a></span><span class="s">série ${esc(e.sid)}</span></div>
 </div></div>
 <div class="pnl" style="margin-bottom:9px"><h3>${esc(e.n)} — ${esc(e.ctry)}<span class="rt">${esc(e.unit)}</span></h3>
 <div class="ctl" style="align-items:center">
@@ -2888,7 +2865,7 @@ const items=[...local.map(n=>({h:n.h,w:n.w,src:n.src,ts:n.ts,url:n.url})),
 ...yh.map(n=>({h:n.title,src:n.publisher||'Yahoo Finance',ts:new Date(n.providerPublishTime*1000).toISOString(),url:n.link}))]
 .filter((n,i,a)=>a.findIndex(m=>m.h===n.h)===i).sort((a,b)=>String(b.ts).localeCompare(String(a.ts))).slice(0,20);
 box.innerHTML=`<h3>CN — Actualités du titre<span class="rt">${items.length} article${items.length>1?'s':''} citant ${esc(words[0]||root)}${yhAll>yh.length?` · ${yhAll-yh.length} hors sujet écartés`:''}</span></h3><div class="pbody flush" style="max-height:420px;overflow-y:auto">
-${items.length?items.map(n=>`<div class="nw"><h4>${esc(n.h)}</h4>${n.w?`<p>${esc(n.w)}</p>`:''}<div class="meta"><span>${esc(n.src)}</span><span>${ago(n.ts)}</span>${n.url?`<a href="${esc(n.url)}" target="_blank" rel="noopener">Ouvrir<span class="sr-only"> (nouvel onglet)</span></a>`:''}</div></div>`).join('')
+${items.length?items.map(n=>`<div class="nw"><h4>${esc(n.h)}</h4>${n.w?`<p>${esc(n.w)}</p>`:''}<div class="meta"><span>${esc(n.src)}</span><span>${ago(n.ts)}</span>${n.url?`<a href="${safeUrl(n.url)}" target="_blank" rel="noopener">Ouvrir<span class="sr-only"> (nouvel onglet)</span></a>`:''}</div></div>`).join('')
 :'<div class="note na">Aucune actualité trouvée pour ce titre.</div>'}</div>`;
 }
 
@@ -2964,7 +2941,7 @@ for(const [s,f] of Object.entries(SNAPSHOT.fundamentals)){ if(!f||!f.mcap) conti
 if(F.idx&&!(u.l||[]).includes(F.idx)) continue; if(F.sec&&f.sector!==F.sec) continue;
 const q=SNAPSHOT.quotes[s], px=q&&q.p!=null?q.p:u.p, rate=fx[normCcy(f.ccy||'USD')];
 const cap=rate?f.mcap*rate:null, up=f.target&&px?(f.target/px-1)*100:null;
-const r={s,n:f.name||u.n||s,sec:SECT_FR[f.sector]||f.sector||'',cap,pe:f.pe,fpe:f.fpe,div:f.divYield,om:f.opMargin,gr:f.revGrowth,roe:f.roe,de:f.debtEq,up,pc:q&&q.pct!=null?q.pct:u.pct};
+const r={s,n:f.name||u.n||s,sec:SECT_FR[f.sector]||f.sector||'Non classé',cap,pe:f.pe,fpe:f.fpe,div:f.divYield,om:f.opMargin,gr:f.revGrowth,roe:f.roe,de:f.debtEq,up,pc:q&&q.pct!=null?q.pct:u.pct};
 const ok=(v,min,max)=>(min==null||(v!=null&&v>=min))&&(max==null||(v!=null&&v>0&&v<=max));
 if(!ok(cap!=null?cap/1e9:null,num('capMin'),null)||!ok(r.pe,null,num('peMax'))||!ok(r.fpe,null,num('fpeMax'))||!ok(r.div,num('divMin'),null)
 ||!ok(r.om,num('omMin'),null)||!ok(r.gr,num('grMin'),null)||!ok(r.roe,num('roeMin'),null)||!ok(r.de,null,num('deMax'))||!ok(up,num('upMin'),null)){
@@ -3159,15 +3136,24 @@ if(h>24*4.5) return 'STALE';                          // plus de 4,5 jours : au-
 if(st0==='DELAYED_15M'&&h>1.5) return 'AGED';         // annoncé différé mais relevé il y a plus d'1 h 30
 return st0;
 }
+/** Libellé de la séance des variations : « du jour » si les marchés ont coté aujourd'hui, sinon la date de la dernière séance. */
+function sessionLbl(){ const q=SNAPSHOT.quotes.SPX||SNAPSHOT.quotes.CAC; if(!q||!q.ts) return 'du jour';
+const d=new Date(q.ts.length===10?q.ts+'T21:00:00Z':q.ts), today=new Date().toLocaleDateString('fr-CA',{timeZone:'Europe/Paris'});
+return d.toLocaleDateString('fr-CA',{timeZone:'Europe/Paris'})===today?'du jour':'de la dernière séance ('+d.toLocaleDateString('fr-FR',{weekday:'short',day:'2-digit',month:'2-digit'})+')'; }
+const YAHOO_OF={SPX:'^GSPC',NDX:'^NDX',DJI:'^DJI',RUT:'^RUT',VIX:'^VIX',N225:'^N225',HSI:'^HSI',SHCOMP:'000001.SS',STI:'^STI',
+UKX:'^FTSE',DAX:'^GDAXI',CAC:'^FCHI',SX5E:'^STOXX50E',EURUSD:'EURUSD=X',USDJPY:'JPY=X',GBPUSD:'GBPUSD=X',DXY:'DX-Y.NYB',XAU:'GC=F',CL:'CL=F',BRENT:'BZ=F',BTC:'BTC-USD'};
 function harmonize(){
 const U=new Map((UNIV||[]).map(u=>[u.s,u]));
 for(const [s,q] of Object.entries(SNAPSHOT.quotes)){ if(q.st0===undefined) q.st0=q.st;
-const u=U.get(s)||U.get(({SPX:'^GSPC',NDX:'^NDX',DJI:'^DJI',EURUSD:'EURUSD=X',XAU:'GC=F',BTC:'BTC-USD'})[s]);
+const u=U.get(s)||U.get(YAHOO_OF[s]);
 if(u&&q.p!=null&&q.ts){ u.p=q.p; u.pct=q.pct; u.ts=q.ts; u.st0=q.st0; if(q.h) u.h=q.h; }
 const sec=SNAPSHOT.securities.find(x=>x.sym===s); q.st=ageStatus(q.st0,q.ts,sec&&sec.cls,s); }
 for(const u of UNIV||[]){ if(u.st0===undefined) u.st0=u.st; if(!u.nw) u.st=ageStatus(u.st0,u.ts,u.c,u.s);
 if(u.n===u.s&&SNAPSHOT.fundamentals[u.s]&&SNAPSHOT.fundamentals[u.s].name) u.n=SNAPSHOT.fundamentals[u.s].name; }
 for(const [s,F] of Object.entries(SNAPSHOT.fundamentals)){ if(!F) continue;
+if(!(F.mcap>0)) delete F.mcap;                                  // capitalisation nulle = donnée absente
+for(const k of ['pe','fpe']) if(F[k]>300){ F[k+'_ns']=F[k]; F[k]=null; }   // bénéfice quasi nul : PER non significatif
+if(!F.sector&&Object.keys(F).length>4) F.sector='Non classé';
 const q=SNAPSHOT.quotes[s], u=U.get(s), px=q&&q.p!=null?q.p:u&&u.p!=null?u.p:null;
 if(F.div>0&&px>0){ let y=F.div/px*100; if(SUBUNIT(F.ccy)){ if(y<0.05) y*=100; else if(y>40) y/=100; } if(y>0&&y<40) F.divYield=Math.round(y*1000)/1000; }
 else if(F.divYield>40) delete F.divYield; }
