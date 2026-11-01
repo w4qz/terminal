@@ -1032,11 +1032,24 @@ const rates = SNAPSHOT.rates.map(r=>`<tr>
 const curve = SNAPSHOT.curve.map(c=>`<tr><th scope="row" class="sym">${c.t}</th>
 <td>${c.y!=null?nf(c.y,2)+' %'+badge(c.st):'<span class="na">non relevé</span>'}</td></tr>`).join('');
 
+// Indicateurs macro : séries automatiques (economics.json) ; les relevés manuels du 31/10 ne servent qu'en secours.
+const MK=[['USINTR','Fed — taux directeur'],['USIRYY','Inflation US (a/a)'],['USCIR','Inflation sous-jacente US'],['USUR','Chômage US'],['USGDPQQ','PIB US (t/t annualisé)'],
+['EUINTR','BCE — taux de dépôt'],['EUIRYY','Inflation zone euro'],['EUUR','Chômage zone euro'],['FRIRYY','Inflation France'],['GBIRYY','Inflation Royaume-Uni'],['JPIRYY','Inflation Japon'],['CNIRYY','Inflation Chine'],['US10Y','Taux 10 ans US'],['DE10Y','Taux 10 ans Allemagne']];
+const macroLive = ECON&&ECON.length ? MK.map(([c,l])=>{ const e=ecoGet(c); if(!e) return ''; const dv=e.last-e.prev;
+return `<tr class="clk" data-eco="${esc(c)}" tabindex="0" role="button"><th scope="row" style="text-align:left;font-weight:400;color:var(--txt)">${esc(l)}</th><td style="font-weight:600">${ecoFmt(e.last,e)}</td>
+<td class="mut">${ecoFmt(e.prev,e)}</td><td class="${cls(dv)}" style="font-size:10px">${dv>0?'▲':dv<0?'▼':'='}</td><td class="mut" style="text-align:left;font-size:10px">${ecoPeriod(e,e.date)}${staleMark(e.date,e.freq==='trimestrielle'?200:100)} · ${esc(e.src.split(' ')[0])}</td></tr>`; }).join('') : '';
 const macro = SNAPSHOT.macro.map(m=>`<tr>
 <th scope="row" style="text-align:left;font-weight:400;color:var(--txt)">${esc(m.k)}</th><td style="font-weight:600">${esc(m.v)}${badge(m.st)}</td>
 <td class="mut">${esc(m.prev)}</td>
 <td class="mut" style="text-align:left;font-size:10px">${esc(m.note)}</td></tr>`).join('');
 
+// Calendrier : consensus automatique (macro.json) ; relevé manuel seulement si le fichier manque.
+const CR=(MACRO&&MACRO.eco&&MACRO.eco.consensus&&MACRO.eco.consensus.rows)||[];
+const calLive = CR.length ? CR.filter(c=>c.imp>=2).slice(0,14).map(c=>{ const t=new Date(c.ts), past=t<new Date();
+return `<tr style="${past&&!c.act?'opacity:.6':''}"><th scope="row" style="font-weight:400;color:var(--txt);white-space:nowrap">${t.toLocaleString('fr-FR',{weekday:'short',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'})}</th>
+<td style="text-align:left">${esc(c.ev)} <span class="mut">${esc(c.ctry)}</span></td><td><span aria-hidden="true">${'●'.repeat(c.imp)}</span></td>
+<td>${c.cons?esc(c.cons):'<span class="na">—</span>'}</td><td>${c.prev?esc(c.prev):'<span class="na">—</span>'}</td>
+<td style="font-weight:600">${c.act?esc(c.act):past?'<span class="na">non relevé</span>':'<span class="na">à venir</span>'}</td></tr>`; }).join('') : '';
 const cal = SNAPSHOT.calendar.map(c=>{
 const d = new Date(c.d+'T12:00:00');
 const dateTxt = d.toLocaleDateString('fr-FR',{weekday:'short',day:'2-digit',month:'short'});
@@ -1066,13 +1079,13 @@ ${hmPanelHtml()}
 <div class="pnl"><h3>Change et matières premières<span class="rt">${LIVE?"Yahoo Finance, MAJ toutes les 30 min":"FX, pétrole, or via FT 30/10"}</span></h3><div class="pbody flush">${T(fx,'Change et matières premières')}</div></div>
 <div class="pnl span2"><h3>Banques centrales</h3><div class="pbody flush"><table><caption class="sr-only">Taux directeurs des banques centrales</caption><tbody>${rates}</tbody></table></div></div>
 <div class="pnl span2" id="mkt-sov"><h3>Taux souverains<span class="rt">3M · 2A · 5A · 10A · 30A · cliquez un pays pour sa courbe (GC)</span></h3><div class="pbody flush">${sovHtml()}</div></div>
-<div class="pnl"><h3>Indicateurs macro</h3><div class="pbody flush"><table><caption class="sr-only">Indicateurs macroéconomiques</caption><tbody>${macro}</tbody></table></div></div>
-<div class="pnl span2"><h3>Calendrier économique</h3><div class="pbody flush">
+<div class="pnl"><h3>Indicateurs macro<span class="rt">${macroLive?'FRED, BCE, BoE · mis à jour chaque jour · cliquez pour la série':'<span class="neg">relevé manuel du 31/10, non actualisé</span>'}</span></h3><div class="pbody flush"><table><caption class="sr-only">Indicateurs macroéconomiques</caption><tbody>${macroLive||macro}</tbody></table></div></div>
+<div class="pnl span2"><h3>Calendrier économique<span class="rt">${calLive?'cette semaine et la suivante · consensus Forex Factory · heures de Paris':'<span class="neg">relevé manuel du 31/10, non actualisé</span>'}</span></h3><div class="pbody flush">
 <table><caption class="sr-only">Calendrier économique</caption><thead><tr><th scope="col">Date</th><th scope="col" style="text-align:left">Événement</th><th scope="col">Impact</th>
-<th scope="col">Consensus</th><th scope="col">Précédent</th><th scope="col">Publié</th></tr></thead><tbody>${cal}</tbody></table></div></div>
+<th scope="col">Consensus</th><th scope="col">Précédent</th><th scope="col">Publié</th></tr></thead><tbody>${calLive||cal}</tbody></table></div></div>
 </div>`;
 wireSymbolClicks(el);
-wireHeatmap(el); wireSov(el);
+wireHeatmap(el); wireSov(el); wireEco(el);
 }
 
 /*═══════════════════════════════════════════════════════════════════════
@@ -1983,8 +1996,8 @@ ${nl?`<div class="pnl"><h3>Mes newsletters FT<span class="rt">depuis Gmail · MA
 <label class="mut" style="font-size:10px">Source <select id="nsrc" style="background:var(--bg);border:1px solid var(--line);color:var(--txt);font-size:11px;padding:1px 3px">${provs.map(p=>`<option${p===NEWSF.src?' selected':''}>${esc(p)}</option>`).join('')}</select></label></div>
 <div class="pbody flush">${items||'<div class="note">Aucun article pour ces filtres.</div>'}</div></div>
 </div>
-<div style="display:flex;flex-direction:column;gap:9px;min-width:0">${SNAPSHOT.summary&&SNAPSHOT.summary.text?`<div class="pnl" ><h3>Lecture de marché — IA<span class="rt">${esc(SNAPSHOT.summary.model)} · ${fmtDT(SNAPSHOT.summary.ts)}</span></h3><div class="pbody"><div class="note" style="padding:0;white-space:pre-line">${esc(SNAPSHOT.summary.text)}</div><div class="warn" style="margin-top:8px">Synthèse générée automatiquement à partir des titres RSS et des cotations. Peut contenir des erreurs ; ne constitue pas un conseil en investissement. <span class="st st-SIMULATED">IA</span></div></div></div>`:''}
-<div class="pnl"><h3>Lecture de la semaine (archive FT)<span class="rt">actualisé 31/10 via les newsletters Financial Times du 20 au 30/10</span></h3><div class="pbody">
+<div style="display:flex;flex-direction:column;gap:9px;min-width:0">${SNAPSHOT.summary&&SNAPSHOT.summary.text?`<div class="pnl" ><h3>Lecture de marché — texte généré par IA (Gemini)<span class="rt">${esc(SNAPSHOT.summary.model)} · rédigé le ${fmtDT(SNAPSHOT.summary.ts)}${LIVE&&Date.parse(LIVE.generated_at)-Date.parse(SNAPSHOT.summary.ts)>15*6e4?' · <span class="neg">antérieur aux derniers cours</span>':''}</span></h3><div class="pbody"><div class="note" style="padding:0;white-space:pre-line">${esc(SNAPSHOT.summary.text)}</div><div class="warn" style="margin-top:8px">Synthèse générée automatiquement à partir des titres RSS et des cotations. Peut contenir des erreurs ; ne constitue pas un conseil en investissement. <span class="st st-SIMULATED">IA</span></div></div></div>`:''}
+<div class="pnl" style="${Date.now()<Date.parse('2026-11-08')?'':'display:none'}"><h3>Lecture de la semaine (archive FT)<span class="rt">actualisé 31/10 via les newsletters Financial Times du 20 au 30/10</span></h3><div class="pbody">
 <div class="note" style="padding:0" data-keep="1">
 <b>Le marché doute de l'IA au moment même où l'IA entre en bourse.</b> Les résultats trimestriels ont transformé
 les champions du secteur en « incinérateurs de cash » : Alphabet a perdu 13 % (−500 Md$, deuxième plus forte
@@ -2910,7 +2923,7 @@ async function viewEqs(){
 const el=document.getElementById('v-eqs');
 const F=EQS.f, secs=[...new Set(Object.values(SNAPSHOT.fundamentals).map(f=>f&&f.sector).filter(Boolean))].sort();
 const inp=(k,l,ph)=>`<div class="f"><label for="eq_${k}">${l}</label><input id="eq_${k}" data-k="${k}" type="number" step="any" value="${esc(F[k])}" placeholder="${ph}"></div>`;
-el.innerHTML=`<div class="pnl" style="margin-bottom:9px"><h3>EQS — Filtre d'actions<span class="rt">${Object.keys(SNAPSHOT.fundamentals).length} titres avec fondamentaux · Yahoo Finance</span></h3>
+el.innerHTML=`<div class="pnl" style="margin-bottom:9px"><h3>EQS — Filtre d'actions<span class="rt">${(UNIV||[]).filter(u=>u.c==='Action'&&SNAPSHOT.fundamentals[u.s]&&Object.keys(SNAPSHOT.fundamentals[u.s]).length>4).length} actions du catalogue avec fondamentaux (même décompte que Diagnostic) · Yahoo Finance</span></h3>
 <form class="ctl" id="eqform" novalidate style="align-items:flex-end">
 <div class="f w"><label for="eq_idx">Indice</label><select id="eq_idx" data-k="idx" style="background:var(--bg);border:1px solid var(--line);color:var(--txt);font-size:11px;padding:2px"><option value="">Tous</option>${hmIndices().map(l=>`<option${F.idx===l?' selected':''}>${esc(l)}</option>`).join('')}</select></div>
 <div class="f w"><label for="eq_sec">Secteur</label><select id="eq_sec" data-k="sec" style="background:var(--bg);border:1px solid var(--line);color:var(--txt);font-size:11px;padding:2px"><option value="">Tous</option>${secs.map(s=>`<option value="${esc(s)}"${F.sec===s?' selected':''}>${esc(SECT_FR[s]||s)}</option>`).join('')}</select></div>
@@ -3139,7 +3152,7 @@ return st0;
 /** Libellé de la séance des variations : « du jour » si les marchés ont coté aujourd'hui, sinon la date de la dernière séance. */
 function sessionLbl(){ const q=SNAPSHOT.quotes.SPX||SNAPSHOT.quotes.CAC; if(!q||!q.ts) return 'du jour';
 const d=new Date(q.ts.length===10?q.ts+'T21:00:00Z':q.ts), today=new Date().toLocaleDateString('fr-CA',{timeZone:'Europe/Paris'});
-return d.toLocaleDateString('fr-CA',{timeZone:'Europe/Paris'})===today?'du jour':'de la dernière séance ('+d.toLocaleDateString('fr-FR',{weekday:'short',day:'2-digit',month:'2-digit'})+')'; }
+return d.toLocaleDateString('fr-CA',{timeZone:'Europe/Paris'})===today?'du jour':'de la dernière séance ('+d.toLocaleDateString('fr-FR',{weekday:'short',day:'2-digit',month:'2-digit',timeZone:'Europe/Paris'})+')'; }
 const YAHOO_OF={SPX:'^GSPC',NDX:'^NDX',DJI:'^DJI',RUT:'^RUT',VIX:'^VIX',N225:'^N225',HSI:'^HSI',SHCOMP:'000001.SS',STI:'^STI',
 UKX:'^FTSE',DAX:'^GDAXI',CAC:'^FCHI',SX5E:'^STOXX50E',EURUSD:'EURUSD=X',USDJPY:'JPY=X',GBPUSD:'GBPUSD=X',DXY:'DX-Y.NYB',XAU:'GC=F',CL:'CL=F',BRENT:'BZ=F',BTC:'BTC-USD'};
 function harmonize(){
@@ -3157,6 +3170,11 @@ if(!F.sector&&Object.keys(F).length>4) F.sector='Non classé';
 const q=SNAPSHOT.quotes[s], u=U.get(s), px=q&&q.p!=null?q.p:u&&u.p!=null?u.p:null;
 if(F.div>0&&px>0){ let y=F.div/px*100; if(SUBUNIT(F.ccy)){ if(y<0.05) y*=100; else if(y>40) y/=100; } if(y>0&&y<40) F.divYield=Math.round(y*1000)/1000; }
 else if(F.divYield>40) delete F.divYield; }
+// BNS : taux officiel lu dans les séries économiques ; PBoC : pas de source gratuite, dit clairement.
+{ const snb=(SNAPSHOT.rates||[]).find(r=>r.cb==='SNB'), ch=typeof ecoGet==='function'?ecoGet('CHINTR'):null;
+if(snb&&ch){ snb.v=nf(ch.last,2)+' %'; snb.st='EOD'; snb.ts=ch.date; snb.src=ch.src; snb.name='Taux directeur';
+snb.note='Valeur au '+new Date(ch.date+'T12:00:00').toLocaleDateString('fr-FR')+' — source : '+ch.src+' (série '+ch.sid+').'; }
+const pb=(SNAPSHOT.rates||[]).find(r=>r.cb==='PBoC'); if(pb) pb.note='Pas de source automatique gratuite : dernière valeur relevée à la main le 20/08/2026 (LPR 5 ans : 3,50 %). À vérifier sur pbc.gov.cn.'; }
 // Banques centrales : une série officielle arrêtée ne doit pas passer pour la valeur actuelle.
 for(const r of SNAPSHOT.rates||[]){ if(!r.ts) continue; const d=(Date.now()-Date.parse(r.ts+'T12:00:00Z'))/864e5;
 if(d>120){ r.st='STALE'; if(!/série arrêtée/.test(r.note||'')) r.note=`⚠ Série arrêtée au ${new Date(r.ts+'T12:00:00').toLocaleDateString('fr-FR')} : valeur probablement dépassée. `+(r.note||''); } }
