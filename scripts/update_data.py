@@ -74,12 +74,12 @@ MAX_NEWS = 100
 # Mots-clés → tickers, pour relier une news à une fiche du terminal.
 TAGS = {
     "NVDA": r"\bnvidia\b", "ASTS": r"ast spacemobile",
-    "SPX": r"s&p ?500|wall street", "NDX": r"nasdaq|big tech|tech stocks",
+    "SPX": r"s&p ?500|wall street|us stocks|actions américaines", "NDX": r"nasdaq",
     "BRENT": r"\bbrent\b|\boil\b|pétrole|opec", "CL": r"\bwti\b|crude",
-    "XAU": r"\bgold\b|\bor\b ", "BTC": r"bitcoin|crypto|binance",
+    "XAU": r"\bgold price|\bgold\b(?! medal)|prix de l'or|cours de l'or|\bl'or\b", "BTC": r"bitcoin|\bcrypto|binance",
     "EURUSD": r"\becb\b|\bbce\b|lagarde|euro\b", "USDJPY": r"\byen\b|bank of japan|\bboj\b",
-    "N225": r"nikkei|japan", "HSI": r"hang seng|hong kong", "UKX": r"ftse|bank of england",
-    "CAC": r"cac 40|\bfrance\b|french", "DAX": r"\bdax\b|germany|german",
+    "N225": r"nikkei|topix|tokyo stocks|japanese stocks", "HSI": r"hang seng|hong kong stocks", "UKX": r"ftse|bank of england|\bboe\b",
+    "CAC": r"cac 40|cac40|bourse de paris|euronext paris|paris stocks", "DAX": r"\bdax\b|frankfurt stock|german stocks",
 }
 
 
