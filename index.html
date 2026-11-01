@@ -90,6 +90,7 @@ vertical-align:middle;margin-left:5px;font-weight:600;white-space:nowrap}
 .st-INDICATIVE{color:var(--hot);border-color:#6b4a15;background:#241a08}
 .st-SIMULATED{color:#bb98e6;border-color:#4a3268;background:#1a1226}
 .st-STALE{color:var(--neg);border-color:#5c2020;background:#240d0d}
+.st-AGED{color:var(--hot);border-color:#6b4a15;background:#241a08}
 .na{color:var(--txt3);font-style:italic}
 
 /* ---------- controls ---------- */
@@ -315,11 +316,11 @@ et non déclaratif.
 ═══════════════════════════════════════════════════════════════════════*/
 const STATUS = {
 REALTIME:'REALTIME', DELAYED_15M:'DELAYED_15M', EOD:'EOD',
-SNAPSHOT:'SNAPSHOT', INDICATIVE:'INDICATIVE', SIMULATED:'SIMULATED', STALE:'STALE'
+SNAPSHOT:'SNAPSHOT', INDICATIVE:'INDICATIVE', SIMULATED:'SIMULATED', STALE:'STALE', AGED:'AGED'
 };
 const STATUS_LABEL = {
 REALTIME:'Temps réel', DELAYED_15M:'Différé 15 min', EOD:'Clôture',
-SNAPSHOT:'Instantané', INDICATIVE:'Indicatif', SIMULATED:'Simulé', STALE:'Périmé'
+SNAPSHOT:'Instantané', INDICATIVE:'Indicatif', SIMULATED:'Simulé', STALE:'Périmé', AGED:'Relevé ancien'
 };
 
 function dp(value, {ts, source, status, currency='USD', unit=null}={}){
@@ -1066,7 +1067,7 @@ return `<tr>
 <td><span class="sr-only">Impact : ${c.imp} sur 3.</span><span aria-hidden="true">${'●'.repeat(c.imp)}</span></td>
 <td>${c.cons?esc(c.cons):'<span class="na">—</span>'}</td>
 <td>${c.prev?esc(c.prev):'<span class="na">—</span>'}</td>
-<td style="font-weight:600">${c.act?esc(c.act):'<span class="na">à venir</span>'}</td>
+<td style="font-weight:600">${c.act?esc(c.act):c.d<new Date().toISOString().slice(0,10)?'<span class="na">non relevé</span>':'<span class="na">à venir</span>'}</td>
 </tr>`;
 }).join('');
 
@@ -1351,6 +1352,7 @@ ${pfCalendarHtml(rows,nav,B)}
 <div class="pnl"><h3>Performance historique — poids actuels<span class="rt" id="pfperfinfo"></span></h3>
 <div class="ctl" style="align-items:center"><div class="rng" role="group" aria-label="Période">${['3M','6M','1A','2A'].map(r=>`<button type="button" data-pr="${r}" class="${r===(S.pfPerf||'1A')?'on':''}">${r}</button>`).join('')}</div>
 <span class="mut" style="font-size:10px;margin-left:auto" id="pfperfsum"></span></div>
+<div class="note" style="padding:6px 9px 0;color:var(--hot)" data-keep="1">Performance reconstituée : les poids actuels sont appliqués au passé (rééquilibrage quotidien). Ce n'est pas la performance réellement obtenue par le client.</div>
 <div class="pbody"><canvas id="pfperfcv" height="200" role="img" aria-label="Performance du portefeuille contre l'indice monde"></canvas><div id="pfcontrib" style="margin-top:8px"></div></div></div>
 <div class="pnl"><h3>Diversification — corrélations<span class="rt">2 ans, rendements quotidiens</span></h3><div class="pbody" id="pfcorr"><div class="note" style="padding:0">Calcul…</div></div></div>
 </div>
@@ -1525,8 +1527,10 @@ function pfRenderPerf(hover){
 const L=S.pfLast, cur=L&&L.cur, cv=document.getElementById('pfperfcv'); if(!cur||!cv) return;
 const per=S.pfPerf||'1A', n=Math.min(cur.Rb.length,{'3M':63,'6M':126,'1A':252,'2A':9999}[per]), off=cur.Rb.length-n;
 const rf=S.pfp.rf/100, dts=cur.dates.slice(off), pv=[1], bv=[1]; const contrib=cur.syms.map(()=>0); let cc=0;
-for(let t=off;t<cur.Rb.length;t++){ let r=cur.wc*rf/252; cc+=cur.wc*rf/252;
-cur.R.forEach((a,i)=>{ r+=cur.w[i]*a[t]; contrib[i]+=cur.w[i]*a[t]; });
+// Attribution exacte : chaque jour, la contribution d'une ligne est pondérée par la valeur atteinte
+// la veille (base 1 au départ). La somme des contributions égale donc la performance composée affichée.
+for(let t=off;t<cur.Rb.length;t++){ const base=pv[pv.length-1]; let r=cur.wc*rf/252; cc+=base*cur.wc*rf/252;
+cur.R.forEach((a,i)=>{ r+=cur.w[i]*a[t]; contrib[i]+=base*cur.w[i]*a[t]; });
 pv.push(pv[pv.length-1]*(1+r)); bv.push(bv[bv.length-1]*(1+cur.Rb[t])); }
 const pr=(pv[pv.length-1]-1)*100, br=(bv[bv.length-1]-1)*100;
 const sum=document.getElementById('pfperfsum'); if(sum) sum.innerHTML=`Portefeuille <b class="${cls(pr)}">${pct(pr,1)}</b> · ACWI <b class="${cls(br)}">${pct(br,1)}</b> · écart <b class="${cls(pr-br)}">${pct(pr-br,1)}</b>`;
@@ -1557,7 +1561,7 @@ const cb=document.getElementById('pfcontrib');
 if(cb) cb.innerHTML=`<div style="font-size:9px;color:var(--txt3);margin-bottom:4px">CONTRIBUTION À LA PERFORMANCE (${per}, en points)</div>`+items.map(([s,v])=>`<div style="display:grid;grid-template-columns:80px 1fr 64px;gap:8px;align-items:center;font-size:11px;padding:1px 0">
 <span class="sym">${esc(s)}</span><div style="position:relative;height:10px;background:#14171b"><div style="position:absolute;top:0;bottom:0;${v>=0?'left:50%':'right:50%'};width:${Math.abs(v)/mx*50}%;background:${v>=0?'#2fbf6b':'#e04a4a'}"></div><div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:#4a525c"></div></div>
 <span class="${cls(v)}" style="text-align:right">${v>0?'+':''}${nf(v,1)}</span></div>`).join('')+
-`<div class="note" style="padding:6px 0 0">Poids actuels appliqués à l'historique en ${esc(cur.base)}, rééquilibrage quotidien : c'est ce qu'aurait fait ce portefeuille, pas la performance réellement obtenue. Contributions additives (somme des poids × rendements quotidiens).</div>`;
+`<div class="note" style="padding:6px 0 0">Contributions en points de performance : leur somme (${pct(items.reduce((a,x)=>a+x[1],0),1)}) égale la performance du portefeuille sur la période. Chaque jour, la contribution d'une ligne = son poids × son rendement × la valeur atteinte la veille.</div>`;
 const info=document.getElementById('pfperfinfo'); if(info) info.textContent=`en ${cur.base} · contre MSCI ACWI`;
 }
 /** Matrice de corrélation en carte de chaleur + ratio de diversification + exposition aux devises. */
@@ -1986,9 +1990,9 @@ ${nl?`<div class="pnl"><h3>Mes newsletters FT<span class="rt">depuis Gmail · MA
 <div class="pnl"><h3>Fil d'actualité<span class="rt">myFT, FT, CNBC, BBC, Le Monde · cliquez un ticker</span></h3>
 <div class="pbody flush">${items}</div></div>
 </div>
-<div style="display:flex;flex-direction:column;gap:9px;min-width:0">${SNAPSHOT.summary?`<div class="pnl" ><h3>Lecture de marché — IA<span class="rt">${esc(SNAPSHOT.summary.model)} · ${fmtDT(SNAPSHOT.summary.ts)}</span></h3><div class="pbody"><div class="note" style="padding:0;white-space:pre-line">${esc(SNAPSHOT.summary.text)}</div><div class="warn" style="margin-top:8px">Synthèse générée automatiquement à partir des titres RSS et des cotations. Peut contenir des erreurs ; ne constitue pas un conseil en investissement. <span class="st st-SIMULATED">IA</span></div></div></div>`:''}
+<div style="display:flex;flex-direction:column;gap:9px;min-width:0">${SNAPSHOT.summary&&SNAPSHOT.summary.text?`<div class="pnl" ><h3>Lecture de marché — IA<span class="rt">${esc(SNAPSHOT.summary.model)} · ${fmtDT(SNAPSHOT.summary.ts)}</span></h3><div class="pbody"><div class="note" style="padding:0;white-space:pre-line">${esc(SNAPSHOT.summary.text)}</div><div class="warn" style="margin-top:8px">Synthèse générée automatiquement à partir des titres RSS et des cotations. Peut contenir des erreurs ; ne constitue pas un conseil en investissement. <span class="st st-SIMULATED">IA</span></div></div></div>`:''}
 <div class="pnl"><h3>Lecture de la semaine (archive FT)<span class="rt">actualisé 31/10 via les newsletters Financial Times du 20 au 30/10</span></h3><div class="pbody">
-<div class="note" style="padding:0">
+<div class="note" style="padding:0" data-keep="1">
 <b>Le marché doute de l'IA au moment même où l'IA entre en bourse.</b> Les résultats trimestriels ont transformé
 les champions du secteur en « incinérateurs de cash » : Alphabet a perdu 13 % (−500 Md$, deuxième plus forte
 destruction de valeur de l'histoire de Wall Street) après plus de 50 Md$ de dépenses IA et l'aveu que son « AI mode »
@@ -2205,7 +2209,7 @@ const M=MACRO, today=new Date().toISOString().slice(0,10);
 // ECO
 const prints=(M.eco.prints||[]).map(x=>`<tr><th scope="row" style="font-weight:400;color:var(--txt);text-align:left">${esc(x.k)}</th>
 <td style="font-weight:600">${fmtMacro(x.v,x.fmt)}</td><td class="mut">${fmtMacro(x.prev,x.fmt)}</td>
-<td class="mut" style="font-size:10px">${esc(x.ts)}</td></tr>`).join('');
+<td class="mut" style="font-size:10px">${esc(x.ts)}${staleMark(x.ts,100)}</td></tr>`).join('');
 const cal=(M.eco.calendar||[]).map(c=>{ const past=c.d<today, now=c.d===today;
 return `<tr style="${past?'opacity:.55':''}"><th scope="row" style="font-weight:${now?700:400};color:var(--txt)">${dfr(c.d)}</th>
 <td style="text-align:left;white-space:normal">${c.imp===3?'<b>':''}${esc(c.ev)}${c.imp===3?'</b>':''} <span class="mut">${esc(c.ctry)}</span>${/FOMC\)|Federal Funds Rate/i.test(c.ev)?fomcDetail(c.d||String(c.ts).slice(0,10),M):''}</td>
@@ -2237,7 +2241,7 @@ return `<tr><th scope="row" style="font-weight:400;color:var(--txt)">${dfr(r.d)}
 </tbody></table><div class="note">${esc(W.src||'')}. Une probabilité de 100 % avec une variation supérieure à 25 pb signale qu'une baisse plus forte, ou plusieurs, est anticipée.</div>`;
 // BTMM
 const bt=(M.btmm||[]).map(x=>`<tr><th scope="row" style="font-weight:400;color:var(--txt);text-align:left">${esc(x.k)}</th>
-<td style="font-weight:600">${fmtMacro(x.v,x.fmt)}</td><td>${dlt(x.v,x.prev,x.fmt)}</td><td class="mut" style="font-size:10px">${esc(x.ts)}</td></tr>`).join('');
+<td style="font-weight:600">${fmtMacro(x.v,x.fmt)}</td><td>${dlt(x.v,x.prev,x.fmt)}</td><td class="mut" style="font-size:10px">${esc(x.ts)}${staleMark(x.ts,100)}</td></tr>`).join('');
 el.innerHTML=`<div class="note" style="padding:0 0 8px">Équivalents gratuits des fonctions Bloomberg <b>ECO</b>, <b>WIRP</b>, <b>GC</b> et <b>BTMM</b>. Données du ${fmtDT(M.generated_at)} — FRED, BCE, Federal Reserve, Yahoo. Mise à jour toutes les 30 min.</div>
 <div class="g g2">
 <div class="pnl span2" id="m-eco"><h3>ECO — Calendrier avec consensus<span class="rt">cette semaine et la suivante · heures locales · impact moyen et fort</span></h3><div class="pbody flush">
@@ -2550,15 +2554,21 @@ const qs=(d.quotes||[]).filter(x=>x.symbol&&['EQUITY','ETF','INDEX','CURRENCY','
 const exact=qs.find(x=>x.symbol===t); out=exact?exact.symbol:qs[0]?qs[0].symbol:t; }catch(e){}
 RESOLVE_CACHE.set(t,out); return out;
 }
+/** Annonce l'instrument retenu (nom, place, devise) : une commande ambiguë ne doit jamais ouvrir un titre en silence. */
+function symLabel(s){ const u=(UNIV||[]).find(x=>x.s===s), F=SNAPSHOT.fundamentals[s]||{}, sec=SNAPSHOT.securities.find(x=>x.sym===s);
+const sfx=(s.match(/\.([A-Z]+)$/)||[])[1], place={PA:'Paris',DE:'Francfort',L:'Londres',SW:'Suisse',AS:'Amsterdam',MI:'Milan',MC:'Madrid',T:'Tokyo',HK:'Hong Kong',TO:'Toronto'}[sfx]||(u&&u.l&&u.l[0])||(sfx?sfx:'États-Unis');
+return `${s} · ${(F.name||(u&&u.n)||(sec&&sec.name)||'nom inconnu')} · ${place}${F.ccy?' · '+F.ccy:''}`; }
+function announce(t){ const m=document.getElementById('hmsg'); if(!m) return; m.textContent='▶ '+t; clearTimeout(m.__t); m.__t=setTimeout(()=>{ m.textContent=''; },9000); }
 const cmdLabel=c=>c.sym?`${c.sym} ${c.f}`:c.syms?`${c.syms.join(' ')} ${c.f}`:c.f;
 async function runCmd(c){
 closePal(); const F=FUNCS[c.f];
 if(F.help){ openPal(); document.getElementById('palin').value='HELP'; palSearch('HELP'); return; }
 if(F.go){ await go(F.go); if(F.a){ const e=document.getElementById(F.a); if(e) e.scrollIntoView({behavior:'smooth',block:'start'}); } return; }
-if(c.f==='COMP'){ const sy=await Promise.all(c.syms.map(resolveRemote)); COMP.syms=sy.length>1?[...new Set(sy)]:[sy[0],'ACWI']; return go('comp'); }
+if(c.f==='COMP'){ const sy=await Promise.all(c.syms.map(resolveRemote)); COMP.syms=sy.length>1?[...new Set(sy)]:[sy[0],'ACWI']; await go('comp'); announce('COMP — '+COMP.syms.map(symLabel).join('  |  ')); return; }
 S.focus=await resolveRemote(c.sym);
 if(c.f==='GIP') SEC.range='1J'; else if(SEC.range==='1J') SEC.range='6M';
 await go('sec');
+announce(`${c.f} — ${symLabel(S.focus)}`);
 const anc={RV:'sec-rv',FA:'sec-fa',DVD:'sec-dvd',OMON:'sec-omon',CN:'sec-cn'}[c.f];
 if(anc) setTimeout(()=>{ const e=document.getElementById(anc); if(e) e.scrollIntoView({behavior:'smooth',block:'start'}); },150);
 }
@@ -3061,6 +3071,40 @@ ${Object.entries(FUNCS).map(([k,v])=>`<tr><th scope="row" class="sym" style="tex
 document.body.appendChild(m); m.onclick=e=>{ if(e.target===m) m.remove(); }; document.getElementById('helpx').onclick=()=>m.remove();
 }
 
+/*── Cohérence des données entre les vues (lot « confiance ») ─────────
+1. Un seul cours par titre : le relevé le plus précis (data.json, horodaté à la minute) remplace
+   celui du catalogue, pour que carte, fiche, recherche et filtre affichent le même chiffre.
+2. Statut de fraîcheur calculé sur l'âge réel du relevé, pas seulement sur le type de source.
+3. Rendement du dividende recalculé (dividende ÷ cours) quand les deux sont connus. */
+const SUBUNIT=c=>['GBp','GBX','ZAc','ILA'].includes(c);
+function ageStatus(st0,ts,cls,sym){
+if(!ts||!st0||st0==='SIMULATED'||st0==='SNAPSHOT') return st0;
+const t=Date.parse(ts.length===10?ts+'T22:00:00Z':ts); if(!isFinite(t)) return st0;
+const h=(Date.now()-t)/36e5, crypto=cls==='Crypto'||/^(BTC|ETH)|-USD$/.test(sym||'');
+if(crypto) return h>1.5?(h>48?'STALE':'AGED'):st0;     // cote 24 h/24 : un relevé de plus d'1 h 30 est ancien
+if(h>24*4.5) return 'STALE';                          // plus de 4,5 jours : au-delà d'un week-end prolongé
+if(st0==='DELAYED_15M'&&h>1.5) return 'AGED';         // annoncé différé mais relevé il y a plus d'1 h 30
+return st0;
+}
+function harmonize(){
+const U=new Map((UNIV||[]).map(u=>[u.s,u]));
+for(const [s,q] of Object.entries(SNAPSHOT.quotes)){ if(q.st0===undefined) q.st0=q.st;
+const u=U.get(s)||U.get(({SPX:'^GSPC',NDX:'^NDX',DJI:'^DJI',EURUSD:'EURUSD=X',XAU:'GC=F',BTC:'BTC-USD'})[s]);
+if(u&&q.p!=null&&q.ts){ u.p=q.p; u.pct=q.pct; u.ts=q.ts; u.st0=q.st0; }
+const sec=SNAPSHOT.securities.find(x=>x.sym===s); q.st=ageStatus(q.st0,q.ts,sec&&sec.cls,s); }
+for(const u of UNIV||[]){ if(u.st0===undefined) u.st0=u.st; if(!u.nw) u.st=ageStatus(u.st0,u.ts,u.c,u.s); }
+for(const [s,F] of Object.entries(SNAPSHOT.fundamentals)){ if(!F) continue;
+const q=SNAPSHOT.quotes[s], u=U.get(s), px=q&&q.p!=null?q.p:u&&u.p!=null?u.p:null;
+if(F.div>0&&px>0){ let y=F.div/px*100; if(SUBUNIT(F.ccy)){ if(y<0.05) y*=100; else if(y>40) y/=100; } if(y>0&&y<40) F.divYield=Math.round(y*1000)/1000; }
+else if(F.divYield>40) delete F.divYield; }
+// Banques centrales : une série officielle arrêtée ne doit pas passer pour la valeur actuelle.
+for(const r of SNAPSHOT.rates||[]){ if(!r.ts) continue; const d=(Date.now()-Date.parse(r.ts+'T12:00:00Z'))/864e5;
+if(d>120){ r.st='STALE'; if(!/série arrêtée/.test(r.note||'')) r.note=`⚠ Série arrêtée au ${new Date(r.ts+'T12:00:00').toLocaleDateString('fr-FR')} : valeur probablement dépassée. `+(r.note||''); } }
+}
+/** Âge lisible d'une date, et alerte si une série dépasse l'ancienneté attendue. */
+function staleMark(ts,maxDays){ if(!ts) return ''; const d=(Date.now()-Date.parse(String(ts).slice(0,10)+'T12:00:00Z'))/864e5;
+return d>maxDays?` <span class="st st-STALE" title="Dernière donnée au ${esc(String(ts).slice(0,10))} : série interrompue ou très en retard">ancienne</span>`:''; }
+
 /*═══════════════════════════════════════════════════════════════════════
 14. NAVIGATION
 ═══════════════════════════════════════════════════════════════════════*/
@@ -3121,7 +3165,7 @@ el.querySelectorAll('b[data-tz]').forEach(b=>{ b.textContent=new Date().toLocale
 }
 
 /* Notes explicatives longues repliées derrière ⓘ (lisibilité) */
-function collapseNotes(root){ root.querySelectorAll('.note:not([id]):not([data-nfo])').forEach(n=>{ const t=n.textContent.trim();
+function collapseNotes(root){ root.querySelectorAll('.note:not([id]):not([data-nfo]):not([data-keep])').forEach(n=>{ const t=n.textContent.trim();
 if(t.length<140||n.closest('.statrow,#pal,form')||/Chargement|Calcul/.test(t)) return;
 const d=document.createElement('details'); d.className='nfo'; d.dataset.nfo=1;
 d.innerHTML=`<summary>Méthode et sources</summary><p>${n.innerHTML}</p>`; n.replaceWith(d); }); }
@@ -3174,10 +3218,10 @@ document.getElementById('themebtn').onclick=()=>setTheme(document.body.classList
 const EMBED=new URLSearchParams(location.search);
 if(EMBED.get('embed')){ document.body.classList.add('embed'); const c=EMBED.get('cmd')||'WEI';
 S.view='mkt'; (async()=>{ // catalogue chargé d'abord : « TTE » doit devenir TTE.PA, pas le certificat américain
-await Promise.all([loadUniverse(),loadLive(),loadFund(),loadMacro(),loadEcon(),loadCurves(),loadPeers()].map(p=>p.catch(()=>{})));
+await Promise.all([loadUniverse(),loadLive(),loadFund(),loadMacro(),loadEcon(),loadCurves(),loadPeers()].map(p=>p.catch(()=>{}))); harmonize();
 if(!/^(BLP)$/i.test(c.trim())) runAny(c); else go('mkt'); })(); }
 else go('mkt');
-const refresh=()=>Promise.all([loadLive(),loadUniverse(),loadFT(),loadMacro(),loadFund(),loadEcon(),loadPeers(),loadCurves()]).then(([a,b,c,d,e,f,g,h])=>{ renderTape(); if(a||b||c||d||e||f||h){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
+const refresh=()=>Promise.all([loadLive(),loadUniverse(),loadFT(),loadMacro(),loadFund(),loadEcon(),loadPeers(),loadCurves()]).then(([a,b,c,d,e,f,g,h])=>{ harmonize(); renderTape(); if(a||b||c||d||e||f||h){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
 refresh();
 setInterval(refresh, 10*60*1000);
 
