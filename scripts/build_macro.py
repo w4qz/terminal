@@ -95,15 +95,29 @@ FOMC_FALLBACK = ["2026-01-28", "2026-03-18", "2026-04-29", "2026-06-17",
                  "2026-07-29", "2026-09-16", "2026-10-28", "2026-12-09"]
 
 
+def _fred_full(sid, units):
+    """Deux dernières observations avec leur date de publication (realtime_start = date de la
+    dernière publication ou révision de la valeur) et la fréquence de la série."""
+    r = requests.get("https://api.stlouisfed.org/fred/series/observations", params={
+        "series_id": sid, "api_key": KEY, "file_type": "json", "sort_order": "desc", "limit": 2, "units": units}, timeout=25)
+    r.raise_for_status()
+    obs = [o for o in r.json()["observations"] if o["value"] != "."]
+    m = requests.get("https://api.stlouisfed.org/fred/series", params={"series_id": sid, "api_key": KEY, "file_type": "json"}, timeout=25)
+    freq = (m.json().get("seriess") or [{}])[0].get("frequency_short", "") if m.ok else ""
+    return obs, freq
+
+
 def eco_prints():
     out = []
     for sid, label, units, fmt in PRINTS:
-        obs = safe(lambda: fred(sid, 2, units), sid)
-        if not obs:
+        res = safe(lambda: _fred_full(sid, units), sid)
+        if not res or not res[0]:
             continue
-        (d, v), prev = obs[0], (obs[1][1] if len(obs) > 1 else None)
-        out.append({"k": label, "v": round(v, 2), "prev": round(prev, 2) if prev is not None else None,
-                    "fmt": fmt, "ts": d, "src": f"FRED {sid}"})
+        obs, freq = res
+        o, prev = obs[0], (float(obs[1]["value"]) if len(obs) > 1 else None)
+        out.append({"k": label, "v": round(float(o["value"]), 2), "prev": round(prev, 2) if prev is not None else None,
+                    "fmt": fmt, "ts": o["date"], "pub": o.get("realtime_start"), "freq": freq,
+                    "src": f"FRED {sid}", "url": f"https://fred.stlouisfed.org/series/{sid}"})
     log(f"ECO : {len(out)}/{len(PRINTS)} indicateurs")
     return out
 
