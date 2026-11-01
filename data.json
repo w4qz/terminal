@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T07:51:36.823958Z",
+ "generated_at": "2026-11-01T08:40:56.100325Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -212,8 +212,8 @@
    "prev": 157.833,
    "chg": -0.314,
    "pct": -0.2,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (JPY=X)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (JPY=X) — échec de la dernière mise à jour",
    "ts": "2026-10-30T20:00:00Z",
    "open": 157.857,
    "lo": 156.966,
@@ -267,7 +267,7 @@
    "open": 102.8,
    "lo": 102.43,
    "hi": 104.99,
-   "vol": 262537
+   "vol": 248667
   },
   "BRENT": {
    "p": 113.43,
@@ -283,17 +283,17 @@
    "vol": 37539
   },
   "BTC": {
-   "p": 77774.9688,
+   "p": 78013.6016,
    "prev": 77434.75,
-   "chg": 340.2188,
-   "pct": 0.44,
+   "chg": 578.8516,
+   "pct": 0.75,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-01T07:00:00Z",
+   "ts": "2026-11-01T08:00:00Z",
    "open": 77440.9297,
    "lo": 77395.6953,
-   "hi": 77885.4375,
-   "vol": 11097830400
+   "hi": 78032.2422,
+   "vol": 11171273728
   }
  },
  "fundamentals": {
@@ -1620,7 +1620,10 @@
   },
   {
    "t": "10A",
-   "y": null
+   "y": 4.98,
+   "st": "EOD",
+   "src": "FRED DGS10",
+   "ts": "2026-10-29"
   },
   {
    "t": "30A",
@@ -1638,7 +1641,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T07:51:36.823958+00:00",
+   "ts": "2026-11-01T08:40:56.100325+00:00",
    "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/ai-dubbing-to-help-japanese-companies-expand-global-outreach"
   },
   {
@@ -1648,7 +1651,7 @@
     "HSI"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T07:51:36.823958+00:00",
+   "ts": "2026-11-01T08:40:56.100325+00:00",
    "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/indonesia-gdp-us-midterm-elections-hong-kong-financial-summit"
   },
   {
@@ -1656,7 +1659,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T07:51:36.823958+00:00",
+   "ts": "2026-11-01T08:40:56.100325+00:00",
    "url": "https://asia.nikkei.com/business/energy/pakistan-refineries-report-1-860-jump-in-profit-amid-war-windfall2"
   },
   {
@@ -1664,7 +1667,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T07:51:36.823958+00:00",
+   "ts": "2026-11-01T08:40:56.100325+00:00",
    "url": "https://asia.nikkei.com/spotlight/comment/after-us-midterms-democracy-will-face-test-of-ability-to-self-correct"
   },
   {
@@ -1672,7 +1675,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T07:51:36.823958+00:00",
+   "ts": "2026-11-01T08:40:56.100325+00:00",
    "url": "https://asia.nikkei.com/politics/thai-reformists-became-too-technocratic-party-ex-leader-pita-says"
   },
   {
@@ -1682,7 +1685,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T07:51:36.823958+00:00",
+   "ts": "2026-11-01T08:40:56.100325+00:00",
    "url": "https://asia.nikkei.com/business/companies/japan-bamboo-chopsticks-catch-on-in-south-korea"
   },
   {
@@ -1690,7 +1693,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T07:51:36.823958+00:00",
+   "ts": "2026-11-01T08:40:56.100325+00:00",
    "url": "https://asia.nikkei.com/life-arts/life/on-india-s-east-coast-tidepooling-inspires-marine-conservation"
   },
   {
@@ -1698,7 +1701,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T07:51:36.823958+00:00",
+   "ts": "2026-11-01T08:40:56.100325+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/china-mega-complex-in-dalian-puts-spotlight-on-investment-push"
   },
   {
@@ -1708,7 +1711,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T07:51:36.823958+00:00",
+   "ts": "2026-11-01T08:40:56.100325+00:00",
    "url": "https://asia.nikkei.com/opinion/time-for-japan-to-develop-people-who-can-sell-content"
   },
   {
@@ -1719,7 +1722,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T07:51:36.823958+00:00",
+   "ts": "2026-11-01T08:40:56.100325+00:00",
    "url": "https://asia.nikkei.com/business/markets/bonds/yen-bond-offerings-hit-record-16bn-as-ai-funding-race-reaches-japan"
   },
   {
@@ -1729,7 +1732,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T07:51:36.823958+00:00",
+   "ts": "2026-11-01T08:40:56.100325+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/japan-weighs-taxing-real-estate-rental-operators-living-overseas"
   },
   {
@@ -1739,7 +1742,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T07:51:36.823958+00:00",
+   "ts": "2026-11-01T08:40:56.100325+00:00",
    "url": "https://asia.nikkei.com/business/health-care/japan-s-foreign-caregivers-face-exam-hurdle-as-grace-period-ends"
   },
   {
@@ -1747,7 +1750,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T07:51:36.823958+00:00",
+   "ts": "2026-11-01T08:40:56.100325+00:00",
    "url": "https://asia.nikkei.com/business/food-beverage/thai-highland-tribe-coffee-brews-following-at-home-and-in-tokyo"
   },
   {
@@ -1757,7 +1760,7 @@
     "HSI"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T07:51:36.823958+00:00",
+   "ts": "2026-11-01T08:40:56.100325+00:00",
    "url": "https://asia.nikkei.com/spotlight/society/fatal-dog-attacks-test-hong-kong-s-ambitions-for-a-pet-friendly-economy"
   },
   {
@@ -1765,8 +1768,24 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T07:51:36.823958+00:00",
+   "ts": "2026-11-01T08:40:56.100325+00:00",
    "url": "https://asia.nikkei.com/spotlight/comment/thailand-looks-west-after-30-years-of-struggles-over-dawei"
+  },
+  {
+   "h": "Le directeur technique de Dime Commercial Bancshares cède des actions pour 98.462$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-01T08:02:26Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-technique-de-dime-commercial-bancshares-cede-des-actions-pour-98462-93CH-3667076"
+  },
+  {
+   "h": "Les revenus du jeu à Macao chutent de 10% en octobre malgré l’afflux de touristes",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-01T07:58:23Z",
+   "url": "https://fr.investing.com/news/economy-news/les-revenus-du-jeu-a-macao-chutent-de-10-en-octobre-malgre-lafflux-de-touristes-3667074"
   },
   {
    "h": "L’Iran propose un plan de réouverture d’Hormuz en 48h",
@@ -1902,7 +1921,7 @@
    "mine": 1
   },
   {
-   "h": "Germany fails to meet Winter gas storage target",
+   "h": "Germany fails to meet winter gas storage target",
    "w": "Prices could rise for other EU countries as bloc’s biggest economy will be forced to rely on more spot market purchases",
    "syms": [
     "DAX"
@@ -2012,14 +2031,6 @@
    "mine": 1
   },
   {
-   "h": "Hanwha décroche un contrat naval de 269 millions $ avec l’US Navy",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-01T04:41:50Z",
-   "url": "https://fr.investing.com/news/company-news/hanwha-decroche-un-contrat-naval-de-269-millions--avec-lus-navy-3667060"
-  },
-  {
    "h": "L’attrait des jeunes pour le fitness et la musculation porte le succès commercial des salles de sport",
    "w": "Portées par des tarifs accessibles et par l’engouement des 16-25 ans, les salles de sport connaissent une croissance impressionnante. De quoi aiguiser l’appétit des investisseurs.",
    "syms": [],
@@ -2061,14 +2072,6 @@
    "ts": "2026-11-01T04:24:02Z",
    "url": "https://www.ft.com/content/c7062e37-86fd-45ef-8f58-573de0fcaaf0?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Le directeur de Shore Bancshares John Lamon achète des actions pour 7.753$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-01T04:17:00Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-de-shore-bancshares-john-lamon-achete-des-actions-pour-7753-93CH-3667058"
   },
   {
    "h": "Ce qui change le 1ᵉʳ novembre : gaz, crédit à la consommation, expulsions locatives, petits colis, retraites complémentaires",
@@ -2445,10 +2448,19 @@
    "mine": 1
   },
   {
-   "h": "Fiscal drifting: why the Budget won’t leave you better off",
+   "h": "Why the Budget won’t leave you better off",
    "w": "Frozen thresholds and higher inflation forecasts mean thousands more could be dragged into the £100,000 tax trap than previously thought",
    "syms": [],
    "src": "myFT — world uk",
+   "ts": "2026-10-31T05:12:54Z",
+   "url": "https://www.ft.com/content/2d7ef638-2efb-42ec-a433-bef55f61d2e1?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Fiscal drifting: why the Budget won’t leave you better off",
+   "w": "Frozen thresholds and higher inflation forecasts mean thousands more could be dragged into the £100,000 tax trap than previously thought",
+   "syms": [],
+   "src": "myFT — economy",
    "ts": "2026-10-31T05:12:54Z",
    "url": "https://www.ft.com/content/2d7ef638-2efb-42ec-a433-bef55f61d2e1?syn-25a6b1a6=1",
    "mine": 1
@@ -2510,20 +2522,11 @@
    "ts": "2026-10-31T05:00:39Z",
    "url": "https://www.ft.com/content/636fd85e-2f5f-4b98-91ff-75300df69908",
    "mine": 1
-  },
-  {
-   "h": "Entrepreneurs question Budget rhetoric on relief and red tape",
-   "w": "Small business bodies said higher taxes and reduced reliefs exposed chancellor’s pledge to back Britain’s ‘bloody-minded’ founders",
-   "syms": [],
-   "src": "myFT — world uk",
-   "ts": "2026-10-31T05:00:39Z",
-   "url": "https://www.ft.com/content/8a26c5ed-820b-4653-8bf0-d9ee4f20bdcd",
-   "mine": 1
   }
  ],
  "summary": {
-  "text": "Une nette aversion au risque pénalise les marchés, tirée par la chute des valeurs technologiques (NDX -3,46 %, NVDA -4,14 %) et du Nikkei (-2,44 %). Le S&P 500 cède 1,81 % et la volatilité bondit (VIX à 19,44, +13,02 %). Les indices européens reculent également (SX5E -1,23 %), tandis que le Hang Seng progresse à contre-courant (+1,46 %).\n\nLe dollar fléchit légèrement (DXY à 101,964), soutenant l'EUR/USD (1,1166) et le GBP/USD (1,3389). L'or décroche lourdement à 3898,90 (-3,29 %). Les pétroles divergent, le WTI grimpant à 104,12 (+2,08 %) face au Brent à 113,43 (-1,26 %). Côté obligataire, les émissions en yens atteignent un record de 16 milliards de dollars pour financer l'IA.\n\nÀ surveiller : les défenses des pétroliers russes face aux drones, les suites de l'enquête du FBI sur le vol de 6,3 milliards de dollars sur Binance (BTC à 77 492,68) et les investissements massifs dans l'IA au Japon (Murata pour 6,3 milliards).",
+  "text": "Une nette aversion au risque domine, marquée par le plongeon du secteur technologique (NDX -3,46 %, NVDA -4,14 %) et le bond de la volatilité (VIX à 19,44, +13,02 %). Les indices mondiaux fléchissent (SPX -1,81 %, N225 -2,44 %, SX5E -1,23 %), à l'exception notable de Hong Kong (HSI +1,46 %).\n\nLe dollar s'effrite légèrement (DXY à 101,964, -0,07 %), l'EUR/USD s'établissant à 1,1166 (+0,09 %). Les matières premières décrochent pour certaines : l'or recule lourdement (XAU -3,29 % à 3898,90), tandis que le pétrole diverge entre la hausse du CL (+2,08 % à 104,12) et le repli du Brent (-1,26 % à 113,43). Le BTC avance de 0,75 % à 78013,60.\n\nL'attention se porte sur la proposition iranienne de réouverture d'Hormuz en 48 heures, les élections de mi-mandat américaines et l'offre record d'obligations en yens de 16 milliards de dollars pour financer l'IA au Japon.",
   "model": "gemini-flash-latest",
-  "ts": "2026-11-01T00:45:31.935944Z"
+  "ts": "2026-11-01T08:40:56.100325Z"
  }
 }

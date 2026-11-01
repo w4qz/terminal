@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T07:56:02.961453Z",
+ "generated_at": "2026-11-01T08:44:05.055821Z",
  "eco": {
   "prints": [
    {
@@ -59,12 +59,36 @@
     "src": "FRED A191RL1Q225SBEA"
    },
    {
+    "k": "Ventes au détail (US, m/m)",
+    "v": 0.77,
+    "prev": 1.29,
+    "fmt": "%",
+    "ts": "2026-09-01",
+    "src": "FRED RSAFS"
+   },
+   {
+    "k": "Confiance consommateurs U. Michigan",
+    "v": 48.1,
+    "prev": 51.7,
+    "fmt": "n",
+    "ts": "2026-09-01",
+    "src": "FRED UMCSENT"
+   },
+   {
     "k": "Inflation HICP (zone euro, a/a)",
     "v": 3.75,
     "prev": 3.23,
     "fmt": "%",
     "ts": "2026-09-01",
     "src": "FRED CP0000EZ19M086NEST"
+   },
+   {
+    "k": "Taux de chômage (zone euro)",
+    "v": 6.7,
+    "prev": 6.7,
+    "fmt": "%",
+    "ts": "2023-01-01",
+    "src": "FRED LRHUTTTTEZM156S"
    }
   ],
   "calendar": [
@@ -453,8 +477,8 @@
   "effr": 3.88,
   "effr_ts": "2026-10-29",
   "range": [
-   null,
-   null
+   3.75,
+   4.0
   ],
   "meetings": [
    {
@@ -750,6 +774,14 @@
    "fmt": "pb",
    "ts": "2026-10-30",
    "src": "FRED T10Y2Y"
+  },
+  {
+   "k": "Pente 3m10a",
+   "v": 78.0,
+   "prev": 80.0,
+   "fmt": "pb",
+   "ts": "2026-10-30",
+   "src": "FRED T10Y3M"
   },
   {
    "k": "Reverse repo de la Fed (Md$)",
