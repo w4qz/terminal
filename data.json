@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T18:41:00.492771Z",
+ "generated_at": "2026-11-01T18:47:32.011062Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -806,17 +806,17 @@
    ]
   },
   "BTC": {
-   "p": 77821.5781,
+   "p": 77844.9922,
    "prev": 77434.75,
-   "chg": 386.8281,
-   "pct": 0.5,
+   "chg": 410.2422,
+   "pct": 0.53,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
    "ts": "2026-11-01T18:00:00Z",
    "open": 77440.9297,
    "lo": 77395.6953,
    "hi": 78126.9297,
-   "vol": 11555002368,
+   "vol": 11519170560,
    "h": [
     83679.47,
     81762.56,
@@ -839,7 +839,7 @@
     77775.11,
     77198.21,
     77434.75,
-    77821.58
+    77844.99
    ]
   }
  },
@@ -1103,7 +1103,6 @@
    "industry": "Aerospace & Defense",
    "ccy": "USD",
    "mcap": 1829640994816,
-   "pe": 585.7391,
    "fpe": 52.529,
    "eps": 0.23,
    "feps": 2.5647,
@@ -1129,7 +1128,8 @@
    "earnStart": 1792526400,
    "earnEnd": 1792526400,
    "earnEst": false,
-   "trailDiv": 0.0
+   "trailDiv": 0.0,
+   "pe_ns": 585.7391
   },
   "2222.SR": {
    "name": "Saudi Arabian Oil Company",
@@ -1222,7 +1222,6 @@
    "industry": "Auto Manufacturers",
    "ccy": "USD",
    "mcap": 1580341002240,
-   "pe": 439.3516,
    "fpe": 185.1641,
    "eps": 0.91,
    "feps": 2.1592,
@@ -1252,7 +1251,8 @@
    "earnStart": 1801083600,
    "earnEnd": 1801083600,
    "earnEst": true,
-   "trailDiv": 0.0
+   "trailDiv": 0.0,
+   "pe_ns": 439.3516
   },
   "AVGO": {
    "name": "Broadcom Inc.",
@@ -2086,7 +2086,6 @@
    "industry": "Communication Equipment",
    "ccy": "USD",
    "mcap": 15944192000,
-   "fpe": -28.2116,
    "eps": -2.13,
    "feps": -1.4522,
    "revTTM": 115299000,
@@ -2114,7 +2113,8 @@
    "earnStart": 1794258000,
    "earnEnd": 1794258000,
    "earnEst": false,
-   "trailDiv": 0.0
+   "trailDiv": 0.0,
+   "fpe_ns": -28.2116
   },
   "ACWI": {
    "name": "iShares MSCI ACWI ETF",
@@ -2123,7 +2123,8 @@
    "w52lo": 133.65,
    "w52hi": 162.8,
    "divDate": 1482883200,
-   "trailDiv": 0.0
+   "trailDiv": 0.0,
+   "sector": "Fonds et trusts"
   },
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
@@ -2134,7 +2135,8 @@
    "w52lo": 93.84,
    "w52hi": 101.46,
    "trailDiv": 2.48,
-   "div": 2.48
+   "div": 2.48,
+   "sector": "Fonds et trusts"
   },
   "GLD": {
    "name": "SPDR Gold Shares",
@@ -2142,13 +2144,15 @@
    "shares": 260300000,
    "w52lo": 354.67,
    "w52hi": 509.7,
-   "trailDiv": 0.0
+   "trailDiv": 0.0,
+   "sector": "Fonds et trusts"
   },
   "BIL": {
    "name": "State Street SPDR Bloomberg 1-3 Month T-Bill ETF",
    "ccy": "USD",
    "w52lo": 91.26,
-   "w52hi": 91.73
+   "w52hi": 91.73,
+   "sector": "Fonds et trusts"
   }
  },
  "curve": [
@@ -2187,7 +2191,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:41:00.492771+00:00",
+   "ts": "2026-11-01T18:47:32.011062+00:00",
    "url": "https://asia.nikkei.com/business/energy/mitsubishi-heavy-gears-up-to-boost-us-gas-turbine-production"
   },
   {
@@ -2195,7 +2199,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:41:00.492771+00:00",
+   "ts": "2026-11-01T18:47:32.011062+00:00",
    "url": "https://asia.nikkei.com/business/energy/nuclear-reactors-under-construction-rise-to-79-globally-on-ai-demand"
   },
   {
@@ -2203,7 +2207,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:41:00.492771+00:00",
+   "ts": "2026-11-01T18:47:32.011062+00:00",
    "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/ai-dubbing-to-help-japanese-companies-expand-global-outreach"
   },
   {
@@ -2211,7 +2215,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:41:00.492771+00:00",
+   "ts": "2026-11-01T18:47:32.011062+00:00",
    "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/indonesia-gdp-us-midterm-elections-hong-kong-financial-summit"
   },
   {
@@ -2219,7 +2223,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:41:00.492771+00:00",
+   "ts": "2026-11-01T18:47:32.011062+00:00",
    "url": "https://asia.nikkei.com/business/energy/pakistan-refineries-report-1-860-jump-in-profit-amid-war-windfall2"
   },
   {
@@ -2227,7 +2231,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:41:00.492771+00:00",
+   "ts": "2026-11-01T18:47:32.011062+00:00",
    "url": "https://asia.nikkei.com/spotlight/comment/after-us-midterms-democracy-will-face-test-of-ability-to-self-correct"
   },
   {
@@ -2235,7 +2239,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:41:00.492771+00:00",
+   "ts": "2026-11-01T18:47:32.011062+00:00",
    "url": "https://asia.nikkei.com/politics/thai-reformists-became-too-technocratic-party-ex-leader-pita-says"
   },
   {
@@ -2243,7 +2247,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:41:00.492771+00:00",
+   "ts": "2026-11-01T18:47:32.011062+00:00",
    "url": "https://asia.nikkei.com/business/companies/japan-bamboo-chopsticks-catch-on-in-south-korea"
   },
   {
@@ -2251,7 +2255,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:41:00.492771+00:00",
+   "ts": "2026-11-01T18:47:32.011062+00:00",
    "url": "https://asia.nikkei.com/life-arts/life/on-india-s-east-coast-tidepooling-inspires-marine-conservation"
   },
   {
@@ -2259,7 +2263,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:41:00.492771+00:00",
+   "ts": "2026-11-01T18:47:32.011062+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/china-mega-complex-in-dalian-puts-spotlight-on-investment-push"
   },
   {
@@ -2267,7 +2271,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:41:00.492771+00:00",
+   "ts": "2026-11-01T18:47:32.011062+00:00",
    "url": "https://asia.nikkei.com/opinion/time-for-japan-to-develop-people-who-can-sell-content"
   },
   {
@@ -2277,7 +2281,7 @@
     "USDJPY"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:41:00.492771+00:00",
+   "ts": "2026-11-01T18:47:32.011062+00:00",
    "url": "https://asia.nikkei.com/business/markets/bonds/yen-bond-offerings-hit-record-16bn-as-ai-funding-race-reaches-japan"
   },
   {
@@ -2285,7 +2289,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:41:00.492771+00:00",
+   "ts": "2026-11-01T18:47:32.011062+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/japan-weighs-taxing-real-estate-rental-operators-living-overseas"
   },
   {
@@ -2293,7 +2297,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:41:00.492771+00:00",
+   "ts": "2026-11-01T18:47:32.011062+00:00",
    "url": "https://asia.nikkei.com/business/health-care/japan-s-foreign-caregivers-face-exam-hurdle-as-grace-period-ends"
   },
   {
@@ -2301,8 +2305,16 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:41:00.492771+00:00",
+   "ts": "2026-11-01T18:47:32.011062+00:00",
    "url": "https://asia.nikkei.com/business/food-beverage/thai-highland-tribe-coffee-brews-following-at-home-and-in-tokyo"
+  },
+  {
+   "h": "Judge dismisses DOJ lawsuit over Alaska Senate election",
+   "w": "Democratic nominee Mary Peltola is facing two candidates named Dan Sullivan in the Alaska Senate election, one of whom is the Republican incumbent.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-01T18:41:04Z",
+   "url": "https://www.cnbc.com/2026/11/01/alaska-senate-doj-lawsuit-dismissed-sullivan-peltola.html"
   },
   {
    "h": "Democratic Rep. Stevens endorses Rogers over El-Sayed in Michigan Senate election",
@@ -2498,14 +2510,6 @@
    "src": "CNBC — Marchés",
    "ts": "2026-11-01T15:20:06Z",
    "url": "https://www.cnbc.com/2026/11/01/social-security-senate-races.html"
-  },
-  {
-   "h": "Social Security may have to cut retirement benefits in six years. Here's how much money is at stake for beneficiaries",
-   "w": "The latest projections show Social Security may have to cut retirement benefits in six years. Here's what may happen if Congress doesn't prevent that.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-01T15:18:38Z",
-   "url": "https://www.cnbc.com/2026/11/01/social-security-benefit-cuts-2032.html"
   },
   {
    "h": "Apple’s new earnings era begins at a critical time for Big Tech",
