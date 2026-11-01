@@ -231,13 +231,46 @@ def _fred_last(sid: str, key: str):
     return float(o["value"]), o["date"]
 
 
+def _boj_tona():
+    """Taux au jour le jour non garanti (TONA), cible opérationnelle de la BoJ, via l'API statistique
+    de la Banque du Japon. Le format de réponse est lu de façon tolérante : on cherche deux listes
+    parallèles (dates, valeurs) et on garde la dernière valeur renseignée."""
+    r = requests.get("https://www.stat-search.boj.or.jp/api/v1/getDataCode",
+                     params={"format": "json", "lang": "en", "db": "FM01", "code": "STRDCLUCON"},
+                     headers=UA, timeout=30)
+    r.raise_for_status()
+    found = []
+
+    def walk(o):
+        if isinstance(o, dict):
+            lists = {k: v for k, v in o.items() if isinstance(v, list) and v}
+            dk = next((k for k in lists if "DATE" in k.upper()), None)
+            vk = next((k for k in lists if k.upper() in ("VALUES", "VALUE", "DATA") and k != dk), None)
+            if dk and vk and len(lists[dk]) == len(lists[vk]):
+                found.append((lists[dk], lists[vk]))
+            for v in o.values():
+                walk(v)
+        elif isinstance(o, list):
+            for v in o:
+                walk(v)
+    walk(r.json())
+    for dates, vals in found:
+        pairs = [(str(d), v) for d, v in zip(dates, vals) if v not in (None, "", "NaN")]
+        if pairs:
+            d, v = pairs[-1]
+            d = re.sub(r"\D", "", d)
+            d = f"{d[:4]}-{d[4:6] or '01'}-{d[6:8] or '01'}"
+            return float(v), d
+    raise RuntimeError("réponse BoJ sans série exploitable")
+
+
 def fetch_policy_rates() -> list:
     import os
     out = []
 
     # BCE — taux de dépôt (taux directeur de référence), refinancement, €STR
     for code, s, n in (
-        ("FM/D.U2.EUR.4F.KR.DFR.LEV", "ECB-DFR", "BCE — taux de facilité de dépôt"),
+        ("FM/D.U2.EUR.4F.KR.DFR.LEV", "ECB-DFR", "BCE — taux de dépôt (taux directeur de référence)"),
         ("FM/D.U2.EUR.4F.KR.MRR_FR.LEV", "ECB-MRO", "BCE — taux de refinancement principal"),
         ("EST/B.EU000A2X2A25.WT", "ESTR", "€STR (taux au jour le jour en euro)"),
     ):
@@ -285,12 +318,25 @@ def fetch_policy_rates() -> list:
             log(f"  ! Fed : {e}")
         try:
             v, d = _fred_last("IRSTCB01JPM156N", key)
-            out.append(_rate("BOJ-RATE", "BoJ — taux directeur (relevé mensuel OCDE)", "BoJ", v, d,
-                             "FRED IRSTCB01JPM156N (OCDE, mensuel)"))
+            boj_fred = (v, d)
         except Exception as e:
-            log(f"  ! BoJ : {e}")
+            boj_fred = None
+            log(f"  ! BoJ (FRED) : {e}")
     else:
-        log("Taux directeurs : pas de FRED_API_KEY, Fed et BoJ ignorés")
+        boj_fred = None
+        log("Taux directeurs : pas de FRED_API_KEY, Fed ignorée")
+
+    # BoJ : API officielle d'abord (à jour) ; série OCDE de FRED seulement en dernier recours
+    try:
+        v, d = _boj_tona()
+        out.append(_rate("BOJ-RATE", "BoJ — taux au jour le jour non garanti (TONA, cible de la BoJ)", "BoJ", v, d,
+                         "Banque du Japon — API statistique (série FM01 STRDCLUCON)"))
+        log(f"  BoJ : {v} % au {d} (API BoJ)")
+    except Exception as e:
+        log(f"  ! BoJ (API) : {str(e)[:120]}")
+        if boj_fred:
+            out.append(_rate("BOJ-RATE", "BoJ — taux directeur (série OCDE, possiblement arrêtée)", "BoJ", *boj_fred,
+                             "FRED IRSTCB01JPM156N (OCDE, mensuel)"))
 
     log(f"Taux directeurs : {len(out)} relevés ({', '.join(x['s'] for x in out)})")
     return out
