@@ -948,7 +948,7 @@ const p = q.changePct;
 const pctTxt = p&&!p.na ? pct(p.value) : 'n/d';
 h += `<tr class="clk" data-sym="${s}" tabindex="0" role="button"
 aria-label="Ouvrir la fiche ${esc(meta.name)} (${s}), dernier cours ${nf(q.price.value)}, variation ${pctTxt}">
-<th scope="row" class="sym">${s}<div class="mut" style="font-size:10px;font-weight:400">${esc(meta.name)}</div></th>
+<th scope="row" class="sym"><div style="display:flex;align-items:center;gap:10px"><div>${s}<div class="mut" style="font-size:10px;font-weight:400">${esc(meta.name)}</div></div><span style="margin-left:auto">${spark(sparkData(s))}</span></div></th>
 <td>${V(q.price, x=>npx(x,s))}</td>
 <td class="${p&&!p.na?cls(p.value):''}">${V(p, x=>pct(x))}</td>
 <td class="mut">${q.volume&&!q.volume.na?big(q.volume.value):'—'}</td>
@@ -2069,9 +2069,17 @@ it=[...it].sort((a,b)=>Math.abs(b.pct??0)-Math.abs(a.pct??0));
 }
 return it;
 }
+/* Mini-graphique 1 mois (22 dernières clôtures) : vert si le titre a monté sur la période, rouge sinon. */
+function sparkData(sym){ const q=SNAPSHOT.quotes[sym]; if(q&&q.h&&q.h.length>2) return q.h;
+const u=(UNIV||[]).find(x=>x.s===sym); return u&&u.h&&u.h.length>2?u.h:null; }
+function spark(h,w=64,ht=18){ if(!h||h.length<3) return `<span style="display:inline-block;width:${w}px"></span>`;
+const lo=Math.min(...h), hi=Math.max(...h), r=hi-lo||1, up=h[h.length-1]>=h[0], col=up?'#2fbf6b':'#e04a4a';
+const pts=h.map((v,i)=>`${(i/(h.length-1)*(w-2)+1).toFixed(1)},${(ht-1-(v-lo)/r*(ht-2)).toFixed(1)}`).join(' ');
+const chg=(h[h.length-1]/h[0]-1)*100;
+return `<svg width="${w}" height="${ht}" viewBox="0 0 ${w} ${ht}" style="vertical-align:middle;flex:none" role="img" aria-label="1 mois : ${pct(chg,1)}"><title>1 mois : ${pct(chg,1)}</title><polyline points="${pts}" fill="none" stroke="${col}" stroke-width="1.3" stroke-linejoin="round"/></svg>`; }
 function srRows(list){
 return list.map(x=>`<tr class="clk" data-s="${esc(x.s)}" tabindex="0" role="button" aria-label="Ouvrir ${esc(x.n)} (${esc(x.s)})">
-<th scope="row" class="sym">${esc(x.s)}<div class="mut" style="font-size:10px;font-weight:400;max-width:260px;overflow:hidden;text-overflow:ellipsis">${esc(x.n||'')}</div></th>
+<th scope="row" class="sym"><div style="display:flex;align-items:center;gap:10px"><div style="min-width:0">${esc(x.s)}<div class="mut" style="font-size:10px;font-weight:400;max-width:230px;overflow:hidden;text-overflow:ellipsis">${esc(x.n||'')}</div></div><span style="margin-left:auto">${x.eco?'':spark(x.h||sparkData(x.s))}</span></div></th>
 <td class="mut" style="font-size:10px;text-align:left">${esc(x.c)}${x.l&&x.l.length?' · '+esc(x.l.join(', ')):''}${x.c==='Action'?(SNAPSHOT.fundamentals[x.s]&&Object.keys(SNAPSHOT.fundamentals[x.s]).length>4?' <span class="st st-EOD" title="Fondamentaux disponibles">F</span>':' <span class="na" title="Fondamentaux pas encore lus">·</span>'):''}</td>
 <td>${x.eco?ecoFmt(x.p,ecoGet(x.s))+badge('EOD'):x.p!=null?(x.c==='Taux'?nf(x.p,2):npx(x.p,x.s))+(x.c==='Taux'?' %':'')+badge(x.st):'<span class="na">n/d</span>'}</td>
 <td class="${cls(x.pct)}">${x.pct!=null?pct(x.pct):'—'}</td></tr>`).join('');
@@ -2972,7 +2980,7 @@ ${why.noFund.length?` · <span class="neg">${why.noFund.length} sans fondamentau
 Critères actifs : ${esc(eqsCrit(F))}. Un PER ou une dette négatifs (pertes, fonds propres négatifs) sont exclus des filtres « maximum ». ${ages.length?`Fondamentaux lus il y a ${hAge(ages[ages.length>>1])} en médiane (le plus ancien : ${hAge(ages[ages.length-1])}).`:''}`;
 const box=document.getElementById('eqres');
 box.innerHTML=list.length?`<table><caption class="sr-only">Résultats du filtre</caption><thead><tr>${cols.map(([c,l])=>`<th scope="col" data-sort="${c}" style="cursor:pointer;${c==='s'||c==='sec'?'text-align:left':''}">${l}${EQS.sort===c?(EQS.dir<0?' ▼':' ▲'):''}</th>`).join('')}</tr></thead><tbody>
-${list.slice(0,200).map(r=>`<tr class="clk" data-sym="${esc(r.s)}" tabindex="0" role="button"><th scope="row" style="text-align:left"><span class="sym">${esc(r.s)}</span> <span class="mut" style="font-size:10px;font-weight:400">${esc(r.n).slice(0,26)}</span></th>
+${list.slice(0,200).map(r=>`<tr class="clk" data-sym="${esc(r.s)}" tabindex="0" role="button"><th scope="row" style="text-align:left"><div style="display:flex;align-items:center;gap:8px"><span><span class="sym">${esc(r.s)}</span> <span class="mut" style="font-size:10px;font-weight:400">${esc(r.n).slice(0,26)}</span></span><span style="margin-left:auto">${spark(sparkData(r.s),52,16)}</span></div></th>
 <td class="mut" style="text-align:left;font-size:10px">${esc(r.sec)}</td>${cols.slice(2).map(([c])=>`<td class="${c==='gr'||c==='up'||c==='pc'?cls(r[c]):''}">${r[c]!=null&&isFinite(r[c])?fm[c](r[c]):'<span class="na">—</span>'}</td>`).join('')}</tr>`).join('')}</tbody></table>`
 :'<div class="note">Aucun titre ne passe tous les filtres. Assouplissez un critère.</div>';
 box.querySelectorAll('[data-sort]').forEach(h=>h.onclick=()=>{ const c=h.dataset.sort; EQS.dir=EQS.sort===c?-EQS.dir:(c==='s'||c==='sec'?1:-1); EQS.sort=c; eqsRun(); });
@@ -3153,7 +3161,7 @@ function harmonize(){
 const U=new Map((UNIV||[]).map(u=>[u.s,u]));
 for(const [s,q] of Object.entries(SNAPSHOT.quotes)){ if(q.st0===undefined) q.st0=q.st;
 const u=U.get(s)||U.get(({SPX:'^GSPC',NDX:'^NDX',DJI:'^DJI',EURUSD:'EURUSD=X',XAU:'GC=F',BTC:'BTC-USD'})[s]);
-if(u&&q.p!=null&&q.ts){ u.p=q.p; u.pct=q.pct; u.ts=q.ts; u.st0=q.st0; }
+if(u&&q.p!=null&&q.ts){ u.p=q.p; u.pct=q.pct; u.ts=q.ts; u.st0=q.st0; if(q.h) u.h=q.h; }
 const sec=SNAPSHOT.securities.find(x=>x.sym===s); q.st=ageStatus(q.st0,q.ts,sec&&sec.cls,s); }
 for(const u of UNIV||[]){ if(u.st0===undefined) u.st0=u.st; if(!u.nw) u.st=ageStatus(u.st0,u.ts,u.c,u.s); }
 for(const [s,F] of Object.entries(SNAPSHOT.fundamentals)){ if(!F) continue;
