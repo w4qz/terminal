@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T19:31:46.747373Z",
+ "generated_at": "2026-11-01T20:27:47.975947Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -39,10 +39,10 @@
    ]
   },
   "ASTS": {
-   "p": 40.97,
+   "p": 40.99,
    "prev": 43.07,
-   "chg": -2.1,
-   "pct": -4.88,
+   "chg": -2.08,
+   "pct": -4.83,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-10-30T19:30:00Z",
@@ -80,8 +80,8 @@
    "prev": 7720.3901,
    "chg": -139.4399,
    "pct": -1.81,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^GSPC)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^GSPC) — échec de la dernière mise à jour",
    "ts": "2026-10-30T19:30:00Z",
    "open": 7631.0698,
    "lo": 7527.5601,
@@ -481,8 +481,8 @@
    "prev": 7970.0,
    "chg": -7.8901,
    "pct": -0.1,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^FCHI) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^FCHI)",
    "ts": "2026-10-30T16:00:00Z",
    "open": 7973.8599,
    "lo": 7952.3901,
@@ -806,17 +806,17 @@
    ]
   },
   "BTC": {
-   "p": 77673.5312,
+   "p": 77642.5234,
    "prev": 77434.75,
-   "chg": 238.7812,
-   "pct": 0.31,
+   "chg": 207.7734,
+   "pct": 0.27,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-01T19:00:00Z",
+   "ts": "2026-11-01T20:00:00Z",
    "open": 77440.9297,
    "lo": 77395.6953,
    "hi": 78126.9297,
-   "vol": 11646015488,
+   "vol": 11822010368,
    "h": [
     83679.47,
     81762.56,
@@ -839,7 +839,7 @@
     77775.11,
     77198.21,
     77434.75,
-    77673.53
+    77642.52
    ]
   }
  },
@@ -937,9 +937,9 @@
    "ccy": "USD",
    "mcap": 3875804807168,
    "pe": 27.2396,
-   "fpe": 21.6233,
+   "fpe": 21.6187,
    "eps": 19.16,
-   "feps": 24.1364,
+   "feps": 24.1416,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -1023,9 +1023,9 @@
    "ccy": "USD",
    "mcap": 2598937821184,
    "pe": 19.4301,
-   "fpe": 22.0672,
+   "fpe": 22.3914,
    "eps": 12.37,
-   "feps": 10.8917,
+   "feps": 10.734,
    "revTTM": 797455024128,
    "netIncome": 134779002880,
    "shares": 10813138306,
@@ -1103,9 +1103,9 @@
    "industry": "Aerospace & Defense",
    "ccy": "USD",
    "mcap": 1829640994816,
-   "fpe": 56.9376,
+   "fpe": 52.529,
    "eps": 0.23,
-   "feps": 2.3661,
+   "feps": 2.5647,
    "revTTM": 32042999808,
    "netIncome": -3431000064,
    "shares": 8246541218,
@@ -1501,14 +1501,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 982902374400,
+   "mcap": 979897024512,
    "pe": 44.75,
    "fpe": 38.2805,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.578,
    "div": 0.99,
    "divYield": 0.802,
@@ -1879,9 +1879,9 @@
    "ccy": "USD",
    "mcap": 459499536384,
    "pe": 17.2922,
-   "fpe": 14.9045,
+   "fpe": 14.8086,
    "eps": 13.62,
-   "feps": 15.802,
+   "feps": 15.9043,
    "revTTM": 226326003712,
    "netIncome": 26976000000,
    "shares": 1951000000,
@@ -1911,7 +1911,7 @@
    "exDiv": 1794960000,
    "divDate": 1796860800,
    "lastDiv": 1.78,
-   "trailDiv": 1.71
+   "trailDiv": 7.05
   },
   "COST": {
    "name": "Costco Wholesale Corporation",
@@ -1963,9 +1963,9 @@
    "ccy": "USD",
    "mcap": 442427080704,
    "pe": 158.7155,
-   "fpe": 78.3347,
+   "fpe": 78.7903,
    "eps": 1.16,
-   "feps": 2.3503,
+   "feps": 2.3367,
    "revTTM": 6155940864,
    "netIncome": 3016691968,
    "shares": 2300713329,
@@ -2129,8 +2129,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 122.9082,
+   "shares": 572600000,
+   "divYield": 2.574,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2182,11 +2187,19 @@
  ],
  "news": [
   {
+   "h": "Japan is attracting startups. But can it keep them?",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-01T20:27:47.975947+00:00",
+   "url": "https://asia.nikkei.com/opinion/japan-is-attracting-startups.-but-can-it-keep-them"
+  },
+  {
    "h": "Mitsubishi Heavy gears up to boost US gas turbine production",
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T19:31:46.747373+00:00",
+   "ts": "2026-11-01T20:27:47.975947+00:00",
    "url": "https://asia.nikkei.com/business/energy/mitsubishi-heavy-gears-up-to-boost-us-gas-turbine-production"
   },
   {
@@ -2194,7 +2207,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T19:31:46.747373+00:00",
+   "ts": "2026-11-01T20:27:47.975947+00:00",
    "url": "https://asia.nikkei.com/business/energy/nuclear-reactors-under-construction-rise-to-79-globally-on-ai-demand"
   },
   {
@@ -2202,7 +2215,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T19:31:46.747373+00:00",
+   "ts": "2026-11-01T20:27:47.975947+00:00",
    "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/ai-dubbing-to-help-japanese-companies-expand-global-outreach"
   },
   {
@@ -2210,7 +2223,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T19:31:46.747373+00:00",
+   "ts": "2026-11-01T20:27:47.975947+00:00",
    "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/indonesia-gdp-us-midterm-elections-hong-kong-financial-summit"
   },
   {
@@ -2218,7 +2231,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T19:31:46.747373+00:00",
+   "ts": "2026-11-01T20:27:47.975947+00:00",
    "url": "https://asia.nikkei.com/business/energy/pakistan-refineries-report-1-860-jump-in-profit-amid-war-windfall2"
   },
   {
@@ -2226,7 +2239,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T19:31:46.747373+00:00",
+   "ts": "2026-11-01T20:27:47.975947+00:00",
    "url": "https://asia.nikkei.com/spotlight/comment/after-us-midterms-democracy-will-face-test-of-ability-to-self-correct"
   },
   {
@@ -2234,7 +2247,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T19:31:46.747373+00:00",
+   "ts": "2026-11-01T20:27:47.975947+00:00",
    "url": "https://asia.nikkei.com/politics/thai-reformists-became-too-technocratic-party-ex-leader-pita-says"
   },
   {
@@ -2242,7 +2255,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T19:31:46.747373+00:00",
+   "ts": "2026-11-01T20:27:47.975947+00:00",
    "url": "https://asia.nikkei.com/business/companies/japan-bamboo-chopsticks-catch-on-in-south-korea"
   },
   {
@@ -2250,7 +2263,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T19:31:46.747373+00:00",
+   "ts": "2026-11-01T20:27:47.975947+00:00",
    "url": "https://asia.nikkei.com/life-arts/life/on-india-s-east-coast-tidepooling-inspires-marine-conservation"
   },
   {
@@ -2258,7 +2271,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T19:31:46.747373+00:00",
+   "ts": "2026-11-01T20:27:47.975947+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/china-mega-complex-in-dalian-puts-spotlight-on-investment-push"
   },
   {
@@ -2266,7 +2279,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T19:31:46.747373+00:00",
+   "ts": "2026-11-01T20:27:47.975947+00:00",
    "url": "https://asia.nikkei.com/opinion/time-for-japan-to-develop-people-who-can-sell-content"
   },
   {
@@ -2276,7 +2289,7 @@
     "USDJPY"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T19:31:46.747373+00:00",
+   "ts": "2026-11-01T20:27:47.975947+00:00",
    "url": "https://asia.nikkei.com/business/markets/bonds/yen-bond-offerings-hit-record-16bn-as-ai-funding-race-reaches-japan"
   },
   {
@@ -2284,7 +2297,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T19:31:46.747373+00:00",
+   "ts": "2026-11-01T20:27:47.975947+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/japan-weighs-taxing-real-estate-rental-operators-living-overseas"
   },
   {
@@ -2292,24 +2305,32 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T19:31:46.747373+00:00",
+   "ts": "2026-11-01T20:27:47.975947+00:00",
    "url": "https://asia.nikkei.com/business/health-care/japan-s-foreign-caregivers-face-exam-hurdle-as-grace-period-ends"
   },
   {
-   "h": "Thai highland tribe coffee brews following at home and in Tokyo",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-01T19:31:46.747373+00:00",
-   "url": "https://asia.nikkei.com/business/food-beverage/thai-highland-tribe-coffee-brews-following-at-home-and-in-tokyo"
-  },
-  {
-   "h": "Judge dismisses DOJ lawsuit over Alaska Senate election",
+   "h": "Judge dismisses Alaska Senate election lawsuit; DOJ vows appeal",
    "w": "Democratic nominee Mary Peltola is facing two candidates named Dan Sullivan in the Alaska Senate election, one of whom is the Republican incumbent.",
    "syms": [],
    "src": "CNBC — Marchés",
-   "ts": "2026-11-01T19:23:50Z",
+   "ts": "2026-11-01T20:21:39Z",
    "url": "https://www.cnbc.com/2026/11/01/alaska-senate-doj-lawsuit-dismissed-sullivan-peltola.html"
+  },
+  {
+   "h": "My wife cried when I found out she had only $80,000 in her 401(k). I have $2.2 million. Am I wrong to be shocked?",
+   "w": "“When I brought up retiring last spring, she said she was ready whenever I was, and I took that to mean we were in good shape.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-01T20:00:00Z",
+   "url": "https://www.marketwatch.com/story/my-wife-has-only-80-000-saved-for-retirement-i-have-2-2-million-am-i-wrong-to-be-shocked-3e27b490?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Democratic Rep. Stevens endorses Republican Rogers over rival El-Sayed in Michigan Senate election",
+   "w": "Haley Stevens had lost the Democratic nomination for Senate in Michigan to Abdul El-Sayed earlier this year.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-01T19:41:44Z",
+   "url": "https://www.cnbc.com/2026/11/01/michigan-senate-stevens-rogers-endorsement-el-sayed.html"
   },
   {
    "h": "‘Showy jewelry and fancy cars hold no appeal’: We have a 99% chance of outliving our life savings. Why not spend it all?",
@@ -2318,6 +2339,15 @@
    "src": "MarketWatch",
    "ts": "2026-11-01T19:20:00Z",
    "url": "https://www.marketwatch.com/story/fancy-cars-hold-no-appeal-my-wife-and-i-have-a-99-chance-of-outliving-our-savings-why-dont-we-spend-it-all-932a2166?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Bulgarians projected to re-elect pro-Russian president",
+   "w": "Interim president Iliana Yotova set to consolidate her country’s Kremlin-friendly stance if results confirm exit polls",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-01T19:00:09Z",
+   "url": "https://www.ft.com/content/c1565a1b-9962-40d2-a764-5a19d0f3c700?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "Michigan Democrat Haley Stevens endorses Republican instead of Abdul El-Sayed",
@@ -2335,14 +2365,6 @@
    "src": "Investing.com France",
    "ts": "2026-11-01T18:35:35Z",
    "url": "https://fr.investing.com/news/world-news/un-juge-bloque-la-tentative-de-trump-darreter-la-certification-du-vote-au-senat-en-alaska-3667259"
-  },
-  {
-   "h": "Democratic Rep. Stevens endorses Rogers over El-Sayed in Michigan Senate election",
-   "w": "Haley Stevens had lost the Democratic nomination for Senate in Michigan to Abdul El-Sayed earlier this year.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-01T18:16:05Z",
-   "url": "https://www.cnbc.com/2026/11/01/michigan-senate-stevens-rogers-endorsement-el-sayed.html"
   },
   {
    "h": "Binance users pull $3.6bn as crypto exchange restarts services after heist",
@@ -2388,7 +2410,7 @@
    "h": "Blue Lagoon owner plans to float as Icelandic tourism booms",
    "w": "Owner of famed geothermal baths wants to raise money for its growth plans including a mountain retreat",
    "syms": [],
-   "src": "myFT — companies",
+   "src": "myFT — europe",
    "ts": "2026-11-01T18:00:03Z",
    "url": "https://www.ft.com/content/6a3c6f12-cada-4368-8aad-4deb4db13fcb?syn-25a6b1a6=1",
    "mine": 1
@@ -2882,15 +2904,6 @@
    "mine": 1
   },
   {
-   "h": "Russia forced to ship grain via Arctic as Black Sea battles rage",
-   "w": "Farmers are exporting agricultural goods from ports thousands of miles away, driving up costs for overseas buyers",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-01T05:00:09Z",
-   "url": "https://www.ft.com/content/50aeab56-c5e3-44c5-9117-8fadc2f980fb?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Military briefing: what would another US-Iran conflict look like?",
    "w": "US and Israeli options to escalate range from maritime campaigns to attempting regime change but risk provoking retaliation",
    "syms": [],
@@ -2906,6 +2919,15 @@
    "src": "myFT — world uk",
    "ts": "2026-11-01T05:00:09Z",
    "url": "https://www.ft.com/content/bc51e3b9-f691-4cf2-a333-476a9c4a4a54?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Russia forced to ship grain via Arctic as Black Sea battles rage",
+   "w": "Farmers are exporting agricultural goods from ports thousands of miles away, driving up costs for overseas buyers",
+   "syms": [],
+   "src": "myFT — economy",
+   "ts": "2026-11-01T05:00:09Z",
+   "url": "https://www.ft.com/content/50aeab56-c5e3-44c5-9117-8fadc2f980fb?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -3005,15 +3027,6 @@
    "url": "https://www.cnbc.com/2026/10/31/trump-murdoch-wsj-epstein-defamation-lawsuit-dismissed.html"
   },
   {
-   "h": "Tusk vows to press on with overhaul of Poland’s judiciary",
-   "w": "Prime minister defends suspension of constitutional court’s president as opposition accuses him of staging an institutional coup",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-10-31T22:51:11Z",
-   "url": "https://www.ft.com/content/d49a7943-fc11-45cb-bcf2-f5876c3c381d?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Marie Lavigne, spécialiste de l’économie de l’URSS et des pays socialistes, est morte",
    "w": "L’universitaire était à la pointe de la recherche en « soviétologie économique » puis sur la transition post-communiste vers l’économie de marché. Elle s’est éteinte le 28 octobre, à l’âge de 91 ans.",
    "syms": [],
@@ -3028,14 +3041,6 @@
    "src": "MarketWatch",
    "ts": "2026-10-31T20:15:00Z",
    "url": "https://www.marketwatch.com/story/my-abusive-ex-husband-promised-20-000-for-our-kids-education-now-he-refuses-to-pay-is-he-legally-obligated-325ef50f?mod=mw_rss_topstories"
-  },
-  {
-   "h": "This is where most people go wrong in their 30s and 40s",
-   "w": "These big life decisions will determine just how well you retire.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-10-31T19:02:00Z",
-   "url": "https://www.marketwatch.com/story/the-house-the-kids-college-and-the-raise-where-people-in-their-30s-and-40s-go-wrong-69ec6c90?mod=mw_rss_topstories"
   },
   {
    "h": "Le parquet de Paris a ouvert une enquête pour provocation à la haine raciale en raison de menaces racistes visant des livreurs et chauffeurs sur X",
