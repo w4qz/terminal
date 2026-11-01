@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T17:39:07.178173Z",
+ "generated_at": "2026-11-01T17:59:01.485537Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -39,10 +39,10 @@
    ]
   },
   "ASTS": {
-   "p": 40.99,
+   "p": 40.97,
    "prev": 43.07,
-   "chg": -2.08,
-   "pct": -4.83,
+   "chg": -2.1,
+   "pct": -4.88,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-10-30T19:30:00Z",
@@ -742,7 +742,7 @@
    "open": 102.8,
    "lo": 102.43,
    "hi": 104.99,
-   "vol": 248667,
+   "vol": 248668,
    "h": [
     92.87,
     91.11,
@@ -806,17 +806,17 @@
    ]
   },
   "BTC": {
-   "p": 78014.0,
+   "p": 77894.6016,
    "prev": 77434.75,
-   "chg": 579.25,
-   "pct": 0.75,
+   "chg": 459.8516,
+   "pct": 0.59,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
    "ts": "2026-11-01T17:00:00Z",
    "open": 77440.9297,
    "lo": 77395.6953,
    "hi": 78126.9297,
-   "vol": 11799756800,
+   "vol": 11639059456,
    "h": [
     83679.47,
     81762.56,
@@ -839,7 +839,7 @@
     77775.11,
     77198.21,
     77434.75,
-    78014.0
+    77894.6
    ]
   }
  },
@@ -937,9 +937,9 @@
    "ccy": "USD",
    "mcap": 3875804807168,
    "pe": 27.2396,
-   "fpe": 21.6187,
+   "fpe": 21.6233,
    "eps": 19.16,
-   "feps": 24.1416,
+   "feps": 24.1364,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -1023,9 +1023,9 @@
    "ccy": "USD",
    "mcap": 2598937821184,
    "pe": 19.4301,
-   "fpe": 22.3914,
+   "fpe": 22.0672,
    "eps": 12.37,
-   "feps": 10.734,
+   "feps": 10.8917,
    "revTTM": 797455024128,
    "netIncome": 134779002880,
    "shares": 10813138306,
@@ -1104,9 +1104,9 @@
    "ccy": "USD",
    "mcap": 1829640994816,
    "pe": 585.7391,
-   "fpe": 52.529,
+   "fpe": 56.9376,
    "eps": 0.23,
-   "feps": 2.5647,
+   "feps": 2.3661,
    "revTTM": 32042999808,
    "netIncome": -3431000064,
    "shares": 8246541218,
@@ -1501,14 +1501,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 979897024512,
+   "mcap": 982902374400,
    "pe": 44.75,
    "fpe": 38.2805,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.578,
    "div": 0.99,
    "divYield": 0.802,
@@ -1879,9 +1879,9 @@
    "ccy": "USD",
    "mcap": 459499536384,
    "pe": 17.2922,
-   "fpe": 14.8086,
+   "fpe": 14.9045,
    "eps": 13.62,
-   "feps": 15.9043,
+   "feps": 15.802,
    "revTTM": 226326003712,
    "netIncome": 26976000000,
    "shares": 1951000000,
@@ -1911,7 +1911,7 @@
    "exDiv": 1794960000,
    "divDate": 1788998400,
    "lastDiv": 1.78,
-   "trailDiv": 7.05
+   "trailDiv": 1.71
   },
   "COST": {
    "name": "Costco Wholesale Corporation",
@@ -1963,9 +1963,9 @@
    "ccy": "USD",
    "mcap": 442427080704,
    "pe": 158.7155,
-   "fpe": 78.7903,
+   "fpe": 78.3347,
    "eps": 1.16,
-   "feps": 2.3367,
+   "feps": 2.3503,
    "revTTM": 6155940864,
    "netIncome": 3016691968,
    "shares": 2300713329,
@@ -2128,13 +2128,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 122.9082,
-   "shares": 572600000,
-   "divYield": 2.574,
    "w52lo": 93.84,
-   "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48
+   "w52hi": 101.46
   },
   "GLD": {
    "name": "SPDR Gold Shares",
@@ -2187,7 +2182,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T17:39:07.178173+00:00",
+   "ts": "2026-11-01T17:59:01.485537+00:00",
    "url": "https://asia.nikkei.com/business/energy/mitsubishi-heavy-gears-up-to-boost-us-gas-turbine-production"
   },
   {
@@ -2195,7 +2190,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T17:39:07.178173+00:00",
+   "ts": "2026-11-01T17:59:01.485537+00:00",
    "url": "https://asia.nikkei.com/business/energy/nuclear-reactors-under-construction-rise-to-79-globally-on-ai-demand"
   },
   {
@@ -2203,7 +2198,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T17:39:07.178173+00:00",
+   "ts": "2026-11-01T17:59:01.485537+00:00",
    "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/ai-dubbing-to-help-japanese-companies-expand-global-outreach"
   },
   {
@@ -2211,7 +2206,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T17:39:07.178173+00:00",
+   "ts": "2026-11-01T17:59:01.485537+00:00",
    "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/indonesia-gdp-us-midterm-elections-hong-kong-financial-summit"
   },
   {
@@ -2219,7 +2214,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T17:39:07.178173+00:00",
+   "ts": "2026-11-01T17:59:01.485537+00:00",
    "url": "https://asia.nikkei.com/business/energy/pakistan-refineries-report-1-860-jump-in-profit-amid-war-windfall2"
   },
   {
@@ -2227,7 +2222,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T17:39:07.178173+00:00",
+   "ts": "2026-11-01T17:59:01.485537+00:00",
    "url": "https://asia.nikkei.com/spotlight/comment/after-us-midterms-democracy-will-face-test-of-ability-to-self-correct"
   },
   {
@@ -2235,7 +2230,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T17:39:07.178173+00:00",
+   "ts": "2026-11-01T17:59:01.485537+00:00",
    "url": "https://asia.nikkei.com/politics/thai-reformists-became-too-technocratic-party-ex-leader-pita-says"
   },
   {
@@ -2243,7 +2238,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T17:39:07.178173+00:00",
+   "ts": "2026-11-01T17:59:01.485537+00:00",
    "url": "https://asia.nikkei.com/business/companies/japan-bamboo-chopsticks-catch-on-in-south-korea"
   },
   {
@@ -2251,7 +2246,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T17:39:07.178173+00:00",
+   "ts": "2026-11-01T17:59:01.485537+00:00",
    "url": "https://asia.nikkei.com/life-arts/life/on-india-s-east-coast-tidepooling-inspires-marine-conservation"
   },
   {
@@ -2259,7 +2254,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T17:39:07.178173+00:00",
+   "ts": "2026-11-01T17:59:01.485537+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/china-mega-complex-in-dalian-puts-spotlight-on-investment-push"
   },
   {
@@ -2267,7 +2262,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T17:39:07.178173+00:00",
+   "ts": "2026-11-01T17:59:01.485537+00:00",
    "url": "https://asia.nikkei.com/opinion/time-for-japan-to-develop-people-who-can-sell-content"
   },
   {
@@ -2277,7 +2272,7 @@
     "USDJPY"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T17:39:07.178173+00:00",
+   "ts": "2026-11-01T17:59:01.485537+00:00",
    "url": "https://asia.nikkei.com/business/markets/bonds/yen-bond-offerings-hit-record-16bn-as-ai-funding-race-reaches-japan"
   },
   {
@@ -2285,7 +2280,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T17:39:07.178173+00:00",
+   "ts": "2026-11-01T17:59:01.485537+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/japan-weighs-taxing-real-estate-rental-operators-living-overseas"
   },
   {
@@ -2293,7 +2288,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T17:39:07.178173+00:00",
+   "ts": "2026-11-01T17:59:01.485537+00:00",
    "url": "https://asia.nikkei.com/business/health-care/japan-s-foreign-caregivers-face-exam-hurdle-as-grace-period-ends"
   },
   {
@@ -2301,12 +2296,20 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T17:39:07.178173+00:00",
+   "ts": "2026-11-01T17:59:01.485537+00:00",
    "url": "https://asia.nikkei.com/business/food-beverage/thai-highland-tribe-coffee-brews-following-at-home-and-in-tokyo"
   },
   {
+   "h": "Democratic Rep. Stevens endorses Rogers over El-Sayed in Michigan Senate election",
+   "w": "Haley Stevens had lost the Democratic nomination for Senate in Michigan to Abdul El-Sayed earlier this year.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-01T17:57:54Z",
+   "url": "https://www.cnbc.com/2026/11/01/michigan-senate-stevens-rogers-endorsement-el-sayed.html"
+  },
+  {
    "h": "Worsening Michigan feud threatens Democratic unity in key Senate race",
-   "w": "Defeated primary candidate Haley Stevens appears with Republican rival to Abdul El-Sayed amid war of words over Israel",
+   "w": "Moderate Haley Stevens snubs progressive nominee Abdul El-Sayed to attend church with his Republican rival days before midterm elections",
    "syms": [],
    "src": "myFT — world",
    "ts": "2026-11-01T17:33:59Z",
@@ -2349,10 +2352,19 @@
    "url": "https://www.marketwatch.com/story/he-was-heartbroken-my-husbands-kids-never-helped-when-he-was-gravely-ill-was-he-right-to-leave-everything-to-me-1ad0616b?mod=mw_rss_topstories"
   },
   {
+   "h": "Serbia shuts down bank favoured by Russians",
+   "w": "Alta Bank is suspected of wiring large amounts of money out of the country after election loss of former president Aleksandar Vučić",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-01T17:02:03Z",
+   "url": "https://www.ft.com/content/c478c8b6-789f-4253-8970-1244b93c1cce?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "Britain to offer cheaper university fees to EU students at ‘reset’ summit",
    "w": "Since Brexit, European students have paid international tuition rates at UK universities",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — europe",
    "ts": "2026-11-01T17:00:02Z",
    "url": "https://www.ft.com/content/1bcb60e3-8fd7-495d-9482-f59ce64d534e?syn-25a6b1a6=1",
    "mine": 1
@@ -2383,6 +2395,15 @@
    "url": "https://www.marketwatch.com/story/grand-theft-callout-gta-6-fans-are-missing-work-on-the-games-release-day-because-they-dont-want-to-wait-anymore-5f2fa2e3?mod=mw_rss_topstories"
   },
   {
+   "h": "Inside the leaderless movement set to govern Serbia",
+   "w": "Secretive ‘plenums’, code names based on Teletubbies, and fury over corruption: how student rebels won a parliamentary victory",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-01T16:12:16Z",
+   "url": "https://www.ft.com/content/4e09cf90-7395-4dc4-afa8-a4fa71abe2b3?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "Intensive parenting is no longer the preserve of the rich",
    "w": "But wealthy families still come out on top",
    "syms": [],
@@ -2394,7 +2415,7 @@
    "h": "France and the UK require a new entente",
    "w": "The Suez crisis offers valuable lessons on troubled relations since the birth of the European project",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — europe",
    "ts": "2026-11-01T16:00:02Z",
    "url": "https://www.ft.com/content/e1f6ac62-d677-4a50-94c5-25605ae71eb7",
    "mine": 1
@@ -2983,23 +3004,6 @@
    "url": "https://www.marketwatch.com/story/the-house-the-kids-college-and-the-raise-where-people-in-their-30s-and-40s-go-wrong-69ec6c90?mod=mw_rss_topstories"
   },
   {
-   "h": "Le parquet de Paris a ouvert une enquête pour provocation à la haine raciale en raison de menaces racistes visant des livreurs et chauffeurs sur X",
-   "w": "Sur le réseau social, un salon de discussion ouvert aux utilisateurs, intitulé « L’heure est à l’action face à la violence des islamo-collabos antifas », a été l’espace où ces propos racistes et d’incitation à la violence ont été tenus, au début d’octobre.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-10-31T16:24:37Z",
-   "url": "https://www.lemonde.fr/societe/article/2026/10/31/le-parquet-de-paris-a-ouvert-une-enquete-pour-provocation-a-la-haine-raciale-en-raison-de-menaces-racistes-visant-des-livreurs-et-chauffeurs-sur-x_6803720_3224.html"
-  },
-  {
-   "h": "Evacuees from Russian-occupied city arrive in Ukraine",
-   "w": "Complex humanitarian mission extracted hundreds of people from Oleshky during rare local ceasefire between Moscow and Kyiv",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-10-31T15:17:34Z",
-   "url": "https://www.ft.com/content/55dfa145-4078-450f-a853-5f2d551260f1",
-   "mine": 1
-  },
-  {
    "h": "Investors trim growth bets over fears of US economy’s AI exposure",
    "w": "Return to bonds after long sell-off comes as concern rises about over-reliance on tech spending",
    "syms": [],
@@ -3034,20 +3038,11 @@
    "ts": "2026-10-31T12:00:01Z",
    "url": "https://www.ft.com/content/14a8ce6c-ef84-478a-993f-47db30a41d1d?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Poland suspends top judges as battle over rule of law escalates",
-   "w": "President and prime minister are embroiled in a bitter dispute over appointments to country’s constitutional court",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-10-31T11:57:56Z",
-   "url": "https://www.ft.com/content/1be69ebe-0c55-446e-9abf-84ac9e99c51e?syn-25a6b1a6=1",
-   "mine": 1
   }
  ],
  "summary": {
-  "text": "Une nette aversion au risque domine, marquée par le plongeon du secteur technologique (NDX -3,46 %, NVDA -4,14 %) et le bond de la volatilité (VIX à 19,44, +13,02 %). Les indices mondiaux fléchissent (SPX -1,81 %, N225 -2,44 %, SX5E -1,23 %), à l'exception notable de Hong Kong (HSI +1,46 %).\n\nLe dollar s'effrite légèrement (DXY à 101,964, -0,07 %), l'EUR/USD s'établissant à 1,1166 (+0,09 %). Les matières premières décrochent pour certaines : l'or recule lourdement (XAU -3,29 % à 3898,90), tandis que le pétrole diverge entre la hausse du CL (+2,08 % à 104,12) et le repli du Brent (-1,26 % à 113,43). Le BTC avance de 0,75 % à 78013,60.\n\nL'attention se porte sur la proposition iranienne de réouverture d'Hormuz en 48 heures, les élections de mi-mandat américaines et l'offre record d'obligations en yens de 16 milliards de dollars pour financer l'IA au Japon.",
+  "text": "Une nette aversion au risque pèse sur les marchés, tirée par le recul marqué de la technologie : le NDX décroche de 3,46 % et NVDA chute de 4,14 %, propulsant le VIX à 19,44 (+13,02 %). Wall Street cède du terrain (SPX -1,81 %) à l'instar du Nikkei (-2,44 %). En parallèle, Binance a repris les retraits clients après un vol de 6,3 milliards de dollars (BTC à 77 894).\n\nLe dollar s'effrite légèrement (DXY à 101,964), l'EUR/USD s'établissant à 1,1166 et l'USD/JPY à 157,519. Côté matières premières, l'or plonge de 3,29 % (XAU à 3 898,90). Le pétrole affiche des trajectoires opposées : le CL gagne 2,08 % à 104,12 tandis que le Brent reflue de 1,26 % à 113,43.\n\nÀ court terme, les investisseurs surveilleront le sommet financier de Hong Kong, le PIB indonésien, l'échiquier politique américain autour des élections de mi-mandat, ainsi que les financements records pour l'IA (16 milliards de dollars d'obligations en yens).",
   "model": "gemini-flash-latest",
-  "ts": "2026-11-01T08:40:56.100325Z"
+  "ts": "2026-11-01T17:59:01.485537Z"
  }
 }
