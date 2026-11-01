@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T01:54:19.527555Z",
+ "generated_at": "2026-11-01T02:41:29.885836Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -15,10 +15,10 @@
    "vol": 168039400
   },
   "ASTS": {
-   "p": 40.97,
+   "p": 40.99,
    "prev": 43.07,
-   "chg": -2.1,
-   "pct": -4.88,
+   "chg": -2.08,
+   "pct": -4.83,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-10-30T19:30:00Z",
@@ -283,17 +283,17 @@
    "vol": 6774
   },
   "BTC": {
-   "p": 77544.7031,
+   "p": 77560.0,
    "prev": 77198.2109,
-   "chg": 346.4922,
-   "pct": 0.45,
+   "chg": 361.7891,
+   "pct": 0.47,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-01T01:00:00Z",
+   "ts": "2026-11-01T02:00:00Z",
    "open": 77440.9297,
    "lo": 77395.6953,
-   "hi": 77632.0625,
-   "vol": 11519143936
+   "hi": 77727.7422,
+   "vol": 11362913280
   }
  },
  "fundamentals": {
@@ -390,9 +390,9 @@
    "ccy": "USD",
    "mcap": 3875804807168,
    "pe": 27.2396,
-   "fpe": 21.6269,
+   "fpe": 21.6187,
    "eps": 19.16,
-   "feps": 24.1324,
+   "feps": 24.1416,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -476,9 +476,9 @@
    "ccy": "USD",
    "mcap": 2598937821184,
    "pe": 19.4301,
-   "fpe": 22.5757,
+   "fpe": 22.5665,
    "eps": 12.37,
-   "feps": 10.6464,
+   "feps": 10.6508,
    "revTTM": 797455024128,
    "netIncome": 134779002880,
    "shares": 10813138306,
@@ -557,9 +557,9 @@
    "ccy": "USD",
    "mcap": 1829640994816,
    "pe": 585.7391,
-   "fpe": 56.9376,
+   "fpe": 52.529,
    "eps": 0.23,
-   "feps": 2.3661,
+   "feps": 2.5647,
    "revTTM": 32042999808,
    "netIncome": -3431000064,
    "shares": 8246541218,
@@ -957,14 +957,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 982902374400,
+   "mcap": 979897024512,
    "pe": 44.75,
    "fpe": 38.2805,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.578,
    "div": 0.99,
    "divYield": 0.8,
@@ -1330,10 +1330,10 @@
    "industry": "Oil & Gas Integrated",
    "ccy": "USD",
    "mcap": 459499536384,
-   "pe": 17.2922,
-   "fpe": 14.9045,
-   "eps": 13.62,
-   "feps": 15.802,
+   "pe": 22.668,
+   "fpe": 14.9859,
+   "eps": 10.39,
+   "feps": 15.7161,
    "revTTM": 228955996160,
    "netIncome": 26976000000,
    "shares": 1951000000,
@@ -1359,7 +1359,7 @@
    "exDiv": 1794960000,
    "divDate": 1788998400,
    "lastDiv": 1.78,
-   "trailDiv": 1.71
+   "trailDiv": 6.98
   },
   "COST": {
    "name": "Costco Wholesale Corporation",
@@ -1411,9 +1411,9 @@
    "ccy": "USD",
    "mcap": 442427080704,
    "pe": 158.7155,
-   "fpe": 78.3347,
+   "fpe": 78.7903,
    "eps": 1.16,
-   "feps": 2.3503,
+   "feps": 2.3367,
    "revTTM": 6155940864,
    "netIncome": 3016691968,
    "shares": 2300713329,
@@ -1579,9 +1579,12 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 122.9082,
+   "shares": 572600000,
    "divYield": 4.19,
    "w52lo": 93.84,
-   "w52hi": 101.46
+   "w52hi": 101.46,
+   "trailDiv": 2.48
   },
   "GLD": {
    "name": "SPDR Gold Shares",
@@ -1638,7 +1641,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T01:54:19.527555+00:00",
+   "ts": "2026-11-01T02:41:29.885836+00:00",
    "url": "https://asia.nikkei.com/business/companies/japan-bamboo-chopsticks-catch-on-in-south-korea"
   },
   {
@@ -1646,7 +1649,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T01:54:19.527555+00:00",
+   "ts": "2026-11-01T02:41:29.885836+00:00",
    "url": "https://asia.nikkei.com/life-arts/life/on-india-s-east-coast-tidepooling-inspires-marine-conservation"
   },
   {
@@ -1654,7 +1657,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T01:54:19.527555+00:00",
+   "ts": "2026-11-01T02:41:29.885836+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/china-mega-complex-in-dalian-puts-spotlight-on-investment-push"
   },
   {
@@ -1664,7 +1667,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T01:54:19.527555+00:00",
+   "ts": "2026-11-01T02:41:29.885836+00:00",
    "url": "https://asia.nikkei.com/opinion/time-for-japan-to-develop-people-who-can-sell-content"
   },
   {
@@ -1675,7 +1678,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T01:54:19.527555+00:00",
+   "ts": "2026-11-01T02:41:29.885836+00:00",
    "url": "https://asia.nikkei.com/business/markets/bonds/yen-bond-offerings-hit-record-16bn-as-ai-funding-race-reaches-japan"
   },
   {
@@ -1685,7 +1688,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T01:54:19.527555+00:00",
+   "ts": "2026-11-01T02:41:29.885836+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/japan-weighs-taxing-real-estate-rental-operators-living-overseas"
   },
   {
@@ -1695,7 +1698,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T01:54:19.527555+00:00",
+   "ts": "2026-11-01T02:41:29.885836+00:00",
    "url": "https://asia.nikkei.com/business/health-care/japan-s-foreign-caregivers-face-exam-hurdle-as-grace-period-ends"
   },
   {
@@ -1703,7 +1706,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T01:54:19.527555+00:00",
+   "ts": "2026-11-01T02:41:29.885836+00:00",
    "url": "https://asia.nikkei.com/business/food-beverage/thai-highland-tribe-coffee-brews-following-at-home-and-in-tokyo"
   },
   {
@@ -1713,7 +1716,7 @@
     "HSI"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T01:54:19.527555+00:00",
+   "ts": "2026-11-01T02:41:29.885836+00:00",
    "url": "https://asia.nikkei.com/spotlight/society/fatal-dog-attacks-test-hong-kong-s-ambitions-for-a-pet-friendly-economy"
   },
   {
@@ -1721,7 +1724,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T01:54:19.527555+00:00",
+   "ts": "2026-11-01T02:41:29.885836+00:00",
    "url": "https://asia.nikkei.com/spotlight/comment/thailand-looks-west-after-30-years-of-struggles-over-dawei"
   },
   {
@@ -1729,7 +1732,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T01:54:19.527555+00:00",
+   "ts": "2026-11-01T02:41:29.885836+00:00",
    "url": "https://asia.nikkei.com/spotlight/my-personal-history/what-lies-ahead-stephen-schwarzman-30"
   },
   {
@@ -1739,7 +1742,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T01:54:19.527555+00:00",
+   "ts": "2026-11-01T02:41:29.885836+00:00",
    "url": "https://asia.nikkei.com/business/food-beverage/yakitori-chicken-from-japan-takes-a-stab-at-the-philippines-the-land-of-jollibee"
   },
   {
@@ -1747,7 +1750,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T01:54:19.527555+00:00",
+   "ts": "2026-11-01T02:41:29.885836+00:00",
    "url": "https://asia.nikkei.com/business/automobiles/electric-vehicles/foxconn-unveils-3-evs-to-grow-contract-manufacturing-business"
   },
   {
@@ -1757,7 +1760,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T01:54:19.527555+00:00",
+   "ts": "2026-11-01T02:41:29.885836+00:00",
    "url": "https://asia.nikkei.com/business/technology/japan-miner-to-address-labor-crunch-with-self-driving-dump-trucks"
   },
   {
@@ -1765,14 +1768,41 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T01:54:19.527555+00:00",
+   "ts": "2026-11-01T02:41:29.885836+00:00",
    "url": "https://asia.nikkei.com/business/retail/uniqlo-shakes-up-china-strategy-with-focus-on-store-profitability"
+  },
+  {
+   "h": "FBI blames North Korean group for $6.3bn Binance cyber heist",
+   "w": "Crypto exchanges move to tighten security after record theft from world’s biggest digital assets venue",
+   "syms": [
+    "BTC"
+   ],
+   "src": "myFT — technology",
+   "ts": "2026-11-01T02:30:37Z",
+   "url": "https://www.ft.com/content/c7062e37-86fd-45ef-8f58-573de0fcaaf0?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Une directrice d’AAR CORP vend des actions pour 454.238$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-01T02:02:06Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/une-directrice-daar-corp-vend-des-actions-pour-454238-93CH-3667052"
+  },
+  {
+   "h": "Les exportations de la Corée du Sud bondissent de 93,7% en octobre, leur plus forte hausse depuis 1974",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-01T01:40:34Z",
+   "url": "https://fr.investing.com/news/economy-news/les-exportations-de-la-coree-du-sud-bondissent-de-937-en-octobre-leur-plus-forte-hausse-depuis-1974-3667050"
   },
   {
    "h": "Toyota-backed truckmaker bets on aftersales service to fend off Chinese EV rivals",
    "w": "Archion chief says repair network offers competitive strength after Thai floods bring service quality to fore",
    "syms": [],
-   "src": "myFT — companies",
+   "src": "myFT — world",
    "ts": "2026-11-01T01:00:06Z",
    "url": "https://www.ft.com/content/7e749777-dcee-4c11-9bdc-7f81bee80455?syn-25a6b1a6=1",
    "mine": 1
@@ -1837,17 +1867,6 @@
    "src": "myFT — europe",
    "ts": "2026-10-31T22:51:11Z",
    "url": "https://www.ft.com/content/d49a7943-fc11-45cb-bcf2-f5876c3c381d?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "FBI blames North Korean group for $6.3bn Binance cyber heist",
-   "w": "Crypto exchanges move to tighten security after record theft from world’s biggest digital assets venue",
-   "syms": [
-    "BTC"
-   ],
-   "src": "myFT — technology",
-   "ts": "2026-10-31T22:34:50Z",
-   "url": "https://www.ft.com/content/c7062e37-86fd-45ef-8f58-573de0fcaaf0?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -1977,30 +1996,12 @@
    "url": "https://www.marketwatch.com/story/were-spending-more-than-11-000-a-year-of-our-own-money-caring-for-our-aging-parents-and-loved-ones-8fc5b2dc?mod=mw_rss_topstories"
   },
   {
-   "h": "Meta développe un robot humanoïde avec la startup chinoise Fourier",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-10-31T17:29:26Z",
-   "url": "https://fr.investing.com/news/stock-market-news/meta-developpe-un-robot-humanoide-avec-la-startup-chinoise-fourier-3667033"
-  },
-  {
    "h": "Medicare used AI to pre-approve patient care, and it immediately led to a large drop in medical services",
    "w": "Medicare is testing the use of AI to conduct prior authorizations to target wasteful medical spending",
    "syms": [],
    "src": "MarketWatch",
    "ts": "2026-10-31T17:26:00Z",
    "url": "https://www.marketwatch.com/story/medicare-used-ai-to-pre-approve-patient-care-and-it-immediately-led-to-a-large-drop-in-medical-services-dc38a210?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Binance a remplacé 90% des 6,3 milliards $ volés dans le plus grand piratage crypto",
-   "w": "",
-   "syms": [
-    "BTC"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-10-31T16:56:46Z",
-   "url": "https://fr.investing.com/news/cryptocurrency-news/binance-a-remplace-90-des-63-milliards--voles-dans-le-plus-grand-piratage-crypto-3667031"
   },
   {
    "h": "80% of workers make this 401(k) mistake when they retire",
