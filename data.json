@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T03:43:59.402149Z",
+ "generated_at": "2026-11-01T04:43:33.043189Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -254,7 +254,7 @@
    "open": 4033.6001,
    "lo": 3879.3,
    "hi": 4038.2,
-   "vol": 142006
+   "vol": 230038
   },
   "CL": {
    "p": 104.12,
@@ -267,7 +267,7 @@
    "open": 102.8,
    "lo": 102.43,
    "hi": 104.99,
-   "vol": 262537
+   "vol": 248668
   },
   "BRENT": {
    "p": 113.43,
@@ -277,23 +277,23 @@
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-10-30T20:00:00Z",
-   "open": 115.83,
-   "lo": 115.28,
-   "hi": 118.0,
-   "vol": 6774
+   "open": 111.28,
+   "lo": 111.05,
+   "hi": 114.29,
+   "vol": 37539
   },
   "BTC": {
-   "p": 77688.6406,
+   "p": 77689.6719,
    "prev": 77198.2109,
-   "chg": 490.4297,
+   "chg": 491.4609,
    "pct": 0.64,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-01T03:00:00Z",
+   "ts": "2026-11-01T04:00:00Z",
    "open": 77440.9297,
    "lo": 77395.6953,
    "hi": 77727.7422,
-   "vol": 11190444032
+   "vol": 10853628928
   }
  },
  "fundamentals": {
@@ -390,9 +390,9 @@
    "ccy": "USD",
    "mcap": 3875804807168,
    "pe": 27.2396,
-   "fpe": 21.6269,
+   "fpe": 21.6233,
    "eps": 19.16,
-   "feps": 24.1324,
+   "feps": 24.1364,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -476,9 +476,9 @@
    "ccy": "USD",
    "mcap": 2598937821184,
    "pe": 19.4301,
-   "fpe": 22.5757,
+   "fpe": 22.3914,
    "eps": 12.37,
-   "feps": 10.6464,
+   "feps": 10.734,
    "revTTM": 797455024128,
    "netIncome": 134779002880,
    "shares": 10813138306,
@@ -616,7 +616,7 @@
    "cash": 229477007360,
    "debt": 355262005248,
    "fcf": 375149985792,
-   "w52lo": 23.29,
+   "w52lo": 0.0,
    "w52hi": 27.96,
    "evEbitda": 7.405,
    "earnTs": 1793707200,
@@ -1632,11 +1632,19 @@
  ],
  "news": [
   {
+   "h": "After US midterms, democracy will face test of ability to self-correct",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-01T04:43:33.043189+00:00",
+   "url": "https://asia.nikkei.com/spotlight/comment/after-us-midterms-democracy-will-face-test-of-ability-to-self-correct"
+  },
+  {
    "h": "Thai reformists became too technocratic, party ex-leader Pita says",
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T03:43:59.402149+00:00",
+   "ts": "2026-11-01T04:43:33.043189+00:00",
    "url": "https://asia.nikkei.com/politics/thai-reformists-became-too-technocratic-party-ex-leader-pita-says"
   },
   {
@@ -1646,7 +1654,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T03:43:59.402149+00:00",
+   "ts": "2026-11-01T04:43:33.043189+00:00",
    "url": "https://asia.nikkei.com/business/companies/japan-bamboo-chopsticks-catch-on-in-south-korea"
   },
   {
@@ -1654,7 +1662,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T03:43:59.402149+00:00",
+   "ts": "2026-11-01T04:43:33.043189+00:00",
    "url": "https://asia.nikkei.com/life-arts/life/on-india-s-east-coast-tidepooling-inspires-marine-conservation"
   },
   {
@@ -1662,7 +1670,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T03:43:59.402149+00:00",
+   "ts": "2026-11-01T04:43:33.043189+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/china-mega-complex-in-dalian-puts-spotlight-on-investment-push"
   },
   {
@@ -1672,7 +1680,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T03:43:59.402149+00:00",
+   "ts": "2026-11-01T04:43:33.043189+00:00",
    "url": "https://asia.nikkei.com/opinion/time-for-japan-to-develop-people-who-can-sell-content"
   },
   {
@@ -1683,7 +1691,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T03:43:59.402149+00:00",
+   "ts": "2026-11-01T04:43:33.043189+00:00",
    "url": "https://asia.nikkei.com/business/markets/bonds/yen-bond-offerings-hit-record-16bn-as-ai-funding-race-reaches-japan"
   },
   {
@@ -1693,7 +1701,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T03:43:59.402149+00:00",
+   "ts": "2026-11-01T04:43:33.043189+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/japan-weighs-taxing-real-estate-rental-operators-living-overseas"
   },
   {
@@ -1703,7 +1711,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T03:43:59.402149+00:00",
+   "ts": "2026-11-01T04:43:33.043189+00:00",
    "url": "https://asia.nikkei.com/business/health-care/japan-s-foreign-caregivers-face-exam-hurdle-as-grace-period-ends"
   },
   {
@@ -1711,7 +1719,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T03:43:59.402149+00:00",
+   "ts": "2026-11-01T04:43:33.043189+00:00",
    "url": "https://asia.nikkei.com/business/food-beverage/thai-highland-tribe-coffee-brews-following-at-home-and-in-tokyo"
   },
   {
@@ -1721,7 +1729,7 @@
     "HSI"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T03:43:59.402149+00:00",
+   "ts": "2026-11-01T04:43:33.043189+00:00",
    "url": "https://asia.nikkei.com/spotlight/society/fatal-dog-attacks-test-hong-kong-s-ambitions-for-a-pet-friendly-economy"
   },
   {
@@ -1729,7 +1737,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T03:43:59.402149+00:00",
+   "ts": "2026-11-01T04:43:33.043189+00:00",
    "url": "https://asia.nikkei.com/spotlight/comment/thailand-looks-west-after-30-years-of-struggles-over-dawei"
   },
   {
@@ -1737,7 +1745,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T03:43:59.402149+00:00",
+   "ts": "2026-11-01T04:43:33.043189+00:00",
    "url": "https://asia.nikkei.com/spotlight/my-personal-history/what-lies-ahead-stephen-schwarzman-30"
   },
   {
@@ -1747,7 +1755,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T03:43:59.402149+00:00",
+   "ts": "2026-11-01T04:43:33.043189+00:00",
    "url": "https://asia.nikkei.com/business/food-beverage/yakitori-chicken-from-japan-takes-a-stab-at-the-philippines-the-land-of-jollibee"
   },
   {
@@ -1755,26 +1763,40 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T03:43:59.402149+00:00",
+   "ts": "2026-11-01T04:43:33.043189+00:00",
    "url": "https://asia.nikkei.com/business/automobiles/electric-vehicles/foxconn-unveils-3-evs-to-grow-contract-manufacturing-business"
   },
   {
-   "h": "Japan miner to address labor crunch with self-driving dump trucks",
-   "w": "",
-   "syms": [
-    "N225"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-01T03:43:59.402149+00:00",
-   "url": "https://asia.nikkei.com/business/technology/japan-miner-to-address-labor-crunch-with-self-driving-dump-trucks"
+   "h": "L’attrait des jeunes pour le fitness et la musculation porte le succès commercial des salles de sport",
+   "w": "Portées par des tarifs accessibles et par l’engouement des 16-25 ans, les salles de sport connaissent une croissance impressionnante. De quoi aiguiser l’appétit des investisseurs.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-01T04:40:45Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/11/01/l-attrait-des-jeunes-pour-le-fitness-et-la-musculation-porte-le-succes-commercial-des-salles-de-sport_6804018_3234.html"
   },
   {
-   "h": "Les investisseurs en IA se couvrent contre un possible effondrement du secteur tech",
-   "w": "",
+   "h": "« Les gens dépensent avec précaution » : en Chine, les ménages préoccupés par les incertitudes économiques",
+   "w": "Echaudés par la crise de l’immobilier et par des tensions sur les salaires, de nombreux Chinois rognent sur les dépenses jugées superflues. Mais pas question pour autant de transiger sur l’éducation des enfants, pourtant de plus en plus onéreuse.",
    "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-01T02:32:11Z",
-   "url": "https://fr.investing.com/news/stock-market-news/les-investisseurs-en-ia-se-couvrent-contre-un-possible-effondrement-du-secteur-tech-3667054"
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-01T04:39:28Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/11/01/les-gens-depensent-avec-precaution-en-chine-les-menages-preoccupes-par-les-incertitudes-economiques_6804017_3234.html"
+  },
+  {
+   "h": "Assurance : comment faire face à un sinistre important ?",
+   "w": "Les incendies, les inondations ou encore le retrait-gonflement des argiles sont des sinistres aux conséquences importantes, qui nécessitent des démarches spécifiques que les assurés ne maîtrisent pas toujours. Un expert indépendant peut les aider à défendre leurs intérêts.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-01T04:34:42Z",
+   "url": "https://www.lemonde.fr/argent/article/2026/11/01/assurance-comment-faire-face-a-un-sinistre-important_6804013_1657007.html"
+  },
+  {
+   "h": "Sur l’île de Penfret, le rêve de transformer un vieux fort en musée",
+   "w": "Réunis au sein d’une association depuis 2013, originaires de Bretagne, mais pas seulement, ils sont près de 130 bénévoles à y croire : faire d’un vieux bastion militaire niché au pied d’un phare, au cœur de l’archipel des Glénan, un lieu de transmission de la mémoire. Un site qu’ils espèrent bientôt rendre accessible au public.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-01T04:31:07Z",
+   "url": "https://www.lemonde.fr/m-perso/article/2026/11/01/sur-l-ile-de-penfret-le-reve-de-transformer-un-vieux-fort-en-musee_6804011_4497916.html"
   },
   {
    "h": "FBI blames North Korean group for $6.3bn Binance cyber heist",
@@ -1783,9 +1805,33 @@
     "BTC"
    ],
    "src": "myFT — technology",
-   "ts": "2026-11-01T02:30:37Z",
+   "ts": "2026-11-01T04:24:02Z",
    "url": "https://www.ft.com/content/c7062e37-86fd-45ef-8f58-573de0fcaaf0?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "Le directeur de Shore Bancshares John Lamon achète des actions pour 7.753$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-01T04:17:00Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-de-shore-bancshares-john-lamon-achete-des-actions-pour-7753-93CH-3667058"
+  },
+  {
+   "h": "Ce qui change le 1ᵉʳ novembre : gaz, crédit à la consommation, expulsions locatives, petits colis, retraites complémentaires",
+   "w": "Les pensions du secteur privé vont être revalorisées mais le prix du gaz va augmenter et une nouvelle taxe sur les colis est mise en place.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-01T04:00:35Z",
+   "url": "https://www.lemonde.fr/argent/article/2026/11/01/ce-qui-change-le-1-novembre-gaz-credit-a-la-consommation-expulsions-locatives-petits-colis-retraites-complementaires_6803973_1657007.html"
+  },
+  {
+   "h": "Les investisseurs en IA se couvrent contre un possible effondrement du secteur tech",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-01T02:32:11Z",
+   "url": "https://fr.investing.com/news/stock-market-news/les-investisseurs-en-ia-se-couvrent-contre-un-possible-effondrement-du-secteur-tech-3667054"
   },
   {
    "h": "Une directrice d’AAR CORP vend des actions pour 454.238$",
@@ -1959,14 +2005,6 @@
    "src": "MarketWatch",
    "ts": "2026-10-31T19:00:00Z",
    "url": "https://www.marketwatch.com/story/we-are-in-our-70s-should-we-pay-off-our-2-5-mortgage-or-build-up-our-savings-5a35e9c1?mod=mw_rss_topstories"
-  },
-  {
-   "h": "La vente massive d’obligations françaises, un avertissement pour les gouvernements mondiaux",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-10-31T18:53:38Z",
-   "url": "https://fr.investing.com/news/stock-market-news/la-vente-massive-dobligations-francaises-un-avertissement-pour-les-gouvernements-mondiaux-3667036"
   },
   {
    "h": "‘He was heartbroken’: My husband’s kids abandoned him when he was dying. Was he right to leave everything to me?",
@@ -2465,14 +2503,6 @@
    "mine": 1
   },
   {
-   "h": "Peut-on acheter un logement sans devenir propriétaire du terrain ?",
-   "w": "Le bail réel solidaire permet aux acheteurs d’accéder à la propriété en séparant le bâti du terrain, sous certaines conditions, explique Thomas Prud’Homoz, notaire associé chez KL Conseil.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-10-31T05:00:12Z",
-   "url": "https://www.lemonde.fr/argent/article/2026/10/31/peut-on-acheter-un-logement-sans-devenir-proprietaire-du-terrain_6803390_1657007.html"
-  },
-  {
    "h": "Martin Wolf on the US midterms: What’s the risk of political violence?",
    "w": "Barbara F Walter on why disorder is a risk, but not inevitable",
    "syms": [],
@@ -2480,32 +2510,6 @@
    "ts": "2026-10-31T05:00:00Z",
    "url": "https://www.ft.com/content/37e4bc6b-ca6c-43f1-adc2-09cddc56a9ae?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "A New York, le prix des crèches, des écoles et des structures de garde est si exorbitant qu’avoir un enfant est devenu un luxe",
-   "w": "« L’Amérique hors de prix » (3/3). La garde des enfants en bas âge peut représenter de 30 % à 40 % du budget d’une famille new-yorkaise. Pour éviter de payer plusieurs dizaines de milliers de dollars par an, la plupart d’entre elles ont recours à l’aide publique mise en place depuis douze ans seulement.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-10-31T04:30:15Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/10/31/a-new-york-le-prix-des-creches-et-des-ecoles-et-des-structures-de-garde-est-si-exorbitant-qu-avoir-un-enfant-est-devenu-un-luxe_6803386_3234.html"
-  },
-  {
-   "h": "Pénurie de navires et tarifs record : comment la guerre au Moyen-Orient fait bondir les prix du transport de pétrole",
-   "w": "Le conflit se traduit par une raréfaction des navires pétroliers disponibles et un allongement des temps de transport, qui favorise l’envolée des tarifs du fret. Les chaînes logistiques se réorganisent et certains acteurs du marché tentent de profiter de cette nouvelle donne.",
-   "syms": [
-    "BRENT"
-   ],
-   "src": "Le Monde — Économie",
-   "ts": "2026-10-31T04:00:48Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/10/31/penurie-de-navires-et-tarifs-record-comment-la-guerre-au-moyen-orient-fait-bondir-les-prix-du-transport-de-petrole_6803378_3234.html"
-  },
-  {
-   "h": "La Bourse de New York saisie d’effroi, à la veille de Halloween",
-   "w": "Alors que les inquiétudes s’accumulent sur la rentabilité des investissements massifs des entreprises du secteur de l’intelligence artificielle, les résultats trimestriels décevants de ces géants ont entraîné un fort repli des marchés actions.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-10-31T02:17:19Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/10/31/la-bourse-de-new-york-saisie-d-effroi-a-la-veille-d-halloween_6803334_3234.html"
   },
   {
    "h": "Muji takes its China playbook global",
@@ -2517,16 +2521,6 @@
    "ts": "2026-10-31T00:40:33Z",
    "url": "https://www.ft.com/content/e0484ec6-f370-476f-8763-309f3d746ba9?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "L’agence Fitch maintient la note de la dette souveraine de la France, mais dégrade sa perspective",
-   "w": "Relevant une détérioration de la situation budgétaire et des taux d’emprunt, l’agence de notation abaisse la perspective, de stable à négative. « Cette appréciation confirme l’absolue nécessité d’adopter d’ici à la fin de l’année un budget responsable », a réagi vendredi le ministre de l’économie, Roland Lescure.",
-   "syms": [
-    "CAC"
-   ],
-   "src": "Le Monde — Économie",
-   "ts": "2026-10-30T23:19:06Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/10/31/l-agence-fitch-maintient-la-note-de-la-dette-souveraine-de-la-france-mais-degrade-sa-perspective_6803235_3234.html"
   }
  ],
  "summary": {
