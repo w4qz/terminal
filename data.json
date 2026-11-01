@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T08:40:56.100325Z",
+ "generated_at": "2026-11-01T09:37:10.619366Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -15,10 +15,10 @@
    "vol": 168039400
   },
   "ASTS": {
-   "p": 40.99,
+   "p": 40.97,
    "prev": 43.07,
-   "chg": -2.08,
-   "pct": -4.83,
+   "chg": -2.1,
+   "pct": -4.88,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-10-30T19:30:00Z",
@@ -213,7 +213,7 @@
    "chg": -0.314,
    "pct": -0.2,
    "st": "STALE",
-   "src": "Yahoo Finance via yfinance (JPY=X) — échec de la dernière mise à jour",
+   "src": "Yahoo Finance via yfinance (JPY=X) — échec de la dernière mise à jour — échec de la dernière mise à jour",
    "ts": "2026-10-30T20:00:00Z",
    "open": 157.857,
    "lo": 156.966,
@@ -267,7 +267,7 @@
    "open": 102.8,
    "lo": 102.43,
    "hi": 104.99,
-   "vol": 248667
+   "vol": 248668
   },
   "BRENT": {
    "p": 113.43,
@@ -283,17 +283,17 @@
    "vol": 37539
   },
   "BTC": {
-   "p": 78013.6016,
+   "p": 77861.9688,
    "prev": 77434.75,
-   "chg": 578.8516,
-   "pct": 0.75,
+   "chg": 427.2188,
+   "pct": 0.55,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-01T08:00:00Z",
+   "ts": "2026-11-01T09:00:00Z",
    "open": 77440.9297,
    "lo": 77395.6953,
-   "hi": 78032.2422,
-   "vol": 11171273728
+   "hi": 78126.9297,
+   "vol": 11564718080
   }
  },
  "fundamentals": {
@@ -390,9 +390,9 @@
    "ccy": "USD",
    "mcap": 3875804807168,
    "pe": 27.2396,
-   "fpe": 21.6187,
+   "fpe": 21.6233,
    "eps": 19.16,
-   "feps": 24.1416,
+   "feps": 24.1364,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -557,9 +557,9 @@
    "ccy": "USD",
    "mcap": 1829640994816,
    "pe": 585.7391,
-   "fpe": 52.529,
+   "fpe": 56.9376,
    "eps": 0.23,
-   "feps": 2.5647,
+   "feps": 2.3661,
    "revTTM": 32042999808,
    "netIncome": -3431000064,
    "shares": 8246541218,
@@ -590,9 +590,9 @@
    "sector": "Energy",
    "industry": "Oil & Gas Integrated",
    "ccy": "SAR",
-   "mcap": 6275078291456,
-   "pe": 15.3491,
-   "fpe": 15.5329,
+   "mcap": 6260563378176,
+   "pe": 15.3136,
+   "fpe": 15.497,
    "eps": 1.69,
    "feps": 1.67,
    "revTTM": 1823482970112,
@@ -957,14 +957,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 979897024512,
+   "mcap": 982902374400,
    "pe": 44.75,
    "fpe": 38.2805,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.578,
    "div": 0.99,
    "divYield": 0.8,
@@ -1128,9 +1128,10 @@
    "fpe": 15.5869,
    "eps": 9.72,
    "feps": 12.0133,
-   "revTTM": 388293984256,
+   "revTTM": 388231987200,
    "netIncome": 40621998080,
    "shares": 4079000000,
+   "beta": 0.209,
    "div": 4.12,
    "divYield": 2.2,
    "target": 179.7143,
@@ -1138,19 +1139,19 @@
    "targetLo": 142.0,
    "rating": "Achat",
    "analysts": 21,
-   "revGrowth": 35.8,
+   "revGrowth": 32.6,
    "epsGrowth": 111.4,
-   "grossMargin": 29.82,
-   "opMargin": 18.927,
-   "netMargin": 10.462,
+   "grossMargin": 29.808,
+   "opMargin": 16.975,
+   "netMargin": 10.463,
    "roe": 15.528,
    "debtEq": 12.568,
    "cash": 12152999936,
    "debt": 34250000384,
-   "fcf": 28357500928,
+   "fcf": 28896249856,
    "w52lo": 112.51,
    "w52hi": 188.5,
-   "evEbitda": 10.238,
+   "evEbitda": 10.047,
    "earnTs": 1793363400,
    "earnStart": 1801229400,
    "earnEnd": 1801229400,
@@ -1301,6 +1302,7 @@
    "revTTM": 66013999104,
    "netIncome": 10302000128,
    "shares": 1767117285,
+   "beta": 0.228,
    "div": 6.92,
    "divYield": 2.35,
    "target": 283.1852,
@@ -1310,11 +1312,14 @@
    "analysts": 27,
    "revGrowth": 10.3,
    "epsGrowth": 2282.1,
-   "grossMargin": 75.007,
-   "opMargin": 37.25,
+   "grossMargin": 73.719,
+   "opMargin": 39.525,
    "netMargin": 15.666,
+   "cash": 6568999936,
+   "debt": 70884999168,
    "w52lo": 190.75,
    "w52hi": 298.74,
+   "evEbitda": 18.464,
    "earnTs": 1793363400,
    "earnStart": 1793363400,
    "earnEnd": 1793363400,
@@ -1330,13 +1335,14 @@
    "industry": "Oil & Gas Integrated",
    "ccy": "USD",
    "mcap": 459499536384,
-   "pe": 22.668,
-   "fpe": 14.9859,
-   "eps": 10.39,
-   "feps": 15.7161,
-   "revTTM": 228955996160,
+   "pe": 17.2922,
+   "fpe": 14.9045,
+   "eps": 13.62,
+   "feps": 15.802,
+   "revTTM": 226326003712,
    "netIncome": 26976000000,
    "shares": 1951000000,
+   "beta": 0.523,
    "div": 7.12,
    "divYield": 3.02,
    "target": 232.5,
@@ -1344,14 +1350,17 @@
    "targetLo": 175.0,
    "rating": "Achat",
    "analysts": 24,
-   "revGrowth": 39.1,
+   "revGrowth": 34.8,
    "epsGrowth": 178.0,
-   "grossMargin": 45.041,
-   "opMargin": 20.545,
-   "netMargin": 11.782,
+   "grossMargin": 44.402,
+   "opMargin": 18.009,
+   "netMargin": 11.919,
    "debtEq": 18.959,
+   "cash": 8529999872,
+   "debt": 37075001344,
    "w52lo": 146.49,
    "w52hi": 236.48,
+   "evEbitda": 8.487,
    "earnTs": 1793363400,
    "earnStart": 1801229400,
    "earnEnd": 1801229400,
@@ -1359,7 +1368,7 @@
    "exDiv": 1794960000,
    "divDate": 1788998400,
    "lastDiv": 1.78,
-   "trailDiv": 6.98
+   "trailDiv": 1.71
   },
   "COST": {
    "name": "Costco Wholesale Corporation",
@@ -1411,9 +1420,9 @@
    "ccy": "USD",
    "mcap": 442427080704,
    "pe": 158.7155,
-   "fpe": 78.7903,
+   "fpe": 78.3347,
    "eps": 1.16,
-   "feps": 2.3367,
+   "feps": 2.3503,
    "revTTM": 6155940864,
    "netIncome": 3016691968,
    "shares": 2300713329,
@@ -1579,12 +1588,9 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 122.9082,
-   "shares": 572600000,
    "divYield": 4.19,
    "w52lo": 93.84,
-   "w52hi": 101.46,
-   "trailDiv": 2.48
+   "w52hi": 101.46
   },
   "GLD": {
    "name": "SPDR Gold Shares",
@@ -1641,7 +1647,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T08:40:56.100325+00:00",
+   "ts": "2026-11-01T09:37:10.619366+00:00",
    "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/ai-dubbing-to-help-japanese-companies-expand-global-outreach"
   },
   {
@@ -1651,7 +1657,7 @@
     "HSI"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T08:40:56.100325+00:00",
+   "ts": "2026-11-01T09:37:10.619366+00:00",
    "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/indonesia-gdp-us-midterm-elections-hong-kong-financial-summit"
   },
   {
@@ -1659,7 +1665,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T08:40:56.100325+00:00",
+   "ts": "2026-11-01T09:37:10.619366+00:00",
    "url": "https://asia.nikkei.com/business/energy/pakistan-refineries-report-1-860-jump-in-profit-amid-war-windfall2"
   },
   {
@@ -1667,7 +1673,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T08:40:56.100325+00:00",
+   "ts": "2026-11-01T09:37:10.619366+00:00",
    "url": "https://asia.nikkei.com/spotlight/comment/after-us-midterms-democracy-will-face-test-of-ability-to-self-correct"
   },
   {
@@ -1675,7 +1681,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T08:40:56.100325+00:00",
+   "ts": "2026-11-01T09:37:10.619366+00:00",
    "url": "https://asia.nikkei.com/politics/thai-reformists-became-too-technocratic-party-ex-leader-pita-says"
   },
   {
@@ -1685,7 +1691,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T08:40:56.100325+00:00",
+   "ts": "2026-11-01T09:37:10.619366+00:00",
    "url": "https://asia.nikkei.com/business/companies/japan-bamboo-chopsticks-catch-on-in-south-korea"
   },
   {
@@ -1693,7 +1699,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T08:40:56.100325+00:00",
+   "ts": "2026-11-01T09:37:10.619366+00:00",
    "url": "https://asia.nikkei.com/life-arts/life/on-india-s-east-coast-tidepooling-inspires-marine-conservation"
   },
   {
@@ -1701,7 +1707,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T08:40:56.100325+00:00",
+   "ts": "2026-11-01T09:37:10.619366+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/china-mega-complex-in-dalian-puts-spotlight-on-investment-push"
   },
   {
@@ -1711,7 +1717,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T08:40:56.100325+00:00",
+   "ts": "2026-11-01T09:37:10.619366+00:00",
    "url": "https://asia.nikkei.com/opinion/time-for-japan-to-develop-people-who-can-sell-content"
   },
   {
@@ -1722,7 +1728,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T08:40:56.100325+00:00",
+   "ts": "2026-11-01T09:37:10.619366+00:00",
    "url": "https://asia.nikkei.com/business/markets/bonds/yen-bond-offerings-hit-record-16bn-as-ai-funding-race-reaches-japan"
   },
   {
@@ -1732,7 +1738,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T08:40:56.100325+00:00",
+   "ts": "2026-11-01T09:37:10.619366+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/japan-weighs-taxing-real-estate-rental-operators-living-overseas"
   },
   {
@@ -1742,7 +1748,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T08:40:56.100325+00:00",
+   "ts": "2026-11-01T09:37:10.619366+00:00",
    "url": "https://asia.nikkei.com/business/health-care/japan-s-foreign-caregivers-face-exam-hurdle-as-grace-period-ends"
   },
   {
@@ -1750,7 +1756,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T08:40:56.100325+00:00",
+   "ts": "2026-11-01T09:37:10.619366+00:00",
    "url": "https://asia.nikkei.com/business/food-beverage/thai-highland-tribe-coffee-brews-following-at-home-and-in-tokyo"
   },
   {
@@ -1760,7 +1766,7 @@
     "HSI"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T08:40:56.100325+00:00",
+   "ts": "2026-11-01T09:37:10.619366+00:00",
    "url": "https://asia.nikkei.com/spotlight/society/fatal-dog-attacks-test-hong-kong-s-ambitions-for-a-pet-friendly-economy"
   },
   {
@@ -1768,74 +1774,98 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T08:40:56.100325+00:00",
+   "ts": "2026-11-01T09:37:10.619366+00:00",
    "url": "https://asia.nikkei.com/spotlight/comment/thailand-looks-west-after-30-years-of-struggles-over-dawei"
   },
   {
-   "h": "Le directeur technique de Dime Commercial Bancshares cède des actions pour 98.462$",
+   "h": "AstraZeneca dépasse les prévisions du T3 2026, l’action bondit de 7%",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-01T08:02:26Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-technique-de-dime-commercial-bancshares-cede-des-actions-pour-98462-93CH-3667076"
+   "ts": "2026-11-01T09:15:59Z",
+   "url": "https://fr.investing.com/news/transcripts/astrazeneca-depasse-les-previsions-du-t3-2026-laction-bondit-de-7-93CH-3667095"
   },
   {
-   "h": "Les revenus du jeu à Macao chutent de 10% en octobre malgré l’afflux de touristes",
+   "h": "CaixaBank relève ses prévisions de rentabilité au T3 2026",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-01T07:58:23Z",
-   "url": "https://fr.investing.com/news/economy-news/les-revenus-du-jeu-a-macao-chutent-de-10-en-octobre-malgre-lafflux-de-touristes-3667074"
+   "ts": "2026-11-01T09:13:28Z",
+   "url": "https://fr.investing.com/news/transcripts/caixabank-releve-ses-previsions-de-rentabilite-au-t3-2026-93CH-3667094"
   },
   {
-   "h": "L’Iran propose un plan de réouverture d’Hormuz en 48h",
+   "h": "Sanofi dépasse les prévisions du T3 2026 et relève ses objectifs",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-01T07:18:26Z",
-   "url": "https://fr.investing.com/news/economy-news/liran-propose-un-plan-de-reouverture-dhormuz-en-48h-3667072"
+   "ts": "2026-11-01T09:13:14Z",
+   "url": "https://fr.investing.com/news/transcripts/sanofi-depasse-les-previsions-du-t3-2026-et-releve-ses-objectifs-93CH-3667093"
   },
   {
-   "h": "Quels sont les grands gagnants de l’essor des exportations IA en Asie ?",
+   "h": "AbbVie dépasse les prévisions du T3 2026 et relève ses perspectives",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-01T06:50:07Z",
-   "url": "https://fr.investing.com/news/stock-market-news/quels-sont-les-grands-gagnants-de-lessor-des-exportations-ia-en-asie--3667070"
+   "ts": "2026-11-01T09:13:02Z",
+   "url": "https://fr.investing.com/news/transcripts/abbvie-depasse-les-previsions-du-t3-2026-et-releve-ses-perspectives-93CH-3667092"
   },
   {
-   "h": "Le PDG de Truist Financial achète pour 1,2 M$ d’actions de la société",
+   "h": "General Dynamics dépasse les prévisions du T3 2026 et relève ses perspectives",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-01T06:47:07Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-truist-financial-achete-pour-12-m-dactions-de-la-societe-93CH-3667069"
+   "ts": "2026-11-01T09:12:38Z",
+   "url": "https://fr.investing.com/news/transcripts/general-dynamics-depasse-les-previsions-du-t3-2026-et-releve-ses-perspectives-93CH-3667091"
   },
   {
-   "h": "Le PDG d’Actuate Therapeutics achète pour 49.999$ d’actions",
+   "h": "Regeneron dépasse les prévisions du T3 2026, l’action bondit de 13%",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-01T06:32:10Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-dactuate-therapeutics-achete-pour-49999-dactions-93CH-3667068"
+   "ts": "2026-11-01T09:12:37Z",
+   "url": "https://fr.investing.com/news/transcripts/regeneron-depasse-les-previsions-du-t3-2026-laction-bondit-de-13-93CH-3667090"
   },
   {
-   "h": "Binance reprendra les retraits crypto par phases après un piratage record de 6 milliards $",
+   "h": "Quanta Services dépasse les prévisions du T3 2026 grâce à une demande solide",
    "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-01T09:12:35Z",
+   "url": "https://fr.investing.com/news/transcripts/quanta-services-depasse-les-previsions-du-t3-2026-grace-a-une-demande-solide-93CH-3667089"
+  },
+  {
+   "h": "Kioxia enregistre un chiffre d’affaires record au T2 2026, l’action recule",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-01T09:12:34Z",
+   "url": "https://fr.investing.com/news/transcripts/kioxia-enregistre-un-chiffre-daffaires-record-au-t2-2026-laction-recule-93CH-3667088"
+  },
+  {
+   "h": "ExxonMobil dépasse les prévisions de BPA au T3 2026 malgré un chiffre d’affaires décevant",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-01T09:12:21Z",
+   "url": "https://fr.investing.com/news/transcripts/exxonmobil-depasse-les-previsions-de-bpa-au-t3-2026-malgre-un-chiffre-daffaires-decevant-93CH-3667087"
+  },
+  {
+   "h": "CNOOC affiche une hausse des bénéfices au T3 2026 grâce à la croissance de la production",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-01T09:12:18Z",
+   "url": "https://fr.investing.com/news/transcripts/cnooc-affiche-une-hausse-des-benefices-au-t3-2026-grace-a-la-croissance-de-la-production-93CH-3667086"
+  },
+  {
+   "h": "Binance resumes withdrawals following $6.3 billion hack, says 90% of stolen user assets are covered",
+   "w": "Binance says it has restored backing for 90% of assets affected by its $6.3 billion hack and resumed phased withdrawals.",
    "syms": [
     "BTC"
    ],
-   "src": "Investing.com France",
-   "ts": "2026-11-01T06:20:37Z",
-   "url": "https://fr.investing.com/news/cryptocurrency-news/binance-reprendra-les-retraits-crypto-par-phases-apres-un-piratage-record-de-6-milliards--3667067"
-  },
-  {
-   "h": "Un administrateur de Bank First Corp achète pour 59.348$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-01T06:16:34Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-bank-first-corp-achete-pour-59348-dactions-93CH-3667065"
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-01T09:03:47Z",
+   "url": "https://www.cnbc.com/2026/10/31/binance-hack-asset-coverage-withdrawals.html"
   },
   {
    "h": "Companies promised AI gains— here's how the payoff showed up in earnings",
@@ -1854,24 +1884,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-01T06:00:01Z",
    "url": "https://www.lemonde.fr/argent/article/2026/11/01/apres-un-sinistre-le-long-parcours-des-assures-pour-obtenir-une-indemnisation_6804089_1657007.html"
-  },
-  {
-   "h": "DeepSeek lance un agent de codage autonome pour défier Claude Code d’Anthropic",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-01T05:45:12Z",
-   "url": "https://fr.investing.com/news/company-news/deepseek-lance-un-agent-de-codage-autonome-pour-defier-claude-code-danthropic-3667063"
-  },
-  {
-   "h": "Le Bitcoin face à de nouveaux risques baissiers après le piratage de Binance",
-   "w": "",
-   "syms": [
-    "BTC"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-11-01T05:19:12Z",
-   "url": "https://fr.investing.com/news/cryptocurrency-news/le-bitcoin-face-a-de-nouveaux-risques-baissiers-apres-le-piratage-de-binance-3667062"
   },
   {
    "h": "The new Bristol town that could give Burnham a blueprint for devolution",
@@ -1921,7 +1933,7 @@
    "mine": 1
   },
   {
-   "h": "Germany fails to meet winter gas storage target",
+   "h": "Germany fails to meet Winter gas storage target",
    "w": "Prices could rise for other EU countries as bloc’s biggest economy will be forced to rely on more spot market purchases",
    "syms": [
     "DAX"
@@ -2043,7 +2055,7 @@
    "w": "Echaudés par la crise de l’immobilier et par des tensions sur les salaires, de nombreux Chinois rognent sur les dépenses jugées superflues. Mais pas question pour autant de transiger sur l’éducation des enfants, pourtant de plus en plus onéreuse.",
    "syms": [],
    "src": "Le Monde — Économie",
-   "ts": "2026-11-01T04:39:28Z",
+   "ts": "2026-11-01T04:39:25Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/01/les-gens-depensent-avec-precaution-en-chine-les-menages-preoccupes-par-les-incertitudes-economiques_6804017_3234.html"
   },
   {
@@ -2091,6 +2103,16 @@
    "mine": 1
   },
   {
+   "h": "No more washing up: How Airbnb's new house rules have divided hosts and guests",
+   "w": "Airbnb hosts must stop asking guests to wash-up or take out bins under rules coming into force in November.",
+   "syms": [
+    "XAU"
+   ],
+   "src": "BBC — Business",
+   "ts": "2026-11-01T00:17:05Z",
+   "url": "https://www.bbc.co.uk/news/articles/ckjwez8g5dyeo?at_medium=RSS&at_campaign=rss"
+  },
+  {
    "h": "Michigan feud threatens Democratic unity in key Senate race",
    "w": "Abdul El-Sayed disinvites former primary rival Haley Stevens from campaign event amid war of words over Israel",
    "syms": [],
@@ -2117,16 +2139,6 @@
    "ts": "2026-10-31T22:51:11Z",
    "url": "https://www.ft.com/content/d49a7943-fc11-45cb-bcf2-f5876c3c381d?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Binance says 90% of $6.3 billion hack losses are now covered, plans to resume withdrawals Sunday",
-   "w": "Binance says it has restored backing for 90% of assets affected by its $6.3 billion hack and is planning to resume withdrawals, subject to security checks.",
-   "syms": [
-    "BTC"
-   ],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-31T22:27:56Z",
-   "url": "https://www.cnbc.com/2026/10/31/binance-hack-asset-coverage-withdrawals.html"
   },
   {
    "h": "Marie Lavigne, spécialiste de l’économie de l’URSS et des pays socialistes, est morte",
@@ -2431,14 +2443,6 @@
    "url": "https://www.lemonde.fr/idees/article/2026/10/31/les-jeunes-economistes-distingues-depuis-2000_6803477_3232.html"
   },
   {
-   "h": "Pour Halloween, des bonbons sans sucre qui ne sont pas sans défaut ni à l’abri des critiques",
-   "w": "Les confiseries étiquetées « peu caloriques » ou « sans sucre », dont certaines arborent un Nutri-Score A, ont trouvé leur place dans les rayons des supermarchés.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-10-31T08:00:19Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/10/31/pour-halloween-des-bonbons-sans-sucre-au-gout-amer_6803476_3234.html"
-  },
-  {
    "h": "US approves $2.1bn sale of Patriot interceptors to Ukraine",
    "w": "Volodymyr Zelenskyy welcomes ‘strong decision’ but calls for the missiles to be provided immediately",
    "syms": [],
@@ -2448,7 +2452,7 @@
    "mine": 1
   },
   {
-   "h": "Why the Budget won’t leave you better off",
+   "h": "Fiscal drifting: why the Budget won’t leave you better off",
    "w": "Frozen thresholds and higher inflation forecasts mean thousands more could be dragged into the £100,000 tax trap than previously thought",
    "syms": [],
    "src": "myFT — world uk",
@@ -2457,7 +2461,7 @@
    "mine": 1
   },
   {
-   "h": "Fiscal drifting: why the Budget won’t leave you better off",
+   "h": "Why the Budget won’t leave you better off",
    "w": "Frozen thresholds and higher inflation forecasts mean thousands more could be dragged into the £100,000 tax trap than previously thought",
    "syms": [],
    "src": "myFT — economy",
