@@ -21,7 +21,7 @@ warnings.filterwarnings("ignore")
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import yfinance as yf
-from update_data import FUND_FIELDS, FUND_TICKERS, PCT_FIELDS, RATING_FR
+from update_data import FUND_FIELDS, FUND_TICKERS, PCT_FIELDS, RATING_FR, fix_div_yield
 from peers import PEER_GROUPS, all_peer_tickers
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -50,6 +50,7 @@ def extract(info: dict) -> dict:
             v = RATING_FR.get(v, v)
         if v is not None:
             f[k] = round(v, 4) if isinstance(v, float) else v
+    fix_div_yield(f, info)
     return f
 
 
