@@ -21,7 +21,7 @@ warnings.filterwarnings("ignore")
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import yfinance as yf
-from update_data import FUND_FIELDS, FUND_TICKERS, PCT_FIELDS, RATING_FR, fix_div_yield
+from update_data import FUND_FIELDS, FUND_TICKERS, PCT_FIELDS, RATING_FR, fix_div_yield, sanitize_fund
 from peers import PEER_GROUPS, all_peer_tickers
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -38,7 +38,7 @@ def log(msg):
     print(f"[{datetime.now(timezone.utc):%H:%M:%S}] {msg}", flush=True)
 
 
-def extract(info: dict) -> dict:
+def extract(info: dict, sym: str = "") -> dict:
     f = {}
     for k, yk in FUND_FIELDS.items():
         v = info.get(yk)
@@ -51,6 +51,7 @@ def extract(info: dict) -> dict:
         if v is not None:
             f[k] = round(v, 4) if isinstance(v, float) else v
     fix_div_yield(f, info)
+    sanitize_fund(f, sym, info)
     return f
 
 
@@ -74,7 +75,7 @@ def main() -> int:
     ok, errors = 0, 0
     for s in todo:
         try:
-            f = extract(yf.Ticker(s).info or {})
+            f = extract(yf.Ticker(s).info or {}, s)
             if len(f) > 3:
                 f["ts"] = NOW.isoformat().replace("+00:00", "Z")
                 cache[s] = f
