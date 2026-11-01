@@ -206,6 +206,32 @@ RATING_FR = {"strong_buy": "Achat fort", "buy": "Achat", "hold": "Conserver",
              "underperform": "Sous-performance", "sell": "Vente", "none": None}
 
 
+def fix_div_yield(f: dict, info: dict) -> None:
+    """Rendement du dividende recalculé (dividende annuel ÷ cours × 100), sans dépendre du format Yahoo,
+    qui donne selon les titres une fraction (0,0019) ou un pourcentage (0,19). Les cours cotés en pence
+    (Londres) sont ramenés en livres quand le dividende est exprimé en livres."""
+    div = info.get("dividendRate") or info.get("trailingAnnualDividendRate")
+    px = info.get("currentPrice") or info.get("regularMarketPrice") or info.get("previousClose")
+    try:
+        div, px = float(div or 0), float(px or 0)
+    except Exception:
+        div, px = 0.0, 0.0
+    if div > 0 and px > 0:
+        y = div / px * 100
+        if y < 0.05 and info.get("currency") in ("GBp", "GBX", "ZAc", "ILA"):
+            y *= 100                       # dividende en livres, cours en pence
+        elif y > 40 and info.get("currency") in ("GBp", "GBX", "ZAc", "ILA"):
+            y /= 100
+        if 0 < y < 40:
+            f["divYield"] = round(y, 3)
+            f["div"] = round(div, 4)
+            return
+    if not div:
+        f.pop("divYield", None)            # pas de dividende : pas de rendement affiché
+    elif f.get("divYield", 0) > 40:
+        f.pop("divYield", None)            # valeur incohérente : écartée plutôt qu'affichée
+
+
 def fetch_fundamentals() -> dict:
     out = {}
     for sym in FUND_TICKERS:
@@ -223,6 +249,7 @@ def fetch_fundamentals() -> dict:
                     v = RATING_FR.get(v, v)
                 if v is not None:
                     f[k] = round(v, 4) if isinstance(v, float) else v
+            fix_div_yield(f, info)
             if len(f) > 3:
                 out[sym] = f
         except Exception as e:
