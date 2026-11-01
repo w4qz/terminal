@@ -355,6 +355,19 @@ def main() -> int:
         if s not in fixed_syms:
             catalog.append({"s": s, "n": it["n"], "c": "Action", "l": it["l"]})
 
+    # Titres suivis hors des grands indices (prioritaires, pairs RV, ETF des profils) : ajoutés au catalogue
+    # pour qu'ils aient eux aussi cours, variation et mini-graphique partout dans le terminal.
+    try:
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        from update_data import FUND_TICKERS
+        from peers import all_peer_tickers
+        have = {x["s"] for x in catalog}
+        extra = [t for t in dict.fromkeys([*FUND_TICKERS, *all_peer_tickers()]) if t not in have]
+        catalog.extend({"s": t, "n": t, "c": "ETF" if t in ("ACWI", "AGG", "GLD", "BIL") else "Action", "l": ["Hors indice"]} for t in extra)
+        log(f"Catalogue : {len(extra)} titres suivis ajoutés hors indices")
+    except Exception as e:
+        log(f"  ! titres suivis hors indices : {e}")
+
     prices = fetch_prices([x["s"] for x in catalog])
     for x in catalog:
         x.update(prices.get(x["s"], {"p": None, "pct": None, "st": "STALE", "ts": None}))
