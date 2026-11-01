@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T10:34:14.103125Z",
+ "generated_at": "2026-11-01T10:39:01.736686Z",
  "eco": {
   "prints": [
    {
@@ -8,7 +8,10 @@
     "prev": 3.35,
     "fmt": "%",
     "ts": "2026-09-01",
-    "src": "FRED CPIAUCSL"
+    "pub": "2026-10-21",
+    "freq": "M",
+    "src": "FRED CPIAUCSL",
+    "url": "https://fred.stlouisfed.org/series/CPIAUCSL"
    },
    {
     "k": "Inflation CPI core (US, a/a)",
@@ -16,7 +19,10 @@
     "prev": 2.45,
     "fmt": "%",
     "ts": "2026-09-01",
-    "src": "FRED CPILFESL"
+    "pub": "2026-10-21",
+    "freq": "M",
+    "src": "FRED CPILFESL",
+    "url": "https://fred.stlouisfed.org/series/CPILFESL"
    },
    {
     "k": "PCE core (US, a/a) — cible Fed",
@@ -24,7 +30,10 @@
     "prev": 3.03,
     "fmt": "%",
     "ts": "2026-09-01",
-    "src": "FRED PCEPILFE"
+    "pub": "2026-10-29",
+    "freq": "M",
+    "src": "FRED PCEPILFE",
+    "url": "https://fred.stlouisfed.org/series/PCEPILFE"
    },
    {
     "k": "Créations d'emplois NFP (US, k)",
@@ -32,7 +41,10 @@
     "prev": 133.0,
     "fmt": "k",
     "ts": "2026-09-01",
-    "src": "FRED PAYEMS"
+    "pub": "2026-10-21",
+    "freq": "M",
+    "src": "FRED PAYEMS",
+    "url": "https://fred.stlouisfed.org/series/PAYEMS"
    },
    {
     "k": "Taux de chômage (US)",
@@ -40,7 +52,10 @@
     "prev": 4.1,
     "fmt": "%",
     "ts": "2026-09-01",
-    "src": "FRED UNRATE"
+    "pub": "2026-10-22",
+    "freq": "M",
+    "src": "FRED UNRATE",
+    "url": "https://fred.stlouisfed.org/series/UNRATE"
    },
    {
     "k": "Inscriptions hebdo. au chômage (US)",
@@ -48,7 +63,10 @@
     "prev": 195000.0,
     "fmt": "n",
     "ts": "2026-10-24",
-    "src": "FRED ICSA"
+    "pub": "2026-10-29",
+    "freq": "W",
+    "src": "FRED ICSA",
+    "url": "https://fred.stlouisfed.org/series/ICSA"
    },
    {
     "k": "PIB réel (US, t/t annualisé)",
@@ -56,7 +74,10 @@
     "prev": 2.2,
     "fmt": "%",
     "ts": "2026-07-01",
-    "src": "FRED A191RL1Q225SBEA"
+    "pub": "2026-10-29",
+    "freq": "Q",
+    "src": "FRED A191RL1Q225SBEA",
+    "url": "https://fred.stlouisfed.org/series/A191RL1Q225SBEA"
    },
    {
     "k": "Ventes au détail (US, m/m)",
@@ -64,7 +85,10 @@
     "prev": 1.29,
     "fmt": "%",
     "ts": "2026-09-01",
-    "src": "FRED RSAFS"
+    "pub": "2026-10-22",
+    "freq": "M",
+    "src": "FRED RSAFS",
+    "url": "https://fred.stlouisfed.org/series/RSAFS"
    },
    {
     "k": "Confiance consommateurs U. Michigan",
@@ -72,7 +96,10 @@
     "prev": 51.7,
     "fmt": "n",
     "ts": "2026-09-01",
-    "src": "FRED UMCSENT"
+    "pub": "2026-10-23",
+    "freq": "M",
+    "src": "FRED UMCSENT",
+    "url": "https://fred.stlouisfed.org/series/UMCSENT"
    },
    {
     "k": "Inflation HICP (zone euro, a/a)",
@@ -80,7 +107,10 @@
     "prev": 3.23,
     "fmt": "%",
     "ts": "2026-09-01",
-    "src": "FRED CP0000EZ19M086NEST"
+    "pub": "2026-10-22",
+    "freq": "M",
+    "src": "FRED CP0000EZ19M086NEST",
+    "url": "https://fred.stlouisfed.org/series/CP0000EZ19M086NEST"
    },
    {
     "k": "Taux de chômage (zone euro)",
@@ -88,7 +118,10 @@
     "prev": 6.7,
     "fmt": "%",
     "ts": "2023-01-01",
-    "src": "FRED LRHUTTTTEZM156S"
+    "pub": "2026-11-01",
+    "freq": "M",
+    "src": "FRED LRHUTTTTEZM156S",
+    "url": "https://fred.stlouisfed.org/series/LRHUTTTTEZM156S"
    }
   ],
   "calendar": [
