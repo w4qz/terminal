@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T09:37:10.619366Z",
+ "generated_at": "2026-11-01T10:31:51.641298Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -15,10 +15,10 @@
    "vol": 168039400
   },
   "ASTS": {
-   "p": 40.97,
+   "p": 40.99,
    "prev": 43.07,
-   "chg": -2.1,
-   "pct": -4.88,
+   "chg": -2.08,
+   "pct": -4.83,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-10-30T19:30:00Z",
@@ -212,8 +212,8 @@
    "prev": 157.833,
    "chg": -0.314,
    "pct": -0.2,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (JPY=X) — échec de la dernière mise à jour — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (JPY=X)",
    "ts": "2026-10-30T20:00:00Z",
    "open": 157.857,
    "lo": 156.966,
@@ -267,7 +267,7 @@
    "open": 102.8,
    "lo": 102.43,
    "hi": 104.99,
-   "vol": 248668
+   "vol": 248667
   },
   "BRENT": {
    "p": 113.43,
@@ -283,17 +283,17 @@
    "vol": 37539
   },
   "BTC": {
-   "p": 77861.9688,
+   "p": 77970.9062,
    "prev": 77434.75,
-   "chg": 427.2188,
-   "pct": 0.55,
+   "chg": 536.1562,
+   "pct": 0.69,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-01T09:00:00Z",
+   "ts": "2026-11-01T10:00:00Z",
    "open": 77440.9297,
    "lo": 77395.6953,
    "hi": 78126.9297,
-   "vol": 11564718080
+   "vol": 12166453248
   }
  },
  "fundamentals": {
@@ -312,7 +312,7 @@
    "shares": 14594180000,
    "beta": 1.069,
    "div": 1.08,
-   "divYield": 0.31,
+   "divYield": 0.313,
    "target": 332.3858,
    "targetHi": 405.0,
    "targetLo": 245.0,
@@ -355,7 +355,7 @@
    "shares": 24147000000,
    "beta": 2.216,
    "div": 1.0,
-   "divYield": 0.49,
+   "divYield": 0.489,
    "target": 328.9535,
    "targetHi": 515.0,
    "targetLo": 180.0,
@@ -390,15 +390,15 @@
    "ccy": "USD",
    "mcap": 3875804807168,
    "pe": 27.2396,
-   "fpe": 21.6233,
+   "fpe": 21.6187,
    "eps": 19.16,
-   "feps": 24.1364,
+   "feps": 24.1416,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
    "beta": 1.099,
    "div": 3.92,
-   "divYield": 0.75,
+   "divYield": 0.751,
    "target": 631.0924,
    "targetHi": 870.0,
    "targetLo": 440.0,
@@ -441,7 +441,7 @@
    "shares": 5888000000,
    "beta": 1.211,
    "div": 0.88,
-   "divYield": 0.31,
+   "divYield": 0.314,
    "target": 406.5481,
    "targetHi": 500.0,
    "targetLo": 325.0,
@@ -482,7 +482,7 @@
    "revTTM": 797455024128,
    "netIncome": 134779002880,
    "shares": 10813138306,
-   "divYield": 0.0,
+   "beta": 1.456,
    "target": 327.6969,
    "targetHi": 405.0,
    "targetLo": 230.0,
@@ -497,7 +497,7 @@
    "debtEq": 44.32,
    "cash": 114226003968,
    "debt": 271949004800,
-   "fcf": -11545749504,
+   "fcf": -11139749888,
    "w52lo": 196.0,
    "w52hi": 287.2,
    "evEbitda": 15.002,
@@ -522,7 +522,7 @@
    "shares": 5186474013,
    "beta": 1.239,
    "div": 3.77,
-   "divYield": 0.93,
+   "divYield": 0.928,
    "target": 584.3929,
    "targetHi": 1000.0,
    "targetLo": 440.0,
@@ -557,13 +557,12 @@
    "ccy": "USD",
    "mcap": 1829640994816,
    "pe": 585.7391,
-   "fpe": 56.9376,
+   "fpe": 52.529,
    "eps": 0.23,
-   "feps": 2.3661,
+   "feps": 2.5647,
    "revTTM": 32042999808,
    "netIncome": -3431000064,
    "shares": 8246541218,
-   "divYield": 0.0,
    "target": 257.1144,
    "targetHi": 800.0,
    "targetLo": 70.0,
@@ -590,9 +589,9 @@
    "sector": "Energy",
    "industry": "Oil & Gas Integrated",
    "ccy": "SAR",
-   "mcap": 6260563378176,
-   "pe": 15.3136,
-   "fpe": 15.497,
+   "mcap": 6270239637504,
+   "pe": 15.3373,
+   "fpe": 15.521,
    "eps": 1.69,
    "feps": 1.67,
    "revTTM": 1823482970112,
@@ -600,7 +599,7 @@
    "shares": 241907400000,
    "beta": 0.016,
    "div": 1.36,
-   "divYield": 5.24,
+   "divYield": 5.247,
    "target": 30.2444,
    "targetHi": 35.0,
    "targetLo": 27.0,
@@ -642,7 +641,7 @@
    "shares": 2214455318,
    "beta": 1.185,
    "div": 2.1,
-   "divYield": 0.34,
+   "divYield": 0.341,
    "target": 848.3765,
    "targetHi": 1050.0,
    "targetLo": 629.06,
@@ -684,7 +683,6 @@
    "netIncome": 3220000000,
    "shares": 3952730153,
    "beta": 1.916,
-   "divYield": 0.0,
    "target": 411.8155,
    "targetHi": 600.0,
    "targetLo": 128.11,
@@ -724,7 +722,7 @@
    "shares": 4773629865,
    "beta": 1.476,
    "div": 2.6,
-   "divYield": 0.8,
+   "divYield": 0.797,
    "target": 530.1417,
    "targetHi": 660.0,
    "targetLo": 215.88,
@@ -764,7 +762,7 @@
    "shares": 5709551509,
    "beta": 1.545,
    "div": 1496.0,
-   "divYield": 0.66,
+   "divYield": 0.665,
    "target": 480102.94,
    "targetHi": 690000.0,
    "targetLo": 290000.0,
@@ -805,7 +803,7 @@
    "shares": 890745031,
    "beta": 0.453,
    "div": 6.92,
-   "divYield": 0.49,
+   "divYield": 0.488,
    "target": 1403.6427,
    "targetHi": 1650.0,
    "targetLo": 930.0,
@@ -847,7 +845,6 @@
    "netIncome": 85768003584,
    "shares": 1408035161,
    "beta": 0.595,
-   "divYield": 0.0,
    "target": 555.6667,
    "targetHi": 628.0,
    "targetLo": 510.0,
@@ -884,7 +881,7 @@
    "shares": 705173324,
    "beta": 2.391,
    "div": 3000.0,
-   "divYield": 0.21,
+   "divYield": 0.212,
    "target": 3157408.8,
    "targetHi": 4700000.0,
    "targetLo": 1575000.0,
@@ -924,7 +921,7 @@
    "shares": 1131423212,
    "beta": 2.226,
    "div": 0.6,
-   "divYield": 7.0,
+   "divYield": 0.068,
    "target": 1561.9111,
    "targetHi": 3000.0,
    "targetLo": 361.0,
@@ -957,17 +954,17 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 982902374400,
+   "mcap": 979897024512,
    "pe": 44.75,
    "fpe": 38.2805,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.578,
    "div": 0.99,
-   "divYield": 0.8,
+   "divYield": 0.802,
    "target": 127.475,
    "targetHi": 155.0,
    "targetLo": 81.0,
@@ -1010,7 +1007,7 @@
    "shares": 2655600000,
    "beta": 1.015,
    "div": 6.6,
-   "divYield": 1.96,
+   "divYield": 1.958,
    "target": 373.2609,
    "targetHi": 425.0,
    "targetLo": 312.0,
@@ -1049,7 +1046,6 @@
    "netIncome": 6469000192,
    "shares": 1632475042,
    "beta": 2.454,
-   "divYield": 0.0,
    "target": 640.208,
    "targetHi": 1250.0,
    "targetLo": 365.0,
@@ -1090,7 +1086,7 @@
    "shares": 1728000000,
    "beta": 0.771,
    "div": 2.68,
-   "divYield": 0.65,
+   "divYield": 0.648,
    "target": 441.1454,
    "targetHi": 485.0,
    "targetLo": 330.0,
@@ -1176,7 +1172,7 @@
    "shares": 2407310266,
    "beta": 0.206,
    "div": 5.36,
-   "divYield": 1.96,
+   "divYield": 1.962,
    "target": 279.4091,
    "targetHi": 320.0,
    "targetLo": 190.0,
@@ -1219,7 +1215,7 @@
    "shares": 385417742,
    "beta": 1.302,
    "div": 7.52,
-   "divYield": 0.53,
+   "divYield": 0.532,
    "target": 2097.4546,
    "targetHi": 2507.0,
    "targetLo": 1288.0,
@@ -1261,7 +1257,7 @@
    "shares": 864657109,
    "beta": 0.76,
    "div": 3.48,
-   "divYield": 0.55,
+   "divYield": 0.545,
    "target": 697.2814,
    "targetHi": 775.0,
    "targetLo": 550.0,
@@ -1304,7 +1300,7 @@
    "shares": 1767117285,
    "beta": 0.228,
    "div": 6.92,
-   "divYield": 2.35,
+   "divYield": 2.347,
    "target": 283.1852,
    "targetHi": 325.0,
    "targetLo": 200.0,
@@ -1335,16 +1331,16 @@
    "industry": "Oil & Gas Integrated",
    "ccy": "USD",
    "mcap": 459499536384,
-   "pe": 17.2922,
-   "fpe": 14.9045,
-   "eps": 13.62,
-   "feps": 15.802,
+   "pe": 22.668,
+   "fpe": 14.9859,
+   "eps": 10.39,
+   "feps": 15.7161,
    "revTTM": 226326003712,
    "netIncome": 26976000000,
    "shares": 1951000000,
    "beta": 0.523,
    "div": 7.12,
-   "divYield": 3.02,
+   "divYield": 3.023,
    "target": 232.5,
    "targetHi": 272.0,
    "targetLo": 175.0,
@@ -1368,7 +1364,7 @@
    "exDiv": 1794960000,
    "divDate": 1788998400,
    "lastDiv": 1.78,
-   "trailDiv": 1.71
+   "trailDiv": 6.98
   },
   "COST": {
    "name": "Costco Wholesale Corporation",
@@ -1385,7 +1381,7 @@
    "shares": 443129349,
    "beta": 0.87,
    "div": 5.88,
-   "divYield": 0.58,
+   "divYield": 0.581,
    "target": 1067.5946,
    "targetHi": 1315.0,
    "targetLo": 770.0,
@@ -1420,14 +1416,13 @@
    "ccy": "USD",
    "mcap": 442427080704,
    "pe": 158.7155,
-   "fpe": 78.3347,
+   "fpe": 78.7903,
    "eps": 1.16,
-   "feps": 2.3503,
+   "feps": 2.3367,
    "revTTM": 6155940864,
    "netIncome": 3016691968,
    "shares": 2300713329,
    "beta": 1.602,
-   "divYield": 0.0,
    "target": 212.5036,
    "targetHi": 265.0,
    "targetLo": 80.0,
@@ -1467,7 +1462,7 @@
    "shares": 3942586873,
    "beta": 0.979,
    "div": 1.68,
-   "divYield": 1.61,
+   "divYield": 1.608,
    "target": 136.16,
    "targetHi": 170.0,
    "targetLo": 110.0,
@@ -1510,7 +1505,7 @@
    "shares": 4301902335,
    "beta": 0.318,
    "div": 2.12,
-   "divYield": 2.25,
+   "divYield": 2.253,
    "target": 97.5417,
    "targetHi": 106.0,
    "targetLo": 80.0,
@@ -1551,7 +1546,6 @@
    "netIncome": -618761024,
    "shares": 299789305,
    "beta": 2.706,
-   "divYield": 0.0,
    "target": 74.6833,
    "targetHi": 108.0,
    "targetLo": 42.5,
@@ -1579,7 +1573,6 @@
    "name": "iShares MSCI ACWI ETF",
    "ccy": "USD",
    "pe": 20.2873,
-   "divYield": 1.41,
    "w52lo": 133.65,
    "w52hi": 162.8,
    "divDate": 1482883200,
@@ -1588,15 +1581,18 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "divYield": 4.19,
+   "pe": 122.9082,
+   "shares": 572600000,
+   "divYield": 2.574,
    "w52lo": 93.84,
-   "w52hi": 101.46
+   "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48
   },
   "GLD": {
    "name": "SPDR Gold Shares",
    "ccy": "USD",
    "shares": 260300000,
-   "divYield": 0.0,
    "w52lo": 354.67,
    "w52hi": 509.7,
    "trailDiv": 0.0
@@ -1604,7 +1600,6 @@
   "BIL": {
    "name": "State Street SPDR Bloomberg 1-3 Month T-Bill ETF",
    "ccy": "USD",
-   "divYield": 3.71,
    "w52lo": 91.26,
    "w52hi": 91.73
   }
@@ -1647,7 +1642,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T09:37:10.619366+00:00",
+   "ts": "2026-11-01T10:31:51.641298+00:00",
    "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/ai-dubbing-to-help-japanese-companies-expand-global-outreach"
   },
   {
@@ -1657,7 +1652,7 @@
     "HSI"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T09:37:10.619366+00:00",
+   "ts": "2026-11-01T10:31:51.641298+00:00",
    "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/indonesia-gdp-us-midterm-elections-hong-kong-financial-summit"
   },
   {
@@ -1665,7 +1660,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T09:37:10.619366+00:00",
+   "ts": "2026-11-01T10:31:51.641298+00:00",
    "url": "https://asia.nikkei.com/business/energy/pakistan-refineries-report-1-860-jump-in-profit-amid-war-windfall2"
   },
   {
@@ -1673,7 +1668,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T09:37:10.619366+00:00",
+   "ts": "2026-11-01T10:31:51.641298+00:00",
    "url": "https://asia.nikkei.com/spotlight/comment/after-us-midterms-democracy-will-face-test-of-ability-to-self-correct"
   },
   {
@@ -1681,7 +1676,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T09:37:10.619366+00:00",
+   "ts": "2026-11-01T10:31:51.641298+00:00",
    "url": "https://asia.nikkei.com/politics/thai-reformists-became-too-technocratic-party-ex-leader-pita-says"
   },
   {
@@ -1691,7 +1686,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T09:37:10.619366+00:00",
+   "ts": "2026-11-01T10:31:51.641298+00:00",
    "url": "https://asia.nikkei.com/business/companies/japan-bamboo-chopsticks-catch-on-in-south-korea"
   },
   {
@@ -1699,7 +1694,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T09:37:10.619366+00:00",
+   "ts": "2026-11-01T10:31:51.641298+00:00",
    "url": "https://asia.nikkei.com/life-arts/life/on-india-s-east-coast-tidepooling-inspires-marine-conservation"
   },
   {
@@ -1707,7 +1702,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T09:37:10.619366+00:00",
+   "ts": "2026-11-01T10:31:51.641298+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/china-mega-complex-in-dalian-puts-spotlight-on-investment-push"
   },
   {
@@ -1717,7 +1712,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T09:37:10.619366+00:00",
+   "ts": "2026-11-01T10:31:51.641298+00:00",
    "url": "https://asia.nikkei.com/opinion/time-for-japan-to-develop-people-who-can-sell-content"
   },
   {
@@ -1728,7 +1723,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T09:37:10.619366+00:00",
+   "ts": "2026-11-01T10:31:51.641298+00:00",
    "url": "https://asia.nikkei.com/business/markets/bonds/yen-bond-offerings-hit-record-16bn-as-ai-funding-race-reaches-japan"
   },
   {
@@ -1738,7 +1733,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T09:37:10.619366+00:00",
+   "ts": "2026-11-01T10:31:51.641298+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/japan-weighs-taxing-real-estate-rental-operators-living-overseas"
   },
   {
@@ -1748,7 +1743,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T09:37:10.619366+00:00",
+   "ts": "2026-11-01T10:31:51.641298+00:00",
    "url": "https://asia.nikkei.com/business/health-care/japan-s-foreign-caregivers-face-exam-hurdle-as-grace-period-ends"
   },
   {
@@ -1756,7 +1751,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T09:37:10.619366+00:00",
+   "ts": "2026-11-01T10:31:51.641298+00:00",
    "url": "https://asia.nikkei.com/business/food-beverage/thai-highland-tribe-coffee-brews-following-at-home-and-in-tokyo"
   },
   {
@@ -1766,7 +1761,7 @@
     "HSI"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T09:37:10.619366+00:00",
+   "ts": "2026-11-01T10:31:51.641298+00:00",
    "url": "https://asia.nikkei.com/spotlight/society/fatal-dog-attacks-test-hong-kong-s-ambitions-for-a-pet-friendly-economy"
   },
   {
@@ -1774,88 +1769,99 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T09:37:10.619366+00:00",
+   "ts": "2026-11-01T10:31:51.641298+00:00",
    "url": "https://asia.nikkei.com/spotlight/comment/thailand-looks-west-after-30-years-of-struggles-over-dawei"
   },
   {
-   "h": "AstraZeneca dépasse les prévisions du T3 2026, l’action bondit de 7%",
+   "h": "OneMain Financial : résultats du T3 2026 inférieurs aux attentes, le titre recule",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-01T09:15:59Z",
-   "url": "https://fr.investing.com/news/transcripts/astrazeneca-depasse-les-previsions-du-t3-2026-laction-bondit-de-7-93CH-3667095"
+   "ts": "2026-11-01T10:20:17Z",
+   "url": "https://fr.investing.com/news/transcripts/onemain-financial--resultats-du-t3-2026-inferieurs-aux-attentes-le-titre-recule-93CH-3667158"
   },
   {
-   "h": "CaixaBank relève ses prévisions de rentabilité au T3 2026",
+   "h": "Methanex dépasse les prévisions du T3 2026, l’action bondit",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-01T09:13:28Z",
-   "url": "https://fr.investing.com/news/transcripts/caixabank-releve-ses-previsions-de-rentabilite-au-t3-2026-93CH-3667094"
+   "ts": "2026-11-01T10:18:21Z",
+   "url": "https://fr.investing.com/news/transcripts/methanex-depasse-les-previsions-du-t3-2026-laction-bondit-93CH-3667157"
   },
   {
-   "h": "Sanofi dépasse les prévisions du T3 2026 et relève ses objectifs",
+   "h": "Compte rendu de résultats : AUO creuse ses pertes au T3 2026, l’action chute de 16%",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-01T09:13:14Z",
-   "url": "https://fr.investing.com/news/transcripts/sanofi-depasse-les-previsions-du-t3-2026-et-releve-ses-objectifs-93CH-3667093"
+   "ts": "2026-11-01T10:18:07Z",
+   "url": "https://fr.investing.com/news/transcripts/compte-rendu-de-resultats--auo-creuse-ses-pertes-au-t3-2026-laction-chute-de-16-93CH-3667156"
   },
   {
-   "h": "AbbVie dépasse les prévisions du T3 2026 et relève ses perspectives",
+   "h": "Un administrateur de Team Inc. acquiert 25.293 actions",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-01T09:13:02Z",
-   "url": "https://fr.investing.com/news/transcripts/abbvie-depasse-les-previsions-du-t3-2026-et-releve-ses-perspectives-93CH-3667092"
+   "ts": "2026-11-01T10:17:09Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-team-inc-acquiert-25293-actions-93CH-3667155"
   },
   {
-   "h": "General Dynamics dépasse les prévisions du T3 2026 et relève ses perspectives",
+   "h": "Enel Chili dépasse les prévisions du T3 2026 malgré une baisse du titre",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-01T09:12:38Z",
-   "url": "https://fr.investing.com/news/transcripts/general-dynamics-depasse-les-previsions-du-t3-2026-et-releve-ses-perspectives-93CH-3667091"
+   "ts": "2026-11-01T10:15:52Z",
+   "url": "https://fr.investing.com/news/transcripts/enel-chili-depasse-les-previsions-du-t3-2026-malgre-une-baisse-du-titre-93CH-3667154"
   },
   {
-   "h": "Regeneron dépasse les prévisions du T3 2026, l’action bondit de 13%",
+   "h": "Compte de résultats APR T3 2026 : bénéfice décevant malgré un chiffre d’affaires record",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-01T09:12:37Z",
-   "url": "https://fr.investing.com/news/transcripts/regeneron-depasse-les-previsions-du-t3-2026-laction-bondit-de-13-93CH-3667090"
+   "ts": "2026-11-01T10:14:22Z",
+   "url": "https://fr.investing.com/news/transcripts/compte-de-resultats-apr-t3-2026--benefice-decevant-malgre-un-chiffre-daffaires-record-93CH-3667153"
   },
   {
-   "h": "Quanta Services dépasse les prévisions du T3 2026 grâce à une demande solide",
+   "h": "Unicaja dépasse les prévisions de chiffre d’affaires au T3 2026 malgré un BPA en baisse",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-01T09:12:35Z",
-   "url": "https://fr.investing.com/news/transcripts/quanta-services-depasse-les-previsions-du-t3-2026-grace-a-une-demande-solide-93CH-3667089"
+   "ts": "2026-11-01T10:14:05Z",
+   "url": "https://fr.investing.com/news/transcripts/unicaja-depasse-les-previsions-de-chiffre-daffaires-au-t3-2026-malgre-un-bpa-en-baisse-93CH-3667152"
   },
   {
-   "h": "Kioxia enregistre un chiffre d’affaires record au T2 2026, l’action recule",
+   "h": "Kaneka affiche des résultats records au premier semestre 2026 et relève ses prévisions",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-01T09:12:34Z",
-   "url": "https://fr.investing.com/news/transcripts/kioxia-enregistre-un-chiffre-daffaires-record-au-t2-2026-laction-recule-93CH-3667088"
+   "ts": "2026-11-01T10:13:50Z",
+   "url": "https://fr.investing.com/news/transcripts/kaneka-affiche-des-resultats-records-au-premier-semestre-2026-et-releve-ses-previsions-93CH-3667151"
   },
   {
-   "h": "ExxonMobil dépasse les prévisions de BPA au T3 2026 malgré un chiffre d’affaires décevant",
+   "h": "Compte rendu d’appel aux résultats : NewMarket recule malgré des bénéfices en hausse au T3 2026",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-01T09:12:21Z",
-   "url": "https://fr.investing.com/news/transcripts/exxonmobil-depasse-les-previsions-de-bpa-au-t3-2026-malgre-un-chiffre-daffaires-decevant-93CH-3667087"
+   "ts": "2026-11-01T10:12:05Z",
+   "url": "https://fr.investing.com/news/transcripts/compte-rendu-dappel-aux-resultats--newmarket-recule-malgre-des-benefices-en-hausse-au-t3-2026-93CH-3667150"
   },
   {
-   "h": "CNOOC affiche une hausse des bénéfices au T3 2026 grâce à la croissance de la production",
+   "h": "WEX dépasse les prévisions du T3 2026, mais le titre recule",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-01T09:12:18Z",
-   "url": "https://fr.investing.com/news/transcripts/cnooc-affiche-une-hausse-des-benefices-au-t3-2026-grace-a-la-croissance-de-la-production-93CH-3667086"
+   "ts": "2026-11-01T10:11:51Z",
+   "url": "https://fr.investing.com/news/transcripts/wex-depasse-les-previsions-du-t3-2026-mais-le-titre-recule-93CH-3667149"
+  },
+  {
+   "h": "Binance restarts customer withdrawals after $6.3bn heist",
+   "w": "Crypto exchange to reimburse users whose assets were stolen in hack blamed on North Korea-linked group",
+   "syms": [
+    "BTC"
+   ],
+   "src": "myFT — technology",
+   "ts": "2026-11-01T09:38:52Z",
+   "url": "https://www.ft.com/content/1d4dd7b2-9dee-433b-ac2a-e8022af1dd07?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "Binance resumes withdrawals following $6.3 billion hack, says 90% of stolen user assets are covered",
@@ -1933,7 +1939,7 @@
    "mine": 1
   },
   {
-   "h": "Germany fails to meet Winter gas storage target",
+   "h": "Germany fails to meet winter gas storage target",
    "w": "Prices could rise for other EU countries as bloc’s biggest economy will be forced to rely on more spot market purchases",
    "syms": [
     "DAX"
@@ -2452,19 +2458,10 @@
    "mine": 1
   },
   {
-   "h": "Fiscal drifting: why the Budget won’t leave you better off",
-   "w": "Frozen thresholds and higher inflation forecasts mean thousands more could be dragged into the £100,000 tax trap than previously thought",
-   "syms": [],
-   "src": "myFT — world uk",
-   "ts": "2026-10-31T05:12:54Z",
-   "url": "https://www.ft.com/content/2d7ef638-2efb-42ec-a433-bef55f61d2e1?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Why the Budget won’t leave you better off",
    "w": "Frozen thresholds and higher inflation forecasts mean thousands more could be dragged into the £100,000 tax trap than previously thought",
    "syms": [],
-   "src": "myFT — economy",
+   "src": "myFT — world uk",
    "ts": "2026-10-31T05:12:54Z",
    "url": "https://www.ft.com/content/2d7ef638-2efb-42ec-a433-bef55f61d2e1?syn-25a6b1a6=1",
    "mine": 1
