@@ -111,7 +111,7 @@ def _col(df, ticker, field):
 def fetch_quotes(previous: dict) -> dict:
     yt = list(TICKERS.values())
     log(f"Prix : {len(yt)} tickers")
-    daily = yf.download(yt, period="10d", interval="1d", group_by="ticker",
+    daily = yf.download(yt, period="1mo", interval="1d", group_by="ticker",
                         auto_adjust=False, progress=False, threads=True)
     hourly = yf.download(yt, period="5d", interval="60m", group_by="ticker",
                          auto_adjust=False, progress=False, threads=True)
@@ -165,6 +165,7 @@ def fetch_quotes(previous: dict) -> dict:
                     v = row.get(col)
                     if v is not None and v == v and float(v) > 0:
                         q[k] = round(float(v), 4) if k != "vol" else int(v)
+            q["h"] = [round(float(v), 6 if v < 10 else 2) for v in dclose.tail(22)]   # mini-graphique 1 mois
             out[sym] = q
         except Exception as e:
             old = (previous.get("quotes") or {}).get(sym)
