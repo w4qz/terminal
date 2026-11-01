@@ -429,7 +429,7 @@ rates:[
 {cb:'Fed', name:'Fed Funds Target', v:'3,75 – 4,00 %', next:'déc. 2026 (date non relevée)',
 note:'Maintenu le 28/10, à quelques jours des midterms, malgré la flambée des carburants liée à la guerre en Iran. Kevin Warsh préside la Fed ; nouvelles hausses possibles pour ramener le PCE vers 2,3 %.',
 st:STATUS.SNAPSHOT, src:'Financial Times (FirstFT, 29/10)', ts:'2026-10-28'},
-{cb:'BCE', name:'Taux directeur', v:'2,50 %', next:'déc. 2026',
+{cb:'BCE', name:'Taux de dépôt', v:'2,50 %', next:'déc. 2026',
 note:'Maintenu le 29/10, mais la BCE laisse entendre une hausse en décembre face au retour de l\'inflation. Christine Lagarde quittera la présidence en février 2027, neuf mois avant la fin de son mandat.',
 st:STATUS.SNAPSHOT, src:'Financial Times (FirstFT Asia, 30/10)', ts:'2026-10-29'},
 {cb:'BoE', name:'Bank Rate', v:'3,75 %', next:'non relevé',
@@ -742,7 +742,7 @@ const fr = v => v.toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractio
 for(const it of UNIV.filter(x=>x.cb && x.p!=null)){
 const row = SNAPSHOT.rates.find(r=>r.cb===it.cb); if(!row) continue;
 row.v = it.lo!=null ? fr(it.lo)+' – '+fr(it.p)+' %' : fr(it.p)+' %';
-row.st = it.st; row.src = it.src; row.ts = it.ts;
+row.st = it.st; row.src = it.src; row.ts = it.ts; if(it.n&&it.n.includes(' — ')) row.name = it.n.split(' — ')[1];
 row.note = 'Valeur officielle au '+new Date(it.ts+'T12:00:00').toLocaleDateString('fr-FR')+' — source : '+it.src+'. Mise à jour automatique toutes les 30 min.';
 row.next = '—';
 }
@@ -1801,13 +1801,13 @@ const fundTs=F.ts?ago(F.ts):'—';
 
 el.innerHTML=`
 <div id="secbar"><span class="t">${esc(sym)}</span><span class="px">${px!=null?npx(px,sym):'—'}</span><span class="${cls(pc)}" style="font-weight:600">${pc!=null?pct(pc):''}</span><span class="nm">${esc(name)}</span>
-<nav aria-label="Sections de la fiche">${[['GP','sec-gp'],['DES','sec-des'],['RV','sec-rv'],['FA','sec-fa'],['DVD','sec-dvd'],['CN','sec-cn'],...(/[.=^]/.test(sym)?[]:[['OMON','sec-omon']])].map(([k,a])=>`<button type="button" data-jump="${a}">${k}</button>`).join('')}</nav></div>
+<nav aria-label="Sections de la fiche">${[['GP','sec-gp','Graphique'],['DES','sec-des','Résumé'],['RV','sec-rv','Comparables'],['FA','sec-fa','Comptes'],['DVD','sec-dvd','Dividendes'],['CN','sec-cn','Actualités'],...(/[.=^]/.test(sym)?[]:[['OMON','sec-omon','Options']])].map(([k,a,l])=>`<button type="button" data-jump="${a}" title="${l} (${k})">${l} <span style="color:var(--txt3);font-size:9px">${k}</span></button>`).join('')}</nav></div>
 <div class="pnl" id="sec-des" style="margin-bottom:9px"><div class="statrow">
 <div class="stat"><span class="l">${esc(sym)}${F.sector?' · '+esc(F.sector):''}</span><span class="n" id="secpx">${px!=null?npx(px,sym):'—'}${badge(st)}</span><span class="s">${esc(name)}</span></div>
 <div class="stat"><span class="l">VARIATION</span><span class="n ${cls(pc)}" id="secpc">${pc!=null?pct(pc):'—'}</span><span class="s">${esc(ccy)}</span></div>
 <div class="stat"><span class="l">CAPITALISATION</span><span class="n">${B(F.mcap)}</span><span class="s">${esc(ccy)}</span></div>
 <div class="stat"><span class="l">PER / PER PROSPECTIF</span><span class="n">${N(F.pe,1)} / ${N(F.fpe,1)}</span><span class="s">x les bénéfices</span></div>
-<div class="stat"><span class="l">OBJECTIF ANALYSTES</span><span class="n">${N(F.target)}</span><span class="s">${up!=null?pct(up,1)+' de potentiel':''}</span></div>
+<div class="stat"><span class="l">OBJECTIF ANALYSTES (12 MOIS)</span><span class="n">${N(F.target)}</span><span class="s">${up!=null?pct(up,1)+' de potentiel · ':''}moyenne du consensus${F.ts?', lu '+ago(F.ts):''}</span></div>
 <div class="stat"><span class="l">CONSENSUS</span><span class="n" style="font-size:15px">${F.rating?esc(F.rating):'—'}</span><span class="s">${F.analysts?F.analysts+' analystes':''}</span></div>
 </div></div>
 <div class="pnl" id="sec-gp" style="margin-bottom:9px"><h3>Graphique — chandeliers japonais<span class="rt" id="secsrc">${WORKER_URL?'Yahoo Finance via relais':'relais non configuré'}</span></h3>
@@ -1972,9 +1972,19 @@ return out.length?`<ul style="margin:0 0 0 16px;font-size:11px;line-height:1.6;c
 /*═══════════════════════════════════════════════════════════════════════
 11. VUE — NEWS
 ═══════════════════════════════════════════════════════════════════════*/
+const NEWSF={src:'Toutes', scope:'all', lang:'all'};
+const newsProv=n=>String(n.src||'').split(' — ')[0];
+const newsLang=n=>/Le Monde|Investing\.com France|Les Échos|BCE/.test(n.src||'')?'fr':'en';
 function viewNews(){
 const el=document.getElementById('v-news');
-const items=SNAPSHOT.news.map(n=>`<div class="nw">
+// Filtres : source, langue, et « mon portefeuille » (articles citant une ligne détenue)
+const provs=['Toutes',...[...new Set(SNAPSHOT.news.map(newsProv))].sort()];
+const held=S.positions.map(p=>p.sym), heldNames=held.map(s=>{ const f=SNAPSHOT.fundamentals[s]||{}, u=(UNIV||[]).find(x=>x.s===s)||{};
+return String(f.name||u.n||'').split(/[\s,.]/).find(w=>w.length>=4)||s.replace(/[.\-].*$/,''); }).filter(Boolean);
+const reHeld=heldNames.length?new RegExp('\\b('+heldNames.map(w=>w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|')+')\\b','i'):null;
+const shown=SNAPSHOT.news.filter(n=>(NEWSF.src==='Toutes'||newsProv(n)===NEWSF.src)&&(NEWSF.lang==='all'||newsLang(n)===NEWSF.lang)
+&&(NEWSF.scope==='all'||(n.syms||[]).some(x=>held.includes(x))||(reHeld&&reHeld.test(n.h+' '+(n.w||'')))));
+const items=shown.map(n=>`<div class="nw">
 <h4>${esc(n.h)}</h4><p>${esc(n.w)}</p>
 <div class="meta"><span${n.mine?' style="color:#e8a33d"':''}>${esc(n.src)}</span><span>${ago(n.ts)}</span>
 ${n.syms.map(s=>`<button class="tag" data-sym="${s}" type="button">${s}</button>`).join('')}
@@ -1987,8 +1997,12 @@ ${(n.topics||[]).length?`<ul style="margin:0 0 5px 16px;font-size:11px;color:#a4
 el.innerHTML=`<div class="g g23">
 <div style="display:flex;flex-direction:column;gap:9px;min-width:0">
 ${nl?`<div class="pnl"><h3>Mes newsletters FT<span class="rt">depuis Gmail · MAJ ${fmtDT(FTNL.generated_at)}</span></h3><div class="pbody flush">${nl}</div></div>`:''}
-<div class="pnl"><h3>Fil d'actualité<span class="rt">myFT, FT, CNBC, BBC, Le Monde · cliquez un ticker</span></h3>
-<div class="pbody flush">${items}</div></div>
+<div class="pnl"><h3>Fil d'actualité<span class="rt">${shown.length} / ${SNAPSHOT.news.length} articles · cliquez un ticker</span></h3>
+<div class="ctl" style="align-items:center">
+<div class="rng" role="group" aria-label="Périmètre"><button type="button" data-nsc="all" class="${NEWSF.scope==='all'?'on':''}">Tout</button><button type="button" data-nsc="pf" class="${NEWSF.scope==='pf'?'on':''}">Mon portefeuille</button></div>
+<div class="rng" role="group" aria-label="Langue"><button type="button" data-nlg="all" class="${NEWSF.lang==='all'?'on':''}">Toutes langues</button><button type="button" data-nlg="fr" class="${NEWSF.lang==='fr'?'on':''}">FR</button><button type="button" data-nlg="en" class="${NEWSF.lang==='en'?'on':''}">EN</button></div>
+<label class="mut" style="font-size:10px">Source <select id="nsrc" style="background:var(--bg);border:1px solid var(--line);color:var(--txt);font-size:11px;padding:1px 3px">${provs.map(p=>`<option${p===NEWSF.src?' selected':''}>${esc(p)}</option>`).join('')}</select></label></div>
+<div class="pbody flush">${items||'<div class="note">Aucun article pour ces filtres.</div>'}</div></div>
 </div>
 <div style="display:flex;flex-direction:column;gap:9px;min-width:0">${SNAPSHOT.summary&&SNAPSHOT.summary.text?`<div class="pnl" ><h3>Lecture de marché — IA<span class="rt">${esc(SNAPSHOT.summary.model)} · ${fmtDT(SNAPSHOT.summary.ts)}</span></h3><div class="pbody"><div class="note" style="padding:0;white-space:pre-line">${esc(SNAPSHOT.summary.text)}</div><div class="warn" style="margin-top:8px">Synthèse générée automatiquement à partir des titres RSS et des cotations. Peut contenir des erreurs ; ne constitue pas un conseil en investissement. <span class="st st-SIMULATED">IA</span></div></div></div>`:''}
 <div class="pnl"><h3>Lecture de la semaine (archive FT)<span class="rt">actualisé 31/10 via les newsletters Financial Times du 20 au 30/10</span></h3><div class="pbody">
@@ -2020,6 +2034,9 @@ depuis : à vérifier avant toute décision.
 </div>
 </div>`;
 wireSymbolClicks(el);
+el.querySelectorAll('[data-nsc]').forEach(b=>b.onclick=()=>{ NEWSF.scope=b.dataset.nsc; viewNews(); });
+el.querySelectorAll('[data-nlg]').forEach(b=>b.onclick=()=>{ NEWSF.lang=b.dataset.nlg; viewNews(); });
+const ns=document.getElementById('nsrc'); if(ns) ns.onchange=()=>{ NEWSF.src=ns.value; viewNews(); };
 }
 
 /*═══════════════════════════════════════════════════════════════════════
@@ -2207,9 +2224,10 @@ const el=document.getElementById('v-macro');
 if(!MACRO){ el.innerHTML=`<div class="pnl"><div class="note">Les données macro ne sont pas encore générées. Elles apparaîtront après le prochain passage du robot GitHub (fichier <code>macro.json</code>, script <code>build_macro.py</code>).</div></div>`+ecoPanelHtml(); wireEco(el); return; }
 const M=MACRO, today=new Date().toISOString().slice(0,10);
 // ECO
+const perLbl=(d,f)=>{ const t=new Date(d+'T12:00:00'); return f==='Q'?`T${Math.floor(t.getMonth()/3)+1} ${t.getFullYear()}`:f==='W'||f==='D'?t.toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'numeric'}):t.toLocaleDateString('fr-FR',{month:'short',year:'numeric'}); };
 const prints=(M.eco.prints||[]).map(x=>`<tr><th scope="row" style="font-weight:400;color:var(--txt);text-align:left">${esc(x.k)}</th>
 <td style="font-weight:600">${fmtMacro(x.v,x.fmt)}</td><td class="mut">${fmtMacro(x.prev,x.fmt)}</td>
-<td class="mut" style="font-size:10px">${esc(x.ts)}${staleMark(x.ts,100)}</td></tr>`).join('');
+<td style="font-size:10px;text-align:left"><b style="color:var(--txt)">${perLbl(x.ts,x.freq)}</b>${staleMark(x.ts,x.freq==='Q'?200:x.freq==='W'||x.freq==='D'?30:100)}<br><span class="mut">${x.pub?'publié/révisé le '+new Date(x.pub+'T12:00:00').toLocaleDateString('fr-FR'):''} · ${x.url?`<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.src)}</a>`:esc(x.src||'')}</span></td></tr>`).join('');
 const cal=(M.eco.calendar||[]).map(c=>{ const past=c.d<today, now=c.d===today;
 return `<tr style="${past?'opacity:.55':''}"><th scope="row" style="font-weight:${now?700:400};color:var(--txt)">${dfr(c.d)}</th>
 <td style="text-align:left;white-space:normal">${c.imp===3?'<b>':''}${esc(c.ev)}${c.imp===3?'</b>':''} <span class="mut">${esc(c.ctry)}</span>${/FOMC\)|Federal Funds Rate/i.test(c.ev)?fomcDetail(c.d||String(c.ts).slice(0,10),M):''}</td>
@@ -2246,8 +2264,8 @@ el.innerHTML=`<div class="note" style="padding:0 0 8px">Équivalents gratuits de
 <div class="g g2">
 <div class="pnl span2" id="m-eco"><h3>ECO — Calendrier avec consensus<span class="rt">cette semaine et la suivante · heures locales · impact moyen et fort</span></h3><div class="pbody flush">
 ${cons?`<table><caption class="sr-only">Calendrier économique avec consensus</caption><thead><tr><th scope="col">Date</th><th scope="col" style="text-align:left">Événement</th><th scope="col">Impact</th><th scope="col">Consensus</th><th scope="col">Publié</th><th scope="col">Surprise</th><th scope="col">Précédent</th></tr></thead><tbody>${cons}</tbody></table>`:'<div class="note na">Consensus indisponible pour le moment.</div>'}
-<div class="note">${esc((M.eco.consensus&&M.eco.consensus.src)||'')} Le chiffre publié n'est rapproché automatiquement que pour les principales statistiques américaines ; pour les autres, consultez la source.</div></div></div>
-<div class="pnl"><h3>ECO — Derniers chiffres<span class="rt">dernier · précédent · date</span></h3><div class="pbody flush"><table><caption class="sr-only">Derniers chiffres macroéconomiques</caption><tbody>${prints||'<tr><td class="na">indisponible</td></tr>'}</tbody></table>
+<div class="note">${esc((M.eco.consensus&&M.eco.consensus.src)||'')} « Précédent » = valeur annoncée par le calendrier au moment de la publication, souvent avant révision : elle peut différer du « précédent » du panneau Derniers chiffres (FRED), qui intègre les révisions. Le chiffre publié n'est rapproché automatiquement que pour les principales statistiques américaines ; pour les autres, consultez la source.</div></div></div>
+<div class="pnl"><h3>ECO — Derniers chiffres<span class="rt">dernier · précédent · période et publication</span></h3><div class="pbody flush"><table><caption class="sr-only">Derniers chiffres macroéconomiques</caption><tbody>${prints||'<tr><td class="na">indisponible</td></tr>'}</tbody></table>
 <div class="note">Le consensus des économistes n'est pas disponible gratuitement : seuls les chiffres publiés sont affichés.</div></div></div>
 <div class="pnl"><h3>ECO — Calendrier US à 4 semaines<span class="rt">FRED · Federal Reserve</span></h3><div class="pbody flush"><table><caption class="sr-only">Calendrier des publications</caption><tbody>${cal||'<tr><td class="na">aucune publication</td></tr>'}</tbody></table></div></div>
 <div class="pnl" id="m-wirp"><h3>WIRP — Probabilités des décisions de la Fed<span class="rt">futures fed funds</span></h3><div class="pbody">${wirp}</div></div>
@@ -2559,11 +2577,16 @@ function symLabel(s){ const u=(UNIV||[]).find(x=>x.s===s), F=SNAPSHOT.fundamenta
 const sfx=(s.match(/\.([A-Z]+)$/)||[])[1], place={PA:'Paris',DE:'Francfort',L:'Londres',SW:'Suisse',AS:'Amsterdam',MI:'Milan',MC:'Madrid',T:'Tokyo',HK:'Hong Kong',TO:'Toronto'}[sfx]||(u&&u.l&&u.l[0])||(sfx?sfx:'États-Unis');
 return `${s} · ${(F.name||(u&&u.n)||(sec&&sec.name)||'nom inconnu')} · ${place}${F.ccy?' · '+F.ccy:''}`; }
 function announce(t){ const m=document.getElementById('hmsg'); if(!m) return; m.textContent='▶ '+t; clearTimeout(m.__t); m.__t=setTimeout(()=>{ m.textContent=''; },9000); }
+/* Panneau du Launchpad : n'afficher que le module demandé (ex. GC → les courbes, pas tout l'onglet Macro). */
+let EMBED_FOCUS=null;
+function focusOnly(id){ if(!document.body.classList.contains('embed')||!id) return; const t=document.getElementById(id); if(!t) return;
+const view=t.closest('.view'); view.querySelectorAll('.pnl,.note,.warn,.g').forEach(e=>{ e.style.display=(e===t||e.contains(t)||t.contains(e))?'':'none'; });
+let p=t.parentElement; while(p&&p!==view){ p.style.display=''; if(p.classList.contains('g')) p.style.gridTemplateColumns='1fr'; p=p.parentElement; } t.style.gridColumn='1/-1';  if(id==='m-gc'&&typeof drawGC==='function') drawGC(); }
 const cmdLabel=c=>c.sym?`${c.sym} ${c.f}`:c.syms?`${c.syms.join(' ')} ${c.f}`:c.f;
 async function runCmd(c){
 closePal(); const F=FUNCS[c.f];
 if(F.help){ openPal(); document.getElementById('palin').value='HELP'; palSearch('HELP'); return; }
-if(F.go){ await go(F.go); if(F.a){ const e=document.getElementById(F.a); if(e) e.scrollIntoView({behavior:'smooth',block:'start'}); } return; }
+if(F.go){ EMBED_FOCUS=F.a||null; await go(F.go); if(F.a){ const e=document.getElementById(F.a); if(e) e.scrollIntoView({behavior:'smooth',block:'start'}); } return; }
 if(c.f==='COMP'){ const sy=await Promise.all(c.syms.map(resolveRemote)); COMP.syms=sy.length>1?[...new Set(sy)]:[sy[0],'ACWI']; await go('comp'); announce('COMP — '+COMP.syms.map(symLabel).join('  |  ')); return; }
 S.focus=await resolveRemote(c.sym);
 if(c.f==='GIP') SEC.range='1J'; else if(SEC.range==='1J') SEC.range='6M';
@@ -2647,7 +2670,7 @@ CUSTOM_PEERS[sym]=c?c.syms.filter(s=>s!==sym).slice(0,13):[]; if(!CUSTOM_PEERS[s
 }
 
 /*── COMP : comparaison de performances en base 100 ──────────────────*/
-const COMP={syms:['MC.PA','RMS.PA','KER.PA','ACWI'], range:'1A', hover:null, data:null};
+const COMP={ccy:'local', tr:false, syms:['MC.PA','RMS.PA','KER.PA','ACWI'], range:'1A', hover:null, data:null};
 const COMP_R={'1M':'1mo','3M':'3mo','6M':'6mo','1A':'1y','2A':'2y','5A':'5y'};
 const COMP_COL=['#6ba3e0','#e8a33d','#2fbf6b','#bb98e6','#e04a4a','#4fc1c9','#d8d36b','#c98a5f'];
 const COMP_CACHE=new Map();
@@ -2655,9 +2678,10 @@ async function compFetch(sym,range){
 const k=sym+'|'+range; if(COMP_CACHE.has(k)) return COMP_CACHE.get(k);
 const pr=(async()=>{ const r=await fetch(`${WORKER_URL}/chart?s=${encodeURIComponent(sym)}&range=${range}`); const d=await r.json();
 const res=d.chart&&d.chart.result&&d.chart.result[0]; if(!r.ok||!res) throw new Error('introuvable');
-const c=res.indicators.quote[0].close, off=res.meta.gmtoffset||0, map=new Map();
-(res.timestamp||[]).forEach((t,i)=>{ if(c[i]!=null) map.set(new Date((t+off)*1000).toISOString().slice(0,10),c[i]); });
-return {map, meta:res.meta}; })();
+const c=res.indicators.quote[0].close, off=res.meta.gmtoffset||0, map=new Map(), amap=new Map();
+const a=res.indicators.adjclose&&res.indicators.adjclose[0]&&res.indicators.adjclose[0].adjclose;   // cours ajusté des dividendes
+(res.timestamp||[]).forEach((t,i)=>{ const d=new Date((t+off)*1000).toISOString().slice(0,10); if(c[i]!=null) map.set(d,c[i]); if(a&&a[i]!=null) amap.set(d,a[i]); });
+return {map, amap, meta:res.meta}; })();
 COMP_CACHE.set(k,pr); pr.catch(()=>COMP_CACHE.delete(k)); return pr;
 }
 async function viewComp(){
@@ -2667,11 +2691,15 @@ el.innerHTML=`<div class="pnl" style="margin-bottom:9px"><h3>COMP — Comparaiso
 <div class="f w"><label for="compin">Titres (séparés par des espaces)</label><input id="compin" value="${esc(COMP.syms.join(' '))}" style="text-align:left;width:360px" autocomplete="off"></div>
 <button class="btn go" type="submit">Comparer</button>
 <div class="rng" role="group" aria-label="Période" style="margin-left:14px">${Object.keys(COMP_R).map(r=>`<button type="button" data-cr="${r}" class="${r===COMP.range?'on':''}">${r}</button>`).join('')}</div>
+<div class="rng" role="group" aria-label="Devise" style="margin-left:14px">${[['local','Devises locales'],['USD','En USD'],['EUR','En EUR']].map(([k,l])=>`<button type="button" data-cc="${k}" class="${COMP.ccy===k?'on':''}">${l}</button>`).join('')}</div>
+<div class="rng" role="group" aria-label="Dividendes" style="margin-left:8px"><button type="button" data-tr="1" class="${COMP.tr?'on':''}" aria-pressed="${COMP.tr}">Dividendes réinvestis</button></div>
 <span class="note" style="padding:0;margin-left:auto">Bloomberg : MC RMS KER COMP · accepte MC FP, AAPL US…</span></form>
 <div class="pbody" style="position:relative"><canvas id="compcv" height="380" role="img" aria-label="Comparaison des performances"></canvas><div id="compmsg" class="note" style="padding:6px 0 0">Chargement…</div></div></div>
 <div class="pnl"><h3>Statistiques sur la période</h3><div class="pbody flush" id="comptab"></div></div>`;
 document.getElementById('compform').onsubmit=async e=>{ e.preventDefault(); const c=parseCmd(document.getElementById('compin').value+' COMP'); if(c&&c.syms.length){ COMP.syms=[...new Set(await Promise.all(c.syms.slice(0,8).map(resolveRemote)))]; viewComp(); } };
 el.querySelectorAll('[data-cr]').forEach(b=>b.onclick=()=>{ COMP.range=b.dataset.cr; viewComp(); });
+el.querySelectorAll('[data-cc]').forEach(b=>b.onclick=()=>{ COMP.ccy=b.dataset.cc; viewComp(); });
+el.querySelectorAll('[data-tr]').forEach(b=>b.onclick=()=>{ COMP.tr=!COMP.tr; viewComp(); });
 if(!WORKER_URL){ document.getElementById('compmsg').textContent='Relais Cloudflare non configuré.'; return; }
 const renamed=[];
 const res=await Promise.all(COMP.syms.map(async s=>{ try{ return {s,d:await compFetch(s,COMP_R[COMP.range])}; }catch(e){
@@ -2683,13 +2711,22 @@ const ok=res.filter(r=>r.d&&r.d.map.size>2), bad=res.filter(r=>!r.d||r.d.map.siz
 if(!ok.length){ document.getElementById('compmsg').innerHTML=`<span class="neg">Aucune donnée pour ${bad.map(esc).join(', ')}.</span>`; return; }
 const start=ok.map(r=>[...r.d.map.keys()].sort()[0]).sort().pop();
 const dates=[...new Set(ok.flatMap(r=>[...r.d.map.keys()]))].filter(d=>d>=start).sort();
-const series=ok.map((r,i)=>{ const look=fxLookup(r.d), v0=look(dates[0]); const vals=dates.map(d=>look(d)/v0*100);
+// Dividendes réinvestis (cours ajusté) et conversion dans une devise commune au change de chaque jour.
+const rng=COMP_R[COMP.range], noTR=[];
+const fxH=async c=>c==='USD'?null:await compFetch(`${c}USD=X`,rng).catch(()=>null);
+const tgtFx=COMP.ccy==='local'?null:await fxH(COMP.ccy);
+for(const r of ok){ let m=r.d.map; if(COMP.tr){ if(r.d.amap&&r.d.amap.size>2) m=r.d.amap; else noTR.push(r.s); }
+if(COMP.ccy!=='local'){ const c=normCcy(r.d.meta.currency); if(c!==COMP.ccy){ const fx=await fxH(c), lf=fx?fxLookup(fx):null, lt=tgtFx?fxLookup(tgtFx):null;
+const conv=new Map(); for(const [d,v] of m) conv.set(d,v*(lf?lf(d):1)/(lt?lt(d):1)); m=conv; } }
+r.view={map:m}; }
+if(S.view!=='comp') return;
+const series=ok.map((r,i)=>{ const look=fxLookup(r.view), v0=look(dates[0]); const vals=dates.map(d=>look(d)/v0*100);
 const u=(UNIV||[]).find(x=>x.s===r.s);
 const rets=vals.slice(1).map((v,j)=>v/vals[j]-1);
 return {s:r.s, n:(u&&u.n)||r.d.meta.shortName||r.d.meta.longName||r.s, col:COMP_COL[i%COMP_COL.length], vals, rets, last:r.d.meta.regularMarketPrice, ccy:r.d.meta.currency}; });
 COMP.data={dates,series};
 document.getElementById('compmsg').innerHTML=(renamed.length?`<span class="pos">Interprété : ${renamed.map(esc).join(', ')}.</span> `:'')+(bad.length?`<span class="neg">Introuvables : ${bad.map(esc).join(', ')}.</span> `:'');
-document.getElementById('compmsg').innerHTML+=`Du ${new Date(dates[0]+'T12:00:00').toLocaleDateString('fr-FR')} au ${new Date(dates[dates.length-1]+'T12:00:00').toLocaleDateString('fr-FR')} · cours dans la devise de cotation, dividendes non réinvestis.`;
+document.getElementById('compmsg').innerHTML+=`Du ${new Date(dates[0]+'T12:00:00').toLocaleDateString('fr-FR')} au ${new Date(dates[dates.length-1]+'T12:00:00').toLocaleDateString('fr-FR')} · ${COMP.ccy==='local'?'chaque titre dans sa devise de cotation (l\'effet de change n\'est pas inclus)':'tout converti en '+COMP.ccy+' au change de chaque jour (effet de change inclus)'} · ${COMP.tr?'dividendes réinvestis (cours ajusté Yahoo)'+(noTR.length?' sauf '+noTR.map(esc).join(', '):''):'performance du cours seul, dividendes non réinvestis'}.`;
 const ppy=COMP.range==='5A'?52:252, ref=series[0].rets;
 document.getElementById('comptab').innerHTML=`<table><caption class="sr-only">Statistiques comparées</caption><thead><tr><th scope="col" style="text-align:left">Titre</th><th scope="col">Dernier</th><th scope="col">Performance</th><th scope="col">Volatilité ann.</th><th scope="col">Perte max</th><th scope="col">Corrélation avec ${esc(series[0].s)}</th><th scope="col"></th></tr></thead><tbody>
 ${series.map((x,i)=>{ const pf=x.vals[x.vals.length-1]-100, n=Math.min(ref.length,x.rets.length);
@@ -2745,7 +2782,7 @@ async function faRender(sym){
 const box=document.getElementById('sec-fa'); if(!box) return;
 let d; try{ d=(await lazyJSON('financials.json')).items[sym]; }catch(e){ box.innerHTML='<h3>FA — Analyse financière</h3><div class="note">financials.json pas encore généré par le robot GitHub.</div>'; return; }
 if(S.focus!==sym) return;
-if(!d||!d.years){ box.innerHTML=`<h3>FA — Analyse financière</h3><div class="note">États financiers pas encore lus pour ${esc(sym)} : le robot couvre le catalogue par roulement (environ 12 h pour tout le cycle, titres prioritaires chaque jour).</div>`; return; }
+if(!d||!d.years){ box.innerHTML=`<h3>FA — Analyse financière</h3><div class="note" data-keep="1">États financiers pas encore lus pour ${esc(sym)} : le robot couvre le catalogue par roulement (environ 12 h pour tout le cycle, titres prioritaires chaque jour).</div>`; return; }
 const Y=d.years, n=Y.length, I=d.is||{}, B=d.bs||{}, C=d.cf||{};
 const at=(o,k,i)=>o[k]?o[k][i]:null, ratio=(a,b)=>a!=null&&b?a/b*100:null;
 const rows=[
@@ -2785,7 +2822,7 @@ catch(e){ box.innerHTML=`<h3>DVD — Dividendes</h3><div class="note">Historique
 if(S.focus!==sym) return;
 const ev=Object.values((res.events&&res.events.dividends)||{}).map(x=>({t:x.date*1000,a:x.amount})).sort((a,b)=>a.t-b.t);
 const px=res.meta.regularMarketPrice, ccy=res.meta.currency||'';
-if(!ev.length){ box.innerHTML=`<h3>DVD — Dividendes</h3><div class="note">${esc(sym)} ne verse pas de dividende (aucun versement dans l'historique Yahoo).</div>`; return; }
+if(!ev.length){ box.innerHTML=`<h3>DVD — Dividendes</h3><div class="note" data-keep="1">${esc(sym)} ne verse pas de dividende (aucun versement dans l'historique Yahoo).</div>`; return; }
 const curY=new Date().getFullYear(), byY={}; ev.forEach(x=>{ const y=new Date(x.t).getFullYear(); byY[y]=(byY[y]||0)+x.a; });
 const years=Object.keys(byY).map(Number).sort(), full=years.filter(y=>y<curY);
 const ttm=ev.filter(x=>x.t>Date.now()-365*864e5).reduce((s,x)=>s+x.a,0), yld=px?ttm/px*100:null;
@@ -2826,10 +2863,17 @@ const box=document.getElementById('sec-cn'); if(!box) return;
 let yh=[];
 if(WORKER_URL){ try{ const r=await fetch(`${WORKER_URL}/news?s=${encodeURIComponent(sym)}`); const d=await r.json(); yh=(d.news||[]).filter(n=>n.title&&n.link); }catch(e){} }
 if(S.focus!==sym) return;
+// Pertinence : on ne garde que les articles Yahoo dont le titre cite le ticker ou le nom de la société.
+const Fn=SNAPSHOT.fundamentals[sym]||{}, un=(UNIV||[]).find(x=>x.s===sym)||{}, root=sym.replace(/[.\-=^].*$/,'');
+const STOP=/^(inc|corp|corporation|company|co|group|holdings?|the|sa|se|ag|nv|plc|ltd|limited|class|ordinary|shares?|de|la|le|et|and)$/i;
+const words=String(Fn.name||un.n||'').replace(/[,.()]/g,' ').split(/\s+/).filter(w=>w.length>=3&&!STOP.test(w)).slice(0,2);
+const reName=words.length?new RegExp('\\b('+words.map(w=>w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|')+')\\b','i'):null;
+const reTk=root.length>=2?new RegExp('(^|[^A-Za-z])\\$?'+root+'([^A-Za-z]|$)'):null;
+const yhAll=yh.length; yh=yh.filter(n=>(reTk&&reTk.test(n.title))||(reName&&reName.test(n.title)));
 const items=[...local.map(n=>({h:n.h,w:n.w,src:n.src,ts:n.ts,url:n.url})),
 ...yh.map(n=>({h:n.title,src:n.publisher||'Yahoo Finance',ts:new Date(n.providerPublishTime*1000).toISOString(),url:n.link}))]
 .filter((n,i,a)=>a.findIndex(m=>m.h===n.h)===i).sort((a,b)=>String(b.ts).localeCompare(String(a.ts))).slice(0,20);
-box.innerHTML=`<h3>CN — Actualités du titre<span class="rt">${items.length} article${items.length>1?'s':''} · flux du terminal + Yahoo Finance</span></h3><div class="pbody flush" style="max-height:420px;overflow-y:auto">
+box.innerHTML=`<h3>CN — Actualités du titre<span class="rt">${items.length} article${items.length>1?'s':''} citant ${esc(words[0]||root)}${yhAll>yh.length?` · ${yhAll-yh.length} hors sujet écartés`:''}</span></h3><div class="pbody flush" style="max-height:420px;overflow-y:auto">
 ${items.length?items.map(n=>`<div class="nw"><h4>${esc(n.h)}</h4>${n.w?`<p>${esc(n.w)}</p>`:''}<div class="meta"><span>${esc(n.src)}</span><span>${ago(n.ts)}</span>${n.url?`<a href="${esc(n.url)}" target="_blank" rel="noopener">Ouvrir<span class="sr-only"> (nouvel onglet)</span></a>`:''}</div></div>`).join('')
 :'<div class="note na">Aucune actualité trouvée pour ce titre.</div>'}</div>`;
 }
@@ -2840,7 +2884,7 @@ async function omonRender(sym){
 const box=document.getElementById('sec-omon'); if(!box) return;
 let O; try{ O=await lazyJSON('options.json'); }catch(e){ box.style.display='none'; return; }
 const d=O.items&&O.items[sym]; if(S.focus!==sym) return;
-if(!d||!d.exps||!d.exps.length){ box.innerHTML=`<h3>OMON — Options</h3><div class="note">Pas de chaîne d'options pour ${esc(sym)} : seuls les titres américains prioritaires et les grands ETF (${Object.keys(O.items||{}).slice(0,12).map(esc).join(', ')}…) sont suivis, une fois par heure.</div>`; return; }
+if(!d||!d.exps||!d.exps.length){ box.innerHTML=`<h3>OMON — Options</h3><div class="note" data-keep="1">Pas de chaîne d'options pour ${esc(sym)} : seuls les titres américains prioritaires et les grands ETF (${Object.keys(O.items||{}).slice(0,12).map(esc).join(', ')}…) sont suivis, une fois par heure.</div>`; return; }
 const e=d.exps[Math.min(OMON.exp,d.exps.length-1)], spot=d.spot;
 const byK=new Map(); e.calls.forEach(c=>byK.set(c[0],{k:c[0],c})); e.puts.forEach(p=>{ const o=byK.get(p[0])||{k:p[0]}; o.p=p; byK.set(p[0],o); });
 const rowsAll=[...byK.values()].sort((a,b)=>a.k-b.k), both=rowsAll.filter(r=>r.c&&r.p), rows=both.length>=8?both:rowsAll, atm=rows.reduce((b,r)=>Math.abs(r.k-spot)<Math.abs(b.k-spot)?r:b,rows[0]);
@@ -2868,6 +2912,8 @@ box.querySelectorAll('[data-oe]').forEach(b=>b.onclick=()=>{ OMON.exp=+b.dataset
 
 /*── EQS : filtre d'actions ──────────────────────────────────────────*/
 const EQS={f:{idx:'',sec:'',capMin:'',peMax:'',fpeMax:'',divMin:'',omMin:'',grMin:'',roeMin:'',deMax:'',upMin:''}, sort:'cap', dir:-1};
+const EQS_LBL={capMin:['capitalisation ≥',' Md$'],peMax:['PER ≤',''],fpeMax:['PER prospectif ≤',''],divMin:['rendement ≥',' %'],omMin:['marge opérationnelle ≥',' %'],grMin:['croissance du CA ≥',' %'],roeMin:['ROE ≥',' %'],deMax:['dette / fonds propres ≤',' %'],upMin:['potentiel analystes ≥',' %']};
+const eqsCrit=o=>Object.entries(o).filter(([k,v])=>EQS_LBL[k]&&v!==''&&v!=null).map(([k,v])=>EQS_LBL[k][0]+' '+String(v).replace('.',',')+EQS_LBL[k][1]).join(', ')||'aucun critère';
 const EQS_PRESETS={'Value':{peMax:15,divMin:2.5},'Qualité':{omMin:20,roeMin:15,deMax:100},'Croissance':{grMin:15,omMin:10},'Rendement':{divMin:4},'Potentiel analystes':{upMin:20,capMin:10}};
 async function viewEqs(){
 const el=document.getElementById('v-eqs');
@@ -2880,7 +2926,9 @@ el.innerHTML=`<div class="pnl" style="margin-bottom:9px"><h3>EQS — Filtre d'ac
 ${inp('capMin','Capi. min (Md$)','10')}${inp('peMax','PER max','15')}${inp('fpeMax','PER prosp. max','')}${inp('divMin','Rdt div. min %','3')}
 ${inp('omMin','Marge op. min %','20')}${inp('grMin','Croiss. CA min %','')}${inp('roeMin','ROE min %','15')}${inp('deMax','Dette/FP max %','')}${inp('upMin','Potentiel min %','')}
 <button class="btn go" type="submit">Filtrer</button><button class="btn" type="button" id="eq_clear">Effacer</button></form>
-<div class="ctl" style="align-items:center;border-bottom:none"><span class="mut" style="font-size:10px">Stratégies :</span>${Object.keys(EQS_PRESETS).map(k=>`<button class="btn" type="button" data-pre="${esc(k)}">${esc(k)}</button>`).join('')}</div></div>
+<div class="ctl" style="align-items:center;border-bottom:none"><span class="mut" style="font-size:10px">Stratégies :</span>${Object.keys(EQS_PRESETS).map(k=>`<button class="btn" type="button" data-pre="${esc(k)}" title="${esc(eqsCrit(EQS_PRESETS[k]))}">${esc(k)}</button>`).join('')}</div>
+<div class="note" data-keep="1" style="padding:0 9px 8px">${Object.entries(EQS_PRESETS).map(([k,v])=>`<b>${esc(k)}</b> : ${esc(eqsCrit(v))}`).join(' · ')}</div></div>
+<div class="pnl" style="margin-bottom:9px"><div class="pbody" id="eqexpl" style="font-size:11px;color:var(--txt2)"></div></div>
 <div class="pnl"><h3>Résultats<span class="rt" id="eqcount"></span></h3><div class="pbody flush" id="eqres"><div class="note">Calcul…</div></div></div>`;
 const read=()=>el.querySelectorAll('[data-k]').forEach(i=>{ F[i.dataset.k]=i.value; });
 document.getElementById('eqform').onsubmit=e=>{ e.preventDefault(); read(); eqsRun(); };
@@ -2894,7 +2942,10 @@ const F=EQS.f, num=k=>F[k]===''||F[k]==null?null:parseFloat(F[k]);
 const U=new Map((UNIV||[]).map(u=>[u.s,u]));
 const ccys=[...new Set(Object.values(SNAPSHOT.fundamentals).map(f=>f&&f.ccy).filter(Boolean).map(normCcy))];
 const fx={}; await Promise.all(ccys.map(async c=>{ fx[c]=await pfFX(c).catch(()=>null); }));
-const list=[];
+const list=[], why={noFund:[],noCap:[],crit:0,missing:0}, ages=[];
+// Univers de départ : membres de l'indice choisi (ou tout le catalogue d'actions), pour expliquer les exclusions.
+const univ=[...new Set([...(UNIV||[]).filter(u=>u.c==='Action'&&(!F.idx||(u.l||[]).includes(F.idx))).map(u=>u.s),...(F.idx?[]:Object.keys(SNAPSHOT.fundamentals))])];
+for(const s of univ){ const f=SNAPSHOT.fundamentals[s]; if(!f||Object.keys(f).length<4) why.noFund.push(s); else if(!f.mcap) why.noCap.push(s); }
 for(const [s,f] of Object.entries(SNAPSHOT.fundamentals)){ if(!f||!f.mcap) continue; const u=U.get(s)||{};
 if(F.idx&&!(u.l||[]).includes(F.idx)) continue; if(F.sec&&f.sector!==F.sec) continue;
 const q=SNAPSHOT.quotes[s], px=q&&q.p!=null?q.p:u.p, rate=fx[normCcy(f.ccy||'USD')];
@@ -2902,12 +2953,19 @@ const cap=rate?f.mcap*rate:null, up=f.target&&px?(f.target/px-1)*100:null;
 const r={s,n:f.name||u.n||s,sec:SECT_FR[f.sector]||f.sector||'',cap,pe:f.pe,fpe:f.fpe,div:f.divYield,om:f.opMargin,gr:f.revGrowth,roe:f.roe,de:f.debtEq,up,pc:q&&q.pct!=null?q.pct:u.pct};
 const ok=(v,min,max)=>(min==null||(v!=null&&v>=min))&&(max==null||(v!=null&&v>0&&v<=max));
 if(!ok(cap!=null?cap/1e9:null,num('capMin'),null)||!ok(r.pe,null,num('peMax'))||!ok(r.fpe,null,num('fpeMax'))||!ok(r.div,num('divMin'),null)
-||!ok(r.om,num('omMin'),null)||!ok(r.gr,num('grMin'),null)||!ok(r.roe,num('roeMin'),null)||!ok(r.de,null,num('deMax'))||!ok(up,num('upMin'),null)) continue;
-list.push(r); }
+||!ok(r.om,num('omMin'),null)||!ok(r.gr,num('grMin'),null)||!ok(r.roe,num('roeMin'),null)||!ok(r.de,null,num('deMax'))||!ok(up,num('upMin'),null)){
+// donnée absente pour un critère actif, ou critère non rempli
+const act=[['peMax',r.pe],['fpeMax',r.fpe],['divMin',r.div],['omMin',r.om],['grMin',r.gr],['roeMin',r.roe],['deMax',r.de],['upMin',up]].filter(([k])=>num(k)!=null);
+if(act.some(([,v])=>v==null)) why.missing++; else why.crit++; continue; }
+if(f.ts) ages.push(Date.now()-Date.parse(f.ts)); list.push(r); }
 const k=EQS.sort, d=EQS.dir; list.sort((a,b)=>{ const x=a[k], y=b[k]; if(x==null) return 1; if(y==null) return -1; return typeof x==='string'?d*x.localeCompare(y):d*(x-y); });
 const cols=[['s','Titre'],['sec','Secteur'],['cap','Capi. ($)'],['pe','PER'],['fpe','PER prosp.'],['div','Rdt div.'],['om','Marge op.'],['gr','Croiss. CA'],['roe','ROE'],['de','Dette/FP'],['up','Potentiel'],['pc','Var. jour']];
 const fm={cap:v=>big(v),pe:v=>nf(v,1),fpe:v=>nf(v,1),div:v=>nf(v,2)+' %',om:v=>nf(v,1)+' %',gr:v=>pct(v,1),roe:v=>nf(v,1)+' %',de:v=>nf(v,0)+' %',up:v=>pct(v,1),pc:v=>pct(v)};
 document.getElementById('eqcount').textContent=`${list.length} titre${list.length>1?'s':''}${list.length>200?' (200 premiers affichés)':''} · cliquez un en-tête pour trier`;
+ages.sort((a,b)=>a-b); const hAge=v=>v<36e5?'moins d\'1 h':v<864e5?Math.round(v/36e5)+' h':Math.round(v/864e5)+' j';
+const ex=document.getElementById('eqexpl'); if(ex) ex.innerHTML=`<b style="color:var(--txt)">${univ.length} titres${F.idx?' dans le '+esc(F.idx):' dans le catalogue'}${F.sec?' (secteur filtré à part)':''} → ${list.length} retenus.</b>
+${why.noFund.length?` · <span class="neg">${why.noFund.length} sans fondamentaux lus</span> (${why.noFund.slice(0,6).map(esc).join(', ')}${why.noFund.length>6?'…':''})`:''}${why.noCap.length?` · ${why.noCap.length} sans capitalisation`:''}${why.missing?` · ${why.missing} écartés faute de donnée pour un critère (ex. pas de PER)`:''}${why.crit?` · ${why.crit} ne remplissent pas les critères`:''}.
+Critères actifs : ${esc(eqsCrit(F))}. Un PER ou une dette négatifs (pertes, fonds propres négatifs) sont exclus des filtres « maximum ». ${ages.length?`Fondamentaux lus il y a ${hAge(ages[ages.length>>1])} en médiane (le plus ancien : ${hAge(ages[ages.length-1])}).`:''}`;
 const box=document.getElementById('eqres');
 box.innerHTML=list.length?`<table><caption class="sr-only">Résultats du filtre</caption><thead><tr>${cols.map(([c,l])=>`<th scope="col" data-sort="${c}" style="cursor:pointer;${c==='s'||c==='sec'?'text-align:left':''}">${l}${EQS.sort===c?(EQS.dir<0?' ▼':' ▲'):''}</th>`).join('')}</tr></thead><tbody>
 ${list.slice(0,200).map(r=>`<tr class="clk" data-sym="${esc(r.s)}" tabindex="0" role="button"><th scope="row" style="text-align:left"><span class="sym">${esc(r.s)}</span> <span class="mut" style="font-size:10px;font-weight:400">${esc(r.n).slice(0,26)}</span></th>
@@ -3125,6 +3183,7 @@ if(active) b.setAttribute('aria-current','page'); else b.removeAttribute('aria-c
 });
 await RENDER[v]();
 document.getElementById('main').scrollTop=0;
+if(EMBED_FOCUS) focusOnly(EMBED_FOCUS);
 syncBar();
 const live=document.getElementById('live-status');
 if(live) live.textContent='Vue '+VIEW_LABEL[v]+' affichée.';
