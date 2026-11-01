@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T18:22:00.078705Z",
+ "generated_at": "2026-11-01T18:41:00.492771Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -39,10 +39,10 @@
    ]
   },
   "ASTS": {
-   "p": 40.97,
+   "p": 40.99,
    "prev": 43.07,
-   "chg": -2.1,
-   "pct": -4.88,
+   "chg": -2.08,
+   "pct": -4.83,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-10-30T19:30:00Z",
@@ -806,17 +806,17 @@
    ]
   },
   "BTC": {
-   "p": 77817.5781,
+   "p": 77821.5781,
    "prev": 77434.75,
-   "chg": 382.8281,
-   "pct": 0.49,
+   "chg": 386.8281,
+   "pct": 0.5,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
    "ts": "2026-11-01T18:00:00Z",
    "open": 77440.9297,
    "lo": 77395.6953,
    "hi": 78126.9297,
-   "vol": 11577318400,
+   "vol": 11555002368,
    "h": [
     83679.47,
     81762.56,
@@ -839,7 +839,7 @@
     77775.11,
     77198.21,
     77434.75,
-    77817.58
+    77821.58
    ]
   }
  },
@@ -937,9 +937,9 @@
    "ccy": "USD",
    "mcap": 3875804807168,
    "pe": 27.2396,
-   "fpe": 21.6233,
+   "fpe": 21.6187,
    "eps": 19.16,
-   "feps": 24.1364,
+   "feps": 24.1416,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -980,9 +980,9 @@
    "ccy": "USD",
    "mcap": 3440352690176,
    "pe": 14.6131,
-   "fpe": 18.4851,
+   "fpe": 18.4392,
    "eps": 19.15,
-   "feps": 15.1387,
+   "feps": 15.1763,
    "revTTM": 471097999360,
    "netIncome": 235693621248,
    "shares": 5888000000,
@@ -1023,9 +1023,9 @@
    "ccy": "USD",
    "mcap": 2598937821184,
    "pe": 19.4301,
-   "fpe": 22.0672,
+   "fpe": 22.3914,
    "eps": 12.37,
-   "feps": 10.8917,
+   "feps": 10.734,
    "revTTM": 797455024128,
    "netIncome": 134779002880,
    "shares": 10813138306,
@@ -1104,9 +1104,9 @@
    "ccy": "USD",
    "mcap": 1829640994816,
    "pe": 585.7391,
-   "fpe": 56.9376,
+   "fpe": 52.529,
    "eps": 0.23,
-   "feps": 2.3661,
+   "feps": 2.5647,
    "revTTM": 32042999808,
    "netIncome": -3431000064,
    "shares": 8246541218,
@@ -1501,14 +1501,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 982902374400,
+   "mcap": 979897024512,
    "pe": 44.75,
    "fpe": 38.2805,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.578,
    "div": 0.99,
    "divYield": 0.802,
@@ -1879,9 +1879,9 @@
    "ccy": "USD",
    "mcap": 459499536384,
    "pe": 17.2922,
-   "fpe": 14.9045,
+   "fpe": 14.8086,
    "eps": 13.62,
-   "feps": 15.802,
+   "feps": 15.9043,
    "revTTM": 226326003712,
    "netIncome": 26976000000,
    "shares": 1951000000,
@@ -1911,7 +1911,7 @@
    "exDiv": 1794960000,
    "divDate": 1796860800,
    "lastDiv": 1.78,
-   "trailDiv": 1.71
+   "trailDiv": 7.05
   },
   "COST": {
    "name": "Costco Wholesale Corporation",
@@ -1963,9 +1963,9 @@
    "ccy": "USD",
    "mcap": 442427080704,
    "pe": 158.7155,
-   "fpe": 78.3347,
+   "fpe": 78.7903,
    "eps": 1.16,
-   "feps": 2.3503,
+   "feps": 2.3367,
    "revTTM": 6155940864,
    "netIncome": 3016691968,
    "shares": 2300713329,
@@ -2128,8 +2128,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 122.9082,
+   "shares": 572600000,
+   "divYield": 2.574,
    "w52lo": 93.84,
-   "w52hi": 101.46
+   "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48
   },
   "GLD": {
    "name": "SPDR Gold Shares",
@@ -2182,7 +2187,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:22:00.078705+00:00",
+   "ts": "2026-11-01T18:41:00.492771+00:00",
    "url": "https://asia.nikkei.com/business/energy/mitsubishi-heavy-gears-up-to-boost-us-gas-turbine-production"
   },
   {
@@ -2190,7 +2195,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:22:00.078705+00:00",
+   "ts": "2026-11-01T18:41:00.492771+00:00",
    "url": "https://asia.nikkei.com/business/energy/nuclear-reactors-under-construction-rise-to-79-globally-on-ai-demand"
   },
   {
@@ -2198,7 +2203,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:22:00.078705+00:00",
+   "ts": "2026-11-01T18:41:00.492771+00:00",
    "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/ai-dubbing-to-help-japanese-companies-expand-global-outreach"
   },
   {
@@ -2206,7 +2211,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:22:00.078705+00:00",
+   "ts": "2026-11-01T18:41:00.492771+00:00",
    "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/indonesia-gdp-us-midterm-elections-hong-kong-financial-summit"
   },
   {
@@ -2214,7 +2219,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:22:00.078705+00:00",
+   "ts": "2026-11-01T18:41:00.492771+00:00",
    "url": "https://asia.nikkei.com/business/energy/pakistan-refineries-report-1-860-jump-in-profit-amid-war-windfall2"
   },
   {
@@ -2222,7 +2227,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:22:00.078705+00:00",
+   "ts": "2026-11-01T18:41:00.492771+00:00",
    "url": "https://asia.nikkei.com/spotlight/comment/after-us-midterms-democracy-will-face-test-of-ability-to-self-correct"
   },
   {
@@ -2230,7 +2235,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:22:00.078705+00:00",
+   "ts": "2026-11-01T18:41:00.492771+00:00",
    "url": "https://asia.nikkei.com/politics/thai-reformists-became-too-technocratic-party-ex-leader-pita-says"
   },
   {
@@ -2238,7 +2243,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:22:00.078705+00:00",
+   "ts": "2026-11-01T18:41:00.492771+00:00",
    "url": "https://asia.nikkei.com/business/companies/japan-bamboo-chopsticks-catch-on-in-south-korea"
   },
   {
@@ -2246,7 +2251,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:22:00.078705+00:00",
+   "ts": "2026-11-01T18:41:00.492771+00:00",
    "url": "https://asia.nikkei.com/life-arts/life/on-india-s-east-coast-tidepooling-inspires-marine-conservation"
   },
   {
@@ -2254,7 +2259,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:22:00.078705+00:00",
+   "ts": "2026-11-01T18:41:00.492771+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/china-mega-complex-in-dalian-puts-spotlight-on-investment-push"
   },
   {
@@ -2262,7 +2267,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:22:00.078705+00:00",
+   "ts": "2026-11-01T18:41:00.492771+00:00",
    "url": "https://asia.nikkei.com/opinion/time-for-japan-to-develop-people-who-can-sell-content"
   },
   {
@@ -2272,7 +2277,7 @@
     "USDJPY"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:22:00.078705+00:00",
+   "ts": "2026-11-01T18:41:00.492771+00:00",
    "url": "https://asia.nikkei.com/business/markets/bonds/yen-bond-offerings-hit-record-16bn-as-ai-funding-race-reaches-japan"
   },
   {
@@ -2280,7 +2285,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:22:00.078705+00:00",
+   "ts": "2026-11-01T18:41:00.492771+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/japan-weighs-taxing-real-estate-rental-operators-living-overseas"
   },
   {
@@ -2288,7 +2293,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:22:00.078705+00:00",
+   "ts": "2026-11-01T18:41:00.492771+00:00",
    "url": "https://asia.nikkei.com/business/health-care/japan-s-foreign-caregivers-face-exam-hurdle-as-grace-period-ends"
   },
   {
@@ -2296,7 +2301,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T18:22:00.078705+00:00",
+   "ts": "2026-11-01T18:41:00.492771+00:00",
    "url": "https://asia.nikkei.com/business/food-beverage/thai-highland-tribe-coffee-brews-following-at-home-and-in-tokyo"
   },
   {
@@ -2362,6 +2367,15 @@
    "src": "myFT — world",
    "ts": "2026-11-01T18:01:31Z",
    "url": "https://www.ft.com/content/bf03380a-3193-4342-b300-bcbfd8f51187",
+   "mine": 1
+  },
+  {
+   "h": "Blue Lagoon owner plans to float as Icelandic tourism booms",
+   "w": "Owner of famed geothermal baths wants to raise money for its growth plans including a mountain retreat",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-01T18:00:03Z",
+   "url": "https://www.ft.com/content/6a3c6f12-cada-4368-8aad-4deb4db13fcb?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2995,7 +3009,7 @@
    "h": "Tusk vows to press on with overhaul of Poland’s judiciary",
    "w": "Prime minister defends suspension of constitutional court’s president as opposition accuses him of staging an institutional coup",
    "syms": [],
-   "src": "myFT — europe",
+   "src": "myFT — emerging markets",
    "ts": "2026-10-31T22:51:11Z",
    "url": "https://www.ft.com/content/d49a7943-fc11-45cb-bcf2-f5876c3c381d?syn-25a6b1a6=1",
    "mine": 1
@@ -3031,15 +3045,6 @@
    "src": "MarketWatch",
    "ts": "2026-10-31T19:02:00Z",
    "url": "https://www.marketwatch.com/story/the-house-the-kids-college-and-the-raise-where-people-in-their-30s-and-40s-go-wrong-69ec6c90?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Investors trim growth bets over fears of US economy’s AI exposure",
-   "w": "Return to bonds after long sell-off comes as concern rises about over-reliance on tech spending",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-10-31T14:00:02Z",
-   "url": "https://www.ft.com/content/56b0d5fa-829c-47b1-b07b-b4be18f60151?syn-25a6b1a6=1",
-   "mine": 1
   }
  ],
  "summary": {
