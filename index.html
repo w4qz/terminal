@@ -239,6 +239,10 @@ body.amber #tape .it b{color:#ffb000}
 body.embed #top,body.embed #tape,body.embed #bot{display:none}
 body.embed #main{padding:6px}
 body.embed #secbar{top:-6px;margin:-6px -6px 6px}
+
+/* badge de statut sous le chiffre dans les cartouches (évite le chevauchement en panneau étroit) */
+.stat .n .st{display:block;width:max-content;margin:3px 0 0;font-size:8px}
+.stat{min-width:0}
 </style>
 </head>
 <body>
@@ -3169,7 +3173,9 @@ document.getElementById('helpbtn').onclick=openHelp;
 document.getElementById('themebtn').onclick=()=>setTheme(document.body.classList.contains('amber')?'blue':'amber');
 const EMBED=new URLSearchParams(location.search);
 if(EMBED.get('embed')){ document.body.classList.add('embed'); const c=EMBED.get('cmd')||'WEI';
-S.view='mkt'; (async()=>{ if(/^(GC|ECO|WIRP|BTMM|ECST)$/.test(c.trim().toUpperCase())) await loadMacro(); if(!/^(BLP)$/i.test(c.trim())) runAny(c); else go('mkt'); })(); }
+S.view='mkt'; (async()=>{ // catalogue chargé d'abord : « TTE » doit devenir TTE.PA, pas le certificat américain
+await Promise.all([loadUniverse(),loadLive(),loadFund(),loadMacro(),loadEcon(),loadCurves(),loadPeers()].map(p=>p.catch(()=>{})));
+if(!/^(BLP)$/i.test(c.trim())) runAny(c); else go('mkt'); })(); }
 else go('mkt');
 const refresh=()=>Promise.all([loadLive(),loadUniverse(),loadFT(),loadMacro(),loadFund(),loadEcon(),loadPeers(),loadCurves()]).then(([a,b,c,d,e,f,g,h])=>{ renderTape(); if(a||b||c||d||e||f||h){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
 refresh();
