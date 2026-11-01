@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T06:47:20.113719Z",
+ "generated_at": "2026-11-01T07:56:02.961453Z",
  "eco": {
   "prints": [
    {
@@ -43,6 +43,14 @@
     "src": "FRED UNRATE"
    },
    {
+    "k": "Inscriptions hebdo. au chômage (US)",
+    "v": 194000.0,
+    "prev": 195000.0,
+    "fmt": "n",
+    "ts": "2026-10-24",
+    "src": "FRED ICSA"
+   },
+   {
     "k": "PIB réel (US, t/t annualisé)",
     "v": 3.4,
     "prev": 2.2,
@@ -51,36 +59,12 @@
     "src": "FRED A191RL1Q225SBEA"
    },
    {
-    "k": "Ventes au détail (US, m/m)",
-    "v": 0.77,
-    "prev": 1.29,
-    "fmt": "%",
-    "ts": "2026-09-01",
-    "src": "FRED RSAFS"
-   },
-   {
-    "k": "Confiance consommateurs U. Michigan",
-    "v": 48.1,
-    "prev": 51.7,
-    "fmt": "n",
-    "ts": "2026-09-01",
-    "src": "FRED UMCSENT"
-   },
-   {
     "k": "Inflation HICP (zone euro, a/a)",
     "v": 3.75,
     "prev": 3.23,
     "fmt": "%",
     "ts": "2026-09-01",
     "src": "FRED CP0000EZ19M086NEST"
-   },
-   {
-    "k": "Taux de chômage (zone euro)",
-    "v": 6.7,
-    "prev": 6.7,
-    "fmt": "%",
-    "ts": "2023-01-01",
-    "src": "FRED LRHUTTTTEZM156S"
    }
   ],
   "calendar": [
@@ -469,8 +453,8 @@
   "effr": 3.88,
   "effr_ts": "2026-10-29",
   "range": [
-   3.75,
-   4.0
+   null,
+   null
   ],
   "meetings": [
    {
@@ -553,11 +537,15 @@
    "pts": [
     {
      "t": "1M",
-     "y": null
+     "y": 4.06,
+     "y1m": 4.04,
+     "ts": "2026-10-29"
     },
     {
      "t": "3M",
-     "y": null
+     "y": 4.18,
+     "y1m": 4.19,
+     "ts": "2026-10-29"
     },
     {
      "t": "6M",
@@ -692,6 +680,22 @@
    "src": "FRED DFEDTARU"
   },
   {
+   "k": "Fed funds — borne basse",
+   "v": 3.75,
+   "prev": 3.75,
+   "fmt": "%",
+   "ts": "2026-10-31",
+   "src": "FRED DFEDTARL"
+  },
+  {
+   "k": "Taux effectif des fed funds (EFFR)",
+   "v": 3.88,
+   "prev": 3.88,
+   "fmt": "%",
+   "ts": "2026-10-29",
+   "src": "FRED EFFR"
+  },
+  {
    "k": "SOFR",
    "v": 3.94,
    "prev": 3.94,
@@ -706,6 +710,14 @@
    "fmt": "%",
    "ts": "2026-11-02",
    "src": "FRED IORB"
+  },
+  {
+   "k": "T-bill 3 mois",
+   "v": 4.0,
+   "prev": 4.01,
+   "fmt": "%",
+   "ts": "2026-10-29",
+   "src": "FRED DTB3"
   },
   {
    "k": "T-bill 6 mois",
@@ -724,12 +736,20 @@
    "src": "FRED DGS2"
   },
   {
-   "k": "Pente 3m10a",
-   "v": 78.0,
-   "prev": 80.0,
+   "k": "Trésor 10 ans",
+   "v": 4.98,
+   "prev": 5.05,
+   "fmt": "%",
+   "ts": "2026-10-29",
+   "src": "FRED DGS10"
+  },
+  {
+   "k": "Pente 2s10s",
+   "v": 38.0,
+   "prev": 37.0,
    "fmt": "pb",
    "ts": "2026-10-30",
-   "src": "FRED T10Y3M"
+   "src": "FRED T10Y2Y"
   },
   {
    "k": "Reverse repo de la Fed (Md$)",
@@ -738,6 +758,14 @@
    "fmt": "Md",
    "ts": "2026-10-30",
    "src": "FRED RRPONTSYD"
+  },
+  {
+   "k": "Bilan de la Fed (Md$)",
+   "v": 6745.635,
+   "prev": 6753.604,
+   "fmt": "Md",
+   "ts": "2026-10-28",
+   "src": "FRED WALCL"
   }
  ],
  "fomc": [

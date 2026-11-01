@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T06:45:08.334181Z",
+ "generated_at": "2026-11-01T07:51:36.823958Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -267,15 +267,15 @@
    "open": 102.8,
    "lo": 102.43,
    "hi": 104.99,
-   "vol": 248667
+   "vol": 262537
   },
   "BRENT": {
    "p": 113.43,
    "prev": 114.88,
    "chg": -1.45,
    "pct": -1.26,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (BZ=F) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-10-30T20:00:00Z",
    "open": 111.28,
    "lo": 111.05,
@@ -283,17 +283,17 @@
    "vol": 37539
   },
   "BTC": {
-   "p": 77766.2188,
-   "prev": 77198.2109,
-   "chg": 568.0078,
-   "pct": 0.74,
+   "p": 77774.9688,
+   "prev": 77434.75,
+   "chg": 340.2188,
+   "pct": 0.44,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-01T06:00:00Z",
+   "ts": "2026-11-01T07:00:00Z",
    "open": 77440.9297,
    "lo": 77395.6953,
-   "hi": 77882.4297,
-   "vol": 10680890368
+   "hi": 77885.4375,
+   "vol": 11097830400
   }
  },
  "fundamentals": {
@@ -590,9 +590,9 @@
    "sector": "Energy",
    "industry": "Oil & Gas Integrated",
    "ccy": "SAR",
-   "mcap": 6270239637504,
-   "pe": 15.3373,
-   "fpe": 15.521,
+   "mcap": 6275078291456,
+   "pe": 15.3491,
+   "fpe": 15.5329,
    "eps": 1.69,
    "feps": 1.67,
    "revTTM": 1823482970112,
@@ -616,7 +616,7 @@
    "cash": 229477007360,
    "debt": 355262005248,
    "fcf": 375149985792,
-   "w52lo": 0.0,
+   "w52lo": 23.29,
    "w52hi": 27.96,
    "evEbitda": 7.405,
    "earnTs": 1793707200,
@@ -1620,10 +1620,7 @@
   },
   {
    "t": "10A",
-   "y": 4.98,
-   "st": "EOD",
-   "src": "FRED DGS10",
-   "ts": "2026-10-29"
+   "y": null
   },
   {
    "t": "30A",
@@ -1635,13 +1632,23 @@
  ],
  "news": [
   {
+   "h": "AI dubbing to help Japanese companies expand global outreach",
+   "w": "",
+   "syms": [
+    "N225"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-01T07:51:36.823958+00:00",
+   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/ai-dubbing-to-help-japanese-companies-expand-global-outreach"
+  },
+  {
    "h": "Indonesia GDP, US midterm elections, Hong Kong financial summit",
    "w": "",
    "syms": [
     "HSI"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T06:45:08.334181+00:00",
+   "ts": "2026-11-01T07:51:36.823958+00:00",
    "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/indonesia-gdp-us-midterm-elections-hong-kong-financial-summit"
   },
   {
@@ -1649,7 +1656,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T06:45:08.334181+00:00",
+   "ts": "2026-11-01T07:51:36.823958+00:00",
    "url": "https://asia.nikkei.com/business/energy/pakistan-refineries-report-1-860-jump-in-profit-amid-war-windfall2"
   },
   {
@@ -1657,7 +1664,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T06:45:08.334181+00:00",
+   "ts": "2026-11-01T07:51:36.823958+00:00",
    "url": "https://asia.nikkei.com/spotlight/comment/after-us-midterms-democracy-will-face-test-of-ability-to-self-correct"
   },
   {
@@ -1665,7 +1672,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T06:45:08.334181+00:00",
+   "ts": "2026-11-01T07:51:36.823958+00:00",
    "url": "https://asia.nikkei.com/politics/thai-reformists-became-too-technocratic-party-ex-leader-pita-says"
   },
   {
@@ -1675,7 +1682,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T06:45:08.334181+00:00",
+   "ts": "2026-11-01T07:51:36.823958+00:00",
    "url": "https://asia.nikkei.com/business/companies/japan-bamboo-chopsticks-catch-on-in-south-korea"
   },
   {
@@ -1683,7 +1690,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T06:45:08.334181+00:00",
+   "ts": "2026-11-01T07:51:36.823958+00:00",
    "url": "https://asia.nikkei.com/life-arts/life/on-india-s-east-coast-tidepooling-inspires-marine-conservation"
   },
   {
@@ -1691,7 +1698,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T06:45:08.334181+00:00",
+   "ts": "2026-11-01T07:51:36.823958+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/china-mega-complex-in-dalian-puts-spotlight-on-investment-push"
   },
   {
@@ -1701,7 +1708,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T06:45:08.334181+00:00",
+   "ts": "2026-11-01T07:51:36.823958+00:00",
    "url": "https://asia.nikkei.com/opinion/time-for-japan-to-develop-people-who-can-sell-content"
   },
   {
@@ -1712,7 +1719,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T06:45:08.334181+00:00",
+   "ts": "2026-11-01T07:51:36.823958+00:00",
    "url": "https://asia.nikkei.com/business/markets/bonds/yen-bond-offerings-hit-record-16bn-as-ai-funding-race-reaches-japan"
   },
   {
@@ -1722,7 +1729,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T06:45:08.334181+00:00",
+   "ts": "2026-11-01T07:51:36.823958+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/japan-weighs-taxing-real-estate-rental-operators-living-overseas"
   },
   {
@@ -1732,7 +1739,7 @@
     "N225"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T06:45:08.334181+00:00",
+   "ts": "2026-11-01T07:51:36.823958+00:00",
    "url": "https://asia.nikkei.com/business/health-care/japan-s-foreign-caregivers-face-exam-hurdle-as-grace-period-ends"
   },
   {
@@ -1740,7 +1747,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T06:45:08.334181+00:00",
+   "ts": "2026-11-01T07:51:36.823958+00:00",
    "url": "https://asia.nikkei.com/business/food-beverage/thai-highland-tribe-coffee-brews-following-at-home-and-in-tokyo"
   },
   {
@@ -1750,7 +1757,7 @@
     "HSI"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T06:45:08.334181+00:00",
+   "ts": "2026-11-01T07:51:36.823958+00:00",
    "url": "https://asia.nikkei.com/spotlight/society/fatal-dog-attacks-test-hong-kong-s-ambitions-for-a-pet-friendly-economy"
   },
   {
@@ -1758,16 +1765,32 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T06:45:08.334181+00:00",
+   "ts": "2026-11-01T07:51:36.823958+00:00",
    "url": "https://asia.nikkei.com/spotlight/comment/thailand-looks-west-after-30-years-of-struggles-over-dawei"
   },
   {
-   "h": "What Lies Ahead: Stephen Schwarzman (30)",
+   "h": "L’Iran propose un plan de réouverture d’Hormuz en 48h",
    "w": "",
    "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-01T06:45:08.334181+00:00",
-   "url": "https://asia.nikkei.com/spotlight/my-personal-history/what-lies-ahead-stephen-schwarzman-30"
+   "src": "Investing.com France",
+   "ts": "2026-11-01T07:18:26Z",
+   "url": "https://fr.investing.com/news/economy-news/liran-propose-un-plan-de-reouverture-dhormuz-en-48h-3667072"
+  },
+  {
+   "h": "Quels sont les grands gagnants de l’essor des exportations IA en Asie ?",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-01T06:50:07Z",
+   "url": "https://fr.investing.com/news/stock-market-news/quels-sont-les-grands-gagnants-de-lessor-des-exportations-ia-en-asie--3667070"
+  },
+  {
+   "h": "Le PDG de Truist Financial achète pour 1,2 M$ d’actions de la société",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-01T06:47:07Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-truist-financial-achete-pour-12-m-dactions-de-la-societe-93CH-3667069"
   },
   {
    "h": "Le PDG d’Actuate Therapeutics achète pour 49.999$ d’actions",
@@ -1794,6 +1817,16 @@
    "src": "Investing.com France",
    "ts": "2026-11-01T06:16:34Z",
    "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-bank-first-corp-achete-pour-59348-dactions-93CH-3667065"
+  },
+  {
+   "h": "Companies promised AI gains— here's how the payoff showed up in earnings",
+   "w": "Santander, Novartis and other companies say AI is beginning to boost revenue, cut costs or improve profitability as investors seek returns.",
+   "syms": [
+    "XAU"
+   ],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-01T06:00:01Z",
+   "url": "https://www.cnbc.com/2026/11/01/ai-investments-company-earnings.html"
   },
   {
    "h": "Après un sinistre, le long parcours des assurés pour obtenir une indemnisation",
@@ -2044,30 +2077,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-01T04:00:35Z",
    "url": "https://www.lemonde.fr/argent/article/2026/11/01/ce-qui-change-le-1-novembre-gaz-credit-a-la-consommation-expulsions-locatives-petits-colis-retraites-complementaires_6803973_1657007.html"
-  },
-  {
-   "h": "Les investisseurs en IA se couvrent contre un possible effondrement du secteur tech",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-01T02:32:11Z",
-   "url": "https://fr.investing.com/news/stock-market-news/les-investisseurs-en-ia-se-couvrent-contre-un-possible-effondrement-du-secteur-tech-3667054"
-  },
-  {
-   "h": "Une directrice d’AAR CORP vend des actions pour 454.238$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-01T02:02:06Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/une-directrice-daar-corp-vend-des-actions-pour-454238-93CH-3667052"
-  },
-  {
-   "h": "Les exportations de la Corée du Sud bondissent de 93,7% en octobre, leur plus forte hausse depuis 1974",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-01T01:40:34Z",
-   "url": "https://fr.investing.com/news/economy-news/les-exportations-de-la-coree-du-sud-bondissent-de-937-en-octobre-leur-plus-forte-hausse-depuis-1974-3667050"
   },
   {
    "h": "Toyota-backed truckmaker bets on aftersales service to fend off Chinese EV rivals",
@@ -2434,16 +2443,6 @@
    "ts": "2026-10-31T07:04:09Z",
    "url": "https://www.ft.com/content/321cf4f9-d236-4b50-a52c-c2a21f7c447b?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Pour faire baisser le prix du gazole à la pompe, une course contre la montre et un casse-tête logistique",
-   "w": "Dans les stations-service, le prix du litre de diesel doit perdre jusqu’à 18 centimes d’euro dès dimanche 1ᵉʳ novembre, selon le gouvernement. Mais la remise devrait s’appliquer de façon disparate d’un distributeur à l’autre.",
-   "syms": [
-    "EURUSD"
-   ],
-   "src": "Le Monde — Économie",
-   "ts": "2026-10-31T07:00:06Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/10/31/course-contre-la-montre-et-casse-tete-logistique-pour-faire-baisser-le-prix-du-gazole-a-la-pompe_6803469_3234.html"
   },
   {
    "h": "Fiscal drifting: why the Budget won’t leave you better off",
