@@ -3163,7 +3163,8 @@ for(const [s,q] of Object.entries(SNAPSHOT.quotes)){ if(q.st0===undefined) q.st0
 const u=U.get(s)||U.get(({SPX:'^GSPC',NDX:'^NDX',DJI:'^DJI',EURUSD:'EURUSD=X',XAU:'GC=F',BTC:'BTC-USD'})[s]);
 if(u&&q.p!=null&&q.ts){ u.p=q.p; u.pct=q.pct; u.ts=q.ts; u.st0=q.st0; if(q.h) u.h=q.h; }
 const sec=SNAPSHOT.securities.find(x=>x.sym===s); q.st=ageStatus(q.st0,q.ts,sec&&sec.cls,s); }
-for(const u of UNIV||[]){ if(u.st0===undefined) u.st0=u.st; if(!u.nw) u.st=ageStatus(u.st0,u.ts,u.c,u.s); }
+for(const u of UNIV||[]){ if(u.st0===undefined) u.st0=u.st; if(!u.nw) u.st=ageStatus(u.st0,u.ts,u.c,u.s);
+if(u.n===u.s&&SNAPSHOT.fundamentals[u.s]&&SNAPSHOT.fundamentals[u.s].name) u.n=SNAPSHOT.fundamentals[u.s].name; }
 for(const [s,F] of Object.entries(SNAPSHOT.fundamentals)){ if(!F) continue;
 const q=SNAPSHOT.quotes[s], u=U.get(s), px=q&&q.p!=null?q.p:u&&u.p!=null?u.p:null;
 if(F.div>0&&px>0){ let y=F.div/px*100; if(SUBUNIT(F.ccy)){ if(y<0.05) y*=100; else if(y>40) y/=100; } if(y>0&&y<40) F.divYield=Math.round(y*1000)/1000; }
