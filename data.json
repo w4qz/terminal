@@ -1,13 +1,13 @@
 {
- "generated_at": "2026-11-01T16:01:06.872650Z",
+ "generated_at": "2026-11-01T17:04:33.398348Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
    "prev": 213.66,
    "chg": -8.85,
    "pct": -4.14,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (NVDA) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (NVDA)",
    "ts": "2026-10-30T19:30:00Z",
    "open": 208.94,
    "lo": 200.92,
@@ -15,10 +15,10 @@
    "vol": 168039400
   },
   "ASTS": {
-   "p": 40.97,
+   "p": 40.99,
    "prev": 43.07,
-   "chg": -2.1,
-   "pct": -4.88,
+   "chg": -2.08,
+   "pct": -4.83,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-10-30T19:30:00Z",
@@ -267,7 +267,7 @@
    "open": 102.8,
    "lo": 102.43,
    "hi": 104.99,
-   "vol": 248668
+   "vol": 248667
   },
   "BRENT": {
    "p": 113.43,
@@ -283,17 +283,17 @@
    "vol": 37539
   },
   "BTC": {
-   "p": 77889.0234,
+   "p": 78014.0703,
    "prev": 77434.75,
-   "chg": 454.2734,
-   "pct": 0.59,
+   "chg": 579.3203,
+   "pct": 0.75,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-01T16:00:00Z",
+   "ts": "2026-11-01T17:00:00Z",
    "open": 77440.9297,
    "lo": 77395.6953,
    "hi": 78126.9297,
-   "vol": 12222112768
+   "vol": 11936121856
   }
  },
  "fundamentals": {
@@ -390,9 +390,9 @@
    "ccy": "USD",
    "mcap": 3875804807168,
    "pe": 27.2396,
-   "fpe": 21.6233,
+   "fpe": 21.6187,
    "eps": 19.16,
-   "feps": 24.1364,
+   "feps": 24.1416,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -557,9 +557,9 @@
    "ccy": "USD",
    "mcap": 1829640994816,
    "pe": 585.7391,
-   "fpe": 56.9376,
+   "fpe": 52.529,
    "eps": 0.23,
-   "feps": 2.3661,
+   "feps": 2.5647,
    "revTTM": 32042999808,
    "netIncome": -3431000064,
    "shares": 8246541218,
@@ -954,14 +954,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 982902374400,
+   "mcap": 979897024512,
    "pe": 44.75,
    "fpe": 38.2805,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.578,
    "div": 0.99,
    "divYield": 0.802,
@@ -1332,9 +1332,9 @@
    "ccy": "USD",
    "mcap": 459499536384,
    "pe": 17.2922,
-   "fpe": 14.9045,
+   "fpe": 14.8086,
    "eps": 13.62,
-   "feps": 15.802,
+   "feps": 15.9043,
    "revTTM": 226326003712,
    "netIncome": 26976000000,
    "shares": 1951000000,
@@ -1364,7 +1364,7 @@
    "exDiv": 1794960000,
    "divDate": 1788998400,
    "lastDiv": 1.78,
-   "trailDiv": 1.71
+   "trailDiv": 7.05
   },
   "COST": {
    "name": "Costco Wholesale Corporation",
@@ -1416,9 +1416,9 @@
    "ccy": "USD",
    "mcap": 442427080704,
    "pe": 158.7155,
-   "fpe": 78.3347,
+   "fpe": 78.7903,
    "eps": 1.16,
-   "feps": 2.3503,
+   "feps": 2.3367,
    "revTTM": 6155940864,
    "netIncome": 3016691968,
    "shares": 2300713329,
@@ -1581,8 +1581,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 122.9082,
+   "shares": 572600000,
+   "divYield": 2.574,
    "w52lo": 93.84,
-   "w52hi": 101.46
+   "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48
   },
   "GLD": {
    "name": "SPDR Gold Shares",
@@ -1631,11 +1636,19 @@
  ],
  "news": [
   {
+   "h": "Nuclear reactors under construction rise to 79 globally on AI demand",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-01T17:04:33.398348+00:00",
+   "url": "https://asia.nikkei.com/business/energy/nuclear-reactors-under-construction-rise-to-79-globally-on-ai-demand"
+  },
+  {
    "h": "AI dubbing to help Japanese companies expand global outreach",
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T16:01:06.872650+00:00",
+   "ts": "2026-11-01T17:04:33.398348+00:00",
    "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/ai-dubbing-to-help-japanese-companies-expand-global-outreach"
   },
   {
@@ -1643,7 +1656,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T16:01:06.872650+00:00",
+   "ts": "2026-11-01T17:04:33.398348+00:00",
    "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/indonesia-gdp-us-midterm-elections-hong-kong-financial-summit"
   },
   {
@@ -1651,7 +1664,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T16:01:06.872650+00:00",
+   "ts": "2026-11-01T17:04:33.398348+00:00",
    "url": "https://asia.nikkei.com/business/energy/pakistan-refineries-report-1-860-jump-in-profit-amid-war-windfall2"
   },
   {
@@ -1659,7 +1672,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T16:01:06.872650+00:00",
+   "ts": "2026-11-01T17:04:33.398348+00:00",
    "url": "https://asia.nikkei.com/spotlight/comment/after-us-midterms-democracy-will-face-test-of-ability-to-self-correct"
   },
   {
@@ -1667,7 +1680,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T16:01:06.872650+00:00",
+   "ts": "2026-11-01T17:04:33.398348+00:00",
    "url": "https://asia.nikkei.com/politics/thai-reformists-became-too-technocratic-party-ex-leader-pita-says"
   },
   {
@@ -1675,7 +1688,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T16:01:06.872650+00:00",
+   "ts": "2026-11-01T17:04:33.398348+00:00",
    "url": "https://asia.nikkei.com/business/companies/japan-bamboo-chopsticks-catch-on-in-south-korea"
   },
   {
@@ -1683,7 +1696,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T16:01:06.872650+00:00",
+   "ts": "2026-11-01T17:04:33.398348+00:00",
    "url": "https://asia.nikkei.com/life-arts/life/on-india-s-east-coast-tidepooling-inspires-marine-conservation"
   },
   {
@@ -1691,7 +1704,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T16:01:06.872650+00:00",
+   "ts": "2026-11-01T17:04:33.398348+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/china-mega-complex-in-dalian-puts-spotlight-on-investment-push"
   },
   {
@@ -1699,7 +1712,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T16:01:06.872650+00:00",
+   "ts": "2026-11-01T17:04:33.398348+00:00",
    "url": "https://asia.nikkei.com/opinion/time-for-japan-to-develop-people-who-can-sell-content"
   },
   {
@@ -1709,7 +1722,7 @@
     "USDJPY"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T16:01:06.872650+00:00",
+   "ts": "2026-11-01T17:04:33.398348+00:00",
    "url": "https://asia.nikkei.com/business/markets/bonds/yen-bond-offerings-hit-record-16bn-as-ai-funding-race-reaches-japan"
   },
   {
@@ -1717,7 +1730,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T16:01:06.872650+00:00",
+   "ts": "2026-11-01T17:04:33.398348+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/japan-weighs-taxing-real-estate-rental-operators-living-overseas"
   },
   {
@@ -1725,7 +1738,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T16:01:06.872650+00:00",
+   "ts": "2026-11-01T17:04:33.398348+00:00",
    "url": "https://asia.nikkei.com/business/health-care/japan-s-foreign-caregivers-face-exam-hurdle-as-grace-period-ends"
   },
   {
@@ -1733,7 +1746,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T16:01:06.872650+00:00",
+   "ts": "2026-11-01T17:04:33.398348+00:00",
    "url": "https://asia.nikkei.com/business/food-beverage/thai-highland-tribe-coffee-brews-following-at-home-and-in-tokyo"
   },
   {
@@ -1741,16 +1754,78 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T16:01:06.872650+00:00",
+   "ts": "2026-11-01T17:04:33.398348+00:00",
    "url": "https://asia.nikkei.com/spotlight/society/fatal-dog-attacks-test-hong-kong-s-ambitions-for-a-pet-friendly-economy"
   },
   {
-   "h": "Thailand looks west after 30 years of struggles over Dawei",
-   "w": "",
+   "h": "Alaska Sen. Sullivan says he'll accept election results, slams Peltola campaign’s reported recruitment of 2nd Sullivan",
+   "w": "President Donald Trump's Department of Justice has sued Alaska, demanding the state not certify the election if the incumbent Republican loses.",
    "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-01T16:01:06.872650+00:00",
-   "url": "https://asia.nikkei.com/spotlight/comment/thailand-looks-west-after-30-years-of-struggles-over-dawei"
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-01T17:03:35Z",
+   "url": "https://www.cnbc.com/2026/11/01/alaska-senate-election-dan-sullivan-peltola.html"
+  },
+  {
+   "h": "Serbia shuts down bank favoured by Russians",
+   "w": "Alta Bank is suspected of wiring large amounts of money out of the country after election loss of former president Aleksandar Vučić",
+   "syms": [],
+   "src": "myFT — banks",
+   "ts": "2026-11-01T17:02:03Z",
+   "url": "https://www.ft.com/content/c478c8b6-789f-4253-8970-1244b93c1cce?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Britain to offer cheaper university fees to EU students at ‘reset’ summit",
+   "w": "Since Brexit, European students have paid international tuition rates at UK universities",
+   "syms": [],
+   "src": "myFT — world uk",
+   "ts": "2026-11-01T17:00:02Z",
+   "url": "https://www.ft.com/content/1bcb60e3-8fd7-495d-9482-f59ce64d534e?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Trump makes final pitch to restive voters in midterms campaign",
+   "w": "Republican Party is defending its control of Congress against signs of a backlash to the president",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-01T16:54:05Z",
+   "url": "https://www.ft.com/content/75e8405b-124f-44aa-9c5e-0a33d0ee5b92?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Grand Theft Callout: ‘GTA 6’ fans are missing work on the game’s release day because they ‘don’t want to wait’ anymore",
+   "w": "After waiting 13 years for this videogame, almost one-fifth of workers plan to take the day off to play ‘Grand Theft Auto VI’ when it drops on Nov. 19",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-01T16:35:00Z",
+   "url": "https://www.marketwatch.com/story/grand-theft-callout-gta-6-fans-are-missing-work-on-the-games-release-day-because-they-dont-want-to-wait-anymore-5f2fa2e3?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Intensive parenting is no longer the preserve of the rich",
+   "w": "But wealthy families still come out on top",
+   "syms": [],
+   "src": "The Economist — Finance",
+   "ts": "2026-11-01T16:08:43Z",
+   "url": "https://www.economist.com/finance-and-economics/2026/11/01/intensive-parenting-is-no-longer-the-preserve-of-the-rich"
+  },
+  {
+   "h": "France and the UK require a new entente",
+   "w": "The Suez crisis offers valuable lessons on troubled relations since the birth of the European project",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-01T16:00:02Z",
+   "url": "https://www.ft.com/content/e1f6ac62-d677-4a50-94c5-25605ae71eb7",
+   "mine": 1
+  },
+  {
+   "h": "Everything changed for the oil, AI and bond trades over the past month",
+   "w": "The market expects oil to keep rising, but treasury yields have declined, a warning traders and investors may be more worried about an AI crash than inflation.",
+   "syms": [
+    "BRENT"
+   ],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-01T15:58:24Z",
+   "url": "https://www.cnbc.com/2026/11/01/oil-bond-yields-ai-market.html"
   },
   {
    "h": "Raymond James réduit son objectif de cours sur Oil States International",
@@ -1793,15 +1868,6 @@
    "src": "myFT — world",
    "ts": "2026-11-01T14:54:55Z",
    "url": "https://www.ft.com/content/fdc9a85d-d2c4-465f-99ca-609d68b6d443?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Trump makes final pitch to restive voters in midterms campaign",
-   "w": "Republican Party is defending its control of Congress against signs of a backlash to the president",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-01T14:51:29Z",
-   "url": "https://www.ft.com/content/75e8405b-124f-44aa-9c5e-0a33d0ee5b92?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2194,7 +2260,7 @@
    "h": "Military briefing: what would another US-Iran conflict look like?",
    "w": "US and Israeli options to escalate range from maritime campaigns to attempting regime change but risk provoking retaliation",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-01T05:00:09Z",
    "url": "https://www.ft.com/content/89e3ff89-c097-44cb-a290-0d46726e6075?syn-25a6b1a6=1",
    "mine": 1
@@ -2371,14 +2437,6 @@
    "url": "https://www.marketwatch.com/story/he-was-heartbroken-my-husbands-kids-never-helped-when-he-was-gravely-ill-was-he-right-to-leave-everything-to-me-1ad0616b?mod=mw_rss_topstories"
   },
   {
-   "h": "Is it curtains for COLA? Saving Social Security could mean changing the cost-of-living adjustment.",
-   "w": "Several proposals consider changing the way retirees receive inflation protection. Here’s what it could cost you.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-10-31T18:33:00Z",
-   "url": "https://www.marketwatch.com/story/is-it-curtains-for-cola-saving-social-security-could-mean-changing-the-cost-of-living-adjustment-867c6bd8?mod=mw_rss_topstories"
-  },
-  {
    "h": "Le parquet de Paris a ouvert une enquête pour provocation à la haine raciale en raison de menaces racistes visant des livreurs et chauffeurs sur X",
    "w": "Sur le réseau social, un salon de discussion ouvert aux utilisateurs, intitulé « L’heure est à l’action face à la violence des islamo-collabos antifas », a été l’espace où ces propos racistes et d’incitation à la violence ont été tenus, au début d’octobre.",
    "syms": [],
@@ -2422,34 +2480,6 @@
    "url": "https://www.cnbc.com/2026/10/31/401k-cash-outs-automatic-rollovers.html"
   },
   {
-   "h": "Crypto industry pours more than $200 million into 2026 midterms to pressure Congress on favorable rules",
-   "w": "Interest groups tied to cryptocurrency are spending millions to tilt the midterm elections. They had mixed success in 2024",
-   "syms": [
-    "BTC"
-   ],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-31T13:04:29Z",
-   "url": "https://www.cnbc.com/2026/10/31/crypto-industry-spends-more-than-200-million-to-sway-the-midterms.html"
-  },
-  {
-   "h": "« La seule manière de corriger le sous-investissement de la France est d’augmenter le montant de l’épargne disponible »",
-   "w": "Transition énergétique, innovation, numérique, IA, éducation… La France ne pourra rejoindre ses voisins européens dans ces domaines qu’en modifiant ses arbitrages, juge l’économiste Patrick Artus, dans sa chronique au « Monde ».",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-10-31T13:00:04Z",
-   "url": "https://www.lemonde.fr/idees/article/2026/10/31/la-seule-maniere-de-corriger-le-sous-investissement-de-la-france-est-d-augmenter-le-montant-de-l-epargne-disponible_6803601_3232.html"
-  },
-  {
-   "h": "Binance’s $6.3 billion hack raises questions about crypto wallet safety",
-   "w": "Two high-profile security incidents this week, including the largest crypto theft in history, have raised custody and safety concerns.",
-   "syms": [
-    "BTC"
-   ],
-   "src": "CNBC — Marchés",
-   "ts": "2026-10-31T12:47:08Z",
-   "url": "https://www.cnbc.com/2026/10/31/binance-hack-crypto-wallet-safety.html"
-  },
-  {
    "h": "Steve Bannon: Republicans will erupt in ‘civil war’ after midterm elections",
    "w": "Former White House chief strategist predicts ‘monster’ legislative battles before new Congress is sworn in",
    "syms": [],
@@ -2465,33 +2495,6 @@
    "src": "myFT — world uk",
    "ts": "2026-10-31T12:00:01Z",
    "url": "https://www.ft.com/content/14a8ce6c-ef84-478a-993f-47db30a41d1d?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Poland suspends top judges as battle over rule of law escalates",
-   "w": "President and prime minister are embroiled in a bitter dispute over appointments to country’s constitutional court",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-10-31T11:57:56Z",
-   "url": "https://www.ft.com/content/1be69ebe-0c55-446e-9abf-84ac9e99c51e?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Serbia comes back into the fold",
-   "w": "Decisive vote against autocratic leader Aleksandar Vučić will enable restoration of democratic checks and balances",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-10-31T11:00:01Z",
-   "url": "https://www.ft.com/content/80da9ebf-4057-4ccb-896f-c34929889726?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Chart of the Week: Bond investors may cheer gridlock",
-   "w": "Midterms will have higher stakes for the bond market",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-10-31T10:30:01Z",
-   "url": "https://www.ft.com/content/9570b122-5418-41e6-b91b-b95af96ec881?syn-25a6b1a6=1",
    "mine": 1
   }
  ],
