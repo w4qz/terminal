@@ -3036,7 +3036,7 @@ ${C.map(c=>{ const p10=c.pts.find(p=>p.t==='10A'), dv=p10&&p10.y1m!=null?(p10.y-
 return `<tr class="clk" data-sov="${c.k}" tabindex="0" role="button" title="Ouvrir la courbe (GC)"><th scope="row" style="text-align:left"><span style="color:${c.col}">■</span> ${esc(c.n)}</th>
 ${cols.map(t=>{ const n=nearY(c,t); return n?`<td${n.exact?'':' class="mut" title="maturité la plus proche : '+n.t+'"'}>${nf(n.v,2)} %${n.exact?'':'<sup>*</sup>'}</td>`:'<td class="na">—</td>'; }).join('')}
 <td class="${cls(dv)}">${dv!=null?(dv>0?'+':'')+nf(dv,0)+' pb':'—'}</td></tr>`; }).join('')}</tbody></table>
-<div class="note">Cliquez un pays pour ouvrir sa courbe. * maturité la plus proche disponible. France et Italie : 10 ans mensuel uniquement (pas de courbe gratuite).</div>`;
+<div class="note">Cliquez un pays pour ouvrir sa courbe. * maturité la plus proche disponible. ${C.filter(c=>c.freq==='mensuel').map(c=>c.n).join(' et ')||'—'} : 10 ans mensuel uniquement (pas de courbe gratuite).</div>`;
 }
 function wireSov(root){ root.querySelectorAll('[data-sov]').forEach(r=>{ const f=async()=>{ GC.sel=new Set([r.dataset.sov,'US']); if(r.dataset.sov!=='DE') GC.sel.add('DE'); await go('macro');
 const e=document.getElementById('m-gc'); if(e) e.scrollIntoView({behavior:'smooth',block:'start'}); };
