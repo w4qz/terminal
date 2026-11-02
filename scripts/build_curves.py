@@ -6,7 +6,7 @@ Sources officielles et gratuites, une par pays (la meilleure disponible sans abo
   Japon      Ministère des Finances — JGB par maturité constante (quotidien)
   Suisse     Banque nationale suisse — rendements des obligations de la Confédération (quotidien)
   Royaume-Uni Bank of England — courbe nominale des gilts 5, 10 et 20 ans (quotidien)
-  France, Italie  OCDE via FRED — taux à 10 ans (mensuel ; pas de courbe complète gratuite)
+  France, Italie  CNBC — rendements cotés OAT / BTP, 3 mois à 30 ans (repli : 10 ans OCDE mensuel)
 
 Chaque point garde sa valeur du jour et celle d'il y a environ un mois. Une source en échec
 laisse le pays vide : rien n'est inventé. Écrit curves.json.
@@ -225,9 +225,63 @@ def ten_year(sid):
         return [], "", ""
 
 
+# ── France, Italie : cotations CNBC (rendements de marché, différés ~15 min, toutes maturités) ──
+# L'OCDE ne publie qu'une MOYENNE MENSUELLE du 10 ans, avec un mois de retard : 4,48 % affiché
+# alors que l'OAT cotait bien plus haut. CNBC sert gratuitement les rendements cotés des OAT et BTP.
+CNBC_URL = "https://quote.cnbc.com/quote-html-webservice/restQuote/symbolType/symbol"
+CNBC_TENORS = [("3M", "3M"), ("6M", "6M"), ("1A", "1Y"), ("2A", "2Y"), ("5A", "5Y"), ("7A", "7Y"),
+               ("10A", "10Y"), ("20A", "20Y"), ("30A", "30Y")]
+PREV = {}   # curves.json précédent (historique des points CNBC pour la variation sur 1 mois)
+
+
+def curve_cnbc(cc):
+    syms = {f"{cc}{c}-{cc}": t for t, c in CNBC_TENORS}
+    try:
+        r = requests.get(CNBC_URL, params={"symbols": "|".join(syms), "requestMethod": "itv", "noform": 1,
+                                           "partnerId": 2, "fund": 1, "exthrs": 1, "output": "json"},
+                         headers={"User-Agent": "Mozilla/5.0"}, timeout=25)
+        r.raise_for_status()
+        quotes = r.json()["FormattedQuoteResult"]["FormattedQuote"]
+        quotes = quotes if isinstance(quotes, list) else [quotes]
+    except Exception as e:
+        log(f"  ! CNBC {cc} : {str(e)[:100]}")
+        return []
+    hist = (PREV.get(cc) or {}).get("hist") or {}
+    pts = []
+    for q in quotes:
+        t = syms.get(q.get("symbol"))
+        try:
+            y = float(str(q.get("last", "")).replace("%", "").replace(",", ""))
+        except ValueError:
+            continue
+        if t is None or not (-5 < y < 30):
+            continue
+        ts = str(q.get("last_time") or TODAY.isoformat())[:10]
+        h = [x for x in hist.get(t, []) if x[0] != ts] + [[ts, y]]
+        h = [x for x in h if x[0] >= (TODAY - timedelta(days=45)).isoformat()]
+        hist[t] = sorted(h)
+        p = point(t, [tuple(x) for x in hist[t]])
+        if p:
+            p["ts"] = ts
+            pts.append(p)
+    pts.sort(key=lambda p: TEN_ORD_PY.index(p["t"]) if p["t"] in TEN_ORD_PY else 99)
+    if pts:
+        pts[0]["_hist"] = hist
+    return pts
+
+
+def curve_fr_it(cc, oecd_sid):
+    pts = curve_cnbc(cc)
+    if len(pts) >= 3:
+        return pts, "CNBC — rendements cotés des emprunts d'État (différé ~15 min)", "intrajournalier"
+    log(f"  CNBC {cc} insuffisant : repli sur le 10 ans OCDE (moyenne mensuelle)")
+    return ten_year(oecd_sid)
+
+
 COUNTRIES = [
-    ("DE", "Allemagne", curve_de), ("FR", "France", curve_fr),
-    ("IT", "Italie", lambda: ten_year("IRLTLT01ITM156N")), ("UK", "Royaume-Uni", curve_uk),
+    ("DE", "Allemagne", curve_de),
+    ("FR", "France", lambda: curve_fr() if WEBSTAT_KEY else curve_fr_it("FR", "IRLTLT01FRM156N")),
+    ("IT", "Italie", lambda: curve_fr_it("IT", "IRLTLT01ITM156N")), ("UK", "Royaume-Uni", curve_uk),
     ("JP", "Japon", curve_jp), ("CH", "Suisse", curve_ch),
 ]
 
@@ -237,11 +291,15 @@ def main() -> int:
         prev = json.loads(OUT.read_text(encoding="utf-8")).get("items", {})
     except Exception:
         prev = {}
+    PREV.update(prev)
     items = {}
     for k, name, fn in COUNTRIES:
         pts, src, freq = fn()
         if pts:
+            hist = pts[0].pop("_hist", None)
             items[k] = {"n": name, "pts": pts, "src": src, "freq": freq}
+            if hist:
+                items[k]["hist"] = hist
             log(f"GC : {name} {len(pts)} points ({', '.join(p['t'] for p in pts)})")
         elif k in prev:
             items[k] = {**prev[k], "stale": True}
