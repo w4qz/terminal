@@ -244,6 +244,60 @@ def _actual(title, when):
     return f"{v:,.0f}{suf}".replace(",", " ") if suf in ("K",) else f"{v:.2f}{suf}" if suf == "M" else f"{v:.1f}{suf}"
 
 
+# Chiffres publiés hors FRED : sources officielles gratuites (BCE, BoE, BNS).
+#   (devise, titre FF) → (fonction de lecture, suffixe, nombre de décimales, type)
+#   type « m » : statistique mensuelle (le chiffre du mois précédent doit être paru) ; « r » : décision de taux.
+def _ecb_last(key):
+    r = requests.get(f"https://data-api.ecb.europa.eu/service/data/{key}",
+                     params={"lastNObservations": 2, "format": "csvdata"}, headers=UA, timeout=30)
+    r.raise_for_status()
+    df = pd.read_csv(StringIO(r.text)).dropna(subset=["OBS_VALUE"])
+    return str(df["TIME_PERIOD"].iloc[-1]), float(df["OBS_VALUE"].iloc[-1])
+
+
+def _boe_last(code):
+    r = requests.get("https://www.bankofengland.co.uk/boeapps/database/_iadb-fromshowcolumns.asp",
+                     params={"csv.x": "yes", "Datefrom": (TODAY - timedelta(days=20)).strftime("%d/%b/%Y"),
+                             "Dateto": "now", "SeriesCodes": code, "CSVF": "TN", "UsingCodes": "Y", "VPD": "Y", "VFD": "N"},
+                     headers=UA, timeout=30)
+    r.raise_for_status()
+    df = pd.read_csv(StringIO(r.text)).dropna(subset=[code])
+    d = pd.to_datetime(df[df.columns[0]], dayfirst=True).dt.strftime("%Y-%m-%d").iloc[-1]
+    return d, float(df[code].iloc[-1])
+
+
+def _snb_last(cube, dim):
+    r = requests.get(f"https://data.snb.ch/api/cube/{cube}/data/csv/en",
+                     params={"fromDate": (TODAY - timedelta(days=400)).isoformat()}, headers=UA, timeout=30)
+    r.raise_for_status()
+    obs = sorted((d, float(v)) for d, k, v in
+                 re.findall(r'"?(\d{4}-\d{2}(?:-\d{2})?)"?;"?([A-Za-z0-9_]+)"?;"?(-?\d+\.?\d*)"?', r.text) if k == dim)
+    return obs[-1]
+
+
+OTHER_ACTUAL = {
+    ("EUR", "Flash CPI y/y"): (lambda: _ecb_last("ICP/M.U2.N.000000.4.ANR"), "%", 1, "m"),
+    ("EUR", "CPI Flash Estimate y/y"): (lambda: _ecb_last("ICP/M.U2.N.000000.4.ANR"), "%", 1, "m"),
+    ("EUR", "Core CPI Flash Estimate y/y"): (lambda: _ecb_last("ICP/M.U2.N.XEF000.4.ANR"), "%", 1, "m"),
+    ("GBP", "Official Bank Rate"): (lambda: _boe_last("IUDBEDR"), "%", 2, "r"),
+    ("CHF", "SNB Policy Rate"): (lambda: _snb_last("snbgwdzid", "LZ"), "%", 2, "r"),
+}
+
+
+def _actual_other(cur, title, when):
+    fn, suf, dec, kind = OTHER_ACTUAL[(cur, title)]
+    if when > NOW:
+        return None
+    period, v = fn()
+    if kind == "m":
+        ref = (when.replace(day=1) - timedelta(days=1)).strftime("%Y-%m")   # un flash publié en novembre couvre octobre
+        if str(period)[:7] < ref:
+            return None                   # la nouvelle valeur n'est pas encore dans la base officielle
+    elif str(period)[:10] < when.date().isoformat():   # le taux doit être daté du jour de la décision
+        return None
+    return f"{v:.{dec}f}{suf}"
+
+
 def eco_consensus():
     rows, seen = [], set()
     for url in FF_URLS:
@@ -262,8 +316,11 @@ def eco_consensus():
                 when = datetime.fromisoformat(e["date"]).astimezone(timezone.utc)
                 title = e.get("title", "")
                 actual = None
+                covered = (cur == "USD" and title in FF_TO_FRED and bool(KEY)) or (cur, title) in OTHER_ACTUAL
                 if cur == "USD" and title in FF_TO_FRED and KEY:
                     actual = safe(lambda: _actual(title, when), f"publié {title}")
+                elif (cur, title) in OTHER_ACTUAL:
+                    actual = safe(lambda: _actual_other(cur, title, when), f"publié {title}")
                 f, a = _num(e.get("forecast")), _num(actual)
                 rows.append({
                     "ts": when.isoformat().replace("+00:00", "Z"),
@@ -271,14 +328,15 @@ def eco_consensus():
                     "ev": TITLE_FR.get(title, title), "ev_en": title,
                     "imp": 3 if imp == "High" else 2,
                     "cons": e.get("forecast") or None, "prev": e.get("previous") or None,
-                    "act": actual, "surp": round(a - f, 3) if a is not None and f is not None else None,
+                    "act": actual, "cov": covered, "surp": round(a - f, 3) if a is not None and f is not None else None,
                 })
         except Exception as ex:
             log(f"  ! Forex Factory {url.rsplit('_', 1)[-1]} : {ex}")
     rows.sort(key=lambda x: x["ts"])
     log(f"ECO : {len(rows)} publications avec consensus ({sum(1 for x in rows if x['act'])} avec chiffre publié)")
     return {"rows": rows, "src": "Consensus et précédent : Forex Factory (compilation non officielle, usage personnel). "
-                                "Chiffre publié : FRED (sources officielles BLS, BEA, Fed)."}
+                                "Chiffre publié : FRED (BLS, BEA, Fed), BCE, Bank of England et BNS. Les autres publications "
+                                "(ISM, PMI S&P Global…) n'ont pas de source gratuite : marquées « non couvert »."}
 
 
 # ─────────────────────────────────────────────────────────────────────────────
