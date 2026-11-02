@@ -22,6 +22,7 @@ import warnings
 warnings.filterwarnings("ignore")  # masque les avertissements pandas de yfinance
 
 import feedparser
+import pandas as pd
 import requests
 import yfinance as yf
 
@@ -113,7 +114,7 @@ def fetch_quotes(previous: dict) -> dict:
     log(f"Prix : {len(yt)} tickers")
     daily = yf.download(yt, period="1mo", interval="1d", group_by="ticker",
                         auto_adjust=False, progress=False, threads=True)
-    hourly = yf.download(yt, period="5d", interval="60m", group_by="ticker",
+    hourly = yf.download(yt, period="5d", interval="15m", group_by="ticker",
                          auto_adjust=False, progress=False, threads=True)
     out = {}
     for sym, t in TICKERS.items():
@@ -131,6 +132,11 @@ def fetch_quotes(previous: dict) -> dict:
                 price = float(dclose.iloc[-1])
                 last_ts = dclose.index[-1]
             last_ts = last_ts.tz_localize("UTC") if last_ts.tzinfo is None else last_ts.tz_convert("UTC")
+            # Yahoo horodate une bougie à son OUVERTURE : le cours affiché est celui de la fin de la bougie
+            # (ou du moment du passage si elle est en cours). Sans ce décalage, un cours relevé il y a
+            # 5 minutes apparaissait « vieux de 63 min ».
+            if hclose is not None and len(hclose):
+                last_ts = min(last_ts + pd.Timedelta(minutes=15), pd.Timestamp(NOW))
 
             # Clôture précédente = dernière clôture quotidienne d'une séance antérieure.
             last_day = last_ts.date()
