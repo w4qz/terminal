@@ -29,6 +29,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Récupérer prix, taux et news
+        id: prices
         env:
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -36,32 +37,38 @@ jobs:
         run: python scripts/update_data.py
 
       - name: Construire le catalogue de recherche
+        id: universe
         continue-on-error: true      # un échec ici ne bloque pas les prix
         env:
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
         run: python scripts/build_universe.py
 
       - name: Fondamentaux du catalogue (par roulement)
+        id: fundamentals
         continue-on-error: true
         run: python scripts/build_fundamentals.py
 
       - name: Construire l'onglet Macro (ECO, WIRP, GC, BTMM)
+        id: macro
         continue-on-error: true
         env:
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
         run: python scripts/build_macro.py
 
       - name: États financiers (FA, par roulement)
+        id: financials
         continue-on-error: true
         run: python scripts/build_financials.py
 
       - name: Chaînes d'options (OMON, une fois par heure)
+        id: options
         continue-on-error: true
         env:
           OPT_FORCE: ${{ github.event_name == 'workflow_dispatch' }}
         run: python scripts/build_options.py
 
       - name: Courbes des taux souveraines (GC)
+        id: curves
         continue-on-error: true
         env:
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
@@ -69,6 +76,7 @@ jobs:
         run: python scripts/build_curves.py
 
       - name: Données économiques (une fois par jour)
+        id: economics
         continue-on-error: true
         env:
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
@@ -76,10 +84,19 @@ jobs:
         run: python scripts/build_economics.py
 
       - name: Publier data.json
+        if: always()
         run: |
+          # Résultat de chaque étape de ce passage, lu par l'onglet Diagnostic du terminal
+          cat > status.json <<EOF
+          {"finished_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)", "run": "${{ github.run_id }}",
+           "steps": {"prix, taux et news": "${{ steps.prices.outcome }}", "catalogue": "${{ steps.universe.outcome }}",
+                     "fondamentaux": "${{ steps.fundamentals.outcome }}", "macro": "${{ steps.macro.outcome }}",
+                     "états financiers": "${{ steps.financials.outcome }}", "options": "${{ steps.options.outcome }}",
+                     "courbes souveraines": "${{ steps.curves.outcome }}", "séries économiques": "${{ steps.economics.outcome }}"}}
+          EOF
           git config user.name  "terminal-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for f in data.json universe.json constituents.json macro.json fundamentals.json economics.json peers.json financials.json options.json curves.json ft.json; do [ -f "$f" ] && git add "$f"; done
+          for f in data.json universe.json constituents.json macro.json fundamentals.json economics.json peers.json financials.json options.json curves.json ft.json status.json; do [ -f "$f" ] && git add "$f"; done
           git diff --staged --quiet || git commit -m "Données $(date -u +'%Y-%m-%d %H:%M') UTC"
           # Si un autre passage a publié entre-temps, on garde nos fichiers (les plus récents) et on réessaie.
           for i in 1 2 3; do
