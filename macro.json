@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-02T21:17:48.287359Z",
+ "generated_at": "2026-11-02T22:16:31.933475Z",
  "eco": {
   "prints": [
    {
@@ -283,7 +283,7 @@
      "ev": "Offres d'emploi JOLTS",
      "ev_en": "JOLTS Job Openings",
      "imp": 2,
-     "cons": "7.11M",
+     "cons": "7.15M",
      "prev": "7.08M",
      "act": null,
      "cov": true,
@@ -335,7 +335,7 @@
      "ev": "ISM services",
      "ev_en": "ISM Services PMI",
      "imp": 2,
-     "cons": "54.9",
+     "cons": "54.8",
      "prev": "54.9",
      "act": null,
      "cov": false,
@@ -465,7 +465,7 @@
      "ev": "Créations d'emplois NFP",
      "ev_en": "Non-Farm Employment Change",
      "imp": 3,
-     "cons": "63K",
+     "cons": "65K",
      "prev": "29K",
      "act": null,
      "cov": true,
@@ -491,7 +491,7 @@
      "ev": "Confiance U. Michigan (prélim.)",
      "ev_en": "Prelim UoM Consumer Sentiment",
      "imp": 2,
-     "cons": "47.8",
+     "cons": "48.1",
      "prev": "46.3",
      "act": null,
      "cov": true,
@@ -538,73 +538,73 @@
    {
     "d": "2026-12-09",
     "pre": 3.88,
-    "post": 4.063,
-    "move_bp": 18.3,
+    "post": 4.07,
+    "move_bp": 19.0,
     "p_cut": 0,
-    "p_hike": 73
+    "p_hike": 76
    },
    {
     "d": "2027-01-27",
-    "pre": 4.063,
-    "post": 4.13,
-    "move_bp": 6.7,
+    "pre": 4.07,
+    "post": 4.135,
+    "move_bp": 6.5,
     "p_cut": 0,
-    "p_hike": 27
+    "p_hike": 26
    },
    {
     "d": "2027-03-17",
-    "pre": 4.13,
-    "post": 4.274,
+    "pre": 4.135,
+    "post": 4.279,
     "move_bp": 14.4,
     "p_cut": 0,
     "p_hike": 58
    },
    {
     "d": "2027-04-28",
-    "pre": 4.274,
-    "post": 4.335,
+    "pre": 4.279,
+    "post": 4.34,
     "move_bp": 6.1,
     "p_cut": 0,
     "p_hike": 24
    },
    {
     "d": "2027-06-09",
-    "pre": 4.335,
-    "post": 4.414,
-    "move_bp": 7.9,
+    "pre": 4.34,
+    "post": 4.433,
+    "move_bp": 9.3,
     "p_cut": 0,
-    "p_hike": 31
+    "p_hike": 37
    },
    {
     "d": "2027-07-28",
-    "pre": 4.414,
-    "post": 4.44,
-    "move_bp": 2.6,
+    "pre": 4.433,
+    "post": 4.45,
+    "move_bp": 1.7,
     "p_cut": 0,
-    "p_hike": 11
+    "p_hike": 7
    },
    {
     "d": "2027-09-15",
-    "pre": 4.44,
-    "post": 4.47,
+    "pre": 4.45,
+    "post": 4.48,
     "move_bp": 3.0,
     "p_cut": 0,
     "p_hike": 12
    },
    {
     "d": "2027-10-27",
-    "pre": 4.47,
-    "post": 4.455,
-    "move_bp": -1.5,
-    "p_cut": 6,
+    "pre": 4.48,
+    "post": 4.46,
+    "move_bp": -2.0,
+    "p_cut": 8,
     "p_hike": 0
    },
    {
     "d": "2027-12-08",
-    "pre": 4.455,
-    "post": 4.428,
-    "move_bp": -2.7,
-    "p_cut": 11,
+    "pre": 4.46,
+    "post": 4.44,
+    "move_bp": -2.0,
+    "p_cut": 8,
     "p_hike": 0
    }
   ],
@@ -823,18 +823,18 @@
   },
   {
    "k": "Pente 2s10s",
-   "v": 38.0,
-   "prev": 37.0,
+   "v": 32.0,
+   "prev": 38.0,
    "fmt": "pb",
-   "ts": "2026-10-30",
+   "ts": "2026-11-02",
    "src": "FRED T10Y2Y"
   },
   {
    "k": "Pente 3m10a",
-   "v": 78.0,
-   "prev": 80.0,
+   "v": 70.0,
+   "prev": 78.0,
    "fmt": "pb",
-   "ts": "2026-10-30",
+   "ts": "2026-11-02",
    "src": "FRED T10Y3M"
   },
   {
