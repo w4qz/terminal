@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-02T07:52:34.406958Z",
+ "generated_at": "2026-11-02T08:06:58.563004Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -8,7 +8,7 @@
    "pct": -4.14,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (NVDA)",
-   "ts": "2026-10-30T19:30:00Z",
+   "ts": "2026-10-30T20:00:00Z",
    "open": 208.94,
    "lo": 200.92,
    "hi": 209.06,
@@ -45,7 +45,7 @@
    "pct": -4.88,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
-   "ts": "2026-10-30T19:30:00Z",
+   "ts": "2026-10-30T20:00:00Z",
    "open": 41.07,
    "lo": 39.213,
    "hi": 42.36,
@@ -82,7 +82,7 @@
    "pct": -1.81,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^GSPC)",
-   "ts": "2026-10-30T19:30:00Z",
+   "ts": "2026-10-30T20:00:00Z",
    "open": 7631.0698,
    "lo": 7527.5601,
    "hi": 7637.48,
@@ -119,7 +119,7 @@
    "pct": -3.46,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^NDX)",
-   "ts": "2026-10-30T19:30:00Z",
+   "ts": "2026-10-30T20:00:00Z",
    "open": 28604.9102,
    "lo": 28093.2402,
    "hi": 28713.4492,
@@ -156,7 +156,7 @@
    "pct": -1.09,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^DJI)",
-   "ts": "2026-10-30T19:30:00Z",
+   "ts": "2026-10-30T20:00:00Z",
    "open": 52383.8984,
    "lo": 51563.7617,
    "hi": 52383.8984,
@@ -193,7 +193,7 @@
    "pct": -1.65,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^RUT)",
-   "ts": "2026-10-30T19:30:00Z",
+   "ts": "2026-10-30T20:00:00Z",
    "open": 2838.77,
    "lo": 2787.1201,
    "hi": 2843.0,
@@ -228,14 +228,13 @@
    "prev": 17.2,
    "chg": 2.24,
    "pct": 13.02,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^VIX) — échec de la dernière mise à jour",
-   "ts": "2026-10-30T20:00:00Z",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^VIX)",
+   "ts": "2026-10-30T20:15:00Z",
    "open": 18.43,
    "lo": 18.03,
    "hi": 23.93,
    "h": [
-    16.39,
     15.31,
     15.52,
     15.01,
@@ -266,7 +265,7 @@
    "pct": -0.36,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^N225)",
-   "ts": "2026-11-02T06:00:00Z",
+   "ts": "2026-11-02T06:30:00Z",
    "open": 62972.0195,
    "lo": 62712.9102,
    "hi": 63615.3203,
@@ -295,13 +294,13 @@
    ]
   },
   "HSI": {
-   "p": 23392.6699,
+   "p": 23363.5391,
    "prev": 23294.4199,
-   "chg": 98.25,
-   "pct": 0.42,
+   "chg": 69.1191,
+   "pct": 0.3,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^HSI)",
-   "ts": "2026-11-02T07:30:00Z",
+   "ts": "2026-11-02T08:00:00Z",
    "open": 23301.7402,
    "lo": 23271.2598,
    "hi": 23543.3008,
@@ -326,7 +325,7 @@
     23094.83,
     22958.65,
     23294.42,
-    23390.9
+    23363.54
    ]
   },
   "SHCOMP": {
@@ -336,7 +335,7 @@
    "pct": 0.93,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (000001.SS)",
-   "ts": "2026-11-02T06:30:00Z",
+   "ts": "2026-11-02T07:00:00Z",
    "open": 3614.311,
    "lo": 3594.7683,
    "hi": 3648.1328,
@@ -363,13 +362,13 @@
    ]
   },
   "STI": {
-   "p": 5298.8501,
+   "p": 5301.9199,
    "prev": 5376.7402,
-   "chg": -77.8901,
-   "pct": -1.45,
+   "chg": -74.8203,
+   "pct": -1.39,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^STI)",
-   "ts": "2026-11-02T07:00:00Z",
+   "ts": "2026-11-02T08:00:00Z",
    "open": 5354.1201,
    "lo": 5262.8501,
    "hi": 5354.1201,
@@ -395,7 +394,7 @@
     5397.91,
     5396.03,
     5376.74,
-    5298.92
+    5301.92
    ]
   },
   "UKX": {
@@ -405,13 +404,12 @@
    "pct": 0.13,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^FTSE)",
-   "ts": "2026-10-30T16:00:00Z",
+   "ts": "2026-10-30T16:30:00Z",
    "open": 10721.5,
    "lo": 10715.9004,
    "hi": 10778.7002,
    "vol": 866084300,
    "h": [
-    10428.3,
     10462.0,
     10497.9,
     10541.7,
@@ -442,13 +440,12 @@
    "pct": -0.85,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^GDAXI)",
-   "ts": "2026-10-30T16:00:00Z",
+   "ts": "2026-10-30T16:30:00Z",
    "open": 25948.6094,
    "lo": 25779.1504,
    "hi": 26026.1992,
    "vol": 53853200,
    "h": [
-    24939.35,
     25231.2,
     25254.21,
     25449.19,
@@ -479,13 +476,12 @@
    "pct": -0.1,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^FCHI)",
-   "ts": "2026-10-30T16:00:00Z",
+   "ts": "2026-10-30T16:30:00Z",
    "open": 7973.8599,
    "lo": 7952.3901,
    "hi": 7992.1699,
    "vol": 78347100,
    "h": [
-    7835.31,
     7897.19,
     7834.1,
     7865.07,
@@ -516,13 +512,12 @@
    "pct": -1.23,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^STOXX50E)",
-   "ts": "2026-10-30T16:00:00Z",
+   "ts": "2026-10-30T16:30:00Z",
    "open": 6179.29,
    "lo": 6123.0,
    "hi": 6179.29,
    "vol": 21922600,
    "h": [
-    6175.45,
     6238.5,
     6242.14,
     6272.23,
@@ -547,16 +542,16 @@
    ]
   },
   "EURUSD": {
-   "p": 1.1198,
+   "p": 1.1197,
    "prev": 1.1183,
-   "chg": 0.0015,
-   "pct": 0.14,
+   "chg": 0.0014,
+   "pct": 0.13,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (EURUSD=X)",
-   "ts": "2026-11-02T07:00:00Z",
+   "ts": "2026-11-02T08:06:58.563004Z",
    "open": 1.1159,
    "lo": 1.1156,
-   "hi": 1.1199,
+   "hi": 1.1202,
    "h": [
     1.124986,
     1.125454,
@@ -579,17 +574,17 @@
     1.112966,
     1.115573,
     1.118281,
-    1.119821
+    1.119695
    ]
   },
   "USDJPY": {
-   "p": 157.719,
+   "p": 157.721,
    "prev": 157.804,
-   "chg": -0.085,
+   "chg": -0.083,
    "pct": -0.05,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (JPY=X)",
-   "ts": "2026-11-02T07:00:00Z",
+   "ts": "2026-11-02T08:06:58.563004Z",
    "open": 157.457,
    "lo": 157.414,
    "hi": 157.993,
@@ -619,13 +614,13 @@
    ]
   },
   "GBPUSD": {
-   "p": 1.3414,
+   "p": 1.3412,
    "prev": 1.3379,
-   "chg": 0.0036,
-   "pct": 0.27,
+   "chg": 0.0034,
+   "pct": 0.25,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
-   "ts": "2026-11-02T07:00:00Z",
+   "ts": "2026-11-02T08:06:58.563004Z",
    "open": 1.3393,
    "lo": 1.338,
    "hi": 1.3417,
@@ -651,17 +646,17 @@
     1.33063,
     1.3328,
     1.337864,
-    1.341436
+    1.341238
    ]
   },
   "DXY": {
-   "p": 101.744,
+   "p": 101.742,
    "prev": 101.88,
-   "chg": -0.136,
-   "pct": -0.13,
+   "chg": -0.138,
+   "pct": -0.14,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (DX-Y.NYB)",
-   "ts": "2026-11-02T07:00:00Z",
+   "ts": "2026-11-02T08:00:00Z",
    "open": 101.968,
    "lo": 101.732,
    "hi": 101.994,
@@ -691,17 +686,17 @@
    ]
   },
   "XAU": {
-   "p": 3910.2,
+   "p": 3913.8,
    "prev": 3898.8999,
-   "chg": 11.3,
-   "pct": 0.29,
+   "chg": 14.9001,
+   "pct": 0.38,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GC=F)",
-   "ts": "2026-11-02T07:00:00Z",
+   "ts": "2026-11-02T08:00:00Z",
    "open": 3890.0,
    "lo": 3889.0,
    "hi": 3928.1001,
-   "vol": 39043,
+   "vol": 40227,
    "h": [
     4162.3,
     4156.8,
@@ -724,21 +719,21 @@
     4051.6,
     4031.4,
     3898.9,
-    3910.0
+    3913.5
    ]
   },
   "CL": {
-   "p": 100.83,
+   "p": 100.73,
    "prev": 104.12,
-   "chg": -3.29,
-   "pct": -3.16,
+   "chg": -3.39,
+   "pct": -3.26,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (CL=F)",
-   "ts": "2026-11-02T07:00:00Z",
+   "ts": "2026-11-02T08:00:00Z",
    "open": 102.39,
    "lo": 100.18,
    "hi": 102.75,
-   "vol": 40154,
+   "vol": 42023,
    "h": [
     91.11,
     89.43,
@@ -761,21 +756,21 @@
     102.78,
     102.0,
     104.12,
-    100.83
+    100.73
    ]
   },
   "BRENT": {
-   "p": 110.36,
+   "p": 110.29,
    "prev": 117.64,
-   "chg": -7.28,
-   "pct": -6.19,
+   "chg": -7.35,
+   "pct": -6.25,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BZ=F)",
-   "ts": "2026-11-02T07:00:00Z",
+   "ts": "2026-11-02T08:00:00Z",
    "open": 111.84,
    "lo": 109.32,
    "hi": 112.38,
-   "vol": 4691,
+   "vol": 5163,
    "h": [
     102.25,
     100.32,
@@ -798,21 +793,21 @@
     115.32,
     114.88,
     117.64,
-    110.36
+    110.29
    ]
   },
   "BTC": {
-   "p": 77921.2812,
+   "p": 78111.3438,
    "prev": 78248.4531,
-   "chg": -327.1719,
-   "pct": -0.42,
+   "chg": -137.1094,
+   "pct": -0.18,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-02T07:00:00Z",
+   "ts": "2026-11-02T08:06:58.563004Z",
    "open": 78235.5625,
    "lo": 77882.75,
    "hi": 78611.4531,
-   "vol": 14594836480,
+   "vol": 14603759616,
    "h": [
     81762.56,
     83095.12,
@@ -835,7 +830,7 @@
     77198.21,
     77434.75,
     78248.45,
-    77921.28
+    78111.34
    ]
   }
  },
@@ -2178,6 +2173,63 @@
  ],
  "news": [
   {
+   "h": "Bulgarians re-elect pro-Russian president",
+   "w": "Interim president Iliana Yotova consolidates her country’s Kremlin-friendly stance in final election results",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-02T08:04:24Z",
+   "url": "https://www.ft.com/content/c1565a1b-9962-40d2-a764-5a19d0f3c700?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Le secteur manufacturier roumain replonge en contraction",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-02T08:01:11Z",
+   "url": "https://fr.investing.com/news/economic-indicators/le-secteur-manufacturier-roumain-replonge-en-contraction-93CH-3667517"
+  },
+  {
+   "h": "Le Canada rêve d’exporter son gaz naturel liquéfié en Europe",
+   "w": "Ottawa est le cinquième producteur mondial de gaz naturel liquéfié (GNL) et pourrait devenir une nouvelle source d’approvisionnement pour les Européens, en quête de diversification. Mais l’éloignement géographique et le manque d’infrastructures risquent de freiner ces ambitions.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-02T08:00:08Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/11/02/le-canada-reve-d-exporter-son-gaz-naturel-liquefie-en-europe_6805185_3234.html"
+  },
+  {
+   "h": "Citi initie Vusion à l’achat avec un potentiel de hausse de 84%",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-02T07:52:55Z",
+   "url": "https://fr.investing.com/news/stock-market-news/citi-initie-vusion-a-lachat-avec-un-potentiel-de-hausse-de-84-3667516"
+  },
+  {
+   "h": "Compte rendu de résultats : La chute des bénéfices d’Alstom s’aggrave",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-02T07:52:02Z",
+   "url": "https://fr.investing.com/news/transcripts/compte-rendu-de-resultats--la-chute-des-benefices-dalstom-saggrave-93CH-3667512"
+  },
+  {
+   "h": "Un administrateur d’Equitable Holdings vend des actions pour 108.550$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-02T07:46:54Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-dequitable-holdings-vend-des-actions-pour-108550-93CH-3667509"
+  },
+  {
+   "h": "Crizac : le chiffre d’affaires du T2 2026 chute de 37%, l’action recule",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-02T07:45:23Z",
+   "url": "https://fr.investing.com/news/transcripts/crizac--le-chiffre-daffaires-du-t2-2026-chute-de-37-laction-recule-93CH-3667506"
+  },
+  {
    "h": "Binance users withdraw $3.6bn after largest-ever crypto hack",
    "w": "The exchange froze transactions following the incident which has been linked to a North Korean group.",
    "syms": [
@@ -2186,6 +2238,14 @@
    "src": "BBC — Business",
    "ts": "2026-11-02T07:42:33Z",
    "url": "https://www.bbc.co.uk/news/articles/cwj34gdmnly4o?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "Deutsche Bank dégrade Novartis à « vendre » en raison de la valorisation",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-02T07:41:50Z",
+   "url": "https://fr.investing.com/news/analyst-ratings/deutsche-bank-degrade-novartis-a--vendre--en-raison-de-la-valorisation-93CH-3667504"
   },
   {
    "h": "Le BPA de Kosmos Energy a manqué les attentes de 0,03$, le CA en dessous des prévisions",
@@ -2204,20 +2264,20 @@
    "url": "https://fr.investing.com/news/stock-market-news/8-actions-de-puces-us-a-surveiller-de-pres-suite-a-lhecatombe-de-vendredi-3667500"
   },
   {
+   "h": "Goldman Sachs relève ses prévisions pétrolières face aux risques d’approvisionnement",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-02T07:38:28Z",
+   "url": "https://fr.investing.com/news/commodities-news/goldman-sachs-releve-ses-previsions-petrolieres-face-aux-risques-dapprovisionnement-3667508"
+  },
+  {
    "h": "Euronext nomme David Knibbe, de NN Group, comme prochain PDG",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
    "ts": "2026-11-02T07:31:16Z",
    "url": "https://fr.investing.com/news/economy-news/euronext-nomme-david-knibbe-de-nn-group-comme-prochain-pdg-93CH-3667496"
-  },
-  {
-   "h": "Ganesha Ecosphere affiche une forte croissance au T2 2026",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-02T07:30:38Z",
-   "url": "https://fr.investing.com/news/transcripts/ganesha-ecosphere-affiche-une-forte-croissance-au-t2-2026-93CH-3667495"
   },
   {
    "h": "Troubled train giant Alstom issues new profit warning",
@@ -2325,60 +2385,12 @@
    "url": "https://asia.nikkei.com/business/energy/nuclear-reactors-under-construction-rise-to-79-globally-on-ai-demand"
   },
   {
-   "h": "Barclays dégrade Dr. Martens en « sous-pondéré » et réduit son objectif de cours",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-02T07:27:31Z",
-   "url": "https://fr.investing.com/news/stock-market-news/barclays-degrade-dr-martens-en--souspondere--et-reduit-son-objectif-de-cours-3667493"
-  },
-  {
-   "h": "Adnoc signe un accord IA avec OpenAI lors de la visite de Sam Altman à Abou Dhabi",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-02T07:27:20Z",
-   "url": "https://fr.investing.com/news/stock-market-news/adnoc-signe-un-accord-ia-avec-openai-lors-de-la-visite-de-sam-altman-a-abou-dhabi-93CH-3667490"
-  },
-  {
    "h": "Marine sniper turned macro strategist says this bull market has six to 12 months left. Here’s his playbook.",
    "w": "Alex Barrow, founder of Macro Ops, says the bull market is on borrowed time and will ratchet back painfully for investors who aren’t prepared.",
    "syms": [],
    "src": "MarketWatch",
    "ts": "2026-11-02T07:25:00Z",
    "url": "https://www.marketwatch.com/story/marine-sniper-turned-macro-strategist-says-this-bull-market-has-six-to-12-months-left-heres-his-playbook-8b48ce6e?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Les actions Alstom chutent de 18% après une nouvelle révision des prévisions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-02T07:23:46Z",
-   "url": "https://fr.investing.com/news/earnings/les-actions-alstom-chutent-de-18-apres-une-nouvelle-revision-des-previsions-3667494"
-  },
-  {
-   "h": "BP finalise la vente de Castrol à Stonepeak Partners pour 6 milliards $",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-02T07:23:17Z",
-   "url": "https://fr.investing.com/news/stock-market-news/bp-finalise-la-vente-de-castrol-a-stonepeak-partners-pour-6-milliards--93CH-3667488"
-  },
-  {
-   "h": "Phillip Securities relève Amazon à l’achat grâce à la solidité d’AWS",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-02T07:22:27Z",
-   "url": "https://fr.investing.com/news/analyst-ratings/phillip-securities-releve-amazon-a-lachat-grace-a-la-solidite-daws-93CH-3667487"
-  },
-  {
-   "h": "LIC Housing Finance publie des résultats mitigés au T2 2026",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-02T07:16:29Z",
-   "url": "https://fr.investing.com/news/transcripts/lic-housing-finance-publie-des-resultats-mitiges-au-t2-2026-93CH-3667485"
   },
   {
    "h": "AI is coming to construction sites. But does it make workers safer?",
@@ -2506,14 +2518,6 @@
    "url": "https://www.cnbc.com/2026/11/02/binance-outflow-hack-bitcoin.html"
   },
   {
-   "h": "« Dubaï Papers » : l’heure du procès pour une « officine de fraude fiscale à grande échelle »",
-   "w": "Neuf responsables du cabinet Hélin International, trois avocats et un expert-comptable français sont jugés à partir de lundi à Paris. Ils sont accusés d’avoir méthodiquement aidé plus de 300 contribuables français à frauder le fisc pendant des années grâce à des montages sophistiqués.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-02T05:00:44Z",
-   "url": "https://www.lemonde.fr/les-decodeurs/article/2026/11/02/dubai-papers-l-heure-du-proces-pour-une-officine-de-fraude-fiscale-a-grande-echelle_6804884_4355770.html"
-  },
-  {
    "h": "‘Control and sovereignty’ to shape UK approach to AI",
    "w": "Principles come after robust discussions at top of government over rollout of fast-evolving technology",
    "syms": [],
@@ -2613,6 +2617,14 @@
    "ts": "2026-11-02T05:00:17Z",
    "url": "https://www.ft.com/content/e43fb9c3-5487-4373-ad4e-16b50a1ac22e?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "« Dubaï Papers » : l’heure du procès pour une « officine de fraude fiscale à grande échelle »",
+   "w": "Neuf responsables du cabinet Hélin International, trois avocats et un expert-comptable français sont jugés à partir de lundi à Paris. Ils sont accusés d’avoir méthodiquement aidé plus de 300 contribuables français à frauder le fisc pendant des années grâce à des montages sophistiqués.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-02T05:00:15Z",
+   "url": "https://www.lemonde.fr/les-decodeurs/article/2026/11/02/dubai-papers-l-heure-du-proces-pour-une-officine-de-fraude-fiscale-a-grande-echelle_6804884_4355770.html"
   },
   {
    "h": "Is this the smartest toaster ever made?",
@@ -2848,15 +2860,6 @@
    "url": "https://www.cnbc.com/2026/11/01/michigan-senate-stevens-rogers-endorsement-el-sayed.html"
   },
   {
-   "h": "Bulgarians projected to re-elect pro-Russian president",
-   "w": "Interim president Iliana Yotova set to consolidate her country’s Kremlin-friendly stance if results confirm exit polls",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-01T20:53:51Z",
-   "url": "https://www.ft.com/content/c1565a1b-9962-40d2-a764-5a19d0f3c700?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "My wife cried when I found out she had only $80,000 in her 401(k). I have $2.2 million. Am I wrong to be shocked?",
    "w": "“When I brought up retiring last spring, she said she was ready whenever I was, and I took that to mean we were in good shape.”",
    "syms": [],
@@ -3026,14 +3029,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-01T13:00:09Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/01/au-japon-les-chaussettes-uniqlo-symboles-des-inquietudes-face-a-l-augmentation-des-prix_6804306_3234.html"
-  },
-  {
-   "h": "America is doing better than you think. Your algorithm is just hiding it.",
-   "w": "The bottom half of Americans has more than doubled its net worth since 2019. You wouldn’t know it from scrolling social media.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-01T13:00:00Z",
-   "url": "https://www.marketwatch.com/story/america-is-doing-better-than-you-think-your-algorithm-is-just-hiding-it-7dbdecff?mod=mw_rss_topstories"
   }
  ],
  "summary": {
