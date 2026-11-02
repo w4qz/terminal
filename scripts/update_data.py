@@ -319,6 +319,8 @@ def _clean(html: str) -> str:
 
 def fetch_news(previous: dict) -> list:
     items, seen = [], set()
+    # Date déjà connue d'un article (passage précédent) : un article sans date garde sa première apparition
+    known = {x.get("h", "").lower(): x.get("ts") for x in previous.get("news", []) if x.get("h")}
     for name, url in RSS_FEEDS:
         try:
             feed = feedparser.parse(url, agent="Mozilla/5.0 (terminal-ia)")
@@ -329,7 +331,12 @@ def fetch_news(previous: dict) -> list:
                     continue
                 seen.add(title.lower())
                 t = e.get("published_parsed") or e.get("updated_parsed")
-                ts = datetime(*t[:6], tzinfo=timezone.utc).isoformat().replace("+00:00", "Z") if t else NOW.isoformat()
+                if t:
+                    ts = datetime(*t[:6], tzinfo=timezone.utc).isoformat().replace("+00:00", "Z")
+                else:
+                    # Flux sans date (ex. Nikkei Asia) : sans ce garde-fou, chaque article recevait l'heure du
+                    # passage et l'ensemble du flux passait en tête du fil à chaque fois.
+                    ts = known.get(title.lower()) or (NOW - timedelta(hours=6)).isoformat().replace("+00:00", "Z")
                 text = (title + " " + _clean(e.get("summary", ""))).lower()
                 syms = [s for s, pat in TAGS.items() if re.search(pat, text)]
                 items.append({"h": title, "w": _clean(e.get("summary", "")), "syms": syms[:4],
@@ -343,7 +350,16 @@ def fetch_news(previous: dict) -> list:
         return previous.get("news", [])
     items.sort(key=lambda x: x["ts"], reverse=True)
     mine = [x for x in items if x.get("mine")][:40]          # myFT : jusqu'à 40, toujours gardés
-    rest = [x for x in items if not x.get("mine")][:MAX_NEWS - len(mine)]
+    # Au plus 12 articles par source, pour qu'aucun flux ne monopolise le fil
+    per, rest = {}, []
+    for x in items:
+        if x.get("mine"):
+            continue
+        k = x["src"].split(" — ")[0]
+        if per.get(k, 0) < 12:
+            per[k] = per.get(k, 0) + 1
+            rest.append(x)
+    rest = rest[:MAX_NEWS - len(mine)]
     return sorted(mine + rest, key=lambda x: x["ts"], reverse=True)
 
 
