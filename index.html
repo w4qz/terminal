@@ -2238,7 +2238,7 @@ return `<tr style="${past&&!c.act?'opacity:.6':''}"><th scope="row" style="font-
 <td style="text-align:left;white-space:normal">${c.imp===3?'<b>':''}${esc(c.ev)}${c.imp===3?'</b>':''} <span class="mut">${esc(c.ctry)}</span>${/FOMC\)|Federal Funds Rate/i.test(c.ev)?fomcDetail(c.d||String(c.ts).slice(0,10),M):''}</td>
 <td><span class="sr-only">Impact ${c.imp} sur 3.</span><span aria-hidden="true" style="color:${c.imp===3?'var(--neg)':'var(--hot)'}">${'●'.repeat(c.imp)}</span></td>
 <td>${c.cons?esc(c.cons):'<span class="na">—</span>'}</td>
-<td style="font-weight:600">${c.act?esc(c.act):past?'<span class="na">n/d</span>':'<span class="na">à venir</span>'}</td>
+<td style="font-weight:600">${c.act?esc(c.act):!past?'<span class="na">à venir</span>':c.cov===false?'<span class="na" title="Aucune source gratuite pour ce chiffre (ISM, PMI… sont payants) : voir le communiqué officiel">non couvert</span>':'<span class="na" title="Publié, mais pas encore repris par la base officielle (FRED, BCE…) : apparaît au prochain passage du robot">en attente</span>'}</td>
 <td class="${scls}">${sp==null?'—':(sp>0?'+':'')+nf(sp,Math.abs(sp)>=10?0:2)}</td>
 <td class="mut">${c.prev?esc(c.prev):'—'}</td></tr>`; }).join('');
 // WIRP
