@@ -41,8 +41,10 @@ def log(msg):
 
 def fred(sid, n=1, units="lin", start=None):
     """Dernières observations d'une série FRED, de la plus récente à la plus ancienne."""
+    # observation_end = aujourd'hui : FRED publie certains taux administrés (IORB, fed funds cible)
+    # à l'avance, avec une date d'effet future ; on n'affiche jamais une observation postérieure au passage.
     p = {"series_id": sid, "api_key": KEY, "file_type": "json", "sort_order": "desc",
-         "limit": n, "units": units}
+         "limit": n, "units": units, "observation_end": TODAY.isoformat()}
     if start:
         p["observation_start"] = start
     r = requests.get("https://api.stlouisfed.org/fred/series/observations", params=p, timeout=25)
@@ -99,7 +101,8 @@ def _fred_full(sid, units):
     """Deux dernières observations avec leur date de publication (realtime_start = date de la
     dernière publication ou révision de la valeur) et la fréquence de la série."""
     r = requests.get("https://api.stlouisfed.org/fred/series/observations", params={
-        "series_id": sid, "api_key": KEY, "file_type": "json", "sort_order": "desc", "limit": 2, "units": units}, timeout=25)
+        "series_id": sid, "api_key": KEY, "file_type": "json", "sort_order": "desc", "limit": 2, "units": units,
+        "observation_end": TODAY.isoformat()}, timeout=25)
     r.raise_for_status()
     obs = [o for o in r.json()["observations"] if o["value"] != "."]
     m = requests.get("https://api.stlouisfed.org/fred/series", params={"series_id": sid, "api_key": KEY, "file_type": "json"}, timeout=25)
