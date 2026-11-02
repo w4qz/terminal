@@ -367,7 +367,6 @@ securities:[
 {sym:'RUT', name:'Russell 2000', cls:'Indice', exch:'—', ccy:'USD', ctry:'US', sect:'—'},
 {sym:'VIX', name:'CBOE Volatility Index', cls:'Indice', exch:'—', ccy:'USD', ctry:'US', sect:'—'},
 {sym:'N225', name:'Nikkei 225', cls:'Indice', exch:'—', ccy:'JPY', ctry:'JP', sect:'—'},
-{sym:'TOPX', name:'TOPIX', cls:'Indice', exch:'—', ccy:'JPY', ctry:'JP', sect:'—'},
 {sym:'HSI', name:'Hang Seng Index', cls:'Indice', exch:'—', ccy:'HKD', ctry:'HK', sect:'—'},
 {sym:'SHCOMP',name:'Shanghai Composite', cls:'Indice', exch:'—', ccy:'CNY', ctry:'CN', sect:'—'},
 {sym:'STI', name:'Straits Times Index', cls:'Indice', exch:'—', ccy:'SGD', ctry:'SG', sect:'—'},
@@ -399,7 +398,6 @@ RUT:{p:2903.94, chg:12.99, pct:0.45, st:STATUS.STALE, src:'Yahoo Finance — der
 VIX:{p:17.71, chg:0.51, pct:2.97, st:STATUS.STALE, src:'Yahoo Finance — dernier relevé du 16/09', ts:'2026-09-16T20:00:00Z'},
 // Asie — clôtures du 30/10
 N225:{p:63290.00, pct:-2.12, st:STATUS.EOD, src:'Financial Times (FirstFT Americas, relevé 0630 GMT-4 30/10)', ts:'2026-10-30T10:30:00Z'},
-TOPX:{p:4069.02, pct:0.79, st:STATUS.STALE, src:'Business Recorder — dernier relevé du 16/09', ts:'2026-09-16T02:00:00Z'},
 HSI:{p:23294.00, pct:1.46, st:STATUS.EOD, src:'Financial Times (FirstFT Americas, relevé 0630 GMT-4 30/10)', ts:'2026-10-30T10:30:00Z'},
 SHCOMP:{p:3864.00, pct:-0.54, st:STATUS.STALE, src:'NordFX — dernier relevé du 15/09', ts:'2026-09-15T07:00:00Z'},
 STI:{p:5695.93, chg:6.18, pct:0.11, st:STATUS.STALE, src:'TheCloseReport — dernier relevé du 11/09', ts:'2026-09-11T09:00:00Z'},
@@ -900,7 +898,7 @@ cash:0,
 watchlists:{
 'Cœur de portefeuille':['NVDA','ASTS'],
 'Indices':['SPX','NDX','DJI','RUT','VIX'],
-'Asie':['N225','TOPX','HSI','SHCOMP','STI'],
+'Asie':['N225','HSI','SHCOMP','STI'],
 'Europe':['UKX','DAX','CAC','SX5E'],
 'Macro':['EURUSD','USDJPY','GBPUSD','DXY','XAU','CL','BRENT','BTC']
 },
@@ -1016,7 +1014,7 @@ const T = (h,caption) => `<table><caption class="sr-only">${esc(caption)}</capti
 const [us, eu, as, fx] = await Promise.all([
 rowsFor(['SPX','NDX','DJI','RUT','VIX']),
 rowsFor(['UKX','DAX','CAC','SX5E']),
-rowsFor(['N225','TOPX','HSI','SHCOMP','STI']),
+rowsFor(['N225','HSI','SHCOMP','STI']),
 rowsFor(['EURUSD','USDJPY','GBPUSD','DXY','XAU','CL','BRENT','BTC'])
 ]);
 
