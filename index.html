@@ -2045,11 +2045,15 @@ if(UNIV) return ECON?UNIV.concat(ecoItems()):UNIV;
 return SNAPSHOT.securities.map(x=>{ const q=SNAPSHOT.quotes[x.sym]||{};
 return {s:x.sym, n:x.name, c:x.cls==='Change'?'Devise':x.cls, l:[], p:q.p??null, pct:q.pct??null, st:q.st||null, ts:q.ts||null}; }).concat(ecoItems());
 }
+// Noms usuels → contrats Yahoo (« gold », « xauusd », « pétrole »…)
+const SR_ALIAS={gold:['GC=F'],xau:['GC=F'],xauusd:['GC=F'],or:['GC=F'],silver:['SI=F'],xag:['SI=F'],xagusd:['SI=F'],
+oil:['CL=F','BZ=F'],'pétrole':['CL=F','BZ=F'],petrole:['CL=F','BZ=F'],wti:['CL=F'],brent:['BZ=F'],gas:['NG=F'],gaz:['NG=F'],
+copper:['HG=F'],cuivre:['HG=F'],bitcoin:['BTC-USD'],btc:['BTC-USD']};
 function localSearch(){
 const q=SR.q.trim().toLowerCase().replace(/^economics:/,'');
 let it=localItems().filter(x=>SR.cls==='Tout'||x.c===SR.cls);
 if(q){
-it=it.filter(x=>x.s.toLowerCase().includes(q)||(x.n||'').toLowerCase().includes(q))
+const al=SR_ALIAS[q]; it=it.filter(x=>x.s.toLowerCase().includes(q)||(x.n||'').toLowerCase().includes(q)||(al&&al.includes(x.s)))
 .sort((a,b)=>{ const r=x=>x.s.toLowerCase()===q?0:x.s.toLowerCase().startsWith(q)?1:(x.n||'').toLowerCase().startsWith(q)?2:3;
 return r(a)-r(b); });
 }else{
