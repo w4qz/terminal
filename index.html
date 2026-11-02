@@ -894,11 +894,8 @@ const S = {
 view:'mkt',
 focus:'NVDA',
 ccy:'USD',
-positions:[
-{sym:'NVDA', qty:40, cost:142.50, ccy:'USD', date:'2025-11-14'},
-{sym:'ASTS', qty:180, cost:41.20, ccy:'USD', date:'2026-02-03'}
-],
-cash:4200,
+positions:[],   // portefeuille vide par défaut ; l'exemple NVDA / ASTS se charge à la demande (mode démonstration)
+cash:0,
 watchlists:{
 'Cœur de portefeuille':['NVDA','ASTS'],
 'Indices':['SPX','NDX','DJI','RUT','VIX'],
@@ -1124,8 +1121,8 @@ const PROFILES={
 S.pfp={mub:7, rf:3.6, yrs:3, N:3000, mu:{}};
 S.pfccy='USD'; S.cashCcy='USD';
 (function(){ try{ const d=JSON.parse(localStorage.getItem(PF_KEY)||'null');
-if(d&&Array.isArray(d.positions)){ S.positions=d.positions.filter(p=>p&&p.sym&&p.qty>0); S.cash=+d.cash||0; S.cashCcy=d.cashCcy||'USD'; S.pfccy=d.ccy||'USD'; } }catch(e){} })();
-function pfSave(){ try{ localStorage.setItem(PF_KEY,JSON.stringify({positions:S.positions.map(p=>({sym:p.sym,qty:p.qty,cost:p.cost})),cash:S.cash,cashCcy:S.cashCcy,ccy:S.pfccy})); }catch(e){} }
+if(d&&Array.isArray(d.positions)){ S.positions=d.positions.filter(p=>p&&p.sym&&p.qty>0); S.cash=+d.cash||0; S.pfDemo=!!d.demo; S.cashCcy=d.cashCcy||'USD'; S.pfccy=d.ccy||'USD'; } }catch(e){} })();
+function pfSave(){ try{ localStorage.setItem(PF_KEY,JSON.stringify({positions:S.positions.map(p=>({sym:p.sym,qty:p.qty,cost:p.cost})),cash:S.cash,cashCcy:S.cashCcy,ccy:S.pfccy,demo:!!S.pfDemo})); }catch(e){} }
 const PF_CCYS={USD:'$',EUR:'€',CHF:'CHF',GBP:'£'};
 const normCcy=c=>c==='GBp'||c==='GBX'?'GBP':c==='ZAc'?'ZAR':(c||'USD');
 /** Taux sans risque par défaut de la devise : dernier taux directeur publié, sinon valeur indicative. */
@@ -1299,7 +1296,7 @@ const dl=(UNIV||[]).filter(u=>u.c!=='Taux').slice(0,1500).map(u=>`<option value=
 const P=S.pfp;
 el.innerHTML=`
 <div class="pnl" style="margin-bottom:9px">
-<h3>Portefeuille<span class="rt" style="display:flex;gap:10px;align-items:center">devise de référence
+<h3>Portefeuille${S.pfDemo?' <span class="st st-SIMULATED" title="Positions fictives chargées depuis le bouton Charger la démonstration">DÉMONSTRATION · positions fictives</span>':''}<span class="rt" style="display:flex;gap:10px;align-items:center">devise de référence
 <span class="rng" role="group" aria-label="Devise de référence">${Object.keys(PF_CCYS).map(c=>`<button type="button" data-ccy="${c}" class="${c===base?'on':''}" aria-pressed="${c===base}">${c}</button>`).join('')}</span></span></h3>
 <div class="statrow">
 <div class="stat"><span class="l">NAV TOTALE</span><span class="n">${mb(nav)}</span><span class="s">${base}${base!=='USD'?` · 1 ${base} = ${nf(B,4)} USD`:''}</span></div>
@@ -1320,7 +1317,7 @@ el.innerHTML=`
 <button class="btn go" type="submit">+ Ajouter</button>
 <div class="f" style="margin-left:18px"><label for="pa_cash">Liquidités ${CS}</label><input id="pa_cash" type="number" step="any" value="${Math.round(cashUSD/B*100)/100}"></div>
 <button class="btn" type="button" id="pa_cashbtn">Mettre à jour</button>
-<button class="btn" type="button" id="pa_reset" style="margin-left:auto">Revenir à l'exemple</button>
+<button class="btn" type="button" id="pa_reset" style="margin-left:auto">Charger la démonstration</button>
 <div id="pa_msg" class="note" style="flex-basis:100%;padding:0;color:var(--hot)"></div>
 <datalist id="pfdl">${dl}</datalist>
 </form>
@@ -1386,11 +1383,11 @@ msg('Vérification de '+sym+'…');
 try{ const h=await pfHist(sym); if(!(cst>0)) cst=h.meta.regularMarketPrice??h.last; }
 catch(e){ return msg(`${sym} introuvable (${e.message}). Utilisez le symbole Yahoo : MC.PA, 7203.T, SAP.DE…`); }
 const ex=S.positions.find(p=>p.sym===sym);
-if(ex){ ex.cost=(ex.cost*ex.qty+cst*qty)/(ex.qty+qty); ex.qty+=qty; } else S.positions.push({sym,qty,cost:cst});
+if(ex){ ex.cost=(ex.cost*ex.qty+cst*qty)/(ex.qty+qty); ex.qty+=qty; } else S.positions.push({sym,qty,cost:cst}); S.pfDemo=false;
 pfSave(); viewPortfolio(); };
 document.getElementById('pa_cashbtn').onclick=()=>{ const v=parseFloat(document.getElementById('pa_cash').value); if(isFinite(v)&&v>=0){ S.cash=v; S.cashCcy=base; pfSave(); viewPortfolio(); } };
 el.querySelectorAll('[data-ccy]').forEach(b=>b.onclick=()=>{ if(b.dataset.ccy===S.pfccy) return; S.pfccy=b.dataset.ccy; S.pfp.rf=rfFor(S.pfccy); S.pfp.mu={}; pfSave(); viewPortfolio(); });
-document.getElementById('pa_reset').onclick=()=>{ if(!confirm('Remplacer le portefeuille par l\'exemple NVDA / ASTS ?')) return;
+document.getElementById('pa_reset').onclick=()=>{ if(!confirm('Remplacer le portefeuille par le portefeuille de démonstration (NVDA / ASTS, positions fictives) ?')) return; S.pfDemo=true;
 S.positions=PF_DEFAULT.positions.map(p=>({...p})); S.cash=PF_DEFAULT.cash; S.cashCcy='USD'; S.pfp.mu={}; pfSave(); viewPortfolio(); };
 const readP=()=>{ const g=id=>parseFloat(document.getElementById(id).value);
 Object.assign(S.pfp,{mub:g('p_mub'),rf:g('p_rf'),yrs:Math.max(1,Math.min(30,g('p_yrs')||3)),N:Math.max(200,Math.min(20000,g('p_n')||3000))});
@@ -2268,9 +2265,9 @@ ${cons?`<table><caption class="sr-only">Calendrier économique avec consensus</c
 <div class="pnl"><h3>ECO — Derniers chiffres<span class="rt">dernier · précédent · période et publication</span></h3><div class="pbody flush"><table><caption class="sr-only">Derniers chiffres macroéconomiques</caption><tbody>${prints||'<tr><td class="na">indisponible</td></tr>'}</tbody></table>
 <div class="note">Le consensus des économistes n'est pas disponible gratuitement : seuls les chiffres publiés sont affichés.</div></div></div>
 <div class="pnl"><h3>ECO — Calendrier US à 4 semaines<span class="rt">FRED · Federal Reserve</span></h3><div class="pbody flush"><table><caption class="sr-only">Calendrier des publications</caption><tbody>${cal||'<tr><td class="na">aucune publication</td></tr>'}</tbody></table></div></div>
-<div class="pnl" id="m-wirp"><h3>WIRP — Probabilités des décisions de la Fed<span class="rt">futures fed funds</span></h3><div class="pbody">${wirp}</div></div>
+<div class="pnl" id="m-wirp"><h3>WIRP — Probabilités des décisions de la Fed<span class="rt"><span style="color:var(--hot)">estimation indicative, méthode simplifiée</span> · futures fed funds · pas CME FedWatch</span></h3><div class="pbody">${wirp}</div></div>
 <div class="pnl" id="m-btmm"><h3>BTMM — Tableau de bord monétaire US<span class="rt">valeur · variation · date</span></h3><div class="pbody flush"><table><caption class="sr-only">Tableau de bord monétaire</caption><tbody>${bt}</tbody></table></div></div>
-<div class="pnl span2" id="m-gc"><h3>GC — Courbes des taux souveraines<span class="rt">US, zone euro, Allemagne, France, Italie, Royaume-Uni, Japon, Suisse · survolez la courbe</span></h3><div class="pbody" id="gcbody">${gcHtml()}</div></div>
+<div class="pnl span2" id="m-gc"><h3>GC — Courbes des taux souveraines<span class="rt">méthodologies différentes : US = rendements à maturité constante (CMT), zone euro = zéro-coupon AAA, autres pays = sources nationales · US, zone euro, Allemagne, France, Italie, Royaume-Uni, Japon, Suisse · survolez la courbe</span></h3><div class="pbody" id="gcbody">${gcHtml()}</div></div>
 </div>`;
 wireGC(el); drawGC();
 el.insertAdjacentHTML('beforeend',ecoPanelHtml()); wireEco(el);
@@ -2278,9 +2275,51 @@ el.insertAdjacentHTML('beforeend',ecoPanelHtml()); wireEco(el);
 /*═══════════════════════════════════════════════════════════════════════
 12. VUE — DIAGNOSTIC
 ═══════════════════════════════════════════════════════════════════════*/
+/*── Santé réelle des sources (remplace le « disponible » du fournisseur snapshot) ─────────
+Chaque fichier publié par le robot est jugé sur son âge réel ; le relais est réellement interrogé ;
+status.json donne le résultat de chaque étape du dernier passage GitHub Actions. */
+let PIPE_STATUS=null;
+async function loadStatus(){ try{ const r=await fetch('status.json?t='+Date.now(),{cache:'no-store'}); if(r.ok) PIPE_STATUS=await r.json(); }catch(e){} return false; }
+let RELAY={ok:null,ms:null,t:0};
+async function pingRelay(){ if(!WORKER_URL) return RELAY={ok:false,ms:null,t:Date.now(),err:'non configuré'};
+if(Date.now()-RELAY.t<5*6e4&&RELAY.ok!==null) return RELAY;
+const t0=performance.now(); try{ const r=await fetch(WORKER_URL+'/health',{cache:'no-store'}); RELAY={ok:r.ok,ms:Math.round(performance.now()-t0),t:Date.now(),err:r.ok?null:'HTTP '+r.status}; }
+catch(e){ RELAY={ok:false,ms:null,t:Date.now(),err:e.message}; } return RELAY; }
+function sourceRows(){
+const H=36e5, now=Date.now(), age=ts=>ts?(now-Date.parse(ts))/H:null;
+const S30=1.25, DAY=30;   // fichiers « 30 min » en retard au-delà d'1 h 15 ; fichiers quotidiens au-delà de 30 h
+const rows=[
+['Cours et news','data.json',LIVE&&LIVE.generated_at,S30,true],
+['Catalogue et cours','universe.json',UNIV_TS,S30,true],
+['Fondamentaux (roulement)','fundamentals.json',FUND_TS,S30,false],
+['Macro : ECO, WIRP, GC US/euro, BTMM','macro.json',MACRO&&MACRO.generated_at,S30,true],
+['Courbes souveraines','curves.json',CURVES_TS,S30,false],
+['Séries économiques','economics.json',ECON_TS,DAY,false],
+['Newsletters FT (Apps Script)','ft.json',FTNL&&FTNL.generated_at,S30,false,true]];
+return rows.map(([l,f,ts,max,crit,opt])=>{ const a=age(ts); const st=!ts?(opt?'absent':'manquant'):a>max*4?'périmé':a>max?'en retard':'à jour';
+return {l,f,ts,a,st,crit,opt}; }); }
+function healthLevel(rows){ if(rows.some(r=>r.crit&&(r.st==='manquant'||r.st==='périmé'))) return 'down';
+if(rows.some(r=>!r.opt&&r.st!=='à jour')||RELAY.ok===false) return 'degraded'; return 'up'; }
+function sourcesPanel(){
+const rows=sourceRows(), lvl=healthLevel(rows), H=a=>a==null?'—':a<1?Math.round(a*60)+' min':a<48?nf(a,1)+' h':nf(a/24,1)+' j';
+const col={['à jour']:'pos',['en retard']:'',['périmé']:'neg',manquant:'neg',absent:'mut'};
+const q=Object.values(SNAPSHOT.quotes), nSt=q.filter(x=>x.st==='STALE').length, nAg=q.filter(x=>x.st==='AGED').length;
+const steps=PIPE_STATUS&&PIPE_STATUS.steps?Object.entries(PIPE_STATUS.steps):[];
+return `<div class="pnl span2"><h3>État réel des sources<span class="rt">âge mesuré de chaque fichier publié · relais interrogé · ${lvl==='up'?'<span class="pos">tout est à jour</span>':lvl==='degraded'?'<span style="color:var(--hot)">service dégradé</span>':'<span class="neg">source critique en échec</span>'}</span></h3>
+<div class="pbody flush"><table><caption class="sr-only">État des sources</caption><thead><tr><th scope="col" style="text-align:left">Données</th><th scope="col" style="text-align:left">Fichier</th><th scope="col">Dernière génération</th><th scope="col">Âge</th><th scope="col">État</th></tr></thead><tbody>
+${rows.map(r=>`<tr><th scope="row" style="text-align:left;font-weight:400;color:var(--txt)">${esc(r.l)}${r.crit?' <span class="mut" style="font-size:9px">critique</span>':''}</th><td class="mut" style="text-align:left">${esc(r.f)}</td><td>${r.ts?fmtDT(r.ts):'—'}</td><td>${H(r.a)}</td><td class="${col[r.st]||''}"><b>${r.st}</b></td></tr>`).join('')}
+<tr><th scope="row" style="text-align:left;font-weight:400;color:var(--txt)">Relais Cloudflare (recherche, graphiques)</th><td class="mut" style="text-align:left">/health</td><td>${RELAY.t?fmtDT(new Date(RELAY.t).toISOString()):'—'}</td><td>${RELAY.ms!=null?RELAY.ms+' ms':'—'}</td><td class="${RELAY.ok?'pos':RELAY.ok===false?'neg':''}"><b>${RELAY.ok?'répond':RELAY.ok===false?'injoignable'+(RELAY.err?' ('+esc(RELAY.err)+')':''):'non testé'}</b></td></tr>
+</tbody></table>
+<div class="statrow" style="border-top:1px solid var(--line)">
+<div class="stat"><span class="l">COURS PÉRIMÉS</span><span class="n ${nSt?'neg':'pos'}">${nSt}</span><span class="s">sur ${q.length} cours du bandeau</span></div>
+<div class="stat"><span class="l">RELEVÉS ANCIENS</span><span class="n">${nAg}</span><span class="s">annoncés en séance, relevés il y a plus d'1 h 30</span></div>
+<div class="stat"><span class="l">DERNIER PASSAGE DU ROBOT</span><span class="n" style="font-size:14px">${PIPE_STATUS&&PIPE_STATUS.finished_at?fmtDT(PIPE_STATUS.finished_at):'—'}</span><span class="s">${steps.length?steps.filter(([,v])=>v!=='success'&&v!=='skipped').length+' étape(s) en échec sur '+steps.length:'status.json non publié'}</span></div></div>
+${steps.length?`<table><caption class="sr-only">Étapes du dernier passage</caption><tbody>${steps.map(([k,v])=>`<tr><th scope="row" style="text-align:left;font-weight:400">${esc(k)}</th><td class="${v==='success'?'pos':v==='skipped'?'mut':'neg'}" style="text-align:left">${v==='success'?'réussie':v==='skipped'?'ignorée':'échec'}</td></tr>`).join('')}</tbody></table>`:''}
+<div class="note">« À jour » = fichier généré il y a moins d'1 h 15 (moins de 30 h pour les séries quotidiennes). Une étape réussie ne garantit pas une observation nouvelle : le week-end, les fichiers sont régénérés avec les mêmes clôtures.</div></div></div>`; }
+
 async function viewDiag(){
 const el=document.getElementById('v-diag');
-const h=await DATA.health();
+await Promise.all([pingRelay(),loadStatus()]);
 
 const counts={};
 for(const k in SNAPSHOT.quotes){ const s=SNAPSHOT.quotes[k].st; counts[s]=(counts[s]||0)+1; }
@@ -2306,6 +2345,7 @@ const covRows=Object.entries(lists).sort((a,b)=>b[1].n-a[1].n).map(([l,v])=>`<tr
 const recent=Object.entries(SNAPSHOT.fundamentals).filter(([k,f])=>f.ts&&f.name).sort((a,b)=>b[1].ts.localeCompare(a[1].ts)).slice(0,8);
 const missing=stocks.filter(x=>!hasF(x.s)).slice(0,12);
 el.innerHTML=`<div class="g g2">
+${sourcesPanel()}
 <div class="pnl span2"><h3>Couverture des fondamentaux<span class="rt">roulement de 120 titres par passage · tout le catalogue en ~4 h</span></h3><div class="pbody">
 ${tot?`<div class="statrow" style="border:none;padding:0 0 8px"><div class="stat"><span class="l">TITRES COUVERTS</span><span class="n">${okT} / ${tot}</span><span class="s">${nf(Math.floor(okT/tot*1000)/10,1)} % des actions du catalogue</span></div>
 <div class="stat"><span class="l">DERNIER PASSAGE</span><span class="n" style="font-size:15px">${FUND_TS?fmtDT(FUND_TS):'—'}</span><span class="s">fundamentals.json</span></div>
@@ -2314,21 +2354,6 @@ ${tot?`<div class="statrow" style="border:none;padding:0 0 8px"><div class="stat
 <div><div class="note" style="padding:0 0 4px">Derniers actualisés : ${recent.map(([k,f])=>`<button type="button" class="tag" data-sym="${esc(k)}">${esc(k)}</button>`).join(' ')||'—'}</div>
 <div class="note" style="padding:4px 0 0">Prochains à lire : ${missing.map(x=>esc(x.s)).join(', ')||'aucun, tout est couvert'}${tot-okT>12?'…':''}</div></div></div>`
 :'<div class="note na" style="padding:0">Catalogue pas encore chargé.</div>'}
-</div></div>
-<div class="pnl"><h3>Fournisseur actif</h3><div class="pbody">
-<div class="kv"><span class="k">Nom</span><span class="v">${esc(DATA.current.name)}</span></div>
-<div class="kv"><span class="k">Disponible</span><span class="v ${h.up?'pos':'neg'}">${h.up?'oui':'non'}</span></div>
-<div class="kv"><span class="k">Latence moyenne</span><span class="v">${h.latencyMs!=null?h.latencyMs+' ms':'—'}</span></div>
-<div class="kv"><span class="k">Quota restant</span><span class="v">${h.rateLimitRemaining===Infinity?'illimité':(h.rateLimitRemaining??'—')}</span></div>
-<div class="kv"><span class="k">Entrées en cache</span><span class="v">${DATA.cache.size}</span></div>
-<div class="note" style="padding:8px 0 0">${esc(h.note||'')}</div>
-</div></div>
-<div class="pnl"><h3>Fournisseurs enregistrés</h3><div class="pbody flush">
-<table><caption class="sr-only">Fournisseurs de données enregistrés</caption><thead><tr><th scope="col">Clé</th><th scope="col" style="text-align:left">Nom</th><th scope="col">État</th></tr></thead>
-<tbody>${provs}</tbody></table>
-<div class="note">Les adapters FMP, Finnhub et FRED sont écrits dans ce fichier mais non enregistrés :
-ils appellent <code>/api/*</code>, servi par le proxy qui porte les clés. Les activer depuis le navigateur
-seul échouerait sur CORS et exposerait la clé, ce que la règle §6 interdit.</div>
 </div></div>
 <div class="pnl"><h3>Répartition des statuts de donnée</h3><div class="pbody flush">
 <table><caption class="sr-only">Répartition des statuts de donnée</caption><tbody>${dist}</tbody></table></div></div>
@@ -3218,10 +3243,11 @@ if(ev.key==='Enter' || ev.key===' '){ ev.preventDefault(); ev.stopPropagation();
 });
 }
 async function syncBar(){
-const h=await DATA.health();
-document.getElementById('hdot').className='dot '+(h.up?'up':'down');
-document.getElementById('hprov').textContent=DATA.current.name;
-document.getElementById('hup').textContent=h.up?' — disponible':' — indisponible';
+const lvl=LIVE?healthLevel(sourceRows()):'down';
+document.getElementById('hdot').className='dot '+(lvl==='up'?'up':'down');
+document.getElementById('hdot').style.background=lvl==='up'?'':lvl==='degraded'?'var(--hot)':'var(--neg)';
+document.getElementById('hprov').textContent=LIVE?'Pipeline GitHub Actions (MAJ '+fmtDT(LIVE.generated_at)+')'+(lvl==='degraded'?' — service dégradé':lvl==='down'?' — source critique en échec':''):'Données de secours intégrées (31/10) — pipeline indisponible';
+document.getElementById('hup').textContent=lvl==='up'?' — à jour':' — '+lvl;
 document.getElementById('hccy').textContent=S.ccy;
 document.getElementById('hstat').textContent=
 LIVE ? 'différées — rafraîchies toutes les 30 min' : 'instantané — non rafraîchissable';
@@ -3300,7 +3326,7 @@ S.view='mkt'; (async()=>{ // catalogue chargé d'abord : « TTE » doit devenir 
 await Promise.all([loadUniverse(),loadLive(),loadFund(),loadMacro(),loadEcon(),loadCurves(),loadPeers()].map(p=>p.catch(()=>{}))); harmonize();
 if(!/^(BLP)$/i.test(c.trim())) runAny(c); else go('mkt'); })(); }
 else go('mkt');
-const refresh=()=>Promise.all([loadLive(),loadUniverse(),loadFT(),loadMacro(),loadFund(),loadEcon(),loadPeers(),loadCurves()]).then(([a,b,c,d,e,f,g,h])=>{ harmonize(); renderTape(); if(a||b||c||d||e||f||h){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
+const refresh=()=>Promise.all([loadStatus(),loadLive(),loadUniverse(),loadFT(),loadMacro(),loadFund(),loadEcon(),loadPeers(),loadCurves()]).then(([_s,a,b,c,d,e,f,g,h])=>{ harmonize(); renderTape(); if(a||b||c||d||e||f||h){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
 refresh();
 setInterval(refresh, 10*60*1000);
 
