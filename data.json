@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-02T07:29:15.626342Z",
+ "generated_at": "2026-11-02T07:52:34.406958Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -228,8 +228,8 @@
    "prev": 17.2,
    "chg": 2.24,
    "pct": 13.02,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^VIX)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^VIX) — échec de la dernière mise à jour",
    "ts": "2026-10-30T20:00:00Z",
    "open": 18.43,
    "lo": 18.03,
@@ -264,7 +264,7 @@
    "prev": 63290.1094,
    "chg": -225.5977,
    "pct": -0.36,
-   "st": "DELAYED_15M",
+   "st": "EOD",
    "src": "Yahoo Finance via yfinance (^N225)",
    "ts": "2026-11-02T06:00:00Z",
    "open": 62972.0195,
@@ -295,13 +295,13 @@
    ]
   },
   "HSI": {
-   "p": 23403.7305,
+   "p": 23392.6699,
    "prev": 23294.4199,
-   "chg": 109.3105,
-   "pct": 0.47,
+   "chg": 98.25,
+   "pct": 0.42,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^HSI)",
-   "ts": "2026-11-02T06:30:00Z",
+   "ts": "2026-11-02T07:30:00Z",
    "open": 23301.7402,
    "lo": 23271.2598,
    "hi": 23543.3008,
@@ -326,7 +326,7 @@
     23094.83,
     22958.65,
     23294.42,
-    23403.73
+    23390.9
    ]
   },
   "SHCOMP": {
@@ -363,10 +363,10 @@
    ]
   },
   "STI": {
-   "p": 5298.2402,
+   "p": 5298.8501,
    "prev": 5376.7402,
-   "chg": -78.5,
-   "pct": -1.46,
+   "chg": -77.8901,
+   "pct": -1.45,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^STI)",
    "ts": "2026-11-02T07:00:00Z",
@@ -395,7 +395,7 @@
     5397.91,
     5396.03,
     5376.74,
-    5298.24
+    5298.92
    ]
   },
   "UKX": {
@@ -547,16 +547,16 @@
    ]
   },
   "EURUSD": {
-   "p": 1.1196,
+   "p": 1.1198,
    "prev": 1.1183,
-   "chg": 0.0013,
-   "pct": 0.12,
+   "chg": 0.0015,
+   "pct": 0.14,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (EURUSD=X)",
    "ts": "2026-11-02T07:00:00Z",
    "open": 1.1159,
    "lo": 1.1156,
-   "hi": 1.1197,
+   "hi": 1.1199,
    "h": [
     1.124986,
     1.125454,
@@ -579,14 +579,14 @@
     1.112966,
     1.115573,
     1.118281,
-    1.11957
+    1.119821
    ]
   },
   "USDJPY": {
-   "p": 157.762,
+   "p": 157.719,
    "prev": 157.804,
-   "chg": -0.042,
-   "pct": -0.03,
+   "chg": -0.085,
+   "pct": -0.05,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (JPY=X)",
    "ts": "2026-11-02T07:00:00Z",
@@ -615,20 +615,20 @@
     157.99,
     157.83,
     157.8,
-    157.76
+    157.72
    ]
   },
   "GBPUSD": {
    "p": 1.3414,
    "prev": 1.3379,
-   "chg": 0.0035,
-   "pct": 0.26,
+   "chg": 0.0036,
+   "pct": 0.27,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
    "ts": "2026-11-02T07:00:00Z",
    "open": 1.3393,
    "lo": 1.338,
-   "hi": 1.3415,
+   "hi": 1.3417,
    "h": [
     1.319958,
     1.324293,
@@ -651,19 +651,19 @@
     1.33063,
     1.3328,
     1.337864,
-    1.3414
+    1.341436
    ]
   },
   "DXY": {
-   "p": 101.815,
+   "p": 101.744,
    "prev": 101.88,
-   "chg": -0.065,
-   "pct": -0.06,
+   "chg": -0.136,
+   "pct": -0.13,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (DX-Y.NYB)",
    "ts": "2026-11-02T07:00:00Z",
    "open": 101.968,
-   "lo": 101.795,
+   "lo": 101.732,
    "hi": 101.994,
    "h": [
     101.93,
@@ -687,21 +687,21 @@
     102.19,
     102.04,
     101.88,
-    101.82
+    101.74
    ]
   },
   "XAU": {
-   "p": 3916.2,
+   "p": 3910.2,
    "prev": 3898.8999,
-   "chg": 17.3,
-   "pct": 0.44,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (GC=F) — échec de la dernière mise à jour",
-   "ts": "2026-11-02T06:00:00Z",
+   "chg": 11.3,
+   "pct": 0.29,
+   "st": "DELAYED_15M",
+   "src": "Yahoo Finance via yfinance (GC=F)",
+   "ts": "2026-11-02T07:00:00Z",
    "open": 3890.0,
    "lo": 3889.0,
-   "hi": 3927.5,
-   "vol": 36292,
+   "hi": 3928.1001,
+   "vol": 39043,
    "h": [
     4162.3,
     4156.8,
@@ -724,21 +724,21 @@
     4051.6,
     4031.4,
     3898.9,
-    3916.2
+    3910.0
    ]
   },
   "CL": {
-   "p": 100.7,
+   "p": 100.83,
    "prev": 104.12,
-   "chg": -3.42,
-   "pct": -3.28,
+   "chg": -3.29,
+   "pct": -3.16,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (CL=F)",
    "ts": "2026-11-02T07:00:00Z",
    "open": 102.39,
    "lo": 100.18,
    "hi": 102.75,
-   "vol": 36418,
+   "vol": 40154,
    "h": [
     91.11,
     89.43,
@@ -761,21 +761,21 @@
     102.78,
     102.0,
     104.12,
-    100.7
+    100.83
    ]
   },
   "BRENT": {
-   "p": 110.15,
+   "p": 110.36,
    "prev": 117.64,
-   "chg": -7.49,
-   "pct": -6.37,
+   "chg": -7.28,
+   "pct": -6.19,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-02T07:00:00Z",
    "open": 111.84,
    "lo": 109.32,
    "hi": 112.38,
-   "vol": 4009,
+   "vol": 4691,
    "h": [
     102.25,
     100.32,
@@ -798,21 +798,21 @@
     115.32,
     114.88,
     117.64,
-    110.15
+    110.36
    ]
   },
   "BTC": {
-   "p": 77987.0781,
+   "p": 77921.2812,
    "prev": 78248.4531,
-   "chg": -261.375,
-   "pct": -0.33,
+   "chg": -327.1719,
+   "pct": -0.42,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
    "ts": "2026-11-02T07:00:00Z",
    "open": 78235.5625,
-   "lo": 77940.9609,
+   "lo": 77882.75,
    "hi": 78611.4531,
-   "vol": 14436524032,
+   "vol": 14594836480,
    "h": [
     81762.56,
     83095.12,
@@ -835,7 +835,7 @@
     77198.21,
     77434.75,
     78248.45,
-    77987.08
+    77921.28
    ]
   }
  },
@@ -976,9 +976,9 @@
    "ccy": "USD",
    "mcap": 3440352690176,
    "pe": 14.6131,
-   "fpe": 18.4525,
+   "fpe": 18.4354,
    "eps": 19.15,
-   "feps": 15.1654,
+   "feps": 15.1795,
    "revTTM": 471097999360,
    "netIncome": 235693621248,
    "shares": 5888000000,
@@ -2178,6 +2178,57 @@
  ],
  "news": [
   {
+   "h": "Binance users withdraw $3.6bn after largest-ever crypto hack",
+   "w": "The exchange froze transactions following the incident which has been linked to a North Korean group.",
+   "syms": [
+    "BTC"
+   ],
+   "src": "BBC — Business",
+   "ts": "2026-11-02T07:42:33Z",
+   "url": "https://www.bbc.co.uk/news/articles/cwj34gdmnly4o?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "Le BPA de Kosmos Energy a manqué les attentes de 0,03$, le CA en dessous des prévisions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-02T07:39:37Z",
+   "url": "https://fr.investing.com/news/earnings/le-bpa-de-kosmos-energy-a-manque-les-attentes-de-003-le-ca--en-dessous-des-previsions-3667502"
+  },
+  {
+   "h": "8 actions de puces US à surveiller de près suite à l’hécatombe de vendredi",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-02T07:38:30Z",
+   "url": "https://fr.investing.com/news/stock-market-news/8-actions-de-puces-us-a-surveiller-de-pres-suite-a-lhecatombe-de-vendredi-3667500"
+  },
+  {
+   "h": "Euronext nomme David Knibbe, de NN Group, comme prochain PDG",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-02T07:31:16Z",
+   "url": "https://fr.investing.com/news/economy-news/euronext-nomme-david-knibbe-de-nn-group-comme-prochain-pdg-93CH-3667496"
+  },
+  {
+   "h": "Ganesha Ecosphere affiche une forte croissance au T2 2026",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-02T07:30:38Z",
+   "url": "https://fr.investing.com/news/transcripts/ganesha-ecosphere-affiche-une-forte-croissance-au-t2-2026-93CH-3667495"
+  },
+  {
+   "h": "Troubled train giant Alstom issues new profit warning",
+   "w": "French group also sets out plan to cut €2bn in debt in second major profit warning under new chief Martin Sion",
+   "syms": [],
+   "src": "myFT — companies",
+   "ts": "2026-11-02T07:30:14Z",
+   "url": "https://www.ft.com/content/95723b31-c35b-4d68-9abe-9e082e95e362?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "Will Japanese insurers bring money home? 5 things to know",
    "w": "",
    "syms": [],
@@ -2274,28 +2325,20 @@
    "url": "https://asia.nikkei.com/business/energy/nuclear-reactors-under-construction-rise-to-79-globally-on-ai-demand"
   },
   {
-   "h": "AI dubbing to help Japanese companies expand global outreach",
+   "h": "Barclays dégrade Dr. Martens en « sous-pondéré » et réduit son objectif de cours",
    "w": "",
    "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-02T07:29:15.626342+00:00",
-   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/ai-dubbing-to-help-japanese-companies-expand-global-outreach"
+   "src": "Investing.com France",
+   "ts": "2026-11-02T07:27:31Z",
+   "url": "https://fr.investing.com/news/stock-market-news/barclays-degrade-dr-martens-en--souspondere--et-reduit-son-objectif-de-cours-3667493"
   },
   {
-   "h": "Indonesia GDP, US midterm elections, Hong Kong financial summit",
+   "h": "Adnoc signe un accord IA avec OpenAI lors de la visite de Sam Altman à Abou Dhabi",
    "w": "",
    "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-02T07:29:15.626342+00:00",
-   "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/indonesia-gdp-us-midterm-elections-hong-kong-financial-summit"
-  },
-  {
-   "h": "Pakistan refineries report 1,860% jump in profit amid war windfall",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-02T07:29:15.626342+00:00",
-   "url": "https://asia.nikkei.com/business/energy/pakistan-refineries-report-1-860-jump-in-profit-amid-war-windfall2"
+   "src": "Investing.com France",
+   "ts": "2026-11-02T07:27:20Z",
+   "url": "https://fr.investing.com/news/stock-market-news/adnoc-signe-un-accord-ia-avec-openai-lors-de-la-visite-de-sam-altman-a-abou-dhabi-93CH-3667490"
   },
   {
    "h": "Marine sniper turned macro strategist says this bull market has six to 12 months left. Here’s his playbook.",
@@ -2306,84 +2349,36 @@
    "url": "https://www.marketwatch.com/story/marine-sniper-turned-macro-strategist-says-this-bull-market-has-six-to-12-months-left-heres-his-playbook-8b48ce6e?mod=mw_rss_topstories"
   },
   {
+   "h": "Les actions Alstom chutent de 18% après une nouvelle révision des prévisions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-02T07:23:46Z",
+   "url": "https://fr.investing.com/news/earnings/les-actions-alstom-chutent-de-18-apres-une-nouvelle-revision-des-previsions-3667494"
+  },
+  {
+   "h": "BP finalise la vente de Castrol à Stonepeak Partners pour 6 milliards $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-02T07:23:17Z",
+   "url": "https://fr.investing.com/news/stock-market-news/bp-finalise-la-vente-de-castrol-a-stonepeak-partners-pour-6-milliards--93CH-3667488"
+  },
+  {
+   "h": "Phillip Securities relève Amazon à l’achat grâce à la solidité d’AWS",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-02T07:22:27Z",
+   "url": "https://fr.investing.com/news/analyst-ratings/phillip-securities-releve-amazon-a-lachat-grace-a-la-solidite-daws-93CH-3667487"
+  },
+  {
    "h": "LIC Housing Finance publie des résultats mitigés au T2 2026",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
    "ts": "2026-11-02T07:16:29Z",
    "url": "https://fr.investing.com/news/transcripts/lic-housing-finance-publie-des-resultats-mitiges-au-t2-2026-93CH-3667485"
-  },
-  {
-   "h": "CDSL affiche un léger dépassement du BPA au T2 FY27 grâce à l’essor des IPO",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-02T07:15:51Z",
-   "url": "https://fr.investing.com/news/transcripts/cdsl-affiche-un-leger-depassement-du-bpa-au-t2-fy27-grace-a-lessor-des-ipo-93CH-3667484"
-  },
-  {
-   "h": "Les ventes au détail allemandes chutent de 2% en septembre",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-02T07:08:55Z",
-   "url": "https://fr.investing.com/news/economic-indicators/les-ventes-au-detail-allemandes-chutent-de-2-en-septembre-3667480"
-  },
-  {
-   "h": "Le bénéfice net de POSCO Holdings au T3 déçoit en raison du lithium",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-02T07:06:34Z",
-   "url": "https://fr.investing.com/news/earnings/le-benefice-net-de-posco-holdings-au-t3-decoit-en-raison-du-lithium-3667476"
-  },
-  {
-   "h": "Evercore ISI relève la note de Mohawk Industries grâce à son plan de rachat d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-02T07:05:59Z",
-   "url": "https://fr.investing.com/news/analyst-ratings/evercore-isi-releve-la-note-de-mohawk-industries-grace-a-son-plan-de-rachat-dactions-93CH-3667475"
-  },
-  {
-   "h": "Jones Trading initie une couverture sur Azora Therapeutics avec un avis d’achat",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-02T07:05:45Z",
-   "url": "https://fr.investing.com/news/analyst-ratings/jones-trading-initie-une-couverture-sur-azora-therapeutics-avec-un-avis-dachat-93CH-3667473"
-  },
-  {
-   "h": "TotalEnergies acquiert une participation de 30% dans des gisements gaziers en Malaisie",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-02T07:05:22Z",
-   "url": "https://fr.investing.com/news/company-news/totalenergies-acquiert-une-participation-de-30-dans-des-gisements-gaziers-en-malaisie-93CH-3667472"
-  },
-  {
-   "h": "POSCO Holdings affiche un bénéfice record au T3 2026, l’action bondit",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-02T07:04:21Z",
-   "url": "https://fr.investing.com/news/transcripts/posco-holdings-affiche-un-benefice-record-au-t3-2026-laction-bondit-93CH-3667471"
-  },
-  {
-   "h": "Un administrateur de Tidewater vend des actions pour 925.448$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-02T07:02:43Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-tidewater-vend-des-actions-pour-925448-93CH-3667468"
-  },
-  {
-   "h": "Rothblatt d’United Therapeutics cède des actions pour 4,71 M$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-02T07:02:28Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/rothblatt-dunited-therapeutics-cede-des-actions-pour-471-m-93CH-3667467"
   },
   {
    "h": "AI is coming to construction sites. But does it make workers safer?",
@@ -2406,7 +2401,7 @@
    "h": "Unpicking Microsoft’s free cash flow",
    "w": "Plus: stock-bond correlations (again)",
    "syms": [],
-   "src": "myFT — us",
+   "src": "myFT — world",
    "ts": "2026-11-02T06:30:07Z",
    "url": "https://www.ft.com/content/f16babea-fd38-440b-8278-5871d3a47b17?syn-25a6b1a6=1",
    "mine": 1
@@ -2416,7 +2411,7 @@
    "w": "Les difficultés de production de trains Coradia Max remettent en cause les prévisions de résultats financiers du constructeur ferroviaire français sur la période d’avril à septembre 2026.",
    "syms": [],
    "src": "Le Monde — Économie",
-   "ts": "2026-11-02T06:30:07Z",
+   "ts": "2026-11-02T06:30:02Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/02/en-retard-sur-ses-livraisons-de-trains-en-allemagne-alstom-emet-un-nouvel-avertissement-sur-ses-resultats_6805052_3234.html"
   },
   {
@@ -2442,7 +2437,7 @@
    "syms": [
     "BTC"
    ],
-   "src": "myFT — us",
+   "src": "myFT — world",
    "ts": "2026-11-02T06:00:08Z",
    "url": "https://www.ft.com/content/08f99037-1bd5-4eb5-9213-4097ebf3475c?syn-25a6b1a6=1",
    "mine": 1
@@ -2704,7 +2699,7 @@
    "h": "The Gulf braces for new strikes against Iran",
    "w": "Diplomats warn that renewed conflict would be even more damaging than previous rounds of fighting",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-02T05:00:00Z",
    "url": "https://www.ft.com/content/1b02a294-35f3-4fdd-950d-aad4f00d3315?syn-25a6b1a6=1",
    "mine": 1
@@ -2721,20 +2716,10 @@
    "h": "Corruption crusader Donald Sherman: ‘If you give a bully your lunch money, they’re going to ask for more’",
    "w": "Lawyer helms one of the few bodies dedicated to exposing graft in the US government",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-02T04:00:06Z",
    "url": "https://www.ft.com/content/338a8a04-88b5-442e-a895-1253c246c066?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Binance users withdraw $3.6bn after largest-ever crypto hack",
-   "w": "The exchange froze transactions following the incident which has been linked to a North Korean group.",
-   "syms": [
-    "BTC"
-   ],
-   "src": "BBC — Business",
-   "ts": "2026-11-02T03:32:14Z",
-   "url": "https://www.bbc.co.uk/news/articles/cwj34gdmnly4o?at_medium=RSS&at_campaign=rss"
   },
   {
    "h": "Want to help your adult kids and grandkids? Give them money while you’re still alive.",
@@ -2764,7 +2749,7 @@
    "h": "Japanese groups stage $21bn deal spree to secure gas supplies",
    "w": "World’s second-biggest buyer of LNG targets shale resources on US Gulf Coast amid market upheavals",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — companies",
    "ts": "2026-11-02T01:56:22Z",
    "url": "https://www.ft.com/content/9652cb30-c8b1-4f36-993f-54f7827d2174?syn-25a6b1a6=1",
    "mine": 1
@@ -2961,15 +2946,6 @@
    "mine": 1
   },
   {
-   "h": "Britain to offer cheaper university fees to EU students at ‘reset’ summit",
-   "w": "Since Brexit, European students have paid international tuition rates at UK universities",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-01T17:00:02Z",
-   "url": "https://www.ft.com/content/1bcb60e3-8fd7-495d-9482-f59ce64d534e?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Virgin Media O2 set to cut thousands of jobs to reduce costs",
    "w": "The broadband firm has not finalised numbers but it is likely be a sizeable chunk of staff, the BBC understands.",
    "syms": [],
@@ -3018,20 +2994,46 @@
    "url": "https://www.cnbc.com/2026/11/01/social-security-benefit-cuts-2032.html"
   },
   {
-   "h": "Why AI is boosting Meta's ad business while hurting Google search",
-   "w": "The gap between Meta's ad revenue growth and Google's search expansion was the widest it's been since 2021 in the latest quarter.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-01T14:31:29Z",
-   "url": "https://www.cnbc.com/2026/11/01/ai-meta-ads-google-search.html"
-  },
-  {
    "h": "Economie et environnement : « Il faut donner une valeur à ce qui n’a pas de prix pour éclairer nos choix collectifs »",
    "w": "Des méthodes ont été développées afin d’évaluer la valeur des services rendus par la nature comme des dégradations qu’elle subit, et que le produit intérieur brut, utilisé comme seul étalon de la performance économique, ne mesure pas, explique Katheline Schubert, économiste de l’environnement, dans une tribune au « Monde ».",
    "syms": [],
    "src": "Le Monde — Économie",
    "ts": "2026-11-01T14:00:11Z",
    "url": "https://www.lemonde.fr/idees/article/2026/11/01/economie-et-environnement-il-faut-donner-une-valeur-a-ce-qui-n-a-pas-de-prix-pour-eclairer-nos-choix-collectifs_6804376_3232.html"
+  },
+  {
+   "h": "William Nordhaus, Prix Nobel d’économie 2018 et premier économiste à travailler sur le changement climatique, est mort à l’âge de 85 ans",
+   "w": "Travaillant sur le changement climatique dès les années 1970, William Nordhaus construit un modèle publié en 1992, où il s’efforce de mesurer les coûts futurs des effets des émissions de gaz à effet de serre pour déterminer le prix présent des activités émettrices.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-01T13:57:07Z",
+   "url": "https://www.lemonde.fr/disparitions/article/2026/11/01/william-nordhaus-prix-nobel-d-economie-2018-et-premier-economiste-a-travailler-sur-le-changement-climatique-est-mort-a-l-age-de-85-ans_6804373_3382.html"
+  },
+  {
+   "h": "Crypto firm Binance covers 90% of losses after $6.3bn hack",
+   "w": "The Federal Bureau of Investigation (FBI) says North Korea was responsible for the hack.",
+   "syms": [
+    "BTC"
+   ],
+   "src": "BBC — Business",
+   "ts": "2026-11-01T13:11:37Z",
+   "url": "https://www.bbc.co.uk/news/articles/ckpdg3ql4169o?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "Au Japon, les chaussettes Uniqlo, symboles des inquiétudes face à l’augmentation des prix",
+   "w": "L’enseigne d’habillement bon marché a renoncé à augmenter ses tarifs dans ses magasins de l’Archipel. Une décision emblématique du débat créé dans le pays par le retour de l’inflation depuis le début des années 2020.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-01T13:00:09Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/11/01/au-japon-les-chaussettes-uniqlo-symboles-des-inquietudes-face-a-l-augmentation-des-prix_6804306_3234.html"
+  },
+  {
+   "h": "America is doing better than you think. Your algorithm is just hiding it.",
+   "w": "The bottom half of Americans has more than doubled its net worth since 2019. You wouldn’t know it from scrolling social media.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-01T13:00:00Z",
+   "url": "https://www.marketwatch.com/story/america-is-doing-better-than-you-think-your-algorithm-is-just-hiding-it-7dbdecff?mod=mw_rss_topstories"
   }
  ],
  "summary": {
