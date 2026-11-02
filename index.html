@@ -1148,7 +1148,7 @@ function pfHist(sym){
 if(PF_HIST.has(sym)) return PF_HIST.get(sym);
 const pr=(async()=>{
 if(!WORKER_URL) throw new Error('relais non configuré');
-const r=await fetch(`${WORKER_URL}/chart?s=${encodeURIComponent(sym)}&range=2y`);
+const r=await fetch(`${WORKER_URL}/chart?s=${encodeURIComponent(ySym(sym))}&range=2y`);
 const d=await r.json(); const res=d.chart&&d.chart.result&&d.chart.result[0];
 if(!r.ok||!res) throw new Error((d.chart&&d.chart.error&&d.chart.error.description)||d.error||'aucune donnée');
 const c=res.indicators.quote[0].close, off=(res.meta&&res.meta.gmtoffset)||0, map=new Map();
@@ -1845,7 +1845,7 @@ const cfg=RANGE_CFG[SEC.range], key=sym+'|'+cfg.f, msg=document.getElementById('
 try{
 let bars=SEC.cache.get(key);
 if(!bars){
-const r=await fetch(`${WORKER_URL}/chart?s=${encodeURIComponent(sym)}&range=${cfg.f}`);
+const r=await fetch(`${WORKER_URL}/chart?s=${encodeURIComponent(ySym(sym))}&range=${cfg.f}`);
 const d=await r.json();
 const res=d.chart&&d.chart.result&&d.chart.result[0];
 if(!r.ok||!res) throw new Error((d.chart&&d.chart.error&&d.chart.error.description)||d.error||'aucune donnée');
@@ -2122,7 +2122,7 @@ el.innerHTML=`<h3>${esc(sym)}<span class="rt">${esc(nameHint||(loc&&loc.n)||'')}
 ${WORKER_URL&&!(loc&&loc.nw)?'<div class="note" style="padding:0">Chargement des données de marché…</div>':localHtml+'<div class="note" style="padding:8px 0 0">Source : catalogue préchargé (Yahoo Finance, '+(UNIV_TS?fmtDT(UNIV_TS):'snapshot')+'). Déployez le relais Cloudflare pour le graphique et l\'historique.</div>'}</div>`;
 if(!WORKER_URL||(loc&&loc.nw)){ if(loc&&loc.nw){ const b=document.getElementById('srdetb'); if(b) b.innerHTML=localHtml+'<div class="note" style="padding:8px 0 0">Source : '+esc(loc.src||'')+'. Taux publié par la banque centrale, pas de graphique intraday.</div>'; } return; }
 try{
-const r=await fetch(`${WORKER_URL}/chart?s=${encodeURIComponent(sym)}&range=${SR.range}`);
+const r=await fetch(`${WORKER_URL}/chart?s=${encodeURIComponent(ySym(sym))}&range=${SR.range}`);
 const d=await r.json(); if(SR.sel!==sym) return;
 const res=d.chart&&d.chart.result&&d.chart.result[0];
 if(!r.ok||!res) throw new Error((d.chart&&d.chart.error&&d.chart.error.description)||d.error||'aucune donnée');
@@ -2701,7 +2701,7 @@ const COMP_COL=['#6ba3e0','#e8a33d','#2fbf6b','#bb98e6','#e04a4a','#4fc1c9','#d8
 const COMP_CACHE=new Map();
 async function compFetch(sym,range){
 const k=sym+'|'+range; if(COMP_CACHE.has(k)) return COMP_CACHE.get(k);
-const pr=(async()=>{ const r=await fetch(`${WORKER_URL}/chart?s=${encodeURIComponent(sym)}&range=${range}`); const d=await r.json();
+const pr=(async()=>{ const r=await fetch(`${WORKER_URL}/chart?s=${encodeURIComponent(ySym(sym))}&range=${range}`); const d=await r.json();
 const res=d.chart&&d.chart.result&&d.chart.result[0]; if(!r.ok||!res) throw new Error('introuvable');
 const c=res.indicators.quote[0].close, off=res.meta.gmtoffset||0, map=new Map(), amap=new Map();
 const a=res.indicators.adjclose&&res.indicators.adjclose[0]&&res.indicators.adjclose[0].adjclose;   // cours ajusté des dividendes
@@ -2842,7 +2842,7 @@ return `<tr><th scope="row" style="text-align:left;font-weight:${sub?400:600};${
 async function dvdRender(sym){
 const box=document.getElementById('sec-dvd'); if(!box||!WORKER_URL) return;
 let res;
-try{ const r=await fetch(`${WORKER_URL}/chart?s=${encodeURIComponent(sym)}&range=max&ev=div`); const d=await r.json(); res=d.chart&&d.chart.result&&d.chart.result[0]; if(!res) throw new Error('aucune donnée'); }
+try{ const r=await fetch(`${WORKER_URL}/chart?s=${encodeURIComponent(ySym(sym))}&range=max&ev=div`); const d=await r.json(); res=d.chart&&d.chart.result&&d.chart.result[0]; if(!res) throw new Error('aucune donnée'); }
 catch(e){ box.innerHTML=`<h3>DVD — Dividendes</h3><div class="note">Historique indisponible (${esc(e.message)}). Si le message persiste, mettez à jour le relais Cloudflare (worker.js).</div>`; return; }
 if(S.focus!==sym) return;
 const ev=Object.values((res.events&&res.events.dividends)||{}).map(x=>({t:x.date*1000,a:x.amount})).sort((a,b)=>a.t-b.t);
@@ -3178,6 +3178,7 @@ return st0;
 function sessionLbl(){ const q=SNAPSHOT.quotes.SPX||SNAPSHOT.quotes.CAC; if(!q||!q.ts) return 'du jour';
 const d=new Date(q.ts.length===10?q.ts+'T21:00:00Z':q.ts), today=new Date().toLocaleDateString('fr-CA',{timeZone:'Europe/Paris'});
 return d.toLocaleDateString('fr-CA',{timeZone:'Europe/Paris'})===today?'du jour':'de la dernière séance ('+d.toLocaleDateString('fr-FR',{weekday:'short',day:'2-digit',month:'2-digit',timeZone:'Europe/Paris'})+')'; }
+function ySym(s){ try{ return YAHOO_OF[s]||s; }catch(e){ return s; } }
 const YAHOO_OF={SPX:'^GSPC',NDX:'^NDX',DJI:'^DJI',RUT:'^RUT',VIX:'^VIX',N225:'^N225',HSI:'^HSI',SHCOMP:'000001.SS',STI:'^STI',
 UKX:'^FTSE',DAX:'^GDAXI',CAC:'^FCHI',SX5E:'^STOXX50E',EURUSD:'EURUSD=X',USDJPY:'JPY=X',GBPUSD:'GBPUSD=X',DXY:'DX-Y.NYB',XAU:'GC=F',CL:'CL=F',BRENT:'BZ=F',BTC:'BTC-USD'};
 function harmonize(){
