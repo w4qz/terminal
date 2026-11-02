@@ -732,7 +732,8 @@ const r = await fetch('data.json?t='+Date.now(), {cache:'no-store'});
 if(!r.ok) throw new Error('HTTP '+r.status);
 const d = await r.json();
 if(LIVE && LIVE.generated_at===d.generated_at) return false;
-for(const [sym,q] of Object.entries(d.quotes||{})) SNAPSHOT.quotes[sym] = q;
+for(const [sym,q] of Object.entries(d.quotes||{})){ const o=SNAPSHOT.quotes[sym]; // ne remplace pas un cours direct plus récent
+if(o&&o.ts&&q.ts&&/direct/.test(o.src||'')&&Date.parse(o.ts)>Date.parse(q.ts)){ if(q.h) o.h=[...q.h.slice(0,-1),o.p]; continue; } SNAPSHOT.quotes[sym] = q; }
 for(const [sym,f] of Object.entries(d.fundamentals||{})){
 SNAPSHOT.fundamentals[sym] = Object.assign(SNAPSHOT.fundamentals[sym]||{}, f, {src:'Yahoo Finance via yfinance', ts:d.generated_at});
 }
@@ -1070,10 +1071,10 @@ NVDA, ASTS, Dow, VIX, DXY et indices européens continentaux ne figurent pas dan
 </div>
 ${hmPanelHtml()}
 <div class="g g2">
-<div class="pnl"><h3>Actions — États-Unis<span class="rt">${LIVE?"Yahoo Finance, MAJ toutes les 30 min":"S&amp;P / Nasdaq 100 clôture 29/10, reste périmé"}</span></h3><div class="pbody flush">${T(us,'Actions États-Unis')}</div></div>
-<div class="pnl"><h3>Actions — Europe<span class="rt">${LIVE?"Yahoo Finance, MAJ toutes les 30 min":"FTSE via FT 30/10, reste périmé (11/09)"}</span></h3><div class="pbody flush">${T(eu,'Actions Europe')}</div></div>
-<div class="pnl"><h3>Actions — Asie<span class="rt">${LIVE?"Yahoo Finance, MAJ toutes les 30 min":"Nikkei/HSI via FT 30/10"}</span></h3><div class="pbody flush">${T(as,'Actions Asie')}</div></div>
-<div class="pnl"><h3>Change et matières premières<span class="rt">${LIVE?"Yahoo Finance, MAJ toutes les 30 min":"FX, pétrole, or via FT 30/10"}</span></h3><div class="pbody flush">${T(fx,'Change et matières premières')}</div></div>
+<div class="pnl"><h3>Actions — États-Unis<span class="rt">${LIVE?"Yahoo Finance, cours directs toutes les 60 s":"S&amp;P / Nasdaq 100 clôture 29/10, reste périmé"}</span></h3><div class="pbody flush">${T(us,'Actions États-Unis')}</div></div>
+<div class="pnl"><h3>Actions — Europe<span class="rt">${LIVE?"Yahoo Finance, cours directs toutes les 60 s":"FTSE via FT 30/10, reste périmé (11/09)"}</span></h3><div class="pbody flush">${T(eu,'Actions Europe')}</div></div>
+<div class="pnl"><h3>Actions — Asie<span class="rt">${LIVE?"Yahoo Finance, cours directs toutes les 60 s":"Nikkei/HSI via FT 30/10"}</span></h3><div class="pbody flush">${T(as,'Actions Asie')}</div></div>
+<div class="pnl"><h3>Change et matières premières<span class="rt">${LIVE?"Yahoo Finance, cours directs toutes les 60 s":"FX, pétrole, or via FT 30/10"}</span></h3><div class="pbody flush">${T(fx,'Change et matières premières')}</div></div>
 <div class="pnl span2"><h3>Banques centrales</h3><div class="pbody flush"><table><caption class="sr-only">Taux directeurs des banques centrales</caption><tbody>${rates}</tbody></table></div></div>
 <div class="pnl span2" id="mkt-sov"><h3>Taux souverains<span class="rt">3M · 2A · 5A · 10A · 30A · cliquez un pays pour sa courbe (GC)</span></h3><div class="pbody flush">${sovHtml()}</div></div>
 <div class="pnl"><h3>Indicateurs macro<span class="rt">${macroLive?'FRED, BCE, BoE · mis à jour chaque jour · cliquez pour la série':'<span class="neg">relevé manuel du 31/10, non actualisé</span>'}</span></h3><div class="pbody flush"><table><caption class="sr-only">Indicateurs macroéconomiques</caption><tbody>${macroLive||macro}</tbody></table></div></div>
@@ -3251,7 +3252,7 @@ document.getElementById('hprov').textContent=LIVE?'Pipeline GitHub Actions (MAJ 
 document.getElementById('hup').textContent=lvl==='up'?' — à jour':' — '+lvl;
 document.getElementById('hccy').textContent=S.ccy;
 document.getElementById('hstat').textContent=
-LIVE ? 'différées — rafraîchies toutes les 30 min' : 'instantané — non rafraîchissable';
+RT_TS ? 'cours directs Yahoo (différé 0–15 min) — relevés à '+RT_TS.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})+', toutes les 60 s' : LIVE ? 'différées — rafraîchies toutes les 30 min' : 'instantané — non rafraîchissable';
 document.getElementById('hmsg').textContent=
 S.view==='sec' ? S.focus+' — appuyez sur ⌘K pour changer de titre' : '';
 }
@@ -3327,9 +3328,40 @@ S.view='mkt'; (async()=>{ // catalogue chargé d'abord : « TTE » doit devenir 
 await Promise.all([loadUniverse(),loadLive(),loadFund(),loadMacro(),loadEcon(),loadCurves(),loadPeers()].map(p=>p.catch(()=>{}))); harmonize();
 if(!/^(BLP)$/i.test(c.trim())) runAny(c); else go('mkt'); })(); }
 else go('mkt');
+/* Cours directs : le navigateur interroge Yahoo via le relais Cloudflare toutes les 60 s,
+   sans attendre le robot GitHub (dont le cron « 30 min » part souvent avec 20 à 60 min de retard). */
+let RT_TS=null, RT_BUSY=false;
+const RT_SYMS=()=>[...Object.keys(YAHOO_OF),'NVDA','ASTS'];
+async function rtOne(sym){
+const r=await fetch(`${WORKER_URL}/chart?s=${encodeURIComponent(ySym(sym))}&range=1d`); if(!r.ok) return false;
+const d=await r.json(), m=d&&d.chart&&d.chart.result&&d.chart.result[0]&&d.chart.result[0].meta; if(!m||m.regularMarketPrice==null) return false;
+const p=+m.regularMarketPrice, prev=m.chartPreviousClose??m.previousClose, t=m.regularMarketTime?new Date(m.regularMarketTime*1000):null;
+const old=SNAPSHOT.quotes[sym]||{};
+if(old.ts&&t&&Date.parse(old.ts)>t.getTime()+60e3) return false;       // le relevé du robot est plus récent
+const age=t?(Date.now()-t.getTime())/6e4:1e9;
+const st=age<90?'DELAYED_15M':age<60*24*4?'EOD':'STALE';
+const q=Object.assign({},old,{p, st, st0:st, src:'Yahoo Finance via relais (direct, 60 s)', ts:t?t.toISOString():old.ts});
+if(prev){ q.prev=+prev; q.chg=p-prev; q.pct=Math.round((p/prev-1)*1e4)/100; }
+if(m.regularMarketDayHigh) q.hi=m.regularMarketDayHigh; if(m.regularMarketDayLow) q.lo=m.regularMarketDayLow;
+if(m.regularMarketVolume) q.vol=m.regularMarketVolume;
+if(Array.isArray(q.h)&&q.h.length) q.h=[...q.h.slice(0,-1),p];
+SNAPSHOT.quotes[sym]=q; return true;
+}
+async function liveQuotes(){
+if(!WORKER_URL||RT_BUSY||document.hidden) return; RT_BUSY=true;
+try{
+const syms=RT_SYMS(); let n=0;
+for(let i=0;i<syms.length;i+=6){ const res=await Promise.all(syms.slice(i,i+6).map(s=>rtOne(s).catch(()=>false))); n+=res.filter(Boolean).length; }
+if(n){ RT_TS=new Date(); DATA.cache.clear(); harmonize(); renderTape();
+if(S.view==='mkt'||S.view==='wl'){ const mn=document.getElementById('main'), y=mn?mn.scrollTop:0; await RENDER[S.view](); if(mn) mn.scrollTop=y; }
+syncBar(); }
+}finally{ RT_BUSY=false; }
+}
 const refresh=()=>Promise.all([loadStatus(),loadLive(),loadUniverse(),loadFT(),loadMacro(),loadFund(),loadEcon(),loadPeers(),loadCurves()]).then(([_s,a,b,c,d,e,f,g,h])=>{ harmonize(); renderTape(); if(a||b||c||d||e||f||h){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
 refresh();
 setInterval(refresh, 10*60*1000);
+liveQuotes(); setInterval(liveQuotes, 60*1000);
+document.addEventListener('visibilitychange',()=>{ if(!document.hidden) liveQuotes(); });
 
 </script>
 </body>
