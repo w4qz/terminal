@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-02T16:32:29.999199Z",
+ "generated_at": "2026-11-02T17:22:46.555045Z",
  "eco": {
   "prints": [
    {
@@ -260,6 +260,7 @@
      "cons": "54.5",
      "prev": "54.5",
      "act": null,
+     "cov": false,
      "surp": null
     },
     {
@@ -272,6 +273,7 @@
      "cons": "0.0%",
      "prev": "0.0%",
      "act": null,
+     "cov": false,
      "surp": null
     },
     {
@@ -284,6 +286,7 @@
      "cons": "7.11M",
      "prev": "7.08M",
      "act": null,
+     "cov": true,
      "surp": null
     },
     {
@@ -296,6 +299,7 @@
      "cons": null,
      "prev": null,
      "act": null,
+     "cov": false,
      "surp": null
     },
     {
@@ -308,6 +312,7 @@
      "cons": "2.5%",
      "prev": "2.5%",
      "act": null,
+     "cov": true,
      "surp": null
     },
     {
@@ -320,6 +325,7 @@
      "cons": "4.0%",
      "prev": "3.8%",
      "act": null,
+     "cov": true,
      "surp": null
     },
     {
@@ -332,6 +338,7 @@
      "cons": "54.9",
      "prev": "54.9",
      "act": null,
+     "cov": false,
      "surp": null
     },
     {
@@ -344,6 +351,7 @@
      "cons": null,
      "prev": null,
      "act": null,
+     "cov": false,
      "surp": null
     },
     {
@@ -356,6 +364,7 @@
      "cons": null,
      "prev": null,
      "act": null,
+     "cov": false,
      "surp": null
     },
     {
@@ -368,6 +377,7 @@
      "cons": "7-0-2",
      "prev": "3-0-6",
      "act": null,
+     "cov": false,
      "surp": null
     },
     {
@@ -380,6 +390,7 @@
      "cons": "4.00%",
      "prev": "3.75%",
      "act": null,
+     "cov": true,
      "surp": null
     },
     {
@@ -392,6 +403,7 @@
      "cons": null,
      "prev": null,
      "act": null,
+     "cov": false,
      "surp": null
     },
     {
@@ -404,6 +416,7 @@
      "cons": null,
      "prev": null,
      "act": null,
+     "cov": false,
      "surp": null
     },
     {
@@ -416,6 +429,7 @@
      "cons": "197K",
      "prev": "194K",
      "act": null,
+     "cov": true,
      "surp": null
     },
     {
@@ -428,6 +442,7 @@
      "cons": null,
      "prev": null,
      "act": null,
+     "cov": false,
      "surp": null
     },
     {
@@ -440,6 +455,7 @@
      "cons": "0.3%",
      "prev": "0.1%",
      "act": null,
+     "cov": false,
      "surp": null
     },
     {
@@ -452,6 +468,7 @@
      "cons": "63K",
      "prev": "29K",
      "act": null,
+     "cov": true,
      "surp": null
     },
     {
@@ -464,6 +481,7 @@
      "cons": "4.2%",
      "prev": "4.2%",
      "act": null,
+     "cov": true,
      "surp": null
     },
     {
@@ -476,6 +494,7 @@
      "cons": "47.8",
      "prev": "46.3",
      "act": null,
+     "cov": true,
      "surp": null
     },
     {
@@ -488,6 +507,7 @@
      "cons": null,
      "prev": "4.7%",
      "act": null,
+     "cov": false,
      "surp": null
     },
     {
@@ -500,10 +520,11 @@
      "cons": null,
      "prev": null,
      "act": null,
+     "cov": false,
      "surp": null
     }
    ],
-   "src": "Consensus et précédent : Forex Factory (compilation non officielle, usage personnel). Chiffre publié : FRED (sources officielles BLS, BEA, Fed)."
+   "src": "Consensus et précédent : Forex Factory (compilation non officielle, usage personnel). Chiffre publié : FRED (BLS, BEA, Fed), BCE, Bank of England et BNS. Les autres publications (ISM, PMI S&P Global…) n'ont pas de source gratuite : marquées « non couvert »."
   }
  },
  "wirp": {
@@ -517,73 +538,73 @@
    {
     "d": "2026-12-09",
     "pre": 3.88,
-    "post": 4.07,
-    "move_bp": 19.0,
+    "post": 4.063,
+    "move_bp": 18.3,
     "p_cut": 0,
-    "p_hike": 76
+    "p_hike": 73
    },
    {
     "d": "2027-01-27",
-    "pre": 4.07,
-    "post": 4.145,
-    "move_bp": 7.5,
+    "pre": 4.063,
+    "post": 4.14,
+    "move_bp": 7.7,
     "p_cut": 0,
-    "p_hike": 30
+    "p_hike": 31
    },
    {
     "d": "2027-03-17",
-    "pre": 4.145,
-    "post": 4.278,
+    "pre": 4.14,
+    "post": 4.273,
     "move_bp": 13.3,
     "p_cut": 0,
     "p_hike": 53
    },
    {
     "d": "2027-04-28",
-    "pre": 4.278,
-    "post": 4.345,
-    "move_bp": 6.7,
+    "pre": 4.273,
+    "post": 4.335,
+    "move_bp": 6.2,
     "p_cut": 0,
-    "p_hike": 27
+    "p_hike": 25
    },
    {
     "d": "2027-06-09",
-    "pre": 4.345,
-    "post": 4.424,
+    "pre": 4.335,
+    "post": 4.414,
     "move_bp": 7.9,
     "p_cut": 0,
     "p_hike": 31
    },
    {
     "d": "2027-07-28",
-    "pre": 4.424,
-    "post": 4.445,
-    "move_bp": 2.1,
+    "pre": 4.414,
+    "post": 4.425,
+    "move_bp": 1.1,
     "p_cut": 0,
-    "p_hike": 9
+    "p_hike": 5
    },
    {
     "d": "2027-09-15",
-    "pre": 4.445,
-    "post": 4.455,
-    "move_bp": 1.0,
+    "pre": 4.425,
+    "post": 4.445,
+    "move_bp": 2.0,
     "p_cut": 0,
-    "p_hike": 4
+    "p_hike": 8
    },
    {
     "d": "2027-10-27",
-    "pre": 4.455,
-    "post": 4.465,
-    "move_bp": 1.0,
-    "p_cut": 0,
-    "p_hike": 4
+    "pre": 4.445,
+    "post": 4.435,
+    "move_bp": -1.0,
+    "p_cut": 4,
+    "p_hike": 0
    },
    {
     "d": "2027-12-08",
-    "pre": 4.465,
-    "post": 4.438,
-    "move_bp": -2.7,
-    "p_cut": 11,
+    "pre": 4.435,
+    "post": 4.401,
+    "move_bp": -3.4,
+    "p_cut": 13,
     "p_hike": 0
    }
   ],
