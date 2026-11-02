@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T23:01:50.121987Z",
+ "generated_at": "2026-11-01T23:59:25.778168Z",
  "quotes": {
   "NVDA": {
    "p": 204.81,
@@ -39,10 +39,10 @@
    ]
   },
   "ASTS": {
-   "p": 40.97,
+   "p": 40.99,
    "prev": 43.07,
-   "chg": -2.1,
-   "pct": -4.88,
+   "chg": -2.08,
+   "pct": -4.83,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-10-30T19:30:00Z",
@@ -407,8 +407,8 @@
    "prev": 10722.0996,
    "chg": 14.04,
    "pct": 0.13,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^FTSE)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^FTSE) — échec de la dernière mise à jour",
    "ts": "2026-10-30T16:00:00Z",
    "open": 10721.5,
    "lo": 10715.9004,
@@ -583,20 +583,20 @@
     1.112966,
     1.115573,
     1.118281,
-    1.116321
+    1.115947
    ]
   },
   "USDJPY": {
-   "p": 157.519,
-   "prev": 157.833,
-   "chg": -0.314,
-   "pct": -0.2,
-   "st": "EOD",
+   "p": 157.68,
+   "prev": 157.804,
+   "chg": -0.124,
+   "pct": -0.08,
+   "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (JPY=X)",
-   "ts": "2026-10-30T20:00:00Z",
+   "ts": "2026-11-01T23:59:00Z",
    "open": 157.457,
    "lo": 157.414,
-   "hi": 157.587,
+   "hi": 157.693,
    "h": [
     157.93,
     157.73,
@@ -619,7 +619,7 @@
     157.99,
     157.83,
     157.8,
-    157.58
+    157.68
    ]
   },
   "GBPUSD": {
@@ -655,22 +655,21 @@
     1.33063,
     1.3328,
     1.337864,
-    1.338903
+    1.338616
    ]
   },
   "DXY": {
-   "p": 101.964,
-   "prev": 102.04,
-   "chg": -0.076,
-   "pct": -0.07,
-   "st": "EOD",
+   "p": 101.974,
+   "prev": 101.88,
+   "chg": 0.094,
+   "pct": 0.09,
+   "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (DX-Y.NYB)",
-   "ts": "2026-10-30T20:00:00Z",
-   "open": 101.88,
-   "lo": 101.54,
-   "hi": 102.09,
+   "ts": "2026-11-01T23:00:00Z",
+   "open": 101.968,
+   "lo": 101.937,
+   "hi": 101.994,
    "h": [
-    102.1,
     101.93,
     102.17,
     101.83,
@@ -691,23 +690,23 @@
     102.32,
     102.19,
     102.04,
-    101.88
+    101.88,
+    101.97
    ]
   },
   "XAU": {
-   "p": 3898.8999,
-   "prev": 4031.3999,
-   "chg": -132.5,
-   "pct": -3.29,
-   "st": "EOD",
+   "p": 3908.3,
+   "prev": 3898.8999,
+   "chg": 9.4001,
+   "pct": 0.24,
+   "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GC=F)",
-   "ts": "2026-10-30T20:00:00Z",
-   "open": 4033.6001,
-   "lo": 3879.3,
-   "hi": 4038.2,
-   "vol": 230038,
+   "ts": "2026-11-01T23:00:00Z",
+   "open": 3890.0,
+   "lo": 3889.0,
+   "hi": 3911.1001,
+   "vol": 5223,
    "h": [
-    4202.3,
     4162.3,
     4156.8,
     4187.1,
@@ -728,23 +727,23 @@
     4074.6,
     4051.6,
     4031.4,
-    3898.9
+    3898.9,
+    3908.3
    ]
   },
   "CL": {
-   "p": 104.12,
-   "prev": 102.0,
-   "chg": 2.12,
-   "pct": 2.08,
-   "st": "EOD",
+   "p": 102.35,
+   "prev": 104.12,
+   "chg": -1.77,
+   "pct": -1.7,
+   "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (CL=F)",
-   "ts": "2026-10-30T20:00:00Z",
-   "open": 102.8,
-   "lo": 102.43,
-   "hi": 104.99,
-   "vol": 248668,
+   "ts": "2026-11-01T23:00:00Z",
+   "open": 102.39,
+   "lo": 102.25,
+   "hi": 102.75,
+   "vol": 4132,
    "h": [
-    92.87,
     91.11,
     89.43,
     89.44,
@@ -765,23 +764,23 @@
     99.9,
     102.78,
     102.0,
-    104.12
+    104.12,
+    102.35
    ]
   },
   "BRENT": {
-   "p": 113.43,
-   "prev": 114.88,
-   "chg": -1.45,
-   "pct": -1.26,
-   "st": "EOD",
+   "p": 111.58,
+   "prev": 117.64,
+   "chg": -6.06,
+   "pct": -5.15,
+   "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BZ=F)",
-   "ts": "2026-10-30T20:00:00Z",
-   "open": 111.28,
-   "lo": 111.05,
-   "hi": 114.29,
-   "vol": 37539,
+   "ts": "2026-11-01T23:00:00Z",
+   "open": 111.84,
+   "lo": 111.49,
+   "hi": 112.38,
+   "vol": 361,
    "h": [
-    102.31,
     102.25,
     100.32,
     100.58,
@@ -802,21 +801,22 @@
     113.88,
     115.32,
     114.88,
-    113.43
+    117.64,
+    111.58
    ]
   },
   "BTC": {
-   "p": 77791.0938,
+   "p": 78230.3906,
    "prev": 77434.75,
-   "chg": 356.3438,
-   "pct": 0.46,
+   "chg": 795.6406,
+   "pct": 1.03,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
    "ts": "2026-11-01T23:00:00Z",
    "open": 77440.9297,
    "lo": 77395.6953,
-   "hi": 78126.9297,
-   "vol": 12161137664,
+   "hi": 78244.0,
+   "vol": 12666470400,
    "h": [
     83679.47,
     81762.56,
@@ -839,7 +839,7 @@
     77775.11,
     77198.21,
     77434.75,
-    77791.09
+    78234.68
    ]
   }
  },
@@ -937,9 +937,9 @@
    "ccy": "USD",
    "mcap": 3875804807168,
    "pe": 27.2396,
-   "fpe": 21.6233,
+   "fpe": 21.6187,
    "eps": 19.16,
-   "feps": 24.1364,
+   "feps": 24.1416,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -1103,9 +1103,9 @@
    "industry": "Aerospace & Defense",
    "ccy": "USD",
    "mcap": 1829640994816,
-   "fpe": 56.9376,
+   "fpe": 52.529,
    "eps": 0.23,
-   "feps": 2.3661,
+   "feps": 2.5647,
    "revTTM": 32042999808,
    "netIncome": -3431000064,
    "shares": 8246541218,
@@ -1501,14 +1501,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 982902374400,
+   "mcap": 979897024512,
    "pe": 44.75,
    "fpe": 38.2805,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.578,
    "div": 0.99,
    "divYield": 0.802,
@@ -1879,9 +1879,9 @@
    "ccy": "USD",
    "mcap": 459499536384,
    "pe": 17.2922,
-   "fpe": 14.9045,
+   "fpe": 14.8086,
    "eps": 13.62,
-   "feps": 15.802,
+   "feps": 15.9043,
    "revTTM": 226326003712,
    "netIncome": 26976000000,
    "shares": 1951000000,
@@ -1911,7 +1911,7 @@
    "exDiv": 1794960000,
    "divDate": 1796860800,
    "lastDiv": 1.78,
-   "trailDiv": 1.71
+   "trailDiv": 7.05
   },
   "COST": {
    "name": "Costco Wholesale Corporation",
@@ -1963,9 +1963,9 @@
    "ccy": "USD",
    "mcap": 442427080704,
    "pe": 158.7155,
-   "fpe": 78.3347,
+   "fpe": 78.7903,
    "eps": 1.16,
-   "feps": 2.3503,
+   "feps": 2.3367,
    "revTTM": 6155940864,
    "netIncome": 3016691968,
    "shares": 2300713329,
@@ -2129,8 +2129,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 122.9082,
+   "shares": 572600000,
+   "divYield": 2.574,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2186,7 +2191,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T23:01:50.121987+00:00",
+   "ts": "2026-11-01T23:59:25.778168+00:00",
    "url": "https://asia.nikkei.com/business/markets/trading-asia/indonesian-political-maneuvers-hinder-market-reforms-amid-downgrade-threats"
   },
   {
@@ -2194,7 +2199,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T23:01:50.121987+00:00",
+   "ts": "2026-11-01T23:59:25.778168+00:00",
    "url": "https://asia.nikkei.com/politics/chinese-communist-party-taps-big-data-surveillance-to-combat-corruption"
   },
   {
@@ -2202,7 +2207,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T23:01:50.121987+00:00",
+   "ts": "2026-11-01T23:59:25.778168+00:00",
    "url": "https://asia.nikkei.com/opinion/japan-is-attracting-startups.-but-can-it-keep-them"
   },
   {
@@ -2210,7 +2215,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T23:01:50.121987+00:00",
+   "ts": "2026-11-01T23:59:25.778168+00:00",
    "url": "https://asia.nikkei.com/business/energy/mitsubishi-heavy-gears-up-to-boost-us-gas-turbine-production"
   },
   {
@@ -2218,7 +2223,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T23:01:50.121987+00:00",
+   "ts": "2026-11-01T23:59:25.778168+00:00",
    "url": "https://asia.nikkei.com/business/energy/nuclear-reactors-under-construction-rise-to-79-globally-on-ai-demand"
   },
   {
@@ -2226,7 +2231,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T23:01:50.121987+00:00",
+   "ts": "2026-11-01T23:59:25.778168+00:00",
    "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/ai-dubbing-to-help-japanese-companies-expand-global-outreach"
   },
   {
@@ -2234,7 +2239,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T23:01:50.121987+00:00",
+   "ts": "2026-11-01T23:59:25.778168+00:00",
    "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/indonesia-gdp-us-midterm-elections-hong-kong-financial-summit"
   },
   {
@@ -2242,7 +2247,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T23:01:50.121987+00:00",
+   "ts": "2026-11-01T23:59:25.778168+00:00",
    "url": "https://asia.nikkei.com/business/energy/pakistan-refineries-report-1-860-jump-in-profit-amid-war-windfall2"
   },
   {
@@ -2250,7 +2255,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T23:01:50.121987+00:00",
+   "ts": "2026-11-01T23:59:25.778168+00:00",
    "url": "https://asia.nikkei.com/spotlight/comment/after-us-midterms-democracy-will-face-test-of-ability-to-self-correct"
   },
   {
@@ -2258,7 +2263,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T23:01:50.121987+00:00",
+   "ts": "2026-11-01T23:59:25.778168+00:00",
    "url": "https://asia.nikkei.com/politics/thai-reformists-became-too-technocratic-party-ex-leader-pita-says"
   },
   {
@@ -2266,7 +2271,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T23:01:50.121987+00:00",
+   "ts": "2026-11-01T23:59:25.778168+00:00",
    "url": "https://asia.nikkei.com/business/companies/japan-bamboo-chopsticks-catch-on-in-south-korea"
   },
   {
@@ -2274,7 +2279,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T23:01:50.121987+00:00",
+   "ts": "2026-11-01T23:59:25.778168+00:00",
    "url": "https://asia.nikkei.com/life-arts/life/on-india-s-east-coast-tidepooling-inspires-marine-conservation"
   },
   {
@@ -2282,7 +2287,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T23:01:50.121987+00:00",
+   "ts": "2026-11-01T23:59:25.778168+00:00",
    "url": "https://asia.nikkei.com/business/markets/property/china-mega-complex-in-dalian-puts-spotlight-on-investment-push"
   },
   {
@@ -2290,7 +2295,7 @@
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T23:01:50.121987+00:00",
+   "ts": "2026-11-01T23:59:25.778168+00:00",
    "url": "https://asia.nikkei.com/opinion/time-for-japan-to-develop-people-who-can-sell-content"
   },
   {
@@ -2300,8 +2305,24 @@
     "USDJPY"
    ],
    "src": "Nikkei Asia",
-   "ts": "2026-11-01T23:01:50.121987+00:00",
+   "ts": "2026-11-01T23:59:25.778168+00:00",
    "url": "https://asia.nikkei.com/business/markets/bonds/yen-bond-offerings-hit-record-16bn-as-ai-funding-race-reaches-japan"
+  },
+  {
+   "h": "Don't get caught out by new Buy Now Pay Later rules",
+   "w": "New affordability checks mean you could be blocked from using Buy Now Pay Later but here are ways to avoid it.",
+   "syms": [],
+   "src": "BBC — Business",
+   "ts": "2026-11-01T23:34:49Z",
+   "url": "https://www.bbc.co.uk/news/articles/crpdgp4y017go?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "Judge dismisses Alaska Senate election lawsuit; DOJ vows appeal",
+   "w": "Democratic nominee Mary Peltola is facing two candidates named Dan Sullivan in the Alaska Senate election, one of whom is the Republican incumbent.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-01T23:17:57Z",
+   "url": "https://www.cnbc.com/2026/11/01/alaska-senate-doj-lawsuit-dismissed-sullivan-peltola.html"
   },
   {
    "h": "What’s the risk of political violence? | Martin Wolf on the US midterms",
@@ -2311,16 +2332,6 @@
    "ts": "2026-11-01T22:35:19Z",
    "url": "https://www.ft.com/video/32bfcd99-db49-4f9c-9eeb-20978b496972?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Everything changed for the oil, AI and bond trades over the past month",
-   "w": "The market expects oil to keep rising, but treasury yields have declined, a warning traders and investors may be more worried about an AI crash than inflation.",
-   "syms": [
-    "BRENT"
-   ],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-01T22:27:40Z",
-   "url": "https://www.cnbc.com/2026/11/01/oil-bond-yields-ai-market.html"
   },
   {
    "h": "FirstFT: Gulf braced for renewed war between US and Iran",
@@ -2350,14 +2361,6 @@
    "ts": "2026-11-01T21:44:06Z",
    "url": "https://www.ft.com/content/d77e4c6f-0ac7-49ce-bca8-b30080bf9797?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Judge dismisses Alaska Senate election lawsuit; DOJ vows appeal",
-   "w": "Democratic nominee Mary Peltola is facing two candidates named Dan Sullivan in the Alaska Senate election, one of whom is the Republican incumbent.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-01T21:25:03Z",
-   "url": "https://www.cnbc.com/2026/11/01/alaska-senate-doj-lawsuit-dismissed-sullivan-peltola.html"
   },
   {
    "h": "Democratic Rep. Stevens endorses Republican Rogers over rival El-Sayed in Michigan Senate election",
@@ -2391,6 +2394,14 @@
    "src": "MarketWatch",
    "ts": "2026-11-01T19:20:00Z",
    "url": "https://www.marketwatch.com/story/fancy-cars-hold-no-appeal-my-wife-and-i-have-a-99-chance-of-outliving-our-savings-why-dont-we-spend-it-all-932a2166?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Connecticut Sen. Chris Murphy has stroke and is in the hospital, office says",
+   "w": "Sen. Chris Murphy's office announced Sunday that he suffered a stroke and was hospitalized the day prior, though they say he is 'awake and alert.'",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-01T19:10:12Z",
+   "url": "https://www.cnbc.com/2026/11/01/chris-murphy-stroke-senate-hospital.html"
   },
   {
    "h": "Un juge bloque la tentative de Trump d’arrêter la certification du vote au Sénat en Alaska",
@@ -2552,6 +2563,14 @@
    "url": "https://www.cnbc.com/2026/11/01/social-security-senate-races.html"
   },
   {
+   "h": "Social Security may have to cut retirement benefits in six years. Here's how much money is at stake for beneficiaries",
+   "w": "The latest projections show Social Security may have to cut retirement benefits in six years. Here's what may happen if Congress doesn't prevent that.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-01T15:18:38Z",
+   "url": "https://www.cnbc.com/2026/11/01/social-security-benefit-cuts-2032.html"
+  },
+  {
    "h": "Apple’s new earnings era begins at a critical time for Big Tech",
    "w": "A rare Monday earnings report for Apple will give investors a glimpse into how new CEO John Ternus is managing inflated memory prices and a tougher backdrop for consumer spending.",
    "syms": [],
@@ -2667,16 +2686,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-01T13:00:00Z",
    "url": "https://www.marketwatch.com/story/who-really-wins-under-trumps-economy-coastal-liberal-elites-who-hate-him-d74c63cb?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Top Wall Street analysts are bullish on these 3 stocks for the long haul",
-   "w": "Investors looking beyond short-term noise and focusing on long-term returns can track top analysts to pick the right stocks, backed by strong research.",
-   "syms": [
-    "SPX"
-   ],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-01T12:33:53Z",
-   "url": "https://www.cnbc.com/2026/11/01/top-analysts-are-bullish-on-these-3-stocks-for-the-long-haul.html"
   },
   {
    "h": "The midterm election could reshape the muni bond market. Here’s what investors need to know",
@@ -3036,14 +3045,6 @@
    "src": "MarketWatch",
    "ts": "2026-10-31T20:15:00Z",
    "url": "https://www.marketwatch.com/story/my-abusive-ex-husband-promised-20-000-for-our-kids-education-now-he-refuses-to-pay-is-he-legally-obligated-325ef50f?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Le parquet de Paris a ouvert une enquête pour provocation à la haine raciale en raison de menaces racistes visant des livreurs et chauffeurs sur X",
-   "w": "Sur le réseau social, un salon de discussion ouvert aux utilisateurs, intitulé « L’heure est à l’action face à la violence des islamo-collabos antifas », a été l’espace où ces propos racistes et d’incitation à la violence ont été tenus, au début d’octobre.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-10-31T16:24:37Z",
-   "url": "https://www.lemonde.fr/societe/article/2026/10/31/le-parquet-de-paris-a-ouvert-une-enquete-pour-provocation-a-la-haine-raciale-en-raison-de-menaces-racistes-visant-des-livreurs-et-chauffeurs-sur-x_6803720_3224.html"
   }
  ],
  "summary": {

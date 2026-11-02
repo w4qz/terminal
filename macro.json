@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T23:05:53.792174Z",
+ "generated_at": "2026-11-02T00:03:13.018177Z",
  "eco": {
   "prints": [
    {
@@ -19,7 +19,7 @@
     "prev": 2.45,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-10-22",
+    "pub": "2026-10-21",
     "freq": "M",
     "src": "FRED CPILFESL",
     "url": "https://fred.stlouisfed.org/series/CPILFESL"
@@ -107,7 +107,7 @@
     "prev": 3.23,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-10-22",
+    "pub": "2026-10-23",
     "freq": "M",
     "src": "FRED CP0000EZ19M086NEST",
     "url": "https://fred.stlouisfed.org/series/CP0000EZ19M086NEST"
@@ -257,7 +257,7 @@
      "ev": "ISM manufacturier",
      "ev_en": "ISM Manufacturing PMI",
      "imp": 2,
-     "cons": "54.7",
+     "cons": "54.5",
      "prev": "54.5",
      "act": null,
      "surp": null
@@ -517,65 +517,65 @@
    {
     "d": "2026-12-09",
     "pre": 3.88,
-    "post": 4.056,
-    "move_bp": 17.6,
+    "post": 4.063,
+    "move_bp": 18.3,
     "p_cut": 0,
-    "p_hike": 70
+    "p_hike": 73
    },
    {
     "d": "2027-01-27",
-    "pre": 4.056,
-    "post": 4.12,
-    "move_bp": 6.4,
+    "pre": 4.063,
+    "post": 4.13,
+    "move_bp": 6.7,
+    "p_cut": 0,
+    "p_hike": 27
+   },
+   {
+    "d": "2027-03-17",
+    "pre": 4.13,
+    "post": 4.274,
+    "move_bp": 14.4,
+    "p_cut": 0,
+    "p_hike": 58
+   },
+   {
+    "d": "2027-04-28",
+    "pre": 4.274,
+    "post": 4.34,
+    "move_bp": 6.6,
     "p_cut": 0,
     "p_hike": 26
    },
    {
-    "d": "2027-03-17",
-    "pre": 4.12,
-    "post": 4.253,
-    "move_bp": 13.3,
-    "p_cut": 0,
-    "p_hike": 53
-   },
-   {
-    "d": "2027-04-28",
-    "pre": 4.253,
-    "post": 4.315,
-    "move_bp": 6.2,
-    "p_cut": 0,
-    "p_hike": 25
-   },
-   {
     "d": "2027-06-09",
-    "pre": 4.315,
-    "post": 4.401,
+    "pre": 4.34,
+    "post": 4.426,
     "move_bp": 8.6,
     "p_cut": 0,
     "p_hike": 34
    },
    {
     "d": "2027-07-28",
-    "pre": 4.401,
-    "post": 4.42,
+    "pre": 4.426,
+    "post": 4.445,
     "move_bp": 1.9,
     "p_cut": 0,
     "p_hike": 8
    },
    {
     "d": "2027-09-15",
-    "pre": 4.42,
-    "post": 4.45,
-    "move_bp": 3.0,
+    "pre": 4.445,
+    "post": 4.465,
+    "move_bp": 2.0,
     "p_cut": 0,
-    "p_hike": 12
+    "p_hike": 8
    },
    {
     "d": "2027-10-27",
-    "pre": 4.45,
+    "pre": 4.465,
     "post": 4.44,
-    "move_bp": -1.0,
-    "p_cut": 4,
+    "move_bp": -2.5,
+    "p_cut": 10,
     "p_hike": 0
    },
    {
