@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-03T05:50:26.363109Z",
+ "generated_at": "2026-11-03T06:57:36.950041Z",
  "eco": {
   "prints": [
    {
@@ -107,7 +107,7 @@
     "prev": 3.23,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-02",
+    "pub": "2026-11-03",
     "freq": "M",
     "src": "FRED CP0000EZ19M086NEST",
     "url": "https://fred.stlouisfed.org/series/CP0000EZ19M086NEST"
@@ -118,7 +118,7 @@
     "prev": 6.7,
     "fmt": "%",
     "ts": "2023-01-01",
-    "pub": "2026-11-02",
+    "pub": "2026-11-03",
     "freq": "M",
     "src": "FRED LRHUTTTTEZM156S",
     "url": "https://fred.stlouisfed.org/series/LRHUTTTTEZM156S"
@@ -544,65 +544,65 @@
    {
     "d": "2026-12-09",
     "pre": 3.88,
-    "post": 4.063,
-    "move_bp": 18.3,
+    "post": 4.07,
+    "move_bp": 19.0,
     "p_cut": 0,
-    "p_hike": 73
+    "p_hike": 76
    },
    {
     "d": "2027-01-27",
-    "pre": 4.063,
-    "post": 4.13,
+    "pre": 4.07,
+    "post": 4.135,
+    "move_bp": 6.5,
+    "p_cut": 0,
+    "p_hike": 26
+   },
+   {
+    "d": "2027-03-17",
+    "pre": 4.135,
+    "post": 4.268,
+    "move_bp": 13.3,
+    "p_cut": 0,
+    "p_hike": 53
+   },
+   {
+    "d": "2027-04-28",
+    "pre": 4.268,
+    "post": 4.335,
     "move_bp": 6.7,
     "p_cut": 0,
     "p_hike": 27
    },
    {
-    "d": "2027-03-17",
-    "pre": 4.13,
-    "post": 4.274,
-    "move_bp": 14.4,
-    "p_cut": 0,
-    "p_hike": 58
-   },
-   {
-    "d": "2027-04-28",
-    "pre": 4.274,
-    "post": 4.33,
-    "move_bp": 5.6,
-    "p_cut": 0,
-    "p_hike": 22
-   },
-   {
     "d": "2027-06-09",
-    "pre": 4.33,
-    "post": 4.416,
+    "pre": 4.335,
+    "post": 4.421,
     "move_bp": 8.6,
     "p_cut": 0,
     "p_hike": 34
    },
    {
     "d": "2027-07-28",
-    "pre": 4.416,
-    "post": 4.435,
+    "pre": 4.421,
+    "post": 4.44,
     "move_bp": 1.9,
     "p_cut": 0,
     "p_hike": 8
    },
    {
     "d": "2027-09-15",
-    "pre": 4.435,
-    "post": 4.465,
+    "pre": 4.44,
+    "post": 4.47,
     "move_bp": 3.0,
     "p_cut": 0,
     "p_hike": 12
    },
    {
     "d": "2027-10-27",
-    "pre": 4.465,
+    "pre": 4.47,
     "post": 4.455,
-    "move_bp": -1.0,
-    "p_cut": 4,
+    "move_bp": -1.5,
+    "p_cut": 6,
     "p_hike": 0
    },
    {
