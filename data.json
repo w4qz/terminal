@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-03T22:34:47.639490Z",
+ "generated_at": "2026-11-03T23:34:09.230286Z",
  "quotes": {
   "NVDA": {
    "p": 206.57,
@@ -227,7 +227,7 @@
    "prev": 21.15,
    "chg": -0.34,
    "pct": -1.61,
-   "st": "DELAYED_15M",
+   "st": "EOD",
    "src": "Yahoo Finance via yfinance (^VIX)",
    "ts": "2026-11-03T21:15:00Z",
    "open": 21.66,
@@ -464,8 +464,7 @@
     25704.02,
     26039.68,
     25818.21,
-    25981.09,
-    25864.62
+    25981.09
    ]
   },
   "CAC": {
@@ -500,8 +499,7 @@
     7886.96,
     7970.0,
     7969.42,
-    8047.69,
-    8020.31
+    8047.69
    ]
   },
   "SX5E": {
@@ -512,9 +510,10 @@
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^STOXX50E)",
    "ts": "2026-11-03T16:30:00Z",
-   "open": 6159.8799,
-   "lo": 6102.5698,
-   "hi": 6201.1602,
+   "open": 6134.7202,
+   "lo": 6122.7998,
+   "hi": 6189.6802,
+   "vol": 18379000,
    "h": [
     6242.14,
     6272.23,
@@ -536,21 +535,20 @@
     6167.81,
     6207.07,
     6131.31,
-    6176.06,
-    6144.56
+    6176.06
    ]
   },
   "EURUSD": {
-   "p": 1.1192,
+   "p": 1.1196,
    "prev": 1.1157,
-   "chg": 0.0035,
-   "pct": 0.31,
+   "chg": 0.0039,
+   "pct": 0.35,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (EURUSD=X)",
-   "ts": "2026-11-03T22:34:47.639490Z",
+   "ts": "2026-11-03T23:34:09.230286Z",
    "open": 1.1192,
-   "lo": 1.1178,
-   "hi": 1.1208,
+   "lo": 1.1189,
+   "hi": 1.1196,
    "h": [
     1.125454,
     1.121705,
@@ -573,20 +571,20 @@
     1.115573,
     1.118281,
     1.115685,
-    1.119194
+    1.11957
    ]
   },
   "USDJPY": {
-   "p": 158.659,
+   "p": 158.709,
    "prev": 157.677,
-   "chg": 0.982,
-   "pct": 0.62,
+   "chg": 1.032,
+   "pct": 0.65,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (JPY=X)",
-   "ts": "2026-11-03T22:34:47.639490Z",
-   "open": 157.853,
-   "lo": 157.746,
-   "hi": 158.768,
+   "ts": "2026-11-03T23:34:09.230286Z",
+   "open": 158.624,
+   "lo": 158.605,
+   "hi": 158.746,
    "h": [
     157.73,
     157.96,
@@ -609,7 +607,7 @@
     157.83,
     157.8,
     157.68,
-    158.66
+    158.7
    ]
   },
   "GBPUSD": {
@@ -619,10 +617,10 @@
    "pct": 0.21,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
-   "ts": "2026-11-03T22:34:47.639490Z",
-   "open": 1.3406,
-   "lo": 1.3397,
-   "hi": 1.3432,
+   "ts": "2026-11-03T23:34:09.230286Z",
+   "open": 1.3412,
+   "lo": 1.3409,
+   "hi": 1.3417,
    "h": [
     1.324293,
     1.32186,
@@ -645,17 +643,17 @@
     1.3328,
     1.337864,
     1.338563,
-    1.341418
+    1.341436
    ]
   },
   "DXY": {
-   "p": 101.87,
+   "p": 101.89,
    "prev": 101.75,
-   "chg": 0.12,
-   "pct": 0.12,
+   "chg": 0.14,
+   "pct": 0.14,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (DX-Y.NYB)",
-   "ts": "2026-11-03T22:30:00Z",
+   "ts": "2026-11-03T23:15:00Z",
    "open": 101.731,
    "lo": 101.624,
    "hi": 101.942,
@@ -681,21 +679,21 @@
     102.04,
     101.88,
     101.75,
-    101.87
+    101.89
    ]
   },
   "XAU": {
-   "p": 3940.2,
+   "p": 3940.1001,
    "prev": 3969.6001,
-   "chg": -29.4001,
+   "chg": -29.5,
    "pct": -0.74,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GC=F)",
-   "ts": "2026-11-03T22:00:00Z",
-   "open": 3890.0,
-   "lo": 3904.1001,
-   "hi": 3981.7,
-   "vol": 157136,
+   "ts": "2026-11-03T23:30:00Z",
+   "open": 3940.8,
+   "lo": 3936.6001,
+   "hi": 3943.1001,
+   "vol": 1826,
    "h": [
     4156.8,
     4187.1,
@@ -718,21 +716,21 @@
     4031.4,
     3898.9,
     3969.6,
-    3940.2
+    3939.6
    ]
   },
   "CL": {
-   "p": 96.76,
+   "p": 96.69,
    "prev": 96.46,
-   "chg": 0.3,
-   "pct": 0.31,
+   "chg": 0.23,
+   "pct": 0.24,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (CL=F)",
-   "ts": "2026-11-03T22:00:00Z",
-   "open": 102.39,
-   "lo": 93.59,
-   "hi": 98.82,
-   "vol": 348750,
+   "ts": "2026-11-03T23:30:00Z",
+   "open": 96.81,
+   "lo": 96.66,
+   "hi": 96.82,
+   "vol": 478,
    "h": [
     89.43,
     89.44,
@@ -755,21 +753,21 @@
     102.0,
     104.12,
     96.46,
-    96.76
+    96.69
    ]
   },
   "BRENT": {
-   "p": 104.42,
+   "p": 104.33,
    "prev": 104.77,
-   "chg": -0.35,
-   "pct": -0.33,
+   "chg": -0.44,
+   "pct": -0.42,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BZ=F)",
-   "ts": "2026-11-03T22:00:00Z",
-   "open": 111.84,
-   "lo": 100.8,
-   "hi": 107.21,
-   "vol": 58470,
+   "ts": "2026-11-03T23:30:00Z",
+   "open": 104.37,
+   "lo": 104.3,
+   "hi": 104.37,
+   "vol": 8,
    "h": [
     100.32,
     100.58,
@@ -792,21 +790,21 @@
     114.88,
     117.64,
     104.77,
-    104.42
+    104.33
    ]
   },
   "BTC": {
-   "p": 77679.8203,
+   "p": 77801.0,
    "prev": 76677.2969,
-   "chg": 1002.5234,
-   "pct": 1.31,
+   "chg": 1123.7031,
+   "pct": 1.47,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-03T22:34:47.639490Z",
+   "ts": "2026-11-03T23:34:09.230286Z",
    "open": 76683.8906,
    "lo": 76305.5391,
    "hi": 77946.6406,
-   "vol": 22604945408,
+   "vol": 22372188160,
    "h": [
     83095.12,
     81562.49,
@@ -829,7 +827,7 @@
     77434.75,
     78248.45,
     76677.3,
-    77679.83
+    77801.0
    ]
   }
  },
@@ -1490,14 +1488,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 990607572992,
+   "mcap": 993645756416,
    "pe": 45.2391,
    "fpe": 38.6989,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.793,
@@ -1769,7 +1767,7 @@
    "fcf": 10374124544,
    "w52lo": 822.2,
    "w52hi": 1741.0,
-   "evEbitda": 32.67,
+   "evEbitda": 32.125,
    "earnTs": 1791991800,
    "earnStart": 1791991800,
    "earnEnd": 1791991800,
@@ -1868,9 +1866,9 @@
    "ccy": "USD",
    "mcap": 439501783040,
    "pe": 16.5396,
-   "fpe": 14.1641,
+   "fpe": 13.7716,
    "eps": 13.62,
-   "feps": 15.9043,
+   "feps": 16.3576,
    "revTTM": 226326003712,
    "netIncome": 26976000000,
    "shares": 1951000000,
@@ -1951,10 +1949,10 @@
    "industry": "Software - Infrastructure",
    "ccy": "USD",
    "mcap": 421496422400,
-   "pe": 151.2069,
-   "fpe": 75.0628,
-   "eps": 1.16,
-   "feps": 2.3367,
+   "pe": 123.5211,
+   "fpe": 71.0328,
+   "eps": 1.42,
+   "feps": 2.4693,
    "revTTM": 6155940864,
    "netIncome": 3016691968,
    "shares": 2300713329,
@@ -2033,7 +2031,7 @@
    "ccy": "USD",
    "mcap": 407820369920,
    "pe": 27.9646,
-   "fpe": 26.8721,
+   "fpe": 26.8723,
    "eps": 3.39,
    "feps": 3.5278,
    "revTTM": 51053998080,
@@ -2118,13 +2116,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 122.3725,
-   "shares": 572600000,
-   "divYield": 2.585,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2176,54 +2169,162 @@
  ],
  "news": [
   {
-   "h": "CVS Health moves to dismantle $117bn healthcare empire",
-   "w": "Potential spin-off of drugstore business comes as political pressure mounts on pharmacy benefit managers and health insurers",
+   "h": "Strand bookstore to pay nearly $1.5 million over Covid loan tied to Sen. Wyden's wife",
+   "w": "Nancy Bass Wyden, whose grandfather founded the New York City bookstore, had signed off on the PPP, which was off-limits because she is a senator's wife.",
    "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-03T22:33:06Z",
-   "url": "https://www.ft.com/content/2478a5ea-263a-4f4f-ac96-7d619fb39bb8?syn-25a6b1a6=1",
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-03T23:28:01Z",
+   "url": "https://www.cnbc.com/2026/11/03/strand-bookstore-ppp-loan-ron-wyden-wife-settlement.html"
+  },
+  {
+   "h": "Trump DOJ sends target letters to Democrats in Alaska Senate criminal probe: Reports",
+   "w": "\"There's no doubt that the threats are threats to our democracy,\" said John Cusick, assistant counsel at the Legal Defense Fund.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-03T23:26:39Z",
+   "url": "https://www.cnbc.com/2026/11/03/trump-doj-election-lawsuits-monitors-2026-midterms.html"
+  },
+  {
+   "h": "Six European nations threaten to boycott Russia in ice hockey world championships",
+   "w": "Finland, Norway and Sweden among those refusing to play Russian team after court ruled it must be allowed to compete in next year’s tournament",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-03T23:20:32Z",
+   "url": "https://www.ft.com/content/da34f13c-e138-4f08-b9af-ddfcaad791bf?syn-25a6b1a6=1",
    "mine": 1
   },
   {
-   "h": "Americans vote in election that doubles as referendum on Trump’s presidency",
-   "w": "Republicans battle to retain majorities in Senate and House of Representatives",
+   "h": "First polls close in high-stakes vote for control of US Congress",
+   "w": "Republicans and Democrats in battle for Senate and House of Representatives",
    "syms": [],
    "src": "myFT — world",
-   "ts": "2026-11-03T22:31:18Z",
+   "ts": "2026-11-03T23:16:01Z",
    "url": "https://www.ft.com/content/77c2eaca-4fe1-4c69-b3bd-c517b045ff37?syn-25a6b1a6=1",
    "mine": 1
   },
   {
-   "h": "Les actionnaires de Finward Bancorp approuvent la fusion avec First Financial Bancorp",
+   "h": "Transcript d’appel aux résultats : Phoenix Education rate le BPA du T4, l’action chute",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-03T22:27:23Z",
-   "url": "https://fr.investing.com/news/sec-filings/les-actionnaires-de-finward-bancorp-approuvent-la-fusion-avec-first-financial-bancorp-93CH-3673008"
+   "ts": "2026-11-03T23:11:57Z",
+   "url": "https://fr.investing.com/news/transcripts/transcript-dappel-aux-resultats--phoenix-education-rate-le-bpa-du-t4-laction-chute-93CH-3673083"
   },
   {
-   "h": "Latham Group dépasse les préventes du T3, l’action progresse après clôture",
+   "h": "Huron Consulting dépasse les prévisions du T3 2026, le titre recule",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-03T22:27:03Z",
-   "url": "https://fr.investing.com/news/transcripts/latham-group-depasse-les-preventes-du-t3-laction-progresse-apres-cloture-93CH-3673007"
+   "ts": "2026-11-03T23:10:16Z",
+   "url": "https://fr.investing.com/news/transcripts/huron-consulting-depasse-les-previsions-du-t3-2026-le-titre-recule-93CH-3673082"
   },
   {
-   "h": "Marqeta dépasse les prévisions de BPA au T3 2026, mais l’action recule",
+   "h": "Redwood Trust manque les prévisions du T3 2026, l’action chute",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-03T22:26:38Z",
-   "url": "https://fr.investing.com/news/transcripts/marqeta-depasse-les-previsions-de-bpa-au-t3-2026-mais-laction-recule-93CH-3673006"
+   "ts": "2026-11-03T23:10:09Z",
+   "url": "https://fr.investing.com/news/transcripts/redwood-trust-manque-les-previsions-du-t3-2026-laction-chute-93CH-3673080"
   },
   {
-   "h": "Transcript d’appel aux résultats : AtriCure dépasse les prévisions du T3 2026, l’action recule après la clôture",
+   "h": "SSR Mining rate ses estimations du T3 2026 alors que les coûts augmentent",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-03T22:26:23Z",
-   "url": "https://fr.investing.com/news/transcripts/transcript-dappel-aux-resultats--atricure-depasse-les-previsions-du-t3-2026-laction-recule-apres-la-cloture-93CH-3673005"
+   "ts": "2026-11-03T23:08:13Z",
+   "url": "https://fr.investing.com/news/transcripts/ssr-mining-rate-ses-estimations-du-t3-2026-alors-que-les-couts-augmentent-93CH-3673077"
+  },
+  {
+   "h": "Flywire dépasse les attentes du T3 2026, l’action bondit après séance",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-03T23:08:02Z",
+   "url": "https://fr.investing.com/news/transcripts/flywire-depasse-les-attentes-du-t3-2026-laction-bondit-apres-seance-93CH-3673076"
+  },
+  {
+   "h": "Amdocs chute de 44% après des prévisions décevantes liées à un litige avec T-Mobile",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-03T23:07:15Z",
+   "url": "https://fr.investing.com/news/earnings/amdocs-chute-de-44-apres-des-previsions-decevantes-liees-a-un-litige-avec-tmobile-3673079"
+  },
+  {
+   "h": "Compte rendu des résultats d’InnovAge : le T1 2027 dépasse les attentes",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-03T23:06:13Z",
+   "url": "https://fr.investing.com/news/transcripts/compte-rendu-des-resultats-dinnovage--le-t1-2027-depasse-les-attentes-93CH-3673075"
+  },
+  {
+   "h": "Amdocs : des prévisions choc pour 2027 font chuter l’action de 42%",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-03T23:05:54Z",
+   "url": "https://fr.investing.com/news/transcripts/amdocs--des-previsions-choc-pour-2027-font-chuter-laction-de-42-93CH-3673074"
+  },
+  {
+   "h": "AMD stock jumps 8% on earnings as data center revenue nearly doubles",
+   "w": "AMD reported better-than-expected third-quarter results, driven by booming sales of AI chips",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-03T23:04:37Z",
+   "url": "https://www.cnbc.com/2026/11/03/amd-amd-q3-earnings-report-2026-.html"
+  },
+  {
+   "h": "Amwell dépasse les prévisions du T3 2026, l’action monte après clôture",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-03T23:04:20Z",
+   "url": "https://fr.investing.com/news/transcripts/amwell-depasse-les-previsions-du-t3-2026-laction-monte-apres-cloture-93CH-3673073"
+  },
+  {
+   "h": "Le titre des actions Hackett Group grimpe malgré des résultats T3 2026 décevants",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-03T23:04:15Z",
+   "url": "https://fr.investing.com/news/transcripts/le-titre-des-actions-hackett-group-grimpe-malgre-des-resultats-t3-2026-decevants-93CH-3673072"
+  },
+  {
+   "h": "What analysts are telling us while Apple’s stock falls after earnings report",
+   "w": "Shares in Apple declined nearly 2% on Tuesday after investors were left feeling disappointed about the company’s gross margin outlook and slowing services revenue growth.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-03T22:48:00Z",
+   "url": "https://www.marketwatch.com/story/what-analysts-are-saying-as-apples-stock-falls-after-earnings-report-f0afa357?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Shopify’s stock slides after earnings. This is what’s worrying Wall Street.",
+   "w": "The company missed revenue expectations, a tough outcome in today’s less-forgiving tech market.",
+   "syms": [
+    "SPX"
+   ],
+   "src": "MarketWatch",
+   "ts": "2026-11-03T22:45:00Z",
+   "url": "https://www.marketwatch.com/story/shopifys-stock-slides-after-earnings-this-is-whats-worrying-wall-street-e2e8d52b?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Serbia arrests owner of bank linked to Vučić regime",
+   "w": "Alta Bank owner Davor Macura is accused of emptying bank’s vault after election loss of Serbian strongman",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-03T22:35:19Z",
+   "url": "https://www.ft.com/content/af6b1093-0d68-47e6-999e-24b1161cf4ac?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "CVS Health moves to dismantle $117bn healthcare empire",
+   "w": "Potential spin-off of drugstore business comes as political pressure mounts on pharmacy benefit managers and health insurers",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-03T22:33:06Z",
+   "url": "https://www.ft.com/content/2478a5ea-263a-4f4f-ac96-7d619fb39bb8?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "JetBlue raises bag fees for third time in a year as fuel costs bite",
@@ -2232,54 +2333,6 @@
    "src": "CNBC — Marchés",
    "ts": "2026-11-03T22:26:20Z",
    "url": "https://www.cnbc.com/2026/11/03/jetblue-checked-bag-fee.html"
-  },
-  {
-   "h": "Skyworks chute de 17% après des résultats T4 2026 légèrement supérieurs aux attentes",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-03T22:26:19Z",
-   "url": "https://fr.investing.com/news/transcripts/skyworks-chute-de-17-apres-des-resultats-t4-2026-legerement-superieurs-aux-attentes-93CH-3673004"
-  },
-  {
-   "h": "CeriBell : chiffre d’affaires en hausse de 30% au T3 2026, BPA décevant",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-03T22:25:10Z",
-   "url": "https://fr.investing.com/news/transcripts/ceribell--chiffre-daffaires-en-hausse-de-30-au-t3-2026-bpa-decevant-93CH-3673003"
-  },
-  {
-   "h": "Le BPA de Trivago a manqué les attentes de 0,03€, le CA a surpassé les prévisions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-03T22:25:06Z",
-   "url": "https://fr.investing.com/news/earnings/le-bpa-de-trivago-a-manque-les-attentes-de-003-le-ca--a-surpasse-les-previsions-3673002"
-  },
-  {
-   "h": "Le BPA de EchoStar a dépassé les attentes de 7,80$, le CA en dessous des prévisions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-03T22:25:05Z",
-   "url": "https://fr.investing.com/news/earnings/le-bpa-de-echostar-a-depasse-les-attentes-de-780-le-ca--en-dessous-des-previsions-3673001"
-  },
-  {
-   "h": "Le BPA de Cricut a dépassé les attentes de 0,08$, le CA a surpassé les prévisions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-03T22:25:02Z",
-   "url": "https://fr.investing.com/news/earnings/le-bpa-de-cricut-a-depasse-les-attentes-de-008-le-ca--a-surpasse-les-previsions-3673000"
-  },
-  {
-   "h": "Mirum relève ses prévisions de ventes 2026 après un solide T3",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-03T22:24:21Z",
-   "url": "https://fr.investing.com/news/transcripts/mirum-releve-ses-previsions-de-ventes-2026-apres-un-solide-t3-93CH-3672999"
   },
   {
    "h": "Will midterm results deliver victory for Democrats?",
@@ -2291,20 +2344,23 @@
    "mine": 1
   },
   {
-   "h": "AMD stock jumps 8% on earnings as data center revenue nearly doubles",
-   "w": "AMD reported better-than-expected third-quarter results, driven by booming sales of AI chips",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-03T22:10:55Z",
-   "url": "https://www.cnbc.com/2026/11/03/amd-amd-q3-earnings-report-2026-.html"
-  },
-  {
    "h": "AI’s control over the bond market is growing — even rivaling war and elections",
    "w": "“Hyperscalers” burned through their cash. Now their bond deals are helping fuel the economy.",
    "syms": [],
    "src": "MarketWatch",
    "ts": "2026-11-03T22:06:00Z",
    "url": "https://www.marketwatch.com/story/ais-control-over-the-bond-market-is-growing-even-rivaling-war-and-elections-5d727b35?mod=mw_rss_topstories"
+  },
+  {
+   "h": "FirstFT: US voters cast midterm verdict on Trump",
+   "w": "Also in today’s newsletter: Nvidia orders data centre clients to reduce China exposure and former Weil partners lawyer up",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "myFT — technology",
+   "ts": "2026-11-03T21:57:11Z",
+   "url": "https://www.ft.com/content/3729c7ee-80bc-4ea5-949b-78b017f498e4?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "S&P 500 is looking over the edge of a technical cliff — what happens if it falls off?",
@@ -2386,14 +2442,6 @@
    "url": "https://www.bbc.co.uk/news/articles/cmp3grwre9xdo?at_medium=RSS&at_campaign=rss"
   },
   {
-   "h": "Fannie Mae, Freddie Mac rally as Ackman presses for conservatorship exit",
-   "w": "The midterm elections could be a turning point for the release of Fannie Mae and Freddie Mac from government control, according to Bill Ackman.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-03T20:52:14Z",
-   "url": "https://www.cnbc.com/2026/11/03/ackman-fannie-mae-freddie-mac-conservatorship.html"
-  },
-  {
    "h": "China’s AI stock-market struggles are a warning",
    "w": "What happens when the supply of new tech catches up with demand?",
    "syms": [],
@@ -2408,6 +2456,14 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-03T20:48:27Z",
    "url": "https://www.lemonde.fr/international/article/2026/11/03/des-syndicats-et-associations-de-sept-pays-europeens-appellent-a-manifester-contre-la-vie-chere-fin-novembre_6805665_3210.html"
+  },
+  {
+   "h": "Eaton's strong quarter should mark a bottom for shares of the AI buildout winner",
+   "w": "The stock has struggled in recent months.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-03T20:46:59Z",
+   "url": "https://www.cnbc.com/investingclub/2026/11/03/eatons-strong-quarter-should-mark-a-bottom-for-shares-of-the-ai-buildout-winner.html"
   },
   {
    "h": "The internet is ‘dying’: AI is eating it and obliterating these business models",
@@ -2432,14 +2488,6 @@
    "src": "CNBC — Marchés",
    "ts": "2026-11-03T20:40:51Z",
    "url": "https://www.cnbc.com/2026/11/03/amd-has-been-crushed-into-earnings-heres-one-way-to-trade-it.html"
-  },
-  {
-   "h": "Trump DOJ sends target letters to Democrats in Alaska Senate criminal probe: Reports",
-   "w": "\"There's no doubt that the threats are threats to our democracy,\" said John Cusick, assistant counsel at the Legal Defense Fund.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-03T20:33:31Z",
-   "url": "https://www.cnbc.com/2026/11/03/trump-doj-election-lawsuits-monitors-2026-midterms.html"
   },
   {
    "h": "CrowdStrike launches AI kill switch that it says can stop internal agents that go rogue",
@@ -2511,23 +2559,6 @@
    "url": "https://www.cnbc.com/2026/11/03/chris-murphy-hospitalized-stroke.html"
   },
   {
-   "h": "Six European nations threaten to boycott Russia in ice hockey world championships",
-   "w": "Finland, Norway and Sweden among those refusing to play Russian team after court ruled it must be allowed to compete in next year’s tournament",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-03T19:26:44Z",
-   "url": "https://www.ft.com/content/da34f13c-e138-4f08-b9af-ddfcaad791bf?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Medicare prescription drug costs will jump 50% in 2027. Doing nothing could cost you.",
-   "w": "Don’t sit on the sidelines during open enrollment.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-03T19:23:00Z",
-   "url": "https://www.marketwatch.com/story/medicare-prescription-drug-costs-will-jump-50-in-2027-doing-nothing-could-cost-you-b701dfb7?mod=mw_rss_topstories"
-  },
-  {
    "h": "Northern Ireland’s biggest pro-UK party damaged by Drumcree parade fallout",
    "w": "DUP’s support for Protestant Orange Order march through Catholic area backfires after its most popular MP quits",
    "syms": [],
@@ -2551,14 +2582,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-03T19:00:05Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/03/presomption-de-salariat-revenu-minimum-transparence-des-algorithmes-les-propositions-de-la-mission-sur-les-travailleurs-de-plateformes_6805652_3234.html"
-  },
-  {
-   "h": "My wife and I have no kids and a 99% chance of outliving our life savings. Why not spend it all?",
-   "w": "“I’m 68, she’s 74, and we’re both in good health.”",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-03T19:00:00Z",
-   "url": "https://www.marketwatch.com/story/fancy-cars-hold-no-appeal-my-wife-and-i-have-a-99-chance-of-outliving-our-savings-why-dont-we-spend-it-all-932a2166?mod=mw_rss_topstories"
   },
   {
    "h": "How Pennsylvania’s bellwether city could decide the US midterms",
@@ -2587,14 +2610,6 @@
    "src": "CNBC — Marchés",
    "ts": "2026-11-03T18:40:37Z",
    "url": "https://www.cnbc.com/2026/11/03/binance-co-ceo-teng-says-hackers-used-fake-job-interviews-to-steal-6point3-billion-in-crypto.html"
-  },
-  {
-   "h": "Meta seeks to raise up to $25 billion in debt sale as AI spending jumps",
-   "w": "Meta is aiming to raise between $20 billion and $25 billion in a bond sale as the company ramps up spending on infrastructure and AI models and services.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-03T18:33:49Z",
-   "url": "https://www.cnbc.com/2026/11/03/meta-bond-sale-ai-funding.html"
   },
   {
    "h": "Former Weil partners lawyer up over firm’s wind-down",
@@ -2685,6 +2700,46 @@
    "url": "https://www.lemonde.fr/economie/article/2026/11/03/petition-pour-interdire-cnews-l-assemblee-nationale-votera-en-commission-sur-l-opportunite-d-un-debat_6805641_3234.html"
   },
   {
+   "h": "US midterms live: First polls close in battle for Congress",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-03T17:34:09.230286Z",
+   "url": "https://asia.nikkei.com/politics/u.s.-midterm-elections/us-midterms-live-first-polls-close-in-battle-for-congress"
+  },
+  {
+   "h": "The best is yet to come: Asia's chance to reimagine AI",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-03T17:34:09.230286Z",
+   "url": "https://asia.nikkei.com/opinion/the-best-is-yet-to-come-asia-s-chance-to-reimagine-ai"
+  },
+  {
+   "h": "US tech giants' hidden AI debt swells 90% to $3.2tn in 6 months",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-03T17:34:09.230286Z",
+   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/us-tech-giants-hidden-ai-debt-swells-90-to-3.2tn-in-6-months"
+  },
+  {
+   "h": "China's cable-cutting threat reaches Taiwan and the Philippines",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-03T17:34:09.230286Z",
+   "url": "https://asia.nikkei.com/opinion/china-s-cable-cutting-threat-reaches-taiwan-and-the-philippines"
+  },
+  {
+   "h": "Vienna entrepreneur takes leaders on lux train to China to foster ties",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-03T17:34:09.230286Z",
+   "url": "https://asia.nikkei.com/politics/vienna-entrepreneur-takes-leaders-on-lux-train-to-china-to-foster-ties"
+  },
+  {
    "h": "MPs summon Poundland’s owner to select committee grilling",
    "w": "Executives at Gordon Brothers will be asked to explain how discount retailer arrived at brink of collapse",
    "syms": [],
@@ -2761,7 +2816,7 @@
    "h": "Heat returns to US labour market in latest official turnover figures",
    "w": "Job opening and quits rates both rose in September and support the Fed’s narrative of a resilient labour market",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-03T16:40:12Z",
    "url": "https://www.ft.com/content/44e578ac-e2e5-43b4-946d-06ebb82d27e6",
    "mine": 1
@@ -2811,7 +2866,7 @@
    "w": "Les résidents de l’« Odyssey », qui sillonnaient les mers depuis 2024, ont vu leur périple s’achever en raison de la flambée du prix des carburants.",
    "syms": [],
    "src": "Le Monde — Économie",
-   "ts": "2026-11-03T16:30:15Z",
+   "ts": "2026-11-03T16:30:06Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/03/une-croisiere-sans-fin-s-arrete-brutalement-au-cambodge-200-passagers-debarques_6805626_3234.html"
   },
   {
@@ -2841,14 +2896,6 @@
    "url": "https://www.lemonde.fr/economie/article/2026/11/03/livret-a-sebastien-lecornu-annonce-un-relevement-du-plafond-entre-25-000-et-30-000-euros-en-fevrier_6805615_3234.html"
   },
   {
-   "h": "US midterms live: Asia braces for renewed Trump tariff push",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-03T15:38:23.516822Z",
-   "url": "https://asia.nikkei.com/politics/u.s.-midterm-elections/us-midterms-live-asia-braces-for-renewed-trump-tariff-push"
-  },
-  {
    "h": "Nidec's rise and fall fuels calls for sweeping overhaul of Japanese company",
    "w": "",
    "syms": [],
@@ -2863,22 +2910,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-03T15:38:23.516822Z",
    "url": "https://asia.nikkei.com/politics/international-relations/apec-host-china-to-keep-cars-off-street-close-schools-during-shenzhen-summit"
-  },
-  {
-   "h": "Japan's Yamato targets 'leaner' delivery service in push for profit: president",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-03T15:38:23.516822Z",
-   "url": "https://asia.nikkei.com/editor-s-picks/interview/japan-s-yamato-targets-leaner-delivery-service-in-push-for-profit-president"
-  },
-  {
-   "h": "New MUFG digital bank to forgo ATM cards in cybercrime safeguard",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-03T15:38:23.516822Z",
-   "url": "https://asia.nikkei.com/business/finance/new-mufg-digital-bank-to-forgo-atm-cards-in-cybercrime-safeguard"
   },
   {
    "h": "Trump says US will end military aid to Israel by end of the year",
@@ -2917,14 +2948,6 @@
    "url": "https://www.bbc.co.uk/news/articles/c6vg0xzd0ln4o?at_medium=RSS&at_campaign=rss"
   },
   {
-   "h": "Mining giant joins fight to stop killer toad march across Australia",
-   "w": "Rio Tinto is jointly funding a A$28m \"toad containment zoe\" to protect the Pilbara region.",
-   "syms": [],
-   "src": "BBC — Business",
-   "ts": "2026-11-03T15:05:01Z",
-   "url": "https://www.bbc.co.uk/news/articles/c3dxw8p99ervo?at_medium=RSS&at_campaign=rss"
-  },
-  {
    "h": "‘The new frontier of finance is built in the United States of America’",
    "w": "Perp talk",
    "syms": [],
@@ -2961,14 +2984,6 @@
    "ts": "2026-11-03T14:46:20Z",
    "url": "https://www.ft.com/content/ebeaca62-8958-459a-be9d-d3d39e441a53?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Japan regional banks form united front on cybersecurity",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-03T14:40:33.640526Z",
-   "url": "https://asia.nikkei.com/spotlight/cybersecurity/japan-regional-banks-form-united-front-on-cybersecurity2"
   },
   {
    "h": "Oil price extends decline to $103",
@@ -3010,30 +3025,12 @@
    "mine": 1
   },
   {
-   "h": "Serbia arrests owner of bank linked to Vučić regime",
-   "w": "Alta Bank owner Davor Macura is accused of emptying bank’s vault after election loss of Serbian strongman",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-03T13:33:44Z",
-   "url": "https://www.ft.com/content/af6b1093-0d68-47e6-999e-24b1161cf4ac?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Pfizer predicts higher profits as new drugs offset falling sales of Covid products",
    "w": "Pharma group posts 7% rise in revenue from non-Covid medicines including blockbuster blood thinner",
    "syms": [],
    "src": "myFT — us",
    "ts": "2026-11-03T13:26:29Z",
    "url": "https://www.ft.com/content/405784ae-4bb2-4f7f-ad18-ebb5e7a0eaf1?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "The Season by Helen Garner — playing the game of life",
-   "w": "Following her grandson’s under-16s footy team becomes a quiet, funny and deeply moving reckoning with time for the Baillie Gifford-winning Australian writer",
-   "syms": [],
-   "src": "myFT — asia pacific",
-   "ts": "2026-11-03T13:00:01Z",
-   "url": "https://www.ft.com/content/358d949c-0105-4bb4-a92d-5b74fba07bc0",
    "mine": 1
   }
  ],
