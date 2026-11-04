@@ -96,11 +96,19 @@ jobs:
           EOF
           git config user.name  "terminal-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for f in data.json universe.json constituents.json macro.json fundamentals.json economics.json peers.json financials.json options.json curves.json ft.json status.json; do [ -f "$f" ] && git add "$f"; done
-          git diff --staged --quiet || git commit -m "Données $(date -u +'%Y-%m-%d %H:%M') UTC"
-          # Si un autre passage a publié entre-temps, on garde nos fichiers (les plus récents) et on réessaie.
-          for i in 1 2 3; do
-            git pull --rebase -X theirs --autostash && git push && exit 0
-            git rebase --abort 2>/dev/null; sleep 5
+          FILES="data.json universe.json constituents.json macro.json fundamentals.json economics.json peers.json financials.json options.json curves.json ft.json status.json"
+          # Copie de nos fichiers, puis publication sur la toute dernière version de main.
+          # (L'ancienne boucle « git rebase --abort » renvoyait le code 128 quand aucun rebase n'était
+          # en cours, ce qui faisait échouer tout le passage.)
+          mkdir -p "$RUNNER_TEMP/out"
+          for f in $FILES; do [ -f "$f" ] && cp "$f" "$RUNNER_TEMP/out/"; done
+          for i in 1 2 3 4; do
+            if git fetch origin main && git reset --hard origin/main; then
+              cp "$RUNNER_TEMP"/out/* . 2>/dev/null || true
+              for f in $FILES; do [ -f "$f" ] && git add "$f"; done
+              if git diff --staged --quiet; then echo "Rien de nouveau à publier"; exit 0; fi
+              git commit -m "Données $(date -u +'%Y-%m-%d %H:%M') UTC" && git push origin HEAD:main && exit 0
+            fi
+            echo "Publication refusée (tentative $i), nouvel essai…"; sleep $((i * 5))
           done
           exit 1
