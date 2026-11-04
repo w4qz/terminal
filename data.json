@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-04T11:13:12.528348Z",
+ "generated_at": "2026-11-04T11:51:47.657641Z",
  "quotes": {
   "NVDA": {
    "p": 206.57,
@@ -224,13 +224,13 @@
    ]
   },
   "VIX": {
-   "p": 18.28,
+   "p": 18.26,
    "prev": 20.83,
-   "chg": -2.55,
-   "pct": -12.24,
+   "chg": -2.57,
+   "pct": -12.34,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^VIX)",
-   "ts": "2026-11-04T11:00:00Z",
+   "ts": "2026-11-04T11:45:00Z",
    "open": 19.2,
    "lo": 18.06,
    "hi": 19.22,
@@ -256,7 +256,7 @@
     19.42,
     21.15,
     20.83,
-    18.28
+    18.26
    ]
   },
   "N225": {
@@ -264,8 +264,8 @@
    "prev": 63081.8594,
    "chg": -1060.5312,
    "pct": -1.68,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^N225)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^N225) — échec de la dernière mise à jour",
    "ts": "2026-11-04T06:30:00Z",
    "open": 62973.1602,
    "lo": 60030.1016,
@@ -402,16 +402,16 @@
    ]
   },
   "UKX": {
-   "p": 10756.5195,
+   "p": 10767.25,
    "prev": 10638.4004,
-   "chg": 118.1191,
-   "pct": 1.11,
+   "chg": 128.8496,
+   "pct": 1.21,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^FTSE)",
-   "ts": "2026-11-04T11:00:00Z",
+   "ts": "2026-11-04T11:45:00Z",
    "open": 10637.2803,
    "lo": 10631.96,
-   "hi": 10757.4805,
+   "hi": 10769.9004,
    "h": [
     10541.7,
     10458.5,
@@ -434,20 +434,20 @@
     10729.8,
     10761.3,
     10638.4,
-    10756.52
+    10767.25
    ]
   },
   "DAX": {
-   "p": 26241.0098,
+   "p": 26251.1504,
    "prev": 25864.6191,
-   "chg": 376.3906,
-   "pct": 1.46,
+   "chg": 386.5312,
+   "pct": 1.49,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^GDAXI)",
-   "ts": "2026-11-04T11:00:00Z",
+   "ts": "2026-11-04T11:45:00Z",
    "open": 25888.9297,
    "lo": 25876.8203,
-   "hi": 26252.0801,
+   "hi": 26269.1504,
    "h": [
     25449.19,
     25104.36,
@@ -470,20 +470,20 @@
     25818.21,
     25981.09,
     25864.62,
-    26241.01
+    26251.15
    ]
   },
   "CAC": {
-   "p": 8141.0801,
+   "p": 8142.0498,
    "prev": 8020.3101,
-   "chg": 120.77,
-   "pct": 1.51,
+   "chg": 121.7397,
+   "pct": 1.52,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^FCHI)",
-   "ts": "2026-11-04T11:00:00Z",
+   "ts": "2026-11-04T11:45:00Z",
    "open": 8034.5298,
    "lo": 8030.6899,
-   "hi": 8144.21,
+   "hi": 8145.1401,
    "h": [
     7865.07,
     7769.21,
@@ -506,20 +506,20 @@
     7969.42,
     8047.69,
     8020.31,
-    8141.08
+    8142.05
    ]
   },
   "SX5E": {
-   "p": 6252.6201,
+   "p": 6257.48,
    "prev": 6144.5601,
-   "chg": 108.0601,
-   "pct": 1.76,
+   "chg": 112.9199,
+   "pct": 1.84,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^STOXX50E)",
-   "ts": "2026-11-04T11:00:00Z",
+   "ts": "2026-11-04T11:45:00Z",
    "open": 6147.1001,
    "lo": 6147.1001,
-   "hi": 6255.1099,
+   "hi": 6260.73,
    "h": [
     6272.23,
     6180.29,
@@ -542,17 +542,17 @@
     6131.31,
     6176.06,
     6144.56,
-    6252.62
+    6257.48
    ]
   },
   "EURUSD": {
-   "p": 1.1242,
+   "p": 1.1259,
    "prev": 1.1192,
-   "chg": 0.005,
-   "pct": 0.45,
+   "chg": 0.0067,
+   "pct": 0.6,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (EURUSD=X)",
-   "ts": "2026-11-04T11:13:12.528348Z",
+   "ts": "2026-11-04T11:51:47.657641Z",
    "open": 1.1192,
    "lo": 1.1189,
    "hi": 1.1266,
@@ -578,17 +578,17 @@
     1.118281,
     1.115685,
     1.119207,
-    1.124227
+    1.125873
    ]
   },
   "USDJPY": {
-   "p": 158.562,
+   "p": 158.413,
    "prev": 157.915,
-   "chg": 0.647,
-   "pct": 0.41,
+   "chg": 0.498,
+   "pct": 0.32,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (JPY=X)",
-   "ts": "2026-11-04T11:13:12.528348Z",
+   "ts": "2026-11-04T11:51:47.657641Z",
    "open": 158.624,
    "lo": 157.38,
    "hi": 158.746,
@@ -614,17 +614,17 @@
     157.8,
     157.68,
     157.91,
-    158.56
+    158.41
    ]
   },
   "GBPUSD": {
-   "p": 1.3473,
+   "p": 1.3488,
    "prev": 1.341,
-   "chg": 0.0063,
-   "pct": 0.47,
+   "chg": 0.0078,
+   "pct": 0.58,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
-   "ts": "2026-11-04T11:13:12.528348Z",
+   "ts": "2026-11-04T11:51:47.657641Z",
    "open": 1.3412,
    "lo": 1.3409,
    "hi": 1.3499,
@@ -650,17 +650,17 @@
     1.337864,
     1.338563,
     1.340986,
-    1.347328
+    1.348763
    ]
   },
   "DXY": {
-   "p": 101.444,
+   "p": 101.433,
    "prev": 101.87,
-   "chg": -0.426,
-   "pct": -0.42,
+   "chg": -0.437,
+   "pct": -0.43,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (DX-Y.NYB)",
-   "ts": "2026-11-04T11:13:12.528348Z",
+   "ts": "2026-11-04T11:45:00Z",
    "open": 101.734,
    "lo": 101.245,
    "hi": 101.698,
@@ -686,21 +686,21 @@
     101.88,
     101.75,
     101.87,
-    101.44
+    101.43
    ]
   },
   "XAU": {
-   "p": 4052.5,
+   "p": 4054.3999,
    "prev": 3940.3999,
-   "chg": 112.1001,
-   "pct": 2.84,
+   "chg": 114.0,
+   "pct": 2.89,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GC=F)",
-   "ts": "2026-11-04T11:13:12.528348Z",
+   "ts": "2026-11-04T11:45:00Z",
    "open": 3940.8,
    "lo": 3928.2,
-   "hi": 4060.0,
-   "vol": 107584,
+   "hi": 4058.7,
+   "vol": 109846,
    "h": [
     4187.1,
     4140.7,
@@ -723,21 +723,21 @@
     3898.9,
     3969.6,
     3940.4,
-    4052.6
+    4054.4
    ]
   },
   "CL": {
-   "p": 95.47,
+   "p": 95.25,
    "prev": 96.09,
-   "chg": -0.62,
-   "pct": -0.65,
+   "chg": -0.84,
+   "pct": -0.87,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (CL=F)",
-   "ts": "2026-11-04T11:13:12.528348Z",
+   "ts": "2026-11-04T11:45:00Z",
    "open": 96.81,
    "lo": 94.6,
    "hi": 97.15,
-   "vol": 80580,
+   "vol": 86838,
    "h": [
     89.44,
     88.28,
@@ -760,21 +760,21 @@
     104.12,
     96.46,
     96.09,
-    95.46
+    95.25
    ]
   },
   "BRENT": {
-   "p": 102.47,
+   "p": 102.33,
    "prev": 103.6,
-   "chg": -1.13,
-   "pct": -1.09,
+   "chg": -1.27,
+   "pct": -1.23,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BZ=F)",
-   "ts": "2026-11-04T11:13:12.528348Z",
+   "ts": "2026-11-04T11:45:00Z",
    "open": 104.37,
-   "lo": 101.57,
+   "lo": 101.54,
    "hi": 104.87,
-   "vol": 13561,
+   "vol": 14972,
    "h": [
     100.58,
     100.2,
@@ -797,21 +797,21 @@
     117.64,
     104.77,
     103.6,
-    102.47
+    102.33
    ]
   },
   "BTC": {
-   "p": 78514.8125,
+   "p": 78545.2891,
    "prev": 77345.0469,
-   "chg": 1169.7656,
-   "pct": 1.51,
+   "chg": 1200.2422,
+   "pct": 1.55,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-04T11:13:12.528348Z",
+   "ts": "2026-11-04T11:51:47.657641Z",
    "open": 77338.2266,
    "lo": 75709.9141,
-   "hi": 78542.1641,
-   "vol": 28408989696,
+   "hi": 78575.7578,
+   "vol": 28592590848,
    "h": [
     81562.49,
     82141.46,
@@ -834,7 +834,7 @@
     78248.45,
     76677.3,
     77345.05,
-    78514.81
+    78545.29
    ]
   }
  },
@@ -931,9 +931,9 @@
    "industry": "Software - Infrastructure",
    "ccy": "USD",
    "mcap": 3868973072384,
-   "pe": 26.4731,
+   "pe": 27.1915,
    "fpe": 21.5469,
-   "eps": 19.68,
+   "eps": 19.16,
    "feps": 24.1793,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
@@ -1131,9 +1131,9 @@
    "sector": "Energy",
    "industry": "Oil & Gas Integrated",
    "ccy": "SAR",
-   "mcap": 6337973977088,
-   "pe": 15.503,
-   "fpe": 15.6886,
+   "mcap": 6333135847424,
+   "pe": 15.4911,
+   "fpe": 15.6766,
    "eps": 1.69,
    "feps": 1.67,
    "revTTM": 1932166955008,
@@ -1141,7 +1141,7 @@
    "shares": 241907400000,
    "beta": -0.022,
    "div": 1.36,
-   "divYield": 5.191,
+   "divYield": 5.195,
    "target": 30.2444,
    "targetHi": 35.0,
    "targetLo": 27.0,
@@ -1255,9 +1255,9 @@
    "industry": "Semiconductors",
    "ccy": "USD",
    "mcap": 1585465786368,
-   "pe": 42.4176,
+   "pe": 41.1561,
    "fpe": 17.0629,
-   "eps": 7.83,
+   "eps": 8.07,
    "feps": 19.4651,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
@@ -1403,7 +1403,7 @@
    "debt": 128598999040,
    "fcf": 71975247872,
    "w52lo": 464.01,
-   "w52hi": 559.5779,
+   "w52hi": 559.58,
    "evEbitda": -1.789,
    "earnTs": 1794085200,
    "earnStart": 1794085200,
@@ -1496,14 +1496,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 990607572992,
-   "pe": 46.2444,
+   "mcap": 993645756416,
+   "pe": 45.2391,
    "fpe": 38.6989,
-   "eps": 2.7,
+   "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.793,
@@ -1687,7 +1687,7 @@
    "cash": 12152999936,
    "debt": 34250000384,
    "fcf": 28896249856,
-   "w52lo": 112.51,
+   "w52lo": 113.64,
    "w52hi": 188.5,
    "evEbitda": 9.541,
    "earnTs": 1793363400,
@@ -1747,9 +1747,9 @@
    "sector": "Technology",
    "industry": "Semiconductor Equipment & Materials",
    "ccy": "EUR",
-   "mcap": 532261896192,
-   "pe": 39.4797,
-   "fpe": 24.471,
+   "mcap": 532878557184,
+   "pe": 39.5254,
+   "fpe": 24.4993,
    "eps": 34.98,
    "feps": 56.4342,
    "revTTM": 39473500160,
@@ -1757,7 +1757,7 @@
    "shares": 385417742,
    "beta": 1.325,
    "div": 7.52,
-   "divYield": 0.545,
+   "divYield": 0.544,
    "target": 2095.9395,
    "targetHi": 2507.0,
    "targetLo": 1288.0,
@@ -1790,9 +1790,9 @@
    "industry": "Credit Services",
    "ccy": "USD",
    "mcap": 563807780864,
-   "pe": 34.4428,
+   "pe": 33.866,
    "fpe": 27.9535,
-   "eps": 18.79,
+   "eps": 19.11,
    "feps": 23.152,
    "revTTM": 36288000000,
    "netIncome": 16958000128,
@@ -1833,9 +1833,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 505395544064,
-   "pe": 49.6528,
+   "pe": 49.1409,
    "fpe": 17.6743,
-   "eps": 5.76,
+   "eps": 5.82,
    "feps": 16.1817,
    "revTTM": 66013999104,
    "netIncome": 10302000128,
@@ -1873,9 +1873,9 @@
    "industry": "Oil & Gas Integrated",
    "ccy": "USD",
    "mcap": 439501783040,
-   "pe": 16.7238,
+   "pe": 16.5396,
    "fpe": 13.7716,
-   "eps": 13.47,
+   "eps": 13.62,
    "feps": 16.3576,
    "revTTM": 226326003712,
    "netIncome": 26976000000,
@@ -1957,9 +1957,9 @@
    "industry": "Software - Infrastructure",
    "ccy": "USD",
    "mcap": 421496422400,
-   "pe": 125.2857,
+   "pe": 123.5211,
    "fpe": 70.7133,
-   "eps": 1.4,
+   "eps": 1.42,
    "feps": 2.4804,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
@@ -2124,13 +2124,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 122.3725,
-   "shares": 572600000,
-   "divYield": 2.585,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2182,6 +2177,164 @@
  ],
  "news": [
   {
+   "h": "CVS to split off drugstore business in major breakup of healthcare giant",
+   "w": "The move would reverse the company's $78 billion acquisition of Aetna, and dismantle the vertically integrated healthcare conglomerate it created in 2018.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-04T11:46:17Z",
+   "url": "https://www.cnbc.com/2026/11/04/cvs-to-split-off-drugstore-business.html"
+  },
+  {
+   "h": "Le BPA de Freshpet Inc a dépassé les attentes de 0,19$, le CA a surpassé les prévisions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-04T11:40:52Z",
+   "url": "https://fr.investing.com/news/earnings/le-bpa-de-freshpet-inc-a-depasse-les-attentes-de-019-le-ca--a-surpasse-les-previsions-3674382"
+  },
+  {
+   "h": "Eagle Materials dépasse les attentes de chiffre d’affaires mais déçoit sur les bénéfices",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-04T11:39:45Z",
+   "url": "https://fr.investing.com/news/earnings/eagle-materials-depasse-les-attentes-de-chiffre-daffaires-mais-decoit-sur-les-benefices-93CH-3674380"
+  },
+  {
+   "h": "L’action AdvanSix chute de 2 % après des résultats trimestriels décevants",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-04T11:39:42Z",
+   "url": "https://fr.investing.com/news/earnings/laction-advansix-chute-de-2--apres-des-resultats-trimestriels-decevants-93CH-3674378"
+  },
+  {
+   "h": "ESAB abaisse ses prévisions annuelles malgré un chiffre d’affaires trimestriel supérieur aux attentes",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-04T11:38:36Z",
+   "url": "https://fr.investing.com/news/earnings/esab-abaisse-ses-previsions-annuelles-malgre-un-chiffre-daffaires-trimestriel-superieur-aux-attentes-93CH-3674376"
+  },
+  {
+   "h": "Barclays soutient Technoprobe face à la demande croissante pour les tests de puces IA",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-04T11:37:39Z",
+   "url": "https://fr.investing.com/news/stock-market-news/barclays-soutient-technoprobe-face-a-la-demande-croissante-pour-les-tests-de-puces-ia-3674377"
+  },
+  {
+   "h": "Stocks rebound after Democrats’ sweep",
+   "w": "US futures reverse early losses as analysts say divided government reduces policymaking risks",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-04T11:37:26Z",
+   "url": "https://www.ft.com/content/a0b18705-3bd8-4886-992c-b6062fdec6ea?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Le BPA de CVS Health Corp a dépassé les attentes de 0,44$, le CA a surpassé les prévisions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-04T11:37:22Z",
+   "url": "https://fr.investing.com/news/earnings/le-bpa-de-cvs-health-corp-a-depasse-les-attentes-de-044-le-ca--a-surpasse-les-previsions-3674367"
+  },
+  {
+   "h": "Valens Semiconductor lance un chipset d’extension USB3 basse consommation",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-04T11:37:19Z",
+   "url": "https://fr.investing.com/news/company-news/valens-semiconductor-lance-un-chipset-dextension-usb3-basse-consommation-93CH-3674366"
+  },
+  {
+   "h": "Uproar over missing 'pop' as Rice Krispies changes its recipe",
+   "w": "The new recipes mean cereal packaging will now include a 'contains wheat gluten' warning.",
+   "syms": [],
+   "src": "BBC — Business",
+   "ts": "2026-11-04T11:36:44Z",
+   "url": "https://www.bbc.co.uk/news/articles/cqvg0y44ym7vo?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "Wells Fargo abaisse son objectif de cours sur Booking Holdings",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-04T11:36:27Z",
+   "url": "https://fr.investing.com/news/analyst-ratings/wells-fargo-abaisse-son-objectif-de-cours-sur-booking-holdings-93CH-3674365"
+  },
+  {
+   "h": "Raymond James relève son objectif de cours sur Mirum Pharmaceuticals",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-04T11:36:06Z",
+   "url": "https://fr.investing.com/news/analyst-ratings/raymond-james-releve-son-objectif-de-cours-sur-mirum-pharmaceuticals-93CH-3674364"
+  },
+  {
+   "h": "Wells Fargo abaisse son objectif de cours sur Nurix après l’arrêt d’un essai",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-04T11:36:05Z",
+   "url": "https://fr.investing.com/news/analyst-ratings/wells-fargo-abaisse-son-objectif-de-cours-sur-nurix-apres-larret-dun-essai-93CH-3674363"
+  },
+  {
+   "h": "SpaceX, Tesla fall over 4% on Democrats' big win; AI stocks mixed",
+   "w": "AI fortunes were mixed as premarket trading opened on Wednesday.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-04T11:35:52Z",
+   "url": "https://www.cnbc.com/2026/11/04/ai-stocks-texas-governor-data-centers.html"
+  },
+  {
+   "h": "Service public : « Ce qui est économisé aujourd’hui peut coûter davantage demain, ou simplement déplacer la dépense »",
+   "w": "A la veille d’une mobilisation intersyndicale, prévue le 5 novembre, les professeurs en gestion des ressources humaines Caroline Manville et Karim Mignonac appellent, dans une tribune au « Monde », à intégrer les fonctionnaires aux recherches d’économies.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-04T11:30:10Z",
+   "url": "https://www.lemonde.fr/idees/article/2026/11/04/service-public-ce-qui-est-economise-aujourd-hui-peut-couter-davantage-demain-ou-simplement-deplacer-la-depense_6806216_3232.html"
+  },
+  {
+   "h": "October inflation in the Eurozone keeps ECB on course for another tightening",
+   "w": "Headline price pressures accelerate and core inflation remains well above the ECB’s 2% target",
+   "syms": [
+    "EURUSD"
+   ],
+   "src": "myFT — world",
+   "ts": "2026-11-04T11:25:47Z",
+   "url": "https://www.ft.com/content/a3da6c3a-4ab3-413c-bbeb-490d7cde34dc",
+   "mine": 1
+  },
+  {
+   "h": "What Trump losing power over Congress means for Iran, Ukraine and foreign policy",
+   "w": "Democratic control of Congress could bring greater scrutiny of Trump’s handling of the Iran and Ukraine wars, while leaving him broad foreign-policy powers.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-04T11:20:46Z",
+   "url": "https://www.cnbc.com/2026/11/04/democrats-congress-trump-foreign-policy.html"
+  },
+  {
+   "h": "Live coverage: Trump admits Iran war a factor as Republicans routed",
+   "w": "President’s party defeated in battleground races from Kansas to South Carolina",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-04T11:18:44Z",
+   "url": "https://www.ft.com/content/77c2eaca-4fe1-4c69-b3bd-c517b045ff37?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Gibson Dunn in talks to hire 120 lawyers from Weil as firm dissolves",
+   "w": "Move follows unravelling of near-century-old law firm following talent exodus",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-04T11:14:04Z",
+   "url": "https://www.ft.com/content/29522c80-74f7-4f78-b699-39b761d1c081?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "The AI trade has been ‘sold to death’ but Goldman strategist highlights silver lining from Democratic sweep",
    "w": "Corporate decision makers may decide to accelerate their plans to expand compute capacity and take advantage of the status quo rather than risk a new administration and different rules in 2029",
    "syms": [],
@@ -2193,91 +2346,10 @@
    "h": "Republicans turn on each other after disastrous midterms",
    "w": "GOP figures lash out at Donald Trump, his candidates and his staff over Iran war, cost of living and corruption allegations",
    "syms": [],
-   "src": "myFT — us",
+   "src": "myFT — world",
    "ts": "2026-11-04T11:00:10Z",
    "url": "https://www.ft.com/content/83a46027-3cde-41fa-8c55-405f40c6fa82?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "What Trump losing power over Congress means for Iran, Ukraine and foreign policy",
-   "w": "Democratic control of Congress could bring greater scrutiny of Trump’s handling of the Iran and Ukraine wars, while leaving him broad foreign-policy powers.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-04T10:54:32Z",
-   "url": "https://www.cnbc.com/2026/11/04/democrats-congress-trump-foreign-policy.html"
-  },
-  {
-   "h": "L’action CVS Health conserve sa note d’achat chez TD Cowen",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-04T10:50:13Z",
-   "url": "https://fr.investing.com/news/analyst-ratings/laction-cvs-health-conserve-sa-note-dachat-chez-td-cowen-93CH-3674096"
-  },
-  {
-   "h": "Pourquoi l’action CVS Health recule-t-elle aujourd’hui ?",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-04T10:50:08Z",
-   "url": "https://fr.investing.com/news/stock-market-news/pourquoi-laction-cvs-health-reculetelle-aujourdhui--93CH-3674095"
-  },
-  {
-   "h": "Raymond James réitère sa recommandation sur CVS Health avant les résultats",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-04T10:50:05Z",
-   "url": "https://fr.investing.com/news/analyst-ratings/raymond-james-reitere-sa-recommandation-sur-cvs-health-avant-les-resultats-93CH-3674092"
-  },
-  {
-   "h": "Evercore ISI maintient sa note sur CVS Health malgré des rumeurs de scission",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-04T10:50:05Z",
-   "url": "https://fr.investing.com/news/analyst-ratings/evercore-isi-maintient-sa-note-sur-cvs-health-malgre-des-rumeurs-de-scission-93CH-3674093"
-  },
-  {
-   "h": "Live coverage: Trump admits Iran war a factor as Republicans routed",
-   "w": "President’s party defeated in battleground races from Kansas to South Carolina",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-04T10:50:02Z",
-   "url": "https://www.ft.com/content/77c2eaca-4fe1-4c69-b3bd-c517b045ff37?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "BTIG relève l’objectif de cours de ONE Gas à 95$ sur les perspectives de croissance",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-04T10:50:01Z",
-   "url": "https://fr.investing.com/news/analyst-ratings/btig-releve-lobjectif-de-cours-de-one-gas-a-95-sur-les-perspectives-de-croissance-93CH-3674090"
-  },
-  {
-   "h": "Mizuho réitère sa recommandation sur CVS Health en pleine rumeur de scission",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-04T10:50:00Z",
-   "url": "https://fr.investing.com/news/analyst-ratings/mizuho-reitere-sa-recommandation-sur-cvs-health-en-pleine-rumeur-de-scission-93CH-3674089"
-  },
-  {
-   "h": "BTIG relève l’objectif de cours de Flywire à 22$ sur de solides résultats",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-04T10:49:52Z",
-   "url": "https://fr.investing.com/news/analyst-ratings/btig-releve-lobjectif-de-cours-de-flywire-a-22-sur-de-solides-resultats-93CH-3674086"
-  },
-  {
-   "h": "Coca-Cola HBC relève ses prévisions de croissance pour 2026 après un T3 solide",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-04T10:49:25Z",
-   "url": "https://fr.investing.com/news/stock-market-news/cocacola-hbc-releve-ses-previsions-de-croissance-pour-2026-apres-un-t3-solide-93CH-3674085"
   },
   {
    "h": "Europe hails Democrats’ US midterm victory as a rebuke of Trumpism",
@@ -2289,46 +2361,12 @@
    "mine": 1
   },
   {
-   "h": "Pourquoi le titre Avon Technologies recule-t-il aujourd’hui ?",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-04T10:47:48Z",
-   "url": "https://fr.investing.com/news/stock-market-news/pourquoi-le-titre-avon-technologies-reculetil-aujourdhui--93CH-3674083"
-  },
-  {
-   "h": "Euro zone inflation hits 4% for first time in three years as interest rate hike looms",
-   "w": "It was driven by energy inflation, which surged above 20% in October.",
-   "syms": [
-    "EURUSD"
-   ],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-04T10:47:30Z",
-   "url": "https://www.cnbc.com/2026/11/04/euro-zone-cpi-inflation-october-ecb-rate-hike.html"
-  },
-  {
    "h": "U.S. midterm elections in pictures: Democrats' sweeping victories deliver rebuke to Trump",
    "w": "Democrats scored sweeping victories in the U.S. midterm elections on Wednesday, flipping key Republican-held seats in Congress.",
    "syms": [],
    "src": "CNBC — Marchés",
    "ts": "2026-11-04T10:47:19Z",
    "url": "https://www.cnbc.com/2026/11/04/us-midterm-elections-in-pictures-democrats-republicans-trump.html"
-  },
-  {
-   "h": "Pourquoi l’action Chemring chute-t-elle aujourd’hui ?",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-04T10:47:14Z",
-   "url": "https://fr.investing.com/news/stock-market-news/pourquoi-laction-chemring-chutetelle-aujourdhui--93CH-3674081"
-  },
-  {
-   "h": "No more rice grains in Kellogg's Rice Krispies due to changing weather",
-   "w": "The new recipes mean cereal packaging will now include a 'contains wheat gluten' warning.",
-   "syms": [],
-   "src": "BBC — Business",
-   "ts": "2026-11-04T10:45:51Z",
-   "url": "https://www.bbc.co.uk/news/articles/cqvg0y44ym7vo?at_medium=RSS&at_campaign=rss"
   },
   {
    "h": "FirstFT: Blue wave sweeps US",
@@ -2357,23 +2395,6 @@
    "url": "https://www.cnbc.com/2026/11/04/novo-q3-earnings-wegovy-sales.html"
   },
   {
-   "h": "Stocks rebound after Democrats’ sweep",
-   "w": "US futures reverse early losses as resounding victory makes contested results less likely",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-04T10:37:24Z",
-   "url": "https://www.ft.com/content/a0b18705-3bd8-4886-992c-b6062fdec6ea?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "SpaceX, Tesla fall around 4% on Democrats' big win; AI stocks mixed",
-   "w": "AI fortunes were mixed as premarket trading opened on Wednesday.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-04T10:31:32Z",
-   "url": "https://www.cnbc.com/2026/11/04/ai-stocks-texas-governor-data-centers.html"
-  },
-  {
    "h": "Starling Bank chief to step down after just two years",
    "w": "UK digital bank steps up succession planning after Raman Bhatia told board he no longer wanted to run fintech",
    "syms": [],
@@ -2389,15 +2410,6 @@
    "src": "myFT — europe",
    "ts": "2026-11-04T10:25:26Z",
    "url": "https://www.ft.com/content/23cedd6f-e550-4869-aee1-e0ec10ae7e51?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Gibson Dunn in talks to hire 120 lawyers from Weil as firm dissolves",
-   "w": "Move follows unravelling of near-century-old law firm following a talent exodus",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-04T10:20:58Z",
-   "url": "https://www.ft.com/content/29522c80-74f7-4f78-b699-39b761d1c081?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2466,16 +2478,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-04T10:00:06Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/04/relevement-du-plafond-du-livret-a-on-est-loin-de-la-volonte-affichee-par-emmanuel-macron-d-orienter-l-epargne-des-francais-vers-des-placements-a-long-terme_6806139_3234.html"
-  },
-  {
-   "h": "Gold, silver and precious metals prices jump, dollar dips as Democrats take control of Congress",
-   "w": "Precious metals saw strong gains on Tuesday morning, as investors digested a Democratic sweep in the U.S. midterm elections.",
-   "syms": [
-    "XAU"
-   ],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-04T09:59:56Z",
-   "url": "https://www.cnbc.com/2026/11/04/gold-silver-platinum-dollar-midterms.html"
   },
   {
    "h": "Jordyn Woods on her baby plans with Karl-Anthony Towns after buying $14 million home",
@@ -2574,7 +2576,7 @@
    "h": "Americans deliver stunning rebuke to Trump as blue wave sweeps country",
    "w": "Democrats take Congress as Republicans defeated in midterm races from Texas to Georgia",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-04T08:34:14Z",
    "url": "https://www.ft.com/content/b1eb9500-612a-4bb0-bdc3-0311cfc0ec99?syn-25a6b1a6=1",
    "mine": 1
@@ -2583,7 +2585,7 @@
    "h": "Who are the new faces in the Senate?",
    "w": "The new intake includes several winners who are seen as future presidential candidates",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-04T08:24:35Z",
    "url": "https://www.ft.com/content/d808855c-7157-4f63-b511-943fd3714e34?syn-25a6b1a6=1",
    "mine": 1
@@ -2675,6 +2677,30 @@
    "ts": "2026-11-04T06:00:08Z",
    "url": "https://www.ft.com/content/6cf35b70-480b-4316-b7fd-22cdabeb5a05?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "ASEAN auto sales rose 13% in Q3 on EV and hybrid demand in key markets",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-04T05:51:47.657641Z",
+   "url": "https://asia.nikkei.com/business/automobiles/asean-auto-sales-rose-13-in-q3-on-ev-and-hybrid-demand-in-key-markets"
+  },
+  {
+   "h": "Taiwan airlines continue flights over Russia, rattling Europeans",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-04T05:51:47.657641Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/taiwan-airlines-continue-flights-over-russia-rattling-europeans"
+  },
+  {
+   "h": "China's Temu, JD.com revamp business models amid tariff headwinds",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-04T05:51:47.657641Z",
+   "url": "https://asia.nikkei.com/business/retail/china-s-temu-jd.com-revamp-business-models-amid-tariff-headwinds"
   },
   {
    "h": "The Democrats’ moment of truth",
@@ -2847,15 +2873,6 @@
    "mine": 1
   },
   {
-   "h": "Qatar set to become world’s biggest buyer of US LNG",
-   "w": "Once the world’s top producer, the Gulf nation will control largest share of US output by 2033",
-   "syms": [],
-   "src": "myFT — world uk",
-   "ts": "2026-11-04T05:00:09Z",
-   "url": "https://www.ft.com/content/88e46724-0bd4-451a-b02b-f5709c9771b7?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Hausse des taux : les anciennes générations de produits structurés pénalisées",
    "w": "Si la hausse des taux freine la valorisation de certains produits déjà en portefeuille, elle offre aussi davantage de marges pour construire de nouvelles solutions, potentiellement plus rémunératrices.",
    "syms": [],
@@ -2902,30 +2919,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-04T03:26:28.693761Z",
    "url": "https://asia.nikkei.com/business/energy/petrovietnam-ceo-sees-a-future-of-nuclear-and-wind-power"
-  },
-  {
-   "h": "US midterms live: Trump says Democrat victories not a 'hit on me'",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-04T02:19:03.947712Z",
-   "url": "https://asia.nikkei.com/politics/u.s.-midterm-elections/us-midterms-live-trump-says-democrat-victories-not-a-hit-on-me"
-  },
-  {
-   "h": "China's slumping state airlines pin hopes on overseas demand like exporters",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-04T02:19:03.947712Z",
-   "url": "https://asia.nikkei.com/business/transportation/china-s-slumping-state-airlines-pin-hopes-on-overseas-demand-like-exporters"
-  },
-  {
-   "h": "Democrats win control of Congress in sharp rebuke to Trump",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-04T02:19:03.947712Z",
-   "url": "https://asia.nikkei.com/politics/u.s.-midterm-elections/democrats-win-control-of-congress-in-sharp-rebuke-to-trump"
   },
   {
    "h": "Super Micro’s stock pops as earnings show booming demand for AI servers",
@@ -2978,6 +2971,14 @@
    "url": "https://www.cnbc.com/2026/11/03/crowdstrikes-new-kill-switch-can-stop-rogue-ai-agents-in-their-tracks-ceo-says.html"
   },
   {
+   "h": "Strand bookstore to pay nearly $1.5 million over Covid loan tied to Sen. Wyden's wife",
+   "w": "Nancy Bass Wyden, whose grandfather founded the New York City bookstore, had signed off on the PPP, which was off-limits because she is a senator's wife.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-03T23:28:01Z",
+   "url": "https://www.cnbc.com/2026/11/03/strand-bookstore-ppp-loan-ron-wyden-wife-settlement.html"
+  },
+  {
    "h": "What analysts are telling us while Apple’s stock falls after earnings report",
    "w": "Shares in Apple declined nearly 2% on Tuesday after investors were left feeling disappointed about the company’s gross margin outlook and slowing services revenue growth.",
    "syms": [],
@@ -3026,14 +3027,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-03T20:48:27Z",
    "url": "https://www.lemonde.fr/international/article/2026/11/03/des-syndicats-et-associations-de-sept-pays-europeens-appellent-a-manifester-contre-la-vie-chere-fin-novembre_6805665_3210.html"
-  },
-  {
-   "h": "Le conflit se poursuit entre les salariés de SFR et Bouygues Telecom, Free et Orange sur le volet social du rachat de l’opérateur",
-   "w": "De nombreux employés du groupe de Patrick Drahi ont de nouveau fait grève, mardi 3 novembre, sur fond de fortes inquiétudes sur l’emploi dans le cadre du rachat collectif du groupe par Bouygues Telecom, Free et Orange.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-03T20:25:09Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/11/03/le-conflit-se-poursuit-entre-les-salaries-de-sfr-et-bouygues-telecom-free-et-orange-sur-le-volet-social-du-rachat-de-l-operateur_6805663_3234.html"
   }
  ],
  "summary": {
