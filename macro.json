@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-03T23:36:50.603280Z",
+ "generated_at": "2026-11-04T00:50:28.958468Z",
  "eco": {
   "prints": [
    {
@@ -8,7 +8,7 @@
     "prev": 3.35,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-02",
+    "pub": "2026-11-03",
     "freq": "M",
     "src": "FRED CPIAUCSL",
     "url": "https://fred.stlouisfed.org/series/CPIAUCSL"
@@ -30,7 +30,7 @@
     "prev": 3.03,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-02",
+    "pub": "2026-11-03",
     "freq": "M",
     "src": "FRED PCEPILFE",
     "url": "https://fred.stlouisfed.org/series/PCEPILFE"
@@ -41,7 +41,7 @@
     "prev": 133.0,
     "fmt": "k",
     "ts": "2026-09-01",
-    "pub": "2026-11-02",
+    "pub": "2026-11-03",
     "freq": "M",
     "src": "FRED PAYEMS",
     "url": "https://fred.stlouisfed.org/series/PAYEMS"
@@ -52,7 +52,7 @@
     "prev": 4.1,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-02",
+    "pub": "2026-11-03",
     "freq": "M",
     "src": "FRED UNRATE",
     "url": "https://fred.stlouisfed.org/series/UNRATE"
@@ -74,7 +74,7 @@
     "prev": 2.2,
     "fmt": "%",
     "ts": "2026-07-01",
-    "pub": "2026-11-02",
+    "pub": "2026-11-03",
     "freq": "Q",
     "src": "FRED A191RL1Q225SBEA",
     "url": "https://fred.stlouisfed.org/series/A191RL1Q225SBEA"
@@ -107,7 +107,7 @@
     "prev": 3.23,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-02",
+    "pub": "2026-11-03",
     "freq": "M",
     "src": "FRED CP0000EZ19M086NEST",
     "url": "https://fred.stlouisfed.org/series/CP0000EZ19M086NEST"
@@ -125,12 +125,6 @@
    }
   ],
   "calendar": [
-   {
-    "d": "2026-10-27",
-    "ev": "Mises en chantier",
-    "ctry": "US",
-    "src": "FRED"
-   },
    {
     "d": "2026-10-28",
     "ev": "Décision de la Fed (FOMC)",
@@ -243,6 +237,12 @@
    {
     "d": "2026-12-01",
     "ev": "Offres d'emploi JOLTS",
+    "ctry": "US",
+    "src": "FRED"
+   },
+   {
+    "d": "2026-12-02",
+    "ev": "PIB",
     "ctry": "US",
     "src": "FRED"
    },
@@ -544,73 +544,73 @@
    {
     "d": "2026-12-09",
     "pre": 3.88,
-    "post": 4.077,
-    "move_bp": 19.7,
+    "post": 4.07,
+    "move_bp": 19.0,
     "p_cut": 0,
-    "p_hike": 79
+    "p_hike": 76
    },
    {
     "d": "2027-01-27",
-    "pre": 4.077,
-    "post": 4.15,
-    "move_bp": 7.3,
+    "pre": 4.07,
+    "post": 4.13,
+    "move_bp": 6.0,
     "p_cut": 0,
-    "p_hike": 29
+    "p_hike": 24
    },
    {
     "d": "2027-03-17",
-    "pre": 4.15,
-    "post": 4.294,
-    "move_bp": 14.4,
+    "pre": 4.13,
+    "post": 4.263,
+    "move_bp": 13.3,
     "p_cut": 0,
-    "p_hike": 58
+    "p_hike": 53
    },
    {
     "d": "2027-04-28",
-    "pre": 4.294,
-    "post": 4.365,
-    "move_bp": 7.1,
+    "pre": 4.263,
+    "post": 4.33,
+    "move_bp": 6.7,
     "p_cut": 0,
-    "p_hike": 28
+    "p_hike": 27
    },
    {
     "d": "2027-06-09",
-    "pre": 4.365,
-    "post": 4.458,
-    "move_bp": 9.3,
+    "pre": 4.33,
+    "post": 4.416,
+    "move_bp": 8.6,
     "p_cut": 0,
-    "p_hike": 37
+    "p_hike": 34
    },
    {
     "d": "2027-07-28",
-    "pre": 4.458,
-    "post": 4.48,
-    "move_bp": 2.2,
+    "pre": 4.416,
+    "post": 4.43,
+    "move_bp": 1.4,
     "p_cut": 0,
-    "p_hike": 9
+    "p_hike": 6
    },
    {
     "d": "2027-09-15",
-    "pre": 4.48,
-    "post": 4.51,
-    "move_bp": 3.0,
+    "pre": 4.43,
+    "post": 4.47,
+    "move_bp": 4.0,
     "p_cut": 0,
-    "p_hike": 12
+    "p_hike": 16
    },
    {
     "d": "2027-10-27",
-    "pre": 4.51,
-    "post": 4.495,
-    "move_bp": -1.5,
-    "p_cut": 6,
-    "p_hike": 0
+    "pre": 4.47,
+    "post": 4.49,
+    "move_bp": 2.0,
+    "p_cut": 0,
+    "p_hike": 8
    },
    {
     "d": "2027-12-08",
-    "pre": 4.495,
-    "post": 4.488,
-    "move_bp": -0.7,
-    "p_cut": 3,
+    "pre": 4.49,
+    "post": 4.416,
+    "move_bp": -7.4,
+    "p_cut": 30,
     "p_hike": 0
    }
   ],
@@ -622,37 +622,37 @@
     {
      "t": "1M",
      "y": 4.05,
-     "y1m": 4.04,
+     "y1m": 4.05,
      "ts": "2026-11-02"
     },
     {
      "t": "3M",
      "y": 4.21,
-     "y1m": 4.19,
+     "y1m": 4.22,
      "ts": "2026-11-02"
     },
     {
      "t": "6M",
      "y": 4.25,
-     "y1m": 4.27,
+     "y1m": 4.3,
      "ts": "2026-11-02"
     },
     {
      "t": "1A",
      "y": 4.38,
-     "y1m": 4.46,
+     "y1m": 4.47,
      "ts": "2026-11-02"
     },
     {
      "t": "2A",
      "y": 4.59,
-     "y1m": 4.83,
+     "y1m": 4.84,
      "ts": "2026-11-02"
     },
     {
      "t": "3A",
      "y": 4.65,
-     "y1m": 4.96,
+     "y1m": 4.97,
      "ts": "2026-11-02"
     },
     {
@@ -664,25 +664,25 @@
     {
      "t": "7A",
      "y": 4.79,
-     "y1m": 5.17,
+     "y1m": 5.19,
      "ts": "2026-11-02"
     },
     {
      "t": "10A",
      "y": 4.91,
-     "y1m": 5.28,
+     "y1m": 5.31,
      "ts": "2026-11-02"
     },
     {
      "t": "20A",
      "y": 5.31,
-     "y1m": 5.67,
+     "y1m": 5.7,
      "ts": "2026-11-02"
     },
     {
      "t": "30A",
      "y": 5.28,
-     "y1m": 5.63,
+     "y1m": 5.66,
      "ts": "2026-11-02"
     }
    ],
@@ -792,7 +792,7 @@
    "v": 3.9,
    "prev": 3.9,
    "fmt": "%",
-   "ts": "2026-11-03",
+   "ts": "2026-11-04",
    "src": "FRED IORB"
   },
   {
