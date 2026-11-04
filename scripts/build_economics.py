@@ -85,6 +85,9 @@ SPEC = [
     ("FRGDPYY", "Croissance du PIB (a/a)", "France", "%", [F("CLVMNACSCAB1GQFR", "pc1")]),
     ("FR10Y", "Taux à 10 ans (OAT)", "France", "%", [F("IRLTLT01FRM156N")]),
     ("ITIRYY", "Inflation (a/a)", "Italie", "%", [("ecb", "ICP/M.IT.N.000000.4.ANR")]),
+    ("ITGDPYY", "Croissance du PIB (a/a)", "Italie", "%", [F("CLVMNACSCAB1GQIT", "pc1"), F("NGDPRSAXDCITQ", "pc1")]),
+    ("ESGDPYY", "Croissance du PIB (a/a)", "Espagne", "%", [F("CLVMNACSCAB1GQES", "pc1"), F("NGDPRSAXDCESQ", "pc1")]),
+    ("EUGDPQQ", "Croissance du PIB (t/t)", "Zone euro", "%", [F("CLVMNACSCAB1GQEA20", "pch"), F("CLVMNACSCAB1GQEA19", "pch")]),
     ("IT10Y", "Taux à 10 ans (BTP)", "Italie", "%", [F("IRLTLT01ITM156N")]),
     # ── Royaume-Uni
     ("GBINTR", "Taux directeur BoE (Bank Rate)", "Royaume-Uni", "%", [("boe", "IUDBEDR"), F("IRSTCB01GBM156N")]),
@@ -93,8 +96,9 @@ SPEC = [
     ("GBGDPYY", "Croissance du PIB (a/a)", "Royaume-Uni", "%", [F("CLVMNACSCAB1GQUK", "pc1"), F("NGDPRSAXDCGBQ", "pc1")]),
     ("GB10Y", "Taux à 10 ans (Gilt)", "Royaume-Uni", "%", [F("IRLTLT01GBM156N")]),
     # ── Suisse (pertinent pour Monaco)
-    ("CHINTR", "Taux directeur BNS", "Suisse", "%", [F("IRSTCI01CHM156N"), F("IRSTCB01CHM156N")]),
+    ("CHINTR", "Taux directeur BNS", "Suisse", "%", [("snb", "snbgwdzid", "LZ"), F("IRSTCB01CHM156N"), F("IRSTCI01CHM156N")]),
     ("CHIRYY", "Inflation (a/a)", "Suisse", "%", [F("CPALTT01CHM659N"), F("CHECPIALLMINMEI", "pc1")]),
+    ("CHGDPYY", "Croissance du PIB (a/a)", "Suisse", "%", [F("CLVMNACSCAB1GQCH", "pc1"), F("NGDPRSAXDCCHQ", "pc1")]),
     ("CH10Y", "Taux à 10 ans (Confédération)", "Suisse", "%", [F("IRLTLT01CHM156N")]),
     # ── Japon
     ("JPINTR", "Taux directeur BoJ", "Japon", "%", [F("IRSTCB01JPM156N")]),
@@ -104,10 +108,11 @@ SPEC = [
     ("JP10Y", "Taux à 10 ans (JGB)", "Japon", "%", [F("IRLTLT01JPM156N")]),
     # ── Chine
     ("CNIRYY", "Inflation (a/a)", "Chine", "%", [F("CPALTT01CNM659N"), F("CHNCPIALLMINMEI", "pc1")]),
-    ("CNGDPYY", "Croissance du PIB (a/a)", "Chine", "%", [F("CHNGDPNQDSMEI", "pc1")]),
+    ("CNGDPYY", "Croissance du PIB (a/a)", "Chine", "%", [F("CHNGDPNQDSMEI", "pc1"), F("NGDPRXDCCNA", "pc1")]),
 ]
 
-SRC_LABEL = {"fred": "FRED (Fed de St. Louis)", "ecb": "BCE — ECB Data Portal", "boe": "Bank of England — IADB"}
+SRC_LABEL = {"fred": "FRED (Fed de St. Louis)", "ecb": "BCE — ECB Data Portal", "boe": "Bank of England — IADB",
+             "snb": "Banque nationale suisse — data.snb.ch"}
 
 
 def log(msg):
@@ -136,6 +141,18 @@ def get_fred(sid, units, freq):
             time.sleep(5 * (attempt + 1)); continue
         r.raise_for_status()
         obs = [(o["date"], float(o["value"])) for o in r.json()["observations"] if o["value"] not in (".", "")]
+        if freq and obs:
+            # Série quotidienne agrégée en fin de mois : le dernier point doit rester la DERNIÈRE valeur
+            # du jour (sinon US10Y affichait le taux du 31/10 alors que GC montre celui d'hier).
+            q = {"series_id": sid, "api_key": KEY, "file_type": "json", "units": units, "sort_order": "desc", "limit": 1}
+            last = requests.get("https://api.stlouisfed.org/fred/series/observations", params=q, timeout=30)
+            if last.ok:
+                o = next((o for o in last.json()["observations"] if o["value"] not in (".", "")), None)
+                if o and o["date"] > obs[-1][0]:
+                    if obs[-1][0][:7] == o["date"][:7]:
+                        obs[-1] = (o["date"], float(o["value"]))     # mois en cours : remplace la valeur partielle
+                    else:
+                        obs.append((o["date"], float(o["value"])))
         return obs, f"https://fred.stlouisfed.org/series/{sid}"
     raise RuntimeError("FRED : limite de débit")
 
@@ -167,6 +184,27 @@ def get_boe(code):
     return obs, "https://www.bankofengland.co.uk/boeapps/database/"
 
 
+def get_snb(cube, dim):
+    """Cube SNB (CSV « Date;D0;Value ») : taux directeur = cube snbgwdzid, dimension LZ (Leitzins)."""
+    r = requests.get(f"https://data.snb.ch/api/cube/{cube}/data/csv/en",
+                     params={"fromDate": f"{NOW.year - YEARS}-01-01"}, headers=UA, timeout=40)
+    r.raise_for_status()
+    obs = [(d if len(d) == 10 else d + "-01", float(v)) for d, k, v in
+           __import__("re").findall(r'"?(\d{4}-\d{2}(?:-\d{2})?)"?;"?([A-Za-z0-9_]+)"?;"?(-?\d+\.?\d*)"?', r.text) if k == dim]
+    if obs and len(obs[0][0]) == 10:
+        obs = _monthly(sorted(obs))
+    # Un taux directeur n'est publié qu'aux dates de décision : il reste en vigueur jusqu'à la suivante.
+    filled, by = [], dict(obs)
+    if obs:
+        y, m, last = int(obs[0][0][:4]), int(obs[0][0][5:7]), None
+        while (y, m) <= (NOW.year, NOW.month):
+            k = f"{y}-{m:02d}-01"
+            last = by.get(k, last)
+            filled.append((k, last))
+            y, m = (y + 1, 1) if m == 12 else (y, m + 1)
+    return filled, f"https://data.snb.ch/en/topics/snb/cube/{cube}"
+
+
 def freq_of(obs):
     if len(obs) < 3:
         return "?"
@@ -195,7 +233,8 @@ def main() -> int:
         for src in sources:
             kind = src[0]
             try:
-                obs, url = (get_fred(*src[1:]) if kind == "fred" else get_ecb(src[1]) if kind == "ecb" else get_boe(src[1]))
+                obs, url = (get_fred(*src[1:]) if kind == "fred" else get_ecb(src[1]) if kind == "ecb"
+                            else get_snb(*src[1:]) if kind == "snb" else get_boe(src[1]))
                 obs = sorted(obs)
                 if len(obs) < 3:
                     raise RuntimeError("historique vide")
