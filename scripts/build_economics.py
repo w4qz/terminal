@@ -38,7 +38,8 @@ REFRESH_H = 20       # pas plus d'une actualisation toutes les 20 heures
 
 # Sources : ("fred", id, unités FRED, fréquence agrégée ou None) · ("ecb", clé SDMX) · ("boe", code IADB)
 #   unités FRED : lin = niveau · pc1 = variation sur 1 an (%) · pch = variation sur la période (%) · chg = variation absolue
-F = lambda sid, units="lin", freq=None: ("fred", sid, units, freq)
+F = lambda sid, units="lin", freq=None, scale=1: ("fred", sid, units, freq, scale)
+A = 4 / 1000   # Eurostat : PIB trimestriel en millions → rythme annuel en milliards (comme USGDP)
 SPEC = [
     # ── États-Unis
     ("USINTR", "Taux directeur Fed (borne haute)", "États-Unis", "%", [F("DFEDTARU", freq="m"), F("FEDFUNDS")]),
@@ -75,18 +76,27 @@ SPEC = [
     ("EUCIR", "Inflation sous-jacente (IPCH hors énergie et alimentation, a/a)", "Zone euro", "%", [("ecb", "ICP/M.U2.N.XEF000.4.ANR")]),
     ("EUUR", "Taux de chômage", "Zone euro", "%", [F("LRHUTTTTEZM156S")]),
     ("EUGDPYY", "Croissance du PIB (a/a)", "Zone euro", "%", [F("CLVMNACSCAB1GQEA19", "pc1"), F("CLVMNACSCAB1GQEA20", "pc1")]),
+    ("EUGDP", "PIB nominal (rythme annuel)", "Zone euro", "Md€", [F("CPMNACSCAB1GQEA20", scale=A), F("CPMNACSCAB1GQEA19", scale=A)]),
     # ── Allemagne, France, Italie
     ("DEIRYY", "Inflation (a/a)", "Allemagne", "%", [("ecb", "ICP/M.DE.N.000000.4.ANR"), F("CPALTT01DEM659N")]),
     ("DEUR", "Taux de chômage", "Allemagne", "%", [F("LRHUTTTTDEM156S")]),
     ("DEGDPYY", "Croissance du PIB (a/a)", "Allemagne", "%", [F("CLVMNACSCAB1GQDE", "pc1")]),
+    ("DEGDP", "PIB nominal (rythme annuel)", "Allemagne", "Md€", [F("CPMNACSCAB1GQDE", scale=A)]),
+    ("DEGDPQQ", "Croissance du PIB (t/t)", "Allemagne", "%", [F("CLVMNACSCAB1GQDE", "pch")]),
     ("DE10Y", "Taux à 10 ans (Bund)", "Allemagne", "%", [F("IRLTLT01DEM156N")]),
     ("FRIRYY", "Inflation (a/a)", "France", "%", [("ecb", "ICP/M.FR.N.000000.4.ANR"), F("CPALTT01FRM659N")]),
     ("FRUR", "Taux de chômage", "France", "%", [F("LRHUTTTTFRM156S")]),
     ("FRGDPYY", "Croissance du PIB (a/a)", "France", "%", [F("CLVMNACSCAB1GQFR", "pc1")]),
+    ("FRGDP", "PIB nominal (rythme annuel)", "France", "Md€", [F("CPMNACSCAB1GQFR", scale=A)]),
+    ("FRGDPQQ", "Croissance du PIB (t/t)", "France", "%", [F("CLVMNACSCAB1GQFR", "pch")]),
     ("FR10Y", "Taux à 10 ans (OAT)", "France", "%", [F("IRLTLT01FRM156N")]),
     ("ITIRYY", "Inflation (a/a)", "Italie", "%", [("ecb", "ICP/M.IT.N.000000.4.ANR")]),
     ("ITGDPYY", "Croissance du PIB (a/a)", "Italie", "%", [F("CLVMNACSCAB1GQIT", "pc1"), F("NGDPRSAXDCITQ", "pc1")]),
+    ("ITGDP", "PIB nominal (rythme annuel)", "Italie", "Md€", [F("CPMNACSCAB1GQIT", scale=A)]),
+    ("ITGDPQQ", "Croissance du PIB (t/t)", "Italie", "%", [F("CLVMNACSCAB1GQIT", "pch")]),
     ("ESGDPYY", "Croissance du PIB (a/a)", "Espagne", "%", [F("CLVMNACSCAB1GQES", "pc1"), F("NGDPRSAXDCESQ", "pc1")]),
+    ("ESGDP", "PIB nominal (rythme annuel)", "Espagne", "Md€", [F("CPMNACSCAB1GQES", scale=A)]),
+    ("ESGDPQQ", "Croissance du PIB (t/t)", "Espagne", "%", [F("CLVMNACSCAB1GQES", "pch")]),
     ("EUGDPQQ", "Croissance du PIB (t/t)", "Zone euro", "%", [F("CLVMNACSCAB1GQEA20", "pch"), F("CLVMNACSCAB1GQEA19", "pch")]),
     ("IT10Y", "Taux à 10 ans (BTP)", "Italie", "%", [F("IRLTLT01ITM156N")]),
     # ── Royaume-Uni
@@ -94,21 +104,28 @@ SPEC = [
     ("GBIRYY", "Inflation (IPC, a/a)", "Royaume-Uni", "%", [F("CPALTT01GBM659N"), F("GBRCPIALLMINMEI", "pc1")]),
     ("GBUR", "Taux de chômage", "Royaume-Uni", "%", [F("LRHUTTTTGBM156S")]),
     ("GBGDPYY", "Croissance du PIB (a/a)", "Royaume-Uni", "%", [F("CLVMNACSCAB1GQUK", "pc1"), F("NGDPRSAXDCGBQ", "pc1")]),
+    ("GBGDP", "PIB nominal (rythme annuel)", "Royaume-Uni", "Md£", [F("UKNGDP", scale=A), F("CPMNACSCAB1GQUK", scale=A)]),
+    ("GBGDPQQ", "Croissance du PIB (t/t)", "Royaume-Uni", "%", [F("CLVMNACSCAB1GQUK", "pch")]),
     ("GB10Y", "Taux à 10 ans (Gilt)", "Royaume-Uni", "%", [F("IRLTLT01GBM156N")]),
     # ── Suisse (pertinent pour Monaco)
     ("CHINTR", "Taux directeur BNS", "Suisse", "%", [("snb", "snbgwdzid", "LZ"), F("IRSTCB01CHM156N"), F("IRSTCI01CHM156N")]),
     ("CHIRYY", "Inflation (a/a)", "Suisse", "%", [F("CPALTT01CHM659N"), F("CHECPIALLMINMEI", "pc1")]),
     ("CHGDPYY", "Croissance du PIB (a/a)", "Suisse", "%", [F("CLVMNACSCAB1GQCH", "pc1"), F("NGDPRSAXDCCHQ", "pc1")]),
+    ("CHGDP", "PIB nominal (rythme annuel)", "Suisse", "Md CHF", [F("CPMNACSCAB1GQCH", scale=A)]),
+    ("CHGDPQQ", "Croissance du PIB (t/t)", "Suisse", "%", [F("CLVMNACSCAB1GQCH", "pch")]),
     ("CH10Y", "Taux à 10 ans (Confédération)", "Suisse", "%", [F("IRLTLT01CHM156N")]),
     # ── Japon
     ("JPINTR", "Taux directeur BoJ", "Japon", "%", [F("IRSTCB01JPM156N")]),
     ("JPIRYY", "Inflation (a/a)", "Japon", "%", [F("CPALTT01JPM659N"), F("JPNCPIALLMINMEI", "pc1")]),
     ("JPUR", "Taux de chômage", "Japon", "%", [F("LRUN64TTJPM156S"), F("LRHUTTTTJPM156S")]),
     ("JPGDPYY", "Croissance du PIB (a/a)", "Japon", "%", [F("JPNRGDPEXP", "pc1")]),
+    ("JPGDP", "PIB nominal (rythme annuel)", "Japon", "Md¥", [F("JPNNGDP")]),
+    ("JPGDPQQ", "Croissance du PIB (t/t)", "Japon", "%", [F("JPNRGDPEXP", "pch")]),
     ("JP10Y", "Taux à 10 ans (JGB)", "Japon", "%", [F("IRLTLT01JPM156N")]),
     # ── Chine
     ("CNIRYY", "Inflation (a/a)", "Chine", "%", [F("CPALTT01CNM659N"), F("CHNCPIALLMINMEI", "pc1")]),
     ("CNGDPYY", "Croissance du PIB (a/a)", "Chine", "%", [F("CHNGDPNQDSMEI", "pc1"), F("NGDPRXDCCNA", "pc1")]),
+    ("CNGDP", "PIB nominal (annuel, Banque mondiale)", "Chine", "Md$", [F("MKTGDPCNA646NWDB", scale=1e-9)]),
 ]
 
 SRC_LABEL = {"fred": "FRED (Fed de St. Louis)", "ecb": "BCE — ECB Data Portal", "boe": "Bank of England — IADB",
@@ -127,7 +144,7 @@ def _monthly(obs):
     return [(d[:7] + "-01", v) for d, v in out.values()]
 
 
-def get_fred(sid, units, freq):
+def get_fred(sid, units, freq, scale=1):
     if not KEY:
         raise RuntimeError("pas de FRED_API_KEY")
     p = {"series_id": sid, "api_key": KEY, "file_type": "json", "units": units,
@@ -140,7 +157,7 @@ def get_fred(sid, units, freq):
         if r.status_code == 429:          # limite de débit FRED : 120 requêtes / minute
             time.sleep(5 * (attempt + 1)); continue
         r.raise_for_status()
-        obs = [(o["date"], float(o["value"])) for o in r.json()["observations"] if o["value"] not in (".", "")]
+        obs = [(o["date"], float(o["value"]) * scale) for o in r.json()["observations"] if o["value"] not in (".", "")]
         if freq and obs:
             # Série quotidienne agrégée en fin de mois : le dernier point doit rester la DERNIÈRE valeur
             # du jour (sinon US10Y affichait le taux du 31/10 alors que GC montre celui d'hier).
@@ -150,9 +167,9 @@ def get_fred(sid, units, freq):
                 o = next((o for o in last.json()["observations"] if o["value"] not in (".", "")), None)
                 if o and o["date"] > obs[-1][0]:
                     if obs[-1][0][:7] == o["date"][:7]:
-                        obs[-1] = (o["date"], float(o["value"]))     # mois en cours : remplace la valeur partielle
+                        obs[-1] = (o["date"], float(o["value"]) * scale)     # mois en cours : remplace la valeur partielle
                     else:
-                        obs.append((o["date"], float(o["value"])))
+                        obs.append((o["date"], float(o["value"]) * scale))
         return obs, f"https://fred.stlouisfed.org/series/{sid}"
     raise RuntimeError("FRED : limite de débit")
 
