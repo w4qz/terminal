@@ -1030,7 +1030,9 @@ const curve = SNAPSHOT.curve.map(c=>`<tr><th scope="row" class="sym">${c.t}</th>
 
 // Indicateurs macro : séries automatiques (economics.json) ; les relevés manuels du 31/10 ne servent qu'en secours.
 const MK=[['USINTR','Fed — taux directeur'],['USIRYY','Inflation US (a/a)'],['USCIR','Inflation sous-jacente US'],['USUR','Chômage US'],['USGDPQQ','PIB US (t/t annualisé)'],
-['EUINTR','BCE — taux de dépôt'],['EUIRYY','Inflation zone euro'],['EUUR','Chômage zone euro'],['FRIRYY','Inflation France'],['GBIRYY','Inflation Royaume-Uni'],['JPIRYY','Inflation Japon'],['CNIRYY','Inflation Chine'],['US10Y','Taux 10 ans US'],['DE10Y','Taux 10 ans Allemagne']];
+['EUINTR','BCE — taux de dépôt'],['EUIRYY','Inflation zone euro'],['EUUR','Chômage zone euro'],['FRIRYY','Inflation France'],['GBIRYY','Inflation Royaume-Uni'],['JPIRYY','Inflation Japon'],['CNIRYY','Inflation Chine'],['US10Y','Taux 10 ans US'],['DE10Y','Taux 10 ans Allemagne'],
+['EUGDPYY','PIB zone euro (a/a)'],['EUGDPQQ','PIB zone euro (t/t)'],['DEGDPYY','PIB Allemagne (a/a)'],['FRGDPYY','PIB France (a/a)'],['ITGDPYY','PIB Italie (a/a)'],['ESGDPYY','PIB Espagne (a/a)'],
+['GBGDPYY','PIB Royaume-Uni (a/a)'],['CHGDPYY','PIB Suisse (a/a)'],['JPGDPYY','PIB Japon (a/a)'],['CNGDPYY','PIB Chine (a/a)']];
 const macroLive = ECON&&ECON.length ? MK.map(([c,l])=>{ const e=ecoGet(c); if(!e) return ''; const dv=e.last-e.prev;
 return `<tr class="clk" data-eco="${esc(c)}" tabindex="0" role="button"><th scope="row" style="text-align:left;font-weight:400;color:var(--txt)">${esc(l)}</th><td style="font-weight:600">${ecoFmt(e.last,e)}</td>
 <td class="mut">${ecoFmt(e.prev,e)}</td><td class="${cls(dv)}" style="font-size:10px">${dv>0?'▲':dv<0?'▼':'='}</td><td class="mut" style="text-align:left;font-size:10px">${ecoPeriod(e,e.date)}${staleMark(e.date,e.freq==='trimestrielle'?200:100)} · ${esc(e.src.split(' ')[0])}</td></tr>`; }).join('') : '';
@@ -3199,6 +3201,11 @@ if(!F.sector&&Object.keys(F).length>4) F.sector='Non classé';
 const q=SNAPSHOT.quotes[s], u=U.get(s), px=q&&q.p!=null?q.p:u&&u.p!=null?u.p:null;
 if(F.div>0&&px>0){ let y=F.div/px*100; if(SUBUNIT(F.ccy)){ if(y<0.05) y*=100; else if(y>40) y/=100; } if(y>0&&y<40) F.divYield=Math.round(y*1000)/1000; }
 else if(F.divYield>40) delete F.divYield; }
+// US10Y / US02Y : même valeur que la courbe GC (FRED quotidien, actualisé toutes les 30 min).
+if(typeof ecoGet==='function'&&typeof MACRO!=='undefined'&&MACRO&&MACRO.gc&&MACRO.gc.us){
+for(const [code,t] of [['US10Y','10A'],['US02Y','2A']]){ const e=ecoGet(code), p=(MACRO.gc.us.pts||[]).find(x=>x.t===t);
+if(e&&p&&p.y!=null&&p.ts&&p.ts>=String(e.date)){ if(p.ts.slice(0,7)!==String(e.date).slice(0,7)) e.prev=e.last; e.last=p.y; e.date=p.ts;
+if(Array.isArray(e.h)&&e.h.length){ const L=e.h[e.h.length-1]; if(String(L[0]).slice(0,7)===p.ts.slice(0,7)) e.h[e.h.length-1]=[p.ts,p.y]; else e.h.push([p.ts,p.y]); } } } }
 // BNS : taux officiel lu dans les séries économiques ; PBoC : pas de source gratuite, dit clairement.
 { const snb=(SNAPSHOT.rates||[]).find(r=>r.cb==='SNB'), ch=typeof ecoGet==='function'?ecoGet('CHINTR'):null;
 if(snb&&ch){ snb.v=nf(ch.last,2)+' %'; snb.st='EOD'; snb.ts=ch.date; snb.src=ch.src; snb.name='Taux directeur';
