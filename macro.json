@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-04T17:26:34.070277Z",
+ "generated_at": "2026-11-04T18:21:29.602385Z",
  "eco": {
   "prints": [
    {
@@ -30,7 +30,7 @@
     "prev": 3.03,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-04",
+    "pub": "2026-11-03",
     "freq": "M",
     "src": "FRED PCEPILFE",
     "url": "https://fred.stlouisfed.org/series/PCEPILFE"
@@ -107,7 +107,7 @@
     "prev": 3.23,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-04",
+    "pub": "2026-11-03",
     "freq": "M",
     "src": "FRED CP0000EZ19M086NEST",
     "url": "https://fred.stlouisfed.org/series/CP0000EZ19M086NEST"
@@ -118,7 +118,7 @@
     "prev": 6.7,
     "fmt": "%",
     "ts": "2023-01-01",
-    "pub": "2026-11-04",
+    "pub": "2026-11-03",
     "freq": "M",
     "src": "FRED LRHUTTTTEZM156S",
     "url": "https://fred.stlouisfed.org/series/LRHUTTTTEZM156S"
@@ -552,65 +552,65 @@
    {
     "d": "2027-01-27",
     "pre": 4.077,
-    "post": 4.14,
-    "move_bp": 6.3,
+    "post": 4.145,
+    "move_bp": 6.8,
     "p_cut": 0,
-    "p_hike": 25
+    "p_hike": 27
    },
    {
     "d": "2027-03-17",
-    "pre": 4.14,
-    "post": 4.284,
+    "pre": 4.145,
+    "post": 4.289,
     "move_bp": 14.4,
     "p_cut": 0,
     "p_hike": 58
    },
    {
     "d": "2027-04-28",
-    "pre": 4.284,
-    "post": 4.34,
-    "move_bp": 5.6,
+    "pre": 4.289,
+    "post": 4.35,
+    "move_bp": 6.1,
     "p_cut": 0,
-    "p_hike": 22
+    "p_hike": 24
    },
    {
     "d": "2027-06-09",
-    "pre": 4.34,
-    "post": 4.419,
+    "pre": 4.35,
+    "post": 4.429,
     "move_bp": 7.9,
     "p_cut": 0,
     "p_hike": 31
    },
    {
     "d": "2027-07-28",
-    "pre": 4.419,
-    "post": 4.43,
+    "pre": 4.429,
+    "post": 4.44,
     "move_bp": 1.1,
     "p_cut": 0,
     "p_hike": 5
    },
    {
     "d": "2027-09-15",
-    "pre": 4.43,
-    "post": 4.45,
-    "move_bp": 2.0,
+    "pre": 4.44,
+    "post": 4.47,
+    "move_bp": 3.0,
     "p_cut": 0,
-    "p_hike": 8
+    "p_hike": 12
    },
    {
     "d": "2027-10-27",
-    "pre": 4.45,
-    "post": 4.445,
-    "move_bp": -0.5,
-    "p_cut": 2,
+    "pre": 4.47,
+    "post": 4.455,
+    "move_bp": -1.5,
+    "p_cut": 6,
     "p_hike": 0
    },
    {
     "d": "2027-12-08",
-    "pre": 4.445,
-    "post": 4.411,
-    "move_bp": -3.4,
-    "p_cut": 13,
+    "pre": 4.455,
+    "post": 4.394,
+    "move_bp": -6.1,
+    "p_cut": 24,
     "p_hike": 0
    }
   ],
@@ -692,7 +692,9 @@
    "pts": [
     {
      "t": "3M",
-     "y": null
+     "y": 2.591,
+     "y1m": 2.5,
+     "ts": "2026-11-03"
     },
     {
      "t": "6M",
@@ -712,7 +714,9 @@
     },
     {
      "t": "3A",
-     "y": null
+     "y": 3.012,
+     "y1m": 3.215,
+     "ts": "2026-11-03"
     },
     {
      "t": "5A",
@@ -722,13 +726,13 @@
     },
     {
      "t": "7A",
-     "y": 3.179,
-     "y1m": 3.404,
-     "ts": "2026-11-03"
+     "y": null
     },
     {
      "t": "10A",
-     "y": null
+     "y": 3.347,
+     "y1m": 3.582,
+     "ts": "2026-11-03"
     },
     {
      "t": "20A",
