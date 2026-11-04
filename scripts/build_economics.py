@@ -126,6 +126,9 @@ SPEC = [
     ("CNIRYY", "Inflation (a/a)", "Chine", "%", [F("CPALTT01CNM659N"), F("CHNCPIALLMINMEI", "pc1")]),
     ("CNGDPYY", "Croissance du PIB (a/a)", "Chine", "%", [F("CHNGDPNQDSMEI", "pc1"), F("NGDPRXDCCNA", "pc1")]),
     ("CNGDP", "PIB nominal (annuel, Banque mondiale)", "Chine", "Md$", [F("MKTGDPCNA646NWDB", scale=1e-9)]),
+    # ── Inde
+    ("INGDP", "PIB nominal (annuel, Banque mondiale)", "Inde", "Md$", [F("MKTGDPINA646NWDB", scale=1e-9)]),
+    ("INGDPYY", "Croissance du PIB (a/a)", "Inde", "%", [F("NAEXKP01INQ659S"), F("MKTGDPINA646NWDB", "pc1")]),
 ]
 
 SRC_LABEL = {"fred": "FRED (Fed de St. Louis)", "ecb": "BCE — ECB Data Portal", "boe": "Bank of England — IADB",
