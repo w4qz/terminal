@@ -1031,7 +1031,7 @@ const curve = SNAPSHOT.curve.map(c=>`<tr><th scope="row" class="sym">${c.t}</th>
 // Indicateurs macro : séries automatiques (economics.json) ; les relevés manuels du 31/10 ne servent qu'en secours.
 const MK=[['USINTR','Fed — taux directeur'],['USIRYY','Inflation US (a/a)'],['USCIR','Inflation sous-jacente US'],['USUR','Chômage US'],['USGDPQQ','PIB US (t/t annualisé)'],
 ['EUINTR','BCE — taux de dépôt'],['EUIRYY','Inflation zone euro'],['EUUR','Chômage zone euro'],['FRIRYY','Inflation France'],['GBIRYY','Inflation Royaume-Uni'],['JPIRYY','Inflation Japon'],['CNIRYY','Inflation Chine'],['US10Y','Taux 10 ans US'],['DE10Y','Taux 10 ans Allemagne'],
-['EUGDPYY','PIB zone euro (a/a)'],['EUGDPQQ','PIB zone euro (t/t)'],['DEGDPYY','PIB Allemagne (a/a)'],['FRGDPYY','PIB France (a/a)'],['ITGDPYY','PIB Italie (a/a)'],['ESGDPYY','PIB Espagne (a/a)'],
+['EUGDPYY','PIB zone euro (a/a)'],['EUGDPQQ','PIB zone euro (t/t)'],['DEGDPYY','PIB Allemagne (a/a)'],['FRGDP','PIB France (Md€)'],['FRGDPYY','PIB France (a/a)'],['FRGDPQQ','PIB France (t/t)'],['ITGDPYY','PIB Italie (a/a)'],['ESGDPYY','PIB Espagne (a/a)'],
 ['GBGDPYY','PIB Royaume-Uni (a/a)'],['CHGDPYY','PIB Suisse (a/a)'],['JPGDPYY','PIB Japon (a/a)'],['CNGDPYY','PIB Chine (a/a)']];
 const macroLive = ECON&&ECON.length ? MK.map(([c,l])=>{ const e=ecoGet(c); if(!e) return ''; const dv=e.last-e.prev;
 return `<tr class="clk" data-eco="${esc(c)}" tabindex="0" role="button"><th scope="row" style="text-align:left;font-weight:400;color:var(--txt)">${esc(l)}</th><td style="font-weight:600">${ecoFmt(e.last,e)}</td>
