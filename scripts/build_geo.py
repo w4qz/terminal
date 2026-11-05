@@ -4,7 +4,7 @@ Onglet Carte du Terminal : points chauds géopolitiques (GDELT) et fil de recher
 GDELT (gdeltproject.org) recense la presse mondiale toutes les 15 minutes, gratuitement.
 Pour chaque zone suivie : nombre d'articles sur 24 h, comparé aux 24 h précédentes (tendance),
 et les derniers titres. GDELT demande au plus une requête toutes les 5 secondes : ce script
-ne tourne donc qu'une fois par heure (GEO_FORCE=true pour forcer).
+n'actualise que 4 zones par passage, les plus anciennes d'abord, et s'arrête avant 4 minutes.
 
 Le fil « Recherche » ne reprend que les titres et liens de publications publiques
 (banques centrales, institutions, gérants) : jamais le contenu, jamais de note réservée aux clients.
@@ -26,12 +26,15 @@ warnings.filterwarnings("ignore")
 
 import feedparser
 import requests
+from concurrent.futures import ThreadPoolExecutor
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "geo.json"
 NOW = datetime.now(timezone.utc)
 FORCE = os.getenv("GEO_FORCE", "").lower() == "true"
-REFRESH = timedelta(minutes=55)
+T0 = time.monotonic()
+BUDGET = 240          # secondes : l'étape du workflow est coupée à 6 min, on s'arrête bien avant
+PER_RUN = 4           # zones GDELT actualisées par passage (les plus anciennes d'abord) : cycle complet ~1 h
 UA = {"User-Agent": "Mozilla/5.0 (terminal-ia; projet personnel)"}
 GDELT = "https://api.gdeltproject.org/api/v2/doc/doc"
 
@@ -80,12 +83,14 @@ def log(msg):
     print(f"[{datetime.now(timezone.utc):%H:%M:%S}] {msg}", flush=True)
 
 
-def gdelt(params, tries=3):
+def gdelt(params, tries=2):
     for i in range(tries):
+        if time.monotonic() - T0 > BUDGET:
+            raise RuntimeError("budget de temps atteint")
         time.sleep(5.5)                       # limite GDELT : 1 requête / 5 s
-        r = requests.get(GDELT, params={**params, "format": "json"}, headers=UA, timeout=40)
+        r = requests.get(GDELT, params={**params, "format": "json"}, headers=UA, timeout=20)
         if r.status_code == 429:
-            time.sleep(10 * (i + 1)); continue
+            time.sleep(8); continue
         r.raise_for_status()
         try:
             return r.json()
@@ -108,27 +113,39 @@ def hotspot(key, name, q, ll):
     return {"k": key, "n": name, "ll": ll, "n24": now24, "prev24": prev24, "trend": trend, "arts": arts}
 
 
+def _feed(item):
+    """Un flux RSS, avec un délai maximal (feedparser seul peut rester bloqué sur un serveur lent)."""
+    name, cat, url = item
+    try:
+        r = requests.get(url, headers={"User-Agent": "Mozilla/5.0 (terminal-ia)"}, timeout=12)
+        r.raise_for_status()
+        f = feedparser.parse(r.content)
+        ents = f.entries[:8]
+        if not ents:
+            raise RuntimeError("flux vide")
+        out = []
+        for e in ents:
+            tm = e.get("published_parsed") or e.get("updated_parsed")
+            ts = datetime(*tm[:6], tzinfo=timezone.utc).isoformat().replace("+00:00", "Z") if tm else None
+            title = re.sub(r"\s+", " ", e.get("title", "")).strip()
+            tags = [t for t, rx in TAGS.items() if re.search(rx, title, re.I)] or [cat]
+            if cat not in tags:
+                tags.append(cat)
+            if title and e.get("link", "").startswith("http"):
+                out.append({"src": name, "t": title[:220], "u": e["link"], "ts": ts, "tags": tags})
+        return name, out, "ok"
+    except Exception as ex:
+        return name, [], str(ex)[:80]
+
+
 def research():
     rows, status = [], {}
-    for name, cat, url in RESEARCH_FEEDS:
-        try:
-            f = feedparser.parse(url, agent="Mozilla/5.0 (terminal-ia)")
-            ents = f.entries[:8]
-            if not ents:
-                raise RuntimeError(f"flux vide (HTTP {getattr(f, 'status', '?')})")
-            for e in ents:
-                tm = e.get("published_parsed") or e.get("updated_parsed")
-                ts = datetime(*tm[:6], tzinfo=timezone.utc).isoformat().replace("+00:00", "Z") if tm else None
-                title = re.sub(r"\s+", " ", e.get("title", "")).strip()
-                tags = [t for t, rx in TAGS.items() if re.search(rx, title, re.I)] or [cat]
-                if cat not in tags:
-                    tags.append(cat)
-                if title and e.get("link", "").startswith("http"):
-                    rows.append({"src": name, "t": title[:220], "u": e["link"], "ts": ts, "tags": tags})
-            status[name] = "ok"
-        except Exception as ex:
-            status[name] = str(ex)[:80]
-            log(f"  ! Recherche {name} : {status[name]}")
+    with ThreadPoolExecutor(max_workers=8) as ex:
+        for name, out, st in ex.map(_feed, RESEARCH_FEEDS):
+            rows += out
+            status[name] = st
+            if st != "ok":
+                log(f"  ! Recherche {name} : {st}")
     rows.sort(key=lambda x: x["ts"] or "", reverse=True)
     cutoff = (NOW - timedelta(days=21)).isoformat()
     rows = [r for r in rows if (r["ts"] or "9") >= cutoff][:80]
@@ -144,30 +161,29 @@ def main() -> int:
         except Exception:
             prev = {}
     res, res_status = research()
-    hs, hs_ts = prev.get("hotspots", []), prev.get("hotspots_at")
-    fresh = hs_ts and NOW - datetime.fromisoformat(hs_ts.replace("Z", "+00:00")) < REFRESH
-    if FORCE or not fresh:
-        new, fails = [], 0
-        for key, name, q, ll in HOTSPOTS:
-            try:
-                new.append(hotspot(key, name, q, ll))
-                fails = 0
-            except Exception as ex:
-                fails += 1
-                log(f"  ! GDELT {name} : {str(ex)[:100]}")
-                old = next((h for h in hs if h.get("k") == key), None)
-                if old:
-                    new.append({**old, "stale": True})
-                if fails >= 3:
-                    log("GDELT : trop d'échecs d'affilée, reprise au prochain passage")
-                    break
-        if new:
-            hs, hs_ts = new, NOW.isoformat().replace("+00:00", "Z")
-            log(f"Points chauds : {len(new)} zones")
-    else:
-        log("Points chauds lus il y a moins d'une heure : pas d'actualisation GDELT")
+    hs = {h["k"]: h for h in prev.get("hotspots", []) if h.get("k")}
+    # Zones à relire : les plus anciennes d'abord (toutes si lancement manuel et budget suffisant)
+    order = sorted(HOTSPOTS, key=lambda z: (hs.get(z[0]) or {}).get("at", ""))
+    todo = order if FORCE else order[:PER_RUN]
+    done = 0
+    for key, name, q, ll in todo:
+        if time.monotonic() - T0 > BUDGET:
+            log("Budget de temps atteint : les autres zones seront lues au prochain passage")
+            break
+        try:
+            h = hotspot(key, name, q, ll)
+            h["at"] = NOW.isoformat().replace("+00:00", "Z")
+            hs[key] = h
+            done += 1
+        except Exception as ex:
+            log(f"  ! GDELT {name} : {str(ex)[:100]}")
+            if key in hs:
+                hs[key]["stale"] = True
+    hs_list = [hs[k] for k, *_ in HOTSPOTS if k in hs]
+    hs_ts = max((h.get("at", "") for h in hs_list), default=None) or prev.get("hotspots_at")
+    log(f"Points chauds : {done} zones actualisées, {len(hs_list)} au total")
     OUT.write_text(json.dumps({"generated_at": NOW.isoformat().replace("+00:00", "Z"),
-                               "hotspots": hs, "hotspots_at": hs_ts,
+                               "hotspots": hs_list, "hotspots_at": hs_ts,
                                "hotspots_src": "GDELT Project — articles de presse en anglais, 24 h glissantes",
                                "research": res or prev.get("research", []), "research_sources": res_status},
                               ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
