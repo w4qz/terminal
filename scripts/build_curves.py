@@ -229,8 +229,9 @@ def ten_year(sid):
 # L'OCDE ne publie qu'une MOYENNE MENSUELLE du 10 ans, avec un mois de retard : 4,48 % affiché
 # alors que l'OAT cotait bien plus haut. CNBC sert gratuitement les rendements cotés des OAT et BTP.
 CNBC_URL = "https://quote.cnbc.com/quote-html-webservice/restQuote/symbolType/symbol"
-CNBC_TENORS = [("3M", "3M"), ("6M", "6M"), ("1A", "1Y"), ("2A", "2Y"), ("5A", "5Y"), ("7A", "7Y"),
-               ("10A", "10Y"), ("20A", "20Y"), ("30A", "30Y")]
+CNBC_TENORS = [("1M", "1M"), ("3M", "3M"), ("6M", "6M"), ("1A", "1Y"), ("2A", "2Y"), ("3A", "3Y"), ("4A", "4Y"),
+               ("5A", "5Y"), ("7A", "7Y"), ("8A", "8Y"), ("9A", "9Y"), ("10A", "10Y"), ("15A", "15Y"), ("20A", "20Y"),
+               ("25A", "25Y"), ("30A", "30Y")]
 PREV = {}   # curves.json précédent (historique des points CNBC pour la variation sur 1 mois)
 
 
@@ -325,6 +326,8 @@ def hist_10y(sym):
     return sorted(out.items())
 
 
+FILL_CNBC = {"DE": "DE", "UK": "GB", "JP": "JP", "CH": "CH"}
+
 COUNTRIES = [
     ("DE", "Allemagne", curve_de),
     ("FR", "France", lambda: curve_fr() if WEBSTAT_KEY else curve_fr_it("FR", "IRLTLT01FRM156N")),
@@ -342,6 +345,18 @@ def main() -> int:
     items = {}
     for k, name, fn in COUNTRIES:
         pts, src, freq = fn()
+        if k in FILL_CNBC:
+            # Les sources officielles ne publient que quelques maturités (BoE : 5, 10, 20 ans ; Bundesbank :
+            # pas de court terme) : les maturités absentes sont complétées par les rendements cotés CNBC.
+            have = {p["t"] for p in pts}
+            extra = [p for p in curve_cnbc(FILL_CNBC[k]) if p["t"] not in have]
+            for p in extra:
+                p.pop("_hist", None)
+                p["cnbc"] = True
+            if extra:
+                pts = sorted(pts + extra, key=lambda p: TEN_ORD_PY.index(p["t"]) if p["t"] in TEN_ORD_PY else 99)
+                src = (src or "CNBC") + f" · {len(extra)} maturités complétées par CNBC (rendements cotés)"
+                log(f"  {name} : {len(extra)} maturités ajoutées depuis CNBC")
         if pts:
             hist = pts[0].pop("_hist", None)
             items[k] = {"n": name, "pts": pts, "src": src, "freq": freq}
