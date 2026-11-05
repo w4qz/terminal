@@ -265,6 +265,7 @@ body.embed #secbar{top:-6px;margin:-6px -6px 6px}
 <button class="navbtn" data-v="wl">Watchlist <kbd aria-hidden="true">W</kbd><span class="sr-only">(raccourci W)</span></button>
 <button class="navbtn" data-v="pf">Portefeuille <kbd aria-hidden="true">P</kbd><span class="sr-only">(raccourci P)</span></button>
 <button class="navbtn" data-v="macro">Macro <kbd aria-hidden="true">E</kbd><span class="sr-only">(raccourci E)</span></button>
+<button class="navbtn" data-v="map">Carte <kbd aria-hidden="true">G</kbd><span class="sr-only">(raccourci G)</span></button>
 <button class="navbtn" data-v="srch">Recherche <kbd aria-hidden="true">R</kbd><span class="sr-only">(raccourci R)</span></button>
 <button class="navbtn" data-v="sec">Titre <kbd aria-hidden="true">S</kbd><span class="sr-only">(raccourci S)</span></button>
 <button class="navbtn" data-v="comp">Comparer <kbd aria-hidden="true">C</kbd><span class="sr-only">(raccourci C)</span></button>
@@ -285,6 +286,7 @@ body.embed #secbar{top:-6px;margin:-6px -6px 6px}
 <div class="view" id="v-wl" role="tabpanel" aria-label="Watchlist"></div>
 <div class="view" id="v-pf" role="tabpanel" aria-label="Portefeuille"></div>
 <div class="view" id="v-macro" role="tabpanel" aria-label="Macro"></div>
+<div class="view" id="v-map" role="tabpanel" aria-label="Carte du monde"></div>
 <div class="view" id="v-srch" role="tabpanel" aria-label="Recherche"></div>
 <div class="view" id="v-sec" role="tabpanel" aria-label="Titre"></div>
 <div class="view" id="v-comp" role="tabpanel" aria-label="Comparer"></div>
@@ -2569,7 +2571,7 @@ RV:{d:'Valeur relative face aux pairs',t:1}, FA:{d:'Analyse financière sur 4 ex
 OMON:{d:'Chaîne d\'options (titres US)',t:1}, CN:{d:'Actualités du titre',t:1}, EQS:{d:'Filtre d\'actions (screener)',go:'eqs'}, COMP:{d:'Comparaison de performances (base 100)',t:2},
 WEI:{d:'Marchés mondiaux',go:'mkt'}, IMAP:{d:'Carte des marchés',go:'mkt',a:'mkt-hm'},
 ECO:{d:'Calendrier et chiffres économiques',go:'macro',a:'m-eco'}, WIRP:{d:'Probabilités des décisions de la Fed',go:'macro',a:'m-wirp'},
-GC:{d:'Courbes des taux',go:'macro',a:'m-gc'}, BTMM:{d:'Tableau de bord monétaire US',go:'macro',a:'m-btmm'},
+GC:{d:'Courbes des taux',go:'macro',a:'m-gc'}, MAP:{d:'Carte du monde : macro, pétrole, géopolitique',go:'map',a:'g-map'}, CB:{d:'Banques centrales : taux, réunions, attentes',go:'map',a:'g-cb'}, RES:{d:'Recherche publique des banques centrales et institutions',go:'map',a:'g-res'}, BTMM:{d:'Tableau de bord monétaire US',go:'macro',a:'m-btmm'},
 ECST:{d:'Indicateurs économiques par pays',go:'macro',a:'m-econ'},
 PORT:{d:'Portefeuille, risque et adéquation',go:'pf'}, BLP:{d:'Launchpad : écran divisé en 2 ou 4 panneaux',go:'lp'}, TOP:{d:'Principales actualités',go:'news'}, N:{d:'Actualités',go:'news'},
 SECF:{d:'Recherche de titres',go:'srch'}, HELP:{d:'Liste des fonctions',help:1}
@@ -3235,13 +3237,171 @@ function staleMark(ts,maxDays){ if(!ts) return ''; const d=(Date.now()-Date.pars
 return d>maxDays?` <span class="st st-STALE" title="Dernière donnée au ${esc(String(ts).slice(0,10))} : série interrompue ou très en retard">ancienne</span>`:''; }
 
 /*═══════════════════════════════════════════════════════════════════════
+13 bis. CARTE — MAP (macro, pétrole, géopolitique), CB (banques centrales), RES (recherche publique)
+═══════════════════════════════════════════════════════════════════════*/
+let GEO=null, GEO_TS=null, GEOLIB=null;
+async function loadGeo(){ try{ const r=await fetch('geo.json?t='+Date.now(),{cache:'no-store'}); if(!r.ok) throw new Error('HTTP '+r.status);
+const d=await r.json(); if(GEO_TS===d.generated_at) return false; GEO=d; GEO_TS=d.generated_at; return true; }
+catch(e){ console.info('geo.json indisponible ('+e.message+')'); return false; } }
+// Bibliothèques de projection et fond de carte (Natural Earth 1:110 m), chargés à la première ouverture
+function loadGeoLib(){ if(GEOLIB) return GEOLIB;
+const js=u=>new Promise((ok,ko)=>{ const s=document.createElement('script'); s.src=u; s.onload=ok; s.onerror=()=>ko(new Error('chargement impossible : '+u)); document.head.appendChild(s); });
+GEOLIB=(async()=>{ await js('https://cdn.jsdelivr.net/npm/d3-array@3.2.4/dist/d3-array.min.js'); await js('https://cdn.jsdelivr.net/npm/d3-geo@3.1.1/dist/d3-geo.min.js');
+await js('https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js');
+const t=await (await fetch('https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json')).json(); return topojson.feature(t,t.objects.countries); })();
+GEOLIB.catch(()=>{ GEOLIB=null; }); return GEOLIB; }
+// Pays → préfixe des séries ECONOMICS et indice boursier
+const ISO_PFX={840:'US',276:'DE',250:'FR',380:'IT',724:'ES',826:'GB',392:'JP',756:'CH',156:'CN',356:'IN'};
+const ISO_IDX={840:'SPX',250:'CAC',276:'DAX',826:'UKX',392:'N225',156:'SHCOMP',344:'HSI',702:'STI'};
+const EA=new Set([40,56,100,191,196,233,246,250,276,300,372,380,428,440,442,470,528,620,703,705,724]);   // zone euro (Bulgarie depuis 2026)
+const MAP_METRICS={y10:{l:'Taux 10 ans',suf:'10Y',ea:null,div:false},infl:{l:'Inflation',suf:'IRYY',ea:'EUIRYY',div:false},
+rate:{l:'Taux directeur',suf:'INTR',ea:'EUINTR',div:false},gdp:{l:'PIB (a/a)',suf:'GDPYY',ea:null,div:true},eq:{l:'Bourse du jour',div:true}};
+const MAPS={metric:'y10', layers:new Set(['macro','oil','geo']), sel:250, hot:null};
+// Passages maritimes : flux de pétrole (brut et produits), ordre de grandeur annuel publié par l'EIA (World Oil Transit Chokepoints).
+const CHOKE=[['Ormuz',56.4,26.6,20,14,14],['Malacca',101,2.5,23,14,4],['Suez / SUMED',32.5,30,7.5,-150,20],['Bab-el-Mandeb',43.4,12.6,4,12,12],
+['Bosphore',29,41.1,3.4,-110,-12],['Détroits danois',11,56,4.9,-150,-10],['Panama',-79.7,9.1,2,-100,18],['Cap de Bonne-Espérance',18.5,-34.4,9,14,4]];
+const OIL_ROUTES=[[[50,27],[56.4,26.6],[60,22],[75,8],[95,6],[101,2.5],[105,2],[112,10],[121,30]],
+[[50,27],[56.4,26.6],[58,20],[52,14],[43.4,12.6],[38,20],[32.5,30],[25,34],[12,37],[-6,36],[-9,43],[4,51.9]],
+[[50,27],[56.4,26.6],[58,15],[45,-10],[35,-28],[18.5,-34.4],[5,-20],[-10,5],[-15,30],[-9,43],[4,51.9]],
+[[-94,29],[-80,26],[-50,36],[-20,45],[-6,49],[4,51.9]],
+[[29.5,59.9],[20,57],[11,56],[5,57],[-5,50],[-9,40],[-6,36],[12,37],[32.5,30],[38,20],[43.4,12.6],[60,18],[72.8,19]]];
+function mapVal(iso,m){ iso=+iso;
+if(m==='eq'){ const s=ISO_IDX[iso], q=s&&SNAPSHOT.quotes[s]; return q&&q.pct!=null?{v:q.pct,code:s,lab:pct(q.pct)}:null; }
+const M=MAP_METRICS[m], p=ISO_PFX[iso]; let e=p&&ecoGet(p+M.suf);
+if(!e&&M.ea&&EA.has(iso)) e=ecoGet(M.ea);
+return e&&e.last!=null?{v:e.last,code:e.code,lab:ecoFmt(e.last,e)}:null; }
+function mapColor(v,lo,hi,div){ if(div){ const a=Math.min(1,Math.abs(v)/Math.max(Math.abs(lo),Math.abs(hi),1e-9)); return v>=0?`rgba(47,191,107,${.25+.65*a})`:`rgba(224,74,74,${.25+.65*a})`; }
+const t=hi>lo?(v-lo)/(hi-lo):.5, st=[[27,61,102],[47,106,168],[127,176,216],[232,194,122],[232,163,61],[224,74,74]];
+const x=Math.max(0,Math.min(1,t))*(st.length-1), i=Math.min(st.length-2,Math.floor(x)), f=x-i, a=st[i], b=st[i+1];
+return `rgb(${a.map((c,k)=>Math.round(c+(b[k]-c)*f)).join(',')})`; }
+async function viewMap(){
+const el=document.getElementById('v-map');
+const chip=(on,attr,txt)=>`<button type="button" class="chip ${on?'on':''}" ${attr} aria-pressed="${on}">${txt}</button>`;
+const hs=(GEO&&GEO.hotspots)||[];
+el.innerHTML=`<div style="display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:10px">
+<div class="pnl" id="g-map"><h3>MAP — Carte du monde<span class="rt">cliquez un pays pour sa fiche, un point rouge pour ses titres</span></h3>
+<div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding:7px 9px;border-bottom:1px solid var(--line)">
+<span class="mut" style="font-size:9px">CALQUES</span>${chip(MAPS.layers.has('macro'),'data-ml="macro"','■ Macro')}${chip(MAPS.layers.has('oil'),'data-ml="oil"','◆ Pétrole')}${chip(MAPS.layers.has('geo'),'data-ml="geo"','● Géopolitique')}
+<span style="width:1px;height:16px;background:var(--line);margin:0 4px"></span><span class="mut" style="font-size:9px">COLORIER PAR</span>
+${Object.entries(MAP_METRICS).map(([k,m])=>chip(MAPS.metric===k,`data-mm="${k}"`,m.l)).join('')}
+<span id="g-leg" style="margin-left:auto;font-size:9px;color:var(--txt2)"></span></div>
+<div id="g-svgw" style="position:relative;background:#05080b"><div class="note" style="padding:20px">Chargement de la carte…</div></div>
+<div class="note">◆ Passages maritimes : millions de barils par jour (Mb/j), EIA — ordre de grandeur annuel, pas de suivi des navires en temps réel. ● Points chauds : nombre d'articles de presse sur 24 h (GDELT)${GEO&&GEO.hotspots_at?', relevé '+fmtDT(GEO.hotspots_at):''}. ■ Couleur : dernière valeur de la série ECONOMICS du pays (zone euro : série de la zone pour l'inflation et le taux directeur) ; gris = pas de série.</div></div>
+<div style="display:grid;gap:10px;align-content:start">
+<div class="pnl" id="g-card"></div>
+<div class="pnl"><h3>POINTS CHAUDS — 24 H<span class="rt">GDELT</span></h3>${hs.length?`<table><caption class="sr-only">Points chauds</caption><thead><tr><th scope="col" style="text-align:left">Zone</th><th scope="col">Articles</th><th scope="col">Sur 24 h</th></tr></thead><tbody>
+${hs.slice().sort((a,b)=>b.n24-a.n24).map(h=>`<tr class="clk" data-hot="${esc(h.k)}" tabindex="0" role="button"><th scope="row" style="text-align:left;font-weight:400;color:var(--txt)">${esc(h.n)}${h.stale?' <span class="neg" title="dernier relevé conservé">*</span>':''}</th><td>${nf(h.n24,0)}</td>
+<td class="${h.trend==null?'mut':h.trend>15?'neg':h.trend<-15?'pos':'mut'}">${h.trend==null?'—':(h.trend>0?'▲ +':h.trend<0?'▼ ':'= ')+nf(h.trend,0)+' %'}</td></tr>`).join('')}</tbody></table>`
+:'<div class="note">Points chauds pas encore relevés : ils apparaissent après le prochain passage du robot (étape « Carte »).</div>'}
+<div id="g-arts"></div></div>
+<div class="pnl"><h3>PÉTROLE<span class="rt">cours directs</span></h3><div class="pbody">${['BRENT','CL'].map(s=>{ const q=SNAPSHOT.quotes[s]; return q?`<div class="kv"><span class="k">${s==='CL'?'WTI':'Brent'}</span><span class="v"><b>${npx(q.p,s)}</b> <span class="${cls(q.pct)}">${pct(q.pct)}</span></span></div>`:''; }).join('')}
+${SNAPSHOT.quotes.BRENT&&SNAPSHOT.quotes.CL?`<div class="kv"><span class="k">Écart Brent − WTI</span><span class="v">${nf(SNAPSHOT.quotes.BRENT.p-SNAPSHOT.quotes.CL.p)} $</span></div>`:''}</div></div>
+</div></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px">${cbPanel()}${resPanel()}</div>`;
+el.querySelectorAll('[data-ml]').forEach(b=>b.onclick=()=>{ const k=b.dataset.ml; MAPS.layers.has(k)?MAPS.layers.delete(k):MAPS.layers.add(k); viewMap(); });
+el.querySelectorAll('[data-mm]').forEach(b=>b.onclick=()=>{ MAPS.metric=b.dataset.mm; viewMap(); });
+el.querySelectorAll('[data-hot]').forEach(r=>{ r.onclick=()=>{ MAPS.hot=r.dataset.hot; mapArts(); }; r.onkeydown=e=>{ if(e.key==='Enter'){ MAPS.hot=r.dataset.hot; mapArts(); } }; });
+el.querySelectorAll('[data-resf]').forEach(b=>b.onclick=()=>{ RESF=b.dataset.resf; viewMap(); });
+el.querySelectorAll('[data-eco]').forEach(r=>r.onclick=()=>runAny(r.dataset.eco));
+mapCard(); mapArts();
+try{ drawWorld(await loadGeoLib()); }catch(e){ const w=document.getElementById('g-svgw'); if(w) w.innerHTML=`<div class="warn" style="margin:10px">Fond de carte indisponible (${esc(e.message)}). Les panneaux restent utilisables.</div>`; }
+}
+function drawWorld(feat){
+const w=document.getElementById('g-svgw'); if(!w||S.view!=='map') return;
+const W=Math.max(600,w.clientWidth), H=Math.round(W*.49), NS='http://www.w3.org/2000/svg';
+const proj=d3.geoNaturalEarth1().fitExtent([[8,8],[W-8,H-8]],{type:'Sphere'}), path=d3.geoPath(proj);
+const svg=document.createElementNS(NS,'svg'); svg.setAttribute('width',W); svg.setAttribute('height',H); svg.setAttribute('role','img'); svg.setAttribute('aria-label','Carte du monde');
+const add=(n,a,txt)=>{ const e=document.createElementNS(NS,n); for(const k in a) e.setAttribute(k,a[k]); if(txt!=null){ e.textContent=txt; } svg.appendChild(e); return e; };
+const F='ui-monospace,Menlo,monospace';
+add('path',{d:path({type:'Sphere'}),fill:'#05080b',stroke:'#1a2028'});
+add('path',{d:path(d3.geoGraticule10()),fill:'none',stroke:'#10161d','stroke-width':.5});
+const vals=feat.features.map(f=>mapVal(f.id,MAPS.metric)).filter(Boolean).map(x=>x.v), M=MAP_METRICS[MAPS.metric];
+const lo=vals.length?Math.min(...vals):0, hi=vals.length?Math.max(...vals):1;
+for(const f of feat.features){ const v=MAPS.layers.has('macro')?mapVal(f.id,MAPS.metric):null, sel=+f.id===MAPS.sel;
+const p=add('path',{d:path(f),fill:v?mapColor(v.v,lo,hi,M.div):'#161b21',stroke:sel?'#fff':'#05080b','stroke-width':sel?1.6:.5,style:'cursor:pointer'});
+const t=document.createElementNS(NS,'title'); t.textContent=(f.properties&&f.properties.name||'')+(v?' — '+M.l+' : '+v.lab:''); p.appendChild(t);
+p.addEventListener('click',()=>{ MAPS.sel=+f.id; mapCard(); svg.querySelectorAll('path[data-sel]').forEach(x=>{ x.setAttribute('stroke','#05080b'); x.setAttribute('stroke-width',.5); x.removeAttribute('data-sel'); });
+p.setAttribute('stroke','#fff'); p.setAttribute('stroke-width',1.6); p.setAttribute('data-sel','1'); });
+if(sel) p.setAttribute('data-sel','1'); }
+if(MAPS.layers.has('oil')){
+for(const r of OIL_ROUTES) add('path',{d:path({type:'LineString',coordinates:r}),fill:'none',stroke:'#e8a33d','stroke-width':1.3,'stroke-dasharray':'4 3',opacity:.7,'pointer-events':'none'});
+for(const [n,lo2,la,v,dx,dy] of CHOKE){ const [x,y]=proj([lo2,la]), s=4+Math.sqrt(v)*1.5;
+add('path',{d:`M${x} ${y-s}L${x+s} ${y}L${x} ${y+s}L${x-s} ${y}Z`,fill:'#e8a33d',stroke:'#000','stroke-width':1});
+add('text',{x:x+dx,y:y+dy,fill:'#e8c27a','font-size':10,'font-family':F,'pointer-events':'none'},`${n} ${String(v).replace('.',',')} Mb/j`); } }
+if(MAPS.layers.has('geo')){ const hs=(GEO&&GEO.hotspots)||[], mx=Math.max(1,...hs.map(h=>h.n24||0));
+for(const h of hs){ const [x,y]=proj(h.ll), r=4+10*Math.sqrt((h.n24||0)/mx);
+add('circle',{cx:x,cy:y,r:r*1.9,fill:'#e04a4a',opacity:.16,'pointer-events':'none'});
+const c=add('circle',{cx:x,cy:y,r,fill:'#e04a4a',opacity:.6,stroke:'#ff8a8a','stroke-width':1,style:'cursor:pointer'});
+const t=document.createElementNS(NS,'title'); t.textContent=`${h.n} — ${h.n24} articles sur 24 h`; c.appendChild(t);
+c.addEventListener('click',()=>{ MAPS.hot=h.k; mapArts(); });
+add('text',{x:x-r-4,y:y-r-2,fill:'#ffb3b3','font-size':10,'font-family':F,'text-anchor':'end','pointer-events':'none'},h.n); } }
+w.innerHTML=''; w.appendChild(svg);
+const leg=document.getElementById('g-leg');
+if(leg) leg.innerHTML=MAPS.layers.has('macro')&&vals.length?`${M.div?'baisse':'bas'} <span style="display:inline-block;width:110px;height:7px;vertical-align:middle;background:${M.div?'linear-gradient(90deg,#e04a4a,#222,#2fbf6b)':'linear-gradient(90deg,#1b3d66,#2f6aa8,#7fb0d8,#e8c27a,#e8a33d,#e04a4a)'}"></span> ${M.div?'hausse':'haut'} · ${nf(lo,2)} à ${nf(hi,2)}${MAPS.metric==='eq'?' %':''}`:'';
+}
+const ISO_NAME={840:'États-Unis',276:'Allemagne',250:'France',380:'Italie',724:'Espagne',826:'Royaume-Uni',392:'Japon',756:'Suisse',156:'Chine',356:'Inde'};
+function mapCard(){ const el=document.getElementById('g-card'); if(!el) return; const iso=MAPS.sel, p=ISO_PFX[iso], ea=EA.has(iso);
+const name=ISO_NAME[iso]||(GEOLIB_NAMES[iso])||'Pays';
+const codes=(ECON||[]).filter(e=>p&&e.code.startsWith(p)).slice(0,10);
+const eaRows=ea&&p!=='EU'?['EUINTR','EUIRYY'].map(ecoGet).filter(Boolean):[];
+const idx=ISO_IDX[iso], q=idx&&SNAPSHOT.quotes[idx];
+const row=e=>`<tr class="clk" data-eco="${esc(e.code)}" tabindex="0" role="button"><th scope="row" style="text-align:left;font-weight:400;color:var(--txt)">${esc(e.n)}</th><td style="font-weight:600">${ecoFmt(e.last,e)}</td><td class="mut" style="font-size:10px">${ecoPeriod(e,e.date)}</td></tr>`;
+el.innerHTML=`<h3>${esc(name.toUpperCase())}<span class="rt">pays sélectionné</span></h3>
+${q?`<div class="pbody" style="padding-bottom:0"><div class="kv"><span class="k">${esc(idx)}</span><span class="v"><b>${npx(q.p,idx)}</b> <span class="${cls(q.pct)}">${pct(q.pct)}</span></span></div></div>`:''}
+${codes.length||eaRows.length?`<table><caption class="sr-only">Indicateurs du pays</caption><tbody>${codes.map(row).join('')}${eaRows.map(row).join('')}</tbody></table>`
+:'<div class="note">Pas de série ECONOMICS pour ce pays dans le terminal.</div>'}
+<div style="display:flex;gap:6px;flex-wrap:wrap;padding:8px 9px">${p?`<button class="chip" data-run="GC">GC</button>`:''}${idx?`<button class="chip" data-run="${esc(idx)}">${esc(idx)} GP</button>`:''}<button class="chip" data-run="ECO">ECO</button></div>`;
+el.querySelectorAll('[data-eco]').forEach(r=>r.onclick=()=>runAny(r.dataset.eco));
+el.querySelectorAll('[data-run]').forEach(b=>b.onclick=()=>{ const c=b.dataset.run; if(SNAPSHOT.quotes[c]){ S.focus=c; go('sec'); } else runAny(c); }); }
+const GEOLIB_NAMES={};
+function mapArts(){ const el=document.getElementById('g-arts'); if(!el) return; const h=((GEO&&GEO.hotspots)||[]).find(x=>x.k===MAPS.hot);
+if(!h){ el.innerHTML=(GEO&&GEO.hotspots&&GEO.hotspots.length)?'<div class="note">Cliquez une zone pour ses derniers titres.</div>':''; return; }
+el.innerHTML=`<div class="note" style="color:var(--txt2);border-top:1px solid var(--line)"><b style="color:var(--txt)">${esc(h.n)}</b> — derniers titres</div>
+${(h.arts||[]).slice(0,10).map(a=>`<div style="padding:4px 9px;border-bottom:1px solid #14171b;font-size:11px"><a href="${safeUrl(a.u)}" target="_blank" rel="noopener">${esc(a.t)}</a> <span class="mut" style="font-size:9px">${esc(a.d||'')}</span></div>`).join('')||'<div class="note">Aucun titre.</div>'}`; }
+// CB — banques centrales : taux officiel (ECONOMICS), dernier changement, prochaine réunion, attente (Fed seulement)
+const CBS=[['Fed','États-Unis','USINTR','Federal Funds Rate','USD','https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm'],
+['BCE','Zone euro','EUINTR','Main Refinancing Rate','EUR','https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.fr.html'],
+['BoE','Royaume-Uni','GBINTR','Official Bank Rate','GBP','https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates'],
+['BoJ','Japon','JPINTR','BOJ Policy Rate','JPY','https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm'],
+['BNS','Suisse','CHINTR','SNB Policy Rate','CHF','https://www.snb.ch/fr/the-snb/mandates-goals/monetary-policy/decisions'],
+['PBoC','Chine',null,'Loan Prime Rate','CNY','http://www.pbc.gov.cn/en/3688006/index.html']];
+function cbPanel(){ const M=MACRO||{}, cons=(M.eco&&M.eco.consensus&&M.eco.consensus.rows)||[], W=M.wirp||{}, today=new Date().toISOString().slice(0,10);
+const rows=CBS.map(([cb,ctry,code,ff,cur,url])=>{
+const e=code&&ecoGet(code), snap=(SNAPSHOT.rates||[]).find(r=>r.cb===cb);
+let rate=e?ecoFmt(e.last,e):snap?esc(snap.v):'—';
+if(cb==='Fed'&&W.range&&W.range[0]!=null) rate=nf(W.range[0])+' – '+nf(W.range[1])+' %';
+let chg='—';
+if(e&&Array.isArray(e.h)&&e.h.length>1){ const h=e.h; let i=h.length-1; while(i>0&&Math.abs(h[i][1]-h[i-1][1])<1e-9) i--;
+if(i>0){ const d=Math.round((h[i][1]-h[i-1][1])*100); chg=`<span class="${d<0?'neg':'pos'}">${d>0?'+':''}${d} pb</span> <span class="mut">${new Date(String(h[i][0]).slice(0,10)+'T12:00:00').toLocaleDateString('fr-FR',{month:'short',year:'numeric'})}</span>`; } }
+const ev=cons.filter(c=>c.cur===cur&&c.ev_en===ff).map(c=>c.ts).sort();
+const next=(cb==='Fed'?(W.meetings||[]).map(m=>m.d).filter(d=>d>=today)[0]:null)||(ev.find(t=>t.slice(0,10)>=today)||'').slice(0,10);
+const wm=cb==='Fed'&&(W.meetings||[]).find(m=>m.d===next);
+const exp=wm?(wm.p_cut?`baisse ${nf(wm.p_cut,0)} %`:wm.p_hike?`hausse ${nf(wm.p_hike,0)} %`:'statu quo')+' <span class="badge" style="font-size:8px">WIRP</span>':'<span class="mut">—</span>';
+return `<tr${code?` class="clk" data-eco="${esc(code)}" tabindex="0" role="button"`:''}><th scope="row" style="text-align:left;font-weight:400;color:var(--txt)"><b>${esc(cb)}</b> <span class="mut">${esc(ctry)}</span></th>
+<td style="font-weight:600">${rate}</td><td>${chg}</td><td>${next?(next===today?'<span class="hot">aujourd\'hui</span>':dfr(next)):`<a href="${safeUrl(url)}" target="_blank" rel="noopener" class="mut">calendrier ↗</a>`}</td><td>${exp}</td></tr>`; }).join('');
+return `<div class="pnl" id="g-cb"><h3>CB — Banques centrales<span class="rt">taux officiel · dernier changement · prochaine réunion</span></h3>
+<table><caption class="sr-only">Banques centrales</caption><thead><tr><th scope="col" style="text-align:left">Banque</th><th scope="col">Taux</th><th scope="col">Dernier changement</th><th scope="col">Prochaine réunion</th><th scope="col">Attente du marché</th></tr></thead><tbody>${rows}</tbody></table>
+<div class="note">Taux et dernier changement : séries ECONOMICS (FRED, BCE, BoE, BNS ; résolution mensuelle). Prochaine réunion : calendrier FOMC pour la Fed, calendrier économique des deux prochaines semaines pour les autres (sinon lien vers le calendrier officiel). Attente du marché : uniquement pour la Fed (contrats à terme fed funds, WIRP) ; pas de source gratuite pour les autres, la case reste vide. Clic sur une ligne : historique du taux.</div></div>`; }
+// RES — recherche publique (titres et liens)
+let RESF='Tout';
+function resPanel(){ const R=(GEO&&GEO.research)||[], cats=['Tout','Taux','Actions','Pétrole','Banques centrales','Macro','Émergents'];
+const list=R.filter(r=>RESF==='Tout'||(r.tags||[]).includes(RESF)).slice(0,25);
+const ago=ts=>{ if(!ts) return ''; const h=(Date.now()-Date.parse(ts))/36e5; return h<1?'< 1 h':h<24?`il y a ${Math.round(h)} h`:`${Math.round(h/24)} j`; };
+const st=(GEO&&GEO.research_sources)||{}, ok=Object.values(st).filter(v=>v==='ok').length;
+return `<div class="pnl" id="g-res"><h3>RES — Recherche publique<span class="rt">${ok?ok+' sources · ':''}titres et liens uniquement</span></h3>
+<div style="display:flex;gap:6px;flex-wrap:wrap;padding:7px 9px;border-bottom:1px solid var(--line)">${cats.map(c=>`<button type="button" class="chip ${RESF===c?'on':''}" data-resf="${esc(c)}">${esc(c)}</button>`).join('')}</div>
+<div style="max-height:420px;overflow:auto">${list.length?list.map(r=>`<div style="display:grid;grid-template-columns:150px 1fr 70px;gap:10px;padding:6px 9px;border-bottom:1px solid #14171b;align-items:baseline">
+<span style="color:#6ba3e0;font-size:10px">${esc(r.src)}</span><a href="${safeUrl(r.u)}" target="_blank" rel="noopener" style="color:var(--txt)">${esc(r.t)}</a><span class="mut" style="font-size:10px;text-align:right">${ago(r.ts)}</span></div>`).join('')
+:`<div class="note">${R.length?'Aucune publication pour ce thème.':'Fil pas encore relevé : il apparaît après le prochain passage du robot (étape « Carte »).'}</div>`}</div>
+<div class="note">Publications publiques des banques centrales, institutions et instituts (Fed, BCE, BoE, BRI, FMI, Banque de France, Bruegel, VoxEU, AIE, EIA). Les notes réservées aux clients des banques ne sont pas reprises : le site est public.</div></div>`; }
+/*═══════════════════════════════════════════════════════════════════════
 14. NAVIGATION
 ═══════════════════════════════════════════════════════════════════════*/
 const RENDER={mkt:viewMarkets, wl:viewWatchlist, pf:viewPortfolio, macro:viewMacro, srch:viewSearch,
-sec:viewSecurity, comp:viewComp, eqs:viewEqs, lp:viewLp, news:viewNews, diag:viewDiag};
+sec:viewSecurity, comp:viewComp, eqs:viewEqs, lp:viewLp, news:viewNews, diag:viewDiag, map:viewMap};
 
 const VIEW_LABEL={mkt:'Marchés', wl:'Watchlist', pf:'Portefeuille', macro:'Macro', srch:'Recherche',
-sec:'Titre', comp:'Comparer', eqs:'Filtre', lp:'Launchpad', news:'News', diag:'Diagnostic'};
+sec:'Titre', comp:'Comparer', eqs:'Filtre', lp:'Launchpad', news:'News', diag:'Diagnostic', map:'Carte'};
 
 async function go(v){
 S.view=v;
@@ -3321,13 +3481,13 @@ else if(e.key==='Enter' && palList[palIdx]) palOpen(palList[palIdx]);
 return;
 }
 if(e.target.tagName==='INPUT' || e.metaKey || e.ctrlKey || e.altKey) return;
-const map={m:'mkt', w:'wl', p:'pf', e:'macro', r:'srch', s:'sec', c:'comp', f:'eqs', l:'lp', n:'news', d:'diag'};
+const map={m:'mkt', w:'wl', p:'pf', e:'macro', r:'srch', s:'sec', c:'comp', f:'eqs', l:'lp', n:'news', d:'diag', g:'map'};
 if(e.key==='/'){ e.preventDefault(); openPal(); return; }
 if(e.key==='?'){ e.preventDefault(); openHelp(); return; }
 const t=map[e.key.toLowerCase()];
 if(t){ e.preventDefault(); go(t); }
 });
-window.addEventListener('resize',()=>{ if(S.view==='pf'&&S.mc){ drawMC(S.mc.p,S.mc.b,S.mc.yrs); pfRenderPerf(); } if(S.view==='mkt') drawHeatmap(); if(S.view==='comp') drawComp(); if(S.view==='macro') viewMacro(); if(S.view==='sec'){ if(ecoGet(S.focus)) drawEco(); else drawCandles(); } });
+window.addEventListener('resize',()=>{ if(S.view==='pf'&&S.mc){ drawMC(S.mc.p,S.mc.b,S.mc.yrs); pfRenderPerf(); } if(S.view==='mkt') drawHeatmap(); if(S.view==='comp') drawComp(); if(S.view==='macro') viewMacro(); if(S.view==='map') viewMap(); if(S.view==='sec'){ if(ecoGet(S.focus)) drawEco(); else drawCandles(); } });
 
 tick(); setInterval(tick,1000);
 /* Bandeau défilant + thème */
@@ -3349,7 +3509,7 @@ document.getElementById('themebtn').onclick=()=>setTheme(document.body.classList
 const EMBED=new URLSearchParams(location.search);
 if(EMBED.get('embed')){ document.body.classList.add('embed'); const c=EMBED.get('cmd')||'WEI';
 S.view='mkt'; (async()=>{ // catalogue chargé d'abord : « TTE » doit devenir TTE.PA, pas le certificat américain
-await Promise.all([loadUniverse(),loadLive(),loadFund(),loadMacro(),loadEcon(),loadCurves(),loadPeers()].map(p=>p.catch(()=>{}))); harmonize();
+await Promise.all([loadUniverse(),loadLive(),loadFund(),loadMacro(),loadEcon(),loadCurves(),loadPeers(),loadGeo()].map(p=>p.catch(()=>{}))); harmonize();
 if(!/^(BLP)$/i.test(c.trim())) runAny(c); else go('mkt'); })(); }
 else go('mkt');
 /* Cours directs : le navigateur interroge Yahoo via le relais Cloudflare toutes les 60 s,
@@ -3381,7 +3541,7 @@ if(S.view==='mkt'||S.view==='wl'){ const mn=document.getElementById('main'), y=m
 syncBar(); }
 }finally{ RT_BUSY=false; }
 }
-const refresh=()=>Promise.all([loadStatus(),loadLive(),loadUniverse(),loadFT(),loadMacro(),loadFund(),loadEcon(),loadPeers(),loadCurves()]).then(([_s,a,b,c,d,e,f,g,h])=>{ harmonize(); renderTape(); if(a||b||c||d||e||f||h){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
+const refresh=()=>Promise.all([loadStatus(),loadLive(),loadUniverse(),loadFT(),loadMacro(),loadFund(),loadEcon(),loadPeers(),loadCurves(),loadGeo()]).then(([_s,a,b,c,d,e,f,g,h,gg])=>{ harmonize(); renderTape(); if(a||b||c||d||e||f||h||gg){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
 refresh();
 setInterval(refresh, 10*60*1000);
 liveQuotes(); setInterval(liveQuotes, 60*1000);
