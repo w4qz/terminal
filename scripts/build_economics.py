@@ -43,18 +43,18 @@ A = 4 / 1000   # Eurostat : PIB trimestriel en millions → rythme annuel en mil
 SPEC = [
     # ── États-Unis
     ("USINTR", "Taux directeur Fed (borne haute)", "États-Unis", "%", [F("DFEDTARU", freq="m"), F("FEDFUNDS")]),
-    ("USIRYY", "Inflation (IPC, a/a)", "États-Unis", "%", [F("CPIAUCSL", "pc1")]),
-    ("USCIR", "Inflation sous-jacente (IPC hors énergie et alimentation, a/a)", "États-Unis", "%", [F("CPILFESL", "pc1")]),
-    ("USIRMM", "Inflation (IPC, m/m)", "États-Unis", "%", [F("CPIAUCSL", "pch")]),
-    ("USPCE", "Inflation PCE sous-jacente (a/a)", "États-Unis", "%", [F("PCEPILFE", "pc1")]),
-    ("USPPI", "Prix à la production (a/a)", "États-Unis", "%", [F("PPIFIS", "pc1")]),
+    ("USIRYY", "Inflation CPI (IPC, a/a)", "États-Unis", "%", [F("CPIAUCSL", "pc1")]),
+    ("USCIR", "Inflation CPI core (hors énergie et alimentation, a/a)", "États-Unis", "%", [F("CPILFESL", "pc1")]),
+    ("USIRMM", "Inflation CPI (IPC, m/m)", "États-Unis", "%", [F("CPIAUCSL", "pch")]),
+    ("USPCE", "Inflation PCE core (a/a)", "États-Unis", "%", [F("PCEPILFE", "pc1")]),
+    ("USPPI", "Prix à la production PPI (a/a)", "États-Unis", "%", [F("PPIFIS", "pc1")]),
     ("USGDPQQ", "Croissance du PIB (t/t annualisé)", "États-Unis", "%", [F("A191RL1Q225SBEA")]),
     ("USGDPYY", "Croissance du PIB (a/a)", "États-Unis", "%", [F("GDPC1", "pc1")]),
     ("USGDP", "PIB nominal", "États-Unis", "Md$", [F("GDP")]),
     ("USUR", "Taux de chômage", "États-Unis", "%", [F("UNRATE")]),
-    ("USNFP", "Créations d'emplois non agricoles", "États-Unis", "milliers", [F("PAYEMS", "chg")]),
+    ("USNFP", "Créations d'emplois NFP (non agricoles, m/m)", "États-Unis", "milliers", [F("PAYEMS", "chg")]),
     ("USJC", "Inscriptions hebdomadaires au chômage", "États-Unis", "inscriptions", [F("ICSA")]),
-    ("USJVAC", "Offres d'emploi (JOLTS)", "États-Unis", "milliers", [F("JTSJOL")]),
+    ("USJVAC", "Offres d'emploi JOLTS", "États-Unis", "milliers", [F("JTSJOL")]),
     ("USWG", "Salaire horaire moyen (a/a)", "États-Unis", "%", [F("CES0500000003", "pc1")]),
     ("USRSMM", "Ventes au détail (m/m)", "États-Unis", "%", [F("RSAFS", "pch")]),
     ("USIPYY", "Production industrielle (a/a)", "États-Unis", "%", [F("INDPRO", "pc1")]),
@@ -69,10 +69,38 @@ SPEC = [
     ("US10Y", "Taux à 10 ans (Trésor)", "États-Unis", "%", [F("DGS10", freq="m")]),
     ("US02Y", "Taux à 2 ans (Trésor)", "États-Unis", "%", [F("DGS2", freq="m")]),
     ("USYC", "Pente 10 ans − 2 ans", "États-Unis", "pts", [F("T10Y2Y", freq="m")]),
+    # Prix : niveaux d'indice et inflation globale PCE
+    ("USCPI", "Indice des prix CPI (niveau)", "États-Unis", "indice", [F("CPIAUCSL")]),
+    ("USCCPI", "Indice des prix CPI core (niveau)", "États-Unis", "indice", [F("CPILFESL")]),
+    ("USPCEYY", "Inflation PCE globale (a/a)", "États-Unis", "%", [F("PCEPI", "pc1")]),
+    ("USPCEMM", "Inflation PCE core (m/m)", "États-Unis", "%", [F("PCEPILFE", "pch")]),
+    ("USINFE", "Anticipations d'inflation 5 ans dans 5 ans", "États-Unis", "%", [F("T5YIFR", freq="m")]),
+    ("USBE10", "Point mort d'inflation 10 ans (breakeven)", "États-Unis", "%", [F("T10YIE", freq="m")]),
+    # Emploi et activité (l'indice ISM est payant : enquêtes régionales de la Fed et CFNAI en substitut)
+    ("USADP", "Emploi privé ADP (m/m)", "États-Unis", "milliers", [F("ADPMNUSNERSA", "chg", scale=0.001), F("ADPWNUSNERSA", "chg", freq="m", scale=0.001)]),
+    ("USCJC", "Inscriptions continues au chômage", "États-Unis", "inscriptions", [F("CCSA")]),
+    ("USPHIL", "Enquête manufacturière Fed de Philadelphie (substitut ISM)", "États-Unis", "indice", [F("GACDFSA066MSFRBPHI")]),
+    ("USEMPIRE", "Enquête manufacturière Empire State, Fed de New York (substitut ISM)", "États-Unis", "indice", [F("GACDINA066MSFRBNY")]),
+    ("USCFNAI", "Indice d'activité nationale de la Fed de Chicago CFNAI (substitut ISM)", "États-Unis", "indice", [F("CFNAI")]),
+    ("USDGO", "Commandes de biens durables (m/m)", "États-Unis", "%", [F("DGORDER", "pch")]),
+    # Taux monétaires et de marché
+    ("USEFFR", "Taux effectif des fed funds (EFFR)", "États-Unis", "%", [F("EFFR", freq="m"), F("DFF", freq="m")]),
+    ("USSOFR", "Taux SOFR", "États-Unis", "%", [F("SOFR", freq="m")]),
+    ("USIORB", "Rémunération des réserves (IORB)", "États-Unis", "%", [F("IORB", freq="m")]),
+    ("US03MY", "Taux à 3 mois (T-bill)", "États-Unis", "%", [F("DGS3MO", freq="m")]),
+    ("US05Y", "Taux à 5 ans (Trésor)", "États-Unis", "%", [F("DGS5", freq="m")]),
+    ("US30Y", "Taux à 30 ans (Trésor)", "États-Unis", "%", [F("DGS30", freq="m")]),
+    ("US10YR", "Taux réel à 10 ans (TIPS)", "États-Unis", "%", [F("DFII10", freq="m")]),
+    ("USIGS", "Spread crédit Investment Grade (ICE BofA)", "États-Unis", "%", [F("BAMLC0A0CM", freq="m")]),
+    ("USHYS", "Spread crédit High Yield (ICE BofA)", "États-Unis", "%", [F("BAMLH0A0HYM2", freq="m")]),
     # ── Zone euro
     ("EUINTR", "Taux de dépôt BCE", "Zone euro", "%", [("ecb", "FM/D.U2.EUR.4F.KR.DFR.LEV"), F("ECBDFR", freq="m")]),
     ("EUMRO", "Taux de refinancement BCE", "Zone euro", "%", [("ecb", "FM/D.U2.EUR.4F.KR.MRR_FR.LEV"), F("ECBMRRFR", freq="m")]),
-    ("EUIRYY", "Inflation (IPCH, a/a)", "Zone euro", "%", [("ecb", "ICP/M.U2.N.000000.4.ANR"), F("CP0000EZ19M086NEST", "pc1")]),
+    ("EUESTR", "Taux €STR", "Zone euro", "%", [F("ECBESTRVOLWGTTRMDMNRT", freq="m")]),
+    ("EURIBOR3M", "Euribor 3 mois", "Zone euro", "%", [("ecb", "FM/M.U2.EUR.RT.MM.EURIBOR3MD_.HSTA"), F("IR3TIB01EZM156N")]),
+    ("EU02Y", "Taux à 2 ans zone euro AAA (BCE)", "Zone euro", "%", [("ecb", "YC/B.U2.EUR.4F.G_N_A.SV_C_YM.SR_2Y")]),
+    ("EU10Y", "Taux à 10 ans zone euro AAA (BCE)", "Zone euro", "%", [("ecb", "YC/B.U2.EUR.4F.G_N_A.SV_C_YM.SR_10Y")]),
+    ("EUIRYY", "Inflation HICP / CPI (IPCH, a/a)", "Zone euro", "%", [("ecb", "ICP/M.U2.N.000000.4.ANR"), F("CP0000EZ19M086NEST", "pc1")]),
     ("EUCIR", "Inflation sous-jacente (IPCH hors énergie et alimentation, a/a)", "Zone euro", "%", [("ecb", "ICP/M.U2.N.XEF000.4.ANR")]),
     ("EUUR", "Taux de chômage", "Zone euro", "%", [F("LRHUTTTTEZM156S")]),
     ("EUGDPYY", "Croissance du PIB (a/a)", "Zone euro", "%", [F("CLVMNACSCAB1GQEA19", "pc1"), F("CLVMNACSCAB1GQEA20", "pc1")]),
@@ -101,6 +129,7 @@ SPEC = [
     ("IT10Y", "Taux à 10 ans (BTP)", "Italie", "%", [F("IRLTLT01ITM156N")]),
     # ── Royaume-Uni
     ("GBINTR", "Taux directeur BoE (Bank Rate)", "Royaume-Uni", "%", [("boe", "IUDBEDR"), F("IRSTCB01GBM156N")]),
+    ("GBSONIA", "Taux SONIA", "Royaume-Uni", "%", [("boe", "IUDSOIA")]),
     ("GBIRYY", "Inflation (IPC, a/a)", "Royaume-Uni", "%", [F("CPALTT01GBM659N"), F("GBRCPIALLMINMEI", "pc1")]),
     ("GBUR", "Taux de chômage", "Royaume-Uni", "%", [F("LRHUTTTTGBM156S")]),
     ("GBGDPYY", "Croissance du PIB (a/a)", "Royaume-Uni", "%", [F("CLVMNACSCAB1GQUK", "pc1"), F("NGDPRSAXDCGBQ", "pc1")]),
@@ -186,7 +215,7 @@ def get_ecb(key):
     for tp, v in zip(df["TIME_PERIOD"].astype(str), df["OBS_VALUE"]):
         d = tp if len(tp) == 10 else tp + "-01" if len(tp) == 7 else tp
         obs.append((d, float(v)))
-    if obs and len(obs[0][0]) == 10 and key.startswith("FM/D"):
+    if obs and len(obs[0][0]) == 10:
         obs = _monthly(obs)              # taux quotidiens → fin de mois
     flow, series = key.split("/", 1)
     return obs, f"https://data.ecb.europa.eu/data/datasets/{flow}/{flow}.{series}"
