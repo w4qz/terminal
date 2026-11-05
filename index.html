@@ -2462,6 +2462,7 @@ function ecoFmt(v,e){ if(v==null||!isFinite(v)) return '—'; const u=e.unit, a=
 const d=a>=1000?0:u==='indice'?1:2;
 return nf(v,d)+(u==='%'?' %':u==='pts'?' pt':u&&u!=='inscriptions'?' '+u:''); }
 function ecoPeriod(e,d){ const t=new Date(d+'T12:00:00');
+if(e.src0&&d===e.date) return t.toLocaleDateString('fr-FR');   // dernier point coté (courbe GC)
 if(e.freq==='trimestrielle') return `T${Math.floor(t.getMonth()/3)+1} ${t.getFullYear()}`;
 if(e.freq==='mensuelle') return t.toLocaleDateString('fr-FR',{month:'short',year:'numeric'});
 if(e.freq==='annuelle') return String(t.getFullYear());
@@ -3201,11 +3202,20 @@ if(!F.sector&&Object.keys(F).length>4) F.sector='Non classé';
 const q=SNAPSHOT.quotes[s], u=U.get(s), px=q&&q.p!=null?q.p:u&&u.p!=null?u.p:null;
 if(F.div>0&&px>0){ let y=F.div/px*100; if(SUBUNIT(F.ccy)){ if(y<0.05) y*=100; else if(y>40) y/=100; } if(y>0&&y<40) F.divYield=Math.round(y*1000)/1000; }
 else if(F.divYield>40) delete F.divYield; }
-// US10Y / US02Y : même valeur que la courbe GC (FRED quotidien, actualisé toutes les 30 min).
-if(typeof ecoGet==='function'&&typeof MACRO!=='undefined'&&MACRO&&MACRO.gc&&MACRO.gc.us){
-for(const [code,t] of [['US10Y','10A'],['US02Y','2A']]){ const e=ecoGet(code), p=(MACRO.gc.us.pts||[]).find(x=>x.t===t);
-if(e&&p&&p.y!=null&&p.ts&&p.ts>=String(e.date)){ if(p.ts.slice(0,7)!==String(e.date).slice(0,7)) e.prev=e.last; e.last=p.y; e.date=p.ts;
-if(Array.isArray(e.h)&&e.h.length){ const L=e.h[e.h.length-1]; if(String(L[0]).slice(0,7)===p.ts.slice(0,7)) e.h[e.h.length-1]=[p.ts,p.y]; else e.h.push([p.ts,p.y]); } } } }
+// Taux à 10 ans (et US 2 ans) : même valeur que la courbe GC, actualisée toutes les 30 min.
+// Les séries ECONOMICS de l'OCDE sont des moyennes mensuelles publiées avec un mois de retard
+// (FR10Y affichait 4,48 % de septembre quand GC montrait 4,73 % coté) : le dernier point est remplacé.
+if(typeof ecoGet==='function'){
+const gcSrc=k=>{ if(k==='US') return MACRO&&MACRO.gc&&MACRO.gc.us; if(k==='EU') return MACRO&&MACRO.gc&&MACRO.gc.eu; return typeof CURVES!=='undefined'&&CURVES?CURVES[k]:null; };
+for(const [code,k,t] of [['US10Y','US','10A'],['US02Y','US','2A'],['EU10Y','EU','10A'],['EU02Y','EU','2A'],['DE10Y','DE','10A'],['FR10Y','FR','10A'],
+['IT10Y','IT','10A'],['GB10Y','UK','10A'],['JP10Y','JP','10A'],['CH10Y','CH','10A']]){
+const e=ecoGet(code), c=gcSrc(k), p=c&&(c.pts||[]).find(x=>x.t===t);
+if(!e||!p||p.y==null||!p.ts||p.ts<String(e.date)) continue;
+const same=p.ts.slice(0,7)===String(e.date).slice(0,7);
+if(!same&&e.last!==p.y) e.prev=e.last;
+e.last=p.y; e.date=p.ts; e.freq=e.freq==='mensuelle'?'mensuelle':e.freq;
+if(!e.src0){ e.src0=e.src; e.src=(c.src||e.src)+' (dernier point) · historique : '+e.src0; }
+if(Array.isArray(e.h)&&e.h.length){ const L=e.h[e.h.length-1]; if(String(L[0]).slice(0,7)===p.ts.slice(0,7)) e.h[e.h.length-1]=[p.ts,p.y]; else e.h.push([p.ts,p.y]); } } }
 // BNS : taux officiel lu dans les séries économiques ; PBoC : pas de source gratuite, dit clairement.
 { const snb=(SNAPSHOT.rates||[]).find(r=>r.cb==='SNB'), ch=typeof ecoGet==='function'?ecoGet('CHINTR'):null;
 if(snb&&ch){ snb.v=nf(ch.last,2)+' %'; snb.st='EOD'; snb.ts=ch.date; snb.src=ch.src; snb.name='Taux directeur';
