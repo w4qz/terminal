@@ -16,6 +16,7 @@ import json
 import os
 import re
 import sys
+import time
 import warnings
 from datetime import date, datetime, timedelta, timezone
 from io import StringIO
@@ -407,8 +408,9 @@ def wirp(fomc):
 # ─────────────────────────────────────────────────────────────────────────────
 US_TENORS = [("1M", "DGS1MO"), ("3M", "DGS3MO"), ("6M", "DGS6MO"), ("1A", "DGS1"), ("2A", "DGS2"),
              ("3A", "DGS3"), ("5A", "DGS5"), ("7A", "DGS7"), ("10A", "DGS10"), ("20A", "DGS20"), ("30A", "DGS30")]
-EU_TENORS = [("3M", "SR_3M"), ("6M", "SR_6M"), ("1A", "SR_1Y"), ("2A", "SR_2Y"), ("3A", "SR_3Y"),
-             ("5A", "SR_5Y"), ("7A", "SR_7Y"), ("10A", "SR_10Y"), ("20A", "SR_20Y"), ("30A", "SR_30Y")]
+EU_TENORS = [("3M", "SR_3M"), ("6M", "SR_6M"), ("1A", "SR_1Y"), ("2A", "SR_2Y"), ("3A", "SR_3Y"), ("4A", "SR_4Y"),
+             ("5A", "SR_5Y"), ("6A", "SR_6Y"), ("7A", "SR_7Y"), ("8A", "SR_8Y"), ("9A", "SR_9Y"), ("10A", "SR_10Y"),
+             ("15A", "SR_15Y"), ("20A", "SR_20Y"), ("25A", "SR_25Y"), ("30A", "SR_30Y")]
 
 
 def curve_us():
@@ -426,17 +428,29 @@ def curve_us():
 
 
 def curve_eu():
+    """Une seule requête pour toutes les maturités (les appels successifs étaient parfois refusés par la BCE,
+    d'où des trous à 6 mois, 3, 7, 10 et 30 ans), avec nouvel essai en cas d'échec."""
+    codes = [c for _, c in EU_TENORS]
+    df = None
+    for attempt in range(3):
+        try:
+            r = requests.get("https://data-api.ecb.europa.eu/service/data/YC/B.U2.EUR.4F.G_N_A.SV_C_YM." + "+".join(codes),
+                             params={"lastNObservations": 25, "format": "csvdata"}, headers=UA, timeout=40)
+            r.raise_for_status()
+            df = pd.read_csv(StringIO(r.text)).dropna(subset=["OBS_VALUE"])
+            break
+        except Exception as e:
+            log(f"  ! BCE courbe (essai {attempt + 1}) : {str(e)[:90]}")
+            time.sleep(3 * (attempt + 1))
+    col = next((c for c in (df.columns if df is not None else []) if c in ("DATA_TYPE_FM", "KEY")), None)
     pts = []
     for t, code in EU_TENORS:
         try:
-            r = requests.get(f"https://data-api.ecb.europa.eu/service/data/YC/B.U2.EUR.4F.G_N_A.SV_C_YM.{code}",
-                             params={"lastNObservations": 25, "format": "csvdata"}, headers=UA, timeout=25)
-            r.raise_for_status()
-            df = pd.read_csv(StringIO(r.text)).dropna(subset=["OBS_VALUE"]).sort_values("TIME_PERIOD")
-            pts.append({"t": t, "y": round(float(df["OBS_VALUE"].iloc[-1]), 3),
-                        "y1m": round(float(df["OBS_VALUE"].iloc[0]), 3), "ts": df["TIME_PERIOD"].iloc[-1]})
-        except Exception as e:
-            log(f"  ! BCE {code} : {e}")
+            sub = df[df[col].astype(str).str.endswith(code)] if col == "KEY" else df[df[col] == code]
+            sub = sub.sort_values("TIME_PERIOD")
+            pts.append({"t": t, "y": round(float(sub["OBS_VALUE"].iloc[-1]), 3),
+                        "y1m": round(float(sub["OBS_VALUE"].iloc[0]), 3), "ts": sub["TIME_PERIOD"].iloc[-1]})
+        except Exception:
             pts.append({"t": t, "y": None})
     log(f"GC : courbe euro {sum(1 for p in pts if p['y'] is not None)}/{len(pts)}")
     return {"pts": pts, "src": "BCE — courbe des emprunts d'État AAA de la zone euro (taux zéro-coupon)"}
