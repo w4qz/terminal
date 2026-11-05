@@ -83,6 +83,14 @@ jobs:
           ECON_FORCE: ${{ github.event_name == 'workflow_dispatch' }}
         run: python scripts/build_economics.py
 
+      - name: Carte — points chauds et recherche (GDELT une fois par heure)
+        id: geo
+        continue-on-error: true
+        timeout-minutes: 6
+        env:
+          GEO_FORCE: ${{ github.event_name == 'workflow_dispatch' }}
+        run: python scripts/build_geo.py
+
       - name: Publier data.json
         if: always()
         run: |
@@ -92,11 +100,11 @@ jobs:
            "steps": {"prix, taux et news": "${{ steps.prices.outcome }}", "catalogue": "${{ steps.universe.outcome }}",
                      "fondamentaux": "${{ steps.fundamentals.outcome }}", "macro": "${{ steps.macro.outcome }}",
                      "états financiers": "${{ steps.financials.outcome }}", "options": "${{ steps.options.outcome }}",
-                     "courbes souveraines": "${{ steps.curves.outcome }}", "séries économiques": "${{ steps.economics.outcome }}"}}
+                     "courbes souveraines": "${{ steps.curves.outcome }}", "séries économiques": "${{ steps.economics.outcome }}", "carte": "${{ steps.geo.outcome }}"}}
           EOF
           git config user.name  "terminal-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          FILES="data.json universe.json constituents.json macro.json fundamentals.json economics.json peers.json financials.json options.json curves.json ft.json status.json"
+          FILES="data.json universe.json constituents.json macro.json fundamentals.json economics.json peers.json financials.json options.json curves.json ft.json geo.json status.json"
           # Copie de nos fichiers, puis publication sur la toute dernière version de main.
           # (L'ancienne boucle « git rebase --abort » renvoyait le code 128 quand aucun rebase n'était
           # en cours, ce qui faisait échouer tout le passage.)
