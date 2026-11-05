@@ -278,6 +278,53 @@ def curve_fr_it(cc, oecd_sid):
     return ten_year(oecd_sid)
 
 
+
+# ── Historique quotidien des taux à 10 ans (CNBC, 5 ans) pour les séries ECONOMICS:xx10Y ──
+# Les séries OCDE sont des moyennes mensuelles : elles lissent les pics (l'OAT à 5 % fin octobre
+# n'apparaissait pas). Ce relevé quotidien remplace la partie récente de leur historique.
+HIST10 = {"US10Y": "US10Y", "DE10Y": "DE10Y-DE", "FR10Y": "FR10Y-FR", "IT10Y": "IT10Y-IT",
+          "GB10Y": "GB10Y-GB", "JP10Y": "JP10Y-JP", "CH10Y": "CH10Y-CH"}
+
+
+def _bars(obj):
+    """Trouve la liste de barres (dicts avec « close ») dans la réponse CNBC, quelle que soit sa profondeur."""
+    if isinstance(obj, list) and obj and isinstance(obj[0], dict) and "close" in obj[0]:
+        return obj
+    if isinstance(obj, dict):
+        for v in obj.values():
+            b = _bars(v)
+            if b:
+                return b
+    if isinstance(obj, list):
+        for v in obj:
+            b = _bars(v)
+            if b:
+                return b
+    return None
+
+
+def hist_10y(sym):
+    r = requests.get(f"https://ts-api.cnbc.com/harmony/app/charts/5Y.json", params={"symbol": sym},
+                     headers={"User-Agent": "Mozilla/5.0"}, timeout=30)
+    r.raise_for_status()
+    out = {}
+    for b in _bars(r.json()) or []:
+        t = str(b.get("tradeTime") or "")
+        if len(t) >= 8 and t[:8].isdigit():
+            d = f"{t[:4]}-{t[4:6]}-{t[6:8]}"
+        elif b.get("tradeTimeinMills"):
+            d = datetime.fromtimestamp(int(b["tradeTimeinMills"]) / 1000, timezone.utc).date().isoformat()
+        else:
+            continue
+        try:
+            v = float(str(b["close"]).replace("%", ""))
+        except (TypeError, ValueError):
+            continue
+        if -5 < v < 30:
+            out[d] = round(v, 3)
+    return sorted(out.items())
+
+
 COUNTRIES = [
     ("DE", "Allemagne", curve_de),
     ("FR", "France", lambda: curve_fr() if WEBSTAT_KEY else curve_fr_it("FR", "IRLTLT01FRM156N")),
@@ -306,7 +353,24 @@ def main() -> int:
             log(f"GC : {name} en échec, dernière courbe conservée")
         else:
             log(f"GC : {name} indisponible")
-    OUT.write_text(json.dumps({"generated_at": NOW.isoformat().replace("+00:00", "Z"), "items": items},
+    try:
+        prev_h = json.loads(OUT.read_text(encoding="utf-8")).get("hist10", {})
+    except Exception:
+        prev_h = {}
+    hist10 = {}
+    for code, sym in HIST10.items():
+        try:
+            h = hist_10y(sym)
+            if len(h) >= 50:
+                hist10[code] = h
+                log(f"Historique {code} : {len(h)} points ({h[0][0]} → {h[-1][0]})")
+                continue
+            log(f"  ! Historique {code} : {len(h)} points seulement")
+        except Exception as e:
+            log(f"  ! Historique {code} : {str(e)[:100]}")
+        if code in prev_h:
+            hist10[code] = prev_h[code]
+    OUT.write_text(json.dumps({"generated_at": NOW.isoformat().replace("+00:00", "Z"), "items": items, "hist10": hist10},
                               ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     return 0
 
