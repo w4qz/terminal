@@ -3055,9 +3055,9 @@ S.focus=await resolveRemote(resolveTicker(t)); return go('sec');
 }
 
 /*── Courbes souveraines multi-pays (GC + panneau Marchés) ───────────*/
-let CURVES=null, CURVES_TS=null;
+let CURVES=null, CURVES_TS=null, CURVES_HIST={};
 async function loadCurves(){ try{ const r=await fetch('curves.json?t='+Date.now(),{cache:'no-store'}); if(!r.ok) throw new Error('HTTP '+r.status);
-const d=await r.json(); if(CURVES_TS===d.generated_at) return false; CURVES=d.items||{}; CURVES_TS=d.generated_at; return true; }
+const d=await r.json(); if(CURVES_TS===d.generated_at) return false; CURVES=d.items||{}; CURVES_HIST=d.hist10||{}; CURVES_TS=d.generated_at; return true; }
 catch(e){ console.info('curves.json indisponible ('+e.message+')'); return false; } }
 const TEN_ORD=['1M','3M','6M','1A','2A','3A','4A','5A','6A','7A','8A','9A','10A','15A','20A','25A','30A','40A'];
 const GC_COL={US:'#6ba3e0',EU:'#e8a33d',DE:'#d8d36b',FR:'#4fc1c9',IT:'#2fbf6b',UK:'#e04a4a',JP:'#bb98e6',CH:'#c98a5f'};
@@ -3210,12 +3210,17 @@ const gcSrc=k=>{ if(k==='US') return MACRO&&MACRO.gc&&MACRO.gc.us; if(k==='EU') 
 for(const [code,k,t] of [['US10Y','US','10A'],['US02Y','US','2A'],['EU10Y','EU','10A'],['EU02Y','EU','2A'],['DE10Y','DE','10A'],['FR10Y','FR','10A'],
 ['IT10Y','IT','10A'],['GB10Y','UK','10A'],['JP10Y','JP','10A'],['CH10Y','CH','10A']]){
 const e=ecoGet(code), c=gcSrc(k), p=c&&(c.pts||[]).find(x=>x.t===t);
+// Historique quotidien (CNBC) à la place des moyennes mensuelles OCDE sur la période récente
+{ const H=typeof CURVES_HIST!=='undefined'&&CURVES_HIST?CURVES_HIST[code]:null;
+if(e&&H&&H.length&&Array.isArray(e.h)&&!e.hDaily){ const d0=H[0][0]; e.h=e.h.filter(x=>String(x[0])<d0).concat(H.map(x=>[x[0],x[1]])); e.hDaily=true;
+const L=H[H.length-1]; if(String(L[0])>=String(e.date)){ e.prev=H.length>1?H[H.length-2][1]:e.prev; e.last=L[1]; e.date=L[0]; }
+if(!e.src0){ e.src0=e.src; e.src='CNBC (quotidien, 5 ans) · avant : '+e.src0; } } }
 if(!e||!p||p.y==null||!p.ts||p.ts<String(e.date)) continue;
-const same=p.ts.slice(0,7)===String(e.date).slice(0,7);
+const same=e.hDaily?p.ts===String(e.date):p.ts.slice(0,7)===String(e.date).slice(0,7);
 if(!same&&e.last!==p.y) e.prev=e.last;
 e.last=p.y; e.date=p.ts; e.freq=e.freq==='mensuelle'?'mensuelle':e.freq;
 if(!e.src0){ e.src0=e.src; e.src=(c.src||e.src)+' (dernier point) · historique : '+e.src0; }
-if(Array.isArray(e.h)&&e.h.length){ const L=e.h[e.h.length-1]; if(String(L[0]).slice(0,7)===p.ts.slice(0,7)) e.h[e.h.length-1]=[p.ts,p.y]; else e.h.push([p.ts,p.y]); } } }
+if(Array.isArray(e.h)&&e.h.length){ const L=e.h[e.h.length-1], n=e.hDaily?10:7; if(String(L[0]).slice(0,n)===p.ts.slice(0,n)) e.h[e.h.length-1]=[p.ts,p.y]; else e.h.push([p.ts,p.y]); } } }
 // BNS : taux officiel lu dans les séries économiques ; PBoC : pas de source gratuite, dit clairement.
 { const snb=(SNAPSHOT.rates||[]).find(r=>r.cb==='SNB'), ch=typeof ecoGet==='function'?ecoGet('CHINTR'):null;
 if(snb&&ch){ snb.v=nf(ch.last,2)+' %'; snb.st='EOD'; snb.ts=ch.date; snb.src=ch.src; snb.name='Taux directeur';
