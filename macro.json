@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-06T21:26:43.436958Z",
+ "generated_at": "2026-11-06T22:07:30.027757Z",
  "eco": {
   "prints": [
    {
@@ -8,7 +8,7 @@
     "prev": 3.35,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-05",
+    "pub": "2026-11-06",
     "freq": "M",
     "src": "FRED CPIAUCSL",
     "url": "https://fred.stlouisfed.org/series/CPIAUCSL"
@@ -19,7 +19,7 @@
     "prev": 2.45,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-05",
+    "pub": "2026-11-06",
     "freq": "M",
     "src": "FRED CPILFESL",
     "url": "https://fred.stlouisfed.org/series/CPILFESL"
@@ -30,7 +30,7 @@
     "prev": 3.03,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-05",
+    "pub": "2026-11-06",
     "freq": "M",
     "src": "FRED PCEPILFE",
     "url": "https://fred.stlouisfed.org/series/PCEPILFE"
@@ -63,7 +63,7 @@
     "prev": 195000.0,
     "fmt": "n",
     "ts": "2026-10-31",
-    "pub": "2026-11-05",
+    "pub": "2026-11-06",
     "freq": "W",
     "src": "FRED ICSA",
     "url": "https://fred.stlouisfed.org/series/ICSA"
@@ -74,7 +74,7 @@
     "prev": 2.2,
     "fmt": "%",
     "ts": "2026-07-01",
-    "pub": "2026-11-05",
+    "pub": "2026-11-06",
     "freq": "Q",
     "src": "FRED A191RL1Q225SBEA",
     "url": "https://fred.stlouisfed.org/series/A191RL1Q225SBEA"
@@ -85,7 +85,7 @@
     "prev": 1.29,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-05",
+    "pub": "2026-11-06",
     "freq": "M",
     "src": "FRED RSAFS",
     "url": "https://fred.stlouisfed.org/series/RSAFS"
@@ -96,7 +96,7 @@
     "prev": 51.7,
     "fmt": "n",
     "ts": "2026-09-01",
-    "pub": "2026-11-05",
+    "pub": "2026-11-06",
     "freq": "M",
     "src": "FRED UMCSENT",
     "url": "https://fred.stlouisfed.org/series/UMCSENT"
@@ -107,7 +107,7 @@
     "prev": 3.23,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-05",
+    "pub": "2026-11-06",
     "freq": "M",
     "src": "FRED CP0000EZ19M086NEST",
     "url": "https://fred.stlouisfed.org/series/CP0000EZ19M086NEST"
@@ -118,7 +118,7 @@
     "prev": 6.7,
     "fmt": "%",
     "ts": "2023-01-01",
-    "pub": "2026-11-05",
+    "pub": "2026-11-06",
     "freq": "M",
     "src": "FRED LRHUTTTTEZM156S",
     "url": "https://fred.stlouisfed.org/series/LRHUTTTTEZM156S"
@@ -535,61 +535,53 @@
    {
     "d": "2026-12-09",
     "pre": 3.88,
-    "post": 4.063,
-    "move_bp": 18.3,
+    "post": 4.07,
+    "move_bp": 19.0,
     "p_cut": 0,
-    "p_hike": 73
+    "p_hike": 76
    },
    {
     "d": "2027-01-27",
-    "pre": 4.063,
-    "post": 4.115,
-    "move_bp": 5.2,
+    "pre": 4.07,
+    "post": 4.125,
+    "move_bp": 5.5,
     "p_cut": 0,
-    "p_hike": 21
+    "p_hike": 22
    },
    {
     "d": "2027-03-17",
-    "pre": 4.115,
-    "post": 4.204,
+    "pre": 4.125,
+    "post": 4.214,
     "move_bp": 8.9,
     "p_cut": 0,
     "p_hike": 35
    },
    {
     "d": "2027-04-28",
-    "pre": 4.204,
-    "post": 4.245,
-    "move_bp": 4.1,
+    "pre": 4.214,
+    "post": 4.26,
+    "move_bp": 4.6,
     "p_cut": 0,
-    "p_hike": 17
+    "p_hike": 19
    },
    {
     "d": "2027-06-09",
-    "pre": 4.245,
-    "post": 4.302,
+    "pre": 4.26,
+    "post": 4.317,
     "move_bp": 5.7,
     "p_cut": 0,
     "p_hike": 23
    },
    {
     "d": "2027-07-28",
-    "pre": 4.302,
-    "post": 4.32,
-    "move_bp": 1.8,
+    "pre": 4.317,
+    "post": 4.33,
+    "move_bp": 1.3,
     "p_cut": 0,
-    "p_hike": 7
+    "p_hike": 5
    },
    {
     "d": "2027-09-15",
-    "pre": 4.32,
-    "post": 4.33,
-    "move_bp": 1.0,
-    "p_cut": 0,
-    "p_hike": 4
-   },
-   {
-    "d": "2027-10-27",
     "pre": 4.33,
     "post": 4.33,
     "move_bp": 0.0,
@@ -597,11 +589,19 @@
     "p_hike": 0
    },
    {
-    "d": "2027-12-08",
+    "d": "2027-10-27",
     "pre": 4.33,
-    "post": 4.317,
-    "move_bp": -1.3,
-    "p_cut": 5,
+    "post": 4.335,
+    "move_bp": 0.5,
+    "p_cut": 0,
+    "p_hike": 2
+   },
+   {
+    "d": "2027-12-08",
+    "pre": 4.335,
+    "post": 4.315,
+    "move_bp": -2.0,
+    "p_cut": 8,
     "p_hike": 0
    }
   ],
@@ -619,70 +619,70 @@
     },
     {
      "t": "3M",
-     "y": 4.103,
+     "y": 4.108,
      "y1m": 4.22,
      "ts": "2026-11-06",
      "live": true
     },
     {
      "t": "6M",
-     "y": 4.261,
+     "y": 4.256,
      "y1m": 4.28,
      "ts": "2026-11-06",
      "live": true
     },
     {
      "t": "1A",
-     "y": 4.324,
+     "y": 4.33,
      "y1m": 4.42,
      "ts": "2026-11-06",
      "live": true
     },
     {
      "t": "2A",
-     "y": 4.514,
+     "y": 4.512,
      "y1m": 4.77,
      "ts": "2026-11-06",
      "live": true
     },
     {
      "t": "3A",
-     "y": 4.584,
+     "y": 4.582,
      "y1m": 4.87,
      "ts": "2026-11-06",
      "live": true
     },
     {
      "t": "5A",
-     "y": 4.65,
+     "y": 4.645,
      "y1m": 5.03,
      "ts": "2026-11-06",
      "live": true
     },
     {
      "t": "7A",
-     "y": 4.742,
+     "y": 4.739,
      "y1m": 5.15,
      "ts": "2026-11-06",
      "live": true
     },
     {
      "t": "10A",
-     "y": 4.864,
+     "y": 4.859,
      "y1m": 5.28,
      "ts": "2026-11-06",
      "live": true
     },
     {
      "t": "20A",
-     "y": 5.298,
+     "y": 5.294,
      "y1m": 5.71,
      "ts": "2026-11-06",
      "live": true
     },
     {
      "t": "30A",
-     "y": 5.267,
+     "y": 5.263,
      "y1m": 5.67,
      "ts": "2026-11-06",
      "live": true
@@ -835,50 +835,50 @@
   },
   {
    "k": "T-bill 3 mois",
-   "v": 4.03,
+   "v": 4.0,
    "prev": 4.03,
    "fmt": "%",
-   "ts": "2026-11-04",
+   "ts": "2026-11-05",
    "src": "FRED DTB3"
   },
   {
    "k": "T-bill 6 mois",
-   "v": 4.14,
-   "prev": 4.15,
+   "v": 4.08,
+   "prev": 4.14,
    "fmt": "%",
-   "ts": "2026-11-04",
+   "ts": "2026-11-05",
    "src": "FRED DTB6"
   },
   {
    "k": "Trésor 2 ans",
-   "v": 4.58,
-   "prev": 4.61,
+   "v": 4.46,
+   "prev": 4.58,
    "fmt": "%",
-   "ts": "2026-11-04",
+   "ts": "2026-11-05",
    "src": "FRED DGS2"
   },
   {
    "k": "Trésor 10 ans",
-   "v": 4.9,
-   "prev": 4.95,
+   "v": 4.84,
+   "prev": 4.9,
    "fmt": "%",
-   "ts": "2026-11-04",
+   "ts": "2026-11-05",
    "src": "FRED DGS10"
   },
   {
    "k": "Pente 2s10s",
-   "v": 38.0,
-   "prev": 32.0,
+   "v": 35.0,
+   "prev": 38.0,
    "fmt": "pb",
-   "ts": "2026-11-05",
+   "ts": "2026-11-06",
    "src": "FRED T10Y2Y"
   },
   {
    "k": "Pente 3m10a",
    "v": 67.0,
-   "prev": 69.0,
+   "prev": 67.0,
    "fmt": "pb",
-   "ts": "2026-11-05",
+   "ts": "2026-11-06",
    "src": "FRED T10Y3M"
   },
   {

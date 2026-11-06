@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-06T21:24:50.532703Z",
+ "generated_at": "2026-11-06T22:06:08.021104Z",
  "quotes": {
   "NVDA": {
    "p": 186.68,
@@ -12,7 +12,7 @@
    "open": 191.1,
    "lo": 185.22,
    "hi": 194.895,
-   "vol": 178082701,
+   "vol": 179308722,
    "h": [
     230.48,
     229.28,
@@ -49,7 +49,7 @@
    "open": 30.54,
    "lo": 27.58,
    "hi": 33.16,
-   "vol": 32356565,
+   "vol": 32486210,
    "h": [
     56.93,
     50.97,
@@ -86,7 +86,7 @@
    "open": 7377.6499,
    "lo": 7369.5498,
    "hi": 7444.2002,
-   "vol": 3403426000,
+   "vol": 3410452000,
    "h": [
     7765.36,
     7811.54,
@@ -123,7 +123,7 @@
    "open": 27045.2559,
    "lo": 26887.6934,
    "hi": 27316.0938,
-   "vol": 1614355000,
+   "vol": 1624224000,
    "h": [
     30725.81,
     30883.15,
@@ -160,7 +160,7 @@
    "open": 51078.8516,
    "lo": 50992.6094,
    "hi": 51662.2617,
-   "vol": 522516301,
+   "vol": 523301136,
    "h": [
     51231.64,
     51654.95,
@@ -223,10 +223,10 @@
    ]
   },
   "VIX": {
-   "p": 25.5,
+   "p": 25.63,
    "prev": 28.18,
-   "chg": -2.68,
-   "pct": -9.51,
+   "chg": -2.55,
+   "pct": -9.05,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^VIX)",
    "ts": "2026-11-06T21:15:00Z",
@@ -255,7 +255,7 @@
     20.83,
     16.61,
     28.18,
-    25.5
+    25.64
    ]
   },
   "N225": {
@@ -334,8 +334,8 @@
    "prev": 3689.9109,
    "chg": -43.7886,
    "pct": -1.19,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (000001.SS)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (000001.SS) — échec de la dernière mise à jour",
    "ts": "2026-11-06T07:00:00Z",
    "open": 3612.147,
    "lo": 3610.1978,
@@ -546,13 +546,13 @@
    ]
   },
   "EURUSD": {
-   "p": 1.1146,
+   "p": 1.1143,
    "prev": 1.1235,
-   "chg": -0.0089,
-   "pct": -0.79,
+   "chg": -0.0092,
+   "pct": -0.82,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (EURUSD=X)",
-   "ts": "2026-11-06T21:24:50.532703Z",
+   "ts": "2026-11-06T22:06:08.021104Z",
    "open": 1.1222,
    "lo": 1.1136,
    "hi": 1.1237,
@@ -578,17 +578,17 @@
     1.119207,
     1.120724,
     1.123495,
-    1.114579
+    1.11433
    ]
   },
   "USDJPY": {
-   "p": 158.49,
+   "p": 158.425,
    "prev": 158.357,
-   "chg": 0.133,
-   "pct": 0.08,
+   "chg": 0.068,
+   "pct": 0.04,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (JPY=X)",
-   "ts": "2026-11-06T21:24:50.532703Z",
+   "ts": "2026-11-06T22:06:08.021104Z",
    "open": 157.652,
    "lo": 157.249,
    "hi": 158.653,
@@ -614,17 +614,17 @@
     157.91,
     158.47,
     158.36,
-    158.48
+    158.43
    ]
   },
   "GBPUSD": {
-   "p": 1.3351,
+   "p": 1.3356,
    "prev": 1.3477,
-   "chg": -0.0126,
-   "pct": -0.93,
+   "chg": -0.0121,
+   "pct": -0.9,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
-   "ts": "2026-11-06T21:24:50.532703Z",
+   "ts": "2026-11-06T22:06:08.021104Z",
    "open": 1.345,
    "lo": 1.3344,
    "hi": 1.3463,
@@ -650,17 +650,17 @@
     1.340986,
     1.343418,
     1.347709,
-    1.335131
+    1.335577
    ]
   },
   "DXY": {
-   "p": 102.291,
+   "p": 102.322,
    "prev": 101.55,
-   "chg": 0.741,
-   "pct": 0.73,
+   "chg": 0.772,
+   "pct": 0.76,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (DX-Y.NYB)",
-   "ts": "2026-11-06T21:15:00Z",
+   "ts": "2026-11-06T22:00:00Z",
    "open": 101.494,
    "lo": 101.553,
    "hi": 102.358,
@@ -686,21 +686,21 @@
     101.87,
     101.51,
     101.55,
-    102.29
+    102.32
    ]
   },
   "XAU": {
-   "p": 4075.8,
+   "p": 4080.3,
    "prev": 4113.5,
-   "chg": -37.7,
-   "pct": -0.92,
+   "chg": -33.2,
+   "pct": -0.81,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GC=F)",
-   "ts": "2026-11-06T21:15:00Z",
+   "ts": "2026-11-06T22:00:00Z",
    "open": 4098.5,
    "lo": 4035.6001,
    "hi": 4116.2002,
-   "vol": 165137,
+   "vol": 166232,
    "h": [
     4157.0,
     4216.3,
@@ -723,21 +723,21 @@
     3940.4,
     4073.0,
     4113.5,
-    4075.8
+    4080.3
    ]
   },
   "CL": {
-   "p": 90.54,
+   "p": 90.33,
    "prev": 90.52,
-   "chg": 0.02,
-   "pct": 0.02,
+   "chg": -0.19,
+   "pct": -0.21,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (CL=F)",
-   "ts": "2026-11-06T21:15:00Z",
+   "ts": "2026-11-06T22:00:00Z",
    "open": 91.2,
    "lo": 89.08,
    "hi": 92.53,
-   "vol": 251246,
+   "vol": 253450,
    "h": [
     91.49,
     91.85,
@@ -760,21 +760,21 @@
     96.09,
     88.12,
     90.52,
-    90.54
+    90.33
    ]
   },
   "BRENT": {
-   "p": 97.96,
+   "p": 97.75,
    "prev": 98.29,
-   "chg": -0.33,
-   "pct": -0.34,
+   "chg": -0.54,
+   "pct": -0.55,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BZ=F)",
-   "ts": "2026-11-06T21:15:00Z",
+   "ts": "2026-11-06T22:00:00Z",
    "open": 99.24,
    "lo": 96.71,
    "hi": 100.92,
-   "vol": 38650,
+   "vol": 38917,
    "h": [
     104.28,
     104.72,
@@ -797,21 +797,21 @@
     103.6,
     94.62,
     98.29,
-    97.96
+    97.75
    ]
   },
   "BTC": {
-   "p": 75769.0,
+   "p": 75920.5625,
    "prev": 75942.125,
-   "chg": -173.125,
-   "pct": -0.23,
+   "chg": -21.5625,
+   "pct": -0.03,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-06T21:24:50.532703Z",
+   "ts": "2026-11-06T22:06:08.021104Z",
    "open": 75982.8125,
    "lo": 75067.125,
    "hi": 76282.3984,
-   "vol": 32214896640,
+   "vol": 31680628736,
    "h": [
     81500.8,
     81382.15,
@@ -834,7 +834,7 @@
     77345.05,
     80405.29,
     75942.12,
-    75769.0
+    75920.56
    ]
   }
  },
@@ -1797,7 +1797,7 @@
    "fcf": 10374124544,
    "w52lo": 822.2,
    "w52hi": 1741.0,
-   "evEbitda": 28.929,
+   "evEbitda": 29.725,
    "earnTs": 1791991800,
    "earnStart": 1791991800,
    "earnEnd": 1791991800,
@@ -1942,9 +1942,9 @@
    "ccy": "USD",
    "mcap": 466863390720,
    "pe": 50.7495,
-   "fpe": 42.0956,
+   "fpe": 42.0511,
    "eps": 20.76,
-   "feps": 25.0278,
+   "feps": 25.0543,
    "revTTM": 303154003968,
    "netIncome": 9226000384,
    "shares": 443129349,
@@ -2184,34 +2184,163 @@
  "curve": [
   {
    "t": "2A",
-   "y": 4.58,
+   "y": 4.46,
    "st": "EOD",
    "src": "FRED DGS2",
-   "ts": "2026-11-04"
+   "ts": "2026-11-05"
   },
   {
    "t": "5A",
-   "y": 4.69,
+   "y": 4.59,
    "st": "EOD",
    "src": "FRED DGS5",
-   "ts": "2026-11-04"
+   "ts": "2026-11-05"
   },
   {
    "t": "10A",
-   "y": 4.9,
+   "y": 4.84,
    "st": "EOD",
    "src": "FRED DGS10",
-   "ts": "2026-11-04"
+   "ts": "2026-11-05"
   },
   {
    "t": "30A",
-   "y": 5.28,
+   "y": 5.25,
    "st": "EOD",
    "src": "FRED DGS30",
-   "ts": "2026-11-04"
+   "ts": "2026-11-05"
   }
  ],
  "news": [
+  {
+   "h": "Trump taps immigration hardliner Stephen Miller as chief of staff",
+   "w": "Decision to replace Susie Wiles comes days after Republican Party’s resounding midterm election defeat",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-06T21:58:58Z",
+   "url": "https://www.ft.com/content/6e8f2244-0e39-45cd-b415-e0be54b0351f?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "S&P révise la perspective de Boston Scientific à négative",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-06T21:58:19Z",
+   "url": "https://fr.investing.com/news/stock-market-news/sp-revise-la-perspective-de-boston-scientific-a-negative-3683437"
+  },
+  {
+   "h": "American Healthcare REIT lance un programme d’actions de 1,75 milliard $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-06T21:57:47Z",
+   "url": "https://fr.investing.com/news/sec-filings/american-healthcare-reit-lance-un-programme-dactions-de-175-milliard--93CH-3683436"
+  },
+  {
+   "h": "S&P Global relève la note d’Andorre à ’A/A-1’ grâce à de meilleures garanties financières",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-06T21:55:14Z",
+   "url": "https://fr.investing.com/news/world-news/sp-global-releve-la-note-dandorre-a-aa1-grace-a-de-meilleures-garanties-financieres-3683434"
+  },
+  {
+   "h": "Silgan Holdings modifie son accord de crédit pour faciliter un apport d’actifs",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-06T21:53:28Z",
+   "url": "https://fr.investing.com/news/sec-filings/silgan-holdings-modifie-son-accord-de-credit-pour-faciliter-un-apport-dactifs-93CH-3683433"
+  },
+  {
+   "h": "Elon Musk appears to signal the end of the road for Cybertruck",
+   "w": "Musk said it was to make room for production of its Cybercabs - autonomous taxis without a driver.",
+   "syms": [],
+   "src": "BBC — Business",
+   "ts": "2026-11-06T21:49:50Z",
+   "url": "https://www.bbc.co.uk/news/articles/cq1j33w7d232o?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "Les actionnaires de ReAlpha Tech approuvent un regroupement d’actions inversé",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-06T21:49:10Z",
+   "url": "https://fr.investing.com/news/sec-filings/les-actionnaires-de-realpha-tech-approuvent-un-regroupement-dactions-inverse-93CH-3683429"
+  },
+  {
+   "h": "S&P Global abaisse les perspectives de la Pologne à négatives en raison de la dette",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-06T21:48:14Z",
+   "url": "https://fr.investing.com/news/world-news/sp-global-abaisse-les-perspectives-de-la-pologne-a-negatives-en-raison-de-la-dette-3683428"
+  },
+  {
+   "h": "Le président de Magnite, Sean Buckley, cède des actions pour 296.757$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-06T21:46:54Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-president-de-magnite-sean-buckley-cede-des-actions-pour-296757-93CH-3683427"
+  },
+  {
+   "h": "Profusa modifie son accord de conversion avec un nouveau prix plancher",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-06T21:45:22Z",
+   "url": "https://fr.investing.com/news/sec-filings/profusa-modifie-son-accord-de-conversion-avec-un-nouveau-prix-plancher-93CH-3683426"
+  },
+  {
+   "h": "‘I have no financial safety net’: I’m 66, rely on Social Security and have just $500 in savings. What hope do I have?",
+   "w": "“Sometimes I wonder whether wealthier Americans should trade places with people like me.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-06T21:45:00Z",
+   "url": "https://www.marketwatch.com/story/i-have-no-financial-safety-net-im-66-rely-on-social-security-and-have-500-in-savings-what-politician-speaks-for-me-be2126cb?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Elon Musk opens the door for a big SpaceX acquisition",
+   "w": "The rocket and satellite-internet company is looking to challenge telecom giants.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-06T21:45:00Z",
+   "url": "https://www.marketwatch.com/story/elon-musk-opens-the-door-for-a-big-spacex-acquisition-4f62bcad?mod=mw_rss_topstories"
+  },
+  {
+   "h": "S&P abaisse les perspectives de l’Ouganda à stables en raison des retards pétroliers",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-06T21:43:41Z",
+   "url": "https://fr.investing.com/news/world-news/sp-abaisse-les-perspectives-de-louganda-a-stables-en-raison-des-retards-petroliers-3683425"
+  },
+  {
+   "h": "DTE Energy publie les résultats trimestriels de DTE Gas pour septembre 2026",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-06T21:41:09Z",
+   "url": "https://fr.investing.com/news/sec-filings/dte-energy-publie-les-resultats-trimestriels-de-dte-gas-pour-septembre-2026-93CH-3683422"
+  },
+  {
+   "h": "Sen. Chris Murphy released from hospital after stroke, will miss votes for 'several weeks' as he rehabs",
+   "w": "The Connecticut Democrat Murphy has been discussed as a possible candidate for the White House in 2028.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-06T21:40:09Z",
+   "url": "https://www.cnbc.com/2026/11/06/chris-murphy-stroke-hospital-senate.html"
+  },
+  {
+   "h": "Data centers run on debt. That was a problem for bonds this year — and it’s only going to get worse.",
+   "w": "AI debt issuance this year overwhelmed investor portfolios, and has disappointed from a performance perspective. The funding need won’t get any better with Democrats in control of Congress.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-06T21:37:00Z",
+   "url": "https://www.marketwatch.com/story/data-centers-run-on-debt-that-was-a-problem-for-bonds-this-year-and-its-only-going-to-get-worse-09c03be6?mod=mw_rss_topstories"
+  },
   {
    "h": "Nvidia, AMD and other chip stocks rebound — but is relief from the ‘violent’ selloff only temporary?",
    "w": "Analysts warn of further volatility ahead, although there are several new factors that work in the AI trade’s favor.",
@@ -2291,22 +2420,6 @@
    "url": "https://www.marketwatch.com/story/microns-stock-is-dirt-cheap-and-thats-igniting-a-fierce-online-debate-0626791d?mod=mw_rss_topstories"
   },
   {
-   "h": "Sen. Chris Murphy released from hospital after stroke, will miss votes for 'several weeks' as he rehabs",
-   "w": "The Connecticut Democrat Murphy has been discussed as a possible candidate for the White House in 2028.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-06T20:53:13Z",
-   "url": "https://www.cnbc.com/2026/11/06/chris-murphy-stroke-hospital-senate.html"
-  },
-  {
-   "h": "Onsemi et le ministère tchèque annulent un projet d’expansion de 2 milliards $",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T20:47:36Z",
-   "url": "https://fr.investing.com/news/stock-market-news/onsemi-et-le-ministere-tcheque-annulent-un-projet-dexpansion-de-2-milliards--3683360"
-  },
-  {
    "h": "Ex-OpenAI employee accused of spying pleads not guilty",
    "w": "Abdulrahman Alfozan, a Saudi Arabian national, was arrested last month after a bug was discovered in the AI lab’s office",
    "syms": [],
@@ -2322,57 +2435,6 @@
    "src": "CNBC — Marchés",
    "ts": "2026-11-06T20:42:07Z",
    "url": "https://www.cnbc.com/2026/11/06/trump-stephen-miller-wiles-chief-of-staff.html"
-  },
-  {
-   "h": "La startup dentaire vVardis, soutenue par Apollo, vise jusqu’à 229 millions $ lors de son introduction en Bourse",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T20:40:47Z",
-   "url": "https://fr.investing.com/news/stock-market-news/la-startup-dentaire-vvardis-soutenue-par-apollo-vise-jusqua-229-millions--lors-de-son-introduction-en-bourse-3683357"
-  },
-  {
-   "h": "L’action Apple Hospitality REIT atteint un sommet annuel à 18,98$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T20:40:02Z",
-   "url": "https://fr.investing.com/news/company-news/laction-apple-hospitality-reit-atteint-un-sommet-annuel-a-1898-93CH-3683356"
-  },
-  {
-   "h": "Canadian Gold Resources prévoit un placement privé de 1 million C$",
-   "w": "",
-   "syms": [
-    "XAU"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T20:37:29Z",
-   "url": "https://fr.investing.com/news/company-news/canadian-gold-resources-prevoit-un-placement-prive-de-1-million-c-93CH-3683355"
-  },
-  {
-   "h": "L’action Coty atteint un plus haut sur 52 semaines à 4,08$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T20:27:13Z",
-   "url": "https://fr.investing.com/news/company-news/laction-coty-atteint-un-plus-haut-sur-52-semaines-a-408-93CH-3683349"
-  },
-  {
-   "h": "Trump taps immigration hardliner Stephen Miller as chief of staff",
-   "w": "Decision to replace Susie Wiles comes days after Republican Party’s resounding midterm election defeat",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-06T20:24:39Z",
-   "url": "https://www.ft.com/content/6e8f2244-0e39-45cd-b415-e0be54b0351f?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "B.Riley abaisse son objectif de cours sur Strive Enterprises en raison des hypothèses sur le BTC",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T20:22:17Z",
-   "url": "https://fr.investing.com/news/analyst-ratings/briley-abaisse-son-objectif-de-cours-sur-strive-enterprises-en-raison-des-hypotheses-sur-le-btc-93CH-3683345"
   },
   {
    "h": "My 93-year-old father changed his will at the 11th hour, leaving my brother his entire $500,000 estate. Can I challenge it?",
@@ -2397,30 +2459,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-06T20:03:25Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/06/l-irlande-visee-par-des-alertes-a-la-bombe-une-semaine-avant-la-tenue-de-deux-sommets-europeens-a-dublin_6807865_3234.html"
-  },
-  {
-   "h": "Le PDG de CrowdStrike, George Kurtz, cède des actions pour 4,62 millions $",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T20:02:10Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-crowdstrike-george-kurtz-cede-des-actions-pour-462-millions--93CH-3683337"
-  },
-  {
-   "h": "FBN Securities abaisse son objectif de cours sur Five9 après une révision des prévisions de bénéfices",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T19:46:23Z",
-   "url": "https://fr.investing.com/news/analyst-ratings/fbn-securities-abaisse-son-objectif-de-cours-sur-five9-apres-une-revision-des-previsions-de-benefices-93CH-3683335"
-  },
-  {
-   "h": "L’Europe exige l’arrêt de la guerre en Ukraine avant tout dialogue",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T19:46:16Z",
-   "url": "https://fr.investing.com/news/economy-news/leurope-exige-larret-de-la-guerre-en-ukraine-avant-tout-dialogue-93CH-3683334"
   },
   {
    "h": "« La propagande d’extrême droite tue » : à Paris des activistes « déménagent » un Relay pour dénoncer le « monopole » de Bolloré",
@@ -2462,14 +2500,6 @@
    "ts": "2026-11-06T19:29:18Z",
    "url": "https://www.ft.com/content/580ab1bf-4e2e-46b8-9178-dbf765645754?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Protagenic Therapeutics émet un billet à ordre de 250.000$ à Patness LLC",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T19:23:39Z",
-   "url": "https://fr.investing.com/news/sec-filings/protagenic-therapeutics-emet-un-billet-a-ordre-de-250000-a-patness-llc-93CH-3683325"
   },
   {
    "h": "A bord du « TGV nouvelle génération », entre Paris et Marseille : un train repensé de A à Z, à la capacité accrue et moins gourmand en énergie",
@@ -2606,14 +2636,6 @@
    "url": "https://www.lemonde.fr/economie/article/2026/11/06/aux-etats-unis-l-acceleration-inattendue-des-creations-d-emplois_6807852_3234.html"
   },
   {
-   "h": "You’re fired! But you can keep the laptop and insurance. And here’s $10,000.",
-   "w": "Some tech companies are giving more generous severance packages, but here’s what to keep in mind.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-06T18:03:00Z",
-   "url": "https://www.marketwatch.com/story/layoffs-with-dignity-why-these-tech-firms-are-offering-free-laptops-and-linkedin-premium-28750d39?mod=mw_rss_topstories"
-  },
-  {
    "h": "Musk wants to give stock to kids. What’s the problem?",
    "w": "The act is generous but there are reasons to wish it could be done in a different way",
    "syms": [],
@@ -2641,14 +2663,6 @@
    "mine": 1
   },
   {
-   "h": "I’m 65 and worth more than $5.6 million. Can I afford a $200,000 camper?",
-   "w": "Math may be cold and unemotional — but finances are not.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-06T18:00:00Z",
-   "url": "https://www.marketwatch.com/story/im-65-and-worth-more-than-5-6-million-can-i-buy-a-200-000-camper-even-though-the-price-feels-crazy-high-55f668f8?mod=mw_rss_topstories"
-  },
-  {
    "h": "US stocks rebound after tech rout",
    "w": "Tech-heavy Nasdaq 100 rises 1.4 per cent following day of turmoil",
    "syms": [
@@ -2659,14 +2673,6 @@
    "ts": "2026-11-06T17:59:54Z",
    "url": "https://www.ft.com/content/642b32dc-e3a1-4df8-ae91-5c84bdeb89e0?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "DraftKings’ expensive bet on prediction markets is crushing its stock",
-   "w": "Shares of the online betting platform slid more than 26% on Friday, as analysts worry about regulation and competition.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-06T17:51:00Z",
-   "url": "https://www.marketwatch.com/story/draftkings-expensive-bet-on-prediction-markets-is-crushing-its-stock-277bee0d?mod=mw_rss_topstories"
   },
   {
    "h": "EU probes ‘fraud’ on Spain’s lethal high-speed rail line",
@@ -2789,6 +2795,32 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-06T16:06:12Z",
    "url": "https://www.lemonde.fr/international/article/2026/11/06/marche-du-travail-aux-etats-unis-chomage-en-baisse-creations-d-emplois-en-hausse_6807818_3210.html"
+  },
+  {
+   "h": "Editor's Choice: US anti-data center sentiment spreads, hitting Asian markets",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-06T16:06:08.021104Z",
+   "url": "https://asia.nikkei.com/editor-s-picks/editor-in-chief-s-picks/editor-s-choice-us-anti-data-center-sentiment-spreads-hitting-asian-markets"
+  },
+  {
+   "h": "Singapore banks struggle with bond yield and interest rate tensions",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-06T16:06:08.021104Z",
+   "url": "https://asia.nikkei.com/business/finance/singapore-banks-struggle-with-bond-yield-and-interest-rate-tensions"
+  },
+  {
+   "h": "Malaysian palm oil producer turns to solar for steadier income",
+   "w": "",
+   "syms": [
+    "BRENT"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-06T16:06:08.021104Z",
+   "url": "https://asia.nikkei.com/business/markets/commodities/malaysian-palm-oil-producer-turns-to-solar-for-steadier-income"
   },
   {
    "h": "Renewable energy groups boosted by ‘clarity’ of US election results",
@@ -2935,14 +2967,6 @@
    "url": "https://asia.nikkei.com/politics/u.s.-midterm-elections/democrats-midterm-gains-hang-over-data-centers-japanese-us-investment"
   },
   {
-   "h": "China enacts law to hunt down corrupt officials who escape overseas",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T14:01:20.318337Z",
-   "url": "https://asia.nikkei.com/politics/china-enacts-law-to-hunt-down-corrupt-officials-who-escape-overseas"
-  },
-  {
    "h": "Low-profile Wall Street firm to double down on Anthropic despite tech rout",
    "w": "XN amassed $5.3bn stake in AI lab through private-round investments",
    "syms": [
@@ -2978,22 +3002,6 @@
    "ts": "2026-11-06T13:34:06Z",
    "url": "https://www.ft.com/content/44211bf7-0f18-4e55-81b8-01e750ae785f?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Russia took a Japanese journalist. Tokyo should speak up",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T13:11:25.167053Z",
-   "url": "https://asia.nikkei.com/opinion/russia-took-a-japanese-journalist.-tokyo-should-speak-up"
-  },
-  {
-   "h": "Grab to cut maximum take on Vietnam rides to 32% from 40%",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T13:11:25.167053Z",
-   "url": "https://asia.nikkei.com/business/startups/grab-to-cut-maximum-take-on-vietnam-rides-to-32-from-40"
   },
   {
    "h": "Taking stock of the flight-to-quality",
@@ -3060,14 +3068,6 @@
    "ts": "2026-11-06T12:01:03Z",
    "url": "https://www.ft.com/content/db1c70c2-d17e-41ac-aff3-1d824e7dc9e8?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "En Italie, une « taxe de sortie » pour les grandes fortunes",
-   "w": "Le projet de loi de finances pour 2027 du gouvernement Meloni prévoit la création d’une « exit tax » visant les grandes fortunes qui décideraient de quitter l’Italie. Une mesure qui infléchirait une politique fiscale visant depuis 2017 à attirer des ultrariches dans la Péninsule",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-06T10:45:04Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/11/06/en-italie-une-taxe-de-sortie-pour-les-grandes-fortunes_6807773_3234.html"
   }
  ],
  "summary": {
