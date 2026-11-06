@@ -66,6 +66,14 @@ jobs:
           GEO_FORCE: ${{ github.event_name == 'workflow_dispatch' }}
         run: python scripts/build_geo.py
 
+      - name: Monde — BRI, FMI, COT, Polymarket, catastrophes naturelles
+        id: world
+        continue-on-error: true
+        timeout-minutes: 4
+        env:
+          WORLD_FORCE: ${{ github.event_name == 'workflow_dispatch' }}
+        run: python scripts/build_world.py
+
       - name: Publier les fichiers
         if: always()
         env:
@@ -73,7 +81,7 @@ jobs:
         run: |
           git config user.name  "terminal-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          FILES="data.json ft.json universe.json constituents.json macro.json curves.json geo.json"
+          FILES="data.json ft.json universe.json constituents.json macro.json curves.json geo.json world.json"
           # Seuls les fichiers produits par CE robot sont publiés : l'autre robot ne voit jamais
           # ses fichiers récents écrasés par une copie ancienne.
           mkdir -p "$RUNNER_TEMP/out"
@@ -84,7 +92,7 @@ jobs:
               # status.json (onglet Diagnostic) : on met à jour nos étapes, on garde celles de l'autre robot
               python3 - <<'PY'
           import json, os, datetime
-          names = {"prices": "prix, taux et news", "universe": "catalogue", "macro": "macro", "curves": "courbes souveraines", "geo": "carte"}
+          names = {"prices": "prix, taux et news", "universe": "catalogue", "macro": "macro", "curves": "courbes souveraines", "geo": "carte", "world": "monde (BRI, FMI, COT, Polymarket, catastrophes)"}
           steps = json.loads(os.environ.get("STEPS_JSON") or "{}")
           try:
               st = json.load(open("status.json", encoding="utf-8"))
