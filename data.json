@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-06T22:43:33.535326Z",
+ "generated_at": "2026-11-06T23:23:19.160070Z",
  "quotes": {
   "NVDA": {
    "p": 186.68,
@@ -227,7 +227,7 @@
    "prev": 28.18,
    "chg": -2.55,
    "pct": -9.05,
-   "st": "DELAYED_15M",
+   "st": "EOD",
    "src": "Yahoo Finance via yfinance (^VIX)",
    "ts": "2026-11-06T21:15:00Z",
    "open": 27.68,
@@ -449,6 +449,7 @@
    "lo": 25617.5391,
    "hi": 26061.6406,
    "h": [
+    25104.36,
     24806.97,
     25087.27,
     25277.68,
@@ -469,8 +470,7 @@
     25981.09,
     25864.62,
     26437.67,
-    26325.01,
-    25820.36
+    26325.01
    ]
   },
   "CAC": {
@@ -485,6 +485,7 @@
    "lo": 8049.6401,
    "hi": 8140.54,
    "h": [
+    7769.21,
     7729.69,
     7803.33,
     7832.88,
@@ -505,8 +506,7 @@
     8047.69,
     8020.31,
     8177.89,
-    8205.37,
-    8139.0
+    8205.37
    ]
   },
   "SX5E": {
@@ -521,6 +521,7 @@
    "lo": 6122.4702,
    "hi": 6207.7002,
    "h": [
+    6180.29,
     6126.73,
     6173.37,
     6201.21,
@@ -541,8 +542,7 @@
     6176.06,
     6144.56,
     6265.71,
-    6231.54,
-    6170.49
+    6231.54
    ]
   },
   "EURUSD": {
@@ -698,7 +698,7 @@
    "src": "Yahoo Finance via yfinance (GC=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 4098.5,
-   "lo": 4037.0,
+   "lo": 4035.6001,
    "hi": 4116.2002,
    "vol": 166431,
    "h": [
@@ -735,7 +735,7 @@
    "src": "Yahoo Finance via yfinance (CL=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 91.2,
-   "lo": 89.07,
+   "lo": 89.08,
    "hi": 92.53,
    "vol": 253859,
    "h": [
@@ -772,9 +772,9 @@
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 99.24,
-   "lo": 96.65,
+   "lo": 96.71,
    "hi": 100.92,
-   "vol": 38991,
+   "vol": 38993,
    "h": [
     104.28,
     104.72,
@@ -801,17 +801,17 @@
    ]
   },
   "BTC": {
-   "p": 75944.2266,
+   "p": 75800.6875,
    "prev": 75942.125,
-   "chg": 2.1016,
-   "pct": 0.0,
+   "chg": -141.4375,
+   "pct": -0.19,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-06T22:43:33.535326Z",
+   "ts": "2026-11-06T23:23:19.160070Z",
    "open": 75982.8125,
    "lo": 75067.125,
    "hi": 76282.3984,
-   "vol": 31830009856,
+   "vol": 30313105408,
    "h": [
     81500.8,
     81382.15,
@@ -834,7 +834,7 @@
     77345.05,
     80405.29,
     75942.12,
-    75944.23
+    75800.69
    ]
   }
  },
@@ -979,9 +979,9 @@
    "ccy": "USD",
    "mcap": 3501085163520,
    "pe": 14.871,
-   "fpe": 18.3808,
+   "fpe": 18.4501,
    "eps": 19.15,
-   "feps": 15.4934,
+   "feps": 15.4351,
    "revTTM": 471097999360,
    "netIncome": 235693621248,
    "shares": 5888000000,
@@ -1512,14 +1512,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 998898073600,
+   "mcap": 995843768320,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -1814,9 +1814,9 @@
    "ccy": "USD",
    "mcap": 568616681472,
    "pe": 34.1549,
-   "fpe": 28.1914,
+   "fpe": 28.1919,
    "eps": 19.11,
-   "feps": 23.1524,
+   "feps": 23.152,
    "revTTM": 36288000000,
    "netIncome": 16958000128,
    "shares": 864657109,
@@ -2155,8 +2155,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 123.1505,
+   "shares": 572600000,
+   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2208,6 +2213,71 @@
  ],
  "news": [
   {
+   "h": "US warns China it must ‘immediately’ meet terms of Busan trade deal",
+   "w": "Washington says Beijing is not fulfilling commitments to increase supply of rare earths and other critical products",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-06T22:53:51Z",
+   "url": "https://www.ft.com/content/391bb785-0247-4c39-b53b-35007187d603?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Le conseil de Mangoceuticals approuve une nouvelle action privilégiée de série D",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-06T22:53:41Z",
+   "url": "https://fr.investing.com/news/sec-filings/le-conseil-de-mangoceuticals-approuve-une-nouvelle-action-privilegiee-de-serie-d-93CH-3683464"
+  },
+  {
+   "h": "DelphX Capital Markets finalise un placement privé de 55.000 C$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-06T22:53:12Z",
+   "url": "https://fr.investing.com/news/company-news/delphx-capital-markets-finalise-un-placement-prive-de-55000-c-93CH-3683463"
+  },
+  {
+   "h": "Pono Capital Four modifie son accord de fusion avec Blackstar Orbital et réduit le prix d’achat",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-06T22:49:21Z",
+   "url": "https://fr.investing.com/news/sec-filings/pono-capital-four-modifie-son-accord-de-fusion-avec-blackstar-orbital-et-reduit-le-prix-dachat-93CH-3683462"
+  },
+  {
+   "h": "Le PDG de Gilead Sciences vend des actions pour 19,7 millions $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-06T22:47:16Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-gilead-sciences-vend-des-actions-pour-197-millions--93CH-3683461"
+  },
+  {
+   "h": "Silo Pharma finalise un placement privé de 815.000$ en actions et bons de souscription",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-06T22:45:21Z",
+   "url": "https://fr.investing.com/news/sec-filings/silo-pharma-finalise-un-placement-prive-de-815000-en-actions-et-bons-de-souscription-93CH-3683460"
+  },
+  {
+   "h": "Les actionnaires de CVD Equipment élisent les administrateurs lors de l’assemblée annuelle",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-06T22:41:30Z",
+   "url": "https://fr.investing.com/news/sec-filings/les-actionnaires-de-cvd-equipment-elisent-les-administrateurs-lors-de-lassemblee-annuelle-93CH-3683459"
+  },
+  {
+   "h": "TuHURA Biosciences tire 1,5 million $ de sa facilité de crédit revolving",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-06T22:37:36Z",
+   "url": "https://fr.investing.com/news/sec-filings/tuhura-biosciences-tire-15-million--de-sa-facilite-de-credit-revolving-93CH-3683458"
+  },
+  {
    "h": "Auddia annonce des accords d’échange de Warrants contre des actions sur le NASDAQ",
    "w": "",
    "syms": [
@@ -2234,28 +2304,12 @@
    "url": "https://fr.investing.com/news/world-news/les-etatsunis-sanctionnent-8-entreprises-canadiennes-de-services-monetaires-liees-a-liran-3683457"
   },
   {
-   "h": "Faraday Future émet des actions privilégiées de série A pour son président exécutif",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T22:29:43Z",
-   "url": "https://fr.investing.com/news/sec-filings/faraday-future-emet-des-actions-privilegiees-de-serie-a-pour-son-president-executif-93CH-3683453"
-  },
-  {
    "h": "OpenAI will keep investing in AI data centers despite election results, CFO tells CNBC",
    "w": "Voters across the country on Tuesday voiced their support for candidates who have pledged to place restrictions on data center development.",
    "syms": [],
    "src": "CNBC — Marchés",
    "ts": "2026-11-06T22:25:58Z",
    "url": "https://www.cnbc.com/2026/11/06/open-ai-data-centers-election.html"
-  },
-  {
-   "h": "La filiale d’Enova International prévoit une émission de titres adossés à des actifs de 500 millions $",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T22:24:11Z",
-   "url": "https://fr.investing.com/news/sec-filings/la-filiale-denova-international-prevoit-une-emission-de-titres-adosses-a-des-actifs-de-500-millions--93CH-3683452"
   },
   {
    "h": "Trump says Stephen Miller to replace Susie Wiles as White House chief of staff",
@@ -2278,14 +2332,6 @@
    "mine": 1
   },
   {
-   "h": "Health In Tech émet un billet à ordre de 3 millions $ dans le cadre d’un financement en actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T22:19:33Z",
-   "url": "https://fr.investing.com/news/sec-filings/health-in-tech-emet-un-billet-a-ordre-de-3-millions--dans-le-cadre-dun-financement-en-actions-93CH-3683450"
-  },
-  {
    "h": "US economy outstrips forecasts to add 165,000 jobs in October",
    "w": "Hiring rebound reinforces expectations Federal Reserve will raise interest rates",
    "syms": [],
@@ -2293,22 +2339,6 @@
    "ts": "2026-11-06T22:16:13Z",
    "url": "https://www.ft.com/content/f84c722c-99a9-4628-84dc-c42a192cb35c?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Harold J. Schwartz démissionne du conseil d’administration de Data Storage Corp",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T22:15:36Z",
-   "url": "https://fr.investing.com/news/sec-filings/harold-j-schwartz-demissionne-du-conseil-dadministration-de-data-storage-corp-93CH-3683448"
-  },
-  {
-   "h": "Lazard dépose un prospectus pour la revente d’actions émises lors de l’acquisition de Campbell Lutyens",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T22:11:41Z",
-   "url": "https://fr.investing.com/news/sec-filings/lazard-depose-un-prospectus-pour-la-revente-dactions-emises-lors-de-lacquisition-de-campbell-lutyens-93CH-3683446"
   },
   {
    "h": "Trump taps immigration hardliner Stephen Miller as chief of staff",
@@ -2320,28 +2350,12 @@
    "mine": 1
   },
   {
-   "h": "Les actionnaires d’Onfolio Holdings approuvent un regroupement d’actions lors d’une assemblée extraordinaire",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T22:07:40Z",
-   "url": "https://fr.investing.com/news/sec-filings/les-actionnaires-donfolio-holdings-approuvent-un-regroupement-dactions-lors-dune-assemblee-extraordinaire-93CH-3683445"
-  },
-  {
-   "h": "Cognizant finalise l’acquisition de la société d’ingénierie Wizeline",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T22:05:07Z",
-   "url": "https://fr.investing.com/news/company-news/cognizant-finalise-lacquisition-de-la-societe-dingenierie-wizeline-93CH-3683444"
-  },
-  {
    "h": "US stocks stage tepid recovery after $3.2tn rout fuelled by AI fears",
    "w": "Magnitude of rebound was feeble compared with historic recoveries from severe sell-offs",
    "syms": [
     "SPX"
    ],
-   "src": "myFT — world",
+   "src": "myFT — europe",
    "ts": "2026-11-06T22:00:56Z",
    "url": "https://www.ft.com/content/088ed252-ea9c-4b61-b2d1-37295fd0f7c2?syn-25a6b1a6=1",
    "mine": 1
@@ -2701,21 +2715,36 @@
    "mine": 1
   },
   {
+   "h": "Japan's Takaichi pushes for tougher cybersecurity laws as attacks surge",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-06T17:23:19.160070Z",
+   "url": "https://asia.nikkei.com/spotlight/cybersecurity/japan-s-takaichi-pushes-for-tougher-cybersecurity-laws-as-attacks-surge"
+  },
+  {
+   "h": "Democrats' midterm gains hang over data centers, Japanese US investment",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-06T17:23:19.160070Z",
+   "url": "https://asia.nikkei.com/politics/u.s.-midterm-elections/democrats-midterm-gains-hang-over-data-centers-japanese-us-investment"
+  },
+  {
+   "h": "Activist Au Kam-san jailed 12.5 years in 1st Macao national security case",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-06T17:23:19.160070Z",
+   "url": "https://asia.nikkei.com/politics/activist-au-kam-san-jailed-12.5-years-in-1st-macao-national-security-case"
+  },
+  {
    "h": "James Talarico: the Democrats’ rising star who turned Texas blue",
    "w": "The 37-year-old senator-elect combined Christian faith and anti-corruption messaging to give the left its first statewide win in decades",
    "syms": [],
    "src": "myFT — us",
    "ts": "2026-11-06T17:23:03Z",
    "url": "https://www.ft.com/content/7eb006c7-a430-40fd-bba6-48dcbb810ba2?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "US warns China it must ‘immediately’ meet terms of Busan trade deal",
-   "w": "Washington says Beijing is not fulfilling commitments to increase supply of rare earths and other critical products",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-06T17:20:21Z",
-   "url": "https://www.ft.com/content/391bb785-0247-4c39-b53b-35007187d603?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2894,14 +2923,6 @@
    "url": "https://asia.nikkei.com/spotlight/big-in-asia/japan-s-new-whisky-breed-chases-export-elixir"
   },
   {
-   "h": "Putin exploits Takaichi's diplomatic opening with Japan Tobacco grab",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T15:24:50.532703Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/putin-exploits-takaichi-s-diplomatic-opening-with-japan-tobacco-grab"
-  },
-  {
    "h": "Singapore Airlines investit massivement pour rester dans la course du transport aérien haut de gamme",
    "w": "La compagnie de Singapour consacre 1,47 milliard d’euros au renouvellement de ses cabines. Avec en premier lieu la création de classes « avant » (première, affaires…) plus luxueuses, pour capter la clientèle la plus aisée, qui est aussi la plus rentable.",
    "syms": [],
@@ -2926,22 +2947,6 @@
    "ts": "2026-11-06T14:56:03Z",
    "url": "https://www.ft.com/content/52770926-e4b9-4005-9e2f-332eb7dc6631",
    "mine": 1
-  },
-  {
-   "h": "Japan convenience store chain Lawson details first India store in Mumbai",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T14:49:23.726039Z",
-   "url": "https://asia.nikkei.com/business/retail/japan-convenience-store-chain-lawson-details-first-india-store-in-mumbai"
-  },
-  {
-   "h": "Taiwan, South Korea, Japan stock markets hit hard by AI sell-off",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T14:49:23.726039Z",
-   "url": "https://asia.nikkei.com/business/markets/taiwan-south-korea-japan-stock-markets-hit-hard-by-ai-sell-off"
   },
   {
    "h": "UK retail investors buy the dip after bruising tech sell-off",
