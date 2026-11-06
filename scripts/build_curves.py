@@ -304,8 +304,8 @@ def _bars(obj):
     return None
 
 
-def hist_10y(sym):
-    r = requests.get(f"https://ts-api.cnbc.com/harmony/app/charts/5Y.json", params={"symbol": sym},
+def _hist(sym, rng):
+    r = requests.get(f"https://ts-api.cnbc.com/harmony/app/charts/{rng}.json", params={"symbol": sym},
                      headers={"User-Agent": "Mozilla/5.0"}, timeout=30)
     r.raise_for_status()
     out = {}
@@ -324,6 +324,21 @@ def hist_10y(sym):
         if -5 < v < 30:
             out[d] = round(v, 3)
     return sorted(out.items())
+
+
+def hist_10y(sym):
+    """5 ans en hebdomadaire (CNBC 5Y) complétés par la dernière année en quotidien (CNBC 1Y) : pics visibles et dernier jour à jour."""
+    week = dict(_hist(sym, "5Y"))
+    try:
+        day = dict(_hist(sym, "1Y"))
+    except Exception as e:
+        log(f"  ! Historique quotidien {sym} : {str(e)[:80]}")
+        day = {}
+    if day:
+        d0 = min(day)
+        week = {d: v for d, v in week.items() if d < d0}
+    week.update(day)
+    return sorted(week.items())
 
 
 FILL_CNBC = {"DE": "DE", "UK": "GB", "JP": "JP", "CH": "CH"}
