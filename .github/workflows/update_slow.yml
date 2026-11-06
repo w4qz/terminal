@@ -1,0 +1,118 @@
+# À placer dans le dépôt sous : .github/workflows/update_slow.yml
+name: Mise à jour des données (lente)
+
+on:
+  schedule:
+    - cron: "17 * * * *"    # une fois par heure (à h17) : fondamentaux, comptes, options, économie, SEC, Banque mondiale, codes Bloomberg
+  workflow_dispatch:          # bouton « Run workflow » pour lancer à la main
+
+permissions:
+  contents: write             # autorise le robot à publier ses fichiers
+
+concurrency:
+  group: update-slow
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Installer les dépendances
+        run: pip install -r requirements.txt
+
+      - name: Fondamentaux du catalogue (par roulement)
+        id: fundamentals
+        continue-on-error: true
+        run: python scripts/build_fundamentals.py
+
+      - name: États financiers (FA, par roulement)
+        id: financials
+        continue-on-error: true
+        run: python scripts/build_financials.py
+
+      - name: Chaînes d'options (OMON)
+        id: options
+        continue-on-error: true
+        env:
+          OPT_FORCE: "true"
+        run: python scripts/build_options.py
+
+      - name: Données économiques (une fois par jour)
+        id: economics
+        continue-on-error: true
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          ECON_FORCE: ${{ github.event_name == 'workflow_dispatch' }}
+        run: python scripts/build_economics.py
+
+      - name: Dépôts SEC (CF, sociétés américaines)
+        id: sec
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          SEC_CONTACT: ${{ secrets.SEC_CONTACT }}
+        run: python scripts/build_sec.py
+
+      - name: Banque mondiale (une fois par jour)
+        id: worldbank
+        continue-on-error: true
+        timeout-minutes: 3
+        env:
+          WB_FORCE: ${{ github.event_name == 'workflow_dispatch' }}
+        run: python scripts/build_worldbank.py
+
+      - name: Codes Bloomberg (OpenFIGI)
+        id: figi
+        continue-on-error: true
+        timeout-minutes: 3
+        env:
+          OPENFIGI_KEY: ${{ secrets.OPENFIGI_KEY }}
+        run: python scripts/build_figi.py
+
+      - name: Publier les fichiers
+        if: always()
+        env:
+          STEPS_JSON: ${{ toJSON(steps) }}
+        run: |
+          git config user.name  "terminal-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          FILES="fundamentals.json peers.json financials.json options.json economics.json sec.json worldbank.json figi.json"
+          # Seuls les fichiers produits par CE robot sont publiés : l'autre robot ne voit jamais
+          # ses fichiers récents écrasés par une copie ancienne.
+          mkdir -p "$RUNNER_TEMP/out"
+          for f in $FILES; do [ -f "$f" ] && cp "$f" "$RUNNER_TEMP/out/"; done
+          for i in 1 2 3 4; do
+            if git fetch origin main && git reset --hard origin/main; then
+              cp "$RUNNER_TEMP"/out/* . 2>/dev/null || true
+              # status.json (onglet Diagnostic) : on met à jour nos étapes, on garde celles de l'autre robot
+              python3 - <<'PY'
+          import json, os, datetime
+          names = {"fundamentals": "fondamentaux", "financials": "états financiers", "options": "options", "economics": "séries économiques", "sec": "SEC", "worldbank": "Banque mondiale", "figi": "OpenFIGI"}
+          steps = json.loads(os.environ.get("STEPS_JSON") or "{}")
+          try:
+              st = json.load(open("status.json", encoding="utf-8"))
+          except Exception:
+              st = {}
+          st.setdefault("steps", {})
+          for sid, label in names.items():
+              if sid in steps:
+                  st["steps"][label] = steps[sid].get("outcome")
+          st["finished_at"] = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+          st["run"] = os.environ.get("GITHUB_RUN_ID")
+          json.dump(st, open("status.json", "w", encoding="utf-8"), ensure_ascii=False)
+          PY
+              for f in $FILES status.json; do [ -f "$f" ] && git add "$f"; done
+              if git diff --staged --quiet; then echo "Rien de nouveau à publier"; exit 0; fi
+              git commit -m "Données lentes $(date -u +'%Y-%m-%d %H:%M') UTC" && git push origin HEAD:main && exit 0
+            fi
+            echo "Publication refusée (tentative $i), nouvel essai…"; sleep $((i * 7))
+          done
+          exit 1
