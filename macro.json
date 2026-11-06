@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-06T17:18:46.728582Z",
+ "generated_at": "2026-11-06T17:25:59.607069Z",
  "eco": {
   "prints": [
    {
@@ -8,7 +8,7 @@
     "prev": 3.35,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-06",
+    "pub": "2026-11-05",
     "freq": "M",
     "src": "FRED CPIAUCSL",
     "url": "https://fred.stlouisfed.org/series/CPIAUCSL"
@@ -19,7 +19,7 @@
     "prev": 2.45,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-06",
+    "pub": "2026-11-05",
     "freq": "M",
     "src": "FRED CPILFESL",
     "url": "https://fred.stlouisfed.org/series/CPILFESL"
@@ -30,7 +30,7 @@
     "prev": 3.03,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-06",
+    "pub": "2026-11-05",
     "freq": "M",
     "src": "FRED PCEPILFE",
     "url": "https://fred.stlouisfed.org/series/PCEPILFE"
@@ -63,7 +63,7 @@
     "prev": 195000.0,
     "fmt": "n",
     "ts": "2026-10-31",
-    "pub": "2026-11-06",
+    "pub": "2026-11-05",
     "freq": "W",
     "src": "FRED ICSA",
     "url": "https://fred.stlouisfed.org/series/ICSA"
@@ -74,7 +74,7 @@
     "prev": 2.2,
     "fmt": "%",
     "ts": "2026-07-01",
-    "pub": "2026-11-06",
+    "pub": "2026-11-05",
     "freq": "Q",
     "src": "FRED A191RL1Q225SBEA",
     "url": "https://fred.stlouisfed.org/series/A191RL1Q225SBEA"
@@ -85,7 +85,7 @@
     "prev": 1.29,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-06",
+    "pub": "2026-11-05",
     "freq": "M",
     "src": "FRED RSAFS",
     "url": "https://fred.stlouisfed.org/series/RSAFS"
@@ -96,7 +96,7 @@
     "prev": 51.7,
     "fmt": "n",
     "ts": "2026-09-01",
-    "pub": "2026-11-06",
+    "pub": "2026-11-05",
     "freq": "M",
     "src": "FRED UMCSENT",
     "url": "https://fred.stlouisfed.org/series/UMCSENT"
@@ -107,7 +107,7 @@
     "prev": 3.23,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-06",
+    "pub": "2026-11-05",
     "freq": "M",
     "src": "FRED CP0000EZ19M086NEST",
     "url": "https://fred.stlouisfed.org/series/CP0000EZ19M086NEST"
@@ -118,7 +118,7 @@
     "prev": 6.7,
     "fmt": "%",
     "ts": "2023-01-01",
-    "pub": "2026-11-06",
+    "pub": "2026-11-05",
     "freq": "M",
     "src": "FRED LRHUTTTTEZM156S",
     "url": "https://fred.stlouisfed.org/series/LRHUTTTTEZM156S"
@@ -591,18 +591,18 @@
    {
     "d": "2027-10-27",
     "pre": 4.345,
-    "post": 4.34,
-    "move_bp": -0.5,
-    "p_cut": 2,
+    "post": 4.335,
+    "move_bp": -1.0,
+    "p_cut": 4,
     "p_hike": 0
    },
    {
     "d": "2027-12-08",
-    "pre": 4.34,
-    "post": 4.34,
-    "move_bp": 0.0,
+    "pre": 4.335,
+    "post": 4.342,
+    "move_bp": 0.7,
     "p_cut": 0,
-    "p_hike": 0
+    "p_hike": 3
    }
   ],
   "src": "Futures fed funds 30 jours CBOT (Yahoo) + EFFR (FRED) — méthode FedWatch simplifiée"
@@ -640,21 +640,21 @@
     },
     {
      "t": "2A",
-     "y": 4.518,
+     "y": 4.516,
      "y1m": 4.77,
      "ts": "2026-11-06",
      "live": true
     },
     {
      "t": "3A",
-     "y": 4.583,
+     "y": 4.58,
      "y1m": 4.87,
      "ts": "2026-11-06",
      "live": true
     },
     {
      "t": "5A",
-     "y": 4.645,
+     "y": 4.643,
      "y1m": 5.03,
      "ts": "2026-11-06",
      "live": true
@@ -682,7 +682,7 @@
     },
     {
      "t": "30A",
-     "y": 5.251,
+     "y": 5.252,
      "y1m": 5.67,
      "ts": "2026-11-06",
      "live": true
