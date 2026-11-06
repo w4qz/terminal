@@ -1835,8 +1835,8 @@ const nws=SNAPSHOT.news.filter(n=>(n.syms||[]).includes(sym)||(n.h||'').toLowerC
 const fundTs=F.ts?ago(F.ts):'—';
 
 el.innerHTML=`
-<div id="secbar"><span class="t">${esc(sym)}</span><span class="px">${px!=null?npx(px,sym):'—'}</span><span class="${cls(pc)}" style="font-weight:600">${pc!=null?pct(pc):''}</span><span class="nm">${esc(name)}</span>
-<nav aria-label="Sections de la fiche">${[['GP','sec-gp','Graphique'],['DES','sec-des','Résumé'],['RV','sec-rv','Comparables'],['FA','sec-fa','Comptes'],['DVD','sec-dvd','Dividendes'],['CN','sec-cn','Actualités'],...(/[.=^]/.test(sym)?[]:[['OMON','sec-omon','Options']])].map(([k,a,l])=>`<button type="button" data-jump="${a}" title="${l} (${k})">${l} <span style="color:var(--txt3);font-size:9px">${k}</span></button>`).join('')}</nav></div>
+<div id="secbar"><span class="t">${esc(sym)}</span><span class="px">${px!=null?npx(px,sym):'—'}</span><span class="${cls(pc)}" style="font-weight:600">${pc!=null?pct(pc):''}</span><span class="nm">${esc(name)}</span>${(()=>{ const b=bbgCode(sym); return b?`<span style="font-size:10px;color:var(--txt2);border:1px solid var(--line);padding:1px 6px;white-space:nowrap" title="${b.ok?'Code Bloomberg et FIGI fournis par OpenFIGI : '+esc(b.figi||''):'Code Bloomberg déduit de la place de cotation (pas encore confirmé par OpenFIGI)'}">${esc(b.c)}${b.ok?' ✓':''}</span>`:''; })()}
+<nav aria-label="Sections de la fiche">${[['GP','sec-gp','Graphique'],['DES','sec-des','Résumé'],['RV','sec-rv','Comparables'],['FA','sec-fa','Comptes'],['DVD','sec-dvd','Dividendes'],['CN','sec-cn','Actualités'],...(/[.=^]/.test(sym)?[]:[['CF','sec-cf','Dépôts SEC']]),...(/[.=^]/.test(sym)?[]:[['OMON','sec-omon','Options']])].map(([k,a,l])=>`<button type="button" data-jump="${a}" title="${l} (${k})">${l} <span style="color:var(--txt3);font-size:9px">${k}</span></button>`).join('')}</nav></div>
 <div class="pnl" id="sec-des" style="margin-bottom:9px"><div class="statrow">
 <div class="stat"><span class="l">${esc(sym)}${F.sector?' · '+esc(SECT_FR[F.sector]||F.sector):''}</span><span class="n" id="secpx">${px!=null?npx(px,sym):'—'}${badge(st)}</span><span class="s">${esc(name)}</span></div>
 <div class="stat"><span class="l">VARIATION</span><span class="n ${cls(pc)}" id="secpc">${pc!=null?pct(pc):'—'}</span><span class="s">${esc(ccy)}</span></div>
@@ -1857,6 +1857,7 @@ el.innerHTML=`
 <div class="note" id="secmsg" style="padding:6px 0 0">${WORKER_URL?'Chargement…':'Renseignez WORKER_URL (relais Cloudflare) pour afficher le graphique.'}</div></div></div>
 <div class="pnl" id="sec-rv" style="margin-bottom:9px"><h3>RV — Valeur relative</h3><div class="note">Chargement des pairs…</div></div>
 <div class="pnl" id="sec-fa" style="margin-bottom:9px"><h3>FA — Analyse financière</h3><div class="note">Chargement des états financiers…</div></div>
+${/[.=^]/.test(sym)?'':'<div class="pnl" id="sec-cf" style="margin-bottom:9px"><h3>CF — Dépôts SEC</h3><div class="note">Chargement…</div></div>'}
 <div class="g g2" style="margin-bottom:9px"><div class="pnl" id="sec-dvd"><h3>DVD — Dividendes</h3><div class="note">Chargement…</div></div>
 <div class="pnl" id="sec-cn"><h3>CN — Actualités du titre</h3><div class="note">Chargement…</div></div></div>
 ${/[.=^]/.test(sym)?'':'<div class="pnl" id="sec-omon" style="margin-bottom:9px"><h3>OMON — Options</h3><div class="note">Chargement…</div></div>'}
@@ -1880,7 +1881,7 @@ Graphique : clôtures ${SEC.range==='5A'?'hebdomadaires':'quotidiennes'} Yahoo F
 el.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{ SEC.range=b.dataset.r; viewSecurity(); });
 el.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{ SEC[b.dataset.t]=!SEC[b.dataset.t]; viewSecurity(); });
 el.querySelectorAll('[data-jump]').forEach(b=>b.onclick=()=>{ const t=document.getElementById(b.dataset.jump); if(t){ const m=document.getElementById('main'); m.scrollTo({top:t.offsetTop-52,behavior:'smooth'}); } });
-rvRender(sym,F); faRender(sym); dvdRender(sym); cnRender(sym,nws); omonRender(sym);
+rvRender(sym,F); faRender(sym); dvdRender(sym); cnRender(sym,nws); omonRender(sym); cfRender(sym);
 if(WORKER_URL) loadCandles(sym, F, px);
 }
 
@@ -3298,6 +3299,38 @@ function staleMark(ts,maxDays){ if(!ts) return ''; const d=(Date.now()-Date.pars
 return d>maxDays?` <span class="st st-STALE" title="Dernière donnée au ${esc(String(ts).slice(0,10))} : série interrompue ou très en retard">ancienne</span>`:''; }
 
 /*═══════════════════════════════════════════════════════════════════════
+13 ter. SOURCES PUBLIQUES : SEC EDGAR (CF), Banque mondiale (carte), OpenFIGI (codes Bloomberg)
+═══════════════════════════════════════════════════════════════════════*/
+let SECD=null, SECD_P=null, WB=null, WB_TS=null, FIGI={}, FIGI_TS=null;
+async function loadWB(){ try{ const r=await fetch('worldbank.json?t='+Date.now(),{cache:'no-store'}); if(!r.ok) throw new Error('HTTP '+r.status);
+const d=await r.json(); if(WB_TS===d.generated_at) return false; WB=d; WB_TS=d.generated_at; return true; }catch(e){ console.info('worldbank.json indisponible ('+e.message+')'); return false; } }
+async function loadFigi(){ try{ const r=await fetch('figi.json?t='+Date.now(),{cache:'no-store'}); if(!r.ok) throw new Error('HTTP '+r.status);
+const d=await r.json(); if(FIGI_TS===d.generated_at) return false; FIGI=d.items||{}; FIGI_TS=d.generated_at; return true; }catch(e){ return false; } }
+function loadSec(){ if(!SECD_P) SECD_P=fetch('sec.json?t='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(d=>{ SECD=d; return d; }).catch(()=>null); return SECD_P; }
+// Code Bloomberg : OpenFIGI quand il est connu, sinon déduit de la place de cotation Yahoo
+const BBG_OF={'':'US',PA:'FP',L:'LN',DE:'GY',F:'GF',MI:'IM',AS:'NA',MC:'SM',SW:'SE',BR:'BB',LS:'PL',ST:'SS',CO:'DC',OL:'NO',HE:'FH',IR:'ID',VI:'AV',T:'JT',HK:'HK',TO:'CN',AX:'AU',SA:'BZ',NS:'IN',KS:'KS',TW:'TT'};
+const BBG_IDX={SPX:'SPX Index',NDX:'NDX Index',DJI:'INDU Index',RUT:'RTY Index',VIX:'VIX Index',CAC:'CAC Index',DAX:'DAX Index',UKX:'UKX Index',SX5E:'SX5E Index',
+N225:'NKY Index',HSI:'HSI Index',SHCOMP:'SHCOMP Index',STI:'STI Index',EURUSD:'EURUSD Curncy',USDJPY:'USDJPY Curncy',GBPUSD:'GBPUSD Curncy',DXY:'DXY Curncy',
+XAU:'XAU Curncy',CL:'CL1 Comdty',BRENT:'CO1 Comdty',BTC:'XBTUSD Curncy'};
+function bbgCode(sym){ const f=FIGI[sym]; if(f&&f.bbg) return {c:f.bbg,figi:f.figi,ok:true};
+if(BBG_IDX[sym]) return {c:BBG_IDX[sym],ok:false};
+if(/[=^]/.test(sym)) return null; const [b,suf='']=sym.split('.'); const ex=BBG_OF[suf]; if(ex==null) return null;
+return {c:`${b.replace('-','/')} ${ex} Equity`,ok:false}; }
+// CF — dépôts SEC (fiche d'un titre américain)
+async function cfRender(sym){ const box=document.getElementById('sec-cf'); if(!box) return;
+const d=await loadSec(), it=d&&d.items&&d.items[sym];
+if(!it||!it.filings){ box.innerHTML=`<h3>CF — Dépôts SEC</h3><div class="note">${!d?'Dépôts SEC pas encore relevés : ils apparaissent après les prochains passages du robot (étape « Dépôts SEC »).':it&&it.none?'Société introuvable dans la base de la SEC (titre étranger coté aux États-Unis ou fonds).':'Pas encore lus pour ce titre : le robot couvre le catalogue américain par roulement (environ 2 heures).'}</div>`; return; }
+const col=f=>f==='8-K'||f==='6-K'?'var(--hot)':f==='4'?'#bb98e6':/^1[0]|20-F/.test(f)?'#9cc8ff':'var(--txt2)';
+box.innerHTML=`<h3>CF — Dépôts SEC<span class="rt">${esc(it.name||'')} · CIK ${it.cik} · relevé ${fmtDT(it.ts)}</span></h3>
+<div class="statrow" style="padding:8px 9px"><div class="stat"><span class="l">OPÉRATIONS DE DIRIGEANTS</span><span class="n">${nf(it.f4_90d||0,0)}</span><span class="s">formulaires 4 sur 90 jours</span></div>
+<div class="stat"><span class="l">DERNIER RAPPORT</span><span class="n" style="font-size:15px">${(()=>{ const r=it.filings.find(x=>/^(10-K|10-Q|20-F)$/.test(x[1])); return r?esc(r[1])+' · '+new Date(r[0]+'T12:00:00').toLocaleDateString('fr-FR'):'—'; })()}</span></div></div>
+<table><caption class="sr-only">Derniers dépôts SEC</caption><thead><tr><th scope="col" style="text-align:left">Date</th><th scope="col" style="text-align:left">Forme</th><th scope="col" style="text-align:left">Document</th></tr></thead><tbody>
+${it.filings.map(([dt,f,lab,u])=>`<tr><td style="text-align:left;white-space:nowrap">${new Date(dt+'T12:00:00').toLocaleDateString('fr-FR')}</td><td style="text-align:left"><b style="color:${col(f)}">${esc(f==='4'?'Form 4':f)}</b></td>
+<td style="text-align:left"><a href="${safeUrl(u)}" target="_blank" rel="noopener">${esc(lab)}</a></td></tr>`).join('')}</tbody></table>
+<div class="note">Source : SEC EDGAR, dépôts officiels. Formulaire 4 = achat ou vente d'actions par un dirigeant ou un administrateur ; 8-K = annonce importante (motif indiqué). <a href="${safeUrl(it.edgar)}" target="_blank" rel="noopener">Tous les dépôts sur EDGAR ↗</a></div>`; }
+// Banque mondiale : valeur d'un pays pour la carte
+function wbVal(iso,k){ const it=WB&&WB.items&&WB.items[String(+iso)]; const v=it&&it[k]; return v?{v:v[0],y:v[1]}:null; }
+/*═══════════════════════════════════════════════════════════════════════
 13 bis. CARTE — MAP (macro, pétrole, géopolitique), CB (banques centrales), RES (recherche publique)
 ═══════════════════════════════════════════════════════════════════════*/
 let GEO=null, GEO_TS=null, GEOLIB=null;
@@ -3315,8 +3348,9 @@ GEOLIB.catch(()=>{ GEOLIB=null; }); return GEOLIB; }
 const ISO_PFX={840:'US',276:'DE',250:'FR',380:'IT',724:'ES',826:'GB',392:'JP',756:'CH',156:'CN',356:'IN'};
 const ISO_IDX={840:'SPX',250:'CAC',276:'DAX',826:'UKX',392:'N225',156:'SHCOMP',344:'HSI',702:'STI'};
 const EA=new Set([40,56,100,191,196,233,246,250,276,300,372,380,428,440,442,470,528,620,703,705,724]);   // zone euro (Bulgarie depuis 2026)
-const MAP_METRICS={y10:{l:'Taux 10 ans',suf:'10Y',ea:null,div:false},infl:{l:'Inflation',suf:'IRYY',ea:'EUIRYY',div:false},
-rate:{l:'Taux directeur',suf:'INTR',ea:'EUINTR',div:false},gdp:{l:'PIB (a/a)',suf:'GDPYY',ea:null,div:true},eq:{l:'Bourse du jour',div:true}};
+const MAP_METRICS={y10:{l:'Taux 10 ans',suf:'10Y',ea:null,div:false},infl:{l:'Inflation',suf:'IRYY',ea:'EUIRYY',div:false,wb:'infl'},
+rate:{l:'Taux directeur',suf:'INTR',ea:'EUINTR',div:false},gdp:{l:'PIB (a/a)',suf:'GDPYY',ea:null,div:true,wb:'gdpg'},eq:{l:'Bourse du jour',div:true},
+gdpusd:{l:'PIB (Md$)',wb:'gdp',log:true},debt:{l:'Dette publique',wb:'debt'},unemp:{l:'Chômage',wb:'unemp'},ca:{l:'Solde courant',wb:'ca',div:true}};
 const MAPS={metric:'y10', layers:new Set(['macro','conf','trade','oil','geo']), sel:250, hot:null, proj:'globe', rot:[-15,-32], k:1, auto:false};
 // Zones de conflit armé actif : liste indicative revue à la main (UCDP / ACLED / presse), à mettre à jour.
 const CONFLICT_ASOF='06/11/2026';
@@ -3346,9 +3380,12 @@ const OIL_ROUTES=[[[50,27],[56.4,26.6],[60,22],[75,8],[95,6],[101,2.5],[105,2],[
 [[29.5,59.9],[20,57],[11,56],[5,57],[-5,50],[-9,40],[-6,36],[12,37],[32.5,30],[38,20],[43.4,12.6],[60,18],[72.8,19]]];
 function mapVal(iso,m){ iso=+iso;
 if(m==='eq'){ const s=ISO_IDX[iso], q=s&&SNAPSHOT.quotes[s]; return q&&q.pct!=null?{v:q.pct,code:s,lab:pct(q.pct)}:null; }
-const M=MAP_METRICS[m], p=ISO_PFX[iso]; let e=p&&ecoGet(p+M.suf);
+const M=MAP_METRICS[m], p=ISO_PFX[iso]; let e=M.suf&&p&&ecoGet(p+M.suf);
 if(!e&&M.ea&&EA.has(iso)) e=ecoGet(M.ea);
-return e&&e.last!=null?{v:e.last,code:e.code,lab:ecoFmt(e.last,e)}:null; }
+if(e&&e.last!=null) return {v:e.last,code:e.code,lab:ecoFmt(e.last,e)};
+// Sinon : Banque mondiale (données annuelles, tous les pays)
+const w=M.wb&&wbVal(iso,M.wb); if(!w) return null; const u=WB.ind[M.wb].u;
+return {v:M.log?Math.log10(Math.max(1,w.v)):w.v, lab:(u==='Md$'?nf(w.v,0)+' Md$':nf(w.v,1)+(u.startsWith('%')?' %':' '+u))+' ('+w.y+', Banque mondiale)'}; }
 function mapColor(v,lo,hi,div){ if(div){ const a=Math.min(1,Math.abs(v)/Math.max(Math.abs(lo),Math.abs(hi),1e-9)); return v>=0?`rgba(47,191,107,${.25+.65*a})`:`rgba(224,74,74,${.25+.65*a})`; }
 const t=hi>lo?(v-lo)/(hi-lo):.5, st=[[27,61,102],[47,106,168],[127,176,216],[232,194,122],[232,163,61],[224,74,74]];
 const x=Math.max(0,Math.min(1,t))*(st.length-1), i=Math.min(st.length-2,Math.floor(x)), f=x-i, a=st[i], b=st[i+1];
@@ -3476,7 +3513,7 @@ bh.onclick=()=>{ MAPS.k=1; MAPS.pan=null; if(globe) mapTurn([-15,-32]); else ren
 w.appendChild(zb);
 MAP_R={render, off:()=>{ window.removeEventListener('pointermove',onMove); window.removeEventListener('pointerup',onUp); }};
 const leg=document.getElementById('g-leg');
-if(leg) leg.innerHTML=MAPS.layers.has('macro')&&vals.length?`${M.div?'baisse':'bas'} <span style="display:inline-block;width:110px;height:7px;vertical-align:middle;background:${M.div?'linear-gradient(90deg,#e04a4a,#222,#2fbf6b)':'linear-gradient(90deg,#1b3d66,#2f6aa8,#7fb0d8,#e8c27a,#e8a33d,#e04a4a)'}"></span> ${M.div?'hausse':'haut'} · ${nf(lo,2)} à ${nf(hi,2)}${MAPS.metric==='eq'?' %':''}`:'';
+if(leg) leg.innerHTML=MAPS.layers.has('macro')&&vals.length?`${M.div?'baisse':'bas'} <span style="display:inline-block;width:110px;height:7px;vertical-align:middle;background:${M.div?'linear-gradient(90deg,#e04a4a,#222,#2fbf6b)':'linear-gradient(90deg,#1b3d66,#2f6aa8,#7fb0d8,#e8c27a,#e8a33d,#e04a4a)'}"></span> ${M.div?'hausse':'haut'} · ${M.log?nf(Math.pow(10,lo),0)+' à '+nf(Math.pow(10,hi),0)+' Md$':nf(lo,2)+' à '+nf(hi,2)}${MAPS.metric==='eq'?' %':''}`:'';
 if(MAPS.auto) mapSpin();
 }
 // Rotation animée vers une région, et rotation automatique lente
@@ -3513,8 +3550,10 @@ const idx=ISO_IDX[iso], q=idx&&SNAPSHOT.quotes[idx];
 const row=e=>`<tr class="clk" data-eco="${esc(e.code)}" tabindex="0" role="button"><th scope="row" style="text-align:left;font-weight:400;color:var(--txt)">${esc(e.n)}</th><td style="font-weight:600">${ecoFmt(e.last,e)}</td><td class="mut" style="font-size:10px">${ecoPeriod(e,e.date)}</td></tr>`;
 el.innerHTML=`<h3>${esc(name.toUpperCase())}<span class="rt">pays sélectionné</span></h3>
 ${q?`<div class="pbody" style="padding-bottom:0"><div class="kv"><span class="k">${esc(idx)}</span><span class="v"><b>${npx(q.p,idx)}</b> <span class="${cls(q.pct)}">${pct(q.pct)}</span></span></div></div>`:''}
+${(()=>{ const it=WB&&WB.items&&WB.items[String(iso)]; if(!it) return ''; const rows=['gdp','gdppc','gdpg','infl','unemp','debt','ca'].filter(k=>it[k]);
+if(!rows.length) return ''; return `<div class="pbody" style="padding-top:4px">${rows.map(k=>{ const [v,y]=it[k], u=WB.ind[k].u; return `<div class="kv"><span class="k">${esc(WB.ind[k].l)}</span><span class="v">${u==='Md$'?nf(v,0)+' Md$':u==='$'?nf(v,0)+' $':nf(v,1)+(u.startsWith('%')?' %':' '+u)} <span class="mut" style="font-size:9px">${y}</span></span></div>`; }).join('')}<div class="mut" style="font-size:9px;padding-top:3px">Banque mondiale, dernières données annuelles</div></div>`; })()}
 ${codes.length||eaRows.length?`<table><caption class="sr-only">Indicateurs du pays</caption><tbody>${codes.map(row).join('')}${eaRows.map(row).join('')}</tbody></table>`
-:'<div class="note">Pas de série ECONOMICS pour ce pays dans le terminal.</div>'}
+:(WB&&WB.items&&WB.items[String(iso)]?'':'<div class="note">Pas de donnée pour ce pays dans le terminal.</div>')}
 <div style="display:flex;gap:6px;flex-wrap:wrap;padding:8px 9px">${p?`<button class="chip" data-run="GC">GC</button>`:''}${idx?`<button class="chip" data-run="${esc(idx)}">${esc(idx)} GP</button>`:''}<button class="chip" data-run="ECO">ECO</button></div>`;
 el.querySelectorAll('[data-eco]').forEach(r=>r.onclick=()=>runAny(r.dataset.eco));
 el.querySelectorAll('[data-run]').forEach(b=>b.onclick=()=>{ const c=b.dataset.run; if(SNAPSHOT.quotes[c]){ S.focus=c; go('sec'); } else runAny(c); }); }
@@ -3674,7 +3713,7 @@ document.getElementById('themebtn').onclick=()=>setTheme(document.body.classList
 const EMBED=new URLSearchParams(location.search);
 if(EMBED.get('embed')){ document.body.classList.add('embed'); const c=EMBED.get('cmd')||'WEI';
 S.view='mkt'; (async()=>{ // catalogue chargé d'abord : « TTE » doit devenir TTE.PA, pas le certificat américain
-await Promise.all([loadUniverse(),loadLive(),loadFund(),loadMacro(),loadEcon(),loadCurves(),loadPeers(),loadGeo()].map(p=>p.catch(()=>{}))); harmonize();
+await Promise.all([loadUniverse(),loadLive(),loadFund(),loadMacro(),loadEcon(),loadCurves(),loadPeers(),loadGeo(),loadWB(),loadFigi()].map(p=>p.catch(()=>{}))); harmonize();
 if(!/^(BLP)$/i.test(c.trim())) runAny(c); else go('mkt'); })(); }
 else go('mkt');
 /* Cours directs : le navigateur interroge Yahoo via le relais Cloudflare toutes les 60 s,
@@ -3706,7 +3745,7 @@ if(S.view==='mkt'||S.view==='wl'){ const mn=document.getElementById('main'), y=m
 syncBar(); }
 }finally{ RT_BUSY=false; }
 }
-const refresh=()=>Promise.all([loadStatus(),loadLive(),loadUniverse(),loadFT(),loadMacro(),loadFund(),loadEcon(),loadPeers(),loadCurves(),loadGeo()]).then(([_s,a,b,c,d,e,f,g,h,gg])=>{ harmonize(); renderTape(); if(a||b||c||d||e||f||h||gg){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
+const refresh=()=>Promise.all([loadStatus(),loadLive(),loadUniverse(),loadFT(),loadMacro(),loadFund(),loadEcon(),loadPeers(),loadCurves(),loadGeo(),loadWB(),loadFigi()]).then(([_s,a,b,c,d,e,f,g,h,gg,wb,fg])=>{ harmonize(); renderTape(); if(a||b||c||d||e||f||h||gg||wb||fg){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
 refresh();
 setInterval(refresh, 10*60*1000);
 liveQuotes(); setInterval(liveQuotes, 60*1000);
