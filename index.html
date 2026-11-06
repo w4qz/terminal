@@ -587,7 +587,7 @@ return ax-bx;
 async getMacroSeries(){ return SNAPSHOT.macro; }
 async health(){
 if(LIVE) return {up:true, latencyMs:0, rateLimitRemaining:Infinity,
-note:'data.json généré le '+fmtDT(LIVE.generated_at)+' par GitHub Actions (toutes les 30 minutes). Prix : Yahoo Finance via yfinance, différés. Taux : FRED. News : flux RSS publics. Synthèse : '+(LIVE.summary?LIVE.summary.model:'désactivée')+'. Les titres en échec gardent leur dernière valeur, marquée Périmé.'};
+note:'data.json généré le '+fmtDT(LIVE.generated_at)+' par GitHub Actions (toutes les 10 minutes). Prix : Yahoo Finance via yfinance, différés. Taux : FRED. News : flux RSS publics. Synthèse : '+(LIVE.summary?LIVE.summary.model:'désactivée')+'. Les titres en échec gardent leur dernière valeur, marquée Périmé.'};
 return {up:true, latencyMs:0, rateLimitRemaining:Infinity,
 note:'Source locale, actualisée le 31/10 via les newsletters FT du 20 au 30/10. S&P 500 et Nasdaq 100 à la clôture du 29/10. Nikkei, Hang Seng, FTSE, change, pétrole, or et taux 10 ans US au relevé FT du 30/10. NVDA, ASTS, Dow, Russell, VIX, DXY, TOPIX, Shanghai, STI, DAX, CAC et SX5E non couverts par les newsletters : derniers relevés conservés, marqués Périmé.'};
 }
@@ -664,7 +664,7 @@ health(){ return this.current.health(); }
 const DATA = new ProviderRouter();
 
 /*───────────────────────────────────────────────────────────────────────
-2d. Données live — data.json, produit toutes les 30 minutes par GitHub Actions
+2d. Données live — data.json, produit toutes les 10 minutes par GitHub Actions
 (scripts/update_data.py). Si le fichier est absent (ouverture en local),
 le terminal reste sur le snapshot figé ci-dessus : rien n'est inventé.
 ───────────────────────────────────────────────────────────────────────*/
@@ -725,7 +725,7 @@ for(const it of UNIV.filter(x=>x.cb && x.p!=null)){
 const row = SNAPSHOT.rates.find(r=>r.cb===it.cb); if(!row) continue;
 row.v = it.lo!=null ? fr(it.lo)+' – '+fr(it.p)+' %' : fr(it.p)+' %';
 row.st = it.st; row.src = it.src; row.ts = it.ts; if(it.n&&it.n.includes(' — ')) row.name = it.n.split(' — ')[1];
-row.note = 'Valeur officielle au '+new Date(it.ts+'T12:00:00').toLocaleDateString('fr-FR')+' — source : '+it.src+'. Mise à jour automatique toutes les 30 min.';
+row.note = 'Valeur officielle au '+new Date(it.ts+'T12:00:00').toLocaleDateString('fr-FR')+' — source : '+it.src+'. Mise à jour automatique toutes les 10 min.';
 row.next = '—';
 }
 return true;
@@ -1108,7 +1108,7 @@ return `<tr>
 el.innerHTML = `
 ${aboutBanner()}
 <div class="warn" style="margin-bottom:9px">
-${LIVE ? `${sessionLbl()!=='du jour'?`<b style="color:var(--hot)">Marchés actions fermés : variations ${sessionLbl()} ; seules les cryptos évoluent.</b> `:''}Fournisseur actif : <b>Pipeline automatique</b>. Données générées le <b>${fmtDT(LIVE.generated_at)}</b> par GitHub Actions — prix Yahoo Finance différés, taux FRED, news RSS. Rafraîchissement toutes les 30 minutes ; la page vérifie toutes les 10 minutes. Badge Périmé = source en échec, dernière valeur conservée.` : `Fournisseur actif : <b>Snapshot</b>. Actualisé le 31/10/2026 à partir des 25 newsletters Financial Times du dossier FT News (20-30/10).
+${LIVE ? `${sessionLbl()!=='du jour'?`<b style="color:var(--hot)">Marchés actions fermés : variations ${sessionLbl()} ; seules les cryptos évoluent.</b> `:''}Fournisseur actif : <b>Pipeline automatique</b>. Données générées le <b>${fmtDT(LIVE.generated_at)}</b> par GitHub Actions — prix Yahoo Finance différés, taux FRED, news RSS. Rafraîchissement toutes les 10 minutes ; la page vérifie toutes les 10 minutes. Badge Périmé = source en échec, dernière valeur conservée.` : `Fournisseur actif : <b>Snapshot</b>. Actualisé le 31/10/2026 à partir des 25 newsletters Financial Times du dossier FT News (20-30/10).
 <b>Semaine dominée par le doute sur l'IA</b> : Alphabet −13 % (−500 Md$), Big Tech −900 Md$, Intel −21 % ; prospectus d'IPO d'Anthropic ; Binance piraté pour 6,3 Md$.
 Fed et BCE inchangées (3,75-4,00 % et 2,50 %), Lagarde partira en février. S&P 500 et Nasdaq 100 à la clôture du 29/10 ; Asie, FTSE, change, pétrole et or au relevé FT du 30/10.
 NVDA, ASTS, Dow, VIX, DXY et indices européens continentaux ne figurent pas dans les newsletters : marqués Périmé.
@@ -1309,7 +1309,7 @@ return `<div class="pnl" style="margin-bottom:9px"><h3>Calendrier — résultats
 ${ev.length?`<div class="pbody flush"><table><caption class="sr-only">Événements à venir</caption><thead><tr><th scope="col" style="text-align:left">Date</th><th scope="col">Échéance</th><th scope="col" style="text-align:left">Titre</th><th scope="col" style="text-align:left">Événement</th><th scope="col" style="text-align:left">Détail</th></tr></thead><tbody>
 ${ev.map(e=>`<tr><th scope="row" style="text-align:left;font-weight:400">${dLong(e.t)}</th><td>${jx(e.t)}</td><td class="sym clk" data-sym="${esc(e.sym)}" style="text-align:left">${esc(e.sym)}</td>
 <td style="text-align:left">${e.k==='Résultats'?'<b>Résultats</b>':esc(e.k)}</td><td style="text-align:left;font-size:10px;color:var(--txt2)">${e.d}</td></tr>`).join('')}</tbody></table></div>`:''}
-<div class="note" style="padding:8px 9px">${none.length?`Sans date à venir : ${none.map(esc).join(', ')}. `:''}Dates issues des fondamentaux Yahoo (actualisés toutes les 30 min pour les titres prioritaires, en roulement sur ~4 h pour le reste du catalogue). Une date de résultats « estimée » n'est pas encore confirmée par la société ; le montant du dividende reprend le dernier versé. Dividendes convertis au change actuel, avant impôts.</div></div>`;
+<div class="note" style="padding:8px 9px">${none.length?`Sans date à venir : ${none.map(esc).join(', ')}. `:''}Dates issues des fondamentaux Yahoo (actualisés toutes les heures pour les titres prioritaires, en roulement sur ~4 h pour le reste du catalogue). Une date de résultats « estimée » n'est pas encore confirmée par la société ; le montant du dividende reprend le dernier versé. Dividendes convertis au change actuel, avant impôts.</div></div>`;
 }
 
 async function viewPortfolio(){
@@ -2224,7 +2224,7 @@ el.innerHTML=`<div class="pnl" style="margin-bottom:9px"><div class="pbody">
 <label for="sq" class="sr-only">Rechercher un ticker ou un nom</label>
 <input id="sq" placeholder="Ticker ou nom — ex. MC.PA, LVMH, ^TNX, EURCHF, or, Nestlé…" autocomplete="off" spellcheck="false" value="${esc(SR.q)}">
 <div class="chips" role="group" aria-label="Filtrer par classe d'actif">${CLASSES.map(c=>`<button type="button" class="chip ${c===SR.cls?'on':''}" data-c="${esc(c)}" aria-pressed="${c===SR.cls}">${esc(CLS_LABEL[c])}</button>`).join('')}</div>
-<div class="note" style="padding:8px 0 0">${UNIV?`Catalogue : <b>${n}</b> instruments, cours du ${fmtDT(UNIV_TS)} (Yahoo Finance, mis à jour toutes les 30 min).`:`Catalogue complet pas encore généré : ${n} instruments du snapshot disponibles.`}
+<div class="note" style="padding:8px 0 0">${UNIV?`Catalogue : <b>${n}</b> instruments, cours du ${fmtDT(UNIV_TS)} (Yahoo Finance, mis à jour toutes les 10 min).`:`Catalogue complet pas encore généré : ${n} instruments du snapshot disponibles.`}
 ${WORKER_URL?' Recherche mondiale active via le relais Cloudflare.':' Recherche mondiale : relais Cloudflare non configuré.'}</div>
 </div></div>
 <div class="g g23">
@@ -2308,7 +2308,7 @@ return `<tr><th scope="row" style="font-weight:400;color:var(--txt)">${dfr(r.d)}
 // BTMM
 const bt=(M.btmm||[]).map(x=>`<tr><th scope="row" style="font-weight:400;color:var(--txt);text-align:left">${esc(x.k)}</th>
 <td style="font-weight:600">${fmtMacro(x.v,x.fmt)}</td><td>${dlt(x.v,x.prev,x.fmt)}</td><td class="mut" style="font-size:10px">${esc(x.ts)}${staleMark(x.ts,100)}</td></tr>`).join('');
-el.innerHTML=`<div class="note" style="padding:0 0 8px">Équivalents gratuits des fonctions Bloomberg <b>ECO</b>, <b>WIRP</b>, <b>GC</b> et <b>BTMM</b>. Données du ${fmtDT(M.generated_at)} — FRED, BCE, Federal Reserve, Yahoo. Mise à jour toutes les 30 min.</div>
+el.innerHTML=`<div class="note" style="padding:0 0 8px">Équivalents gratuits des fonctions Bloomberg <b>ECO</b>, <b>WIRP</b>, <b>GC</b> et <b>BTMM</b>. Données du ${fmtDT(M.generated_at)} — FRED, BCE, Federal Reserve, Yahoo. Mise à jour toutes les 10 min.</div>
 <div class="g g2">
 <div class="pnl span2" id="m-eco"><h3>ECO — Calendrier avec consensus<span class="rt">cette semaine et la suivante · heures locales · impact moyen et fort</span></h3><div class="pbody flush">
 ${cons?`<table><caption class="sr-only">Calendrier économique avec consensus</caption><thead><tr><th scope="col">Date</th><th scope="col" style="text-align:left">Événement</th><th scope="col">Impact</th><th scope="col">Consensus</th><th scope="col">Publié</th><th scope="col">Surprise</th><th scope="col">Précédent</th></tr></thead><tbody>${cons}</tbody></table>`:'<div class="note na">Consensus indisponible pour le moment.</div>'}
@@ -3286,7 +3286,7 @@ if(!F.sector&&Object.keys(F).length>4) F.sector='Non classé';
 const q=SNAPSHOT.quotes[s], u=U.get(s), px=q&&q.p!=null?q.p:u&&u.p!=null?u.p:null;
 if(F.div>0&&px>0){ let y=F.div/px*100; if(SUBUNIT(F.ccy)){ if(y<0.05) y*=100; else if(y>40) y/=100; } if(y>0&&y<40) F.divYield=Math.round(y*1000)/1000; }
 else if(F.divYield>40) delete F.divYield; }
-// Taux à 10 ans (et US 2 ans) : même valeur que la courbe GC, actualisée toutes les 30 min.
+// Taux à 10 ans (et US 2 ans) : même valeur que la courbe GC, actualisée toutes les 10 min.
 // Les séries ECONOMICS de l'OCDE sont des moyennes mensuelles publiées avec un mois de retard
 // (FR10Y affichait 4,48 % de septembre quand GC montrait 4,73 % coté) : le dernier point est remplacé.
 if(typeof ecoGet==='function'){
@@ -3660,7 +3660,7 @@ document.getElementById('hprov').textContent=LIVE?'Pipeline GitHub Actions (MAJ 
 document.getElementById('hup').textContent=lvl==='up'?' — à jour':' — '+lvl;
 document.getElementById('hccy').textContent=S.ccy;
 document.getElementById('hstat').textContent=
-RT_TS ? 'cours directs Yahoo (différé 0–15 min) — relevés à '+RT_TS.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})+', toutes les 60 s' : LIVE ? 'différées — rafraîchies toutes les 30 min' : 'instantané — non rafraîchissable';
+RT_TS ? 'cours directs Yahoo (différé 0–15 min) — relevés à '+RT_TS.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})+', toutes les 60 s' : LIVE ? 'différées — rafraîchies toutes les 10 min' : 'instantané — non rafraîchissable';
 document.getElementById('hmsg').textContent=
 S.view==='sec' ? S.focus+' — appuyez sur ⌘K pour changer de titre' : '';
 }
@@ -3767,7 +3767,7 @@ syncBar(); }
 }
 const refresh=()=>Promise.all([loadStatus(),loadLive(),loadUniverse(),loadFT(),loadMacro(),loadFund(),loadEcon(),loadPeers(),loadCurves(),loadGeo(),loadWB(),loadFigi()]).then(([_s,a,b,c,d,e,f,g,h,gg,wb,fg])=>{ harmonize(); renderTape(); if(a||b||c||d||e||f||h||gg||wb||fg){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
 refresh();
-setInterval(refresh, 10*60*1000);
+setInterval(refresh, 5*60*1000);   // le robot rapide publie toutes les 10 min
 liveQuotes(); setInterval(liveQuotes, 60*1000);
 document.addEventListener('visibilitychange',()=>{ if(!document.hidden) liveQuotes(); });
 
