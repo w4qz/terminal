@@ -256,16 +256,30 @@ def _ecb_last(key):
     return str(df["TIME_PERIOD"].iloc[-1]), float(df["OBS_VALUE"].iloc[-1])
 
 
+def _jsonstat_series(d):
+    """JSON-stat Eurostat → [(période, valeur)] ; pour toute dimension autre que le temps, 1re modalité retenue."""
+    ids, size = d["id"], d["size"]
+    tpos = ids.index("time")
+    tix = d["dimension"]["time"]["category"]["index"]
+    stride = [1] * len(ids)
+    for k in range(len(ids) - 2, -1, -1):
+        stride[k] = stride[k + 1] * size[k + 1]
+    vals = d.get("value") or {}
+    out = []
+    for per, i in tix.items():
+        v = vals.get(str(i * stride[tpos]))
+        if v is not None:
+            out.append((per, float(v)))
+    return sorted(out)
+
+
 def _estat_last(dataset, filters):
     """Dernière valeur Eurostat (JSON-stat) : (période AAAA-MM, valeur)."""
     q = dict(x.split("=", 1) for x in filters.split("&"))
     r = requests.get(f"https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/{dataset}",
                      params={"format": "JSON", "lang": "EN", "lastTimePeriod": 2, **q}, headers=UA, timeout=30)
     r.raise_for_status()
-    d = r.json()
-    tix, vals = d["dimension"]["time"]["category"]["index"], d.get("value") or {}
-    obs = sorted((per, float(vals[str(i)])) for per, i in tix.items() if str(i) in vals)
-    return obs[-1]
+    return _jsonstat_series(r.json())[-1]
 
 
 def _first(*fns):
@@ -300,9 +314,9 @@ def _snb_last(cube, dim):
 
 
 OTHER_ACTUAL = {
-    ("EUR", "Flash CPI y/y"): (lambda: _first(lambda: _estat_last("prc_hicp_manr", "geo=EA20&coicop=CP00"), lambda: _ecb_last("ICP/M.U2.N.000000.4.ANR")), "%", 1, "m"),
-    ("EUR", "CPI Flash Estimate y/y"): (lambda: _first(lambda: _estat_last("prc_hicp_manr", "geo=EA20&coicop=CP00"), lambda: _ecb_last("ICP/M.U2.N.000000.4.ANR")), "%", 1, "m"),
-    ("EUR", "Core CPI Flash Estimate y/y"): (lambda: _first(lambda: _estat_last("prc_hicp_manr", "geo=EA20&coicop=TOT_X_NRG_FOOD"), lambda: _ecb_last("ICP/M.U2.N.XEF000.4.ANR")), "%", 1, "m"),
+    ("EUR", "Flash CPI y/y"): (lambda: _first(lambda: _estat_last("prc_hicp_manr", "geo=EA20&coicop=CP00"), lambda: _estat_last("prc_hicp_minr", "geo=EA20&coicop18=TOTAL&unit=RCH_A"), lambda: _ecb_last("ICP/M.U2.N.000000.4.ANR")), "%", 1, "m"),
+    ("EUR", "CPI Flash Estimate y/y"): (lambda: _first(lambda: _estat_last("prc_hicp_manr", "geo=EA20&coicop=CP00"), lambda: _estat_last("prc_hicp_minr", "geo=EA20&coicop18=TOTAL&unit=RCH_A"), lambda: _ecb_last("ICP/M.U2.N.000000.4.ANR")), "%", 1, "m"),
+    ("EUR", "Core CPI Flash Estimate y/y"): (lambda: _first(lambda: _estat_last("prc_hicp_manr", "geo=EA20&coicop=TOT_X_NRG_FOOD"), lambda: _estat_last("prc_hicp_minr", "geo=EA20&coicop18=TOT_X_NRG_FOOD&unit=RCH_A"), lambda: _ecb_last("ICP/M.U2.N.XEF000.4.ANR")), "%", 1, "m"),
     ("GBP", "Official Bank Rate"): (lambda: _boe_last("IUDBEDR"), "%", 2, "r"),
     ("CHF", "SNB Policy Rate"): (lambda: _snb_last("snbgwdzid", "LZ"), "%", 2, "r"),
 }
