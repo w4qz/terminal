@@ -2338,14 +2338,17 @@ const t0=performance.now(); try{ const r=await fetch(WORKER_URL+'/health',{cache
 catch(e){ RELAY={ok:false,ms:null,t:Date.now(),err:e.message}; } return RELAY; }
 function sourceRows(){
 const H=36e5, now=Date.now(), age=ts=>ts?(now-Date.parse(ts))/H:null;
-const S30=1.25, DAY=30;   // fichiers « 30 min » en retard au-delà d'1 h 15 ; fichiers quotidiens au-delà de 30 h
+const S30=0.75, SLOW=2.25, DAY=30;   // robot rapide (10 min) en retard au-delà de 45 min ; robot lent (1 h) au-delà de 2 h 15 ; quotidien au-delà de 30 h
 const rows=[
 ['Cours et news','data.json',LIVE&&LIVE.generated_at,S30,true],
 ['Catalogue et cours','universe.json',UNIV_TS,S30,true],
-['Fondamentaux (roulement)','fundamentals.json',FUND_TS,S30,false],
 ['Macro : ECO, WIRP, GC US/euro, BTMM','macro.json',MACRO&&MACRO.generated_at,S30,true],
 ['Courbes souveraines','curves.json',CURVES_TS,S30,false],
+['Carte : points chauds et recherche','geo.json',GEO_TS,S30,false],
+['Fondamentaux (roulement)','fundamentals.json',FUND_TS,SLOW,false],
+['Codes Bloomberg (OpenFIGI)','figi.json',FIGI_TS,SLOW,false],
 ['Séries économiques','economics.json',ECON_TS,DAY,false],
+['Banque mondiale','worldbank.json',WB_TS,DAY,false],
 ['Newsletters FT (Apps Script)','ft.json',FTNL&&FTNL.generated_at,S30,false,true]];
 return rows.map(([l,f,ts,max,crit,opt])=>{ const a=age(ts); const st=!ts?(opt?'absent':'manquant'):a>max*4?'périmé':a>max?'en retard':'à jour';
 return {l,f,ts,a,st,crit,opt}; }); }
@@ -2366,7 +2369,7 @@ ${rows.map(r=>`<tr><th scope="row" style="text-align:left;font-weight:400;color:
 <div class="stat"><span class="l">RELEVÉS ANCIENS</span><span class="n">${nAg}</span><span class="s">annoncés en séance, relevés il y a plus d'1 h 30</span></div>
 <div class="stat"><span class="l">DERNIER PASSAGE DU ROBOT</span><span class="n" style="font-size:14px">${PIPE_STATUS&&PIPE_STATUS.finished_at?fmtDT(PIPE_STATUS.finished_at):'—'}</span><span class="s">${steps.length?steps.filter(([,v])=>v!=='success'&&v!=='skipped').length+' étape(s) en échec sur '+steps.length:'status.json non publié'}</span></div></div>
 ${steps.length?`<table><caption class="sr-only">Étapes du dernier passage</caption><tbody>${steps.map(([k,v])=>`<tr><th scope="row" style="text-align:left;font-weight:400">${esc(k)}</th><td class="${v==='success'?'pos':v==='skipped'?'mut':'neg'}" style="text-align:left">${v==='success'?'réussie':v==='skipped'?'ignorée':'échec'}</td></tr>`).join('')}</tbody></table>`:''}
-<div class="note">« À jour » = fichier généré il y a moins d'1 h 15 (moins de 30 h pour les séries quotidiennes). Une étape réussie ne garantit pas une observation nouvelle : le week-end, les fichiers sont régénérés avec les mêmes clôtures.</div></div></div>`; }
+<div class="note">« À jour » = fichier généré il y a moins de 45 min pour le robot rapide (10 min), 2 h 15 pour le robot lent (1 h), 30 h pour les séries quotidiennes. Une étape réussie ne garantit pas une observation nouvelle : le week-end, les fichiers sont régénérés avec les mêmes clôtures.</div></div></div>`; }
 
 async function viewDiag(){
 const el=document.getElementById('v-diag');
@@ -3145,7 +3148,7 @@ return `<div style="margin-top:10px;border-top:1px solid var(--line);padding-top
 <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap"><span class="mut" style="font-size:10px">Vérifier sur Trading Economics :</span>
 ${ks.map(k=>`<a class="chip" href="https://tradingeconomics.com/${GC_TE[k]}/government-bond-yield" target="_blank" rel="noopener">${esc(GC_NAME[k]||k)} ↗</a>`).join('')}
 <a class="chip" href="https://tradingeconomics.com/bonds" target="_blank" rel="noopener">Tous les taux ↗</a></div>
-${hk.length?`<div style="display:flex;align-items:center;gap:8px;margin:12px 0 4px"><span class="mut" style="font-size:10px">Taux 10 ans — historique quotidien</span>
+${hk.length?`<div style="display:flex;align-items:center;gap:8px;margin:12px 0 4px"><span class="mut" style="font-size:10px">Taux 10 ans — historique</span>
 <div class="rng" role="group" aria-label="Période">${['1M','3M','6M','1A','2A','5A'].map(r=>`<button type="button" data-gchr="${r}" class="${GCH.range===r?'on':''}">${r}</button>`).join('')}</div>
 <span class="mut" id="gchinfo" style="font-size:10px;margin-left:auto"></span></div>
 <div style="position:relative"><canvas id="gchcv" height="320" data-k="${hk.join(',')}" role="img" aria-label="Historique des taux à 10 ans"></canvas></div>`
@@ -3168,7 +3171,7 @@ const rows=S2.map(s=>{ let p=null; for(const q of s.h){ if(q[0]<=d) p=q; else br
 const bw=170, bx=mx+12+bw>R?mx-12-bw:mx+12; x.fillStyle='rgba(13,15,17,.95)'; x.fillRect(bx,T+4,bw,18+rows.length*15); x.strokeStyle='#3a424c'; x.strokeRect(bx,T+4,bw,18+rows.length*15);
 x.fillStyle='#dde3ea'; x.textAlign='left'; x.fillText(new Date(t).toLocaleDateString('fr-FR'),bx+8,T+17);
 rows.forEach(([s,p],i)=>{ x.fillStyle=s.col; x.fillText('■ '+s.n,bx+8,T+32+i*15); x.fillStyle='#dde3ea'; x.textAlign='right'; x.fillText(nf(p[1],2)+' %',bx+bw-8,T+32+i*15); x.textAlign='left'; }); }
-const info=document.getElementById('gchinfo'); if(info) info.textContent='CNBC (rendements cotés), clôtures quotidiennes · '+S2.map(s=>s.n).join(', ');
+const info=document.getElementById('gchinfo'); if(info) info.textContent='CNBC (rendements cotés) : quotidien sur 1 an, hebdomadaire avant · '+S2.map(s=>s.n).join(', ');
 cv.onmousemove=e=>{ const r=cv.getBoundingClientRect(), mx=e.clientX-r.left; GCH.hover=mx>=L&&mx<=R?mx:null; drawGCH(); };
 cv.onmouseleave=()=>{ GCH.hover=null; drawGCH(); }; }
 function gcTV(){ drawGCH(); const root=document.getElementById('gcbody'); if(!root) return;
@@ -3371,7 +3374,8 @@ const EA=new Set([40,56,100,191,196,233,246,250,276,300,372,380,428,440,442,470,
 const MAP_METRICS={y10:{l:'Taux 10 ans',suf:'10Y',ea:null,div:false},infl:{l:'Inflation',suf:'IRYY',ea:'EUIRYY',div:false,wb:'infl'},
 rate:{l:'Taux directeur',suf:'INTR',ea:'EUINTR',div:false},gdp:{l:'PIB (a/a)',suf:'GDPYY',ea:null,div:true,wb:'gdpg'},eq:{l:'Bourse du jour',div:true},
 gdpusd:{l:'PIB (Md$)',wb:'gdp',log:true},debt:{l:'Dette publique',wb:'debt'},unemp:{l:'Chômage',wb:'unemp'},ca:{l:'Solde courant',wb:'ca',div:true}};
-const MAPS={metric:'y10', layers:new Set(['macro','conf','trade','oil','geo']), sel:250, hot:null, proj:'globe', rot:[-15,-32], k:1, auto:false};
+// Vue d'ouverture de la carte : PIB (Md$), calques Macro + Pétrole + Routes commerciales + Géopolitique, globe centré Europe / Afrique
+const MAPS={metric:'gdpusd', layers:new Set(['macro','trade','oil','geo']), sel:250, hot:null, proj:'globe', rot:[-20,-35], k:1, auto:false};
 // Zones de conflit armé actif : liste indicative revue à la main (UCDP / ACLED / presse), à mettre à jour.
 const CONFLICT_ASOF='06/11/2026';
 const CONFLICT={804:'Ukraine (guerre avec la Russie)',364:'Iran (frappes et conflit régional)',376:'Israël / Gaza / Liban',275:'Territoires palestiniens (Gaza)',422:'Liban (Hezbollah)',887:'Yémen (Houthis, mer Rouge)',
@@ -3433,7 +3437,7 @@ ${Object.entries(MAP_GOTO).map(([k,[l]])=>`<button type="button" class="chip" da
 <div class="pnl" id="g-card"></div>
 <div class="pnl"><h3>POINTS CHAUDS — 24 H<span class="rt">GDELT</span></h3>${hs.length?`<table><caption class="sr-only">Points chauds</caption><thead><tr><th scope="col" style="text-align:left">Zone</th><th scope="col">Articles</th><th scope="col">Sur 24 h</th></tr></thead><tbody>
 ${hs.slice().sort((a,b)=>b.n24-a.n24).map(h=>`<tr class="clk" data-hot="${esc(h.k)}" tabindex="0" role="button"><th scope="row" style="text-align:left;font-weight:400;color:var(--txt)">${esc(h.n)}${h.stale?' <span class="neg" title="GDELT n\'a pas répondu au dernier passage : dernier relevé conservé">*</span>':''}</th><td>${h.stale&&!h.n24?'<span class="mut">—</span>':nf(h.n24,0)}</td>
-<td class="${h.trend==null?'mut':h.trend>15?'neg':h.trend<-15?'pos':'mut'}">${h.trend==null?'—':(h.trend>0?'▲ +':h.trend<0?'▼ ':'= ')+nf(h.trend,0)+' %'}</td></tr>`).join('')}</tbody></table>`
+<td class="${h.trend==null||(h.prev24||0)<20?'mut':h.trend>15?'neg':h.trend<-15?'pos':'mut'}">${h.trend==null||(h.prev24||0)<20?'—':(h.trend>0?'▲ +':h.trend<0?'▼ ':'= ')+nf(h.trend,0)+' %'}</td></tr>`).join('')}</tbody></table>`
 :'<div class="note">Points chauds pas encore relevés : ils apparaissent après le prochain passage du robot (étape « Carte »).</div>'}
 <div id="g-arts"></div></div>
 <div class="pnl"><h3>PÉTROLE<span class="rt">cours directs</span></h3><div class="pbody">${['BRENT','CL'].map(s=>{ const q=SNAPSHOT.quotes[s]; return q?`<div class="kv"><span class="k">${s==='CL'?'WTI':'Brent'}</span><span class="v"><b>${npx(q.p,s)}</b> <span class="${cls(q.pct)}">${pct(q.pct)}</span></span></div>`:''; }).join('')}
@@ -3504,7 +3508,7 @@ for(const e of [halo,dot,hitc]){ e.setAttribute('cx',x); e.setAttribute('cy',y);
 MAP_POPH=null;
 function mapPop(h){ MAP_POPH=h; let pop=w.querySelector('.mpop'); if(!pop){ pop=document.createElement('div'); pop.className='mpop'; w.appendChild(pop);
 pop.style.cssText='position:absolute;z-index:6;width:340px;max-height:320px;overflow:auto;background:#0b0e11;border:1px solid #3a424c;box-shadow:0 6px 24px rgba(0,0,0,.6);font-size:11px'; }
-pop.innerHTML=`<div style="display:flex;align-items:center;gap:8px;padding:7px 9px;border-bottom:1px solid var(--line)"><b>${esc(h.n)}</b><span class="mut">${nf(h.n24||0,0)} articles / 24 h${h.trend!=null?` · <span class="${h.trend>15?'neg':h.trend<-15?'pos':''}">${h.trend>0?'+':''}${nf(h.trend,0)} %</span>`:''}</span>
+pop.innerHTML=`<div style="display:flex;align-items:center;gap:8px;padding:7px 9px;border-bottom:1px solid var(--line)"><b>${esc(h.n)}</b><span class="mut">${nf(h.n24||0,0)} articles / 24 h${h.trend!=null&&(h.prev24||0)>=20?` · <span class="${h.trend>15?'neg':h.trend<-15?'pos':''}">${h.trend>0?'+':''}${nf(h.trend,0)} %</span>`:''}</span>
 <button type="button" aria-label="Fermer" style="margin-left:auto;background:none;border:0;color:var(--txt2);cursor:pointer;font-size:14px">×</button></div>
 ${(h.arts||[]).slice(0,8).map(a=>`<div style="padding:5px 9px;border-bottom:1px solid #14171b"><a href="${safeUrl(a.u)}" target="_blank" rel="noopener">${esc(a.t)}</a> <span class="mut" style="font-size:9px">${esc(a.d||'')}</span></div>`).join('')||'<div class="note">Pas encore de titres relevés pour cette zone.</div>'}`;
 pop.querySelector('button').onclick=()=>{ MAP_POPH=null; pop.remove(); }; placePop(); }
@@ -3529,7 +3533,7 @@ const zb=document.createElement('div'); zb.style.cssText='position:absolute;righ
 zb.innerHTML=['+','−','⌂'].map(t=>`<button type="button" class="btn" style="width:28px;height:28px;padding:0" aria-label="${t==='+'?'Zoomer':t==='−'?'Dézoomer':'Vue initiale'}">${t}</button>`).join('');
 const [bp,bm,bh]=zb.querySelectorAll('button');
 bp.onclick=()=>{ MAPS.k=Math.min(8,MAPS.k*1.35); render(); }; bm.onclick=()=>{ MAPS.k=Math.max(globe?.7:1,MAPS.k/1.35); if(!globe&&MAPS.k===1) MAPS.pan=null; render(); };
-bh.onclick=()=>{ MAPS.k=1; MAPS.pan=null; if(globe) mapTurn([-15,-32]); else render(); };
+bh.onclick=()=>{ MAPS.k=1; MAPS.pan=null; if(globe) mapTurn([-20,-35]); else render(); };
 w.appendChild(zb);
 MAP_R={render, off:()=>{ window.removeEventListener('pointermove',onMove); window.removeEventListener('pointerup',onUp); }};
 const leg=document.getElementById('g-leg');
@@ -3617,7 +3621,7 @@ return `<div class="pnl" id="g-res"><h3>RES — Recherche publique<span class="r
 <div style="max-height:420px;overflow:auto">${list.length?list.map(r=>`<div style="display:grid;grid-template-columns:150px 1fr 70px;gap:10px;padding:6px 9px;border-bottom:1px solid #14171b;align-items:baseline">
 <span style="color:#9cc8ff;font-size:10px">${esc(r.src)}</span><a href="${safeUrl(r.u)}" target="_blank" rel="noopener" style="color:var(--txt)">${esc(r.t)}</a><span class="mut" style="font-size:10px;text-align:right">${ago(r.ts)}</span></div>`).join('')
 :`<div class="note">${R.length?'Aucune publication pour ce thème.':'Fil pas encore relevé : il apparaît après le prochain passage du robot (étape « Carte »).'}</div>`}</div>
-<div class="note">Publications publiques des banques centrales, institutions et instituts (Fed, BCE, BoE, BRI, FMI, Banque de France, Bruegel, VoxEU, AIE, EIA). Les notes réservées aux clients des banques ne sont pas reprises : le site est public.</div></div>`; }
+<div class="note">Publications publiques des banques centrales, institutions et instituts (Fed, Fed de New York, BCE, Bank of England, BRI, VoxEU, EIA). Les notes réservées aux clients des banques ne sont pas reprises : le site est public.</div></div>`; }
 /*═══════════════════════════════════════════════════════════════════════
 14. NAVIGATION
 ═══════════════════════════════════════════════════════════════════════*/
