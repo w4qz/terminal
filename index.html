@@ -3132,9 +3132,27 @@ ${d10('US')!=null?`<div class="stat"><span class="l">US − BUND 10A</span><span
 <table style="margin-top:8px"><caption class="sr-only">Courbes des taux par maturité</caption><thead><tr><th scope="col">Maturité</th>${sel.map(c=>`<th scope="col"><span style="color:${c.col}">■</span> ${esc(c.n)}</th>`).join('')}</tr></thead><tbody>
 ${tenors.map(t=>`<tr><th scope="row" class="sym">${t}</th>${sel.map(c=>{ const p=c.pts.find(x=>x.t===t); if(!p) return '<td class="na">—</td>';
 const dv=p.y1m!=null?(p.y-p.y1m)*100:null; return `<td>${nf(p.y,2)} % <span class="${cls(dv)}" style="font-size:9px">${dv!=null?(dv>0?'+':'')+nf(dv,0)+' pb':''}</span></td>`; }).join('')}</tr>`).join('')}</tbody></table>
-<div class="note">${sel.map(c=>{ const ts=c.pts.map(p=>p.ts).filter(Boolean).sort().pop(); const old=ts&&c.freq==='quotidien'&&(Date.now()-new Date(ts))/864e5>7; return `<b style="color:${c.col}">${esc(c.n)}</b>${ts?` (au ${new Date(ts+'T12:00:00').toLocaleDateString('fr-FR')}${old?' — <span class="neg">données anciennes</span>':''})`:''} : ${esc(c.src||'')}${c.freq==='mensuel'?' (seul le 10 ans est disponible gratuitement)':''}${c.stale?' — <span class="neg">source en échec, dernière courbe conservée</span>':''}`; }).join(' · ')}. Variation sur 1 mois en points de base. Trait plein : aujourd'hui ; pointillés : il y a 1 mois.</div>`;
+<div class="note">${sel.map(c=>{ const ts=c.pts.map(p=>p.ts).filter(Boolean).sort().pop(); const old=ts&&c.freq==='quotidien'&&(Date.now()-new Date(ts))/864e5>7; return `<b style="color:${c.col}">${esc(c.n)}</b>${ts?` (au ${new Date(ts+'T12:00:00').toLocaleDateString('fr-FR')}${old?' — <span class="neg">données anciennes</span>':''})`:''} : ${esc(c.src||'')}${c.freq==='mensuel'?' (seul le 10 ans est disponible gratuitement)':''}${c.stale?' — <span class="neg">source en échec, dernière courbe conservée</span>':''}`; }).join(' · ')}. Variation sur 1 mois en points de base. Trait plein : aujourd'hui ; pointillés : il y a 1 mois.</div>${gcVerify(sel)}`;
 }
-function wireGC(root){ root.querySelectorAll('[data-gck]').forEach(b=>b.onclick=()=>{ const k=b.dataset.gck; GC.sel.has(k)?GC.sel.delete(k):GC.sel.add(k); if(!GC.sel.size) GC.sel.add(k);
+// Vérification croisée : liens vers Trading Economics (consultation, pas de reprise de données)
+// et graphique en direct des taux 10 ans par le widget officiel gratuit de TradingView.
+const GC_TE={US:'united-states',EU:'euro-area',DE:'germany',FR:'france',IT:'italy',UK:'united-kingdom',JP:'japan',CH:'switzerland'};
+const GC_TV={US:'TVC:US10Y',DE:'TVC:DE10Y',FR:'TVC:FR10Y',IT:'TVC:IT10Y',UK:'TVC:GB10Y',JP:'TVC:JP10Y',CH:'TVC:CH10Y'};
+function gcVerify(sel){ const ks=sel.map(c=>c.k);
+return `<div style="margin-top:10px;border-top:1px solid var(--line);padding-top:8px">
+<div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap"><span class="mut" style="font-size:10px">Vérifier sur Trading Economics :</span>
+${ks.map(k=>`<a class="chip" href="https://tradingeconomics.com/${GC_TE[k]}/government-bond-yield" target="_blank" rel="noopener">${esc(GC_NAME[k]||k)} ↗</a>`).join('')}
+<a class="chip" href="https://tradingeconomics.com/bonds" target="_blank" rel="noopener">Tous les taux ↗</a></div>
+${ks.some(k=>GC_TV[k])?`<div class="mut" style="font-size:10px;margin:10px 0 4px">Taux 10 ans en direct — widget TradingView (cotations de marché)</div><div id="gctv" data-k="${ks.filter(k=>GC_TV[k]).join(',')}" style="height:380px"></div>`:''}</div>`; }
+function gcTV(){ const box=document.getElementById('gctv'); if(!box||box.dataset.done===box.dataset.k) return; box.dataset.done=box.dataset.k;
+const syms=box.dataset.k.split(',').map(k=>[(GC_NAME[k]||k)+' 10 ans',GC_TV[k]+'|1M']);
+box.innerHTML='<div class="tradingview-widget-container" style="height:100%"><div class="tradingview-widget-container__widget" style="height:100%"></div></div>';
+const sc=document.createElement('script'); sc.src='https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js'; sc.async=true;
+sc.textContent=JSON.stringify({symbols:syms,chartOnly:false,width:'100%',height:'100%',locale:'fr',colorTheme:'dark',isTransparent:true,autosize:true,
+showVolume:false,chartType:'area',lineWidth:2,scalePosition:'right',scaleMode:'Normal',fontColor:'rgba(221,227,234,1)',gridLineColor:'rgba(35,40,48,0.6)',
+dateRanges:['1d|15','1m|30','3m|60','12m|1D','60m|1W','all|1M']});
+box.firstChild.appendChild(sc); }
+function wireGC(root){ setTimeout(gcTV,0);  root.querySelectorAll('[data-gck]').forEach(b=>b.onclick=()=>{ const k=b.dataset.gck; GC.sel.has(k)?GC.sel.delete(k):GC.sel.add(k); if(!GC.sel.size) GC.sel.add(k);
 const box=document.getElementById('gcbody'); box.innerHTML=gcHtml(); wireGC(box); drawGC(); }); }
 function drawGC(hover){
 const cv=document.getElementById('gccv'); if(!cv) return;
