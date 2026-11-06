@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Terminal de marché — cours, macro, taux, portefeuille</title>
+<meta name="author" content="Clément Guerin Casal — Master in Finance, ESSEC Business School (Singapour)">
 <meta name="description" content="Terminal de marché personnel inspiré de Bloomberg : cours différés, courbes des taux, macroéconomie, actualités, comparables et analyse de portefeuille, mis à jour automatiquement.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23000'/%3E%3Cpath d='M5 22l7-8 5 5 10-11' fill='none' stroke='%23e8a33d' stroke-width='3'/%3E%3C/svg%3E">
 <style>
@@ -1039,6 +1040,12 @@ cv.onclick=ev=>{ const [t]=hit(ev); if(t) openSym(t.s); };
 }
 function wireHeatmap(el){ el.querySelectorAll('[data-hm]').forEach(b=>b.onclick=()=>{ HM.idx=b.dataset.hm; el.querySelectorAll('[data-hm]').forEach(x=>x.classList.toggle('on',x===b)); drawHeatmap(); }); el.querySelectorAll('[data-hmg]').forEach(b=>b.onclick=()=>{ HM.group=b.dataset.hmg; el.querySelectorAll('[data-hmg]').forEach(x=>x.classList.toggle('on',x===b)); drawHeatmap(); }); drawHeatmap(); }
 
+// Présentation de l'auteur (modifier ici le nom ou la formation)
+const ABOUT={name:'Clément Guerin Casal', school:'ESSEC Business School', role:'étudiant en Master in Finance', campus:'campus de Singapour'};
+function aboutBanner(){ return `<div class="pnl" style="margin-bottom:9px;border-left:2px solid #4d8fd6"><div style="display:flex;align-items:center;gap:14px;padding:9px 12px;flex-wrap:wrap">
+<div style="font-weight:700;letter-spacing:2px;font-size:11px">TERMINAL</div>
+<div style="color:var(--txt2);font-size:11px">Projet personnel conçu et développé par <b style="color:var(--txt)">${esc(ABOUT.name)}</b>, ${esc(ABOUT.role)} à l'<b style="color:var(--txt)">${esc(ABOUT.school)}</b> (${esc(ABOUT.campus)}).</div>
+<div style="margin-left:auto;color:var(--txt3);font-size:10px">Données publiques et gratuites · usage pédagogique, pas un conseil en investissement</div></div></div>`; }
 async function viewMarkets(){
 const el = document.getElementById('v-mkt');
 const T = (h,caption) => `<table><caption class="sr-only">${esc(caption)}</caption><thead><tr><th scope="col">Titre</th><th scope="col">Dernier</th><th scope="col">Var.</th><th scope="col">Volume</th><th scope="col">Âge</th></tr></thead><tbody>${h}</tbody></table>`;
@@ -1094,6 +1101,7 @@ return `<tr>
 }).join('');
 
 el.innerHTML = `
+${aboutBanner()}
 <div class="warn" style="margin-bottom:9px">
 ${LIVE ? `${sessionLbl()!=='du jour'?`<b style="color:var(--hot)">Marchés actions fermés : variations ${sessionLbl()} ; seules les cryptos évoluent.</b> `:''}Fournisseur actif : <b>Pipeline automatique</b>. Données générées le <b>${fmtDT(LIVE.generated_at)}</b> par GitHub Actions — prix Yahoo Finance différés, taux FRED, news RSS. Rafraîchissement toutes les 30 minutes ; la page vérifie toutes les 10 minutes. Badge Périmé = source en échec, dernière valeur conservée.` : `Fournisseur actif : <b>Snapshot</b>. Actualisé le 31/10/2026 à partir des 25 newsletters Financial Times du dossier FT News (20-30/10).
 <b>Semaine dominée par le doute sur l'IA</b> : Alphabet −13 % (−500 Md$), Big Tech −900 Md$, Intel −21 % ; prospectus d'IPO d'Anthropic ; Binance piraté pour 6,3 Md$.
