@@ -940,7 +940,7 @@ return h;
 }
 
 /*── Carte des marchés (treemap façon Finviz) ─────────────────────────*/
-const HM={idx:'S&P 500', rects:[], hover:null, group:'size'};
+const HM={idx:'S&P 500', rects:[], hover:null, group:'sector'};
 const SECT_FR={'Technology':'Technologie','Healthcare':'Santé','Financial Services':'Finance','Consumer Cyclical':'Consommation cyclique',
 'Consumer Defensive':'Consommation de base','Industrials':'Industrie','Communication Services':'Communication','Energy':'Énergie',
 'Utilities':'Services publics','Real Estate':'Immobilier','Basic Materials':'Matériaux'};
@@ -3171,7 +3171,7 @@ catch(e){ console.info('curves.json indisponible ('+e.message+')'); return false
 const TEN_ORD=['1M','3M','6M','1A','2A','3A','4A','5A','6A','7A','8A','9A','10A','15A','20A','25A','30A','40A'];
 const GC_COL={US:'#6ba3e0',EU:'#e8a33d',DE:'#d8d36b',FR:'#4fc1c9',IT:'#2fbf6b',UK:'#e04a4a',JP:'#bb98e6',CH:'#c98a5f'};
 const GC_NAME={US:'États-Unis',EU:'Zone euro AAA',DE:'Allemagne',FR:'France',IT:'Italie',UK:'Royaume-Uni',JP:'Japon',CH:'Suisse'};
-const GC={sel:new Set(['US','EU','DE','UK','JP'])};
+const GC={sel:new Set(['US','FR','UK','JP'])};   // ouverture : États-Unis, France, Royaume-Uni, Japon
 function allCurves(){ const out=[];
 if(MACRO&&MACRO.gc){ if(MACRO.gc.us) out.push({k:'US',pts:MACRO.gc.us.pts||[],src:MACRO.gc.us.src,freq:'quotidien'}); if(MACRO.gc.eu) out.push({k:'EU',pts:MACRO.gc.eu.pts||[],src:MACRO.gc.eu.src,freq:'quotidien'}); }
 for(const k of ['DE','FR','IT','UK','JP','CH']){ const c=CURVES&&CURVES[k]; if(c) out.push({k,pts:c.pts||[],src:c.src,freq:c.freq,stale:c.stale}); }
