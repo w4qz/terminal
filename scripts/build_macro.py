@@ -499,8 +499,36 @@ def curve_us():
             continue
         old = next((v for d, v in obs if d <= month_ago), None)
         pts.append({"t": t, "y": obs[0][1], "y1m": old, "ts": obs[0][0]})
+    src = "Trésor US via FRED (taux constant maturity, clôture de la veille)"
+    # Cotations de marché CNBC (différé ~15 min) : FRED publie la veille au soir, l'écart atteignait 30 pb
+    # les jours de forte volatilité. La variation sur 1 mois reste calculée sur FRED.
+    try:
+        syms = {f"US{c}": t for t, c in [("1M", "1M"), ("3M", "3M"), ("6M", "6M"), ("1A", "1Y"), ("2A", "2Y"), ("3A", "3Y"),
+                                          ("5A", "5Y"), ("7A", "7Y"), ("10A", "10Y"), ("20A", "20Y"), ("30A", "30Y")]}
+        r = requests.get("https://quote.cnbc.com/quote-html-webservice/restQuote/symbolType/symbol",
+                         params={"symbols": "|".join(syms), "requestMethod": "itv", "noform": 1, "partnerId": 2,
+                                 "fund": 1, "exthrs": 1, "output": "json"}, headers={"User-Agent": "Mozilla/5.0"}, timeout=25)
+        r.raise_for_status()
+        qs = r.json()["FormattedQuoteResult"]["FormattedQuote"]
+        live = {}
+        for q in (qs if isinstance(qs, list) else [qs]):
+            try:
+                y = float(str(q.get("last", "")).replace("%", ""))
+            except ValueError:
+                continue
+            if q.get("symbol") in syms and -5 < y < 30:
+                live[syms[q["symbol"]]] = (y, str(q.get("last_time") or TODAY.isoformat())[:10])
+        for p in pts:
+            if p["t"] in live:
+                p["y"], p["ts"] = live[p["t"]]
+                p["live"] = True
+        if live:
+            src = "CNBC (cotations du Trésor US, différé ~15 min) · variation 1 mois : FRED"
+        log(f"GC : courbe US — {len(live)} maturités en cotation de marché (CNBC)")
+    except Exception as e:
+        log(f"  ! CNBC courbe US : {str(e)[:90]} — clôture FRED conservée")
     log(f"GC : courbe US {sum(1 for p in pts if p['y'] is not None)}/{len(pts)}")
-    return {"pts": pts, "src": "Trésor US via FRED (taux constant maturity)"}
+    return {"pts": pts, "src": src}
 
 
 def curve_eu():
