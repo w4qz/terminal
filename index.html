@@ -3371,7 +3371,7 @@ el.querySelectorAll('[data-eco]').forEach(r=>r.onclick=()=>runAny(r.dataset.eco)
 mapCard(); mapArts(); mapLive();
 try{ drawWorld(await loadGeoLib()); }catch(e){ const w=document.getElementById('g-svgw'); if(w) w.innerHTML=`<div class="warn" style="margin:10px">Fond de carte indisponible (${esc(e.message)}). Les panneaux restent utilisables.</div>`; }
 }
-let MAP_R=null;   // rendu courant : { render(), proj }
+let MAP_R=null, MAP_POPH=null;   // rendu courant ; point chaud ouvert
 function drawWorld(feat){
 const w=document.getElementById('g-svgw'); if(!w||S.view!=='map') return;
 const globe=MAPS.proj==='globe', W=Math.max(600,w.clientWidth), H=globe?Math.round(Math.min(W*.62,640)):Math.round(W*.49), NS='http://www.w3.org/2000/svg', F='ui-monospace,Menlo,monospace';
@@ -3402,9 +3402,10 @@ const chokes=MAPS.layers.has('oil')?CHOKE.map(c=>{ const g=add('g',{'pointer-eve
 const hs=MAPS.layers.has('geo')?((GEO&&GEO.hotspots)||[]):[], mx=Math.max(1,...hs.map(h=>h.n24||0));
 const hots=hs.map(h=>{ const g=add('g',{style:'cursor:pointer'}), r=4+10*Math.sqrt((h.n24||0)/mx);
 const halo=add('circle',{fill:'#e04a4a',opacity:.16,r:r*1.9},null,g), dot=add('circle',{fill:'#e04a4a',opacity:.6,stroke:'#ff8a8a','stroke-width':1,r},null,g);
+const hitc=add('circle',{fill:'transparent',r:Math.max(16,r*2)},null,g);   // zone de clic élargie
 const tt=document.createElementNS(NS,'title'); tt.textContent=`${h.n} — ${h.n24} articles sur 24 h`; dot.appendChild(tt);
 const lab=add('text',{fill:'#ffb3b3','font-size':10,'font-family':F,'text-anchor':'end','pointer-events':'none'},h.n,g);
-g.addEventListener('click',()=>{ if(moved) return; MAPS.hot=h.k; mapArts(); }); return [g,halo,dot,lab,h,r]; });
+g.addEventListener('click',ev=>{ if(moved) return; ev.stopPropagation(); MAPS.hot=h.k; mapArts(); mapPop(h); }); return [g,halo,dot,lab,h,r,hitc]; });
 function render(){
 if(globe){ proj.rotate(MAPS.rot).scale(base*MAPS.k); glow.setAttribute('r',base*MAPS.k+14); }
 else { proj.scale(flatS*MAPS.k).translate([flatT[0]+(MAPS.pan?MAPS.pan[0]:0),flatT[1]+(MAPS.pan?MAPS.pan[1]:0)]); }
@@ -3417,8 +3418,19 @@ const c=[-MAPS.rot[0],-MAPS.rot[1]], vis=ll=>!globe||d3.geoDistance(ll,c)<Math.P
 for(const [g,dm,tx,[n,lo2,la,v,dx,dy]] of chokes){ const on=vis([lo2,la]); g.style.display=on?'':'none'; if(!on) continue;
 const [x,y]=proj([lo2,la]), s=4+Math.sqrt(v)*1.5; dm.setAttribute('d',`M${x} ${y-s}L${x+s} ${y}L${x} ${y+s}L${x-s} ${y}Z`);
 tx.setAttribute('x',globe?x+s+3:x+dx); tx.setAttribute('y',globe?y+3:y+dy); }
-for(const [g,halo,dot,lab,h,r] of hots){ const on=vis(h.ll); g.style.display=on?'':'none'; if(!on) continue; const [x,y]=proj(h.ll);
-for(const e of [halo,dot]){ e.setAttribute('cx',x); e.setAttribute('cy',y); } lab.setAttribute('x',x-r-4); lab.setAttribute('y',y-r-2); } }
+for(const [g,halo,dot,lab,h,r,hitc] of hots){ const on=vis(h.ll); g.style.display=on?'':'none'; if(!on) continue; const [x,y]=proj(h.ll);
+for(const e of [halo,dot,hitc]){ e.setAttribute('cx',x); e.setAttribute('cy',y); } lab.setAttribute('x',x-r-4); lab.setAttribute('y',y-r-2); } }
+MAP_POPH=null;
+function mapPop(h){ MAP_POPH=h; let pop=w.querySelector('.mpop'); if(!pop){ pop=document.createElement('div'); pop.className='mpop'; w.appendChild(pop);
+pop.style.cssText='position:absolute;z-index:6;width:340px;max-height:320px;overflow:auto;background:#0b0e11;border:1px solid #3a424c;box-shadow:0 6px 24px rgba(0,0,0,.6);font-size:11px'; }
+pop.innerHTML=`<div style="display:flex;align-items:center;gap:8px;padding:7px 9px;border-bottom:1px solid var(--line)"><b>${esc(h.n)}</b><span class="mut">${nf(h.n24||0,0)} articles / 24 h${h.trend!=null?` · <span class="${h.trend>15?'neg':h.trend<-15?'pos':''}">${h.trend>0?'+':''}${nf(h.trend,0)} %</span>`:''}</span>
+<button type="button" aria-label="Fermer" style="margin-left:auto;background:none;border:0;color:var(--txt2);cursor:pointer;font-size:14px">×</button></div>
+${(h.arts||[]).slice(0,8).map(a=>`<div style="padding:5px 9px;border-bottom:1px solid #14171b"><a href="${safeUrl(a.u)}" target="_blank" rel="noopener">${esc(a.t)}</a> <span class="mut" style="font-size:9px">${esc(a.d||'')}</span></div>`).join('')||'<div class="note">Pas encore de titres relevés pour cette zone.</div>'}`;
+pop.querySelector('button').onclick=()=>{ MAP_POPH=null; pop.remove(); }; placePop(); }
+function placePop(){ const pop=w.querySelector('.mpop'); if(!pop||!MAP_POPH) return; const c=[-MAPS.rot[0],-MAPS.rot[1]];
+if(globe&&d3.geoDistance(MAP_POPH.ll,c)>Math.PI/2){ pop.style.display='none'; return; } pop.style.display='';
+const [x,y]=proj(MAP_POPH.ll); pop.style.left=Math.max(6,Math.min(W-346,x+14))+'px'; pop.style.top=Math.max(6,Math.min(H-200,y-20))+'px'; }
+const render0=render; render=function(){ render0(); placePop(); };
 render();
 // Rotation (globe) ou déplacement (plat) à la souris, zoom à la molette
 let drag=null;
