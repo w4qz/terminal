@@ -3138,21 +3138,41 @@ const dv=p.y1m!=null?(p.y-p.y1m)*100:null; return `<td>${nf(p.y,2)} % <span clas
 // Vérification croisée : liens vers Trading Economics (consultation, pas de reprise de données)
 // et graphique en direct des taux 10 ans par le widget officiel gratuit de TradingView.
 const GC_TE={US:'united-states',EU:'euro-area',DE:'germany',FR:'france',IT:'italy',UK:'united-kingdom',JP:'japan',CH:'switzerland'};
-const GC_TV={US:'TVC:US10Y',DE:'TVC:DE10Y',FR:'TVC:FR10Y',IT:'TVC:IT10Y',UK:'TVC:GB10Y',JP:'TVC:JP10Y',CH:'TVC:CH10Y'};
-function gcVerify(sel){ const ks=sel.map(c=>c.k);
+const GC_H={US:'US10Y',DE:'DE10Y',FR:'FR10Y',IT:'IT10Y',UK:'GB10Y',JP:'JP10Y',CH:'CH10Y'};
+const GCH={range:'1A', hover:null};
+function gcVerify(sel){ const ks=sel.map(c=>c.k), hk=ks.filter(k=>GC_H[k]&&CURVES_HIST&&CURVES_HIST[GC_H[k]]&&CURVES_HIST[GC_H[k]].length);
 return `<div style="margin-top:10px;border-top:1px solid var(--line);padding-top:8px">
 <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap"><span class="mut" style="font-size:10px">Vérifier sur Trading Economics :</span>
 ${ks.map(k=>`<a class="chip" href="https://tradingeconomics.com/${GC_TE[k]}/government-bond-yield" target="_blank" rel="noopener">${esc(GC_NAME[k]||k)} ↗</a>`).join('')}
 <a class="chip" href="https://tradingeconomics.com/bonds" target="_blank" rel="noopener">Tous les taux ↗</a></div>
-${ks.some(k=>GC_TV[k])?`<div class="mut" style="font-size:10px;margin:10px 0 4px">Taux 10 ans en direct — widget TradingView (cotations de marché)</div><div id="gctv" data-k="${ks.filter(k=>GC_TV[k]).join(',')}" style="height:380px"></div>`:''}</div>`; }
-function gcTV(){ const box=document.getElementById('gctv'); if(!box||box.dataset.done===box.dataset.k) return; box.dataset.done=box.dataset.k;
-const syms=box.dataset.k.split(',').map(k=>[(GC_NAME[k]||k)+' 10 ans',GC_TV[k]+'|1M']);
-box.innerHTML='<div class="tradingview-widget-container" style="height:100%"><div class="tradingview-widget-container__widget" style="height:100%"></div></div>';
-const sc=document.createElement('script'); sc.src='https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js'; sc.async=true;
-sc.textContent=JSON.stringify({symbols:syms,chartOnly:false,width:'100%',height:'100%',locale:'fr',colorTheme:'dark',isTransparent:true,autosize:true,
-showVolume:false,chartType:'area',lineWidth:2,scalePosition:'right',scaleMode:'Normal',fontColor:'rgba(221,227,234,1)',gridLineColor:'rgba(35,40,48,0.6)',
-dateRanges:['1d|15','1m|30','3m|60','12m|1D','60m|1W','all|1M']});
-box.firstChild.appendChild(sc); }
+${hk.length?`<div style="display:flex;align-items:center;gap:8px;margin:12px 0 4px"><span class="mut" style="font-size:10px">Taux 10 ans — historique quotidien</span>
+<div class="rng" role="group" aria-label="Période">${['1M','3M','6M','1A','2A','5A'].map(r=>`<button type="button" data-gchr="${r}" class="${GCH.range===r?'on':''}">${r}</button>`).join('')}</div>
+<span class="mut" id="gchinfo" style="font-size:10px;margin-left:auto"></span></div>
+<div style="position:relative"><canvas id="gchcv" height="320" data-k="${hk.join(',')}" role="img" aria-label="Historique des taux à 10 ans"></canvas></div>`
+:'<div class="note">Historique quotidien des taux 10 ans pas encore relevé : il apparaît après le prochain passage du robot (étape « Courbes »).</div>'}</div>`; }
+function drawGCH(){ const cv=document.getElementById('gchcv'); if(!cv) return; const ks=cv.dataset.k.split(',');
+const days={'1M':31,'3M':92,'6M':183,'1A':366,'2A':731,'5A':1830}[GCH.range], from=new Date(Date.now()-days*864e5).toISOString().slice(0,10);
+const S2=ks.map(k=>({k,col:GC_COL[k],n:GC_NAME[k]||k,h:CURVES_HIST[GC_H[k]].filter(x=>x[0]>=from)})).filter(s=>s.h.length>1); if(!S2.length) return;
+const W=cv.parentElement.clientWidth, H=320, dpr=window.devicePixelRatio||1; cv.width=W*dpr; cv.height=H*dpr; cv.style.width=W+'px';
+const x=cv.getContext('2d'); x.setTransform(dpr,0,0,dpr,0,0); x.fillStyle='#0b0e11'; x.fillRect(0,0,W,H);
+const all=S2.flatMap(s=>s.h.map(p=>p[1])), lo=Math.min(...all), hi=Math.max(...all), pad=(hi-lo)*.08||.1, L=8, R=W-58, T=10, B=H-24;
+const t0=Date.parse(from), t1=Date.now(), X=d=>L+(Date.parse(d)-t0)/(t1-t0)*(R-L), Y=v=>B-(v-(lo-pad))/((hi+pad)-(lo-pad))*(B-T);
+x.font='10px monospace'; x.fillStyle='#79838f'; x.strokeStyle='#1a1f26'; x.lineWidth=1;
+for(let i=0;i<=5;i++){ const v=lo-pad+(hi-lo+2*pad)*i/5, y=Y(v); x.beginPath(); x.moveTo(L,y); x.lineTo(R,y); x.stroke(); x.textAlign='left'; x.fillText(nf(v,2)+' %',R+6,y+3); }
+for(let i=0;i<=4;i++){ const t=t0+(t1-t0)*i/4; x.textAlign=i===0?'left':i===4?'right':'center'; x.fillText(new Date(t).toLocaleDateString('fr-FR',days>200?{month:'short',year:'2-digit'}:{day:'2-digit',month:'short'}),L+(R-L)*i/4,H-6); }
+for(const s of S2){ x.strokeStyle=s.col; x.lineWidth=1.6; x.beginPath(); s.h.forEach((p,i)=>i?x.lineTo(X(p[0]),Y(p[1])):x.moveTo(X(p[0]),Y(p[1]))); x.stroke();
+const l=s.h[s.h.length-1]; x.fillStyle=s.col; x.fillRect(R+2,Y(l[1])-7,54,14); x.fillStyle='#000'; x.textAlign='left'; x.fillText(nf(l[1],2)+' %',R+5,Y(l[1])+4); }
+if(GCH.hover!=null){ const mx=GCH.hover; x.strokeStyle='#5a6470'; x.setLineDash([3,3]); x.beginPath(); x.moveTo(mx,T); x.lineTo(mx,B); x.stroke(); x.setLineDash([]);
+const t=t0+(mx-L)/(R-L)*(t1-t0), d=new Date(t).toISOString().slice(0,10);
+const rows=S2.map(s=>{ let p=null; for(const q of s.h){ if(q[0]<=d) p=q; else break; } return p?[s,p]:null; }).filter(Boolean);
+const bw=170, bx=mx+12+bw>R?mx-12-bw:mx+12; x.fillStyle='rgba(13,15,17,.95)'; x.fillRect(bx,T+4,bw,18+rows.length*15); x.strokeStyle='#3a424c'; x.strokeRect(bx,T+4,bw,18+rows.length*15);
+x.fillStyle='#dde3ea'; x.textAlign='left'; x.fillText(new Date(t).toLocaleDateString('fr-FR'),bx+8,T+17);
+rows.forEach(([s,p],i)=>{ x.fillStyle=s.col; x.fillText('■ '+s.n,bx+8,T+32+i*15); x.fillStyle='#dde3ea'; x.textAlign='right'; x.fillText(nf(p[1],2)+' %',bx+bw-8,T+32+i*15); x.textAlign='left'; }); }
+const info=document.getElementById('gchinfo'); if(info) info.textContent='CNBC (rendements cotés), clôtures quotidiennes · '+S2.map(s=>s.n).join(', ');
+cv.onmousemove=e=>{ const r=cv.getBoundingClientRect(), mx=e.clientX-r.left; GCH.hover=mx>=L&&mx<=R?mx:null; drawGCH(); };
+cv.onmouseleave=()=>{ GCH.hover=null; drawGCH(); }; }
+function gcTV(){ drawGCH(); const root=document.getElementById('gcbody'); if(!root) return;
+root.querySelectorAll('[data-gchr]').forEach(b=>b.onclick=()=>{ GCH.range=b.dataset.gchr; root.querySelectorAll('[data-gchr]').forEach(z=>z.classList.toggle('on',z===b)); drawGCH(); }); }
 function wireGC(root){ setTimeout(gcTV,0);  root.querySelectorAll('[data-gck]').forEach(b=>b.onclick=()=>{ const k=b.dataset.gck; GC.sel.has(k)?GC.sel.delete(k):GC.sel.add(k); if(!GC.sel.size) GC.sel.add(k);
 const box=document.getElementById('gcbody'); box.innerHTML=gcHtml(); wireGC(box); drawGC(); }); }
 function drawGC(hover){
