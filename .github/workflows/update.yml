@@ -1,22 +1,22 @@
 # À placer dans le dépôt sous : .github/workflows/update.yml
-name: Mise à jour des données
+name: Mise à jour des données (rapide)
 
 on:
   schedule:
-    - cron: "0,30 * * * *"    # toutes les 30 minutes (h00 et h30 UTC)
+    - cron: "*/10 * * * *"    # toutes les 10 minutes : prix de secours, news, catalogue, macro, courbes, carte
   workflow_dispatch:          # bouton « Run workflow » pour lancer à la main
 
 permissions:
-  contents: write             # autorise le robot à committer data.json
+  contents: write             # autorise le robot à publier ses fichiers
 
 concurrency:
-  group: update-data
+  group: update-fast
   cancel-in-progress: false
 
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v5
 
@@ -36,36 +36,19 @@ jobs:
           FT_MYFT_RSS: ${{ secrets.FT_MYFT_RSS }}
         run: python scripts/update_data.py
 
-      - name: Construire le catalogue de recherche
+      - name: Catalogue et carte des marchés (cours de ~900 titres)
         id: universe
-        continue-on-error: true      # un échec ici ne bloque pas les prix
+        continue-on-error: true
         env:
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
         run: python scripts/build_universe.py
 
-      - name: Fondamentaux du catalogue (par roulement)
-        id: fundamentals
-        continue-on-error: true
-        run: python scripts/build_fundamentals.py
-
-      - name: Construire l'onglet Macro (ECO, WIRP, GC, BTMM)
+      - name: Onglet Macro (ECO, WIRP, GC, BTMM)
         id: macro
         continue-on-error: true
         env:
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
         run: python scripts/build_macro.py
-
-      - name: États financiers (FA, par roulement)
-        id: financials
-        continue-on-error: true
-        run: python scripts/build_financials.py
-
-      - name: Chaînes d'options (OMON, une fois par heure)
-        id: options
-        continue-on-error: true
-        env:
-          OPT_FORCE: ${{ github.event_name == 'workflow_dispatch' }}
-        run: python scripts/build_options.py
 
       - name: Courbes des taux souveraines (GC)
         id: curves
@@ -75,15 +58,7 @@ jobs:
           WEBSTAT_API_KEY: ${{ secrets.WEBSTAT_API_KEY }}
         run: python scripts/build_curves.py
 
-      - name: Données économiques (une fois par jour)
-        id: economics
-        continue-on-error: true
-        env:
-          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
-          ECON_FORCE: ${{ github.event_name == 'workflow_dispatch' }}
-        run: python scripts/build_economics.py
-
-      - name: Carte — points chauds et recherche (GDELT une fois par heure)
+      - name: Carte — points chauds et recherche
         id: geo
         continue-on-error: true
         timeout-minutes: 6
@@ -91,32 +66,42 @@ jobs:
           GEO_FORCE: ${{ github.event_name == 'workflow_dispatch' }}
         run: python scripts/build_geo.py
 
-      - name: Publier data.json
+      - name: Publier les fichiers
         if: always()
+        env:
+          STEPS_JSON: ${{ toJSON(steps) }}
         run: |
-          # Résultat de chaque étape de ce passage, lu par l'onglet Diagnostic du terminal
-          cat > status.json <<EOF
-          {"finished_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)", "run": "${{ github.run_id }}",
-           "steps": {"prix, taux et news": "${{ steps.prices.outcome }}", "catalogue": "${{ steps.universe.outcome }}",
-                     "fondamentaux": "${{ steps.fundamentals.outcome }}", "macro": "${{ steps.macro.outcome }}",
-                     "états financiers": "${{ steps.financials.outcome }}", "options": "${{ steps.options.outcome }}",
-                     "courbes souveraines": "${{ steps.curves.outcome }}", "séries économiques": "${{ steps.economics.outcome }}", "carte": "${{ steps.geo.outcome }}"}}
-          EOF
           git config user.name  "terminal-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          FILES="data.json universe.json constituents.json macro.json fundamentals.json economics.json peers.json financials.json options.json curves.json ft.json geo.json status.json"
-          # Copie de nos fichiers, puis publication sur la toute dernière version de main.
-          # (L'ancienne boucle « git rebase --abort » renvoyait le code 128 quand aucun rebase n'était
-          # en cours, ce qui faisait échouer tout le passage.)
+          FILES="data.json ft.json universe.json constituents.json macro.json curves.json geo.json"
+          # Seuls les fichiers produits par CE robot sont publiés : l'autre robot ne voit jamais
+          # ses fichiers récents écrasés par une copie ancienne.
           mkdir -p "$RUNNER_TEMP/out"
           for f in $FILES; do [ -f "$f" ] && cp "$f" "$RUNNER_TEMP/out/"; done
           for i in 1 2 3 4; do
             if git fetch origin main && git reset --hard origin/main; then
               cp "$RUNNER_TEMP"/out/* . 2>/dev/null || true
-              for f in $FILES; do [ -f "$f" ] && git add "$f"; done
+              # status.json (onglet Diagnostic) : on met à jour nos étapes, on garde celles de l'autre robot
+              python3 - <<'PY'
+          import json, os, datetime
+          names = {"prices": "prix, taux et news", "universe": "catalogue", "macro": "macro", "curves": "courbes souveraines", "geo": "carte"}
+          steps = json.loads(os.environ.get("STEPS_JSON") or "{}")
+          try:
+              st = json.load(open("status.json", encoding="utf-8"))
+          except Exception:
+              st = {}
+          st.setdefault("steps", {})
+          for sid, label in names.items():
+              if sid in steps:
+                  st["steps"][label] = steps[sid].get("outcome")
+          st["finished_at"] = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+          st["run"] = os.environ.get("GITHUB_RUN_ID")
+          json.dump(st, open("status.json", "w", encoding="utf-8"), ensure_ascii=False)
+          PY
+              for f in $FILES status.json; do [ -f "$f" ] && git add "$f"; done
               if git diff --staged --quiet; then echo "Rien de nouveau à publier"; exit 0; fi
               git commit -m "Données $(date -u +'%Y-%m-%d %H:%M') UTC" && git push origin HEAD:main && exit 0
             fi
-            echo "Publication refusée (tentative $i), nouvel essai…"; sleep $((i * 5))
+            echo "Publication refusée (tentative $i), nouvel essai…"; sleep $((i * 7))
           done
           exit 1
