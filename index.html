@@ -3294,7 +3294,24 @@ const ISO_IDX={840:'SPX',250:'CAC',276:'DAX',826:'UKX',392:'N225',156:'SHCOMP',3
 const EA=new Set([40,56,100,191,196,233,246,250,276,300,372,380,428,440,442,470,528,620,703,705,724]);   // zone euro (Bulgarie depuis 2026)
 const MAP_METRICS={y10:{l:'Taux 10 ans',suf:'10Y',ea:null,div:false},infl:{l:'Inflation',suf:'IRYY',ea:'EUIRYY',div:false},
 rate:{l:'Taux directeur',suf:'INTR',ea:'EUINTR',div:false},gdp:{l:'PIB (a/a)',suf:'GDPYY',ea:null,div:true},eq:{l:'Bourse du jour',div:true}};
-const MAPS={metric:'y10', layers:new Set(['macro','oil','geo']), sel:250, hot:null, proj:'globe', rot:[-15,-32], k:1, auto:false};
+const MAPS={metric:'y10', layers:new Set(['macro','conf','trade','oil','geo']), sel:250, hot:null, proj:'globe', rot:[-15,-32], k:1, auto:false};
+// Zones de conflit armé actif : liste indicative revue à la main (UCDP / ACLED / presse), à mettre à jour.
+const CONFLICT_ASOF='06/11/2026';
+const CONFLICT={804:'Ukraine (guerre avec la Russie)',364:'Iran (frappes et conflit régional)',376:'Israël / Gaza / Liban',275:'Territoires palestiniens (Gaza)',422:'Liban (Hezbollah)',887:'Yémen (Houthis, mer Rouge)',
+729:'Soudan (guerre civile)',104:'Birmanie (guerre civile)',180:'RD Congo (est : M23)',466:'Mali (Sahel)',854:'Burkina Faso (Sahel)',562:'Niger (Sahel)',
+706:'Somalie (Al-Chabab)',760:'Syrie',332:'Haïti (gangs armés)',728:'Soudan du Sud'};
+// Grandes routes maritimes commerciales (porte-conteneurs et vrac), tracé schématique
+const TRADE_ROUTES=[
+[[121.5,31],[122,25],[114,22],[106,10],[103.8,1.3],[95,6],[80,6],[60,13],[51,12.5],[43.4,12.6],[38,20],[32.5,30],[25,34],[12,37.5],[-5.6,36],[-9.5,40],[-5,48],[1.5,51],[4,51.9],[9.9,53.5]],
+[[121.5,31],[130,33],[141,35],[160,40],[-160,42],[-140,40],[-125,36],[-118.2,33.7]],
+[[114,22],[125,25],[141,35]],
+[[-74,40.5],[-50,42],[-30,45],[-10,48],[1.5,51],[4,51.9]],
+[[103.8,1.3],[90,-5],[70,-15],[50,-28],[32,-34],[18.5,-34.4],[0,-20],[-15,0],[-20,25],[-9.5,40]],
+[[-118.2,33.7],[-105,20],[-90,12],[-79.7,9.1],[-75,18],[-74,40.5]],
+[[103.8,1.3],[115,-8],[130,-20],[151,-34]],
+[[-46.3,-24],[-30,-15],[-10,10],[-17,28],[-9.5,40]],
+[[-46.3,-24],[-20,-35],[18.5,-34.4],[60,-15],[90,-3],[103.8,1.3]],
+[[56.4,26.6],[65,22],[72.8,19]],[[-90,29],[-80,25],[-60,30],[-20,40],[-9.5,40]]];
 const MAP_GOTO={am:['Amériques',[95,-20]],eu:['Europe',[-15,-45]],me:['Moyen-Orient',[-50,-27]],as:['Asie',[-110,-28]]};
 // Passages maritimes : flux de pétrole (brut et produits), ordre de grandeur annuel publié par l'EIA (World Oil Transit Chokepoints).
 const CHOKE=[['Ormuz',56.4,26.6,20,14,14],['Malacca',101,2.5,23,14,4],['Suez / SUMED',32.5,30,7.5,-150,20],['Bab-el-Mandeb',43.4,12.6,4,12,12],
@@ -3317,10 +3334,10 @@ async function viewMap(){
 const el=document.getElementById('v-map');
 const chip=(on,attr,txt)=>`<button type="button" class="chip ${on?'on':''}" ${attr} aria-pressed="${on}">${txt}</button>`;
 const hs=(GEO&&GEO.hotspots)||[];
-el.innerHTML=`<div style="display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:10px">
+el.innerHTML=`<div style="display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:10px">
 <div class="pnl" id="g-map"><h3>MAP — Carte du monde<span class="rt">cliquez un pays pour sa fiche, un point rouge pour ses titres</span></h3>
 <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding:7px 9px;border-bottom:1px solid var(--line)">
-<span class="mut" style="font-size:9px">CALQUES</span>${chip(MAPS.layers.has('macro'),'data-ml="macro"','■ Macro')}${chip(MAPS.layers.has('oil'),'data-ml="oil"','◆ Pétrole')}${chip(MAPS.layers.has('geo'),'data-ml="geo"','● Géopolitique')}
+<span class="mut" style="font-size:9px">CALQUES</span>${chip(MAPS.layers.has('macro'),'data-ml="macro"','■ Macro')}${chip(MAPS.layers.has('oil'),'data-ml="oil"','◆ Pétrole')}${chip(MAPS.layers.has('conf'),'data-ml="conf"','▨ Conflits')}${chip(MAPS.layers.has('trade'),'data-ml="trade"','〰 Routes commerciales')}${chip(MAPS.layers.has('geo'),'data-ml="geo"','● Géopolitique')}
 <span style="width:1px;height:16px;background:var(--line);margin:0 4px"></span><span class="mut" style="font-size:9px">COLORIER PAR</span>
 ${Object.entries(MAP_METRICS).map(([k,m])=>chip(MAPS.metric===k,`data-mm="${k}"`,m.l)).join('')}
 <span id="g-leg" style="margin-left:auto;font-size:9px;color:var(--txt2)"></span></div>
@@ -3330,8 +3347,9 @@ ${MAPS.proj==='globe'?`<span style="width:1px;height:16px;background:var(--line)
 ${Object.entries(MAP_GOTO).map(([k,[l]])=>`<button type="button" class="chip" data-goto="${k}">${l}</button>`).join('')}${chip(MAPS.auto,'data-auto="1"','↻ Rotation auto')}`:''}
 <span class="mut" style="margin-left:auto;font-size:9px">${MAPS.proj==='globe'?'glisser pour tourner · molette pour zoomer':'molette pour zoomer'}</span></div>
 <div id="g-svgw" style="position:relative;background:#05080b"><div class="note" style="padding:20px">Chargement de la carte…</div></div>
-<div class="note">◆ Passages maritimes : millions de barils par jour (Mb/j), EIA — ordre de grandeur annuel, pas de suivi des navires en temps réel. ● Points chauds : nombre d'articles de presse sur 24 h (GDELT)${GEO&&GEO.hotspots_at?', relevé '+fmtDT(GEO.hotspots_at):''}. ■ Couleur : dernière valeur de la série ECONOMICS du pays (zone euro : série de la zone pour l'inflation et le taux directeur) ; gris = pas de série.</div></div>
+<div class="note">▨ Zones de conflit : liste indicative revue le ${CONFLICT_ASOF} (sources UCDP, ACLED, presse). 〰 Routes commerciales : grandes routes maritimes, tracé schématique. ◆ Passages maritimes : millions de barils par jour (Mb/j), EIA — ordre de grandeur annuel, pas de suivi des navires en temps réel. ● Points chauds : nombre d'articles de presse sur 24 h (GDELT)${GEO&&GEO.hotspots_at?', relevé '+fmtDT(GEO.hotspots_at):''}. ■ Couleur : dernière valeur de la série ECONOMICS du pays (zone euro : série de la zone pour l'inflation et le taux directeur) ; gris = pas de série.</div></div>
 <div style="display:grid;gap:10px;align-content:start">
+<div class="pnl" id="g-live"></div>
 <div class="pnl" id="g-card"></div>
 <div class="pnl"><h3>POINTS CHAUDS — 24 H<span class="rt">GDELT</span></h3>${hs.length?`<table><caption class="sr-only">Points chauds</caption><thead><tr><th scope="col" style="text-align:left">Zone</th><th scope="col">Articles</th><th scope="col">Sur 24 h</th></tr></thead><tbody>
 ${hs.slice().sort((a,b)=>b.n24-a.n24).map(h=>`<tr class="clk" data-hot="${esc(h.k)}" tabindex="0" role="button"><th scope="row" style="text-align:left;font-weight:400;color:var(--txt)">${esc(h.n)}${h.stale?' <span class="neg" title="dernier relevé conservé">*</span>':''}</th><td>${nf(h.n24,0)}</td>
@@ -3350,7 +3368,7 @@ el.querySelectorAll('[data-auto]').forEach(b=>b.onclick=()=>{ MAPS.auto=!MAPS.au
 el.querySelectorAll('[data-hot]').forEach(r=>{ r.onclick=()=>{ MAPS.hot=r.dataset.hot; mapArts(); }; r.onkeydown=e=>{ if(e.key==='Enter'){ MAPS.hot=r.dataset.hot; mapArts(); } }; });
 el.querySelectorAll('[data-resf]').forEach(b=>b.onclick=()=>{ RESF=b.dataset.resf; viewMap(); });
 el.querySelectorAll('[data-eco]').forEach(r=>r.onclick=()=>runAny(r.dataset.eco));
-mapCard(); mapArts();
+mapCard(); mapArts(); mapLive();
 try{ drawWorld(await loadGeoLib()); }catch(e){ const w=document.getElementById('g-svgw'); if(w) w.innerHTML=`<div class="warn" style="margin:10px">Fond de carte indisponible (${esc(e.message)}). Les panneaux restent utilisables.</div>`; }
 }
 let MAP_R=null;   // rendu courant : { render(), proj }
@@ -3375,6 +3393,10 @@ const p=add('path',{fill:v?mapColor(v.v,lo,hi,M.div):'#222a33',stroke:sel?'#fff'
 const t=document.createElementNS(NS,'title'); t.textContent=(f.properties&&f.properties.name||'')+(v?' — '+M.l+' : '+v.lab:''); p.appendChild(t);
 p.addEventListener('click',()=>{ if(moved) return; MAPS.sel=+f.id; mapCard(); cpaths.forEach(([q,ff])=>{ const on=+ff.id===MAPS.sel; q.setAttribute('stroke',on?'#fff':'#0a0f14'); q.setAttribute('stroke-width',on?1.6:.4); }); });
 return [p,f]; });
+const confs=MAPS.layers.has('conf')?feat.features.filter(f=>CONFLICT[+f.id]).map(f=>{ const p=add('path',{fill:'rgba(224,60,60,.62)',stroke:'#ff6b6b','stroke-width':.9});
+const t=document.createElementNS(NS,'title'); t.textContent='Zone de conflit — '+CONFLICT[+f.id]; p.appendChild(t);
+p.addEventListener('click',()=>{ if(moved) return; MAPS.sel=+f.id; mapCard(); }); return [p,f]; }):[];
+const trades=MAPS.layers.has('trade')?TRADE_ROUTES.map(r=>[add('path',{fill:'none',stroke:'#5aa9e6','stroke-width':1.4,opacity:.7,'pointer-events':'none'}),r]):[];
 const routes=MAPS.layers.has('oil')?OIL_ROUTES.map(r=>[add('path',{fill:'none',stroke:'#e8a33d','stroke-width':1.3,'stroke-dasharray':'4 3',opacity:.75,'pointer-events':'none'}),r]):[];
 const chokes=MAPS.layers.has('oil')?CHOKE.map(c=>{ const g=add('g',{'pointer-events':'none'}); return [g,add('path',{fill:'#e8a33d',stroke:'#000','stroke-width':1},null,g),add('text',{fill:'#e8c27a','font-size':10,'font-family':F},`${c[0]} ${String(c[3]).replace('.',',')} Mb/j`,g),c]; }):[];
 const hs=MAPS.layers.has('geo')?((GEO&&GEO.hotspots)||[]):[], mx=Math.max(1,...hs.map(h=>h.n24||0));
@@ -3389,6 +3411,8 @@ else { proj.scale(flatS*MAPS.k).translate([flatT[0]+(MAPS.pan?MAPS.pan[0]:0),fla
 sphere.setAttribute('d',path({type:'Sphere'})||''); grat.setAttribute('d',path(d3.geoGraticule10())||'');
 for(const [p,f] of cpaths) p.setAttribute('d',path(f)||'');
 for(const [p,r] of routes) p.setAttribute('d',path({type:'LineString',coordinates:r})||'');
+for(const [p,f] of confs) p.setAttribute('d',path(f)||'');
+for(const [p,r] of trades) p.setAttribute('d',path({type:'LineString',coordinates:r})||'');
 const c=[-MAPS.rot[0],-MAPS.rot[1]], vis=ll=>!globe||d3.geoDistance(ll,c)<Math.PI/2-.04;
 for(const [g,dm,tx,[n,lo2,la,v,dx,dy]] of chokes){ const on=vis([lo2,la]); g.style.display=on?'':'none'; if(!on) continue;
 const [x,y]=proj([lo2,la]), s=4+Math.sqrt(v)*1.5; dm.setAttribute('d',`M${x} ${y-s}L${x+s} ${y}L${x} ${y+s}L${x-s} ${y}Z`);
@@ -3428,6 +3452,23 @@ requestAnimationFrame(step); }
 function mapSpin(){ let last=performance.now();
 const step=now=>{ if(!MAPS.auto||S.view!=='map'||MAPS.proj!=='globe') return; MAPS.rot=[MAPS.rot[0]+(now-last)*0.006,MAPS.rot[1],0]; last=now; if(MAP_R) MAP_R.render(); requestAnimationFrame(step); };
 requestAnimationFrame(step); }
+// LIVE NEWS : directs YouTube officiels des chaînes (lecture intégrée autorisée par les chaînes).
+const LIVE_CH=[['Bloomberg','UCIALMKvObZNtJ6AmdCLP7Lg'],['Sky News','UCoMdktPbSTixAyNGwb-UYkQ'],['France 24','UCQfwfsi5VrQ8yKZ-UWmAEFg'],
+['DW','UCknLrEdhRCp1aegoMqRaCZg'],['Al Jazeera','UCNye-wNBqNL5ZzHSJj3l8Bg'],['Euronews','UCSrZ3UV4jOidv8ppoVuvW9Q']];
+const LIVETV={ch:0, on:false, box:null};
+function mapLive(){ const el=document.getElementById('g-live'); if(!el) return;
+el.innerHTML=`<h3>LIVE NEWS<span class="rt">directs YouTube · son coupé au départ</span></h3>
+<div style="display:flex;gap:4px;flex-wrap:wrap;padding:6px 9px;border-bottom:1px solid var(--line)">${LIVE_CH.map(([n],i)=>`<button type="button" class="chip ${i===LIVETV.ch?'on':''}" data-live="${i}" aria-pressed="${i===LIVETV.ch}">${esc(n)}</button>`).join('')}</div>
+<div id="g-livebox"></div><div class="note" style="padding:5px 9px">Le direct ne s'affiche que si la chaîne diffuse en ce moment sur YouTube. <a href="https://www.youtube.com/channel/${LIVE_CH[LIVETV.ch][1]}/live" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a></div>`;
+// Le lecteur est conservé d'un rafraîchissement à l'autre (changer de calque ne coupe pas le direct)
+if(!LIVETV.box){ LIVETV.box=document.createElement('div'); LIVETV.box.style.cssText='position:relative;aspect-ratio:16/9;background:#05080b'; }
+const box=LIVETV.box, fill=()=>{ const id=LIVE_CH[LIVETV.ch][1];
+box.innerHTML=LIVETV.on?`<iframe src="https://www.youtube.com/embed/live_stream?channel=${id}&autoplay=1&mute=1" title="Direct ${esc(LIVE_CH[LIVETV.ch][0])}" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>`
+:`<button type="button" style="position:absolute;inset:0;width:100%;background:transparent;border:0;color:var(--txt);font:inherit;cursor:pointer"><span style="font-size:28px">▶</span><br><span style="font-size:11px">Lancer le direct ${esc(LIVE_CH[LIVETV.ch][0])}</span></button>`;
+const b=box.querySelector('button'); if(b) b.onclick=()=>{ LIVETV.on=true; fill(); }; box.dataset.ch=LIVETV.ch+(LIVETV.on?'on':''); };
+if(box.dataset.ch!==LIVETV.ch+(LIVETV.on?'on':'')) fill();
+document.getElementById('g-livebox').appendChild(box);
+el.querySelectorAll('[data-live]').forEach(b=>b.onclick=()=>{ LIVETV.ch=+b.dataset.live; LIVETV.on=true; mapLive(); }); }
 const ISO_NAME={840:'États-Unis',276:'Allemagne',250:'France',380:'Italie',724:'Espagne',826:'Royaume-Uni',392:'Japon',756:'Suisse',156:'Chine',356:'Inde'};
 function mapCard(){ const el=document.getElementById('g-card'); if(!el) return; const iso=MAPS.sel, p=ISO_PFX[iso], ea=EA.has(iso);
 const name=ISO_NAME[iso]||(GEOLIB_NAMES[iso])||'Pays';
