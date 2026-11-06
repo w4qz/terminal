@@ -3352,7 +3352,7 @@ ${Object.entries(MAP_GOTO).map(([k,[l]])=>`<button type="button" class="chip" da
 <div class="pnl" id="g-live"></div>
 <div class="pnl" id="g-card"></div>
 <div class="pnl"><h3>POINTS CHAUDS — 24 H<span class="rt">GDELT</span></h3>${hs.length?`<table><caption class="sr-only">Points chauds</caption><thead><tr><th scope="col" style="text-align:left">Zone</th><th scope="col">Articles</th><th scope="col">Sur 24 h</th></tr></thead><tbody>
-${hs.slice().sort((a,b)=>b.n24-a.n24).map(h=>`<tr class="clk" data-hot="${esc(h.k)}" tabindex="0" role="button"><th scope="row" style="text-align:left;font-weight:400;color:var(--txt)">${esc(h.n)}${h.stale?' <span class="neg" title="dernier relevé conservé">*</span>':''}</th><td>${nf(h.n24,0)}</td>
+${hs.slice().sort((a,b)=>b.n24-a.n24).map(h=>`<tr class="clk" data-hot="${esc(h.k)}" tabindex="0" role="button"><th scope="row" style="text-align:left;font-weight:400;color:var(--txt)">${esc(h.n)}${h.stale?' <span class="neg" title="GDELT n\'a pas répondu au dernier passage : dernier relevé conservé">*</span>':''}</th><td>${h.stale&&!h.n24?'<span class="mut">—</span>':nf(h.n24,0)}</td>
 <td class="${h.trend==null?'mut':h.trend>15?'neg':h.trend<-15?'pos':'mut'}">${h.trend==null?'—':(h.trend>0?'▲ +':h.trend<0?'▼ ':'= ')+nf(h.trend,0)+' %'}</td></tr>`).join('')}</tbody></table>`
 :'<div class="note">Points chauds pas encore relevés : ils apparaissent après le prochain passage du robot (étape « Carte »).</div>'}
 <div id="g-arts"></div></div>
@@ -3388,6 +3388,7 @@ const grat=add('path',{fill:'none',stroke:globe?'#13202d':'#10161d','stroke-widt
 const vals=feat.features.map(f=>mapVal(f.id,MAPS.metric)).filter(Boolean).map(x=>x.v), M=MAP_METRICS[MAPS.metric];
 const lo=vals.length?Math.min(...vals):0, hi=vals.length?Math.max(...vals):1;
 let moved=false;
+feat.features.forEach(f=>{ if(f.properties&&f.properties.name) GEOLIB_NAMES[+f.id]=f.properties.name; });
 const cpaths=feat.features.map(f=>{ const v=MAPS.layers.has('macro')?mapVal(f.id,MAPS.metric):null, sel=+f.id===MAPS.sel;
 const p=add('path',{fill:v?mapColor(v.v,lo,hi,M.div):'#222a33',stroke:sel?'#fff':'#0a0f14','stroke-width':sel?1.6:.4});
 const t=document.createElementNS(NS,'title'); t.textContent=(f.properties&&f.properties.name||'')+(v?' — '+M.l+' : '+v.lab:''); p.appendChild(t);
@@ -3465,12 +3466,11 @@ function mapSpin(){ let last=performance.now();
 const step=now=>{ if(!MAPS.auto||S.view!=='map'||MAPS.proj!=='globe') return; MAPS.rot=[MAPS.rot[0]+(now-last)*0.006,MAPS.rot[1],0]; last=now; if(MAP_R) MAP_R.render(); requestAnimationFrame(step); };
 requestAnimationFrame(step); }
 // LIVE NEWS : directs YouTube officiels des chaînes (lecture intégrée autorisée par les chaînes).
-const LIVE_CH=[['Bloomberg','UCIALMKvObZNtJ6AmdCLP7Lg'],['Sky News','UCoMdktPbSTixAyNGwb-UYkQ'],['France 24','UCQfwfsi5VrQ8yKZ-UWmAEFg'],
-['DW','UCknLrEdhRCp1aegoMqRaCZg'],['Al Jazeera','UCNye-wNBqNL5ZzHSJj3l8Bg'],['Euronews','UCSrZ3UV4jOidv8ppoVuvW9Q']];
+const LIVE_CH=[['Bloomberg','UCIALMKvObZNtJ6AmdCLP7Lg']];
 const LIVETV={ch:0, on:false, box:null};
 function mapLive(){ const el=document.getElementById('g-live'); if(!el) return;
-el.innerHTML=`<h3>LIVE NEWS<span class="rt">directs YouTube · son coupé au départ</span></h3>
-<div style="display:flex;gap:4px;flex-wrap:wrap;padding:6px 9px;border-bottom:1px solid var(--line)">${LIVE_CH.map(([n],i)=>`<button type="button" class="chip ${i===LIVETV.ch?'on':''}" data-live="${i}" aria-pressed="${i===LIVETV.ch}">${esc(n)}</button>`).join('')}</div>
+el.innerHTML=`<h3>LIVE NEWS — BLOOMBERG<span class="rt">direct YouTube · son coupé au départ</span></h3>
+
 <div id="g-livebox"></div><div class="note" style="padding:5px 9px">Le direct ne s'affiche que si la chaîne diffuse en ce moment sur YouTube. <a href="https://www.youtube.com/channel/${LIVE_CH[LIVETV.ch][1]}/live" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a></div>`;
 // Le lecteur est conservé d'un rafraîchissement à l'autre (changer de calque ne coupe pas le direct)
 if(!LIVETV.box){ LIVETV.box=document.createElement('div'); LIVETV.box.style.cssText='position:relative;aspect-ratio:16/9;background:#05080b'; }
@@ -3483,7 +3483,7 @@ document.getElementById('g-livebox').appendChild(box);
 el.querySelectorAll('[data-live]').forEach(b=>b.onclick=()=>{ LIVETV.ch=+b.dataset.live; LIVETV.on=true; mapLive(); }); }
 const ISO_NAME={840:'États-Unis',276:'Allemagne',250:'France',380:'Italie',724:'Espagne',826:'Royaume-Uni',392:'Japon',756:'Suisse',156:'Chine',356:'Inde'};
 function mapCard(){ const el=document.getElementById('g-card'); if(!el) return; const iso=MAPS.sel, p=ISO_PFX[iso], ea=EA.has(iso);
-const name=ISO_NAME[iso]||(GEOLIB_NAMES[iso])||'Pays';
+const name=ISO_NAME[iso]||GEOLIB_NAMES[iso]||'Pays';
 const codes=(ECON||[]).filter(e=>p&&e.code.startsWith(p)).slice(0,10);
 const eaRows=ea&&p!=='EU'?['EUINTR','EUIRYY'].map(ecoGet).filter(Boolean):[];
 const idx=ISO_IDX[iso], q=idx&&SNAPSHOT.quotes[idx];
