@@ -67,7 +67,8 @@ def main() -> int:
         stocks = [x["s"] for x in json.loads(UNIV.read_text(encoding="utf-8"))["items"] if x.get("c") == "Action"]
     except Exception:
         stocks = []
-    pool = [s for s in dict.fromkeys([*FUND_TICKERS, *stocks]) if "." not in s and "=" not in s and "^" not in s]
+    pool = [s for s in dict.fromkeys([*FUND_TICKERS, *stocks]) if "." not in s and "=" not in s and "^" not in s
+            and s not in ("ACWI", "AGG", "BIL", "GLD", "SPY", "QQQ", "IWM", "TLT")]   # fonds indiciels : pas de dépôts de société
     try:
         cache = json.loads(OUT.read_text(encoding="utf-8")).get("items", {})
     except Exception:
