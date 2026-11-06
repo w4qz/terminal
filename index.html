@@ -1090,7 +1090,7 @@ const CR=(MACRO&&MACRO.eco&&MACRO.eco.consensus&&MACRO.eco.consensus.rows)||[];
 const calLive = CR.length ? CR.filter(c=>c.imp>=2).slice(0,14).map(c=>{ const t=new Date(c.ts), past=t<new Date();
 return `<tr style="${past&&!c.act?'opacity:.6':''}"><th scope="row" style="font-weight:400;color:var(--txt);white-space:nowrap">${t.toLocaleString('fr-FR',{weekday:'short',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'})}</th>
 <td style="text-align:left">${esc(c.ev)} <span class="mut">${esc(c.ctry)}</span></td><td><span aria-hidden="true">${'●'.repeat(c.imp)}</span></td>
-<td>${c.cons?esc(c.cons):'<span class="na">—</span>'}</td><td>${c.prev?esc(c.prev):'<span class="na">—</span>'}</td>
+<td>${c.cons?esc(c.cons):c.off?'<span class="na" title="Consensus publié par Forex Factory la semaine de l\'événement">à venir</span>':'<span class="na">—</span>'}</td><td>${c.prev?esc(c.prev):'<span class="na">—</span>'}</td>
 <td style="font-weight:600">${c.act?esc(c.act):past?'<span class="na">non relevé</span>':'<span class="na">à venir</span>'}</td></tr>`; }).join('') : '';
 const cal = SNAPSHOT.calendar.map(c=>{
 const d = new Date(c.d+'T12:00:00');
@@ -2267,6 +2267,7 @@ function fomcDetail(d,M){ const W=M.wirp||{}, rg=W.range||[], m=(W.meetings||[])
 const rng=rg[0]!=null&&rg[1]!=null?`${nf(rg[0],2)} – ${nf(rg[1],2)} %`:null;
 let exp=''; if(m&&!past){ const p=Math.max(m.p_cut,m.p_hike); exp=m.p_cut>=50?`<span class="neg">baisse de 25 pb anticipée à ${m.p_cut} %</span>`:m.p_hike>=50?`<span class="pos">hausse de 25 pb anticipée à ${m.p_hike} %</span>`:`maintien anticipé à ${100-p} %${p?` (${m.p_cut?'baisse':'hausse'} : ${p} %)`:''}`; }
 return `<div class="mut" style="font-size:10px;margin-top:2px;line-height:1.5">Décision sur la fourchette des fed funds${rng?` (actuelle ${rng})`:''} · communiqué 14:00 New York (20:00 Paris), conférence de presse 14:30 (20:30)${[3,6,9,12].includes(mo)?' · <b>avec projections économiques et « dot plot »</b>':''}${exp?'<br>Marché (futures fed funds) : '+exp:''}</div>`; }
+const ECOP={all:false};
 function viewMacro(){
 const el=document.getElementById('v-macro');
 if(!MACRO){ el.innerHTML=`<div class="pnl"><div class="note">Les données macro ne sont pas encore générées. Elles apparaîtront après le prochain passage du robot GitHub (fichier <code>macro.json</code>, script <code>build_macro.py</code>).</div></div>`+ecoPanelHtml(); wireEco(el); return; }
@@ -2281,10 +2282,18 @@ return `<tr style="${past?'opacity:.55':''}"><th scope="row" style="font-weight:
 <td style="text-align:left;white-space:normal">${c.imp===3?'<b>':''}${esc(c.ev)}${c.imp===3?'</b>':''} <span class="mut">${esc(c.ctry)}</span>${/FOMC\)|Federal Funds Rate/i.test(c.ev)?fomcDetail(c.d||String(c.ts).slice(0,10),M):''}</td>
 <td class="mut" style="font-size:10px">${past?'publié':now?'<span class="pos">aujourd\'hui</span>':'à venir'}</td></tr>`; }).join('');
 // ECO — consensus (Forex Factory) + publié (FRED)
-const C=(M.eco.consensus&&M.eco.consensus.rows)||[];
 const now=Date.now();
-const cons=C.map(c=>{ const t=new Date(c.ts), past=t.getTime()<now;
-const when=t.toLocaleString('fr-FR',{weekday:'short',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'});
+// Calendrier : la veille et ce qui vient (la semaine écoulée sur demande), complété au-delà de la couverture
+// Forex Factory par le calendrier officiel américain (FRED, Fed) : date seule, consensus pas encore publié.
+const C0=(M.eco.consensus&&M.eco.consensus.rows)||[], ffEnd=C0.length?C0[C0.length-1].ts.slice(0,10):'';
+const OFF_IMP=t=>/NFP|Emploi US|Inflation CPI|FOMC|PIB|PCE/.test(t)?3:2;
+const extra=(M.eco.calendar||[]).filter(x=>x.d>ffEnd&&x.d>=new Date(now).toISOString().slice(0,10))
+.map(x=>({ts:x.d+'T12:00:00Z',dOnly:true,ctry:x.ctry,ev:x.ev,imp:x.imp||OFF_IMP(x.ev),cons:null,prev:null,act:null,cov:true,surp:null,off:true}));
+const cutPast=now-30*36e5;
+const C=C0.filter(c=>ECOP.all||Date.parse(c.ts)>=cutPast).concat(extra);
+const nPast=C0.filter(c=>Date.parse(c.ts)<cutPast).length;
+const cons=C.map(c=>{ const t=new Date(c.ts), past=!c.dOnly&&t.getTime()<now;
+const when=c.dOnly?t.toLocaleDateString('fr-FR',{weekday:'short',day:'2-digit',month:'short'})+' <span class="mut" style="font-size:9px">heure à venir</span>':t.toLocaleString('fr-FR',{weekday:'short',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'});
 const sp=c.surp; const scls=sp==null?'mut':sp>0?'pos':sp<0?'neg':'mut';
 return `<tr style="${past&&!c.act?'opacity:.6':''}"><th scope="row" style="font-weight:400;color:var(--txt);white-space:nowrap">${when}</th>
 <td style="text-align:left;white-space:normal">${c.imp===3?'<b>':''}${esc(c.ev)}${c.imp===3?'</b>':''} <span class="mut">${esc(c.ctry)}</span>${/FOMC\)|Federal Funds Rate/i.test(c.ev)?fomcDetail(c.d||String(c.ts).slice(0,10),M):''}</td>
@@ -2310,9 +2319,9 @@ const bt=(M.btmm||[]).map(x=>`<tr><th scope="row" style="font-weight:400;color:v
 <td style="font-weight:600">${fmtMacro(x.v,x.fmt)}</td><td>${dlt(x.v,x.prev,x.fmt)}</td><td class="mut" style="font-size:10px">${esc(x.ts)}${staleMark(x.ts,100)}</td></tr>`).join('');
 el.innerHTML=`<div class="note" style="padding:0 0 8px">Équivalents gratuits des fonctions Bloomberg <b>ECO</b>, <b>WIRP</b>, <b>GC</b> et <b>BTMM</b>. Données du ${fmtDT(M.generated_at)} — FRED, BCE, Federal Reserve, Yahoo. Mise à jour toutes les 10 min.</div>
 <div class="g g2">
-<div class="pnl span2" id="m-eco"><h3>ECO — Calendrier avec consensus<span class="rt">cette semaine et la suivante · heures locales · impact moyen et fort</span></h3><div class="pbody flush">
+<div class="pnl span2" id="m-eco"><h3>ECO — Calendrier avec consensus<span class="rt">depuis hier et à venir · heures locales · impact moyen et fort${nPast||ECOP.all?` · <button type="button" class="btn" style="padding:0 6px" id="ecoall">${ECOP.all?'masquer les jours passés':'afficher la semaine écoulée ('+nPast+')'}</button>`:''}</span></h3><div class="pbody flush">
 ${cons?`<table><caption class="sr-only">Calendrier économique avec consensus</caption><thead><tr><th scope="col">Date</th><th scope="col" style="text-align:left">Événement</th><th scope="col">Impact</th><th scope="col">Consensus</th><th scope="col">Publié</th><th scope="col">Surprise</th><th scope="col">Précédent</th></tr></thead><tbody>${cons}</tbody></table>`:'<div class="note na">Consensus indisponible pour le moment.</div>'}
-<div class="note">${esc((M.eco.consensus&&M.eco.consensus.src)||'')} « Précédent » = valeur annoncée par le calendrier au moment de la publication, souvent avant révision : elle peut différer du « précédent » du panneau Derniers chiffres (FRED), qui intègre les révisions. Le chiffre publié n'est rapproché automatiquement que pour les principales statistiques américaines ; pour les autres, consultez la source.</div></div></div>
+<div class="note">${M.eco.consensus&&M.eco.consensus.feeds?'Flux Forex Factory : '+Object.entries(M.eco.consensus.feeds).map(([k,v])=>esc(k)+' '+esc(v)).join(' · ')+'. Au-delà, les lignes « heure à venir » viennent du calendrier officiel américain (FRED, Fed). ':''}${esc((M.eco.consensus&&M.eco.consensus.src)||'')} « Précédent » = valeur annoncée par le calendrier au moment de la publication, souvent avant révision : elle peut différer du « précédent » du panneau Derniers chiffres (FRED), qui intègre les révisions. Le chiffre publié n'est rapproché automatiquement que pour les principales statistiques américaines ; pour les autres, consultez la source.</div></div></div>
 <div class="pnl"><h3>ECO — Derniers chiffres<span class="rt">dernier · précédent · période et publication</span></h3><div class="pbody flush"><table><caption class="sr-only">Derniers chiffres macroéconomiques</caption><tbody>${prints||'<tr><td class="na">indisponible</td></tr>'}</tbody></table>
 <div class="note">Le consensus des économistes n'est pas disponible gratuitement : seuls les chiffres publiés sont affichés.</div></div></div>
 <div class="pnl"><h3>ECO — Calendrier US à 4 semaines<span class="rt">FRED · Federal Reserve</span></h3><div class="pbody flush"><table><caption class="sr-only">Calendrier des publications</caption><tbody>${cal||'<tr><td class="na">aucune publication</td></tr>'}</tbody></table></div></div>
@@ -2321,6 +2330,7 @@ ${cons?`<table><caption class="sr-only">Calendrier économique avec consensus</c
 <div class="pnl span2" id="m-gc"><h3>GC — Courbes des taux souveraines<span class="rt">méthodologies différentes : US = rendements à maturité constante (CMT), zone euro = zéro-coupon AAA, autres pays = sources nationales · US, zone euro, Allemagne, France, Italie, Royaume-Uni, Japon, Suisse · survolez la courbe</span></h3><div class="pbody" id="gcbody">${gcHtml()}</div></div>
 </div>`;
 wireGC(el); drawGC();
+{ const b=document.getElementById('ecoall'); if(b) b.onclick=()=>{ ECOP.all=!ECOP.all; const y=document.getElementById('main').scrollTop; viewMacro(); document.getElementById('main').scrollTop=y; }; }
 el.insertAdjacentHTML('beforeend',ecoPanelHtml()); wireEco(el);
 }
 /*═══════════════════════════════════════════════════════════════════════
