@@ -103,13 +103,16 @@ def hotspot(key, name, q, ll):
     q = f"{q} sourcelang:english"
     tl = gdelt({"query": q, "mode": "TimelineVolRaw", "timespan": "2d"})
     data = ((tl.get("timeline") or [{}])[0].get("data")) or []
+    if not data:
+        raise RuntimeError("chronologie GDELT vide (requête refusée ou limitée)")
     cut = (NOW - timedelta(hours=24)).strftime("%Y%m%dT%H%M%S")
     now24 = sum(d.get("value", 0) for d in data if str(d.get("date", "")) >= cut)
     prev24 = sum(d.get("value", 0) for d in data if str(d.get("date", "")) < cut)
     al = gdelt({"query": q, "mode": "ArtList", "timespan": "24h", "maxrecords": 10, "sort": "DateDesc"})
     arts = [{"t": a.get("title", "")[:200], "u": a.get("url"), "d": a.get("domain"), "ts": a.get("seendate")}
             for a in (al.get("articles") or []) if a.get("url", "").startswith("http")]
-    trend = None if not prev24 else round((now24 / prev24 - 1) * 100)
+    # Tendance seulement si la veille compte assez d'articles (sinon +12 000 % sur une base de 1 article)
+    trend = None if prev24 < 20 else round((now24 / prev24 - 1) * 100)
     return {"k": key, "n": name, "ll": ll, "n24": now24, "prev24": prev24, "trend": trend, "arts": arts}
 
 
