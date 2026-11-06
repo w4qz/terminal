@@ -72,6 +72,7 @@ jobs:
         timeout-minutes: 4
         env:
           WORLD_FORCE: ${{ github.event_name == 'workflow_dispatch' }}
+          RELAY_KEY: ${{ secrets.RELAY_KEY }}
         run: python scripts/build_world.py
 
       - name: Publier les fichiers
