@@ -2348,7 +2348,7 @@ const t0=performance.now(); try{ const r=await fetch(WORKER_URL+'/health',{cache
 catch(e){ RELAY={ok:false,ms:null,t:Date.now(),err:e.message}; } return RELAY; }
 function sourceRows(){
 const H=36e5, now=Date.now(), age=ts=>ts?(now-Date.parse(ts))/H:null;
-const S30=0.75, SLOW=2.25, DAY=30;   // robot rapide (10 min) en retard au-delà de 45 min ; robot lent (1 h) au-delà de 2 h 15 ; quotidien au-delà de 30 h
+const S30=1.5, SLOW=3, DAY=30;   // GitHub décale souvent les passages programmés : robot rapide en retard au-delà d'1 h 30, robot lent au-delà de 3 h, quotidien au-delà de 30 h
 const rows=[
 ['Cours et news','data.json',LIVE&&LIVE.generated_at,S30,true],
 ['Catalogue et cours','universe.json',UNIV_TS,S30,true],
@@ -2379,7 +2379,7 @@ ${rows.map(r=>`<tr><th scope="row" style="text-align:left;font-weight:400;color:
 <div class="stat"><span class="l">RELEVÉS ANCIENS</span><span class="n">${nAg}</span><span class="s">annoncés en séance, relevés il y a plus d'1 h 30</span></div>
 <div class="stat"><span class="l">DERNIER PASSAGE DU ROBOT</span><span class="n" style="font-size:14px">${PIPE_STATUS&&PIPE_STATUS.finished_at?fmtDT(PIPE_STATUS.finished_at):'—'}</span><span class="s">${steps.length?steps.filter(([,v])=>v!=='success'&&v!=='skipped').length+' étape(s) en échec sur '+steps.length:'status.json non publié'}</span></div></div>
 ${steps.length?`<table><caption class="sr-only">Étapes du dernier passage</caption><tbody>${steps.map(([k,v])=>`<tr><th scope="row" style="text-align:left;font-weight:400">${esc(k)}</th><td class="${v==='success'?'pos':v==='skipped'?'mut':'neg'}" style="text-align:left">${v==='success'?'réussie':v==='skipped'?'ignorée':'échec'}</td></tr>`).join('')}</tbody></table>`:''}
-<div class="note">« À jour » = fichier généré il y a moins de 45 min pour le robot rapide (10 min), 2 h 15 pour le robot lent (1 h), 30 h pour les séries quotidiennes. Une étape réussie ne garantit pas une observation nouvelle : le week-end, les fichiers sont régénérés avec les mêmes clôtures.</div></div></div>`; }
+<div class="note">« À jour » = fichier généré il y a moins d'1 h 30 pour le robot rapide (programmé toutes les 10 min, souvent décalé par GitHub), 3 h pour le robot lent, 30 h pour les séries quotidiennes. Une étape réussie ne garantit pas une observation nouvelle : le week-end, les fichiers sont régénérés avec les mêmes clôtures.</div></div></div>`; }
 
 async function viewDiag(){
 const el=document.getElementById('v-diag');
