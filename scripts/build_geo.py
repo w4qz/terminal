@@ -63,11 +63,7 @@ RESEARCH_FEEDS = [
     ("Bank of England — publications", "Banques centrales", "https://www.bankofengland.co.uk/rss/publications"),
     ("BRI — discours de banquiers centraux", "Banques centrales", "https://www.bis.org/doclist/cbspeeches.rss"),
     ("BRI — recherche", "Taux", "https://www.bis.org/doclist/reshub_papers.rss"),
-    ("FMI — blog", "Macro", "https://www.imf.org/en/Blogs/rss"),
-    ("Banque de France — bloc-notes Éco", "Macro", "https://www.banque-france.fr/fr/rss/bloc-notes-eco"),
-    ("Bruegel", "Macro", "https://www.bruegel.org/rss.xml"),
     ("CEPR — VoxEU", "Macro", "https://cepr.org/rss/vox-content"),
-    ("AIE — actualités", "Pétrole", "https://www.iea.org/rss/news.xml"),
     ("EIA — Today in Energy", "Pétrole", "https://www.eia.gov/rss/todayinenergy.xml"),
 ]
 TAGS = {
@@ -101,7 +97,10 @@ def gdelt(params, tries=2):
 
 def hotspot(key, name, q, ll):
     q = f"{q} sourcelang:english"
-    tl = gdelt({"query": q, "mode": "TimelineVolRaw", "timespan": "2d"})
+    # Fenêtre explicite de 48 h (le paramètre « timespan=2d » ne renvoyait que les dernières 24 h)
+    tl = gdelt({"query": q, "mode": "TimelineVolRaw",
+                "startdatetime": (NOW - timedelta(hours=48)).strftime("%Y%m%d%H%M%S"),
+                "enddatetime": NOW.strftime("%Y%m%d%H%M%S")})
     data = ((tl.get("timeline") or [{}])[0].get("data")) or []
     if not data:
         raise RuntimeError("chronologie GDELT vide (requête refusée ou limitée)")
@@ -176,12 +175,16 @@ def main() -> int:
         try:
             h = hotspot(key, name, q, ll)
             h["at"] = NOW.isoformat().replace("+00:00", "Z")
+            h.pop("err", None)
             hs[key] = h
             done += 1
         except Exception as ex:
             log(f"  ! GDELT {name} : {str(ex)[:100]}")
             if key in hs:
                 hs[key]["stale"] = True
+                hs[key]["err"] = str(ex)[:120]       # raison visible dans geo.json (diagnostic)
+            else:
+                hs[key] = {"k": key, "n": name, "ll": ll, "n24": 0, "prev24": 0, "trend": None, "arts": [], "stale": True, "err": str(ex)[:120]}
     hs_list = [hs[k] for k, *_ in HOTSPOTS if k in hs]
     hs_ts = max((h.get("at", "") for h in hs_list), default=None) or prev.get("hotspots_at")
     log(f"Points chauds : {done} zones actualisées, {len(hs_list)} au total")
