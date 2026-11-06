@@ -130,7 +130,12 @@ padding:10px 9px;border-bottom:1px solid var(--line)}
 .nw h4{font-size:12px;font-weight:600;margin-bottom:3px}
 .nw p{font-size:11px;color:#a4adb8;line-height:1.5;margin-bottom:4px}
 .nw .meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:9px;color:var(--txt3)}
-.nw a{color:#6ba3e0;text-decoration:none}
+.nw a{color:#9cc8ff;text-decoration:none}
+/* Liens : bleu clair lisible sur fond noir (le bleu par défaut du navigateur était illisible) */
+a{color:#9cc8ff;text-decoration:none} a:visited{color:#9cc8ff} a:hover,a:focus-visible{color:#fff;text-decoration:underline}
+a:focus-visible{outline:1px solid #4d8fd6;outline-offset:1px}
+.mpop a,#g-arts a,#g-res a{color:var(--txt)} .mpop a:hover,#g-arts a:hover,#g-res a:hover{color:#9cc8ff}
+body.amber a,body.amber a:visited{color:#ffc266} body.amber .mpop a,body.amber #g-arts a,body.amber #g-res a{color:#f2f2f2}
 .nw a:hover,.nw a:focus-visible{text-decoration:underline}
 .tag{font-size:9px;border:1px solid var(--line);padding:0 4px;border-radius:2px;color:var(--txt2);cursor:pointer}
 .tag:hover,.tag:focus-visible{background:var(--sel);color:var(--txt)}
@@ -3533,7 +3538,7 @@ const st=(GEO&&GEO.research_sources)||{}, ok=Object.values(st).filter(v=>v==='ok
 return `<div class="pnl" id="g-res"><h3>RES — Recherche publique<span class="rt">${ok?ok+' sources · ':''}titres et liens uniquement</span></h3>
 <div style="display:flex;gap:6px;flex-wrap:wrap;padding:7px 9px;border-bottom:1px solid var(--line)">${cats.map(c=>`<button type="button" class="chip ${RESF===c?'on':''}" data-resf="${esc(c)}">${esc(c)}</button>`).join('')}</div>
 <div style="max-height:420px;overflow:auto">${list.length?list.map(r=>`<div style="display:grid;grid-template-columns:150px 1fr 70px;gap:10px;padding:6px 9px;border-bottom:1px solid #14171b;align-items:baseline">
-<span style="color:#6ba3e0;font-size:10px">${esc(r.src)}</span><a href="${safeUrl(r.u)}" target="_blank" rel="noopener" style="color:var(--txt)">${esc(r.t)}</a><span class="mut" style="font-size:10px;text-align:right">${ago(r.ts)}</span></div>`).join('')
+<span style="color:#9cc8ff;font-size:10px">${esc(r.src)}</span><a href="${safeUrl(r.u)}" target="_blank" rel="noopener" style="color:var(--txt)">${esc(r.t)}</a><span class="mut" style="font-size:10px;text-align:right">${ago(r.ts)}</span></div>`).join('')
 :`<div class="note">${R.length?'Aucune publication pour ce thème.':'Fil pas encore relevé : il apparaît après le prochain passage du robot (étape « Carte »).'}</div>`}</div>
 <div class="note">Publications publiques des banques centrales, institutions et instituts (Fed, BCE, BoE, BRI, FMI, Banque de France, Bruegel, VoxEU, AIE, EIA). Les notes réservées aux clients des banques ne sont pas reprises : le site est public.</div></div>`; }
 /*═══════════════════════════════════════════════════════════════════════
