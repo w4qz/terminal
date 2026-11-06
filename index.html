@@ -2281,7 +2281,7 @@ const B=v=>v==null?'<span class="na">—</span>':Math.abs(v)>=1e9?nf(v/1e9,2)+' 
 box.innerHTML=`<h3>ERN — Calendrier des résultats<span class="rt">Finnhub · 3 jours passés et ${ERNF.days} jours à venir · ${L.length} publications</span></h3>
 <div class="ctl" style="align-items:center"><div class="rng" role="group" aria-label="Périmètre">${[['all','Tout le catalogue US'],['mine','Portefeuille et watchlist']].map(([k,l])=>`<button type="button" data-erns="${k}" class="${ERNF.scope===k?'on':''}">${l}</button>`).join('')}</div>
 <div class="rng" role="group" aria-label="Horizon" style="margin-left:8px">${[7,14,30].map(n=>`<button type="button" data-ernd="${n}" class="${ERNF.days===n?'on':''}">${n} j</button>`).join('')}</div></div>
-<div class="pbody flush" style="max-height:460px;overflow:auto"><table><caption class="sr-only">Calendrier des résultats</caption><thead><tr><th scope="col" style="text-align:left">Date</th><th scope="col" style="text-align:left">Société</th><th scope="col">Trimestre</th><th scope="col">BPA attendu</th><th scope="col">BPA publié</th><th scope="col">Surprise</th><th scope="col">CA attendu</th><th scope="col">CA publié</th></tr></thead><tbody>
+<div class="pbody flush" style="max-height:460px;overflow:auto"><table><caption class="sr-only">Calendrier des résultats</caption><thead><tr><th scope="col" style="text-align:left">Date</th><th scope="col" style="text-align:left">Société</th><th scope="col" title="Trimestre de l'exercice fiscal de la société (Cisco ou Nvidia clôturent leur exercice en cours d'année)">Trim. fiscal</th><th scope="col">BPA attendu</th><th scope="col">BPA publié</th><th scope="col">Surprise</th><th scope="col">CA attendu</th><th scope="col">CA publié</th></tr></thead><tbody>
 ${L.map(e=>{ const F=SNAPSHOT.fundamentals[e.s]||{}, past=e.d<today;
 return `<tr${mine.has(e.s)?' style="background:rgba(77,143,214,.07)"':''}><td style="text-align:left;white-space:nowrap">${e.d===today?'<span class="pos">aujourd\'hui</span>':new Date(e.d+'T12:00:00').toLocaleDateString('fr-FR',{weekday:'short',day:'2-digit',month:'short'})} <span class="mut" style="font-size:9px">${esc(H[e.h]||'')}</span></td>
 <td class="sym clk" data-sym="${esc(e.s)}" style="text-align:left"><b>${esc(e.s)}</b> <span class="mut">${esc((F.name||'').slice(0,28))}</span></td><td class="mut">${esc(e.q)}</td>
@@ -2292,7 +2292,10 @@ box.querySelectorAll('[data-erns]').forEach(b=>b.onclick=()=>{ ERNF.scope=b.data
 box.querySelectorAll('[data-ernd]').forEach(b=>b.onclick=()=>{ ERNF.days=+b.dataset.ernd; ernRender(); });
 wireSymbolClicks(box); }
 // Polymarket : marchés prédictifs (probabilités cotées par des parieurs, en dollars)
-function polyPanel(){ const P=WORLD&&WORLD.poly; const ts=WORLD&&WORLD.ts&&WORLD.ts.poly;
+function polyPanel(){ const today=new Date().toISOString().slice(0,10);
+// Événements échus et contrats déjà tranchés (0 % ou 100 %, souvent des dates passées) écartés
+const P=((WORLD&&WORLD.poly)||[]).filter(e=>!e.end||e.end>=today).map(e=>({...e,mk:e.mk.filter(m=>m.p>0.5&&m.p<99.5)})).filter(e=>e.mk.length);
+const ts=WORLD&&WORLD.ts&&WORLD.ts.poly;
 const body=P&&P.length?P.slice(0,10).map(e=>`<div style="padding:7px 9px;border-bottom:1px solid #14171b">
 <div style="display:flex;gap:8px;align-items:baseline"><a href="${safeUrl(e.u)}" target="_blank" rel="noopener" style="color:var(--txt);font-weight:600">${esc(e.t)}</a>
 <span class="mut" style="margin-left:auto;font-size:9px;white-space:nowrap">${e.end?'échéance '+new Date(e.end+'T12:00:00').toLocaleDateString('fr-FR'):''} · ${big(e.vol)} $ engagés</span></div>
