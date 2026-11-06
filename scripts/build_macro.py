@@ -299,14 +299,86 @@ def _actual_other(cur, title, when):
     return f"{v:.{dec}f}{suf}"
 
 
-def eco_consensus():
-    rows, seen = [], set()
-    for url in FF_URLS:
+# Chiffres publiés par le Bureau of Labor Statistics : disponibles dès 8 h 30 (New York),
+# souvent plusieurs heures avant leur reprise par FRED. API publique v1, sans clé (25 requêtes par jour).
+BLS = {
+    "Non-Farm Employment Change": ("CES0000000001", "diff", "K", 0),
+    "Unemployment Rate": ("LNS14000000", "level", "%", 1),
+    "Average Hourly Earnings m/m": ("CES0500000003", "pct1", "%", 1),
+    "CPI m/m": ("CUSR0000SA0", "pct1", "%", 1),
+    "Core CPI m/m": ("CUSR0000SA0L1E", "pct1", "%", 1),
+    "CPI y/y": ("CUUR0000SA0", "pct12", "%", 1),
+    "PPI m/m": ("WPSFD4", "pct1", "%", 1),
+}
+_BLS_CACHE = {}
+
+
+def _bls_series(ids):
+    need = [i for i in ids if i not in _BLS_CACHE]
+    if need:
+        r = requests.post("https://api.bls.gov/publicAPI/v1/timeseries/data/", json={"seriesid": need},
+                          headers={**UA, "Content-type": "application/json"}, timeout=30)
+        r.raise_for_status()
+        for sr in (r.json().get("Results") or {}).get("series", []):
+            obs = [(f"{x['year']}-{x['period'][1:]}", float(x["value"])) for x in sr.get("data", [])
+                   if str(x.get("period", "")).startswith("M") and x["period"] != "M13" and x.get("value") not in ("-", "")]
+            _BLS_CACHE[sr["seriesID"]] = sorted(obs)
+    return _BLS_CACHE
+
+
+def _actual_bls(title, when):
+    sid, how, suf, dec = BLS[title]
+    obs = _bls_series([sid]).get(sid) or []
+    if len(obs) < 13:
+        return None
+    ref = (when.replace(day=1) - timedelta(days=1)).strftime("%Y-%m")   # publication de novembre = chiffre d'octobre
+    if obs[-1][0] < ref:
+        return None
+    v = obs[-1][1]
+    if how == "diff":
+        v = v - obs[-2][1]
+    elif how == "pct1":
+        v = (v / obs[-2][1] - 1) * 100
+    elif how == "pct12":
+        prev = dict(obs).get(f"{int(obs[-1][0][:4]) - 1}{obs[-1][0][4:]}")
+        if not prev:
+            return None
+        v = (v / prev - 1) * 100
+    return f"{v:.0f}{suf}" if suf == "K" else f"{v:.{dec}f}{suf}"
+
+
+def _ff_events(url):
+    """Calendrier Forex Factory : JSON, puis XML en secours (même contenu, heures de New York)."""
+    r = requests.get(url, headers=UA, timeout=25)
+    if r.status_code == 200 and r.text.strip().startswith("["):
+        return r.json(), "json"
+    import xml.etree.ElementTree as ET
+    from zoneinfo import ZoneInfo
+    rx = requests.get(url.replace(".json", ".xml"), headers=UA, timeout=25)
+    rx.raise_for_status()
+    out = []
+    for ev in ET.fromstring(rx.content).iter("event"):
+        g = lambda k: (ev.findtext(k) or "").strip()
         try:
-            r = requests.get(url, headers=UA, timeout=25)
-            if r.status_code != 200:
-                continue
-            for e in r.json():
+            day = datetime.strptime(g("date"), "%m-%d-%Y")
+            tm = g("time")
+            t = datetime.strptime(tm, "%I:%M%p").time() if tm and tm[0].isdigit() else datetime.min.time()
+            dt = datetime.combine(day.date(), t, tzinfo=ZoneInfo("America/New_York"))
+        except Exception:
+            continue
+        out.append({"title": g("title"), "country": g("country"), "date": dt.isoformat(), "impact": g("impact"),
+                    "forecast": g("forecast"), "previous": g("previous")})
+    return out, "xml"
+
+
+def eco_consensus():
+    rows, seen, feeds = [], set(), {}
+    for url in FF_URLS:
+        week = "semaine suivante" if "next" in url else "semaine en cours"
+        try:
+            events, fmt = _ff_events(url)
+            feeds[week] = f"ok ({fmt}, {len(events)} événements)"
+            for e in events:
                 cur, imp = e.get("country"), e.get("impact")
                 if cur not in FF_COUNTRIES or imp not in ("High", "Medium"):
                     continue
@@ -317,10 +389,12 @@ def eco_consensus():
                 when = datetime.fromisoformat(e["date"]).astimezone(timezone.utc)
                 title = e.get("title", "")
                 actual = None
-                covered = (cur == "USD" and title in FF_TO_FRED and bool(KEY)) or (cur, title) in OTHER_ACTUAL
-                if cur == "USD" and title in FF_TO_FRED and KEY:
+                covered = (cur == "USD" and (title in FF_TO_FRED and bool(KEY) or title in BLS)) or (cur, title) in OTHER_ACTUAL
+                if cur == "USD" and title in BLS and when <= NOW:
+                    actual = safe(lambda: _actual_bls(title, when), f"BLS {title}")
+                if actual is None and cur == "USD" and title in FF_TO_FRED and KEY:
                     actual = safe(lambda: _actual(title, when), f"publié {title}")
-                elif (cur, title) in OTHER_ACTUAL:
+                elif actual is None and (cur, title) in OTHER_ACTUAL:
                     actual = safe(lambda: _actual_other(cur, title, when), f"publié {title}")
                 f, a = _num(e.get("forecast")), _num(actual)
                 rows.append({
@@ -332,12 +406,14 @@ def eco_consensus():
                     "act": actual, "cov": covered, "surp": round(a - f, 3) if a is not None and f is not None else None,
                 })
         except Exception as ex:
-            log(f"  ! Forex Factory {url.rsplit('_', 1)[-1]} : {ex}")
+            feeds[week] = f"indisponible ({str(ex)[:60]})"
+            log(f"  ! Forex Factory {week} : {ex}")
     rows.sort(key=lambda x: x["ts"])
-    log(f"ECO : {len(rows)} publications avec consensus ({sum(1 for x in rows if x['act'])} avec chiffre publié)")
-    return {"rows": rows, "src": "Consensus et précédent : Forex Factory (compilation non officielle, usage personnel). "
-                                "Chiffre publié : FRED (BLS, BEA, Fed), BCE, Bank of England et BNS. Les autres publications "
-                                "(ISM, PMI S&P Global…) n'ont pas de source gratuite : marquées « non couvert »."}
+    log(f"ECO : {len(rows)} publications avec consensus ({sum(1 for x in rows if x['act'])} avec chiffre publié) · {feeds}")
+    return {"rows": rows, "feeds": feeds,
+            "src": "Consensus et précédent : Forex Factory (compilation non officielle, usage personnel). "
+                   "Chiffre publié : Bureau of Labor Statistics (dès la publication), FRED (BEA, Fed), BCE, Bank of England et BNS. "
+                   "Les autres publications (ISM, PMI S&P Global…) n'ont pas de source gratuite : marquées « non couvert »."}
 
 
 # ─────────────────────────────────────────────────────────────────────────────
