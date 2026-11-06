@@ -33,6 +33,8 @@ NOW = datetime.now(timezone.utc)
 FORCE = os.getenv("WORLD_FORCE", "").lower() == "true"
 UA = {"User-Agent": "Mozilla/5.0 (terminal-ia; projet personnel)", "Accept": "application/json, text/csv, */*"}
 DAILY = timedelta(hours=20)
+RELAY_URL = os.getenv("RELAY_URL", "https://terminal-relais.299z7d8df6.workers.dev").rstrip("/")
+RELAY_KEY = os.getenv("RELAY_KEY", "").strip()
 
 
 def log(msg):
@@ -83,11 +85,61 @@ IMF_IND = {"gdpg": "NGDP_RPCH", "infl": "PCPIPCH", "debt": "GGXWDG_NGDP", "unemp
 
 
 def imf():
+    """FMI en direct ; s'il refuse le robot (pare-feu du site), copie DBnomics des mêmes Perspectives (même contenu)."""
+    try:
+        return imf_direct()
+    except Exception as e:
+        log(f"  ! FMI direct : {str(e)[:90]} — essai via le relais Cloudflare")
+    if RELAY_KEY:
+        try:
+            return imf_direct(via_relay=True)
+        except Exception as e:
+            log(f"  ! FMI via relais : {str(e)[:90]} — repli sur DBnomics")
+    else:
+        log("  Secret RELAY_KEY absent : relais non utilisé, repli sur DBnomics")
+    return imf_dbnomics()
+
+
+def imf_dbnomics():
     years = [str(NOW.year), str(NOW.year + 1)]
     out = {}
     for k, code in IMF_IND.items():
-        r = requests.get(f"https://www.imf.org/external/datamapper/api/v1/{code}", params={"periods": ",".join(years)},
-                         headers=UA, timeout=40)
+        off = 0
+        while True:
+            r = requests.get("https://api.db.nomics.world/v22/series/IMF/WEO:latest", headers=UA, timeout=60, params={
+                "dimensions": json.dumps({"weo-subject": [code]}), "observations": 1, "limit": 1000, "offset": off})
+            r.raise_for_status()
+            docs = (r.json().get("series") or {}).get("docs") or []
+            for d in docs:
+                dims = d.get("dimensions") or {}
+                a3 = dims.get("weo-country") or str(d.get("series_code", "")).split(".")[0]
+                num = ISO3.get(a3)
+                if not num or num < 0:
+                    continue
+                per = dict(zip(d.get("period") or [], d.get("value") or []))
+                vals = {y: round(float(per[y]), 2) for y in years if isinstance(per.get(y), (int, float))}
+                if vals:
+                    out.setdefault(str(num), {})[k] = vals
+            if len(docs) < 1000:
+                break
+            off += 1000
+        time.sleep(0.5)
+    if not out:
+        raise RuntimeError("DBnomics : aucune prévision")
+    log(f"FMI via DBnomics : {len(out)} pays")
+    return {"years": years, "items": out, "via": "DBnomics"}
+
+
+def imf_direct(via_relay=False):
+    years = [str(NOW.year), str(NOW.year + 1)]
+    out = {}
+    for k, code in IMF_IND.items():
+        if via_relay:
+            r = requests.get(f"{RELAY_URL}/imf", params={"code": code, "periods": ",".join(years)},
+                             headers={**UA, "X-Relay-Key": RELAY_KEY}, timeout=40)
+        else:
+            r = requests.get(f"https://www.imf.org/external/datamapper/api/v1/{code}", params={"periods": ",".join(years)},
+                             headers=UA, timeout=40)
         r.raise_for_status()
         vals = (r.json().get("values") or {}).get(code) or {}
         for a3, per in vals.items():
@@ -97,8 +149,10 @@ def imf():
             it = out.setdefault(str(num), {})
             it[k] = {y: round(float(per[y]), 2) for y in years if per.get(y) is not None}
         time.sleep(0.5)
-    log(f"FMI : {len(out)} pays, années {years}")
-    return {"years": years, "items": out}
+    if not out:
+        raise RuntimeError("réponse vide")
+    log(f"FMI{' via le relais' if via_relay else ''} : {len(out)} pays, années {years}")
+    return {"years": years, "items": out, "via": "FMI (relais Cloudflare)" if via_relay else "FMI"}
 
 
 # ── CFTC : rapport COT (positions des non-commerciaux, contrats à terme seuls) ─
@@ -201,15 +255,35 @@ def natural():
         out["err_usgs"] = str(e)[:100]
         log(f"  ! USGS : {e}")
     try:
-        r = requests.get("https://www.gdacs.org/gdacsapi/api/events/geteventlist/MAP", headers=UA, timeout=40)
-        r.raise_for_status()
+        # API de recherche (la route MAP répondait 400) ; repli sur le flux RSS officiel
         cut = (NOW - timedelta(days=14)).date().isoformat()
-        for f in r.json().get("features", []):
+        try:
+            r = requests.get("https://www.gdacs.org/gdacsapi/api/events/geteventlist/SEARCH", headers=UA, timeout=40, params={
+                "eventlist": "TC;FL;VO;DR;WF;EQ", "fromDate": cut, "toDate": NOW.date().isoformat(), "alertlevel": "Green;Orange;Red"})
+            r.raise_for_status()
+            feats = r.json().get("features", [])
+        except Exception as e1:
+            log(f"  ! GDACS recherche : {str(e1)[:80]} — flux RSS")
+            import xml.etree.ElementTree as ET
+            rx = requests.get("https://www.gdacs.org/xml/rss.xml", headers=UA, timeout=40)
+            rx.raise_for_status()
+            ns = {"gdacs": "http://www.gdacs.org", "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#"}
+            feats = []
+            for it in ET.fromstring(rx.content).iter("item"):
+                lat, lon = it.findtext("geo:Point/geo:lat", None, ns), it.findtext("geo:Point/geo:long", None, ns)
+                if lat is None or lon is None:
+                    continue
+                feats.append({"geometry": {"type": "Point", "coordinates": [float(lon), float(lat)]},
+                              "properties": {"eventtype": it.findtext("gdacs:eventtype", "", ns), "alertlevel": it.findtext("gdacs:alertlevel", "", ns),
+                                             "name": it.findtext("title", ""), "country": it.findtext("gdacs:country", "", ns),
+                                             "fromdate": it.findtext("gdacs:fromdate", "", ns), "todate": it.findtext("gdacs:todate", "", ns),
+                                             "url": {"report": it.findtext("link", "")}}})
+        for f in feats:
             p, g = f.get("properties", {}), f.get("geometry", {})
             if g.get("type") != "Point":
                 continue
             todate = str(p.get("todate") or p.get("fromdate") or "")[:10]
-            if todate < cut:
+            if todate and todate[:4].isdigit() and todate < cut:
                 continue
             out["gdacs"].append({"type": p.get("eventtype"), "lvl": p.get("alertlevel"), "t": p.get("name") or p.get("eventname"),
                                  "c": p.get("country"), "ll": [round(g["coordinates"][0], 2), round(g["coordinates"][1], 2)],
