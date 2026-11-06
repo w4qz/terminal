@@ -1836,7 +1836,7 @@ const fundTs=F.ts?ago(F.ts):'—';
 
 el.innerHTML=`
 <div id="secbar"><span class="t">${esc(sym)}</span><span class="px">${px!=null?npx(px,sym):'—'}</span><span class="${cls(pc)}" style="font-weight:600">${pc!=null?pct(pc):''}</span><span class="nm">${esc(name)}</span>${(()=>{ const b=bbgCode(sym); return b?`<span style="font-size:10px;color:var(--txt2);border:1px solid var(--line);padding:1px 6px;white-space:nowrap" title="${b.ok?'Code Bloomberg et FIGI fournis par OpenFIGI : '+esc(b.figi||''):'Code Bloomberg déduit de la place de cotation (pas encore confirmé par OpenFIGI)'}">${esc(b.c)}${b.ok?' ✓':''}</span>`:''; })()}
-<nav aria-label="Sections de la fiche">${[['GP','sec-gp','Graphique'],['DES','sec-des','Résumé'],['RV','sec-rv','Comparables'],['FA','sec-fa','Comptes'],['DVD','sec-dvd','Dividendes'],['CN','sec-cn','Actualités'],...(/[.=^]/.test(sym)?[]:[['CF','sec-cf','Dépôts SEC']]),...(/[.=^]/.test(sym)?[]:[['OMON','sec-omon','Options']])].map(([k,a,l])=>`<button type="button" data-jump="${a}" title="${l} (${k})">${l} <span style="color:var(--txt3);font-size:9px">${k}</span></button>`).join('')}</nav></div>
+<nav aria-label="Sections de la fiche">${[['GP','sec-gp','Graphique'],['DES','sec-des','Résumé'],['RV','sec-rv','Comparables'],['FA','sec-fa','Comptes'],['DVD','sec-dvd','Dividendes'],['CN','sec-cn','Actualités'],...(/[.=^]/.test(sym)?[]:[['CF','sec-cf','Dépôts SEC'],['ERN','sec-ern','Résultats']]),...(/[.=^]/.test(sym)?[]:[['OMON','sec-omon','Options']])].map(([k,a,l])=>`<button type="button" data-jump="${a}" title="${l} (${k})">${l} <span style="color:var(--txt3);font-size:9px">${k}</span></button>`).join('')}</nav></div>
 <div class="pnl" id="sec-des" style="margin-bottom:9px"><div class="statrow">
 <div class="stat"><span class="l">${esc(sym)}${F.sector?' · '+esc(SECT_FR[F.sector]||F.sector):''}</span><span class="n" id="secpx">${px!=null?npx(px,sym):'—'}${badge(st)}</span><span class="s">${esc(name)}</span></div>
 <div class="stat"><span class="l">VARIATION</span><span class="n ${cls(pc)}" id="secpc">${pc!=null?pct(pc):'—'}</span><span class="s">${esc(ccy)}</span></div>
@@ -1858,6 +1858,7 @@ el.innerHTML=`
 <div class="pnl" id="sec-rv" style="margin-bottom:9px"><h3>RV — Valeur relative</h3><div class="note">Chargement des pairs…</div></div>
 <div class="pnl" id="sec-fa" style="margin-bottom:9px"><h3>FA — Analyse financière</h3><div class="note">Chargement des états financiers…</div></div>
 ${/[.=^]/.test(sym)?'':'<div class="pnl" id="sec-cf" style="margin-bottom:9px"><h3>CF — Dépôts SEC</h3><div class="note">Chargement…</div></div>'}
+${/[.=^]/.test(sym)?'':'<div class="pnl" id="sec-ern" style="margin-bottom:9px"><h3>ERN — Résultats trimestriels</h3><div class="note">Chargement…</div></div>'}
 <div class="g g2" style="margin-bottom:9px"><div class="pnl" id="sec-dvd"><h3>DVD — Dividendes</h3><div class="note">Chargement…</div></div>
 <div class="pnl" id="sec-cn"><h3>CN — Actualités du titre</h3><div class="note">Chargement…</div></div></div>
 ${/[.=^]/.test(sym)?'':'<div class="pnl" id="sec-omon" style="margin-bottom:9px"><h3>OMON — Options</h3><div class="note">Chargement…</div></div>'}
@@ -1881,7 +1882,7 @@ Graphique : clôtures ${SEC.range==='5A'?'hebdomadaires':'quotidiennes'} Yahoo F
 el.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{ SEC.range=b.dataset.r; viewSecurity(); });
 el.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{ SEC[b.dataset.t]=!SEC[b.dataset.t]; viewSecurity(); });
 el.querySelectorAll('[data-jump]').forEach(b=>b.onclick=()=>{ const t=document.getElementById(b.dataset.jump); if(t){ const m=document.getElementById('main'); m.scrollTo({top:t.offsetTop-52,behavior:'smooth'}); } });
-rvRender(sym,F); faRender(sym); dvdRender(sym); cnRender(sym,nws); omonRender(sym); cfRender(sym);
+rvRender(sym,F); faRender(sym); dvdRender(sym); cnRender(sym,nws); omonRender(sym); cfRender(sym); secErnRender(sym);
 if(WORKER_URL) loadCandles(sym, F, px);
 }
 
@@ -2267,7 +2268,52 @@ function fomcDetail(d,M){ const W=M.wirp||{}, rg=W.range||[], m=(W.meetings||[])
 const rng=rg[0]!=null&&rg[1]!=null?`${nf(rg[0],2)} – ${nf(rg[1],2)} %`:null;
 let exp=''; if(m&&!past){ const p=Math.max(m.p_cut,m.p_hike); exp=m.p_cut>=50?`<span class="neg">baisse de 25 pb anticipée à ${m.p_cut} %</span>`:m.p_hike>=50?`<span class="pos">hausse de 25 pb anticipée à ${m.p_hike} %</span>`:`maintien anticipé à ${100-p} %${p?` (${m.p_cut?'baisse':'hausse'} : ${p} %)`:''}`; }
 return `<div class="mut" style="font-size:10px;margin-top:2px;line-height:1.5">Décision sur la fourchette des fed funds${rng?` (actuelle ${rng})`:''} · communiqué 14:00 New York (20:00 Paris), conférence de presse 14:30 (20:30)${[3,6,9,12].includes(mo)?' · <b>avec projections économiques et « dot plot »</b>':''}${exp?'<br>Marché (futures fed funds) : '+exp:''}</div>`; }
-const ECOP={all:false};
+const ECOP={all:false}, ERNF={scope:'all', days:14};
+// ERN — calendrier des résultats (Finnhub) : consensus BPA et CA, publié, surprise
+async function ernRender(){ const box=document.getElementById('m-ern'); if(!box) return; const d=await loadFH(); if(!document.getElementById('m-ern')) return;
+const E=(d&&d.earnings)||[];
+if(!E.length){ box.innerHTML=`<h3>ERN — Calendrier des résultats</h3><div class="note">${d?'Aucune publication relevée.':'Calendrier pas encore relevé : il apparaît après le prochain passage du robot lent (étape « Finnhub »), une fois le secret FINNHUB_API_KEY ajouté.'}</div>`; return; }
+const mine=new Set([...S.positions.map(p=>p.sym),...Object.values(S.watchlists||{}).flat()]);
+const today=new Date().toISOString().slice(0,10), lim=new Date(Date.now()+ERNF.days*864e5).toISOString().slice(0,10), from=new Date(Date.now()-3*864e5).toISOString().slice(0,10);
+const L=E.filter(e=>e.d>=from&&e.d<=lim&&(ERNF.scope==='all'||mine.has(e.s))).sort((a,b)=>a.d.localeCompare(b.d)||(SNAPSHOT.fundamentals[b.s]?.mcap||0)-(SNAPSHOT.fundamentals[a.s]?.mcap||0));
+const H={bmo:'avant ouverture',amc:'après clôture',dmh:'en séance'};
+const B=v=>v==null?'<span class="na">—</span>':Math.abs(v)>=1e9?nf(v/1e9,2)+' Md':Math.abs(v)>=1e6?nf(v/1e6,0)+' M':nf(v,0);
+box.innerHTML=`<h3>ERN — Calendrier des résultats<span class="rt">Finnhub · 3 jours passés et ${ERNF.days} jours à venir · ${L.length} publications</span></h3>
+<div class="ctl" style="align-items:center"><div class="rng" role="group" aria-label="Périmètre">${[['all','Tout le catalogue US'],['mine','Portefeuille et watchlist']].map(([k,l])=>`<button type="button" data-erns="${k}" class="${ERNF.scope===k?'on':''}">${l}</button>`).join('')}</div>
+<div class="rng" role="group" aria-label="Horizon" style="margin-left:8px">${[7,14,30].map(n=>`<button type="button" data-ernd="${n}" class="${ERNF.days===n?'on':''}">${n} j</button>`).join('')}</div></div>
+<div class="pbody flush" style="max-height:460px;overflow:auto"><table><caption class="sr-only">Calendrier des résultats</caption><thead><tr><th scope="col" style="text-align:left">Date</th><th scope="col" style="text-align:left">Société</th><th scope="col">Trimestre</th><th scope="col">BPA attendu</th><th scope="col">BPA publié</th><th scope="col">Surprise</th><th scope="col">CA attendu</th><th scope="col">CA publié</th></tr></thead><tbody>
+${L.map(e=>{ const F=SNAPSHOT.fundamentals[e.s]||{}, past=e.d<today;
+return `<tr${mine.has(e.s)?' style="background:rgba(77,143,214,.07)"':''}><td style="text-align:left;white-space:nowrap">${e.d===today?'<span class="pos">aujourd\'hui</span>':new Date(e.d+'T12:00:00').toLocaleDateString('fr-FR',{weekday:'short',day:'2-digit',month:'short'})} <span class="mut" style="font-size:9px">${esc(H[e.h]||'')}</span></td>
+<td class="sym clk" data-sym="${esc(e.s)}" style="text-align:left"><b>${esc(e.s)}</b> <span class="mut">${esc((F.name||'').slice(0,28))}</span></td><td class="mut">${esc(e.q)}</td>
+<td>${e.epsE!=null?nf(e.epsE,2):'<span class="na">—</span>'}</td><td style="font-weight:600">${e.epsA!=null?nf(e.epsA,2):past?'<span class="na">en attente</span>':'<span class="na">à venir</span>'}</td>
+<td class="${cls(e.surp)}">${e.surp!=null?(e.surp>0?'+':'')+nf(e.surp,1)+' %':'—'}</td><td>${B(e.revE)}</td><td>${B(e.revA)}</td></tr>`; }).join('')||'<tr><td class="na" colspan="8">Aucune publication sur la période.</td></tr>'}</tbody></table></div>
+<div class="note">BPA = bénéfice par action ; consensus Finnhub. La surprise compare le BPA publié au consensus. Lignes surlignées : titres de votre portefeuille ou de vos watchlists. Cliquez une société pour sa fiche.</div>`;
+box.querySelectorAll('[data-erns]').forEach(b=>b.onclick=()=>{ ERNF.scope=b.dataset.erns; ernRender(); });
+box.querySelectorAll('[data-ernd]').forEach(b=>b.onclick=()=>{ ERNF.days=+b.dataset.ernd; ernRender(); });
+wireSymbolClicks(box); }
+// Polymarket : marchés prédictifs (probabilités cotées par des parieurs, en dollars)
+function polyPanel(){ const P=WORLD&&WORLD.poly; const ts=WORLD&&WORLD.ts&&WORLD.ts.poly;
+const body=P&&P.length?P.slice(0,10).map(e=>`<div style="padding:7px 9px;border-bottom:1px solid #14171b">
+<div style="display:flex;gap:8px;align-items:baseline"><a href="${safeUrl(e.u)}" target="_blank" rel="noopener" style="color:var(--txt);font-weight:600">${esc(e.t)}</a>
+<span class="mut" style="margin-left:auto;font-size:9px;white-space:nowrap">${e.end?'échéance '+new Date(e.end+'T12:00:00').toLocaleDateString('fr-FR'):''} · ${big(e.vol)} $ engagés</span></div>
+${e.mk.slice(0,4).map(m=>`<div style="display:grid;grid-template-columns:1fr 120px 46px;gap:8px;align-items:center;margin-top:3px;font-size:11px">
+<span class="mut" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(e.mk.length>1?m.q:'Oui')}</span>
+<span style="height:6px;background:#1a1e23;border-radius:2px"><span style="display:block;height:6px;width:${Math.max(1,m.p)}%;background:#4d8fd6;border-radius:2px"></span></span>
+<b style="text-align:right">${nf(m.p,0)} %</b></div>`).join('')}</div>`).join('')
+:'<div class="note">Marchés prédictifs pas encore relevés : ils apparaissent après le prochain passage du robot rapide.</div>';
+return `<div class="pnl" id="m-poly"><h3>Polymarket — Marchés prédictifs<span class="rt">probabilités cotées${ts?' · '+fmtDT(ts):''}</span></h3><div class="pbody flush" style="max-height:520px;overflow:auto">${body}</div>
+<div class="note">Probabilités implicites des contrats Polymarket (prix du « oui »), sélection macro et géopolitique triée par volume du jour. Marché de paris en cryptomonnaie, non régulé : un signal d'opinion, pas une prévision officielle.</div></div>`; }
+// CFTC COT : positions nettes des spéculateurs (non-commerciaux)
+function cotPanel(){ const C=WORLD&&WORLD.cot; const ts=WORLD&&WORLD.ts&&WORLD.ts.cot;
+const sp=h=>{ if(!h||h.length<2) return ''; const v=h.map(x=>x[1]), lo=Math.min(...v), hi=Math.max(...v), W=70, H=16;
+return `<svg width="${W}" height="${H}" aria-hidden="true"><polyline fill="none" stroke="${v[v.length-1]>=0?'#2fbf6b':'#e04a4a'}" stroke-width="1.2" points="${v.map((y,i)=>`${(i/(v.length-1)*W).toFixed(1)},${(H-1-(hi>lo?(y-lo)/(hi-lo):.5)*(H-2)).toFixed(1)}`).join(' ')}"/></svg>`; };
+const body=C&&C.length?`<table><caption class="sr-only">Positions des spéculateurs</caption><thead><tr><th scope="col" style="text-align:left">Contrat</th><th scope="col">Position nette</th><th scope="col">Sur 1 sem.</th><th scope="col">% de l'OI</th><th scope="col" style="text-align:left">Extrême 3 ans</th><th scope="col">52 sem.</th></tr></thead><tbody>
+${C.map(c=>`<tr><th scope="row" style="text-align:left;font-weight:400;color:var(--txt)">${esc(c.n)} <span class="mut" style="font-size:9px">${esc(c.g)}</span></th>
+<td class="${cls(c.net)}" style="font-weight:600">${c.net>0?'+':''}${nf(c.net,0)}</td><td class="${cls(c.chg)}">${c.chg>0?'+':''}${nf(c.chg,0)}</td><td>${c.pct_oi!=null?nf(c.pct_oi,1)+' %':'—'}</td>
+<td style="text-align:left"><span title="${c.rank} : 0 = position la plus vendeuse des 3 dernières années, 100 = la plus acheteuse" style="display:inline-block;width:80px;height:6px;background:#1a1e23;border-radius:2px;position:relative;vertical-align:middle"><span style="position:absolute;left:calc(${c.rank}% - 3px);top:-2px;width:6px;height:10px;border-radius:1px;background:${c.rank>=85?'#e04a4a':c.rank<=15?'#2fbf6b':'#dde3ea'}"></span></span> <span class="mut" style="font-size:9px">${c.rank}</span></td>
+<td>${sp(c.h)}</td></tr>`).join('')}</tbody></table>`:'<div class="note">Rapport COT pas encore relevé : il apparaît après le prochain passage du robot rapide.</div>';
+return `<div class="pnl" id="m-cot"><h3>COT — Positionnement des spéculateurs<span class="rt">CFTC · rapport du ${C&&C[0]?new Date(C[0].d+'T12:00:00').toLocaleDateString('fr-FR'):'—'}</span></h3><div class="pbody flush">${body}</div>
+<div class="note">Contrats acheteurs moins vendeurs détenus par les non-commerciaux (fonds, spéculateurs), publiés chaque vendredi pour le mardi précédent. Un positionnement proche de son extrême sur 3 ans (repère rouge ou vert) signale souvent un marché encombré, exposé à un retournement.</div></div>`; }
 function viewMacro(){
 const el=document.getElementById('v-macro');
 if(!MACRO){ el.innerHTML=`<div class="pnl"><div class="note">Les données macro ne sont pas encore générées. Elles apparaîtront après le prochain passage du robot GitHub (fichier <code>macro.json</code>, script <code>build_macro.py</code>).</div></div>`+ecoPanelHtml(); wireEco(el); return; }
@@ -2327,9 +2373,11 @@ ${cons?`<table><caption class="sr-only">Calendrier économique avec consensus</c
 <div class="pnl"><h3>ECO — Calendrier US à 4 semaines<span class="rt">FRED · Federal Reserve</span></h3><div class="pbody flush"><table><caption class="sr-only">Calendrier des publications</caption><tbody>${cal||'<tr><td class="na">aucune publication</td></tr>'}</tbody></table></div></div>
 <div class="pnl" id="m-wirp"><h3>WIRP — Probabilités des décisions de la Fed<span class="rt"><span style="color:var(--hot)">estimation indicative, méthode simplifiée</span> · futures fed funds · pas CME FedWatch</span></h3><div class="pbody">${wirp}</div></div>
 <div class="pnl" id="m-btmm"><h3>BTMM — Tableau de bord monétaire US<span class="rt">valeur · variation · date</span></h3><div class="pbody flush"><table><caption class="sr-only">Tableau de bord monétaire</caption><tbody>${bt}</tbody></table></div></div>
+<div class="pnl span2" id="m-ern"><h3>ERN — Calendrier des résultats</h3><div class="note">Chargement…</div></div>
+${polyPanel()}${cotPanel()}
 <div class="pnl span2" id="m-gc"><h3>GC — Courbes des taux souveraines<span class="rt">méthodologies différentes : US = rendements à maturité constante (CMT), zone euro = zéro-coupon AAA, autres pays = sources nationales · US, zone euro, Allemagne, France, Italie, Royaume-Uni, Japon, Suisse · survolez la courbe</span></h3><div class="pbody" id="gcbody">${gcHtml()}</div></div>
 </div>`;
-wireGC(el); drawGC();
+wireGC(el); drawGC(); ernRender();
 { const b=document.getElementById('ecoall'); if(b) b.onclick=()=>{ ECOP.all=!ECOP.all; const y=document.getElementById('main').scrollTop; viewMacro(); document.getElementById('main').scrollTop=y; }; }
 el.insertAdjacentHTML('beforeend',ecoPanelHtml()); wireEco(el);
 }
@@ -2355,6 +2403,7 @@ const rows=[
 ['Macro : ECO, WIRP, GC US/euro, BTMM','macro.json',MACRO&&MACRO.generated_at,S30,true],
 ['Courbes souveraines','curves.json',CURVES_TS,S30,false],
 ['Carte : points chauds et recherche','geo.json',GEO_TS,S30,false],
+['Monde : BRI, FMI, COT, Polymarket, catastrophes','world.json',WORLD_TS,S30,false],
 ['Fondamentaux (roulement)','fundamentals.json',FUND_TS,SLOW,false],
 ['Codes Bloomberg (OpenFIGI)','figi.json',FIGI_TS,SLOW,false],
 ['Séries économiques','economics.json',ECON_TS,DAY,false],
@@ -2628,7 +2677,7 @@ RV:{d:'Valeur relative face aux pairs',t:1}, FA:{d:'Analyse financière sur 4 ex
 OMON:{d:'Chaîne d\'options (titres US)',t:1}, CN:{d:'Actualités du titre',t:1}, EQS:{d:'Filtre d\'actions (screener)',go:'eqs'}, COMP:{d:'Comparaison de performances (base 100)',t:2},
 WEI:{d:'Marchés mondiaux',go:'mkt'}, IMAP:{d:'Carte des marchés',go:'mkt',a:'mkt-hm'},
 ECO:{d:'Calendrier et chiffres économiques',go:'macro',a:'m-eco'}, WIRP:{d:'Probabilités des décisions de la Fed',go:'macro',a:'m-wirp'},
-GC:{d:'Courbes des taux',go:'macro',a:'m-gc'}, MAP:{d:'Carte du monde : macro, pétrole, géopolitique',go:'map',a:'g-map'}, CB:{d:'Banques centrales : taux, réunions, attentes',go:'map',a:'g-cb'}, RES:{d:'Recherche publique des banques centrales et institutions',go:'map',a:'g-res'}, BTMM:{d:'Tableau de bord monétaire US',go:'macro',a:'m-btmm'},
+GC:{d:'Courbes des taux',go:'macro',a:'m-gc'}, MAP:{d:'Carte du monde : macro, pétrole, géopolitique',go:'map',a:'g-map'}, COT:{d:'Positionnement des spéculateurs (CFTC)',go:'macro',a:'m-cot'}, ERN:{d:'Calendrier des résultats et consensus (Finnhub)',go:'macro',a:'m-ern'}, POLY:{d:'Marchés prédictifs (Polymarket)',go:'macro',a:'m-poly'}, CB:{d:'Banques centrales : taux, réunions, attentes',go:'map',a:'g-cb'}, RES:{d:'Recherche publique des banques centrales et institutions',go:'map',a:'g-res'}, BTMM:{d:'Tableau de bord monétaire US',go:'macro',a:'m-btmm'},
 ECST:{d:'Indicateurs économiques par pays',go:'macro',a:'m-econ'},
 PORT:{d:'Portefeuille, risque et adéquation',go:'pf'}, BLP:{d:'Launchpad : écran divisé en 2 ou 4 panneaux',go:'lp'}, TOP:{d:'Principales actualités',go:'news'}, N:{d:'Actualités',go:'news'},
 SECF:{d:'Recherche de titres',go:'srch'}, HELP:{d:'Liste des fonctions',help:1}
@@ -2964,7 +3013,8 @@ const words=String(Fn.name||un.n||'').replace(/[,.()]/g,' ').split(/\s+/).filter
 const reName=words.length?new RegExp('\\b('+words.map(w=>w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|')+')\\b','i'):null;
 const reTk=root.length>=2?new RegExp('(^|[^A-Za-z])\\$?'+root+'([^A-Za-z]|$)'):null;
 const yhAll=yh.length; yh=yh.filter(n=>(reTk&&reTk.test(n.title))||(reName&&reName.test(n.title)));
-const items=[...local.map(n=>({h:n.h,w:n.w,src:n.src,ts:n.ts,url:n.url})),
+const fh=((await loadFH())||{}).co, fhn=(fh&&fh[sym]&&fh[sym].news)||[]; if(S.focus!==sym) return;
+const items=[...local.map(n=>({h:n.h,w:n.w,src:n.src,ts:n.ts,url:n.url})),...fhn.map(n=>({h:n.h,src:(n.src||'Finnhub'),ts:n.ts,url:n.url})),
 ...yh.map(n=>({h:n.title,src:n.publisher||'Yahoo Finance',ts:new Date(n.providerPublishTime*1000).toISOString(),url:n.link}))]
 .filter((n,i,a)=>a.findIndex(m=>m.h===n.h)===i).sort((a,b)=>String(b.ts).localeCompare(String(a.ts))).slice(0,20);
 box.innerHTML=`<h3>CN — Actualités du titre<span class="rt">${items.length} article${items.length>1?'s':''} citant ${esc(words[0]||root)}${yhAll>yh.length?` · ${yhAll-yh.length} hors sujet écartés`:''}</span></h3><div class="pbody flush" style="max-height:420px;overflow-y:auto">
@@ -3335,10 +3385,15 @@ return d>maxDays?` <span class="st st-STALE" title="Dernière donnée au ${esc(S
 13 ter. SOURCES PUBLIQUES : SEC EDGAR (CF), Banque mondiale (carte), OpenFIGI (codes Bloomberg)
 ═══════════════════════════════════════════════════════════════════════*/
 let SECD=null, SECD_P=null, WB=null, WB_TS=null, FIGI={}, FIGI_TS=null;
+let WORLD=null, WORLD_TS=null;
+async function loadWorld(){ try{ const r=await fetch('world.json?t='+Date.now(),{cache:'no-store'}); if(!r.ok) throw new Error('HTTP '+r.status);
+const d=await r.json(); if(WORLD_TS===d.generated_at) return false; WORLD=d; WORLD_TS=d.generated_at; return true; }catch(e){ console.info('world.json indisponible ('+e.message+')'); return false; } }
 async function loadWB(){ try{ const r=await fetch('worldbank.json?t='+Date.now(),{cache:'no-store'}); if(!r.ok) throw new Error('HTTP '+r.status);
 const d=await r.json(); if(WB_TS===d.generated_at) return false; WB=d; WB_TS=d.generated_at; return true; }catch(e){ console.info('worldbank.json indisponible ('+e.message+')'); return false; } }
 async function loadFigi(){ try{ const r=await fetch('figi.json?t='+Date.now(),{cache:'no-store'}); if(!r.ok) throw new Error('HTTP '+r.status);
 const d=await r.json(); if(FIGI_TS===d.generated_at) return false; FIGI=d.items||{}; FIGI_TS=d.generated_at; return true; }catch(e){ return false; } }
+let FH=null, FH_P=null;
+function loadFH(){ if(!FH_P) FH_P=fetch('finnhub.json?t='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(d=>{ FH=d; return d; }).catch(()=>null); return FH_P; }
 function loadSec(){ if(!SECD_P) SECD_P=fetch('sec.json?t='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(d=>{ SECD=d; return d; }).catch(()=>null); return SECD_P; }
 // Code Bloomberg : OpenFIGI quand il est connu, sinon déduit de la place de cotation Yahoo
 const BBG_OF={'':'US',PA:'FP',L:'LN',DE:'GY',F:'GF',MI:'IM',AS:'NA',MC:'SM',SW:'SE',BR:'BB',LS:'PL',ST:'SS',CO:'DC',OL:'NO',HE:'FH',IR:'ID',VI:'AV',T:'JT',HK:'HK',TO:'CN',AX:'AU',SA:'BZ',NS:'IN',KS:'KS',TW:'TT'};
@@ -3350,6 +3405,16 @@ if(BBG_IDX[sym]) return {c:BBG_IDX[sym],ok:false};
 if(/[=^]/.test(sym)) return null; const [b,suf='']=sym.split('.'); const ex=BBG_OF[suf]; if(ex==null) return null;
 return {c:`${b.replace('-','/')} ${ex} Equity`,ok:false}; }
 // CF — dépôts SEC (fiche d'un titre américain)
+async function secErnRender(sym){ const box=document.getElementById('sec-ern'); if(!box) return; const d=await loadFH(); if(S.focus!==sym) return;
+const co=d&&d.co&&d.co[sym], nx=d&&d.earnings&&d.earnings.filter(e=>e.s===sym).sort((a,b)=>a.d.localeCompare(b.d)).find(e=>e.d>=new Date().toISOString().slice(0,10));
+if(!co&&!nx){ box.innerHTML=`<h3>ERN — Résultats trimestriels</h3><div class="note">${d?'Pas encore lu pour ce titre : Finnhub couvre les grandes sociétés américaines par roulement.':'Données Finnhub pas encore relevées (secret FINNHUB_API_KEY).'}</div>`; return; }
+const S4=(co&&co.sur)||[];
+box.innerHTML=`<h3>ERN — Résultats trimestriels<span class="rt">Finnhub</span></h3><div class="statrow" style="padding:8px 9px">
+<div class="stat"><span class="l">PROCHAINE PUBLICATION</span><span class="n" style="font-size:15px">${nx?new Date(nx.d+'T12:00:00').toLocaleDateString('fr-FR',{weekday:'short',day:'2-digit',month:'short'}):'—'}</span><span class="s">${nx?esc(nx.q)+(nx.h==='bmo'?' · avant ouverture':nx.h==='amc'?' · après clôture':''):'hors fenêtre de 30 jours'}</span></div>
+<div class="stat"><span class="l">BPA ATTENDU</span><span class="n">${nx&&nx.epsE!=null?nf(nx.epsE,2):'—'}</span><span class="s">consensus</span></div>
+<div class="stat"><span class="l">BATTU / MANQUÉ (4 TRIM.)</span><span class="n">${S4.length?S4.filter(x=>x.sp>0).length+' / '+S4.filter(x=>x.sp<0).length:'—'}</span><span class="s">BPA publié contre consensus</span></div></div>
+${S4.length?`<table><thead><tr><th scope="col" style="text-align:left">Trimestre</th><th scope="col">BPA attendu</th><th scope="col">BPA publié</th><th scope="col">Surprise</th></tr></thead><tbody>
+${S4.map(x=>`<tr><td style="text-align:left">${esc(x.q)} <span class="mut" style="font-size:9px">${esc(x.p||'')}</span></td><td>${x.e!=null?nf(x.e,2):'—'}</td><td style="font-weight:600">${x.a!=null?nf(x.a,2):'—'}</td><td class="${cls(x.sp)}">${x.sp!=null?(x.sp>0?'+':'')+nf(x.sp,1)+' %':'—'}</td></tr>`).join('')}</tbody></table>`:''}`; }
 async function cfRender(sym){ const box=document.getElementById('sec-cf'); if(!box) return;
 const d=await loadSec(), it=d&&d.items&&d.items[sym];
 if(!it||!it.filings){ box.innerHTML=`<h3>CF — Dépôts SEC</h3><div class="note">${!d?'Dépôts SEC pas encore relevés : ils apparaissent après les prochains passages du robot (étape « Dépôts SEC »).':it&&it.none?'Société introuvable dans la base de la SEC (titre étranger coté aux États-Unis ou fonds).':'Pas encore lus pour ce titre : le robot couvre le catalogue américain par roulement (environ 2 heures).'}</div>`; return; }
@@ -3383,7 +3448,7 @@ const ISO_IDX={840:'SPX',250:'CAC',276:'DAX',826:'UKX',392:'N225',156:'SHCOMP',3
 const EA=new Set([40,56,100,191,196,233,246,250,276,300,372,380,428,440,442,470,528,620,703,705,724]);   // zone euro (Bulgarie depuis 2026)
 const MAP_METRICS={y10:{l:'Taux 10 ans',suf:'10Y',ea:null,div:false},infl:{l:'Inflation',suf:'IRYY',ea:'EUIRYY',div:false,wb:'infl'},
 rate:{l:'Taux directeur',suf:'INTR',ea:'EUINTR',div:false},gdp:{l:'PIB (a/a)',suf:'GDPYY',ea:null,div:true,wb:'gdpg'},eq:{l:'Bourse du jour',div:true},
-gdpusd:{l:'PIB (Md$)',wb:'gdp',log:true},debt:{l:'Dette publique',wb:'debt'},unemp:{l:'Chômage',wb:'unemp'},ca:{l:'Solde courant',wb:'ca',div:true}};
+gdpf:{l:'Croissance prévue (FMI)',imf:'gdpg',div:true},inflf:{l:'Inflation prévue (FMI)',imf:'infl'},gdpusd:{l:'PIB (Md$)',wb:'gdp',log:true},debt:{l:'Dette publique',wb:'debt'},unemp:{l:'Chômage',wb:'unemp'},ca:{l:'Solde courant',wb:'ca',div:true}};
 // Vue d'ouverture de la carte : PIB (Md$), calques Macro + Pétrole + Routes commerciales + Géopolitique, globe centré Europe / Afrique
 const MAPS={metric:'gdpusd', layers:new Set(['macro','trade','oil','geo']), sel:250, hot:null, proj:'globe', rot:[-20,-35], k:1, auto:false};
 // Zones de conflit armé actif : liste indicative revue à la main (UCDP / ACLED / presse), à mettre à jour.
@@ -3417,6 +3482,11 @@ if(m==='eq'){ const s=ISO_IDX[iso], q=s&&SNAPSHOT.quotes[s]; return q&&q.pct!=nu
 const M=MAP_METRICS[m], p=ISO_PFX[iso]; let e=M.suf&&p&&ecoGet(p+M.suf);
 if(!e&&M.ea&&EA.has(iso)) e=ecoGet(M.ea);
 if(e&&e.last!=null) return {v:e.last,code:e.code,lab:ecoFmt(e.last,e)};
+// Taux directeur : BRI pour les pays sans série ECONOMICS
+if(m==='rate'&&WORLD&&WORLD.bis){ const b=Object.values(WORLD.bis).find(x=>x.iso===iso)||(EA.has(iso)&&WORLD.bis.XM); if(b) return {v:b.v,lab:nf(b.v,2)+' % (BRI, '+b.d+')'}; }
+// Prévisions du FMI (année prochaine)
+if(M.imf){ const it=WORLD&&WORLD.imf&&WORLD.imf.items&&WORLD.imf.items[String(iso)], yr=WORLD&&WORLD.imf&&WORLD.imf.years[1], v=it&&it[M.imf]&&it[M.imf][yr];
+return v!=null?{v,lab:nf(v,1)+' % ('+yr+', prévision FMI)'}:null; }
 // Sinon : Banque mondiale (données annuelles, tous les pays)
 const w=M.wb&&wbVal(iso,M.wb); if(!w) return null; const u=WB.ind[M.wb].u;
 return {v:M.log?Math.log10(Math.max(1,w.v)):w.v, lab:(u==='Md$'?nf(w.v,0)+' Md$':nf(w.v,1)+(u.startsWith('%')?' %':' '+u))+' ('+w.y+', Banque mondiale)'}; }
@@ -3431,7 +3501,7 @@ const hs=(GEO&&GEO.hotspots)||[];
 el.innerHTML=`<div style="display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:10px">
 <div class="pnl" id="g-map"><h3>MAP — Carte du monde<span class="rt">cliquez un pays pour sa fiche, un point rouge pour ses titres</span></h3>
 <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding:7px 9px;border-bottom:1px solid var(--line)">
-<span class="mut" style="font-size:9px">CALQUES</span>${chip(MAPS.layers.has('macro'),'data-ml="macro"','■ Macro')}${chip(MAPS.layers.has('oil'),'data-ml="oil"','◆ Pétrole')}${chip(MAPS.layers.has('conf'),'data-ml="conf"','▨ Conflits')}${chip(MAPS.layers.has('trade'),'data-ml="trade"','〰 Routes commerciales')}${chip(MAPS.layers.has('geo'),'data-ml="geo"','● Géopolitique')}
+<span class="mut" style="font-size:9px">CALQUES</span>${chip(MAPS.layers.has('macro'),'data-ml="macro"','■ Macro')}${chip(MAPS.layers.has('oil'),'data-ml="oil"','◆ Pétrole')}${chip(MAPS.layers.has('conf'),'data-ml="conf"','▨ Conflits')}${chip(MAPS.layers.has('trade'),'data-ml="trade"','〰 Routes commerciales')}${chip(MAPS.layers.has('geo'),'data-ml="geo"','● Géopolitique')}${chip(MAPS.layers.has('nat'),'data-ml="nat"','▲ Catastrophes')}
 <span style="width:1px;height:16px;background:var(--line);margin:0 4px"></span><span class="mut" style="font-size:9px">COLORIER PAR</span>
 ${Object.entries(MAP_METRICS).map(([k,m])=>chip(MAPS.metric===k,`data-mm="${k}"`,m.l)).join('')}
 <span id="g-leg" style="margin-left:auto;font-size:9px;color:var(--txt2)"></span></div>
@@ -3501,6 +3571,27 @@ const hitc=add('circle',{fill:'transparent',r:Math.max(16,r*2)},null,g);   // zo
 const tt=document.createElementNS(NS,'title'); tt.textContent=`${h.n} — ${h.n24} articles sur 24 h`; dot.appendChild(tt);
 const lab=add('text',{fill:'#ffb3b3','font-size':10,'font-family':F,'text-anchor':'end','pointer-events':'none'},h.n,g);
 g.addEventListener('click',ev=>{ if(moved) return; ev.stopPropagation(); MAPS.hot=h.k; mapArts(); mapPop(h); }); return [g,halo,dot,lab,h,r,hitc]; });
+// Catastrophes naturelles : séismes (USGS), alertes GDACS, événements NASA EONET
+const NATD=MAPS.layers.has('nat')&&WORLD&&WORLD.natural?WORLD.natural:null;
+const natCol=l=>l==='Red'?'#ff3b3b':l==='Orange'?'#ff9a1f':'#5fd35f';
+const GD_T={EQ:'Séisme',TC:'Cyclone',FL:'Inondation',VO:'Volcan',DR:'Sécheresse',WF:'Incendie',TS:'Tsunami'};
+const nats=[];
+if(NATD){
+for(const q of NATD.quakes||[]){ const r=2+Math.pow(q.m-4,1.4)*1.6, c=add('circle',{r,fill:q.m>=7?'#ff3b3b':q.m>=6?'#ff9a1f':'#ffd23f',opacity:.75,stroke:'#000','stroke-width':.6,style:'cursor:pointer'});
+const t=document.createElementNS(NS,'title'); t.textContent=`Séisme M${q.m} — ${q.t||''}`; c.appendChild(t);
+c.addEventListener('click',ev=>{ if(moved) return; ev.stopPropagation(); mapPopNat(q.ll,`<b>Séisme de magnitude ${nf(q.m,1)}</b>`,`${esc(q.t||'')}<br><span class="mut">${new Date(q.ts).toLocaleString('fr-FR')} · profondeur ${q.depth} km${q.tsunami?' · alerte tsunami':''}</span>`,q.u,'USGS'); });
+nats.push([c,q.ll,'c']); }
+for(const g of NATD.gdacs||[]){ if(g.type==='EQ') continue; const el=add('g',{style:'cursor:pointer'}), col=natCol(g.lvl);
+add('rect',{x:-6,y:-6,width:12,height:12,rx:2,fill:col,stroke:'#000','stroke-width':.8,transform:'rotate(45)'},null,el);
+add('text',{x:0,y:3.5,'text-anchor':'middle','font-size':8,'font-weight':700,fill:'#000','font-family':F},g.type||'?',el);
+const t=document.createElementNS(NS,'title'); t.textContent=`${GD_T[g.type]||g.type} — alerte ${g.lvl||''} — ${g.t||''}`; el.appendChild(t);
+el.addEventListener('click',ev=>{ if(moved) return; ev.stopPropagation(); mapPopNat(g.ll,`<b style="color:${col}">${esc(GD_T[g.type]||g.type)} · alerte ${esc(g.lvl||'')}</b>`,`${esc(g.t||'')}${g.c?' — '+esc(g.c):''}<br><span class="mut">du ${esc(g.from)} au ${esc(g.to)}</span>`,g.u,'GDACS (ONU / Commission européenne)'); });
+nats.push([el,g.ll,'g']); }
+for(const e of NATD.eonet||[]){ const col=/fire/i.test(e.cat)?'#ff7a1a':/volcan/i.test(e.cat)?'#ff3b3b':/storm/i.test(e.cat)?'#7fb0d8':/ice/i.test(e.cat)?'#dde3ea':'#bb98e6';
+const p=add('path',{d:'M0 -5L4.5 3.5L-4.5 3.5Z',fill:col,stroke:'#000','stroke-width':.6,style:'cursor:pointer'});
+const t=document.createElementNS(NS,'title'); t.textContent=`${e.cat||''} — ${e.t||''}`; p.appendChild(t);
+p.addEventListener('click',ev=>{ if(moved) return; ev.stopPropagation(); mapPopNat(e.ll,`<b style="color:${col}">${esc(e.cat||'Événement naturel')}</b>`,`${esc(e.t||'')}<br><span class="mut">dernier relevé ${esc(e.d||'')}</span>`,e.u,'NASA EONET'); });
+nats.push([p,e.ll,'g']); } }
 function render(){
 if(globe){ proj.rotate(MAPS.rot).scale(base*MAPS.k); glow.setAttribute('r',base*MAPS.k+14); }
 else { proj.scale(flatS*MAPS.k).translate([flatT[0]+(MAPS.pan?MAPS.pan[0]:0),flatT[1]+(MAPS.pan?MAPS.pan[1]:0)]); }
@@ -3513,9 +3604,16 @@ const c=[-MAPS.rot[0],-MAPS.rot[1]], vis=ll=>!globe||d3.geoDistance(ll,c)<Math.P
 for(const [g,dm,tx,[n,lo2,la,v,dx,dy]] of chokes){ const on=vis([lo2,la]); g.style.display=on?'':'none'; if(!on) continue;
 const [x,y]=proj([lo2,la]), s=4+Math.sqrt(v)*1.5; dm.setAttribute('d',`M${x} ${y-s}L${x+s} ${y}L${x} ${y+s}L${x-s} ${y}Z`);
 tx.setAttribute('x',globe?x+s+3:x+dx); tx.setAttribute('y',globe?y+3:y+dy); }
+for(const [el,ll,kind] of nats){ const on=vis(ll); el.style.display=on?'':'none'; if(!on) continue; const [x,y]=proj(ll);
+if(kind==='c'){ el.setAttribute('cx',x); el.setAttribute('cy',y); } else el.setAttribute('transform',`translate(${x},${y})`); }
 for(const [g,halo,dot,lab,h,r,hitc] of hots){ const on=vis(h.ll); g.style.display=on?'':'none'; if(!on) continue; const [x,y]=proj(h.ll);
 for(const e of [halo,dot,hitc]){ e.setAttribute('cx',x); e.setAttribute('cy',y); } lab.setAttribute('x',x-r-4); lab.setAttribute('y',y-r-2); } }
 MAP_POPH=null;
+function mapPopNat(ll,title,body,url,src){ MAP_POPH={ll}; let pop=w.querySelector('.mpop'); if(!pop){ pop=document.createElement('div'); pop.className='mpop'; w.appendChild(pop);
+pop.style.cssText='position:absolute;z-index:6;width:340px;max-height:320px;overflow:auto;background:#0b0e11;border:1px solid #3a424c;box-shadow:0 6px 24px rgba(0,0,0,.6);font-size:11px'; }
+pop.innerHTML=`<div style="display:flex;align-items:center;gap:8px;padding:7px 9px;border-bottom:1px solid var(--line)">${title}<button type="button" aria-label="Fermer" style="margin-left:auto;background:none;border:0;color:var(--txt2);cursor:pointer;font-size:14px">×</button></div>
+<div style="padding:7px 9px;line-height:1.5">${body}</div><div class="note" style="padding:4px 9px 8px">Source : ${esc(src)}${url?` · <a href="${safeUrl(url)}" target="_blank" rel="noopener">fiche détaillée ↗</a>`:''}</div>`;
+pop.querySelector('button').onclick=()=>{ MAP_POPH=null; pop.remove(); }; placePop(); }
 function mapPop(h){ MAP_POPH=h; let pop=w.querySelector('.mpop'); if(!pop){ pop=document.createElement('div'); pop.className='mpop'; w.appendChild(pop);
 pop.style.cssText='position:absolute;z-index:6;width:340px;max-height:320px;overflow:auto;background:#0b0e11;border:1px solid #3a424c;box-shadow:0 6px 24px rgba(0,0,0,.6);font-size:11px'; }
 pop.innerHTML=`<div style="display:flex;align-items:center;gap:8px;padding:7px 9px;border-bottom:1px solid var(--line)"><b>${esc(h.n)}</b><span class="mut">${nf(h.n24||0,0)} articles / 24 h${h.trend!=null&&(h.prev24||0)>=20?` · <span class="${h.trend>15?'neg':h.trend<-15?'pos':''}">${h.trend>0?'+':''}${nf(h.trend,0)} %</span>`:''}</span>
@@ -3584,6 +3682,12 @@ const idx=ISO_IDX[iso], q=idx&&SNAPSHOT.quotes[idx];
 const row=e=>`<tr class="clk" data-eco="${esc(e.code)}" tabindex="0" role="button"><th scope="row" style="text-align:left;font-weight:400;color:var(--txt)">${esc(e.n)}</th><td style="font-weight:600">${ecoFmt(e.last,e)}</td><td class="mut" style="font-size:10px">${ecoPeriod(e,e.date)}</td></tr>`;
 el.innerHTML=`<h3>${esc(name.toUpperCase())}<span class="rt">pays sélectionné</span></h3>
 ${q?`<div class="pbody" style="padding-bottom:0"><div class="kv"><span class="k">${esc(idx)}</span><span class="v"><b>${npx(q.p,idx)}</b> <span class="${cls(q.pct)}">${pct(q.pct)}</span></span></div></div>`:''}
+${(()=>{ const I=WORLD&&WORLD.imf, it=I&&I.items[String(iso)]; if(!it) return ''; const [y0,y1]=I.years;
+const L={gdpg:'Croissance du PIB',infl:'Inflation',unemp:'Chômage',debt:'Dette publique (% PIB)',ca:'Solde courant (% PIB)'};
+const rows=Object.keys(L).filter(k=>it[k]); if(!rows.length) return '';
+return `<div class="pbody" style="padding-top:4px"><div class="kv"><span class="k mut" style="font-size:9px">PRÉVISIONS FMI</span><span class="v mut" style="font-size:9px">${y0} · ${y1}</span></div>${rows.map(k=>`<div class="kv"><span class="k">${L[k]}</span><span class="v">${it[k][y0]!=null?nf(it[k][y0],1):'—'} · <b>${it[k][y1]!=null?nf(it[k][y1],1):'—'}</b> %</span></div>`).join('')}</div>`; })()}
+${(()=>{ const b=WORLD&&WORLD.bis&&(Object.values(WORLD.bis).find(x=>x.iso===iso)||(EA.has(iso)?WORLD.bis.XM:null)); if(!b) return '';
+return `<div class="pbody" style="padding-top:0"><div class="kv"><span class="k">Taux directeur (BRI)</span><span class="v"><b>${nf(b.v,2)} %</b> <span class="mut" style="font-size:9px">${esc(b.d)}${b.chg?' · dernier changement '+(b.chg[1]>0?'+':'')+b.chg[1]+' pb en '+esc(b.chg[0]):''}</span></span></div></div>`; })()}
 ${(()=>{ const it=WB&&WB.items&&WB.items[String(iso)]; if(!it) return ''; const rows=['gdp','gdppc','gdpg','infl','unemp','debt','ca'].filter(k=>it[k]);
 if(!rows.length) return ''; return `<div class="pbody" style="padding-top:4px">${rows.map(k=>{ const [v,y]=it[k], u=WB.ind[k].u; return `<div class="kv"><span class="k">${esc(WB.ind[k].l)}</span><span class="v">${u==='Md$'?nf(v,0)+' Md$':u==='$'?nf(v,0)+' $':nf(v,1)+(u.startsWith('%')?' %':' '+u)} <span class="mut" style="font-size:9px">${y}</span></span></div>`; }).join('')}<div class="mut" style="font-size:9px;padding-top:3px">Banque mondiale, dernières données annuelles</div></div>`; })()}
 ${codes.length||eaRows.length?`<table><caption class="sr-only">Indicateurs du pays</caption><tbody>${codes.map(row).join('')}${eaRows.map(row).join('')}</tbody></table>`
@@ -3603,6 +3707,16 @@ const CBS=[['Fed','États-Unis','USINTR','Federal Funds Rate','USD','https://www
 ['BoJ','Japon','JPINTR','BOJ Policy Rate','JPY','https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm'],
 ['BNS','Suisse','CHINTR','SNB Policy Rate','CHF','https://www.snb.ch/fr/the-snb/mandates-goals/monetary-policy/decisions'],
 ['PBoC','Chine',null,'Loan Prime Rate','CNY','http://www.pbc.gov.cn/en/3688006/index.html']];
+function cbBis(){ const B=WORLD&&WORLD.bis; if(!B) return '';
+const skip=new Set(['US','XM','GB','JP','CH','CN']);
+const nm=b=>b.n||(b.iso&&WB&&WB.items&&WB.items[String(b.iso)]&&WB.items[String(b.iso)].name)||(b.iso&&GEOLIB_NAMES[b.iso])||'';
+const L=Object.entries(B).filter(([a])=>!skip.has(a)).sort((x,y)=>y[1].v-x[1].v);
+if(!L.length) return '';
+return `<details class="nfo" style="padding:4px 9px 8px" data-keep><summary>Autres banques centrales — ${L.length} pays (BRI)</summary>
+<table style="margin-top:6px"><thead><tr><th scope="col" style="text-align:left">Pays</th><th scope="col">Taux directeur</th><th scope="col">Dernier changement</th><th scope="col">Relevé</th></tr></thead><tbody>
+${L.map(([a,b])=>`<tr><th scope="row" style="text-align:left;font-weight:400;color:var(--txt)">${esc(nm(b)||a)} <span class="mut" style="font-size:9px">${esc(a)}</span></th><td style="font-weight:600">${nf(b.v,2)} %</td>
+<td>${b.chg?`<span class="${b.chg[1]<0?'neg':'pos'}">${b.chg[1]>0?'+':''}${b.chg[1]} pb</span> <span class="mut">${esc(b.chg[0])}</span>`:'—'}</td><td class="mut">${esc(b.d)}</td></tr>`).join('')}</tbody></table>
+<div class="note" style="padding:4px 0 0">Source : Banque des règlements internationaux, taux directeurs des banques centrales (données mensuelles).</div></details>`; }
 function cbPanel(){ const M=MACRO||{}, cons=(M.eco&&M.eco.consensus&&M.eco.consensus.rows)||[], W=M.wirp||{}, today=new Date().toISOString().slice(0,10);
 const rows=CBS.map(([cb,ctry,code,ff,cur,url])=>{
 const e=code&&ecoGet(code), snap=(SNAPSHOT.rates||[]).find(r=>r.cb===cb);
@@ -3618,7 +3732,7 @@ const exp=wm?(wm.p_cut?`baisse ${nf(wm.p_cut,0)} %`:wm.p_hike?`hausse ${nf(wm.p_
 return `<tr${code?` class="clk" data-eco="${esc(code)}" tabindex="0" role="button"`:''}><th scope="row" style="text-align:left;font-weight:400;color:var(--txt)"><b>${esc(cb)}</b> <span class="mut">${esc(ctry)}</span></th>
 <td style="font-weight:600">${rate}</td><td>${chg}</td><td>${next?(next===today?'<span class="hot">aujourd\'hui</span>':dfr(next)):`<a href="${safeUrl(url)}" target="_blank" rel="noopener" class="mut">calendrier ↗</a>`}</td><td>${exp}</td></tr>`; }).join('');
 return `<div class="pnl" id="g-cb"><h3>CB — Banques centrales<span class="rt">taux officiel · dernier changement · prochaine réunion</span></h3>
-<table><caption class="sr-only">Banques centrales</caption><thead><tr><th scope="col" style="text-align:left">Banque</th><th scope="col">Taux</th><th scope="col">Dernier changement</th><th scope="col">Prochaine réunion</th><th scope="col">Attente du marché</th></tr></thead><tbody>${rows}</tbody></table>
+<table><caption class="sr-only">Banques centrales</caption><thead><tr><th scope="col" style="text-align:left">Banque</th><th scope="col">Taux</th><th scope="col">Dernier changement</th><th scope="col">Prochaine réunion</th><th scope="col">Attente du marché</th></tr></thead><tbody>${rows}</tbody></table>${cbBis()}
 <div class="note">Taux et dernier changement : séries ECONOMICS (FRED, BCE, BoE, BNS ; résolution mensuelle). Prochaine réunion : calendrier FOMC pour la Fed, calendrier économique des deux prochaines semaines pour les autres (sinon lien vers le calendrier officiel). Attente du marché : uniquement pour la Fed (contrats à terme fed funds, WIRP) ; pas de source gratuite pour les autres, la case reste vide. Clic sur une ligne : historique du taux.</div></div>`; }
 // RES — recherche publique (titres et liens)
 let RESF='Tout';
@@ -3747,7 +3861,7 @@ document.getElementById('themebtn').onclick=()=>setTheme(document.body.classList
 const EMBED=new URLSearchParams(location.search);
 if(EMBED.get('embed')){ document.body.classList.add('embed'); const c=EMBED.get('cmd')||'WEI';
 S.view='mkt'; (async()=>{ // catalogue chargé d'abord : « TTE » doit devenir TTE.PA, pas le certificat américain
-await Promise.all([loadUniverse(),loadLive(),loadFund(),loadMacro(),loadEcon(),loadCurves(),loadPeers(),loadGeo(),loadWB(),loadFigi()].map(p=>p.catch(()=>{}))); harmonize();
+await Promise.all([loadUniverse(),loadLive(),loadFund(),loadMacro(),loadEcon(),loadCurves(),loadPeers(),loadGeo(),loadWB(),loadFigi(),loadWorld()].map(p=>p.catch(()=>{}))); harmonize();
 if(!/^(BLP)$/i.test(c.trim())) runAny(c); else go('mkt'); })(); }
 else go('mkt');
 /* Cours directs : le navigateur interroge Yahoo via le relais Cloudflare toutes les 60 s,
@@ -3779,7 +3893,7 @@ if(S.view==='mkt'||S.view==='wl'){ const mn=document.getElementById('main'), y=m
 syncBar(); }
 }finally{ RT_BUSY=false; }
 }
-const refresh=()=>Promise.all([loadStatus(),loadLive(),loadUniverse(),loadFT(),loadMacro(),loadFund(),loadEcon(),loadPeers(),loadCurves(),loadGeo(),loadWB(),loadFigi()]).then(([_s,a,b,c,d,e,f,g,h,gg,wb,fg])=>{ harmonize(); renderTape(); if(a||b||c||d||e||f||h||gg||wb||fg){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
+const refresh=()=>Promise.all([loadStatus(),loadLive(),loadUniverse(),loadFT(),loadMacro(),loadFund(),loadEcon(),loadPeers(),loadCurves(),loadGeo(),loadWB(),loadFigi(),loadWorld()]).then(([_s,a,b,c,d,e,f,g,h,gg,wb,fg,wo])=>{ harmonize(); renderTape(); if(a||b||c||d||e||f||h||gg||wb||fg||wo){ if(S.view==='srch'){ if(b) renderLocal(); } else go(S.view); } });
 refresh();
 setInterval(refresh, 5*60*1000);   // le robot rapide publie toutes les 10 min
 liveQuotes(); setInterval(liveQuotes, 60*1000);
