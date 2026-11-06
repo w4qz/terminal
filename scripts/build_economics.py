@@ -80,7 +80,6 @@ SPEC = [
     ("USADP", "Emploi privé ADP (m/m)", "États-Unis", "milliers", [F("ADPMNUSNERSA", "chg", scale=0.001), F("ADPWNUSNERSA", "chg", freq="m", scale=0.001)]),
     ("USCJC", "Inscriptions continues au chômage", "États-Unis", "inscriptions", [F("CCSA")]),
     ("USPHIL", "Enquête manufacturière Fed de Philadelphie (substitut ISM)", "États-Unis", "indice", [F("GACDFSA066MSFRBPHI")]),
-    ("USEMPIRE", "Enquête manufacturière Empire State, Fed de New York (substitut ISM)", "États-Unis", "indice", [F("GACDINA066MSFRBNY")]),
     ("USCFNAI", "Indice d'activité nationale de la Fed de Chicago CFNAI (substitut ISM)", "États-Unis", "indice", [F("CFNAI")]),
     ("USDGO", "Commandes de biens durables (m/m)", "États-Unis", "%", [F("DGORDER", "pch")]),
     # Taux monétaires et de marché
@@ -102,23 +101,23 @@ SPEC = [
     ("EU10Y", "Taux à 10 ans zone euro AAA (BCE)", "Zone euro", "%", [("ecb", "YC/B.U2.EUR.4F.G_N_A.SV_C_YM.SR_10Y")]),
     ("EUIRYY", "Inflation HICP / CPI (IPCH, a/a)", "Zone euro", "%", [("ecb", "ICP/M.U2.N.000000.4.ANR"), F("CP0000EZ19M086NEST", "pc1")]),
     ("EUCIR", "Inflation sous-jacente (IPCH hors énergie et alimentation, a/a)", "Zone euro", "%", [("ecb", "ICP/M.U2.N.XEF000.4.ANR")]),
-    ("EUUR", "Taux de chômage", "Zone euro", "%", [F("LRHUTTTTEZM156S")]),
+    ("EUUR", "Taux de chômage", "Zone euro", "%", [("ecb", "LFSI/M.I9.S.UNEHRT.TOTAL0.15_74.T"), F("LRHUTTTTEZM156S")]),
     ("EUGDPYY", "Croissance du PIB (a/a)", "Zone euro", "%", [F("CLVMNACSCAB1GQEA19", "pc1"), F("CLVMNACSCAB1GQEA20", "pc1")]),
     ("EUGDP", "PIB nominal (rythme annuel)", "Zone euro", "Md€", [F("CPMNACSCAB1GQEA20", scale=A), F("CPMNACSCAB1GQEA19", scale=A)]),
     # ── Allemagne, France, Italie
-    ("DEIRYY", "Inflation (a/a)", "Allemagne", "%", [("ecb", "ICP/M.DE.N.000000.4.ANR"), F("CPALTT01DEM659N")]),
+    ("DEIRYY", "Inflation (a/a)", "Allemagne", "%", [("ecb", "ICP/M.DE.N.000000.4.ANR"), F("CPALTT01DEM659N"), ("wb", "DE", "FP.CPI.TOTL.ZG")]),
     ("DEUR", "Taux de chômage", "Allemagne", "%", [F("LRHUTTTTDEM156S")]),
     ("DEGDPYY", "Croissance du PIB (a/a)", "Allemagne", "%", [F("CLVMNACSCAB1GQDE", "pc1")]),
     ("DEGDP", "PIB nominal (rythme annuel)", "Allemagne", "Md€", [F("CPMNACSCAB1GQDE", scale=A)]),
     ("DEGDPQQ", "Croissance du PIB (t/t)", "Allemagne", "%", [F("CLVMNACSCAB1GQDE", "pch")]),
     ("DE10Y", "Taux à 10 ans (Bund)", "Allemagne", "%", [F("IRLTLT01DEM156N")]),
-    ("FRIRYY", "Inflation (a/a)", "France", "%", [("ecb", "ICP/M.FR.N.000000.4.ANR"), F("CPALTT01FRM659N")]),
+    ("FRIRYY", "Inflation (a/a)", "France", "%", [("ecb", "ICP/M.FR.N.000000.4.ANR"), F("CPALTT01FRM659N"), ("wb", "FR", "FP.CPI.TOTL.ZG")]),
     ("FRUR", "Taux de chômage", "France", "%", [F("LRHUTTTTFRM156S")]),
     ("FRGDPYY", "Croissance du PIB (a/a)", "France", "%", [F("CLVMNACSCAB1GQFR", "pc1")]),
     ("FRGDP", "PIB nominal (rythme annuel)", "France", "Md€", [F("CPMNACSCAB1GQFR", scale=A)]),
     ("FRGDPQQ", "Croissance du PIB (t/t)", "France", "%", [F("CLVMNACSCAB1GQFR", "pch")]),
     ("FR10Y", "Taux à 10 ans (OAT)", "France", "%", [F("IRLTLT01FRM156N")]),
-    ("ITIRYY", "Inflation (a/a)", "Italie", "%", [("ecb", "ICP/M.IT.N.000000.4.ANR")]),
+    ("ITIRYY", "Inflation (a/a)", "Italie", "%", [("ecb", "ICP/M.IT.N.000000.4.ANR"), ("wb", "IT", "FP.CPI.TOTL.ZG")]),
     ("ITGDPYY", "Croissance du PIB (a/a)", "Italie", "%", [F("CLVMNACSCAB1GQIT", "pc1"), F("NGDPRSAXDCITQ", "pc1")]),
     ("ITGDP", "PIB nominal (rythme annuel)", "Italie", "Md€", [F("CPMNACSCAB1GQIT", scale=A)]),
     ("ITGDPQQ", "Croissance du PIB (t/t)", "Italie", "%", [F("CLVMNACSCAB1GQIT", "pch")]),
@@ -130,7 +129,7 @@ SPEC = [
     # ── Royaume-Uni
     ("GBINTR", "Taux directeur BoE (Bank Rate)", "Royaume-Uni", "%", [("boe", "IUDBEDR"), F("IRSTCB01GBM156N")]),
     ("GBSONIA", "Taux SONIA", "Royaume-Uni", "%", [("boe", "IUDSOIA")]),
-    ("GBIRYY", "Inflation (IPC, a/a)", "Royaume-Uni", "%", [F("CPALTT01GBM659N"), F("GBRCPIALLMINMEI", "pc1")]),
+    ("GBIRYY", "Inflation (IPC, a/a)", "Royaume-Uni", "%", [("ons", "D7G7", "MM23"), F("CPALTT01GBM659N"), F("GBRCPIALLMINMEI", "pc1")]),
     ("GBUR", "Taux de chômage", "Royaume-Uni", "%", [F("LRHUTTTTGBM156S")]),
     ("GBGDPYY", "Croissance du PIB (a/a)", "Royaume-Uni", "%", [F("CLVMNACSCAB1GQUK", "pc1"), F("NGDPRSAXDCGBQ", "pc1")]),
     ("GBGDP", "PIB nominal (rythme annuel)", "Royaume-Uni", "Md£", [F("UKNGDP", scale=A), F("CPMNACSCAB1GQUK", scale=A)]),
@@ -138,21 +137,21 @@ SPEC = [
     ("GB10Y", "Taux à 10 ans (Gilt)", "Royaume-Uni", "%", [F("IRLTLT01GBM156N")]),
     # ── Suisse (pertinent pour Monaco)
     ("CHINTR", "Taux directeur BNS", "Suisse", "%", [("snb", "snbgwdzid", "LZ"), F("IRSTCB01CHM156N"), F("IRSTCI01CHM156N")]),
-    ("CHIRYY", "Inflation (a/a)", "Suisse", "%", [F("CPALTT01CHM659N"), F("CHECPIALLMINMEI", "pc1")]),
+    ("CHIRYY", "Inflation (a/a)", "Suisse", "%", [("wb", "CH", "FP.CPI.TOTL.ZG"), F("CPALTT01CHM659N"), F("CHECPIALLMINMEI", "pc1")]),
     ("CHGDPYY", "Croissance du PIB (a/a)", "Suisse", "%", [F("CLVMNACSCAB1GQCH", "pc1"), F("NGDPRSAXDCCHQ", "pc1")]),
     ("CHGDP", "PIB nominal (rythme annuel)", "Suisse", "Md CHF", [F("CPMNACSCAB1GQCH", scale=A)]),
     ("CHGDPQQ", "Croissance du PIB (t/t)", "Suisse", "%", [F("CLVMNACSCAB1GQCH", "pch")]),
     ("CH10Y", "Taux à 10 ans (Confédération)", "Suisse", "%", [F("IRLTLT01CHM156N")]),
     # ── Japon
     ("JPINTR", "Taux directeur BoJ", "Japon", "%", [F("IRSTCB01JPM156N")]),
-    ("JPIRYY", "Inflation (a/a)", "Japon", "%", [F("CPALTT01JPM659N"), F("JPNCPIALLMINMEI", "pc1")]),
+    ("JPIRYY", "Inflation (a/a)", "Japon", "%", [("wb", "JP", "FP.CPI.TOTL.ZG"), F("CPALTT01JPM659N"), F("JPNCPIALLMINMEI", "pc1")]),
     ("JPUR", "Taux de chômage", "Japon", "%", [F("LRUN64TTJPM156S"), F("LRHUTTTTJPM156S")]),
     ("JPGDPYY", "Croissance du PIB (a/a)", "Japon", "%", [F("JPNRGDPEXP", "pc1")]),
     ("JPGDP", "PIB nominal (rythme annuel)", "Japon", "Md¥", [F("JPNNGDP")]),
     ("JPGDPQQ", "Croissance du PIB (t/t)", "Japon", "%", [F("JPNRGDPEXP", "pch")]),
     ("JP10Y", "Taux à 10 ans (JGB)", "Japon", "%", [F("IRLTLT01JPM156N")]),
     # ── Chine
-    ("CNIRYY", "Inflation (a/a)", "Chine", "%", [F("CPALTT01CNM659N"), F("CHNCPIALLMINMEI", "pc1")]),
+    ("CNIRYY", "Inflation (a/a)", "Chine", "%", [("wb", "CN", "FP.CPI.TOTL.ZG"), F("CPALTT01CNM659N"), F("CHNCPIALLMINMEI", "pc1")]),
     ("CNGDPYY", "Croissance du PIB (a/a)", "Chine", "%", [F("CHNGDPNQDSMEI", "pc1"), F("NGDPRXDCCNA", "pc1")]),
     ("CNGDP", "PIB nominal (annuel, Banque mondiale)", "Chine", "Md$", [F("MKTGDPCNA646NWDB", scale=1e-9)]),
     # ── Inde
@@ -161,7 +160,8 @@ SPEC = [
 ]
 
 SRC_LABEL = {"fred": "FRED (Fed de St. Louis)", "ecb": "BCE — ECB Data Portal", "boe": "Bank of England — IADB",
-             "snb": "Banque nationale suisse — data.snb.ch"}
+             "snb": "Banque nationale suisse — data.snb.ch", "ons": "Office for National Statistics (Royaume-Uni)",
+             "wb": "Banque mondiale (annuel)"}
 
 
 def log(msg):
@@ -207,8 +207,13 @@ def get_fred(sid, units, freq, scale=1):
 
 
 def get_ecb(key):
-    r = requests.get(f"https://data-api.ecb.europa.eu/service/data/{key}",
-                     params={"startPeriod": str(NOW.year - YEARS), "format": "csvdata"}, headers=UA, timeout=40)
+    # La BCE refuse parfois les appels trop rapprochés (429/503) : jusqu'à 3 essais espacés
+    for attempt in range(3):
+        time.sleep(1.0 + 2 * attempt)
+        r = requests.get(f"https://data-api.ecb.europa.eu/service/data/{key}",
+                         params={"startPeriod": str(NOW.year - YEARS), "format": "csvdata"}, headers=UA, timeout=40)
+        if r.status_code not in (429, 500, 502, 503, 504):
+            break
     r.raise_for_status()
     df = pd.read_csv(StringIO(r.text)).dropna(subset=["OBS_VALUE"])
     obs = []
@@ -219,6 +224,34 @@ def get_ecb(key):
         obs = _monthly(obs)              # taux quotidiens → fin de mois
     flow, series = key.split("/", 1)
     return obs, f"https://data.ecb.europa.eu/data/datasets/{flow}/{flow}.{series}"
+
+
+def get_ons(series, dataset):
+    """Office for National Statistics (Royaume-Uni) : série mensuelle, ex. D7G7 = inflation CPI sur un an."""
+    r = requests.get(f"https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/{series.lower()}/{dataset.lower()}/data",
+                     headers=UA, timeout=40)
+    r.raise_for_status()
+    mo = {m: i + 1 for i, m in enumerate(["January", "February", "March", "April", "May", "June", "July", "August",
+                                           "September", "October", "November", "December"])}
+    obs = []
+    for x in r.json().get("months", []):
+        try:
+            obs.append((f"{int(x['year'])}-{mo[x['month']]:02d}-01", float(x["value"])))
+        except Exception:
+            continue
+    cut = f"{NOW.year - YEARS}-01-01"
+    return [o for o in obs if o[0] >= cut], f"https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/{series.lower()}/{dataset.lower()}"
+
+
+def get_wb(country, indicator):
+    """Banque mondiale : série annuelle (repli quand aucune série mensuelle gratuite n'est à jour)."""
+    r = requests.get(f"https://api.worldbank.org/v2/country/{country}/indicator/{indicator}",
+                     params={"format": "json", "per_page": 100, "date": f"{NOW.year - YEARS}:{NOW.year}"}, headers=UA, timeout=40)
+    r.raise_for_status()
+    d = r.json()
+    rows = d[1] if isinstance(d, list) and len(d) > 1 and d[1] else []
+    return [(f"{x['date']}-01-01", float(x["value"])) for x in rows if x.get("value") is not None], \
+        f"https://data.worldbank.org/indicator/{indicator}?locations={country}"
 
 
 def get_boe(code):
@@ -283,7 +316,8 @@ def main() -> int:
             kind = src[0]
             try:
                 obs, url = (get_fred(*src[1:]) if kind == "fred" else get_ecb(src[1]) if kind == "ecb"
-                            else get_snb(*src[1:]) if kind == "snb" else get_boe(src[1]))
+                            else get_snb(*src[1:]) if kind == "snb" else get_ons(*src[1:]) if kind == "ons"
+                            else get_wb(*src[1:]) if kind == "wb" else get_boe(src[1]))
                 obs = sorted(obs)
                 if len(obs) < 3:
                     raise RuntimeError("historique vide")
