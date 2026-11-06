@@ -100,25 +100,25 @@ SPEC = [
     ("EURIBOR3M", "Euribor 3 mois", "Zone euro", "%", [("ecb", "FM/M.U2.EUR.RT.MM.EURIBOR3MD_.HSTA"), F("IR3TIB01EZM156N")]),
     ("EU02Y", "Taux à 2 ans zone euro AAA (BCE)", "Zone euro", "%", [("ecb", "YC/B.U2.EUR.4F.G_N_A.SV_C_YM.SR_2Y")]),
     ("EU10Y", "Taux à 10 ans zone euro AAA (BCE)", "Zone euro", "%", [("ecb", "YC/B.U2.EUR.4F.G_N_A.SV_C_YM.SR_10Y")]),
-    ("EUIRYY", "Inflation HICP / CPI (IPCH, a/a)", "Zone euro", "%", [("estat", "prc_hicp_manr", "geo=EA20&coicop=CP00"), ("ecb", "ICP/M.U2.N.000000.4.ANR"), F("CP0000EZ19M086NEST", "pc1")]),
-    ("EUCIR", "Inflation sous-jacente (IPCH hors énergie et alimentation, a/a)", "Zone euro", "%", [("estat", "prc_hicp_manr", "geo=EA20&coicop=TOT_X_NRG_FOOD"), ("ecb", "ICP/M.U2.N.XEF000.4.ANR")]),
+    ("EUIRYY", "Inflation HICP / CPI (IPCH, a/a)", "Zone euro", "%", [("estat", "prc_hicp_manr", "geo=EA20&coicop=CP00"), ("estat", "prc_hicp_minr", "geo=EA20&coicop18=TOTAL&unit=RCH_A"), ("estat", "teicp000", "geo=EA20&coicop=CP00&unit=RCH_A"), ("ecb", "ICP/M.U2.N.000000.4.ANR"), F("CP0000EZ19M086NEST", "pc1")]),
+    ("EUCIR", "Inflation sous-jacente (IPCH hors énergie et alimentation, a/a)", "Zone euro", "%", [("estat", "prc_hicp_manr", "geo=EA20&coicop=TOT_X_NRG_FOOD"), ("estat", "prc_hicp_minr", "geo=EA20&coicop18=TOT_X_NRG_FOOD&unit=RCH_A"), ("ecb", "ICP/M.U2.N.XEF000.4.ANR")]),
     ("EUUR", "Taux de chômage", "Zone euro", "%", [("estat", "une_rt_m", "geo=EA20&s_adj=SA&age=TOTAL&sex=T&unit=PC_ACT"), ("ecb", "LFSI/M.I9.S.UNEHRT.TOTAL0.15_74.T"), F("LRHUTTTTEZM156S")]),
     ("EUGDPYY", "Croissance du PIB (a/a)", "Zone euro", "%", [F("CLVMNACSCAB1GQEA19", "pc1"), F("CLVMNACSCAB1GQEA20", "pc1")]),
     ("EUGDP", "PIB nominal (rythme annuel)", "Zone euro", "Md€", [F("CPMNACSCAB1GQEA20", scale=A), F("CPMNACSCAB1GQEA19", scale=A)]),
     # ── Allemagne, France, Italie
-    ("DEIRYY", "Inflation (a/a)", "Allemagne", "%", [("estat", "prc_hicp_manr", "geo=DE&coicop=CP00"), ("ecb", "ICP/M.DE.N.000000.4.ANR"), F("CPALTT01DEM659N"), ("wb", "DE", "FP.CPI.TOTL.ZG")]),
+    ("DEIRYY", "Inflation (a/a)", "Allemagne", "%", [("estat", "prc_hicp_manr", "geo=DE&coicop=CP00"), ("estat", "prc_hicp_minr", "geo=DE&coicop18=TOTAL&unit=RCH_A"), ("estat", "teicp000", "geo=DE&coicop=CP00&unit=RCH_A"), ("ecb", "ICP/M.DE.N.000000.4.ANR"), F("CPALTT01DEM659N"), ("wb", "DE", "FP.CPI.TOTL.ZG")]),
     ("DEUR", "Taux de chômage", "Allemagne", "%", [("estat", "une_rt_m", "geo=DE&s_adj=SA&age=TOTAL&sex=T&unit=PC_ACT"), F("LRHUTTTTDEM156S")]),
     ("DEGDPYY", "Croissance du PIB (a/a)", "Allemagne", "%", [F("CLVMNACSCAB1GQDE", "pc1")]),
     ("DEGDP", "PIB nominal (rythme annuel)", "Allemagne", "Md€", [F("CPMNACSCAB1GQDE", scale=A)]),
     ("DEGDPQQ", "Croissance du PIB (t/t)", "Allemagne", "%", [("estat", "namq_10_gdp", "geo=DE&unit=CLV_PCH_PRE&s_adj=SCA&na_item=B1GQ"), F("CLVMNACSCAB1GQDE", "pch")]),
     ("DE10Y", "Taux à 10 ans (Bund)", "Allemagne", "%", [F("IRLTLT01DEM156N")]),
-    ("FRIRYY", "Inflation (a/a)", "France", "%", [("estat", "prc_hicp_manr", "geo=FR&coicop=CP00"), ("ecb", "ICP/M.FR.N.000000.4.ANR"), F("CPALTT01FRM659N"), ("wb", "FR", "FP.CPI.TOTL.ZG")]),
+    ("FRIRYY", "Inflation (a/a)", "France", "%", [("estat", "prc_hicp_manr", "geo=FR&coicop=CP00"), ("estat", "prc_hicp_minr", "geo=FR&coicop18=TOTAL&unit=RCH_A"), ("estat", "teicp000", "geo=FR&coicop=CP00&unit=RCH_A"), ("ecb", "ICP/M.FR.N.000000.4.ANR"), F("CPALTT01FRM659N"), ("wb", "FR", "FP.CPI.TOTL.ZG")]),
     ("FRUR", "Taux de chômage", "France", "%", [("estat", "une_rt_m", "geo=FR&s_adj=SA&age=TOTAL&sex=T&unit=PC_ACT"), F("LRHUTTTTFRM156S")]),
     ("FRGDPYY", "Croissance du PIB (a/a)", "France", "%", [F("CLVMNACSCAB1GQFR", "pc1")]),
     ("FRGDP", "PIB nominal (rythme annuel)", "France", "Md€", [F("CPMNACSCAB1GQFR", scale=A)]),
     ("FRGDPQQ", "Croissance du PIB (t/t)", "France", "%", [("estat", "namq_10_gdp", "geo=FR&unit=CLV_PCH_PRE&s_adj=SCA&na_item=B1GQ"), F("CLVMNACSCAB1GQFR", "pch")]),
     ("FR10Y", "Taux à 10 ans (OAT)", "France", "%", [F("IRLTLT01FRM156N")]),
-    ("ITIRYY", "Inflation (a/a)", "Italie", "%", [("estat", "prc_hicp_manr", "geo=IT&coicop=CP00"), ("ecb", "ICP/M.IT.N.000000.4.ANR"), ("wb", "IT", "FP.CPI.TOTL.ZG")]),
+    ("ITIRYY", "Inflation (a/a)", "Italie", "%", [("estat", "prc_hicp_manr", "geo=IT&coicop=CP00"), ("estat", "prc_hicp_minr", "geo=IT&coicop18=TOTAL&unit=RCH_A"), ("estat", "teicp000", "geo=IT&coicop=CP00&unit=RCH_A"), ("ecb", "ICP/M.IT.N.000000.4.ANR"), ("wb", "IT", "FP.CPI.TOTL.ZG")]),
     ("ITGDPYY", "Croissance du PIB (a/a)", "Italie", "%", [F("CLVMNACSCAB1GQIT", "pc1"), F("NGDPRSAXDCITQ", "pc1")]),
     ("ITGDP", "PIB nominal (rythme annuel)", "Italie", "Md€", [F("CPMNACSCAB1GQIT", scale=A)]),
     ("ITGDPQQ", "Croissance du PIB (t/t)", "Italie", "%", [("estat", "namq_10_gdp", "geo=IT&unit=CLV_PCH_PRE&s_adj=SCA&na_item=B1GQ"), F("CLVMNACSCAB1GQIT", "pch")]),
@@ -256,6 +256,23 @@ def get_wb(country, indicator):
         f"https://data.worldbank.org/indicator/{indicator}?locations={country}"
 
 
+def _jsonstat_series(d):
+    """JSON-stat Eurostat → [(période, valeur)] ; pour toute dimension autre que le temps, 1re modalité retenue."""
+    ids, size = d["id"], d["size"]
+    tpos = ids.index("time")
+    tix = d["dimension"]["time"]["category"]["index"]
+    stride = [1] * len(ids)
+    for k in range(len(ids) - 2, -1, -1):
+        stride[k] = stride[k + 1] * size[k + 1]
+    vals = d.get("value") or {}
+    out = []
+    for per, i in tix.items():
+        v = vals.get(str(i * stride[tpos]))
+        if v is not None:
+            out.append((per, float(v)))
+    return sorted(out)
+
+
 def get_estat(dataset, filters):
     """Eurostat (API JSON-stat, sans clé) : séries officielles publiées le jour même, avant leur reprise par la BCE ou FRED."""
     q = dict(x.split("=", 1) for x in filters.split("&"))
@@ -263,13 +280,8 @@ def get_estat(dataset, filters):
                      params={"format": "JSON", "lang": "EN", "sinceTimePeriod": str(NOW.year - YEARS), **q}, headers=UA, timeout=40)
     r.raise_for_status()
     d = r.json()
-    tix = d["dimension"]["time"]["category"]["index"]
-    vals = d.get("value") or {}
     obs = []
-    for per, i in tix.items():
-        v = vals.get(str(i))
-        if v is None:
-            continue
+    for per, v in _jsonstat_series(d):
         m = re.match(r"(\d{4})-?(Q(\d)|M?(\d{2}))?$", per)
         if not m:
             continue
