@@ -363,14 +363,27 @@ def main() -> int:
         if k in FILL_CNBC:
             # Les sources officielles ne publient que quelques maturités (BoE : 5, 10, 20 ans ; Bundesbank :
             # pas de court terme) : les maturités absentes sont complétées par les rendements cotés CNBC.
+            live = curve_cnbc(FILL_CNBC[k])
+            # Cotations de marché (différé ~15 min) à la place de la clôture de la veille des sources officielles :
+            # la courbe est à jour à chaque passage du robot (10 min). La variation sur 1 mois reste celle de la source officielle.
+            by = {c["t"]: c for c in live}
+            n_live = 0
+            for p in pts:
+                c = by.get(p["t"])
+                if c and c.get("y") is not None:
+                    p["y"], p["ts"], p["live"] = c["y"], c["ts"], True
+                    n_live += 1
+            if n_live:
+                src = f"CNBC (cotations de marché, différé ~15 min) · courbe et variation 1 mois : {src}"
+                freq = "intrajournalier"
             have = {p["t"] for p in pts}
-            extra = [p for p in curve_cnbc(FILL_CNBC[k]) if p["t"] not in have]
+            extra = [p for p in live if p["t"] not in have]
             for p in extra:
                 p.pop("_hist", None)
                 p["cnbc"] = True
             if extra:
                 pts = sorted(pts + extra, key=lambda p: TEN_ORD_PY.index(p["t"]) if p["t"] in TEN_ORD_PY else 99)
-                src = (src or "CNBC") + f" · {len(extra)} maturités complétées par CNBC (rendements cotés)"
+                src = (src or "CNBC") + f" · {len(extra)} maturités complétées par CNBC"
                 log(f"  {name} : {len(extra)} maturités ajoutées depuis CNBC")
         if pts:
             hist = pts[0].pop("_hist", None)
