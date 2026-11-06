@@ -256,6 +256,29 @@ def _ecb_last(key):
     return str(df["TIME_PERIOD"].iloc[-1]), float(df["OBS_VALUE"].iloc[-1])
 
 
+def _estat_last(dataset, filters):
+    """Dernière valeur Eurostat (JSON-stat) : (période AAAA-MM, valeur)."""
+    q = dict(x.split("=", 1) for x in filters.split("&"))
+    r = requests.get(f"https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/{dataset}",
+                     params={"format": "JSON", "lang": "EN", "lastTimePeriod": 2, **q}, headers=UA, timeout=30)
+    r.raise_for_status()
+    d = r.json()
+    tix, vals = d["dimension"]["time"]["category"]["index"], d.get("value") or {}
+    obs = sorted((per, float(vals[str(i)])) for per, i in tix.items() if str(i) in vals)
+    return obs[-1]
+
+
+def _first(*fns):
+    """Première source qui répond : Eurostat publie le jour même, la BCE quelques jours après."""
+    last = None
+    for fn in fns:
+        try:
+            return fn()
+        except Exception as e:
+            last = e
+    raise last
+
+
 def _boe_last(code):
     r = requests.get("https://www.bankofengland.co.uk/boeapps/database/_iadb-fromshowcolumns.asp",
                      params={"csv.x": "yes", "Datefrom": (TODAY - timedelta(days=20)).strftime("%d/%b/%Y"),
@@ -277,9 +300,9 @@ def _snb_last(cube, dim):
 
 
 OTHER_ACTUAL = {
-    ("EUR", "Flash CPI y/y"): (lambda: _ecb_last("ICP/M.U2.N.000000.4.ANR"), "%", 1, "m"),
-    ("EUR", "CPI Flash Estimate y/y"): (lambda: _ecb_last("ICP/M.U2.N.000000.4.ANR"), "%", 1, "m"),
-    ("EUR", "Core CPI Flash Estimate y/y"): (lambda: _ecb_last("ICP/M.U2.N.XEF000.4.ANR"), "%", 1, "m"),
+    ("EUR", "Flash CPI y/y"): (lambda: _first(lambda: _estat_last("prc_hicp_manr", "geo=EA20&coicop=CP00"), lambda: _ecb_last("ICP/M.U2.N.000000.4.ANR")), "%", 1, "m"),
+    ("EUR", "CPI Flash Estimate y/y"): (lambda: _first(lambda: _estat_last("prc_hicp_manr", "geo=EA20&coicop=CP00"), lambda: _ecb_last("ICP/M.U2.N.000000.4.ANR")), "%", 1, "m"),
+    ("EUR", "Core CPI Flash Estimate y/y"): (lambda: _first(lambda: _estat_last("prc_hicp_manr", "geo=EA20&coicop=TOT_X_NRG_FOOD"), lambda: _ecb_last("ICP/M.U2.N.XEF000.4.ANR")), "%", 1, "m"),
     ("GBP", "Official Bank Rate"): (lambda: _boe_last("IUDBEDR"), "%", 2, "r"),
     ("CHF", "SNB Policy Rate"): (lambda: _snb_last("snbgwdzid", "LZ"), "%", 2, "r"),
 }
