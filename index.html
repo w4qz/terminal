@@ -135,7 +135,7 @@ padding:10px 9px;border-bottom:1px solid var(--line)}
 a{color:#9cc8ff;text-decoration:none} a:visited{color:#9cc8ff} a:hover,a:focus-visible{color:#fff;text-decoration:underline}
 a:focus-visible{outline:1px solid #4d8fd6;outline-offset:1px}
 .mpop a,#g-arts a,#g-res a{color:var(--txt)} .mpop a:hover,#g-arts a:hover,#g-res a:hover{color:#9cc8ff}
-body.amber a,body.amber a:visited{color:#ffc266} body.amber .mpop a,body.amber #g-arts a,body.amber #g-res a{color:#f2f2f2}
+
 .nw a:hover,.nw a:focus-visible{text-decoration:underline}
 .tag{font-size:9px;border:1px solid var(--line);padding:0 4px;border-radius:2px;color:var(--txt2);cursor:pointer}
 .tag:hover,.tag:focus-visible{background:var(--sel);color:var(--txt)}
@@ -234,15 +234,45 @@ border-bottom:1px solid var(--line);display:flex;align-items:center;gap:16px}
 #themebtn{margin-left:6px;flex:none;font-size:10px;color:var(--txt3);border:1px solid var(--line);padding:2px 8px;border-radius:3px;white-space:nowrap}
 #themebtn:hover{color:var(--txt)}
 /* ---------- thème ambre façon Bloomberg ---------- */
-body.amber{--bg:#000;--surface:#050505;--raised:#111;--line:#2a2210;--txt:#ffb000;--txt2:#d9962a;--txt3:#9c6d1e;--sel:#3d2a00;--hot:#ff6a00}
-body.amber td,body.amber .stat .n,body.amber .kv .v,body.amber #clocks b{color:#f2f2f2}
-body.amber td.pos,body.amber .n.pos,body.amber .v.pos,body.amber .pos{color:#3ddc6a}
-body.amber td.neg,body.amber .n.neg,body.amber .v.neg,body.amber .neg{color:#ff4d4d}
-body.amber .navbtn.on{box-shadow:inset 0 -2px 0 #ff6a00;color:#ffb000}
-body.amber .pnl h3{color:#ffb000;background:#140d00}
-body.amber .btn.go,body.amber .rng button.on{background:#3d2a00;border-color:#8a5a00;color:#ffcf66}
-body.amber #secbar .t{color:#ff6a00}
-body.amber #tape .it b{color:#ffb000}
+/* ---------- thème Bloomberg : noir, orange, ambre, blanc ; police terminal ---------- */
+body.bbg{--bg:#000;--surface:#000;--raised:#1a1a1a;--line:#2e2e2e;--txt:#f2f2f2;--txt2:#ffb000;--txt3:#a87a1e;--sel:#3a2600;--hot:#fb8b1e;--pos:#2ee05f;--neg:#ff433d;
+--mono:"Lucida Console","Consolas","Courier New",ui-monospace,monospace}
+body.bbg #top{background:#000;border-bottom:1px solid #333}
+body.bbg #brand{background:#fb8b1e;color:#000;height:30px;display:flex;align-items:center}
+body.bbg .navbtn{color:#ffb000}
+body.bbg .navbtn kbd{background:#3a3a3a;color:#fff;border-color:#3a3a3a;border-radius:0}
+body.bbg .navbtn:hover{background:#1a1a1a;color:#fff}
+body.bbg .navbtn.on{background:#fb8b1e;color:#000;box-shadow:none}
+body.bbg .navbtn.on kbd{background:#000;color:#fb8b1e;border-color:#000}
+body.bbg #searchbtn{background:#ffd200;color:#000;border:none;border-radius:0;font-weight:700;padding:3px 10px}
+body.bbg #searchbtn::after{content:' <GO>';color:#000;font-weight:400}
+body.bbg #helpbtn,body.bbg #themebtn{color:#ffb000;border-radius:0}
+body.bbg #clocks b{color:#fff}
+body.bbg #tape{background:#000;border-bottom:1px solid #333}
+body.bbg #tape .it b{color:#ffb000;font-weight:400}
+body.bbg .pnl{background:#000;border-color:#2e2e2e;border-radius:0}
+body.bbg .pnl>h3{background:#262626;color:#ffb000;border-bottom:1px solid #3a3a3a;letter-spacing:.5px}
+body.bbg .pnl>h3 .rt{color:#9a9a9a}
+body.bbg th{background:#000;color:#ffb000;border-bottom-color:#3a3a3a}
+body.bbg td,body.bbg .stat .n,body.bbg .kv .v{color:#f2f2f2}
+body.bbg .kv .k,body.bbg .stat .l{color:#ffb000}
+body.bbg .stat .s{color:#9a9a9a}
+body.bbg .pos,body.bbg td.pos,body.bbg .n.pos,body.bbg .v.pos{color:#2ee05f}
+body.bbg .neg,body.bbg td.neg,body.bbg .n.neg,body.bbg .v.neg{color:#ff433d}
+body.bbg .rng button,body.bbg .chip,body.bbg .btn{border-radius:0;border-color:#3a3a3a;color:#ffb000}
+body.bbg .rng button.on,body.bbg .chip.on,body.bbg .btn.go{background:#fb8b1e;border-color:#fb8b1e;color:#000}
+body.bbg .ctl{background:#000;border-bottom-color:#2e2e2e}
+body.bbg #secbar{background:#c8102e;border-bottom:none;color:#fff}
+body.bbg #secbar .t{background:#000;color:#ffb000;padding:0 6px}
+body.bbg #secbar .px{color:#fff}
+body.bbg #secbar .nm{color:#fff}
+body.bbg #secbar nav button{color:#fff;border-color:rgba(255,255,255,.35);border-radius:0}
+body.bbg #secbar nav button:hover{background:#000;color:#ffb000}
+body.bbg #secbar .pos,body.bbg #secbar .neg{color:#fff}
+body.bbg .warn{background:#000;border-left-color:#fb8b1e;color:#ffb000}
+body.bbg .note{color:#9a9a9a}
+body.bbg a,body.bbg a:visited{color:#ffd200} body.bbg .mpop a,body.bbg #g-arts a,body.bbg #g-res a{color:#f2f2f2}
+body.bbg ::-webkit-scrollbar-thumb{background:#3a3a3a}
 
 /* ---------- mode intégré (panneau du Launchpad) ---------- */
 body.embed #top,body.embed #tape,body.embed #bot{display:none}
@@ -1845,12 +1875,13 @@ el.innerHTML=`
 <div class="stat"><span class="l">OBJECTIF ANALYSTES (12 MOIS)</span><span class="n">${N(F.target)}</span><span class="s">${up!=null?pct(up,1)+' de potentiel · ':''}moyenne du consensus${F.ts?', lu '+ago(F.ts):''}</span></div>
 <div class="stat"><span class="l">CONSENSUS</span><span class="n" style="font-size:15px">${F.rating?esc(F.rating):'—'}</span><span class="s">${F.analysts?F.analysts+' analystes':''}</span></div>
 </div></div>
-<div class="pnl" id="sec-gp" style="margin-bottom:9px"><h3>Graphique — chandeliers japonais<span class="rt" id="secsrc">${WORKER_URL?'Yahoo Finance via relais':'relais non configuré'}</span></h3>
+<div class="pnl" id="sec-gp" style="margin-bottom:9px"><h3>${secLine()?'GP — Line Chart':'GP — Chandeliers japonais'}<span class="rt" id="secsrc">${WORKER_URL?'Yahoo Finance via relais':'relais non configuré'}</span></h3>
 <div class="ctl" style="align-items:center">
 <div class="rng" role="group" aria-label="Période">${Object.keys(RANGE_CFG).map(r=>`<button type="button" data-r="${r}" class="${r===SEC.range?'on':''}">${r}</button>`).join('')}</div>
 <div class="rng" role="group" aria-label="Indicateurs">
 <button type="button" data-t="ma" class="${SEC.ma?'on':''}" aria-pressed="${SEC.ma}">MM50 / MM200</button>
 <button type="button" data-t="vol" class="${SEC.vol?'on':''}" aria-pressed="${SEC.vol}">Volume</button></div>
+<div class="rng" role="group" aria-label="Type de graphique"><button type="button" data-cs="line" class="${secLine()?'on':''}">Ligne</button><button type="button" data-cs="candle" class="${secLine()?'':'on'}">Chandeliers</button></div>
 <span class="mut" style="font-size:10px;margin-left:auto" id="secperf"></span></div>
 <div class="pbody" style="position:relative"><canvas id="seccv" height="380" role="img" aria-label="Graphique en chandeliers japonais de ${esc(sym)}"></canvas>
 <div id="sectip" style="position:absolute;top:14px;left:20px;font-size:10px;color:var(--txt2);pointer-events:none"></div>
@@ -1880,6 +1911,7 @@ Fondamentaux : ${Object.keys(F).length>3?'Yahoo Finance via yfinance, actualisé
 Graphique : clôtures ${SEC.range==='5A'?'hebdomadaires':'quotidiennes'} Yahoo Finance, cours différés.</div></div></div>
 </div>`;
 el.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{ SEC.range=b.dataset.r; viewSecurity(); });
+el.querySelectorAll('[data-cs]').forEach(b=>b.onclick=()=>{ SEC.style=b.dataset.cs; viewSecurity(); });
 el.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{ SEC[b.dataset.t]=!SEC[b.dataset.t]; viewSecurity(); });
 el.querySelectorAll('[data-jump]').forEach(b=>b.onclick=()=>{ const t=document.getElementById(b.dataset.jump); if(t){ const m=document.getElementById('main'); m.scrollTo({top:t.offsetTop-52,behavior:'smooth'}); } });
 rvRender(sym,F); faRender(sym); dvdRender(sym); cnRender(sym,nws); omonRender(sym); cfRender(sym); secErnRender(sym);
@@ -1887,7 +1919,8 @@ if(WORKER_URL) loadCandles(sym, F, px);
 }
 
 const RANGE_CFG={'1J':{f:'1d',n:9999},'1M':{f:'1y',n:22},'3M':{f:'1y',n:66},'6M':{f:'2y',n:128},'1A':{f:'2y',n:252},'2A':{f:'2y',n:520},'5A':{f:'5y',n:9999}};
-const SEC={range:'6M', ma:true, vol:true, bars:null, sym:null, cache:new Map()};
+const SEC={range:'6M', ma:true, vol:true, bars:null, sym:null, cache:new Map(), style:null};   // style : null = selon le thème (Bloomberg → ligne)
+const secLine=()=>SEC.style?SEC.style==='line':document.body.classList.contains('bbg');
 async function loadCandles(sym, F, px){
 const cfg=RANGE_CFG[SEC.range], key=sym+'|'+cfg.f, msg=document.getElementById('secmsg');
 try{
@@ -1937,6 +1970,7 @@ const cfg=RANGE_CFG[SEC.range], n=Math.min(cfg.n, all.length), off=all.length-n,
 const closes=all.map(b=>b.c), m50=sma(closes,50).slice(off), m200=sma(closes,200).slice(off);
 const r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1, W=r.width, H=380;
 cv.width=W*dpr; cv.height=H*dpr; const x=cv.getContext('2d'); x.scale(dpr,dpr);
+const LINE=secLine();
 const hasVol=SEC.bars.some(b=>b.v>0), pr=64, pt=28, volH=SEC.vol&&hasVol?70:0, gap=SEC.vol&&hasVol?14:0, pb=18, priceH=H-pt-pb-volH-gap;
 // Échelle calée sur les bougies : une moyenne mobile éloignée ne doit pas écraser le graphique.
 let lo=Math.min(...bars.map(b=>b.l)), hi=Math.max(...bars.map(b=>b.h));
@@ -1944,30 +1978,48 @@ const padY=(hi-lo)*0.06||Math.abs(hi)*0.002||1; lo-=padY; hi+=padY;
 const sym=SEC.sym, dd=v=>npx(v,sym);
 const step=(W-pr-8)/n, cw=Math.max(1,Math.min(14,step*0.7));
 const X=i=>8+step*(i+0.5), Y=v=>pt+(1-(v-lo)/(hi-lo))*priceH;
-x.font='9px monospace'; x.strokeStyle='#1c2127'; x.fillStyle='#8a93a0'; x.textAlign='left';
-for(let k=0;k<=4;k++){ const v=lo+(hi-lo)*k/4, y=Y(v); x.beginPath(); x.moveTo(8,y); x.lineTo(W-pr,y); x.stroke(); x.fillText(dd(v),W-pr+4,y+3); }
+x.font='9px monospace'; x.strokeStyle=LINE?'#2e2e2e':'#1c2127'; x.fillStyle=LINE?'#dddddd':'#8a93a0'; x.textAlign='left'; if(LINE) x.setLineDash([2,3]);
+for(let k=0;k<=4;k++){ const v=lo+(hi-lo)*k/4, y=Y(v); x.beginPath(); x.moveTo(8,y); x.lineTo(W-pr,y); x.stroke(); x.fillText(dd(v),W-pr+4,y+3); } x.setLineDash([]);
 const ticks=Math.min(6,n); x.textAlign='center';
 for(let k=0;k<ticks;k++){ const i=Math.round(k*(n-1)/Math.max(1,ticks-1));
 x.fillText(SEC.range==='1J'?new Date(bars[i].t).toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'}):new Date(bars[i].t).toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:SEC.range==='1M'||SEC.range==='3M'?undefined:'2-digit'}),X(i),H-5); }
 // volume
 if(SEC.vol&&bars.some(b=>b.v>0)){ const vmax=Math.max(...bars.map(b=>b.v||0))||1, vb=pt+priceH+gap+volH;
-bars.forEach((b,i)=>{ if(!b.v) return; const h=b.v/vmax*volH; x.fillStyle=b.c>=b.o?'rgba(47,191,107,.35)':'rgba(224,74,74,.35)'; x.fillRect(X(i)-cw/2,vb-h,cw,h); });
-x.fillStyle='#4a525c'; x.textAlign='left'; x.fillText('Volume',10,pt+priceH+gap+9); }
-// chandeliers
-bars.forEach((b,i)=>{ const upc=b.c>=b.o, col=upc?'#2fbf6b':'#e04a4a';
+if(LINE){ bars.forEach((b,i)=>{ if(!b.v) return; const h=b.v/vmax*volH; x.fillStyle='#d8d8d8'; x.fillRect(X(i)-Math.max(.6,cw*.35),vb-h,Math.max(1.2,cw*.7),h); });
+const sm=bars.map((_,i)=>{ const a=bars.slice(Math.max(0,i-14),i+1).map(z=>z.v||0); return a.reduce((p,q)=>p+q,0)/a.length; });
+x.strokeStyle='#2ee05f'; x.lineWidth=1.2; x.beginPath(); sm.forEach((v,i)=>{ const y=vb-v/vmax*volH; i?x.lineTo(X(i),y):x.moveTo(X(i),y); }); x.stroke();
+x.fillStyle='rgba(0,0,0,.8)'; x.fillRect(10,pt+priceH+gap,210,28); x.font='10px monospace'; x.textAlign='left';
+x.fillStyle='#d8d8d8'; x.fillText('■ Volume',14,pt+priceH+gap+11); x.textAlign='right'; x.fillText(big(bars[n-1].v||0),214,pt+priceH+gap+11);
+x.fillStyle='#2ee05f'; x.textAlign='left'; x.fillText('■ SMAVG Volume (15)',14,pt+priceH+gap+24); x.textAlign='right'; x.fillText(big(sm[n-1]),214,pt+priceH+gap+24); x.font='9px monospace'; }
+else { bars.forEach((b,i)=>{ if(!b.v) return; const h=b.v/vmax*volH; x.fillStyle=b.c>=b.o?'rgba(47,191,107,.35)':'rgba(224,74,74,.35)'; x.fillRect(X(i)-cw/2,vb-h,cw,h); });
+x.fillStyle='#4a525c'; x.textAlign='left'; x.fillText('Volume',10,pt+priceH+gap+9); } }
+// ligne façon Bloomberg (aire bleue, trait blanc) ou chandeliers
+if(LINE){ const g=x.createLinearGradient(0,pt,0,pt+priceH); g.addColorStop(0,'rgba(58,141,222,.85)'); g.addColorStop(1,'rgba(10,40,80,.3)');
+x.beginPath(); x.moveTo(X(0),pt+priceH); bars.forEach((b,i)=>x.lineTo(X(i),Y(b.c))); x.lineTo(X(n-1),pt+priceH); x.closePath(); x.fillStyle=g; x.fill();
+x.beginPath(); bars.forEach((b,i)=>i?x.lineTo(X(i),Y(b.c)):x.moveTo(X(i),Y(b.c))); x.strokeStyle='#fff'; x.lineWidth=1.3; x.stroke();
+const lc=bars[n-1].c; x.fillStyle='#fff'; x.fillRect(W-pr+1,Y(lc)-8,pr-2,16); x.fillStyle='#000'; x.font='bold 10px monospace'; x.textAlign='left'; x.fillText(dd(lc),W-pr+5,Y(lc)+4); x.font='9px monospace';
+// encadré « séance » : dernier, plus haut, moyenne, plus bas de la période
+let ih=0, il=0; bars.forEach((b,i)=>{ if(b.c>bars[ih].c) ih=i; if(b.c<bars[il].c) il=i; });
+const avg=bars.reduce((p,b)=>p+b.c,0)/n, fd=t=>new Date(t).toLocaleDateString('fr-FR',{day:'2-digit',month:'2-digit',year:'2-digit'});
+const rows=[['■ Dernier',dd(lc)],['↑ Plus haut le '+fd(bars[ih].t),dd(bars[ih].c)],['+ Moyenne',dd(avg)],['↓ Plus bas le '+fd(bars[il].t),dd(bars[il].c)]];
+x.fillStyle='rgba(0,0,0,.85)'; x.fillRect(18,pt+8,226,18+rows.length*14); x.strokeStyle='#888'; x.lineWidth=1; x.strokeRect(18,pt+8,226,18+rows.length*14);
+x.font='10px monospace'; x.fillStyle='#fff'; x.textAlign='left'; x.fillText(SEC.range==='1J'?'Séance du jour':'Période '+SEC.range,26,pt+21);
+rows.forEach(([a,b],k)=>{ x.fillStyle='#ddd'; x.textAlign='left'; x.fillText(a,26,pt+36+k*14); x.textAlign='right'; x.fillText(b,236,pt+36+k*14); }); x.font='9px monospace'; }
+else bars.forEach((b,i)=>{ const upc=b.c>=b.o, col=upc?'#2fbf6b':'#e04a4a';
 x.strokeStyle=col; x.lineWidth=1; x.beginPath(); x.moveTo(X(i),Y(b.h)); x.lineTo(X(i),Y(b.l)); x.stroke();
 const yo=Y(b.o), yc=Y(b.c), top=Math.min(yo,yc), h=Math.max(1,Math.abs(yc-yo));
 x.fillStyle=col; x.fillRect(X(i)-cw/2,top,cw,h); });
 // moyennes mobiles
 const line=(a,col)=>{ x.save(); x.beginPath(); x.rect(8,pt,W-pr-8,priceH); x.clip();
 x.strokeStyle=col; x.lineWidth=1.3; x.beginPath(); let s=false; a.forEach((v,i)=>{ if(v==null) return; s?x.lineTo(X(i),Y(v)):x.moveTo(X(i),Y(v)); s=true; }); x.stroke(); x.restore(); };
-if(SEC.ma&&SEC.range!=='1J'){ line(m50,'#e8a33d'); line(m200,'#bb98e6'); }
+const C50=LINE?'#ffd200':'#e8a33d', C200=LINE?'#ff433d':'#bb98e6';
+if(SEC.ma&&SEC.range!=='1J'){ line(m50,C50); line(m200,C200); }
 const lastMA=a=>{ for(let k=a.length-1;k>=0;k--) if(a[k]!=null) return a[k]; return null; };
 const out=(v)=>v!=null&&(v<lo||v>hi)?` ${v>hi?'↑':'↓'} ${dd(v)} hors cadre`:'';
 const unit=SEC.range==='5A'?'semaines':'séances';
 if(SEC.ma&&SEC.range!=='1J'){ const l200='— MM200 ('+unit+')'+out(lastMA(m200)), l50='— MM50'+out(lastMA(m50));
-x.textAlign='right'; x.fillStyle='#bb98e6'; x.fillText(l200,W-pr-4,pt-6);
-x.fillStyle='#e8a33d'; x.fillText(l50,W-pr-4-x.measureText(l200).width-12,pt-6); }
+x.textAlign='right'; x.fillStyle=C200; x.fillText(l200,W-pr-4,pt-6);
+x.fillStyle=C50; x.fillText(l50,W-pr-4-x.measureText(l200).width-12,pt-6); }
 // survol
 const tip=document.getElementById('sectip'), i=hover?hover.i:null, my=hover?hover.y:null;
 if(i!=null&&i>=0&&i<n){ const b=bars[i];
@@ -3855,12 +3907,12 @@ el.innerHTML=it?`<div class="trk">${it}${it}</div>`:'';
 el.querySelectorAll('[data-tsym]').forEach(x=>x.onclick=()=>{ S.focus=x.dataset.tsym; go('sec'); }); }
 renderTape(); setInterval(renderTape,60000);
 const THEME_KEY='terminal.theme';
-function setTheme(t){ document.body.classList.toggle('amber',t==='amber'); const b=document.getElementById('themebtn');
-b.textContent='Thème : '+(t==='amber'?'ambre':'bleu'); b.setAttribute('aria-pressed',t==='amber');
-try{ localStorage.setItem(THEME_KEY,t); }catch(e){} if(S.view==='sec'&&!ecoGet(S.focus)) drawCandles(); }
+function setTheme(t,redraw){ if(t!=='bbg') t='blue'; document.body.classList.toggle('bbg',t==='bbg'); const b=document.getElementById('themebtn');
+b.textContent='Thème : '+(t==='bbg'?'Bloomberg':'bleu'); b.setAttribute('aria-pressed',t==='bbg');
+try{ localStorage.setItem(THEME_KEY,t); }catch(e){} if(redraw&&S.view) go(S.view); }
 setTheme((()=>{ try{ return localStorage.getItem(THEME_KEY)||'blue'; }catch(e){ return 'blue'; } })());
 document.getElementById('helpbtn').onclick=openHelp;
-document.getElementById('themebtn').onclick=()=>setTheme(document.body.classList.contains('amber')?'blue':'amber');
+document.getElementById('themebtn').onclick=()=>setTheme(document.body.classList.contains('bbg')?'blue':'bbg',true);
 const EMBED=new URLSearchParams(location.search);
 if(EMBED.get('embed')){ document.body.classList.add('embed'); const c=EMBED.get('cmd')||'WEI';
 S.view='mkt'; (async()=>{ // catalogue chargé d'abord : « TTE » doit devenir TTE.PA, pas le certificat américain
