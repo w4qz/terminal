@@ -77,6 +77,14 @@ jobs:
           OPENFIGI_KEY: ${{ secrets.OPENFIGI_KEY }}
         run: python scripts/build_figi.py
 
+      - name: Finnhub — résultats, consensus et actualités par société
+        id: finnhub
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+        run: python scripts/build_finnhub.py
+
       - name: Publier les fichiers
         if: always()
         env:
@@ -84,7 +92,7 @@ jobs:
         run: |
           git config user.name  "terminal-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          FILES="fundamentals.json peers.json financials.json options.json economics.json sec.json worldbank.json figi.json"
+          FILES="fundamentals.json peers.json financials.json options.json economics.json sec.json worldbank.json figi.json finnhub.json"
           # Seuls les fichiers produits par CE robot sont publiés : l'autre robot ne voit jamais
           # ses fichiers récents écrasés par une copie ancienne.
           mkdir -p "$RUNNER_TEMP/out"
@@ -95,7 +103,7 @@ jobs:
               # status.json (onglet Diagnostic) : on met à jour nos étapes, on garde celles de l'autre robot
               python3 - <<'PY'
           import json, os, datetime
-          names = {"fundamentals": "fondamentaux", "financials": "états financiers", "options": "options", "economics": "séries économiques", "sec": "SEC", "worldbank": "Banque mondiale", "figi": "OpenFIGI"}
+          names = {"fundamentals": "fondamentaux", "financials": "états financiers", "options": "options", "economics": "séries économiques", "sec": "SEC", "worldbank": "Banque mondiale", "figi": "OpenFIGI", "finnhub": "Finnhub"}
           steps = json.loads(os.environ.get("STEPS_JSON") or "{}")
           try:
               st = json.load(open("status.json", encoding="utf-8"))
