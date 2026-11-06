@@ -193,7 +193,7 @@ FUND_TICKERS = [
     "ACWI", "AGG", "GLD", "BIL",   # ETF des profils types (dividendes du rapport client)
 ]
 FUND_FIELDS = {   # clé du terminal ← clé Yahoo
-    "name": "longName", "sector": "sector", "industry": "industry", "ccy": "currency",
+    "name": "longName", "web": "website", "sector": "sector", "industry": "industry", "ccy": "currency",
     "mcap": "marketCap", "pe": "trailingPE", "fpe": "forwardPE", "eps": "trailingEps",
     "feps": "forwardEps", "revTTM": "totalRevenue", "netIncome": "netIncomeToCommon",
     "shares": "sharesOutstanding", "beta": "beta", "div": "dividendRate", "divYield": "dividendYield",
