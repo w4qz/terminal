@@ -235,7 +235,7 @@ border-bottom:1px solid var(--line);display:flex;align-items:center;gap:16px}
 #themebtn:hover{color:var(--txt)}
 /* ---------- thème ambre façon Bloomberg ---------- */
 /* ---------- thème Bloomberg : noir, orange, ambre, blanc ; police terminal ---------- */
-body.bbg{--bg:#000;--surface:#000;--raised:#1a1a1a;--line:#2e2e2e;--txt:#f2f2f2;--txt2:#ffb000;--txt3:#a87a1e;--sel:#3a2600;--hot:#fb8b1e;--pos:#2ee05f;--neg:#ff433d}
+body.bbg{font-family:"Arial Narrow","Helvetica Neue",Helvetica,Arial,sans-serif;font-stretch:condensed;font-size:13px;font-variant-numeric:tabular-nums;--bg:#000;--surface:#000;--raised:#1a1a1a;--line:#2e2e2e;--txt:#f2f2f2;--txt2:#ffb000;--txt3:#a87a1e;--sel:#3a2600;--hot:#fb8b1e;--pos:#2ee05f;--neg:#ff433d}
 body.bbg #top{background:#000;border-bottom:1px solid #333}
 body.bbg #brand{background:#fb8b1e;color:#000;height:30px;display:flex;align-items:center}
 body.bbg .navbtn{color:#ffb000}
@@ -273,6 +273,19 @@ body.bbg .warn{background:#000;border-left-color:#fb8b1e;color:#ffb000}
 body.bbg .note{color:#9a9a9a}
 body.bbg a,body.bbg a:visited{color:#ffd200} body.bbg .mpop a,body.bbg #g-arts a,body.bbg #g-res a{color:#f2f2f2}
 body.bbg ::-webkit-scrollbar-thumb{background:#3a3a3a}
+body.bbg #fbar{display:flex}
+#fbar{display:none;align-items:center;height:22px;background:#c8102e;color:#fff;padding:0 10px;gap:14px;flex:none;font-weight:700}
+#fbar .fc{background:#000;color:#ffb000;padding:0 6px}
+#fbar .ft{font-weight:400}
+#fbar .fr{margin-left:auto;font-weight:400}
+#fbar .fr b{color:#ffd200}
+#fbar .fr .buf{background:#ffd200;color:#000;padding:0 6px;margin-left:6px;font-weight:700;display:none}
+body.bbg .bn{color:#ffd200;font-weight:400;margin-right:6px;font-variant-numeric:tabular-nums}
+body.bbg .pnl>h3{font-size:12px;letter-spacing:0;text-transform:none}
+body.bbg th{font-size:12px}
+body.bbg .sym{font-weight:700}
+body.bbg .stat .n{font-family:inherit}
+
 
 /* ---------- mode intégré (panneau du Launchpad) ---------- */
 body.embed #top,body.embed #tape,body.embed #bot{display:none}
@@ -315,6 +328,7 @@ body.embed #secbar{top:-6px;margin:-6px -6px 6px}
 <button id="themebtn" type="button" aria-pressed="false" title="Basculer le thème">Thème : bleu</button>
 <div id="clocks" aria-label="Horloges des places de marché"></div>
 </div>
+<div id="fbar" aria-hidden="true"><span class="fc" id="fbcode">WEI</span><span class="ft" id="fbtitle">Marchés mondiaux</span><span class="fr">Tapez un <b>numéro de ligne</b> puis Entrée pour ouvrir le titre<span class="buf" id="fbbuf"></span></span></div>
 <div id="tape" aria-label="Bandeau des cours"></div>
 
 <main id="main" tabindex="-1">
@@ -3810,6 +3824,15 @@ sec:viewSecurity, comp:viewComp, eqs:viewEqs, lp:viewLp, news:viewNews, diag:vie
 const VIEW_LABEL={mkt:'Marchés', wl:'Watchlist', pf:'Portefeuille', macro:'Macro', srch:'Recherche',
 sec:'Titre', comp:'Comparer', eqs:'Filtre', lp:'Launchpad', news:'News', diag:'Diagnostic', map:'Carte'};
 
+// Thème Bloomberg : barre de fonction rouge et lignes numérotées (numéro + Entrée ouvre le titre)
+const FCODE={mkt:['WEI','Marchés mondiaux'],wl:['W','Watchlists'],pf:['PORT','Portefeuille'],macro:['ECO','Macroéconomie, taux et calendriers'],map:['MAP','Carte du monde'],srch:['SECF','Recherche de titres'],sec:['GP','Fiche titre'],comp:['COMP','Comparaison'],eqs:['EQS','Filtre d\'actions'],news:['TOP','Actualités'],lp:['BLP','Launchpad'],diag:['DIAG','État des sources']};
+let ROWNUM=[], NUMBUF='';
+function numberRows(v){ const f=FCODE[v]||['',''], c=document.getElementById('fbcode'), t=document.getElementById('fbtitle');
+if(c) c.textContent=v==='sec'&&S.focus?S.focus+' '+f[0]:f[0]; if(t) t.textContent=f[1];
+const root=document.getElementById('v-'+v); ROWNUM=[]; if(!root) return;
+root.querySelectorAll('.bn').forEach(e=>e.remove());
+let n=10; root.querySelectorAll('tr[data-sym]').forEach(tr=>{ const cell=tr.querySelector('th,td'); if(!cell) return;
+const b=document.createElement('span'); b.className='bn'; b.textContent=n+')'; (cell.querySelector('div>div')||cell).prepend(b); ROWNUM[n]=tr; n++; }); }
 async function go(v){
 S.view=v;
 document.querySelectorAll('.view').forEach(e=>e.classList.toggle('on', e.id==='v-'+v));
@@ -3820,6 +3843,7 @@ if(active) b.setAttribute('aria-current','page'); else b.removeAttribute('aria-c
 });
 await RENDER[v]();
 document.getElementById('main').scrollTop=0;
+numberRows(v);
 if(EMBED_FOCUS) focusOnly(EMBED_FOCUS);
 syncBar();
 const live=document.getElementById('live-status');
@@ -3888,6 +3912,11 @@ else if(e.key==='Enter' && palList[palIdx]) palOpen(palList[palIdx]);
 return;
 }
 if(e.target.tagName==='INPUT' || e.metaKey || e.ctrlKey || e.altKey) return;
+if(document.body.classList.contains('bbg')){ const buf=document.getElementById('fbbuf');
+if(/^[0-9]$/.test(e.key)&&NUMBUF.length<3){ e.preventDefault(); NUMBUF+=e.key; if(buf){ buf.textContent=NUMBUF+' <GO>'; buf.style.display='inline'; } return; }
+if(NUMBUF&&(e.key==='Enter'||e.key==='Escape'||e.key==='Backspace')){ e.preventDefault();
+if(e.key==='Backspace'){ NUMBUF=NUMBUF.slice(0,-1); } else { const tr=e.key==='Enter'&&ROWNUM[+NUMBUF]; NUMBUF=''; if(tr) tr.click(); }
+if(buf){ buf.textContent=NUMBUF+' <GO>'; buf.style.display=NUMBUF?'inline':'none'; } return; } }
 const map={m:'mkt', w:'wl', p:'pf', e:'macro', r:'srch', s:'sec', c:'comp', f:'eqs', l:'lp', n:'news', d:'diag', g:'map'};
 if(e.key==='/'){ e.preventDefault(); openPal(); return; }
 if(e.key==='?'){ e.preventDefault(); openHelp(); return; }
@@ -3944,7 +3973,7 @@ try{
 const syms=RT_SYMS(); let n=0;
 for(let i=0;i<syms.length;i+=6){ const res=await Promise.all(syms.slice(i,i+6).map(s=>rtOne(s).catch(()=>false))); n+=res.filter(Boolean).length; }
 if(n){ RT_TS=new Date(); DATA.cache.clear(); harmonize(); renderTape();
-if(S.view==='mkt'||S.view==='wl'){ const mn=document.getElementById('main'), y=mn?mn.scrollTop:0; await RENDER[S.view](); if(mn) mn.scrollTop=y; }
+if(S.view==='mkt'||S.view==='wl'){ const mn=document.getElementById('main'), y=mn?mn.scrollTop:0; await RENDER[S.view](); numberRows(S.view); if(mn) mn.scrollTop=y; }
 syncBar(); }
 }finally{ RT_BUSY=false; }
 }
