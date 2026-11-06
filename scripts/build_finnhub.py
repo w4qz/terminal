@@ -100,7 +100,12 @@ def main() -> int:
             break
         try:
             news = get("/company-news", symbol=s, **{"from": (NOW - timedelta(days=7)).date().isoformat(), "to": NOW.date().isoformat()})
-            sur = get("/stock/earnings", symbol=s, limit=4)
+            try:
+                sur = get("/stock/earnings", symbol=s, limit=4)
+            except Exception as ex2:
+                sur = []
+                if "403" not in str(ex2):
+                    log(f"  ! surprises {s} : {str(ex2)[:60]}")
             cache[s] = {"ts": NOW.isoformat().replace("+00:00", "Z"),
                         "news": [{"h": n.get("headline", "")[:220], "src": n.get("source"), "url": n.get("url"),
                                   "ts": datetime.fromtimestamp(n["datetime"], timezone.utc).isoformat().replace("+00:00", "Z")}
