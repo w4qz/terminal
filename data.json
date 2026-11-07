@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T12:52:42.311464Z",
+ "generated_at": "2026-11-07T13:42:36.933456Z",
  "quotes": {
   "NVDA": {
    "p": 186.68,
@@ -154,8 +154,8 @@
    "prev": 51523.0586,
    "chg": -251.4805,
    "pct": -0.49,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^DJI) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^DJI)",
    "ts": "2026-11-06T21:00:00Z",
    "open": 51078.8516,
    "lo": 50992.6094,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75794.2109,
+   "p": 75835.0781,
    "prev": 75746.9297,
-   "chg": 47.2812,
-   "pct": 0.06,
+   "chg": 88.1484,
+   "pct": 0.12,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-07T12:52:42.311464Z",
+   "ts": "2026-11-07T13:42:36.933456Z",
    "open": 75741.0156,
    "lo": 75703.4219,
    "hi": 76101.3047,
-   "vol": 21289244672,
+   "vol": 20233248768,
    "h": [
     81382.15,
     82017.6,
@@ -844,7 +844,7 @@
     80405.29,
     75942.12,
     75746.93,
-    75794.21
+    75835.08
    ]
   }
  },
@@ -1441,14 +1441,14 @@
    "industry": "Semiconductors",
    "ccy": "KRW",
    "mcap": 798256179183616,
-   "fpe": 2.1385,
+   "fpe": 2.1164,
    "revTTM": 269336677711872,
    "netIncome": 189262280523776,
    "shares": 705173324,
    "beta": 2.466,
    "div": 3000.0,
    "divYield": 0.265,
-   "target": 3157408.8,
+   "target": 3126639.5,
    "targetHi": 4700000.0,
    "targetLo": 1575000.0,
    "rating": "Achat fort",
@@ -2220,6 +2220,94 @@
  ],
  "news": [
   {
+   "h": "World’s No. 1 restaurant crowned as contest comes under increasing scrutiny",
+   "w": "Asador Etxebarri in Atxondo, Spain, is the world's top restaurant, according to the 50 Best Restaurants, which announced its 2026 list.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-07T13:38:44Z",
+   "url": "https://www.cnbc.com/2026/11/07/worlds-50-best-restaurants-2026-asador-etxebarri.html"
+  },
+  {
+   "h": "Democrat shaping AI policy bought chip stocks despite backing congressional trading ban",
+   "w": "Rep. Josh Gottheimer disclosed new AI-linked stock purchases months after voting for a congressional trading ban, as Democrats prepare to regulate the industry.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-07T13:30:01Z",
+   "url": "https://www.cnbc.com/2026/11/07/josh-gottheimer-ai-stocks-congress-trading-ban.html"
+  },
+  {
+   "h": "The AI trade is now counting on Anthropic’s IPO — but it couldn’t be happening at a worse time",
+   "w": "The ongoing tech selloff is leading investors to wonder if Anthropic will delay its IPO or list at a discount.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-07T13:30:00Z",
+   "url": "https://www.marketwatch.com/story/the-ai-trade-is-now-counting-on-anthropics-ipo-but-it-couldnt-be-happening-at-a-worse-time-8bd0f1c4?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Berkshire Hathaway accélère les rachats d’actions malgré une baisse des bénéfices",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T13:16:00Z",
+   "url": "https://fr.investing.com/news/stock-market-news/berkshire-hathaway-accelere-les-rachats-dactions-malgre-une-baisse-des-benefices-3683606"
+  },
+  {
+   "h": "La Pologne : S&P abaisse ses perspectives à négatives, Domański pointe les vetos présidentiels",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T13:08:20Z",
+   "url": "https://fr.investing.com/news/economy-news/la-pologne--sp-abaisse-ses-perspectives-a-negatives-domanski-pointe-les-vetos-presidentiels-3683604"
+  },
+  {
+   "h": "Risk of Iran war escalation remains high despite Democratic sweep in U.S. midterm elections",
+   "w": "The U.S. and Iran are on a collision course as tensions in the Middle East simmer.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-07T13:03:12Z",
+   "url": "https://www.cnbc.com/2026/11/07/iran-war-midterm-election-oil-price-trump.html"
+  },
+  {
+   "h": "Le SVP de GATX Kevin Hillesland cède des actions pour 355.801$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T13:02:28Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-svp-de-gatx-kevin-hillesland-cede-des-actions-pour-355801-93CH-3683602"
+  },
+  {
+   "h": "America doesn't like socialism. So why are socialists winning?",
+   "w": "Democratic socialists had their best showing yet at the polls. The problem: Most U.S. voters don't actually like socialism.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-07T13:01:01Z",
+   "url": "https://www.cnbc.com/2026/11/07/socialism-elections-economy.html"
+  },
+  {
+   "h": "Les équipementiers automobiles s’alarment des conséquences sociales de l’accord franco-allemand",
+   "w": "La filière dénonce un compromis favorable aux constructeurs automobiles et craint une accélération des suppressions d’emplois et des fermetures d’usines. Chacun espère peser lors du débat au Parlement européen mi-décembre.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-07T13:00:11Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/11/07/les-equipementiers-automobiles-s-alarment-des-consequences-sociales-de-l-accord-franco-allemand_6808276_3234.html"
+  },
+  {
+   "h": "Anthropic IPO meets AI backlash after midterms show stinging rebuke of data centers",
+   "w": "Anthropic is poised to become the first pure-play AI company to hit the public market at a time when the public is increasingly leary of the industry.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-07T13:00:01Z",
+   "url": "https://www.cnbc.com/2026/11/07/anthropic-ipo-ai-data-center-backlash.html"
+  },
+  {
+   "h": "Cosm rides premium moviegoing wave with more immersive screenings and a wider library",
+   "w": "Cosm tickets cost anywhere from $18 for a matinee to around $70 for prime seats or in-demand showings.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-07T13:00:01Z",
+   "url": "https://www.cnbc.com/2026/11/07/cosm-immersive-movie-screenings.html"
+  },
+  {
    "h": "Berkshire shares surge as Wall Street swoons amid AI fears",
    "w": "Berkshire Hathaway shares roared past the S&amp;P 500 index this week and are outperforming the benchmark for the year-to-date.",
    "syms": [
@@ -2228,6 +2316,22 @@
    "src": "CNBC — Marchés",
    "ts": "2026-11-07T12:49:19Z",
    "url": "https://www.cnbc.com/2026/11/07/berkshire-shares-surge-as-wall-street-swoons-amid-ai-fears.html"
+  },
+  {
+   "h": "Alerte résultats : Tata Chemicals publie des résultats mitigés au T2 2027",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T12:48:56Z",
+   "url": "https://fr.investing.com/news/transcripts/alerte-resultats--tata-chemicals-publie-des-resultats-mitiges-au-t2-2027-93CH-3683599"
+  },
+  {
+   "h": "Poutine approfondit l’expropriation de Japan Tobacco avec un second décret",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T12:48:11Z",
+   "url": "https://fr.investing.com/news/stock-market-news/poutine-approfondit-lexpropriation-de-japan-tobacco-avec-un-second-decret-3683601"
   },
   {
    "h": "Compte rendu de résultats : Surya Roshni enregistre un chiffre d’affaires record au T2 EF 2027",
@@ -2247,21 +2351,21 @@
    "mine": 1
   },
   {
+   "h": "What will a Democratic Congress mean for Ukraine?",
+   "w": "With Donald Trump retaining control of foreign policy, lawmakers will use legislative tools to try to support Kyiv",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-07T12:00:04Z",
+   "url": "https://www.ft.com/content/fac3a560-7845-4acf-9487-54ec8a445d74?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "US plan to overhaul air traffic control system like ‘changing a tyre at 70mph’",
    "w": "Transport secretary’s $42.5bn project to squeeze decades of much-needed upgrades into three years could be risky, experts argue",
    "syms": [],
    "src": "myFT — world",
    "ts": "2026-11-07T12:00:04Z",
    "url": "https://www.ft.com/content/1cbee3e3-b4cf-4831-bd4e-ac1653c7c7c7?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "What will a Democratic Congress mean for Ukraine?",
-   "w": "With Donald Trump retaining control of foreign policy, lawmakers will use legislative tools to try to support Kyiv",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-07T12:00:04Z",
-   "url": "https://www.ft.com/content/fac3a560-7845-4acf-9487-54ec8a445d74?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2305,54 +2409,12 @@
    "url": "https://fr.investing.com/news/transcripts/compte-rendu-de-resultats--grupo-panvel-depasse-les-attentes-au-t3-2026-93CH-3683594"
   },
   {
-   "h": "La Juste Valeur d’InvestingPro repère un gain de 66% sur Array Technologies",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T11:12:03Z",
-   "url": "https://fr.investing.com/news/investment-ideas/la-juste-valeur-dinvestingpro-repere-un-gain-de-66-sur-array-technologies-93CH-3683593"
-  },
-  {
-   "h": "Comment la Juste Valeur d’InvestingPro a anticipé la baisse de 43% d’Unusual Machines",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T11:04:34Z",
-   "url": "https://fr.investing.com/news/investment-ideas/comment-la-juste-valeur-dinvestingpro-a-anticipe-la-baisse-de-43-dunusual-machines-93CH-3683592"
-  },
-  {
    "h": "Jean Pisani-Ferry : « La Chine manque d’une stratégie macroéconomique de nature à corriger ses déséquilibres persistants »",
    "w": "Le pays souffre d’une industrie hypertrophiée et prédatrice à l’égard du reste du monde, de services anémiés et d’un secteur immobilier fragilisé, observe l’économiste dans sa chronique au « Monde ».",
    "syms": [],
    "src": "Le Monde — Économie",
    "ts": "2026-11-07T11:00:12Z",
    "url": "https://www.lemonde.fr/idees/article/2026/11/07/jean-pisani-ferry-la-chine-manque-d-une-strategie-macroeconomique-de-nature-a-corriger-ses-desequilibres-persistants_6808269_3232.html"
-  },
-  {
-   "h": "Le candidat à la BCE de Cos met en garde contre les risques d’inflation liés à la guerre en Iran",
-   "w": "",
-   "syms": [
-    "EURUSD"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T10:48:23Z",
-   "url": "https://fr.investing.com/news/economy-news/le-candidat-a-la-bce-de-cos-met-en-garde-contre-les-risques-dinflation-lies-a-la-guerre-en-iran-3683590"
-  },
-  {
-   "h": "Le PDG d’AIM ImmunoTech achète des actions pour 3.166$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T10:31:52Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-daim-immunotech-achete-des-actions-pour-3166-93CH-3683589"
-  },
-  {
-   "h": "Un administrateur d’Avidia Bancorp vend des actions pour 20.917$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T10:31:49Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-davidia-bancorp-vend-des-actions-pour-20917-93CH-3683588"
   },
   {
    "h": "La bulle de l’IA se heurte à la réalité",
@@ -2388,16 +2450,32 @@
     "BRENT"
    ],
    "src": "Le Monde — Économie",
-   "ts": "2026-11-07T08:30:04Z",
+   "ts": "2026-11-07T08:30:03Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/07/apres-huit-mois-de-guerre-au-moyen-orient-la-mue-forcee-des-pays-du-golfe-producteurs-de-petrole-et-de-gaz_6808252_3234.html"
   },
   {
-   "h": "Trump says U.S. carried out ‘minor strikes’ on Iran as missiles hit Qeshm Island",
-   "w": "Trump said the U.S. carried out ‘minor strikes’ on Iran after Iranian media reported two missiles hit Qeshm Island near the Strait of Hormuz.",
+   "h": "Prep schools help Chinese students get into Japan's top universities",
+   "w": "",
    "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-07T07:37:36Z",
-   "url": "https://www.cnbc.com/2026/11/07/trump-us-minor-strikes-iran-qeshm-island.html"
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T07:42:36.933456Z",
+   "url": "https://asia.nikkei.com/business/education/prep-schools-help-chinese-students-get-into-japan-s-top-universities"
+  },
+  {
+   "h": "Japan's Takaichi pushes for tougher cybersecurity laws as attacks surge",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T07:42:36.933456Z",
+   "url": "https://asia.nikkei.com/spotlight/cybersecurity/japan-s-takaichi-pushes-for-tougher-cybersecurity-laws-as-attacks-surge"
+  },
+  {
+   "h": "Democrats' midterm gains hang over data centers, Japanese US investment",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T07:42:36.933456Z",
+   "url": "https://asia.nikkei.com/politics/u.s.-midterm-elections/democrats-midterm-gains-hang-over-data-centers-japanese-us-investment"
   },
   {
    "h": "New Zealand's knife-edge election puts coalition talks in focus",
@@ -2456,14 +2534,6 @@
    "url": "https://asia.nikkei.com/politics/international-relations/putin-exploits-takaichi-s-diplomatic-opening-with-japan-tobacco-grab"
   },
   {
-   "h": "The race is on to build the first fusion power plant — and Europe is looking to Japan for help",
-   "w": "Fusion energy has the potential to provide abundant, clean power. Now, the race is on to develop the world’s first commercial plant.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-07T06:00:01Z",
-   "url": "https://www.cnbc.com/2026/11/07/proxima-fusion-power-japan-supply-chain.html"
-  },
-  {
    "h": "Prospect of 'modern-day Yalta' shakes Asia's postwar order",
    "w": "",
    "syms": [],
@@ -2478,14 +2548,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-07T05:28:21.098749Z",
    "url": "https://asia.nikkei.com/business/finance/japan-s-unprotected-deposits-hit-890bn-as-inheritances-inflate-accounts"
-  },
-  {
-   "h": "Activist Au Kam-san jailed 12.5 years in 1st Macao national security case",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T05:28:21.098749Z",
-   "url": "https://asia.nikkei.com/politics/activist-au-kam-san-jailed-12.5-years-in-1st-macao-national-security-case"
   },
   {
    "h": "UK will not slow down on AI despite backlash in US, says growth minister",
@@ -2723,22 +2785,6 @@
    "mine": 1
   },
   {
-   "h": "Seres, Li Auto join Chinese EVs' charge into Europe",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T04:56:54.284667Z",
-   "url": "https://asia.nikkei.com/business/automobiles/electric-vehicles/seres-li-auto-join-chinese-evs-charge-into-europe"
-  },
-  {
-   "h": "US slaps sanctions on Cambodia's Prince Group over online scams",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T04:56:54.284667Z",
-   "url": "https://asia.nikkei.com/spotlight/society/crime/us-slaps-sanctions-on-cambodia-s-prince-group-over-online-scams"
-  },
-  {
    "h": "Le néolibéralisme est-il mort ? Vie et métamorphoses de la doctrine qui a façonné le monde contemporain",
    "w": "L’élection de Donald Trump et le Brexit, en 2016, marquent-ils la fin de quatre décennies d’hégémonie du néolibéralisme ? Le débat anime des intellectuels à travers le monde, qui s’interrogent sur les mutations d’une doctrine ayant refondé le libéralisme moderne en donnant un rôle nouveau à l’Etat.",
    "syms": [],
@@ -2813,15 +2859,6 @@
    "mine": 1
   },
   {
-   "h": "Trump taps immigration hardliner Stephen Miller as chief of staff",
-   "w": "Decision to replace Susie Wiles comes days after Republican Party’s resounding midterm election defeat",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-06T22:09:58Z",
-   "url": "https://www.ft.com/content/6e8f2244-0e39-45cd-b415-e0be54b0351f?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "US stocks stage tepid recovery after $3.2tn rout fuelled by AI fears",
    "w": "Magnitude of rebound was feeble compared with historic recoveries from severe sell-offs",
    "syms": [
@@ -2873,14 +2910,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-06T21:24:00Z",
    "url": "https://www.marketwatch.com/story/nvidia-amd-and-other-chip-stocks-rebound-is-the-violent-ai-selloff-over-8f7df533?mod=mw_rss_topstories"
-  },
-  {
-   "h": "OpenAI bugging suspect Alfozan pleads not guilty",
-   "w": "Saudi national Abdulrahman Alfozan is charged with planting a recording device in a conference room at artificial intelligence giant OpenAI.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-06T21:15:47Z",
-   "url": "https://www.cnbc.com/2026/11/06/openai-bugging-alfozan-saudi.html"
   },
   {
    "h": "‘It seems bizarre’: We’re in our 80s with $950,000 in traditional IRAs. Why is our adviser pushing Roth conversions?",
@@ -2960,14 +2989,6 @@
    "url": "https://www.marketwatch.com/story/my-93-year-old-father-changed-his-will-at-the-11th-hour-leaving-my-brother-his-entire-500-000-estate-can-i-challenge-it-ecfc63d2?mod=mw_rss_topstories"
   },
   {
-   "h": "A disturbing employment trend is hiding beneath the latest strong job numbers",
-   "w": "The average jobless worker's bout of unemployment surpassed 27 weeks in October, the highest outside of the pandemic period in a decade.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-06T20:11:17Z",
-   "url": "https://www.cnbc.com/2026/11/06/long-term-unemployment-october-jobs-report.html"
-  },
-  {
    "h": "L’Irlande visée par des alertes à la bombe une semaine avant la tenue de deux sommets européens à Dublin",
    "w": "Les menaces, qui se sont révélées infondées, ont ciblé vendredi plusieurs médias irlandais ainsi que plusieurs vols commerciaux entre des pays européens. Le flou demeure sur l’origine et les intentions réelles des auteurs.",
    "syms": [],
@@ -2982,22 +3003,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-06T19:45:32Z",
    "url": "https://www.lemonde.fr/politique/article/2026/11/06/la-propagande-d-extreme-droite-tue-a-paris-des-activistes-demenagent-un-relay-pour-denoncer-le-monopole-de-bollore_6807862_823448.html"
-  },
-  {
-   "h": "Mississippi Senate: Longshot Ty Pinkins says he aimed to spoil Hyde-Smith, boost Colom vote",
-   "w": "Ty Pinkins said he avoided campaigning in heavily Black areas of Mississippi to avoid harming chances for Democrat Scott Colom, who, like him, is Black.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-06T19:44:33Z",
-   "url": "https://www.cnbc.com/2026/11/06/mississippi-senate-ty-pinkins-colom-hyde-smith.html"
-  },
-  {
-   "h": "Watch the Annual Meeting: Cramer on the fate of the AI buildout and stocks to buy now",
-   "w": "At the Investing Club's 4th annual meeting, Cramer also reveals his outlook for 2027 and answers questions from the live audience and members at home.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-06T19:36:12Z",
-   "url": "https://www.cnbc.com/investingclub/2026/11/06/watch-jim-cramer-live.html"
   },
   {
    "h": "Who is in the line of fire after the midterm drubbing?",
@@ -3034,14 +3039,6 @@
    "url": "https://www.marketwatch.com/story/is-it-the-end-of-the-cybertruck-elon-musk-announces-factory-will-shift-production-3e33cafd?mod=mw_rss_topstories"
   },
   {
-   "h": "My adviser recommended an annuity. Is it the right move in this market environment?",
-   "w": "“I haven’t committed to the strategy yet and would appreciate some independent perspectives.”",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-06T18:53:00Z",
-   "url": "https://www.marketwatch.com/story/my-adviser-recommended-an-annuity-is-it-the-right-move-in-this-market-environment-00edbbf6?mod=mw_rss_topstories"
-  },
-  {
    "h": "Why the US midterms sparked an AI stock selloff",
    "w": "Fears of more AI regulation appear to have sparked fear among investors, but concerns about the industry have been growing for some time.",
    "syms": [],
@@ -3067,12 +3064,13 @@
    "mine": 1
   },
   {
-   "h": "Aux Etats-Unis, l’accélération inattendue des créations d’emplois",
-   "w": "Les statistiques officielles pour le mois d’octobre ont fait état d’un léger recul du chômage et d’un bond des créations d’emplois, qui ont plus que doublé par rapport à septembre.",
+   "h": "West End reports spending boost after Oxford Street bans cars and buses",
+   "w": "Transactions on Barclays debit and credit cards increased 13% between October 26 and October 31, compared with same period last year",
    "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-06T18:10:39Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/11/06/aux-etats-unis-l-acceleration-inattendue-des-creations-d-emplois_6807852_3234.html"
+   "src": "myFT — world uk",
+   "ts": "2026-11-06T18:15:49Z",
+   "url": "https://www.ft.com/content/d3d05f60-951d-4135-9342-c62c9f1f5839?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "Why smoky bacon crisps threaten to reignite rows over EU rules",
@@ -3084,8 +3082,8 @@
   }
  ],
  "summary": {
-  "text": "La technologie américaine soutient Wall Street (NDX +1,3 %, NVDA +2,8 %), avec un repli de la volatilité (VIX à 25,63, -9,05 %). À l'inverse, les places internationales décrochent lourdement, notamment le Nikkei (-6,0 %) et le DAX (-2,01 %), sur fond de tensions géopolitiques accrues après des frappes américaines signalées sur l'île de Qeshm en Iran.\n\nSur les devises, le billet vert progresse (DXY à 102,279, +0,72 %), faisant reculer l'EUR/USD à 1,1143 (-0,82 %) et le GBP/USD à 1,3356 (-0,9 %). Les matières premières faiblissent : l'or cède 0,83 % à 4 079,5 $, tandis que le pétrole s'effrite légèrement, le Brent cotant 97,76 $ (-0,54 %) et le brut léger américain 90,34 $ (-0,2 %).\n\nÀ surveiller : l'escalade militaire au Moyen-Orient, l'impact des alertes à la bombe sur l'aviation européenne, et la tenue du Bitcoin (76 038 $), confronté à 1,3 milliard de dollars de sorties nettes sur les ETF.",
+  "text": "Séance très contrastée : Wall Street résiste grâce à la technologie (NDX +1,3 %, NVDA +2,8 %), alors que l'Europe (DAX -2,01 %) et surtout l'Asie chutent lourdement (N225 -6,0 %). Les investisseurs digèrent les résultats des élections de mi-mandat américaines ainsi que les doutes et contestations entourant l'introduction en bourse d'Anthropic.\n\nSur le marché des changes, le billet vert se renforce (DXY +0,72 % à 102,28), faisant reculer l'euro (EUR/USD -0,82 % à 1,1143) et la livre (-0,9 %). Côté matières premières, l'or fléchit (-0,94 % à 4 074,90 $), tandis que les cours pétroliers demeurent quasi stables (Brent à 98,32 $, CL à 90,83 $).\n\nLes regards se tournent vers le risque persistant d'escalade militaire avec l'Iran, les orientations du nouveau Congrès démocrate sur l'Ukraine, ainsi que le durcissement politique et réglementaire ciblant l'essor de l'IA et des centres de données.",
   "model": "gemini-flash-latest",
-  "ts": "2026-11-07T09:24:11.834511Z"
+  "ts": "2026-11-07T13:42:36.933456Z"
  }
 }
