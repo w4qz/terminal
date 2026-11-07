@@ -104,9 +104,13 @@ def hotspot(key, name, q, ll):
     data = ((tl.get("timeline") or [{}])[0].get("data")) or []
     if not data:
         raise RuntimeError("chronologie GDELT vide (requête refusée ou limitée)")
+    # Fenêtres bornées des deux côtés : GDELT renvoie parfois plus de 48 h de chronologie, ce qui gonflait
+    # la veille et donnait des tendances de -60 à -80 % sur toutes les zones.
     cut = (NOW - timedelta(hours=24)).strftime("%Y%m%dT%H%M%S")
-    now24 = sum(d.get("value", 0) for d in data if str(d.get("date", "")) >= cut)
-    prev24 = sum(d.get("value", 0) for d in data if str(d.get("date", "")) < cut)
+    cut48 = (NOW - timedelta(hours=48)).strftime("%Y%m%dT%H%M%S")
+    norm = lambda d: re.sub(r"[^0-9T]", "", str(d.get("date", "")))[:15]
+    now24 = sum(d.get("value", 0) for d in data if norm(d) >= cut)
+    prev24 = sum(d.get("value", 0) for d in data if cut48 <= norm(d) < cut)
     al = gdelt({"query": q, "mode": "ArtList", "timespan": "24h", "maxrecords": 10, "sort": "DateDesc"})
     arts = [{"t": a.get("title", "")[:200], "u": a.get("url"), "d": a.get("domain"), "ts": a.get("seendate")}
             for a in (al.get("articles") or []) if a.get("url", "").startswith("http")]
