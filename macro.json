@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T18:07:26.272339Z",
+ "generated_at": "2026-11-07T18:14:58.654558Z",
  "eco": {
   "prints": [
    {
@@ -19,7 +19,7 @@
     "prev": 2.45,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-06",
+    "pub": "2026-11-07",
     "freq": "M",
     "src": "FRED CPILFESL",
     "url": "https://fred.stlouisfed.org/series/CPILFESL"
@@ -103,25 +103,13 @@
    },
    {
     "k": "Inflation HICP (zone euro, a/a)",
-    "v": 3.75,
-    "prev": 3.23,
+    "v": 2.0,
+    "prev": 2.1,
     "fmt": "%",
-    "ts": "2026-09-01",
-    "pub": "2026-11-06",
+    "ts": "2025-12-01",
     "freq": "M",
-    "src": "FRED CP0000EZ19M086NEST",
-    "url": "https://fred.stlouisfed.org/series/CP0000EZ19M086NEST"
-   },
-   {
-    "k": "Taux de chômage (zone euro)",
-    "v": 6.7,
-    "prev": 6.7,
-    "fmt": "%",
-    "ts": "2023-01-01",
-    "pub": "2026-11-06",
-    "freq": "M",
-    "src": "FRED LRHUTTTTEZM156S",
-    "url": "https://fred.stlouisfed.org/series/LRHUTTTTEZM156S"
+    "src": "Eurostat prc_hicp_manr",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_manr/default/table"
    }
   ],
   "calendar": [
