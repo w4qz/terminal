@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-06T23:59:21.317538Z",
+ "generated_at": "2026-11-07T00:52:11.881924Z",
  "quotes": {
   "NVDA": {
    "p": 186.68,
@@ -370,8 +370,8 @@
    "prev": 5296.25,
    "chg": -114.8301,
    "pct": -2.17,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^STI)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^STI) — échec de la dernière mise à jour",
    "ts": "2026-11-06T09:00:00Z",
    "open": 5152.29,
    "lo": 5138.75,
@@ -413,6 +413,7 @@
    "lo": 10528.0703,
    "hi": 10784.1602,
    "h": [
+    10458.5,
     10441.6,
     10552.1,
     10656.3,
@@ -433,8 +434,7 @@
     10761.3,
     10638.4,
     10829.2,
-    10782.7,
-    10673.94
+    10782.7
    ]
   },
   "DAX": {
@@ -550,12 +550,12 @@
    "prev": 1.1235,
    "chg": -0.0092,
    "pct": -0.82,
-   "st": "DELAYED_15M",
+   "st": "EOD",
    "src": "Yahoo Finance via yfinance (EURUSD=X)",
    "ts": "2026-11-06T22:30:00Z",
-   "open": 1.1222,
-   "lo": 1.1136,
-   "hi": 1.1237,
+   "open": 1.1228,
+   "lo": 1.1133,
+   "hi": 1.1235,
    "h": [
     1.120134,
     1.121302,
@@ -578,7 +578,7 @@
     1.119207,
     1.120724,
     1.123495,
-    1.11433
+    1.122826
    ]
   },
   "USDJPY": {
@@ -589,9 +589,9 @@
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (JPY=X)",
    "ts": "2026-11-06T22:15:00Z",
-   "open": 157.652,
-   "lo": 157.249,
-   "hi": 158.653,
+   "open": 157.435,
+   "lo": 157.419,
+   "hi": 158.54,
    "h": [
     158.06,
     158.06,
@@ -614,7 +614,7 @@
     157.91,
     158.47,
     158.36,
-    158.43
+    157.5
    ]
   },
   "GBPUSD": {
@@ -622,12 +622,12 @@
    "prev": 1.3477,
    "chg": -0.0121,
    "pct": -0.9,
-   "st": "DELAYED_15M",
+   "st": "EOD",
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
    "ts": "2026-11-06T22:30:00Z",
-   "open": 1.345,
+   "open": 1.3455,
    "lo": 1.3344,
-   "hi": 1.3463,
+   "hi": 1.3464,
    "h": [
     1.321493,
     1.322909,
@@ -650,7 +650,7 @@
     1.340986,
     1.343418,
     1.347709,
-    1.335577
+    1.345605
    ]
   },
   "DXY": {
@@ -698,7 +698,7 @@
    "src": "Yahoo Finance via yfinance (GC=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 4098.5,
-   "lo": 4037.0,
+   "lo": 4035.6001,
    "hi": 4116.2002,
    "vol": 166431,
    "h": [
@@ -735,7 +735,7 @@
    "src": "Yahoo Finance via yfinance (CL=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 91.2,
-   "lo": 89.07,
+   "lo": 89.08,
    "hi": 92.53,
    "vol": 253859,
    "h": [
@@ -772,9 +772,9 @@
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 99.24,
-   "lo": 96.65,
+   "lo": 96.71,
    "hi": 100.92,
-   "vol": 38991,
+   "vol": 38993,
    "h": [
     104.28,
     104.72,
@@ -801,17 +801,17 @@
    ]
   },
   "BTC": {
-   "p": 75734.1875,
+   "p": 75780.1562,
    "prev": 75942.125,
-   "chg": -207.9375,
-   "pct": -0.27,
+   "chg": -161.9688,
+   "pct": -0.21,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-06T23:59:21.317538Z",
-   "open": 75982.8125,
-   "lo": 75067.125,
-   "hi": 76282.3984,
-   "vol": 29286920192,
+   "ts": "2026-11-07T00:52:11.881924Z",
+   "open": 75741.0156,
+   "lo": 75741.0156,
+   "hi": 75868.4922,
+   "vol": 28638959616,
    "h": [
     81500.8,
     81382.15,
@@ -834,7 +834,7 @@
     77345.05,
     80405.29,
     75942.12,
-    75735.68
+    75780.16
    ]
   }
  },
@@ -873,7 +873,7 @@
    "fcf": 105658376192,
    "w52lo": 243.42,
    "w52hi": 355.38,
-   "evEbitda": 29.386,
+   "evEbitda": 29.234,
    "earnTs": 1793653200,
    "earnStart": 1801170000,
    "earnEnd": 1801170000,
@@ -961,7 +961,7 @@
    "fcf": 2994125056,
    "w52lo": 349.2,
    "w52hi": 559.15,
-   "evEbitda": 19.687,
+   "evEbitda": 19.494,
    "earnTs": 1793217600,
    "earnStart": 1801083600,
    "earnEnd": 1801083600,
@@ -1005,7 +1005,7 @@
    "fcf": -1162499968,
    "w52lo": 270.7,
    "w52hi": 408.61,
-   "evEbitda": 18.204,
+   "evEbitda": 18.351,
    "earnTs": 1793217600,
    "earnStart": 1793217600,
    "earnEnd": 1793217600,
@@ -1047,7 +1047,7 @@
    "fcf": -34731749376,
    "w52lo": 196.0,
    "w52hi": 287.2,
-   "evEbitda": 16.353,
+   "evEbitda": 16.299,
    "earnTs": 1793304000,
    "earnStart": 1793304000,
    "earnEnd": 1793304000,
@@ -1125,7 +1125,7 @@
    "debt": 39217999872,
    "w52lo": 104.83,
    "w52hi": 225.64,
-   "evEbitda": 138.74,
+   "evEbitda": 151.064,
    "earnTs": 1792526400,
    "earnStart": 1792526400,
    "earnEnd": 1792526400,
@@ -1210,7 +1210,7 @@
    "fcf": 16848499712,
    "w52lo": 520.26,
    "w52hi": 779.82,
-   "evEbitda": 13.591,
+   "evEbitda": 13.702,
    "earnTs": 1792612800,
    "earnStart": 1801083600,
    "earnEnd": 1801083600,
@@ -1251,7 +1251,7 @@
    "fcf": 4967249920,
    "w52lo": 297.38,
    "w52hi": 498.83,
-   "evEbitda": 135.202,
+   "evEbitda": 141.04,
    "earnTs": 1792612800,
    "earnStart": 1801083600,
    "earnEnd": 1801083600,
@@ -1293,7 +1293,7 @@
    "fcf": 30596499456,
    "w52lo": 289.767,
    "w52hi": 495.0,
-   "evEbitda": 27.308,
+   "evEbitda": 27.505,
    "earnTs": 1796850000,
    "earnStart": 1796850000,
    "earnEnd": 1796850000,
@@ -1512,14 +1512,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 998898073600,
+   "mcap": 995843768320,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -1540,7 +1540,7 @@
    "fcf": 7127625216,
    "w52lo": 98.88,
    "w52hi": 135.16,
-   "evEbitda": 24.582,
+   "evEbitda": 24.176,
    "earnTs": 1795095000,
    "earnStart": 1795095000,
    "earnEnd": 1795095000,
@@ -1623,7 +1623,7 @@
    "fcf": 7357125120,
    "w52lo": 188.22,
    "w52hi": 658.52,
-   "evEbitda": 58.933,
+   "evEbitda": 65.503,
    "earnTs": 1793739600,
    "earnStart": 1801602000,
    "earnEnd": 1801602000,
@@ -1665,7 +1665,7 @@
    "fcf": 21118375936,
    "w52lo": 293.89,
    "w52hi": 442.23,
-   "evEbitda": 24.16,
+   "evEbitda": 24.164,
    "earnTs": 1793131200,
    "earnStart": 1800997200,
    "earnEnd": 1800997200,
@@ -1709,7 +1709,7 @@
    "fcf": 28896249856,
    "w52lo": 114.19,
    "w52hi": 188.5,
-   "evEbitda": 8.912,
+   "evEbitda": 8.942,
    "earnTs": 1793363400,
    "earnStart": 1801229400,
    "earnEnd": 1801229400,
@@ -1814,9 +1814,9 @@
    "ccy": "USD",
    "mcap": 568616681472,
    "pe": 34.1549,
-   "fpe": 28.1914,
+   "fpe": 28.1919,
    "eps": 19.11,
-   "feps": 23.1524,
+   "feps": 23.152,
    "revTTM": 36288000000,
    "netIncome": 16958000128,
    "shares": 864657109,
@@ -1840,7 +1840,7 @@
    "fcf": 16629250048,
    "w52lo": 464.52,
    "w52hi": 681.99,
-   "evEbitda": 25.398,
+   "evEbitda": 25.276,
    "earnTs": 1793277000,
    "earnStart": 1801143000,
    "earnEnd": 1801143000,
@@ -1882,7 +1882,7 @@
    "fcf": 17693124608,
    "w52lo": 190.75,
    "w52hi": 302.93,
-   "evEbitda": 18.212,
+   "evEbitda": 18.383,
    "earnTs": 1793363400,
    "earnStart": 1793363400,
    "earnEnd": 1793363400,
@@ -1924,7 +1924,7 @@
    "debt": 37075001344,
    "w52lo": 146.49,
    "w52hi": 236.48,
-   "evEbitda": 7.73,
+   "evEbitda": 7.719,
    "earnTs": 1793363400,
    "earnStart": 1801229400,
    "earnEnd": 1801229400,
@@ -1968,7 +1968,7 @@
    "fcf": 6752750080,
    "w52lo": 844.06,
    "w52hi": 1096.5,
-   "evEbitda": 32.504,
+   "evEbitda": 32.129,
    "earnTs": 1796936400,
    "earnStart": 1796936400,
    "earnEnd": 1796936400,
@@ -2010,7 +2010,7 @@
    "fcf": 2652487680,
    "w52lo": 106.37,
    "w52hi": 212.94,
-   "evEbitda": 108.256,
+   "evEbitda": 112.133,
    "earnTs": 1793653200,
    "earnStart": 1801515600,
    "earnEnd": 1801515600,
@@ -2051,7 +2051,7 @@
    "fcf": 11182624768,
    "w52lo": 70.54,
    "w52hi": 130.37,
-   "evEbitda": 21.063,
+   "evEbitda": 20.667,
    "earnTs": 1794517200,
    "earnStart": 1794517200,
    "earnEnd": 1794517200,
@@ -2095,7 +2095,7 @@
    "fcf": 4349000192,
    "w52lo": 67.27,
    "w52hi": 97.39,
-   "evEbitda": 25.216,
+   "evEbitda": 25.201,
    "earnTs": 1793104200,
    "earnStart": 1793104200,
    "earnEnd": 1793104200,
@@ -2134,7 +2134,7 @@
    "fcf": -1799572992,
    "w52lo": 27.58,
    "w52hi": 133.86,
-   "evEbitda": -25.258,
+   "evEbitda": -26.829,
    "earnTs": 1794258000,
    "earnStart": 1794258000,
    "earnEnd": 1794258000,
@@ -2155,8 +2155,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 123.1505,
+   "shares": 572600000,
+   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2208,6 +2213,38 @@
  ],
  "news": [
   {
+   "h": "Turtle Creek cède des actions JELD-WEN pour 347.850$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T00:19:03Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/turtle-creek-cede-des-actions-jeldwen-pour-347850-93CH-3683491"
+  },
+  {
+   "h": "Le président exécutif de Kinder Morgan achète pour 15 M$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T00:17:16Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-president-executif-de-kinder-morgan-achete-pour-15-m-dactions-93CH-3683490"
+  },
+  {
+   "h": "Goldman relève ses prévisions mondiales de capacité des data centers à 273 GW d’ici 2030",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T00:10:19Z",
+   "url": "https://fr.investing.com/news/stock-market-news/goldman-releve-ses-previsions-mondiales-de-capacite-des-data-centers-a-273-gw-dici-2030-3683488"
+  },
+  {
+   "h": "Le PDG de Sprouts Farmers Market vend des actions pour 1,14M$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T00:02:18Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-sprouts-farmers-market-vend-des-actions-pour-114m-93CH-3683486"
+  },
+  {
    "h": "Le PDG de Mondelez, Dirk Van de Put, cède 8,8 millions $ d’actions",
    "w": "",
    "syms": [],
@@ -2256,38 +2293,6 @@
    "src": "Investing.com France",
    "ts": "2026-11-06T23:32:44Z",
    "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-de-globalfoundries-ganesh-moorthy-achete-pour-93687-dactions-93CH-3683479"
-  },
-  {
-   "h": "Le président exécutif d’AudioEye, Moradi, cède des actions pour 284.377$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T23:32:30Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-president-executif-daudioeye-moradi-cede-des-actions-pour-284377-93CH-3683478"
-  },
-  {
-   "h": "Le directeur juridique de GlobalFoundries cède des actions pour 13.004$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T23:31:55Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-juridique-de-globalfoundries-cede-des-actions-pour-13004-93CH-3683477"
-  },
-  {
-   "h": "Le vice-président senior d’Ingersoll Rand cède des actions pour 831.470$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T23:31:51Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-vicepresident-senior-dingersoll-rand-cede-des-actions-pour-831470-93CH-3683476"
-  },
-  {
-   "h": "GeoVax Labs licencie son PDG David A. Dodd pour faute, qui reste président du conseil",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T23:31:44Z",
-   "url": "https://fr.investing.com/news/sec-filings/geovax-labs-licencie-son-pdg-david-a-dodd-pour-faute-qui-reste-president-du-conseil-93CH-3683475"
   },
   {
    "h": "US warns China it must ‘immediately’ meet terms of Busan trade deal",
@@ -2598,6 +2603,30 @@
    "url": "https://www.marketwatch.com/story/my-adviser-recommended-an-annuity-is-it-the-right-move-in-this-market-environment-00edbbf6?mod=mw_rss_topstories"
   },
   {
+   "h": "Taiwan's KMT old guard fights for power base in tight Taipei mayoral races",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-06T18:52:11.881924Z",
+   "url": "https://asia.nikkei.com/politics/taiwan-s-kmt-old-guard-fights-for-power-base-in-tight-taipei-mayoral-races"
+  },
+  {
+   "h": "Japanese companies caught in crossfire of Beijing-Tokyo rift",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-06T18:52:11.881924Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/japanese-companies-caught-in-crossfire-of-beijing-tokyo-rift"
+  },
+  {
+   "h": "Japan's new whisky breed chases export elixir",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-06T18:52:11.881924Z",
+   "url": "https://asia.nikkei.com/spotlight/big-in-asia/japan-s-new-whisky-breed-chases-export-elixir"
+  },
+  {
    "h": "Microsoft plans to use fewer neoclouds as AI buildout shows signs of strain",
    "w": "Microsoft is winding down the number of neoclouds it counts as partners, picking key suppliers and focusing on its own data centers.",
    "syms": [],
@@ -2825,22 +2854,6 @@
    "url": "https://asia.nikkei.com/politics/china-enacts-law-to-hunt-down-corrupt-officials-who-escape-overseas"
   },
   {
-   "h": "Russia took a Japanese journalist. Tokyo should speak up",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T16:43:33.535326Z",
-   "url": "https://asia.nikkei.com/opinion/russia-took-a-japanese-journalist.-tokyo-should-speak-up"
-  },
-  {
-   "h": "Grab to cut maximum take on Vietnam rides to 32% from 40%",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T16:43:33.535326Z",
-   "url": "https://asia.nikkei.com/business/startups/grab-to-cut-maximum-take-on-vietnam-rides-to-32-from-40"
-  },
-  {
    "h": "Copper prices fall on fears of AI backlash",
    "w": "Red metal has soared this year on forecasts of surging demand from AI data centres, now seen at risk after Democrat sweep in US midterms",
    "syms": [],
@@ -2891,14 +2904,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-06T16:06:12Z",
    "url": "https://www.lemonde.fr/international/article/2026/11/06/marche-du-travail-aux-etats-unis-chomage-en-baisse-creations-d-emplois-en-hausse_6807818_3210.html"
-  },
-  {
-   "h": "Editor's Choice: US anti-data center sentiment spreads, hitting Asian markets",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T16:06:08.021104Z",
-   "url": "https://asia.nikkei.com/editor-s-picks/editor-in-chief-s-picks/editor-s-choice-us-anti-data-center-sentiment-spreads-hitting-asian-markets"
   },
   {
    "h": "Renewable energy groups boosted by ‘clarity’ of US election results",
