@@ -3633,6 +3633,7 @@ for(const u of UNIV||[]){ if(u.st0===undefined) u.st0=u.st; if(!u.nw) u.st=ageSt
 if(u.n===u.s&&SNAPSHOT.fundamentals[u.s]&&SNAPSHOT.fundamentals[u.s].name) u.n=SNAPSHOT.fundamentals[u.s].name; }
 for(const [s,F] of Object.entries(SNAPSHOT.fundamentals)){ if(!F) continue;
 if(!(F.mcap>0)) delete F.mcap;                                  // capitalisation nulle = donnée absente
+if(!F.mcap&&F.eps==null){ for(const k of ['pe','fpe','div','divYield','trailDiv']) delete F[k]; }   // fiche partielle (ex. Michelin : dividende d'avant division, rendement 13,6 %)
 for(const k of ['pe','fpe']) if(F[k]>300){ F[k+'_ns']=F[k]; F[k]=null; }   // bénéfice quasi nul : PER non significatif
 if(!F.sector&&Object.keys(F).length>4) F.sector='Non classé';
 const q=SNAPSHOT.quotes[s], u=U.get(s), px=q&&q.p!=null?q.p:u&&u.p!=null?u.p:null;
@@ -3643,7 +3644,7 @@ else if(F.divYield>40) delete F.divYield; }
 // (FR10Y affichait 4,48 % de septembre quand GC montrait 4,73 % coté) : le dernier point est remplacé.
 if(typeof ecoGet==='function'){
 const gcSrc=k=>{ if(k==='US') return MACRO&&MACRO.gc&&MACRO.gc.us; if(k==='EU') return MACRO&&MACRO.gc&&MACRO.gc.eu; return typeof CURVES!=='undefined'&&CURVES?CURVES[k]:null; };
-for(const [code,k,t] of [['US10Y','US','10A'],['US02Y','US','2A'],['EU10Y','EU','10A'],['EU02Y','EU','2A'],['DE10Y','DE','10A'],['FR10Y','FR','10A'],
+for(const [code,k,t] of [['US10Y','US','10A'],['US02Y','US','2A'],['US05Y','US','5A'],['US30Y','US','30A'],['EU10Y','EU','10A'],['EU02Y','EU','2A'],['DE10Y','DE','10A'],['FR10Y','FR','10A'],
 ['IT10Y','IT','10A'],['GB10Y','UK','10A'],['JP10Y','JP','10A'],['CH10Y','CH','10A']]){
 const e=ecoGet(code), c=gcSrc(k), p=c&&(c.pts||[]).find(x=>x.t===t);
 // Historique quotidien (CNBC) à la place des moyennes mensuelles OCDE sur la période récente
@@ -3657,6 +3658,31 @@ if(!same&&e.last!==p.y) e.prev=e.last;
 e.last=p.y; e.date=p.ts; e.freq=e.freq==='mensuelle'?'mensuelle':e.freq;
 if(!e.src0){ e.src0=e.src; e.src=(c.src||e.src)+' (dernier point) · historique : '+e.src0; }
 if(Array.isArray(e.h)&&e.h.length){ const L=e.h[e.h.length-1], n=e.hDaily?10:7; if(String(L[0]).slice(0,n)===p.ts.slice(0,n)) e.h[e.h.length-1]=[p.ts,p.y]; else e.h.push([p.ts,p.y]); } } }
+// ── Cohérence entre panneaux (audit du 07/11/2026) ──
+// 1. Courbe US de l'onglet Marchés (FRED, clôture de l'avant-veille) : mêmes valeurs que GC (CNBC)
+if(MACRO&&MACRO.gc&&MACRO.gc.us&&Array.isArray(SNAPSHOT.curve)) for(const c of SNAPSHOT.curve){ const g=(MACRO.gc.us.pts||[]).find(x=>x.t===c.t);
+if(g&&g.y!=null&&(!c.ts||String(g.ts)>=String(c.ts))){ c.y=g.y; c.ts=g.ts; c.src='CNBC (comme GC)'; } }
+// 2. Derniers chiffres (ECO) : la série économique la plus récente l'emporte (inflation et chômage de la zone euro
+//    venaient de séries FRED en retard d'un mois, voire arrêtées en 2023)
+if(MACRO&&MACRO.eco&&Array.isArray(MACRO.eco.prints)&&typeof ecoGet==='function'){
+const PM={'Inflation CPI (US, a/a)':'USIRYY','Inflation CPI core (US, a/a)':'USCIR','Taux de chômage (US)':'USUR',"Créations d'emplois NFP (US, k)":'USNFP',
+'PIB réel (US, t/t annualisé)':'USGDPQQ','Inflation HICP (zone euro, a/a)':'EUIRYY','Taux de chômage (zone euro)':'EUUR'};
+for(const x of MACRO.eco.prints){ const e=PM[x.k]&&ecoGet(PM[x.k]); if(!e||!e.date) continue;
+if(String(e.date).slice(0,7)>String(x.ts).slice(0,7)){ x.v=Math.round(e.last*100)/100; x.prev=Math.round(e.prev*100)/100; x.ts=String(e.date).slice(0,10); x.src=e.src; x.url=e.url; delete x.pub; } } }
+// 2b. Calendrier : chiffre publié repris des séries économiques quand le robot ne l'a pas (inflation flash de la zone euro)
+if(MACRO&&MACRO.eco&&MACRO.eco.consensus&&Array.isArray(MACRO.eco.consensus.rows)&&typeof ecoGet==='function'){
+const CM={'EUR|CPI Flash Estimate y/y':'EUIRYY','EUR|Core CPI Flash Estimate y/y':'EUCIR','USD|Unemployment Rate':'USUR','USD|Non-Farm Employment Change':'USNFP','GBP|Official Bank Rate':'GBINTR'};
+const mAgo=(ts,n)=>{ const d=new Date(ts); d.setUTCDate(1); d.setUTCMonth(d.getUTCMonth()-n); return d.toISOString().slice(0,7); };
+for(const r of MACRO.eco.consensus.rows){ const code=CM[r.cur+'|'+r.ev_en]; if(!code||r.act||Date.parse(r.ts)>Date.now()) continue; const e=ecoGet(code); if(!e) continue;
+const per=String(e.date).slice(0,7); if(per<mAgo(r.ts,1)) continue;
+const suf=/%/.test(r.cons||r.prev||'')?'%':/K$/.test(r.cons||r.prev||'')?'K':''; r.act=(e.unit==='%'?nf(e.last,1).replace(',','.'):String(Math.round(e.last)))+suf;
+const c=parseFloat(r.cons); if(!isNaN(c)) r.surp=Math.round((e.last-c)*100)/100; r.cov=true; r.actSrc=e.src; }
+// U. Michigan : FRED publie avec un mois de décalage ; le « précédent » du calendrier est le dernier chiffre définitif
+const um=MACRO.eco.prints&&MACRO.eco.prints.find(x=>/Michigan/.test(x.k)), ur=MACRO.eco.consensus.rows.find(r=>/UoM Consumer Sentiment/.test(r.ev_en)&&r.prev);
+if(um&&ur){ const per=mAgo(ur.ts,1); if(per>String(um.ts).slice(0,7)){ um.prev=um.v; um.v=parseFloat(ur.prev); um.ts=per+'-01'; um.src='Université du Michigan (chiffre définitif, via le calendrier)'; delete um.pub; } } }
+// 3. Carte (taux directeurs BRI, mensuels) : la décision officielle plus récente l'emporte
+if(WORLD&&WORLD.bis&&typeof ecoGet==='function') for(const [k,code] of [['GB','GBINTR'],['XM','EUINTR'],['CH','CHINTR']]){ const b=WORLD.bis[k], e=ecoGet(code);
+if(b&&e&&String(e.date).slice(0,7)>=String(b.d)&&e.last!==b.v){ if(b.v0===undefined) b.v0=b.v; if(e.last!==b.v) b.chg=[String(e.date).slice(0,7),Math.round((e.last-b.v)*100)]; b.v=e.last; b.d=String(e.date).slice(0,7); } }
 // BNS : taux officiel lu dans les séries économiques ; PBoC : pas de source gratuite, dit clairement.
 { const snb=(SNAPSHOT.rates||[]).find(r=>r.cb==='SNB'), ch=typeof ecoGet==='function'?ecoGet('CHINTR'):null;
 if(snb&&ch){ snb.v=nf(ch.last,2)+' %'; snb.st='EOD'; snb.ts=ch.date; snb.src=ch.src; snb.name='Taux directeur';
@@ -4009,7 +4035,8 @@ ${L.map(([a,b])=>`<tr><th scope="row" style="text-align:left;font-weight:400;col
 function cbPanel(){ const M=MACRO||{}, cons=(M.eco&&M.eco.consensus&&M.eco.consensus.rows)||[], W=M.wirp||{}, today=new Date().toISOString().slice(0,10);
 const rows=CBS.map(([cb,ctry,code,ff,cur,url])=>{
 const e=code&&ecoGet(code), snap=(SNAPSHOT.rates||[]).find(r=>r.cb===cb);
-let rate=e?ecoFmt(e.last,e):snap?esc(snap.v):'—';
+const bisK={BoJ:'JP',PBoC:'CN'}[cb], bis=!e&&bisK&&WORLD&&WORLD.bis&&WORLD.bis[bisK];
+let rate=e?ecoFmt(e.last,e):bis?nf(bis.v,2)+' % <span class="mut" style="font-size:9px">BRI '+esc(bis.d)+'</span>':snap?esc(snap.v):'—';
 if(cb==='Fed'&&W.range&&W.range[0]!=null) rate=nf(W.range[0])+' – '+nf(W.range[1])+' %';
 let chg='—';
 if(e&&Array.isArray(e.h)&&e.h.length>1){ const h=e.h; let i=h.length-1; while(i>0&&Math.abs(h[i][1]-h[i-1][1])<1e-9) i--;
@@ -4183,7 +4210,11 @@ if(old.ts&&t&&Date.parse(old.ts)>t.getTime()+60e3) return false;       // le rel
 const age=t?(Date.now()-t.getTime())/6e4:1e9;
 const st=age<90?'DELAYED_15M':age<60*24*4?'EOD':'STALE';
 const q=Object.assign({},old,{p, st, st0:st, src:'Yahoo Finance via relais (direct, 60 s)', ts:t?t.toISOString():old.ts});
-if(prev){ q.prev=+prev; q.chg=p-prev; q.pct=Math.round((p/prev-1)*1e4)/100; }
+// Clôture de référence : celle du robot pour la même séance (Yahoo « chartPreviousClose » diffère pour les devises :
+// EURUSD -0,67 % dans le bandeau contre -0,82 % dans les tableaux). Nouvelle séance : celle de Yahoo.
+const sameDay=old.ts&&t&&old.prev!=null&&String(old.ts).slice(0,10)===t.toISOString().slice(0,10);
+const ref=sameDay?+old.prev:prev!=null?+prev:null;
+if(ref){ q.prev=ref; q.chg=p-ref; q.pct=Math.round((p/ref-1)*1e4)/100; }
 if(m.regularMarketDayHigh) q.hi=m.regularMarketDayHigh; if(m.regularMarketDayLow) q.lo=m.regularMarketDayLow;
 if(m.regularMarketVolume) q.vol=m.regularMarketVolume;
 if(Array.isArray(q.h)&&q.h.length) q.h=[...q.h.slice(0,-1),p];
