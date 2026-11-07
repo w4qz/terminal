@@ -3395,8 +3395,72 @@ function gcTV(){ drawGCH(); const root=document.getElementById('gcbody'); if(!ro
 root.querySelectorAll('[data-gchr]').forEach(b=>b.onclick=()=>{ GCH.range=b.dataset.gchr; root.querySelectorAll('[data-gchr]').forEach(z=>z.classList.toggle('on',z===b)); drawGCH(); }); }
 function wireGC(root){ setTimeout(gcTV,0);  root.querySelectorAll('[data-gck]').forEach(b=>b.onclick=()=>{ const k=b.dataset.gck; GC.sel.has(k)?GC.sel.delete(k):GC.sel.add(k); if(!GC.sel.size) GC.sel.add(k);
 const box=document.getElementById('gcbody'); box.innerHTML=gcHtml(); wireGC(box); drawGC(); }); }
+/** GC en thème Bloomberg : axe à droite, carrés aux maturités, aire bleue (une courbe),
+ *  courbe d'il y a 1 mois en pointillés, panneau inférieur « Variation 1 mois (pb) » en barres. */
+function drawGCB(hover){
+const cv=document.getElementById('gccv'); if(!cv) return;
+const C=allCurves().filter(c=>GC.sel.has(c.k)&&c.pts.length), tenors=TEN_ORD.filter(t=>C.some(c=>cy(c,t)!=null)); if(!tenors.length) return;
+const one=C.length===1, col=c=>one?'#ffffff':c.col;
+const yrs=t=>t.endsWith('M')?parseInt(t)/12:parseInt(t);
+const H=400, r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1; cv.style.height=H+'px'; cv.width=r.width*dpr; cv.height=H*dpr;
+const x=cv.getContext('2d'); x.setTransform(dpr,0,0,dpr,0,0); const W=r.width, pl=12, pr=74, pt=8+18*Math.ceil(C.length/3)+6, MB=H-118, LT=H-96, LB=H-24;
+x.fillStyle='#000'; x.fillRect(0,0,W,H);
+const s0=Math.sqrt(yrs(tenors[0])), s1=Math.sqrt(yrs(tenors[tenors.length-1]));
+const X=t=>pl+14+(s1>s0?(Math.sqrt(yrs(t))-s0)/(s1-s0):0.5)*(W-pl-pr-28);
+const all=C.flatMap(c=>c.pts.flatMap(p=>[p.y,p.y1m])).filter(v=>v!=null);
+let lo=Math.min(...all), hi=Math.max(...all); const pad=Math.max(0.1,(hi-lo)*0.08); lo-=pad; hi+=pad;
+const span=hi-lo, stp=span>4?1:span>2?0.5:span>1?0.25:0.1; lo=Math.floor(lo/stp)*stp; hi=Math.ceil(hi/stp)*stp;
+const Y=v=>pt+(1-(v-lo)/(hi-lo))*(MB-pt);
+// Grille en pointillés, axe des taux à droite
+x.font=CT().f10; x.lineWidth=1; x.setLineDash([2,3]); x.strokeStyle='#333';
+for(let v=lo; v<=hi+1e-9; v+=stp){ const y=Y(v); x.beginPath(); x.moveTo(pl,y); x.lineTo(W-pr,y); x.stroke(); x.fillStyle='#e6e6e6'; x.textAlign='left'; x.fillText(nf(v,stp<0.5?2:1),W-pr+8,y+4); }
+tenors.forEach(t=>{ x.strokeStyle='#262626'; x.beginPath(); x.moveTo(X(t),pt); x.lineTo(X(t),LB); x.stroke(); });
+x.setLineDash([]); x.strokeStyle='#666'; x.strokeRect(pl+.5,pt+.5,W-pr-pl,MB-pt); x.strokeRect(pl+.5,LT+.5,W-pr-pl,LB-LT);
+x.textAlign='center'; let lastLx=-99; tenors.forEach((t,i)=>{ const w=x.measureText(t).width; if(X(t)-lastLx>w+6||i===tenors.length-1&&X(t)-lastLx>w/2+4){ x.fillStyle='#e6e6e6'; x.fillText(t,X(t),H-8); lastLx=X(t); } });
+// Légende façon Bloomberg : carré de couleur, pays, rendement le plus long
+let lx=pl+4, ly=pt-14-18*(Math.ceil(C.length/3)-1); x.textAlign='left';
+C.forEach((c,i)=>{ if(i&&i%3===0){ lx=pl+4; ly+=18; } const P=c.pts.filter(p=>tenors.includes(p.t)), last=P.reduce((a,p)=>yrs(p.t)>yrs(a.t)?p:a,P[0]);
+x.fillStyle=col(c); x.fillRect(lx,ly-9,10,10); x.font=CT().fb10; x.fillStyle='#ffb000'; x.fillText(c.n,lx+16,ly); const w=x.measureText(c.n).width;
+x.font=CT().f10; x.fillStyle='#fff'; const t=`${last.t} ${nf(last.y,3)}`; x.fillText(t,lx+22+w,ly); lx+=w+x.measureText(t).width+48; });
+x.fillStyle='#8c8c8c'; x.textAlign='right'; x.fillText('—— aujourd\'hui   - - - il y a 1 mois',W-pr-6,pt-14-18*(Math.ceil(C.length/3)-1));
+// Courbes
+C.forEach(c=>{ const P=tenors.map(t=>c.pts.find(p=>p.t===t)).filter(Boolean); if(!P.length) return;
+if(one&&P.length>1){ const g=x.createLinearGradient(0,pt,0,MB); g.addColorStop(0,'rgba(58,141,222,.55)'); g.addColorStop(1,'rgba(58,141,222,.04)');
+x.fillStyle=g; x.beginPath(); x.moveTo(X(P[0].t),MB); P.forEach(p=>x.lineTo(X(p.t),Y(p.y))); x.lineTo(X(P[P.length-1].t),MB); x.closePath(); x.fill(); }
+const M=P.filter(p=>p.y1m!=null); if(M.length>1){ x.strokeStyle=one?'#fb8b1e':c.col; x.globalAlpha=one?.9:.45; x.lineWidth=1.2; x.setLineDash([4,3]); x.beginPath(); M.forEach((p,i)=>i?x.lineTo(X(p.t),Y(p.y1m)):x.moveTo(X(p.t),Y(p.y1m))); x.stroke(); x.setLineDash([]); x.globalAlpha=1; }
+x.strokeStyle=col(c); x.lineWidth=1.6; x.beginPath(); P.forEach((p,i)=>i?x.lineTo(X(p.t),Y(p.y)):x.moveTo(X(p.t),Y(p.y))); x.stroke();
+x.fillStyle=col(c); P.forEach(p=>x.fillRect(X(p.t)-2.5,Y(p.y)-2.5,5,5)); });
+// Étiquettes sur l'axe de droite (dernier rendement de chaque courbe)
+const tags=C.map(c=>{ const P=c.pts.filter(p=>tenors.includes(p.t)); const last=P.reduce((a,p)=>yrs(p.t)>yrs(a.t)?p:a,P[0]); return {c,v:last.y,y:Y(last.y)}; }).sort((a,b)=>a.y-b.y);
+for(let i=1;i<tags.length;i++) if(tags[i].y-tags[i-1].y<16) tags[i].y=tags[i-1].y+16;
+x.font=CT().fb10; tags.forEach(g=>{ x.fillStyle=one?'#3a8dde':col(g.c); x.beginPath(); x.moveTo(W-pr,g.y); x.lineTo(W-pr+6,g.y-8); x.lineTo(W-2,g.y-8); x.lineTo(W-2,g.y+8); x.lineTo(W-pr+6,g.y+8); x.closePath(); x.fill();
+x.fillStyle=one?'#fff':'#000'; x.textAlign='left'; x.fillText(nf(g.v,3),W-pr+9,g.y+4); });
+// Panneau inférieur : variation sur 1 mois en points de base, une barre par pays et par maturité
+const D=C.map(c=>({c,d:Object.fromEntries(c.pts.filter(p=>p.y1m!=null).map(p=>[p.t,(p.y-p.y1m)*100]))}));
+const dv=D.flatMap(o=>Object.values(o.d)); const m=Math.max(5,...dv.map(Math.abs)); const sm=m>40?20:m>20?10:5, mx=Math.ceil(m/sm)*sm;
+const Z=v=>LT+4+(1-(v+mx)/(2*mx))*(LB-LT-8);
+x.font=CT().f9; x.setLineDash([2,3]); x.strokeStyle='#333'; for(const v of [-mx,0,mx]){ x.beginPath(); x.moveTo(pl,Z(v)); x.lineTo(W-pr,Z(v)); x.stroke(); x.fillStyle='#e6e6e6'; x.textAlign='left'; x.fillText((v>0?'+':'')+v,W-pr+8,Z(v)+4); } x.setLineDash([]);
+const gw=Math.min(26,Math.max(6,(W-pl-pr)/tenors.length*0.6)), bw=gw/C.length;
+tenors.forEach(t=>D.forEach((o,i)=>{ const v=o.d[t]; if(v==null) return; const bx=X(t)-gw/2+i*bw;
+x.fillStyle=one?(v>=0?'#ff433d':'#2ee05f'):o.c.col; x.fillRect(bx,Math.min(Z(v),Z(0)),Math.max(1,bw-1),Math.max(1,Math.abs(Z(v)-Z(0)))); }));
+x.fillStyle='#ffb000'; x.font=CT().fb9; x.textAlign='left'; x.fillText('Variation 1 mois (pb)'+(one?' — hausse des taux en rouge':''),pl+6,LT+13);
+// Survol : réticule et encadré noir à bord orange
+if(hover){ const t=hover.t, my=hover.y, inP=my>=pt&&my<=MB; x.font=CT().f10;
+x.strokeStyle='rgba(255,255,255,.45)'; x.setLineDash([3,3]); x.beginPath(); x.moveTo(X(t),pt); x.lineTo(X(t),LB); if(inP){ x.moveTo(pl,my); x.lineTo(W-pr,my); } x.stroke(); x.setLineDash([]);
+if(inP){ const v=lo+(1-(my-pt)/(MB-pt))*(hi-lo); x.font=CT().fb10; x.fillStyle='#fb8b1e'; x.fillRect(W-pr+2,my-8,pr-4,16); x.fillStyle='#000'; x.textAlign='left'; x.fillText(nf(v,3),W-pr+9,my+4); x.font=CT().f10; }
+const L=[[`Maturité ${t}`,'#ffb000']]; C.forEach(c=>{ const p=c.pts.find(z=>z.t===t); if(!p) return; x.fillStyle=col(c); x.fillRect(X(t)-4,Y(p.y)-4,8,8);
+L.push([`${c.n}  ${nf(p.y,3)} %${p.y1m!=null?`   ${p.y-p.y1m>=0?'+':''}${nf((p.y-p.y1m)*100,1)} pb / 1 mois`:''}`,col(c)]); });
+const bw2=Math.max(...L.map(l=>x.measureText(l[0]).width))+18, bh=L.length*16+8, bx=X(t)+14+bw2>W-pr?X(t)-bw2-14:X(t)+14;
+x.fillStyle='#000'; x.fillRect(bx,pt+6,bw2,bh); x.strokeStyle='#fb8b1e'; x.strokeRect(bx+.5,pt+6.5,bw2,bh);
+L.forEach(([s,c2],j)=>{ x.fillStyle=c2; x.textAlign='left'; x.fillText(s,bx+9,pt+22+j*16); }); }
+cv.style.cursor='crosshair';
+cv.onmousemove=ev=>{ const rr=cv.getBoundingClientRect(), mx2=ev.clientX-rr.left; const t=tenors.reduce((a,b)=>Math.abs(X(b)-mx2)<Math.abs(X(a)-mx2)?b:a); drawGC({t,y:ev.clientY-rr.top}); };
+cv.onmouseleave=()=>drawGC(null);
+}
 function drawGC(hover){
 const cv=document.getElementById('gccv'); if(!cv) return;
+if(CT().B) return drawGCB(hover);
+cv.style.height='';
 const C=allCurves().filter(c=>GC.sel.has(c.k)&&c.pts.length), tenors=TEN_ORD.filter(t=>C.some(c=>cy(c,t)!=null)); if(!tenors.length) return;
 const yrs=t=>t.endsWith('M')?parseInt(t)/12:parseInt(t);
 const r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1, H=300; cv.width=r.width*dpr; cv.height=H*dpr;
