@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T10:12:02.688035Z",
+ "generated_at": "2026-11-07T10:56:54.284667Z",
  "quotes": {
   "NVDA": {
    "p": 186.68,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75965.3203,
+   "p": 75860.9609,
    "prev": 75746.9297,
-   "chg": 218.3906,
-   "pct": 0.29,
+   "chg": 114.0312,
+   "pct": 0.15,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-07T10:12:02.688035Z",
+   "ts": "2026-11-07T10:56:54.284667Z",
    "open": 75741.0156,
    "lo": 75703.4219,
    "hi": 76101.3047,
-   "vol": 22245789696,
+   "vol": 22173652992,
    "h": [
     81382.15,
     82017.6,
@@ -844,7 +844,7 @@
     80405.29,
     75942.12,
     75746.93,
-    75965.32
+    75860.96
    ]
   }
  },
@@ -1522,14 +1522,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 998898073600,
+   "mcap": 995843768320,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -1824,9 +1824,9 @@
    "ccy": "USD",
    "mcap": 568616681472,
    "pe": 34.1549,
-   "fpe": 28.1914,
+   "fpe": 28.1793,
    "eps": 19.11,
-   "feps": 23.1524,
+   "feps": 23.1624,
    "revTTM": 36288000000,
    "netIncome": 16958000128,
    "shares": 864657109,
@@ -1919,9 +1919,9 @@
    "beta": 0.453,
    "div": 7.12,
    "divYield": 3.349,
-   "target": 241.6667,
+   "target": 243.4583,
    "targetHi": 272.0,
-   "targetLo": 175.0,
+   "targetLo": 202.0,
    "rating": "Achat",
    "analysts": 24,
    "revGrowth": 34.8,
@@ -2167,8 +2167,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 123.1505,
+   "shares": 572600000,
+   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2220,6 +2225,81 @@
  ],
  "news": [
   {
+   "h": "Le PDG d’AIM ImmunoTech achète des actions pour 3.166$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T10:31:52Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-daim-immunotech-achete-des-actions-pour-3166-93CH-3683589"
+  },
+  {
+   "h": "Un administrateur d’Avidia Bancorp vend des actions pour 20.917$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T10:31:49Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-davidia-bancorp-vend-des-actions-pour-20917-93CH-3683588"
+  },
+  {
+   "h": "La bulle de l’IA se heurte à la réalité",
+   "w": "Aux Etats-Unis, la large victoire du Parti démocrate aux midterms a entraîné un brusque décrochage du Nasdaq, l’indice boursier spécialisé dans les valeurs technologiques. Après avoir été l’un des principaux facteurs de dynamisme de l’économie américaine, l’intelligence artificielle pourrait devenir son talon d’Achille.",
+   "syms": [
+    "NDX"
+   ],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-07T10:30:18Z",
+   "url": "https://www.lemonde.fr/idees/article/2026/11/07/la-bulle-de-l-ia-se-heurte-a-la-realite_6808268_3232.html"
+  },
+  {
+   "h": "Data centres rebuked",
+   "w": "Capex, meet the electorate",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-07T10:30:03Z",
+   "url": "https://www.ft.com/content/9d40f40a-cbf2-46f5-b3d0-cee554e35298?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Un directeur de Spar Group vend des actions pour 650$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T10:17:20Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-spar-group-vend-des-actions-pour-650-93CH-3683587"
+  },
+  {
+   "h": "Le directeur technique de Better Home & Finance vend des actions pour 41.857$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T10:17:15Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-technique-de-better-home--finance-vend-des-actions-pour-41857-93CH-3683586"
+  },
+  {
+   "h": "Un administrateur de Medifast achète des actions pour 8.609$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T10:16:58Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-medifast-achete-des-actions-pour-8609-93CH-3683585"
+  },
+  {
+   "h": "Le directeur des opérations de Tyler Technologies vend pour 4,2M$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T10:02:15Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-des-operations-de-tyler-technologies-vend-pour-42m-dactions-93CH-3683584"
+  },
+  {
+   "h": "La Chine signale une faible demande intérieure avant les mesures de croissance 2027",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T09:54:30Z",
+   "url": "https://fr.investing.com/news/economy-news/la-chine-signale-une-faible-demande-interieure-avant-les-mesures-de-croissance-2027-3683582"
+  },
+  {
    "h": "Une directrice d’Advanced Energy Industries vend des actions pour 53.005$",
    "w": "",
    "syms": [],
@@ -2260,64 +2340,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-07T08:30:04Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/07/apres-huit-mois-de-guerre-au-moyen-orient-la-mue-forcee-des-pays-du-golfe-producteurs-de-petrole-et-de-gaz_6808252_3234.html"
-  },
-  {
-   "h": "Bitcoin rebondit à 76.000$, mais une sortie de 1,3 milliard$ d’ETF met la reprise à l’épreuve",
-   "w": "",
-   "syms": [
-    "BTC"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T08:12:35Z",
-   "url": "https://fr.investing.com/news/cryptocurrency-news/le-bitcoin-rebondit-a-76000-mais-une-sortie-de-13-milliard-des-etf-met-a-lepreuve-la-reprise-3683575"
-  },
-  {
-   "h": "Le directeur financier de First Commonwealth Financial vend des actions pour 49.298$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T08:02:07Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-de-first-commonwealth-financial-vend-des-actions-pour-49298-93CH-3683571"
-  },
-  {
-   "h": "Le directeur comptable de Moody’s Corp Phillips cède des actions pour 49.335$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T08:01:55Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-comptable-de-moodys-corp-phillips-cede-des-actions-pour-49335-93CH-3683570"
-  },
-  {
-   "h": "Le président exécutif de CarGurus, Langley Steinert, cède des actions pour 107.641$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T07:47:34Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-president-executif-de-cargurus-langley-steinert-cede-des-actions-pour-107641-93CH-3683569"
-  },
-  {
-   "h": "Une directrice de Ranpak cède des actions pour 18.696$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T07:47:16Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/une-directrice-de-ranpak-cede-des-actions-pour-18696-93CH-3683568"
-  },
-  {
-   "h": "Le PDG de Capital One vend des actions pour 18,6 millions de dollars",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T07:47:15Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-capital-one-vend-des-actions-pour-186-millions-de-dollars-93CH-3683567"
-  },
-  {
-   "h": "Les groupes environnementaux se tournent vers l’IA malgré les émissions des centres de données",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T07:38:27Z",
-   "url": "https://fr.investing.com/news/economy-news/les-groupes-environnementaux-se-tournent-vers-lia-malgre-les-emissions-des-centres-de-donnees-3683565"
   },
   {
    "h": "Trump says U.S. carried out ‘minor strikes’ on Iran as missiles hit Qeshm Island",
@@ -2504,7 +2526,7 @@
    "h": "Why does America hate AI?",
    "w": "Voter hostility to Big Tech helped shape the US midterms, and similar fears are spreading through the west. But look east and attitudes are dramatically more optimistic",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-07T05:00:13Z",
    "url": "https://www.ft.com/content/af97585a-3381-42a9-838b-9a205ab81232?syn-25a6b1a6=1",
    "mine": 1
@@ -2569,6 +2591,30 @@
    "ts": "2026-11-07T05:00:00Z",
    "url": "https://www.ft.com/content/b03f1688-be8f-4c7e-946d-7ccea5d9d524?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "Seres, Li Auto join Chinese EVs' charge into Europe",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T04:56:54.284667Z",
+   "url": "https://asia.nikkei.com/business/automobiles/electric-vehicles/seres-li-auto-join-chinese-evs-charge-into-europe"
+  },
+  {
+   "h": "US slaps sanctions on Cambodia's Prince Group over online scams",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T04:56:54.284667Z",
+   "url": "https://asia.nikkei.com/spotlight/society/crime/us-slaps-sanctions-on-cambodia-s-prince-group-over-online-scams"
+  },
+  {
+   "h": "Japan's Takaichi pushes for tougher cybersecurity laws as attacks surge",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T04:56:54.284667Z",
+   "url": "https://asia.nikkei.com/spotlight/cybersecurity/japan-s-takaichi-pushes-for-tougher-cybersecurity-laws-as-attacks-surge"
   },
   {
    "h": "Le néolibéralisme est-il mort ? Vie et métamorphoses de la doctrine qui a façonné le monde contemporain",
@@ -2668,30 +2714,6 @@
    "src": "CNBC — Marchés",
    "ts": "2026-11-07T02:00:01Z",
    "url": "https://www.cnbc.com/2026/11/06/card-pokemon-grading-psa-collectors-price.html"
-  },
-  {
-   "h": "Prospect of 'modern-day Yalta' shakes Asia's postwar order",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T01:44:05.925618Z",
-   "url": "https://asia.nikkei.com/spotlight/comment/prospect-of-modern-day-yalta-shakes-asia-s-postwar-order"
-  },
-  {
-   "h": "Japan's unprotected deposits hit $890bn as inheritances inflate accounts",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T01:44:05.925618Z",
-   "url": "https://asia.nikkei.com/business/finance/japan-s-unprotected-deposits-hit-890bn-as-inheritances-inflate-accounts"
-  },
-  {
-   "h": "Activist Au Kam-san jailed 12.5 years in 1st Macao national security case",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T01:44:05.925618Z",
-   "url": "https://asia.nikkei.com/politics/activist-au-kam-san-jailed-12.5-years-in-1st-macao-national-security-case"
   },
   {
    "h": "‘It’s almost like a nightclub’: Hyrox takes off in China amid fitness frenzy",
@@ -3046,15 +3068,6 @@
    "mine": 1
   },
   {
-   "h": "EU probes ‘fraud’ on Spain’s lethal high-speed rail line",
-   "w": "Accidents have claimed the lives of 115 people on Madrid-Seville route this year",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-06T17:47:55Z",
-   "url": "https://www.ft.com/content/888d77c4-c771-4390-95ef-efcee413ef32?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Why smoky bacon crisps threaten to reignite rows over EU rules",
    "w": "A post-Brexit deal on food standards has raised questions over the future naming of the classic British snack.",
    "syms": [],
@@ -3069,14 +3082,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-06T17:14:29Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/06/l-allemagne-va-entrer-au-capital-de-knds-et-controlera-le-geant-de-l-armement-terrestre-a-parite-avec-la-france_6807842_3234.html"
-  },
-  {
-   "h": "Pantouflage : l’étau du contrôle se desserre à l’heure des grandes manœuvres aux sommets de l’Etat",
-   "w": "Alors que la fin du quinquennat devrait s’accompagner de départs d’agents publics vers le privé, le Conseil d’Etat vient d’infléchir sa jurisprudence sur l’appréciation des risques de conflits d’intérêts. Une manière de faciliter les parcours professionnels, pour certains. Un recul déontologique, pour d’autres.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-06T16:30:08Z",
-   "url": "https://www.lemonde.fr/politique/article/2026/11/06/pantouflage-l-etau-du-controle-se-desserre-a-l-heure-des-grandes-man-uvres-aux-sommets-de-l-etat_6807822_823448.html"
   }
  ],
  "summary": {
