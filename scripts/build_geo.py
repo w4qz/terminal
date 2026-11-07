@@ -86,7 +86,7 @@ def gdelt(params, tries=2):
         time.sleep(5.5)                       # limite GDELT : 1 requête / 5 s
         r = requests.get(GDELT, params={**params, "format": "json"}, headers=UA, timeout=20)
         if r.status_code == 429:
-            time.sleep(8); continue
+            time.sleep(15); continue
         r.raise_for_status()
         try:
             return r.json()
@@ -116,7 +116,7 @@ def hotspot(key, name, q, ll):
             for a in (al.get("articles") or []) if a.get("url", "").startswith("http")]
     # Tendance seulement si la veille compte assez d'articles (sinon +12 000 % sur une base de 1 article)
     trend = None if prev24 < 20 else round((now24 / prev24 - 1) * 100)
-    return {"k": key, "n": name, "ll": ll, "n24": now24, "prev24": prev24, "trend": trend, "arts": arts}
+    return {"k": key, "n": name, "ll": ll, "n24": now24, "prev24": prev24, "trend": trend, "arts": arts, "m": 2}
 
 
 def _feed(item):
