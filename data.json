@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T18:49:54.089005Z",
+ "generated_at": "2026-11-07T19:30:08.198569Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
@@ -43,8 +43,8 @@
    "prev": 30.2,
    "chg": 2.13,
    "pct": 7.05,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (ASTS)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (ASTS) — échec de la dernière mise à jour",
    "ts": "2026-11-06T21:00:00Z",
    "open": 30.54,
    "lo": 27.58,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75723.2734,
+   "p": 75689.6172,
    "prev": 75746.9297,
-   "chg": -23.6562,
-   "pct": -0.03,
+   "chg": -57.3125,
+   "pct": -0.08,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-07T18:49:54.089005Z",
+   "ts": "2026-11-07T19:30:08.198569Z",
    "open": 75741.0156,
    "lo": 75599.6484,
    "hi": 76101.3047,
-   "vol": 11239413760,
+   "vol": 11007939584,
    "h": [
     81382.15,
     82017.6,
@@ -844,7 +844,7 @@
     80405.29,
     75942.12,
     75746.93,
-    75723.27
+    75689.62
    ]
   }
  },
@@ -2220,6 +2220,54 @@
  ],
  "news": [
   {
+   "h": "Trump offers UFC chief Dana White press secretary job",
+   "w": "President Donald Trump offered the job of press secretary to UFC president and CEO Dana White on Saturday.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-07T19:27:36Z",
+   "url": "https://www.cnbc.com/2026/11/07/trump-ufc-dana-white-press-secretary-offer.html"
+  },
+  {
+   "h": "Medicare prescription drug costs will jump 50% in 2027. Doing nothing could cost you.",
+   "w": "Don’t sit on the sidelines during open enrollment.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-07T19:20:00Z",
+   "url": "https://www.marketwatch.com/story/medicare-prescription-drug-costs-will-jump-50-in-2027-doing-nothing-could-cost-you-b701dfb7?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Diginex repousse la date limite d’acquisition de Resulticks au 19 novembre",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T19:13:25Z",
+   "url": "https://fr.investing.com/news/company-news/diginex-repousse-la-date-limite-dacquisition-de-resulticks-au-19-novembre-93CH-3683646"
+  },
+  {
+   "h": "Trump propose le poste de porte-parole de la Maison Blanche à Dana White de l’UFC",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T19:04:00Z",
+   "url": "https://fr.investing.com/news/economy-news/trump-propose-le-poste-de-porteparole-de-la-maison-blanche-a-dana-white-de-lufc-3683644"
+  },
+  {
+   "h": "Le PDG de Civeo, Dodson, cède des actions pour 865.614$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T19:01:59Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-civeo-dodson-cede-des-actions-pour-865614-93CH-3683643"
+  },
+  {
+   "h": "Le président de Richmond Mutual Bancorporation achète des actions pour 23.317$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T19:01:53Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-president-de-richmond-mutual-bancorporation-achete-des-actions-pour-23317-93CH-3683642"
+  },
+  {
    "h": "My adviser recommended an annuity. Is it the right move in this market environment?",
    "w": "“I haven’t committed to the strategy yet and would appreciate some independent perspectives.”",
    "syms": [],
@@ -2309,30 +2357,12 @@
    "url": "https://fr.investing.com/news/insider-trading-news/la-vicepresidente-de-cocacola-perez-cede-des-actions-pour-641-m-93CH-3683635"
   },
   {
-   "h": "Le directeur financier de Binance démissionne après un piratage crypto de 6 milliards $",
-   "w": "",
-   "syms": [
-    "BTC"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T17:06:29Z",
-   "url": "https://fr.investing.com/news/stock-market-news/le-directeur-financier-de-binance-demissionne-apres-un-piratage-crypto-de-6-milliards--3683634"
-  },
-  {
    "h": "The wealthiest 10% of Americans are pulling ahead of everyone else. This is what’s making them richer.",
    "w": "The wealthiest 10% have a median net worth that is $800,000 greater than it was three years ago.",
    "syms": [],
    "src": "MarketWatch",
    "ts": "2026-11-07T17:04:00Z",
    "url": "https://www.marketwatch.com/story/the-wealthiest-10-of-americans-are-pulling-ahead-of-everyone-else-this-is-whats-making-them-richer-bd83c2f6?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Le directeur technique de Ceribell vend des actions pour 131.753$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T17:02:32Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-technique-de-ceribell-vend-des-actions-pour-131753-93CH-3683632"
   },
   {
    "h": "‘It feels like he’s quietly building a separate life’: My husband inherited $500,000, but he refuses to spend it on our home",
@@ -2360,22 +2390,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-07T16:40:00Z",
    "url": "https://www.marketwatch.com/story/the-s-p-500-has-become-a-big-ai-bet-here-are-some-simple-alternatives-3c7574a4?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Le directeur technique de Steel Dynamics cède des actions pour 12,4 M$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T16:32:31Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-technique-de-steel-dynamics-cede-des-actions-pour-124-m-93CH-3683631"
-  },
-  {
-   "h": "Le PDG de C&F Financial, Mark Fox, cède des actions pour 111.990$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T16:31:47Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-cf-financial-mark-fox-cede-des-actions-pour-111990-93CH-3683630"
   },
   {
    "h": "The 2027 tax brackets are out. See what the standard deduction and SALT tax breaks will be.",
@@ -2410,14 +2424,6 @@
    "url": "https://www.marketwatch.com/story/my-93-year-old-father-changed-his-will-at-the-11th-hour-leaving-my-brother-his-entire-500-000-estate-can-i-challenge-it-ecfc63d2?mod=mw_rss_topstories"
   },
   {
-   "h": "You follow the rules for smart stock trading. But are they the right rules?",
-   "w": "Apply the wisdom of investment pros to develop your own consistent methodology.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-07T16:00:00Z",
-   "url": "https://www.marketwatch.com/story/you-follow-the-rules-for-smart-stock-trading-but-are-they-the-right-rules-9bfe5846?mod=mw_rss_topstories"
-  },
-  {
    "h": "Alertes à la bombe visant des avions : une enquête ouverte par le parquet de Paris, notamment sur un lien éventuel avec des puissances étrangères",
    "w": "Les investigations sont « menées pour retrouver les auteurs des courriels divulguant ces fausses informations afin de faire croire à une destruction dangereuse », a expliqué le parquet.",
    "syms": [],
@@ -2440,14 +2446,6 @@
    "src": "CNBC — Marchés",
    "ts": "2026-11-07T14:33:32Z",
    "url": "https://www.cnbc.com/2026/11/07/midterm-election-blue-wave-trump-renewable-energy.html"
-  },
-  {
-   "h": "Many workers lose unused FSA money — but could still come out ahead. Here's how",
-   "w": "While experts say it's best to use up your FSA money, the tax savings on your contributions could outweigh any amount you forfeit. Here's how to tell.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-07T14:30:01Z",
-   "url": "https://www.cnbc.com/2026/11/07/fsa-forfeit.html"
   },
   {
    "h": "31-year-old dumpster diver brought in $140,000 in 12 months: I 'did much more than I thought was possible'",
@@ -2490,6 +2488,30 @@
    "src": "BCE — communiqués",
    "ts": "2026-11-07T14:00:00Z",
    "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261107~e7b86fc4ce.en.html"
+  },
+  {
+   "h": "US sports investment fund RedBird hunts for tie-ups in Japan",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T13:30:08.198569Z",
+   "url": "https://asia.nikkei.com/spotlight/sports/us-sports-investment-fund-redbird-hunts-for-tie-ups-in-japan"
+  },
+  {
+   "h": "Astellas employee jailed in China on spy charge set for December release",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T13:30:08.198569Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/astellas-employee-jailed-in-china-on-spy-charge-set-for-december-release"
+  },
+  {
+   "h": "Prospect of 'modern-day Yalta' shakes Asia's postwar order",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T13:30:08.198569Z",
+   "url": "https://asia.nikkei.com/spotlight/comment/prospect-of-modern-day-yalta-shakes-asia-s-postwar-order"
   },
   {
    "h": "Risk of Iran war escalation remains high despite Democratic sweep in U.S. midterm elections",
@@ -2629,30 +2651,6 @@
    "src": "CNBC — Marchés",
    "ts": "2026-11-07T12:00:01Z",
    "url": "https://www.cnbc.com/2026/11/07/snap-social-media-teen-safety-lawsuits.html"
-  },
-  {
-   "h": "Japanese companies caught in crossfire of Beijing-Tokyo rift",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T11:22:40.645737Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/japanese-companies-caught-in-crossfire-of-beijing-tokyo-rift"
-  },
-  {
-   "h": "Japan's new whisky breed chases export elixir",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T11:22:40.645737Z",
-   "url": "https://asia.nikkei.com/spotlight/big-in-asia/japan-s-new-whisky-breed-chases-export-elixir"
-  },
-  {
-   "h": "Japan convenience store chain Lawson details first India store in Mumbai",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T11:22:40.645737Z",
-   "url": "https://asia.nikkei.com/business/retail/japan-convenience-store-chain-lawson-details-first-india-store-in-mumbai"
   },
   {
    "h": "Jean Pisani-Ferry : « La Chine manque d’une stratégie macroéconomique de nature à corriger ses déséquilibres persistants »",
