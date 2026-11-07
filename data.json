@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T21:36:08.318571Z",
+ "generated_at": "2026-11-07T22:16:39.042027Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75537.8438,
+   "p": 75659.5234,
    "prev": 75746.9297,
-   "chg": -209.0859,
-   "pct": -0.28,
+   "chg": -87.4062,
+   "pct": -0.12,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-07T21:36:08.318571Z",
+   "ts": "2026-11-07T22:16:39.042027Z",
    "open": 75741.0156,
    "lo": 75518.6562,
    "hi": 76101.3047,
-   "vol": 9824689152,
+   "vol": 9593613312,
    "h": [
     81382.15,
     82017.6,
@@ -844,7 +844,7 @@
     80405.29,
     75942.12,
     75746.93,
-    75537.84
+    75659.52
    ]
   }
  },
@@ -1522,14 +1522,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 998898073600,
+   "mcap": 995843768320,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -2167,8 +2167,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 123.1505,
+   "shares": 572600000,
+   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2220,12 +2225,72 @@
  ],
  "news": [
   {
+   "h": "Risk of Iran war escalation remains high despite Democratic sweep in U.S. midterm elections",
+   "w": "The U.S. and Iran are on a collision course as tensions in the Middle East simmer.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-07T22:10:40Z",
+   "url": "https://www.cnbc.com/2026/11/07/iran-war-midterm-election-oil-price-trump.html"
+  },
+  {
    "h": "Trump offers UFC chief Dana White press secretary job",
    "w": "President Donald Trump offered the job of press secretary to UFC president and CEO Dana White on Saturday.",
    "syms": [],
    "src": "CNBC — Marchés",
-   "ts": "2026-11-07T21:17:54Z",
+   "ts": "2026-11-07T22:03:06Z",
    "url": "https://www.cnbc.com/2026/11/07/trump-ufc-dana-white-press-secretary-offer.html"
+  },
+  {
+   "h": "Gunman kills six in Kraków shooting",
+   "w": "Poland’s Prime Minister Donald Tusk called on politicians not to exploit the incident",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-07T22:00:14Z",
+   "url": "https://www.ft.com/content/0fab9ede-4fa1-4f94-b23e-e32f07a6b7df?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Trump targets Slotkin in call for DOJ probe of alleged Democratic threats to Republicans",
+   "w": "Trump ordered DOJ to examine alleged threats against Republicans while singling out Slotkin.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-07T21:59:10Z",
+   "url": "https://www.cnbc.com/2026/11/07/trump-doj-democrats-alleged-threats-slotkin.html"
+  },
+  {
+   "h": "Un directeur de World Acceptance vend des actions pour 14.878$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T21:47:00Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-world-acceptance-vend-des-actions-pour-14878-93CH-3683662"
+  },
+  {
+   "h": "Le directeur comptable de Dropbox cède des actions pour 74.884$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T21:46:59Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-comptable-de-dropbox-cede-des-actions-pour-74884-93CH-3683661"
+  },
+  {
+   "h": "US believes Nvidia’s Huang had romantic relationship with alleged Chinese spy",
+   "w": "American intelligence warned the tech boss was involved with executive recruited by China to gather information on US group",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "myFT — world",
+   "ts": "2026-11-07T21:41:05Z",
+   "url": "https://www.ft.com/content/a55a2a22-4479-4f93-a445-6147a5c6d790?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Les banques centrales des marchés émergents adoptent une posture hawkish, selon Citi",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T21:32:51Z",
+   "url": "https://fr.investing.com/news/economy-news/les-banques-centrales-des-marches-emergents-adoptent-une-posture-hawkish-selon-citi-3683660"
   },
   {
    "h": "Le positionnement actions a subi l’une de ses plus fortes baisses hebdomadaires",
@@ -2276,14 +2341,6 @@
    "ts": "2026-11-07T20:33:52Z",
    "url": "https://www.ft.com/content/52c3c7ac-f0ee-4b90-a2c8-68e76d120a79?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Trump targets Slotkin in call for DOJ probe of alleged Democratic threats to Republicans",
-   "w": "Trump ordered DOJ to examine alleged threats against Republicans while singling out Slotkin.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-07T20:28:17Z",
-   "url": "https://www.cnbc.com/2026/11/07/trump-doj-democrats-alleged-threats-slotkin.html"
   },
   {
    "h": "La directrice juridique d’Amex, Laureen Seeger, cède pour 22,9M$ d’actions",
@@ -2340,47 +2397,6 @@
    "src": "Investing.com France",
    "ts": "2026-11-07T19:13:25Z",
    "url": "https://fr.investing.com/news/company-news/diginex-repousse-la-date-limite-dacquisition-de-resulticks-au-19-novembre-93CH-3683646"
-  },
-  {
-   "h": "Gunman kills six in Kraków shooting",
-   "w": "Poland’s Prime Minister Donald Tusk called on politicians not to exploit the incident",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-07T19:06:52Z",
-   "url": "https://www.ft.com/content/0fab9ede-4fa1-4f94-b23e-e32f07a6b7df?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Trump propose le poste de porte-parole de la Maison Blanche à Dana White de l’UFC",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T19:04:00Z",
-   "url": "https://fr.investing.com/news/economy-news/trump-propose-le-poste-de-porteparole-de-la-maison-blanche-a-dana-white-de-lufc-3683644"
-  },
-  {
-   "h": "Le PDG de Civeo, Dodson, cède des actions pour 865.614$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T19:01:59Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-civeo-dodson-cede-des-actions-pour-865614-93CH-3683643"
-  },
-  {
-   "h": "Le président de Richmond Mutual Bancorporation achète des actions pour 23.317$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T19:01:53Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-president-de-richmond-mutual-bancorporation-achete-des-actions-pour-23317-93CH-3683642"
-  },
-  {
-   "h": "Meta chief strategy officer Dave Wehner leaves to join AI infrastructure startup Fireworks as CFO",
-   "w": "Dave Wehner, Meta’s chief strategy officer, is leaving the company to become CFO of Fireworks, the AI infrastructure startup valued at $17.5 billion in July.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-07T17:51:16Z",
-   "url": "https://www.cnbc.com/2026/11/07/dave-wehner-meta-fireworks-cfo.html"
   },
   {
    "h": "Democrats’ big election win revives a difficult Social Security question: Who pays?",
@@ -2449,6 +2465,38 @@
    "src": "MarketWatch",
    "ts": "2026-11-07T16:30:00Z",
    "url": "https://www.marketwatch.com/story/the-2027-tax-brackets-are-out-see-what-the-standard-deduction-and-salt-tax-breaks-will-be-5dd1d293?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Indonesia's art deco hot spot, a century on",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T16:16:39.042027Z",
+   "url": "https://asia.nikkei.com/life-arts/life/destinations/indonesia-s-art-deco-hot-spot-a-century-on"
+  },
+  {
+   "h": "Prospect of 'modern-day Yalta' shakes Asia's postwar order",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T16:16:39.042027Z",
+   "url": "https://asia.nikkei.com/spotlight/comment/prospect-of-modern-day-yalta-shakes-asia-s-postwar-order"
+  },
+  {
+   "h": "Japan's unprotected deposits hit $890bn as inheritances inflate accounts",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T16:16:39.042027Z",
+   "url": "https://asia.nikkei.com/business/finance/japan-s-unprotected-deposits-hit-890bn-as-inheritances-inflate-accounts"
+  },
+  {
+   "h": "Activist Au Kam-san jailed 12.5 years in 1st Macao national security case",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T16:16:39.042027Z",
+   "url": "https://asia.nikkei.com/politics/activist-au-kam-san-jailed-12.5-years-in-1st-macao-national-security-case"
   },
   {
    "h": "Why the prognosis for healthcare stocks is uncertain ahead of Congress’ new makeup",
@@ -2565,20 +2613,14 @@
    "url": "https://asia.nikkei.com/opinion/gen-z-and-ai-are-changing-the-world-of-video-games"
   },
   {
-   "h": "Japanese companies caught in crossfire of Beijing-Tokyo rift",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T14:12:01.476370Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/japanese-companies-caught-in-crossfire-of-beijing-tokyo-rift"
-  },
-  {
-   "h": "Japan's new whisky breed chases export elixir",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T14:12:01.476370Z",
-   "url": "https://asia.nikkei.com/spotlight/big-in-asia/japan-s-new-whisky-breed-chases-export-elixir"
+   "h": "Berkshire shares surge as Wall Street swoons amid AI fears",
+   "w": "Berkshire Hathaway shares roared past the S&amp;P 500 index this week and are outperforming the benchmark for the year-to-date.",
+   "syms": [
+    "SPX"
+   ],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-07T14:06:20Z",
+   "url": "https://www.cnbc.com/2026/11/07/berkshire-shares-surge-as-wall-street-swoons-amid-ai-fears.html"
   },
   {
    "h": "Mark Cuban says he doesn’t ‘give a f---' about growing his net worth—a healthy mindset for non-billionaires too, a financial therapist says",
@@ -2605,30 +2647,6 @@
    "src": "BCE — communiqués",
    "ts": "2026-11-07T14:00:00Z",
    "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261107~e7b86fc4ce.en.html"
-  },
-  {
-   "h": "US sports investment fund RedBird hunts for tie-ups in Japan",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T13:30:08.198569Z",
-   "url": "https://asia.nikkei.com/spotlight/sports/us-sports-investment-fund-redbird-hunts-for-tie-ups-in-japan"
-  },
-  {
-   "h": "Astellas employee jailed in China on spy charge set for December release",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T13:30:08.198569Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/astellas-employee-jailed-in-china-on-spy-charge-set-for-december-release"
-  },
-  {
-   "h": "Risk of Iran war escalation remains high despite Democratic sweep in U.S. midterm elections",
-   "w": "The U.S. and Iran are on a collision course as tensions in the Middle East simmer.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-07T13:03:12Z",
-   "url": "https://www.cnbc.com/2026/11/07/iran-war-midterm-election-oil-price-trump.html"
   },
   {
    "h": "America doesn't like socialism. So why are socialists winning?",
@@ -2776,7 +2794,7 @@
    "h": "The mother of all American course corrections",
    "w": "US midterms are the latest confirmation that reports of the death of liberal democracy have been much exaggerated",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-07T05:00:33Z",
    "url": "https://www.ft.com/content/452cf328-c819-482e-8f2c-61b65c96f8ce?syn-25a6b1a6=1",
    "mine": 1
@@ -2960,17 +2978,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-07T04:55:01Z",
    "url": "https://www.lemonde.fr/idees/article/2026/11/07/le-neoliberalisme-est-il-mort-vie-et-metamorphoses-de-la-doctrine-qui-a-faconne-le-monde-contemporain_6808201_3232.html"
-  },
-  {
-   "h": "US believes Nvidia’s Huang had romantic relationship with alleged Chinese spy",
-   "w": "American intelligence warned the tech boss was involved with executive recruited by China to gather information on US group",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "myFT — us",
-   "ts": "2026-11-07T02:33:26Z",
-   "url": "https://www.ft.com/content/a55a2a22-4479-4f93-a445-6147a5c6d790?syn-25a6b1a6=1",
-   "mine": 1
   },
   {
    "h": "‘It’s almost like a nightclub’: Hyrox takes off in China amid fitness frenzy",
