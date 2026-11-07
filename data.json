@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T19:30:08.198569Z",
+ "generated_at": "2026-11-07T20:12:01.476370Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
@@ -43,8 +43,8 @@
    "prev": 30.2,
    "chg": 2.13,
    "pct": 7.05,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (ASTS) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-11-06T21:00:00Z",
    "open": 30.54,
    "lo": 27.58,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75689.6172,
+   "p": 75691.5391,
    "prev": 75746.9297,
-   "chg": -57.3125,
-   "pct": -0.08,
+   "chg": -55.3906,
+   "pct": -0.07,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-07T19:30:08.198569Z",
+   "ts": "2026-11-07T20:12:01.476370Z",
    "open": 75741.0156,
    "lo": 75599.6484,
    "hi": 76101.3047,
-   "vol": 11007939584,
+   "vol": 10693934080,
    "h": [
     81382.15,
     82017.6,
@@ -844,7 +844,7 @@
     80405.29,
     75942.12,
     75746.93,
-    75689.62
+    75691.54
    ]
   }
  },
@@ -1522,14 +1522,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 998898073600,
+   "mcap": 995843768320,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -2167,8 +2167,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 123.1505,
+   "shares": 572600000,
+   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2224,8 +2229,33 @@
    "w": "President Donald Trump offered the job of press secretary to UFC president and CEO Dana White on Saturday.",
    "syms": [],
    "src": "CNBC — Marchés",
-   "ts": "2026-11-07T19:27:36Z",
+   "ts": "2026-11-07T20:10:01Z",
    "url": "https://www.cnbc.com/2026/11/07/trump-ufc-dana-white-press-secretary-offer.html"
+  },
+  {
+   "h": "Eisenkot reçoit le premier mandat pour former un gouvernement en Israël",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T19:54:47Z",
+   "url": "https://fr.investing.com/news/economy-news/eisenkot-recoit-le-premier-mandat-pour-former-un-gouvernement-en-israel-3683648"
+  },
+  {
+   "h": "Trump says he asked UFC boss Dana White to be new press secretary",
+   "w": "President sacked previous White House spokesperson after five days",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-07T19:52:07Z",
+   "url": "https://www.ft.com/content/52c3c7ac-f0ee-4b90-a2c8-68e76d120a79?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Here are the 2027 capital-gains tax rates for each income level",
+   "w": "How much will you pay in capital-gains taxes next year? The IRS just released this crucial information.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-07T19:48:00Z",
+   "url": "https://www.marketwatch.com/story/here-are-the-2027-capital-gains-tax-rates-for-each-income-level-166fc306?mod=mw_rss_topstories"
   },
   {
    "h": "Medicare prescription drug costs will jump 50% in 2027. Doing nothing could cost you.",
@@ -2242,6 +2272,15 @@
    "src": "Investing.com France",
    "ts": "2026-11-07T19:13:25Z",
    "url": "https://fr.investing.com/news/company-news/diginex-repousse-la-date-limite-dacquisition-de-resulticks-au-19-novembre-93CH-3683646"
+  },
+  {
+   "h": "Gunman kills six in Kraków shooting",
+   "w": "Poland’s Prime Minister Donald Tusk called on politicians not to exploit the incident",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-07T19:06:52Z",
+   "url": "https://www.ft.com/content/0fab9ede-4fa1-4f94-b23e-e32f07a6b7df?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "Trump propose le poste de porte-parole de la Maison Blanche à Dana White de l’UFC",
@@ -2319,7 +2358,7 @@
    "h": "French far-left presidential hopeful pledges ‘revolutionary’ remaking of society",
    "w": "Jean-Luc Mélenchon stages show of force with 20,000-strong rally as widespread protests boost his momentum",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — europe",
    "ts": "2026-11-07T17:42:41Z",
    "url": "https://www.ft.com/content/5cb562ec-5493-4ff3-bd2d-99cc9cacfa73?syn-25a6b1a6=1",
    "mine": 1
@@ -2347,14 +2386,6 @@
    "src": "Investing.com France",
    "ts": "2026-11-07T17:27:53Z",
    "url": "https://fr.investing.com/news/stock-market-news/seaport-publie-ses-premieres-reflexions-sur-laction-anthropic-3683637"
-  },
-  {
-   "h": "La vice-présidente de Coca-Cola, Perez, cède des actions pour 6,41 M$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T17:16:54Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/la-vicepresidente-de-cocacola-perez-cede-des-actions-pour-641-m-93CH-3683635"
   },
   {
    "h": "The wealthiest 10% of Americans are pulling ahead of everyone else. This is what’s making them richer.",
@@ -2416,14 +2447,6 @@
    "url": "https://www.cnbc.com/2026/11/07/healthcare-stocks-may-face-trouble-due-to-midterm-results.html"
   },
   {
-   "h": "My 93-year-old father changed his will at the 11th hour, leaving my brother his entire $500,000 estate. Can I challenge it?",
-   "w": "“My brother had no job and needed a place to live.”",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-07T16:00:00Z",
-   "url": "https://www.marketwatch.com/story/my-93-year-old-father-changed-his-will-at-the-11th-hour-leaving-my-brother-his-entire-500-000-estate-can-i-challenge-it-ecfc63d2?mod=mw_rss_topstories"
-  },
-  {
    "h": "Alertes à la bombe visant des avions : une enquête ouverte par le parquet de Paris, notamment sur un lien éventuel avec des puissances étrangères",
    "w": "Les investigations sont « menées pour retrouver les auteurs des courriels divulguant ces fausses informations afin de faire croire à une destruction dangereuse », a expliqué le parquet.",
    "syms": [],
@@ -2462,6 +2485,38 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-07T14:13:19Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/07/les-prix-de-l-electricite-pour-les-particuliers-seront-stables-jusqu-au-1-fevrier-au-moins-selon-le-pdg-d-edf_6808283_3234.html"
+  },
+  {
+   "h": "Gen Z and AI are changing the world of video games",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T14:12:01.476370Z",
+   "url": "https://asia.nikkei.com/opinion/gen-z-and-ai-are-changing-the-world-of-video-games"
+  },
+  {
+   "h": "Japanese companies caught in crossfire of Beijing-Tokyo rift",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T14:12:01.476370Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/japanese-companies-caught-in-crossfire-of-beijing-tokyo-rift"
+  },
+  {
+   "h": "Japan's new whisky breed chases export elixir",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T14:12:01.476370Z",
+   "url": "https://asia.nikkei.com/spotlight/big-in-asia/japan-s-new-whisky-breed-chases-export-elixir"
+  },
+  {
+   "h": "Japan convenience store chain Lawson details first India store in Mumbai",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T14:12:01.476370Z",
+   "url": "https://asia.nikkei.com/business/retail/japan-convenience-store-chain-lawson-details-first-india-store-in-mumbai"
   },
   {
    "h": "Mark Cuban says he doesn’t ‘give a f---' about growing his net worth—a healthy mindset for non-billionaires too, a financial therapist says",
@@ -2584,38 +2639,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-07T12:28:29.886774Z",
    "url": "https://asia.nikkei.com/spotlight/society/crime/us-slaps-sanctions-on-cambodia-s-prince-group-over-online-scams"
-  },
-  {
-   "h": "Putin exploits Takaichi's diplomatic opening with Japan Tobacco grab",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T12:28:29.886774Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/putin-exploits-takaichi-s-diplomatic-opening-with-japan-tobacco-grab"
-  },
-  {
-   "h": "Credit Saison, ADB to partner on loans for Asia's small businesses",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T12:12:13.713437Z",
-   "url": "https://asia.nikkei.com/business/finance/credit-saison-adb-to-partner-on-loans-for-asia-s-small-businesses"
-  },
-  {
-   "h": "New Zealand's knife-edge election puts coalition talks in focus",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T12:12:13.713437Z",
-   "url": "https://asia.nikkei.com/politics/new-zealand-s-knife-edge-election-puts-coalition-talks-in-focus"
-  },
-  {
-   "h": "Taiwan's KMT old guard fights for power base in tight Taipei mayoral races",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T12:12:13.713437Z",
-   "url": "https://asia.nikkei.com/politics/taiwan-s-kmt-old-guard-fights-for-power-base-in-tight-taipei-mayoral-races"
   },
   {
    "h": "New Zealand’s National Party set to cling on to power",
@@ -2767,7 +2790,7 @@
    "syms": [
     "SPX"
    ],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-07T05:00:31Z",
    "url": "https://www.ft.com/content/5a6806f0-e82e-4b34-b761-f9877e2b511c?syn-25a6b1a6=1",
    "mine": 1
@@ -2776,7 +2799,7 @@
    "h": "No, ‘mogging’ does not signal the decline of the English language",
    "w": "The popularity of manosphere vocabulary takes the sting out of a harmful ideology",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-07T05:00:23Z",
    "url": "https://www.ft.com/content/e25b73c7-9c6c-446b-b9d2-8f82d458bcf8?syn-25a6b1a6=1",
    "mine": 1
@@ -2855,7 +2878,7 @@
    "mine": 1
   },
   {
-   "h": "UK officials warned that changing mackerel definition could mislead shoppers",
+   "h": "Changing mackerel definition could mislead shoppers, officials warned",
    "w": "Internal emails show concern at moves to allow Chilean species to be sold as ‘jack mackerel’, even though it is from a different family from traditional product",
    "syms": [],
    "src": "myFT — world uk",
@@ -3051,24 +3074,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-06T19:45:32Z",
    "url": "https://www.lemonde.fr/politique/article/2026/11/06/la-propagande-d-extreme-droite-tue-a-paris-des-activistes-demenagent-un-relay-pour-denoncer-le-monopole-de-bollore_6807862_823448.html"
-  },
-  {
-   "h": "Who is in the line of fire after the midterm drubbing?",
-   "w": "The Trump administration reckons with the Democratic Party’s emphatic victory in the US midterms",
-   "syms": [],
-   "src": "myFT — sujet suivi",
-   "ts": "2026-11-06T19:29:18Z",
-   "url": "https://www.ft.com/content/580ab1bf-4e2e-46b8-9178-dbf765645754?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Bomb threats target media and flights as email warns ‘this is only the beginning’",
-   "w": "Campaign of intimidation continues a week before 50 European leaders are due to attend two major summits in Dublin",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-06T18:56:20Z",
-   "url": "https://www.ft.com/content/f7167042-33d7-423a-89dd-4f379a437c15?syn-25a6b1a6=1",
-   "mine": 1
   },
   {
    "h": "Why the US midterms sparked an AI stock selloff",
