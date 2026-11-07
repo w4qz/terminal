@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T08:31:51.407218Z",
+ "generated_at": "2026-11-07T09:24:11.834511Z",
  "quotes": {
   "NVDA": {
    "p": 186.68,
@@ -596,8 +596,8 @@
    "prev": 158.357,
    "chg": 0.068,
    "pct": 0.04,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (JPY=X) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (JPY=X)",
    "ts": "2026-11-06T22:15:00Z",
    "open": 158.425,
    "lo": 158.425,
@@ -632,8 +632,8 @@
    "prev": 1.3477,
    "chg": -0.0121,
    "pct": -0.9,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (GBPUSD=X)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (GBPUSD=X) — échec de la dernière mise à jour",
    "ts": "2026-11-06T22:30:00Z",
    "open": 1.3455,
    "lo": 1.3344,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 76013.0,
+   "p": 76038.0078,
    "prev": 75746.9297,
-   "chg": 266.0703,
-   "pct": 0.35,
+   "chg": 291.0781,
+   "pct": 0.38,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-07T08:31:51.407218Z",
+   "ts": "2026-11-07T09:24:11.834511Z",
    "open": 75741.0156,
    "lo": 75703.4219,
-   "hi": 76036.5469,
-   "vol": 23168550912,
+   "hi": 76101.3047,
+   "vol": 22805043200,
    "h": [
     81382.15,
     82017.6,
@@ -844,7 +844,7 @@
     80405.29,
     75942.12,
     75746.93,
-    76013.0
+    76038.01
    ]
   }
  },
@@ -1522,14 +1522,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 998898073600,
+   "mcap": 995843768320,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -2165,8 +2165,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 123.1505,
+   "shares": 572600000,
+   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2218,6 +2223,42 @@
  ],
  "news": [
   {
+   "h": "Why a wave of bomb threats is proving so difficult for Europe's aviation authorities to contain",
+   "w": "The \"weakest point of aviation is targeting it in-flight,\" analysts say — but any change to procedures will be a lengthy process.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-07T09:01:57Z",
+   "url": "https://www.cnbc.com/2026/11/07/hoax-bomb-threats-flights-europe.html"
+  },
+  {
+   "h": "Le PDG Ternus qualifie Apple de « meilleure entreprise du monde », mais est-ce la meilleure action ?",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T08:52:08Z",
+   "url": "https://fr.investing.com/news/company-news/le-pdg-ternus-qualifie-apple-de-meilleure-entreprise-du-monde-mais-estce-la-meilleure-action--3683577"
+  },
+  {
+   "h": "Après huit mois de guerre au Moyen-Orient, la mue forcée des pays du Golfe producteurs de pétrole et de gaz",
+   "w": "Pour conserver leur rôle pivot sur les marchés de l’énergie, le Qatar, l’Arabie saoudite et les Emirats arabes unis doivent repenser leurs stratégies commerciales et logistiques.",
+   "syms": [
+    "BRENT"
+   ],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-07T08:30:04Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/11/07/apres-huit-mois-de-guerre-au-moyen-orient-la-mue-forcee-des-pays-du-golfe-producteurs-de-petrole-et-de-gaz_6808252_3234.html"
+  },
+  {
+   "h": "Bitcoin rebondit à 76.000$, mais une sortie de 1,3 milliard$ d’ETF met la reprise à l’épreuve",
+   "w": "",
+   "syms": [
+    "BTC"
+   ],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T08:12:35Z",
+   "url": "https://fr.investing.com/news/cryptocurrency-news/le-bitcoin-rebondit-a-76000-mais-une-sortie-de-13-milliard-des-etf-met-a-lepreuve-la-reprise-3683575"
+  },
+  {
    "h": "Le directeur financier de First Commonwealth Financial vend des actions pour 49.298$",
    "w": "",
    "syms": [],
@@ -2266,6 +2307,14 @@
    "url": "https://fr.investing.com/news/economy-news/les-groupes-environnementaux-se-tournent-vers-lia-malgre-les-emissions-des-centres-de-donnees-3683565"
   },
   {
+   "h": "Trump says U.S. carried out ‘minor strikes’ on Iran as missiles hit Qeshm Island",
+   "w": "Trump said the U.S. carried out ‘minor strikes’ on Iran after Iranian media reported two missiles hit Qeshm Island near the Strait of Hormuz.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-07T07:37:36Z",
+   "url": "https://www.cnbc.com/2026/11/07/trump-us-minor-strikes-iran-qeshm-island.html"
+  },
+  {
    "h": "Une administratrice de Bristol Myers Squibb cède des actions pour 240.578$",
    "w": "",
    "syms": [],
@@ -2282,20 +2331,12 @@
    "url": "https://fr.investing.com/news/economy-news/le-premier-ministre-britannique-burnham-cherche-a-se-rapprocher-de-lue-3683563"
   },
   {
-   "h": "L’administration Trump abandonne son recours contre les votes par correspondance en Californie",
-   "w": "",
+   "h": "The race is on to build the first fusion power plant — and Europe is looking to Japan for help",
+   "w": "Fusion energy has the potential to provide abundant, clean power. Now, the race is on to develop the world’s first commercial plant.",
    "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T06:35:14Z",
-   "url": "https://fr.investing.com/news/economy-news/ladministration-trump-abandonne-son-recours-contre-les-votes-par-correspondance-en-californie-3683560"
-  },
-  {
-   "h": "Schroders cherche à vendre un centre commercial à Singapour pour 172 millions $",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T06:17:02Z",
-   "url": "https://fr.investing.com/news/company-news/schroders-cherche-a-vendre-un-centre-commercial-a-singapour-pour-172-millions--3683558"
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-07T06:00:01Z",
+   "url": "https://www.cnbc.com/2026/11/07/proxima-fusion-power-japan-supply-chain.html"
   },
   {
    "h": "UK will not slow down on AI despite backlash in US, says growth minister",
@@ -2481,14 +2522,6 @@
    "mine": 1
   },
   {
-   "h": "Thierry Cotillard, patron d’Intermarché : « L’hypersensibilité au prix est telle qu’il y a un risque de déconsommation si l’inflation alimentaire dépasse 2 % ou 3 % »",
-   "w": "En amont des négociations commerciales annuelles entre les enseignes de supermarchés et les industriels de l’agroalimentaire, qui débuteront le 1ᵉʳ décembre, le président de Groupement Mousquetaires appelle, dans un entretien au « Monde », à la responsabilité de tous les acteurs pour que la hausse des prix reste contenue.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-07T05:00:08Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/11/07/thierry-cotillard-patron-d-intermarche-l-hypersensibilite-au-prix-est-telle-qu-il-y-a-un-risque-de-deconsommation-si-l-inflation-alimentaire-depasse-2-ou-3_6808204_3234.html"
-  },
-  {
    "h": "Five great British getaways",
    "w": "A tower suite in Gleneagles, a great hall in Northumberland, cabins in the Cairngorms and more",
    "syms": [],
@@ -2524,6 +2557,14 @@
    "url": "https://www.lemonde.fr/argent/article/2026/11/07/que-faire-si-je-constate-des-fissures-sur-ma-maison_6808202_1657007.html"
   },
   {
+   "h": "Thierry Cotillard, patron d’Intermarché : « L’hypersensibilité au prix est telle qu’il y a un risque de déconsommation si l’inflation alimentaire dépasse 2 % ou 3 % »",
+   "w": "En amont des négociations commerciales annuelles entre les enseignes de supermarchés et les industriels de l’agroalimentaire, qui débuteront le 1ᵉʳ décembre, le président de Groupement Mousquetaires appelle, dans un entretien au « Monde », à la responsabilité de tous les acteurs pour que la hausse des prix reste contenue.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-07T05:00:02Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/11/07/thierry-cotillard-patron-d-intermarche-l-hypersensibilite-au-prix-est-telle-qu-il-y-a-un-risque-de-deconsommation-si-l-inflation-alimentaire-depasse-2-ou-3_6808204_3234.html"
+  },
+  {
    "h": "Martin Wolf on the US midterms: What will the Democrats do next?",
    "w": "Paul Krugman explains what the party may do with their newfound power",
    "syms": [],
@@ -2539,6 +2580,30 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-07T04:55:01Z",
    "url": "https://www.lemonde.fr/idees/article/2026/11/07/le-neoliberalisme-est-il-mort-vie-et-metamorphoses-de-la-doctrine-qui-a-faconne-le-monde-contemporain_6808201_3232.html"
+  },
+  {
+   "h": "Taiwan's KMT old guard fights for power base in tight Taipei mayoral races",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T03:24:11.834511Z",
+   "url": "https://asia.nikkei.com/politics/taiwan-s-kmt-old-guard-fights-for-power-base-in-tight-taipei-mayoral-races"
+  },
+  {
+   "h": "Japanese companies caught in crossfire of Beijing-Tokyo rift",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T03:24:11.834511Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/japanese-companies-caught-in-crossfire-of-beijing-tokyo-rift"
+  },
+  {
+   "h": "Japan's new whisky breed chases export elixir",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T03:24:11.834511Z",
+   "url": "https://asia.nikkei.com/spotlight/big-in-asia/japan-s-new-whisky-breed-chases-export-elixir"
   },
   {
    "h": "US believes Nvidia’s Huang had romantic relationship with alleged Chinese spy",
@@ -2574,6 +2639,14 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-07T02:31:51.407218Z",
    "url": "https://asia.nikkei.com/business/markets/taiwan-south-korea-japan-stock-markets-hit-hard-by-ai-sell-off"
+  },
+  {
+   "h": "Inside the card-grading empire shaping the price of Pokémon cards",
+   "w": "PSA’s resale premium, backlog and grading-market dominance shape what collectors pay — and how much their Pokémon cards may fetch.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-07T02:00:01Z",
+   "url": "https://www.cnbc.com/2026/11/06/card-pokemon-grading-psa-collectors-price.html"
   },
   {
    "h": "Prospect of 'modern-day Yalta' shakes Asia's postwar order",
@@ -2633,30 +2706,6 @@
    "url": "https://asia.nikkei.com/spotlight/society/crime/us-slaps-sanctions-on-cambodia-s-prince-group-over-online-scams"
   },
   {
-   "h": "Democrats' midterm gains hang over data centers, Japanese US investment",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T00:40:42.764974Z",
-   "url": "https://asia.nikkei.com/politics/u.s.-midterm-elections/democrats-midterm-gains-hang-over-data-centers-japanese-us-investment"
-  },
-  {
-   "h": "Prep schools help Chinese students get into Japan's top universities",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T23:51:28.194938Z",
-   "url": "https://asia.nikkei.com/business/education/prep-schools-help-chinese-students-get-into-japan-s-top-universities"
-  },
-  {
-   "h": "China enacts law to hunt down corrupt officials who escape overseas",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T23:51:28.194938Z",
-   "url": "https://asia.nikkei.com/politics/china-enacts-law-to-hunt-down-corrupt-officials-who-escape-overseas"
-  },
-  {
    "h": "US warns China it must ‘immediately’ meet terms of Busan trade deal",
    "w": "Washington says Beijing is not fulfilling commitments to increase supply of rare earths and other critical products",
    "syms": [],
@@ -2672,14 +2721,6 @@
    "src": "CNBC — Marchés",
    "ts": "2026-11-06T22:25:58Z",
    "url": "https://www.cnbc.com/2026/11/06/open-ai-data-centers-election.html"
-  },
-  {
-   "h": "Trump says Stephen Miller to replace Susie Wiles as White House chief of staff",
-   "w": "Trump revealed the shake-up three days after Democrats' landslide victory in the midterm elections, winning majority control of the House and Senate.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-06T22:22:53Z",
-   "url": "https://www.cnbc.com/2026/11/06/trump-stephen-miller-wiles-chief-of-staff.html"
   },
   {
    "h": "US stocks recover after tech rout",
@@ -2890,14 +2931,6 @@
    "url": "https://www.cnbc.com/2026/11/06/mississippi-senate-ty-pinkins-colom-hyde-smith.html"
   },
   {
-   "h": "Top House Oversight Democrat warns Trump family to 'lawyer up'",
-   "w": "With Democrats set to take control of the House in January, Rep. Robert Garcia is promising sweeping probes into Trump, his family and his administration.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-06T19:42:36Z",
-   "url": "https://www.cnbc.com/2026/11/06/robert-garcia-trump-congress-oversight-investigations.html"
-  },
-  {
    "h": "Watch the Annual Meeting: Cramer on the fate of the AI buildout and stocks to buy now",
    "w": "At the Investing Club's 4th annual meeting, Cramer also reveals his outlook for 2027 and answers questions from the live audience and members at home.",
    "syms": [],
@@ -2954,22 +2987,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-06T18:53:00Z",
    "url": "https://www.marketwatch.com/story/my-adviser-recommended-an-annuity-is-it-the-right-move-in-this-market-environment-00edbbf6?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Microsoft plans to use fewer neoclouds as AI buildout shows signs of strain",
-   "w": "Microsoft is winding down the number of neoclouds it counts as partners, picking key suppliers and focusing on its own data centers.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-06T18:40:58Z",
-   "url": "https://www.cnbc.com/2026/11/06/microsoft-moves-to-consolidate-its-relationships-with-neoclouds-in-ai.html"
-  },
-  {
-   "h": "OpenAI, Arm and Qualcomm executives react to post-midterm AI sell-off",
-   "w": "Executives of major tech companies are largely projecting optimism about continued growth in the artificial intelligence sector despite a post-midterm sell-off.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-06T18:35:08Z",
-   "url": "https://www.cnbc.com/2026/11/06/tech-executives-ai-data-center-selloff-midterms.html"
   },
   {
    "h": "Why the US midterms sparked an AI stock selloff",
@@ -3063,19 +3080,11 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-06T16:30:08Z",
    "url": "https://www.lemonde.fr/politique/article/2026/11/06/pantouflage-l-etau-du-controle-se-desserre-a-l-heure-des-grandes-man-uvres-aux-sommets-de-l-etat_6807822_823448.html"
-  },
-  {
-   "h": "Marché du travail aux Etats-Unis : chômage en baisse, créations d’emplois en hausse",
-   "w": "Le principal souci des Américains n’est pas de se retrouver au chômage, mais de voir que leur travail ne leur permet pas de faire face au coût de la vie, alors que les possibilités de trouver mieux ailleurs se sont raréfiées.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-06T16:06:12Z",
-   "url": "https://www.lemonde.fr/international/article/2026/11/06/marche-du-travail-aux-etats-unis-chomage-en-baisse-creations-d-emplois-en-hausse_6807818_3210.html"
   }
  ],
  "summary": {
-  "text": "Wall Street tente un rebond mené par la tech (NDX +1,3 %, NVDA +2,8 %), soutenu par 165 000 créations d'emplois en octobre aux États-Unis et l'engagement d'OpenAI à investir dans l'IA. La volatilité reflue avec un VIX à 25,63 (-9,05 %). En revanche, les places internationales décrochent lourdement, le Nikkei 225 plongeant de 6,0 % et le DAX de 2,01 %.\n\nLe dollar progresse nettement avec un DXY à 102,279 (+0,72 %), pesant sur l'EUR/USD (1,1143, -0,82 %) et le GBP/USD (1,3356, -0,9 %). Les cours pétroliers s'effritent (Brent à 97,76 $, CL à 90,34 $), tout comme l'or (4 079,5 $, -0,83 %) et le bitcoin (75 734,1875 $).\n\nÀ surveiller : les tensions sino-américaines autour du respect de l'accord commercial de Busan, la nomination de Stephen Miller comme futur chef de cabinet de la Maison Blanche, ainsi que la finalisation du rachat de Roku par Fox.",
+  "text": "La technologie américaine soutient Wall Street (NDX +1,3 %, NVDA +2,8 %), avec un repli de la volatilité (VIX à 25,63, -9,05 %). À l'inverse, les places internationales décrochent lourdement, notamment le Nikkei (-6,0 %) et le DAX (-2,01 %), sur fond de tensions géopolitiques accrues après des frappes américaines signalées sur l'île de Qeshm en Iran.\n\nSur les devises, le billet vert progresse (DXY à 102,279, +0,72 %), faisant reculer l'EUR/USD à 1,1143 (-0,82 %) et le GBP/USD à 1,3356 (-0,9 %). Les matières premières faiblissent : l'or cède 0,83 % à 4 079,5 $, tandis que le pétrole s'effrite légèrement, le Brent cotant 97,76 $ (-0,54 %) et le brut léger américain 90,34 $ (-0,2 %).\n\nÀ surveiller : l'escalade militaire au Moyen-Orient, l'impact des alertes à la bombe sur l'aviation européenne, et la tenue du Bitcoin (76 038 $), confronté à 1,3 milliard de dollars de sorties nettes sur les ETF.",
   "model": "gemini-flash-latest",
-  "ts": "2026-11-06T23:59:21.317538Z"
+  "ts": "2026-11-07T09:24:11.834511Z"
  }
 }
