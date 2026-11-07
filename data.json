@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T05:08:55.258474Z",
+ "generated_at": "2026-11-07T05:51:28.194938Z",
  "quotes": {
   "NVDA": {
    "p": 186.68,
@@ -154,8 +154,8 @@
    "prev": 51523.0586,
    "chg": -251.4805,
    "pct": -0.49,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^DJI)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^DJI) — échec de la dernière mise à jour",
    "ts": "2026-11-06T21:00:00Z",
    "open": 51078.8516,
    "lo": 50992.6094,
@@ -599,11 +599,10 @@
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (JPY=X)",
    "ts": "2026-11-06T22:15:00Z",
-   "open": 157.435,
-   "lo": 157.419,
-   "hi": 158.54,
+   "open": 158.425,
+   "lo": 158.425,
+   "hi": 158.425,
    "h": [
-    158.06,
     158.06,
     158.2,
     158.52,
@@ -624,7 +623,8 @@
     157.91,
     158.47,
     158.36,
-    157.5
+    157.5,
+    158.43
    ]
   },
   "GBPUSD": {
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75821.1797,
+   "p": 75933.0703,
    "prev": 75942.125,
-   "chg": -120.9453,
-   "pct": -0.16,
+   "chg": -9.0547,
+   "pct": -0.01,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-07T05:08:55.258474Z",
+   "ts": "2026-11-07T05:51:28.194938Z",
    "open": 75741.0156,
    "lo": 75703.4219,
    "hi": 75998.1172,
-   "vol": 26122377216,
+   "vol": 25821386752,
    "h": [
     81500.8,
     81382.15,
@@ -844,7 +844,7 @@
     77345.05,
     80405.29,
     75942.12,
-    75821.18
+    75933.07
    ]
   }
  },
@@ -944,9 +944,9 @@
    "industry": "Software - Infrastructure",
    "ccy": "USD",
    "mcap": 3940412817408,
-   "pe": 27.971,
+   "pe": 27.6936,
    "fpe": 21.9448,
-   "eps": 18.97,
+   "eps": 19.16,
    "feps": 24.1793,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
@@ -1032,9 +1032,9 @@
    "industry": "Internet Retail",
    "ccy": "USD",
    "mcap": 2803846610944,
-   "pe": 21.03,
+   "pe": 20.962,
    "fpe": 23.781,
-   "eps": 12.33,
+   "eps": 12.37,
    "feps": 10.9036,
    "revTTM": 797455024128,
    "netIncome": 134779002880,
@@ -1522,14 +1522,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 995843768320,
-   "pe": 46.3173,
+   "mcap": 998898073600,
+   "pe": 45.4783,
    "fpe": 38.9034,
-   "eps": 2.71,
+   "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -1609,9 +1609,9 @@
    "ccy": "USD",
    "mcap": 736464797696,
    "pe": 95.9487,
-   "fpe": 26.0017,
+   "fpe": 25.453,
    "eps": 4.68,
-   "feps": 17.2697,
+   "feps": 17.6419,
    "revTTM": 45435998208,
    "netIncome": 7725000192,
    "shares": 1640087251,
@@ -1780,9 +1780,9 @@
    "industry": "Semiconductor Equipment & Materials",
    "ccy": "EUR",
    "mcap": 494722187264,
-   "pe": 36.6953,
+   "pe": 37.6864,
    "fpe": 22.7451,
-   "eps": 34.98,
+   "eps": 34.06,
    "feps": 56.4342,
    "revTTM": 39473500160,
    "netIncome": 13474299904,
@@ -1823,9 +1823,9 @@
    "industry": "Credit Services",
    "ccy": "USD",
    "mcap": 568616681472,
-   "pe": 34.3165,
+   "pe": 34.1549,
    "fpe": 28.1914,
-   "eps": 19.02,
+   "eps": 19.11,
    "feps": 23.1524,
    "revTTM": 36288000000,
    "netIncome": 16958000128,
@@ -1951,9 +1951,9 @@
    "industry": "Discount Stores",
    "ccy": "USD",
    "mcap": 466863390720,
-   "pe": 51.3181,
+   "pe": 50.7495,
    "fpe": 42.0511,
-   "eps": 20.53,
+   "eps": 20.76,
    "feps": 25.0543,
    "revTTM": 303154003968,
    "netIncome": 9226000384,
@@ -2034,9 +2034,9 @@
    "industry": "Communication Equipment",
    "ccy": "USD",
    "mcap": 370011766784,
-   "pe": 28.7883,
+   "pe": 28.1832,
    "fpe": 16.6933,
-   "eps": 3.26,
+   "eps": 3.33,
    "feps": 5.622,
    "revTTM": 63324999680,
    "netIncome": 13267000320,
@@ -2165,13 +2165,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 123.1505,
-   "shares": 572600000,
-   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2223,21 +2218,146 @@
  ],
  "news": [
   {
+   "h": "L’épouse du PDG d’Amplitude cède des actions pour 16.839$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T05:47:14Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/lepouse-du-pdg-damplitude-cede-des-actions-pour-16839-93CH-3683554"
+  },
+  {
+   "h": "Une directrice d’ESAB Corp vend des actions pour 294.391$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T05:46:54Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/une-directrice-desab-corp-vend-des-actions-pour-294391-93CH-3683553"
+  },
+  {
+   "h": "Un dirigeant de Clear Secure vend pour 10,7 millions $ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T05:46:53Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-de-clear-secure-vend-pour-107-millions--dactions-93CH-3683552"
+  },
+  {
+   "h": "La PDG de Clear Secure vend des actions pour 10,7 millions $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T05:39:42Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/la-pdg-de-clear-secure-vend-des-actions-pour-107-millions--93CH-3683551"
+  },
+  {
+   "h": "Le directeur financier d’O’Reilly Automotive cède des actions pour 987.623$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T05:36:13Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-doreilly-automotive-cede-des-actions-pour-987623-93CH-3683550"
+  },
+  {
+   "h": "La directrice technologique de Wayfair vend des actions pour 1,86 million $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T05:35:53Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-technologique-de-wayfair-vend-des-actions-pour-186-million--93CH-3683549"
+  },
+  {
+   "h": "L’ex-directeur financier Craig Conti cède 20.074$ d’actions Verra Mobility",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T05:35:34Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/lexdirecteur-financier-craig-conti-cede-20074-dactions-verra-mobility-93CH-3683548"
+  },
+  {
+   "h": "Le directeur digital de Levi Strauss vend des actions pour 83.367$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T05:35:27Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-digital-de-levi-strauss-vend-des-actions-pour-83367-93CH-3683547"
+  },
+  {
+   "h": "Le PDG d’Omada Health vend des actions pour 248.730$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T05:32:06Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-domada-health-vend-des-actions-pour-248730-93CH-3683546"
+  },
+  {
+   "h": "Le président de Generac Home, Norman Taffe, cède des actions GNRC pour 54.603$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T05:31:47Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-president-de-generac-home-norman-taffe-cede-des-actions-gnrc-pour-54603-93CH-3683545"
+  },
+  {
    "h": "UK will not slow down on AI despite backlash in US, says growth minister",
    "w": "Dan Tomlinson asserts that pace of investment is ‘too low for what we need to stay at the forefront as AI technology develops’",
    "syms": [],
-   "src": "myFT — economy",
+   "src": "myFT — world",
    "ts": "2026-11-07T05:00:41Z",
    "url": "https://www.ft.com/content/47dba9d2-4c82-4e17-969d-f1728ef13a5a?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "The UK has few easy options for rejoining a ‘traumatised’ EU",
+   "w": "Accession is really not a negotiation. It is a process and candidates must tick all the relevant boxes",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-07T05:00:34Z",
+   "url": "https://www.ft.com/content/b9b88216-4285-467b-8aad-33e26ee2468a",
+   "mine": 1
+  },
+  {
+   "h": "Burnham’s 10-year plan morphs into ‘high-level’ blueprint",
+   "w": "Delay deepens doubts within Labour whether PM’s vision for UK will be as transformational as billed",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-07T05:00:34Z",
+   "url": "https://www.ft.com/content/8e34dba9-8ebc-4499-9274-f88d02ad691c?syn-25a6b1a6=1",
    "mine": 1
   },
   {
    "h": "Trump’s defeat heralds a US retreat",
    "w": "American retrenchment could change Middle East balance of power and signify opportunities for China",
    "syms": [],
-   "src": "myFT — economy",
+   "src": "myFT — world",
    "ts": "2026-11-07T05:00:34Z",
    "url": "https://www.ft.com/content/f80ff605-6f6e-4b5d-9fab-20276b78e9b7?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "European security agencies probe whether bomb hoaxes started in Russia",
+   "w": "A working hypothesis is that the co-ordinated threats were produced by pro-Kremlin activists or hacking groups",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-07T05:00:33Z",
+   "url": "https://www.ft.com/content/0845687f-1f74-4bbf-88c9-5c6b031c7f20?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Zelenskyy to be honoured with UK state visit in 2027",
+   "w": "The grand occasion will mark five years since Russia’s full-scale invasion of Ukraine",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-07T05:00:33Z",
+   "url": "https://www.ft.com/content/bc1814b7-fbd0-4d05-8ba3-c61115c80735?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "The mother of all American course corrections",
+   "w": "US midterms are the latest confirmation that reports of the death of liberal democracy have been much exaggerated",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-07T05:00:33Z",
+   "url": "https://www.ft.com/content/452cf328-c819-482e-8f2c-61b65c96f8ce?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2250,12 +2370,68 @@
    "mine": 1
   },
   {
-   "h": "European security agencies probe whether bomb hoaxes started in Russia",
-   "w": "A working hypothesis is that the co-ordinated threats were produced by pro-Kremlin activists or hacking groups",
+   "h": "How Wall Street’s all-in bet on AI blew up",
+   "w": "US midterm elections sparked a hedge fund and retail investor exodus from a trade that had taken over equity markets",
+   "syms": [
+    "SPX"
+   ],
+   "src": "myFT — world",
+   "ts": "2026-11-07T05:00:31Z",
+   "url": "https://www.ft.com/content/5a6806f0-e82e-4b34-b761-f9877e2b511c?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "No, ‘mogging’ does not signal the decline of the English language",
+   "w": "The popularity of manosphere vocabulary takes the sting out of a harmful ideology",
    "syms": [],
-   "src": "myFT — companies",
-   "ts": "2026-11-07T05:00:33Z",
-   "url": "https://www.ft.com/content/0845687f-1f74-4bbf-88c9-5c6b031c7f20?syn-25a6b1a6=1",
+   "src": "myFT — world",
+   "ts": "2026-11-07T05:00:23Z",
+   "url": "https://www.ft.com/content/e25b73c7-9c6c-446b-b9d2-8f82d458bcf8?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "An apology for slavery will help build trust across the Commonwealth",
+   "w": "The Caribbean Community has ten relatively modest proposals for repairing relations with the UK",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-07T05:00:23Z",
+   "url": "https://www.ft.com/content/510f4a2e-0c7a-48c9-bee6-eabc704b1907",
+   "mine": 1
+  },
+  {
+   "h": "Russia ships metal via the Arctic to evade Ukrainian strikes",
+   "w": "Pig iron will be exported through the northern port of Murmansk for the first time in 30 years as Black Sea battles rage",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-07T05:00:22Z",
+   "url": "https://www.ft.com/content/80d91653-c210-43cd-b91e-2b8c644561c1?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "In search of skiing nirvana in Norway’s far north",
+   "w": "Why are skiers turning their backs on resorts to head to a tiny village on Europe’s northernmost fringe, where there are neither restaurants, bars — nor a single lift?",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-07T05:00:22Z",
+   "url": "https://www.ft.com/content/db2a7bec-5863-491b-9c64-59e4de48db05?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "A bittersweet year for liberals",
+   "w": "The lesson of 2026 is that people can forgive election subversion, Kremlin support — but not high prices",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-07T05:00:22Z",
+   "url": "https://www.ft.com/content/3370e949-4a32-4a2d-8738-2f1cde6a35ea?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Mississippi election marks political earthquake in the Deep South",
+   "w": "Democrat Scott Colom could become the first Black man from the state to reach the US Senate in 150 years",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-07T05:00:22Z",
+   "url": "https://www.ft.com/content/0700baee-1a7f-4dc4-ac95-5b98e1868d96?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2279,9 +2455,9 @@
   },
   {
    "h": "UK officials warned that changing mackerel definition could mislead shoppers",
-   "w": "Internal emails show concern at moves to allow Chilean species to be sold ‘jack mackerel’, even though it is from a different family to traditional mackerel",
+   "w": "Internal emails show concern at moves to allow Chilean species to be sold as ‘jack mackerel’, even though it is from a different family from traditional product",
    "syms": [],
-   "src": "myFT — companies",
+   "src": "myFT — world",
    "ts": "2026-11-07T05:00:13Z",
    "url": "https://www.ft.com/content/52f2548d-93b8-47dd-9edf-9900a9a43a51?syn-25a6b1a6=1",
    "mine": 1
@@ -2290,7 +2466,7 @@
    "h": "Why does America hate AI?",
    "w": "Voter hostility to Big Tech helped shape the US midterms, and similar fears are spreading through the west. But look east and attitudes are dramatically more optimistic",
    "syms": [],
-   "src": "myFT — companies",
+   "src": "myFT — world",
    "ts": "2026-11-07T05:00:13Z",
    "url": "https://www.ft.com/content/af97585a-3381-42a9-838b-9a205ab81232?syn-25a6b1a6=1",
    "mine": 1
@@ -2299,7 +2475,7 @@
    "h": "K-pop super-fandom, my daughter and me",
    "w": "Over one summer and three huge concerts, a mother lives the intense devotion and explores the risks of extreme social media intimacy",
    "syms": [],
-   "src": "myFT — asia pacific",
+   "src": "myFT — emerging markets",
    "ts": "2026-11-07T05:00:13Z",
    "url": "https://www.ft.com/content/32066a67-a697-4eb4-a779-c6dff8cc2ac7",
    "mine": 1
@@ -2311,6 +2487,15 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-07T05:00:08Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/07/thierry-cotillard-patron-d-intermarche-l-hypersensibilite-au-prix-est-telle-qu-il-y-a-un-risque-de-deconsommation-si-l-inflation-alimentaire-depasse-2-ou-3_6808204_3234.html"
+  },
+  {
+   "h": "Five great British getaways",
+   "w": "A tower suite in Gleneagles, a great hall in Northumberland, cabins in the Cairngorms and more",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-07T05:00:04Z",
+   "url": "https://www.ft.com/content/04b1bc84-981e-4996-b98e-ade9603045b8",
+   "mine": 1
   },
   {
    "h": "‘I don’t do business plans’ — serial entrepreneur Marcia Kilgore",
@@ -2339,96 +2524,21 @@
    "url": "https://www.lemonde.fr/argent/article/2026/11/07/que-faire-si-je-constate-des-fissures-sur-ma-maison_6808202_1657007.html"
   },
   {
+   "h": "Martin Wolf on the US midterms: What will the Democrats do next?",
+   "w": "Paul Krugman explains what the party may do with their newfound power",
+   "syms": [],
+   "src": "myFT — us",
+   "ts": "2026-11-07T05:00:00Z",
+   "url": "https://www.ft.com/content/b03f1688-be8f-4c7e-946d-7ccea5d9d524?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "Le néolibéralisme est-il mort ? Vie et métamorphoses de la doctrine qui a façonné le monde contemporain",
    "w": "L’élection de Donald Trump et le Brexit, en 2016, marquent-ils la fin de quatre décennies d’hégémonie du néolibéralisme ? Le débat anime des intellectuels à travers le monde, qui s’interrogent sur les mutations d’une doctrine ayant refondé le libéralisme moderne en donnant un rôle nouveau à l’Etat.",
    "syms": [],
    "src": "Le Monde — Économie",
-   "ts": "2026-11-07T04:55:03Z",
+   "ts": "2026-11-07T04:55:01Z",
    "url": "https://www.lemonde.fr/idees/article/2026/11/07/le-neoliberalisme-est-il-mort-vie-et-metamorphoses-de-la-doctrine-qui-a-faconne-le-monde-contemporain_6808201_3232.html"
-  },
-  {
-   "h": "Un dirigeant de Dream Finders Homes achète des actions pour 10.530$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T04:47:17Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-de-dream-finders-homes-achete-des-actions-pour-10530-93CH-3683535"
-  },
-  {
-   "h": "Trump signale des progrès dans les négociations avec l’Iran",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T04:39:37Z",
-   "url": "https://fr.investing.com/news/economy-news/trump-signale-des-progres-dans-les-negociations-avec-liran-3683533"
-  },
-  {
-   "h": "Le directeur clinique de HCA Healthcare cède des actions pour 593.582$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T04:31:56Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-clinique-de-hca-healthcare-cede-des-actions-pour-593582-93CH-3683532"
-  },
-  {
-   "h": "Le BPA de Bumble a manqué les attentes de 0,04$, le CA en dessous des prévisions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T04:21:49Z",
-   "url": "https://fr.investing.com/news/earnings/le-bpa-de-bumble-a-manque-les-attentes-de-004-le-ca--en-dessous-des-previsions-3683531"
-  },
-  {
-   "h": "Le directeur des opérations de HCA Healthcare cède des actions pour 15,9 M$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T04:17:23Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-des-operations-de-hca-healthcare-cede-des-actions-pour-159-m-93CH-3683530"
-  },
-  {
-   "h": "Un dirigeant d’Abbott Laboratories cède des actions pour 406.000$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T04:16:52Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-dabbott-laboratories-cede-des-actions-pour-406000-93CH-3683529"
-  },
-  {
-   "h": "Le BPA de Ivanhoe Electric a manqué les attentes de 0,10$, le CA en dessous des prévisions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T04:11:34Z",
-   "url": "https://fr.investing.com/news/earnings/le-bpa-de-ivanhoe-electric-a-manque-les-attentes-de-010-le-ca--en-dessous-des-previsions-3683528"
-  },
-  {
-   "h": "Analyse technique : 2 façons d’utiliser WarrenAI sur vos graphiques - Tutos inclus",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T04:10:26Z",
-   "url": "https://fr.investing.com/news/stock-market-news/analyse-technique--2-facons-dutiliser-warrenai-sur-vos-graphiques--tutos-inclus-3673852"
-  },
-  {
-   "h": "Vous tradez les cryptos ? Cette IA spécialisée va devenir votre outil le plus précieux",
-   "w": "",
-   "syms": [
-    "BTC"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T04:10:17Z",
-   "url": "https://fr.investing.com/news/cryptocurrency-news/vous-tradez-les-cryptos--cette-ia-specialisee-va-devenir-votre-outil-le-plus-precieux-3670627"
-  },
-  {
-   "h": "Nvidia se trouve à un tournant technique après la pire semaine de son histoire",
-   "w": "",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T04:02:53Z",
-   "url": "https://fr.investing.com/news/stock-market-news/nvidia--pire-semaine-de-son-histoire-laction-se-trouve-a-un-tournant-technique-3681455"
   },
   {
    "h": "US believes Nvidia’s Huang had romantic relationship with alleged Chinese spy",
@@ -2436,7 +2546,7 @@
    "syms": [
     "NVDA"
    ],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-07T02:33:26Z",
    "url": "https://www.ft.com/content/a55a2a22-4479-4f93-a445-6147a5c6d790?syn-25a6b1a6=1",
    "mine": 1
@@ -2445,10 +2555,34 @@
    "h": "‘It’s almost like a nightclub’: Hyrox takes off in China amid fitness frenzy",
    "w": "Group behind gruelling competitive races faces challenges from Chinese rivals",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — companies",
    "ts": "2026-11-07T01:00:00Z",
    "url": "https://www.ft.com/content/ac76efa6-a309-41c6-ab51-b64225f2c18b?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "Prep schools help Chinese students get into Japan's top universities",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-06T23:51:28.194938Z",
+   "url": "https://asia.nikkei.com/business/education/prep-schools-help-chinese-students-get-into-japan-s-top-universities"
+  },
+  {
+   "h": "China enacts law to hunt down corrupt officials who escape overseas",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-06T23:51:28.194938Z",
+   "url": "https://asia.nikkei.com/politics/china-enacts-law-to-hunt-down-corrupt-officials-who-escape-overseas"
+  },
+  {
+   "h": "Russia took a Japanese journalist. Tokyo should speak up",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-06T23:51:28.194938Z",
+   "url": "https://asia.nikkei.com/opinion/russia-took-a-japanese-journalist.-tokyo-should-speak-up"
   },
   {
    "h": "Taiwan's KMT old guard fights for power base in tight Taipei mayoral races",
@@ -2478,7 +2612,7 @@
    "h": "US warns China it must ‘immediately’ meet terms of Busan trade deal",
    "w": "Washington says Beijing is not fulfilling commitments to increase supply of rare earths and other critical products",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-06T22:53:51Z",
    "url": "https://www.ft.com/content/391bb785-0247-4c39-b53b-35007187d603?syn-25a6b1a6=1",
    "mine": 1
@@ -2506,7 +2640,7 @@
     "SPX",
     "NDX"
    ],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-06T22:22:05Z",
    "url": "https://www.ft.com/content/642b32dc-e3a1-4df8-ae91-5c84bdeb89e0?syn-25a6b1a6=1",
    "mine": 1
@@ -2539,7 +2673,7 @@
    "h": "US economy outstrips forecasts to add 165,000 jobs in October",
    "w": "Hiring rebound reinforces expectations Federal Reserve will raise interest rates",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-06T22:16:13Z",
    "url": "https://www.ft.com/content/f84c722c-99a9-4628-84dc-c42a192cb35c?syn-25a6b1a6=1",
    "mine": 1
@@ -2548,7 +2682,7 @@
    "h": "Trump taps immigration hardliner Stephen Miller as chief of staff",
    "w": "Decision to replace Susie Wiles comes days after Republican Party’s resounding midterm election defeat",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-06T22:09:58Z",
    "url": "https://www.ft.com/content/6e8f2244-0e39-45cd-b415-e0be54b0351f?syn-25a6b1a6=1",
    "mine": 1
@@ -2629,14 +2763,6 @@
    "url": "https://asia.nikkei.com/spotlight/cybersecurity/japan-s-takaichi-pushes-for-tougher-cybersecurity-laws-as-attacks-surge"
   },
   {
-   "h": "Democrats' midterm gains hang over data centers, Japanese US investment",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T21:25:41.686306Z",
-   "url": "https://asia.nikkei.com/politics/u.s.-midterm-elections/democrats-midterm-gains-hang-over-data-centers-japanese-us-investment"
-  },
-  {
    "h": "Nvidia, AMD and other chip stocks rebound — but is relief from the ‘violent’ selloff only temporary?",
    "w": "Analysts warn of further volatility ahead, although there are several new factors that work in the AI trade’s favor.",
    "syms": [
@@ -2692,7 +2818,7 @@
    "h": "Voters take their pick in New Zealand’s ‘supermarket election’",
    "w": "Christopher Luxon tries to hang on as cost of living crisis and high energy prices weigh on consumers",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — asia pacific",
    "ts": "2026-11-06T21:00:10Z",
    "url": "https://www.ft.com/content/1e80651b-14f3-4cf0-9b47-2f6dee158496?syn-25a6b1a6=1",
    "mine": 1
@@ -2701,7 +2827,7 @@
    "h": "Anthropic to press ahead with IPO targeting $1.5tn valuation",
    "w": "Claude maker intends to list before Thanksgiving despite brutal tech rout",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-06T21:00:09Z",
    "url": "https://www.ft.com/content/314e17df-e7af-4814-b208-70a0557cb452?syn-25a6b1a6=1",
    "mine": 1
@@ -2718,26 +2844,10 @@
    "h": "Ex-OpenAI employee accused of spying pleads not guilty",
    "w": "Abdulrahman Alfozan, a Saudi Arabian national, was arrested last month after a bug was discovered in the AI lab’s office",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-06T20:47:31Z",
    "url": "https://www.ft.com/content/daee9cd2-3477-4fcc-859f-46acb9fdfbd9?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Seres, Li Auto join Chinese EVs' charge into Europe",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T20:31:51.436997Z",
-   "url": "https://asia.nikkei.com/business/automobiles/electric-vehicles/seres-li-auto-join-chinese-evs-charge-into-europe"
-  },
-  {
-   "h": "US slaps sanctions on Cambodia's Prince Group over online scams",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T20:31:51.436997Z",
-   "url": "https://asia.nikkei.com/spotlight/society/crime/us-slaps-sanctions-on-cambodia-s-prince-group-over-online-scams"
   },
   {
    "h": "My 93-year-old father changed his will at the 11th hour, leaving my brother his entire $500,000 estate. Can I challenge it?",
@@ -2799,7 +2909,7 @@
    "h": "Who is in the line of fire after the midterm drubbing?",
    "w": "The Trump administration reckons with the Democratic Party’s emphatic victory in the US midterms",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — sujet suivi",
    "ts": "2026-11-06T19:29:18Z",
    "url": "https://www.ft.com/content/580ab1bf-4e2e-46b8-9178-dbf765645754?syn-25a6b1a6=1",
    "mine": 1
@@ -2811,15 +2921,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-06T19:23:08Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/06/a-bord-du-tgv-nouvelle-generation-entre-paris-et-marseille-un-train-repense-de-a-a-z-a-la-capacite-accrue-et-moins-gourmand-en-energie_6807856_3234.html"
-  },
-  {
-   "h": "How will the midterm results change US politics? You asked, we answered",
-   "w": "The FT’s senior US columnists Edward Luce and Rana Foroohar replied to reader questions",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-06T19:02:43Z",
-   "url": "https://www.ft.com/content/01048d5b-9886-4247-b14a-8c738edba5e3?syn-25a6b1a6=1",
-   "mine": 1
   },
   {
    "h": "Bomb threats target media and flights as email warns ‘this is only the beginning’",
@@ -2879,15 +2980,6 @@
    "url": "https://www.bbc.co.uk/news/articles/crlykkzwwpydo?at_medium=RSS&at_campaign=rss"
   },
   {
-   "h": "Wave of uncertainty",
-   "w": "The US political outlook has added an additional layer of complexity to the rate outlook",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-06T18:30:08Z",
-   "url": "https://www.ft.com/content/117c1690-2928-4652-b4d9-33c0be02b129",
-   "mine": 1
-  },
-  {
    "h": "Surfréquentation à Chamonix : vers l’instauration de quotas touristiques, une première dans les Alpes",
    "w": "L’accès au lac Blanc et aux lacs des Chéserys, offrant une vue imprenable sur le massif du Mont-Blanc, devrait être soumis à une réservation obligatoire, avec des jauges de 600 à 1 000 personnes, à partir de l’été 2027, sur le modèle en place dans les calanques de Marseille.",
    "syms": [],
@@ -2899,7 +2991,7 @@
    "h": "A new phase in the tech market correction",
    "w": "Investors are no longer pricing in accelerating AI growth",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — companies",
    "ts": "2026-11-06T18:24:44Z",
    "url": "https://www.ft.com/content/a91d70f1-d335-4d58-a6d8-1052658211ba?syn-25a6b1a6=1",
    "mine": 1
@@ -2925,7 +3017,7 @@
    "h": "Musk wants to give stock to kids. What’s the problem?",
    "w": "The act is generous but there are reasons to wish it could be done in a different way",
    "syms": [],
-   "src": "myFT — us",
+   "src": "myFT — financials",
    "ts": "2026-11-06T18:00:10Z",
    "url": "https://www.ft.com/content/6c9d92ac-eba0-47c0-b4db-d9d5226e9891",
    "mine": 1
@@ -2949,24 +3041,6 @@
    "mine": 1
   },
   {
-   "h": "Tesla’s Cybertruck is a masterclass in failing upwards",
-   "w": "Musk wasn’t so hot when it came to selling a pick-up truck, but he still knows how to sell himself",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-06T17:38:41Z",
-   "url": "https://www.ft.com/content/675d9559-acb0-49a0-8108-f7dc433176fc?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "James Talarico: the Democrats’ rising star who turned Texas blue",
-   "w": "The 37-year-old senator-elect combined Christian faith and anti-corruption messaging to give the left its first statewide win in decades",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-06T17:23:03Z",
-   "url": "https://www.ft.com/content/7eb006c7-a430-40fd-bba6-48dcbb810ba2?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Why smoky bacon crisps threaten to reignite rows over EU rules",
    "w": "A post-Brexit deal on food standards has raised questions over the future naming of the classic British snack.",
    "syms": [],
@@ -2983,42 +3057,6 @@
    "url": "https://www.lemonde.fr/economie/article/2026/11/06/l-allemagne-va-entrer-au-capital-de-knds-et-controlera-le-geant-de-l-armement-terrestre-a-parite-avec-la-france_6807842_3234.html"
   },
   {
-   "h": "Anthropic lines up UK retail offer as AI stocks wobble",
-   "w": "Analysts warn demand may be dented by the SpaceX slide",
-   "syms": [],
-   "src": "myFT — technology",
-   "ts": "2026-11-06T16:50:16Z",
-   "url": "https://www.ft.com/content/d0be1646-7d2a-4d9d-8412-7488f3c8b203?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "‘De-extinction’ start-up Colossal accuses ex-staffer of stealing secrets",
-   "w": "Lawsuit alleges scientist who worked on reviving dodo bird has taken confidential research to rival biotech ventures",
-   "syms": [],
-   "src": "myFT — markets",
-   "ts": "2026-11-06T16:47:12Z",
-   "url": "https://www.ft.com/content/3a70a224-6d6c-4480-bd14-241fe3f6a987?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Copper prices fall on fears of AI backlash",
-   "w": "Red metal has soared this year on forecasts of surging demand from AI data centres, now seen at risk after Democrat sweep in US midterms",
-   "syms": [],
-   "src": "myFT — technology",
-   "ts": "2026-11-06T16:31:51Z",
-   "url": "https://www.ft.com/content/0a4e2a58-f83f-4445-8f32-892657cf8c27?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Is the AI stock bubble finally bursting?",
-   "w": "Any reasonable person can see the hallmarks of an unsustainable party in markets",
-   "syms": [],
-   "src": "myFT — technology",
-   "ts": "2026-11-06T16:30:27Z",
-   "url": "https://www.ft.com/content/e185d576-c4a6-4fb0-aa03-deda69c900c8?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Pantouflage : l’étau du contrôle se desserre à l’heure des grandes manœuvres aux sommets de l’Etat",
    "w": "Alors que la fin du quinquennat devrait s’accompagner de départs d’agents publics vers le privé, le Conseil d’Etat vient d’infléchir sa jurisprudence sur l’appréciation des risques de conflits d’intérêts. Une manière de faciliter les parcours professionnels, pour certains. Un recul déontologique, pour d’autres.",
    "syms": [],
@@ -3027,57 +3065,12 @@
    "url": "https://www.lemonde.fr/politique/article/2026/11/06/pantouflage-l-etau-du-controle-se-desserre-a-l-heure-des-grandes-man-uvres-aux-sommets-de-l-etat_6807822_823448.html"
   },
   {
-   "h": "Met chief publicly criticised by senior officer and mayors for push to merge police forces",
-   "w": "Sir Mark Rowley accused of interfering in political matters as Met performance comes under fire",
-   "syms": [],
-   "src": "myFT — world uk",
-   "ts": "2026-11-06T16:22:34Z",
-   "url": "https://www.ft.com/content/58dc7cb0-bbce-4197-83eb-1fed7e2e9523?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Can Labour unpick the immigration knot?",
-   "w": "The Home Office must restore public faith wrecked by the gulf between political rhetoric and reality",
-   "syms": [],
-   "src": "myFT — world uk",
-   "ts": "2026-11-06T16:13:15Z",
-   "url": "https://www.ft.com/content/c8d86ced-554a-4a41-8fe2-89fe1151324d?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Marché du travail aux Etats-Unis : chômage en baisse, créations d’emplois en hausse",
    "w": "Le principal souci des Américains n’est pas de se retrouver au chômage, mais de voir que leur travail ne leur permet pas de faire face au coût de la vie, alors que les possibilités de trouver mieux ailleurs se sont raréfiées.",
    "syms": [],
    "src": "Le Monde — Économie",
    "ts": "2026-11-06T16:06:12Z",
    "url": "https://www.lemonde.fr/international/article/2026/11/06/marche-du-travail-aux-etats-unis-chomage-en-baisse-creations-d-emplois-en-hausse_6807818_3210.html"
-  },
-  {
-   "h": "Renewable energy groups boosted by ‘clarity’ of US election results",
-   "w": "Ørsted among the main gainers from the shift in political backdrop after two years of hostility from the Trump administration",
-   "syms": [],
-   "src": "myFT — energy",
-   "ts": "2026-11-06T15:53:53Z",
-   "url": "https://www.ft.com/content/3066017e-996c-4689-9bd8-021eb70b99ac?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Europe alarmed by US plans for security deal with Russia",
-   "w": "European officials fear Washington could strike agreement with Moscow that undermines Nato and restores Russia’s sphere of influence",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-06T15:19:37Z",
-   "url": "https://www.ft.com/content/1731d88c-fba2-4060-84dc-7dfddd7bfbca?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Blowout October payrolls data sets up Federal Reserve December rate rise",
-   "w": "Non-farm payrolls beat expectations by 100,000 jobs in October",
-   "syms": [],
-   "src": "myFT — economy",
-   "ts": "2026-11-06T14:56:03Z",
-   "url": "https://www.ft.com/content/52770926-e4b9-4005-9e2f-332eb7dc6631",
-   "mine": 1
   }
  ],
  "summary": {
