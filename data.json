@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T11:28:21.098749Z",
+ "generated_at": "2026-11-07T12:06:56.533407Z",
  "quotes": {
   "NVDA": {
    "p": 186.68,
@@ -815,8 +815,8 @@
    "prev": 75746.9297,
    "chg": 113.5703,
    "pct": 0.15,
-   "st": "DELAYED_15M",
-   "src": "Yahoo Finance via yfinance (BTC-USD)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (BTC-USD) — échec de la dernière mise à jour",
    "ts": "2026-11-07T11:28:21.098749Z",
    "open": 75741.0156,
    "lo": 75703.4219,
@@ -1115,9 +1115,9 @@
    "industry": "Aerospace & Defense",
    "ccy": "USD",
    "mcap": 1823529500672,
-   "fpe": 50.4109,
+   "fpe": 52.3535,
    "eps": 0.23,
-   "feps": 2.6635,
+   "feps": 2.5647,
    "revTTM": 32042999808,
    "netIncome": -3431000064,
    "shares": 8246541218,
@@ -1203,11 +1203,11 @@
    "beta": 1.279,
    "div": 2.1,
    "divYield": 0.344,
-   "target": 848.3765,
+   "target": 850.1025,
    "targetHi": 1050.0,
    "targetLo": 629.06,
    "rating": "Achat fort",
-   "analysts": 58,
+   "analysts": 57,
    "revGrowth": 26.1,
    "epsGrowth": 264.8,
    "grossMargin": 81.034,
@@ -1522,14 +1522,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 998898073600,
+   "mcap": 995843768320,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -1693,9 +1693,9 @@
    "ccy": "USD",
    "mcap": 676620599296,
    "pe": 17.0648,
-   "fpe": 13.3285,
+   "fpe": 13.4488,
    "eps": 9.72,
-   "feps": 12.4447,
+   "feps": 12.3334,
    "revTTM": 388231987200,
    "netIncome": 40621998080,
    "shares": 4079222444,
@@ -1963,7 +1963,7 @@
    "beta": 0.852,
    "div": 5.88,
    "divYield": 0.558,
-   "target": 1067.5946,
+   "target": 1071.3243,
    "targetHi": 1315.0,
    "targetLo": 770.0,
    "rating": "Achat",
@@ -1998,14 +1998,14 @@
    "ccy": "USD",
    "mcap": 386435252224,
    "pe": 112.9437,
-   "fpe": 63.2608,
+   "fpe": 63.8374,
    "eps": 1.42,
-   "feps": 2.5352,
+   "feps": 2.5123,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
    "beta": 1.61,
-   "target": 217.9679,
+   "target": 222.2536,
    "targetHi": 273.0,
    "targetLo": 80.0,
    "rating": "Achat",
@@ -2046,7 +2046,7 @@
    "beta": 1.002,
    "div": 1.68,
    "divYield": 1.79,
-   "target": 136.16,
+   "target": 135.56,
    "targetHi": 170.0,
    "targetLo": 110.0,
    "rating": "Achat",
@@ -2061,7 +2061,7 @@
    "cash": 15918000128,
    "debt": 31185000448,
    "fcf": 11182624768,
-   "w52lo": 70.54,
+   "w52lo": 71.1,
    "w52hi": 130.37,
    "evEbitda": 20.667,
    "earnTs": 1794517200,
@@ -2167,8 +2167,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 123.1505,
+   "shares": 572600000,
+   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2219,6 +2224,63 @@
   }
  ],
  "news": [
+  {
+   "h": "What will a Democratic Congress mean for Ukraine?",
+   "w": "With Donald Trump retaining control of foreign policy, lawmakers will use legislative tools to try to support Kyiv",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-07T12:00:04Z",
+   "url": "https://www.ft.com/content/fac3a560-7845-4acf-9487-54ec8a445d74?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Tech companies face mounting child safety lawsuits while pushing AI into schools",
+   "w": "Lawsuits against Snap, Meta and Google are creating headwinds for tech companies just as artificial intelligence tools expand into classrooms.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-07T12:00:01Z",
+   "url": "https://www.cnbc.com/2026/11/07/snap-social-media-teen-safety-lawsuits.html"
+  },
+  {
+   "h": "Le PDG de Marriott, Anthony Capuano, cède des actions pour 26,6M$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T11:47:47Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-marriott-anthony-capuano-cede-des-actions-pour-266m-93CH-3683597"
+  },
+  {
+   "h": "Le vice-président de Kayne Anderson achète pour 51.538$ d’actions KYN",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T11:47:00Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-vicepresident-de-kayne-anderson-achete-pour-51538-dactions-kyn-93CH-3683596"
+  },
+  {
+   "h": "Compte rendu des résultats : MDVP enregistre un chiffre d’affaires record au T3 2026, actions en hausse de 5,25%",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T11:44:26Z",
+   "url": "https://fr.investing.com/news/transcripts/compte-rendu-des-resultats--mdvp-enregistre-un-chiffre-daffaires-record-au-t3-2026-actions-en-hausse-de-525-93CH-3683595"
+  },
+  {
+   "h": "Compte rendu de résultats : Grupo Panvel dépasse les attentes au T3 2026",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T11:33:29Z",
+   "url": "https://fr.investing.com/news/transcripts/compte-rendu-de-resultats--grupo-panvel-depasse-les-attentes-au-t3-2026-93CH-3683594"
+  },
+  {
+   "h": "La Juste Valeur d’InvestingPro repère un gain de 66% sur Array Technologies",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T11:12:03Z",
+   "url": "https://fr.investing.com/news/investment-ideas/la-juste-valeur-dinvestingpro-repere-un-gain-de-66-sur-array-technologies-93CH-3683593"
+  },
   {
    "h": "Comment la Juste Valeur d’InvestingPro a anticipé la baisse de 43% d’Unusual Machines",
    "w": "",
@@ -2289,46 +2351,6 @@
    "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-spar-group-vend-des-actions-pour-650-93CH-3683587"
   },
   {
-   "h": "Le directeur technique de Better Home & Finance vend des actions pour 41.857$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T10:17:15Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-technique-de-better-home--finance-vend-des-actions-pour-41857-93CH-3683586"
-  },
-  {
-   "h": "Un administrateur de Medifast achète des actions pour 8.609$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T10:16:58Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-medifast-achete-des-actions-pour-8609-93CH-3683585"
-  },
-  {
-   "h": "Le directeur des opérations de Tyler Technologies vend pour 4,2M$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T10:02:15Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-des-operations-de-tyler-technologies-vend-pour-42m-dactions-93CH-3683584"
-  },
-  {
-   "h": "La Chine signale une faible demande intérieure avant les mesures de croissance 2027",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T09:54:30Z",
-   "url": "https://fr.investing.com/news/economy-news/la-chine-signale-une-faible-demande-interieure-avant-les-mesures-de-croissance-2027-3683582"
-  },
-  {
-   "h": "Une directrice d’Advanced Energy Industries vend des actions pour 53.005$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T09:17:08Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/une-directrice-dadvanced-energy-industries-vend-des-actions-pour-53005-93CH-3683580"
-  },
-  {
    "h": "Why a wave of bomb threats is proving so difficult for Europe's aviation authorities to contain",
    "w": "The \"weakest point of aviation is targeting it in-flight,\" analysts say — but any change to procedures will be a lengthy process.",
    "syms": [],
@@ -2353,6 +2375,38 @@
    "src": "CNBC — Marchés",
    "ts": "2026-11-07T07:37:36Z",
    "url": "https://www.cnbc.com/2026/11/07/trump-us-minor-strikes-iran-qeshm-island.html"
+  },
+  {
+   "h": "New Zealand's tight election puts coalition talks in focus",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T06:06:56.533407Z",
+   "url": "https://asia.nikkei.com/politics/new-zealand-s-tight-election-puts-coalition-talks-in-focus"
+  },
+  {
+   "h": "Japan's new whisky breed chases export elixir",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T06:06:56.533407Z",
+   "url": "https://asia.nikkei.com/spotlight/big-in-asia/japan-s-new-whisky-breed-chases-export-elixir"
+  },
+  {
+   "h": "Japan convenience store chain Lawson details first India store in Mumbai",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T06:06:56.533407Z",
+   "url": "https://asia.nikkei.com/business/retail/japan-convenience-store-chain-lawson-details-first-india-store-in-mumbai"
+  },
+  {
+   "h": "Putin exploits Takaichi's diplomatic opening with Japan Tobacco grab",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T06:06:56.533407Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/putin-exploits-takaichi-s-diplomatic-opening-with-japan-tobacco-grab"
   },
   {
    "h": "The race is on to build the first fusion power plant — and Europe is looking to Japan for help",
@@ -2654,14 +2708,6 @@
    "url": "https://www.lemonde.fr/idees/article/2026/11/07/le-neoliberalisme-est-il-mort-vie-et-metamorphoses-de-la-doctrine-qui-a-faconne-le-monde-contemporain_6808201_3232.html"
   },
   {
-   "h": "New Zealand's two main parties deadlocked in early election counting",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T04:12:02.688035Z",
-   "url": "https://asia.nikkei.com/politics/new-zealand-s-two-main-parties-deadlocked-in-early-election-counting"
-  },
-  {
    "h": "Prep schools help Chinese students get into Japan's top universities",
    "w": "",
    "syms": [],
@@ -2676,30 +2722,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-07T04:12:02.688035Z",
    "url": "https://asia.nikkei.com/politics/u.s.-midterm-elections/democrats-midterm-gains-hang-over-data-centers-japanese-us-investment"
-  },
-  {
-   "h": "China enacts law to hunt down corrupt officials who escape overseas",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T04:12:02.688035Z",
-   "url": "https://asia.nikkei.com/politics/china-enacts-law-to-hunt-down-corrupt-officials-who-escape-overseas"
-  },
-  {
-   "h": "Taiwan's KMT old guard fights for power base in tight Taipei mayoral races",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T03:24:11.834511Z",
-   "url": "https://asia.nikkei.com/politics/taiwan-s-kmt-old-guard-fights-for-power-base-in-tight-taipei-mayoral-races"
-  },
-  {
-   "h": "Japanese companies caught in crossfire of Beijing-Tokyo rift",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T03:24:11.834511Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/japanese-companies-caught-in-crossfire-of-beijing-tokyo-rift"
   },
   {
    "h": "US believes Nvidia’s Huang had romantic relationship with alleged Chinese spy",
@@ -2737,14 +2759,6 @@
    "ts": "2026-11-06T22:53:51Z",
    "url": "https://www.ft.com/content/391bb785-0247-4c39-b53b-35007187d603?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "OpenAI will keep investing in AI data centers despite election results, CFO tells CNBC",
-   "w": "Voters across the country on Tuesday voiced their support for candidates who have pledged to place restrictions on data center development.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-06T22:25:58Z",
-   "url": "https://www.cnbc.com/2026/11/06/open-ai-data-centers-election.html"
   },
   {
    "h": "Trump says Stephen Miller to replace Susie Wiles as White House chief of staff",
@@ -3061,15 +3075,6 @@
    "src": "myFT — financials",
    "ts": "2026-11-06T18:00:10Z",
    "url": "https://www.ft.com/content/6c9d92ac-eba0-47c0-b4db-d9d5226e9891",
-   "mine": 1
-  },
-  {
-   "h": "EU probes ‘fraud’ on Spain’s lethal high-speed rail line",
-   "w": "Accidents have claimed the lives of 115 people on Madrid-Seville route this year",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-06T17:47:55Z",
-   "url": "https://www.ft.com/content/888d77c4-c771-4390-95ef-efcee413ef32?syn-25a6b1a6=1",
    "mine": 1
   },
   {
