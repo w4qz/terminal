@@ -273,6 +273,25 @@ body.bbg .warn{background:#000;border-left-color:#fb8b1e;color:#ffb000}
 body.bbg .note{color:#9a9a9a}
 body.bbg a,body.bbg a:visited{color:#ffd200} body.bbg .mpop a,body.bbg #g-arts a,body.bbg #g-res a{color:#f2f2f2}
 body.bbg ::-webkit-scrollbar-thumb{background:#3a3a3a}
+#msgline{display:none}
+body.bbg #msgline{display:block;flex:none;background:#000;color:#2ee05f;padding:2px 10px;font-size:12px;border-bottom:1px solid #222;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gph{gap:10px!important}.gph .gpt{font-weight:700}.gph .gpb{font-size:10px;border:1px solid var(--line);padding:0 8px;color:var(--txt2)}
+.gph .gpn{margin-left:8px}
+.gpp{border-bottom:1px solid var(--line)}
+.gpr{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:5px 9px}
+.gpr label{color:var(--txt2);font-size:11px;margin-left:6px}.gpr label:first-child{margin-left:0}
+.gpr input,.gpr select{font:inherit;font-size:11px;background:var(--raised);color:var(--txt);border:1px solid var(--line);padding:1px 6px;height:20px}
+.gpr input[type=number]{width:52px}.gpr input[type=date]{width:128px}
+body.bbg .gph{background:#c8102e!important;color:#fff!important;border-bottom:none!important}
+body.bbg .gph .gpt{background:#000;color:#ffb000;padding:0 6px}
+body.bbg .gph .gpb{background:#000;color:#ffb000;border:1px solid #000;border-radius:0}
+body.bbg .gph .gpb:hover{color:#fff}
+body.bbg .gph .gpn{color:#fff;font-weight:400}
+body.bbg .gph .rt{color:#ffd9a0!important}
+body.bbg .gpr{background:#000}
+body.bbg .gpr label{color:#fff}
+body.bbg .gpr input,body.bbg .gpr select{background:#fb8b1e;color:#000;border:none;border-radius:0;font-weight:700;color-scheme:light}
+
 body.bbg #fbar{display:flex}
 #fbar{display:none;align-items:center;height:22px;background:#c8102e;color:#fff;padding:0 10px;gap:14px;flex:none;font-weight:700}
 #fbar .fc{background:#000;color:#ffb000;padding:0 6px}
@@ -328,7 +347,8 @@ body.embed #secbar{top:-6px;margin:-6px -6px 6px}
 <button id="themebtn" type="button" aria-pressed="false" title="Basculer le thème">Thème : bleu</button>
 <div id="clocks" aria-label="Horloges des places de marché"></div>
 </div>
-<div id="fbar" aria-hidden="true"><span class="fc" id="fbcode">WEI</span><span class="ft" id="fbtitle">Marchés mondiaux</span><span class="fr">Tapez un <b>numéro de ligne</b> puis Entrée pour ouvrir le titre<span class="buf" id="fbbuf"></span></span></div>
+<div id="fbar" aria-hidden="true"><span class="fc" id="fbcode">WEI</span><span class="ft" id="fbtitle">Marchés mondiaux</span><span class="fr"><span class="buf" id="fbbuf"></span></span></div>
+<div id="msgline" role="status" aria-live="polite"></div>
 <div id="tape" aria-label="Bandeau des cours"></div>
 
 <main id="main" tabindex="-1">
@@ -1904,14 +1924,19 @@ el.innerHTML=`
 <div class="stat"><span class="l">OBJECTIF ANALYSTES (12 MOIS)</span><span class="n">${N(F.target)}</span><span class="s">${up!=null?pct(up,1)+' de potentiel · ':''}moyenne du consensus${F.ts?', lu '+ago(F.ts):''}</span></div>
 <div class="stat"><span class="l">CONSENSUS</span><span class="n" style="font-size:15px">${F.rating?esc(F.rating):'—'}</span><span class="s">${F.analysts?F.analysts+' analystes':''}</span></div>
 </div></div>
-<div class="pnl" id="sec-gp" style="margin-bottom:9px"><h3>${secLine()?'GP — Line Chart':'GP — Chandeliers japonais'}<span class="rt" id="secsrc">${WORKER_URL?'Yahoo Finance via relais':'relais non configuré'}</span></h3>
-<div class="ctl" style="align-items:center">
-<div class="rng" role="group" aria-label="Période">${Object.keys(RANGE_CFG).map(r=>`<button type="button" data-r="${r}" class="${r===SEC.range?'on':''}">${r}</button>`).join('')}</div>
-<div class="rng" role="group" aria-label="Indicateurs">
-<button type="button" data-t="ma" class="${SEC.ma?'on':''}" aria-pressed="${SEC.ma}">MM50 / MM200</button>
-<button type="button" data-t="vol" class="${SEC.vol?'on':''}" aria-pressed="${SEC.vol}">Volume</button></div>
-<div class="rng" role="group" aria-label="Type de graphique"><button type="button" data-cs="line" class="${secLine()?'on':''}">Ligne</button><button type="button" data-cs="candle" class="${secLine()?'':'on'}">Chandeliers</button></div>
-<span class="mut" style="font-size:10px;margin-left:auto" id="secperf"></span></div>
+<div class="pnl" id="sec-gp" style="margin-bottom:9px"><h3 class="gph"><span class="gpt">${esc(bbgCode(sym)?bbgCode(sym).c.toUpperCase():sym)}</span>
+<button type="button" class="gpb" id="gpsave" title="Télécharger le graphique en image">Enregistrer</button><button type="button" class="gpb" id="gphide">${SEC.hide?'Afficher':'Masquer'}</button>
+<span class="gpn">${secLine()?'GP — Line Chart':'GP — Chandeliers'}</span><span class="rt" id="secsrc">${WORKER_URL?'Yahoo Finance via relais':'relais non configuré'}</span></h3>
+<div class="gpp"${SEC.hide?' hidden':''}>
+<div class="gpr"><label>Range</label><input type="date" id="gpfrom" value="${SEC.from||''}"><span>–</span><input type="date" id="gpto" value="${SEC.to||''}">
+<label>Upper</label><select id="gpup"><option value="line"${secLine()?' selected':''}>Trade Line</option><option value="candle"${secLine()?'':' selected'}>Chandeliers</option></select>
+<label>Mov. Avgs</label><input type="number" min="0" max="400" id="gpma1" value="${SEC.ma?SEC.ma1||'':''}" placeholder="—"><input type="number" min="0" max="400" id="gpma2" value="${SEC.ma?SEC.ma2||'':''}" placeholder="—">
+<label>Currency</label><select id="gpccy">${[['local','Locale'],['USD','USD'],['EUR','EUR'],['CHF','CHF'],['GBP','GBP'],['JPY','JPY']].map(([v,l])=>`<option value="${v}"${SEC.ccy===v?' selected':''}>${l}</option>`).join('')}</select></div>
+<div class="gpr"><label>Period</label><select id="gpper">${[['D','Daily'],['W','Weekly'],['M','Monthly']].map(([v,l])=>`<option value="${v}"${SEC.per===v?' selected':''}>${l}</option>`).join('')}</select>
+<label>Lower</label><select id="gplow"><option value="vol"${SEC.vol?' selected':''}>Volume</option><option value="none"${SEC.vol?'':' selected'}>Aucun</option></select>
+<label>Mov. Avg</label><input type="number" min="1" max="200" id="gpvma" value="${SEC.vma}">
+<div class="rng" role="group" aria-label="Période rapide" style="margin-left:auto">${Object.keys(RANGE_CFG).map(r=>`<button type="button" data-r="${r}" class="${!SEC.from&&r===SEC.range?'on':''}">${r}</button>`).join('')}</div>
+<span class="mut" style="font-size:10px" id="secperf"></span></div></div>
 <div class="pbody" style="position:relative"><canvas id="seccv" height="380" role="img" aria-label="Graphique en chandeliers japonais de ${esc(sym)}"></canvas>
 <div id="sectip" style="position:absolute;top:14px;left:20px;font-size:10px;color:var(--txt2);pointer-events:none"></div>
 <div class="note" id="secmsg" style="padding:6px 0 0">${WORKER_URL?'Chargement…':'Renseignez WORKER_URL (relais Cloudflare) pour afficher le graphique.'}</div></div></div>
@@ -1939,7 +1964,8 @@ Cours : ${q?esc(q.src||''):loc?'catalogue Yahoo Finance':'relais Yahoo Finance'}
 Fondamentaux : ${Object.keys(F).length>3?'Yahoo Finance via yfinance, actualisés par le robot':'<b>pas encore lus</b> pour ce titre : le robot couvre tout le catalogue par roulement, en 4 heures environ. Pour un titre hors catalogue, ajoutez-le à <code>FUND_TICKERS</code> dans scripts/update_data.py'}.<br>
 Graphique : clôtures ${SEC.range==='5A'?'hebdomadaires':'quotidiennes'} Yahoo Finance, cours différés.</div></div></div>
 </div>`;
-el.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{ SEC.range=b.dataset.r; viewSecurity(); });
+el.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{ SEC.range=b.dataset.r; SEC.from=SEC.to=null; viewSecurity(); });
+wireGP(el, sym);
 el.querySelectorAll('[data-cs]').forEach(b=>b.onclick=()=>{ SEC.style=b.dataset.cs; viewSecurity(); });
 el.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{ SEC[b.dataset.t]=!SEC[b.dataset.t]; viewSecurity(); });
 el.querySelectorAll('[data-jump]').forEach(b=>b.onclick=()=>{ const t=document.getElementById(b.dataset.jump); if(t){ const m=document.getElementById('main'); m.scrollTo({top:t.offsetTop-52,behavior:'smooth'}); } });
@@ -1948,10 +1974,43 @@ if(WORKER_URL) loadCandles(sym, F, px);
 }
 
 const RANGE_CFG={'1J':{f:'1d',n:9999},'1M':{f:'1y',n:22},'3M':{f:'1y',n:66},'6M':{f:'2y',n:128},'1A':{f:'2y',n:252},'2A':{f:'2y',n:520},'5A':{f:'5y',n:9999}};
-const SEC={range:'6M', ma:true, vol:true, bars:null, sym:null, cache:new Map(), style:null};   // style : null = selon le thème (Bloomberg → ligne)
+const SEC={range:'6M', ma:true, vol:true, bars:null, sym:null, cache:new Map(), style:null,
+  from:null, to:null, per:'D', ccy:'local', ma1:50, ma2:200, vma:15, fx:null, hide:false};   // paramètres GP (Range, Period, Currency, Mov. Avgs…)   // style : null = selon le thème (Bloomberg → ligne)
 const secLine=()=>SEC.style?SEC.style==='line':document.body.classList.contains('bbg');
+// Données à demander au relais : période rapide (1J…5A) ou plage de dates personnalisée (Range)
+function secFetchCfg(){ if(!SEC.from) return RANGE_CFG[SEC.range];
+const yrs=(Date.now()-Date.parse(SEC.from))/(365.25*864e5); return {f:yrs<=1.9?'2y':yrs<=4.9?'5y':'max',n:9999}; }
+// Conversion de devise : cours de change quotidien Yahoo (via le relais), appliqué au jour près
+async function secLoadFx(ccy0,cfg){ SEC.fx=null; const to=SEC.ccy; if(to==='local') return;
+const from=ccy0==='GBp'||ccy0==='GBX'?'GBP':ccy0==='ZAc'?'ZAR':ccy0; if(!from||from===to){ SEC.fx={k:1,map:null,lbl:to}; return; }
+const pair=from+to+'=X', key='FX|'+pair+'|'+cfg.f; let fx=SEC.cache.get(key);
+if(!fx){ const r=await fetch(`${WORKER_URL}/chart?s=${encodeURIComponent(pair)}&range=${cfg.f==='1d'?'5d':cfg.f}`); const d=await r.json(); const res=d.chart&&d.chart.result&&d.chart.result[0];
+if(!res) throw new Error('cours '+pair+' indisponible'); const q=res.indicators.quote[0];
+fx=(res.timestamp||[]).map((t,i)=>[t*1000,q.close[i]]).filter(x=>x[1]); SEC.cache.set(key,fx); }
+SEC.fx={k:ccy0==='GBp'||ccy0==='GBX'||ccy0==='ZAc'?0.01:1, rows:fx, lbl:to, pair}; }
+function secFxAt(t){ const F=SEC.fx; if(!F) return 1; if(!F.rows) return F.k; let lo=0, hi=F.rows.length-1, v=F.rows[0][1];
+while(lo<=hi){ const m=(lo+hi)>>1; if(F.rows[m][0]<=t+864e5/2){ v=F.rows[m][1]; lo=m+1; } else hi=m-1; } return F.k*v; }
+// Barres préparées : devise, fréquence (Period), plage (Range)
+function secPrepBars(all){ let b=all;
+if(SEC.fx) b=b.map(x=>{ const k=secFxAt(x.t); return {...x,o:x.o*k,h:x.h*k,l:x.l*k,c:x.c*k}; });
+if(SEC.per!=='D'&&SEC.range!=='1J'){ const key=t=>{ const d=new Date(t); if(SEC.per==='M') return d.getFullYear()*100+d.getMonth(); const m=new Date(d); m.setHours(0,0,0,0); m.setDate(m.getDate()-((m.getDay()+6)%7)); return +m; };
+const out=[]; for(const x of b){ const k=key(x.t), L=out[out.length-1]; if(L&&L.k===k){ L.h=Math.max(L.h,x.h); L.l=Math.min(L.l,x.l); L.c=x.c; L.v=(L.v||0)+(x.v||0); } else out.push({...x,k}); } b=out; }
+return b; }
+function termMsg(t){ const e=document.getElementById('msgline'); if(e) e.textContent=t; }
+function wireGP(el, sym){ const g=id=>el.querySelector('#'+id); if(!g('gpfrom')) return;
+const redraw=()=>{ if(SEC.bars) drawCandles(); };
+g('gpfrom').onchange=g('gpto').onchange=()=>{ SEC.from=g('gpfrom').value||null; SEC.to=g('gpto').value||null; if(SEC.from&&SEC.to&&SEC.to<SEC.from){ termMsg('Plage invalide : la date de fin précède la date de début.'); return; } termMsg(SEC.from?`Plage ${SEC.from} → ${SEC.to||'aujourd\'hui'}.`:'Plage personnalisée retirée.'); viewSecurity(); };
+g('gpup').onchange=()=>{ SEC.style=g('gpup').value; viewSecurity(); };
+const ma=()=>{ SEC.ma1=+g('gpma1').value||0; SEC.ma2=+g('gpma2').value||0; SEC.ma=!!(SEC.ma1||SEC.ma2); redraw(); };
+g('gpma1').onchange=g('gpma2').onchange=ma;
+g('gpccy').onchange=()=>{ SEC.ccy=g('gpccy').value; termMsg(SEC.ccy==='local'?'Graphique en devise locale.':'Conversion en '+SEC.ccy+' au cours de change quotidien (Yahoo Finance).'); viewSecurity(); };
+g('gpper').onchange=()=>{ SEC.per=g('gpper').value; redraw(); };
+g('gplow').onchange=()=>{ SEC.vol=g('gplow').value==='vol'; redraw(); };
+g('gpvma').onchange=()=>{ SEC.vma=Math.max(1,+g('gpvma').value||15); redraw(); };
+g('gphide').onclick=()=>{ SEC.hide=!SEC.hide; el.querySelector('.gpp').hidden=SEC.hide; g('gphide').textContent=SEC.hide?'Afficher':'Masquer'; };
+g('gpsave').onclick=()=>{ const cv=document.getElementById('seccv'); if(!cv) return; const a=document.createElement('a'); a.download=`${sym}_GP_${new Date().toISOString().slice(0,10)}.png`; a.href=cv.toDataURL('image/png'); a.click(); termMsg(`Graphique ${sym} enregistré (${a.download}).`); }; }
 async function loadCandles(sym, F, px){
-const cfg=RANGE_CFG[SEC.range], key=sym+'|'+cfg.f, msg=document.getElementById('secmsg');
+const cfg=secFetchCfg(), key=sym+'|'+cfg.f, msg=document.getElementById('secmsg');
 try{
 let bars=SEC.cache.get(key);
 if(!bars){
@@ -1967,6 +2026,7 @@ if(cfg.f==='1d'&&res.meta.dataGranularity!=='5m') throw new Error('intraday indi
 bars.meta=res.meta; if(cfg.f!=='1d') SEC.cache.set(key,bars);
 }
 if(S.focus!==sym||S.view!=='sec') return;
+try{ await secLoadFx((bars.meta||{}).currency,cfg); }catch(e){ SEC.fx=null; termMsg('Conversion impossible : '+e.message+' — graphique en devise locale.'); }
 SEC.bars=bars; SEC.sym=sym;
 const m=bars.meta||{};
 if(px==null&&m.regularMarketPrice!=null){
@@ -1994,9 +2054,12 @@ out.cleaned=true; return out; }
 function sma(arr,n){ const out=new Array(arr.length).fill(null); let s=0;
 for(let i=0;i<arr.length;i++){ s+=arr[i]; if(i>=n) s-=arr[i-n]; if(i>=n-1) out[i]=s/n; } return out; }
 function drawCandles(hover){
-const cv=document.getElementById('seccv'), all=SEC.bars; if(!cv||!all||!all.length) return;
-const cfg=RANGE_CFG[SEC.range], n=Math.min(cfg.n, all.length), off=all.length-n, bars=all.slice(off);
-const closes=all.map(b=>b.c), m50=sma(closes,50).slice(off), m200=sma(closes,200).slice(off);
+const cv=document.getElementById('seccv'), all=SEC.bars?secPrepBars(SEC.bars):null; if(!cv||!all||!all.length) return;
+const cfg=RANGE_CFG[SEC.range]; let off, n;
+if(SEC.from){ const f=Date.parse(SEC.from), t=SEC.to?Date.parse(SEC.to)+864e5:Infinity; off=all.findIndex(b=>b.t>=f); if(off<0) off=all.length-1; let e=all.length; while(e>off+1&&all[e-1].t>t) e--; n=e-off; }
+else { n=Math.min(cfg.n, all.length); off=all.length-n; }
+const bars=all.slice(off,off+n);
+const closes=all.map(b=>b.c), m50=sma(closes,SEC.ma1||1).slice(off,off+n), m200=sma(closes,SEC.ma2||1).slice(off,off+n);
 const r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1, W=r.width, H=380;
 cv.width=W*dpr; cv.height=H*dpr; const x=cv.getContext('2d'); x.scale(dpr,dpr);
 const LINE=secLine();
@@ -2015,11 +2078,11 @@ x.fillText(SEC.range==='1J'?new Date(bars[i].t).toLocaleTimeString('fr-FR',{hour
 // volume
 if(SEC.vol&&bars.some(b=>b.v>0)){ const vmax=Math.max(...bars.map(b=>b.v||0))||1, vb=pt+priceH+gap+volH;
 if(LINE){ bars.forEach((b,i)=>{ if(!b.v) return; const h=b.v/vmax*volH; x.fillStyle='#d8d8d8'; x.fillRect(X(i)-Math.max(.6,cw*.35),vb-h,Math.max(1.2,cw*.7),h); });
-const sm=bars.map((_,i)=>{ const a=bars.slice(Math.max(0,i-14),i+1).map(z=>z.v||0); return a.reduce((p,q)=>p+q,0)/a.length; });
+const sm=bars.map((_,i)=>{ const a=bars.slice(Math.max(0,i-(SEC.vma||15)+1),i+1).map(z=>z.v||0); return a.reduce((p,q)=>p+q,0)/a.length; });
 x.strokeStyle='#2ee05f'; x.lineWidth=1.2; x.beginPath(); sm.forEach((v,i)=>{ const y=vb-v/vmax*volH; i?x.lineTo(X(i),y):x.moveTo(X(i),y); }); x.stroke();
 x.fillStyle='rgba(0,0,0,.8)'; x.fillRect(10,pt+priceH+gap,210,28); x.font=CT().f10; x.textAlign='left';
 x.fillStyle='#d8d8d8'; x.fillText('■ Volume',14,pt+priceH+gap+11); x.textAlign='right'; x.fillText(big(bars[n-1].v||0),214,pt+priceH+gap+11);
-x.fillStyle='#2ee05f'; x.textAlign='left'; x.fillText('■ SMAVG Volume (15)',14,pt+priceH+gap+24); x.textAlign='right'; x.fillText(big(sm[n-1]),214,pt+priceH+gap+24); x.font=CT().f9; }
+x.fillStyle='#2ee05f'; x.textAlign='left'; x.fillText('■ SMAVG Volume ('+(SEC.vma||15)+')',14,pt+priceH+gap+24); x.textAlign='right'; x.fillText(big(sm[n-1]),214,pt+priceH+gap+24); x.font=CT().f9; }
 else { bars.forEach((b,i)=>{ if(!b.v) return; const h=b.v/vmax*volH; x.fillStyle=b.c>=b.o?'rgba(47,191,107,.35)':'rgba(224,74,74,.35)'; x.fillRect(X(i)-cw/2,vb-h,cw,h); });
 x.fillStyle=CT().ax2; x.textAlign='left'; x.fillText('Volume',10,pt+priceH+gap+9); } }
 // ligne façon Bloomberg (aire bleue, trait blanc) ou chandeliers
@@ -2042,11 +2105,11 @@ x.fillStyle=col; x.fillRect(X(i)-cw/2,top,cw,h); });
 const line=(a,col)=>{ x.save(); x.beginPath(); x.rect(8,pt,W-pr-8,priceH); x.clip();
 x.strokeStyle=col; x.lineWidth=1.3; x.beginPath(); let s=false; a.forEach((v,i)=>{ if(v==null) return; s?x.lineTo(X(i),Y(v)):x.moveTo(X(i),Y(v)); s=true; }); x.stroke(); x.restore(); };
 const C50=LINE?'#ffd200':'#e8a33d', C200=LINE?'#ff433d':'#bb98e6';
-if(SEC.ma&&SEC.range!=='1J'){ line(m50,C50); line(m200,C200); }
+if(SEC.ma&&SEC.range!=='1J'){ if(SEC.ma1) line(m50,C50); if(SEC.ma2) line(m200,C200); }
 const lastMA=a=>{ for(let k=a.length-1;k>=0;k--) if(a[k]!=null) return a[k]; return null; };
 const out=(v)=>v!=null&&(v<lo||v>hi)?` ${v>hi?'↑':'↓'} ${dd(v)} hors cadre`:'';
-const unit=SEC.range==='5A'?'semaines':'séances';
-if(SEC.ma&&SEC.range!=='1J'){ const l200='— MM200 ('+unit+')'+out(lastMA(m200)), l50='— MM50'+out(lastMA(m50));
+const unit=SEC.per==='M'?'mois':SEC.per==='W'||(!SEC.from&&SEC.range==='5A')||(SEC.from&&secFetchCfg().f!=='2y')?'semaines':'séances';
+if(SEC.ma&&SEC.range!=='1J'){ const l200=SEC.ma2?'— MM'+SEC.ma2+' ('+unit+')'+out(lastMA(m200)):'', l50=SEC.ma1?'— MM'+SEC.ma1+out(lastMA(m50)):'';
 x.textAlign='right'; x.fillStyle=C200; x.fillText(l200,W-pr-4,pt-6);
 x.fillStyle=C50; x.fillText(l50,W-pr-4-x.measureText(l200).width-12,pt-6); }
 // survol
@@ -2068,7 +2131,7 @@ const chg=i>0?(b.c/bars[i-1].c-1)*100:null;
 tip.innerHTML=`<b style="color:var(--txt)">${SEC.range==='1J'?new Date(b.t).toLocaleString('fr-FR',{weekday:'short',hour:'2-digit',minute:'2-digit'}):new Date(b.t).toLocaleDateString('fr-FR',{weekday:'short',day:'2-digit',month:'short',year:'numeric'})}</b> &nbsp; O ${dd(b.o)} &nbsp; H ${dd(b.h)} &nbsp; B ${dd(b.l)} &nbsp; C <b style="color:var(--txt)">${dd(b.c)}</b> ${chg!=null?`&nbsp; <span class="${cls(chg)}">${pct(chg)}</span>`:''} ${b.v?'&nbsp; Vol. '+big(b.v):''}${SEC.ma&&m50[i]?` &nbsp; <span style="color:#e8a33d">MM50 ${dd(m50[i])}</span>`:''}${SEC.ma&&m200[i]?` &nbsp; <span style="color:#bb98e6">MM200 ${dd(m200[i])}</span>`:''}`;
 } else if(tip){ tip.innerHTML=''; }
 const perf=(bars[n-1].c/bars[0].o-1)*100, pe=document.getElementById('secperf');
-if(pe) pe.innerHTML=`${SEC.range} : <span class="${cls(perf)}">${pct(perf,1)}</span> · ${n} ${unit}`;
+if(pe) pe.innerHTML=`${SEC.from?'Plage':SEC.range} : <span class="${cls(perf)}">${pct(perf,1)}</span> · ${n} ${unit}${SEC.fx&&SEC.fx.lbl?' · en '+SEC.fx.lbl:''}`;
 cv.onmousemove=ev=>{ const rr=cv.getBoundingClientRect(); const k=Math.floor((ev.clientX-rr.left-8)/step); drawCandles(k>=0&&k<n?{i:k,y:ev.clientY-rr.top}:null); };
 cv.style.cursor='crosshair';
 cv.onmouseleave=()=>drawCandles(null);
@@ -3855,6 +3918,7 @@ let ROWNUM=[], NUMBUF='';
 function numberRows(v){ const f=FCODE[v]||['',''], c=document.getElementById('fbcode'), t=document.getElementById('fbtitle');
 const eco=v==='sec'&&S.focus&&typeof ecoGet==='function'&&ecoGet(S.focus);
 if(c) c.textContent=v==='sec'&&S.focus?S.focus+' '+(eco?'ECO':f[0]):f[0]; if(t) t.textContent=eco?(eco.n+' — '+eco.ctry):f[1];
+termMsg(`${LIVE&&LIVE.generated_at?'Données mises à jour le '+fmtDT(LIVE.generated_at):'Données de secours'} · cours Yahoo Finance différés de 15 min · ⌘K pour une commande, ex. MC FP GP <GO>`);
 const root=document.getElementById('v-'+v); ROWNUM=[]; if(!root) return;
 root.querySelectorAll('.bn').forEach(e=>e.remove());
 let n=10; root.querySelectorAll('tr[data-sym]').forEach(tr=>{ const cell=tr.querySelector('th,td'); if(!cell) return;
