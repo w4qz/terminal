@@ -341,7 +341,7 @@ def hist_10y(sym):
     return sorted(week.items())
 
 
-FILL_CNBC = {"DE": "DE", "UK": "GB", "JP": "JP", "CH": "CH"}
+FILL_CNBC = {"DE": "DE", "UK": "GB", "JP": "JP", "CH": "CH", "FR": "FR"}   # FR : seulement quand la courbe vient de Webstat
 
 COUNTRIES = [
     ("DE", "Allemagne", curve_de),
@@ -360,7 +360,7 @@ def main() -> int:
     items = {}
     for k, name, fn in COUNTRIES:
         pts, src, freq = fn()
-        if k in FILL_CNBC:
+        if k in FILL_CNBC and not (k == "FR" and "Webstat" not in (src or "")):
             # Les sources officielles ne publient que quelques maturités (BoE : 5, 10, 20 ans ; Bundesbank :
             # pas de court terme) : les maturités absentes sont complétées par les rendements cotés CNBC.
             live = curve_cnbc(FILL_CNBC[k])
