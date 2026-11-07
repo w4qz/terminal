@@ -960,6 +960,21 @@ mc:null, dcf:null
 /*═══════════════════════════════════════════════════════════════════════
 6. VUE — MARCHÉS
 ═══════════════════════════════════════════════════════════════════════*/
+// Horaires des places (heure locale de la place) : une place fermée affiche sa prochaine ouverture au lieu d'un âge.
+const MKT_HRS={US:['America/New_York',570,960],FR:['Europe/Paris',540,1050],UK:['Europe/London',480,990],JP:['Asia/Tokyo',540,930],
+HK:['Asia/Hong_Kong',570,960],CN:['Asia/Shanghai',570,900],SG:['Asia/Singapore',540,1020],CH:['Europe/Zurich',540,1050]};
+const MKT_OF={SPX:'US',NDX:'US',DJI:'US',RUT:'US',VIX:'US',CAC:'FR',DAX:'FR',SX5E:'FR',UKX:'UK',N225:'JP',HSI:'HK',SHCOMP:'CN',STI:'SG'};
+function mktOf(sym){ if(MKT_OF[sym]) return MKT_OF[sym]; if(/[=^]|-USD$/.test(sym)) return null; const suf=(sym.split('.')[1]||'');
+return suf===''?'US':{PA:'FR',DE:'FR',AS:'FR',MI:'FR',MC:'FR',BR:'FR',L:'UK',T:'JP',HK:'HK',SS:'CN',SZ:'CN',SI:'SG',SW:'CH'}[suf]||null; }
+function tzParts(t,tz){ const o={}; new Intl.DateTimeFormat('en-US',{timeZone:tz,hourCycle:'h23',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',weekday:'short'})
+.formatToParts(new Date(t)).forEach(p=>o[p.type]=p.value); return o; }
+function nextOpen(m){ const [tz,op,cl]=MKT_HRS[m], now=Date.now(), p=tzParts(now,tz), wd=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(p.weekday), mins=+p.hour*60+ +p.minute;
+if(wd>=1&&wd<=5&&mins>=op&&mins<cl) return null;          // ouverte
+let add=(wd>=1&&wd<=5&&mins<op)?0:1, w=(wd+add)%7; while(w===0||w===6){ add++; w=(wd+add)%7; }
+return now+(add*1440+op-mins)*6e4-(now%6e4); }          // ouverture suivante (jours fériés non pris en compte)
+function mktAge(sym,ts){ const m=mktOf(sym); if(!m||!MKT_HRS[m]) return ago(ts); const t=nextOpen(m); if(t==null) return ago(ts);
+const d=new Date(t), same=d.toDateString()===new Date().toDateString();
+return `<span title="Place fermée — dernier cours ${ts?ago(ts):'—'}">fermé · réouv. ${same?'':d.toLocaleDateString('fr-FR',{weekday:'short'})+' '}${d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})}</span>`; }
 async function rowsFor(syms){
 let h='';
 for(const s of syms){
@@ -977,7 +992,7 @@ aria-label="Ouvrir la fiche ${esc(meta.name)} (${s}), dernier cours ${nf(q.price
 <td>${V(q.price, x=>npx(x,s))}</td>
 <td class="${p&&!p.na?cls(p.value):''}">${V(p, x=>pct(x))}</td>
 <td class="mut">${q.volume&&!q.volume.na?big(q.volume.value):'—'}</td>
-<td class="mut" style="font-size:10px">${ago(q.price.ts)}</td>
+<td class="mut" style="font-size:10px">${mktAge(s,q.price.ts)}</td>
 </tr>`;
 }
 return h;
