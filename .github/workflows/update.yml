@@ -3,8 +3,13 @@ name: Mise à jour des données (rapide)
 
 on:
   schedule:
-    - cron: "*/10 * * * *"    # toutes les 10 minutes : prix de secours, news, catalogue, macro, courbes, carte
-  workflow_dispatch:          # bouton « Run workflow » pour lancer à la main
+    - cron: "5,35 * * * *"    # secours si le relais Cloudflare ne déclenche pas (déclenchement principal : relais, */10 * * * *)
+  workflow_dispatch:          # bouton « Run workflow » (manuel) ou relais Cloudflare (auto = true)
+    inputs:
+      auto:
+        description: "Lancement automatique par le relais Cloudflare (ne force pas les données quotidiennes)"
+        required: false
+        default: "false"
 
 permissions:
   contents: write             # autorise le robot à publier ses fichiers
@@ -63,7 +68,7 @@ jobs:
         continue-on-error: true
         timeout-minutes: 6
         env:
-          GEO_FORCE: ${{ github.event_name == 'workflow_dispatch' }}
+          GEO_FORCE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.auto != 'true' }}
         run: python scripts/build_geo.py
 
       - name: Monde — BRI, FMI, COT, Polymarket, catastrophes naturelles
@@ -71,7 +76,7 @@ jobs:
         continue-on-error: true
         timeout-minutes: 4
         env:
-          WORLD_FORCE: ${{ github.event_name == 'workflow_dispatch' }}
+          WORLD_FORCE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.auto != 'true' }}
           RELAY_KEY: ${{ secrets.RELAY_KEY }}
         run: python scripts/build_world.py
 
