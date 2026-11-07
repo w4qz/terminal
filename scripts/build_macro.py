@@ -75,8 +75,14 @@ PRINTS = [
     ("A191RL1Q225SBEA", "PIB réel (US, t/t annualisé)", "lin", "%"),
     ("RSAFS", "Ventes au détail (US, m/m)", "pch", "%"),
     ("UMCSENT", "Confiance consommateurs U. Michigan", "lin", "n"),
-    ("CP0000EZ19M086NEST", "Inflation HICP (zone euro, a/a)", "pc1", "%"),
-    ("LRHUTTTTEZM156S", "Taux de chômage (zone euro)", "lin", "%"),
+]
+
+# Zone euro : Eurostat publie le jour même (inflation flash, chômage) ; les séries FRED reprises de l'OCDE
+# avaient un mois de retard (inflation) ou étaient arrêtées (chômage, figé à janvier 2023).
+ESTAT_PRINTS = [
+    ("Inflation HICP (zone euro, a/a)", "%", [("prc_hicp_manr", "geo=EA20&coicop=CP00"), ("prc_hicp_minr", "geo=EA20&coicop18=TOTAL&unit=RCH_A"),
+                                              ("teicp000", "geo=EA20&coicop=CP00&unit=RCH_A")]),
+    ("Taux de chômage (zone euro)", "%", [("une_rt_m", "geo=EA20&s_adj=SA&age=TOTAL&sex=T&unit=PC_ACT")]),
 ]
 
 RELEASES = {
@@ -122,7 +128,25 @@ def eco_prints():
         out.append({"k": label, "v": round(float(o["value"]), 2), "prev": round(prev, 2) if prev is not None else None,
                     "fmt": fmt, "ts": o["date"], "pub": o.get("realtime_start"), "freq": freq,
                     "src": f"FRED {sid}", "url": f"https://fred.stlouisfed.org/series/{sid}"})
-    log(f"ECO : {len(out)}/{len(PRINTS)} indicateurs")
+    for label, fmt, cands in ESTAT_PRINTS:
+        for ds, flt in cands:
+            try:
+                q = dict(x.split("=", 1) for x in flt.split("&"))
+                r = requests.get(f"https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/{ds}",
+                                 params={"format": "JSON", "lang": "EN", "lastTimePeriod": 2, **q}, headers=UA, timeout=30)
+                r.raise_for_status()
+                ser = sorted(_jsonstat_series(r.json()))
+                if not ser:
+                    raise RuntimeError("série vide")
+                per, v = ser[-1]
+                y, m = per.replace("M", "-").split("-")[:2]
+                out.append({"k": label, "v": round(float(v), 2), "prev": round(float(ser[-2][1]), 2) if len(ser) > 1 else None,
+                            "fmt": fmt, "ts": f"{y}-{int(m):02d}-01", "freq": "M", "src": f"Eurostat {ds}",
+                            "url": f"https://ec.europa.eu/eurostat/databrowser/view/{ds}/default/table"})
+                break
+            except Exception as e:
+                log(f"  · {label} via Eurostat {ds} : {str(e)[:80]}")
+    log(f"ECO : {len(out)}/{len(PRINTS) + len(ESTAT_PRINTS)} indicateurs")
     return out
 
 
