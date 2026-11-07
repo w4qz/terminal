@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T12:06:56.533407Z",
+ "generated_at": "2026-11-07T12:52:42.311464Z",
  "quotes": {
   "NVDA": {
    "p": 186.68,
@@ -154,8 +154,8 @@
    "prev": 51523.0586,
    "chg": -251.4805,
    "pct": -0.49,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^DJI)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^DJI) — échec de la dernière mise à jour",
    "ts": "2026-11-06T21:00:00Z",
    "open": 51078.8516,
    "lo": 50992.6094,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75860.5,
+   "p": 75794.2109,
    "prev": 75746.9297,
-   "chg": 113.5703,
-   "pct": 0.15,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (BTC-USD) — échec de la dernière mise à jour",
-   "ts": "2026-11-07T11:28:21.098749Z",
+   "chg": 47.2812,
+   "pct": 0.06,
+   "st": "DELAYED_15M",
+   "src": "Yahoo Finance via yfinance (BTC-USD)",
+   "ts": "2026-11-07T12:52:42.311464Z",
    "open": 75741.0156,
    "lo": 75703.4219,
    "hi": 76101.3047,
-   "vol": 21929355264,
+   "vol": 21289244672,
    "h": [
     81382.15,
     82017.6,
@@ -844,7 +844,7 @@
     80405.29,
     75942.12,
     75746.93,
-    75860.5
+    75794.21
    ]
   }
  },
@@ -866,7 +866,7 @@
    "beta": 1.089,
    "div": 1.08,
    "divYield": 0.315,
-   "target": 332.6836,
+   "target": 339.0415,
    "targetHi": 405.0,
    "targetLo": 250.0,
    "rating": "Achat",
@@ -1040,11 +1040,11 @@
    "netIncome": 134779002880,
    "shares": 10813138306,
    "beta": 1.503,
-   "target": 326.8521,
+   "target": 326.9902,
    "targetHi": 405.0,
    "targetLo": 230.0,
    "rating": "Achat fort",
-   "analysts": 58,
+   "analysts": 59,
    "revGrowth": 12.1,
    "epsGrowth": -3.1,
    "grossMargin": 51.374,
@@ -1115,17 +1115,17 @@
    "industry": "Aerospace & Defense",
    "ccy": "USD",
    "mcap": 1823529500672,
-   "fpe": 52.3535,
+   "fpe": 50.4109,
    "eps": 0.23,
-   "feps": 2.5647,
+   "feps": 2.6635,
    "revTTM": 32042999808,
    "netIncome": -3431000064,
    "shares": 8246541218,
-   "target": 257.1144,
+   "target": 255.0627,
    "targetHi": 800.0,
    "targetLo": 70.0,
    "rating": "Achat",
-   "analysts": 36,
+   "analysts": 37,
    "revGrowth": 161.4,
    "grossMargin": 56.755,
    "opMargin": 27.575,
@@ -1522,14 +1522,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 995843768320,
+   "mcap": 998898073600,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -1647,14 +1647,14 @@
    "sector": "Financial Services",
    "industry": "Credit Services",
    "ccy": "USD",
-   "mcap": 789935357952,
+   "mcap": 788580401152,
    "pe": 34.306,
    "fpe": 24.678,
    "eps": 12.32,
    "feps": 17.1266,
    "revTTM": 45902999552,
    "netIncome": 23311998976,
-   "shares": 1728000000,
+   "shares": 1724473215,
    "beta": 0.786,
    "div": 3.12,
    "divYield": 0.738,
@@ -1693,20 +1693,20 @@
    "ccy": "USD",
    "mcap": 676620599296,
    "pe": 17.0648,
-   "fpe": 13.4488,
+   "fpe": 13.3285,
    "eps": 9.72,
-   "feps": 12.3334,
+   "feps": 12.4447,
    "revTTM": 388231987200,
    "netIncome": 40621998080,
    "shares": 4079222444,
    "beta": 0.141,
    "div": 4.28,
    "divYield": 2.58,
-   "target": 183.6667,
+   "target": 185.0455,
    "targetHi": 213.0,
-   "targetLo": 142.0,
+   "targetLo": 160.0,
    "rating": "Achat",
-   "analysts": 21,
+   "analysts": 22,
    "revGrowth": 32.6,
    "epsGrowth": 111.4,
    "grossMargin": 29.808,
@@ -1833,7 +1833,7 @@
    "beta": 0.77,
    "div": 3.48,
    "divYield": 0.533,
-   "target": 707.7949,
+   "target": 716.3895,
    "targetHi": 800.0,
    "targetLo": 550.0,
    "rating": "Achat fort",
@@ -1908,14 +1908,14 @@
    "sector": "Energy",
    "industry": "Oil & Gas Integrated",
    "ccy": "USD",
-   "mcap": 414802116608,
+   "mcap": 414856019968,
    "pe": 15.6101,
    "fpe": 12.869,
    "eps": 13.62,
    "feps": 16.521,
    "revTTM": 226256994304,
    "netIncome": 26976000000,
-   "shares": 1951000000,
+   "shares": 1951253686,
    "beta": 0.453,
    "div": 7.12,
    "divYield": 3.349,
@@ -1998,9 +1998,9 @@
    "ccy": "USD",
    "mcap": 386435252224,
    "pe": 112.9437,
-   "fpe": 63.8374,
+   "fpe": 63.2608,
    "eps": 1.42,
-   "feps": 2.5123,
+   "feps": 2.5352,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
@@ -2167,13 +2167,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 123.1505,
-   "shares": 572600000,
-   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2225,10 +2220,46 @@
  ],
  "news": [
   {
+   "h": "Berkshire shares surge as Wall Street swoons amid AI fears",
+   "w": "Berkshire Hathaway shares roared past the S&amp;P 500 index this week and are outperforming the benchmark for the year-to-date.",
+   "syms": [
+    "SPX"
+   ],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-07T12:49:19Z",
+   "url": "https://www.cnbc.com/2026/11/07/berkshire-shares-surge-as-wall-street-swoons-amid-ai-fears.html"
+  },
+  {
+   "h": "Compte rendu de résultats : Surya Roshni enregistre un chiffre d’affaires record au T2 EF 2027",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T12:13:45Z",
+   "url": "https://fr.investing.com/news/transcripts/compte-rendu-de-resultats--surya-roshni-enregistre-un-chiffre-daffaires-record-au-t2-ef-2027-93CH-3683598"
+  },
+  {
+   "h": "New Zealand’s National Party set to cling on to power",
+   "w": "Rightwing bloc projected to win enough seats to form a government",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-07T12:06:11Z",
+   "url": "https://www.ft.com/content/76a2208d-62c8-46f7-bada-554201d78cf4?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "US plan to overhaul air traffic control system like ‘changing a tyre at 70mph’",
+   "w": "Transport secretary’s $42.5bn project to squeeze decades of much-needed upgrades into three years could be risky, experts argue",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-07T12:00:04Z",
+   "url": "https://www.ft.com/content/1cbee3e3-b4cf-4831-bd4e-ac1653c7c7c7?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "What will a Democratic Congress mean for Ukraine?",
    "w": "With Donald Trump retaining control of foreign policy, lawmakers will use legislative tools to try to support Kyiv",
    "syms": [],
-   "src": "myFT — europe",
+   "src": "myFT — world",
    "ts": "2026-11-07T12:00:04Z",
    "url": "https://www.ft.com/content/fac3a560-7845-4acf-9487-54ec8a445d74?syn-25a6b1a6=1",
    "mine": 1
@@ -2343,14 +2374,6 @@
    "mine": 1
   },
   {
-   "h": "Un directeur de Spar Group vend des actions pour 650$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T10:17:20Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-spar-group-vend-des-actions-pour-650-93CH-3683587"
-  },
-  {
    "h": "Why a wave of bomb threats is proving so difficult for Europe's aviation authorities to contain",
    "w": "The \"weakest point of aviation is targeting it in-flight,\" analysts say — but any change to procedures will be a lengthy process.",
    "syms": [],
@@ -2377,12 +2400,36 @@
    "url": "https://www.cnbc.com/2026/11/07/trump-us-minor-strikes-iran-qeshm-island.html"
   },
   {
-   "h": "New Zealand's tight election puts coalition talks in focus",
+   "h": "New Zealand's knife-edge election puts coalition talks in focus",
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
-   "ts": "2026-11-07T06:06:56.533407Z",
-   "url": "https://asia.nikkei.com/politics/new-zealand-s-tight-election-puts-coalition-talks-in-focus"
+   "ts": "2026-11-07T06:52:42.311464Z",
+   "url": "https://asia.nikkei.com/politics/new-zealand-s-knife-edge-election-puts-coalition-talks-in-focus"
+  },
+  {
+   "h": "Taiwan's KMT old guard fights for power base in tight Taipei mayoral races",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T06:52:42.311464Z",
+   "url": "https://asia.nikkei.com/politics/taiwan-s-kmt-old-guard-fights-for-power-base-in-tight-taipei-mayoral-races"
+  },
+  {
+   "h": "Japanese companies caught in crossfire of Beijing-Tokyo rift",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T06:52:42.311464Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/japanese-companies-caught-in-crossfire-of-beijing-tokyo-rift"
+  },
+  {
+   "h": "China enacts law to hunt down corrupt officials who escape overseas",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T06:52:42.311464Z",
+   "url": "https://asia.nikkei.com/politics/china-enacts-law-to-hunt-down-corrupt-officials-who-escape-overseas"
   },
   {
    "h": "Japan's new whisky breed chases export elixir",
@@ -2572,7 +2619,7 @@
    "h": "Mississippi election marks political earthquake in the Deep South",
    "w": "Democrat Scott Colom could become the first Black man from the state to reach the US Senate in 150 years",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-07T05:00:22Z",
    "url": "https://www.ft.com/content/0700baee-1a7f-4dc4-ac95-5b98e1868d96?syn-25a6b1a6=1",
    "mine": 1
@@ -2597,21 +2644,21 @@
    "url": "https://www.lemonde.fr/comprendre-en-3-minutes/video/2026/11/07/pourquoi-personne-ne-semble-satisfait-de-l-augmentation-du-smic-comprendre-en-trois-minutes_6808237_6176282.html"
   },
   {
-   "h": "UK officials warned that changing mackerel definition could mislead shoppers",
-   "w": "Internal emails show concern at moves to allow Chilean species to be sold as ‘jack mackerel’, even though it is from a different family from traditional product",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-07T05:00:13Z",
-   "url": "https://www.ft.com/content/52f2548d-93b8-47dd-9edf-9900a9a43a51?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Why does America hate AI?",
    "w": "Voter hostility to Big Tech helped shape the US midterms, and similar fears are spreading through the west. But look east and attitudes are dramatically more optimistic",
    "syms": [],
    "src": "myFT — us",
    "ts": "2026-11-07T05:00:13Z",
    "url": "https://www.ft.com/content/af97585a-3381-42a9-838b-9a205ab81232?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "UK officials warned that changing mackerel definition could mislead shoppers",
+   "w": "Internal emails show concern at moves to allow Chilean species to be sold as ‘jack mackerel’, even though it is from a different family from traditional product",
+   "syms": [],
+   "src": "myFT — world uk",
+   "ts": "2026-11-07T05:00:13Z",
+   "url": "https://www.ft.com/content/52f2548d-93b8-47dd-9edf-9900a9a43a51?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2692,36 +2739,12 @@
    "url": "https://asia.nikkei.com/spotlight/society/crime/us-slaps-sanctions-on-cambodia-s-prince-group-over-online-scams"
   },
   {
-   "h": "Japan's Takaichi pushes for tougher cybersecurity laws as attacks surge",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T04:56:54.284667Z",
-   "url": "https://asia.nikkei.com/spotlight/cybersecurity/japan-s-takaichi-pushes-for-tougher-cybersecurity-laws-as-attacks-surge"
-  },
-  {
    "h": "Le néolibéralisme est-il mort ? Vie et métamorphoses de la doctrine qui a façonné le monde contemporain",
    "w": "L’élection de Donald Trump et le Brexit, en 2016, marquent-ils la fin de quatre décennies d’hégémonie du néolibéralisme ? Le débat anime des intellectuels à travers le monde, qui s’interrogent sur les mutations d’une doctrine ayant refondé le libéralisme moderne en donnant un rôle nouveau à l’Etat.",
    "syms": [],
    "src": "Le Monde — Économie",
    "ts": "2026-11-07T04:55:01Z",
    "url": "https://www.lemonde.fr/idees/article/2026/11/07/le-neoliberalisme-est-il-mort-vie-et-metamorphoses-de-la-doctrine-qui-a-faconne-le-monde-contemporain_6808201_3232.html"
-  },
-  {
-   "h": "Prep schools help Chinese students get into Japan's top universities",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T04:12:02.688035Z",
-   "url": "https://asia.nikkei.com/business/education/prep-schools-help-chinese-students-get-into-japan-s-top-universities"
-  },
-  {
-   "h": "Democrats' midterm gains hang over data centers, Japanese US investment",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T04:12:02.688035Z",
-   "url": "https://asia.nikkei.com/politics/u.s.-midterm-elections/democrats-midterm-gains-hang-over-data-centers-japanese-us-investment"
   },
   {
    "h": "US believes Nvidia’s Huang had romantic relationship with alleged Chinese spy",
@@ -2832,14 +2855,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-06T21:45:00Z",
    "url": "https://www.marketwatch.com/story/elon-musk-opens-the-door-for-a-big-spacex-acquisition-4f62bcad?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Sen. Chris Murphy released from hospital after stroke, will miss votes for 'several weeks' as he rehabs",
-   "w": "The Connecticut Democrat Murphy has been discussed as a possible candidate for the White House in 2028.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-06T21:40:09Z",
-   "url": "https://www.cnbc.com/2026/11/06/chris-murphy-stroke-hospital-senate.html"
   },
   {
    "h": "Data centers run on debt. That was a problem for bonds this year — and it’s only going to get worse.",
@@ -3052,30 +3067,12 @@
    "mine": 1
   },
   {
-   "h": "West End reports spending boost after Oxford Street bans cars and buses",
-   "w": "Transactions on Barclays debit and credit cards increased 13% between October 26 and October 31, compared with same period last year",
-   "syms": [],
-   "src": "myFT — world uk",
-   "ts": "2026-11-06T18:15:49Z",
-   "url": "https://www.ft.com/content/d3d05f60-951d-4135-9342-c62c9f1f5839?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Aux Etats-Unis, l’accélération inattendue des créations d’emplois",
    "w": "Les statistiques officielles pour le mois d’octobre ont fait état d’un léger recul du chômage et d’un bond des créations d’emplois, qui ont plus que doublé par rapport à septembre.",
    "syms": [],
    "src": "Le Monde — Économie",
    "ts": "2026-11-06T18:10:39Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/06/aux-etats-unis-l-acceleration-inattendue-des-creations-d-emplois_6807852_3234.html"
-  },
-  {
-   "h": "Musk wants to give stock to kids. What’s the problem?",
-   "w": "The act is generous but there are reasons to wish it could be done in a different way",
-   "syms": [],
-   "src": "myFT — financials",
-   "ts": "2026-11-06T18:00:10Z",
-   "url": "https://www.ft.com/content/6c9d92ac-eba0-47c0-b4db-d9d5226e9891",
-   "mine": 1
   },
   {
    "h": "Why smoky bacon crisps threaten to reignite rows over EU rules",
