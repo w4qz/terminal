@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-06T23:23:19.160070Z",
+ "generated_at": "2026-11-06T23:59:21.317538Z",
  "quotes": {
   "NVDA": {
    "p": 186.68,
@@ -586,7 +586,7 @@
    "prev": 158.357,
    "chg": 0.068,
    "pct": 0.04,
-   "st": "DELAYED_15M",
+   "st": "EOD",
    "src": "Yahoo Finance via yfinance (JPY=X)",
    "ts": "2026-11-06T22:15:00Z",
    "open": 157.652,
@@ -658,7 +658,7 @@
    "prev": 101.55,
    "chg": 0.729,
    "pct": 0.72,
-   "st": "DELAYED_15M",
+   "st": "EOD",
    "src": "Yahoo Finance via yfinance (DX-Y.NYB)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 101.494,
@@ -694,11 +694,11 @@
    "prev": 4113.5,
    "chg": -34.0,
    "pct": -0.83,
-   "st": "DELAYED_15M",
+   "st": "EOD",
    "src": "Yahoo Finance via yfinance (GC=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 4098.5,
-   "lo": 4035.6001,
+   "lo": 4037.0,
    "hi": 4116.2002,
    "vol": 166431,
    "h": [
@@ -731,11 +731,11 @@
    "prev": 90.52,
    "chg": -0.18,
    "pct": -0.2,
-   "st": "DELAYED_15M",
+   "st": "EOD",
    "src": "Yahoo Finance via yfinance (CL=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 91.2,
-   "lo": 89.08,
+   "lo": 89.07,
    "hi": 92.53,
    "vol": 253859,
    "h": [
@@ -768,13 +768,13 @@
    "prev": 98.29,
    "chg": -0.53,
    "pct": -0.54,
-   "st": "DELAYED_15M",
+   "st": "EOD",
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 99.24,
-   "lo": 96.71,
+   "lo": 96.65,
    "hi": 100.92,
-   "vol": 38993,
+   "vol": 38991,
    "h": [
     104.28,
     104.72,
@@ -801,17 +801,17 @@
    ]
   },
   "BTC": {
-   "p": 75800.6875,
+   "p": 75734.1875,
    "prev": 75942.125,
-   "chg": -141.4375,
-   "pct": -0.19,
+   "chg": -207.9375,
+   "pct": -0.27,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-06T23:23:19.160070Z",
+   "ts": "2026-11-06T23:59:21.317538Z",
    "open": 75982.8125,
    "lo": 75067.125,
    "hi": 76282.3984,
-   "vol": 30313105408,
+   "vol": 29286920192,
    "h": [
     81500.8,
     81382.15,
@@ -834,7 +834,7 @@
     77345.05,
     80405.29,
     75942.12,
-    75800.69
+    75735.68
    ]
   }
  },
@@ -917,7 +917,7 @@
    "fcf": 41809874944,
    "w52lo": 164.27,
    "w52hi": 243.37,
-   "evEbitda": 21.628,
+   "evEbitda": 22.231,
    "earnTs": 1794949200,
    "earnStart": 1794949200,
    "earnEnd": 1794949200,
@@ -1088,7 +1088,7 @@
    "fcf": 1203071877120,
    "w52lo": 266.82,
    "w52hi": 487.47,
-   "evEbitda": 3.171,
+   "evEbitda": 3.428,
    "earnTs": 1792067400,
    "earnStart": 1799933400,
    "earnEnd": 1799933400,
@@ -1376,7 +1376,7 @@
    "fcf": 9343699968,
    "w52lo": 850.51,
    "w52hi": 1453.0,
-   "evEbitda": 27.108,
+   "evEbitda": 26.903,
    "earnTs": 1793277000,
    "earnStart": 1793277000,
    "earnEnd": 1793277000,
@@ -1496,7 +1496,7 @@
    "fcf": 29140250624,
    "w52lo": 192.59,
    "w52hi": 1255.0,
-   "evEbitda": 6.472,
+   "evEbitda": 6.821,
    "earnTs": 1790798400,
    "earnStart": 1798059600,
    "earnEnd": 1798059600,
@@ -1512,14 +1512,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 995843768320,
+   "mcap": 998898073600,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -1753,7 +1753,7 @@
    "fcf": 18501875712,
    "w52lo": 185.12,
    "w52hi": 282.02,
-   "evEbitda": 19.795,
+   "evEbitda": 20.068,
    "earnTs": 1800970200,
    "earnStart": 1800970200,
    "earnEnd": 1800970200,
@@ -1814,9 +1814,9 @@
    "ccy": "USD",
    "mcap": 568616681472,
    "pe": 34.1549,
-   "fpe": 28.1919,
+   "fpe": 28.1914,
    "eps": 19.11,
-   "feps": 23.152,
+   "feps": 23.1524,
    "revTTM": 36288000000,
    "netIncome": 16958000128,
    "shares": 864657109,
@@ -2155,13 +2155,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 123.1505,
-   "shares": 572600000,
-   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2213,6 +2208,88 @@
  ],
  "news": [
   {
+   "h": "Le PDG de Mondelez, Dirk Van de Put, cède 8,8 millions $ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-06T23:47:16Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-mondelez-dirk-van-de-put-cede-88-millions--dactions-93CH-3683485"
+  },
+  {
+   "h": "Le PDG de Mondelez vend des actions pour 8,5 millions de dollars",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-06T23:46:55Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-mondelez-vend-des-actions-pour-85-millions-de-dollars-93CH-3683484"
+  },
+  {
+   "h": "Le directeur marketing de Procept BioRobotics cède des actions pour 92.852$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-06T23:46:39Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-marketing-de-procept-biorobotics-cede-des-actions-pour-92852-93CH-3683482"
+  },
+  {
+   "h": "Le directeur d’El Pollo Loco, Sardar Biglari, cède 316.024$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-06T23:38:24Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-del-pollo-loco-sardar-biglari-cede-316024-dactions-93CH-3683481"
+  },
+  {
+   "h": "Fox finalise l’acquisition de Roku, cotation suspendue au NASDAQ",
+   "w": "",
+   "syms": [
+    "NDX"
+   ],
+   "src": "Investing.com France",
+   "ts": "2026-11-06T23:36:18Z",
+   "url": "https://fr.investing.com/news/sec-filings/fox-finalise-lacquisition-de-roku-cotation-suspendue-au-nasdaq-93CH-3683480"
+  },
+  {
+   "h": "Le directeur de GlobalFoundries Ganesh Moorthy achète pour 93.687$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-06T23:32:44Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-de-globalfoundries-ganesh-moorthy-achete-pour-93687-dactions-93CH-3683479"
+  },
+  {
+   "h": "Le président exécutif d’AudioEye, Moradi, cède des actions pour 284.377$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-06T23:32:30Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-president-executif-daudioeye-moradi-cede-des-actions-pour-284377-93CH-3683478"
+  },
+  {
+   "h": "Le directeur juridique de GlobalFoundries cède des actions pour 13.004$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-06T23:31:55Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-juridique-de-globalfoundries-cede-des-actions-pour-13004-93CH-3683477"
+  },
+  {
+   "h": "Le vice-président senior d’Ingersoll Rand cède des actions pour 831.470$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-06T23:31:51Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-vicepresident-senior-dingersoll-rand-cede-des-actions-pour-831470-93CH-3683476"
+  },
+  {
+   "h": "GeoVax Labs licencie son PDG David A. Dodd pour faute, qui reste président du conseil",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-06T23:31:44Z",
+   "url": "https://fr.investing.com/news/sec-filings/geovax-labs-licencie-son-pdg-david-a-dodd-pour-faute-qui-reste-president-du-conseil-93CH-3683475"
+  },
+  {
    "h": "US warns China it must ‘immediately’ meet terms of Busan trade deal",
    "w": "Washington says Beijing is not fulfilling commitments to increase supply of rare earths and other critical products",
    "syms": [],
@@ -2220,88 +2297,6 @@
    "ts": "2026-11-06T22:53:51Z",
    "url": "https://www.ft.com/content/391bb785-0247-4c39-b53b-35007187d603?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Le conseil de Mangoceuticals approuve une nouvelle action privilégiée de série D",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T22:53:41Z",
-   "url": "https://fr.investing.com/news/sec-filings/le-conseil-de-mangoceuticals-approuve-une-nouvelle-action-privilegiee-de-serie-d-93CH-3683464"
-  },
-  {
-   "h": "DelphX Capital Markets finalise un placement privé de 55.000 C$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T22:53:12Z",
-   "url": "https://fr.investing.com/news/company-news/delphx-capital-markets-finalise-un-placement-prive-de-55000-c-93CH-3683463"
-  },
-  {
-   "h": "Pono Capital Four modifie son accord de fusion avec Blackstar Orbital et réduit le prix d’achat",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T22:49:21Z",
-   "url": "https://fr.investing.com/news/sec-filings/pono-capital-four-modifie-son-accord-de-fusion-avec-blackstar-orbital-et-reduit-le-prix-dachat-93CH-3683462"
-  },
-  {
-   "h": "Le PDG de Gilead Sciences vend des actions pour 19,7 millions $",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T22:47:16Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-gilead-sciences-vend-des-actions-pour-197-millions--93CH-3683461"
-  },
-  {
-   "h": "Silo Pharma finalise un placement privé de 815.000$ en actions et bons de souscription",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T22:45:21Z",
-   "url": "https://fr.investing.com/news/sec-filings/silo-pharma-finalise-un-placement-prive-de-815000-en-actions-et-bons-de-souscription-93CH-3683460"
-  },
-  {
-   "h": "Les actionnaires de CVD Equipment élisent les administrateurs lors de l’assemblée annuelle",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T22:41:30Z",
-   "url": "https://fr.investing.com/news/sec-filings/les-actionnaires-de-cvd-equipment-elisent-les-administrateurs-lors-de-lassemblee-annuelle-93CH-3683459"
-  },
-  {
-   "h": "TuHURA Biosciences tire 1,5 million $ de sa facilité de crédit revolving",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T22:37:36Z",
-   "url": "https://fr.investing.com/news/sec-filings/tuhura-biosciences-tire-15-million--de-sa-facilite-de-credit-revolving-93CH-3683458"
-  },
-  {
-   "h": "Auddia annonce des accords d’échange de Warrants contre des actions sur le NASDAQ",
-   "w": "",
-   "syms": [
-    "NDX"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T22:33:40Z",
-   "url": "https://fr.investing.com/news/sec-filings/auddia-annonce-des-accords-dechange-de-warrants-contre-des-actions-sur-le-nasdaq-93CH-3683456"
-  },
-  {
-   "h": "La PDG de SI-BONE, Laura Francis, cède des actions pour 1,9 million $",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T22:33:14Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/la-pdg-de-sibone-laura-francis-cede-des-actions-pour-19-million--93CH-3683455"
-  },
-  {
-   "h": "Les États-Unis sanctionnent 8 entreprises canadiennes de services monétaires liées à l’Iran",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-06T22:31:06Z",
-   "url": "https://fr.investing.com/news/world-news/les-etatsunis-sanctionnent-8-entreprises-canadiennes-de-services-monetaires-liees-a-liran-3683457"
   },
   {
    "h": "OpenAI will keep investing in AI data centers despite election results, CFO tells CNBC",
@@ -2697,6 +2692,30 @@
    "mine": 1
   },
   {
+   "h": "Japan convenience store chain Lawson details first India store in Mumbai",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-06T17:59:21.317538Z",
+   "url": "https://asia.nikkei.com/business/retail/japan-convenience-store-chain-lawson-details-first-india-store-in-mumbai"
+  },
+  {
+   "h": "Putin exploits Takaichi's diplomatic opening with Japan Tobacco grab",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-06T17:59:21.317538Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/putin-exploits-takaichi-s-diplomatic-opening-with-japan-tobacco-grab"
+  },
+  {
+   "h": "Taiwan, South Korea, Japan stock markets hit hard by AI sell-off",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-06T17:59:21.317538Z",
+   "url": "https://asia.nikkei.com/business/markets/taiwan-south-korea-japan-stock-markets-hit-hard-by-ai-sell-off"
+  },
+  {
    "h": "EU probes ‘fraud’ on Spain’s lethal high-speed rail line",
    "w": "Accidents have claimed the lives of 115 people on Madrid-Seville route this year",
    "syms": [],
@@ -2882,14 +2901,6 @@
    "url": "https://asia.nikkei.com/editor-s-picks/editor-in-chief-s-picks/editor-s-choice-us-anti-data-center-sentiment-spreads-hitting-asian-markets"
   },
   {
-   "h": "Singapore banks struggle with bond yield and interest rate tensions",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T16:06:08.021104Z",
-   "url": "https://asia.nikkei.com/business/finance/singapore-banks-struggle-with-bond-yield-and-interest-rate-tensions"
-  },
-  {
    "h": "Renewable energy groups boosted by ‘clarity’ of US election results",
    "w": "Ørsted among the main gainers from the shift in political backdrop after two years of hostility from the Trump administration",
    "syms": [],
@@ -2905,22 +2916,6 @@
    "src": "BBC — Business",
    "ts": "2026-11-06T15:25:43Z",
    "url": "https://www.bbc.co.uk/news/articles/cmd9343z3zw2o?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "Japanese companies caught in crossfire of Beijing-Tokyo rift",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T15:24:50.532703Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/japanese-companies-caught-in-crossfire-of-beijing-tokyo-rift"
-  },
-  {
-   "h": "Japan's new whisky breed chases export elixir",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T15:24:50.532703Z",
-   "url": "https://asia.nikkei.com/spotlight/big-in-asia/japan-s-new-whisky-breed-chases-export-elixir"
   },
   {
    "h": "Singapore Airlines investit massivement pour rester dans la course du transport aérien haut de gamme",
@@ -3073,8 +3068,8 @@
   }
  ],
  "summary": {
-  "text": "Une vive correction frappe les marchés d’actions, menée par le secteur technologique face aux craintes d'un ralentissement de l'IA et au contexte politique américain. Le NDX plonge de 6,29 % dans le sillage de NVDA (-9,26 %), tandis que le N225 décroche de 6,22 % et le SPX de 4,32 %. Reflet d'une anxiété marquée, la volatilité s'envole avec un VIX en hausse de 69,48 % à 28,15.\n\nCôté changes et matières premières, le billet vert s’apprécie (DXY à 101,793, +0,24 %) face à l'euro (EURUSD à 1,1197, -0,34 %). Les cours pétroliers progressent, portant le Brent à 99,83 (+1,57 %) et le brut léger (CL) à 91,58 (+1,17 %). À l'inverse, l’or recule à 4 057,0 (-1,37 %) et le Bitcoin chute à 75 573,80 (-6,01 %).\n\nLes investisseurs surveilleront particulièrement le risque de franchissement des 100 $ sur le pétrole sous l'effet des tensions américano-iraniennes, ainsi que la persistance des turbulences pesant sur les valeurs liées à l'IA.",
+  "text": "Wall Street tente un rebond mené par la tech (NDX +1,3 %, NVDA +2,8 %), soutenu par 165 000 créations d'emplois en octobre aux États-Unis et l'engagement d'OpenAI à investir dans l'IA. La volatilité reflue avec un VIX à 25,63 (-9,05 %). En revanche, les places internationales décrochent lourdement, le Nikkei 225 plongeant de 6,0 % et le DAX de 2,01 %.\n\nLe dollar progresse nettement avec un DXY à 102,279 (+0,72 %), pesant sur l'EUR/USD (1,1143, -0,82 %) et le GBP/USD (1,3356, -0,9 %). Les cours pétroliers s'effritent (Brent à 97,76 $, CL à 90,34 $), tout comme l'or (4 079,5 $, -0,83 %) et le bitcoin (75 734,1875 $).\n\nÀ surveiller : les tensions sino-américaines autour du respect de l'accord commercial de Busan, la nomination de Stephen Miller comme futur chef de cabinet de la Maison Blanche, ainsi que la finalisation du rachat de Roku par Fox.",
   "model": "gemini-flash-latest",
-  "ts": "2026-11-06T06:31:10.177652Z"
+  "ts": "2026-11-06T23:59:21.317538Z"
  }
 }
