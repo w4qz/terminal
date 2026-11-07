@@ -150,6 +150,12 @@ def fetch_quotes(previous: dict) -> dict:
                 row = None
 
             age = NOW - last_ts.to_pydatetime()
+            # Marché fermé : la clôture officielle (barre quotidienne, fixing de clôture compris) remplace
+            # la dernière barre de 15 min. Sans cela le DAX affichait 25 795 (-2,01 %) au lieu de 25 820 (-1,92 %).
+            # Devises, contrats à terme et cryptos cotent en continu : leur barre quotidienne n'est pas une clôture.
+            continuous = t.endswith("=X") or t.endswith("=F") or t.endswith("-USD") or t.startswith("DX-")
+            if age >= timedelta(minutes=90) and not continuous and dclose.index[-1].date() == last_day:
+                price = float(dclose.iloc[-1])
             if age < timedelta(minutes=90):
                 status = "DELAYED_15M"      # marché ouvert, cotation différée Yahoo
             elif age < timedelta(days=4):
