@@ -1649,19 +1649,25 @@ pv.push(pv[pv.length-1]*(1+r)); bv.push(bv[bv.length-1]*(1+cur.Rb[t])); }
 const pr=(pv[pv.length-1]-1)*100, br=(bv[bv.length-1]-1)*100;
 const sum=document.getElementById('pfperfsum'); if(sum) sum.innerHTML=`Portefeuille <b class="${cls(pr)}">${pct(pr,1)}</b> · ACWI <b class="${cls(br)}">${pct(br,1)}</b> · écart <b class="${cls(pr-br)}">${pct(pr-br,1)}</b>`;
 const r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1, W=r.width, H=200; cv.width=W*dpr; cv.height=H*dpr;
-const x=cv.getContext('2d'); x.scale(dpr,dpr); const pl=8, prr=56, pt=10, pb=18;
+const x=cv.getContext('2d'); x.scale(dpr,dpr); const pl=8, prr=CT().B?66:56, pt=10, pb=18; if(CT().B){ x.fillStyle='#000'; x.fillRect(0,0,W,H); }
 const all=[...pv,...bv], lo=Math.min(...all), hi=Math.max(...all), N=pv.length;
 const X=i=>pl+i/(N-1)*(W-pl-prr), Y=v=>pt+(1-(v-lo)/(hi-lo||1))*(H-pt-pb);
 x.font=CT().f9; x.fillStyle=CT().ax; x.strokeStyle=CT().grid;
 if(CT().B) x.setLineDash([2,3]); for(let k=0;k<=3;k++){ const v=lo+(hi-lo)*k/3, y=Y(v); x.beginPath(); x.moveTo(pl,y); x.lineTo(W-prr,y); x.stroke(); x.textAlign='left'; x.fillText(pct((v-1)*100,0),W-prr+4,y+3); } x.setLineDash([]);
 x.strokeStyle=CT().ax2; x.beginPath(); x.moveTo(pl,Y(1)); x.lineTo(W-prr,Y(1)); x.stroke();
 const line=(s,c,w)=>{ x.strokeStyle=c; x.lineWidth=w; x.beginPath(); s.forEach((v,i)=>i?x.lineTo(X(i),Y(v)):x.moveTo(X(i),Y(v))); x.stroke(); };
-line(bv,CT().ax,1.2); line(pv,'#6ba3e0',1.8);
+if(CT().B){ bbgFrame(x,pl,pt,W-prr,H-pb); bbgArea(x,pv.map((v,i)=>[X(i),Y(v)]),pt,H-pb); line(bv,'#fb8b1e',1.2);
+bbgLegend(x,[['Portefeuille',pct((pv[N-1]-1)*100,1),'#fff'],['Indice monde (ACWI)',pct((bv[N-1]-1)*100,1),'#fb8b1e']],pl+6,pt+14);
+bbgTags(x,[{txt:pct((pv[N-1]-1)*100,1),y:Y(pv[N-1]),bg:'#3a8dde',fg:'#fff'},{txt:pct((bv[N-1]-1)*100,1),y:Y(bv[N-1]),bg:'#fb8b1e',fg:'#000'}],W-prr); x.font=CT().f9; }
+else { line(bv,CT().ax,1.2); line(pv,'#6ba3e0',1.8);
 x.font=CT().f10; x.textAlign='left'; x.fillStyle='#6ba3e0'; x.fillRect(pl+4,pt+4,12,3); x.fillText('Portefeuille',pl+20,pt+9);
-x.fillStyle=CT().ax; x.fillRect(pl+110,pt+4,12,3); x.fillText('Indice monde (ACWI)',pl+126,pt+9); x.font=CT().f9;
+x.fillStyle=CT().ax; x.fillRect(pl+110,pt+4,12,3); x.fillText('Indice monde (ACWI)',pl+126,pt+9); x.font=CT().f9; }
 const fd=d=>new Date(d+'T12:00:00').toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'2-digit'});
 x.fillStyle=CT().ax; x.textAlign='left'; x.fillText(fd(cur.dates[off]),pl,H-4); x.textAlign='right'; x.fillText(fd(dts[dts.length-1]),W-prr,H-4);
-if(hover!=null&&hover>=0&&hover<N){ x.strokeStyle='rgba(221,227,234,.4)'; x.setLineDash([3,3]); x.beginPath(); x.moveTo(X(hover),pt); x.lineTo(X(hover),H-pb); x.stroke(); x.setLineDash([]);
+if(hover!=null&&hover>=0&&hover<N&&CT().B){ bbgCross(x,X(hover),null,pl,pt,W-prr,H-pb); const d=hover?dts[hover-1]:cur.dates[off];
+x.fillStyle='#fff'; x.fillRect(X(hover)-3,Y(pv[hover])-3,6,6); x.fillStyle='#fb8b1e'; x.fillRect(X(hover)-3,Y(bv[hover])-3,6,6);
+bbgTip(x,[[fd(d),'#ffb000'],[`Portefeuille  ${pct((pv[hover]-1)*100,1)}`,'#fff'],[`ACWI  ${pct((bv[hover]-1)*100,1)}`,'#fb8b1e']],X(hover),pt+22,pl,W-prr); }
+else if(hover!=null&&hover>=0&&hover<N){ x.strokeStyle='rgba(221,227,234,.4)'; x.setLineDash([3,3]); x.beginPath(); x.moveTo(X(hover),pt); x.lineTo(X(hover),H-pb); x.stroke(); x.setLineDash([]);
 const d=hover?dts[hover-1]:cur.dates[off]; x.textAlign='left'; x.font=CT().fb10;
 const tx=`${fd(d)}  portefeuille ${pct((pv[hover]-1)*100,1)}  ACWI ${pct((bv[hover]-1)*100,1)}`, tw=x.measureText(tx).width+10, lx=Math.min(Math.max(pl,X(hover)-tw/2),W-prr-tw);
 x.fillStyle=CT().fg; x.fillRect(lx,pt,tw,16); x.fillStyle=CT().bg; x.fillText(tx,lx+5,pt+11.5); }
@@ -1879,16 +1885,19 @@ x.clearRect(0,0,W,H);
 const all=[...p,...b], mn=Math.min(...all), mx=Math.max(...all);
 const X=i=>pad+(i/(p.length-1))*(W-pad-8);
 const Y=v=>H-18-((v-mn)/(mx-mn||1))*(H-32);
-x.strokeStyle='#232830'; x.lineWidth=1;
+x.strokeStyle=CT().grid; x.lineWidth=1; if(CT().B){ x.fillStyle='#000'; x.fillRect(0,0,W,H); x.setLineDash([2,3]); }
 [0,0.5,1].forEach(f=>{ const v=mn+(mx-mn)*f, y=Y(v);
 x.beginPath(); x.moveTo(pad,y); x.lineTo(W-8,y); x.stroke();
 x.fillStyle=CT().ax; x.font=CT().f9; x.textAlign='right';
 x.fillText('×'+v.toFixed(2), pad-4, y+3); });
 const line=(s,c,w)=>{ x.strokeStyle=c; x.lineWidth=w; x.beginPath();
 s.forEach((v,i)=>i?x.lineTo(X(i),Y(v)):x.moveTo(X(i),Y(v))); x.stroke(); };
-line(b,'#5b6672',1); line(p,'#6ba3e0',1.4);
+x.setLineDash([]);
+if(CT().B){ bbgFrame(x,pad,14,W-8,H-18); bbgArea(x,p.map((v,i)=>[X(i),Y(v)]),14,H-18); line(b,'#fb8b1e',1.1);
+bbgLegend(x,[['Portefeuille','×'+p[p.length-1].toFixed(2),'#fff'],['Indice monde ACWI','×'+b[b.length-1].toFixed(2),'#fb8b1e'],['Trajectoire d\'exemple sur '+yrs+' ans','','#000']],pad+6,11); }
+else { line(b,'#5b6672',1); line(p,'#6ba3e0',1.4);
 x.fillStyle=CT().ax; x.font=CT().f9; x.textAlign='left';
-x.fillText('Trajectoire d\'exemple — portefeuille (bleu) contre indice monde ACWI (gris) sur '+yrs+' ans', pad, 11);
+x.fillText('Trajectoire d\'exemple — portefeuille (bleu) contre indice monde ACWI (gris) sur '+yrs+' ans', pad, 11); }
 }
 
 /*═══════════════════════════════════════════════════════════════════════
@@ -2354,11 +2363,13 @@ const x=cv.getContext('2d'); x.scale(dpr,dpr);
 const W=r.width, H=190, pl=46, pb=18;
 const vs=pts.map(p=>p[1]), mn=Math.min(...vs), mx=Math.max(...vs);
 const X=i=>pl+i/(pts.length-1)*(W-pl-6), Y=v=>8+(1-(v-mn)/(mx-mn||1))*(H-8-pb);
-x.strokeStyle='#232830'; x.fillStyle=CT().ax; x.font=CT().f9; x.textAlign='right';
+if(CT().B){ x.fillStyle='#000'; x.fillRect(0,0,W,H); x.setLineDash([2,3]); }
+x.strokeStyle=CT().grid; x.fillStyle=CT().ax; x.font=CT().f9; x.textAlign='right';
 [0,.5,1].forEach(f=>{ const v=mn+(mx-mn)*f, y=Y(v); x.beginPath(); x.moveTo(pl,y); x.lineTo(W-6,y); x.stroke(); x.fillText(nf(v,v>1000?0:2),pl-4,y+3); });
 const up=vs[vs.length-1]>=vs[0];
-x.strokeStyle=up?'#2fbf6b':'#e04a4a'; x.lineWidth=1.4; x.beginPath();
-pts.forEach((p,i)=>i?x.lineTo(X(i),Y(p[1])):x.moveTo(X(i),Y(p[1]))); x.stroke();
+if(CT().B){ x.setLineDash([]); bbgFrame(x,pl,8,W-6,H-pb); bbgArea(x,pts.map((p,i)=>[X(i),Y(p[1])]),8,H-pb); const l=vs[vs.length-1]; x.fillStyle='#3a8dde'; x.font=CT().fb9; const t=nf(l,l>1000?0:2), w=x.measureText(t).width+8; x.fillRect(W-6-w,Y(l)-8,w,15); x.fillStyle='#fff'; x.textAlign='left'; x.fillText(t,W-2-w,Y(l)+3); x.font=CT().f9; x.fillStyle=CT().ax; }
+else { x.strokeStyle=up?'#2fbf6b':'#e04a4a'; x.lineWidth=1.4; x.beginPath();
+pts.forEach((p,i)=>i?x.lineTo(X(i),Y(p[1])):x.moveTo(X(i),Y(p[1]))); x.stroke(); }
 const d=t=>new Date(t).toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'2-digit'});
 x.textAlign='left'; x.fillText(d(pts[0][0]),pl,H-4); x.textAlign='right'; x.fillText(d(pts[pts.length-1][0]),W-6,H-4);
 }
@@ -2789,14 +2800,14 @@ x.beginPath(); pts.forEach((p,i)=>i?x.lineTo(X(i),Y(p[1])):x.moveTo(X(i),Y(p[1])
 x.strokeStyle=BB?'#ffffff':'#6ba3e0'; x.lineWidth=BB?1.3:1.5; x.beginPath(); pts.forEach((p,i)=>i?x.lineTo(X(i),Y(p[1])):x.moveTo(X(i),Y(p[1]))); x.stroke(); }
 // dernière valeur sur l'axe
 const tag=(txt,y,bg,fg)=>{ x.font=CT().fb10; const w=x.measureText(txt).width+10; x.fillStyle=bg; x.fillRect(W-pr+1,y-8,w,16); x.fillStyle=fg; x.textAlign='left'; x.fillText(txt,W-pr+6,y+3.5); x.font=CT().f9; };
-tag(dd(pts[n-1][1]),Y(pts[n-1][1]),'#6ba3e0',CT().bg);
+if(CT().B){ bbgFrame(x,8,pt,W-pr,pt+ph); bbgTag(x,dd(pts[n-1][1]),Y(pts[n-1][1]),W-pr,'#3a8dde','#fff'); } else tag(dd(pts[n-1][1]),Y(pts[n-1][1]),'#6ba3e0',CT().bg);
 const info=document.getElementById('ecoinfo');
 if(info) info.textContent=`${ECO_ST.range} : min ${dd(Math.min(...vs))} · max ${dd(Math.max(...vs))} · ${n} points`;
 const tip=document.getElementById('ecotip'), i=hover?hover.i:null, my=hover?hover.y:null;
 if(i!=null&&i>=0&&i<n){ const p=pts[i], inP=my!=null&&my>=pt&&my<=pt+ph;
 x.strokeStyle='rgba(221,227,234,.4)'; x.setLineDash([3,3]); x.beginPath(); x.moveTo(X(i),pt); x.lineTo(X(i),H-pb); if(inP){ x.moveTo(8,my); x.lineTo(W-pr,my); } x.stroke(); x.setLineDash([]);
 x.fillStyle=CT().fg; x.beginPath(); x.arc(X(i),Y(p[1]),3,0,7); x.fill();
-if(inP) tag(dd(lo+(1-(my-pt)/ph)*(hi-lo)),my,CT().fg,CT().bg);
+if(inP){ if(CT().B) bbgTag(x,dd(lo+(1-(my-pt)/ph)*(hi-lo)),my,W-pr,'#fb8b1e','#000'); else tag(dd(lo+(1-(my-pt)/ph)*(hi-lo)),my,CT().fg,CT().bg); }
 const pv=i>0?pts[i-1][1]:null;
 tip.innerHTML=`<b style="color:var(--txt)">${ecoPeriod(e,p[0])}</b> &nbsp; ${dd(p[1])}${pv!=null?` &nbsp; <span class="${cls(p[1]-pv)}">${p[1]-pv>0?'+':''}${nf(p[1]-pv,Math.abs(p[1]-pv)>=100?0:2)}</span>`:''}`;
 } else if(tip) tip.innerHTML='';
@@ -3030,7 +3041,7 @@ drawComp();
 function drawComp(hover){
 const cv=document.getElementById('compcv'), D=COMP.data; if(!cv||!D) return;
 const {dates,series}=D, n=dates.length, r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1, W=r.width, H=380;
-cv.width=W*dpr; cv.height=H*dpr; const x=cv.getContext('2d'); x.scale(dpr,dpr);
+cv.width=W*dpr; cv.height=H*dpr; const x=cv.getContext('2d'); x.scale(dpr,dpr); if(CT().B){ x.fillStyle='#000'; x.fillRect(0,0,W,H); }
 const pl=8, pr=70, pt=30, pb=20, all=series.flatMap(s=>s.vals);
 let lo=Math.min(...all), hi=Math.max(...all); const pad=(hi-lo)*0.05||1; lo-=pad; hi+=pad;
 const X=i=>pl+i/(n-1)*(W-pl-pr), Y=v=>pt+(1-(v-lo)/(hi-lo))*(H-pt-pb), fp=v=>(v>=100?'+':'')+nf(v-100,1)+' %';
@@ -3042,10 +3053,15 @@ for(let k=0;k<6;k++){ const i=Math.round(k*(n-1)/5); x.textAlign=k===0?'left':k=
 series.forEach(s=>{ x.strokeStyle=s.col; x.lineWidth=1.6; x.beginPath(); s.vals.forEach((v,i)=>i?x.lineTo(X(i),Y(v)):x.moveTo(X(i),Y(v))); x.stroke(); });
 // légende et étiquettes de fin
 let lx=pl+4; x.font=CT().f10; x.textAlign='left';
-series.forEach(s=>{ const t=`${s.s} ${fp(s.vals[n-1])}`; x.fillStyle=s.col; x.fillRect(lx,10,12,3); x.fillText(t,lx+16,15); lx+=x.measureText(t).width+30; });
+if(CT().B){ bbgFrame(x,pl,pt,W-pr,H-pb); bbgLegend(x,series.map(s=>[s.s,fp(s.vals[n-1]),s.col]),pl+4,18); }
+else series.forEach(s=>{ const t=`${s.s} ${fp(s.vals[n-1])}`; x.fillStyle=s.col; x.fillRect(lx,10,12,3); x.fillText(t,lx+16,15); lx+=x.measureText(t).width+30; });
 const tag=(txt,y,bg,fg)=>{ x.font=CT().fb10; const w=x.measureText(txt).width+10; x.fillStyle=bg; x.fillRect(W-pr+1,y-8,w,16); x.fillStyle=fg; x.textAlign='left'; x.fillText(txt,W-pr+6,y+3.5); x.font=CT().f9; };
-if(hover==null) series.forEach(s=>tag(fp(s.vals[n-1]),Y(s.vals[n-1]),s.col,CT().bg));
-if(hover){ const i=hover.i, my=hover.y, inP=my>=pt&&my<=H-pb;
+if(hover==null){ if(CT().B) bbgTags(x,series.map(s=>({txt:fp(s.vals[n-1]),y:Y(s.vals[n-1]),bg:s.col,fg:'#000'})),W-pr); else series.forEach(s=>tag(fp(s.vals[n-1]),Y(s.vals[n-1]),s.col,CT().bg)); }
+if(hover&&CT().B){ const i=hover.i, my=hover.y, inP=my>=pt&&my<=H-pb; bbgCross(x,X(i),my,pl,pt,W-pr,H-pb);
+series.forEach(s=>{ x.fillStyle=s.col; x.fillRect(X(i)-3.5,Y(s.vals[i])-3.5,7,7); });
+if(inP) bbgTag(x,fp(lo+(1-(my-pt)/(H-pt-pb))*(hi-lo)),my,W-pr,'#fb8b1e','#000');
+bbgTip(x,[[fd(dates[i]),'#ffb000'],...series.map(s=>[`${s.s}  ${fp(s.vals[i])}`,s.col])],X(i),pt+6,pl,W-pr); }
+else if(hover){ const i=hover.i, my=hover.y, inP=my>=pt&&my<=H-pb;
 x.strokeStyle='rgba(221,227,234,.4)'; x.setLineDash([3,3]); x.beginPath(); x.moveTo(X(i),pt); x.lineTo(X(i),H-pb); if(inP){ x.moveTo(pl,my); x.lineTo(W-pr,my); } x.stroke(); x.setLineDash([]);
 series.forEach(s=>{ x.fillStyle=s.col; x.beginPath(); x.arc(X(i),Y(s.vals[i]),3,0,7); x.fill(); });
 if(inP) tag(fp(lo+(1-(my-pt)/(H-pt-pb))*(hi-lo)),my,CT().fg,CT().bg);
@@ -3136,12 +3152,13 @@ box.innerHTML=`<h3>DVD — Dividendes<span class="rt">${ev.length} versements de
 const draw=hv=>{ const cv=document.getElementById('dvdcv'); if(!cv) return; const yy=years.slice(-20), r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1, W=r.width, H=170;
 cv.width=W*dpr; cv.height=H*dpr; const x=cv.getContext('2d'); x.scale(dpr,dpr); const pl=8, pr=56, pt=10, pb=18, mx=Math.max(...yy.map(y=>byY[y]))*1.1||1;
 const bw=(W-pl-pr)/yy.length, Y=v=>pt+(1-v/mx)*(H-pt-pb);
-x.font='9px monospace'; x.fillStyle='#8a93a0'; x.strokeStyle='#1c2127';
-for(let k=0;k<=3;k++){ const v=mx*k/3, y=Y(v); x.beginPath(); x.moveTo(pl,y); x.lineTo(W-pr,y); x.stroke(); x.textAlign='left'; x.fillText(nf(v,2),W-pr+4,y+3); }
-yy.forEach((y,i)=>{ x.fillStyle=y===curY?'rgba(107,163,224,.35)':i===hv?'#9cc4ef':'#6ba3e0'; const bx=pl+i*bw+bw*0.15; x.fillRect(bx,Y(byY[y]),bw*0.7,H-pb-Y(byY[y]));
-if(yy.length<=12||i%2===0){ x.fillStyle='#8a93a0'; x.textAlign='center'; x.fillText(String(y).slice(yy.length>12?2:0),bx+bw*0.35,H-5); } });
+const BB=CT().B; if(BB){ x.fillStyle='#000'; x.fillRect(0,0,W,H); x.setLineDash([2,3]); }
+x.font=CT().f9; x.fillStyle=CT().ax; x.strokeStyle=CT().grid;
+for(let k=0;k<=3;k++){ const v=mx*k/3, y=Y(v); x.beginPath(); x.moveTo(pl,y); x.lineTo(W-pr,y); x.stroke(); x.textAlign='left'; x.fillText(nf(v,2),W-pr+4,y+3); } x.setLineDash([]); if(BB) bbgFrame(x,pl,pt,W-pr,H-pb);
+yy.forEach((y,i)=>{ x.fillStyle=BB?(y===curY?'rgba(58,141,222,.35)':i===hv?'#ffffff':'#3a8dde'):y===curY?'rgba(107,163,224,.35)':i===hv?'#9cc4ef':'#6ba3e0'; const bx=pl+i*bw+bw*0.15; x.fillRect(bx,Y(byY[y]),bw*0.7,H-pb-Y(byY[y]));
+if(yy.length<=12||i%2===0){ x.fillStyle=CT().ax; x.textAlign='center'; x.fillText(String(y).slice(yy.length>12?2:0),bx+bw*0.35,H-5); } });
 if(hv!=null&&yy[hv]!=null){ const y=yy[hv], prev=byY[y-1], t=`${y} : ${nf(byY[y],3)} ${ccy}${prev?'  '+pct((byY[y]/prev-1)*100,1):''}`;
-x.font='bold 10px monospace'; const w=x.measureText(t).width+10, bx=Math.min(Math.max(pl,pl+hv*bw-w/2),W-pr-w); x.fillStyle='#dde3ea'; x.fillRect(bx,pt,w,16); x.fillStyle='#0b0e11'; x.textAlign='left'; x.fillText(t,bx+5,pt+11.5); }
+x.font=CT().fb10; const w=x.measureText(t).width+10, bx=Math.min(Math.max(pl,pl+hv*bw-w/2),W-pr-w); if(BB){ x.fillStyle='#000'; x.fillRect(bx,pt,w,16); x.strokeStyle='#fb8b1e'; x.strokeRect(bx+.5,pt+.5,w,16); x.fillStyle='#fff'; } else { x.fillStyle='#dde3ea'; x.fillRect(bx,pt,w,16); x.fillStyle='#0b0e11'; } x.textAlign='left'; x.fillText(t,bx+5,pt+11.5); }
 cv.onmousemove=ev2=>{ const rr=cv.getBoundingClientRect(), i=Math.floor((ev2.clientX-rr.left-pl)/bw); draw(i>=0&&i<yy.length?i:null); }; cv.onmouseleave=()=>draw(null); };
 draw(null);
 }
@@ -3323,6 +3340,22 @@ const TEN_ORD=['1M','3M','6M','1A','2A','3A','4A','5A','6A','7A','8A','9A','10A'
 function CT(){ const B=document.body.classList.contains('bbg'), F=B?'"Arial Narrow","Helvetica Neue",Helvetica,Arial,sans-serif':'monospace';
 return B?{B,bg:'#000',grid:'#333333',grid2:'#262626',ax:'#e6e6e6',ax2:'#ffb000',fg:'#ffffff',f9:'11px '+F,f10:'12px '+F,fb10:'bold 12px '+F,fb9:'bold 11px '+F}
 :{B,bg:'#0b0e11',grid:'#1c2127',grid2:'#14171b',ax:'#8a93a0',ax2:'#4a525c',fg:'#dde3ea',f9:'9px monospace',f10:'10px monospace',fb10:'bold 10px monospace',fb9:'bold 9px monospace'}; }
+/* Kit graphique Bloomberg (thème bbg) : aire bleue + trait blanc, étiquette fléchée sur l'axe de droite,
+   encadré de survol noir à bord orange, légende carré de couleur + nom orange + valeur blanche. */
+const BBG_PAL=['#ffffff','#fb8b1e','#3a8dde','#ffd200','#2ee05f','#ff433d','#d46bff','#7fd4ff'];
+function bbgArea(x,P,top,bot,line){ if(P.length<2) return; const g=x.createLinearGradient(0,top,0,bot); g.addColorStop(0,'rgba(58,141,222,.75)'); g.addColorStop(1,'rgba(10,40,80,.15)');
+x.beginPath(); P.forEach(([a,b],i)=>i?x.lineTo(a,b):x.moveTo(a,b)); x.lineTo(P[P.length-1][0],bot); x.lineTo(P[0][0],bot); x.closePath(); x.fillStyle=g; x.fill();
+x.strokeStyle=line||'#ffffff'; x.lineWidth=1.4; x.beginPath(); P.forEach(([a,b],i)=>i?x.lineTo(a,b):x.moveTo(a,b)); x.stroke(); }
+function bbgTag(x,txt,y,x0,bg,fg){ x.font=CT().fb10; const w=x.measureText(txt).width+12; x.fillStyle=bg; x.beginPath(); x.moveTo(x0,y); x.lineTo(x0+6,y-8); x.lineTo(x0+6+w,y-8); x.lineTo(x0+6+w,y+8); x.lineTo(x0+6,y+8); x.closePath(); x.fill();
+x.fillStyle=fg||'#000'; x.textAlign='left'; x.fillText(txt,x0+11,y+4); }
+function bbgTags(x,list,x0){ list.sort((a,b)=>a.y-b.y); for(let i=1;i<list.length;i++) if(list[i].y-list[i-1].y<17) list[i].y=list[i-1].y+17; list.forEach(t=>bbgTag(x,t.txt,t.y,x0,t.bg,t.fg)); }
+function bbgTip(x,lines,ax,top,minX,maxX){ x.font=CT().f10; const bw=Math.max(...lines.map(l=>x.measureText(l[0]).width))+18, bh=lines.length*16+8;
+let bx=ax+14; if(bx+bw>maxX) bx=ax-bw-14; if(bx<minX) bx=minX; x.fillStyle='#000'; x.fillRect(bx,top,bw,bh); x.strokeStyle='#fb8b1e'; x.lineWidth=1; x.strokeRect(bx+.5,top+.5,bw,bh);
+lines.forEach(([t,c],j)=>{ x.fillStyle=c||'#fff'; x.textAlign='left'; x.fillText(t,bx+9,top+16+j*16); }); }
+function bbgLegend(x,items,lx,ly){ x.textAlign='left'; items.forEach(([name,val,col])=>{ x.fillStyle=col; x.fillRect(lx,ly-9,10,10); x.font=CT().fb10; x.fillStyle='#ffb000'; x.fillText(name,lx+15,ly); let w=x.measureText(name).width;
+if(val){ x.font=CT().f10; x.fillStyle='#fff'; x.fillText(val,lx+21+w,ly); w+=6+x.measureText(val).width; } lx+=w+36; }); }
+function bbgFrame(x,l,t,r,b){ x.strokeStyle='#5a5a5a'; x.lineWidth=1; x.setLineDash([]); x.strokeRect(Math.round(l)+.5,Math.round(t)+.5,Math.round(r-l),Math.round(b-t)); }
+function bbgCross(x,ax,ay,l,t,r,b){ x.strokeStyle='rgba(255,255,255,.45)'; x.lineWidth=1; x.setLineDash([3,3]); x.beginPath(); x.moveTo(ax,t); x.lineTo(ax,b); if(ay!=null&&ay>=t&&ay<=b){ x.moveTo(l,ay); x.lineTo(r,ay); } x.stroke(); x.setLineDash([]); }
 // Couleurs des courbes de taux : en thème Bloomberg, teintes vives sur fond noir
 const GC_COL_BBG={US:'#ffffff',EU:'#fb8b1e',DE:'#ffd200',FR:'#3a8dde',IT:'#2ee05f',UK:'#ff433d',JP:'#d46bff',CH:'#7fd4ff'};
 const gcCol=k=>(document.body.classList.contains('bbg')?GC_COL_BBG:GC_COL)[k];
@@ -3375,14 +3408,23 @@ const days={'1M':31,'3M':92,'6M':183,'1A':366,'2A':731,'5A':1830}[GCH.range], fr
 const S2=ks.map(k=>({k,col:gcCol(k),n:GC_NAME[k]||k,h:CURVES_HIST[GC_H[k]].filter(x=>x[0]>=from)})).filter(s=>s.h.length>1); if(!S2.length) return;
 const W=cv.parentElement.clientWidth, H=320, dpr=window.devicePixelRatio||1; cv.width=W*dpr; cv.height=H*dpr; cv.style.width=W+'px';
 const x=cv.getContext('2d'); x.setTransform(dpr,0,0,dpr,0,0); x.fillStyle=CT().bg; x.fillRect(0,0,W,H);
-const all=S2.flatMap(s=>s.h.map(p=>p[1])), lo=Math.min(...all), hi=Math.max(...all), pad=(hi-lo)*.08||.1, L=8, R=W-58, T=10, B=H-24;
+const all=S2.flatMap(s=>s.h.map(p=>p[1])), lo=Math.min(...all), hi=Math.max(...all), pad=(hi-lo)*.08||.1, L=8, R=W-(CT().B?70:58), T=CT().B?30:10, B=H-24;
 const t0=Date.parse(from), t1=Date.now(), X=d=>L+(Date.parse(d)-t0)/(t1-t0)*(R-L), Y=v=>B-(v-(lo-pad))/((hi+pad)-(lo-pad))*(B-T);
 x.font=CT().f10; x.fillStyle=CT().ax; x.strokeStyle=CT().grid; x.lineWidth=1;
-if(CT().B) x.setLineDash([2,3]); for(let i=0;i<=5;i++){ const v=lo-pad+(hi-lo+2*pad)*i/5, y=Y(v); x.beginPath(); x.moveTo(L,y); x.lineTo(R,y); x.stroke(); x.textAlign='left'; x.fillText(nf(v,2)+' %',R+6,y+3); } x.setLineDash([]);
+if(CT().B) x.setLineDash([2,3]); for(let i=0;i<=5;i++){ const v=lo-pad+(hi-lo+2*pad)*i/5, y=Y(v); x.beginPath(); x.moveTo(L,y); x.lineTo(R,y); x.stroke(); x.textAlign='left'; x.fillText(CT().B?nf(v,2):nf(v,2)+' %',R+(CT().B?9:6),y+3); }
+if(CT().B) for(let i=1;i<4;i++){ const xx=L+(R-L)*i/4; x.beginPath(); x.moveTo(xx,T); x.lineTo(xx,B); x.stroke(); } x.setLineDash([]);
 for(let i=0;i<=4;i++){ const t=t0+(t1-t0)*i/4; x.textAlign=i===0?'left':i===4?'right':'center'; x.fillText(new Date(t).toLocaleDateString('fr-FR',days>200?{month:'short',year:'2-digit'}:{day:'2-digit',month:'short'}),L+(R-L)*i/4,H-6); }
-for(const s of S2){ x.strokeStyle=s.col; x.lineWidth=1.6; x.beginPath(); s.h.forEach((p,i)=>i?x.lineTo(X(p[0]),Y(p[1])):x.moveTo(X(p[0]),Y(p[1]))); x.stroke();
+const BB=CT().B, one=S2.length===1;
+if(BB){ bbgFrame(x,L,T,R,B); S2.forEach(s=>{ const P=s.h.map(p=>[X(p[0]),Y(p[1])]); if(one) bbgArea(x,P,T,B); else { x.strokeStyle=s.col; x.lineWidth=1.4; x.beginPath(); P.forEach(([a,b],i)=>i?x.lineTo(a,b):x.moveTo(a,b)); x.stroke(); } });
+bbgLegend(x,S2.map(s=>[s.n+' 10A',nf(s.h[s.h.length-1][1],3),one?'#fff':s.col]),L+6,T+16);
+bbgTags(x,S2.map(s=>{ const l=s.h[s.h.length-1]; return {txt:nf(l[1],3),y:Y(l[1]),bg:one?'#3a8dde':s.col,fg:one?'#fff':'#000'}; }),R); }
+else for(const s of S2){ x.strokeStyle=s.col; x.lineWidth=1.6; x.beginPath(); s.h.forEach((p,i)=>i?x.lineTo(X(p[0]),Y(p[1])):x.moveTo(X(p[0]),Y(p[1]))); x.stroke();
 const l=s.h[s.h.length-1]; x.fillStyle=s.col; x.fillRect(R+2,Y(l[1])-7,54,14); x.fillStyle='#000'; x.textAlign='left'; x.fillText(nf(l[1],2)+' %',R+5,Y(l[1])+4); }
-if(GCH.hover!=null){ const mx=GCH.hover; x.strokeStyle='#5a6470'; x.setLineDash([3,3]); x.beginPath(); x.moveTo(mx,T); x.lineTo(mx,B); x.stroke(); x.setLineDash([]);
+if(GCH.hover!=null&&BB){ const mx=GCH.hover, t=t0+(mx-L)/(R-L)*(t1-t0), d=new Date(t).toISOString().slice(0,10); bbgCross(x,mx,null,L,T,R,B);
+const rows=S2.map(s=>{ let p=null; for(const q of s.h){ if(q[0]<=d) p=q; else break; } return p?[s,p]:null; }).filter(Boolean);
+rows.forEach(([s,p])=>{ x.fillStyle=one?'#fff':s.col; x.fillRect(X(p[0])-3.5,Y(p[1])-3.5,7,7); });
+bbgTip(x,[[new Date(t).toLocaleDateString('fr-FR'),'#ffb000'],...rows.map(([s,p])=>[`${s.n}  ${nf(p[1],3)} %`,one?'#fff':s.col])],mx,T+6,L,R); }
+else if(GCH.hover!=null){ const mx=GCH.hover; x.strokeStyle='#5a6470'; x.setLineDash([3,3]); x.beginPath(); x.moveTo(mx,T); x.lineTo(mx,B); x.stroke(); x.setLineDash([]);
 const t=t0+(mx-L)/(R-L)*(t1-t0), d=new Date(t).toISOString().slice(0,10);
 const rows=S2.map(s=>{ let p=null; for(const q of s.h){ if(q[0]<=d) p=q; else break; } return p?[s,p]:null; }).filter(Boolean);
 const bw=170, bx=mx+12+bw>R?mx-12-bw:mx+12; x.fillStyle='rgba(13,15,17,.95)'; x.fillRect(bx,T+4,bw,18+rows.length*15); x.strokeStyle='#3a424c'; x.strokeRect(bx,T+4,bw,18+rows.length*15);
