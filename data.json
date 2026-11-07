@@ -1,13 +1,13 @@
 {
- "generated_at": "2026-11-07T15:43:10.570405Z",
+ "generated_at": "2026-11-07T16:21:25.851866Z",
  "quotes": {
   "NVDA": {
    "p": 186.68,
    "prev": 181.6,
    "chg": 5.08,
    "pct": 2.8,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (NVDA) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (NVDA)",
    "ts": "2026-11-06T21:00:00Z",
    "open": 191.1,
    "lo": 185.22,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75727.3438,
+   "p": 75674.9609,
    "prev": 75746.9297,
-   "chg": -19.5859,
-   "pct": -0.03,
+   "chg": -71.9688,
+   "pct": -0.1,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-07T15:43:10.570405Z",
+   "ts": "2026-11-07T16:21:25.851866Z",
    "open": 75741.0156,
-   "lo": 75699.6797,
+   "lo": 75599.6484,
    "hi": 76101.3047,
-   "vol": 14200783872,
+   "vol": 13398435840,
    "h": [
     81382.15,
     82017.6,
@@ -844,7 +844,7 @@
     80405.29,
     75942.12,
     75746.93,
-    75727.34
+    75674.96
    ]
   }
  },
@@ -1522,14 +1522,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 998898073600,
+   "mcap": 995843768320,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -2167,8 +2167,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 123.1505,
+   "shares": 572600000,
+   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2220,6 +2225,54 @@
  ],
  "news": [
   {
+   "h": "Why the prognosis for healthcare stocks is uncertain ahead of Congress’ new makeup",
+   "w": "Healthcare stocks may struggle to find momentum as the Democrats get ready to take over Congress.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-07T16:02:33Z",
+   "url": "https://www.cnbc.com/2026/11/07/healthcare-stocks-may-face-trouble-due-to-midterm-results.html"
+  },
+  {
+   "h": "My 93-year-old father changed his will at the 11th hour, leaving my brother his entire $500,000 estate. Can I challenge it?",
+   "w": "“My brother had no job and needed a place to live.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-07T16:00:00Z",
+   "url": "https://www.marketwatch.com/story/my-93-year-old-father-changed-his-will-at-the-11th-hour-leaving-my-brother-his-entire-500-000-estate-can-i-challenge-it-ecfc63d2?mod=mw_rss_topstories"
+  },
+  {
+   "h": "You follow the rules for smart stock trading. But are they the right rules?",
+   "w": "Apply the wisdom of investment pros to develop your own consistent methodology.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-07T16:00:00Z",
+   "url": "https://www.marketwatch.com/story/you-follow-the-rules-for-smart-stock-trading-but-are-they-the-right-rules-9bfe5846?mod=mw_rss_topstories"
+  },
+  {
+   "h": "La directrice d’Apogee Enterprises achète des actions pour 2.416$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T15:46:46Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-dapogee-enterprises-achete-des-actions-pour-2416-93CH-3683627"
+  },
+  {
+   "h": "You’re fired! But you can keep the laptop and insurance. And here’s $10,000.",
+   "w": "Some tech companies are giving more generous severance packages, but here’s what to keep in mind.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-07T15:44:00Z",
+   "url": "https://www.marketwatch.com/story/layoffs-with-dignity-why-these-tech-firms-are-offering-free-laptops-and-linkedin-premium-28750d39?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Alertes à la bombe visant des avions : une enquête ouverte par le parquet de Paris, notamment sur un lien éventuel avec des puissances étrangères",
+   "w": "Les investigations sont « menées pour retrouver les auteurs des courriels divulguant ces fausses informations afin de faire croire à une destruction dangereuse », a expliqué le parquet.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-07T15:43:47Z",
+   "url": "https://www.lemonde.fr/societe/article/2026/11/07/alertes-a-la-bombe-visant-des-avions-une-enquete-ouverte-par-le-parquet-de-paris-notamment-sur-un-lien-eventuel-avec-des-puissances-etrangeres_6808294_3224.html"
+  },
+  {
    "h": "‘I have no financial safety net’: I’m 66, rely on Social Security and have just $500 in savings. What hope do I have?",
    "w": "“Sometimes I wonder whether wealthier Americans should trade places with people like me.”",
    "syms": [],
@@ -2234,6 +2287,14 @@
    "src": "MarketWatch",
    "ts": "2026-11-07T15:35:00Z",
    "url": "https://www.marketwatch.com/story/a-record-10-of-first-time-home-buyers-now-pay-in-cash-heres-where-they-get-the-money-70f2e656?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Un directeur de Visium Technologies achète pour 108.000$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T15:32:28Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-visium-technologies-achete-pour-108000-dactions-93CH-3683626"
   },
   {
    "h": "Berkshire Hathaway more than doubles buybacks in third quarter as earnings decline",
@@ -2269,7 +2330,7 @@
    "url": "https://fr.investing.com/news/stock-market-news/novartis-abandonne-le-pelacarsen-apres-lechec-dune-etude-majeure-3683624"
   },
   {
-   "h": "Un mémo des renseignements américains lie le PDG de Nvidia à une espionne présumée",
+   "h": "Un mémo américain allègue que le PDG de Nvidia était lié à une espionne présumée de Pékin",
    "w": "",
    "syms": [
     "NVDA"
@@ -2391,14 +2452,6 @@
    "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-da-o-smith-vend-des-actions-pour-963284-93CH-3683612"
   },
   {
-   "h": "Le directeur juridique de Velocity Financial cède des actions pour 57.600$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T14:01:50Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-juridique-de-velocity-financial-cede-des-actions-pour-57600-93CH-3683611"
-  },
-  {
    "h": "Will this week's blue wave election usher in a Democratic president in 2028?",
    "w": "A CNBC analysis of historical election data finds wave elections don't necessarily spell trouble for the party in power during the next presidential year.",
    "syms": [],
@@ -2423,14 +2476,6 @@
    "src": "BCE — communiqués",
    "ts": "2026-11-07T14:00:00Z",
    "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261107~e7b86fc4ce.en.html"
-  },
-  {
-   "h": "Le directeur financier de Velocity Financial vend des actions pour 36.000$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T13:47:12Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-de-velocity-financial-vend-des-actions-pour-36000-93CH-3683610"
   },
   {
    "h": "The AI trade is now counting on Anthropic’s IPO — but it couldn’t be happening at a worse time",
@@ -2471,14 +2516,6 @@
    "src": "CNBC — Marchés",
    "ts": "2026-11-07T13:00:01Z",
    "url": "https://www.cnbc.com/2026/11/07/anthropic-ipo-ai-data-center-backlash.html"
-  },
-  {
-   "h": "Cosm rides premium moviegoing wave with more immersive screenings and a wider library",
-   "w": "Cosm tickets cost anywhere from $18 for a matinee to around $70 for prime seats or in-demand showings.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-07T13:00:01Z",
-   "url": "https://www.cnbc.com/2026/11/07/cosm-immersive-movie-screenings.html"
   },
   {
    "h": "New Zealand’s National Party set to cling on to power",
@@ -2541,6 +2578,30 @@
    "ts": "2026-11-07T10:30:03Z",
    "url": "https://www.ft.com/content/9d40f40a-cbf2-46f5-b3d0-cee554e35298?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "New Zealand's knife-edge election puts coalition talks in focus",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T10:21:25.851866Z",
+   "url": "https://asia.nikkei.com/politics/new-zealand-s-knife-edge-election-puts-coalition-talks-in-focus"
+  },
+  {
+   "h": "Taiwan's KMT old guard fights for power base in tight Taipei mayoral races",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T10:21:25.851866Z",
+   "url": "https://asia.nikkei.com/politics/taiwan-s-kmt-old-guard-fights-for-power-base-in-tight-taipei-mayoral-races"
+  },
+  {
+   "h": "Democrats' midterm gains hang over data centers, Japanese US investment",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T10:21:25.851866Z",
+   "url": "https://asia.nikkei.com/politics/u.s.-midterm-elections/democrats-midterm-gains-hang-over-data-centers-japanese-us-investment"
   },
   {
    "h": "Japanese companies caught in crossfire of Beijing-Tokyo rift",
@@ -2623,30 +2684,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-07T08:27:14.115783Z",
    "url": "https://asia.nikkei.com/business/automobiles/electric-vehicles/seres-li-auto-join-chinese-evs-charge-into-europe"
-  },
-  {
-   "h": "US slaps sanctions on Cambodia's Prince Group over online scams",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T08:27:14.115783Z",
-   "url": "https://asia.nikkei.com/spotlight/society/crime/us-slaps-sanctions-on-cambodia-s-prince-group-over-online-scams"
-  },
-  {
-   "h": "Prep schools help Chinese students get into Japan's top universities",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T07:42:36.933456Z",
-   "url": "https://asia.nikkei.com/business/education/prep-schools-help-chinese-students-get-into-japan-s-top-universities"
-  },
-  {
-   "h": "Japan's Takaichi pushes for tougher cybersecurity laws as attacks surge",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T07:42:36.933456Z",
-   "url": "https://asia.nikkei.com/spotlight/cybersecurity/japan-s-takaichi-pushes-for-tougher-cybersecurity-laws-as-attacks-surge"
   },
   {
    "h": "UK will not slow down on AI despite backlash in US, says growth minister",
@@ -2961,32 +2998,6 @@
    "url": "https://www.bbc.co.uk/news/articles/cq1j33w7d232o?at_medium=RSS&at_campaign=rss"
   },
   {
-   "h": "Elon Musk opens the door for a big SpaceX acquisition",
-   "w": "The rocket and satellite-internet company is looking to challenge telecom giants.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-06T21:45:00Z",
-   "url": "https://www.marketwatch.com/story/elon-musk-opens-the-door-for-a-big-spacex-acquisition-4f62bcad?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Data centers run on debt. That was a problem for bonds this year — and it’s only going to get worse.",
-   "w": "AI debt issuance this year overwhelmed investor portfolios, and has disappointed from a performance perspective. The funding need won’t get any better with Democrats in control of Congress.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-06T21:37:00Z",
-   "url": "https://www.marketwatch.com/story/data-centers-run-on-debt-that-was-a-problem-for-bonds-this-year-and-its-only-going-to-get-worse-09c03be6?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Nvidia, AMD and other chip stocks rebound — but is relief from the ‘violent’ selloff only temporary?",
-   "w": "Analysts warn of further volatility ahead, although there are several new factors that work in the AI trade’s favor.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "MarketWatch",
-   "ts": "2026-11-06T21:24:00Z",
-   "url": "https://www.marketwatch.com/story/nvidia-amd-and-other-chip-stocks-rebound-is-the-violent-ai-selloff-over-8f7df533?mod=mw_rss_topstories"
-  },
-  {
    "h": "AI stocks climb after trillions wiped from market values",
    "w": "Investors had been selling off tech shares in part due to concerns the Democrat election victory would mean slower AI development.",
    "syms": [],
@@ -3045,14 +3056,6 @@
    "ts": "2026-11-06T19:29:18Z",
    "url": "https://www.ft.com/content/580ab1bf-4e2e-46b8-9178-dbf765645754?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "A bord du « TGV nouvelle génération », entre Paris et Marseille : un train repensé de A à Z, à la capacité accrue et moins gourmand en énergie",
-   "w": "Livré par Alstom à la SNCF avec plus de deux ans de retard, il a effectué son voyage inaugural vendredi. Il remplacera progressivement les plus vieilles unités de la flotte.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-06T19:23:08Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/11/06/a-bord-du-tgv-nouvelle-generation-entre-paris-et-marseille-un-train-repense-de-a-a-z-a-la-capacite-accrue-et-moins-gourmand-en-energie_6807856_3234.html"
   },
   {
    "h": "Bomb threats target media and flights as email warns ‘this is only the beginning’",
