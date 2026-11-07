@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T00:52:11.881924Z",
+ "generated_at": "2026-11-07T01:48:48.323612Z",
  "quotes": {
   "NVDA": {
    "p": 186.68,
@@ -11,8 +11,8 @@
    "ts": "2026-11-06T21:00:00Z",
    "open": 191.1,
    "lo": 185.22,
-   "hi": 194.895,
-   "vol": 179308722,
+   "hi": 194.9,
+   "vol": 179722400,
    "h": [
     230.48,
     229.28,
@@ -51,6 +51,7 @@
    "hi": 33.16,
    "vol": 32486210,
    "h": [
+    60.65,
     56.93,
     50.97,
     51.46,
@@ -71,8 +72,7 @@
     36.33,
     37.15,
     35.62,
-    30.2,
-    32.33
+    30.2
    ]
   },
   "SPX": {
@@ -269,6 +269,7 @@
    "open": 60374.3516,
    "lo": 56745.8086,
    "hi": 60374.3516,
+   "vol": 314400000,
    "h": [
     70683.98,
     70035.71,
@@ -290,7 +291,8 @@
     63290.11,
     63081.86,
     62188.63,
-    61077.9
+    61077.9,
+    57434.77
    ]
   },
   "HSI": {
@@ -304,8 +306,8 @@
    "open": 24404.6191,
    "lo": 24349.3008,
    "hi": 24740.1797,
+   "vol": 3440200000,
    "h": [
-    24280.56,
     24130.5,
     23785.79,
     24211.35,
@@ -326,7 +328,8 @@
     23393.32,
     23525.97,
     23919.5,
-    24796.98
+    24796.98,
+    24481.86
    ]
   },
   "SHCOMP": {
@@ -338,9 +341,9 @@
    "src": "Yahoo Finance via yfinance (000001.SS)",
    "ts": "2026-11-06T07:00:00Z",
    "open": 3612.147,
-   "lo": 3610.1978,
+   "lo": 3610.198,
    "hi": 3660.4861,
-   "vol": 459615844,
+   "vol": 477000,
    "h": [
     3811.9,
     3813.79,
@@ -362,7 +365,8 @@
     3638.03,
     3608.1,
     3686.17,
-    3689.91
+    3689.91,
+    3649.18
    ]
   },
   "STI": {
@@ -370,14 +374,14 @@
    "prev": 5296.25,
    "chg": -114.8301,
    "pct": -2.17,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^STI) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^STI)",
    "ts": "2026-11-06T09:00:00Z",
    "open": 5152.29,
    "lo": 5138.75,
    "hi": 5199.8198,
+   "vol": 448874000,
    "h": [
-    5608.44,
     5412.96,
     5401.89,
     5415.48,
@@ -398,7 +402,8 @@
     5303.83,
     5269.29,
     5268.63,
-    5296.25
+    5296.25,
+    5179.17
    ]
   },
   "UKX": {
@@ -409,11 +414,11 @@
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^FTSE)",
    "ts": "2026-11-06T16:30:00Z",
-   "open": 10784.1602,
-   "lo": 10528.0703,
-   "hi": 10784.1602,
+   "open": 10784.2002,
+   "lo": 10528.0996,
+   "hi": 10784.2002,
+   "vol": 823947000,
    "h": [
-    10458.5,
     10441.6,
     10552.1,
     10656.3,
@@ -434,7 +439,8 @@
     10761.3,
     10638.4,
     10829.2,
-    10782.7
+    10782.7,
+    10673.9
    ]
   },
   "DAX": {
@@ -448,8 +454,8 @@
    "open": 25919.4805,
    "lo": 25617.5391,
    "hi": 26061.6406,
+   "vol": 71599900,
    "h": [
-    25104.36,
     24806.97,
     25087.27,
     25277.68,
@@ -470,7 +476,8 @@
     25981.09,
     25864.62,
     26437.67,
-    26325.01
+    26325.01,
+    25820.36
    ]
   },
   "CAC": {
@@ -484,8 +491,8 @@
    "open": 8105.0601,
    "lo": 8049.6401,
    "hi": 8140.54,
+   "vol": 62518800,
    "h": [
-    7769.21,
     7729.69,
     7803.33,
     7832.88,
@@ -506,7 +513,8 @@
     8047.69,
     8020.31,
     8177.89,
-    8205.37
+    8205.37,
+    8139.0
    ]
   },
   "SX5E": {
@@ -520,8 +528,8 @@
    "open": 6207.7002,
    "lo": 6122.4702,
    "hi": 6207.7002,
+   "vol": 24185100,
    "h": [
-    6180.29,
     6126.73,
     6173.37,
     6201.21,
@@ -542,7 +550,8 @@
     6176.06,
     6144.56,
     6265.71,
-    6231.54
+    6231.54,
+    6170.49
    ]
   },
   "EURUSD": {
@@ -698,7 +707,7 @@
    "src": "Yahoo Finance via yfinance (GC=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 4098.5,
-   "lo": 4035.6001,
+   "lo": 4037.0,
    "hi": 4116.2002,
    "vol": 166431,
    "h": [
@@ -735,7 +744,7 @@
    "src": "Yahoo Finance via yfinance (CL=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 91.2,
-   "lo": 89.08,
+   "lo": 89.07,
    "hi": 92.53,
    "vol": 253859,
    "h": [
@@ -772,9 +781,9 @@
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 99.24,
-   "lo": 96.71,
+   "lo": 96.65,
    "hi": 100.92,
-   "vol": 38993,
+   "vol": 38991,
    "h": [
     104.28,
     104.72,
@@ -801,17 +810,17 @@
    ]
   },
   "BTC": {
-   "p": 75780.1562,
+   "p": 75901.4531,
    "prev": 75942.125,
-   "chg": -161.9688,
-   "pct": -0.21,
+   "chg": -40.6719,
+   "pct": -0.05,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-07T00:52:11.881924Z",
+   "ts": "2026-11-07T01:48:48.323612Z",
    "open": 75741.0156,
    "lo": 75741.0156,
-   "hi": 75868.4922,
-   "vol": 28638959616,
+   "hi": 75900.1562,
+   "vol": 28065236992,
    "h": [
     81500.8,
     81382.15,
@@ -834,7 +843,7 @@
     77345.05,
     80405.29,
     75942.12,
-    75780.16
+    75901.46
    ]
   }
  },
@@ -1512,14 +1521,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 995843768320,
+   "mcap": 998898073600,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -1599,9 +1608,9 @@
    "ccy": "USD",
    "mcap": 736464797696,
    "pe": 95.9487,
-   "fpe": 26.5491,
+   "fpe": 26.0126,
    "eps": 4.68,
-   "feps": 16.9136,
+   "feps": 17.2624,
    "revTTM": 45435998208,
    "netIncome": 7725000192,
    "shares": 1640087251,
@@ -1814,9 +1823,9 @@
    "ccy": "USD",
    "mcap": 568616681472,
    "pe": 34.1549,
-   "fpe": 28.1919,
+   "fpe": 28.1914,
    "eps": 19.11,
-   "feps": 23.152,
+   "feps": 23.1524,
    "revTTM": 36288000000,
    "netIncome": 16958000128,
    "shares": 864657109,
@@ -2155,13 +2164,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 123.1505,
-   "shares": 572600000,
-   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2213,86 +2217,95 @@
  ],
  "news": [
   {
-   "h": "Turtle Creek cède des actions JELD-WEN pour 347.850$",
+   "h": "Une directrice de Qualcomm cède pour 10.074$ d’actions",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-07T00:19:03Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/turtle-creek-cede-des-actions-jeldwen-pour-347850-93CH-3683491"
+   "ts": "2026-11-07T01:32:05Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/une-directrice-de-qualcomm-cede-pour-10074-dactions-93CH-3683507"
   },
   {
-   "h": "Le président exécutif de Kinder Morgan achète pour 15 M$ d’actions",
+   "h": "Une directrice de Procore cède des actions PCOR pour 230.586$",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-07T00:17:16Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-president-executif-de-kinder-morgan-achete-pour-15-m-dactions-93CH-3683490"
+   "ts": "2026-11-07T01:32:04Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/une-directrice-de-procore-cede-des-actions-pcor-pour-230586-93CH-3683506"
   },
   {
-   "h": "Goldman relève ses prévisions mondiales de capacité des data centers à 273 GW d’ici 2030",
+   "h": "Le directeur juridique de Procore Technologies cède des actions pour 193.950$",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-07T00:10:19Z",
-   "url": "https://fr.investing.com/news/stock-market-news/goldman-releve-ses-previsions-mondiales-de-capacite-des-data-centers-a-273-gw-dici-2030-3683488"
+   "ts": "2026-11-07T01:31:56Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-juridique-de-procore-technologies-cede-des-actions-pour-193950-93CH-3683505"
   },
   {
-   "h": "Le PDG de Sprouts Farmers Market vend des actions pour 1,14M$",
+   "h": "Le président d’Accel Entertainment vend des actions pour 517.628$",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-07T00:02:18Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-sprouts-farmers-market-vend-des-actions-pour-114m-93CH-3683486"
+   "ts": "2026-11-07T01:31:53Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-president-daccel-entertainment-vend-des-actions-pour-517628-93CH-3683504"
   },
   {
-   "h": "Le PDG de Mondelez, Dirk Van de Put, cède 8,8 millions $ d’actions",
+   "h": "Radian Group : un cadre supérieur cède des actions pour 308.600$",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-06T23:47:16Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-mondelez-dirk-van-de-put-cede-88-millions--dactions-93CH-3683485"
+   "ts": "2026-11-07T01:17:05Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/radian-group--un-cadre-superieur-cede-des-actions-pour-308600-93CH-3683503"
   },
   {
-   "h": "Le PDG de Mondelez vend des actions pour 8,5 millions de dollars",
+   "h": "L’ARK de Cathie Wood vend CareDx, achète Natera et Kratos",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-06T23:46:55Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-mondelez-vend-des-actions-pour-85-millions-de-dollars-93CH-3683484"
+   "ts": "2026-11-07T01:06:56Z",
+   "url": "https://fr.investing.com/news/company-news/lark-de-cathie-wood-vend-caredx-achete-natera-et-kratos-93CH-3683502"
   },
   {
-   "h": "Le directeur marketing de Procept BioRobotics cède des actions pour 92.852$",
+   "h": "La directrice juridique d’Apollo Global vend des actions pour 864.763$",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-06T23:46:39Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-marketing-de-procept-biorobotics-cede-des-actions-pour-92852-93CH-3683482"
+   "ts": "2026-11-07T01:02:14Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-juridique-dapollo-global-vend-des-actions-pour-864763-93CH-3683499"
   },
   {
-   "h": "Le directeur d’El Pollo Loco, Sardar Biglari, cède 316.024$ d’actions",
+   "h": "Le président exécutif de Morningstar, Mansueto, cède 1,79 M$ d’actions",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-06T23:38:24Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-del-pollo-loco-sardar-biglari-cede-316024-dactions-93CH-3683481"
+   "ts": "2026-11-07T01:01:43Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-president-executif-de-morningstar-mansueto-cede-179-m-dactions-93CH-3683498"
   },
   {
-   "h": "Fox finalise l’acquisition de Roku, cotation suspendue au NASDAQ",
+   "h": "Groq, soutenu par Nvidia, vise une valorisation de 8 milliards $",
    "w": "",
    "syms": [
-    "NDX"
+    "NVDA"
    ],
    "src": "Investing.com France",
-   "ts": "2026-11-06T23:36:18Z",
-   "url": "https://fr.investing.com/news/sec-filings/fox-finalise-lacquisition-de-roku-cotation-suspendue-au-nasdaq-93CH-3683480"
+   "ts": "2026-11-07T01:00:53Z",
+   "url": "https://fr.investing.com/news/stock-market-news/groq-soutenu-par-nvidia-vise-une-valorisation-de-8-milliards--3683500"
   },
   {
-   "h": "Le directeur de GlobalFoundries Ganesh Moorthy achète pour 93.687$ d’actions",
+   "h": "‘It’s almost like a nightclub’: Hyrox takes off in China amid fitness frenzy",
+   "w": "Group behind gruelling competitive races faces challenges from Chinese rivals",
+   "syms": [],
+   "src": "myFT — emerging markets",
+   "ts": "2026-11-07T01:00:00Z",
+   "url": "https://www.ft.com/content/ac76efa6-a309-41c6-ab51-b64225f2c18b?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "La présidente et COO d’Adaptive Biotechnologies cède des actions pour 954.000$",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-06T23:32:44Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-de-globalfoundries-ganesh-moorthy-achete-pour-93687-dactions-93CH-3683479"
+   "ts": "2026-11-07T00:47:14Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/la-presidente-et-coo-dadaptive-biotechnologies-cede-des-actions-pour-954000-93CH-3683497"
   },
   {
    "h": "US warns China it must ‘immediately’ meet terms of Busan trade deal",
@@ -2510,6 +2523,30 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-06T20:03:25Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/06/l-irlande-visee-par-des-alertes-a-la-bombe-une-semaine-avant-la-tenue-de-deux-sommets-europeens-a-dublin_6807865_3234.html"
+  },
+  {
+   "h": "Russia took a Japanese journalist. Tokyo should speak up",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-06T19:48:48.323612Z",
+   "url": "https://asia.nikkei.com/opinion/russia-took-a-japanese-journalist.-tokyo-should-speak-up"
+  },
+  {
+   "h": "Grab to cut maximum take on Vietnam rides to 32% from 40%",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-06T19:48:48.323612Z",
+   "url": "https://asia.nikkei.com/business/startups/grab-to-cut-maximum-take-on-vietnam-rides-to-32-from-40"
+  },
+  {
+   "h": "Editor's Choice: US anti-data center sentiment spreads, hitting Asian markets",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-06T19:48:48.323612Z",
+   "url": "https://asia.nikkei.com/editor-s-picks/editor-in-chief-s-picks/editor-s-choice-us-anti-data-center-sentiment-spreads-hitting-asian-markets"
   },
   {
    "h": "« La propagande d’extrême droite tue » : à Paris des activistes « déménagent » un Relay pour dénoncer le « monopole » de Bolloré",
@@ -2763,6 +2800,14 @@
    "mine": 1
   },
   {
+   "h": "Activist Au Kam-san jailed 12.5 years in 1st Macao national security case",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-06T17:23:19.160070Z",
+   "url": "https://asia.nikkei.com/politics/activist-au-kam-san-jailed-12.5-years-in-1st-macao-national-security-case"
+  },
+  {
    "h": "Japan's Takaichi pushes for tougher cybersecurity laws as attacks surge",
    "w": "",
    "syms": [],
@@ -2777,14 +2822,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-06T17:23:19.160070Z",
    "url": "https://asia.nikkei.com/politics/u.s.-midterm-elections/democrats-midterm-gains-hang-over-data-centers-japanese-us-investment"
-  },
-  {
-   "h": "Activist Au Kam-san jailed 12.5 years in 1st Macao national security case",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T17:23:19.160070Z",
-   "url": "https://asia.nikkei.com/politics/activist-au-kam-san-jailed-12.5-years-in-1st-macao-national-security-case"
   },
   {
    "h": "James Talarico: the Democrats’ rising star who turned Texas blue",
@@ -2828,30 +2865,6 @@
    "ts": "2026-11-06T16:47:12Z",
    "url": "https://www.ft.com/content/3a70a224-6d6c-4480-bd14-241fe3f6a987?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Seres, Li Auto join Chinese EVs' charge into Europe",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T16:43:33.535326Z",
-   "url": "https://asia.nikkei.com/business/automobiles/electric-vehicles/seres-li-auto-join-chinese-evs-charge-into-europe"
-  },
-  {
-   "h": "US slaps sanctions on Cambodia's Prince Group over online scams",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T16:43:33.535326Z",
-   "url": "https://asia.nikkei.com/spotlight/society/crime/us-slaps-sanctions-on-cambodia-s-prince-group-over-online-scams"
-  },
-  {
-   "h": "China enacts law to hunt down corrupt officials who escape overseas",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T16:43:33.535326Z",
-   "url": "https://asia.nikkei.com/politics/china-enacts-law-to-hunt-down-corrupt-officials-who-escape-overseas"
   },
   {
    "h": "Copper prices fall on fears of AI backlash",
@@ -3060,15 +3073,6 @@
    "src": "myFT — financials",
    "ts": "2026-11-06T12:23:58Z",
    "url": "https://www.ft.com/content/aa99a49b-d6fa-473e-9e8a-7d7906ab4f79?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "World ‘virtually certain’ to exceed average 1.5C of warming in 2026, EU agency says",
-   "w": "October ranks as warmest on record with average global air temperature 1.75C above pre-industrial levels",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-06T12:09:12Z",
-   "url": "https://www.ft.com/content/1860f560-2400-4881-a98f-9101eb3d8705?syn-25a6b1a6=1",
    "mine": 1
   }
  ],
