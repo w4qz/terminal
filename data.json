@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T09:24:11.834511Z",
+ "generated_at": "2026-11-07T10:12:02.688035Z",
  "quotes": {
   "NVDA": {
    "p": 186.68,
@@ -632,8 +632,8 @@
    "prev": 1.3477,
    "chg": -0.0121,
    "pct": -0.9,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (GBPUSD=X) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (GBPUSD=X)",
    "ts": "2026-11-06T22:30:00Z",
    "open": 1.3455,
    "lo": 1.3344,
@@ -700,10 +700,10 @@
    ]
   },
   "XAU": {
-   "p": 4079.5,
+   "p": 4074.8999,
    "prev": 4113.5,
-   "chg": -34.0,
-   "pct": -0.83,
+   "chg": -38.6001,
+   "pct": -0.94,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (GC=F)",
    "ts": "2026-11-06T22:00:00Z",
@@ -737,10 +737,10 @@
    ]
   },
   "CL": {
-   "p": 90.34,
+   "p": 90.83,
    "prev": 90.52,
-   "chg": -0.18,
-   "pct": -0.2,
+   "chg": 0.31,
+   "pct": 0.34,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (CL=F)",
    "ts": "2026-11-06T22:00:00Z",
@@ -774,10 +774,10 @@
    ]
   },
   "BRENT": {
-   "p": 97.76,
+   "p": 98.32,
    "prev": 98.29,
-   "chg": -0.53,
-   "pct": -0.54,
+   "chg": 0.03,
+   "pct": 0.03,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-06T22:00:00Z",
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 76038.0078,
+   "p": 75965.3203,
    "prev": 75746.9297,
-   "chg": 291.0781,
-   "pct": 0.38,
+   "chg": 218.3906,
+   "pct": 0.29,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-07T09:24:11.834511Z",
+   "ts": "2026-11-07T10:12:02.688035Z",
    "open": 75741.0156,
    "lo": 75703.4219,
    "hi": 76101.3047,
-   "vol": 22805043200,
+   "vol": 22245789696,
    "h": [
     81382.15,
     82017.6,
@@ -844,7 +844,7 @@
     80405.29,
     75942.12,
     75746.93,
-    76038.01
+    75965.32
    ]
   }
  },
@@ -1522,14 +1522,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 995843768320,
+   "mcap": 998898073600,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -1653,7 +1653,7 @@
    "eps": 12.32,
    "feps": 17.1266,
    "revTTM": 45902999552,
-   "netIncome": 23503998976,
+   "netIncome": 23311998976,
    "shares": 1728000000,
    "beta": 0.786,
    "div": 3.12,
@@ -1669,13 +1669,13 @@
    "opMargin": 63.728,
    "netMargin": 51.204,
    "roe": 63.507,
-   "debtEq": 61.12,
+   "debtEq": 63.568,
    "cash": 14083000320,
-   "debt": 22070999040,
-   "fcf": 21118375936,
+   "debt": 22954999808,
+   "fcf": 20983375872,
    "w52lo": 293.89,
    "w52hi": 442.23,
-   "evEbitda": 24.164,
+   "evEbitda": 24.606,
    "earnTs": 1793131200,
    "earnStart": 1800997200,
    "earnEnd": 1800997200,
@@ -1716,10 +1716,10 @@
    "debtEq": 12.568,
    "cash": 12152999936,
    "debt": 34250000384,
-   "fcf": 28896249856,
+   "fcf": 28318750720,
    "w52lo": 114.19,
    "w52hi": 188.5,
-   "evEbitda": 8.942,
+   "evEbitda": 9.048,
    "earnTs": 1793363400,
    "earnStart": 1801229400,
    "earnEnd": 1801229400,
@@ -1780,9 +1780,9 @@
    "industry": "Semiconductor Equipment & Materials",
    "ccy": "EUR",
    "mcap": 494722187264,
-   "pe": 37.6864,
+   "pe": 36.6953,
    "fpe": 22.7451,
-   "eps": 34.06,
+   "eps": 34.98,
    "feps": 56.4342,
    "revTTM": 39473500160,
    "netIncome": 13474299904,
@@ -1913,7 +1913,7 @@
    "fpe": 12.869,
    "eps": 13.62,
    "feps": 16.521,
-   "revTTM": 226326003712,
+   "revTTM": 226256994304,
    "netIncome": 26976000000,
    "shares": 1951000000,
    "beta": 0.453,
@@ -1926,15 +1926,17 @@
    "analysts": 24,
    "revGrowth": 34.8,
    "epsGrowth": 178.0,
-   "grossMargin": 44.402,
-   "opMargin": 18.009,
-   "netMargin": 11.919,
-   "debtEq": 18.959,
-   "cash": 8529999872,
-   "debt": 37075001344,
+   "grossMargin": 44.385,
+   "opMargin": 17.89,
+   "netMargin": 11.923,
+   "roe": 13.853,
+   "debtEq": 16.769,
+   "cash": 12803999744,
+   "debt": 33533999104,
+   "fcf": 26048374784,
    "w52lo": 146.49,
    "w52hi": 236.48,
-   "evEbitda": 7.719,
+   "evEbitda": 7.596,
    "earnTs": 1793363400,
    "earnStart": 1801229400,
    "earnEnd": 1801229400,
@@ -2165,13 +2167,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 123.1505,
-   "shares": 572600000,
-   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2222,6 +2219,22 @@
   }
  ],
  "news": [
+  {
+   "h": "Une directrice d’Advanced Energy Industries vend des actions pour 53.005$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T09:17:08Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/une-directrice-dadvanced-energy-industries-vend-des-actions-pour-53005-93CH-3683580"
+  },
+  {
+   "h": "SoftBank et ABB envisagent une scission chinoise pour sauver leur accord à 5,4 milliards $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T09:12:53Z",
+   "url": "https://fr.investing.com/news/company-news/softbank-et-abb-envisagent-une-scission-chinoise-pour-sauver-leur-accord-a-54-milliards--3683581"
+  },
   {
    "h": "Why a wave of bomb threats is proving so difficult for Europe's aviation authorities to contain",
    "w": "The \"weakest point of aviation is targeting it in-flight,\" analysts say — but any change to procedures will be a lengthy process.",
@@ -2313,22 +2326,6 @@
    "src": "CNBC — Marchés",
    "ts": "2026-11-07T07:37:36Z",
    "url": "https://www.cnbc.com/2026/11/07/trump-us-minor-strikes-iran-qeshm-island.html"
-  },
-  {
-   "h": "Une administratrice de Bristol Myers Squibb cède des actions pour 240.578$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T07:02:15Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/une-administratrice-de-bristol-myers-squibb-cede-des-actions-pour-240578-93CH-3683562"
-  },
-  {
-   "h": "Le Premier ministre britannique Burnham cherche à se rapprocher de l’UE",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T07:01:55Z",
-   "url": "https://fr.investing.com/news/economy-news/le-premier-ministre-britannique-burnham-cherche-a-se-rapprocher-de-lue-3683563"
   },
   {
    "h": "The race is on to build the first fusion power plant — and Europe is looking to Japan for help",
@@ -2582,6 +2579,38 @@
    "url": "https://www.lemonde.fr/idees/article/2026/11/07/le-neoliberalisme-est-il-mort-vie-et-metamorphoses-de-la-doctrine-qui-a-faconne-le-monde-contemporain_6808201_3232.html"
   },
   {
+   "h": "New Zealand's two main parties deadlocked in early election counting",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T04:12:02.688035Z",
+   "url": "https://asia.nikkei.com/politics/new-zealand-s-two-main-parties-deadlocked-in-early-election-counting"
+  },
+  {
+   "h": "Prep schools help Chinese students get into Japan's top universities",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T04:12:02.688035Z",
+   "url": "https://asia.nikkei.com/business/education/prep-schools-help-chinese-students-get-into-japan-s-top-universities"
+  },
+  {
+   "h": "Democrats' midterm gains hang over data centers, Japanese US investment",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T04:12:02.688035Z",
+   "url": "https://asia.nikkei.com/politics/u.s.-midterm-elections/democrats-midterm-gains-hang-over-data-centers-japanese-us-investment"
+  },
+  {
+   "h": "China enacts law to hunt down corrupt officials who escape overseas",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T04:12:02.688035Z",
+   "url": "https://asia.nikkei.com/politics/china-enacts-law-to-hunt-down-corrupt-officials-who-escape-overseas"
+  },
+  {
    "h": "Taiwan's KMT old guard fights for power base in tight Taipei mayoral races",
    "w": "",
    "syms": [],
@@ -2633,14 +2662,6 @@
    "url": "https://asia.nikkei.com/politics/international-relations/putin-exploits-takaichi-s-diplomatic-opening-with-japan-tobacco-grab"
   },
   {
-   "h": "Taiwan, South Korea, Japan stock markets hit hard by AI sell-off",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T02:31:51.407218Z",
-   "url": "https://asia.nikkei.com/business/markets/taiwan-south-korea-japan-stock-markets-hit-hard-by-ai-sell-off"
-  },
-  {
    "h": "Inside the card-grading empire shaping the price of Pokémon cards",
    "w": "PSA’s resale premium, backlog and grading-market dominance shape what collectors pay — and how much their Pokémon cards may fetch.",
    "syms": [],
@@ -2673,14 +2694,6 @@
    "url": "https://asia.nikkei.com/politics/activist-au-kam-san-jailed-12.5-years-in-1st-macao-national-security-case"
   },
   {
-   "h": "Japan's Takaichi pushes for tougher cybersecurity laws as attacks surge",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T01:44:05.925618Z",
-   "url": "https://asia.nikkei.com/spotlight/cybersecurity/japan-s-takaichi-pushes-for-tougher-cybersecurity-laws-as-attacks-surge"
-  },
-  {
    "h": "‘It’s almost like a nightclub’: Hyrox takes off in China amid fitness frenzy",
    "w": "Group behind gruelling competitive races faces challenges from Chinese rivals",
    "syms": [],
@@ -2688,22 +2701,6 @@
    "ts": "2026-11-07T01:00:00Z",
    "url": "https://www.ft.com/content/ac76efa6-a309-41c6-ab51-b64225f2c18b?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Seres, Li Auto join Chinese EVs' charge into Europe",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T00:40:42.764974Z",
-   "url": "https://asia.nikkei.com/business/automobiles/electric-vehicles/seres-li-auto-join-chinese-evs-charge-into-europe"
-  },
-  {
-   "h": "US slaps sanctions on Cambodia's Prince Group over online scams",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T00:40:42.764974Z",
-   "url": "https://asia.nikkei.com/spotlight/society/crime/us-slaps-sanctions-on-cambodia-s-prince-group-over-online-scams"
   },
   {
    "h": "US warns China it must ‘immediately’ meet terms of Busan trade deal",
@@ -2915,7 +2912,7 @@
    "url": "https://www.lemonde.fr/economie/article/2026/11/06/l-irlande-visee-par-des-alertes-a-la-bombe-une-semaine-avant-la-tenue-de-deux-sommets-europeens-a-dublin_6807865_3234.html"
   },
   {
-   "h": "« La propagande d’extrême droite tue » : à Paris des activistes « déménagent » un Relay pour dénoncer le « monopole » de Bolloré",
+   "h": "« La propagande d’extrême droite tue » : à Paris, des militants « déménagent » un Relay pour dénoncer le « monopole » de Vincent Bolloré",
    "w": "Des militants ont vidé un Relay à Montparnasse, accusant la SNCF de favoriser la diffusion d’ouvrages d’extrême droite et de manquer de neutralité dans l’espace public.",
    "syms": [],
    "src": "Le Monde — Économie",
