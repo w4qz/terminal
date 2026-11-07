@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T22:57:01.366296Z",
+ "generated_at": "2026-11-07T23:34:57.368982Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
@@ -560,8 +560,8 @@
    "prev": 1.1235,
    "chg": -0.0092,
    "pct": -0.82,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (EURUSD=X) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (EURUSD=X)",
    "ts": "2026-11-06T22:30:00Z",
    "open": 1.1228,
    "lo": 1.1133,
@@ -704,8 +704,8 @@
    "prev": 4113.5,
    "chg": -38.6001,
    "pct": -0.94,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (GC=F)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (GC=F) — échec de la dernière mise à jour",
    "ts": "2026-11-06T22:00:00Z",
    "open": 4098.5,
    "lo": 4035.1001,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75677.0312,
+   "p": 75719.7891,
    "prev": 75746.9297,
-   "chg": -69.8984,
-   "pct": -0.09,
+   "chg": -27.1406,
+   "pct": -0.04,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-07T22:57:01.366296Z",
+   "ts": "2026-11-07T23:34:57.368982Z",
    "open": 75741.0156,
    "lo": 75518.6562,
    "hi": 76101.3047,
-   "vol": 9605586944,
+   "vol": 9465180160,
    "h": [
     81382.15,
     82017.6,
@@ -844,7 +844,7 @@
     80405.29,
     75942.12,
     75746.93,
-    75677.03
+    75719.79
    ]
   }
  },
@@ -2225,20 +2225,28 @@
  ],
  "news": [
   {
+   "h": "Trump offers UFC chief Dana White press secretary job",
+   "w": "President Donald Trump offered the job of press secretary to UFC president and CEO Dana White on Saturday.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-07T23:13:38Z",
+   "url": "https://www.cnbc.com/2026/11/07/trump-ufc-dana-white-press-secretary-offer.html"
+  },
+  {
+   "h": "Voyager Technologies sélectionné pour le contrat lunaire de 10 milliards $ de la NASA",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T23:05:55Z",
+   "url": "https://fr.investing.com/news/company-news/voyager-technologies-selectionne-pour-le-contrat-lunaire-de-10-milliards--de-la-nasa-93CH-3683665"
+  },
+  {
    "h": "Risk of Iran war escalation remains high despite Democratic sweep in U.S. midterm elections",
    "w": "The U.S. and Iran are on a collision course as tensions in the Middle East simmer.",
    "syms": [],
    "src": "CNBC — Marchés",
    "ts": "2026-11-07T22:17:52Z",
    "url": "https://www.cnbc.com/2026/11/07/iran-war-midterm-election-oil-price-trump.html"
-  },
-  {
-   "h": "Trump offers UFC chief Dana White press secretary job",
-   "w": "President Donald Trump offered the job of press secretary to UFC president and CEO Dana White on Saturday.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-07T22:03:06Z",
-   "url": "https://www.cnbc.com/2026/11/07/trump-ufc-dana-white-press-secretary-offer.html"
   },
   {
    "h": "Gunman kills six in Kraków shooting",
@@ -2391,14 +2399,6 @@
    "url": "https://www.marketwatch.com/story/medicare-prescription-drug-costs-will-jump-50-in-2027-doing-nothing-could-cost-you-b701dfb7?mod=mw_rss_topstories"
   },
   {
-   "h": "Diginex repousse la date limite d’acquisition de Resulticks au 19 novembre",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T19:13:25Z",
-   "url": "https://fr.investing.com/news/company-news/diginex-repousse-la-date-limite-dacquisition-de-resulticks-au-19-novembre-93CH-3683646"
-  },
-  {
    "h": "Democrats’ big election win revives a difficult Social Security question: Who pays?",
    "w": "There are many ideas for saving Social Security. All of them will hurt.",
    "syms": [],
@@ -2414,6 +2414,30 @@
    "ts": "2026-11-07T17:42:41Z",
    "url": "https://www.ft.com/content/5cb562ec-5493-4ff3-bd2d-99cc9cacfa73?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "Gen Z and AI are changing the world of video games",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T17:34:57.368982Z",
+   "url": "https://asia.nikkei.com/opinion/gen-z-and-ai-are-changing-the-world-of-video-games"
+  },
+  {
+   "h": "New Zealand's knife-edge election puts coalition talks in focus",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T17:34:57.368982Z",
+   "url": "https://asia.nikkei.com/politics/new-zealand-s-knife-edge-election-puts-coalition-talks-in-focus"
+  },
+  {
+   "h": "Taiwan's KMT old guard fights for power base in tight Taipei mayoral races",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T17:34:57.368982Z",
+   "url": "https://asia.nikkei.com/politics/taiwan-s-kmt-old-guard-fights-for-power-base-in-tight-taipei-mayoral-races"
   },
   {
    "h": "I’m 65 and worth more than $5.6 million. Can I afford a $200,000 camper?",
@@ -2555,38 +2579,12 @@
    "url": "https://asia.nikkei.com/business/automobiles/electric-vehicles/seres-li-auto-join-chinese-evs-charge-into-europe"
   },
   {
-   "h": "US slaps sanctions on Cambodia's Prince Group over online scams",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T15:36:08.318571Z",
-   "url": "https://asia.nikkei.com/spotlight/society/crime/us-slaps-sanctions-on-cambodia-s-prince-group-over-online-scams"
-  },
-  {
    "h": "Berkshire Hathaway more than doubles buybacks in third quarter as earnings decline",
    "w": "Berkshire Hathaway said Saturday it accelerated its share repurchases during the third quarter, as operating and overall profits took a hit.",
    "syms": [],
    "src": "CNBC — Marchés",
    "ts": "2026-11-07T15:23:46Z",
    "url": "https://www.cnbc.com/2026/11/07/berkshire-hathaway-q3-2026-earnings-buybacks.html"
-  },
-  {
-   "h": "Japan manufacturers lift profit outlooks on price hikes, weak yen",
-   "w": "",
-   "syms": [
-    "USDJPY"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T14:57:51.010019Z",
-   "url": "https://asia.nikkei.com/business/business-trends/japan-manufacturers-lift-profit-outlooks-on-price-hikes-weak-yen"
-  },
-  {
-   "h": "Credit Saison, ADB to partner on loans for Asia's small businesses",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T14:57:51.010019Z",
-   "url": "https://asia.nikkei.com/business/finance/credit-saison-adb-to-partner-on-loans-for-asia-s-small-businesses"
   },
   {
    "h": "What midterm election blue wave rebuke of Trump means for renewable energy",
