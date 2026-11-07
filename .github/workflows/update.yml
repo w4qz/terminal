@@ -3,7 +3,7 @@ name: Mise à jour des données (rapide)
 
 on:
   schedule:
-    - cron: "5,35 * * * *"    # secours si le relais Cloudflare ne déclenche pas (déclenchement principal : relais, */10 * * * *)
+    - cron: "*/10 * * * *"    # toutes les 10 minutes (GitHub décale parfois les passages)
   workflow_dispatch:          # bouton « Run workflow » (manuel) ou relais Cloudflare (auto = true)
     inputs:
       auto:
