@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T05:51:28.194938Z",
+ "generated_at": "2026-11-07T06:40:42.764974Z",
  "quotes": {
   "NVDA": {
    "p": 186.68,
@@ -154,8 +154,8 @@
    "prev": 51523.0586,
    "chg": -251.4805,
    "pct": -0.49,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^DJI) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^DJI)",
    "ts": "2026-11-06T21:00:00Z",
    "open": 51078.8516,
    "lo": 50992.6094,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75933.0703,
+   "p": 75936.3828,
    "prev": 75942.125,
-   "chg": -9.0547,
+   "chg": -5.7422,
    "pct": -0.01,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-07T05:51:28.194938Z",
+   "ts": "2026-11-07T06:40:42.764974Z",
    "open": 75741.0156,
    "lo": 75703.4219,
    "hi": 75998.1172,
-   "vol": 25821386752,
+   "vol": 25646561280,
    "h": [
     81500.8,
     81382.15,
@@ -844,7 +844,7 @@
     77345.05,
     80405.29,
     75942.12,
-    75933.07
+    75936.38
    ]
   }
  },
@@ -1116,7 +1116,7 @@
    "ccy": "USD",
    "mcap": 1823529500672,
    "fpe": 52.3535,
-   "eps": 0.25,
+   "eps": 0.23,
    "feps": 2.5647,
    "revTTM": 32042999808,
    "netIncome": -3431000064,
@@ -1141,7 +1141,7 @@
    "earnEnd": 1792526400,
    "earnEst": false,
    "trailDiv": 0.0,
-   "pe_ns": 537.08
+   "pe_ns": 583.7826
   },
   "2222.SR": {
    "name": "Saudi Arabian Oil Company",
@@ -1276,9 +1276,9 @@
    "industry": "Semiconductors",
    "ccy": "USD",
    "mcap": 1401967345664,
-   "pe": 37.2231,
+   "pe": 37.5083,
    "fpe": 15.0881,
-   "eps": 7.89,
+   "eps": 7.83,
    "feps": 19.4651,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
@@ -1522,14 +1522,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 998898073600,
+   "mcap": 995843768320,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -1692,9 +1692,9 @@
    "industry": "Oil & Gas Integrated",
    "ccy": "USD",
    "mcap": 676620599296,
-   "pe": 17.0123,
+   "pe": 17.0648,
    "fpe": 13.4044,
-   "eps": 9.75,
+   "eps": 9.72,
    "feps": 12.3743,
    "revTTM": 388231987200,
    "netIncome": 40621998080,
@@ -1867,10 +1867,10 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 514924281856,
-   "pe": 49.5425,
-   "fpe": 18.0004,
-   "eps": 5.88,
-   "feps": 16.1835,
+   "pe": 50.0533,
+   "fpe": 17.9966,
+   "eps": 5.82,
+   "feps": 16.187,
    "revTTM": 66013999104,
    "netIncome": 10302999552,
    "shares": 1767616306,
@@ -1909,9 +1909,9 @@
    "industry": "Oil & Gas Integrated",
    "ccy": "USD",
    "mcap": 414802116608,
-   "pe": 15.6331,
+   "pe": 15.6101,
    "fpe": 12.869,
-   "eps": 13.6,
+   "eps": 13.62,
    "feps": 16.521,
    "revTTM": 226326003712,
    "netIncome": 26976000000,
@@ -1995,9 +1995,9 @@
    "industry": "Software - Infrastructure",
    "ccy": "USD",
    "mcap": 386435252224,
-   "pe": 109.102,
+   "pe": 112.9437,
    "fpe": 63.8374,
-   "eps": 1.47,
+   "eps": 1.42,
    "feps": 2.5123,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
@@ -2165,8 +2165,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 123.1505,
+   "shares": 572600000,
+   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2218,6 +2223,38 @@
  ],
  "news": [
   {
+   "h": "Schroders cherche à vendre un centre commercial à Singapour pour 172 millions $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T06:17:02Z",
+   "url": "https://fr.investing.com/news/company-news/schroders-cherche-a-vendre-un-centre-commercial-a-singapour-pour-172-millions--3683558"
+  },
+  {
+   "h": "Le directeur financier d’AutoZone vend des actions pour 22,9 millions $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T06:02:24Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-dautozone-vend-des-actions-pour-229-millions--93CH-3683557"
+  },
+  {
+   "h": "Un administrateur de Bridgewater Bancshares vend des actions pour 404.218$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T06:02:06Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-bridgewater-bancshares-vend-des-actions-pour-404218-93CH-3683556"
+  },
+  {
+   "h": "Prem Shah, vice-président de CVS Health, achète pour 2 millions $ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T06:01:56Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/prem-shah-vicepresident-de-cvs-health-achete-pour-2-millions--dactions-93CH-3683555"
+  },
+  {
    "h": "L’épouse du PDG d’Amplitude cède des actions pour 16.839$",
    "w": "",
    "syms": [],
@@ -2264,38 +2301,6 @@
    "src": "Investing.com France",
    "ts": "2026-11-07T05:35:53Z",
    "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-technologique-de-wayfair-vend-des-actions-pour-186-million--93CH-3683549"
-  },
-  {
-   "h": "L’ex-directeur financier Craig Conti cède 20.074$ d’actions Verra Mobility",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T05:35:34Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/lexdirecteur-financier-craig-conti-cede-20074-dactions-verra-mobility-93CH-3683548"
-  },
-  {
-   "h": "Le directeur digital de Levi Strauss vend des actions pour 83.367$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T05:35:27Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-digital-de-levi-strauss-vend-des-actions-pour-83367-93CH-3683547"
-  },
-  {
-   "h": "Le PDG d’Omada Health vend des actions pour 248.730$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T05:32:06Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-domada-health-vend-des-actions-pour-248730-93CH-3683546"
-  },
-  {
-   "h": "Le président de Generac Home, Norman Taffe, cède des actions GNRC pour 54.603$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T05:31:47Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-president-de-generac-home-norman-taffe-cede-des-actions-gnrc-pour-54603-93CH-3683545"
   },
   {
    "h": "UK will not slow down on AI despite backlash in US, says growth minister",
@@ -2561,6 +2566,30 @@
    "mine": 1
   },
   {
+   "h": "Seres, Li Auto join Chinese EVs' charge into Europe",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T00:40:42.764974Z",
+   "url": "https://asia.nikkei.com/business/automobiles/electric-vehicles/seres-li-auto-join-chinese-evs-charge-into-europe"
+  },
+  {
+   "h": "US slaps sanctions on Cambodia's Prince Group over online scams",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T00:40:42.764974Z",
+   "url": "https://asia.nikkei.com/spotlight/society/crime/us-slaps-sanctions-on-cambodia-s-prince-group-over-online-scams"
+  },
+  {
+   "h": "Democrats' midterm gains hang over data centers, Japanese US investment",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T00:40:42.764974Z",
+   "url": "https://asia.nikkei.com/politics/u.s.-midterm-elections/democrats-midterm-gains-hang-over-data-centers-japanese-us-investment"
+  },
+  {
    "h": "Prep schools help Chinese students get into Japan's top universities",
    "w": "",
    "syms": [],
@@ -2737,30 +2766,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-06T21:37:00Z",
    "url": "https://www.marketwatch.com/story/data-centers-run-on-debt-that-was-a-problem-for-bonds-this-year-and-its-only-going-to-get-worse-09c03be6?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Japan's unprotected deposits hit $890bn as inheritances inflate accounts",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T21:25:41.686306Z",
-   "url": "https://asia.nikkei.com/business/finance/japan-s-unprotected-deposits-hit-890bn-as-inheritances-inflate-accounts"
-  },
-  {
-   "h": "Activist Au Kam-san jailed 12.5 years in 1st Macao national security case",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T21:25:41.686306Z",
-   "url": "https://asia.nikkei.com/politics/activist-au-kam-san-jailed-12.5-years-in-1st-macao-national-security-case"
-  },
-  {
-   "h": "Japan's Takaichi pushes for tougher cybersecurity laws as attacks surge",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T21:25:41.686306Z",
-   "url": "https://asia.nikkei.com/spotlight/cybersecurity/japan-s-takaichi-pushes-for-tougher-cybersecurity-laws-as-attacks-surge"
   },
   {
    "h": "Nvidia, AMD and other chip stocks rebound — but is relief from the ‘violent’ selloff only temporary?",
