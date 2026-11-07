@@ -67,7 +67,8 @@ def main() -> int:
         fund = json.loads(FUND.read_text(encoding="utf-8")).get("items", {})
     except Exception:
         fund = {}
-    us = [s for s in dict.fromkeys([*FUND_TICKERS, *univ]) if "." not in s and "=" not in s and "^" not in s]
+    us = [s for s in dict.fromkeys([*FUND_TICKERS, *univ]) if "." not in s and "=" not in s and "^" not in s
+          and s not in ("ACWI", "AGG", "BIL", "GLD", "SPY", "QQQ", "IWM", "TLT")]   # fonds : pas de résultats de société
     us_set = set(us)
 
     # 1. Calendrier des résultats (tout le marché américain, filtré sur le catalogue)
@@ -114,10 +115,13 @@ def main() -> int:
                                  "e": x.get("estimate"), "sp": x.get("surprisePercent")} for x in (sur or [])[:4]]}
             ok += 1
         except Exception as ex:
-            log(f"  ! {s} : {str(ex)[:80]}")
-            if "401" in str(ex) or "403" in str(ex):
-                log("Clé Finnhub refusée : vérifiez le secret FINNHUB_API_KEY.")
+            msg = str(ex)
+            if "401" in msg:
+                log("Clé Finnhub refusée (401) : vérifiez le secret FINNHUB_API_KEY.")
                 break
+            # 403 = titre non couvert par la formule gratuite (fonds, titre étranger…) : on le note et on passe au suivant
+            cache[s] = {"ts": NOW.isoformat().replace("+00:00", "Z"), "none": "403" in msg}
+            log(f"  · {s} : {msg[:70]}")
     cache = {k: v for k, v in cache.items() if k in us_set}
     OUT.write_text(json.dumps({"generated_at": NOW.isoformat().replace("+00:00", "Z"),
                                "source": "Finnhub (formule gratuite)", "earnings": earnings, "co": cache},
