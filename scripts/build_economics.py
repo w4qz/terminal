@@ -103,27 +103,27 @@ SPEC = [
     ("EUIRYY", "Inflation HICP / CPI (IPCH, a/a)", "Zone euro", "%", [("estat", "prc_hicp_manr", "geo=EA20&coicop=CP00"), ("estat", "prc_hicp_minr", "geo=EA20&coicop18=TOTAL&unit=RCH_A"), ("estat", "teicp000", "geo=EA20&coicop=CP00&unit=RCH_A"), ("ecb", "ICP/M.U2.N.000000.4.ANR"), F("CP0000EZ19M086NEST", "pc1")]),
     ("EUCIR", "Inflation sous-jacente (IPCH hors énergie et alimentation, a/a)", "Zone euro", "%", [("estat", "prc_hicp_manr", "geo=EA20&coicop=TOT_X_NRG_FOOD"), ("estat", "prc_hicp_minr", "geo=EA20&coicop18=TOT_X_NRG_FOOD&unit=RCH_A"), ("ecb", "ICP/M.U2.N.XEF000.4.ANR")]),
     ("EUUR", "Taux de chômage", "Zone euro", "%", [("estat", "une_rt_m", "geo=EA20&s_adj=SA&age=TOTAL&sex=T&unit=PC_ACT"), ("ecb", "LFSI/M.I9.S.UNEHRT.TOTAL0.15_74.T"), F("LRHUTTTTEZM156S")]),
-    ("EUGDPYY", "Croissance du PIB (a/a)", "Zone euro", "%", [F("CLVMNACSCAB1GQEA19", "pc1"), F("CLVMNACSCAB1GQEA20", "pc1")]),
-    ("EUGDP", "PIB nominal (rythme annuel)", "Zone euro", "Md€", [F("CPMNACSCAB1GQEA20", scale=A), F("CPMNACSCAB1GQEA19", scale=A)]),
+    ("EUGDPYY", "Croissance du PIB (a/a)", "Zone euro", "%", [("estat", "namq_10_gdp", "geo=EA20&unit=CLV_PCH_SM&s_adj=SCA&na_item=B1GQ"), F("CLVMNACSCAB1GQEA19", "pc1"), F("CLVMNACSCAB1GQEA20", "pc1")]),
+    ("EUGDP", "PIB nominal (rythme annuel)", "Zone euro", "Md€", [("estat", "namq_10_gdp", "geo=EA20&unit=CP_MEUR&s_adj=SCA&na_item=B1GQ", 0.004), F("CPMNACSCAB1GQEA20", scale=A), F("CPMNACSCAB1GQEA19", scale=A)]),
     # ── Allemagne, France, Italie
     ("DEIRYY", "Inflation (a/a)", "Allemagne", "%", [("estat", "prc_hicp_manr", "geo=DE&coicop=CP00"), ("estat", "prc_hicp_minr", "geo=DE&coicop18=TOTAL&unit=RCH_A"), ("estat", "teicp000", "geo=DE&coicop=CP00&unit=RCH_A"), ("ecb", "ICP/M.DE.N.000000.4.ANR"), F("CPALTT01DEM659N"), ("wb", "DE", "FP.CPI.TOTL.ZG")]),
     ("DEUR", "Taux de chômage", "Allemagne", "%", [("estat", "une_rt_m", "geo=DE&s_adj=SA&age=TOTAL&sex=T&unit=PC_ACT"), F("LRHUTTTTDEM156S")]),
-    ("DEGDPYY", "Croissance du PIB (a/a)", "Allemagne", "%", [F("CLVMNACSCAB1GQDE", "pc1")]),
-    ("DEGDP", "PIB nominal (rythme annuel)", "Allemagne", "Md€", [F("CPMNACSCAB1GQDE", scale=A)]),
+    ("DEGDPYY", "Croissance du PIB (a/a)", "Allemagne", "%", [("estat", "namq_10_gdp", "geo=DE&unit=CLV_PCH_SM&s_adj=SCA&na_item=B1GQ"), F("CLVMNACSCAB1GQDE", "pc1")]),
+    ("DEGDP", "PIB nominal (rythme annuel)", "Allemagne", "Md€", [("estat", "namq_10_gdp", "geo=DE&unit=CP_MEUR&s_adj=SCA&na_item=B1GQ", 0.004), F("CPMNACSCAB1GQDE", scale=A)]),
     ("DEGDPQQ", "Croissance du PIB (t/t)", "Allemagne", "%", [("estat", "namq_10_gdp", "geo=DE&unit=CLV_PCH_PRE&s_adj=SCA&na_item=B1GQ"), F("CLVMNACSCAB1GQDE", "pch")]),
     ("DE10Y", "Taux à 10 ans (Bund)", "Allemagne", "%", [F("IRLTLT01DEM156N")]),
     ("FRIRYY", "Inflation (a/a)", "France", "%", [("estat", "prc_hicp_manr", "geo=FR&coicop=CP00"), ("estat", "prc_hicp_minr", "geo=FR&coicop18=TOTAL&unit=RCH_A"), ("estat", "teicp000", "geo=FR&coicop=CP00&unit=RCH_A"), ("ecb", "ICP/M.FR.N.000000.4.ANR"), F("CPALTT01FRM659N"), ("wb", "FR", "FP.CPI.TOTL.ZG")]),
     ("FRUR", "Taux de chômage", "France", "%", [("estat", "une_rt_m", "geo=FR&s_adj=SA&age=TOTAL&sex=T&unit=PC_ACT"), F("LRHUTTTTFRM156S")]),
-    ("FRGDPYY", "Croissance du PIB (a/a)", "France", "%", [F("CLVMNACSCAB1GQFR", "pc1")]),
-    ("FRGDP", "PIB nominal (rythme annuel)", "France", "Md€", [F("CPMNACSCAB1GQFR", scale=A)]),
+    ("FRGDPYY", "Croissance du PIB (a/a)", "France", "%", [("estat", "namq_10_gdp", "geo=FR&unit=CLV_PCH_SM&s_adj=SCA&na_item=B1GQ"), F("CLVMNACSCAB1GQFR", "pc1")]),
+    ("FRGDP", "PIB nominal (rythme annuel)", "France", "Md€", [("estat", "namq_10_gdp", "geo=FR&unit=CP_MEUR&s_adj=SCA&na_item=B1GQ", 0.004), F("CPMNACSCAB1GQFR", scale=A)]),
     ("FRGDPQQ", "Croissance du PIB (t/t)", "France", "%", [("estat", "namq_10_gdp", "geo=FR&unit=CLV_PCH_PRE&s_adj=SCA&na_item=B1GQ"), F("CLVMNACSCAB1GQFR", "pch")]),
     ("FR10Y", "Taux à 10 ans (OAT)", "France", "%", [F("IRLTLT01FRM156N")]),
     ("ITIRYY", "Inflation (a/a)", "Italie", "%", [("estat", "prc_hicp_manr", "geo=IT&coicop=CP00"), ("estat", "prc_hicp_minr", "geo=IT&coicop18=TOTAL&unit=RCH_A"), ("estat", "teicp000", "geo=IT&coicop=CP00&unit=RCH_A"), ("ecb", "ICP/M.IT.N.000000.4.ANR"), ("wb", "IT", "FP.CPI.TOTL.ZG")]),
-    ("ITGDPYY", "Croissance du PIB (a/a)", "Italie", "%", [F("CLVMNACSCAB1GQIT", "pc1"), F("NGDPRSAXDCITQ", "pc1")]),
-    ("ITGDP", "PIB nominal (rythme annuel)", "Italie", "Md€", [F("CPMNACSCAB1GQIT", scale=A)]),
+    ("ITGDPYY", "Croissance du PIB (a/a)", "Italie", "%", [("estat", "namq_10_gdp", "geo=IT&unit=CLV_PCH_SM&s_adj=SCA&na_item=B1GQ"), F("CLVMNACSCAB1GQIT", "pc1"), F("NGDPRSAXDCITQ", "pc1")]),
+    ("ITGDP", "PIB nominal (rythme annuel)", "Italie", "Md€", [("estat", "namq_10_gdp", "geo=IT&unit=CP_MEUR&s_adj=SCA&na_item=B1GQ", 0.004), F("CPMNACSCAB1GQIT", scale=A)]),
     ("ITGDPQQ", "Croissance du PIB (t/t)", "Italie", "%", [("estat", "namq_10_gdp", "geo=IT&unit=CLV_PCH_PRE&s_adj=SCA&na_item=B1GQ"), F("CLVMNACSCAB1GQIT", "pch")]),
-    ("ESGDPYY", "Croissance du PIB (a/a)", "Espagne", "%", [F("CLVMNACSCAB1GQES", "pc1"), F("NGDPRSAXDCESQ", "pc1")]),
-    ("ESGDP", "PIB nominal (rythme annuel)", "Espagne", "Md€", [F("CPMNACSCAB1GQES", scale=A)]),
+    ("ESGDPYY", "Croissance du PIB (a/a)", "Espagne", "%", [("estat", "namq_10_gdp", "geo=ES&unit=CLV_PCH_SM&s_adj=SCA&na_item=B1GQ"), F("CLVMNACSCAB1GQES", "pc1"), F("NGDPRSAXDCESQ", "pc1")]),
+    ("ESGDP", "PIB nominal (rythme annuel)", "Espagne", "Md€", [("estat", "namq_10_gdp", "geo=ES&unit=CP_MEUR&s_adj=SCA&na_item=B1GQ", 0.004), F("CPMNACSCAB1GQES", scale=A)]),
     ("ESGDPQQ", "Croissance du PIB (t/t)", "Espagne", "%", [("estat", "namq_10_gdp", "geo=ES&unit=CLV_PCH_PRE&s_adj=SCA&na_item=B1GQ"), F("CLVMNACSCAB1GQES", "pch")]),
     ("EUGDPQQ", "Croissance du PIB (t/t)", "Zone euro", "%", [("estat", "namq_10_gdp", "geo=EA20&unit=CLV_PCH_PRE&s_adj=SCA&na_item=B1GQ"), F("CLVMNACSCAB1GQEA20", "pch"), F("CLVMNACSCAB1GQEA19", "pch")]),
     ("IT10Y", "Taux à 10 ans (BTP)", "Italie", "%", [F("IRLTLT01ITM156N")]),
@@ -199,7 +199,7 @@ def get_fred(sid, units, freq, scale=1):
             last = requests.get("https://api.stlouisfed.org/fred/series/observations", params=q, timeout=30)
             if last.ok:
                 o = next((o for o in last.json()["observations"] if o["value"] not in (".", "")), None)
-                if o and o["date"] > obs[-1][0]:
+                if o and o["date"] > obs[-1][0] and o["date"] <= NOW.date().isoformat():
                     if obs[-1][0][:7] == o["date"][:7]:
                         obs[-1] = (o["date"], float(o["value"]) * scale)     # mois en cours : remplace la valeur partielle
                     else:
@@ -273,7 +273,7 @@ def _jsonstat_series(d):
     return sorted(out)
 
 
-def get_estat(dataset, filters):
+def get_estat(dataset, filters, scale=1.0):
     """Eurostat (API JSON-stat, sans clé) : séries officielles publiées le jour même, avant leur reprise par la BCE ou FRED."""
     q = dict(x.split("=", 1) for x in filters.split("&"))
     r = requests.get(f"https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/{dataset}",
@@ -287,7 +287,7 @@ def get_estat(dataset, filters):
             continue
         y = m.group(1)
         mo = (int(m.group(3)) - 1) * 3 + 1 if m.group(3) else int(m.group(4) or 1)
-        obs.append((f"{y}-{mo:02d}-01", float(v)))
+        obs.append((f"{y}-{mo:02d}-01", float(v) * scale))
     return sorted(obs), f"https://ec.europa.eu/eurostat/databrowser/view/{dataset}/default/table"
 
 
