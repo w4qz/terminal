@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T06:40:42.764974Z",
+ "generated_at": "2026-11-07T07:44:05.925618Z",
  "quotes": {
   "NVDA": {
    "p": 186.68,
@@ -117,8 +117,8 @@
    "prev": 26629.8105,
    "chg": 347.4961,
    "pct": 1.3,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^NDX)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^NDX) — échec de la dernière mise à jour",
    "ts": "2026-11-06T21:00:00Z",
    "open": 27045.2598,
    "lo": 26887.6895,
@@ -811,19 +811,18 @@
    ]
   },
   "BTC": {
-   "p": 75936.3828,
-   "prev": 75942.125,
-   "chg": -5.7422,
-   "pct": -0.01,
+   "p": 75930.9297,
+   "prev": 75746.9297,
+   "chg": 184.0,
+   "pct": 0.24,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-07T06:40:42.764974Z",
+   "ts": "2026-11-07T07:44:05.925618Z",
    "open": 75741.0156,
    "lo": 75703.4219,
    "hi": 75998.1172,
-   "vol": 25646561280,
+   "vol": 24723372032,
    "h": [
-    81500.8,
     81382.15,
     82017.6,
     81853.54,
@@ -844,7 +843,8 @@
     77345.05,
     80405.29,
     75942.12,
-    75936.38
+    75746.93,
+    75930.93
    ]
   }
  },
@@ -1693,9 +1693,9 @@
    "ccy": "USD",
    "mcap": 676620599296,
    "pe": 17.0648,
-   "fpe": 13.4044,
+   "fpe": 13.4488,
    "eps": 9.72,
-   "feps": 12.3743,
+   "feps": 12.3334,
    "revTTM": 388231987200,
    "netIncome": 40621998080,
    "shares": 4079222444,
@@ -2223,6 +2223,30 @@
  ],
  "news": [
   {
+   "h": "Une administratrice de Bristol Myers Squibb cède des actions pour 240.578$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T07:02:15Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/une-administratrice-de-bristol-myers-squibb-cede-des-actions-pour-240578-93CH-3683562"
+  },
+  {
+   "h": "Le Premier ministre britannique Burnham cherche à se rapprocher de l’UE",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T07:01:55Z",
+   "url": "https://fr.investing.com/news/economy-news/le-premier-ministre-britannique-burnham-cherche-a-se-rapprocher-de-lue-3683563"
+  },
+  {
+   "h": "L’administration Trump abandonne son recours contre les votes par correspondance en Californie",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T06:35:14Z",
+   "url": "https://fr.investing.com/news/economy-news/ladministration-trump-abandonne-son-recours-contre-les-votes-par-correspondance-en-californie-3683560"
+  },
+  {
    "h": "Schroders cherche à vendre un centre commercial à Singapour pour 172 millions $",
    "w": "",
    "syms": [],
@@ -2277,30 +2301,6 @@
    "src": "Investing.com France",
    "ts": "2026-11-07T05:46:53Z",
    "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-de-clear-secure-vend-pour-107-millions--dactions-93CH-3683552"
-  },
-  {
-   "h": "La PDG de Clear Secure vend des actions pour 10,7 millions $",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T05:39:42Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/la-pdg-de-clear-secure-vend-des-actions-pour-107-millions--93CH-3683551"
-  },
-  {
-   "h": "Le directeur financier d’O’Reilly Automotive cède des actions pour 987.623$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T05:36:13Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-doreilly-automotive-cede-des-actions-pour-987623-93CH-3683550"
-  },
-  {
-   "h": "La directrice technologique de Wayfair vend des actions pour 1,86 million $",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T05:35:53Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-technologique-de-wayfair-vend-des-actions-pour-186-million--93CH-3683549"
   },
   {
    "h": "UK will not slow down on AI despite backlash in US, says growth minister",
@@ -2396,7 +2396,7 @@
   },
   {
    "h": "An apology for slavery will help build trust across the Commonwealth",
-   "w": "The Caribbean Community has ten relatively modest proposals for repairing relations with the UK",
+   "w": "The Caribbean Community has 10 relatively modest proposals for repairing relations with the UK",
    "syms": [],
    "src": "myFT — world",
    "ts": "2026-11-07T05:00:23Z",
@@ -2480,7 +2480,7 @@
    "h": "K-pop super-fandom, my daughter and me",
    "w": "Over one summer and three huge concerts, a mother lives the intense devotion and explores the risks of extreme social media intimacy",
    "syms": [],
-   "src": "myFT — emerging markets",
+   "src": "myFT — technology",
    "ts": "2026-11-07T05:00:13Z",
    "url": "https://www.ft.com/content/32066a67-a697-4eb4-a779-c6dff8cc2ac7",
    "mine": 1
@@ -2557,6 +2557,38 @@
    "mine": 1
   },
   {
+   "h": "Prospect of 'modern-day Yalta' shakes Asia's postwar order",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T01:44:05.925618Z",
+   "url": "https://asia.nikkei.com/spotlight/comment/prospect-of-modern-day-yalta-shakes-asia-s-postwar-order"
+  },
+  {
+   "h": "Japan's unprotected deposits hit $890bn as inheritances inflate accounts",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T01:44:05.925618Z",
+   "url": "https://asia.nikkei.com/business/finance/japan-s-unprotected-deposits-hit-890bn-as-inheritances-inflate-accounts"
+  },
+  {
+   "h": "Activist Au Kam-san jailed 12.5 years in 1st Macao national security case",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T01:44:05.925618Z",
+   "url": "https://asia.nikkei.com/politics/activist-au-kam-san-jailed-12.5-years-in-1st-macao-national-security-case"
+  },
+  {
+   "h": "Japan's Takaichi pushes for tougher cybersecurity laws as attacks surge",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T01:44:05.925618Z",
+   "url": "https://asia.nikkei.com/spotlight/cybersecurity/japan-s-takaichi-pushes-for-tougher-cybersecurity-laws-as-attacks-surge"
+  },
+  {
    "h": "‘It’s almost like a nightclub’: Hyrox takes off in China amid fitness frenzy",
    "w": "Group behind gruelling competitive races faces challenges from Chinese rivals",
    "syms": [],
@@ -2604,14 +2636,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-06T23:51:28.194938Z",
    "url": "https://asia.nikkei.com/politics/china-enacts-law-to-hunt-down-corrupt-officials-who-escape-overseas"
-  },
-  {
-   "h": "Russia took a Japanese journalist. Tokyo should speak up",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T23:51:28.194938Z",
-   "url": "https://asia.nikkei.com/opinion/russia-took-a-japanese-journalist.-tokyo-should-speak-up"
   },
   {
    "h": "Taiwan's KMT old guard fights for power base in tight Taipei mayoral races",
@@ -2673,30 +2697,6 @@
    "ts": "2026-11-06T22:22:05Z",
    "url": "https://www.ft.com/content/642b32dc-e3a1-4df8-ae91-5c84bdeb89e0?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Japan convenience store chain Lawson details first India store in Mumbai",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T22:17:05.794018Z",
-   "url": "https://asia.nikkei.com/business/retail/japan-convenience-store-chain-lawson-details-first-india-store-in-mumbai"
-  },
-  {
-   "h": "Putin exploits Takaichi's diplomatic opening with Japan Tobacco grab",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T22:17:05.794018Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/putin-exploits-takaichi-s-diplomatic-opening-with-japan-tobacco-grab"
-  },
-  {
-   "h": "Taiwan, South Korea, Japan stock markets hit hard by AI sell-off",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T22:17:05.794018Z",
-   "url": "https://asia.nikkei.com/business/markets/taiwan-south-korea-japan-stock-markets-hit-hard-by-ai-sell-off"
   },
   {
    "h": "US economy outstrips forecasts to add 165,000 jobs in October",
