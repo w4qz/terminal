@@ -3748,7 +3748,9 @@ function wbVal(iso,k){ const it=WB&&WB.items&&WB.items[String(+iso)]; const v=it
 ═══════════════════════════════════════════════════════════════════════*/
 let GEO=null, GEO_TS=null, GEOLIB=null;
 async function loadGeo(){ try{ const r=await fetch('geo.json?t='+Date.now(),{cache:'no-store'}); if(!r.ok) throw new Error('HTTP '+r.status);
-const d=await r.json(); if(GEO_TS===d.generated_at) return false; GEO=d; GEO_TS=d.generated_at; return true; }
+const d=await r.json(); if(GEO_TS===d.generated_at) return false; GEO=d; GEO_TS=d.generated_at;
+// Tendance : seulement si la zone a été relue avec le calcul corrigé (m ≥ 2) et que la lecture a réussi
+(GEO.hotspots||[]).forEach(h=>{ if(!(h.m>=2)||h.stale){ h.trend=null; } }); return true; }
 catch(e){ console.info('geo.json indisponible ('+e.message+')'); return false; } }
 // Bibliothèques de projection et fond de carte (Natural Earth 1:110 m), chargés à la première ouverture
 function loadGeoLib(){ if(GEOLIB) return GEOLIB;
