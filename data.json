@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T02:31:51.436997Z",
+ "generated_at": "2026-11-07T03:25:41.686306Z",
  "quotes": {
   "NVDA": {
    "p": 186.68,
@@ -49,9 +49,8 @@
    "open": 30.54,
    "lo": 27.58,
    "hi": 33.16,
-   "vol": 32486210,
+   "vol": 32666700,
    "h": [
-    60.65,
     56.93,
     50.97,
     51.46,
@@ -72,7 +71,8 @@
     36.33,
     37.15,
     35.62,
-    30.2
+    30.2,
+    32.33
    ]
   },
   "SPX": {
@@ -707,7 +707,7 @@
    "src": "Yahoo Finance via yfinance (GC=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 4098.5,
-   "lo": 4037.0,
+   "lo": 4035.6001,
    "hi": 4116.2002,
    "vol": 166431,
    "h": [
@@ -744,7 +744,7 @@
    "src": "Yahoo Finance via yfinance (CL=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 91.2,
-   "lo": 89.07,
+   "lo": 89.08,
    "hi": 92.53,
    "vol": 253859,
    "h": [
@@ -781,9 +781,9 @@
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 99.24,
-   "lo": 96.65,
+   "lo": 96.71,
    "hi": 100.92,
-   "vol": 38991,
+   "vol": 38993,
    "h": [
     104.28,
     104.72,
@@ -810,17 +810,17 @@
    ]
   },
   "BTC": {
-   "p": 75955.8516,
+   "p": 75925.7891,
    "prev": 75942.125,
-   "chg": 13.7266,
-   "pct": 0.02,
+   "chg": -16.3359,
+   "pct": -0.02,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-07T02:31:51.436997Z",
+   "ts": "2026-11-07T03:25:41.686306Z",
    "open": 75741.0156,
    "lo": 75741.0156,
-   "hi": 75997.2812,
-   "vol": 27676332032,
+   "hi": 75998.1172,
+   "vol": 27114571776,
    "h": [
     81500.8,
     81382.15,
@@ -843,7 +843,7 @@
     77345.05,
     80405.29,
     75942.12,
-    75955.85
+    75925.79
    ]
   }
  },
@@ -855,9 +855,9 @@
    "industry": "Consumer Electronics",
    "ccy": "USD",
    "mcap": 4975383019520,
-   "pe": 38.1258,
+   "pe": 38.3393,
    "fpe": 32.1529,
-   "eps": 8.98,
+   "eps": 8.93,
    "feps": 10.6482,
    "revTTM": 478833999872,
    "netIncome": 132175003648,
@@ -1521,14 +1521,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 998898073600,
+   "mcap": 995843768320,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -2164,8 +2164,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 123.1505,
+   "shares": 572600000,
+   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2217,6 +2222,57 @@
  ],
  "news": [
   {
+   "h": "Le PDG de SharkNinja, Mark Barrocas, cède 25 millions $ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T03:16:44Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-sharkninja-mark-barrocas-cede-25-millions--dactions-93CH-3683523"
+  },
+  {
+   "h": "La Russie frappe Kyiv avec des missiles balistiques avant les pourparlers d’Abou Dhabi",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T03:04:31Z",
+   "url": "https://fr.investing.com/news/economy-news/la-russie-frappe-kyiv-avec-des-missiles-balistiques-avant-les-pourparlers-dabou-dhabi-3683521"
+  },
+  {
+   "h": "Un dirigeant de Ryerson Holding vend des actions pour 96.300$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T03:02:08Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-de-ryerson-holding-vend-des-actions-pour-96300-93CH-3683520"
+  },
+  {
+   "h": "Un directeur d’Empery Digital vend des actions pour 1.193$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T02:46:58Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-dempery-digital-vend-des-actions-pour-1193-93CH-3683519"
+  },
+  {
+   "h": "US believes Nvidia’s Huang had romantic relationship with alleged Chinese spy",
+   "w": "American intelligence warned the tech boss was involved with executive recruited by China to gather information on US group",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "myFT — world",
+   "ts": "2026-11-07T02:33:26Z",
+   "url": "https://www.ft.com/content/a55a2a22-4479-4f93-a445-6147a5c6d790?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Musk cite des conflits avec Alphabet après le départ d’un cadre de Google du conseil de SpaceX",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T02:22:21Z",
+   "url": "https://fr.investing.com/news/company-news/musk-cite-des-conflits-avec-alphabet-apres-le-depart-dun-cadre-de-google-du-conseil-de-spacex-3683518"
+  },
+  {
    "h": "Un administrateur de Ligand Pharmaceuticals cède des actions pour 90.237$",
    "w": "",
    "syms": [],
@@ -2257,50 +2313,10 @@
    "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-fair-isaac-vend-des-actions-pour-27048-93CH-3683512"
   },
   {
-   "h": "Le SEVP de Walt Disney, Horacio Gutierrez, cède des actions pour 2,47M$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T02:02:40Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-sevp-de-walt-disney-horacio-gutierrez-cede-des-actions-pour-247m-93CH-3683511"
-  },
-  {
-   "h": "Baker Bros. Advisors acquiert pour 35M$ d’actions Madrigal Pharma",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T01:47:44Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/baker-bros-advisors-acquiert-pour-35m-dactions-madrigal-pharma-93CH-3683510"
-  },
-  {
-   "h": "Les pertes du hedge fund Arini atteignent 32% dans la tourmente du crédit",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T01:39:55Z",
-   "url": "https://fr.investing.com/news/company-news/les-pertes-du-hedge-fund-arini-atteignent-32-dans-la-tourmente-du-credit-3683508"
-  },
-  {
-   "h": "Une directrice de Qualcomm cède pour 10.074$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T01:32:05Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/une-directrice-de-qualcomm-cede-pour-10074-dactions-93CH-3683507"
-  },
-  {
-   "h": "Une directrice de Procore cède des actions PCOR pour 230.586$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T01:32:04Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/une-directrice-de-procore-cede-des-actions-pcor-pour-230586-93CH-3683506"
-  },
-  {
    "h": "‘It’s almost like a nightclub’: Hyrox takes off in China amid fitness frenzy",
    "w": "Group behind gruelling competitive races faces challenges from Chinese rivals",
    "syms": [],
-   "src": "myFT — companies",
+   "src": "myFT — world",
    "ts": "2026-11-07T01:00:00Z",
    "url": "https://www.ft.com/content/ac76efa6-a309-41c6-ab51-b64225f2c18b?syn-25a6b1a6=1",
    "mine": 1
@@ -2410,6 +2426,38 @@
    "src": "MarketWatch",
    "ts": "2026-11-06T21:37:00Z",
    "url": "https://www.marketwatch.com/story/data-centers-run-on-debt-that-was-a-problem-for-bonds-this-year-and-its-only-going-to-get-worse-09c03be6?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Japan's unprotected deposits hit $890bn as inheritances inflate accounts",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-06T21:25:41.686306Z",
+   "url": "https://asia.nikkei.com/business/finance/japan-s-unprotected-deposits-hit-890bn-as-inheritances-inflate-accounts"
+  },
+  {
+   "h": "Activist Au Kam-san jailed 12.5 years in 1st Macao national security case",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-06T21:25:41.686306Z",
+   "url": "https://asia.nikkei.com/politics/activist-au-kam-san-jailed-12.5-years-in-1st-macao-national-security-case"
+  },
+  {
+   "h": "Japan's Takaichi pushes for tougher cybersecurity laws as attacks surge",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-06T21:25:41.686306Z",
+   "url": "https://asia.nikkei.com/spotlight/cybersecurity/japan-s-takaichi-pushes-for-tougher-cybersecurity-laws-as-attacks-surge"
+  },
+  {
+   "h": "Democrats' midterm gains hang over data centers, Japanese US investment",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-06T21:25:41.686306Z",
+   "url": "https://asia.nikkei.com/politics/u.s.-midterm-elections/democrats-midterm-gains-hang-over-data-centers-japanese-us-investment"
   },
   {
    "h": "Nvidia, AMD and other chip stocks rebound — but is relief from the ‘violent’ selloff only temporary?",
@@ -2561,14 +2609,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-06T19:48:48.323612Z",
    "url": "https://asia.nikkei.com/business/startups/grab-to-cut-maximum-take-on-vietnam-rides-to-32-from-40"
-  },
-  {
-   "h": "Editor's Choice: US anti-data center sentiment spreads, hitting Asian markets",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T19:48:48.323612Z",
-   "url": "https://asia.nikkei.com/editor-s-picks/editor-in-chief-s-picks/editor-s-choice-us-anti-data-center-sentiment-spreads-hitting-asian-markets"
   },
   {
    "h": "« La propagande d’extrême droite tue » : à Paris des activistes « déménagent » un Relay pour dénoncer le « monopole » de Bolloré",
@@ -2739,7 +2779,7 @@
    "h": "West End reports spending boost after Oxford Street bans cars and buses",
    "w": "Transactions on Barclays debit and credit cards increased 13% between October 26 and October 31, compared with same period last year",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — world uk",
    "ts": "2026-11-06T18:15:49Z",
    "url": "https://www.ft.com/content/d3d05f60-951d-4135-9342-c62c9f1f5839?syn-25a6b1a6=1",
    "mine": 1
@@ -2756,7 +2796,7 @@
    "h": "Musk wants to give stock to kids. What’s the problem?",
    "w": "The act is generous but there are reasons to wish it could be done in a different way",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-06T18:00:10Z",
    "url": "https://www.ft.com/content/6c9d92ac-eba0-47c0-b4db-d9d5226e9891",
    "mine": 1
@@ -2778,30 +2818,6 @@
    "ts": "2026-11-06T18:00:10Z",
    "url": "https://www.ft.com/content/dc6474f0-0b12-439d-9c90-818731bfcc63",
    "mine": 1
-  },
-  {
-   "h": "Japan convenience store chain Lawson details first India store in Mumbai",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T17:59:21.317538Z",
-   "url": "https://asia.nikkei.com/business/retail/japan-convenience-store-chain-lawson-details-first-india-store-in-mumbai"
-  },
-  {
-   "h": "Putin exploits Takaichi's diplomatic opening with Japan Tobacco grab",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T17:59:21.317538Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/putin-exploits-takaichi-s-diplomatic-opening-with-japan-tobacco-grab"
-  },
-  {
-   "h": "Taiwan, South Korea, Japan stock markets hit hard by AI sell-off",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-06T17:59:21.317538Z",
-   "url": "https://asia.nikkei.com/business/markets/taiwan-south-korea-japan-stock-markets-hit-hard-by-ai-sell-off"
   },
   {
    "h": "EU probes ‘fraud’ on Spain’s lethal high-speed rail line",
@@ -2850,7 +2866,7 @@
    "h": "Anthropic lines up UK retail offer as AI stocks wobble",
    "w": "Analysts warn demand may be dented by the SpaceX slide",
    "syms": [],
-   "src": "myFT — us",
+   "src": "myFT — companies",
    "ts": "2026-11-06T16:50:16Z",
    "url": "https://www.ft.com/content/d0be1646-7d2a-4d9d-8412-7488f3c8b203?syn-25a6b1a6=1",
    "mine": 1
@@ -3063,15 +3079,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-06T12:41:25Z",
    "url": "https://www.lemonde.fr/international/article/2026/11/06/alertes-a-la-bombe-quatre-vols-commerciaux-survolant-la-france-se-sont-poses-sans-encombre_6807787_3210.html"
-  },
-  {
-   "h": "Telecoms entrepreneur behind ‘breathtaking fraud’ hit with freezing orders",
-   "w": "Indian and Singaporean courts freeze assets of businessman who allegedly orchestrated private credit fraud before fleeing US",
-   "syms": [],
-   "src": "myFT — financials",
-   "ts": "2026-11-06T12:23:58Z",
-   "url": "https://www.ft.com/content/aa99a49b-d6fa-473e-9e8a-7d7906ab4f79?syn-25a6b1a6=1",
-   "mine": 1
   }
  ],
  "summary": {
