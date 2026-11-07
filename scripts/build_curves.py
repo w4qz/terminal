@@ -264,6 +264,7 @@ def curve_cnbc(cc):
         p = point(t, [tuple(x) for x in hist[t]])
         if p:
             p["ts"] = ts
+            p["_sym"] = f"{cc}{dict(CNBC_TENORS)[t]}-{cc}"
             pts.append(p)
     pts.sort(key=lambda p: TEN_ORD_PY.index(p["t"]) if p["t"] in TEN_ORD_PY else 99)
     if pts:
@@ -341,6 +342,54 @@ def hist_10y(sym):
     return sorted(week.items())
 
 
+# ── Cohérence des courbes ──
+Y1M = {}   # {symbole CNBC : [date du calcul, rendement il y a 1 mois]} : relu une fois par jour seulement
+
+
+def cnbc_y1m(sym):
+    """Rendement coté il y a 1 mois (même instrument que le rendement du jour : la variation est cohérente)."""
+    c = Y1M.get(sym)
+    if c and c[0] == TODAY.isoformat():
+        return c[1]
+    try:
+        h = _hist(sym, "3M")
+        old = next((v for d, v in reversed(h) if d <= MONTH_AGO), None)
+    except Exception as e:
+        log(f"  ! Historique 1 mois {sym} : {str(e)[:60]}")
+        return c[1] if c else None
+    Y1M[sym] = [TODAY.isoformat(), old]
+    return old
+
+
+def _yrs(t):
+    return int(t[:-1]) / 12 if t.endswith("M") else int(t[:-1])
+
+
+def clean_curve(name, pts):
+    """Retire les points périmés (source arrêtée depuis des semaines) et les cotations aberrantes."""
+    newest = max((p["ts"] for p in pts if p.get("ts")), default="")
+    if newest:
+        lim = (datetime.fromisoformat(newest[:10]) - timedelta(days=14)).date().isoformat()
+        old = [p["t"] for p in pts if (p.get("ts") or "")[:10] < lim]
+        if old and len(old) < len(pts):
+            log(f"  {name} : points périmés retirés ({', '.join(old)}, antérieurs au {lim})")
+            pts = [p for p in pts if (p.get("ts") or "")[:10] >= lim]
+    out = [p for p in pts if p.get("y") is not None]
+    while len(out) >= 3:
+        worst, dev = None, 0.35          # écart à l'interpolation de ses deux voisins, en points de %
+        for i in range(1, len(out) - 1):
+            a, p, b = out[i - 1], out[i], out[i + 1]
+            w = (_yrs(p["t"]) - _yrs(a["t"])) / (_yrs(b["t"]) - _yrs(a["t"]))
+            d = abs(p["y"] - (a["y"] + w * (b["y"] - a["y"])))
+            if d > dev:
+                worst, dev = p, d
+        if not worst:
+            break
+        log(f"  {name} : cotation aberrante retirée ({worst['t']} à {worst['y']} %, écart {dev:.2f} pt à ses voisins)")
+        out.remove(worst)
+    return out
+
+
 FILL_CNBC = {"DE": "DE", "UK": "GB", "JP": "JP", "CH": "CH", "FR": "FR"}   # FR : seulement quand la courbe vient de Webstat
 
 COUNTRIES = [
@@ -357,6 +406,10 @@ def main() -> int:
     except Exception:
         prev = {}
     PREV.update(prev)
+    try:
+        Y1M.update(json.loads(OUT.read_text(encoding="utf-8")).get("y1m", {}))
+    except Exception:
+        pass
     items = {}
     for k, name, fn in COUNTRIES:
         pts, src, freq = fn()
@@ -387,6 +440,19 @@ def main() -> int:
                 log(f"  {name} : {len(extra)} maturités ajoutées depuis CNBC")
         if pts:
             hist = pts[0].pop("_hist", None)
+            # Variation sur 1 mois : rendement coté CNBC il y a 1 mois pour tout point coté CNBC
+            # (avant : la source officielle pour certains points, rien pour la France et l'Italie)
+            cc = FILL_CNBC.get(k, k)
+            for p in pts:
+                p.pop("_hist", None)
+                sym = p.pop("_sym", None)
+                if p.get("live") or p.get("cnbc") or sym:
+                    sym = sym or f"{cc}{dict(CNBC_TENORS).get(p['t'], '')}-{cc}"
+                    if dict(CNBC_TENORS).get(p["t"]):
+                        v = cnbc_y1m(sym)
+                        if v is not None:
+                            p["y1m"] = v
+            pts = clean_curve(name, pts)
             items[k] = {"n": name, "pts": pts, "src": src, "freq": freq}
             if hist:
                 items[k]["hist"] = hist
@@ -413,7 +479,7 @@ def main() -> int:
             log(f"  ! Historique {code} : {str(e)[:100]}")
         if code in prev_h:
             hist10[code] = prev_h[code]
-    OUT.write_text(json.dumps({"generated_at": NOW.isoformat().replace("+00:00", "Z"), "items": items, "hist10": hist10},
+    OUT.write_text(json.dumps({"generated_at": NOW.isoformat().replace("+00:00", "Z"), "items": items, "hist10": hist10, "y1m": Y1M},
                               ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     return 0
 
