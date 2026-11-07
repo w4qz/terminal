@@ -3,7 +3,7 @@ name: Mise à jour des données (lente)
 
 on:
   schedule:
-    - cron: "47 */3 * * *"    # secours si le relais Cloudflare ne déclenche pas (déclenchement principal : relais, 17 * * * *)
+    - cron: "17 * * * *"    # une fois par heure, à h17
   workflow_dispatch:          # bouton « Run workflow » (manuel) ou relais Cloudflare (auto = true)
     inputs:
       auto:
