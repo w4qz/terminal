@@ -171,7 +171,7 @@ def _ws_series(key):
 
 def curve_fr():
     if not WEBSTAT_KEY:
-        return ten_year("IRLTLT01FRM156N")
+        return curve_fr_it("FR", "IRLTLT01FRM156N")
     # 1) Recherche des séries TEC quotidiennes ; 2) à défaut, clés usuelles
     keys = {}
     try:
@@ -199,8 +199,8 @@ def curve_fr():
             log(f"  ! Webstat {k} : {str(e)[:100]}")
     if pts:
         return pts, "Banque de France (Webstat) — taux de l'échéance constante des OAT", "quotidien"
-    log("  Webstat sans résultat : repli sur le 10 ans OCDE")
-    return ten_year("IRLTLT01FRM156N")
+    log("  Webstat sans résultat : repli sur les cotations CNBC (courbe complète)")
+    return curve_fr_it("FR", "IRLTLT01FRM156N")
 
 
 TEN_ORD_PY = ["1M", "3M", "6M", "1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "15A", "20A", "25A", "30A", "40A", "50A"]
