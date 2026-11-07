@@ -3,8 +3,13 @@ name: Mise à jour des données (lente)
 
 on:
   schedule:
-    - cron: "17 * * * *"    # une fois par heure (à h17) : fondamentaux, comptes, options, économie, SEC, Banque mondiale, codes Bloomberg
-  workflow_dispatch:          # bouton « Run workflow » pour lancer à la main
+    - cron: "47 */3 * * *"    # secours si le relais Cloudflare ne déclenche pas (déclenchement principal : relais, 17 * * * *)
+  workflow_dispatch:          # bouton « Run workflow » (manuel) ou relais Cloudflare (auto = true)
+    inputs:
+      auto:
+        description: "Lancement automatique par le relais Cloudflare (ne force pas les données quotidiennes)"
+        required: false
+        default: "false"
 
 permissions:
   contents: write             # autorise le robot à publier ses fichiers
@@ -50,7 +55,7 @@ jobs:
         continue-on-error: true
         env:
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
-          ECON_FORCE: ${{ github.event_name == 'workflow_dispatch' }}
+          ECON_FORCE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.auto != 'true' }}
         run: python scripts/build_economics.py
 
       - name: Dépôts SEC (CF, sociétés américaines)
@@ -66,7 +71,7 @@ jobs:
         continue-on-error: true
         timeout-minutes: 3
         env:
-          WB_FORCE: ${{ github.event_name == 'workflow_dispatch' }}
+          WB_FORCE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.auto != 'true' }}
         run: python scripts/build_worldbank.py
 
       - name: Codes Bloomberg (OpenFIGI)
