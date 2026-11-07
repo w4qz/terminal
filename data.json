@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T17:22:40.645737Z",
+ "generated_at": "2026-11-07T18:04:17.374884Z",
  "quotes": {
   "NVDA": {
    "p": 186.68,
@@ -228,8 +228,8 @@
    "prev": 28.18,
    "chg": -2.55,
    "pct": -9.05,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^VIX)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^VIX) — échec de la dernière mise à jour",
    "ts": "2026-11-06T21:15:00Z",
    "open": 27.68,
    "lo": 23.47,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75691.0391,
+   "p": 75727.7812,
    "prev": 75746.9297,
-   "chg": -55.8906,
-   "pct": -0.07,
+   "chg": -19.1484,
+   "pct": -0.03,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-07T17:22:40.645737Z",
+   "ts": "2026-11-07T18:04:17.374884Z",
    "open": 75741.0156,
    "lo": 75599.6484,
    "hi": 76101.3047,
-   "vol": 12247016448,
+   "vol": 11619616768,
    "h": [
     81382.15,
     82017.6,
@@ -844,7 +844,7 @@
     80405.29,
     75942.12,
     75746.93,
-    75691.04
+    75727.78
    ]
   }
  },
@@ -1522,14 +1522,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 995843768320,
+   "mcap": 998898073600,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -2167,13 +2167,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 123.1505,
-   "shares": 572600000,
-   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2224,6 +2219,71 @@
   }
  ],
  "news": [
+  {
+   "h": "Meta chief strategy officer Dave Wehner leaves to join AI infrastructure startup Fireworks as CFO",
+   "w": "Dave Wehner, Meta’s chief strategy officer, is leaving the company to become CFO of Fireworks, the AI infrastructure startup valued at $17.5 billion in July.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-07T17:51:16Z",
+   "url": "https://www.cnbc.com/2026/11/07/dave-wehner-meta-fireworks-cfo.html"
+  },
+  {
+   "h": "Une directrice de Sierra Bancorp cède des actions pour 337.604$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T17:47:20Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/une-directrice-de-sierra-bancorp-cede-des-actions-pour-337604-93CH-3683639"
+  },
+  {
+   "h": "Democrats’ big election win revives a difficult Social Security question: Who pays?",
+   "w": "There are many ideas for saving Social Security. All of them will hurt.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-07T17:43:00Z",
+   "url": "https://www.marketwatch.com/story/democrats-big-election-win-revives-a-difficult-social-security-question-who-pays-17ba9448?mod=mw_rss_topstories"
+  },
+  {
+   "h": "French far-left presidential hopeful pledges ‘revolutionary’ remaking of society",
+   "w": "Jean-Luc Mélenchon stages show of force with 20,000-strong rally as widespread protests boost his momentum",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-07T17:42:41Z",
+   "url": "https://www.ft.com/content/5cb562ec-5493-4ff3-bd2d-99cc9cacfa73?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "I’m 65 and worth more than $5.6 million. Can I afford a $200,000 camper?",
+   "w": "Math may be cold and unemotional — but finances are not.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-07T17:33:00Z",
+   "url": "https://www.marketwatch.com/story/im-65-and-worth-more-than-5-6-million-can-i-buy-a-200-000-camper-even-though-the-price-feels-crazy-high-55f668f8?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Un directeur du Clough Global Opportunities Fund achète des actions GLO pour 1.996$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T17:31:27Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-du-clough-global-opportunities-fund-achete-des-actions-glo-pour-1996-93CH-3683638"
+  },
+  {
+   "h": "Seaport publie ses premières réflexions sur l’action Anthropic",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T17:27:53Z",
+   "url": "https://fr.investing.com/news/stock-market-news/seaport-publie-ses-premieres-reflexions-sur-laction-anthropic-3683637"
+  },
+  {
+   "h": "La vice-présidente de Coca-Cola, Perez, cède des actions pour 6,41 M$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T17:16:54Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/la-vicepresidente-de-cocacola-perez-cede-des-actions-pour-641-m-93CH-3683635"
+  },
   {
    "h": "Le directeur financier de Binance démissionne après un piratage crypto de 6 milliards $",
    "w": "",
@@ -2368,70 +2428,12 @@
    "url": "https://www.lemonde.fr/societe/article/2026/11/07/alertes-a-la-bombe-visant-des-avions-une-enquete-ouverte-par-le-parquet-de-paris-notamment-sur-un-lien-eventuel-avec-des-puissances-etrangeres_6808294_3224.html"
   },
   {
-   "h": "‘I have no financial safety net’: I’m 66, rely on Social Security and have just $500 in savings. What hope do I have?",
-   "w": "“Sometimes I wonder whether wealthier Americans should trade places with people like me.”",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-07T15:41:00Z",
-   "url": "https://www.marketwatch.com/story/i-have-no-financial-safety-net-im-66-rely-on-social-security-and-have-500-in-savings-what-politician-speaks-for-me-be2126cb?mod=mw_rss_topstories"
-  },
-  {
-   "h": "A record number of first-time home buyers now pay in cash. Here’s where they get the money.",
-   "w": "All-cash buyers are becoming more common, despite a housing market that’s been struggling with affordability issues.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-07T15:35:00Z",
-   "url": "https://www.marketwatch.com/story/a-record-10-of-first-time-home-buyers-now-pay-in-cash-heres-where-they-get-the-money-70f2e656?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Un directeur de Visium Technologies achète pour 108.000$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T15:32:28Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-visium-technologies-achete-pour-108000-dactions-93CH-3683626"
-  },
-  {
    "h": "Berkshire Hathaway more than doubles buybacks in third quarter as earnings decline",
    "w": "Berkshire Hathaway said Saturday it accelerated its share repurchases during the third quarter, as operating and overall profits took a hit.",
    "syms": [],
    "src": "CNBC — Marchés",
    "ts": "2026-11-07T15:23:46Z",
    "url": "https://www.cnbc.com/2026/11/07/berkshire-hathaway-q3-2026-earnings-buybacks.html"
-  },
-  {
-   "h": "Novartis abandonne le pelacarsen après l’échec d’une étude majeure",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T15:16:03Z",
-   "url": "https://fr.investing.com/news/stock-market-news/novartis-abandonne-le-pelacarsen-apres-lechec-dune-etude-majeure-3683624"
-  },
-  {
-   "h": "Un mémo américain allègue que le PDG de Nvidia était lié à une espionne présumée de Pékin",
-   "w": "",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T15:11:08Z",
-   "url": "https://fr.investing.com/news/stock-market-news/un-memo-des-renseignements-americains-lie-le-pdg-de-nvidia-a-une-espionne-presumee-3683623"
-  },
-  {
-   "h": "J&J présente des données patients sur le nipocalimab pour la maladie de Sjögren",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T15:09:32Z",
-   "url": "https://fr.investing.com/news/company-news/jj-presente-des-donnees-patients-sur-le-nipocalimab-pour-la-maladie-de-sjogren-93CH-3683621"
-  },
-  {
-   "h": "America's newest small business owners with no employees are off to a hot start in AI era",
-   "w": "New small business formation is rising for owners who can grow with AI serving in finance, marketing and design roles, eliminating the need for hiring.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-07T14:45:01Z",
-   "url": "https://www.cnbc.com/2026/11/07/americas-new-no-employee-small-business-owners-start-hot-in-ai-era.html"
   },
   {
    "h": "What midterm election blue wave rebuke of Trump means for renewable energy",
@@ -2531,6 +2533,30 @@
    "ts": "2026-11-07T12:06:11Z",
    "url": "https://www.ft.com/content/76a2208d-62c8-46f7-bada-554201d78cf4?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "Credit Saison, ADB to partner on loans for Asia's small businesses",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T12:04:17.374884Z",
+   "url": "https://asia.nikkei.com/business/finance/credit-saison-adb-to-partner-on-loans-for-asia-s-small-businesses"
+  },
+  {
+   "h": "New Zealand's knife-edge election puts coalition talks in focus",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T12:04:17.374884Z",
+   "url": "https://asia.nikkei.com/politics/new-zealand-s-knife-edge-election-puts-coalition-talks-in-focus"
+  },
+  {
+   "h": "Taiwan's KMT old guard fights for power base in tight Taipei mayoral races",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T12:04:17.374884Z",
+   "url": "https://asia.nikkei.com/politics/taiwan-s-kmt-old-guard-fights-for-power-base-in-tight-taipei-mayoral-races"
   },
   {
    "h": "What will a Democratic Congress mean for Ukraine?",
@@ -2637,30 +2663,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-07T10:54:27.756137Z",
    "url": "https://asia.nikkei.com/business/automobiles/electric-vehicles/seres-li-auto-join-chinese-evs-charge-into-europe"
-  },
-  {
-   "h": "Putin exploits Takaichi's diplomatic opening with Japan Tobacco grab",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T10:54:27.756137Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/putin-exploits-takaichi-s-diplomatic-opening-with-japan-tobacco-grab"
-  },
-  {
-   "h": "Prep schools help Chinese students get into Japan's top universities",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T10:44:14.459863Z",
-   "url": "https://asia.nikkei.com/business/education/prep-schools-help-chinese-students-get-into-japan-s-top-universities"
-  },
-  {
-   "h": "US slaps sanctions on Cambodia's Prince Group over online scams",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T10:44:14.459863Z",
-   "url": "https://asia.nikkei.com/spotlight/society/crime/us-slaps-sanctions-on-cambodia-s-prince-group-over-online-scams"
   },
   {
    "h": "La bulle de l’IA se heurte à la réalité",
@@ -3070,15 +3072,6 @@
    "src": "myFT — sujet suivi",
    "ts": "2026-11-06T19:29:18Z",
    "url": "https://www.ft.com/content/580ab1bf-4e2e-46b8-9178-dbf765645754?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Bomb threats target media and flights as email warns ‘this is only the beginning’",
-   "w": "Campaign of intimidation continues a week before 50 European leaders are due to attend two major summits in Dublin",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-06T18:56:20Z",
-   "url": "https://www.ft.com/content/f7167042-33d7-423a-89dd-4f379a437c15?syn-25a6b1a6=1",
    "mine": 1
   },
   {
