@@ -1,13 +1,13 @@
 {
- "generated_at": "2026-11-07T15:08:35.749449Z",
+ "generated_at": "2026-11-07T15:43:10.570405Z",
  "quotes": {
   "NVDA": {
    "p": 186.68,
    "prev": 181.6,
    "chg": 5.08,
    "pct": 2.8,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (NVDA)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (NVDA) — échec de la dernière mise à jour",
    "ts": "2026-11-06T21:00:00Z",
    "open": 191.1,
    "lo": 185.22,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75801.9922,
+   "p": 75727.3438,
    "prev": 75746.9297,
-   "chg": 55.0625,
-   "pct": 0.07,
+   "chg": -19.5859,
+   "pct": -0.03,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-07T15:08:35.749449Z",
+   "ts": "2026-11-07T15:43:10.570405Z",
    "open": 75741.0156,
-   "lo": 75703.4219,
+   "lo": 75699.6797,
    "hi": 76101.3047,
-   "vol": 16283838464,
+   "vol": 14200783872,
    "h": [
     81382.15,
     82017.6,
@@ -844,7 +844,7 @@
     80405.29,
     75942.12,
     75746.93,
-    75801.99
+    75727.34
    ]
   }
  },
@@ -1522,14 +1522,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 995843768320,
+   "mcap": 998898073600,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -2167,13 +2167,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 123.1505,
-   "shares": 572600000,
-   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2225,12 +2220,111 @@
  ],
  "news": [
   {
+   "h": "‘I have no financial safety net’: I’m 66, rely on Social Security and have just $500 in savings. What hope do I have?",
+   "w": "“Sometimes I wonder whether wealthier Americans should trade places with people like me.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-07T15:41:00Z",
+   "url": "https://www.marketwatch.com/story/i-have-no-financial-safety-net-im-66-rely-on-social-security-and-have-500-in-savings-what-politician-speaks-for-me-be2126cb?mod=mw_rss_topstories"
+  },
+  {
+   "h": "A record number of first-time home buyers now pay in cash. Here’s where they get the money.",
+   "w": "All-cash buyers are becoming more common, despite a housing market that’s been struggling with affordability issues.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-07T15:35:00Z",
+   "url": "https://www.marketwatch.com/story/a-record-10-of-first-time-home-buyers-now-pay-in-cash-heres-where-they-get-the-money-70f2e656?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Berkshire Hathaway more than doubles buybacks in third quarter as earnings decline",
+   "w": "Berkshire Hathaway said Saturday it accelerated its share repurchases during the third quarter, as operating and overall profits took a hit.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-07T15:23:46Z",
+   "url": "https://www.cnbc.com/2026/11/07/berkshire-hathaway-q3-2026-earnings-buybacks.html"
+  },
+  {
+   "h": "Berkshire Hathaway ploughs $9.6bn into share buybacks",
+   "w": "Insurance slowdown drags on performance, with quarterly operating income falling by 5.8 per cent year-on-year",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-07T15:18:43Z",
+   "url": "https://www.ft.com/content/1f153350-2377-4e48-a073-0539376eab4c?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Trump’s Iran war has changed the future of Social Security",
+   "w": "It’s a mathematical certainty that the Iran war is going to have an enormous influence on the future of retirement in America.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-07T15:18:00Z",
+   "url": "https://www.marketwatch.com/story/trumps-iran-war-has-changed-the-future-of-social-security-7a500f9f?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Novartis abandonne le pelacarsen après l’échec d’une étude majeure",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T15:16:03Z",
+   "url": "https://fr.investing.com/news/stock-market-news/novartis-abandonne-le-pelacarsen-apres-lechec-dune-etude-majeure-3683624"
+  },
+  {
+   "h": "Un mémo des renseignements américains lie le PDG de Nvidia à une espionne présumée",
+   "w": "",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T15:11:08Z",
+   "url": "https://fr.investing.com/news/stock-market-news/un-memo-des-renseignements-americains-lie-le-pdg-de-nvidia-a-une-espionne-presumee-3683623"
+  },
+  {
+   "h": "J&J présente des données patients sur le nipocalimab pour la maladie de Sjögren",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T15:09:32Z",
+   "url": "https://fr.investing.com/news/company-news/jj-presente-des-donnees-patients-sur-le-nipocalimab-pour-la-maladie-de-sjogren-93CH-3683621"
+  },
+  {
+   "h": "ASBISc dépasse largement les attentes au T3 2026, l’action bondit de 8%",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T15:05:53Z",
+   "url": "https://fr.investing.com/news/transcripts/asbisc-depasse-largement-les-attentes-au-t3-2026-laction-bondit-de-8-93CH-3683619"
+  },
+  {
+   "h": "argenx annonce des données positives de phase 3 pour son traitement contre la myosite auto-immune",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-07T15:05:36Z",
+   "url": "https://fr.investing.com/news/company-news/argenx-annonce-des-donnees-positives-de-phase-3-pour-son-traitement-contre-la-myosite-autoimmune-93CH-3683618"
+  },
+  {
    "h": "‘We’re losing to cottage cheese’: The protein-maxxing craze is hurting cream-cheese sales",
    "w": "U.S. cottage-cheese sales have more than doubled from levels seen in 2021.",
    "syms": [],
    "src": "MarketWatch",
    "ts": "2026-11-07T14:50:00Z",
    "url": "https://www.marketwatch.com/story/were-losing-to-cottage-cheese-the-protein-maxxing-craze-is-hurting-cream-cheese-sales-40ae94f3?mod=mw_rss_topstories"
+  },
+  {
+   "h": "America's newest small business owners with no employees are off to a hot start in AI era",
+   "w": "New small business formation is rising for owners who can grow with AI serving in finance, marketing and design roles, eliminating the need for hiring.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-07T14:45:01Z",
+   "url": "https://www.cnbc.com/2026/11/07/americas-new-no-employee-small-business-owners-start-hot-in-ai-era.html"
+  },
+  {
+   "h": "What midterm election blue wave rebuke of Trump means for renewable energy",
+   "w": "The conservative war on renewable energy suffered a big loss in the rout of President Trump and the GOP in midterm elections. Investors should pay attention.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-07T14:33:32Z",
+   "url": "https://www.cnbc.com/2026/11/07/midterm-election-blue-wave-trump-renewable-energy.html"
   },
   {
    "h": "Many workers lose unused FSA money — but could still come out ahead. Here's how",
@@ -2273,30 +2367,12 @@
    "url": "https://www.lemonde.fr/economie/article/2026/11/07/les-prix-de-l-electricite-pour-les-particuliers-seront-stables-jusqu-au-1-fevrier-au-moins-selon-le-pdg-d-edf_6808283_3234.html"
   },
   {
-   "h": "Berkshire shares surge as Wall Street swoons amid AI fears",
-   "w": "Berkshire Hathaway shares roared past the S&amp;P 500 index this week and are outperforming the benchmark for the year-to-date.",
-   "syms": [
-    "SPX"
-   ],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-07T14:06:20Z",
-   "url": "https://www.cnbc.com/2026/11/07/berkshire-shares-surge-as-wall-street-swoons-amid-ai-fears.html"
-  },
-  {
    "h": "Mark Cuban says he doesn’t ‘give a f---' about growing his net worth—a healthy mindset for non-billionaires too, a financial therapist says",
    "w": "The billionaire serial entrepreneur says he cares more about the impact he can have by spending and investing, rather than worrying about amassing more wealth.",
    "syms": [],
    "src": "CNBC — Marchés",
    "ts": "2026-11-07T14:05:01Z",
    "url": "https://www.cnbc.com/make-it/2026/11/07/mark-cuban-net-worth-money-mindset.html"
-  },
-  {
-   "h": "Berkshire Hathaway more than doubles buybacks in third quarter as earnings decline",
-   "w": "Berkshire Hathaway said Saturday it accelerated its share repurchases during the third quarter, as operating and overall profits took a hit.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-07T14:02:49Z",
-   "url": "https://www.cnbc.com/2026/11/07/berkshire-hathaway-q3-2026-earnings-buybacks.html"
   },
   {
    "h": "Un administrateur de Catalyst Bancorp achète des actions pour 30.254$",
@@ -2349,15 +2425,6 @@
    "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261107~e7b86fc4ce.en.html"
   },
   {
-   "h": "Berkshire Hathaway ploughs $9.6bn into share buybacks",
-   "w": "New chief executive Greg Abel was a net seller of stocks as the conglomerate’s shares beat the S&amp;P 500",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-07T13:53:28Z",
-   "url": "https://www.ft.com/content/1f153350-2377-4e48-a073-0539376eab4c?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Le directeur financier de Velocity Financial vend des actions pour 36.000$",
    "w": "",
    "syms": [],
@@ -2366,52 +2433,12 @@
    "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-de-velocity-financial-vend-des-actions-pour-36000-93CH-3683610"
   },
   {
-   "h": "Le président exécutif de Paccar, Mark Pigott, cède 46$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T13:47:08Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-president-executif-de-paccar-mark-pigott-cede-46-dactions-93CH-3683609"
-  },
-  {
-   "h": "Le BPA de Berkshire Hathaway B a dépassé les attentes de 4,55$, le CA a surpassé les prévisions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T13:46:30Z",
-   "url": "https://fr.investing.com/news/earnings/le-bpa-de-berkshire-hathaway-b-a-depasse-les-attentes-de-455-le-ca--a-surpasse-les-previsions-3683608"
-  },
-  {
-   "h": "Le BPA de Berkshire Hathaway A a dépassé les attentes de 7,00$, le CA a surpassé les prévisions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T13:42:20Z",
-   "url": "https://fr.investing.com/news/earnings/le-bpa-de-berkshire-hathaway-a-a-depasse-les-attentes-de-700-le-ca--a-surpasse-les-previsions-3683607"
-  },
-  {
    "h": "The AI trade is now counting on Anthropic’s IPO — but it couldn’t be happening at a worse time",
    "w": "The ongoing tech selloff is leading investors to wonder if Anthropic will delay its IPO or list at a discount.",
    "syms": [],
    "src": "MarketWatch",
    "ts": "2026-11-07T13:30:00Z",
    "url": "https://www.marketwatch.com/story/the-ai-trade-is-now-counting-on-anthropics-ipo-but-it-couldnt-be-happening-at-a-worse-time-8bd0f1c4?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Berkshire Hathaway accélère ses rachats d’actions malgré une baisse des bénéfices",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T13:16:00Z",
-   "url": "https://fr.investing.com/news/stock-market-news/berkshire-hathaway-accelere-les-rachats-dactions-malgre-une-baisse-des-benefices-3683606"
-  },
-  {
-   "h": "La Pologne : S&P abaisse ses perspectives à négatives, Domański pointe les vetos présidentiels",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T13:08:20Z",
-   "url": "https://fr.investing.com/news/economy-news/la-pologne--sp-abaisse-ses-perspectives-a-negatives-domanski-pointe-les-vetos-presidentiels-3683604"
   },
   {
    "h": "Risk of Iran war escalation remains high despite Democratic sweep in U.S. midterm elections",
@@ -2516,6 +2543,30 @@
    "mine": 1
   },
   {
+   "h": "Japanese companies caught in crossfire of Beijing-Tokyo rift",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T09:43:10.570405Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/japanese-companies-caught-in-crossfire-of-beijing-tokyo-rift"
+  },
+  {
+   "h": "Japan's new whisky breed chases export elixir",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T09:43:10.570405Z",
+   "url": "https://asia.nikkei.com/spotlight/big-in-asia/japan-s-new-whisky-breed-chases-export-elixir"
+  },
+  {
+   "h": "Japan convenience store chain Lawson details first India store in Mumbai",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T09:43:10.570405Z",
+   "url": "https://asia.nikkei.com/business/retail/japan-convenience-store-chain-lawson-details-first-india-store-in-mumbai"
+  },
+  {
    "h": "Astellas employee jailed in China on spy charge set for December release",
    "w": "",
    "syms": [],
@@ -2546,14 +2597,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-07T09:08:35.749449Z",
    "url": "https://asia.nikkei.com/politics/international-relations/putin-exploits-takaichi-s-diplomatic-opening-with-japan-tobacco-grab"
-  },
-  {
-   "h": "Why a wave of bomb threats is proving so difficult for Europe's aviation authorities to contain",
-   "w": "The \"weakest point of aviation is targeting it in-flight,\" analysts say — but any change to procedures will be a lengthy process.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-07T09:01:57Z",
-   "url": "https://www.cnbc.com/2026/11/07/hoax-bomb-threats-flights-europe.html"
   },
   {
    "h": "Après huit mois de guerre au Moyen-Orient, la mue forcée des pays du Golfe producteurs de pétrole et de gaz",
@@ -2604,30 +2647,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-07T07:42:36.933456Z",
    "url": "https://asia.nikkei.com/spotlight/cybersecurity/japan-s-takaichi-pushes-for-tougher-cybersecurity-laws-as-attacks-surge"
-  },
-  {
-   "h": "Democrats' midterm gains hang over data centers, Japanese US investment",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T07:42:36.933456Z",
-   "url": "https://asia.nikkei.com/politics/u.s.-midterm-elections/democrats-midterm-gains-hang-over-data-centers-japanese-us-investment"
-  },
-  {
-   "h": "New Zealand's knife-edge election puts coalition talks in focus",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T06:52:42.311464Z",
-   "url": "https://asia.nikkei.com/politics/new-zealand-s-knife-edge-election-puts-coalition-talks-in-focus"
-  },
-  {
-   "h": "Taiwan's KMT old guard fights for power base in tight Taipei mayoral races",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T06:52:42.311464Z",
-   "url": "https://asia.nikkei.com/politics/taiwan-s-kmt-old-guard-fights-for-power-base-in-tight-taipei-mayoral-races"
   },
   {
    "h": "UK will not slow down on AI despite backlash in US, says growth minister",
@@ -2917,7 +2936,7 @@
    "h": "US economy outstrips forecasts to add 165,000 jobs in October",
    "w": "Hiring rebound reinforces expectations Federal Reserve will raise interest rates",
    "syms": [],
-   "src": "myFT — us",
+   "src": "myFT — economy",
    "ts": "2026-11-06T22:16:13Z",
    "url": "https://www.ft.com/content/f84c722c-99a9-4628-84dc-c42a192cb35c?syn-25a6b1a6=1",
    "mine": 1
@@ -2940,14 +2959,6 @@
    "src": "BBC — Business",
    "ts": "2026-11-06T21:49:50Z",
    "url": "https://www.bbc.co.uk/news/articles/cq1j33w7d232o?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "‘I have no financial safety net’: I’m 66, rely on Social Security and have just $500 in savings. What hope do I have?",
-   "w": "“Sometimes I wonder whether wealthier Americans should trade places with people like me.”",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-06T21:45:00Z",
-   "url": "https://www.marketwatch.com/story/i-have-no-financial-safety-net-im-66-rely-on-social-security-and-have-500-in-savings-what-politician-speaks-for-me-be2126cb?mod=mw_rss_topstories"
   },
   {
    "h": "Elon Musk opens the door for a big SpaceX acquisition",
@@ -2974,22 +2985,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-06T21:24:00Z",
    "url": "https://www.marketwatch.com/story/nvidia-amd-and-other-chip-stocks-rebound-is-the-violent-ai-selloff-over-8f7df533?mod=mw_rss_topstories"
-  },
-  {
-   "h": "‘It seems bizarre’: We’re in our 80s with $950,000 in traditional IRAs. Why is our adviser pushing Roth conversions?",
-   "w": "“Our basic living expenses are covered by $110,000 in annual pensions and Social Security.”",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-06T21:15:00Z",
-   "url": "https://www.marketwatch.com/story/it-seems-bizarre-were-in-our-80s-with-950-000-in-traditional-iras-why-is-our-adviser-pushing-us-to-do-roth-conversions-a665f990?mod=mw_rss_topstories"
-  },
-  {
-   "h": "‘It feels like he’s quietly building a separate life’: My husband inherited $500,000, but he refuses to spend it on our home",
-   "w": "“Our kitchen dates from 1999 and the oven only works if you hit the door a certain way.”",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-06T21:15:00Z",
-   "url": "https://www.marketwatch.com/story/it-feels-like-hes-quietly-building-a-separate-life-my-husband-inherited-500-000-but-he-refuses-to-spend-it-on-our-home-06535cff?mod=mw_rss_topstories"
   },
   {
    "h": "AI stocks climb after trillions wiped from market values",
@@ -3080,7 +3075,7 @@
    "h": "A new phase in the tech market correction",
    "w": "Investors are no longer pricing in accelerating AI growth",
    "syms": [],
-   "src": "myFT — companies",
+   "src": "myFT — technology",
    "ts": "2026-11-06T18:24:44Z",
    "url": "https://www.ft.com/content/a91d70f1-d335-4d58-a6d8-1052658211ba?syn-25a6b1a6=1",
    "mine": 1
