@@ -80,9 +80,9 @@ PRINTS = [
 # Zone euro : Eurostat publie le jour même (inflation flash, chômage) ; les séries FRED reprises de l'OCDE
 # avaient un mois de retard (inflation) ou étaient arrêtées (chômage, figé à janvier 2023).
 ESTAT_PRINTS = [
-    ("Inflation HICP (zone euro, a/a)", "%", [("prc_hicp_manr", "geo=EA20&coicop=CP00"), ("prc_hicp_minr", "geo=EA20&coicop18=TOTAL&unit=RCH_A"),
-                                              ("teicp000", "geo=EA20&coicop=CP00&unit=RCH_A")]),
-    ("Taux de chômage (zone euro)", "%", [("une_rt_m", "geo=EA20&s_adj=SA&age=TOTAL&sex=T&unit=PC_ACT")]),
+    ("Inflation HICP (zone euro, a/a)", "%", [("estat", "prc_hicp_minr", "geo=EA20&coicop18=TOTAL&unit=RCH_A"), ("estat", "prc_hicp_manr", "geo=EA20&coicop=CP00"),
+                                              ("estat", "teicp000", "geo=EA20&coicop=CP00&unit=RCH_A"), ("ecb", "ICP/M.U2.N.000000.4.ANR")]),
+    ("Taux de chômage (zone euro)", "%", [("estat", "une_rt_m", "geo=EA20&s_adj=SA&age=TOTAL&sex=T&unit=PC_ACT"), ("ecb", "LFSI/M.I9.S.UNEHRT.TOTAL0.15_74.T")]),
 ]
 
 RELEASES = {
@@ -128,24 +128,37 @@ def eco_prints():
         out.append({"k": label, "v": round(float(o["value"]), 2), "prev": round(prev, 2) if prev is not None else None,
                     "fmt": fmt, "ts": o["date"], "pub": o.get("realtime_start"), "freq": freq,
                     "src": f"FRED {sid}", "url": f"https://fred.stlouisfed.org/series/{sid}"})
+    # Toutes les sources sont lues et la plus récente l'emporte (prc_hicp_manr répond encore mais s'arrête à décembre 2025)
     for label, fmt, cands in ESTAT_PRINTS:
-        for ds, flt in cands:
+        best = None
+        for kind, ds, *flt in cands:
             try:
-                q = dict(x.split("=", 1) for x in flt.split("&"))
-                r = requests.get(f"https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/{ds}",
-                                 params={"format": "JSON", "lang": "EN", "lastTimePeriod": 2, **q}, headers=UA, timeout=30)
-                r.raise_for_status()
-                ser = sorted(_jsonstat_series(r.json()))
+                if kind == "ecb":
+                    r = requests.get(f"https://data-api.ecb.europa.eu/service/data/{ds}",
+                                     params={"lastNObservations": 2, "format": "csvdata"}, headers=UA, timeout=30)
+                    r.raise_for_status()
+                    df = pd.read_csv(StringIO(r.text)).dropna(subset=["OBS_VALUE"])
+                    ser = [(str(a), float(b)) for a, b in zip(df["TIME_PERIOD"], df["OBS_VALUE"])]
+                    src, url = f"BCE {ds.split('/')[0]}", f"https://data.ecb.europa.eu/data/datasets/{ds.split('/')[0]}"
+                else:
+                    q = dict(x.split("=", 1) for x in flt[0].split("&"))
+                    r = requests.get(f"https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/{ds}",
+                                     params={"format": "JSON", "lang": "EN", "lastTimePeriod": 2, **q}, headers=UA, timeout=30)
+                    r.raise_for_status()
+                    ser = list(_jsonstat_series(r.json()))
+                    src, url = f"Eurostat {ds}", f"https://ec.europa.eu/eurostat/databrowser/view/{ds}/default/table"
+                ser = sorted((per.replace("M", "-")[:7], v) for per, v in ser)
                 if not ser:
                     raise RuntimeError("série vide")
-                per, v = ser[-1]
-                y, m = per.replace("M", "-").split("-")[:2]
-                out.append({"k": label, "v": round(float(v), 2), "prev": round(float(ser[-2][1]), 2) if len(ser) > 1 else None,
-                            "fmt": fmt, "ts": f"{y}-{int(m):02d}-01", "freq": "M", "src": f"Eurostat {ds}",
-                            "url": f"https://ec.europa.eu/eurostat/databrowser/view/{ds}/default/table"})
-                break
+                if best is None or ser[-1][0] > best[0][-1][0]:
+                    best = (ser, src, url)
             except Exception as e:
-                log(f"  · {label} via Eurostat {ds} : {str(e)[:80]}")
+                log(f"  · {label} via {kind} {ds} : {str(e)[:80]}")
+        if best:
+            ser, src, url = best
+            y, m = ser[-1][0].split("-")[:2]
+            out.append({"k": label, "v": round(float(ser[-1][1]), 2), "prev": round(float(ser[-2][1]), 2) if len(ser) > 1 else None,
+                        "fmt": fmt, "ts": f"{y}-{int(m):02d}-01", "freq": "M", "src": src, "url": url})
     log(f"ECO : {len(out)}/{len(PRINTS) + len(ESTAT_PRINTS)} indicateurs")
     return out
 
