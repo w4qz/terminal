@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T16:57:57.164309Z",
+ "generated_at": "2026-11-08T17:35:19.781770Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
@@ -778,8 +778,8 @@
    "prev": 98.29,
    "chg": 0.03,
    "pct": 0.03,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (BZ=F)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (BZ=F) — échec de la dernière mise à jour",
    "ts": "2026-11-06T22:00:00Z",
    "open": 99.24,
    "lo": 96.65,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75670.8203,
+   "p": 75600.0078,
    "prev": 75747.5781,
-   "chg": -76.7578,
-   "pct": -0.1,
+   "chg": -147.5703,
+   "pct": -0.19,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-08T16:57:57.164309Z",
+   "ts": "2026-11-08T17:35:19.781770Z",
    "open": 75753.7109,
    "lo": 75585.3672,
    "hi": 76068.3203,
-   "vol": 8703518720,
+   "vol": 9048765440,
    "h": [
     82017.6,
     81853.54,
@@ -844,7 +844,7 @@
     75942.12,
     75746.93,
     75747.58,
-    75670.82
+    75616.54
    ]
   }
  },
@@ -1342,7 +1342,7 @@
    "cash": 214822905970688,
    "debt": 17191200096256,
    "fcf": 83820791463936,
-   "w52lo": 94500.0,
+   "w52lo": 0.0,
    "w52hi": 374500.0,
    "evEbitda": 3.214,
    "earnTs": 1793167200,
@@ -1462,7 +1462,7 @@
    "debtEq": 5.111,
    "cash": 114459997634560,
    "debt": 15799000498176,
-   "w52lo": 501000.0,
+   "w52lo": 0.0,
    "w52hi": 2987000.0,
    "evEbitda": 3.324,
    "earnTs": 1793080800,
@@ -2220,6 +2220,41 @@
  ],
  "news": [
   {
+   "h": "Two months after my father’s funeral, my stepmother asked me to repay his $40,000 wedding gift. Should I do what she says?",
+   "w": "“About two months after his funeral, my stepmother called and said she wanted the money back.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-08T17:30:00Z",
+   "url": "https://www.marketwatch.com/story/shes-a-type-a-personality-my-stepmother-wants-me-to-repay-my-late-fathers-40-000-wedding-gift-should-i-oblige-51fc64f7?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Funeral homes are finding new life hosting weddings and golf outings, as the traditional burial business dies out",
+   "w": "“It’s not my funeral — it’s yours — so make it what you want,” one funeral-home operator says.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-08T17:23:00Z",
+   "url": "https://www.marketwatch.com/story/funeral-homes-are-finding-new-life-hosting-weddings-and-golf-outings-as-the-traditional-burial-business-dies-out-15831d13?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Le directeur comptable de Cullen/Frost Bankers vend des actions pour 85.290$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T17:02:20Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-comptable-de-cullenfrost-bankers-vend-des-actions-pour-85290-93CH-3683744"
+  },
+  {
+   "h": "Democrats vow to impeach Trump officials and investigate Republican donors",
+   "w": "Pete Hegseth, Elon Musk and Venezuelan oil deals are early targets for Congressional probes by incoming lawmakers",
+   "syms": [
+    "BRENT"
+   ],
+   "src": "myFT — world",
+   "ts": "2026-11-08T17:02:12Z",
+   "url": "https://www.ft.com/content/111fefdb-0f85-4f8f-854f-86a5f81aceec?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "La chute de l’IA chinoise menace les ambitions de Xi sur les marchés",
    "w": "",
    "syms": [],
@@ -2239,7 +2274,7 @@
    "h": "Will US inflation data ease affordability concerns?",
    "w": "Market Questions is the FT’s guide to the week ahead",
    "syms": [],
-   "src": "myFT — economy",
+   "src": "myFT — world",
    "ts": "2026-11-08T16:20:06Z",
    "url": "https://www.ft.com/content/3d46dfb4-eef8-4ea0-9264-282bd269647e?syn-25a6b1a6=1",
    "mine": 1
@@ -2272,7 +2307,7 @@
    "h": "A new economic agenda for America",
    "w": "Pro-growth policies on their own won’t address the concerns of voters worried about the cost of living",
    "syms": [],
-   "src": "myFT — economy",
+   "src": "myFT — world",
    "ts": "2026-11-08T16:00:00Z",
    "url": "https://www.ft.com/content/81bd54ff-61b4-4fa6-83d3-5a73821a879c",
    "mine": 1
@@ -2284,14 +2319,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-08T16:00:00Z",
    "url": "https://www.marketwatch.com/story/it-feels-like-hes-quietly-building-a-separate-life-my-husband-inherited-500-000-but-he-refuses-to-spend-it-on-our-home-06535cff?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Funeral homes are finding new life hosting weddings and golf outings, as the traditional burial business dies out",
-   "w": "“It’s not my funeral — it’s yours — so make it what you want,” one funeral-home operator says.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-08T16:00:00Z",
-   "url": "https://www.marketwatch.com/story/funeral-homes-are-finding-new-life-hosting-weddings-and-golf-outings-as-the-traditional-burial-business-dies-out-15831d13?mod=mw_rss_topstories"
   },
   {
    "h": "Les 5 actions à surveiller cette semaine",
@@ -2385,14 +2412,6 @@
    "src": "Investing.com France",
    "ts": "2026-11-08T14:46:47Z",
    "url": "https://fr.investing.com/news/earnings/les-derniers-resultats-de-pacira-avant-son-rachat-a-165-milliard--93CH-3683728"
-  },
-  {
-   "h": "Teekay Tankers face à un test alors que les taux de fret se refroidissent",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T14:44:40Z",
-   "url": "https://fr.investing.com/news/earnings/teekay-tankers-face-a-un-test-alors-que-les-taux-de-fret-se-refroidissent-93CH-3683727"
   },
   {
    "h": "How each country’s emissions compare",
@@ -2554,6 +2573,32 @@
    "url": "https://www.cnbc.com/2026/11/08/top-analysts-like-these-3-dividend-stocks-for-consistent-income.html"
   },
   {
+   "h": "Bridgestone revs up output of massive mining tires on AI-driven demand",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T11:35:19.781770Z",
+   "url": "https://asia.nikkei.com/business/automobiles/bridgestone-revs-up-output-of-massive-mining-tires-on-ai-driven-demand"
+  },
+  {
+   "h": "Indonesia's art deco hot spot, a century on",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T11:35:19.781770Z",
+   "url": "https://asia.nikkei.com/life-arts/life/destinations/indonesia-s-art-deco-hot-spot-a-century-on"
+  },
+  {
+   "h": "Japan manufacturers lift profit outlooks on price hikes, weak yen",
+   "w": "",
+   "syms": [
+    "USDJPY"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T11:35:19.781770Z",
+   "url": "https://asia.nikkei.com/business/business-trends/japan-manufacturers-lift-profit-outlooks-on-price-hikes-weak-yen"
+  },
+  {
    "h": "Anthropic strikes $3.4bn deal to generate gas-fired power for data centres",
    "w": "AI lab bypasses traditional suppliers to secure scarce equipment as demand for energy surges",
    "syms": [],
@@ -2660,30 +2705,6 @@
    "url": "https://www.cnbc.com/2026/11/08/france-protests-clashes-arrests.html"
   },
   {
-   "h": "What the Democratic sweep means for Trump's tariffs and AI",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T08:58:00.690641Z",
-   "url": "https://asia.nikkei.com/video/what-the-democratic-sweep-means-for-trump-s-tariffs-and-ai"
-  },
-  {
-   "h": "Grab rival Tada joins Singapore's self-driving minibus project",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T08:58:00.690641Z",
-   "url": "https://asia.nikkei.com/business/transportation/grab-rival-tada-joins-singapore-s-self-driving-minibus-project"
-  },
-  {
-   "h": "Astellas employee jailed in China on spy charge set for December release",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T08:58:00.690641Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/astellas-employee-jailed-in-china-on-spy-charge-set-for-december-release"
-  },
-  {
    "h": "Cathie Wood 'always feels better when the market is worried' — here's why",
    "w": "The Ark Invest CEO said there was a \"wall of worry\" gripping markets right now.",
    "syms": [],
@@ -2757,7 +2778,7 @@
    "h": "‘Radical left’ get the headlines but centrists dominate new US Congress",
    "w": "Most of the Democrats who swept to power in the midterms blue wave are moderates",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-08T05:00:19Z",
    "url": "https://www.ft.com/content/c8692ed7-f32b-487f-9efa-3ccd3d144f42?syn-25a6b1a6=1",
    "mine": 1
@@ -2914,14 +2935,6 @@
    "url": "https://www.marketwatch.com/story/this-retired-professor-has-reinvented-himself-as-a-taylor-swift-scholar-88456c8d?mod=mw_rss_topstories"
   },
   {
-   "h": "Second-guessing my adviser: Is an annuity the right move in this market?",
-   "w": "“I haven’t committed to the strategy yet and would appreciate some independent perspectives.”",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-07T20:36:00Z",
-   "url": "https://www.marketwatch.com/story/my-adviser-recommended-an-annuity-is-it-the-right-move-in-this-market-environment-00edbbf6?mod=mw_rss_topstories"
-  },
-  {
    "h": "French far-left presidential hopeful pledges ‘revolutionary’ remaking of society",
    "w": "Jean-Luc Mélenchon stages show of force with 20,000-strong rally as widespread protests boost his momentum",
    "syms": [],
@@ -3046,7 +3059,7 @@
    "h": "Data centres rebuked",
    "w": "Capex, meet the electorate",
    "syms": [],
-   "src": "myFT — us",
+   "src": "myFT — technology",
    "ts": "2026-11-07T10:30:03Z",
    "url": "https://www.ft.com/content/9d40f40a-cbf2-46f5-b3d0-cee554e35298?syn-25a6b1a6=1",
    "mine": 1
@@ -3058,15 +3071,6 @@
    "src": "myFT — world uk",
    "ts": "2026-11-07T05:00:41Z",
    "url": "https://www.ft.com/content/47dba9d2-4c82-4e17-969d-f1728ef13a5a?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "The UK has few easy options for rejoining a ‘traumatised’ EU",
-   "w": "Accession is really not a negotiation. It is a process and candidates must tick all the relevant boxes",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-07T05:00:34Z",
-   "url": "https://www.ft.com/content/b9b88216-4285-467b-8aad-33e26ee2468a",
    "mine": 1
   },
   {
