@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T14:58:00.690641Z",
+ "generated_at": "2026-11-08T15:36:07.373300Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
@@ -375,8 +375,8 @@
    "prev": 5296.25,
    "chg": -117.0801,
    "pct": -2.21,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^STI) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^STI)",
    "ts": "2026-11-06T09:00:00Z",
    "open": 5152.29,
    "lo": 5138.75,
@@ -632,8 +632,8 @@
    "prev": 1.3477,
    "chg": -0.0121,
    "pct": -0.9,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (GBPUSD=X)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (GBPUSD=X) — échec de la dernière mise à jour",
    "ts": "2026-11-06T22:30:00Z",
    "open": 1.3455,
    "lo": 1.3344,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75940.7578,
+   "p": 75963.75,
    "prev": 75747.5781,
-   "chg": 193.1797,
-   "pct": 0.26,
+   "chg": 216.1719,
+   "pct": 0.29,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-08T14:58:00.690641Z",
+   "ts": "2026-11-08T15:36:07.373300Z",
    "open": 75753.7109,
    "lo": 75585.3672,
    "hi": 76068.3203,
-   "vol": 8888793088,
+   "vol": 8819409920,
    "h": [
     82017.6,
     81853.54,
@@ -844,7 +844,7 @@
     75942.12,
     75746.93,
     75747.58,
-    75940.76
+    75963.75
    ]
   }
  },
@@ -2225,6 +2225,58 @@
  ],
  "news": [
   {
+   "h": "‘I have no financial safety net’: I’m 66, rely on Social Security and have just $500 in savings. What hope do I have?",
+   "w": "“Sometimes I wonder whether wealthier Americans should trade places with people like me.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-08T15:30:00Z",
+   "url": "https://www.marketwatch.com/story/i-have-no-financial-safety-net-im-66-rely-on-social-security-and-have-500-in-savings-what-politician-speaks-for-me-be2126cb?mod=mw_rss_topstories"
+  },
+  {
+   "h": "My 93-year-old father changed his will at the 11th hour, leaving my brother his entire $500,000 estate. Can I challenge it?",
+   "w": "“My brother had no job and needed a place to live.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-08T15:16:00Z",
+   "url": "https://www.marketwatch.com/story/my-93-year-old-father-changed-his-will-at-the-11th-hour-leaving-my-brother-his-entire-500-000-estate-can-i-challenge-it-ecfc63d2?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Cabaletta Bio présente des données de phase 1/2 pour sa thérapie auto-immune",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T15:05:34Z",
+   "url": "https://fr.investing.com/news/company-news/cabaletta-bio-presente-des-donnees-de-phase-12-pour-sa-therapie-autoimmune-93CH-3683733"
+  },
+  {
+   "h": "Paul Gama, PDG Santé de P&G, cède des actions pour 477.510$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T15:02:12Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/paul-gama-pdg-sante-de-pg-cede-des-actions-pour-477510-93CH-3683729"
+  },
+  {
+   "h": "Alors que l’IA s’essouffle, BCA mise sur les actions européennes face à Wall Street",
+   "w": "",
+   "syms": [
+    "SPX"
+   ],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T15:01:06Z",
+   "url": "https://fr.investing.com/news/stock-market-news/alors-que-lia-sessouffle-bca-mise-sur-les-actions-europeennes-face-a-wall-street-3683732"
+  },
+  {
+   "h": "Corporate America’s profit numbers are just barely beating Wall Street’s expectations",
+   "w": "S&amp;P 500 companies’ earnings are mostly topping analysts’ estimates — but by the narrowest margin in roughly four years.",
+   "syms": [
+    "SPX"
+   ],
+   "src": "MarketWatch",
+   "ts": "2026-11-08T15:00:00Z",
+   "url": "https://www.marketwatch.com/story/corporate-americas-profit-numbers-are-just-barely-beating-wall-streets-expectations-eaa67fe2?mod=mw_rss_topstories"
+  },
+  {
    "h": "Les derniers résultats de Pacira avant son rachat à 1,65 milliard $",
    "w": "",
    "syms": [],
@@ -2349,14 +2401,6 @@
    "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-de-northrop-grumman-mark-welsh-iii-cede-des-actions-pour-54453-93CH-3683720"
   },
   {
-   "h": "Le PDG de Community Bancorp achète des actions pour 21.492$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T13:32:05Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-community-bancorp-achete-des-actions-pour-21492-93CH-3683719"
-  },
-  {
    "h": "En Nouvelle-Aquitaine, une première dans l’achat groupé d’énergie",
    "w": "Neuf entreprises se sont associées pour acheter de l’énergie décarbonée, à un prix prédéfini pendant quinze ans. Un modèle qui peut faire école.",
    "syms": [],
@@ -2405,14 +2449,6 @@
    "ts": "2026-11-08T12:30:28Z",
    "url": "https://www.ft.com/content/1401fe6f-52a2-4639-bed3-67cc828085f1?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Un administrateur de Caterpillar achète des actions pour 620.390$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T12:17:25Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-caterpillar-achete-des-actions-pour-620390-93CH-3683717"
   },
   {
    "h": "Saudi Aramco office in Riyadh damaged in latest Houthi strikes",
@@ -2464,14 +2500,6 @@
    "url": "https://www.cnbc.com/2026/11/08/top-analysts-like-these-3-dividend-stocks-for-consistent-income.html"
   },
   {
-   "h": "Anthropic conclut un accord de 3,4 milliards $ pour des générateurs à gaz",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T11:36:02Z",
-   "url": "https://fr.investing.com/news/stock-market-news/anthropic-conclut-un-accord-de-34-milliards--pour-des-generateurs-a-gaz-3683716"
-  },
-  {
    "h": "Government 'looking seriously' at banning under-16s from Vinted and eBay",
    "w": "The culture secretary confirms reports they could be in the list of platforms set to be banned next March.",
    "syms": [],
@@ -2496,6 +2524,30 @@
    "ts": "2026-11-08T10:24:09Z",
    "url": "https://www.ft.com/content/0fab9ede-4fa1-4f94-b23e-e32f07a6b7df?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "Vietnam leader To Lam visits Japan as decades-old relationship evolves",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T09:36:07.373300Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/vietnam-leader-to-lam-visits-japan-as-decades-old-relationship-evolves"
+  },
+  {
+   "h": "COP31 climate summit in Turkey, ASEAN Summit, Sri Lanka budget",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T09:36:07.373300Z",
+   "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/cop31-climate-summit-in-turkey-asean-summit-sri-lanka-budget"
+  },
+  {
+   "h": "New Zealand's knife-edge election puts coalition talks in focus",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T09:36:07.373300Z",
+   "url": "https://asia.nikkei.com/politics/new-zealand-s-knife-edge-election-puts-coalition-talks-in-focus"
   },
   {
    "h": "Moins de touristes étrangers dans les commerces parisiens, autre conséquence des manifestations",
@@ -2586,30 +2638,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-08T07:26:18.029019Z",
    "url": "https://asia.nikkei.com/business/finance/credit-saison-adb-to-partner-on-loans-for-asia-s-small-businesses"
-  },
-  {
-   "h": "Ukraine's Zaporizhzhia nuclear plant again relies on backup power",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T06:25:18.218717Z",
-   "url": "https://asia.nikkei.com/politics/ukraine-war/ukraine-s-zaporizhzhia-nuclear-plant-again-relies-on-backup-power"
-  },
-  {
-   "h": "Japan tourism industry steps up push to draw Indian visitors",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T06:25:18.218717Z",
-   "url": "https://asia.nikkei.com/business/travel-leisure/japan-tourism-industry-steps-up-push-to-draw-indian-visitors"
-  },
-  {
-   "h": "US sports investment fund RedBird hunts for tie-ups in Japan",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T06:25:18.218717Z",
-   "url": "https://asia.nikkei.com/spotlight/sports/us-sports-investment-fund-redbird-hunts-for-tie-ups-in-japan"
   },
   {
    "h": "Cathie Wood 'always feels better when the market is worried' — here's why",
@@ -2875,14 +2903,6 @@
    "url": "https://www.marketwatch.com/story/medicare-prescription-drug-costs-will-jump-50-in-2027-doing-nothing-could-cost-you-b701dfb7?mod=mw_rss_topstories"
   },
   {
-   "h": "Democrats’ big election win revives a difficult Social Security question: Who pays?",
-   "w": "There are many ideas for saving Social Security. All of them will hurt.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-07T17:43:00Z",
-   "url": "https://www.marketwatch.com/story/democrats-big-election-win-revives-a-difficult-social-security-question-who-pays-17ba9448?mod=mw_rss_topstories"
-  },
-  {
    "h": "French far-left presidential hopeful pledges ‘revolutionary’ remaking of society",
    "w": "Jean-Luc Mélenchon stages show of force with 20,000-strong rally as widespread protests boost his momentum",
    "syms": [],
@@ -2890,22 +2910,6 @@
    "ts": "2026-11-07T17:42:41Z",
    "url": "https://www.ft.com/content/5cb562ec-5493-4ff3-bd2d-99cc9cacfa73?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "I’m 65 and worth more than $5.6 million. Can I afford a $200,000 camper?",
-   "w": "Math may be cold and unemotional — but finances are not.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-07T17:33:00Z",
-   "url": "https://www.marketwatch.com/story/im-65-and-worth-more-than-5-6-million-can-i-buy-a-200-000-camper-even-though-the-price-feels-crazy-high-55f668f8?mod=mw_rss_topstories"
-  },
-  {
-   "h": "The wealthiest 10% of Americans are pulling ahead of everyone else. This is what’s making them richer.",
-   "w": "The wealthiest 10% have a median net worth that is $800,000 greater than it was three years ago.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-07T17:04:00Z",
-   "url": "https://www.marketwatch.com/story/the-wealthiest-10-of-americans-are-pulling-ahead-of-everyone-else-this-is-whats-making-them-richer-bd83c2f6?mod=mw_rss_topstories"
   },
   {
    "h": "Berkshire Hathaway steps up share buybacks with $9.6bn of purchases",
