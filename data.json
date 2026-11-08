@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T12:25:18.218717Z",
+ "generated_at": "2026-11-08T13:26:18.029019Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
@@ -449,8 +449,8 @@
    "prev": 26325.0098,
    "chg": -504.6504,
    "pct": -1.92,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^GDAXI) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^GDAXI)",
    "ts": "2026-11-06T16:30:00Z",
    "open": 25919.4805,
    "lo": 25617.5391,
@@ -523,8 +523,8 @@
    "prev": 6231.54,
    "chg": -61.0498,
    "pct": -0.98,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^STOXX50E)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^STOXX50E) — échec de la dernière mise à jour",
    "ts": "2026-11-06T16:30:00Z",
    "open": 6207.7002,
    "lo": 6122.4702,
@@ -708,7 +708,7 @@
    "src": "Yahoo Finance via yfinance (GC=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 4098.5,
-   "lo": 4035.6001,
+   "lo": 4037.0,
    "hi": 4116.2002,
    "vol": 166431,
    "h": [
@@ -745,7 +745,7 @@
    "src": "Yahoo Finance via yfinance (CL=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 91.2,
-   "lo": 89.08,
+   "lo": 89.07,
    "hi": 92.53,
    "vol": 253859,
    "h": [
@@ -782,9 +782,9 @@
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 99.24,
-   "lo": 96.71,
+   "lo": 96.65,
    "hi": 100.92,
-   "vol": 38993,
+   "vol": 38991,
    "h": [
     104.28,
     104.72,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75855.4766,
+   "p": 75962.8906,
    "prev": 75747.5781,
-   "chg": 107.8984,
-   "pct": 0.14,
+   "chg": 215.3125,
+   "pct": 0.28,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-08T12:25:18.218717Z",
+   "ts": "2026-11-08T13:26:18.029019Z",
    "open": 75753.7109,
    "lo": 75585.3672,
-   "hi": 75918.0391,
-   "vol": 8942926848,
+   "hi": 76019.25,
+   "vol": 8500328960,
    "h": [
     82017.6,
     81853.54,
@@ -844,7 +844,7 @@
     75942.12,
     75746.93,
     75747.58,
-    75855.48
+    75962.89
    ]
   }
  },
@@ -1522,14 +1522,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 995843768320,
+   "mcap": 998898073600,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -2167,13 +2167,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 123.1505,
-   "shares": 572600000,
-   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2225,12 +2220,60 @@
  ],
  "news": [
   {
+   "h": "En Nouvelle-Aquitaine, une première dans l’achat groupé d’énergie",
+   "w": "Neuf entreprises se sont associées pour acheter de l’énergie décarbonée, à un prix prédéfini pendant quinze ans. Un modèle qui peut faire école.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-08T13:00:03Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/11/08/en-nouvelle-aquitaine-une-premiere-dans-l-achat-groupe-d-energie_6808429_3234.html"
+  },
+  {
+   "h": "How Democrats will try to end Trump's tariffs",
+   "w": "Rep. Hakeem Jeffries, D-N.Y., who is likely the next House speaker, has made clear that ending President Trump's tariffs is one of Democrats' top priorities.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-08T13:00:01Z",
+   "url": "https://www.cnbc.com/2026/11/08/trump-tariffs-democrats-congress-canada.html"
+  },
+  {
+   "h": "Using miles to fly for Thanksgiving? These are the most expensive and cheapest routes",
+   "w": "Thanksgiving airfare will cost more than last year as fares rise and strong demand continues.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-08T13:00:01Z",
+   "url": "https://www.cnbc.com/2026/11/08/frequent-flyer-miles-points-thanksgiving.html"
+  },
+  {
+   "h": "Amazon's Astro home robot has fans but looks destined for the 'trash heap.' Why it's trying again",
+   "w": "Amazon has formed a new home robotics team and is hiring for a “new-to-world robot product,” according to CNBC’s analysis of job posts.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-08T13:00:01Z",
+   "url": "https://www.cnbc.com/2026/11/08/amazon-home-robot-fauna-sprout.html"
+  },
+  {
+   "h": "Brands are sponsoring IRL communities. Some experts say that could spell their end",
+   "w": "Brands are sponsoring book clubs and other local groups, giving organizers new revenue while raising questions about trust and community.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-08T13:00:01Z",
+   "url": "https://www.cnbc.com/make-it/2026/11/08/brand-sponsorship-local-communities.html"
+  },
+  {
+   "h": "Un administrateur de Caterpillar achète des actions pour 620.390$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T12:17:25Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-caterpillar-achete-des-actions-pour-620390-93CH-3683717"
+  },
+  {
    "h": "Saudi Aramco office in Riyadh damaged in latest Houthi strikes",
    "w": "Tower hosting Saudi Arabia’s state-owned oil major hit by shrapnel in King Abdullah Financial District on Sunday",
    "syms": [
     "BRENT"
    ],
-   "src": "myFT — sujet suivi",
+   "src": "myFT — world",
    "ts": "2026-11-08T12:16:02Z",
    "url": "https://www.ft.com/content/eeadc13e-b915-4591-ab85-54db81030996?syn-25a6b1a6=1",
    "mine": 1
@@ -2239,7 +2282,7 @@
    "h": "Data says the unsaid about British welfare politics",
    "w": "Both Labour and the Conservatives owe their majorities to claimants, just different kinds",
    "syms": [],
-   "src": "myFT — economy",
+   "src": "myFT — europe",
    "ts": "2026-11-08T12:00:11Z",
    "url": "https://www.ft.com/content/62bc1938-d7ea-4be0-a5de-ec9735343009?syn-25a6b1a6=1",
    "mine": 1
@@ -2306,7 +2349,7 @@
    "h": "Anthropic strikes $3.4bn deal to generate gas-fired power for data centres",
    "w": "AI lab bypasses traditional suppliers to secure scarce equipment as demand for energy surges",
    "syms": [],
-   "src": "myFT — us",
+   "src": "myFT — world",
    "ts": "2026-11-08T11:00:09Z",
    "url": "https://www.ft.com/content/41bf5c6a-9735-4f1a-a8e3-2bcccad58ba0?syn-25a6b1a6=1",
    "mine": 1
@@ -2377,12 +2420,28 @@
    "url": "https://www.cnbc.com/2026/11/08/france-protests-clashes-arrests.html"
   },
   {
-   "h": "La centrale nucléaire de Zaporijjia perd son alimentation externe et bascule sur des générateurs diesel",
+   "h": "Pakistan's Hormuz agreement with Iran faces test after LNG tanker attack",
    "w": "",
    "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T09:08:27Z",
-   "url": "https://fr.investing.com/news/economy-news/la-centrale-nucleaire-de-zaporijjia-perd-son-alimentation-externe-et-bascule-sur-des-generateurs-diesel-3683700"
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T07:26:18.029019Z",
+   "url": "https://asia.nikkei.com/spotlight/iran-tensions/iran-war/pakistan-s-hormuz-agreement-with-iran-faces-test-after-lng-tanker-attack"
+  },
+  {
+   "h": "Gen Z and AI are changing the world of video games",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T07:26:18.029019Z",
+   "url": "https://asia.nikkei.com/opinion/gen-z-and-ai-are-changing-the-world-of-video-games"
+  },
+  {
+   "h": "Credit Saison, ADB to partner on loans for Asia's small businesses",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T07:26:18.029019Z",
+   "url": "https://asia.nikkei.com/business/finance/credit-saison-adb-to-partner-on-loans-for-asia-s-small-businesses"
   },
   {
    "h": "Ukraine's Zaporizhzhia nuclear plant again relies on backup power",
@@ -2487,14 +2546,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-08T05:03:56.796377Z",
    "url": "https://asia.nikkei.com/business/transportation/grab-rival-tada-joins-singapore-s-self-driving-minibus-project"
-  },
-  {
-   "h": "Indonesia's art deco hot spot, a century on",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T05:03:56.796377Z",
-   "url": "https://asia.nikkei.com/life-arts/life/destinations/indonesia-s-art-deco-hot-spot-a-century-on"
   },
   {
    "h": "UK must ‘catch up’ with Europe in opposing Russian threat, says military chief",
@@ -2634,24 +2685,6 @@
    "mine": 1
   },
   {
-   "h": "Bridgestone revs up output of massive mining tires on AI-driven demand",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T04:16:20.446799Z",
-   "url": "https://asia.nikkei.com/business/automobiles/bridgestone-revs-up-output-of-massive-mining-tires-on-ai-driven-demand"
-  },
-  {
-   "h": "Japan manufacturers lift profit outlooks on price hikes, weak yen",
-   "w": "",
-   "syms": [
-    "USDJPY"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T04:16:20.446799Z",
-   "url": "https://asia.nikkei.com/business/business-trends/japan-manufacturers-lift-profit-outlooks-on-price-hikes-weak-yen"
-  },
-  {
    "h": "« J’ai un entretien ce vendredi ! C’est mon dernier espoir… » : quand la réalité de la crise envahit les réseaux sociaux",
    "w": "Selon l’Insee, en France, le taux de chômage des moins de 25 ans a dépassé, au deuxième trimestre, les 21 %. Face à la difficulté à s’insérer dans le monde du travail, de nombreux jeunes « sous pression » trouvent, sur YouTube ou TikTok, des espaces pour s’épancher.",
    "syms": [],
@@ -2672,7 +2705,7 @@
    "h": "Trump asks UFC boss Dana White to be new press secretary",
    "w": "US president signals combative approach in wake of midterms drubbing of his party",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-08T01:23:57Z",
    "url": "https://www.ft.com/content/52c3c7ac-f0ee-4b90-a2c8-68e76d120a79?syn-25a6b1a6=1",
    "mine": 1
@@ -2694,14 +2727,6 @@
    "url": "https://www.bbc.co.uk/news/articles/cmvg652l927lo?at_medium=RSS&at_campaign=rss"
   },
   {
-   "h": "Risk of Iran war escalation remains high despite Democratic sweep in U.S. midterm elections",
-   "w": "The U.S. and Iran are on a collision course as tensions in the Middle East simmer.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-07T22:17:52Z",
-   "url": "https://www.cnbc.com/2026/11/07/iran-war-midterm-election-oil-price-trump.html"
-  },
-  {
    "h": "Meta chief strategy officer Dave Wehner leaves to join AI infrastructure startup Fireworks as CFO",
    "w": "Dave Wehner, Meta’s chief strategy officer, is leaving the company to become CFO of Fireworks, the AI infrastructure startup valued at $17.5 billion in July.",
    "syms": [],
@@ -2710,20 +2735,12 @@
    "url": "https://www.cnbc.com/2026/11/07/dave-wehner-meta-fireworks-cfo.html"
   },
   {
-   "h": "Trump targets Slotkin in call for DOJ probe of alleged Democratic threats to Republicans",
-   "w": "Trump ordered DOJ to examine alleged threats against Republicans while singling out Slotkin.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-07T21:59:10Z",
-   "url": "https://www.cnbc.com/2026/11/07/trump-doj-democrats-alleged-threats-slotkin.html"
-  },
-  {
    "h": "US believes Nvidia’s Huang had romantic relationship with alleged Chinese spy",
    "w": "American intelligence warned the tech boss was involved with executive recruited by China to gather information on US group",
    "syms": [
     "NVDA"
    ],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-07T21:41:05Z",
    "url": "https://www.ft.com/content/a55a2a22-4479-4f93-a445-6147a5c6d790?syn-25a6b1a6=1",
    "mine": 1
@@ -2732,7 +2749,7 @@
    "h": "Israel’s president gives Gadi Eisenkot first chance at forming a government",
    "w": "Isaac Herzog’s decision means opposition politician has 28 days to attempt to put together a ruling coalition",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — middle east north africa",
    "ts": "2026-11-07T21:03:47Z",
    "url": "https://www.ft.com/content/bf737648-b974-4f87-ba0b-958f2aff1163?syn-25a6b1a6=1",
    "mine": 1
@@ -2830,12 +2847,12 @@
    "url": "https://www.marketwatch.com/story/the-s-p-500-has-become-a-big-ai-bet-here-are-some-simple-alternatives-3c7574a4?mod=mw_rss_topstories"
   },
   {
-   "h": "Decisive election. Dramatic stock swings. How we handled the market last week",
-   "w": "On Friday, Jim Cramer revealed his strategy for navigating this new era at the Investing Club's 4th Annual Meeting.",
+   "h": "Why the prognosis for healthcare stocks is uncertain ahead of Congress’ new makeup",
+   "w": "Healthcare stocks may struggle to find momentum as the Democrats get ready to take over Congress.",
    "syms": [],
    "src": "CNBC — Marchés",
-   "ts": "2026-11-07T16:31:00Z",
-   "url": "https://www.cnbc.com/investingclub/2026/11/07/decisive-election-dramatic-stock-swings-how-we-handled-the-market-last-week.html"
+   "ts": "2026-11-07T16:02:33Z",
+   "url": "https://www.cnbc.com/2026/11/07/healthcare-stocks-may-face-trouble-due-to-midterm-results.html"
   },
   {
    "h": "Alertes à la bombe visant des avions : une enquête ouverte par le parquet de Paris, notamment sur un lien éventuel avec des puissances étrangères",
@@ -2868,24 +2885,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-07T14:13:19Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/07/les-prix-de-l-electricite-pour-les-particuliers-seront-stables-jusqu-au-1-fevrier-au-moins-selon-le-pdg-d-edf_6808283_3234.html"
-  },
-  {
-   "h": "Berkshire shares surge as Wall Street swoons amid AI fears",
-   "w": "Berkshire Hathaway shares roared past the S&amp;P 500 index this week and are outperforming the benchmark for the year-to-date.",
-   "syms": [
-    "SPX"
-   ],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-07T14:06:20Z",
-   "url": "https://www.cnbc.com/2026/11/07/berkshire-shares-surge-as-wall-street-swoons-amid-ai-fears.html"
-  },
-  {
-   "h": "Mark Cuban says he doesn’t ‘give a f---' about growing his net worth—a healthy mindset for non-billionaires too, a financial therapist says",
-   "w": "The billionaire serial entrepreneur says he cares more about the impact he can have by spending and investing, rather than worrying about amassing more wealth.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-07T14:05:01Z",
-   "url": "https://www.cnbc.com/make-it/2026/11/07/mark-cuban-net-worth-money-mindset.html"
   },
   {
    "h": "Christine Lagarde: Interview with Yomiuri Shimbun",
@@ -3069,14 +3068,6 @@
    "ts": "2026-11-07T05:00:23Z",
    "url": "https://www.ft.com/content/510f4a2e-0c7a-48c9-bee6-eabc704b1907",
    "mine": 1
-  },
-  {
-   "h": "Pourquoi personne ne semble satisfait de l’augmentation du SMIC ? Comprendre en trois minutes",
-   "w": "Depuis 2017, le salaire minimum a augmenté de plus de 28 % en France. Mais cette hausse, qui correspond aux 14 revalorisations automatiques du SMIC, a en réalité suivi l’inflation sans véritable gain de pouvoir d’achat pour les salariés concernés.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-07T05:00:17Z",
-   "url": "https://www.lemonde.fr/comprendre-en-3-minutes/video/2026/11/07/pourquoi-personne-ne-semble-satisfait-de-l-augmentation-du-smic-comprendre-en-trois-minutes_6808237_6176282.html"
   },
   {
    "h": "'My mortgage is going up £200 a month': How rising interest rates are hitting people's pockets",
