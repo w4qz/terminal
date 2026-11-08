@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T17:35:19.781770Z",
+ "generated_at": "2026-11-08T18:12:32.757478Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
@@ -708,7 +708,7 @@
    "src": "Yahoo Finance via yfinance (GC=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 4098.5,
-   "lo": 4037.0,
+   "lo": 4035.6001,
    "hi": 4116.2002,
    "vol": 166431,
    "h": [
@@ -745,7 +745,7 @@
    "src": "Yahoo Finance via yfinance (CL=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 91.2,
-   "lo": 89.07,
+   "lo": 89.08,
    "hi": 92.53,
    "vol": 253859,
    "h": [
@@ -778,13 +778,13 @@
    "prev": 98.29,
    "chg": 0.03,
    "pct": 0.03,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (BZ=F) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 99.24,
-   "lo": 96.65,
+   "lo": 96.71,
    "hi": 100.92,
-   "vol": 38991,
+   "vol": 38993,
    "h": [
     104.28,
     104.72,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75600.0078,
+   "p": 75760.4375,
    "prev": 75747.5781,
-   "chg": -147.5703,
-   "pct": -0.19,
+   "chg": 12.8594,
+   "pct": 0.02,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-08T17:35:19.781770Z",
+   "ts": "2026-11-08T18:12:32.757478Z",
    "open": 75753.7109,
    "lo": 75585.3672,
    "hi": 76068.3203,
-   "vol": 9048765440,
+   "vol": 9073413120,
    "h": [
     82017.6,
     81853.54,
@@ -844,7 +844,7 @@
     75942.12,
     75746.93,
     75747.58,
-    75616.54
+    75753.58
    ]
   }
  },
@@ -1522,14 +1522,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 998898073600,
+   "mcap": 995843768320,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -2167,8 +2167,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 123.1505,
+   "shares": 572600000,
+   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2220,6 +2225,51 @@
  ],
  "news": [
   {
+   "h": "Democrats vow to impeach Trump officials and investigate Republican donors",
+   "w": "Pete Hegseth, Elon Musk and Venezuelan oil deals are early targets for Congressional probes by incoming lawmakers",
+   "syms": [
+    "BRENT"
+   ],
+   "src": "myFT — world",
+   "ts": "2026-11-08T18:10:24Z",
+   "url": "https://www.ft.com/content/111fefdb-0f85-4f8f-854f-86a5f81aceec?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Nvidia CEO Jensen Huang faces bipartisan congressional scrutiny over reported China spy link",
+   "w": "Lawmakers want to question Nvidia CEO Jensen Huang following reports about his relationship with an alleged Chinese intelligence asset.",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-08T18:06:12Z",
+   "url": "https://www.cnbc.com/2026/11/08/jensen-huang-nvidia-china-spy-congress.html"
+  },
+  {
+   "h": "‘It seems bizarre’: We’re in our 80s with $950,000 in traditional IRAs. Why is our adviser pushing Roth conversions?",
+   "w": "“Our basic living expenses are covered by $110,000 in annual pensions and Social Security.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-08T18:00:00Z",
+   "url": "https://www.marketwatch.com/story/it-seems-bizarre-were-in-our-80s-with-950-000-in-traditional-iras-why-is-our-adviser-pushing-us-to-do-roth-conversions-a665f990?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Un administrateur de First Financial Bankshares achète pour 24.423$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T17:48:04Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-first-financial-bankshares-achete-pour-24423-dactions-93CH-3683745"
+  },
+  {
+   "h": "Here are the 2 big things we're watching in the stock market in the week ahead",
+   "w": "CoreWeave earnings and inflation data will take center stage.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-08T17:40:15Z",
+   "url": "https://www.cnbc.com/investingclub/2026/11/08/here-are-the-2-big-things-were-watching-in-the-stock-market-in-the-week-ahead.html"
+  },
+  {
    "h": "Two months after my father’s funeral, my stepmother asked me to repay his $40,000 wedding gift. Should I do what she says?",
    "w": "“About two months after his funeral, my stepmother called and said she wanted the money back.”",
    "syms": [],
@@ -2242,17 +2292,6 @@
    "src": "Investing.com France",
    "ts": "2026-11-08T17:02:20Z",
    "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-comptable-de-cullenfrost-bankers-vend-des-actions-pour-85290-93CH-3683744"
-  },
-  {
-   "h": "Democrats vow to impeach Trump officials and investigate Republican donors",
-   "w": "Pete Hegseth, Elon Musk and Venezuelan oil deals are early targets for Congressional probes by incoming lawmakers",
-   "syms": [
-    "BRENT"
-   ],
-   "src": "myFT — world",
-   "ts": "2026-11-08T17:02:12Z",
-   "url": "https://www.ft.com/content/111fefdb-0f85-4f8f-854f-86a5f81aceec?syn-25a6b1a6=1",
-   "mine": 1
   },
   {
    "h": "La chute de l’IA chinoise menace les ambitions de Xi sur les marchés",
@@ -2406,14 +2445,6 @@
    "url": "https://www.marketwatch.com/story/corporate-americas-profit-numbers-are-just-barely-beating-wall-streets-expectations-eaa67fe2?mod=mw_rss_topstories"
   },
   {
-   "h": "Les derniers résultats de Pacira avant son rachat à 1,65 milliard $",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T14:46:47Z",
-   "url": "https://fr.investing.com/news/earnings/les-derniers-resultats-de-pacira-avant-son-rachat-a-165-milliard--93CH-3683728"
-  },
-  {
    "h": "How each country’s emissions compare",
    "w": "A searchable dashboard of 197 countries’ historical emissions and future climate targets",
    "syms": [],
@@ -2533,6 +2564,30 @@
    "ts": "2026-11-08T12:16:02Z",
    "url": "https://www.ft.com/content/eeadc13e-b915-4591-ab85-54db81030996?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "What the Democratic sweep means for Trump's tariffs and AI",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T12:12:32.757478Z",
+   "url": "https://asia.nikkei.com/video/what-the-democratic-sweep-means-for-trump-s-tariffs-and-ai"
+  },
+  {
+   "h": "Grab rival Tada joins Singapore's self-driving minibus project",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T12:12:32.757478Z",
+   "url": "https://asia.nikkei.com/business/transportation/grab-rival-tada-joins-singapore-s-self-driving-minibus-project"
+  },
+  {
+   "h": "Astellas employee jailed in China on spy charge set for December release",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T12:12:32.757478Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/astellas-employee-jailed-in-china-on-spy-charge-set-for-december-release"
   },
   {
    "h": "Data says the unsaid about British welfare politics",
@@ -2663,30 +2718,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-08T10:16:37.252791Z",
    "url": "https://asia.nikkei.com/business/travel-leisure/japan-tourism-industry-steps-up-push-to-draw-indian-visitors"
-  },
-  {
-   "h": "US sports investment fund RedBird hunts for tie-ups in Japan",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T10:16:37.252791Z",
-   "url": "https://asia.nikkei.com/spotlight/sports/us-sports-investment-fund-redbird-hunts-for-tie-ups-in-japan"
-  },
-  {
-   "h": "Vietnam leader To Lam visits Japan as decades-old relationship evolves",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T09:36:07.373300Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/vietnam-leader-to-lam-visits-japan-as-decades-old-relationship-evolves"
-  },
-  {
-   "h": "COP31 climate summit in Turkey, ASEAN Summit, Sri Lanka budget",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T09:36:07.373300Z",
-   "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/cop31-climate-summit-in-turkey-asean-summit-sri-lanka-budget"
   },
   {
    "h": "Moins de touristes étrangers dans les commerces parisiens, autre conséquence des manifestations",
@@ -2927,14 +2958,6 @@
    "mine": 1
   },
   {
-   "h": "This retired professor has reinvented himself — as a Taylor Swift scholar",
-   "w": "His niece convinced him to spend his retirement analyzing Taylor Swift lyrics. Now he’s a successful podcaster at 72.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-07T20:48:00Z",
-   "url": "https://www.marketwatch.com/story/this-retired-professor-has-reinvented-himself-as-a-taylor-swift-scholar-88456c8d?mod=mw_rss_topstories"
-  },
-  {
    "h": "French far-left presidential hopeful pledges ‘revolutionary’ remaking of society",
    "w": "Jean-Luc Mélenchon stages show of force with 20,000-strong rally as widespread protests boost his momentum",
    "syms": [],
@@ -2967,22 +2990,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-07T15:43:47Z",
    "url": "https://www.lemonde.fr/societe/article/2026/11/07/alertes-a-la-bombe-visant-des-avions-une-enquete-ouverte-par-le-parquet-de-paris-notamment-sur-un-lien-eventuel-avec-des-puissances-etrangeres_6808294_3224.html"
-  },
-  {
-   "h": "Berkshire Hathaway more than doubles buybacks in third quarter as earnings decline",
-   "w": "Berkshire Hathaway said Saturday it accelerated its share repurchases during the third quarter, as operating and overall profits took a hit.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-07T15:23:46Z",
-   "url": "https://www.cnbc.com/2026/11/07/berkshire-hathaway-q3-2026-earnings-buybacks.html"
-  },
-  {
-   "h": "31-year-old dumpster diver brought in $140,000 in 12 months: I 'did much more than I thought was possible'",
-   "w": "Carter Stevens started reselling discarded items from dumpsters around Nashville, Tennessee, in March 2024. Months earlier, he'd been living in his car.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-07T14:15:01Z",
-   "url": "https://www.cnbc.com/make-it/2026/11/07/dumpster-diver-resale-business.html"
   },
   {
    "h": "Les prix de l’électricité pour les particuliers « seront stables jusqu’au 1ᵉʳ février au moins », selon le PDG d’EDF",
