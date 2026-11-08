@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T09:22:23.339647Z",
+ "generated_at": "2026-11-08T10:16:20.446799Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
@@ -43,8 +43,8 @@
    "prev": 30.2,
    "chg": 2.13,
    "pct": 7.05,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (ASTS) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-11-06T21:00:00Z",
    "open": 30.54,
    "lo": 27.58,
@@ -596,8 +596,8 @@
    "prev": 158.357,
    "chg": 0.068,
    "pct": 0.04,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (JPY=X)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (JPY=X) — échec de la dernière mise à jour",
    "ts": "2026-11-06T22:15:00Z",
    "open": 158.425,
    "lo": 158.425,
@@ -708,7 +708,7 @@
    "src": "Yahoo Finance via yfinance (GC=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 4098.5,
-   "lo": 4037.0,
+   "lo": 4035.6001,
    "hi": 4116.2002,
    "vol": 166431,
    "h": [
@@ -745,7 +745,7 @@
    "src": "Yahoo Finance via yfinance (CL=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 91.2,
-   "lo": 89.07,
+   "lo": 89.08,
    "hi": 92.53,
    "vol": 253859,
    "h": [
@@ -782,9 +782,9 @@
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 99.24,
-   "lo": 96.65,
+   "lo": 96.71,
    "hi": 100.92,
-   "vol": 38991,
+   "vol": 38993,
    "h": [
     104.28,
     104.72,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75778.6172,
+   "p": 75778.7969,
    "prev": 75747.5781,
-   "chg": 31.0391,
+   "chg": 31.2188,
    "pct": 0.04,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-08T09:22:23.339647Z",
+   "ts": "2026-11-08T10:16:20.446799Z",
    "open": 75753.7109,
    "lo": 75585.3672,
    "hi": 75878.1016,
-   "vol": 8854541312,
+   "vol": 8874881024,
    "h": [
     82017.6,
     81853.54,
@@ -844,7 +844,7 @@
     75942.12,
     75746.93,
     75747.58,
-    75778.62
+    75778.8
    ]
   }
  },
@@ -1149,9 +1149,9 @@
    "sector": "Energy",
    "industry": "Oil & Gas Integrated",
    "ccy": "SAR",
-   "mcap": 6328297717760,
-   "pe": 14.0645,
-   "fpe": 15.6647,
+   "mcap": 6318621458432,
+   "pe": 14.043,
+   "fpe": 15.6407,
    "eps": 1.86,
    "feps": 1.67,
    "revTTM": 1932166955008,
@@ -1159,7 +1159,7 @@
    "shares": 241907400000,
    "beta": -0.022,
    "div": 1.36,
-   "divYield": 5.199,
+   "divYield": 5.207,
    "target": 30.3294,
    "targetHi": 35.0,
    "targetLo": 27.0,
@@ -1522,14 +1522,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 998898073600,
+   "mcap": 995843768320,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -2167,8 +2167,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 123.1505,
+   "shares": 572600000,
+   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2219,6 +2224,38 @@
   }
  ],
  "news": [
+  {
+   "h": "Un administrateur de Crocs vend des actions pour 2,3 millions de dollars",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T10:02:08Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-crocs-vend-des-actions-pour-23-millions-de-dollars-93CH-3683704"
+  },
+  {
+   "h": "L’UE et le Royaume-Uni proches d’un accord sur le marché carbone post-Brexit",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T09:39:00Z",
+   "url": "https://fr.investing.com/news/economy-news/lue-et-le-royaumeuni-proches-dun-accord-sur-le-marche-carbone-postbrexit-3683703"
+  },
+  {
+   "h": "Moins de touristes étrangers dans les commerces parisiens, autre conséquence des manifestations",
+   "w": "Les mobilisations sociales et les scènes de violences impactent les commerces parisiens. Dans le quartier touristique du Marais, les magasins se barricadent. Fini le lèche-vitrine pour les visiteurs internationaux.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-08T09:30:07Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/11/08/moins-de-touristes-etrangers-dans-les-commerces-parisiens-autre-consequence-des-manifestations_6808417_3234.html"
+  },
+  {
+   "h": "In pictures: France protests draw 146,000 as clashes erupt for fourth straight weekend",
+   "w": "France's Interior Ministry counted 146,000 protesters Saturday as demonstrations over living costs public services entered a fourth consecutive weekend.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-08T09:29:04Z",
+   "url": "https://www.cnbc.com/2026/11/08/france-protests-clashes-arrests.html"
+  },
   {
    "h": "La centrale nucléaire de Zaporijjia perd son alimentation externe et bascule sur des générateurs diesel",
    "w": "",
@@ -2284,16 +2321,6 @@
    "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-first-interstate-bancsystem-vend-120016-dactions-fibk-93CH-3683689"
   },
   {
-   "h": "Le Bitcoin reste sous 76 000 $ alors que Binance ferme des comptes en Europe",
-   "w": "",
-   "syms": [
-    "BTC"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T06:00:07Z",
-   "url": "https://fr.investing.com/news/cryptocurrency-news/le-bitcoin-reste-sous-76-000--alors-que-binance-ferme-des-comptes-en-europe-3683688"
-  },
-  {
    "h": "Cathie Wood 'always feels better when the market is worried' — here's why",
    "w": "The Ark Invest CEO said there was a \"wall of worry\" gripping markets right now.",
    "syms": [],
@@ -2324,14 +2351,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-08T05:25:07Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/08/le-super-el-nino-inquiete-les-horticulteurs-kenyans-qui-fournissent-un-tiers-des-fleurs-importees-de-l-ue_6808402_3234.html"
-  },
-  {
-   "h": "Les investissements énergétiques de la Chine devraient atteindre 940 milliards $ en 2026",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T05:23:29Z",
-   "url": "https://fr.investing.com/news/economy-news/les-investissements-energetiques-de-la-chine-devraient-atteindre-940-milliards--en-2026-3683684"
   },
   {
    "h": "UK must ‘catch up’ with Europe in opposing Russian threat, says military chief",
@@ -2471,6 +2490,32 @@
    "mine": 1
   },
   {
+   "h": "Bridgestone revs up output of massive mining tires on AI-driven demand",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T04:16:20.446799Z",
+   "url": "https://asia.nikkei.com/business/automobiles/bridgestone-revs-up-output-of-massive-mining-tires-on-ai-driven-demand"
+  },
+  {
+   "h": "Japan manufacturers lift profit outlooks on price hikes, weak yen",
+   "w": "",
+   "syms": [
+    "USDJPY"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T04:16:20.446799Z",
+   "url": "https://asia.nikkei.com/business/business-trends/japan-manufacturers-lift-profit-outlooks-on-price-hikes-weak-yen"
+  },
+  {
+   "h": "Credit Saison, ADB to partner on loans for Asia's small businesses",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T04:16:20.446799Z",
+   "url": "https://asia.nikkei.com/business/finance/credit-saison-adb-to-partner-on-loans-for-asia-s-small-businesses"
+  },
+  {
    "h": "« J’ai un entretien ce vendredi ! C’est mon dernier espoir… » : quand la réalité de la crise envahit les réseaux sociaux",
    "w": "Selon l’Insee, en France, le taux de chômage des moins de 25 ans a dépassé, au deuxième trimestre, les 21 %. Face à la difficulté à s’insérer dans le monde du travail, de nombreux jeunes « sous pression » trouvent, sur YouTube ou TikTok, des espaces pour s’épancher.",
    "syms": [],
@@ -2551,22 +2596,6 @@
    "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/cop31-climate-summit-in-turkey-asean-summit-sri-lanka-budget"
   },
   {
-   "h": "What the Democratic sweep means for Trump's tariffs and AI",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T01:36:56.165585Z",
-   "url": "https://asia.nikkei.com/video/what-the-democratic-sweep-means-for-trump-s-tariffs-and-ai"
-  },
-  {
-   "h": "Indonesia's art deco hot spot, a century on",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T01:36:56.165585Z",
-   "url": "https://asia.nikkei.com/life-arts/life/destinations/indonesia-s-art-deco-hot-spot-a-century-on"
-  },
-  {
    "h": "Indonesian president’s adviser says MSCI downgrade threat ‘went too far’",
    "w": "Tycoon and brother of President Prabowo Subianto says expulsion from global indices would have ‘serious consequences’",
    "syms": [],
@@ -2583,14 +2612,6 @@
    "ts": "2026-11-08T01:23:57Z",
    "url": "https://www.ft.com/content/52c3c7ac-f0ee-4b90-a2c8-68e76d120a79?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Grab rival Tada joins Singapore's self-driving minibus project",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T00:23:33.694529Z",
-   "url": "https://asia.nikkei.com/business/transportation/grab-rival-tada-joins-singapore-s-self-driving-minibus-project"
   },
   {
    "h": "Trump offers UFC chief Dana White press secretary job",
@@ -2768,14 +2789,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-07T16:30:00Z",
    "url": "https://www.marketwatch.com/story/the-2027-tax-brackets-are-out-see-what-the-standard-deduction-and-salt-tax-breaks-will-be-5dd1d293?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Why the prognosis for healthcare stocks is uncertain ahead of Congress’ new makeup",
-   "w": "Healthcare stocks may struggle to find momentum as the Democrats get ready to take over Congress.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-07T16:02:33Z",
-   "url": "https://www.cnbc.com/2026/11/07/healthcare-stocks-may-face-trouble-due-to-midterm-results.html"
   },
   {
    "h": "Alertes à la bombe visant des avions : une enquête ouverte par le parquet de Paris, notamment sur un lien éventuel avec des puissances étrangères",
@@ -3052,14 +3065,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-07T05:00:17Z",
    "url": "https://www.lemonde.fr/comprendre-en-3-minutes/video/2026/11/07/pourquoi-personne-ne-semble-satisfait-de-l-augmentation-du-smic-comprendre-en-trois-minutes_6808237_6176282.html"
-  },
-  {
-   "h": "Que faire si je constate des fissures sur ma maison ?",
-   "w": "Il faut d’abord dater leur apparition, puis documenter régulièrement leur évolution à l’aide de photos et de mesures, explique Olivier Moustacakis, cofondateur d’Assurland.com.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-07T05:00:04Z",
-   "url": "https://www.lemonde.fr/argent/article/2026/11/07/que-faire-si-je-constate-des-fissures-sur-ma-maison_6808202_1657007.html"
   },
   {
    "h": "Elon Musk appears to signal the end of the road for Cybertruck",
