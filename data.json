@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T05:28:54.426274Z",
+ "generated_at": "2026-11-08T06:23:33.694529Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75763.7734,
+   "p": 75739.0781,
    "prev": 75746.9297,
-   "chg": 16.8438,
-   "pct": 0.02,
+   "chg": -7.8516,
+   "pct": -0.01,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-08T05:28:54.426274Z",
+   "ts": "2026-11-08T06:23:33.694529Z",
    "open": 75753.7109,
    "lo": 75585.3672,
    "hi": 75841.5156,
-   "vol": 8933298176,
+   "vol": 8837925888,
    "h": [
     81382.15,
     82017.6,
@@ -844,7 +844,7 @@
     80405.29,
     75942.12,
     75746.93,
-    75763.77
+    75739.08
    ]
   }
  },
@@ -2220,6 +2220,38 @@
  ],
  "news": [
   {
+   "h": "Chez Grasset, un supplice mortifère après sept mois sans patron",
+   "w": "Depuis le limogeage brutal de son PDG Olivier Nora en avril, débarqué par son propriétaire, Vincent Bolloré, la maison parisienne de la rue des Saints-Pères attend, muette et tétanisée, de connaître son sort.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-08T05:30:15Z",
+   "url": "https://www.lemonde.fr/livres/article/2026/11/08/chez-grasset-un-supplice-mortifere-apres-sept-mois-sans-patron_6808405_3260.html"
+  },
+  {
+   "h": "François Villeroy de Galhau : « Laisser filer la dette, c’est faire des choix contre la jeunesse, des choix gérontocratiques »",
+   "w": "Face à la crise financière et sociale, l’ancien gouverneur de la Banque de France, qui a quitté son poste en juin, plaide, dans un entretien au « Monde », pour un redressement fondé sur l’efficacité des dépenses publiques et sur trois grands projets concrets européens à l’horizon 2029 : IA, énergie et défense.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-08T05:30:11Z",
+   "url": "https://www.lemonde.fr/idees/article/2026/11/08/francois-villeroy-de-galhau-laisser-filer-la-dette-c-est-faire-des-choix-contre-la-jeunesse-des-choix-gerontocratiques_6808404_3232.html"
+  },
+  {
+   "h": "Le « super El Niño » inquiète les horticulteurs kényans, qui fournissent un tiers des fleurs importées de l’UE",
+   "w": "Ce pays d’Afrique de l’Est fournit aux étals européens de nombreux produits agricoles et horticoles. Les producteurs se préparent à un El Niño d’une puissance peut-être jamais vue.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-08T05:25:07Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/11/08/le-super-el-nino-inquiete-les-horticulteurs-kenyans-qui-fournissent-un-tiers-des-fleurs-importees-de-l-ue_6808402_3234.html"
+  },
+  {
+   "h": "Les investissements énergétiques de la Chine devraient atteindre 940 milliards $ en 2026",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T05:23:29Z",
+   "url": "https://fr.investing.com/news/economy-news/les-investissements-energetiques-de-la-chine-devraient-atteindre-940-milliards--en-2026-3683684"
+  },
+  {
    "h": "L’Arabie Saoudite lève les alertes pétrolières après l’interception d’un missile houthi",
    "w": "",
    "syms": [],
@@ -2228,10 +2260,84 @@
    "url": "https://fr.investing.com/news/economy-news/larabie-saoudite-leve-les-alertes-petrolieres-apres-linterception-dun-missile-houthi-3683682"
   },
   {
+   "h": "UK must ‘catch up’ with Europe in opposing Russian threat, says military chief",
+   "w": "Sir Richard Knighton promises further action to counter Moscow’s submarines in the north Atlantic",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-08T05:00:19Z",
+   "url": "https://www.ft.com/content/9d49deb8-33f6-4375-9216-a95dbb915576?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Is Europe getting serious about ending tech dependence?",
+   "w": "Brussels is moving in the right direction but could push national governments further",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-08T05:00:19Z",
+   "url": "https://www.ft.com/content/bd763f67-4c23-4e55-8fbf-3ca0ed520175?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Crypto industry braces for reckoning over Trump ties",
+   "w": "Democrats have vowed to start investigation into president’s family after sweeping victory in midterms",
+   "syms": [
+    "BTC"
+   ],
+   "src": "myFT — world",
+   "ts": "2026-11-08T05:00:19Z",
+   "url": "https://www.ft.com/content/f1b98a61-4103-447c-bb9a-3dccc0819f61?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "America is craving a return to community",
+   "w": "The midterms are only the latest sign of hope",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-08T05:00:19Z",
+   "url": "https://www.ft.com/content/2a0bc83c-1c48-451a-a2b6-3371a36fc287?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "‘Radical left’ get the headlines but centrists dominate new US Congress",
+   "w": "Most of the Democrats who swept to power in the midterms blue wave are moderates",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-08T05:00:19Z",
+   "url": "https://www.ft.com/content/c8692ed7-f32b-487f-9efa-3ccd3d144f42?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "AI is coming for managers’ headcount",
+   "w": "Their pay grade could be next",
+   "syms": [],
+   "src": "myFT — financials",
+   "ts": "2026-11-08T05:00:19Z",
+   "url": "https://www.ft.com/content/c1af5834-e9ee-411f-ba57-9af758ac6682?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Hotel groups gain $50bn amid ‘unbelievably resilient’ demand",
+   "w": "Industry surprised by growth in bookings as tourists shrug off higher costs and geopolitical turmoil",
+   "syms": [],
+   "src": "myFT — companies",
+   "ts": "2026-11-08T05:00:19Z",
+   "url": "https://www.ft.com/content/8b2fdcb6-a882-4541-87ea-ecf290d090a4?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Russia races to build rival to Elon Musk’s Starlink",
+   "w": "Moscow’s flagship space project would enable more deadly drone strikes deep inside Ukraine",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-08T05:00:11Z",
+   "url": "https://www.ft.com/content/423ca208-8e22-4fb3-a76d-b9c722fd8cc0?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "Apple saves $2.7bn in taxes by booking profits in Singapore",
    "w": "City-state overtakes Ireland as iPhone maker’s biggest tax shelter according to new disclosures",
    "syms": [],
-   "src": "myFT — sujet suivi",
+   "src": "myFT — world",
    "ts": "2026-11-08T05:00:11Z",
    "url": "https://www.ft.com/content/49453406-99f2-4f5b-8f5d-01dc8cac5ede?syn-25a6b1a6=1",
    "mine": 1
@@ -2240,7 +2346,7 @@
    "h": "Groundscrapers: a low-rise innovation with high-rise prospects",
    "w": "Buildings that are longer than they are tall have started popping up in the busiest cities",
    "syms": [],
-   "src": "myFT — sujet suivi",
+   "src": "myFT — world",
    "ts": "2026-11-08T05:00:11Z",
    "url": "https://www.ft.com/content/3926d1c2-a32e-45b0-ab8a-cfcc96e90454?syn-25a6b1a6=1",
    "mine": 1
@@ -2249,9 +2355,45 @@
    "h": "‘Terrible backdrop’ looms over UN climate summit in Turkey",
    "w": "Various global crises suggest this year’s COP will be about trying to get previous deals acted upon, rather than bold commitments",
    "syms": [],
-   "src": "myFT — global economy",
+   "src": "myFT — world",
    "ts": "2026-11-08T05:00:11Z",
    "url": "https://www.ft.com/content/bec8ac4e-4c1d-424a-92af-f7330d9024d2?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Meet the people saving England’s peatlands",
+   "w": "The country’s ancient wetlands are so damaged that stored carbon is being released into the atmosphere, but conservation groups are working to restore them to health",
+   "syms": [],
+   "src": "myFT — companies",
+   "ts": "2026-11-08T05:00:11Z",
+   "url": "https://www.ft.com/content/bfc196c9-042d-4ad3-b53c-9248185b7159?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "‘Cowmaxxing’: Meat companies use every bit of the animal to fuel wellness boom",
+   "w": "Producers cash in on demand for hides, bones, skin, cartilage and tendons to satisfy collagen craze",
+   "syms": [],
+   "src": "myFT — companies",
+   "ts": "2026-11-08T05:00:11Z",
+   "url": "https://www.ft.com/content/b6730fcf-6bc8-4a9a-b1c7-752d71a2b9b3?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Argentina’s Milei dreams of data centres on the Patagonian steppe",
+   "w": "Libertarian seeks to turn vast land and energy resources into the foundation of his ‘unregulated’ AI hub",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-08T05:00:10Z",
+   "url": "https://www.ft.com/content/d432ae29-6454-4916-98c7-afb6993cfb67?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Far-right British MP outperforms most world leaders on X",
+   "w": "Rupert Lowe’s 1.7bn views underscore the power of the platform’s owner Elon Musk to amplify voices from political fringes",
+   "syms": [],
+   "src": "myFT — technology",
+   "ts": "2026-11-08T05:00:10Z",
+   "url": "https://www.ft.com/content/fe954496-6a1b-4644-9a7d-d99c53276bfd?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2329,6 +2471,30 @@
    "url": "https://fr.investing.com/news/stock-market-news/la-vente-massive-dactions-ia-pousse-les-investisseurs-vers-la-chine-et-linde-3683670"
   },
   {
+   "h": "Grab rival Tada joins Singapore's self-driving minibus project",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T00:23:33.694529Z",
+   "url": "https://asia.nikkei.com/business/transportation/grab-rival-tada-joins-singapore-s-self-driving-minibus-project"
+  },
+  {
+   "h": "Prep schools help Chinese students get into Japan's top universities",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T00:23:33.694529Z",
+   "url": "https://asia.nikkei.com/business/education/prep-schools-help-chinese-students-get-into-japan-s-top-universities"
+  },
+  {
+   "h": "Japan's unprotected deposits hit $890bn as inheritances inflate accounts",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T00:23:33.694529Z",
+   "url": "https://asia.nikkei.com/business/finance/japan-s-unprotected-deposits-hit-890bn-as-inheritances-inflate-accounts"
+  },
+  {
    "h": "Comment investir dans l’IA malgré les inquiétudes sur les dépenses ?",
    "w": "",
    "syms": [],
@@ -2343,14 +2509,6 @@
    "src": "Investing.com France",
    "ts": "2026-11-07T23:33:22Z",
    "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-doceanfirst-jack-farris-achete-pour-10008-dactions-93CH-3683667"
-  },
-  {
-   "h": "Le contrôleur de Southern Co, Matthew Kim, cède des actions pour 9.339$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T23:32:41Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-controleur-de-southern-co-matthew-kim-cede-des-actions-pour-9339-93CH-3683666"
   },
   {
    "h": "Bridgestone revs up output of massive mining tires on AI-driven demand",
@@ -2504,30 +2662,6 @@
    "url": "https://www.marketwatch.com/story/my-adviser-recommended-an-annuity-is-it-the-right-move-in-this-market-environment-00edbbf6?mod=mw_rss_topstories"
   },
   {
-   "h": "What the Democratic sweep means for Trump's tariffs and AI",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T20:30:22.471921Z",
-   "url": "https://asia.nikkei.com/video/what-the-democratic-sweep-means-for-trump-s-tariffs-and-ai"
-  },
-  {
-   "h": "Indonesia's art deco hot spot, a century on",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T20:30:22.471921Z",
-   "url": "https://asia.nikkei.com/life-arts/life/destinations/indonesia-s-art-deco-hot-spot-a-century-on"
-  },
-  {
-   "h": "Prospect of 'modern-day Yalta' shakes Asia's postwar order",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T20:30:22.471921Z",
-   "url": "https://asia.nikkei.com/spotlight/comment/prospect-of-modern-day-yalta-shakes-asia-s-postwar-order"
-  },
-  {
    "h": "Here are the 2027 capital-gains tax rates for each income level",
    "w": "How much will you pay in capital-gains taxes next year? The IRS just released this crucial information.",
    "syms": [],
@@ -2588,7 +2722,7 @@
    "h": "Berkshire Hathaway steps up share buybacks with $9.6bn of purchases",
    "w": "Insurance slowdown drags on performance, with quarterly operating income falling by 5.8 per cent year-on-year",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-07T16:43:06Z",
    "url": "https://www.ft.com/content/1f153350-2377-4e48-a073-0539376eab4c?syn-25a6b1a6=1",
    "mine": 1
@@ -2723,7 +2857,7 @@
    "h": "New Zealand’s National Party takes narrow lead in tight poll",
    "w": "Rightwing bloc projected to win enough seats to form a government",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — asia pacific",
    "ts": "2026-11-07T12:06:11Z",
    "url": "https://www.ft.com/content/76a2208d-62c8-46f7-bada-554201d78cf4?syn-25a6b1a6=1",
    "mine": 1
@@ -2741,7 +2875,7 @@
    "h": "US plan to overhaul air traffic control system like ‘changing a tyre at 70mph’",
    "w": "Transport secretary’s $42.5bn project to squeeze decades of much-needed upgrades into three years could be risky, experts argue",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-07T12:00:04Z",
    "url": "https://www.ft.com/content/1cbee3e3-b4cf-4831-bd4e-ac1653c7c7c7?syn-25a6b1a6=1",
    "mine": 1
@@ -2768,7 +2902,7 @@
    "h": "Data centres rebuked",
    "w": "Capex, meet the electorate",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-07T10:30:03Z",
    "url": "https://www.ft.com/content/9d40f40a-cbf2-46f5-b3d0-cee554e35298?syn-25a6b1a6=1",
    "mine": 1
@@ -2787,7 +2921,7 @@
    "h": "UK will not slow down on AI despite backlash in US, says growth minister",
    "w": "Dan Tomlinson asserts that pace of investment is ‘too low for what we need to stay at the forefront as AI technology develops’",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — world uk",
    "ts": "2026-11-07T05:00:41Z",
    "url": "https://www.ft.com/content/47dba9d2-4c82-4e17-969d-f1728ef13a5a?syn-25a6b1a6=1",
    "mine": 1
@@ -2802,21 +2936,21 @@
    "mine": 1
   },
   {
-   "h": "Burnham’s 10-year plan morphs into ‘high-level’ blueprint",
-   "w": "Delay deepens doubts within Labour whether PM’s vision for UK will be as transformational as billed",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-07T05:00:34Z",
-   "url": "https://www.ft.com/content/8e34dba9-8ebc-4499-9274-f88d02ad691c?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Trump’s defeat heralds a US retreat",
    "w": "American retrenchment could change Middle East balance of power and signify opportunities for China",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-07T05:00:34Z",
    "url": "https://www.ft.com/content/f80ff605-6f6e-4b5d-9fab-20276b78e9b7?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Burnham’s 10-year plan morphs into ‘high-level’ blueprint",
+   "w": "Delay deepens doubts within Labour whether PM’s vision for UK will be as transformational as billed",
+   "syms": [],
+   "src": "myFT — world uk",
+   "ts": "2026-11-07T05:00:34Z",
+   "url": "https://www.ft.com/content/8e34dba9-8ebc-4499-9274-f88d02ad691c?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2912,26 +3046,6 @@
    "mine": 1
   },
   {
-   "h": "Mississippi election marks political earthquake in the Deep South",
-   "w": "Democrat Scott Colom could become the first Black man from the state to reach the US Senate in 150 years",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-07T05:00:22Z",
-   "url": "https://www.ft.com/content/0700baee-1a7f-4dc4-ac95-5b98e1868d96?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Peter Frankopan on Constantinople to Istanbul at the V&A — a sparkling tale of two empires",
-   "w": "From dazzling tapestries of silk and gold to rare mosaics from the Great Palace, glorious artefacts trace the intertwining histories of one of the world’s greatest cities",
-   "syms": [
-    "XAU"
-   ],
-   "src": "myFT — sujet suivi",
-   "ts": "2026-11-07T05:00:22Z",
-   "url": "https://www.ft.com/content/d76bc5c3-1f43-4c91-b02c-2547b4995cb5",
-   "mine": 1
-  },
-  {
    "h": "Pourquoi personne ne semble satisfait de l’augmentation du SMIC ? Comprendre en trois minutes",
    "w": "Depuis 2017, le salaire minimum a augmenté de plus de 28 % en France. Mais cette hausse, qui correspond aux 14 revalorisations automatiques du SMIC, a en réalité suivi l’inflation sans véritable gain de pouvoir d’achat pour les salariés concernés.",
    "syms": [],
@@ -2940,121 +3054,12 @@
    "url": "https://www.lemonde.fr/comprendre-en-3-minutes/video/2026/11/07/pourquoi-personne-ne-semble-satisfait-de-l-augmentation-du-smic-comprendre-en-trois-minutes_6808237_6176282.html"
   },
   {
-   "h": "Gillian Tett: Why does America hate AI?",
-   "w": "Voter hostility to Big Tech helped shape the US midterms, and similar fears are spreading through the west. But look east and attitudes are dramatically more optimistic",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-07T05:00:13Z",
-   "url": "https://www.ft.com/content/af97585a-3381-42a9-838b-9a205ab81232?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Changing mackerel definition could mislead shoppers, officials warned",
-   "w": "Internal emails show concern at moves to allow Chilean species to be sold as ‘jack mackerel’, even though it is from a different family from traditional product",
-   "syms": [],
-   "src": "myFT — world uk",
-   "ts": "2026-11-07T05:00:13Z",
-   "url": "https://www.ft.com/content/52f2548d-93b8-47dd-9edf-9900a9a43a51?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "K-pop super-fandom, my daughter and me",
-   "w": "Over one summer and three huge concerts, a mother lives the intense devotion and explores the risks of extreme social media intimacy",
-   "syms": [],
-   "src": "myFT — technology",
-   "ts": "2026-11-07T05:00:13Z",
-   "url": "https://www.ft.com/content/32066a67-a697-4eb4-a779-c6dff8cc2ac7",
-   "mine": 1
-  },
-  {
-   "h": "Five great British getaways",
-   "w": "A tower suite in Gleneagles, a great hall in Northumberland, cabins in the Cairngorms and more",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-07T05:00:04Z",
-   "url": "https://www.ft.com/content/04b1bc84-981e-4996-b98e-ade9603045b8",
-   "mine": 1
-  },
-  {
-   "h": "‘I don’t do business plans’ — serial entrepreneur Marcia Kilgore",
-   "w": "Beauty Pie and FitFlop founder Marcia Kilgore on dropping out of university, resisting venture capital for decades and her frugal approach to spending",
-   "syms": [],
-   "src": "myFT — companies",
-   "ts": "2026-11-07T05:00:04Z",
-   "url": "https://www.ft.com/content/b1262eee-c146-46b3-a925-8762e46e242b",
-   "mine": 1
-  },
-  {
-   "h": "Renault readies for ‘golden moment’ for EVs in UK despite Chinese onslaught",
-   "w": "French carmaker has topped the British electric vehicle sales charts with its R5 hatch",
-   "syms": [],
-   "src": "myFT — companies",
-   "ts": "2026-11-07T05:00:04Z",
-   "url": "https://www.ft.com/content/b5b257db-f662-46b9-b5b3-e5c4f6063296?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Que faire si je constate des fissures sur ma maison ?",
    "w": "Il faut d’abord dater leur apparition, puis documenter régulièrement leur évolution à l’aide de photos et de mesures, explique Olivier Moustacakis, cofondateur d’Assurland.com.",
    "syms": [],
    "src": "Le Monde — Économie",
    "ts": "2026-11-07T05:00:04Z",
    "url": "https://www.lemonde.fr/argent/article/2026/11/07/que-faire-si-je-constate-des-fissures-sur-ma-maison_6808202_1657007.html"
-  },
-  {
-   "h": "Thierry Cotillard, patron d’Intermarché : « L’hypersensibilité au prix est telle qu’il y a un risque de déconsommation si l’inflation alimentaire dépasse 2 % ou 3 % »",
-   "w": "En amont des négociations commerciales annuelles entre les enseignes de supermarchés et les industriels de l’agroalimentaire, qui débuteront le 1ᵉʳ décembre, le président de Groupement Mousquetaires appelle, dans un entretien au « Monde », à la responsabilité de tous les acteurs pour que la hausse des prix reste contenue.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-07T05:00:02Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/11/07/thierry-cotillard-patron-d-intermarche-l-hypersensibilite-au-prix-est-telle-qu-il-y-a-un-risque-de-deconsommation-si-l-inflation-alimentaire-depasse-2-ou-3_6808204_3234.html"
-  },
-  {
-   "h": "Martin Wolf on the US midterms: What will the Democrats do next?",
-   "w": "Paul Krugman explains what the party may do with their newfound power",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-07T05:00:00Z",
-   "url": "https://www.ft.com/content/b03f1688-be8f-4c7e-946d-7ccea5d9d524?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Le néolibéralisme est-il mort ? Vie et métamorphoses de la doctrine qui a façonné le monde contemporain",
-   "w": "L’élection de Donald Trump et le Brexit, en 2016, marquent-ils la fin de quatre décennies d’hégémonie du néolibéralisme ? Le débat anime des intellectuels à travers le monde, qui s’interrogent sur les mutations d’une doctrine ayant refondé le libéralisme moderne en donnant un rôle nouveau à l’Etat.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-07T04:55:01Z",
-   "url": "https://www.lemonde.fr/idees/article/2026/11/07/le-neoliberalisme-est-il-mort-vie-et-metamorphoses-de-la-doctrine-qui-a-faconne-le-monde-contemporain_6808201_3232.html"
-  },
-  {
-   "h": "‘It’s almost like a nightclub’: Hyrox takes off in China amid fitness frenzy",
-   "w": "Group behind gruelling competitive races faces challenges from Chinese rivals",
-   "syms": [],
-   "src": "myFT — companies",
-   "ts": "2026-11-07T01:00:00Z",
-   "url": "https://www.ft.com/content/ac76efa6-a309-41c6-ab51-b64225f2c18b?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "US warns China it must ‘immediately’ meet terms of Busan trade deal",
-   "w": "Washington says Beijing is not fulfilling commitments to increase supply of rare earths and other critical products",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-06T22:53:51Z",
-   "url": "https://www.ft.com/content/391bb785-0247-4c39-b53b-35007187d603?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "US stocks recover after tech rout",
-   "w": "Tech-heavy Nasdaq 100 rises 1.4% following day of turmoil",
-   "syms": [
-    "SPX",
-    "NDX"
-   ],
-   "src": "myFT — companies",
-   "ts": "2026-11-06T22:22:05Z",
-   "url": "https://www.ft.com/content/642b32dc-e3a1-4df8-ae91-5c84bdeb89e0?syn-25a6b1a6=1",
-   "mine": 1
   },
   {
    "h": "Elon Musk appears to signal the end of the road for Cybertruck",
@@ -3071,14 +3076,6 @@
    "src": "BBC — Business",
    "ts": "2026-11-06T21:06:25Z",
    "url": "https://www.bbc.co.uk/news/articles/c35ynnpzdq51o?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "L’Irlande visée par des alertes à la bombe une semaine avant la tenue de deux sommets européens à Dublin",
-   "w": "Les menaces, qui se sont révélées infondées, ont ciblé vendredi plusieurs médias irlandais ainsi que plusieurs vols commerciaux entre des pays européens. Le flou demeure sur l’origine et les intentions réelles des auteurs.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-06T20:03:24Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/11/06/l-irlande-visee-par-des-alertes-a-la-bombe-une-semaine-avant-la-tenue-de-deux-sommets-europeens-a-dublin_6807865_3234.html"
   }
  ],
  "summary": {
