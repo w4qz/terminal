@@ -1,13 +1,13 @@
 {
- "generated_at": "2026-11-08T21:15:55.938937Z",
+ "generated_at": "2026-11-08T21:56:25.642599Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
    "prev": 181.6,
    "chg": 5.04,
    "pct": 2.78,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (NVDA)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (NVDA) — échec de la dernière mise à jour",
    "ts": "2026-11-06T21:00:00Z",
    "open": 191.1,
    "lo": 185.22,
@@ -117,8 +117,8 @@
    "prev": 26629.8105,
    "chg": 360.1797,
    "pct": 1.35,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^NDX) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^NDX)",
    "ts": "2026-11-06T21:00:00Z",
    "open": 27045.2598,
    "lo": 26887.6895,
@@ -624,7 +624,7 @@
     158.47,
     158.36,
     157.5,
-    158.35
+    158.34
    ]
   },
   "GBPUSD": {
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75657.0078,
+   "p": 74172.0938,
    "prev": 75747.5781,
-   "chg": -90.5703,
-   "pct": -0.12,
+   "chg": -1575.4844,
+   "pct": -2.08,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-08T21:15:55.938937Z",
+   "ts": "2026-11-08T21:56:25.642599Z",
    "open": 75753.7109,
-   "lo": 75585.3672,
+   "lo": 73788.8438,
    "hi": 76068.3203,
-   "vol": 9101007872,
+   "vol": 9128736768,
    "h": [
     82017.6,
     81853.54,
@@ -844,7 +844,7 @@
     75942.12,
     75746.93,
     75747.58,
-    75657.01
+    74172.09
    ]
   }
  },
@@ -945,9 +945,9 @@
    "ccy": "USD",
    "mcap": 3940412817408,
    "pe": 27.6936,
-   "fpe": 21.9448,
+   "fpe": 21.9299,
    "eps": 19.16,
-   "feps": 24.1793,
+   "feps": 24.1957,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -1522,14 +1522,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 995843768320,
+   "mcap": 998898073600,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -2167,13 +2167,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 123.1505,
-   "shares": 572600000,
-   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2224,6 +2219,24 @@
   }
  ],
  "news": [
+  {
+   "h": "Trump says renewed Iran strikes ‘highly unlikely’ if talks progress but warns he could still strike",
+   "w": "Trump tied avoiding renewed U.S. strikes to progress in talks over Iran’s nuclear program and the Strait of Hormuz.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-08T21:53:02Z",
+   "url": "https://www.cnbc.com/2026/11/08/trump-iran-strikes-unlikely-talks-hormuz.html"
+  },
+  {
+   "h": "Nvidia’s board will probe CEO Jensen Huang’s relationship with an alleged spy. Here’s what to know.",
+   "w": "“Today’s news will not slow Nvidia,” a spokesperson says. Huang will remain in his role and cooperate with the investigation.",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "MarketWatch",
+   "ts": "2026-11-08T21:29:00Z",
+   "url": "https://www.marketwatch.com/story/nvidias-board-will-probe-ceo-jensen-huangs-relationship-with-an-alleged-spy-heres-what-to-know-86656cd9?mod=mw_rss_topstories"
+  },
   {
    "h": "Nvidia investigates CEO Jensen Huang's relationship with alleged Chinese spy",
    "w": "Huang told Nvidia staff in an email that he had an affair and that the company's board has opened an investigation into allegations the woman is a Chinese spy.",
@@ -2415,6 +2428,40 @@
    "url": "https://www.marketwatch.com/story/it-feels-like-hes-quietly-building-a-separate-life-my-husband-inherited-500-000-but-he-refuses-to-spend-it-on-our-home-06535cff?mod=mw_rss_topstories"
   },
   {
+   "h": "Nvidia probes CEO Jensen Huang's affair amid China security concerns",
+   "w": "",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T15:56:25.642599Z",
+   "url": "https://asia.nikkei.com/business/tech/semiconductors/nvidia-probes-ceo-jensen-huang-s-affair-amid-china-security-concerns"
+  },
+  {
+   "h": "COP31 climate summit in Turkey, ASEAN Summit, Sri Lanka budget",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T15:56:25.642599Z",
+   "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/cop31-climate-summit-in-turkey-asean-summit-sri-lanka-budget"
+  },
+  {
+   "h": "What the Democratic sweep means for Trump's tariffs and AI",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T15:56:25.642599Z",
+   "url": "https://asia.nikkei.com/video/what-the-democratic-sweep-means-for-trump-s-tariffs-and-ai"
+  },
+  {
+   "h": "Grab rival Tada joins Singapore's self-driving minibus project",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T15:56:25.642599Z",
+   "url": "https://asia.nikkei.com/business/transportation/grab-rival-tada-joins-singapore-s-self-driving-minibus-project"
+  },
+  {
    "h": "Les 5 actions à surveiller cette semaine",
    "w": "",
    "syms": [],
@@ -2496,16 +2543,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-08T15:15:55.938937Z",
    "url": "https://asia.nikkei.com/life-arts/life/destinations/indonesia-s-art-deco-hot-spot-a-century-on"
-  },
-  {
-   "h": "Japan manufacturers lift profit outlooks on price hikes, weak yen",
-   "w": "",
-   "syms": [
-    "USDJPY"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T15:15:55.938937Z",
-   "url": "https://asia.nikkei.com/business/business-trends/japan-manufacturers-lift-profit-outlooks-on-price-hikes-weak-yen"
   },
   {
    "h": "Cabaletta Bio présente des données de phase 1/2 pour sa thérapie auto-immune",
@@ -2617,14 +2654,6 @@
    "url": "https://asia.nikkei.com/politics/ukraine-war/ukraine-s-zaporizhzhia-nuclear-plant-again-relies-on-backup-power"
   },
   {
-   "h": "Japan tourism industry steps up push to draw Indian visitors",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T13:54:44.638942Z",
-   "url": "https://asia.nikkei.com/business/travel-leisure/japan-tourism-industry-steps-up-push-to-draw-indian-visitors"
-  },
-  {
    "h": "Dublin launches ‘blueprint’ for united Ireland",
    "w": "Coalition party’s scenario planning puts first-year cost of reunification at €3bn to €25bn while prime minister announces government unit to inform debate",
    "syms": [],
@@ -2632,22 +2661,6 @@
    "ts": "2026-11-08T13:49:18Z",
    "url": "https://www.ft.com/content/e372642c-81a5-4098-8fdf-d118d22fa896?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Netanyahu rival Eisenkot seeks 'wide' government, path to power uncertain",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T13:09:21.375991Z",
-   "url": "https://asia.nikkei.com/politics/netanyahu-rival-eisenkot-seeks-wide-government-path-to-power-uncertain"
-  },
-  {
-   "h": "Vietnam leader To Lam visits Japan as decades-old relationship evolves",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T13:09:21.375991Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/vietnam-leader-to-lam-visits-japan-as-decades-old-relationship-evolves"
   },
   {
    "h": "En Nouvelle-Aquitaine, une première dans l’achat groupé d’énergie",
@@ -2721,14 +2734,6 @@
    "ts": "2026-11-08T12:00:10Z",
    "url": "https://www.ft.com/content/26687a2b-85ef-4ea8-94d3-07debe920f5f?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "This market signal called the tech selloff. Now it’s sending another warning.",
-   "w": "Correlations between individual stocks recently hit a record low, and a reversion to the mean may not be a good thing for the market.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-08T12:00:00Z",
-   "url": "https://www.marketwatch.com/story/this-market-signal-called-the-tech-selloff-now-its-sending-another-warning-f7f8eb9b?mod=mw_rss_topstories"
   },
   {
    "h": "Top Wall Street analysts like these 3 dividend stocks for consistent income",
@@ -2968,14 +2973,6 @@
    "ts": "2026-11-08T01:23:57Z",
    "url": "https://www.ft.com/content/52c3c7ac-f0ee-4b90-a2c8-68e76d120a79?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Trump offers UFC chief Dana White press secretary job",
-   "w": "President Donald Trump offered the job of press secretary to UFC president and CEO Dana White on Saturday.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-07T23:13:38Z",
-   "url": "https://www.cnbc.com/2026/11/07/trump-ufc-dana-white-press-secretary-offer.html"
   },
   {
    "h": "He spent $50,000 on Labubus but now the craze is dying",
