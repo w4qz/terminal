@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T00:13:28.392622Z",
+ "generated_at": "2026-11-08T01:32:01.066998Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
@@ -596,8 +596,8 @@
    "prev": 158.357,
    "chg": 0.068,
    "pct": 0.04,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (JPY=X) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (JPY=X)",
    "ts": "2026-11-06T22:15:00Z",
    "open": 158.425,
    "lo": 158.425,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75694.1875,
+   "p": 75688.5312,
    "prev": 75746.9297,
-   "chg": -52.7422,
-   "pct": -0.07,
+   "chg": -58.3984,
+   "pct": -0.08,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-08T00:13:28.392622Z",
+   "ts": "2026-11-08T01:32:01.066998Z",
    "open": 75753.7109,
-   "lo": 75709.3672,
+   "lo": 75637.9141,
    "hi": 75753.7109,
-   "vol": 9261538304,
+   "vol": 9305957376,
    "h": [
     81382.15,
     82017.6,
@@ -844,7 +844,7 @@
     80405.29,
     75942.12,
     75746.93,
-    75694.19
+    75688.53
    ]
   }
  },
@@ -1649,9 +1649,9 @@
    "ccy": "USD",
    "mcap": 788580401152,
    "pe": 34.306,
-   "fpe": 24.678,
+   "fpe": 24.655,
    "eps": 12.32,
-   "feps": 17.1266,
+   "feps": 17.1426,
    "revTTM": 45902999552,
    "netIncome": 23311998976,
    "shares": 1724473215,
@@ -2225,6 +2225,23 @@
  ],
  "news": [
   {
+   "h": "Trump asks UFC boss Dana White to be new press secretary",
+   "w": "US president signals combative approach in wake of midterms drubbing of his party",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-08T01:23:57Z",
+   "url": "https://www.ft.com/content/52c3c7ac-f0ee-4b90-a2c8-68e76d120a79?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "La vente massive d’actions IA pousse les investisseurs vers la Chine et l’Inde",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T01:00:45Z",
+   "url": "https://fr.investing.com/news/stock-market-news/la-vente-massive-dactions-ia-pousse-les-investisseurs-vers-la-chine-et-linde-3683670"
+  },
+  {
    "h": "Comment investir dans l’IA malgré les inquiétudes sur les dépenses ?",
    "w": "",
    "syms": [],
@@ -2263,6 +2280,14 @@
    "src": "Investing.com France",
    "ts": "2026-11-07T23:05:55Z",
    "url": "https://fr.investing.com/news/company-news/voyager-technologies-selectionne-pour-le-contrat-lunaire-de-10-milliards--de-la-nasa-93CH-3683665"
+  },
+  {
+   "h": "Labubu hype seemed unstoppable, now the fluffy monster mania is dying",
+   "w": "Parent company Pop Mart's revenue has fallen as appetite for the quirky collectible monsters wanes.",
+   "syms": [],
+   "src": "BBC — Business",
+   "ts": "2026-11-07T23:02:35Z",
+   "url": "https://www.bbc.co.uk/news/articles/cmvg652l927lo?at_medium=RSS&at_campaign=rss"
   },
   {
    "h": "Risk of Iran war escalation remains high despite Democratic sweep in U.S. midterm elections",
@@ -2366,29 +2391,44 @@
    "url": "https://www.marketwatch.com/story/my-adviser-recommended-an-annuity-is-it-the-right-move-in-this-market-environment-00edbbf6?mod=mw_rss_topstories"
   },
   {
-   "h": "Trump asks UFC boss Dana White to be new press secretary",
-   "w": "US president signals combative approach in wake of midterms drubbing of his party",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-07T20:33:52Z",
-   "url": "https://www.ft.com/content/52c3c7ac-f0ee-4b90-a2c8-68e76d120a79?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "La directrice juridique d’Amex, Laureen Seeger, cède pour 22,9M$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T20:17:29Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-juridique-damex-laureen-seeger-cede-pour-229m-dactions-93CH-3683652"
-  },
-  {
    "h": "Here are the 2027 capital-gains tax rates for each income level",
    "w": "How much will you pay in capital-gains taxes next year? The IRS just released this crucial information.",
    "syms": [],
    "src": "MarketWatch",
    "ts": "2026-11-07T19:48:00Z",
    "url": "https://www.marketwatch.com/story/here-are-the-2027-capital-gains-tax-rates-for-each-income-level-166fc306?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Grab rival Tada joins Singapore's self-driving minibus project",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T19:32:01.066998Z",
+   "url": "https://asia.nikkei.com/business/transportation/grab-rival-tada-joins-singapore-s-self-driving-minibus-project"
+  },
+  {
+   "h": "Prep schools help Chinese students get into Japan's top universities",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T19:32:01.066998Z",
+   "url": "https://asia.nikkei.com/business/education/prep-schools-help-chinese-students-get-into-japan-s-top-universities"
+  },
+  {
+   "h": "Activist Au Kam-san jailed 12.5 years in 1st Macao national security case",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T19:32:01.066998Z",
+   "url": "https://asia.nikkei.com/politics/activist-au-kam-san-jailed-12.5-years-in-1st-macao-national-security-case"
+  },
+  {
+   "h": "Seres, Li Auto join Chinese EVs' charge into Europe",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T19:32:01.066998Z",
+   "url": "https://asia.nikkei.com/business/automobiles/electric-vehicles/seres-li-auto-join-chinese-evs-charge-into-europe"
   },
   {
    "h": "Medicare prescription drug costs will jump 50% in 2027. Doing nothing could cost you.",
@@ -2415,14 +2455,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-07T18:13:28.392622Z",
    "url": "https://asia.nikkei.com/business/finance/credit-saison-adb-to-partner-on-loans-for-asia-s-small-businesses"
-  },
-  {
-   "h": "US slaps sanctions on Cambodia's Prince Group over online scams",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T18:13:28.392622Z",
-   "url": "https://asia.nikkei.com/spotlight/society/crime/us-slaps-sanctions-on-cambodia-s-prince-group-over-online-scams"
   },
   {
    "h": "Democrats’ big election win revives a difficult Social Security question: Who pays?",
@@ -2541,30 +2573,6 @@
    "url": "https://www.marketwatch.com/story/the-2027-tax-brackets-are-out-see-what-the-standard-deduction-and-salt-tax-breaks-will-be-5dd1d293?mod=mw_rss_topstories"
   },
   {
-   "h": "Indonesia's art deco hot spot, a century on",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T16:16:39.042027Z",
-   "url": "https://asia.nikkei.com/life-arts/life/destinations/indonesia-s-art-deco-hot-spot-a-century-on"
-  },
-  {
-   "h": "Prospect of 'modern-day Yalta' shakes Asia's postwar order",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T16:16:39.042027Z",
-   "url": "https://asia.nikkei.com/spotlight/comment/prospect-of-modern-day-yalta-shakes-asia-s-postwar-order"
-  },
-  {
-   "h": "Japan's unprotected deposits hit $890bn as inheritances inflate accounts",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T16:16:39.042027Z",
-   "url": "https://asia.nikkei.com/business/finance/japan-s-unprotected-deposits-hit-890bn-as-inheritances-inflate-accounts"
-  },
-  {
    "h": "Why the prognosis for healthcare stocks is uncertain ahead of Congress’ new makeup",
    "w": "Healthcare stocks may struggle to find momentum as the Democrats get ready to take over Congress.",
    "syms": [],
@@ -2673,7 +2681,7 @@
    "url": "https://www.cnbc.com/2026/11/07/anthropic-ipo-ai-data-center-backlash.html"
   },
   {
-   "h": "New Zealand’s National Party set to cling on to power",
+   "h": "New Zealand’s National Party takes narrow lead in tight poll",
    "w": "Rightwing bloc projected to win enough seats to form a government",
    "syms": [],
    "src": "myFT — world",
@@ -3078,14 +3086,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-06T19:45:32Z",
    "url": "https://www.lemonde.fr/politique/article/2026/11/06/la-propagande-d-extreme-droite-tue-a-paris-des-activistes-demenagent-un-relay-pour-denoncer-le-monopole-de-bollore_6807862_823448.html"
-  },
-  {
-   "h": "Why the US midterms sparked an AI stock selloff",
-   "w": "Fears of more AI regulation appear to have sparked fear among investors, but concerns about the industry have been growing for some time.",
-   "syms": [],
-   "src": "BBC — Business",
-   "ts": "2026-11-06T18:32:16Z",
-   "url": "https://www.bbc.co.uk/news/articles/crlykkzwwpydo?at_medium=RSS&at_campaign=rss"
   }
  ],
  "summary": {
