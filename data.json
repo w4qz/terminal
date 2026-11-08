@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T03:30:47.133732Z",
+ "generated_at": "2026-11-08T04:32:19.568986Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
@@ -412,8 +412,8 @@
    "prev": 10782.7002,
    "chg": -108.7998,
    "pct": -1.01,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^FTSE)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^FTSE) — échec de la dernière mise à jour",
    "ts": "2026-11-06T16:30:00Z",
    "open": 10784.2002,
    "lo": 10528.0996,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75757.8672,
+   "p": 75835.1875,
    "prev": 75746.9297,
-   "chg": 10.9375,
-   "pct": 0.01,
+   "chg": 88.2578,
+   "pct": 0.12,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-08T03:30:47.133732Z",
+   "ts": "2026-11-08T04:32:19.568986Z",
    "open": 75753.7109,
    "lo": 75585.3672,
-   "hi": 75793.0078,
-   "vol": 9337372672,
+   "hi": 75838.1406,
+   "vol": 9096076288,
    "h": [
     81382.15,
     82017.6,
@@ -844,7 +844,7 @@
     80405.29,
     75942.12,
     75746.93,
-    75757.87
+    75835.19
    ]
   }
  },
@@ -1175,7 +1175,7 @@
    "cash": 247142006784,
    "debt": 360191000576,
    "fcf": 343484628992,
-   "w52lo": 23.29,
+   "w52lo": 0.0,
    "w52hi": 27.96,
    "evEbitda": 7.42,
    "earnTs": 1793707200,
@@ -1522,14 +1522,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 998898073600,
+   "mcap": 995843768320,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -1616,11 +1616,11 @@
    "netIncome": 7725000192,
    "shares": 1640087251,
    "beta": 2.542,
-   "target": 656.2375,
+   "target": 659.7745,
    "targetHi": 1250.0,
-   "targetLo": 490.0,
+   "targetLo": 540.0,
    "rating": "Achat fort",
-   "analysts": 48,
+   "analysts": 47,
    "revGrowth": 44.7,
    "epsGrowth": 93.8,
    "grossMargin": 56.0,
@@ -1658,7 +1658,7 @@
    "beta": 0.786,
    "div": 3.12,
    "divYield": 0.738,
-   "target": 443.4427,
+   "target": 446.3346,
    "targetHi": 500.0,
    "targetLo": 330.0,
    "rating": "Achat fort",
@@ -2167,8 +2167,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 123.1505,
+   "shares": 572600000,
+   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2220,6 +2225,30 @@
  ],
  "news": [
   {
+   "h": "Le BPA de Pacira a manqué les attentes de 0,03$, le CA en dessous des prévisions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T04:17:44Z",
+   "url": "https://fr.investing.com/news/earnings/le-bpa-de-pacira-a-manque-les-attentes-de-003-le-ca--en-dessous-des-previsions-3683681"
+  },
+  {
+   "h": "« J’ai un entretien ce vendredi ! C’est mon dernier espoir… » : quand la réalité de la crise envahit les réseaux sociaux",
+   "w": "Selon l’Insee, en France, le taux de chômage des moins de 25 ans a dépassé, au deuxième trimestre, les 21 %. Face à la difficulté à s’insérer dans le monde du travail, de nombreux jeunes « sous pression » trouvent, sur YouTube ou TikTok, des espaces pour s’épancher.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-08T04:00:31Z",
+   "url": "https://www.lemonde.fr/m-perso/article/2026/11/08/j-ai-un-entretien-ce-vendredi-c-est-mon-dernier-espoir-quand-la-realite-de-la-crise-envahit-les-reseaux-sociaux_6808389_4497916.html"
+  },
+  {
+   "h": "Un juge ordonne une enquête éthique sur le projet de golf de Trump à Washington",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T03:40:36Z",
+   "url": "https://fr.investing.com/news/economy-news/un-juge-ordonne-une-enquete-ethique-sur-le-projet-de-golf-de-trump-a-washington-3683679"
+  },
+  {
    "h": "Quels sont les engagements de calcul des laboratoires d’IA ?",
    "w": "",
    "syms": [],
@@ -2247,7 +2276,7 @@
    "h": "Indonesian president’s adviser says MSCI downgrade threat ‘went too far’",
    "w": "Tycoon and brother of President Prabowo Subianto says expulsion from global indices would have ‘serious consequences’",
    "syms": [],
-   "src": "myFT — emerging markets",
+   "src": "myFT — world",
    "ts": "2026-11-08T01:32:03Z",
    "url": "https://www.ft.com/content/32c04cee-3f49-4971-a72d-391ad52e8f58?syn-25a6b1a6=1",
    "mine": 1
@@ -2318,6 +2347,30 @@
    "url": "https://www.bbc.co.uk/news/articles/cmvg652l927lo?at_medium=RSS&at_campaign=rss"
   },
   {
+   "h": "Pakistan's Hormuz agreement with Iran faces test after LNG tanker attack",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T22:32:19.568986Z",
+   "url": "https://asia.nikkei.com/spotlight/iran-tensions/iran-war/pakistan-s-hormuz-agreement-with-iran-faces-test-after-lng-tanker-attack"
+  },
+  {
+   "h": "Gen Z and AI are changing the world of video games",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T22:32:19.568986Z",
+   "url": "https://asia.nikkei.com/opinion/gen-z-and-ai-are-changing-the-world-of-video-games"
+  },
+  {
+   "h": "New Zealand's knife-edge election puts coalition talks in focus",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T22:32:19.568986Z",
+   "url": "https://asia.nikkei.com/politics/new-zealand-s-knife-edge-election-puts-coalition-talks-in-focus"
+  },
+  {
    "h": "Risk of Iran war escalation remains high despite Democratic sweep in U.S. midterm elections",
    "w": "The U.S. and Iran are on a collision course as tensions in the Middle East simmer.",
    "syms": [],
@@ -2341,22 +2394,6 @@
    "src": "CNBC — Marchés",
    "ts": "2026-11-07T21:59:10Z",
    "url": "https://www.cnbc.com/2026/11/07/trump-doj-democrats-alleged-threats-slotkin.html"
-  },
-  {
-   "h": "Un directeur de World Acceptance vend des actions pour 14.878$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T21:47:00Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-world-acceptance-vend-des-actions-pour-14878-93CH-3683662"
-  },
-  {
-   "h": "Le directeur comptable de Dropbox cède des actions pour 74.884$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T21:46:59Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-comptable-de-dropbox-cede-des-actions-pour-74884-93CH-3683661"
   },
   {
    "h": "US believes Nvidia’s Huang had romantic relationship with alleged Chinese spy",
@@ -2475,38 +2512,12 @@
    "url": "https://asia.nikkei.com/business/education/prep-schools-help-chinese-students-get-into-japan-s-top-universities"
   },
   {
-   "h": "Activist Au Kam-san jailed 12.5 years in 1st Macao national security case",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T19:32:01.066998Z",
-   "url": "https://asia.nikkei.com/politics/activist-au-kam-san-jailed-12.5-years-in-1st-macao-national-security-case"
-  },
-  {
    "h": "Medicare prescription drug costs will jump 50% in 2027. Doing nothing could cost you.",
    "w": "Don’t sit on the sidelines during open enrollment.",
    "syms": [],
    "src": "MarketWatch",
    "ts": "2026-11-07T19:20:00Z",
    "url": "https://www.marketwatch.com/story/medicare-prescription-drug-costs-will-jump-50-in-2027-doing-nothing-could-cost-you-b701dfb7?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Japan manufacturers lift profit outlooks on price hikes, weak yen",
-   "w": "",
-   "syms": [
-    "USDJPY"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T18:13:28.392622Z",
-   "url": "https://asia.nikkei.com/business/business-trends/japan-manufacturers-lift-profit-outlooks-on-price-hikes-weak-yen"
-  },
-  {
-   "h": "Credit Saison, ADB to partner on loans for Asia's small businesses",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T18:13:28.392622Z",
-   "url": "https://asia.nikkei.com/business/finance/credit-saison-adb-to-partner-on-loans-for-asia-s-small-businesses"
   },
   {
    "h": "Democrats’ big election win revives a difficult Social Security question: Who pays?",
@@ -3073,14 +3084,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-06T20:03:24Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/06/l-irlande-visee-par-des-alertes-a-la-bombe-une-semaine-avant-la-tenue-de-deux-sommets-europeens-a-dublin_6807865_3234.html"
-  },
-  {
-   "h": "« La propagande d’extrême droite tue » : à Paris, des militants « déménagent » un Relay pour dénoncer le « monopole » de Vincent Bolloré",
-   "w": "Des militants ont vidé un Relay à Montparnasse, accusant la SNCF de favoriser la diffusion d’ouvrages d’extrême droite et de manquer de neutralité dans l’espace public.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-06T19:45:32Z",
-   "url": "https://www.lemonde.fr/politique/article/2026/11/06/la-propagande-d-extreme-droite-tue-a-paris-des-activistes-demenagent-un-relay-pour-denoncer-le-monopole-de-bollore_6807862_823448.html"
   }
  ],
  "summary": {
