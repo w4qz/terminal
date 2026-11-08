@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T13:26:18.029019Z",
+ "generated_at": "2026-11-08T14:15:23.830756Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
@@ -523,8 +523,8 @@
    "prev": 6231.54,
    "chg": -61.0498,
    "pct": -0.98,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^STOXX50E) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^STOXX50E)",
    "ts": "2026-11-06T16:30:00Z",
    "open": 6207.7002,
    "lo": 6122.4702,
@@ -708,7 +708,7 @@
    "src": "Yahoo Finance via yfinance (GC=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 4098.5,
-   "lo": 4037.0,
+   "lo": 4035.6001,
    "hi": 4116.2002,
    "vol": 166431,
    "h": [
@@ -745,7 +745,7 @@
    "src": "Yahoo Finance via yfinance (CL=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 91.2,
-   "lo": 89.07,
+   "lo": 89.08,
    "hi": 92.53,
    "vol": 253859,
    "h": [
@@ -782,9 +782,9 @@
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 99.24,
-   "lo": 96.65,
+   "lo": 96.71,
    "hi": 100.92,
-   "vol": 38991,
+   "vol": 38993,
    "h": [
     104.28,
     104.72,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75962.8906,
+   "p": 75860.4688,
    "prev": 75747.5781,
-   "chg": 215.3125,
-   "pct": 0.28,
+   "chg": 112.8906,
+   "pct": 0.15,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-08T13:26:18.029019Z",
+   "ts": "2026-11-08T14:15:23.830756Z",
    "open": 75753.7109,
    "lo": 75585.3672,
-   "hi": 76019.25,
-   "vol": 8500328960,
+   "hi": 76068.3203,
+   "vol": 8940551168,
    "h": [
     82017.6,
     81853.54,
@@ -844,7 +844,7 @@
     75942.12,
     75746.93,
     75747.58,
-    75962.89
+    75860.47
    ]
   }
  },
@@ -1522,14 +1522,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 998898073600,
+   "mcap": 995843768320,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -2167,8 +2167,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 123.1505,
+   "shares": 572600000,
+   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2220,6 +2225,47 @@
  ],
  "news": [
   {
+   "h": "Poppi founders are going after PepsiCo's Gatorade with new beverage startup Jetty",
+   "w": "Poppi founders Allison and Stephen Ellsworth are launching Jetty, a hydration brand selling bottled drinks and powders at Whole Foods, Target and Amazon.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-08T14:00:01Z",
+   "url": "https://www.cnbc.com/2026/11/08/poppi-founders-jetty-hydration-gatorade.html"
+  },
+  {
+   "h": "Sequoia’s new chiefs sweep away last remnants of Botha era",
+   "w": "Closures of London office and permanent capital fund mark latest efforts to streamline Silicon Valley VC firm",
+   "syms": [],
+   "src": "myFT — technology sector",
+   "ts": "2026-11-08T14:00:00Z",
+   "url": "https://www.ft.com/content/abf66424-1738-4c1b-9d6b-a868be30b474?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Stocks are moving in sync again for the first time in a while. There’s just one problem.",
+   "w": "An increasingly divided U.S. equity market is enjoying a rare moment of unity. Unfortunately, it has coincided with the biggest selloff in more than a year.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-08T14:00:00Z",
+   "url": "https://www.marketwatch.com/story/stocks-are-moving-in-sync-again-for-the-first-time-in-a-while-theres-just-one-problem-c953bf72?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Le directeur de Northrop Grumman Mark Welsh III cède des actions pour 54.453$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T13:32:45Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-de-northrop-grumman-mark-welsh-iii-cede-des-actions-pour-54453-93CH-3683720"
+  },
+  {
+   "h": "Le PDG de Community Bancorp achète des actions pour 21.492$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T13:32:05Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-community-bancorp-achete-des-actions-pour-21492-93CH-3683719"
+  },
+  {
    "h": "En Nouvelle-Aquitaine, une première dans l’achat groupé d’énergie",
    "w": "Neuf entreprises se sont associées pour acheter de l’énergie décarbonée, à un prix prédéfini pendant quinze ans. Un modèle qui peut faire école.",
    "syms": [],
@@ -2260,6 +2306,24 @@
    "url": "https://www.cnbc.com/make-it/2026/11/08/brand-sponsorship-local-communities.html"
   },
   {
+   "h": "Republican infighting mounts over corruption claims after midterms wipeout",
+   "w": "Former health official’s allegations of corporate influence over Trump administration policy spark war of words",
+   "syms": [],
+   "src": "myFT — us",
+   "ts": "2026-11-08T12:51:25Z",
+   "url": "https://www.ft.com/content/66e9ca46-d1ea-473c-b8d6-06ba1dfc9e76?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "UK culture secretary Lisa Nandy questions whether rejoining EU is a ‘choice we have’",
+   "w": "PM Andy Burnham has said he wants debate about Britain’s long-term relationship with Brussels",
+   "syms": [],
+   "src": "myFT — world uk",
+   "ts": "2026-11-08T12:30:28Z",
+   "url": "https://www.ft.com/content/1401fe6f-52a2-4639-bed3-67cc828085f1?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "Un administrateur de Caterpillar achète des actions pour 620.390$",
    "w": "",
    "syms": [],
@@ -2285,6 +2349,17 @@
    "src": "myFT — europe",
    "ts": "2026-11-08T12:00:11Z",
    "url": "https://www.ft.com/content/62bc1938-d7ea-4be0-a5de-ec9735343009?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Hacks expose the flaws of the connected world",
+   "w": "Binance and supermarket freezers reveal the costs of digitisation",
+   "syms": [
+    "BTC"
+   ],
+   "src": "myFT — companies",
+   "ts": "2026-11-08T12:00:10Z",
+   "url": "https://www.ft.com/content/26687a2b-85ef-4ea8-94d3-07debe920f5f?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2388,22 +2463,6 @@
    "url": "https://fr.investing.com/news/insider-trading-news/rupert-campbell-evp-de-crocs-cede-des-actions-crox-pour-399000-93CH-3683705"
   },
   {
-   "h": "Un administrateur de Crocs vend des actions pour 2,3 millions de dollars",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T10:02:08Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-crocs-vend-des-actions-pour-23-millions-de-dollars-93CH-3683704"
-  },
-  {
-   "h": "L’UE et le Royaume-Uni proches d’un accord sur le marché carbone post-Brexit",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T09:39:00Z",
-   "url": "https://fr.investing.com/news/economy-news/lue-et-le-royaumeuni-proches-dun-accord-sur-le-marche-carbone-postbrexit-3683703"
-  },
-  {
    "h": "Moins de touristes étrangers dans les commerces parisiens, autre conséquence des manifestations",
    "w": "Les mobilisations sociales et les scènes de violences impactent les commerces parisiens. Dans le quartier touristique du Marais, les magasins se barricadent. Fini le lèche-vitrine pour les visiteurs internationaux.",
    "syms": [],
@@ -2418,6 +2477,32 @@
    "src": "CNBC — Marchés",
    "ts": "2026-11-08T09:29:04Z",
    "url": "https://www.cnbc.com/2026/11/08/france-protests-clashes-arrests.html"
+  },
+  {
+   "h": "Bridgestone revs up output of massive mining tires on AI-driven demand",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T08:15:23.830756Z",
+   "url": "https://asia.nikkei.com/business/automobiles/bridgestone-revs-up-output-of-massive-mining-tires-on-ai-driven-demand"
+  },
+  {
+   "h": "Indonesia's art deco hot spot, a century on",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T08:15:23.830756Z",
+   "url": "https://asia.nikkei.com/life-arts/life/destinations/indonesia-s-art-deco-hot-spot-a-century-on"
+  },
+  {
+   "h": "Japan manufacturers lift profit outlooks on price hikes, weak yen",
+   "w": "",
+   "syms": [
+    "USDJPY"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T08:15:23.830756Z",
+   "url": "https://asia.nikkei.com/business/business-trends/japan-manufacturers-lift-profit-outlooks-on-price-hikes-weak-yen"
   },
   {
    "h": "Pakistan's Hormuz agreement with Iran faces test after LNG tanker attack",
@@ -2500,14 +2585,6 @@
    "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/cop31-climate-summit-in-turkey-asean-summit-sri-lanka-budget"
   },
   {
-   "h": "Astellas employee jailed in China on spy charge set for December release",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T05:45:19.607431Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/astellas-employee-jailed-in-china-on-spy-charge-set-for-december-release"
-  },
-  {
    "h": "François Villeroy de Galhau : « Laisser filer la dette, c’est faire des choix contre la jeunesse, des choix gérontocratiques »",
    "w": "Face à la crise financière et sociale, l’ancien gouverneur de la Banque de France, qui a quitté son poste en juin, plaide, dans un entretien au « Monde », pour un redressement fondé sur l’efficacité des dépenses publiques et sur trois grands projets concrets européens à l’horizon 2029 : IA, énergie et défense.",
    "syms": [],
@@ -2530,22 +2607,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-08T05:25:07Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/08/le-super-el-nino-inquiete-les-horticulteurs-kenyans-qui-fournissent-un-tiers-des-fleurs-importees-de-l-ue_6808402_3234.html"
-  },
-  {
-   "h": "What the Democratic sweep means for Trump's tariffs and AI",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T05:03:56.796377Z",
-   "url": "https://asia.nikkei.com/video/what-the-democratic-sweep-means-for-trump-s-tariffs-and-ai"
-  },
-  {
-   "h": "Grab rival Tada joins Singapore's self-driving minibus project",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T05:03:56.796377Z",
-   "url": "https://asia.nikkei.com/business/transportation/grab-rival-tada-joins-singapore-s-self-driving-minibus-project"
   },
   {
    "h": "UK must ‘catch up’ with Europe in opposing Russian threat, says military chief",
@@ -2727,14 +2788,6 @@
    "url": "https://www.bbc.co.uk/news/articles/cmvg652l927lo?at_medium=RSS&at_campaign=rss"
   },
   {
-   "h": "Meta chief strategy officer Dave Wehner leaves to join AI infrastructure startup Fireworks as CFO",
-   "w": "Dave Wehner, Meta’s chief strategy officer, is leaving the company to become CFO of Fireworks, the AI infrastructure startup valued at $17.5 billion in July.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-07T22:01:17Z",
-   "url": "https://www.cnbc.com/2026/11/07/dave-wehner-meta-fireworks-cfo.html"
-  },
-  {
    "h": "US believes Nvidia’s Huang had romantic relationship with alleged Chinese spy",
    "w": "American intelligence warned the tech boss was involved with executive recruited by China to gather information on US group",
    "syms": [
@@ -2835,16 +2888,6 @@
    "ts": "2026-11-07T16:43:06Z",
    "url": "https://www.ft.com/content/1f153350-2377-4e48-a073-0539376eab4c?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "The S&P 500 could be dangerously exposed to AI. Here are some simple alternatives.",
-   "w": "The large-cap index is nowhere near as diversified as you think.",
-   "syms": [
-    "SPX"
-   ],
-   "src": "MarketWatch",
-   "ts": "2026-11-07T16:40:00Z",
-   "url": "https://www.marketwatch.com/story/the-s-p-500-has-become-a-big-ai-bet-here-are-some-simple-alternatives-3c7574a4?mod=mw_rss_topstories"
   },
   {
    "h": "Why the prognosis for healthcare stocks is uncertain ahead of Congress’ new makeup",
@@ -3029,44 +3072,6 @@
    "src": "myFT — us",
    "ts": "2026-11-07T05:00:33Z",
    "url": "https://www.ft.com/content/452cf328-c819-482e-8f2c-61b65c96f8ce?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Scottish government explores seizing assets of Sanjeev Gupta’s business empire",
-   "w": "Holyrood wants to ensure any claims it has against GFG Alliance are prioritised over those of other creditors",
-   "syms": [],
-   "src": "myFT — companies",
-   "ts": "2026-11-07T05:00:33Z",
-   "url": "https://www.ft.com/content/0536161f-9d9d-496c-b25d-e18f7aa510b6?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "How Wall Street’s all-in bet on AI blew up",
-   "w": "US midterm elections sparked a hedge fund and retail investor exodus from a trade that had taken over equity markets",
-   "syms": [
-    "SPX"
-   ],
-   "src": "myFT — us",
-   "ts": "2026-11-07T05:00:31Z",
-   "url": "https://www.ft.com/content/5a6806f0-e82e-4b34-b761-f9877e2b511c?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "No, ‘mogging’ does not signal the decline of the English language",
-   "w": "The popularity of manosphere vocabulary takes the sting out of a harmful ideology",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-07T05:00:23Z",
-   "url": "https://www.ft.com/content/e25b73c7-9c6c-446b-b9d2-8f82d458bcf8?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "An apology for slavery will help build trust across the Commonwealth",
-   "w": "The Caribbean Community has 10 relatively modest proposals for repairing relations with the UK",
-   "syms": [],
-   "src": "myFT — world uk",
-   "ts": "2026-11-07T05:00:23Z",
-   "url": "https://www.ft.com/content/510f4a2e-0c7a-48c9-bee6-eabc704b1907",
    "mine": 1
   },
   {
