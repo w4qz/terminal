@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T04:32:19.568986Z",
+ "generated_at": "2026-11-08T05:28:54.426274Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
@@ -412,8 +412,8 @@
    "prev": 10782.7002,
    "chg": -108.7998,
    "pct": -1.01,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^FTSE) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^FTSE)",
    "ts": "2026-11-06T16:30:00Z",
    "open": 10784.2002,
    "lo": 10528.0996,
@@ -708,9 +708,9 @@
    "src": "Yahoo Finance via yfinance (GC=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 4098.5,
-   "lo": 4035.1001,
+   "lo": 4037.0,
    "hi": 4116.2002,
-   "vol": 215643,
+   "vol": 166431,
    "h": [
     4157.0,
     4216.3,
@@ -747,7 +747,7 @@
    "open": 91.2,
    "lo": 89.07,
    "hi": 92.53,
-   "vol": 335754,
+   "vol": 253859,
    "h": [
     91.49,
     91.85,
@@ -784,7 +784,7 @@
    "open": 99.24,
    "lo": 96.65,
    "hi": 100.92,
-   "vol": 53411,
+   "vol": 38991,
    "h": [
     104.28,
     104.72,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75835.1875,
+   "p": 75763.7734,
    "prev": 75746.9297,
-   "chg": 88.2578,
-   "pct": 0.12,
+   "chg": 16.8438,
+   "pct": 0.02,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-08T04:32:19.568986Z",
+   "ts": "2026-11-08T05:28:54.426274Z",
    "open": 75753.7109,
    "lo": 75585.3672,
-   "hi": 75838.1406,
-   "vol": 9096076288,
+   "hi": 75841.5156,
+   "vol": 8933298176,
    "h": [
     81382.15,
     82017.6,
@@ -844,7 +844,7 @@
     80405.29,
     75942.12,
     75746.93,
-    75835.19
+    75763.77
    ]
   }
  },
@@ -1286,11 +1286,11 @@
    "beta": 1.508,
    "div": 2.6,
    "divYield": 0.885,
-   "target": 526.8084,
+   "target": 533.4238,
    "targetHi": 660.0,
-   "targetLo": 215.88,
+   "targetLo": 400.0,
    "rating": "Achat fort",
-   "analysts": 48,
+   "analysts": 47,
    "revGrowth": 85.5,
    "epsGrowth": 215.3,
    "grossMargin": 75.515,
@@ -1522,14 +1522,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 995843768320,
+   "mcap": 998898073600,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -2167,13 +2167,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 123.1505,
-   "shares": 572600000,
-   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2224,6 +2219,41 @@
   }
  ],
  "news": [
+  {
+   "h": "L’Arabie Saoudite lève les alertes pétrolières après l’interception d’un missile houthi",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T05:04:32Z",
+   "url": "https://fr.investing.com/news/economy-news/larabie-saoudite-leve-les-alertes-petrolieres-apres-linterception-dun-missile-houthi-3683682"
+  },
+  {
+   "h": "Apple saves $2.7bn in taxes by booking profits in Singapore",
+   "w": "City-state overtakes Ireland as iPhone maker’s biggest tax shelter according to new disclosures",
+   "syms": [],
+   "src": "myFT — sujet suivi",
+   "ts": "2026-11-08T05:00:11Z",
+   "url": "https://www.ft.com/content/49453406-99f2-4f5b-8f5d-01dc8cac5ede?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Groundscrapers: a low-rise innovation with high-rise prospects",
+   "w": "Buildings that are longer than they are tall have started popping up in the busiest cities",
+   "syms": [],
+   "src": "myFT — sujet suivi",
+   "ts": "2026-11-08T05:00:11Z",
+   "url": "https://www.ft.com/content/3926d1c2-a32e-45b0-ab8a-cfcc96e90454?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "‘Terrible backdrop’ looms over UN climate summit in Turkey",
+   "w": "Various global crises suggest this year’s COP will be about trying to get previous deals acted upon, rather than bold commitments",
+   "syms": [],
+   "src": "myFT — global economy",
+   "ts": "2026-11-08T05:00:11Z",
+   "url": "https://www.ft.com/content/bec8ac4e-4c1d-424a-92af-f7330d9024d2?syn-25a6b1a6=1",
+   "mine": 1
+  },
   {
    "h": "Le BPA de Pacira a manqué les attentes de 0,03$, le CA en dessous des prévisions",
    "w": "",
@@ -2323,20 +2353,38 @@
    "url": "https://fr.investing.com/news/insider-trading-news/le-controleur-de-southern-co-matthew-kim-cede-des-actions-pour-9339-93CH-3683666"
   },
   {
+   "h": "Bridgestone revs up output of massive mining tires on AI-driven demand",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T23:28:54.426274Z",
+   "url": "https://asia.nikkei.com/business/automobiles/bridgestone-revs-up-output-of-massive-mining-tires-on-ai-driven-demand"
+  },
+  {
+   "h": "Japan manufacturers lift profit outlooks on price hikes, weak yen",
+   "w": "",
+   "syms": [
+    "USDJPY"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T23:28:54.426274Z",
+   "url": "https://asia.nikkei.com/business/business-trends/japan-manufacturers-lift-profit-outlooks-on-price-hikes-weak-yen"
+  },
+  {
+   "h": "Credit Saison, ADB to partner on loans for Asia's small businesses",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-07T23:28:54.426274Z",
+   "url": "https://asia.nikkei.com/business/finance/credit-saison-adb-to-partner-on-loans-for-asia-s-small-businesses"
+  },
+  {
    "h": "Trump offers UFC chief Dana White press secretary job",
    "w": "President Donald Trump offered the job of press secretary to UFC president and CEO Dana White on Saturday.",
    "syms": [],
    "src": "CNBC — Marchés",
    "ts": "2026-11-07T23:13:38Z",
    "url": "https://www.cnbc.com/2026/11/07/trump-ufc-dana-white-press-secretary-offer.html"
-  },
-  {
-   "h": "Voyager Technologies sélectionné pour le contrat lunaire de 10 milliards $ de la NASA",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T23:05:55Z",
-   "url": "https://fr.investing.com/news/company-news/voyager-technologies-selectionne-pour-le-contrat-lunaire-de-10-milliards--de-la-nasa-93CH-3683665"
   },
   {
    "h": "Labubu hype seemed unstoppable, now the fluffy monster mania is dying",
@@ -2480,36 +2528,12 @@
    "url": "https://asia.nikkei.com/spotlight/comment/prospect-of-modern-day-yalta-shakes-asia-s-postwar-order"
   },
   {
-   "h": "Japan's unprotected deposits hit $890bn as inheritances inflate accounts",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T20:30:22.471921Z",
-   "url": "https://asia.nikkei.com/business/finance/japan-s-unprotected-deposits-hit-890bn-as-inheritances-inflate-accounts"
-  },
-  {
    "h": "Here are the 2027 capital-gains tax rates for each income level",
    "w": "How much will you pay in capital-gains taxes next year? The IRS just released this crucial information.",
    "syms": [],
    "src": "MarketWatch",
    "ts": "2026-11-07T19:48:00Z",
    "url": "https://www.marketwatch.com/story/here-are-the-2027-capital-gains-tax-rates-for-each-income-level-166fc306?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Grab rival Tada joins Singapore's self-driving minibus project",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T19:32:01.066998Z",
-   "url": "https://asia.nikkei.com/business/transportation/grab-rival-tada-joins-singapore-s-self-driving-minibus-project"
-  },
-  {
-   "h": "Prep schools help Chinese students get into Japan's top universities",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T19:32:01.066998Z",
-   "url": "https://asia.nikkei.com/business/education/prep-schools-help-chinese-students-get-into-japan-s-top-universities"
   },
   {
    "h": "Medicare prescription drug costs will jump 50% in 2027. Doing nothing could cost you.",
@@ -3033,26 +3057,6 @@
    "mine": 1
   },
   {
-   "h": "US economy outstrips forecasts to add 165,000 jobs in October",
-   "w": "Hiring rebound reinforces expectations Federal Reserve will raise interest rates",
-   "syms": [],
-   "src": "myFT — economy",
-   "ts": "2026-11-06T22:16:13Z",
-   "url": "https://www.ft.com/content/f84c722c-99a9-4628-84dc-c42a192cb35c?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "US stocks stage tepid recovery after $3.2tn rout fuelled by AI fears",
-   "w": "Magnitude of rebound was feeble compared with historic recoveries from severe sell-offs",
-   "syms": [
-    "SPX"
-   ],
-   "src": "myFT — europe",
-   "ts": "2026-11-06T22:00:56Z",
-   "url": "https://www.ft.com/content/088ed252-ea9c-4b61-b2d1-37295fd0f7c2?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Elon Musk appears to signal the end of the road for Cybertruck",
    "w": "Musk said it was to make room for production of its Cybercabs - autonomous taxis without a driver.",
    "syms": [],
@@ -3067,15 +3071,6 @@
    "src": "BBC — Business",
    "ts": "2026-11-06T21:06:25Z",
    "url": "https://www.bbc.co.uk/news/articles/c35ynnpzdq51o?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "Voters take their pick in New Zealand’s ‘supermarket election’",
-   "w": "Christopher Luxon tries to hang on as cost of living crisis and high energy prices weigh on consumers",
-   "syms": [],
-   "src": "myFT — asia pacific",
-   "ts": "2026-11-06T21:00:10Z",
-   "url": "https://www.ft.com/content/1e80651b-14f3-4cf0-9b47-2f6dee158496?syn-25a6b1a6=1",
-   "mine": 1
   },
   {
    "h": "L’Irlande visée par des alertes à la bombe une semaine avant la tenue de deux sommets européens à Dublin",
