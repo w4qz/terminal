@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T10:16:20.446799Z",
+ "generated_at": "2026-11-08T11:03:56.796377Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
@@ -596,8 +596,8 @@
    "prev": 158.357,
    "chg": 0.068,
    "pct": 0.04,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (JPY=X) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (JPY=X)",
    "ts": "2026-11-06T22:15:00Z",
    "open": 158.425,
    "lo": 158.425,
@@ -708,7 +708,7 @@
    "src": "Yahoo Finance via yfinance (GC=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 4098.5,
-   "lo": 4035.6001,
+   "lo": 4037.0,
    "hi": 4116.2002,
    "vol": 166431,
    "h": [
@@ -745,7 +745,7 @@
    "src": "Yahoo Finance via yfinance (CL=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 91.2,
-   "lo": 89.08,
+   "lo": 89.07,
    "hi": 92.53,
    "vol": 253859,
    "h": [
@@ -782,9 +782,9 @@
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 99.24,
-   "lo": 96.71,
+   "lo": 96.65,
    "hi": 100.92,
-   "vol": 38993,
+   "vol": 38991,
    "h": [
     104.28,
     104.72,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75778.7969,
+   "p": 75798.1172,
    "prev": 75747.5781,
-   "chg": 31.2188,
-   "pct": 0.04,
+   "chg": 50.5391,
+   "pct": 0.07,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-08T10:16:20.446799Z",
+   "ts": "2026-11-08T11:03:56.796377Z",
    "open": 75753.7109,
    "lo": 75585.3672,
    "hi": 75878.1016,
-   "vol": 8874881024,
+   "vol": 8958367744,
    "h": [
     82017.6,
     81853.54,
@@ -844,7 +844,7 @@
     75942.12,
     75746.93,
     75747.58,
-    75778.8
+    75798.12
    ]
   }
  },
@@ -1429,9 +1429,9 @@
    "w52hi": 586.3,
    "evEbitda": -1.789,
    "earnTs": 1794085200,
-   "earnStart": 1794085200,
-   "earnEnd": 1794085200,
-   "earnEst": false,
+   "earnStart": 1794258000,
+   "earnEnd": 1794258000,
+   "earnEst": true,
    "trailDiv": 0.0
   },
   "000660.KS": {
@@ -1522,14 +1522,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 995843768320,
+   "mcap": 998898073600,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -2167,13 +2167,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 123.1505,
-   "shares": 572600000,
-   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2224,6 +2219,39 @@
   }
  ],
  "news": [
+  {
+   "h": "Government 'looking seriously' at banning under-16s from Vinted and eBay",
+   "w": "The culture secretary confirms reports they could be in the list of platforms set to be banned next March.",
+   "syms": [],
+   "src": "BBC — Business",
+   "ts": "2026-11-08T10:44:42Z",
+   "url": "https://www.bbc.co.uk/news/articles/cmzxjvpqrjxro?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "Gunman kills six in Kraków shooting",
+   "w": "Poland’s Prime Minister Donald Tusk called on politicians not to exploit the incident",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-08T10:24:09Z",
+   "url": "https://www.ft.com/content/0fab9ede-4fa1-4f94-b23e-e32f07a6b7df?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Les bureaux de Saudi Aramco à Riyad touchés par des missiles houthis",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T10:23:55Z",
+   "url": "https://fr.investing.com/news/economy-news/les-bureaux-de-saudi-aramco-a-riyad-touches-par-des-missiles-houthis-3683707"
+  },
+  {
+   "h": "Rupert Campbell, EVP de Crocs, cède des actions CROX pour 399.000$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T10:16:45Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/rupert-campbell-evp-de-crocs-cede-des-actions-crox-pour-399000-93CH-3683705"
+  },
   {
    "h": "Un administrateur de Crocs vend des actions pour 2,3 millions de dollars",
    "w": "",
@@ -2305,22 +2333,6 @@
    "url": "https://fr.investing.com/news/insider-trading-news/matthew-janzaruk-svp-de-pg-cede-des-actions-pour-155-million--93CH-3683692"
   },
   {
-   "h": "Comment Mercedes a subi une chute de 14 milliards € d’EBIT",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T06:54:10Z",
-   "url": "https://fr.investing.com/news/company-news/comment-mercedes-a-subi-une-chute-de-14-milliards--debit-3683690"
-  },
-  {
-   "h": "Un administrateur de First Interstate Bancsystem vend 120.016$ d’actions FIBK",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T06:47:05Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-first-interstate-bancsystem-vend-120016-dactions-fibk-93CH-3683689"
-  },
-  {
    "h": "Cathie Wood 'always feels better when the market is worried' — here's why",
    "w": "The Ark Invest CEO said there was a \"wall of worry\" gripping markets right now.",
    "syms": [],
@@ -2351,6 +2363,30 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-08T05:25:07Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/08/le-super-el-nino-inquiete-les-horticulteurs-kenyans-qui-fournissent-un-tiers-des-fleurs-importees-de-l-ue_6808402_3234.html"
+  },
+  {
+   "h": "What the Democratic sweep means for Trump's tariffs and AI",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T05:03:56.796377Z",
+   "url": "https://asia.nikkei.com/video/what-the-democratic-sweep-means-for-trump-s-tariffs-and-ai"
+  },
+  {
+   "h": "Grab rival Tada joins Singapore's self-driving minibus project",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T05:03:56.796377Z",
+   "url": "https://asia.nikkei.com/business/transportation/grab-rival-tada-joins-singapore-s-self-driving-minibus-project"
+  },
+  {
+   "h": "Indonesia's art deco hot spot, a century on",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T05:03:56.796377Z",
+   "url": "https://asia.nikkei.com/life-arts/life/destinations/indonesia-s-art-deco-hot-spot-a-century-on"
   },
   {
    "h": "UK must ‘catch up’ with Europe in opposing Russian threat, says military chief",
@@ -2572,30 +2608,6 @@
    "url": "https://asia.nikkei.com/spotlight/sports/us-sports-investment-fund-redbird-hunts-for-tie-ups-in-japan"
   },
   {
-   "h": "Astellas employee jailed in China on spy charge set for December release",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T02:28:05.713636Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/astellas-employee-jailed-in-china-on-spy-charge-set-for-december-release"
-  },
-  {
-   "h": "Vietnam leader To Lam visits Japan as decades-old relationship evolves",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T01:36:56.165585Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/vietnam-leader-to-lam-visits-japan-as-decades-old-relationship-evolves"
-  },
-  {
-   "h": "COP31 climate summit in Turkey, ASEAN Summit, Sri Lanka budget",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T01:36:56.165585Z",
-   "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/cop31-climate-summit-in-turkey-asean-summit-sri-lanka-budget"
-  },
-  {
    "h": "Indonesian president’s adviser says MSCI downgrade threat ‘went too far’",
    "w": "Tycoon and brother of President Prabowo Subianto says expulsion from global indices would have ‘serious consequences’",
    "syms": [],
@@ -2644,15 +2656,6 @@
    "src": "CNBC — Marchés",
    "ts": "2026-11-07T22:01:17Z",
    "url": "https://www.cnbc.com/2026/11/07/dave-wehner-meta-fireworks-cfo.html"
-  },
-  {
-   "h": "Gunman kills six in Kraków shooting",
-   "w": "Poland’s Prime Minister Donald Tusk called on politicians not to exploit the incident",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-07T22:00:14Z",
-   "url": "https://www.ft.com/content/0fab9ede-4fa1-4f94-b23e-e32f07a6b7df?syn-25a6b1a6=1",
-   "mine": 1
   },
   {
    "h": "Trump targets Slotkin in call for DOJ probe of alleged Democratic threats to Republicans",
@@ -3067,20 +3070,12 @@
    "url": "https://www.lemonde.fr/comprendre-en-3-minutes/video/2026/11/07/pourquoi-personne-ne-semble-satisfait-de-l-augmentation-du-smic-comprendre-en-trois-minutes_6808237_6176282.html"
   },
   {
-   "h": "Elon Musk appears to signal the end of the road for Cybertruck",
-   "w": "Musk said it was to make room for production of its Cybercabs - autonomous taxis without a driver.",
+   "h": "'My mortgage is going up £200 a month': How rising interest rates are hitting people's pockets",
+   "w": "With UK interest rates set to rise, mortgages, credit cards and loans could get more expensive for millions.",
    "syms": [],
    "src": "BBC — Business",
-   "ts": "2026-11-06T21:49:50Z",
-   "url": "https://www.bbc.co.uk/news/articles/cq1j33w7d232o?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "AI stocks climb after trillions wiped from market values",
-   "w": "Investors had been selling off tech shares in part due to concerns the Democrat election victory would mean slower AI development.",
-   "syms": [],
-   "src": "BBC — Business",
-   "ts": "2026-11-06T21:06:25Z",
-   "url": "https://www.bbc.co.uk/news/articles/c35ynnpzdq51o?at_medium=RSS&at_campaign=rss"
+   "ts": "2026-11-07T01:41:36Z",
+   "url": "https://www.bbc.co.uk/news/articles/c617kjqjvk12o?at_medium=RSS&at_campaign=rss"
   }
  ],
  "summary": {
