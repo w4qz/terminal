@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T14:15:23.830756Z",
+ "generated_at": "2026-11-08T14:58:00.690641Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
@@ -375,8 +375,8 @@
    "prev": 5296.25,
    "chg": -117.0801,
    "pct": -2.21,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^STI)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^STI) — échec de la dernière mise à jour",
    "ts": "2026-11-06T09:00:00Z",
    "open": 5152.29,
    "lo": 5138.75,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75860.4688,
+   "p": 75940.7578,
    "prev": 75747.5781,
-   "chg": 112.8906,
-   "pct": 0.15,
+   "chg": 193.1797,
+   "pct": 0.26,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-08T14:15:23.830756Z",
+   "ts": "2026-11-08T14:58:00.690641Z",
    "open": 75753.7109,
    "lo": 75585.3672,
    "hi": 76068.3203,
-   "vol": 8940551168,
+   "vol": 8888793088,
    "h": [
     82017.6,
     81853.54,
@@ -844,7 +844,7 @@
     75942.12,
     75746.93,
     75747.58,
-    75860.47
+    75940.76
    ]
   }
  },
@@ -2225,6 +2225,88 @@
  ],
  "news": [
   {
+   "h": "Les derniers résultats de Pacira avant son rachat à 1,65 milliard $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T14:46:47Z",
+   "url": "https://fr.investing.com/news/earnings/les-derniers-resultats-de-pacira-avant-son-rachat-a-165-milliard--93CH-3683728"
+  },
+  {
+   "h": "Teekay Tankers face à un test alors que les taux de fret se refroidissent",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T14:44:40Z",
+   "url": "https://fr.investing.com/news/earnings/teekay-tankers-face-a-un-test-alors-que-les-taux-de-fret-se-refroidissent-93CH-3683727"
+  },
+  {
+   "h": "Organon publie ses résultats alors que la fusion avec Sun Pharma attend son approbation",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T14:44:22Z",
+   "url": "https://fr.investing.com/news/earnings/organon-publie-ses-resultats-alors-que-la-fusion-avec-sun-pharma-attend-son-approbation-93CH-3683726"
+  },
+  {
+   "h": "Moog : les marges tiendront-elles après un trimestre exceptionnel ?",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T14:42:02Z",
+   "url": "https://fr.investing.com/news/earnings/moog--les-marges-tiendrontelles-apres-un-trimestre-exceptionnel--93CH-3683724"
+  },
+  {
+   "h": "Moog sous les projecteurs alors que le budget défense américain bat des records",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T14:41:56Z",
+   "url": "https://fr.investing.com/news/earnings/moog-sous-les-projecteurs-alors-que-le-budget-defense-americain-bat-des-records-93CH-3683723"
+  },
+  {
+   "h": "How each country’s emissions compare",
+   "w": "A searchable dashboard of 197 countries’ historical emissions and future climate targets",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-08T14:36:08Z",
+   "url": "https://www.ft.com/content/9dfb0201-ef77-4c05-93cd-1e277c7017cf?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Private equity firm seeks to take control of LIV Golf from Saudi wealth fund",
+   "w": "BC Partners looks to purchase Public Investment Fund’s bankruptcy loan in order to revive failed golf league assets",
+   "syms": [],
+   "src": "myFT — financials",
+   "ts": "2026-11-08T14:32:40Z",
+   "url": "https://www.ft.com/content/cbab2db2-3180-40c5-8fa6-af51adc74768?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "La France participera aux discussions sur l’Ukraine à Abou Dhabi",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T14:28:59Z",
+   "url": "https://fr.investing.com/news/world-news/la-france-participera-aux-discussions-sur-lukraine-a-abou-dhabi-3683722"
+  },
+  {
+   "h": "Recent AI agent experiments reveal a risky future of machine 'teamwork' inside corporations",
+   "w": "AI agents are now working together on a regular basis. Research shows they are not always seeking the same goal, or operating with ethics.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-08T14:14:11Z",
+   "url": "https://www.cnbc.com/2026/11/08/ai-agents-risks.html"
+  },
+  {
+   "h": "‘We’re losing to cottage cheese’: The protein-maxxing craze is hurting cream-cheese sales",
+   "w": "U.S. cottage-cheese sales have more than doubled from levels seen in 2021.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-08T14:13:00Z",
+   "url": "https://www.marketwatch.com/story/were-losing-to-cottage-cheese-the-protein-maxxing-craze-is-hurting-cream-cheese-sales-40ae94f3?mod=mw_rss_topstories"
+  },
+  {
    "h": "Poppi founders are going after PepsiCo's Gatorade with new beverage startup Jetty",
    "w": "Poppi founders Allison and Stephen Ellsworth are launching Jetty, a hydration brand selling bottled drinks and powders at Whole Foods, Target and Amazon.",
    "syms": [],
@@ -2236,7 +2318,7 @@
    "h": "Sequoia’s new chiefs sweep away last remnants of Botha era",
    "w": "Closures of London office and permanent capital fund mark latest efforts to streamline Silicon Valley VC firm",
    "syms": [],
-   "src": "myFT — technology sector",
+   "src": "myFT — world",
    "ts": "2026-11-08T14:00:00Z",
    "url": "https://www.ft.com/content/abf66424-1738-4c1b-9d6b-a868be30b474?syn-25a6b1a6=1",
    "mine": 1
@@ -2248,6 +2330,15 @@
    "src": "MarketWatch",
    "ts": "2026-11-08T14:00:00Z",
    "url": "https://www.marketwatch.com/story/stocks-are-moving-in-sync-again-for-the-first-time-in-a-while-theres-just-one-problem-c953bf72?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Dublin launches ‘blueprint’ for united Ireland",
+   "w": "Coalition party’s scenario planning puts first-year cost of reunification at €3bn to €25bn while prime minister announces government unit to inform debate",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-08T13:49:18Z",
+   "url": "https://www.ft.com/content/e372642c-81a5-4098-8fdf-d118d22fa896?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "Le directeur de Northrop Grumman Mark Welsh III cède des actions pour 54.453$",
@@ -2298,18 +2389,10 @@
    "url": "https://www.cnbc.com/2026/11/08/amazon-home-robot-fauna-sprout.html"
   },
   {
-   "h": "Brands are sponsoring IRL communities. Some experts say that could spell their end",
-   "w": "Brands are sponsoring book clubs and other local groups, giving organizers new revenue while raising questions about trust and community.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-08T13:00:01Z",
-   "url": "https://www.cnbc.com/make-it/2026/11/08/brand-sponsorship-local-communities.html"
-  },
-  {
    "h": "Republican infighting mounts over corruption claims after midterms wipeout",
    "w": "Former health official’s allegations of corporate influence over Trump administration policy spark war of words",
    "syms": [],
-   "src": "myFT — us",
+   "src": "myFT — world",
    "ts": "2026-11-08T12:51:25Z",
    "url": "https://www.ft.com/content/66e9ca46-d1ea-473c-b8d6-06ba1dfc9e76?syn-25a6b1a6=1",
    "mine": 1
@@ -2318,7 +2401,7 @@
    "h": "UK culture secretary Lisa Nandy questions whether rejoining EU is a ‘choice we have’",
    "w": "PM Andy Burnham has said he wants debate about Britain’s long-term relationship with Brussels",
    "syms": [],
-   "src": "myFT — world uk",
+   "src": "myFT — europe",
    "ts": "2026-11-08T12:30:28Z",
    "url": "https://www.ft.com/content/1401fe6f-52a2-4639-bed3-67cc828085f1?syn-25a6b1a6=1",
    "mine": 1
@@ -2389,36 +2472,12 @@
    "url": "https://fr.investing.com/news/stock-market-news/anthropic-conclut-un-accord-de-34-milliards--pour-des-generateurs-a-gaz-3683716"
   },
   {
-   "h": "Acheter la baisse ou attendre ? BofA présente 3 scénarios pour les semi-conducteurs",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T11:27:01Z",
-   "url": "https://fr.investing.com/news/stock-market-news/acheter-la-baisse-ou-attendre--bofa-presente-3-scenarios-pour-les-semiconducteurs-3683714"
-  },
-  {
    "h": "Government 'looking seriously' at banning under-16s from Vinted and eBay",
    "w": "The culture secretary confirms reports they could be in the list of platforms set to be banned next March.",
    "syms": [],
    "src": "BBC — Business",
    "ts": "2026-11-08T11:25:32Z",
    "url": "https://www.bbc.co.uk/news/articles/cmzxjvpqrjxro?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "L’action Gogo bondit de 79 % en un mois grâce au signal de Juste Valeur",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T11:10:25Z",
-   "url": "https://fr.investing.com/news/investment-ideas/laction-gogo-bondit-de-79--en-un-mois-grace-au-signal-de-juste-valeur-93CH-3683712"
-  },
-  {
-   "h": "Comment InvestingPro a anticipé la chute de 48% de Latigo",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T11:03:20Z",
-   "url": "https://fr.investing.com/news/investment-ideas/comment-investingpro-a-anticipe-la-chute-de-48-de-latigo-93CH-3683711"
   },
   {
    "h": "Anthropic strikes $3.4bn deal to generate gas-fired power for data centres",
@@ -2430,14 +2489,6 @@
    "mine": 1
   },
   {
-   "h": "Le pari à 17 milliards $ de DoorDash sur Instacart menacé par Amazon et Uber",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T10:58:23Z",
-   "url": "https://fr.investing.com/news/company-news/le-pari-a-17-milliards--de-doordash-sur-instacart-menace-par-amazon-et-uber-3683710"
-  },
-  {
    "h": "Gunman kills six in Kraków shooting",
    "w": "Poland’s Prime Minister Donald Tusk called on politicians not to exploit the incident",
    "syms": [],
@@ -2445,22 +2496,6 @@
    "ts": "2026-11-08T10:24:09Z",
    "url": "https://www.ft.com/content/0fab9ede-4fa1-4f94-b23e-e32f07a6b7df?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Les bureaux de Saudi Aramco à Riyad touchés par des missiles houthis",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T10:23:55Z",
-   "url": "https://fr.investing.com/news/economy-news/les-bureaux-de-saudi-aramco-a-riyad-touches-par-des-missiles-houthis-3683707"
-  },
-  {
-   "h": "Rupert Campbell, EVP de Crocs, cède des actions CROX pour 399.000$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T10:16:45Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/rupert-campbell-evp-de-crocs-cede-des-actions-crox-pour-399000-93CH-3683705"
   },
   {
    "h": "Moins de touristes étrangers dans les commerces parisiens, autre conséquence des manifestations",
@@ -2477,6 +2512,30 @@
    "src": "CNBC — Marchés",
    "ts": "2026-11-08T09:29:04Z",
    "url": "https://www.cnbc.com/2026/11/08/france-protests-clashes-arrests.html"
+  },
+  {
+   "h": "What the Democratic sweep means for Trump's tariffs and AI",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T08:58:00.690641Z",
+   "url": "https://asia.nikkei.com/video/what-the-democratic-sweep-means-for-trump-s-tariffs-and-ai"
+  },
+  {
+   "h": "Grab rival Tada joins Singapore's self-driving minibus project",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T08:58:00.690641Z",
+   "url": "https://asia.nikkei.com/business/transportation/grab-rival-tada-joins-singapore-s-self-driving-minibus-project"
+  },
+  {
+   "h": "Astellas employee jailed in China on spy charge set for December release",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T08:58:00.690641Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/astellas-employee-jailed-in-china-on-spy-charge-set-for-december-release"
   },
   {
    "h": "Bridgestone revs up output of massive mining tires on AI-driven demand",
@@ -2553,36 +2612,12 @@
    "url": "https://asia.nikkei.com/spotlight/sports/us-sports-investment-fund-redbird-hunts-for-tie-ups-in-japan"
   },
   {
-   "h": "New Zealand's knife-edge election puts coalition talks in focus",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T06:25:18.218717Z",
-   "url": "https://asia.nikkei.com/politics/new-zealand-s-knife-edge-election-puts-coalition-talks-in-focus"
-  },
-  {
    "h": "Cathie Wood 'always feels better when the market is worried' — here's why",
    "w": "The Ark Invest CEO said there was a \"wall of worry\" gripping markets right now.",
    "syms": [],
    "src": "CNBC — Marchés",
    "ts": "2026-11-08T06:00:01Z",
    "url": "https://www.cnbc.com/2026/11/08/cathie-wood-ai-selloff.html"
-  },
-  {
-   "h": "Vietnam leader To Lam visits Japan as decades-old relationship evolves",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T05:45:19.607431Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/vietnam-leader-to-lam-visits-japan-as-decades-old-relationship-evolves"
-  },
-  {
-   "h": "COP31 climate summit in Turkey, ASEAN Summit, Sri Lanka budget",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T05:45:19.607431Z",
-   "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/cop31-climate-summit-in-turkey-asean-summit-sri-lanka-budget"
   },
   {
    "h": "François Villeroy de Galhau : « Laisser filer la dette, c’est faire des choix contre la jeunesse, des choix gérontocratiques »",
@@ -2692,21 +2727,21 @@
    "mine": 1
   },
   {
-   "h": "Groundscrapers: a low-rise innovation with high-rise prospects",
-   "w": "Buildings that are longer than they are tall have started popping up in the busiest cities",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-08T05:00:11Z",
-   "url": "https://www.ft.com/content/3926d1c2-a32e-45b0-ab8a-cfcc96e90454?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "‘Terrible backdrop’ looms over UN climate summit in Turkey",
    "w": "Various global crises suggest this year’s COP will be about trying to get previous deals acted upon, rather than bold commitments",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — economy",
    "ts": "2026-11-08T05:00:11Z",
    "url": "https://www.ft.com/content/bec8ac4e-4c1d-424a-92af-f7330d9024d2?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Groundscrapers: a low-rise innovation with high-rise prospects",
+   "w": "Buildings that are longer than they are tall have started popping up in the busiest cities",
+   "syms": [],
+   "src": "myFT — financials",
+   "ts": "2026-11-08T05:00:11Z",
+   "url": "https://www.ft.com/content/3926d1c2-a32e-45b0-ab8a-cfcc96e90454?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2731,7 +2766,7 @@
    "h": "Argentina’s Milei dreams of data centres on the Patagonian steppe",
    "w": "Libertarian seeks to turn vast land and energy resources into the foundation of his ‘unregulated’ AI hub",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — economy",
    "ts": "2026-11-08T05:00:10Z",
    "url": "https://www.ft.com/content/d432ae29-6454-4916-98c7-afb6993cfb67?syn-25a6b1a6=1",
    "mine": 1
@@ -2757,7 +2792,7 @@
    "h": "Indonesian president’s adviser says MSCI downgrade threat ‘went too far’",
    "w": "Tycoon and brother of President Prabowo Subianto says expulsion from global indices would have ‘serious consequences’",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — emerging markets",
    "ts": "2026-11-08T01:32:03Z",
    "url": "https://www.ft.com/content/32c04cee-3f49-4971-a72d-391ad52e8f58?syn-25a6b1a6=1",
    "mine": 1
@@ -2780,7 +2815,7 @@
    "url": "https://www.cnbc.com/2026/11/07/trump-ufc-dana-white-press-secretary-offer.html"
   },
   {
-   "h": "Labubu hype seemed unstoppable, now the fluffy monster mania is dying",
+   "h": "He spent $50,000 on Labubus but now the craze is dying",
    "w": "Parent company Pop Mart's revenue has fallen as appetite for the quirky collectible monsters wanes.",
    "syms": [],
    "src": "BBC — Business",
@@ -2871,14 +2906,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-07T17:04:00Z",
    "url": "https://www.marketwatch.com/story/the-wealthiest-10-of-americans-are-pulling-ahead-of-everyone-else-this-is-whats-making-them-richer-bd83c2f6?mod=mw_rss_topstories"
-  },
-  {
-   "h": "‘It feels like he’s quietly building a separate life’: My husband inherited $500,000, but he refuses to spend it on our home",
-   "w": "“Our kitchen dates from 1999 and the oven only works if you hit the door a certain way.”",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-07T17:01:00Z",
-   "url": "https://www.marketwatch.com/story/it-feels-like-hes-quietly-building-a-separate-life-my-husband-inherited-500-000-but-he-refuses-to-spend-it-on-our-home-06535cff?mod=mw_rss_topstories"
   },
   {
    "h": "Berkshire Hathaway steps up share buybacks with $9.6bn of purchases",
@@ -3045,33 +3072,6 @@
    "src": "myFT — world uk",
    "ts": "2026-11-07T05:00:34Z",
    "url": "https://www.ft.com/content/8e34dba9-8ebc-4499-9274-f88d02ad691c?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "European security agencies probe whether bomb hoaxes started in Russia",
-   "w": "A working hypothesis is that the co-ordinated threats were produced by pro-Kremlin activists or hacking groups",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-07T05:00:33Z",
-   "url": "https://www.ft.com/content/0845687f-1f74-4bbf-88c9-5c6b031c7f20?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Zelenskyy to be honoured with UK state visit in 2027",
-   "w": "The grand occasion will mark five years since Russia’s full-scale invasion of Ukraine",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-07T05:00:33Z",
-   "url": "https://www.ft.com/content/bc1814b7-fbd0-4d05-8ba3-c61115c80735?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "The mother of all American course corrections",
-   "w": "US midterms are the latest confirmation that reports of the death of liberal democracy have been much exaggerated",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-07T05:00:33Z",
-   "url": "https://www.ft.com/content/452cf328-c819-482e-8f2c-61b65c96f8ce?syn-25a6b1a6=1",
    "mine": 1
   },
   {
