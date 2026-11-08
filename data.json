@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T11:45:19.607431Z",
+ "generated_at": "2026-11-08T12:25:18.218717Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
@@ -449,8 +449,8 @@
    "prev": 26325.0098,
    "chg": -504.6504,
    "pct": -1.92,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^GDAXI)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^GDAXI) — échec de la dernière mise à jour",
    "ts": "2026-11-06T16:30:00Z",
    "open": 25919.4805,
    "lo": 25617.5391,
@@ -708,7 +708,7 @@
    "src": "Yahoo Finance via yfinance (GC=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 4098.5,
-   "lo": 4037.0,
+   "lo": 4035.6001,
    "hi": 4116.2002,
    "vol": 166431,
    "h": [
@@ -745,7 +745,7 @@
    "src": "Yahoo Finance via yfinance (CL=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 91.2,
-   "lo": 89.07,
+   "lo": 89.08,
    "hi": 92.53,
    "vol": 253859,
    "h": [
@@ -782,9 +782,9 @@
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 99.24,
-   "lo": 96.65,
+   "lo": 96.71,
    "hi": 100.92,
-   "vol": 38991,
+   "vol": 38993,
    "h": [
     104.28,
     104.72,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75798.1172,
+   "p": 75855.4766,
    "prev": 75747.5781,
-   "chg": 50.5391,
-   "pct": 0.07,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (BTC-USD) — échec de la dernière mise à jour",
-   "ts": "2026-11-08T11:03:56.796377Z",
+   "chg": 107.8984,
+   "pct": 0.14,
+   "st": "DELAYED_15M",
+   "src": "Yahoo Finance via yfinance (BTC-USD)",
+   "ts": "2026-11-08T12:25:18.218717Z",
    "open": 75753.7109,
    "lo": 75585.3672,
-   "hi": 75878.1016,
-   "vol": 8958367744,
+   "hi": 75918.0391,
+   "vol": 8942926848,
    "h": [
     82017.6,
     81853.54,
@@ -844,7 +844,7 @@
     75942.12,
     75746.93,
     75747.58,
-    75798.12
+    75855.48
    ]
   }
  },
@@ -1149,9 +1149,9 @@
    "sector": "Energy",
    "industry": "Oil & Gas Integrated",
    "ccy": "SAR",
-   "mcap": 6318621458432,
-   "pe": 14.043,
-   "fpe": 15.6407,
+   "mcap": 6308945199104,
+   "pe": 14.0215,
+   "fpe": 15.6168,
    "eps": 1.86,
    "feps": 1.67,
    "revTTM": 1932166955008,
@@ -1159,7 +1159,7 @@
    "shares": 241907400000,
    "beta": -0.022,
    "div": 1.36,
-   "divYield": 5.207,
+   "divYield": 5.215,
    "target": 30.3294,
    "targetHi": 35.0,
    "targetLo": 27.0,
@@ -1522,14 +1522,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 998898073600,
+   "mcap": 995843768320,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -2167,8 +2167,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 123.1505,
+   "shares": 572600000,
+   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2219,6 +2224,52 @@
   }
  ],
  "news": [
+  {
+   "h": "Saudi Aramco office in Riyadh damaged in latest Houthi strikes",
+   "w": "Tower hosting Saudi Arabia’s state-owned oil major hit by shrapnel in King Abdullah Financial District on Sunday",
+   "syms": [
+    "BRENT"
+   ],
+   "src": "myFT — sujet suivi",
+   "ts": "2026-11-08T12:16:02Z",
+   "url": "https://www.ft.com/content/eeadc13e-b915-4591-ab85-54db81030996?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Data says the unsaid about British welfare politics",
+   "w": "Both Labour and the Conservatives owe their majorities to claimants, just different kinds",
+   "syms": [],
+   "src": "myFT — economy",
+   "ts": "2026-11-08T12:00:11Z",
+   "url": "https://www.ft.com/content/62bc1938-d7ea-4be0-a5de-ec9735343009?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "This market signal called the tech selloff. Now it’s sending another warning.",
+   "w": "Correlations between individual stocks recently hit a record low, and a reversion to the mean may not be a good thing for the market.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-08T12:00:00Z",
+   "url": "https://www.marketwatch.com/story/this-market-signal-called-the-tech-selloff-now-its-sending-another-warning-f7f8eb9b?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Top Wall Street analysts like these 3 dividend stocks for consistent income",
+   "w": "Three dividend-paying stocks that are highlighted by Wall Street’s top pros, as tracked by TipRanks.",
+   "syms": [
+    "SPX"
+   ],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-08T11:47:24Z",
+   "url": "https://www.cnbc.com/2026/11/08/top-analysts-like-these-3-dividend-stocks-for-consistent-income.html"
+  },
+  {
+   "h": "Anthropic conclut un accord de 3,4 milliards $ pour des générateurs à gaz",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T11:36:02Z",
+   "url": "https://fr.investing.com/news/stock-market-news/anthropic-conclut-un-accord-de-34-milliards--pour-des-generateurs-a-gaz-3683716"
+  },
   {
    "h": "Acheter la baisse ou attendre ? BofA présente 3 scénarios pour les semi-conducteurs",
    "w": "",
@@ -2334,12 +2385,36 @@
    "url": "https://fr.investing.com/news/economy-news/la-centrale-nucleaire-de-zaporijjia-perd-son-alimentation-externe-et-bascule-sur-des-generateurs-diesel-3683700"
   },
   {
-   "h": "5 grandes décisions d’analystes sur l’IA : la chute historique est-elle une opportunité d’achat ?",
+   "h": "Ukraine's Zaporizhzhia nuclear plant again relies on backup power",
    "w": "",
    "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T08:54:18Z",
-   "url": "https://fr.investing.com/news/stock-market-news/5-grandes-decisions-danalystes-sur-lia--la-chute-historique-estelle-une-opportunite-dachat--3683698"
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T06:25:18.218717Z",
+   "url": "https://asia.nikkei.com/politics/ukraine-war/ukraine-s-zaporizhzhia-nuclear-plant-again-relies-on-backup-power"
+  },
+  {
+   "h": "Japan tourism industry steps up push to draw Indian visitors",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T06:25:18.218717Z",
+   "url": "https://asia.nikkei.com/business/travel-leisure/japan-tourism-industry-steps-up-push-to-draw-indian-visitors"
+  },
+  {
+   "h": "US sports investment fund RedBird hunts for tie-ups in Japan",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T06:25:18.218717Z",
+   "url": "https://asia.nikkei.com/spotlight/sports/us-sports-investment-fund-redbird-hunts-for-tie-ups-in-japan"
+  },
+  {
+   "h": "New Zealand's knife-edge election puts coalition talks in focus",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T06:25:18.218717Z",
+   "url": "https://asia.nikkei.com/politics/new-zealand-s-knife-edge-election-puts-coalition-talks-in-focus"
   },
   {
    "h": "Cathie Wood 'always feels better when the market is worried' — here's why",
@@ -2577,44 +2652,12 @@
    "url": "https://asia.nikkei.com/business/business-trends/japan-manufacturers-lift-profit-outlooks-on-price-hikes-weak-yen"
   },
   {
-   "h": "Credit Saison, ADB to partner on loans for Asia's small businesses",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T04:16:20.446799Z",
-   "url": "https://asia.nikkei.com/business/finance/credit-saison-adb-to-partner-on-loans-for-asia-s-small-businesses"
-  },
-  {
    "h": "« J’ai un entretien ce vendredi ! C’est mon dernier espoir… » : quand la réalité de la crise envahit les réseaux sociaux",
    "w": "Selon l’Insee, en France, le taux de chômage des moins de 25 ans a dépassé, au deuxième trimestre, les 21 %. Face à la difficulté à s’insérer dans le monde du travail, de nombreux jeunes « sous pression » trouvent, sur YouTube ou TikTok, des espaces pour s’épancher.",
    "syms": [],
    "src": "Le Monde — Économie",
    "ts": "2026-11-08T04:00:31Z",
    "url": "https://www.lemonde.fr/m-perso/article/2026/11/08/j-ai-un-entretien-ce-vendredi-c-est-mon-dernier-espoir-quand-la-realite-de-la-crise-envahit-les-reseaux-sociaux_6808389_4497916.html"
-  },
-  {
-   "h": "Ukraine's Zaporizhzhia nuclear plant loses external power",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T03:22:23.339647Z",
-   "url": "https://asia.nikkei.com/politics/ukraine-war/ukraine-s-zaporizhzhia-nuclear-plant-loses-external-power"
-  },
-  {
-   "h": "Pakistan's Hormuz agreement with Iran faces test after LNG tanker attack",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T03:22:23.339647Z",
-   "url": "https://asia.nikkei.com/spotlight/iran-tensions/iran-war/pakistan-s-hormuz-agreement-with-iran-faces-test-after-lng-tanker-attack"
-  },
-  {
-   "h": "Gen Z and AI are changing the world of video games",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T03:22:23.339647Z",
-   "url": "https://asia.nikkei.com/opinion/gen-z-and-ai-are-changing-the-world-of-video-games"
   },
   {
    "h": "Indonesian president’s adviser says MSCI downgrade threat ‘went too far’",
@@ -2795,14 +2838,6 @@
    "url": "https://www.cnbc.com/investingclub/2026/11/07/decisive-election-dramatic-stock-swings-how-we-handled-the-market-last-week.html"
   },
   {
-   "h": "The 2027 tax brackets are out. See what the standard deduction and SALT tax breaks will be.",
-   "w": "The tax brackets at the heart of Americans’ income-tax bills will be adjusting at a steeper level in 2027 compared to this year, underscoring inflation’s rekindled presence.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-07T16:30:00Z",
-   "url": "https://www.marketwatch.com/story/the-2027-tax-brackets-are-out-see-what-the-standard-deduction-and-salt-tax-breaks-will-be-5dd1d293?mod=mw_rss_topstories"
-  },
-  {
    "h": "Alertes à la bombe visant des avions : une enquête ouverte par le parquet de Paris, notamment sur un lien éventuel avec des puissances étrangères",
    "w": "Les investigations sont « menées pour retrouver les auteurs des courriels divulguant ces fausses informations afin de faire croire à une destruction dangereuse », a expliqué le parquet.",
    "syms": [],
@@ -2861,14 +2896,6 @@
    "src": "BCE — communiqués",
    "ts": "2026-11-07T14:00:00Z",
    "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261107~e7b86fc4ce.en.html"
-  },
-  {
-   "h": "America doesn't like socialism. So why are socialists winning?",
-   "w": "Democratic socialists had their best showing yet at the polls. The problem: Most U.S. voters don't actually like socialism.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-07T13:01:01Z",
-   "url": "https://www.cnbc.com/2026/11/07/socialism-elections-economy.html"
   },
   {
    "h": "Les équipementiers automobiles s’alarment des conséquences sociales de l’accord franco-allemand",
@@ -3041,24 +3068,6 @@
    "src": "myFT — world uk",
    "ts": "2026-11-07T05:00:23Z",
    "url": "https://www.ft.com/content/510f4a2e-0c7a-48c9-bee6-eabc704b1907",
-   "mine": 1
-  },
-  {
-   "h": "Russia ships metal via the Arctic to evade Ukrainian strikes",
-   "w": "Pig iron will be exported through the northern port of Murmansk for the first time in 30 years as Black Sea battles rage",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-07T05:00:22Z",
-   "url": "https://www.ft.com/content/80d91653-c210-43cd-b91e-2b8c644561c1?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "In search of skiing nirvana in Norway’s far north",
-   "w": "Why are skiers turning their backs on resorts to head to a tiny village on Europe’s northernmost fringe, where there are neither restaurants, bars — nor a single lift?",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-07T05:00:22Z",
-   "url": "https://www.ft.com/content/db2a7bec-5863-491b-9c64-59e4de48db05?syn-25a6b1a6=1",
    "mine": 1
   },
   {
