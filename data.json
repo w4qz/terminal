@@ -1,13 +1,13 @@
 {
- "generated_at": "2026-11-08T19:54:44.638942Z",
+ "generated_at": "2026-11-08T20:32:19.449828Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
    "prev": 181.6,
    "chg": 5.04,
    "pct": 2.78,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (NVDA)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (NVDA) — échec de la dernière mise à jour",
    "ts": "2026-11-06T21:00:00Z",
    "open": 191.1,
    "lo": 185.22,
@@ -588,7 +588,7 @@
     1.120724,
     1.123495,
     1.122826,
-    1.114082
+    1.114206
    ]
   },
   "USDJPY": {
@@ -600,7 +600,7 @@
    "src": "Yahoo Finance via yfinance (JPY=X)",
    "ts": "2026-11-06T22:15:00Z",
    "open": 158.425,
-   "lo": 158.281,
+   "lo": 158.252,
    "hi": 158.425,
    "h": [
     158.06,
@@ -624,7 +624,7 @@
     158.47,
     158.36,
     157.5,
-    158.38
+    158.33
    ]
   },
   "GBPUSD": {
@@ -660,7 +660,7 @@
     1.343418,
     1.347709,
     1.345605,
-    1.334668
+    1.335541
    ]
   },
   "DXY": {
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75831.4219,
+   "p": 75788.1094,
    "prev": 75747.5781,
-   "chg": 83.8438,
-   "pct": 0.11,
+   "chg": 40.5312,
+   "pct": 0.05,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-08T19:54:44.638942Z",
+   "ts": "2026-11-08T20:32:19.449828Z",
    "open": 75753.7109,
    "lo": 75585.3672,
    "hi": 76068.3203,
-   "vol": 9134233600,
+   "vol": 8964318208,
    "h": [
     82017.6,
     81853.54,
@@ -844,7 +844,7 @@
     75942.12,
     75746.93,
     75747.58,
-    75831.42
+    75788.11
    ]
   }
  },
@@ -1522,14 +1522,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 995843768320,
+   "mcap": 998898073600,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -2167,13 +2167,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 123.1505,
-   "shares": 572600000,
-   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2225,10 +2220,21 @@
  ],
  "news": [
   {
+   "h": "Nvidia’s Huang admits to affair after allegations of relationship with Chinese spy",
+   "w": "Tech CEO confirms extramarital relationship in internal message to employees",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "myFT — us",
+   "ts": "2026-11-08T20:19:02Z",
+   "url": "https://www.ft.com/content/1397e2f4-d7f5-4cbb-a4d9-04ecf661d1aa?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "Companies House faces scrutiny over ‘pervasive and systemic’ errors",
    "w": "Almost four in 10 businesses identify inconsistencies with their own records, calling official UK corporate register’s reliability into question",
    "syms": [],
-   "src": "myFT — companies",
+   "src": "myFT — world",
    "ts": "2026-11-08T19:00:02Z",
    "url": "https://www.ft.com/content/1b67f9c7-b1ad-4b5b-b496-ac3a305ec841?syn-25a6b1a6=1",
    "mine": 1
@@ -2255,7 +2261,7 @@
    "h": "Attempts to find resolution for Israel’s new government and Ukraine’s war",
    "w": "Trilateral peace talks in Abu Dhabi, new Knesset in Jerusalem, COP31 opens in Turkey",
    "syms": [],
-   "src": "myFT — economy",
+   "src": "myFT — world",
    "ts": "2026-11-08T18:15:02Z",
    "url": "https://www.ft.com/content/4e97fc54-3886-4300-a824-0a592beca5f6?syn-25a6b1a6=1",
    "mine": 1
@@ -2489,6 +2495,38 @@
    "mine": 1
   },
   {
+   "h": "Japan headlight king Koito tears down Chinese rivals' lamps for bright ideas",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T14:32:19.449828Z",
+   "url": "https://asia.nikkei.com/business/automobiles/japan-headlight-king-koito-tears-down-chinese-rivals-lamps-for-bright-ideas"
+  },
+  {
+   "h": "Singapore Airlines unveils $1.6bn cabin revamp with giant double bed",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T14:32:19.449828Z",
+   "url": "https://asia.nikkei.com/business/transportation/singapore-airlines-unveils-1.6bn-cabin-revamp-with-giant-double-bed"
+  },
+  {
+   "h": "Pakistan's Hormuz agreement with Iran faces test after LNG tanker attack",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T14:32:19.449828Z",
+   "url": "https://asia.nikkei.com/spotlight/iran-tensions/iran-war/pakistan-s-hormuz-agreement-with-iran-faces-test-after-lng-tanker-attack"
+  },
+  {
+   "h": "Gen Z and AI are changing the world of video games",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T14:32:19.449828Z",
+   "url": "https://asia.nikkei.com/opinion/gen-z-and-ai-are-changing-the-world-of-video-games"
+  },
+  {
    "h": "Recent AI agent experiments reveal a risky future of machine 'teamwork' inside corporations",
    "w": "AI agents are now working together on a regular basis. Research shows they are not always seeking the same goal, or operating with ethics.",
    "syms": [],
@@ -2585,14 +2623,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-08T13:09:21.375991Z",
    "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/cop31-climate-summit-in-turkey-asean-summit-sri-lanka-budget"
-  },
-  {
-   "h": "US sports investment fund RedBird hunts for tie-ups in Japan",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T13:09:21.375991Z",
-   "url": "https://asia.nikkei.com/spotlight/sports/us-sports-investment-fund-redbird-hunts-for-tie-ups-in-japan"
   },
   {
    "h": "En Nouvelle-Aquitaine, une première dans l’achat groupé d’énergie",
@@ -2702,32 +2732,6 @@
    "url": "https://www.cnbc.com/2026/11/08/top-analysts-like-these-3-dividend-stocks-for-consistent-income.html"
   },
   {
-   "h": "Bridgestone revs up output of massive mining tires on AI-driven demand",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T11:35:19.781770Z",
-   "url": "https://asia.nikkei.com/business/automobiles/bridgestone-revs-up-output-of-massive-mining-tires-on-ai-driven-demand"
-  },
-  {
-   "h": "Indonesia's art deco hot spot, a century on",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T11:35:19.781770Z",
-   "url": "https://asia.nikkei.com/life-arts/life/destinations/indonesia-s-art-deco-hot-spot-a-century-on"
-  },
-  {
-   "h": "Japan manufacturers lift profit outlooks on price hikes, weak yen",
-   "w": "",
-   "syms": [
-    "USDJPY"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T11:35:19.781770Z",
-   "url": "https://asia.nikkei.com/business/business-trends/japan-manufacturers-lift-profit-outlooks-on-price-hikes-weak-yen"
-  },
-  {
    "h": "Anthropic strikes $3.4bn deal to generate gas-fired power for data centres",
    "w": "AI lab bypasses traditional suppliers to secure scarce equipment as demand for energy surges",
    "syms": [],
@@ -2817,7 +2821,7 @@
    "syms": [
     "BTC"
    ],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-08T05:00:19Z",
    "url": "https://www.ft.com/content/f1b98a61-4103-447c-bb9a-3dccc0819f61?syn-25a6b1a6=1",
    "mine": 1
@@ -2826,7 +2830,7 @@
    "h": "America is craving a return to community",
    "w": "The midterms are only the latest sign of hope",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-08T05:00:19Z",
    "url": "https://www.ft.com/content/2a0bc83c-1c48-451a-a2b6-3371a36fc287?syn-25a6b1a6=1",
    "mine": 1
@@ -3051,15 +3055,6 @@
    "src": "myFT — europe",
    "ts": "2026-11-07T12:00:04Z",
    "url": "https://www.ft.com/content/fac3a560-7845-4acf-9487-54ec8a445d74?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "US plan to overhaul air traffic control system like ‘changing a tyre at 70mph’",
-   "w": "Transport secretary’s $42.5bn project to squeeze decades of much-needed upgrades into three years could be risky, experts argue",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-07T12:00:04Z",
-   "url": "https://www.ft.com/content/1cbee3e3-b4cf-4831-bd4e-ac1653c7c7c7?syn-25a6b1a6=1",
    "mine": 1
   },
   {
