@@ -1,13 +1,13 @@
 {
- "generated_at": "2026-11-08T20:32:19.449828Z",
+ "generated_at": "2026-11-08T21:15:55.938937Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
    "prev": 181.6,
    "chg": 5.04,
    "pct": 2.78,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (NVDA) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (NVDA)",
    "ts": "2026-11-06T21:00:00Z",
    "open": 191.1,
    "lo": 185.22,
@@ -117,8 +117,8 @@
    "prev": 26629.8105,
    "chg": 360.1797,
    "pct": 1.35,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^NDX)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^NDX) — échec de la dernière mise à jour",
    "ts": "2026-11-06T21:00:00Z",
    "open": 27045.2598,
    "lo": 26887.6895,
@@ -600,7 +600,7 @@
    "src": "Yahoo Finance via yfinance (JPY=X)",
    "ts": "2026-11-06T22:15:00Z",
    "open": 158.425,
-   "lo": 158.252,
+   "lo": 158.235,
    "hi": 158.425,
    "h": [
     158.06,
@@ -624,7 +624,7 @@
     158.47,
     158.36,
     157.5,
-    158.33
+    158.35
    ]
   },
   "GBPUSD": {
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75788.1094,
+   "p": 75657.0078,
    "prev": 75747.5781,
-   "chg": 40.5312,
-   "pct": 0.05,
+   "chg": -90.5703,
+   "pct": -0.12,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-08T20:32:19.449828Z",
+   "ts": "2026-11-08T21:15:55.938937Z",
    "open": 75753.7109,
    "lo": 75585.3672,
    "hi": 76068.3203,
-   "vol": 8964318208,
+   "vol": 9101007872,
    "h": [
     82017.6,
     81853.54,
@@ -844,7 +844,7 @@
     75942.12,
     75746.93,
     75747.58,
-    75788.11
+    75657.01
    ]
   }
  },
@@ -954,7 +954,7 @@
    "beta": 1.045,
    "div": 3.92,
    "divYield": 0.739,
-   "target": 634.1428,
+   "target": 636.1243,
    "targetHi": 870.0,
    "targetLo": 440.0,
    "rating": "Achat fort",
@@ -1522,14 +1522,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 998898073600,
+   "mcap": 995843768320,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -2167,8 +2167,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 123.1505,
+   "shares": 572600000,
+   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2220,15 +2225,43 @@
  ],
  "news": [
   {
-   "h": "Nvidia’s Huang admits to affair after allegations of relationship with Chinese spy",
-   "w": "Tech CEO confirms extramarital relationship in internal message to employees",
+   "h": "Nvidia investigates CEO Jensen Huang's relationship with alleged Chinese spy",
+   "w": "Huang told Nvidia staff in an email that he had an affair and that the company's board has opened an investigation into allegations the woman is a Chinese spy.",
    "syms": [
     "NVDA"
    ],
-   "src": "myFT — us",
-   "ts": "2026-11-08T20:19:02Z",
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-08T21:13:38Z",
+   "url": "https://www.cnbc.com/2026/11/08/nvidia-jensen-huang-investigation-china-spy.html"
+  },
+  {
+   "h": "Nvidia’s Huang admits to affair after allegations of relationship with Chinese spy",
+   "w": "Silicon Valley chipmaker opens investigation into chief executive as he confirms extramarital relationship in message to employees",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "myFT — world",
+   "ts": "2026-11-08T21:08:33Z",
    "url": "https://www.ft.com/content/1397e2f4-d7f5-4cbb-a4d9-04ecf661d1aa?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "Un directeur de Beacon Financial achète des actions pour 6.146$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T21:02:23Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-beacon-financial-achete-des-actions-pour-6146-93CH-3683750"
+  },
+  {
+   "h": "Nvidia lance une enquête sur un prétendu complot d’espionnage visant son PDG Jensen Huang",
+   "w": "",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T20:36:56Z",
+   "url": "https://fr.investing.com/news/stock-market-news/nvidia-lance-une-enquete-sur-un-pretendu-complot-despionnage-visant-son-pdg-jensen-huang-3683748"
   },
   {
    "h": "Companies House faces scrutiny over ‘pervasive and systemic’ errors",
@@ -2246,16 +2279,6 @@
    "src": "CNBC — Marchés",
    "ts": "2026-11-08T18:57:56Z",
    "url": "https://www.cnbc.com/2026/11/08/democrats-trump-oversight-blanche-doj-investigations.html"
-  },
-  {
-   "h": "Nvidia CEO Jensen Huang faces bipartisan congressional scrutiny over reported China spy link",
-   "w": "Lawmakers want to question Nvidia CEO Jensen Huang following reports about his relationship with an alleged Chinese intelligence asset.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-08T18:18:30Z",
-   "url": "https://www.cnbc.com/2026/11/08/jensen-huang-nvidia-china-spy-congress.html"
   },
   {
    "h": "Attempts to find resolution for Israel’s new government and Ukraine’s war",
@@ -2441,30 +2464,56 @@
    "url": "https://www.marketwatch.com/story/my-93-year-old-father-changed-his-will-at-the-11th-hour-leaving-my-brother-his-entire-500-000-estate-can-i-challenge-it-ecfc63d2?mod=mw_rss_topstories"
   },
   {
+   "h": "Binance hack clouds Singapore crypto push for tokenized stocks",
+   "w": "",
+   "syms": [
+    "BTC"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T15:15:55.938937Z",
+   "url": "https://asia.nikkei.com/business/markets/trading-asia/binance-hack-clouds-singapore-crypto-push-for-tokenized-stocks"
+  },
+  {
+   "h": "European far right distances itself from Trump after midterm rout",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T15:15:55.938937Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/european-far-right-distances-itself-from-trump-after-midterm-rout"
+  },
+  {
+   "h": "Bridgestone revs up output of massive mining tires on AI-driven demand",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T15:15:55.938937Z",
+   "url": "https://asia.nikkei.com/business/automobiles/bridgestone-revs-up-output-of-massive-mining-tires-on-ai-driven-demand"
+  },
+  {
+   "h": "Indonesia's art deco hot spot, a century on",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T15:15:55.938937Z",
+   "url": "https://asia.nikkei.com/life-arts/life/destinations/indonesia-s-art-deco-hot-spot-a-century-on"
+  },
+  {
+   "h": "Japan manufacturers lift profit outlooks on price hikes, weak yen",
+   "w": "",
+   "syms": [
+    "USDJPY"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T15:15:55.938937Z",
+   "url": "https://asia.nikkei.com/business/business-trends/japan-manufacturers-lift-profit-outlooks-on-price-hikes-weak-yen"
+  },
+  {
    "h": "Cabaletta Bio présente des données de phase 1/2 pour sa thérapie auto-immune",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
    "ts": "2026-11-08T15:05:34Z",
    "url": "https://fr.investing.com/news/company-news/cabaletta-bio-presente-des-donnees-de-phase-12-pour-sa-therapie-autoimmune-93CH-3683733"
-  },
-  {
-   "h": "Paul Gama, PDG Santé de P&G, cède des actions pour 477.510$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T15:02:12Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/paul-gama-pdg-sante-de-pg-cede-des-actions-pour-477510-93CH-3683729"
-  },
-  {
-   "h": "Alors que l’IA s’essouffle, BCA mise sur les actions européennes face à Wall Street",
-   "w": "",
-   "syms": [
-    "SPX"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T15:01:06Z",
-   "url": "https://fr.investing.com/news/stock-market-news/alors-que-lia-sessouffle-bca-mise-sur-les-actions-europeennes-face-a-wall-street-3683732"
   },
   {
    "h": "Corporate America’s profit numbers are just barely beating Wall Street’s expectations",
@@ -2517,14 +2566,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-08T14:32:19.449828Z",
    "url": "https://asia.nikkei.com/spotlight/iran-tensions/iran-war/pakistan-s-hormuz-agreement-with-iran-faces-test-after-lng-tanker-attack"
-  },
-  {
-   "h": "Gen Z and AI are changing the world of video games",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T14:32:19.449828Z",
-   "url": "https://asia.nikkei.com/opinion/gen-z-and-ai-are-changing-the-world-of-video-games"
   },
   {
    "h": "Recent AI agent experiments reveal a risky future of machine 'teamwork' inside corporations",
@@ -2584,14 +2625,6 @@
    "url": "https://asia.nikkei.com/business/travel-leisure/japan-tourism-industry-steps-up-push-to-draw-indian-visitors"
   },
   {
-   "h": "Credit Saison, ADB to partner on loans for Asia's small businesses",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T13:54:44.638942Z",
-   "url": "https://asia.nikkei.com/business/finance/credit-saison-adb-to-partner-on-loans-for-asia-s-small-businesses"
-  },
-  {
    "h": "Dublin launches ‘blueprint’ for united Ireland",
    "w": "Coalition party’s scenario planning puts first-year cost of reunification at €3bn to €25bn while prime minister announces government unit to inform debate",
    "syms": [],
@@ -2615,14 +2648,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-08T13:09:21.375991Z",
    "url": "https://asia.nikkei.com/politics/international-relations/vietnam-leader-to-lam-visits-japan-as-decades-old-relationship-evolves"
-  },
-  {
-   "h": "COP31 climate summit in Turkey, ASEAN Summit, Sri Lanka budget",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T13:09:21.375991Z",
-   "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/cop31-climate-summit-in-turkey-asean-summit-sri-lanka-budget"
   },
   {
    "h": "En Nouvelle-Aquitaine, une première dans l’achat groupé d’énergie",
@@ -2676,22 +2701,6 @@
    "ts": "2026-11-08T12:16:02Z",
    "url": "https://www.ft.com/content/eeadc13e-b915-4591-ab85-54db81030996?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "What the Democratic sweep means for Trump's tariffs and AI",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T12:12:32.757478Z",
-   "url": "https://asia.nikkei.com/video/what-the-democratic-sweep-means-for-trump-s-tariffs-and-ai"
-  },
-  {
-   "h": "Grab rival Tada joins Singapore's self-driving minibus project",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T12:12:32.757478Z",
-   "url": "https://asia.nikkei.com/business/transportation/grab-rival-tada-joins-singapore-s-self-driving-minibus-project"
   },
   {
    "h": "Data says the unsaid about British welfare politics",
