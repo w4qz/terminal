@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T06:23:33.694529Z",
+ "generated_at": "2026-11-08T07:36:56.165585Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
@@ -228,8 +228,8 @@
    "prev": 28.18,
    "chg": -2.54,
    "pct": -9.01,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^VIX)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^VIX) — échec de la dernière mise à jour",
    "ts": "2026-11-06T21:15:00Z",
    "open": 27.68,
    "lo": 23.47,
@@ -708,7 +708,7 @@
    "src": "Yahoo Finance via yfinance (GC=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 4098.5,
-   "lo": 4037.0,
+   "lo": 4035.6001,
    "hi": 4116.2002,
    "vol": 166431,
    "h": [
@@ -745,7 +745,7 @@
    "src": "Yahoo Finance via yfinance (CL=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 91.2,
-   "lo": 89.07,
+   "lo": 89.08,
    "hi": 92.53,
    "vol": 253859,
    "h": [
@@ -782,9 +782,9 @@
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 99.24,
-   "lo": 96.65,
+   "lo": 96.71,
    "hi": 100.92,
-   "vol": 38991,
+   "vol": 38993,
    "h": [
     104.28,
     104.72,
@@ -811,19 +811,18 @@
    ]
   },
   "BTC": {
-   "p": 75739.0781,
-   "prev": 75746.9297,
-   "chg": -7.8516,
-   "pct": -0.01,
+   "p": 75770.7188,
+   "prev": 75747.5781,
+   "chg": 23.1406,
+   "pct": 0.03,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-08T06:23:33.694529Z",
+   "ts": "2026-11-08T07:36:56.165585Z",
    "open": 75753.7109,
    "lo": 75585.3672,
    "hi": 75841.5156,
-   "vol": 8837925888,
+   "vol": 8852164608,
    "h": [
-    81382.15,
     82017.6,
     81853.54,
     82941.0,
@@ -844,7 +843,8 @@
     80405.29,
     75942.12,
     75746.93,
-    75739.08
+    75747.58,
+    75770.72
    ]
   }
  },
@@ -1149,9 +1149,9 @@
    "sector": "Energy",
    "industry": "Oil & Gas Integrated",
    "ccy": "SAR",
-   "mcap": 6328297717760,
-   "pe": 14.0645,
-   "fpe": 15.6647,
+   "mcap": 6308945199104,
+   "pe": 14.0215,
+   "fpe": 15.6168,
    "eps": 1.86,
    "feps": 1.67,
    "revTTM": 1932166955008,
@@ -1159,7 +1159,7 @@
    "shares": 241907400000,
    "beta": -0.022,
    "div": 1.36,
-   "divYield": 5.199,
+   "divYield": 5.215,
    "target": 30.3294,
    "targetHi": 35.0,
    "targetLo": 27.0,
@@ -1175,7 +1175,7 @@
    "cash": 247142006784,
    "debt": 360191000576,
    "fcf": 343484628992,
-   "w52lo": 0.0,
+   "w52lo": 23.29,
    "w52hi": 27.96,
    "evEbitda": 7.42,
    "earnTs": 1793707200,
@@ -1522,14 +1522,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 998898073600,
+   "mcap": 995843768320,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -2167,8 +2167,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 123.1505,
+   "shares": 572600000,
+   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2219,6 +2224,48 @@
   }
  ],
  "news": [
+  {
+   "h": "Matthew Janzaruk, SVP de P&G, cède des actions pour 1,55 million $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T07:02:05Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/matthew-janzaruk-svp-de-pg-cede-des-actions-pour-155-million--93CH-3683692"
+  },
+  {
+   "h": "Comment Mercedes a subi une chute de 14 milliards € d’EBIT",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T06:54:10Z",
+   "url": "https://fr.investing.com/news/company-news/comment-mercedes-a-subi-une-chute-de-14-milliards--debit-3683690"
+  },
+  {
+   "h": "Un administrateur de First Interstate Bancsystem vend 120.016$ d’actions FIBK",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T06:47:05Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-first-interstate-bancsystem-vend-120016-dactions-fibk-93CH-3683689"
+  },
+  {
+   "h": "Le Bitcoin reste sous 76 000 $ alors que Binance ferme des comptes en Europe",
+   "w": "",
+   "syms": [
+    "BTC"
+   ],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T06:00:07Z",
+   "url": "https://fr.investing.com/news/cryptocurrency-news/le-bitcoin-reste-sous-76-000--alors-que-binance-ferme-des-comptes-en-europe-3683688"
+  },
+  {
+   "h": "Cathie Wood 'always feels better when the market is worried' — here's why",
+   "w": "The Ark Invest CEO said there was a \"wall of worry\" gripping markets right now.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-08T06:00:01Z",
+   "url": "https://www.cnbc.com/2026/11/08/cathie-wood-ai-selloff.html"
+  },
   {
    "h": "Chez Grasset, un supplice mortifère après sept mois sans patron",
    "w": "Depuis le limogeage brutal de son PDG Olivier Nora en avril, débarqué par son propriétaire, Vincent Bolloré, la maison parisienne de la rue des Saints-Pères attend, muette et tétanisée, de connaître son sort.",
@@ -2437,12 +2484,44 @@
    "url": "https://fr.investing.com/news/economy-news/lelection-en-nouvellezelande-place-un-parti-reformateur-en-position-charniere-3683674"
   },
   {
-   "h": "L’armée américaine neutralise un navire tentant de briser le blocus contre l’Iran",
+   "h": "Vietnam leader To Lam visits Japan as decades-old relationship evolves",
    "w": "",
    "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T01:43:47Z",
-   "url": "https://fr.investing.com/news/economy-news/larmee-americaine-neutralise-un-navire-tentant-de-briser-le-blocus-contre-liran-3683673"
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T01:36:56.165585Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/vietnam-leader-to-lam-visits-japan-as-decades-old-relationship-evolves"
+  },
+  {
+   "h": "COP31 climate summit in Turkey, ASEAN Summit, Sri Lanka budget",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T01:36:56.165585Z",
+   "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/cop31-climate-summit-in-turkey-asean-summit-sri-lanka-budget"
+  },
+  {
+   "h": "What the Democratic sweep means for Trump's tariffs and AI",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T01:36:56.165585Z",
+   "url": "https://asia.nikkei.com/video/what-the-democratic-sweep-means-for-trump-s-tariffs-and-ai"
+  },
+  {
+   "h": "Indonesia's art deco hot spot, a century on",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T01:36:56.165585Z",
+   "url": "https://asia.nikkei.com/life-arts/life/destinations/indonesia-s-art-deco-hot-spot-a-century-on"
+  },
+  {
+   "h": "Prospect of 'modern-day Yalta' shakes Asia's postwar order",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T01:36:56.165585Z",
+   "url": "https://asia.nikkei.com/spotlight/comment/prospect-of-modern-day-yalta-shakes-asia-s-postwar-order"
   },
   {
    "h": "Indonesian president’s adviser says MSCI downgrade threat ‘went too far’",
@@ -2463,52 +2542,12 @@
    "mine": 1
   },
   {
-   "h": "La vente massive d’actions IA pousse les investisseurs vers la Chine et l’Inde",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T01:00:45Z",
-   "url": "https://fr.investing.com/news/stock-market-news/la-vente-massive-dactions-ia-pousse-les-investisseurs-vers-la-chine-et-linde-3683670"
-  },
-  {
    "h": "Grab rival Tada joins Singapore's self-driving minibus project",
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
    "ts": "2026-11-08T00:23:33.694529Z",
    "url": "https://asia.nikkei.com/business/transportation/grab-rival-tada-joins-singapore-s-self-driving-minibus-project"
-  },
-  {
-   "h": "Prep schools help Chinese students get into Japan's top universities",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T00:23:33.694529Z",
-   "url": "https://asia.nikkei.com/business/education/prep-schools-help-chinese-students-get-into-japan-s-top-universities"
-  },
-  {
-   "h": "Japan's unprotected deposits hit $890bn as inheritances inflate accounts",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T00:23:33.694529Z",
-   "url": "https://asia.nikkei.com/business/finance/japan-s-unprotected-deposits-hit-890bn-as-inheritances-inflate-accounts"
-  },
-  {
-   "h": "Comment investir dans l’IA malgré les inquiétudes sur les dépenses ?",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T23:53:16Z",
-   "url": "https://fr.investing.com/news/stock-market-news/comment-investir-dans-lia-malgre-les-inquietudes-sur-les-depenses--3683668"
-  },
-  {
-   "h": "Le directeur d’OceanFirst, Jack Farris, achète pour 10.008$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-07T23:33:22Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-doceanfirst-jack-farris-achete-pour-10008-dactions-93CH-3683667"
   },
   {
    "h": "Bridgestone revs up output of massive mining tires on AI-driven demand",
@@ -2585,6 +2624,14 @@
    "url": "https://www.cnbc.com/2026/11/07/iran-war-midterm-election-oil-price-trump.html"
   },
   {
+   "h": "Meta chief strategy officer Dave Wehner leaves to join AI infrastructure startup Fireworks as CFO",
+   "w": "Dave Wehner, Meta’s chief strategy officer, is leaving the company to become CFO of Fireworks, the AI infrastructure startup valued at $17.5 billion in July.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-07T22:01:17Z",
+   "url": "https://www.cnbc.com/2026/11/07/dave-wehner-meta-fireworks-cfo.html"
+  },
+  {
    "h": "Gunman kills six in Kraków shooting",
    "w": "Poland’s Prime Minister Donald Tusk called on politicians not to exploit the incident",
    "syms": [],
@@ -2611,30 +2658,6 @@
    "ts": "2026-11-07T21:41:05Z",
    "url": "https://www.ft.com/content/a55a2a22-4479-4f93-a445-6147a5c6d790?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Japan tourism industry steps up push to draw Indian visitors",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T21:30:47.133732Z",
-   "url": "https://asia.nikkei.com/business/travel-leisure/japan-tourism-industry-steps-up-push-to-draw-indian-visitors"
-  },
-  {
-   "h": "US sports investment fund RedBird hunts for tie-ups in Japan",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T21:30:47.133732Z",
-   "url": "https://asia.nikkei.com/spotlight/sports/us-sports-investment-fund-redbird-hunts-for-tie-ups-in-japan"
-  },
-  {
-   "h": "Astellas employee jailed in China on spy charge set for December release",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T21:30:47.133732Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/astellas-employee-jailed-in-china-on-spy-charge-set-for-december-release"
   },
   {
    "h": "Israel’s president gives Gadi Eisenkot first chance at forming a government",
@@ -2738,6 +2761,14 @@
    "url": "https://www.marketwatch.com/story/the-s-p-500-has-become-a-big-ai-bet-here-are-some-simple-alternatives-3c7574a4?mod=mw_rss_topstories"
   },
   {
+   "h": "Decisive election. Dramatic stock swings. How we handled the market last week",
+   "w": "On Friday, Jim Cramer revealed his strategy for navigating this new era at the Investing Club's 4th Annual Meeting.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-07T16:31:00Z",
+   "url": "https://www.cnbc.com/investingclub/2026/11/07/decisive-election-dramatic-stock-swings-how-we-handled-the-market-last-week.html"
+  },
+  {
    "h": "The 2027 tax brackets are out. See what the standard deduction and SALT tax breaks will be.",
    "w": "The tax brackets at the heart of Americans’ income-tax bills will be adjusting at a steeper level in 2027 compared to this year, underscoring inflation’s rekindled presence.",
    "syms": [],
@@ -2768,14 +2799,6 @@
    "src": "CNBC — Marchés",
    "ts": "2026-11-07T15:23:46Z",
    "url": "https://www.cnbc.com/2026/11/07/berkshire-hathaway-q3-2026-earnings-buybacks.html"
-  },
-  {
-   "h": "What midterm election blue wave rebuke of Trump means for renewable energy",
-   "w": "The conservative war on renewable energy suffered a big loss in the rout of President Trump and the GOP in midterm elections. Investors should pay attention.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-07T14:33:32Z",
-   "url": "https://www.cnbc.com/2026/11/07/midterm-election-blue-wave-trump-renewable-energy.html"
   },
   {
    "h": "31-year-old dumpster diver brought in $140,000 in 12 months: I 'did much more than I thought was possible'",
@@ -2812,14 +2835,6 @@
    "url": "https://www.cnbc.com/make-it/2026/11/07/mark-cuban-net-worth-money-mindset.html"
   },
   {
-   "h": "Will this week's blue wave election usher in a Democratic president in 2028?",
-   "w": "A CNBC analysis of historical election data finds wave elections don't necessarily spell trouble for the party in power during the next presidential year.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-07T14:00:01Z",
-   "url": "https://www.cnbc.com/2026/11/07/2026-midterm-election-blue-wave-2028-president.html"
-  },
-  {
    "h": "Christine Lagarde: Interview with Yomiuri Shimbun",
    "w": "",
    "syms": [
@@ -2844,14 +2859,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-07T13:00:02Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/07/les-equipementiers-automobiles-s-alarment-des-consequences-sociales-de-l-accord-franco-allemand_6808276_3234.html"
-  },
-  {
-   "h": "Anthropic IPO meets AI backlash after midterms show stinging rebuke of data centers",
-   "w": "Anthropic is poised to become the first pure-play AI company to hit the public market at a time when the public is increasingly leary of the industry.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-07T13:00:01Z",
-   "url": "https://www.cnbc.com/2026/11/07/anthropic-ipo-ai-data-center-backlash.html"
   },
   {
    "h": "New Zealand’s National Party takes narrow lead in tight poll",
