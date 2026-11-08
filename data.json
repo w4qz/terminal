@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T07:36:56.165585Z",
+ "generated_at": "2026-11-08T08:28:05.713636Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
@@ -228,8 +228,8 @@
    "prev": 28.18,
    "chg": -2.54,
    "pct": -9.01,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^VIX) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^VIX)",
    "ts": "2026-11-06T21:15:00Z",
    "open": 27.68,
    "lo": 23.47,
@@ -708,7 +708,7 @@
    "src": "Yahoo Finance via yfinance (GC=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 4098.5,
-   "lo": 4035.6001,
+   "lo": 4037.0,
    "hi": 4116.2002,
    "vol": 166431,
    "h": [
@@ -745,7 +745,7 @@
    "src": "Yahoo Finance via yfinance (CL=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 91.2,
-   "lo": 89.08,
+   "lo": 89.07,
    "hi": 92.53,
    "vol": 253859,
    "h": [
@@ -782,9 +782,9 @@
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 99.24,
-   "lo": 96.71,
+   "lo": 96.65,
    "hi": 100.92,
-   "vol": 38993,
+   "vol": 38991,
    "h": [
     104.28,
     104.72,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75770.7188,
+   "p": 75784.8672,
    "prev": 75747.5781,
-   "chg": 23.1406,
-   "pct": 0.03,
+   "chg": 37.2891,
+   "pct": 0.05,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-08T07:36:56.165585Z",
+   "ts": "2026-11-08T08:28:05.713636Z",
    "open": 75753.7109,
    "lo": 75585.3672,
-   "hi": 75841.5156,
-   "vol": 8852164608,
+   "hi": 75878.1016,
+   "vol": 8771935232,
    "h": [
     82017.6,
     81853.54,
@@ -844,7 +844,7 @@
     75942.12,
     75746.93,
     75747.58,
-    75770.72
+    75784.87
    ]
   }
  },
@@ -1149,9 +1149,9 @@
    "sector": "Energy",
    "industry": "Oil & Gas Integrated",
    "ccy": "SAR",
-   "mcap": 6308945199104,
-   "pe": 14.0215,
-   "fpe": 15.6168,
+   "mcap": 6323459063808,
+   "pe": 14.0538,
+   "fpe": 15.6527,
    "eps": 1.86,
    "feps": 1.67,
    "revTTM": 1932166955008,
@@ -1159,7 +1159,7 @@
    "shares": 241907400000,
    "beta": -0.022,
    "div": 1.36,
-   "divYield": 5.215,
+   "divYield": 5.203,
    "target": 30.3294,
    "targetHi": 35.0,
    "targetLo": 27.0,
@@ -1522,14 +1522,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 995843768320,
+   "mcap": 998898073600,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -2167,13 +2167,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 123.1505,
-   "shares": 572600000,
-   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2224,6 +2219,14 @@
   }
  ],
  "news": [
+  {
+   "h": "Stockland abandonne son projet de data center à Sydney face à l’opposition locale",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T07:43:53Z",
+   "url": "https://fr.investing.com/news/company-news/stockland-abandonne-son-projet-de-data-center-a-sydney-face-a-lopposition-locale-3683693"
+  },
   {
    "h": "Matthew Janzaruk, SVP de P&G, cède des actions pour 1,55 million $",
    "w": "",
@@ -2476,12 +2479,28 @@
    "url": "https://fr.investing.com/news/stock-market-news/quels-sont-les-engagements-de-calcul-des-laboratoires-dia--3683677"
   },
   {
-   "h": "L’élection en Nouvelle-Zélande place un parti réformateur en position charnière",
+   "h": "Japan tourism industry steps up push to draw Indian visitors",
    "w": "",
    "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T02:26:04Z",
-   "url": "https://fr.investing.com/news/economy-news/lelection-en-nouvellezelande-place-un-parti-reformateur-en-position-charniere-3683674"
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T02:28:05.713636Z",
+   "url": "https://asia.nikkei.com/business/travel-leisure/japan-tourism-industry-steps-up-push-to-draw-indian-visitors"
+  },
+  {
+   "h": "US sports investment fund RedBird hunts for tie-ups in Japan",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T02:28:05.713636Z",
+   "url": "https://asia.nikkei.com/spotlight/sports/us-sports-investment-fund-redbird-hunts-for-tie-ups-in-japan"
+  },
+  {
+   "h": "Astellas employee jailed in China on spy charge set for December release",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T02:28:05.713636Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/astellas-employee-jailed-in-china-on-spy-charge-set-for-december-release"
   },
   {
    "h": "Vietnam leader To Lam visits Japan as decades-old relationship evolves",
@@ -2590,30 +2609,6 @@
    "src": "BBC — Business",
    "ts": "2026-11-07T23:02:35Z",
    "url": "https://www.bbc.co.uk/news/articles/cmvg652l927lo?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "Pakistan's Hormuz agreement with Iran faces test after LNG tanker attack",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T22:32:19.568986Z",
-   "url": "https://asia.nikkei.com/spotlight/iran-tensions/iran-war/pakistan-s-hormuz-agreement-with-iran-faces-test-after-lng-tanker-attack"
-  },
-  {
-   "h": "Gen Z and AI are changing the world of video games",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T22:32:19.568986Z",
-   "url": "https://asia.nikkei.com/opinion/gen-z-and-ai-are-changing-the-world-of-video-games"
-  },
-  {
-   "h": "New Zealand's knife-edge election puts coalition talks in focus",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-07T22:32:19.568986Z",
-   "url": "https://asia.nikkei.com/politics/new-zealand-s-knife-edge-election-puts-coalition-talks-in-focus"
   },
   {
    "h": "Risk of Iran war escalation remains high despite Democratic sweep in U.S. midterm elections",
