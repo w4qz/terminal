@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T15:36:07.373300Z",
+ "generated_at": "2026-11-08T16:16:37.252791Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
@@ -632,8 +632,8 @@
    "prev": 1.3477,
    "chg": -0.0121,
    "pct": -0.9,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (GBPUSD=X) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (GBPUSD=X)",
    "ts": "2026-11-06T22:30:00Z",
    "open": 1.3455,
    "lo": 1.3344,
@@ -708,7 +708,7 @@
    "src": "Yahoo Finance via yfinance (GC=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 4098.5,
-   "lo": 4035.6001,
+   "lo": 4037.0,
    "hi": 4116.2002,
    "vol": 166431,
    "h": [
@@ -745,7 +745,7 @@
    "src": "Yahoo Finance via yfinance (CL=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 91.2,
-   "lo": 89.08,
+   "lo": 89.07,
    "hi": 92.53,
    "vol": 253859,
    "h": [
@@ -782,9 +782,9 @@
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 99.24,
-   "lo": 96.71,
+   "lo": 96.65,
    "hi": 100.92,
-   "vol": 38993,
+   "vol": 38991,
    "h": [
     104.28,
     104.72,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75963.75,
+   "p": 75924.7031,
    "prev": 75747.5781,
-   "chg": 216.1719,
-   "pct": 0.29,
+   "chg": 177.125,
+   "pct": 0.23,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-08T15:36:07.373300Z",
+   "ts": "2026-11-08T16:16:37.252791Z",
    "open": 75753.7109,
    "lo": 75585.3672,
    "hi": 76068.3203,
-   "vol": 8819409920,
+   "vol": 8736875520,
    "h": [
     82017.6,
     81853.54,
@@ -844,7 +844,7 @@
     75942.12,
     75746.93,
     75747.58,
-    75963.75
+    75924.7
    ]
   }
  },
@@ -1177,7 +1177,7 @@
    "fcf": 343484628992,
    "w52lo": 23.29,
    "w52hi": 27.96,
-   "evEbitda": 7.42,
+   "evEbitda": 7.399,
    "earnTs": 1793707200,
    "earnStart": 1793707200,
    "earnEnd": 1793707200,
@@ -1522,14 +1522,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 995843768320,
+   "mcap": 998898073600,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -2167,13 +2167,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 123.1505,
-   "shares": 572600000,
-   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2224,6 +2219,71 @@
   }
  ],
  "news": [
+  {
+   "h": "Une directrice de Labcorp cède des actions pour 389.395$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T16:02:19Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/une-directrice-de-labcorp-cede-des-actions-pour-389395-93CH-3683737"
+  },
+  {
+   "h": "La contestation contre les data centers monte en Europe",
+   "w": "A l’appel d’une coalition d’associations environnementales, des dizaines de manifestations se sont tenues dans une quinzaine de pays européens, vendredi et samedi, pour réclamer un moratoire sur la construction de centres de données.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-08T16:00:08Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/11/08/la-contestation-contre-les-data-centers-monte-en-europe_6808448_3234.html"
+  },
+  {
+   "h": "‘It feels like he’s quietly building a separate life’: My husband inherited $500,000, but he refuses to spend it on our home",
+   "w": "“Our kitchen dates from 1999 and the oven only works if you hit the door a certain way.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-08T16:00:00Z",
+   "url": "https://www.marketwatch.com/story/it-feels-like-hes-quietly-building-a-separate-life-my-husband-inherited-500-000-but-he-refuses-to-spend-it-on-our-home-06535cff?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Funeral homes are finding new life hosting weddings and golf outings, as the traditional burial business dies out",
+   "w": "“It’s not my funeral — it’s yours — so make it what you want,” one funeral-home operator says.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-08T16:00:00Z",
+   "url": "https://www.marketwatch.com/story/funeral-homes-are-finding-new-life-hosting-weddings-and-golf-outings-as-the-traditional-burial-business-dies-out-15831d13?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Les 5 actions à surveiller cette semaine",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T15:50:25Z",
+   "url": "https://fr.investing.com/news/stock-market-news/les-5-actions-a-surveiller-cette-semaine-3683736"
+  },
+  {
+   "h": "Israel’s president gives Gadi Eisenkot first chance at forming government",
+   "w": "Isaac Herzog’s decision means opposition politician has 28 days to attempt to put together a ruling coalition",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-08T15:49:24Z",
+   "url": "https://www.ft.com/content/bf737648-b974-4f87-ba0b-958f2aff1163?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Government 'looking seriously' at banning under-16s from Vinted and eBay",
+   "w": "The culture secretary confirms reports they could be in the list of platforms set to be banned next March.",
+   "syms": [],
+   "src": "BBC — Business",
+   "ts": "2026-11-08T15:37:25Z",
+   "url": "https://www.bbc.co.uk/news/articles/cmzxjvpqrjxro?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "How Democrats will try to end Trump's tariffs",
+   "w": "Rep. Hakeem Jeffries, D-N.Y., who is likely the next House speaker, has made clear that ending President Trump's tariffs is one of Democrats' top priorities.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-08T15:36:39Z",
+   "url": "https://www.cnbc.com/2026/11/08/trump-tariffs-democrats-congress-canada.html"
+  },
   {
    "h": "‘I have no financial safety net’: I’m 66, rely on Social Security and have just $500 in savings. What hope do I have?",
    "w": "“Sometimes I wonder whether wealthier Americans should trade places with people like me.”",
@@ -2335,14 +2395,6 @@
    "mine": 1
   },
   {
-   "h": "La France participera aux discussions sur l’Ukraine à Abou Dhabi",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T14:28:59Z",
-   "url": "https://fr.investing.com/news/world-news/la-france-participera-aux-discussions-sur-lukraine-a-abou-dhabi-3683722"
-  },
-  {
    "h": "Recent AI agent experiments reveal a risky future of machine 'teamwork' inside corporations",
    "w": "AI agents are now working together on a regular basis. Research shows they are not always seeking the same goal, or operating with ethics.",
    "syms": [],
@@ -2393,28 +2445,12 @@
    "mine": 1
   },
   {
-   "h": "Le directeur de Northrop Grumman Mark Welsh III cède des actions pour 54.453$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T13:32:45Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-de-northrop-grumman-mark-welsh-iii-cede-des-actions-pour-54453-93CH-3683720"
-  },
-  {
    "h": "En Nouvelle-Aquitaine, une première dans l’achat groupé d’énergie",
    "w": "Neuf entreprises se sont associées pour acheter de l’énergie décarbonée, à un prix prédéfini pendant quinze ans. Un modèle qui peut faire école.",
    "syms": [],
    "src": "Le Monde — Économie",
    "ts": "2026-11-08T13:00:03Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/08/en-nouvelle-aquitaine-une-premiere-dans-l-achat-groupe-d-energie_6808429_3234.html"
-  },
-  {
-   "h": "How Democrats will try to end Trump's tariffs",
-   "w": "Rep. Hakeem Jeffries, D-N.Y., who is likely the next House speaker, has made clear that ending President Trump's tariffs is one of Democrats' top priorities.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-08T13:00:01Z",
-   "url": "https://www.cnbc.com/2026/11/08/trump-tariffs-democrats-congress-canada.html"
   },
   {
    "h": "Using miles to fly for Thanksgiving? These are the most expensive and cheapest routes",
@@ -2500,14 +2536,6 @@
    "url": "https://www.cnbc.com/2026/11/08/top-analysts-like-these-3-dividend-stocks-for-consistent-income.html"
   },
   {
-   "h": "Government 'looking seriously' at banning under-16s from Vinted and eBay",
-   "w": "The culture secretary confirms reports they could be in the list of platforms set to be banned next March.",
-   "syms": [],
-   "src": "BBC — Business",
-   "ts": "2026-11-08T11:25:32Z",
-   "url": "https://www.bbc.co.uk/news/articles/cmzxjvpqrjxro?at_medium=RSS&at_campaign=rss"
-  },
-  {
    "h": "Anthropic strikes $3.4bn deal to generate gas-fired power for data centres",
    "w": "AI lab bypasses traditional suppliers to secure scarce equipment as demand for energy surges",
    "syms": [],
@@ -2524,6 +2552,30 @@
    "ts": "2026-11-08T10:24:09Z",
    "url": "https://www.ft.com/content/0fab9ede-4fa1-4f94-b23e-e32f07a6b7df?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "Ukraine's Zaporizhzhia nuclear plant again relies on backup power",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T10:16:37.252791Z",
+   "url": "https://asia.nikkei.com/politics/ukraine-war/ukraine-s-zaporizhzhia-nuclear-plant-again-relies-on-backup-power"
+  },
+  {
+   "h": "Japan tourism industry steps up push to draw Indian visitors",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T10:16:37.252791Z",
+   "url": "https://asia.nikkei.com/business/travel-leisure/japan-tourism-industry-steps-up-push-to-draw-indian-visitors"
+  },
+  {
+   "h": "US sports investment fund RedBird hunts for tie-ups in Japan",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T10:16:37.252791Z",
+   "url": "https://asia.nikkei.com/spotlight/sports/us-sports-investment-fund-redbird-hunts-for-tie-ups-in-japan"
   },
   {
    "h": "Vietnam leader To Lam visits Japan as decades-old relationship evolves",
@@ -2614,30 +2666,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-08T08:15:23.830756Z",
    "url": "https://asia.nikkei.com/business/business-trends/japan-manufacturers-lift-profit-outlooks-on-price-hikes-weak-yen"
-  },
-  {
-   "h": "Pakistan's Hormuz agreement with Iran faces test after LNG tanker attack",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T07:26:18.029019Z",
-   "url": "https://asia.nikkei.com/spotlight/iran-tensions/iran-war/pakistan-s-hormuz-agreement-with-iran-faces-test-after-lng-tanker-attack"
-  },
-  {
-   "h": "Gen Z and AI are changing the world of video games",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T07:26:18.029019Z",
-   "url": "https://asia.nikkei.com/opinion/gen-z-and-ai-are-changing-the-world-of-video-games"
-  },
-  {
-   "h": "Credit Saison, ADB to partner on loans for Asia's small businesses",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T07:26:18.029019Z",
-   "url": "https://asia.nikkei.com/business/finance/credit-saison-adb-to-partner-on-loans-for-asia-s-small-businesses"
   },
   {
    "h": "Cathie Wood 'always feels better when the market is worried' — here's why",
@@ -2749,7 +2777,7 @@
    "h": "Apple saves $2.7bn in taxes by booking profits in Singapore",
    "w": "City-state overtakes Ireland as iPhone maker’s biggest tax shelter according to new disclosures",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-08T05:00:11Z",
    "url": "https://www.ft.com/content/49453406-99f2-4f5b-8f5d-01dc8cac5ede?syn-25a6b1a6=1",
    "mine": 1
@@ -2862,15 +2890,6 @@
    "mine": 1
   },
   {
-   "h": "Israel’s president gives Gadi Eisenkot first chance at forming a government",
-   "w": "Isaac Herzog’s decision means opposition politician has 28 days to attempt to put together a ruling coalition",
-   "syms": [],
-   "src": "myFT — middle east north africa",
-   "ts": "2026-11-07T21:03:47Z",
-   "url": "https://www.ft.com/content/bf737648-b974-4f87-ba0b-958f2aff1163?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "This retired professor has reinvented himself — as a Taylor Swift scholar",
    "w": "His niece convinced him to spend his retirement analyzing Taylor Swift lyrics. Now he’s a successful podcaster at 72.",
    "syms": [],
@@ -2885,22 +2904,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-07T20:36:00Z",
    "url": "https://www.marketwatch.com/story/my-adviser-recommended-an-annuity-is-it-the-right-move-in-this-market-environment-00edbbf6?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Here are the 2027 capital-gains tax rates for each income level",
-   "w": "How much will you pay in capital-gains taxes next year? The IRS just released this crucial information.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-07T19:48:00Z",
-   "url": "https://www.marketwatch.com/story/here-are-the-2027-capital-gains-tax-rates-for-each-income-level-166fc306?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Medicare prescription drug costs will jump 50% in 2027. Doing nothing could cost you.",
-   "w": "Don’t sit on the sidelines during open enrollment.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-07T19:20:00Z",
-   "url": "https://www.marketwatch.com/story/medicare-prescription-drug-costs-will-jump-50-in-2027-doing-nothing-could-cost-you-b701dfb7?mod=mw_rss_topstories"
   },
   {
    "h": "French far-left presidential hopeful pledges ‘revolutionary’ remaking of society",
@@ -3031,16 +3034,6 @@
    "ts": "2026-11-07T10:30:03Z",
    "url": "https://www.ft.com/content/9d40f40a-cbf2-46f5-b3d0-cee554e35298?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Après huit mois de guerre au Moyen-Orient, la mue forcée des pays du Golfe producteurs de pétrole et de gaz",
-   "w": "Pour conserver leur rôle pivot sur les marchés de l’énergie, le Qatar, l’Arabie saoudite et les Emirats arabes unis doivent repenser leurs stratégies commerciales et logistiques.",
-   "syms": [
-    "BRENT"
-   ],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-07T08:30:03Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/11/07/apres-huit-mois-de-guerre-au-moyen-orient-la-mue-forcee-des-pays-du-golfe-producteurs-de-petrole-et-de-gaz_6808252_3234.html"
   },
   {
    "h": "UK will not slow down on AI despite backlash in US, says growth minister",
