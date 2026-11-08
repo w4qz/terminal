@@ -298,6 +298,9 @@ body.bbg #fbar{display:flex}
 #fbar .ft{font-weight:400}
 #fbar .fr{margin-left:auto;font-weight:400}
 #fbar .fr b{color:#ffd200}
+.fag{background:none;border:1px solid var(--line);color:var(--txt3);padding:2px 4px;cursor:pointer;line-height:0;border-radius:2px}
+.fag svg{fill:currentColor}.fag:hover{color:var(--txt);border-color:var(--txt3)}.fag.on{color:#000;background:#fb8b1e;border-color:#fb8b1e}
+body:not(.bbg) .fag.on{background:var(--acc,#4d8fd6);border-color:var(--acc,#4d8fd6)}
 #fbar .fr .buf{background:#ffd200;color:#000;padding:0 6px;margin-left:6px;font-weight:700;display:none}
 body.bbg .bn{color:#ffd200;font-weight:400;margin-right:6px;font-variant-numeric:tabular-nums}
 body.bbg .pnl>h3{font-size:12px;letter-spacing:0;text-transform:none}
@@ -3121,15 +3124,38 @@ const rows=[
 ['v','Free cash flow',i=>at(C,'fcf',i),'cagr'],['p','FCF en % du CA',i=>ratio(at(C,'fcf',i),at(I,'rev',i))],
 ['v','Dividendes versés',i=>at(C,'div',i)],['v','Rachats d\'actions',i=>at(C,'buyback',i)],
 ['p','Taux de distribution',i=>{ const dv=at(C,'div',i), nt=at(I,'net',i); return dv!=null&&nt>0?Math.abs(dv)/nt*100:null; }]];
+const FAR=[];   // lignes du tableau, pour le graphique ouvert au clic
 const fmt=(t,v)=>v==null||!isFinite(v)?'<span class="na">—</span>':t==='v'?big(v):t==='n'?nf(v,2):t==='x'?nf(v,1)+' x':nf(v,1)+' %';
 box.innerHTML=`<h3>FA — Analyse financière<span class="rt">exercices annuels · ${esc(d.ccy||'')} · Yahoo Finance · lu ${ago(d.ts)}</span></h3>
-<div class="pbody flush"><table><caption class="sr-only">États financiers</caption><thead><tr><th scope="col" style="text-align:left"></th>${Y.map(y=>`<th scope="col">${fyLabel(y)}</th>`).join('')}<th scope="col">TCAM</th></tr></thead><tbody>
-${rows.map(r=>{ if(r[0]==='h') return `<tr><th colspan="${n+2}" scope="colgroup" style="text-align:left;font-size:9px;color:var(--hot);letter-spacing:.8px;padding-top:9px">${r[1].toUpperCase()}</th></tr>`;
+<div class="pbody flush"><table><caption class="sr-only">États financiers</caption><thead><tr><th scope="col" style="text-align:left"></th><th scope="col" style="width:34px"><span class="sr-only">Graphique</span></th>${Y.map(y=>`<th scope="col">${fyLabel(y)}</th>`).join('')}<th scope="col">TCAM</th></tr></thead><tbody>
+${rows.map(r=>{ if(r[0]==='h') return `<tr><th colspan="${n+3}" scope="colgroup" style="text-align:left;font-size:9px;color:var(--hot);letter-spacing:.8px;padding-top:9px">${r[1].toUpperCase()}</th></tr>`;
 const vals=Y.map((_,i)=>r[2](i)), f=vals.findIndex(v=>v!=null), l=vals.length-1-[...vals].reverse().findIndex(v=>v!=null);
 const cg=r[3]&&f>=0&&l>f?cagrOf(vals[f],vals[l],l-f):null, sub=r[0]==='p'||r[0]==='x';
-return `<tr><th scope="row" style="text-align:left;font-weight:${sub?400:600};${sub?'color:var(--txt2);padding-left:14px':''}">${r[1]}</th>${vals.map(v=>`<td${sub?' class="mut"':''}>${fmt(r[0],v)}</td>`).join('')}<td class="${cls(cg)}">${cg!=null?pct(cg,1):''}</td></tr>`; }).join('')}
-</tbody></table></div><div class="note" style="padding:6px 9px">TCAM = taux de croissance annuel moyen entre le premier et le dernier exercice disponibles. Montants dans la devise des comptes ; certaines lignes manquent selon le format comptable de la société (banques, assureurs).</div>`;
+return `<tr><th scope="row" style="text-align:left;font-weight:${sub?400:600};${sub?'color:var(--txt2);padding-left:14px':''}">${r[1]}</th><td style="padding:2px 4px;text-align:center">${vals.filter(v=>v!=null&&isFinite(v)).length>1?`<button type="button" class="fag" data-far="${FAR.push({lab:r[1],t:r[0],vals,cg})-1}" aria-expanded="false" aria-label="Évolution : ${esc(r[1])}" title="Afficher l'évolution"><svg width="14" height="12" viewBox="0 0 14 12" aria-hidden="true"><rect x="0" y="7" width="3" height="5"/><rect x="5" y="4" width="3" height="8"/><rect x="10" y="0" width="3" height="12"/></svg></button>`:''}</td>${vals.map(v=>`<td${sub?' class="mut"':''}>${fmt(r[0],v)}</td>`).join('')}<td class="${cls(cg)}">${cg!=null?pct(cg,1):''}</td></tr>`; }).join('')}
+</tbody></table></div><div class="note" style="padding:6px 9px">TCAM = taux de croissance annuel moyen entre le premier et le dernier exercice disponibles. Montants dans la devise des comptes ; certaines lignes manquent selon le format comptable de la société (banques, assureurs). Cliquez sur l'icône de graphique d'une ligne pour voir son évolution.</div>`;
+box.querySelectorAll('.fag').forEach(b=>b.onclick=()=>{ const tr=b.closest('tr'), nx=tr.nextElementSibling, open=nx&&nx.classList.contains('fachart');
+box.querySelectorAll('tr.fachart').forEach(x=>x.remove()); box.querySelectorAll('.fag').forEach(x=>{ x.classList.remove('on'); x.setAttribute('aria-expanded','false'); });
+if(open) return; const o=FAR[+b.dataset.far]; b.classList.add('on'); b.setAttribute('aria-expanded','true');
+const row=document.createElement('tr'); row.className='fachart'; row.innerHTML=`<td colspan="${n+3}" style="padding:8px 10px 12px;background:${CT().B?'#000':'var(--bg2)'}">${faChart(o,Y,fmt,Math.max(600,tr.offsetWidth-24))}</td>`; tr.after(row); });
 }
+/** Graphique d'évolution d'une ligne du FA : barres par exercice, valeur au-dessus, variation entre exercices. */
+function faChart(o,Y,fmt,W=760){ const B=CT().B, v=o.vals.map(x=>x!=null&&isFinite(x)?x:null), n=v.length, ok=v.filter(x=>x!=null);
+const mx=Math.max(0,...ok), mn=Math.min(0,...ok), H=220, pl=10, pr=10, pt=36, pb=mn<0?54:34, sp=(mx-mn)||1, ph=H-pt-pb;
+const z=pt+(mx/sp)*ph, slot=(W-pl-pr)/n, bw=Math.min(110,slot*0.5), txt=t=>String(t).replace(/<[^>]+>/g,'');
+const col=(x,i)=>x<0?(B?'#ff433d':'#e04a4a'):i===n-1?(B?'#ffffff':'#9cc4ef'):(B?'#3a8dde':'#6ba3e0');
+const fg=B?'#e6e6e6':'#c9d1da', mut=B?'#8c8c8c':'#6b7480', hot=B?'#ffb000':'#e8a33d';
+let g=`<text x="${pl}" y="14" fill="${hot}" font-weight="700" font-size="13">${esc(o.lab)}</text>`+(o.cg!=null?`<text x="${W-pr}" y="14" text-anchor="end" fill="${o.cg>=0?'#2ee05f':'#ff433d'}" font-size="12">TCAM ${esc(pct(o.cg,1))}</text>`:'');
+g+=`<line x1="${pl}" x2="${W-pr}" y1="${z}" y2="${z}" stroke="${B?'#555':'#3a424c'}"/>`;
+v.forEach((x,i)=>{ const cx=pl+slot*(i+.5); g+=`<text x="${cx}" y="${H-8}" text-anchor="middle" fill="${fg}" font-size="12">${esc(fyLabel(Y[i]))}</text>`;
+if(x==null){ g+=`<text x="${cx}" y="${z-6}" text-anchor="middle" fill="${mut}" font-size="11">n/d</text>`; return; }
+const h=Math.max(1,Math.abs(x)/sp*ph), y=x>=0?z-h:z; g+=`<rect x="${cx-bw/2}" y="${y}" width="${bw}" height="${h}" fill="${col(x,i)}"><title>${esc(fyLabel(Y[i]))} : ${esc(txt(fmt(o.t,x)))}</title></rect>`;
+g+=`<text x="${cx}" y="${x>=0?y-6:y+h+14}" text-anchor="middle" fill="${fg}" font-size="12" font-weight="600">${esc(txt(fmt(o.t,x)))}</text>`;
+const p=i>0?v[i-1]:null; if(p!=null){ const neg=x<0&&p<0;   // sorties de trésorerie (capex, dividendes) : variation du montant versé
+const d=o.t==='p'||o.t==='x'?x-p:p!==0?(neg?(x/p-1)*100:(x-p)/Math.abs(p)*100):null;
+if(d!=null&&isFinite(d)){ const lab=o.t==='p'?(d>=0?'+':'')+nf(d,1)+' pt':o.t==='x'?(d>=0?'+':'')+nf(d,1)+' x':(d>=0?'+':'')+nf(d,1)+' %';
+g+=`<text x="${pl+slot*i}" y="${pt-8}" text-anchor="middle" fill="${neg?mut:d>=0?'#2ee05f':'#ff433d'}" font-size="11">${lab}</text>`; } } });
+return `<svg viewBox="0 0 ${W} ${H}" width="100%" style="max-width:${W}px;display:block;font-family:inherit" role="img" aria-label="Évolution de ${esc(o.lab)} par exercice">${g}</svg>
+<div class="mut" style="font-size:10px;margin-top:2px">En haut : variation d'un exercice à l'autre${o.t==='p'?' (en points)':''}${mn<0&&mx===0?' (en gris : variation du montant versé)':''}. Dernier exercice en ${B?'blanc':'clair'}, valeurs négatives en rouge.</div>`; }
 
 /*── DVD : historique des dividendes ─────────────────────────────────*/
 async function dvdRender(sym){
