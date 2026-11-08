@@ -1,13 +1,13 @@
 {
- "generated_at": "2026-11-08T21:56:25.642599Z",
+ "generated_at": "2026-11-08T22:36:49.724413Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
    "prev": 181.6,
    "chg": 5.04,
    "pct": 2.78,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (NVDA) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (NVDA)",
    "ts": "2026-11-06T21:00:00Z",
    "open": 191.1,
    "lo": 185.22,
@@ -565,7 +565,7 @@
    "ts": "2026-11-06T22:30:00Z",
    "open": 1.1141,
    "lo": 1.1138,
-   "hi": 1.1148,
+   "hi": 1.115,
    "h": [
     1.121302,
     1.120473,
@@ -624,7 +624,7 @@
     158.47,
     158.36,
     157.5,
-    158.34
+    158.38
    ]
   },
   "GBPUSD": {
@@ -636,8 +636,8 @@
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
    "ts": "2026-11-06T22:30:00Z",
    "open": 1.3344,
-   "lo": 1.3343,
-   "hi": 1.3355,
+   "lo": 1.3339,
+   "hi": 1.3358,
    "h": [
     1.322909,
     1.324152,
@@ -660,7 +660,7 @@
     1.343418,
     1.347709,
     1.345605,
-    1.335541
+    1.335631
    ]
   },
   "DXY": {
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 74172.0938,
+   "p": 74185.1719,
    "prev": 75747.5781,
-   "chg": -1575.4844,
-   "pct": -2.08,
+   "chg": -1562.4062,
+   "pct": -2.06,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-08T21:56:25.642599Z",
+   "ts": "2026-11-08T22:36:49.724413Z",
    "open": 75753.7109,
-   "lo": 73788.8438,
+   "lo": 74023.0859,
    "hi": 76068.3203,
-   "vol": 9128736768,
+   "vol": 13391663104,
    "h": [
     82017.6,
     81853.54,
@@ -844,7 +844,7 @@
     75942.12,
     75746.93,
     75747.58,
-    74172.09
+    74185.17
    ]
   }
  },
@@ -2220,6 +2220,62 @@
  ],
  "news": [
   {
+   "h": "Nvidia’s Huang admits to affair after allegations of relationship with Chinese spy",
+   "w": "Silicon Valley chipmaker opens investigation into chief executive as he confirms extramarital relationship in message to employees",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "myFT — world",
+   "ts": "2026-11-08T22:31:02Z",
+   "url": "https://www.ft.com/content/1397e2f4-d7f5-4cbb-a4d9-04ecf661d1aa?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Nvidia investigates CEO Jensen Huang's relationship with alleged Chinese spy",
+   "w": "Huang told Nvidia staff in an email that he had an affair and that the company's board has opened an investigation into allegations the woman is a Chinese spy.",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-08T22:22:18Z",
+   "url": "https://www.cnbc.com/2026/11/08/nvidia-jensen-huang-investigation-china-spy.html"
+  },
+  {
+   "h": "FirstFT: Nvidia CEO admits to affair after allegations of relationship with Chinese spy",
+   "w": "Also in today’s newsletter: Singapore becomes Apple’s biggest tax shelter and Democrats vow to impeach Trump officials",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "myFT — technology",
+   "ts": "2026-11-08T22:20:29Z",
+   "url": "https://www.ft.com/content/494e9731-d195-40e0-9ad4-cf7811037c05?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "HBF : la solution au goulot d’étranglement de la mémoire ?",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T22:10:23Z",
+   "url": "https://fr.investing.com/news/stock-market-news/hbf--la-solution-au-goulot-detranglement-de-la-memoire--3683758"
+  },
+  {
+   "h": "Onterris acquires EcOz Environmental Consultants en Australie",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T22:05:48Z",
+   "url": "https://fr.investing.com/news/company-news/onterris-acquires-ecoz-environmental-consultants-en-australie-93CH-3683756"
+  },
+  {
+   "h": "EOS décline de 12% dans un marché pessimiste",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-08T21:57:03Z",
+   "url": "https://fr.investing.com/news/cryptocurrency-news/eos-decline-de-12-dans-un-marche-pessimiste-3683754"
+  },
+  {
    "h": "Trump says renewed Iran strikes ‘highly unlikely’ if talks progress but warns he could still strike",
    "w": "Trump tied avoiding renewed U.S. strikes to progress in talks over Iran’s nuclear program and the Strait of Hormuz.",
    "syms": [],
@@ -2236,27 +2292,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-08T21:29:00Z",
    "url": "https://www.marketwatch.com/story/nvidias-board-will-probe-ceo-jensen-huangs-relationship-with-an-alleged-spy-heres-what-to-know-86656cd9?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Nvidia investigates CEO Jensen Huang's relationship with alleged Chinese spy",
-   "w": "Huang told Nvidia staff in an email that he had an affair and that the company's board has opened an investigation into allegations the woman is a Chinese spy.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-08T21:13:38Z",
-   "url": "https://www.cnbc.com/2026/11/08/nvidia-jensen-huang-investigation-china-spy.html"
-  },
-  {
-   "h": "Nvidia’s Huang admits to affair after allegations of relationship with Chinese spy",
-   "w": "Silicon Valley chipmaker opens investigation into chief executive as he confirms extramarital relationship in message to employees",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "myFT — world",
-   "ts": "2026-11-08T21:08:33Z",
-   "url": "https://www.ft.com/content/1397e2f4-d7f5-4cbb-a4d9-04ecf661d1aa?syn-25a6b1a6=1",
-   "mine": 1
   },
   {
    "h": "Un directeur de Beacon Financial achète des actions pour 6.146$",
@@ -2370,6 +2405,30 @@
    "url": "https://fr.investing.com/news/stock-market-news/la-chute-de-lia-chinoise-menace-les-ambitions-de-xi-sur-les-marches-3683743"
   },
   {
+   "h": "Netanyahu rival Eisenkot seeks 'wide' government, path to power uncertain",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T16:36:49.724413Z",
+   "url": "https://asia.nikkei.com/politics/netanyahu-rival-eisenkot-seeks-wide-government-path-to-power-uncertain"
+  },
+  {
+   "h": "Vietnam leader To Lam visits Japan as decades-old relationship evolves",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T16:36:49.724413Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/vietnam-leader-to-lam-visits-japan-as-decades-old-relationship-evolves"
+  },
+  {
+   "h": "Japan tourism industry steps up push to draw Indian visitors",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T16:36:49.724413Z",
+   "url": "https://asia.nikkei.com/business/travel-leisure/japan-tourism-industry-steps-up-push-to-draw-indian-visitors"
+  },
+  {
    "h": "Profitez de la baisse sur cette action canadienne : RJ",
    "w": "",
    "syms": [],
@@ -2393,14 +2452,6 @@
    "src": "Investing.com France",
    "ts": "2026-11-08T16:17:11Z",
    "url": "https://fr.investing.com/news/stock-market-news/le-boom-des-investissements-dans-lia-estil-durable-apres-le-repli-de-jeudi--3683739"
-  },
-  {
-   "h": "Une directrice de Labcorp cède des actions pour 389.395$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T16:02:19Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/une-directrice-de-labcorp-cede-des-actions-pour-389395-93CH-3683737"
   },
   {
    "h": "La contestation contre les data centers monte en Europe",
@@ -2460,14 +2511,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-08T15:56:25.642599Z",
    "url": "https://asia.nikkei.com/business/transportation/grab-rival-tada-joins-singapore-s-self-driving-minibus-project"
-  },
-  {
-   "h": "Les 5 actions à surveiller cette semaine",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T15:50:25Z",
-   "url": "https://fr.investing.com/news/stock-market-news/les-5-actions-a-surveiller-cette-semaine-3683736"
   },
   {
    "h": "Israel’s president gives Gadi Eisenkot first chance at forming government",
@@ -2545,14 +2588,6 @@
    "url": "https://asia.nikkei.com/life-arts/life/destinations/indonesia-s-art-deco-hot-spot-a-century-on"
   },
   {
-   "h": "Cabaletta Bio présente des données de phase 1/2 pour sa thérapie auto-immune",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T15:05:34Z",
-   "url": "https://fr.investing.com/news/company-news/cabaletta-bio-presente-des-donnees-de-phase-12-pour-sa-therapie-autoimmune-93CH-3683733"
-  },
-  {
    "h": "Corporate America’s profit numbers are just barely beating Wall Street’s expectations",
    "w": "S&amp;P 500 companies’ earnings are mostly topping analysts’ estimates — but by the narrowest margin in roughly four years.",
    "syms": [
@@ -2587,22 +2622,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-08T14:32:19.449828Z",
    "url": "https://asia.nikkei.com/business/automobiles/japan-headlight-king-koito-tears-down-chinese-rivals-lamps-for-bright-ideas"
-  },
-  {
-   "h": "Singapore Airlines unveils $1.6bn cabin revamp with giant double bed",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T14:32:19.449828Z",
-   "url": "https://asia.nikkei.com/business/transportation/singapore-airlines-unveils-1.6bn-cabin-revamp-with-giant-double-bed"
-  },
-  {
-   "h": "Pakistan's Hormuz agreement with Iran faces test after LNG tanker attack",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T14:32:19.449828Z",
-   "url": "https://asia.nikkei.com/spotlight/iran-tensions/iran-war/pakistan-s-hormuz-agreement-with-iran-faces-test-after-lng-tanker-attack"
   },
   {
    "h": "Recent AI agent experiments reveal a risky future of machine 'teamwork' inside corporations",
@@ -2644,14 +2663,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-08T14:00:00Z",
    "url": "https://www.marketwatch.com/story/stocks-are-moving-in-sync-again-for-the-first-time-in-a-while-theres-just-one-problem-c953bf72?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Ukraine's Zaporizhzhia nuclear plant again relies on backup power",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T13:54:44.638942Z",
-   "url": "https://asia.nikkei.com/politics/ukraine-war/ukraine-s-zaporizhzhia-nuclear-plant-again-relies-on-backup-power"
   },
   {
    "h": "Dublin launches ‘blueprint’ for united Ireland",
@@ -3052,15 +3063,6 @@
    "src": "myFT — asia pacific",
    "ts": "2026-11-07T12:06:11Z",
    "url": "https://www.ft.com/content/76a2208d-62c8-46f7-bada-554201d78cf4?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "What will a Democratic Congress mean for Ukraine?",
-   "w": "With Donald Trump retaining control of foreign policy, lawmakers will use legislative tools to try to support Kyiv",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-07T12:00:04Z",
-   "url": "https://www.ft.com/content/fac3a560-7845-4acf-9487-54ec8a445d74?syn-25a6b1a6=1",
    "mine": 1
   },
   {
