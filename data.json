@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T18:12:32.757478Z",
+ "generated_at": "2026-11-08T19:09:21.375991Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
@@ -563,11 +563,10 @@
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (EURUSD=X)",
    "ts": "2026-11-06T22:30:00Z",
-   "open": 1.1228,
-   "lo": 1.1133,
-   "hi": 1.1235,
+   "open": 1.1141,
+   "lo": 1.1141,
+   "hi": 1.1143,
    "h": [
-    1.120134,
     1.121302,
     1.120473,
     1.116022,
@@ -588,7 +587,8 @@
     1.119207,
     1.120724,
     1.123495,
-    1.122826
+    1.122826,
+    1.11433
    ]
   },
   "USDJPY": {
@@ -600,7 +600,7 @@
    "src": "Yahoo Finance via yfinance (JPY=X)",
    "ts": "2026-11-06T22:15:00Z",
    "open": 158.425,
-   "lo": 158.425,
+   "lo": 158.281,
    "hi": 158.425,
    "h": [
     158.06,
@@ -624,7 +624,7 @@
     158.47,
     158.36,
     157.5,
-    158.43
+    158.32
    ]
   },
   "GBPUSD": {
@@ -635,11 +635,10 @@
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
    "ts": "2026-11-06T22:30:00Z",
-   "open": 1.3455,
-   "lo": 1.3344,
-   "hi": 1.3464,
+   "open": 1.3344,
+   "lo": 1.3343,
+   "hi": 1.3347,
    "h": [
-    1.321493,
     1.322909,
     1.324152,
     1.32098,
@@ -660,7 +659,8 @@
     1.340986,
     1.343418,
     1.347709,
-    1.345605
+    1.345605,
+    1.334704
    ]
   },
   "DXY": {
@@ -708,7 +708,7 @@
    "src": "Yahoo Finance via yfinance (GC=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 4098.5,
-   "lo": 4035.6001,
+   "lo": 4035.1001,
    "hi": 4116.2002,
    "vol": 166431,
    "h": [
@@ -745,7 +745,7 @@
    "src": "Yahoo Finance via yfinance (CL=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 91.2,
-   "lo": 89.08,
+   "lo": 89.07,
    "hi": 92.53,
    "vol": 253859,
    "h": [
@@ -782,7 +782,7 @@
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-06T22:00:00Z",
    "open": 99.24,
-   "lo": 96.71,
+   "lo": 96.65,
    "hi": 100.92,
    "vol": 38993,
    "h": [
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 75760.4375,
+   "p": 75759.4922,
    "prev": 75747.5781,
-   "chg": 12.8594,
+   "chg": 11.9141,
    "pct": 0.02,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-08T18:12:32.757478Z",
+   "ts": "2026-11-08T19:09:21.375991Z",
    "open": 75753.7109,
    "lo": 75585.3672,
    "hi": 76068.3203,
-   "vol": 9073413120,
+   "vol": 9170891776,
    "h": [
     82017.6,
     81853.54,
@@ -844,7 +844,7 @@
     75942.12,
     75746.93,
     75747.58,
-    75753.58
+    75759.49
    ]
   }
  },
@@ -889,7 +889,7 @@
    "earnEnd": 1801170000,
    "earnEst": true,
    "exDiv": 1794441600,
-   "divDate": 1786579200,
+   "divDate": 1794787200,
    "lastDiv": 0.27,
    "trailDiv": 1.06
   },
@@ -2225,6 +2225,33 @@
  ],
  "news": [
   {
+   "h": "Companies House faces scrutiny over ‘pervasive and systemic’ errors",
+   "w": "Almost four in 10 businesses identify inconsistencies with their own records, calling official UK corporate register’s reliability into question",
+   "syms": [],
+   "src": "myFT — world uk",
+   "ts": "2026-11-08T19:00:02Z",
+   "url": "https://www.ft.com/content/1b67f9c7-b1ad-4b5b-b496-ac3a305ec841?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Democrats amp up Trump investigation threats, Blanche counters he may probe lawmakers",
+   "w": "Democrats have vowed to investigate both President Donald Trump's White House and businesses that have worked with the administration.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-08T18:57:56Z",
+   "url": "https://www.cnbc.com/2026/11/08/democrats-trump-oversight-blanche-doj-investigations.html"
+  },
+  {
+   "h": "Nvidia CEO Jensen Huang faces bipartisan congressional scrutiny over reported China spy link",
+   "w": "Lawmakers want to question Nvidia CEO Jensen Huang following reports about his relationship with an alleged Chinese intelligence asset.",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-08T18:18:30Z",
+   "url": "https://www.cnbc.com/2026/11/08/jensen-huang-nvidia-china-spy-congress.html"
+  },
+  {
    "h": "Democrats vow to impeach Trump officials and investigate Republican donors",
    "w": "Pete Hegseth, Elon Musk and Venezuelan oil deals are early targets for Congressional probes by incoming lawmakers",
    "syms": [
@@ -2234,16 +2261,6 @@
    "ts": "2026-11-08T18:10:24Z",
    "url": "https://www.ft.com/content/111fefdb-0f85-4f8f-854f-86a5f81aceec?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Nvidia CEO Jensen Huang faces bipartisan congressional scrutiny over reported China spy link",
-   "w": "Lawmakers want to question Nvidia CEO Jensen Huang following reports about his relationship with an alleged Chinese intelligence asset.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-08T18:06:12Z",
-   "url": "https://www.cnbc.com/2026/11/08/jensen-huang-nvidia-china-spy-congress.html"
   },
   {
    "h": "‘It seems bizarre’: We’re in our 80s with $950,000 in traditional IRAs. Why is our adviser pushing Roth conversions?",
@@ -2513,6 +2530,38 @@
    "mine": 1
   },
   {
+   "h": "Netanyahu rival Eisenkot seeks 'wide' government, path to power uncertain",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T13:09:21.375991Z",
+   "url": "https://asia.nikkei.com/politics/netanyahu-rival-eisenkot-seeks-wide-government-path-to-power-uncertain"
+  },
+  {
+   "h": "Vietnam leader To Lam visits Japan as decades-old relationship evolves",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T13:09:21.375991Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/vietnam-leader-to-lam-visits-japan-as-decades-old-relationship-evolves"
+  },
+  {
+   "h": "COP31 climate summit in Turkey, ASEAN Summit, Sri Lanka budget",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T13:09:21.375991Z",
+   "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/cop31-climate-summit-in-turkey-asean-summit-sri-lanka-budget"
+  },
+  {
+   "h": "US sports investment fund RedBird hunts for tie-ups in Japan",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T13:09:21.375991Z",
+   "url": "https://asia.nikkei.com/spotlight/sports/us-sports-investment-fund-redbird-hunts-for-tie-ups-in-japan"
+  },
+  {
    "h": "En Nouvelle-Aquitaine, une première dans l’achat groupé d’énergie",
    "w": "Neuf entreprises se sont associées pour acheter de l’énergie décarbonée, à un prix prédéfini pendant quinze ans. Un modèle qui peut faire école.",
    "syms": [],
@@ -2580,14 +2629,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-08T12:12:32.757478Z",
    "url": "https://asia.nikkei.com/business/transportation/grab-rival-tada-joins-singapore-s-self-driving-minibus-project"
-  },
-  {
-   "h": "Astellas employee jailed in China on spy charge set for December release",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T12:12:32.757478Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/astellas-employee-jailed-in-china-on-spy-charge-set-for-december-release"
   },
   {
    "h": "Data says the unsaid about British welfare politics",
@@ -2687,14 +2728,6 @@
    "url": "https://asia.nikkei.com/opinion/gen-z-and-ai-are-changing-the-world-of-video-games"
   },
   {
-   "h": "Credit Saison, ADB to partner on loans for Asia's small businesses",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T10:57:57.164309Z",
-   "url": "https://asia.nikkei.com/business/finance/credit-saison-adb-to-partner-on-loans-for-asia-s-small-businesses"
-  },
-  {
    "h": "Gunman kills six in Kraków shooting",
    "w": "Poland’s Prime Minister Donald Tusk called on politicians not to exploit the incident",
    "syms": [],
@@ -2702,22 +2735,6 @@
    "ts": "2026-11-08T10:24:09Z",
    "url": "https://www.ft.com/content/0fab9ede-4fa1-4f94-b23e-e32f07a6b7df?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Ukraine's Zaporizhzhia nuclear plant again relies on backup power",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T10:16:37.252791Z",
-   "url": "https://asia.nikkei.com/politics/ukraine-war/ukraine-s-zaporizhzhia-nuclear-plant-again-relies-on-backup-power"
-  },
-  {
-   "h": "Japan tourism industry steps up push to draw Indian visitors",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T10:16:37.252791Z",
-   "url": "https://asia.nikkei.com/business/travel-leisure/japan-tourism-industry-steps-up-push-to-draw-indian-visitors"
   },
   {
    "h": "Moins de touristes étrangers dans les commerces parisiens, autre conséquence des manifestations",
@@ -2976,14 +2993,6 @@
    "mine": 1
   },
   {
-   "h": "Why the prognosis for healthcare stocks is uncertain ahead of Congress’ new makeup",
-   "w": "Healthcare stocks may struggle to find momentum as the Democrats get ready to take over Congress.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-07T16:02:33Z",
-   "url": "https://www.cnbc.com/2026/11/07/healthcare-stocks-may-face-trouble-due-to-midterm-results.html"
-  },
-  {
    "h": "Alertes à la bombe visant des avions : une enquête ouverte par le parquet de Paris, notamment sur un lien éventuel avec des puissances étrangères",
    "w": "Les investigations sont « menées pour retrouver les auteurs des courriels divulguant ces fausses informations afin de faire croire à une destruction dangereuse », a expliqué le parquet.",
    "syms": [],
@@ -3069,15 +3078,6 @@
    "src": "myFT — technology",
    "ts": "2026-11-07T10:30:03Z",
    "url": "https://www.ft.com/content/9d40f40a-cbf2-46f5-b3d0-cee554e35298?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "UK will not slow down on AI despite backlash in US, says growth minister",
-   "w": "Dan Tomlinson asserts that pace of investment is ‘too low for what we need to stay at the forefront as AI technology develops’",
-   "syms": [],
-   "src": "myFT — world uk",
-   "ts": "2026-11-07T05:00:41Z",
-   "url": "https://www.ft.com/content/47dba9d2-4c82-4e17-969d-f1728ef13a5a?syn-25a6b1a6=1",
    "mine": 1
   },
   {
