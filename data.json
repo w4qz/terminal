@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T23:15:30.828596Z",
+ "generated_at": "2026-11-08T23:53:55.175456Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
@@ -588,7 +588,7 @@
     1.120724,
     1.123495,
     1.122826,
-    1.114951
+    1.115076
    ]
   },
   "USDJPY": {
@@ -624,7 +624,7 @@
     158.47,
     158.36,
     157.5,
-    158.44
+    158.32
    ]
   },
   "GBPUSD": {
@@ -637,7 +637,7 @@
    "ts": "2026-11-06T22:30:00Z",
    "open": 1.3344,
    "lo": 1.3339,
-   "hi": 1.3359,
+   "hi": 1.3361,
    "h": [
     1.322909,
     1.324152,
@@ -660,17 +660,17 @@
     1.343418,
     1.347709,
     1.345605,
-    1.335898
+    1.336023
    ]
   },
   "DXY": {
-   "p": 102.284,
+   "p": 102.228,
    "prev": 102.3,
-   "chg": -0.016,
-   "pct": -0.02,
+   "chg": -0.072,
+   "pct": -0.07,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (DX-Y.NYB)",
-   "ts": "2026-11-08T23:15:00Z",
+   "ts": "2026-11-08T23:45:00Z",
    "open": 102.236,
    "lo": 102.227,
    "hi": 102.284,
@@ -696,21 +696,21 @@
     101.51,
     101.55,
     102.3,
-    102.28
+    102.23
    ]
   },
   "XAU": {
-   "p": 4074.8999,
+   "p": 4073.0,
    "prev": 4074.8999,
-   "chg": 0.0,
-   "pct": 0.0,
+   "chg": -1.8999,
+   "pct": -0.05,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GC=F)",
-   "ts": "2026-11-08T23:15:00Z",
+   "ts": "2026-11-08T23:45:00Z",
    "open": 4074.3,
    "lo": 4065.7,
-   "hi": 4078.3,
-   "vol": 910,
+   "hi": 4082.2,
+   "vol": 3182,
    "h": [
     4216.3,
     4190.6,
@@ -733,21 +733,21 @@
     4073.0,
     4113.5,
     4074.9,
-    4074.9
+    4072.9
    ]
   },
   "CL": {
-   "p": 90.83,
+   "p": 90.41,
    "prev": 90.83,
-   "chg": 0.0,
-   "pct": 0.0,
+   "chg": -0.42,
+   "pct": -0.46,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (CL=F)",
-   "ts": "2026-11-08T23:15:00Z",
+   "ts": "2026-11-08T23:45:00Z",
    "open": 90.83,
    "lo": 89.82,
    "hi": 90.83,
-   "vol": 3227,
+   "vol": 4947,
    "h": [
     91.85,
     93.74,
@@ -770,21 +770,21 @@
     88.12,
     90.52,
     90.83,
-    90.83
+    90.41
    ]
   },
   "BRENT": {
-   "p": 98.32,
+   "p": 97.62,
    "prev": 98.32,
-   "chg": 0.0,
-   "pct": 0.0,
+   "chg": -0.7,
+   "pct": -0.71,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BZ=F)",
-   "ts": "2026-11-08T23:15:00Z",
+   "ts": "2026-11-08T23:45:00Z",
    "open": 98.06,
    "lo": 96.78,
    "hi": 98.4,
-   "vol": 163,
+   "vol": 649,
    "h": [
     104.72,
     106.65,
@@ -807,21 +807,21 @@
     94.62,
     98.29,
     98.32,
-    98.32
+    97.62
    ]
   },
   "BTC": {
-   "p": 75226.1406,
+   "p": 74681.4531,
    "prev": 75747.5781,
-   "chg": -521.4375,
-   "pct": -0.69,
+   "chg": -1066.125,
+   "pct": -1.41,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-08T23:15:30.828596Z",
+   "ts": "2026-11-08T23:53:55.175456Z",
    "open": 75753.7109,
    "lo": 74023.0859,
    "hi": 76068.3203,
-   "vol": 14441822208,
+   "vol": 15487460352,
    "h": [
     82017.6,
     81853.54,
@@ -844,7 +844,7 @@
     75942.12,
     75746.93,
     75747.58,
-    75226.14
+    74682.81
    ]
   }
  },
@@ -2220,6 +2220,30 @@
  ],
  "news": [
   {
+   "h": "How much in Roth conversions can you do in 2027 with the new tax brackets?",
+   "w": "The math should actually start with “if” — not “how much.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-08T23:50:00Z",
+   "url": "https://www.marketwatch.com/story/how-much-roth-conversion-can-you-do-in-2027-with-the-new-tax-brackets-a2f940c8?mod=mw_rss_topstories"
+  },
+  {
+   "h": "I’m 65 and worth more than $5.6 million. Can I afford a $200,000 camper?",
+   "w": "Math may be cold and unemotional — but finances are not.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-08T23:49:00Z",
+   "url": "https://www.marketwatch.com/story/im-65-and-worth-more-than-5-6-million-can-i-buy-a-200-000-camper-even-though-the-price-feels-crazy-high-55f668f8?mod=mw_rss_topstories"
+  },
+  {
+   "h": "This retired professor has reinvented himself — as a Taylor Swift scholar",
+   "w": "His niece convinced him to spend his retirement analyzing Taylor Swift lyrics. Now he’s a successful podcaster at 72.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-08T23:35:00Z",
+   "url": "https://www.marketwatch.com/story/this-retired-professor-has-reinvented-himself-as-a-taylor-swift-scholar-88456c8d?mod=mw_rss_topstories"
+  },
+  {
    "h": "You follow the rules for smart stock trading. But are they the right rules?",
    "w": "Apply the wisdom of investment pros to develop your own consistent methodology.",
    "syms": [],
@@ -2371,6 +2395,30 @@
    "src": "MarketWatch",
    "ts": "2026-11-08T18:00:00Z",
    "url": "https://www.marketwatch.com/story/it-seems-bizarre-were-in-our-80s-with-950-000-in-traditional-iras-why-is-our-adviser-pushing-us-to-do-roth-conversions-a665f990?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Japan headlight king Koito tears down Chinese rivals' lamps for bright ideas",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T17:53:55.175456Z",
+   "url": "https://asia.nikkei.com/business/automobiles/japan-headlight-king-koito-tears-down-chinese-rivals-lamps-for-bright-ideas"
+  },
+  {
+   "h": "Bridgestone revs up output of massive mining tires on AI-driven demand",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T17:53:55.175456Z",
+   "url": "https://asia.nikkei.com/business/automobiles/bridgestone-revs-up-output-of-massive-mining-tires-on-ai-driven-demand"
+  },
+  {
+   "h": "Indonesia's art deco hot spot, a century on",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T17:53:55.175456Z",
+   "url": "https://asia.nikkei.com/life-arts/life/destinations/indonesia-s-art-deco-hot-spot-a-century-on"
   },
   {
    "h": "Un administrateur de First Financial Bankshares achète pour 24.423$ d’actions",
@@ -2537,14 +2585,6 @@
    "url": "https://asia.nikkei.com/video/what-the-democratic-sweep-means-for-trump-s-tariffs-and-ai"
   },
   {
-   "h": "Grab rival Tada joins Singapore's self-driving minibus project",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T15:56:25.642599Z",
-   "url": "https://asia.nikkei.com/business/transportation/grab-rival-tada-joins-singapore-s-self-driving-minibus-project"
-  },
-  {
    "h": "Israel’s president gives Gadi Eisenkot first chance at forming government",
    "w": "Isaac Herzog’s decision means opposition politician has 28 days to attempt to put together a ruling coalition",
    "syms": [],
@@ -2578,42 +2618,6 @@
    "url": "https://www.marketwatch.com/story/i-have-no-financial-safety-net-im-66-rely-on-social-security-and-have-500-in-savings-what-politician-speaks-for-me-be2126cb?mod=mw_rss_topstories"
   },
   {
-   "h": "My 93-year-old father changed his will at the 11th hour, leaving my brother his entire $500,000 estate. Can I challenge it?",
-   "w": "“My brother had no job and needed a place to live.”",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-08T15:16:00Z",
-   "url": "https://www.marketwatch.com/story/my-93-year-old-father-changed-his-will-at-the-11th-hour-leaving-my-brother-his-entire-500-000-estate-can-i-challenge-it-ecfc63d2?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Binance hack clouds Singapore crypto push for tokenized stocks",
-   "w": "",
-   "syms": [
-    "BTC"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T15:15:55.938937Z",
-   "url": "https://asia.nikkei.com/business/markets/trading-asia/binance-hack-clouds-singapore-crypto-push-for-tokenized-stocks"
-  },
-  {
-   "h": "European far right distances itself from Trump after midterm rout",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T15:15:55.938937Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/european-far-right-distances-itself-from-trump-after-midterm-rout"
-  },
-  {
-   "h": "Corporate America’s profit numbers are just barely beating Wall Street’s expectations",
-   "w": "S&amp;P 500 companies’ earnings are mostly topping analysts’ estimates — but by the narrowest margin in roughly four years.",
-   "syms": [
-    "SPX"
-   ],
-   "src": "MarketWatch",
-   "ts": "2026-11-08T15:00:00Z",
-   "url": "https://www.marketwatch.com/story/corporate-americas-profit-numbers-are-just-barely-beating-wall-streets-expectations-eaa67fe2?mod=mw_rss_topstories"
-  },
-  {
    "h": "How each country’s emissions compare",
    "w": "A searchable dashboard of 197 countries’ historical emissions and future climate targets",
    "syms": [],
@@ -2638,14 +2642,6 @@
    "src": "CNBC — Marchés",
    "ts": "2026-11-08T14:14:11Z",
    "url": "https://www.cnbc.com/2026/11/08/ai-agents-risks.html"
-  },
-  {
-   "h": "‘We’re losing to cottage cheese’: The protein-maxxing craze is hurting cream-cheese sales",
-   "w": "U.S. cottage-cheese sales have more than doubled from levels seen in 2021.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-08T14:13:00Z",
-   "url": "https://www.marketwatch.com/story/were-losing-to-cottage-cheese-the-protein-maxxing-craze-is-hurting-cream-cheese-sales-40ae94f3?mod=mw_rss_topstories"
   },
   {
    "h": "Poppi founders are going after PepsiCo's Gatorade with new beverage startup Jetty",
