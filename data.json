@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-09T02:06:29.441437Z",
+ "generated_at": "2026-11-09T02:55:56.870693Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
@@ -117,8 +117,8 @@
    "prev": 26629.8105,
    "chg": 360.1797,
    "pct": 1.35,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^NDX) — échec de la dernière mise à jour",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^NDX)",
    "ts": "2026-11-06T21:00:00Z",
    "open": 27045.2598,
    "lo": 26887.6895,
@@ -260,16 +260,16 @@
    ]
   },
   "N225": {
-   "p": 59254.3281,
+   "p": 59411.3398,
    "prev": 57434.7695,
-   "chg": 1819.5586,
-   "pct": 3.17,
+   "chg": 1976.5703,
+   "pct": 3.44,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^N225)",
-   "ts": "2026-11-09T02:00:00Z",
+   "ts": "2026-11-09T02:45:00Z",
    "open": 57960.6992,
    "lo": 57775.1602,
-   "hi": 59343.4102,
+   "hi": 59440.1797,
    "h": [
     69030.92,
     67777.52,
@@ -290,19 +290,19 @@
     62188.63,
     61077.9,
     57434.77,
-    59266.15
+    59411.34
    ]
   },
   "HSI": {
-   "p": 24661.1797,
+   "p": 24604.1895,
    "prev": 24481.8594,
-   "chg": 179.3203,
-   "pct": 0.73,
+   "chg": 122.3301,
+   "pct": 0.5,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^HSI)",
-   "ts": "2026-11-09T02:00:00Z",
+   "ts": "2026-11-09T02:45:00Z",
    "open": 24625.7109,
-   "lo": 24592.6992,
+   "lo": 24549.8398,
    "hi": 24738.8809,
    "h": [
     24211.35,
@@ -325,21 +325,21 @@
     23919.5,
     24796.98,
     24481.86,
-    24661.18
+    24604.19
    ]
   },
   "SHCOMP": {
-   "p": 3674.8706,
+   "p": 3670.6555,
    "prev": 3649.177,
-   "chg": 25.6936,
-   "pct": 0.7,
+   "chg": 21.4785,
+   "pct": 0.59,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (000001.SS)",
-   "ts": "2026-11-09T02:00:00Z",
+   "ts": "2026-11-09T02:45:00Z",
    "open": 3659.0168,
    "lo": 3653.0457,
-   "hi": 3676.4495,
-   "vol": 3558024508,
+   "hi": 3679.0901,
+   "vol": 831771520,
    "h": [
     3813.79,
     3797.24,
@@ -362,7 +362,7 @@
     3686.17,
     3689.91,
     3649.18,
-    3674.87
+    3670.66
    ]
   },
   "STI": {
@@ -551,13 +551,13 @@
    ]
   },
   "EURUSD": {
-   "p": 1.1159,
+   "p": 1.1157,
    "prev": 1.1228,
-   "chg": -0.0069,
-   "pct": -0.61,
+   "chg": -0.0071,
+   "pct": -0.63,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (EURUSD=X)",
-   "ts": "2026-11-09T02:06:29.441437Z",
+   "ts": "2026-11-09T02:55:56.870693Z",
    "open": 1.1141,
    "lo": 1.1138,
    "hi": 1.1161,
@@ -583,17 +583,17 @@
     1.120724,
     1.123495,
     1.122826,
-    1.115947
+    1.115698
    ]
   },
   "USDJPY": {
-   "p": 158.221,
+   "p": 158.298,
    "prev": 157.498,
-   "chg": 0.723,
-   "pct": 0.46,
+   "chg": 0.8,
+   "pct": 0.51,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (JPY=X)",
-   "ts": "2026-11-09T02:06:29.441437Z",
+   "ts": "2026-11-09T02:55:56.870693Z",
    "open": 158.425,
    "lo": 158.125,
    "hi": 158.531,
@@ -619,20 +619,20 @@
     158.47,
     158.36,
     157.5,
-    158.21
+    158.3
    ]
   },
   "GBPUSD": {
-   "p": 1.3372,
+   "p": 1.3374,
    "prev": 1.3456,
-   "chg": -0.0084,
-   "pct": -0.62,
+   "chg": -0.0082,
+   "pct": -0.61,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
-   "ts": "2026-11-09T02:06:29.441437Z",
+   "ts": "2026-11-09T02:55:56.870693Z",
    "open": 1.3344,
    "lo": 1.3339,
-   "hi": 1.3375,
+   "hi": 1.3376,
    "h": [
     1.322909,
     1.324152,
@@ -655,17 +655,17 @@
     1.343418,
     1.347709,
     1.345605,
-    1.337238
+    1.337435
    ]
   },
   "DXY": {
-   "p": 102.152,
-   "prev": 102.152,
+   "p": 102.157,
+   "prev": 102.157,
    "chg": 0.0,
    "pct": 0.0,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (DX-Y.NYB)",
-   "ts": "2026-11-09T02:00:00Z",
+   "ts": "2026-11-09T02:55:56.870693Z",
    "open": 102.236,
    "lo": 102.132,
    "hi": 102.284,
@@ -691,21 +691,21 @@
     101.51,
     101.55,
     102.3,
-    102.15
+    102.16
    ]
   },
   "XAU": {
-   "p": 4135.7002,
-   "prev": 4135.7002,
+   "p": 4139.1001,
+   "prev": 4139.1001,
    "chg": 0.0,
    "pct": 0.0,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GC=F)",
-   "ts": "2026-11-09T02:00:00Z",
+   "ts": "2026-11-09T02:55:56.870693Z",
    "open": 4074.3,
    "lo": 4062.5,
-   "hi": 4136.1001,
-   "vol": 23524,
+   "hi": 4143.2998,
+   "vol": 28131,
    "h": [
     4216.3,
     4190.6,
@@ -728,21 +728,21 @@
     4073.0,
     4113.5,
     4074.9,
-    4135.7
+    4139.1
    ]
   },
   "CL": {
-   "p": 90.24,
-   "prev": 90.22,
-   "chg": 0.02,
-   "pct": 0.02,
+   "p": 90.88,
+   "prev": 90.88,
+   "chg": 0.0,
+   "pct": 0.0,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (CL=F)",
-   "ts": "2026-11-09T02:00:00Z",
+   "ts": "2026-11-09T02:55:56.870693Z",
    "open": 90.83,
-   "lo": 89.82,
-   "hi": 90.83,
-   "vol": 12626,
+   "lo": 89.8,
+   "hi": 90.94,
+   "vol": 14856,
    "h": [
     91.85,
     93.74,
@@ -765,21 +765,21 @@
     88.12,
     90.52,
     90.83,
-    90.22
+    90.88
    ]
   },
   "BRENT": {
-   "p": 97.2,
-   "prev": 97.19,
-   "chg": 0.01,
-   "pct": 0.01,
+   "p": 97.95,
+   "prev": 97.95,
+   "chg": 0.0,
+   "pct": 0.0,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BZ=F)",
-   "ts": "2026-11-09T02:00:00Z",
+   "ts": "2026-11-09T02:55:56.870693Z",
    "open": 98.06,
    "lo": 96.78,
    "hi": 98.4,
-   "vol": 1804,
+   "vol": 2013,
    "h": [
     104.72,
     106.65,
@@ -802,21 +802,21 @@
     94.62,
     98.29,
     98.32,
-    97.19
+    97.95
    ]
   },
   "BTC": {
-   "p": 75240.7578,
+   "p": 75140.25,
    "prev": 75747.5781,
-   "chg": -506.8203,
-   "pct": -0.67,
+   "chg": -607.3281,
+   "pct": -0.8,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-09T02:06:29.441437Z",
+   "ts": "2026-11-09T02:55:56.870693Z",
    "open": 74719.8203,
    "lo": 74508.4375,
-   "hi": 75290.25,
-   "vol": 17790574592,
+   "hi": 75452.8125,
+   "vol": 18154573824,
    "h": [
     82017.6,
     81853.54,
@@ -839,7 +839,7 @@
     75942.12,
     75746.93,
     75747.58,
-    75240.76
+    75140.25
    ]
   }
  },
@@ -1314,14 +1314,14 @@
    "sector": "Technology",
    "industry": "Consumer Electronics",
    "ccy": "KRW",
-   "mcap": 1264616344649728,
-   "fpe": 2.5115,
+   "mcap": 1267872198295552,
+   "fpe": 2.518,
    "revTTM": 594479375450112,
    "netIncome": 212962144944128,
    "shares": 5709556199,
    "beta": 1.594,
    "div": 18404.0,
-   "divYield": 9.477,
+   "divYield": 9.452,
    "target": 475628.56,
    "targetHi": 690000.0,
    "targetLo": 290000.0,
@@ -1435,8 +1435,8 @@
    "sector": "Technology",
    "industry": "Semiconductors",
    "ccy": "KRW",
-   "mcap": 834925200670720,
-   "fpe": 2.2155,
+   "mcap": 836335560556544,
+   "fpe": 2.2174,
    "revTTM": 269336677711872,
    "netIncome": 189262280523776,
    "shares": 705173324,
@@ -1517,14 +1517,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 998898073600,
+   "mcap": 995843768320,
    "pe": 45.4783,
    "fpe": 38.9034,
    "eps": 2.76,
    "feps": 3.2264,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.789,
@@ -2162,8 +2162,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 123.1505,
+   "shares": 572600000,
+   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Fonds et trusts"
   },
   "GLD": {
@@ -2215,20 +2220,71 @@
  ],
  "news": [
   {
-   "h": "L’inflation en Chine déçoit en octobre ; les prix à la production accélèrent",
+   "h": "China wholesale inflation hits highest in more than four years as consumer measure slows",
+   "w": "The PPI for October came in at 5.7%, compared to the 5.3% expected by economists polled by Reuters.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-09T02:50:22Z",
+   "url": "https://www.cnbc.com/2026/11/09/china-wholesale-inflation-rises-consumer.html"
+  },
+  {
+   "h": "Mitsui Chemicals rachète le fabricant de matériaux pour puces JSR pour 11 milliards de dollars",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-09T02:29:07Z",
+   "url": "https://fr.investing.com/news/stock-market-news/mitsui-chemicals-rachete-le-fabricant-de-materiaux-pour-puces-jsr-pour-11-milliards-de-dollars-3683786"
+  },
+  {
+   "h": "Le patron de Nvidia, Jensen Huang, reconnaît avoir eu une liaison extraconjugale avec une personne considérée comme une espionne de Pékin",
+   "w": "Cette affaire aux airs de vaudeville concerne une entreprise valorisée à 4 500 milliards de dollars qui fabrique des microprocesseurs essentiels à la révolution de l’IA, au cœur de la rivalité entre les Etats-Unis et la Chine. La firme a lancé une enquête interne.",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-09T02:21:10Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/11/09/le-patron-de-nvidia-jensen-huang-reconnait-avoir-eu-une-liaison-extraconjugale-avec-une-personne-consideree-comme-une-espionne-de-pekin_6808531_3234.html"
+  },
+  {
+   "h": "Greenfire Resources annonce une production de 27.166 bbls/j au T3",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-09T02:17:48Z",
+   "url": "https://fr.investing.com/news/company-news/greenfire-resources-annonce-une-production-de-27166-bblsj-au-t3-93CH-3683784"
+  },
+  {
+   "h": "Cette action de dépistage du cancer est le choix phare de BTIG",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-09T02:08:17Z",
+   "url": "https://fr.investing.com/news/stock-market-news/cette-action-de-depistage-du-cancer-est-le-choix-phare-de-btig-3683782"
+  },
+  {
+   "h": "China’s inflation edges lower in October",
+   "w": "Weak domestic demand weighs on prices in world’s second-largest economy even as higher energy prices drive up costs for producers",
+   "syms": [],
+   "src": "myFT — economy",
+   "ts": "2026-11-09T02:01:28Z",
+   "url": "https://www.ft.com/content/085c4610-143a-47ad-b546-0587695294b5?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "La RBA voit peu de gains de productivité liés à l’IA pour l’instant",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-09T01:48:45Z",
+   "url": "https://fr.investing.com/news/stock-market-news/la-rba-voit-peu-de-gains-de-productivite-lies-a-lia-pour-linstant-93CH-3683780"
+  },
+  {
+   "h": "L’inflation en Chine décevante en octobre ; les prix à la production s’accélèrent",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
    "ts": "2026-11-09T01:45:15Z",
    "url": "https://fr.investing.com/news/economic-indicators/linflation-en-chine-decoit-en-octobre--les-prix-a-la-production-accelerent-3683779"
-  },
-  {
-   "h": "China wholesale inflation hits over four-year high as consumer measure slows",
-   "w": "The PPI for October came in at 5.7%, compared to the 5.3% expected by economists polled by Reuters.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-09T01:40:11Z",
-   "url": "https://www.cnbc.com/2026/11/09/china-wholesale-inflation-rises-consumer.html"
   },
   {
    "h": "‘My life could be cut short’: I’m 55, married and have a brain tumor. Should I splash out on a $210,000 Porsche?",
@@ -2309,14 +2365,6 @@
    "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-mueller-industries-vend-des-actions-pour-110800-93CH-3683771"
   },
   {
-   "h": "ANZ affiche un solide bénéfice au second semestre 2026",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-09T00:45:08Z",
-   "url": "https://fr.investing.com/news/transcripts/anz-affiche-un-solide-benefice-au-second-semestre-2026-93CH-3683770"
-  },
-  {
    "h": "The S&P 500 could be dangerously exposed to AI. Here are some simple alternatives.",
    "w": "The large-cap index is nowhere near as diversified as you think.",
    "syms": [
@@ -2325,22 +2373,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-09T00:40:00Z",
    "url": "https://www.marketwatch.com/story/the-s-p-500-has-become-a-big-ai-bet-here-are-some-simple-alternatives-3c7574a4?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Bathurst Resources : l’EBITDA du T1 FY2027 en hausse de 80%",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-09T00:39:20Z",
-   "url": "https://fr.investing.com/news/transcripts/bathurst-resources--lebitda-du-t1-fy2027-en-hausse-de-80-93CH-3683769"
-  },
-  {
-   "h": "Les actions Dyno Nobel chutent de 7,33 % après un solide exercice 2026",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-09T00:38:34Z",
-   "url": "https://fr.investing.com/news/transcripts/les-actions-dyno-nobel-chutent-de-733--apres-un-solide-exercice-2026-93CH-3683768"
   },
   {
    "h": "Pope Leo and Javier Milei offer duelling visions for Argentina",
@@ -2358,16 +2390,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-09T00:30:00Z",
    "url": "https://www.marketwatch.com/story/my-adviser-recommended-an-annuity-is-it-the-right-move-in-this-market-environment-00edbbf6?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Les prix du pétrole baissent après les déclarations de Trump sur l’Iran",
-   "w": "",
-   "syms": [
-    "BRENT"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-11-09T00:25:21Z",
-   "url": "https://fr.investing.com/news/commodities-news/les-prix-du-petrole-baissent-apres-les-declarations-de-trump-sur-liran-3683767"
   },
   {
    "h": "Doing these things now will help you save money at Christmas",
@@ -2465,6 +2487,38 @@
    "url": "https://www.cnbc.com/2026/11/08/trump-iran-strikes-unlikely-talks-hormuz.html"
   },
   {
+   "h": "Taiwan chipmaker CEO warns memory price rises are unsustainable",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T20:55:56.870693Z",
+   "url": "https://asia.nikkei.com/editor-s-picks/interview/taiwan-chipmaker-ceo-warns-memory-price-rises-are-unsustainable"
+  },
+  {
+   "h": "Philippine GDP grows 2.1% in Q3, dragged by high inflation",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T20:55:56.870693Z",
+   "url": "https://asia.nikkei.com/economy/philippine-gdp-grows-2.1-in-q3-dragged-by-high-inflation"
+  },
+  {
+   "h": "Netanyahu rival Eisenkot seeks 'wide' government, path to power uncertain",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T20:55:56.870693Z",
+   "url": "https://asia.nikkei.com/politics/netanyahu-rival-eisenkot-seeks-wide-government-path-to-power-uncertain"
+  },
+  {
+   "h": "Vietnam leader To Lam visits Japan as decades-old relationship evolves",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T20:55:56.870693Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/vietnam-leader-to-lam-visits-japan-as-decades-old-relationship-evolves"
+  },
+  {
    "h": "Nvidia probes CEO Jensen Huang's affair amid China security concerns",
    "w": "",
    "syms": [
@@ -2536,14 +2590,6 @@
    "url": "https://asia.nikkei.com/politics/international-relations/european-far-right-distances-itself-from-trump-after-midterm-rout"
   },
   {
-   "h": "Grab rival Tada joins Singapore's self-driving minibus project",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T18:56:46.905636Z",
-   "url": "https://asia.nikkei.com/business/transportation/grab-rival-tada-joins-singapore-s-self-driving-minibus-project"
-  },
-  {
    "h": "Attempts to find resolution for Israel’s new government and Ukraine’s war",
    "w": "Trilateral peace talks in Abu Dhabi, new Knesset in Jerusalem, COP31 opens in Turkey",
    "syms": [],
@@ -2578,30 +2624,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-08T17:53:55.175456Z",
    "url": "https://asia.nikkei.com/business/automobiles/bridgestone-revs-up-output-of-massive-mining-tires-on-ai-driven-demand"
-  },
-  {
-   "h": "Singapore Airlines unveils $1.6bn cabin revamp with giant double bed",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T17:15:30.828596Z",
-   "url": "https://asia.nikkei.com/business/transportation/singapore-airlines-unveils-1.6bn-cabin-revamp-with-giant-double-bed"
-  },
-  {
-   "h": "Ukraine's Zaporizhzhia nuclear plant again relies on backup power",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T17:15:30.828596Z",
-   "url": "https://asia.nikkei.com/politics/ukraine-war/ukraine-s-zaporizhzhia-nuclear-plant-again-relies-on-backup-power"
-  },
-  {
-   "h": "Pakistan's Hormuz agreement with Iran faces test after LNG tanker attack",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T17:15:30.828596Z",
-   "url": "https://asia.nikkei.com/spotlight/iran-tensions/iran-war/pakistan-s-hormuz-agreement-with-iran-faces-test-after-lng-tanker-attack"
   },
   {
    "h": "Will US inflation data ease affordability concerns?",
@@ -3028,15 +3050,6 @@
    "mine": 1
   },
   {
-   "h": "French far-left presidential hopeful pledges ‘revolutionary’ remaking of society",
-   "w": "Jean-Luc Mélenchon stages show of force with 20,000-strong rally as widespread protests boost his momentum",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-07T17:42:41Z",
-   "url": "https://www.ft.com/content/5cb562ec-5493-4ff3-bd2d-99cc9cacfa73?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Alertes à la bombe visant des avions : une enquête ouverte par le parquet de Paris, notamment sur un lien éventuel avec des puissances étrangères",
    "w": "Les investigations sont « menées pour retrouver les auteurs des courriels divulguant ces fausses informations afin de faire croire à une destruction dangereuse », a expliqué le parquet.",
    "syms": [],
@@ -3077,14 +3090,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-07T13:00:02Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/07/les-equipementiers-automobiles-s-alarment-des-consequences-sociales-de-l-accord-franco-allemand_6808276_3234.html"
-  },
-  {
-   "h": "Jean Pisani-Ferry : « La Chine manque d’une stratégie macroéconomique de nature à corriger ses déséquilibres persistants »",
-   "w": "Le pays souffre d’une industrie hypertrophiée et prédatrice à l’égard du reste du monde, de services anémiés et d’un secteur immobilier fragilisé, observe l’économiste dans sa chronique au « Monde ».",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-07T11:00:12Z",
-   "url": "https://www.lemonde.fr/idees/article/2026/11/07/jean-pisani-ferry-la-chine-manque-d-une-strategie-macroeconomique-de-nature-a-corriger-ses-desequilibres-persistants_6808269_3232.html"
   }
  ],
  "summary": {
