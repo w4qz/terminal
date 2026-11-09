@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-09T00:56:46.905636Z",
+ "generated_at": "2026-11-09T02:06:29.441437Z",
  "quotes": {
   "NVDA": {
    "p": 186.64,
@@ -117,8 +117,8 @@
    "prev": 26629.8105,
    "chg": 360.1797,
    "pct": 1.35,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^NDX)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^NDX) — échec de la dernière mise à jour",
    "ts": "2026-11-06T21:00:00Z",
    "open": 27045.2598,
    "lo": 26887.6895,
@@ -260,16 +260,16 @@
    ]
   },
   "N225": {
-   "p": 58291.1992,
+   "p": 59254.3281,
    "prev": 57434.7695,
-   "chg": 856.4297,
-   "pct": 1.49,
+   "chg": 1819.5586,
+   "pct": 3.17,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^N225)",
-   "ts": "2026-11-09T00:45:00Z",
+   "ts": "2026-11-09T02:00:00Z",
    "open": 57960.6992,
    "lo": 57775.1602,
-   "hi": 58686.9297,
+   "hi": 59343.4102,
    "h": [
     69030.92,
     67777.52,
@@ -290,24 +290,21 @@
     62188.63,
     61077.9,
     57434.77,
-    58291.2
+    59266.15
    ]
   },
   "HSI": {
-   "p": 24481.8594,
-   "prev": 24796.9805,
-   "chg": -315.1211,
-   "pct": -1.27,
-   "st": "EOD",
+   "p": 24661.1797,
+   "prev": 24481.8594,
+   "chg": 179.3203,
+   "pct": 0.73,
+   "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^HSI)",
-   "ts": "2026-11-06T08:15:00Z",
-   "open": 24404.6191,
-   "lo": 24349.3008,
-   "hi": 24740.1797,
-   "vol": 3440200000,
+   "ts": "2026-11-09T02:00:00Z",
+   "open": 24625.7109,
+   "lo": 24592.6992,
+   "hi": 24738.8809,
    "h": [
-    24130.5,
-    23785.79,
     24211.35,
     24271.2,
     24345.22,
@@ -327,23 +324,23 @@
     23525.97,
     23919.5,
     24796.98,
-    24481.86
+    24481.86,
+    24661.18
    ]
   },
   "SHCOMP": {
-   "p": 3649.177,
-   "prev": 3689.9109,
-   "chg": -40.7339,
-   "pct": -1.1,
-   "st": "EOD",
+   "p": 3674.8706,
+   "prev": 3649.177,
+   "chg": 25.6936,
+   "pct": 0.7,
+   "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (000001.SS)",
-   "ts": "2026-11-06T07:00:00Z",
-   "open": 3612.147,
-   "lo": 3610.198,
-   "hi": 3660.4861,
-   "vol": 477000,
+   "ts": "2026-11-09T02:00:00Z",
+   "open": 3659.0168,
+   "lo": 3653.0457,
+   "hi": 3676.4495,
+   "vol": 3558024508,
    "h": [
-    3811.9,
     3813.79,
     3797.24,
     3800.86,
@@ -364,7 +361,8 @@
     3608.1,
     3686.17,
     3689.91,
-    3649.18
+    3649.18,
+    3674.87
    ]
   },
   "STI": {
@@ -553,16 +551,16 @@
    ]
   },
   "EURUSD": {
-   "p": 1.1152,
+   "p": 1.1159,
    "prev": 1.1228,
-   "chg": -0.0076,
-   "pct": -0.68,
+   "chg": -0.0069,
+   "pct": -0.61,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (EURUSD=X)",
-   "ts": "2026-11-09T00:56:46.905636Z",
+   "ts": "2026-11-09T02:06:29.441437Z",
    "open": 1.1141,
    "lo": 1.1138,
-   "hi": 1.1154,
+   "hi": 1.1161,
    "h": [
     1.121302,
     1.120473,
@@ -585,19 +583,19 @@
     1.120724,
     1.123495,
     1.122826,
-    1.1152
+    1.115947
    ]
   },
   "USDJPY": {
-   "p": 158.425,
-   "prev": 158.357,
-   "chg": 0.068,
-   "pct": 0.04,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (JPY=X) — échec de la dernière mise à jour",
-   "ts": "2026-11-06T22:15:00Z",
+   "p": 158.221,
+   "prev": 157.498,
+   "chg": 0.723,
+   "pct": 0.46,
+   "st": "DELAYED_15M",
+   "src": "Yahoo Finance via yfinance (JPY=X)",
+   "ts": "2026-11-09T02:06:29.441437Z",
    "open": 158.425,
-   "lo": 158.235,
+   "lo": 158.125,
    "hi": 158.531,
    "h": [
     158.06,
@@ -621,20 +619,20 @@
     158.47,
     158.36,
     157.5,
-    158.32
+    158.21
    ]
   },
   "GBPUSD": {
-   "p": 1.3362,
+   "p": 1.3372,
    "prev": 1.3456,
-   "chg": -0.0094,
-   "pct": -0.7,
+   "chg": -0.0084,
+   "pct": -0.62,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
-   "ts": "2026-11-09T00:56:46.905636Z",
+   "ts": "2026-11-09T02:06:29.441437Z",
    "open": 1.3344,
    "lo": 1.3339,
-   "hi": 1.3367,
+   "hi": 1.3375,
    "h": [
     1.322909,
     1.324152,
@@ -657,19 +655,19 @@
     1.343418,
     1.347709,
     1.345605,
-    1.336202
+    1.337238
    ]
   },
   "DXY": {
-   "p": 102.194,
-   "prev": 102.194,
+   "p": 102.152,
+   "prev": 102.152,
    "chg": 0.0,
    "pct": 0.0,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (DX-Y.NYB)",
-   "ts": "2026-11-09T00:56:46.905636Z",
+   "ts": "2026-11-09T02:00:00Z",
    "open": 102.236,
-   "lo": 102.177,
+   "lo": 102.132,
    "hi": 102.284,
    "h": [
     102.21,
@@ -693,21 +691,21 @@
     101.51,
     101.55,
     102.3,
-    102.19
+    102.15
    ]
   },
   "XAU": {
-   "p": 4104.2998,
-   "prev": 4104.2998,
+   "p": 4135.7002,
+   "prev": 4135.7002,
    "chg": 0.0,
    "pct": 0.0,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GC=F)",
-   "ts": "2026-11-09T00:56:46.905636Z",
+   "ts": "2026-11-09T02:00:00Z",
    "open": 4074.3,
    "lo": 4062.5,
-   "hi": 4109.7998,
-   "vol": 11375,
+   "hi": 4136.1001,
+   "vol": 23524,
    "h": [
     4216.3,
     4190.6,
@@ -730,21 +728,21 @@
     4073.0,
     4113.5,
     4074.9,
-    4104.3
+    4135.7
    ]
   },
   "CL": {
-   "p": 90.7,
-   "prev": 90.7,
-   "chg": 0.0,
-   "pct": 0.0,
+   "p": 90.24,
+   "prev": 90.22,
+   "chg": 0.02,
+   "pct": 0.02,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (CL=F)",
-   "ts": "2026-11-09T00:56:46.905636Z",
+   "ts": "2026-11-09T02:00:00Z",
    "open": 90.83,
    "lo": 89.82,
    "hi": 90.83,
-   "vol": 8009,
+   "vol": 12626,
    "h": [
     91.85,
     93.74,
@@ -767,21 +765,21 @@
     88.12,
     90.52,
     90.83,
-    90.7
+    90.22
    ]
   },
   "BRENT": {
-   "p": 97.85,
-   "prev": 97.85,
-   "chg": 0.0,
-   "pct": 0.0,
+   "p": 97.2,
+   "prev": 97.19,
+   "chg": 0.01,
+   "pct": 0.01,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BZ=F)",
-   "ts": "2026-11-09T00:56:46.905636Z",
+   "ts": "2026-11-09T02:00:00Z",
    "open": 98.06,
    "lo": 96.78,
    "hi": 98.4,
-   "vol": 932,
+   "vol": 1804,
    "h": [
     104.72,
     106.65,
@@ -804,21 +802,21 @@
     94.62,
     98.29,
     98.32,
-    97.85
+    97.19
    ]
   },
   "BTC": {
-   "p": 75113.8828,
+   "p": 75240.7578,
    "prev": 75747.5781,
-   "chg": -633.6953,
-   "pct": -0.84,
+   "chg": -506.8203,
+   "pct": -0.67,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-09T00:56:46.905636Z",
+   "ts": "2026-11-09T02:06:29.441437Z",
    "open": 74719.8203,
    "lo": 74508.4375,
-   "hi": 75051.6016,
-   "vol": 17082372096,
+   "hi": 75290.25,
+   "vol": 17790574592,
    "h": [
     82017.6,
     81853.54,
@@ -841,7 +839,7 @@
     75942.12,
     75746.93,
     75747.58,
-    75113.88
+    75240.76
    ]
   }
  },
@@ -1316,14 +1314,14 @@
    "sector": "Technology",
    "industry": "Consumer Electronics",
    "ccy": "KRW",
-   "mcap": 1242475788238848,
-   "fpe": 2.4676,
+   "mcap": 1264616344649728,
+   "fpe": 2.5115,
    "revTTM": 594479375450112,
    "netIncome": 212962144944128,
    "shares": 5709556199,
    "beta": 1.594,
    "div": 18404.0,
-   "divYield": 9.646,
+   "divYield": 9.477,
    "target": 475628.56,
    "targetHi": 690000.0,
    "targetLo": 290000.0,
@@ -1437,14 +1435,14 @@
    "sector": "Technology",
    "industry": "Semiconductors",
    "ccy": "KRW",
-   "mcap": 808128631275520,
-   "fpe": 2.1426,
+   "mcap": 834925200670720,
+   "fpe": 2.2155,
    "revTTM": 269336677711872,
    "netIncome": 189262280523776,
    "shares": 705173324,
    "beta": 2.466,
    "div": 3000.0,
-   "divYield": 0.262,
+   "divYield": 0.253,
    "target": 3126639.5,
    "targetHi": 4700000.0,
    "targetLo": 1575000.0,
@@ -2217,15 +2215,80 @@
  ],
  "news": [
   {
+   "h": "L’inflation en Chine déçoit en octobre ; les prix à la production accélèrent",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-09T01:45:15Z",
+   "url": "https://fr.investing.com/news/economic-indicators/linflation-en-chine-decoit-en-octobre--les-prix-a-la-production-accelerent-3683779"
+  },
+  {
+   "h": "China wholesale inflation hits over four-year high as consumer measure slows",
+   "w": "The PPI for October came in at 5.7%, compared to the 5.3% expected by economists polled by Reuters.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-09T01:40:11Z",
+   "url": "https://www.cnbc.com/2026/11/09/china-wholesale-inflation-rises-consumer.html"
+  },
+  {
+   "h": "‘My life could be cut short’: I’m 55, married and have a brain tumor. Should I splash out on a $210,000 Porsche?",
+   "w": "“I also want to preserve the opportunity to leave a meaningful legacy for my two sons.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-09T01:21:00Z",
+   "url": "https://www.marketwatch.com/story/my-life-could-be-cut-short-im-55-married-with-4-3-million-and-have-a-brain-tumor-should-i-buy-a-210-000-custom-porsche-ed825ada?mod=mw_rss_topstories"
+  },
+  {
+   "h": "L’or rebondit au-dessus de 4.100$ alors que les traders attendent les données sur l’inflation américaine",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-09T01:16:44Z",
+   "url": "https://fr.investing.com/news/commodities-news/lor-rebondit-audessus-de-4100-alors-que-les-traders-attendent-les-donnees-sur-linflation-americaine-3683777"
+  },
+  {
+   "h": "Un administrateur de Richardson Electronics vend des actions pour 21.190$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-09T01:16:42Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-richardson-electronics-vend-des-actions-pour-21190-93CH-3683775"
+  },
+  {
+   "h": "Trump says he was ‘only kidding’ about asking UFC boss to be spokesperson",
+   "w": "US president caused a media flurry by announcing he had invited Dana White to be White House press secretary",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-09T01:15:06Z",
+   "url": "https://www.ft.com/content/b3acb746-76c0-46de-879a-990602b27a6a?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "Nvidia’s Huang admits to affair after allegations of relationship with Chinese spy",
-   "w": "Silicon Valley chipmaker opens investigation into chief executive as he confirms extramarital relationship in message to employees",
+   "w": "Silicon Valley chipmaker opens investigation into chief executive as he confirms extramarital liaison in message to employees",
    "syms": [
     "NVDA"
    ],
    "src": "myFT — world",
-   "ts": "2026-11-09T00:51:47Z",
+   "ts": "2026-11-09T01:08:15Z",
    "url": "https://www.ft.com/content/1397e2f4-d7f5-4cbb-a4d9-04ecf661d1aa?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "Un administrateur d’OceanFirst Financial achète des actions pour 178.277$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-09T01:02:04Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-doceanfirst-financial-achete-des-actions-pour-178277-93CH-3683774"
+  },
+  {
+   "h": "Les futures de Wall St mitigés face aux inquiétudes sur l’IA ; données d’inflation attendues",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-09T00:50:09Z",
+   "url": "https://fr.investing.com/news/stock-market-news/les-futures-de-wall-st-mitiges-face-aux-inquietudes-sur-lia--donnees-dinflation-attendues-3683773"
   },
   {
    "h": "Nvidia launches investigation into CEO's affair with suspected Chinese spy",
@@ -2307,28 +2370,12 @@
    "url": "https://fr.investing.com/news/commodities-news/les-prix-du-petrole-baissent-apres-les-declarations-de-trump-sur-liran-3683767"
   },
   {
-   "h": "Le BPA de RadNet a dépassé les attentes de 0,08$, le CA en dessous des prévisions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-09T00:17:47Z",
-   "url": "https://fr.investing.com/news/earnings/le-bpa-de-radnet-a-depasse-les-attentes-de-008-le-ca--en-dessous-des-previsions-3683765"
-  },
-  {
    "h": "Doing these things now will help you save money at Christmas",
    "w": "Small decisions made now can make a big difference to your festive finances, charities say, so here are some tips.",
    "syms": [],
    "src": "BBC — Business",
    "ts": "2026-11-09T00:09:14Z",
    "url": "https://www.bbc.co.uk/news/articles/ck7vppll151mo?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "Un administrateur d’Alphatec Holdings achète pour 408.600$ d’actions ordinaires",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-09T00:02:43Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-dalphatec-holdings-achete-pour-408600-dactions-ordinaires-93CH-3683763"
   },
   {
    "h": "‘It feels like he’s quietly building a separate life’: My husband inherited $500,000, but he refuses to spend it on our home",
@@ -2345,14 +2392,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-09T00:00:00Z",
    "url": "https://www.marketwatch.com/story/funeral-homes-are-finding-new-life-hosting-weddings-and-golf-outings-as-the-traditional-burial-business-dies-out-15831d13?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Le bénéfice annuel d’ANZ bondit de 31% grâce au plan de redressement de Matos",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T23:57:43Z",
-   "url": "https://fr.investing.com/news/earnings/le-benefice-annuel-danz-bondit-de-31-grace-au-plan-de-redressement-de-matos-3683762"
   },
   {
    "h": "How much in Roth conversions can you do in 2027 with the new tax brackets?",
@@ -2387,14 +2426,6 @@
    "url": "https://www.marketwatch.com/story/you-follow-the-rules-for-smart-stock-trading-but-are-they-the-right-rules-9bfe5846?mod=mw_rss_topstories"
   },
   {
-   "h": "Veradermics présentera les résultats de son essai de phase 3 contre la chute de cheveux lundi",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T23:05:52Z",
-   "url": "https://fr.investing.com/news/company-news/veradermics-presentera-les-resultats-de-son-essai-de-phase-3-contre-la-chute-de-cheveux-lundi-93CH-3683759"
-  },
-  {
    "h": "A new setback for the AI trade: Nvidia’s board is probing CEO Huang’s relationship with alleged spy",
    "w": "Jensen Huang will remain in his role and cooperate with the investigation, though analysts say the matter could cloud over Nvidia’s stock for some time.",
    "syms": [
@@ -2426,20 +2457,38 @@
    "mine": 1
   },
   {
-   "h": "HBF : la solution au goulot d’étranglement de la mémoire ?",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-08T22:10:23Z",
-   "url": "https://fr.investing.com/news/stock-market-news/hbf--la-solution-au-goulot-detranglement-de-la-memoire--3683758"
-  },
-  {
    "h": "Trump says renewed Iran strikes ‘highly unlikely’ if talks progress but warns he could still strike",
    "w": "Trump tied avoiding renewed U.S. strikes to progress in talks over Iran’s nuclear program and the Strait of Hormuz.",
    "syms": [],
    "src": "CNBC — Marchés",
    "ts": "2026-11-08T21:53:02Z",
    "url": "https://www.cnbc.com/2026/11/08/trump-iran-strikes-unlikely-talks-hormuz.html"
+  },
+  {
+   "h": "Nvidia probes CEO Jensen Huang's affair amid China security concerns",
+   "w": "",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T20:06:29.441437Z",
+   "url": "https://asia.nikkei.com/business/tech/semiconductors/nvidia-probes-ceo-jensen-huang-s-affair-amid-china-security-concerns"
+  },
+  {
+   "h": "COP31 climate summit in Turkey, ASEAN Summit, Sri Lanka budget",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T20:06:29.441437Z",
+   "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/cop31-climate-summit-in-turkey-asean-summit-sri-lanka-budget"
+  },
+  {
+   "h": "What the Democratic sweep means for Trump's tariffs and AI",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-08T20:06:29.441437Z",
+   "url": "https://asia.nikkei.com/video/what-the-democratic-sweep-means-for-trump-s-tariffs-and-ai"
   },
   {
    "h": "Companies House faces scrutiny over ‘pervasive and systemic’ errors",
@@ -2515,14 +2564,6 @@
    "mine": 1
   },
   {
-   "h": "‘It seems bizarre’: We’re in our 80s with $950,000 in traditional IRAs. Why is our adviser pushing Roth conversions?",
-   "w": "“Our basic living expenses are covered by $110,000 in annual pensions and Social Security.”",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-08T18:00:00Z",
-   "url": "https://www.marketwatch.com/story/it-seems-bizarre-were-in-our-80s-with-950-000-in-traditional-iras-why-is-our-adviser-pushing-us-to-do-roth-conversions-a665f990?mod=mw_rss_topstories"
-  },
-  {
    "h": "Japan headlight king Koito tears down Chinese rivals' lamps for bright ideas",
    "w": "",
    "syms": [],
@@ -2537,14 +2578,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-08T17:53:55.175456Z",
    "url": "https://asia.nikkei.com/business/automobiles/bridgestone-revs-up-output-of-massive-mining-tires-on-ai-driven-demand"
-  },
-  {
-   "h": "Here are the 2 big things we're watching in the stock market in the week ahead",
-   "w": "CoreWeave earnings and inflation data will take center stage.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-08T17:40:15Z",
-   "url": "https://www.cnbc.com/investingclub/2026/11/08/here-are-the-2-big-things-were-watching-in-the-stock-market-in-the-week-ahead.html"
   },
   {
    "h": "Singapore Airlines unveils $1.6bn cabin revamp with giant double bed",
@@ -2569,30 +2602,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-08T17:15:30.828596Z",
    "url": "https://asia.nikkei.com/spotlight/iran-tensions/iran-war/pakistan-s-hormuz-agreement-with-iran-faces-test-after-lng-tanker-attack"
-  },
-  {
-   "h": "Netanyahu rival Eisenkot seeks 'wide' government, path to power uncertain",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T16:36:49.724413Z",
-   "url": "https://asia.nikkei.com/politics/netanyahu-rival-eisenkot-seeks-wide-government-path-to-power-uncertain"
-  },
-  {
-   "h": "Vietnam leader To Lam visits Japan as decades-old relationship evolves",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T16:36:49.724413Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/vietnam-leader-to-lam-visits-japan-as-decades-old-relationship-evolves"
-  },
-  {
-   "h": "Japan tourism industry steps up push to draw Indian visitors",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-08T16:36:49.724413Z",
-   "url": "https://asia.nikkei.com/business/travel-leisure/japan-tourism-industry-steps-up-push-to-draw-indian-visitors"
   },
   {
    "h": "Will US inflation data ease affordability concerns?",
@@ -2771,16 +2780,6 @@
    "mine": 1
   },
   {
-   "h": "Top Wall Street analysts like these 3 dividend stocks for consistent income",
-   "w": "Three dividend-paying stocks that are highlighted by Wall Street’s top pros, as tracked by TipRanks.",
-   "syms": [
-    "SPX"
-   ],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-08T11:47:24Z",
-   "url": "https://www.cnbc.com/2026/11/08/top-analysts-like-these-3-dividend-stocks-for-consistent-income.html"
-  },
-  {
    "h": "Anthropic strikes $3.4bn deal to generate gas-fired power for data centres",
    "w": "AI lab bypasses traditional suppliers to secure scarce equipment as demand for energy surges",
    "syms": [],
@@ -2805,14 +2804,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-08T09:30:04Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/08/moins-de-touristes-etrangers-dans-les-commerces-parisiens-autre-consequence-des-manifestations_6808417_3234.html"
-  },
-  {
-   "h": "In pictures: France protests draw 146,000 as clashes erupt for fourth straight weekend",
-   "w": "France's Interior Ministry counted 146,000 protesters Saturday as demonstrations over living costs public services entered a fourth consecutive weekend.",
-   "syms": [],
-   "src": "CNBC — Marchés",
-   "ts": "2026-11-08T09:29:04Z",
-   "url": "https://www.cnbc.com/2026/11/08/france-protests-clashes-arrests.html"
   },
   {
    "h": "Cathie Wood 'always feels better when the market is worried' — here's why",
@@ -3010,6 +3001,14 @@
    "mine": 1
   },
   {
+   "h": "Trump offers UFC chief Dana White press secretary job",
+   "w": "President Donald Trump offered the job of press secretary to UFC president and CEO Dana White on Saturday.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-07T23:13:38Z",
+   "url": "https://www.cnbc.com/2026/11/07/trump-ufc-dana-white-press-secretary-offer.html"
+  },
+  {
    "h": "He spent $50,000 on Labubus but now the craze is dying",
    "w": "Parent company Pop Mart's revenue has fallen as appetite for the quirky collectible monsters wanes.",
    "syms": [],
@@ -3038,21 +3037,20 @@
    "mine": 1
   },
   {
-   "h": "Berkshire Hathaway steps up share buybacks with $9.6bn of purchases",
-   "w": "Insurance slowdown drags on performance, with quarterly operating income falling by 5.8 per cent year-on-year",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-07T16:43:06Z",
-   "url": "https://www.ft.com/content/1f153350-2377-4e48-a073-0539376eab4c?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Alertes à la bombe visant des avions : une enquête ouverte par le parquet de Paris, notamment sur un lien éventuel avec des puissances étrangères",
    "w": "Les investigations sont « menées pour retrouver les auteurs des courriels divulguant ces fausses informations afin de faire croire à une destruction dangereuse », a expliqué le parquet.",
    "syms": [],
    "src": "Le Monde — Économie",
    "ts": "2026-11-07T15:43:47Z",
    "url": "https://www.lemonde.fr/societe/article/2026/11/07/alertes-a-la-bombe-visant-des-avions-une-enquete-ouverte-par-le-parquet-de-paris-notamment-sur-un-lien-eventuel-avec-des-puissances-etrangeres_6808294_3224.html"
+  },
+  {
+   "h": "31-year-old dumpster diver brought in $140,000 in 12 months: I 'did much more than I thought was possible'",
+   "w": "Carter Stevens started reselling discarded items from dumpsters around Nashville, Tennessee, in March 2024. Months earlier, he'd been living in his car.",
+   "syms": [],
+   "src": "CNBC — Marchés",
+   "ts": "2026-11-07T14:15:01Z",
+   "url": "https://www.cnbc.com/make-it/2026/11/07/dumpster-diver-resale-business.html"
   },
   {
    "h": "Les prix de l’électricité pour les particuliers « seront stables jusqu’au 1ᵉʳ février au moins », selon le PDG d’EDF",
