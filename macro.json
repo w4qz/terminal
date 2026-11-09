@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-09T20:37:21.901921Z",
+ "generated_at": "2026-11-09T21:31:17.165366Z",
  "eco": {
   "prints": [
    {
@@ -110,6 +110,16 @@
     "freq": "M",
     "src": "Eurostat prc_hicp_minr",
     "url": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table"
+   },
+   {
+    "k": "Taux de chômage (zone euro)",
+    "v": 6.6,
+    "prev": 6.5,
+    "fmt": "%",
+    "ts": "2026-09-01",
+    "freq": "M",
+    "src": "BCE LFSI",
+    "url": "https://data.ecb.europa.eu/data/datasets/LFSI"
    }
   ],
   "calendar": [
@@ -376,7 +386,7 @@
     }
    ],
    "feeds": {
-    "semaine en cours": "ok (json, 104 événements)",
+    "semaine en cours": "ok (json, 105 événements)",
     "semaine suivante": "indisponible (404 Client Error: Not Found for url: https://nfs.faireconomy)"
    },
    "src": "Consensus et précédent : Forex Factory (compilation non officielle, usage personnel). Chiffre publié : Bureau of Labor Statistics (dès la publication), FRED (BEA, Fed), BCE, Bank of England et BNS. Les autres publications (ISM, PMI S&P Global…) n'ont pas de source gratuite : marquées « non couvert »."
@@ -401,66 +411,66 @@
    {
     "d": "2027-01-27",
     "pre": 4.084,
-    "post": 4.145,
-    "move_bp": 6.1,
-    "p_cut": 0,
-    "p_hike": 24
-   },
-   {
-    "d": "2027-03-17",
-    "pre": 4.145,
-    "post": 4.267,
-    "move_bp": 12.2,
-    "p_cut": 0,
-    "p_hike": 49
-   },
-   {
-    "d": "2027-04-28",
-    "pre": 4.267,
-    "post": 4.305,
-    "move_bp": 3.8,
-    "p_cut": 0,
-    "p_hike": 15
-   },
-   {
-    "d": "2027-06-09",
-    "pre": 4.305,
-    "post": 4.369,
-    "move_bp": 6.4,
+    "post": 4.15,
+    "move_bp": 6.6,
     "p_cut": 0,
     "p_hike": 26
    },
    {
-    "d": "2027-07-28",
-    "pre": 4.369,
-    "post": 4.38,
-    "move_bp": 1.1,
+    "d": "2027-03-17",
+    "pre": 4.15,
+    "post": 4.261,
+    "move_bp": 11.1,
     "p_cut": 0,
-    "p_hike": 4
+    "p_hike": 44
+   },
+   {
+    "d": "2027-04-28",
+    "pre": 4.261,
+    "post": 4.31,
+    "move_bp": 4.9,
+    "p_cut": 0,
+    "p_hike": 20
+   },
+   {
+    "d": "2027-06-09",
+    "pre": 4.31,
+    "post": 4.381,
+    "move_bp": 7.1,
+    "p_cut": 0,
+    "p_hike": 29
+   },
+   {
+    "d": "2027-07-28",
+    "pre": 4.381,
+    "post": 4.395,
+    "move_bp": 1.4,
+    "p_cut": 0,
+    "p_hike": 5
    },
    {
     "d": "2027-09-15",
-    "pre": 4.38,
-    "post": 4.39,
+    "pre": 4.395,
+    "post": 4.405,
     "move_bp": 1.0,
     "p_cut": 0,
     "p_hike": 4
    },
    {
     "d": "2027-10-27",
-    "pre": 4.39,
-    "post": 4.375,
-    "move_bp": -1.5,
-    "p_cut": 6,
+    "pre": 4.405,
+    "post": 4.4,
+    "move_bp": -0.5,
+    "p_cut": 2,
     "p_hike": 0
    },
    {
     "d": "2027-12-08",
-    "pre": 4.375,
-    "post": 4.382,
-    "move_bp": 0.7,
-    "p_cut": 0,
-    "p_hike": 3
+    "pre": 4.4,
+    "post": 4.38,
+    "move_bp": -2.0,
+    "p_cut": 8,
+    "p_hike": 0
    }
   ],
   "src": "Futures fed funds 30 jours CBOT (Yahoo) + EFFR (FRED) — méthode FedWatch simplifiée"
@@ -484,14 +494,14 @@
     },
     {
      "t": "6M",
-     "y": 4.285,
+     "y": 4.287,
      "y1m": 4.32,
      "ts": "2026-11-09",
      "live": true
     },
     {
      "t": "1A",
-     "y": 4.37,
+     "y": 4.375,
      "y1m": 4.47,
      "ts": "2026-11-09",
      "live": true
@@ -505,7 +515,7 @@
     },
     {
      "t": "3A",
-     "y": 4.616,
+     "y": 4.617,
      "y1m": 4.89,
      "ts": "2026-11-09",
      "live": true
@@ -519,7 +529,7 @@
     },
     {
      "t": "7A",
-     "y": 4.763,
+     "y": 4.762,
      "y1m": 5.13,
      "ts": "2026-11-09",
      "live": true
@@ -533,14 +543,14 @@
     },
     {
      "t": "20A",
-     "y": 5.298,
+     "y": 5.299,
      "y1m": 5.65,
      "ts": "2026-11-09",
      "live": true
     },
     {
      "t": "30A",
-     "y": 5.267,
+     "y": 5.268,
      "y1m": 5.6,
      "ts": "2026-11-09",
      "live": true
@@ -693,34 +703,34 @@
   },
   {
    "k": "T-bill 3 mois",
-   "v": 4.0,
-   "prev": 4.03,
+   "v": 4.01,
+   "prev": 4.0,
    "fmt": "%",
-   "ts": "2026-11-05",
+   "ts": "2026-11-06",
    "src": "FRED DTB3"
   },
   {
    "k": "T-bill 6 mois",
-   "v": 4.08,
-   "prev": 4.14,
+   "v": 4.12,
+   "prev": 4.08,
    "fmt": "%",
-   "ts": "2026-11-05",
+   "ts": "2026-11-06",
    "src": "FRED DTB6"
   },
   {
    "k": "Trésor 2 ans",
-   "v": 4.46,
-   "prev": 4.58,
+   "v": 4.51,
+   "prev": 4.46,
    "fmt": "%",
-   "ts": "2026-11-05",
+   "ts": "2026-11-06",
    "src": "FRED DGS2"
   },
   {
    "k": "Trésor 10 ans",
-   "v": 4.84,
-   "prev": 4.9,
+   "v": 4.86,
+   "prev": 4.84,
    "fmt": "%",
-   "ts": "2026-11-05",
+   "ts": "2026-11-06",
    "src": "FRED DGS10"
   },
   {
