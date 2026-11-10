@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-10T02:01:24.494120Z",
+ "generated_at": "2026-11-10T02:54:49.219645Z",
  "eco": {
   "prints": [
    {
@@ -110,6 +110,16 @@
     "freq": "M",
     "src": "Eurostat prc_hicp_minr",
     "url": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table"
+   },
+   {
+    "k": "Taux de chômage (zone euro)",
+    "v": 6.6,
+    "prev": 6.5,
+    "fmt": "%",
+    "ts": "2026-09-01",
+    "freq": "M",
+    "src": "BCE LFSI",
+    "url": "https://data.ecb.europa.eu/data/datasets/LFSI"
    }
   ],
   "calendar": [
@@ -393,18 +403,18 @@
    {
     "d": "2026-12-09",
     "pre": 3.88,
-    "post": 4.091,
-    "move_bp": 21.1,
+    "post": 4.084,
+    "move_bp": 20.4,
     "p_cut": 0,
-    "p_hike": 85
+    "p_hike": 82
    },
    {
     "d": "2027-01-27",
-    "pre": 4.091,
+    "pre": 4.084,
     "post": 4.15,
-    "move_bp": 5.9,
+    "move_bp": 6.6,
     "p_cut": 0,
-    "p_hike": 23
+    "p_hike": 26
    },
    {
     "d": "2027-03-17",
@@ -433,25 +443,25 @@
    {
     "d": "2027-07-28",
     "pre": 4.369,
-    "post": 4.38,
-    "move_bp": 1.1,
+    "post": 4.385,
+    "move_bp": 1.6,
+    "p_cut": 0,
+    "p_hike": 6
+   },
+   {
+    "d": "2027-09-15",
+    "pre": 4.385,
+    "post": 4.395,
+    "move_bp": 1.0,
     "p_cut": 0,
     "p_hike": 4
    },
    {
-    "d": "2027-09-15",
-    "pre": 4.38,
-    "post": 4.41,
-    "move_bp": 3.0,
-    "p_cut": 0,
-    "p_hike": 12
-   },
-   {
     "d": "2027-10-27",
-    "pre": 4.41,
+    "pre": 4.395,
     "post": 4.39,
-    "move_bp": -2.0,
-    "p_cut": 8,
+    "move_bp": -0.5,
+    "p_cut": 2,
     "p_hike": 0
    },
    {
@@ -505,42 +515,42 @@
     },
     {
      "t": "3A",
-     "y": 4.621,
+     "y": 4.619,
      "y1m": 4.89,
      "ts": "2026-11-09",
      "live": true
     },
     {
      "t": "5A",
-     "y": 4.671,
+     "y": 4.669,
      "y1m": 5.02,
      "ts": "2026-11-09",
      "live": true
     },
     {
      "t": "7A",
-     "y": 4.762,
+     "y": 4.758,
      "y1m": 5.13,
      "ts": "2026-11-09",
      "live": true
     },
     {
      "t": "10A",
-     "y": 4.876,
+     "y": 4.872,
      "y1m": 5.24,
      "ts": "2026-11-09",
      "live": true
     },
     {
      "t": "20A",
-     "y": 5.302,
+     "y": 5.299,
      "y1m": 5.65,
      "ts": "2026-11-09",
      "live": true
     },
     {
      "t": "30A",
-     "y": 5.273,
+     "y": 5.27,
      "y1m": 5.6,
      "ts": "2026-11-09",
      "live": true
