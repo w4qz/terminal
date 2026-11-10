@@ -152,15 +152,15 @@ def imf_direct(via_relay=False):
     if not out:
         raise RuntimeError("réponse vide")
     log(f"FMI{' via le relais' if via_relay else ''} : {len(out)} pays, années {years}")
-    return {"years": years, "items": out, "via": "FMI (relais Cloudflare)" if via_relay else "FMI"}
+    return {"years": years, "items": out, "via": "IMF (Cloudflare relay)" if via_relay else "IMF"}
 
 
 # ── CFTC : rapport COT (positions des non-commerciaux, contrats à terme seuls) ─
-COT = [("067651", "Pétrole WTI", "Énergie"), ("023651", "Gaz naturel", "Énergie"), ("088691", "Or", "Métaux"),
-       ("084691", "Argent", "Métaux"), ("085692", "Cuivre", "Métaux"), ("099741", "Euro", "Devises"),
-       ("097741", "Yen", "Devises"), ("096742", "Livre sterling", "Devises"), ("092741", "Franc suisse", "Devises"),
-       ("043602", "T-Note 10 ans", "Taux"), ("020601", "T-Bond 30 ans", "Taux"), ("13874A", "S&P 500 E-mini", "Actions"),
-       ("209742", "Nasdaq 100 E-mini", "Actions"), ("133741", "Bitcoin", "Crypto")]
+COT = [("067651", "WTI crude", "Energy"), ("023651", "Natural gas", "Energy"), ("088691", "Gold", "Metals"),
+       ("084691", "Silver", "Metals"), ("085692", "Copper", "Metals"), ("099741", "Euro", "Currencies"),
+       ("097741", "Yen", "Currencies"), ("096742", "Pound sterling", "Currencies"), ("092741", "Swiss franc", "Currencies"),
+       ("043602", "10-year T-Note", "Rates"), ("020601", "30-year T-Bond", "Rates"), ("13874A", "S&P 500 E-mini", "Equities"),
+       ("209742", "Nasdaq 100 E-mini", "Equities"), ("133741", "Bitcoin", "Crypto")]
 
 
 def cot():
