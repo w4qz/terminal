@@ -82,7 +82,7 @@ def main() -> int:
             if s not in us_set:
                 continue
             est, act = e.get("epsEstimate"), e.get("epsActual")
-            earnings.append({"s": s, "d": e.get("date"), "h": e.get("hour") or "", "q": f"T{e.get('quarter')} {e.get('year')}",
+            earnings.append({"s": s, "d": e.get("date"), "h": e.get("hour") or "", "q": f"Q{e.get('quarter')} {e.get('year')}",
                              "epsE": est, "epsA": act, "revE": e.get("revenueEstimate"), "revA": e.get("revenueActual"),
                              "surp": round((act - est) / abs(est) * 100, 1) if act is not None and est not in (None, 0) else None})
         earnings.sort(key=lambda x: (x["d"] or "", x["s"]))
@@ -111,7 +111,7 @@ def main() -> int:
                         "news": [{"h": n.get("headline", "")[:220], "src": n.get("source"), "url": n.get("url"),
                                   "ts": datetime.fromtimestamp(n["datetime"], timezone.utc).isoformat().replace("+00:00", "Z")}
                                  for n in (news or [])[:10] if n.get("headline") and n.get("url") and n.get("datetime")],
-                        "sur": [{"p": x.get("period"), "q": f"T{x.get('quarter')} {x.get('year')}", "a": x.get("actual"),
+                        "sur": [{"p": x.get("period"), "q": f"Q{x.get('quarter')} {x.get('year')}", "a": x.get("actual"),
                                  "e": x.get("estimate"), "sp": x.get("surprisePercent")} for x in (sur or [])[:4]]}
             ok += 1
         except Exception as ex:
