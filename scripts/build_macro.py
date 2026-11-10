@@ -66,37 +66,37 @@ def safe(fn, label):
 # ─────────────────────────────────────────────────────────────────────────────
 PRINTS = [
     # (série FRED, libellé, unités FRED, format)
-    ("CPIAUCSL", "Inflation CPI (US, a/a)", "pc1", "%"),
-    ("CPILFESL", "Inflation CPI core (US, a/a)", "pc1", "%"),
-    ("PCEPILFE", "PCE core (US, a/a) — cible Fed", "pc1", "%"),
-    ("PAYEMS", "Créations d'emplois NFP (US, k)", "chg", "k"),
-    ("UNRATE", "Taux de chômage (US)", "lin", "%"),
-    ("ICSA", "Inscriptions hebdo. au chômage (US)", "lin", "n"),
-    ("A191RL1Q225SBEA", "PIB réel (US, t/t annualisé)", "lin", "%"),
-    ("RSAFS", "Ventes au détail (US, m/m)", "pch", "%"),
-    ("UMCSENT", "Confiance consommateurs U. Michigan", "lin", "n"),
+    ("CPIAUCSL", "CPI inflation (US, y/y)", "pc1", "%"),
+    ("CPILFESL", "Core CPI inflation (US, y/y)", "pc1", "%"),
+    ("PCEPILFE", "Core PCE (US, y/y) — Fed target", "pc1", "%"),
+    ("PAYEMS", "Nonfarm payrolls (US, K)", "chg", "k"),
+    ("UNRATE", "Unemployment rate (US)", "lin", "%"),
+    ("ICSA", "Weekly jobless claims (US)", "lin", "n"),
+    ("A191RL1Q225SBEA", "Real GDP (US, q/q annualised)", "lin", "%"),
+    ("RSAFS", "Retail sales (US, m/m)", "pch", "%"),
+    ("UMCSENT", "U. Michigan consumer sentiment", "lin", "n"),
 ]
 
 # Zone euro : Eurostat publie le jour même (inflation flash, chômage) ; les séries FRED reprises de l'OCDE
 # avaient un mois de retard (inflation) ou étaient arrêtées (chômage, figé à janvier 2023).
 ESTAT_PRINTS = [
-    ("Inflation HICP (zone euro, a/a)", "%", [("estat", "prc_hicp_minr", "geo=EA20&coicop18=TOTAL&unit=RCH_A"), ("estat", "prc_hicp_manr", "geo=EA20&coicop=CP00"),
+    ("HICP inflation (euro area, y/y)", "%", [("estat", "prc_hicp_minr", "geo=EA20&coicop18=TOTAL&unit=RCH_A"), ("estat", "prc_hicp_manr", "geo=EA20&coicop=CP00"),
                                               ("estat", "teicp000", "geo=EA20&coicop=CP00&unit=RCH_A"), ("ecb", "ICP/M.U2.N.000000.4.ANR")]),
-    ("Taux de chômage (zone euro)", "%", [("estat", "une_rt_m", "geo=EA20&s_adj=SA&age=TOTAL&sex=T&unit=PC_ACT"), ("ecb", "LFSI/M.I9.S.UNEHRT.TOTAL0.15_74.T")]),
+    ("Unemployment rate (euro area)", "%", [("estat", "une_rt_m", "geo=EA20&s_adj=SA&age=TOTAL&sex=T&unit=PC_ACT"), ("ecb", "LFSI/M.I9.S.UNEHRT.TOTAL0.15_74.T")]),
 ]
 
 RELEASES = {
-    "Employment Situation": "Emploi US (NFP, chômage)",
-    "Consumer Price Index": "Inflation CPI",
-    "Producer Price Index": "Prix à la production PPI",
-    "Personal Income and Outlays": "Revenus et dépenses (PCE)",
-    "Gross Domestic Product": "PIB",
-    "Advance Monthly Sales for Retail and Food Services": "Ventes au détail",
-    "Unemployment Insurance Weekly Claims Report": "Inscriptions hebdo. au chômage",
-    "Job Openings and Labor Turnover Survey": "Offres d'emploi JOLTS",
-    "Industrial Production and Capacity Utilization": "Production industrielle",
-    "New Residential Construction": "Mises en chantier",
-    "Surveys of Consumers": "Confiance U. Michigan",
+    "Employment Situation": "US jobs report (NFP, unemployment)",
+    "Consumer Price Index": "CPI inflation",
+    "Producer Price Index": "PPI producer prices",
+    "Personal Income and Outlays": "Personal income and outlays (PCE)",
+    "Gross Domestic Product": "GDP",
+    "Advance Monthly Sales for Retail and Food Services": "Retail sales",
+    "Unemployment Insurance Weekly Claims Report": "Weekly jobless claims",
+    "Job Openings and Labor Turnover Survey": "JOLTS job openings",
+    "Industrial Production and Capacity Utilization": "Industrial production",
+    "New Residential Construction": "Housing starts",
+    "Surveys of Consumers": "U. Michigan sentiment",
 }
 
 # Calendrier FOMC 2026 publié par la Fed (deuxième jour = jour de la décision).
@@ -205,7 +205,7 @@ def eco_calendar(fomc):
             log(f"  ! calendrier FRED : {e}")
     for d in fomc:
         if TODAY - timedelta(days=7) <= date.fromisoformat(d) <= TODAY + timedelta(days=60):
-            cal.append({"d": d, "ev": "Décision de la Fed (FOMC)", "ctry": "US", "src": "Federal Reserve", "imp": 3})
+            cal.append({"d": d, "ev": "Fed decision (FOMC)", "ctry": "US", "src": "Federal Reserve", "imp": 3})
     cal.sort(key=lambda x: x["d"])
     log(f"ECO : {len(cal)} publications au calendrier")
     return cal
@@ -218,7 +218,7 @@ def eco_calendar(fomc):
 # ─────────────────────────────────────────────────────────────────────────────
 FF_URLS = ["https://nfs.faireconomy.media/ff_calendar_thisweek.json",
            "https://nfs.faireconomy.media/ff_calendar_nextweek.json"]
-FF_COUNTRIES = {"USD": "US", "EUR": "Zone euro", "GBP": "R.-U.", "JPY": "Japon", "CHF": "Suisse", "CNY": "Chine"}
+FF_COUNTRIES = {"USD": "US", "EUR": "Euro area", "GBP": "UK", "JPY": "Japan", "CHF": "Switzerland", "CNY": "China"}
 # Titre Forex Factory (USD) → (série FRED, unités FRED, conversion, suffixe affiché comme chez FF)
 FF_TO_FRED = {
     "Non-Farm Employment Change": ("PAYEMS", "chg", 1, "K"),
@@ -238,18 +238,7 @@ FF_TO_FRED = {
     "JOLTS Job Openings": ("JTSJOL", "lin", 0.001, "M"),
     "Federal Funds Rate": ("DFEDTARU", "lin", 1, "%"),
 }
-TITLE_FR = {
-    "Non-Farm Employment Change": "Créations d'emplois NFP", "Unemployment Rate": "Taux de chômage",
-    "Unemployment Claims": "Inscriptions hebdo. au chômage", "Retail Sales m/m": "Ventes au détail m/m",
-    "Federal Funds Rate": "Décision de la Fed", "Main Refinancing Rate": "Décision de la BCE (refi)",
-    "Official Bank Rate": "Décision de la BoE", "BOJ Policy Rate": "Décision de la BoJ",
-    "SNB Policy Rate": "Décision de la BNS", "FOMC Statement": "Communiqué de la Fed",
-    "FOMC Meeting Minutes": "Compte rendu du FOMC", "Monetary Policy Statement": "Communiqué de politique monétaire",
-    "JOLTS Job Openings": "Offres d'emploi JOLTS", "Prelim UoM Consumer Sentiment": "Confiance U. Michigan (prélim.)",
-    "Revised UoM Consumer Sentiment": "Confiance U. Michigan (révisée)", "ISM Manufacturing PMI": "ISM manufacturier",
-    "ISM Services PMI": "ISM services", "German Prelim CPI m/m": "Inflation Allemagne (prélim.) m/m",
-    "Flash CPI y/y": "Inflation zone euro (flash) a/a", "Core CPI Flash Estimate y/y": "Inflation core zone euro (flash) a/a",
-}
+TITLE_FR = {}   # event names stay in English (Forex Factory title)
 
 
 def _num(s):
@@ -485,9 +474,9 @@ def eco_consensus():
     rows.sort(key=lambda x: x["ts"])
     log(f"ECO : {len(rows)} publications avec consensus ({sum(1 for x in rows if x['act'])} avec chiffre publié) · {feeds}")
     return {"rows": rows, "feeds": feeds,
-            "src": "Consensus et précédent : Forex Factory (compilation non officielle, usage personnel). "
-                   "Chiffre publié : Bureau of Labor Statistics (dès la publication), FRED (BEA, Fed), BCE, Bank of England et BNS. "
-                   "Les autres publications (ISM, PMI S&P Global…) n'ont pas de source gratuite : marquées « non couvert »."}
+            "src": "Consensus and prior: Forex Factory (unofficial compilation, personal use). "
+                   "Actual: Bureau of Labor Statistics (on release), FRED (BEA, Fed), ECB, Bank of England and SNB. "
+                   "Other releases (ISM, S&P Global PMI…) have no free source: marked \"not covered\"."}
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -550,7 +539,7 @@ def wirp(fomc):
     return {"effr": effr[0][1], "effr_ts": effr[0][0],
             "range": [lo[0][1] if lo else None, hi[0][1] if hi else None],
             "meetings": rows,
-            "src": "Futures fed funds 30 jours CBOT (Yahoo) + EFFR (FRED) — méthode FedWatch simplifiée"}
+            "src": "CBOT 30-day fed funds futures (Yahoo) + EFFR (FRED) — simplified FedWatch method"}
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -573,7 +562,7 @@ def curve_us():
             continue
         old = next((v for d, v in obs if d <= month_ago), None)
         pts.append({"t": t, "y": obs[0][1], "y1m": old, "ts": obs[0][0]})
-    src = "Trésor US via FRED (taux constant maturity, clôture de la veille)"
+    src = "US Treasury via FRED (constant maturity, previous close)"
     # Cotations de marché CNBC (différé ~15 min) : FRED publie la veille au soir, l'écart atteignait 30 pb
     # les jours de forte volatilité. La variation sur 1 mois reste calculée sur FRED.
     try:
@@ -597,7 +586,7 @@ def curve_us():
                 p["y"], p["ts"] = live[p["t"]]
                 p["live"] = True
         if live:
-            src = "CNBC (cotations du Trésor US, différé ~15 min) · variation 1 mois : FRED"
+            src = "CNBC (US Treasury quotes, ~15 min delay) · 1-month change: FRED"
         log(f"GC : courbe US — {len(live)} maturités en cotation de marché (CNBC)")
     except Exception as e:
         log(f"  ! CNBC courbe US : {str(e)[:90]} — clôture FRED conservée")
@@ -631,19 +620,19 @@ def curve_eu():
         except Exception:
             pts.append({"t": t, "y": None})
     log(f"GC : courbe euro {sum(1 for p in pts if p['y'] is not None)}/{len(pts)}")
-    return {"pts": pts, "src": "BCE — courbe des emprunts d'État AAA de la zone euro (taux zéro-coupon)"}
+    return {"pts": pts, "src": "ECB — euro area AAA government bond curve (zero-coupon yields)"}
 
 
 # ─────────────────────────────────────────────────────────────────────────────
 # BTMM — tableau de bord monétaire US
 # ─────────────────────────────────────────────────────────────────────────────
 BTMM_SERIES = [
-    ("DFEDTARU", "Fed funds — borne haute", "%"), ("DFEDTARL", "Fed funds — borne basse", "%"),
-    ("EFFR", "Taux effectif des fed funds (EFFR)", "%"), ("SOFR", "SOFR", "%"),
-    ("IORB", "Taux sur les réserves (IORB)", "%"), ("DTB3", "T-bill 3 mois", "%"),
-    ("DTB6", "T-bill 6 mois", "%"), ("DGS2", "Trésor 2 ans", "%"), ("DGS10", "Trésor 10 ans", "%"),
-    ("T10Y2Y", "Pente 2s10s", "pb"), ("T10Y3M", "Pente 3m10a", "pb"),
-    ("RRPONTSYD", "Reverse repo de la Fed (Md$)", "Md"), ("WALCL", "Bilan de la Fed (Md$)", "Mdm"),
+    ("DFEDTARU", "Fed funds — upper bound", "%"), ("DFEDTARL", "Fed funds — lower bound", "%"),
+    ("EFFR", "Effective fed funds rate (EFFR)", "%"), ("SOFR", "SOFR", "%"),
+    ("IORB", "Interest on reserves (IORB)", "%"), ("DTB3", "3-month T-bill", "%"),
+    ("DTB6", "6-month T-bill", "%"), ("DGS2", "2-year Treasury", "%"), ("DGS10", "10-year Treasury", "%"),
+    ("T10Y2Y", "2s10s slope", "pb"), ("T10Y3M", "3m10y slope", "pb"),
+    ("RRPONTSYD", "Fed reverse repo ($bn)", "Md"), ("WALCL", "Fed balance sheet ($bn)", "Mdm"),
 ]
 
 
