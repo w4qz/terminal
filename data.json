@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-10T12:14:47.033066Z",
+ "generated_at": "2026-11-10T12:41:04.673557Z",
  "quotes": {
   "NVDA": {
    "p": 178.67,
@@ -42,8 +42,8 @@
    "prev": 32.33,
    "chg": 4.56,
    "pct": 14.1,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (ASTS) — last update failed",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-11-09T21:00:00Z",
    "open": 33.485,
    "lo": 32.26,
@@ -218,13 +218,13 @@
    ]
   },
   "VIX": {
-   "p": 19.96,
+   "p": 19.99,
    "prev": 19.92,
-   "chg": 0.04,
-   "pct": 0.2,
+   "chg": 0.07,
+   "pct": 0.35,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^VIX)",
-   "ts": "2026-11-10T12:00:00Z",
+   "ts": "2026-11-10T12:30:00Z",
    "open": 19.76,
    "lo": 19.62,
    "hi": 20.32,
@@ -250,7 +250,7 @@
     28.18,
     25.64,
     19.92,
-    19.96
+    19.99
    ]
   },
   "N225": {
@@ -395,13 +395,13 @@
    ]
   },
   "UKX": {
-   "p": 10825.5498,
+   "p": 10841.6699,
    "prev": 10782.9004,
-   "chg": 42.6494,
-   "pct": 0.4,
+   "chg": 58.7695,
+   "pct": 0.55,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^FTSE)",
-   "ts": "2026-11-10T12:00:00Z",
+   "ts": "2026-11-10T12:30:00Z",
    "open": 10781.9404,
    "lo": 10775.7598,
    "hi": 10868.5098,
@@ -427,17 +427,17 @@
     10782.7,
     10673.9,
     10782.9,
-    10825.55
+    10841.62
    ]
   },
   "DAX": {
-   "p": 26593.2891,
+   "p": 26585.8809,
    "prev": 26267.1895,
-   "chg": 326.0996,
-   "pct": 1.24,
+   "chg": 318.6914,
+   "pct": 1.21,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^GDAXI)",
-   "ts": "2026-11-10T12:00:00Z",
+   "ts": "2026-11-10T12:30:00Z",
    "open": 26548.5898,
    "lo": 26460.6406,
    "hi": 26633.7793,
@@ -463,17 +463,17 @@
     26325.01,
     25820.36,
     26267.19,
-    26593.29
+    26585.88
    ]
   },
   "CAC": {
-   "p": 8326.0,
+   "p": 8329.96,
    "prev": 8233.2998,
-   "chg": 92.7002,
-   "pct": 1.13,
+   "chg": 96.6602,
+   "pct": 1.17,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^FCHI)",
-   "ts": "2026-11-10T12:00:00Z",
+   "ts": "2026-11-10T12:30:00Z",
    "open": 8306.0996,
    "lo": 8290.8398,
    "hi": 8337.5898,
@@ -499,17 +499,17 @@
     8205.37,
     8139.0,
     8233.3,
-    8326.0
+    8329.96
    ]
   },
   "SX5E": {
-   "p": 6363.1802,
+   "p": 6364.2998,
    "prev": 6290.4502,
-   "chg": 72.73,
-   "pct": 1.16,
+   "chg": 73.8496,
+   "pct": 1.17,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^STOXX50E)",
-   "ts": "2026-11-10T12:00:00Z",
+   "ts": "2026-11-10T12:30:00Z",
    "open": 6319.8101,
    "lo": 6319.8101,
    "hi": 6373.8799,
@@ -535,19 +535,19 @@
     6231.54,
     6170.49,
     6290.45,
-    6363.18
+    6364.3
    ]
   },
   "EURUSD": {
-   "p": 1.1222,
+   "p": 1.1217,
    "prev": 1.1147,
-   "chg": 0.0075,
-   "pct": 0.67,
+   "chg": 0.007,
+   "pct": 0.63,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (EURUSD=X)",
-   "ts": "2026-11-10T12:14:47.033066Z",
+   "ts": "2026-11-10T12:41:04.673557Z",
    "open": 1.1225,
-   "lo": 1.1217,
+   "lo": 1.1216,
    "hi": 1.1254,
    "h": [
     1.120473,
@@ -571,7 +571,7 @@
     1.123495,
     1.122826,
     1.114728,
-    1.122208
+    1.121705
    ]
   },
   "USDJPY": {
@@ -581,10 +581,10 @@
    "pct": -0.06,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (JPY=X)",
-   "ts": "2026-11-10T12:14:47.033066Z",
+   "ts": "2026-11-10T12:41:04.673557Z",
    "open": 157.899,
    "lo": 157.864,
-   "hi": 158.24,
+   "hi": 158.252,
    "h": [
     158.2,
     158.52,
@@ -611,13 +611,13 @@
    ]
   },
   "GBPUSD": {
-   "p": 1.343,
+   "p": 1.3428,
    "prev": 1.336,
-   "chg": 0.007,
-   "pct": 0.52,
+   "chg": 0.0068,
+   "pct": 0.51,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
-   "ts": "2026-11-10T12:14:47.033066Z",
+   "ts": "2026-11-10T12:41:04.673557Z",
    "open": 1.3438,
    "lo": 1.3424,
    "hi": 1.3459,
@@ -643,20 +643,20 @@
     1.347709,
     1.345605,
     1.336041,
-    1.343003
+    1.342823
    ]
   },
   "DXY": {
-   "p": 101.745,
+   "p": 101.755,
    "prev": 101.65,
-   "chg": 0.095,
-   "pct": 0.09,
+   "chg": 0.105,
+   "pct": 0.1,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (DX-Y.NYB)",
-   "ts": "2026-11-10T12:14:47.033066Z",
+   "ts": "2026-11-10T12:41:04.673557Z",
    "open": 101.717,
    "lo": 101.488,
-   "hi": 101.772,
+   "hi": 101.781,
    "h": [
     102.58,
     102.18,
@@ -683,17 +683,17 @@
    ]
   },
   "XAU": {
-   "p": 4084.3,
+   "p": 4083.6001,
    "prev": 4114.5,
-   "chg": -30.2,
-   "pct": -0.73,
+   "chg": -30.8999,
+   "pct": -0.75,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GC=F)",
-   "ts": "2026-11-10T12:14:47.033066Z",
+   "ts": "2026-11-10T12:41:04.673557Z",
    "open": 4149.0,
-   "lo": 4076.6001,
+   "lo": 4076.2,
    "hi": 4156.2002,
-   "vol": 67898,
+   "vol": 70925,
    "h": [
     4190.6,
     4177.3,
@@ -716,21 +716,21 @@
     4113.5,
     4074.9,
     4114.5,
-    4084.3
+    4083.6
    ]
   },
   "CL": {
-   "p": 85.31,
+   "p": 85.25,
    "prev": 86.85,
-   "chg": -1.54,
-   "pct": -1.77,
+   "chg": -1.6,
+   "pct": -1.84,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (CL=F)",
-   "ts": "2026-11-10T12:14:47.033066Z",
+   "ts": "2026-11-10T12:41:04.673557Z",
    "open": 86.43,
    "lo": 83.88,
    "hi": 86.93,
-   "vol": 76997,
+   "vol": 80568,
    "h": [
     93.74,
     94.14,
@@ -753,21 +753,21 @@
     90.52,
     90.83,
     86.85,
-    85.31
+    85.27
    ]
   },
   "BRENT": {
-   "p": 90.65,
+   "p": 90.55,
    "prev": 92.57,
-   "chg": -1.92,
-   "pct": -2.07,
+   "chg": -2.02,
+   "pct": -2.18,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BZ=F)",
-   "ts": "2026-11-10T12:14:47.033066Z",
+   "ts": "2026-11-10T12:41:04.673557Z",
    "open": 92.39,
    "lo": 89.21,
    "hi": 92.82,
-   "vol": 12762,
+   "vol": 13228,
    "h": [
     106.65,
     105.69,
@@ -790,21 +790,21 @@
     98.29,
     98.32,
     92.57,
-    90.65
+    90.55
    ]
   },
   "BTC": {
-   "p": 74263.9297,
+   "p": 74112.6328,
    "prev": 75223.1484,
-   "chg": -959.2188,
-   "pct": -1.28,
+   "chg": -1110.5156,
+   "pct": -1.48,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-10T12:14:47.033066Z",
+   "ts": "2026-11-10T12:41:04.673557Z",
    "open": 75253.8594,
    "lo": 74096.9297,
    "hi": 75317.2266,
-   "vol": 21622179840,
+   "vol": 21494331392,
    "h": [
     82941.0,
     84011.97,
@@ -827,7 +827,7 @@
     75747.58,
     74584.65,
     75223.15,
-    74263.93
+    74103.12
    ]
   }
  },
@@ -1506,14 +1506,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 996954603520,
+   "mcap": 1000012251136,
    "pe": 45.529,
-   "fpe": 38.9468,
+   "fpe": 38.9739,
    "eps": 2.76,
-   "feps": 3.2264,
+   "feps": 3.2242,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.788,
@@ -1763,9 +1763,9 @@
    "sector": "Technology",
    "industry": "Semiconductor Equipment & Materials",
    "ccy": "EUR",
-   "mcap": 519697268736,
-   "pe": 38.5477,
-   "fpe": 23.8933,
+   "mcap": 519311851520,
+   "pe": 38.5192,
+   "fpe": 23.8756,
    "eps": 34.98,
    "feps": 56.4342,
    "revTTM": 39473500160,
@@ -1852,9 +1852,9 @@
    "ccy": "USD",
    "mcap": 518441828352,
    "pe": 50.3952,
-   "fpe": 18.1195,
+   "fpe": 18.1073,
    "eps": 5.82,
-   "feps": 16.187,
+   "feps": 16.1979,
    "revTTM": 66013999104,
    "netIncome": 10302999552,
    "shares": 1767616306,
@@ -1982,9 +1982,9 @@
    "ccy": "USD",
    "mcap": 407686971392,
    "pe": 119.1549,
-   "fpe": 66.7398,
+   "fpe": 66.6465,
    "eps": 1.42,
-   "feps": 2.5352,
+   "feps": 2.5388,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
@@ -2150,13 +2150,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 123.1888,
-   "shares": 572600000,
-   "divYield": 2.568,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2208,14 +2203,171 @@
  ],
  "news": [
   {
+   "h": "Italian banks hit out at Giorgia Meloni over latest tax raid",
+   "w": "Rome plans to raise €7bn from financial institutions during the next three years through measures including a higher corporation tax rate",
+   "syms": [],
+   "src": "myFT — companies",
+   "ts": "2026-11-10T12:33:13Z",
+   "url": "https://www.ft.com/content/f0665cf7-a36f-4573-b7d6-93dda9d59d3f?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Nvidia couldn’t derail the stock market’s rally. Hot inflation might.",
+   "w": "A Fed official raises the prospect of a half-a-percentage-point rate hike. Plus, fresh valuation focus on Anthropic’s blockbuster IPO.",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "MarketWatch",
+   "ts": "2026-11-10T12:33:00Z",
+   "url": "https://www.marketwatch.com/story/nvidia-couldnt-derail-the-stock-markets-rally-hot-inflation-might-8a572024?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Bilt bets on local businesses, hospitality and major sports franchises, expanding beyond residential rewards",
+   "w": "Bilt is announcing the launch of two new platforms designed to help local businesses and event venues attract customers and build loyalty.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-10T12:32:17Z",
+   "url": "https://www.cnbc.com/2026/11/10/bilt-expands-beyond-residential-rewards.html"
+  },
+  {
+   "h": "Anthropic officially sets the stage for an IPO valuing the company north of $1 trillion",
+   "w": "Anthropic could raise up to $63 billion in an IPO expected to take place next week.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-10T12:32:00Z",
+   "url": "https://www.marketwatch.com/story/anthropic-reportedly-retracts-ipo-terms-sent-to-banks-by-mistake-exposing-jitters-over-ai-investments-6116578d?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Oil falls below $90 as Trump pulls back from threat to strike Iran",
+   "w": "Falling crude prices have supported recovery in global stocks from last week’s sell-off",
+   "syms": [
+    "BRENT",
+    "CL"
+   ],
+   "src": "myFT — world",
+   "ts": "2026-11-10T12:31:54Z",
+   "url": "https://www.ft.com/content/07bdb58c-4557-4def-b8cb-db9be304fd72?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "Anthropic sets price range of $70 to $78 in upcoming IPO as AI lab marches toward Nasdaq",
    "w": "Anthropic's IPO is expected to come roughly five months after Elon Musk took SpaceX public in a record offering.",
    "syms": [
     "NDX"
    ],
    "src": "CNBC — Markets",
-   "ts": "2026-11-10T12:01:06Z",
+   "ts": "2026-11-10T12:31:39Z",
    "url": "https://www.cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html"
+  },
+  {
+   "h": "Les actions eToro chutent de 6% après des résultats trimestriels décevants",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-10T12:30:48Z",
+   "url": "https://fr.investing.com/news/earnings/les-actions-etoro-chutent-de-6-apres-des-resultats-trimestriels-decevants-93CH-3687655"
+  },
+  {
+   "h": "The UK has an inflation problem",
+   "w": "The Bank of England should recognise its record of inflation control is slipping internationally",
+   "syms": [
+    "UKX"
+   ],
+   "src": "myFT — world",
+   "ts": "2026-11-10T12:30:04Z",
+   "url": "https://www.ft.com/content/fea10439-29c0-4a06-a99b-700118018f89?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Cantor Fitzgerald initie Nike à neutre en raison du calendrier de reprise",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-10T12:28:16Z",
+   "url": "https://fr.investing.com/news/analyst-ratings/cantor-fitzgerald-initie-nike-a-neutre-en-raison-du-calendrier-de-reprise-93CH-3687646"
+  },
+  {
+   "h": "Compte rendu de résultats : Ten Square Games affiche des réservations en hausse au T3 2026",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-10T12:28:08Z",
+   "url": "https://fr.investing.com/news/transcripts/compte-rendu-de-resultats--ten-square-games-affiche-des-reservations-en-hausse-au-t3-2026-93CH-3687645"
+  },
+  {
+   "h": "UBS abaisse son objectif de cours sur Cummins en raison d’incertitudes à court terme",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-10T12:27:57Z",
+   "url": "https://fr.investing.com/news/analyst-ratings/ubs-abaisse-son-objectif-de-cours-sur-cummins-en-raison-dincertitudes-a-court-terme-93CH-3687644"
+  },
+  {
+   "h": "UBS réduit son objectif de cours d’AST SpaceMobile en raison de retards",
+   "w": "",
+   "syms": [
+    "ASTS"
+   ],
+   "src": "Investing.com France",
+   "ts": "2026-11-10T12:27:54Z",
+   "url": "https://fr.investing.com/news/analyst-ratings/ubs-reduit-son-objectif-de-cours-dast-spacemobile-en-raison-de-retards-93CH-3687643"
+  },
+  {
+   "h": "L’action Bitdeer en hausse grâce à un chiffre d’affaires record",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-10T12:27:47Z",
+   "url": "https://fr.investing.com/news/earnings/laction-bitdeer-en-hausse-grace-a-un-chiffre-daffaires-record-93CH-3687642"
+  },
+  {
+   "h": "Les actions Liquidia reculent malgré un chiffre d’affaires solide",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-10T12:27:27Z",
+   "url": "https://fr.investing.com/news/earnings/les-actions-liquidia-reculent-malgre-un-chiffre-daffaires-solide-93CH-3687641"
+  },
+  {
+   "h": "Pourquoi l’action GFL Environmental s’effondre-t-elle aujourd’hui ?",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-10T12:26:30Z",
+   "url": "https://fr.investing.com/news/stock-market-news/pourquoi-laction-gfl-environmental-seffondretelle-aujourdhui--93CH-3687634"
+  },
+  {
+   "h": "Les contrats à terme du TSX stables avant les données d’inflation américaines",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-10T12:24:08Z",
+   "url": "https://fr.investing.com/news/stock-market-news/les-contrats-a-terme-du-tsx-stables-avant-les-donnees-dinflation-americaines-3687633"
+  },
+  {
+   "h": "Cantor Fitzgerald initie une couverture d’Amer Sports avec une note de surpondération",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-10T12:22:16Z",
+   "url": "https://fr.investing.com/news/analyst-ratings/cantor-fitzgerald-initie-une-couverture-damer-sports-avec-une-note-de-surponderation-93CH-3687618"
+  },
+  {
+   "h": "‘We had the worst fight’: I want my husband to retire at 65, but I don’t want to lose his $280,000 salary. Is that unreasonable?",
+   "w": "“We have $2.6 million, most of it in his 401(k) and IRAs, plus $450,000 in a brokerage account.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-10T12:16:00Z",
+   "url": "https://www.marketwatch.com/story/we-had-the-worst-fight-weve-ever-had-i-want-my-husband-to-retire-at-65-but-i-dont-want-to-lose-his-280-000-salary-48511469?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Anthropic targets valuation of up to $1.4tn in IPO",
+   "w": "The Claude maker said it and some of its investors planned to sell shares for as much as $78 each",
+   "syms": [],
+   "src": "myFT — companies",
+   "ts": "2026-11-10T12:06:30Z",
+   "url": "https://www.ft.com/content/5654e210-4be3-4550-b975-129c9a2e7fe5?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "Countries speed up on renewables as China’s blistering pace slows",
@@ -2246,54 +2398,6 @@
    "mine": 1
   },
   {
-   "h": "Trump sees opening for Ukraine peace deal, but key questions remain ahead of Abu Dhabi talks",
-   "w": "President Trump signaled optimism for the end of Russia's war in Ukraine ahead of trilateral negotiation talks on Tuesday in Abu Dhabi.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-10T11:52:54Z",
-   "url": "https://www.cnbc.com/2026/11/10/trump-russia-ukraine-abu-dhabi-war-talks.html"
-  },
-  {
-   "h": "Le BPA de Brightstar Lottery a dépassé les attentes de 0,04$, le CA en dessous des prévisions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-10T11:52:44Z",
-   "url": "https://fr.investing.com/news/earnings/le-bpa-de-brightstar-lottery-a-depasse-les-attentes-de-004-le-ca--en-dessous-des-previsions-3687442"
-  },
-  {
-   "h": "L’action Brightstar Lottery chute de 11% après une révision à la baisse des prévisions de revenus",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-10T11:50:36Z",
-   "url": "https://fr.investing.com/news/earnings/laction-brightstar-lottery-chute-de-11-apres-une-revision-a-la-baisse-des-previsions-de-revenus-93CH-3687440"
-  },
-  {
-   "h": "GFL rejette les offres de rachat et choisit de rester cotée en bourse",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-10T11:49:26Z",
-   "url": "https://fr.investing.com/news/company-news/gfl-rejette-les-offres-de-rachat-et-choisit-de-rester-cotee-en-bourse-93CH-3687438"
-  },
-  {
-   "h": "Diamondback et KKR acquièrent la participation de Five Point dans Deep Blue",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-10T11:49:21Z",
-   "url": "https://fr.investing.com/news/company-news/diamondback-et-kkr-acquierent-la-participation-de-five-point-dans-deep-blue-93CH-3687437"
-  },
-  {
-   "h": "Les actions d’Atour Lifestyle chutent de 4% sur fond de faible performance hôtelière",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-10T11:49:03Z",
-   "url": "https://fr.investing.com/news/earnings/les-actions-datour-lifestyle-chutent-de-4-sur-fond-de-faible-performance-hoteliere-93CH-3687436"
-  },
-  {
    "h": "Trump is taking the Alamo route",
    "w": "Accepting defeat with grace would go against a lifetime of going for broke",
    "syms": [],
@@ -2303,64 +2407,12 @@
    "mine": 1
   },
   {
-   "h": "Deutsche Bank dégrade Hugo Boss en raison de la baisse des ventes",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-10T11:45:53Z",
-   "url": "https://fr.investing.com/news/stock-market-news/deutsche-bank-degrade-hugo-boss-face-a-la-baisse-des-ventes-3687429"
-  },
-  {
-   "h": "Needham relève l’objectif de cours de Nerdy à 8$ grâce aux gains d’efficacité",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-10T11:45:46Z",
-   "url": "https://fr.investing.com/news/analyst-ratings/needham-releve-lobjectif-de-cours-de-nerdy-a-8-grace-aux-gains-defficacite-93CH-3687427"
-  },
-  {
-   "h": "Enghouse acquiert MIND C.T.I. pour environ 25,4 millions $",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-10T11:45:24Z",
-   "url": "https://fr.investing.com/news/company-news/enghouse-acquiert-mind-cti-pour-environ-254-millions--93CH-3687426"
-  },
-  {
-   "h": "Le BPA de Sea a manqué les attentes de 0,21$, le CA a surpassé les prévisions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-10T11:44:46Z",
-   "url": "https://fr.investing.com/news/earnings/le-bpa-de-sea-a-manque-les-attentes-de-021-le-ca--a-surpasse-les-previsions-3687423"
-  },
-  {
-   "h": "Les actions TransDigm chutent de 4% après des prévisions décevantes",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-10T11:44:06Z",
-   "url": "https://fr.investing.com/news/earnings/les-actions-transdigm-chutent-de-4-apres-des-previsions-decevantes-93CH-3687422"
-  },
-  {
    "h": "Sales of tinned food and bottled water jump after 'Be Ready' campaign launch",
    "w": "Sales of essential goods such as hand sanitiser soar after the government called on households to be prepared for emergencies.",
    "syms": [],
    "src": "BBC — Business",
    "ts": "2026-11-10T11:43:06Z",
    "url": "https://www.bbc.co.uk/news/articles/cqev3vl4ek33o?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "Oil falls below $90 as Trump pulls back from threat to strike Iran",
-   "w": "Falling crude prices have supported recovery in global stocks from last week’s sell-off",
-   "syms": [
-    "BRENT",
-    "CL"
-   ],
-   "src": "myFT — world",
-   "ts": "2026-11-10T11:33:24Z",
-   "url": "https://www.ft.com/content/07bdb58c-4557-4def-b8cb-db9be304fd72?syn-25a6b1a6=1",
-   "mine": 1
   },
   {
    "h": "Gaz : nouvelle hausse de 5,8 % à venir pour les foyers français, dans le sillage de la guerre au Moyen-Orient",
@@ -2410,14 +2462,6 @@
    "ts": "2026-11-10T10:55:57Z",
    "url": "https://www.ft.com/content/5ceed157-0016-4822-a272-8b607911da5e?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Anthropic reportedly retracts IPO terms sent to banks by mistake, exposing jitters over AI investments",
-   "w": "Anthropic reportedly late Monday sent a copy of a securities filing to bankers for an IPO raising up to $69.3 billion before saying that was in error.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-10T10:48:00Z",
-   "url": "https://www.marketwatch.com/story/anthropic-reportedly-retracts-ipo-terms-sent-to-banks-by-mistake-exposing-jitters-over-ai-investments-6116578d?mod=mw_rss_topstories"
   },
   {
    "h": "FirstFT: Oil price falls below $90 a barrel",
@@ -2543,7 +2587,7 @@
   },
   {
    "h": "Fed’s Waller puts half-point rate hike into the mix for December",
-   "w": "Federal Reserve Gov. Chris Waller on Tuesday put the possibility of a half-point rate hike into the mix, depending how hot the consumer price data for October comes in.",
+   "w": "It all depends on how hot the consumer-price data for October comes in.",
    "syms": [],
    "src": "MarketWatch",
    "ts": "2026-11-10T09:45:00Z",
@@ -2670,6 +2714,30 @@
    "ts": "2026-11-10T06:53:37Z",
    "url": "https://www.ft.com/content/9e3dacfa-ebff-4f05-a89e-9514211d73a2?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "Honda bets on hybrids as mainstay of U.S. electrification into early 2030s",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-10T06:41:04.673557Z",
+   "url": "https://asia.nikkei.com/business/automobiles/honda-bets-on-hybrids-as-mainstay-of-u.s.-electrification-into-early-2030s"
+  },
+  {
+   "h": "US midterms expose costs of East Asia's Trump diplomacy",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-10T06:41:04.673557Z",
+   "url": "https://asia.nikkei.com/opinion/us-midterms-expose-costs-of-east-asia-s-trump-diplomacy"
+  },
+  {
+   "h": "Democrats' midterm victory puts future of House China committee in doubt",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-10T06:41:04.673557Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/us-china-tensions/democrats-midterm-victory-puts-future-of-house-china-committee-in-doubt"
   },
   {
    "h": "Trump’s C-SPAN call marks latest surprise post-midterm appearance",
@@ -2960,38 +3028,6 @@
    "url": "https://asia.nikkei.com/economy/trade/china-exports-stay-brisk-as-annual-trade-surplus-tops-1tn"
   },
   {
-   "h": "India forms commando units for close combat along China border",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-10T04:50:52.760003Z",
-   "url": "https://asia.nikkei.com/politics/defense/india-forms-commando-units-for-close-combat-along-china-border"
-  },
-  {
-   "h": "SoftBank swings to first-half loss as AI hopes face new setbacks",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-10T03:53:28.252642Z",
-   "url": "https://asia.nikkei.com/business/softbank/softbank-swings-to-first-half-loss-as-ai-hopes-face-new-setbacks"
-  },
-  {
-   "h": "China bubble tea chain Mixue shuts more stores as growth model falters",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-10T03:53:28.252642Z",
-   "url": "https://asia.nikkei.com/business/food-beverage/china-bubble-tea-chain-mixue-shuts-more-stores-as-growth-model-falters"
-  },
-  {
-   "h": "‘We had the worst fight’: I want my husband to retire at 65, but I don’t want to lose his $280,000 salary. Is that unreasonable?",
-   "w": "“We have $2.6 million, most of it in his 401(k) and IRAs, plus $450,000 in a brokerage account.”",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-10T03:38:00Z",
-   "url": "https://www.marketwatch.com/story/we-had-the-worst-fight-weve-ever-had-i-want-my-husband-to-retire-at-65-but-i-dont-want-to-lose-his-280-000-salary-48511469?mod=mw_rss_topstories"
-  },
-  {
    "h": "Californians reject wealth tax for billionaires",
    "w": "Proposition 40 targeted Californian billionaires with a 5% tax on their total wealth, including assets such as shares as well as income.",
    "syms": [],
@@ -3034,45 +3070,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-10T00:48:00Z",
    "url": "https://www.marketwatch.com/story/the-short-seller-who-saw-signs-of-nvidias-china-scandal-months-ago-claims-megaspeed-isnt-the-ony-company-helping-china-access-chips-9877f544?mod=mw_rss_topstories"
-  },
-  {
-   "h": "The high price of Japan’s disaster-proof society",
-   "w": "Telling people to stock up is one thing but the Japanese know that building a stockpile of civil credibility requires greater effort",
-   "syms": [],
-   "src": "myFT — asia pacific",
-   "ts": "2026-11-10T00:47:30Z",
-   "url": "https://www.ft.com/content/559a8eeb-0e91-4920-8321-5066f81ea015?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Trump says FBI is ‘looking into’ Nvidia’s Jensen Huang",
-   "w": "US company has been rocked by allegations its chief executive had an affair with a Chinese spy",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "myFT — us",
-   "ts": "2026-11-10T00:35:56Z",
-   "url": "https://www.ft.com/content/cbabf2da-2079-4b69-88e3-0ba84cf8d6fd?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "ExxonMobil explores return to Venezuela after calling nation ‘uninvestable’",
-   "w": "US oil major says it has signed a memorandum of understanding with Caracas",
-   "syms": [
-    "BRENT"
-   ],
-   "src": "myFT — us",
-   "ts": "2026-11-10T00:34:45Z",
-   "url": "https://www.ft.com/content/cd3b2969-9c58-404a-a80a-c823754899ef?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "I took Vinted to court to get my money back",
-   "w": "The BBC hears from Vinted sellers who describe difficulties accessing money held in their online wallets.",
-   "syms": [],
-   "src": "BBC — Business",
-   "ts": "2026-11-10T00:27:37Z",
-   "url": "https://www.bbc.co.uk/news/articles/cm369e3l15lwo?at_medium=RSS&at_campaign=rss"
   }
  ],
  "summary": null
