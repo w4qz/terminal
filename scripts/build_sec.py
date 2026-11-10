@@ -37,14 +37,14 @@ BATCH = 150
 BUDGET = 150          # secondes
 KEEP = 12             # dépôts conservés par société
 
-FORMS = {"10-K": "Rapport annuel", "10-Q": "Rapport trimestriel", "8-K": "Annonce importante",
-         "20-F": "Rapport annuel (émetteur étranger)", "6-K": "Annonce (émetteur étranger)", "S-1": "Introduction en bourse",
-         "DEF 14A": "Convocation à l'assemblée", "SC 13D": "Franchissement de seuil (actif)", "SC 13G": "Franchissement de seuil (passif)",
-         "SCHEDULE 13D": "Franchissement de seuil (actif)", "SCHEDULE 13G": "Franchissement de seuil (passif)", "4": "Opération d'un dirigeant"}
-ITEMS_8K = {"1.01": "accord important", "1.02": "fin d'un accord", "2.01": "acquisition ou cession", "2.02": "résultats",
-            "2.03": "nouvelle dette", "2.05": "restructuration", "2.06": "dépréciation", "3.01": "radiation de la cote",
-            "4.01": "changement d'auditeur", "4.02": "comptes à corriger", "5.02": "changement de dirigeants",
-            "5.03": "statuts", "5.07": "vote de l'assemblée", "7.01": "communication au marché", "8.01": "autre événement"}
+FORMS = {"10-K": "Annual report", "10-Q": "Quarterly report", "8-K": "Current report",
+         "20-F": "Annual report (foreign issuer)", "6-K": "Current report (foreign issuer)", "S-1": "IPO registration",
+         "DEF 14A": "Proxy statement", "SC 13D": "Beneficial ownership (active)", "SC 13G": "Beneficial ownership (passive)",
+         "SCHEDULE 13D": "Beneficial ownership (active)", "SCHEDULE 13G": "Beneficial ownership (passive)", "4": "Insider transaction"}
+ITEMS_8K = {"1.01": "material agreement", "1.02": "termination of an agreement", "2.01": "acquisition or disposal", "2.02": "results",
+            "2.03": "new debt", "2.05": "restructuring", "2.06": "impairment", "3.01": "delisting",
+            "4.01": "change of auditor", "4.02": "non-reliance on financials", "5.02": "change of officers",
+            "5.03": "bylaws", "5.07": "shareholder vote", "7.01": "Reg FD disclosure", "8.01": "other event"}
 
 
 def log(msg):
@@ -108,7 +108,7 @@ def main() -> int:
                 if f == "8-K" and i < len(items) and items[i]:
                     motifs = [ITEMS_8K[x] for x in str(items[i]).split(",") if x.strip() in ITEMS_8K]
                     if motifs:
-                        lab += " : " + ", ".join(dict.fromkeys(motifs))
+                        lab += ": " + ", ".join(dict.fromkeys(motifs))
                 acc = accs[i].replace("-", "")
                 url = f"https://www.sec.gov/Archives/edgar/data/{cik}/{acc}/{docs[i]}" if i < len(docs) and docs[i] \
                     else f"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={cik}"
@@ -126,7 +126,7 @@ def main() -> int:
                 break
     cache = {k: v for k, v in cache.items() if k in pool}
     OUT.write_text(json.dumps({"generated_at": NOW.isoformat().replace("+00:00", "Z"),
-                               "source": "SEC EDGAR (dépôts officiels des sociétés cotées aux États-Unis)", "items": cache},
+                               "source": "SEC EDGAR (official filings of US-listed companies)", "items": cache},
                               ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     have = sum(1 for v in cache.values() if v.get("filings"))
     log(f"SEC : {ok} sociétés lues ce passage, {have}/{len(pool)} couvertes ({OUT.stat().st_size // 1024} Ko)")
