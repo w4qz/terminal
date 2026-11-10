@@ -46,29 +46,29 @@ TICKERS = {
 FRED_SERIES = {"2A": "DGS2", "5A": "DGS5", "10A": "DGS10", "30A": "DGS30"}
 
 RSS_FEEDS = [
-    ("Financial Times — Marchés", "https://www.ft.com/markets?format=rss"),
-    ("Financial Times — Économie mondiale", "https://www.ft.com/global-economy?format=rss"),
-    ("Financial Times — Entreprises", "https://www.ft.com/companies?format=rss"),
-    ("Financial Times — Monde", "https://www.ft.com/world?format=rss"),
-    ("CNBC — Marchés", "https://www.cnbc.com/id/100003114/device/rss/rss.html"),
+    ("Financial Times — Markets", "https://www.ft.com/markets?format=rss"),
+    ("Financial Times — Global economy", "https://www.ft.com/global-economy?format=rss"),
+    ("Financial Times — Companies", "https://www.ft.com/companies?format=rss"),
+    ("Financial Times — World", "https://www.ft.com/world?format=rss"),
+    ("CNBC — Markets", "https://www.cnbc.com/id/100003114/device/rss/rss.html"),
     ("BBC — Business", "https://feeds.bbci.co.uk/news/business/rss.xml"),
     ("Le Monde — Économie", "https://www.lemonde.fr/economie/rss_full.xml"),
-    ("Wall Street Journal — Marchés", "https://feeds.a.dj.com/rss/RSSMarketsMain.xml"),
-    ("Wall Street Journal — Monde", "https://feeds.a.dj.com/rss/RSSWorldNews.xml"),
+    ("Wall Street Journal — Markets", "https://feeds.a.dj.com/rss/RSSMarketsMain.xml"),
+    ("Wall Street Journal — World", "https://feeds.a.dj.com/rss/RSSWorldNews.xml"),
     ("MarketWatch", "https://feeds.content.dowjones.io/public/rss/mw_topstories"),
     ("Yahoo Finance", "https://finance.yahoo.com/news/rssindex"),
     ("Nikkei Asia", "https://asia.nikkei.com/rss/feed/nar"),
     ("The Economist — Finance", "https://www.economist.com/finance-and-economics/rss.xml"),
     ("Investing.com France", "https://fr.investing.com/rss/news.rss"),
-    ("Réserve fédérale — communiqués", "https://www.federalreserve.gov/feeds/press_all.xml"),
-    ("BCE — communiqués", "https://www.ecb.europa.eu/rss/press.html"),
+    ("Federal Reserve — press releases", "https://www.federalreserve.gov/feeds/press_all.xml"),
+    ("ECB — press releases", "https://www.ecb.europa.eu/rss/press.html"),
 ]
 # Flux personnel myFT (sujets suivis sur ft.com), gardé dans le secret GitHub FT_MYFT_RSS.
 # Plusieurs adresses possibles, séparées par des virgules. Les articles payants y figurent
 # avec leur titre et leur chapô ; le lien ouvre ft.com, où l'abonné est connecté.
 for _i, _u in enumerate([u.strip() for u in os.getenv("FT_MYFT_RSS", "").split(",") if u.strip()]):
     _slug = _u.split("ft.com/")[-1].split("?")[0].replace("stream/", "")
-    _slug = "sujet suivi" if re.fullmatch(r"[0-9a-f-]{36}", _slug) else _slug.replace("-", " ")
+    _slug = "followed topic" if re.fullmatch(r"[0-9a-f-]{36}", _slug) else _slug.replace("-", " ")
     RSS_FEEDS.insert(_i, (f"myFT — {_slug}", _u))
 MAX_NEWS = 100
 
@@ -182,7 +182,7 @@ def fetch_quotes(previous: dict) -> dict:
         except Exception as e:
             old = (previous.get("quotes") or {}).get(sym)
             if old:
-                old = {**old, "st": "STALE", "src": old.get("src", "") + " — échec de la dernière mise à jour"}
+                old = {**old, "st": "STALE", "src": old.get("src", "") + " — last update failed"}
                 out[sym] = old
             log(f"  ! {sym} ({t}) : {e}")
     log(f"Prix : {len(out)} cotations écrites")
@@ -215,8 +215,8 @@ FUND_FIELDS = {   # clé du terminal ← clé Yahoo
     "lastDiv": "lastDividendValue", "trailDiv": "trailingAnnualDividendRate",
 }
 PCT_FIELDS = {"divYield", "revGrowth", "epsGrowth", "grossMargin", "opMargin", "netMargin", "roe"}
-RATING_FR = {"strong_buy": "Achat fort", "buy": "Achat", "hold": "Conserver",
-             "underperform": "Sous-performance", "sell": "Vente", "none": None}
+RATING_FR = {"strong_buy": "Strong buy", "buy": "Buy", "hold": "Hold",
+             "underperform": "Underperform", "sell": "Sell", "none": None}
 
 
 def fix_div_yield(f: dict, info: dict) -> None:
@@ -261,9 +261,9 @@ def sanitize_fund(f: dict, sym: str, info: dict) -> None:
         if sym in SECTOR_FIX:
             f["sector"] = SECTOR_FIX[sym]
         elif qt in ("ETF", "MUTUALFUND") or re.search(r"\b(trust|fund|investment)\b", str(info.get("longName", "")), re.I):
-            f["sector"] = "Fonds et trusts"
+            f["sector"] = "Funds and trusts"
         elif len(f) > 3:
-            f["sector"] = "Non classé"
+            f["sector"] = "Unclassified"
 
 
 def fetch_fundamentals() -> dict:
@@ -386,12 +386,12 @@ def ai_summary(quotes: dict, news: list, previous: dict) -> dict | None:
     mk = "\n".join(f"{s}: {q['p']} ({q.get('pct')} %) [{q['st']}]" for s, q in quotes.items())
     hd = "\n".join(f"- {n['h']} ({n['src']})" for n in news[:20])
     prompt = (
-        "Tu es analyste pour un conseiller en investissement à Monaco. En français, en 150 mots "
-        "maximum, rédige la lecture de marché du moment à partir UNIQUEMENT des données ci-dessous. "
-        "Trois paragraphes courts : (1) ce qui fait bouger les marchés, (2) taux, change et matières "
-        "premières, (3) points à surveiller. N'invente aucun chiffre absent des données. "
-        "Pas de recommandation d'achat ou de vente.\n\n"
-        f"COTATIONS :\n{mk}\n\nTITRES DE PRESSE :\n{hd}"
+        "You are an analyst for an investment adviser in Monaco. In English, in 150 words "
+        "maximum, write the current market wrap using ONLY the data below (some headlines may be in "
+        "French: translate them). Three short paragraphs, no markdown: (1) what is moving markets, "
+        "(2) rates, FX and commodities, (3) what to watch. Do not invent any figure that is not in the data. "
+        "No buy or sell recommendation.\n\n"
+        f"PRICES:\n{mk}\n\nHEADLINES:\n{hd}"
     )
     base = "https://generativelanguage.googleapis.com/v1beta"
     headers = {"x-goog-api-key": key, "Content-Type": "application/json"}
@@ -418,10 +418,11 @@ def ai_summary(quotes: dict, news: list, previous: dict) -> dict | None:
             raise RuntimeError(f"HTTP {r.status_code} : {r.text[:300]}")
         text = r.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
         log(f"Synthèse IA : {len(text)} caractères ({model})")
-        return {"text": text, "model": model, "ts": NOW.isoformat().replace("+00:00", "Z")}
+        return {"text": text, "model": model, "lang": "en", "ts": NOW.isoformat().replace("+00:00", "Z")}
     except Exception as e:
         log(f"  ! Gemini : {e}")
-        return previous.get("summary")
+        prev = previous.get("summary")
+        return prev if prev and prev.get("lang") == "en" else None   # an old French summary is dropped
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -430,7 +431,7 @@ def main() -> int:
     # un fichier vide évite une erreur 404 à chaque visite (le script le remplacera ensuite).
     ft = ROOT / "ft.json"
     if not ft.exists():
-        ft.write_text(json.dumps({"generated_at": None, "items": [], "note": "Apps Script des newsletters FT non installé"}), encoding="utf-8")
+        ft.write_text(json.dumps({"generated_at": None, "items": [], "note": "FT newsletter Apps Script not installed"}), encoding="utf-8")
     previous = load_previous()
     quotes = fetch_quotes(previous)
     news = fetch_news(previous)
