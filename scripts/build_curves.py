@@ -65,7 +65,7 @@ def curve_de():
                 pts.append(p)
         except Exception as e:
             log(f"  ! Bundesbank {t} : {str(e)[:90]}")
-    return pts, "Bundesbank — rendements des titres fédéraux allemands (maturité résiduelle)", "quotidien"
+    return pts, "Bundesbank — German federal securities yields (residual maturity)", "quotidien"
 
 
 # ── Japon : ministère des Finances (JGB, maturités constantes) ──
@@ -99,7 +99,7 @@ def curve_jp():
         p = point(f"{m.group(1)}A", [(d.date().isoformat(), None if pd.isna(v) else float(v)) for d, v in zip(df["Date"], vals)])
         if p:
             pts.append(p)
-    return pts, "Ministère des Finances du Japon — JGB à maturité constante", "quotidien"
+    return pts, "Japan Ministry of Finance — constant-maturity JGBs", "quotidien"
 
 
 # ── Suisse : Banque nationale suisse (rendements de la Confédération) ──
@@ -112,7 +112,7 @@ def curve_ch():
         for d, k, v in re.findall(r"\"?(\d{4}-\d{2}(?:-\d{2})?)\"?;\"?(\d+)J\"?;\"?(-?\d+\.?\d*)\"?", r.text):
             by.setdefault(int(k), []).append((d, float(v)))
         pts = [point(f"{k}A", sorted(v)) for k, v in sorted(by.items())]
-        return [p for p in pts if p], "Banque nationale suisse — rendements des obligations de la Confédération", "quotidien"
+        return [p for p in pts if p], "Swiss National Bank — Confederation bond yields", "quotidien"
     except Exception as e:
         log(f"  ! BNS : {str(e)[:90]}")
         return [], "", ""
@@ -139,7 +139,7 @@ def curve_uk():
                     if p:
                         pts.append(p)
                         break
-        return pts, "Bank of England — courbe nominale des gilts (5, 10 et 20 ans)", "quotidien"
+        return pts, "Bank of England — nominal gilt curve (5, 10 and 20 years)", "quotidien"
     except Exception as e:
         log(f"  ! BoE : {str(e)[:90]}")
         return [], "", ""
@@ -198,7 +198,7 @@ def curve_fr():
         except Exception as e:
             log(f"  ! Webstat {k} : {str(e)[:100]}")
     if pts:
-        return pts, "Banque de France (Webstat) — taux de l'échéance constante des OAT", "quotidien"
+        return pts, "Banque de France (Webstat) — constant-maturity OAT yields", "quotidien"
     log("  Webstat sans résultat : repli sur les cotations CNBC (courbe complète)")
     return curve_fr_it("FR", "IRLTLT01FRM156N")
 
@@ -219,7 +219,7 @@ def ten_year(sid):
         p = point("10A", obs)
         if p and len(obs) > 1:
             p["y1m"] = round(obs[-2][1], 3)
-        return ([p] if p else []), "OCDE via FRED — taux à 10 ans (moyenne mensuelle)", "mensuel"
+        return ([p] if p else []), "OECD via FRED — 10-year yield (monthly average)", "mensuel"
     except Exception as e:
         log(f"  ! FRED {sid} : {str(e)[:90]}")
         return [], "", ""
@@ -275,7 +275,7 @@ def curve_cnbc(cc):
 def curve_fr_it(cc, oecd_sid):
     pts = curve_cnbc(cc)
     if len(pts) >= 3:
-        return pts, "CNBC — rendements cotés des emprunts d'État (différé ~15 min)", "intrajournalier"
+        return pts, "CNBC — quoted government bond yields (~15 min delay)", "intrajournalier"
     log(f"  CNBC {cc} insuffisant : repli sur le 10 ans OCDE (moyenne mensuelle)")
     return ten_year(oecd_sid)
 
@@ -393,10 +393,10 @@ def clean_curve(name, pts):
 FILL_CNBC = {"DE": "DE", "UK": "GB", "JP": "JP", "CH": "CH", "FR": "FR"}   # FR : seulement quand la courbe vient de Webstat
 
 COUNTRIES = [
-    ("DE", "Allemagne", curve_de),
+    ("DE", "Germany", curve_de),
     ("FR", "France", lambda: curve_fr() if WEBSTAT_KEY else curve_fr_it("FR", "IRLTLT01FRM156N")),
-    ("IT", "Italie", lambda: curve_fr_it("IT", "IRLTLT01ITM156N")), ("UK", "Royaume-Uni", curve_uk),
-    ("JP", "Japon", curve_jp), ("CH", "Suisse", curve_ch),
+    ("IT", "Italy", lambda: curve_fr_it("IT", "IRLTLT01ITM156N")), ("UK", "United Kingdom", curve_uk),
+    ("JP", "Japan", curve_jp), ("CH", "Switzerland", curve_ch),
 ]
 
 
@@ -427,7 +427,7 @@ def main() -> int:
                     p["y"], p["ts"], p["live"] = c["y"], c["ts"], True
                     n_live += 1
             if n_live:
-                src = f"CNBC (cotations de marché, différé ~15 min) · courbe et variation 1 mois : {src}"
+                src = f"CNBC (market quotes, ~15 min delay) · curve and 1-month change: {src}"
                 freq = "intrajournalier"
             have = {p["t"] for p in pts}
             extra = [p for p in live if p["t"] not in have]
@@ -436,7 +436,7 @@ def main() -> int:
                 p["cnbc"] = True
             if extra:
                 pts = sorted(pts + extra, key=lambda p: TEN_ORD_PY.index(p["t"]) if p["t"] in TEN_ORD_PY else 99)
-                src = (src or "CNBC") + f" · {len(extra)} maturités complétées par CNBC"
+                src = (src or "CNBC") + f" · {len(extra)} maturities filled in from CNBC"
                 log(f"  {name} : {len(extra)} maturités ajoutées depuis CNBC")
         if pts:
             hist = pts[0].pop("_hist", None)
