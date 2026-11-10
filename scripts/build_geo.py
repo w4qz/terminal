@@ -40,29 +40,29 @@ GDELT = "https://api.gdeltproject.org/api/v2/doc/doc"
 
 # Zones suivies : (clé, nom affiché, requête GDELT, [longitude, latitude])
 HOTSPOTS = [
-    ("iran", "Iran / Golfe", "(iran OR hormuz OR tehran)", [53, 32]),
-    ("ukraine", "Ukraine / Russie", "(ukraine OR kyiv OR donbas)", [31, 49]),
-    ("israel", "Israël / Gaza / Liban", "(gaza OR israel OR hezbollah)", [35, 31.5]),
-    ("redsea", "Mer Rouge / Yémen", '("red sea" OR houthi OR houthis OR yemen)', [42, 15.5]),
-    ("taiwan", "Taïwan / mer de Chine", '(taiwan OR "south china sea")', [121, 23.7]),
+    ("iran", "Iran / Gulf", "(iran OR hormuz OR tehran)", [53, 32]),
+    ("ukraine", "Ukraine / Russia", "(ukraine OR kyiv OR donbas)", [31, 49]),
+    ("israel", "Israel / Gaza / Lebanon", "(gaza OR israel OR hezbollah)", [35, 31.5]),
+    ("redsea", "Red Sea / Yemen", '("red sea" OR houthi OR houthis OR yemen)', [42, 15.5]),
+    ("taiwan", "Taiwan / South China Sea", '(taiwan OR "south china sea")', [121, 23.7]),
     ("venezuela", "Venezuela", "(venezuela OR maduro OR caracas)", [-66, 7]),
-    ("korea", "Corée du Nord", '("north korea" OR pyongyang)', [127, 40]),
-    ("kashmir", "Inde / Pakistan", '(kashmir OR "india pakistan")', [74, 33]),
+    ("korea", "North Korea", '("north korea" OR pyongyang)', [127, 40]),
+    ("kashmir", "India / Pakistan", '(kashmir OR "india pakistan")', [74, 33]),
     ("sahel", "Sahel", '(sahel OR "burkina faso" OR mali OR niger) (attack OR coup OR jihadist)', [-2, 15]),
 ]
 
 # Recherche publique : flux RSS officiels. Un flux qui ne répond pas est simplement ignoré
 # (il apparaît en échec dans research_sources, lu par l'onglet Diagnostic).
 RESEARCH_FEEDS = [
-    ("Fed — discours", "Banques centrales", "https://www.federalreserve.gov/feeds/speeches.xml"),
-    ("Fed — communiqués", "Banques centrales", "https://www.federalreserve.gov/feeds/press_all.xml"),
-    ("Fed de New York — Liberty Street", "Taux", "https://libertystreeteconomics.newyorkfed.org/feed/"),
-    ("BCE — communiqués et discours", "Banques centrales", "https://www.ecb.europa.eu/rss/press.html"),
-    ("BCE — blog", "Banques centrales", "https://www.ecb.europa.eu/rss/blog.html"),
-    ("Bank of England — discours", "Banques centrales", "https://www.bankofengland.co.uk/rss/speeches"),
+    ("Fed — speeches", "Banques centrales", "https://www.federalreserve.gov/feeds/speeches.xml"),
+    ("Fed — press releases", "Banques centrales", "https://www.federalreserve.gov/feeds/press_all.xml"),
+    ("New York Fed — Liberty Street", "Taux", "https://libertystreeteconomics.newyorkfed.org/feed/"),
+    ("ECB — press releases and speeches", "Banques centrales", "https://www.ecb.europa.eu/rss/press.html"),
+    ("ECB — blog", "Banques centrales", "https://www.ecb.europa.eu/rss/blog.html"),
+    ("Bank of England — speeches", "Banques centrales", "https://www.bankofengland.co.uk/rss/speeches"),
     ("Bank of England — publications", "Banques centrales", "https://www.bankofengland.co.uk/rss/publications"),
-    ("BRI — discours de banquiers centraux", "Banques centrales", "https://www.bis.org/doclist/cbspeeches.rss"),
-    ("BRI — recherche", "Taux", "https://www.bis.org/doclist/reshub_papers.rss"),
+    ("BIS — central bankers' speeches", "Banques centrales", "https://www.bis.org/doclist/cbspeeches.rss"),
+    ("BIS — research", "Taux", "https://www.bis.org/doclist/reshub_papers.rss"),
     ("CEPR — VoxEU", "Macro", "https://cepr.org/rss/vox-content"),
     ("EIA — Today in Energy", "Pétrole", "https://www.eia.gov/rss/todayinenergy.xml"),
 ]
@@ -194,7 +194,7 @@ def main() -> int:
     log(f"Points chauds : {done} zones actualisées, {len(hs_list)} au total")
     OUT.write_text(json.dumps({"generated_at": NOW.isoformat().replace("+00:00", "Z"),
                                "hotspots": hs_list, "hotspots_at": hs_ts,
-                               "hotspots_src": "GDELT Project — articles de presse en anglais, 24 h glissantes",
+                               "hotspots_src": "GDELT Project — English-language press articles, rolling 24h",
                                "research": res or prev.get("research", []), "research_sources": res_status},
                               ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     return 0
