@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-10T15:46:34.780475Z",
+ "generated_at": "2026-11-10T16:36:19.608277Z",
  "eco": {
   "prints": [
    {
@@ -30,7 +30,7 @@
     "prev": 3.03,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-10",
+    "pub": "2026-11-09",
     "freq": "M",
     "src": "FRED PCEPILFE",
     "url": "https://fred.stlouisfed.org/series/PCEPILFE"
@@ -41,7 +41,7 @@
     "prev": 60.0,
     "fmt": "k",
     "ts": "2026-10-01",
-    "pub": "2026-11-10",
+    "pub": "2026-11-09",
     "freq": "M",
     "src": "FRED PAYEMS",
     "url": "https://fred.stlouisfed.org/series/PAYEMS"
@@ -52,7 +52,7 @@
     "prev": 4.2,
     "fmt": "%",
     "ts": "2026-10-01",
-    "pub": "2026-11-10",
+    "pub": "2026-11-09",
     "freq": "M",
     "src": "FRED UNRATE",
     "url": "https://fred.stlouisfed.org/series/UNRATE"
@@ -63,7 +63,7 @@
     "prev": 195000.0,
     "fmt": "n",
     "ts": "2026-10-31",
-    "pub": "2026-11-10",
+    "pub": "2026-11-09",
     "freq": "W",
     "src": "FRED ICSA",
     "url": "https://fred.stlouisfed.org/series/ICSA"
@@ -74,7 +74,7 @@
     "prev": 2.2,
     "fmt": "%",
     "ts": "2026-07-01",
-    "pub": "2026-11-10",
+    "pub": "2026-11-09",
     "freq": "Q",
     "src": "FRED A191RL1Q225SBEA",
     "url": "https://fred.stlouisfed.org/series/A191RL1Q225SBEA"
@@ -85,7 +85,7 @@
     "prev": 1.29,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-10",
+    "pub": "2026-11-09",
     "freq": "M",
     "src": "FRED RSAFS",
     "url": "https://fred.stlouisfed.org/series/RSAFS"
@@ -96,7 +96,7 @@
     "prev": 51.7,
     "fmt": "n",
     "ts": "2026-09-01",
-    "pub": "2026-11-10",
+    "pub": "2026-11-09",
     "freq": "M",
     "src": "FRED UMCSENT",
     "url": "https://fred.stlouisfed.org/series/UMCSENT"
@@ -110,16 +110,6 @@
     "freq": "M",
     "src": "Eurostat prc_hicp_minr",
     "url": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table"
-   },
-   {
-    "k": "Unemployment rate (euro area)",
-    "v": 6.6,
-    "prev": 6.5,
-    "fmt": "%",
-    "ts": "2026-09-01",
-    "freq": "M",
-    "src": "BCE LFSI",
-    "url": "https://data.ecb.europa.eu/data/datasets/LFSI"
    }
   ],
   "calendar": [
@@ -411,65 +401,65 @@
    {
     "d": "2027-01-27",
     "pre": 4.162,
-    "post": 4.295,
-    "move_bp": 13.3,
+    "post": 4.315,
+    "move_bp": 15.3,
     "p_cut": 0,
-    "p_hike": 53
+    "p_hike": 61
    },
    {
     "d": "2027-03-17",
-    "pre": 4.295,
-    "post": 4.461,
+    "pre": 4.315,
+    "post": 4.481,
     "move_bp": 16.6,
     "p_cut": 0,
     "p_hike": 66
    },
    {
     "d": "2027-04-28",
-    "pre": 4.461,
-    "post": 4.52,
-    "move_bp": 5.9,
+    "pre": 4.481,
+    "post": 4.55,
+    "move_bp": 6.9,
     "p_cut": 0,
-    "p_hike": 24
+    "p_hike": 28
    },
    {
     "d": "2027-06-09",
-    "pre": 4.52,
-    "post": 4.599,
+    "pre": 4.55,
+    "post": 4.629,
     "move_bp": 7.9,
     "p_cut": 0,
     "p_hike": 31
    },
    {
     "d": "2027-07-28",
-    "pre": 4.599,
-    "post": 4.605,
-    "move_bp": 0.6,
+    "pre": 4.629,
+    "post": 4.64,
+    "move_bp": 1.1,
     "p_cut": 0,
-    "p_hike": 3
+    "p_hike": 5
    },
    {
     "d": "2027-09-15",
-    "pre": 4.605,
-    "post": 4.615,
-    "move_bp": 1.0,
+    "pre": 4.64,
+    "post": 4.64,
+    "move_bp": 0.0,
     "p_cut": 0,
-    "p_hike": 4
+    "p_hike": 0
    },
    {
     "d": "2027-10-27",
-    "pre": 4.615,
-    "post": 4.605,
+    "pre": 4.64,
+    "post": 4.63,
     "move_bp": -1.0,
     "p_cut": 4,
     "p_hike": 0
    },
    {
     "d": "2027-12-08",
-    "pre": 4.605,
-    "post": 4.565,
-    "move_bp": -4.0,
-    "p_cut": 16,
+    "pre": 4.63,
+    "post": 4.596,
+    "move_bp": -3.4,
+    "p_cut": 13,
     "p_hike": 0
    }
   ],
@@ -480,77 +470,77 @@
    "pts": [
     {
      "t": "1M",
-     "y": 3.953,
+     "y": 3.95,
      "y1m": 4.13,
      "ts": "2026-11-10",
      "live": true
     },
     {
      "t": "3M",
-     "y": 4.226,
+     "y": 4.232,
      "y1m": 4.25,
      "ts": "2026-11-10",
      "live": true
     },
     {
      "t": "6M",
-     "y": 4.409,
+     "y": 4.433,
      "y1m": 4.32,
      "ts": "2026-11-10",
      "live": true
     },
     {
      "t": "1A",
-     "y": 4.539,
+     "y": 4.561,
      "y1m": 4.47,
      "ts": "2026-11-10",
      "live": true
     },
     {
      "t": "2A",
-     "y": 4.733,
+     "y": 4.752,
      "y1m": 4.8,
      "ts": "2026-11-10",
      "live": true
     },
     {
      "t": "3A",
-     "y": 4.779,
+     "y": 4.797,
      "y1m": 4.89,
      "ts": "2026-11-10",
      "live": true
     },
     {
      "t": "5A",
-     "y": 4.814,
+     "y": 4.83,
      "y1m": 5.02,
      "ts": "2026-11-10",
      "live": true
     },
     {
      "t": "7A",
-     "y": 4.891,
+     "y": 4.905,
      "y1m": 5.13,
      "ts": "2026-11-10",
      "live": true
     },
     {
      "t": "10A",
-     "y": 4.988,
+     "y": 5.004,
      "y1m": 5.24,
      "ts": "2026-11-10",
      "live": true
     },
     {
      "t": "20A",
-     "y": 5.392,
+     "y": 5.408,
      "y1m": 5.65,
      "ts": "2026-11-10",
      "live": true
     },
     {
      "t": "30A",
-     "y": 5.35,
+     "y": 5.364,
      "y1m": 5.6,
      "ts": "2026-11-10",
      "live": true
@@ -562,99 +552,67 @@
    "pts": [
     {
      "t": "3M",
-     "y": 2.612,
-     "y1m": 2.538,
-     "ts": "2026-11-09"
+     "y": null
     },
     {
      "t": "6M",
-     "y": 2.723,
-     "y1m": 2.695,
-     "ts": "2026-11-09"
+     "y": null
     },
     {
      "t": "1A",
-     "y": 2.853,
-     "y1m": 2.892,
-     "ts": "2026-11-09"
+     "y": null
     },
     {
      "t": "2A",
-     "y": 2.939,
-     "y1m": 3.052,
-     "ts": "2026-11-09"
+     "y": null
     },
     {
      "t": "3A",
-     "y": 2.958,
-     "y1m": 3.11,
-     "ts": "2026-11-09"
+     "y": null
     },
     {
      "t": "4A",
-     "y": 2.978,
-     "y1m": 3.156,
-     "ts": "2026-11-09"
+     "y": null
     },
     {
      "t": "5A",
-     "y": 3.013,
-     "y1m": 3.208,
-     "ts": "2026-11-09"
+     "y": null
     },
     {
      "t": "6A",
-     "y": 3.058,
-     "y1m": 3.269,
-     "ts": "2026-11-09"
+     "y": null
     },
     {
      "t": "7A",
-     "y": 3.111,
-     "y1m": 3.333,
-     "ts": "2026-11-09"
+     "y": null
     },
     {
      "t": "8A",
-     "y": 3.165,
-     "y1m": 3.398,
-     "ts": "2026-11-09"
+     "y": null
     },
     {
      "t": "9A",
-     "y": 3.22,
-     "y1m": 3.46,
-     "ts": "2026-11-09"
+     "y": null
     },
     {
      "t": "10A",
-     "y": 3.272,
-     "y1m": 3.519,
-     "ts": "2026-11-09"
+     "y": null
     },
     {
      "t": "15A",
-     "y": 3.474,
-     "y1m": 3.733,
-     "ts": "2026-11-09"
+     "y": null
     },
     {
      "t": "20A",
-     "y": 3.575,
-     "y1m": 3.824,
-     "ts": "2026-11-09"
+     "y": null
     },
     {
      "t": "25A",
-     "y": 3.599,
-     "y1m": 3.829,
-     "ts": "2026-11-09"
+     "y": null
     },
     {
      "t": "30A",
-     "y": 3.571,
-     "y1m": 3.778,
-     "ts": "2026-11-09"
+     "y": null
     }
    ],
    "src": "ECB — euro area AAA government bond curve (zero-coupon yields)"
