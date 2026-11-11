@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-11T21:07:40.949197Z",
+ "generated_at": "2026-11-11T22:15:50.525192Z",
  "eco": {
   "prints": [
    {
@@ -8,7 +8,7 @@
     "prev": null,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-11",
+    "pub": "2026-11-10",
     "freq": "M",
     "src": "FRED CPIAUCSL",
     "url": "https://fred.stlouisfed.org/series/CPIAUCSL"
@@ -19,7 +19,7 @@
     "prev": null,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-11",
+    "pub": "2026-11-10",
     "freq": "M",
     "src": "FRED CPILFESL",
     "url": "https://fred.stlouisfed.org/series/CPILFESL"
@@ -30,7 +30,7 @@
     "prev": 3.03,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-11",
+    "pub": "2026-11-10",
     "freq": "M",
     "src": "FRED PCEPILFE",
     "url": "https://fred.stlouisfed.org/series/PCEPILFE"
@@ -41,7 +41,7 @@
     "prev": 60.0,
     "fmt": "k",
     "ts": "2026-10-01",
-    "pub": "2026-11-11",
+    "pub": "2026-11-10",
     "freq": "M",
     "src": "FRED PAYEMS",
     "url": "https://fred.stlouisfed.org/series/PAYEMS"
@@ -52,7 +52,7 @@
     "prev": 4.2,
     "fmt": "%",
     "ts": "2026-10-01",
-    "pub": "2026-11-11",
+    "pub": "2026-11-10",
     "freq": "M",
     "src": "FRED UNRATE",
     "url": "https://fred.stlouisfed.org/series/UNRATE"
@@ -63,7 +63,7 @@
     "prev": 195000.0,
     "fmt": "n",
     "ts": "2026-10-31",
-    "pub": "2026-11-11",
+    "pub": "2026-11-10",
     "freq": "W",
     "src": "FRED ICSA",
     "url": "https://fred.stlouisfed.org/series/ICSA"
@@ -74,7 +74,7 @@
     "prev": 2.2,
     "fmt": "%",
     "ts": "2026-07-01",
-    "pub": "2026-11-11",
+    "pub": "2026-11-10",
     "freq": "Q",
     "src": "FRED A191RL1Q225SBEA",
     "url": "https://fred.stlouisfed.org/series/A191RL1Q225SBEA"
@@ -85,7 +85,7 @@
     "prev": 1.29,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-11",
+    "pub": "2026-11-10",
     "freq": "M",
     "src": "FRED RSAFS",
     "url": "https://fred.stlouisfed.org/series/RSAFS"
@@ -96,7 +96,7 @@
     "prev": 51.7,
     "fmt": "n",
     "ts": "2026-09-01",
-    "pub": "2026-11-11",
+    "pub": "2026-11-10",
     "freq": "M",
     "src": "FRED UMCSENT",
     "url": "https://fred.stlouisfed.org/series/UMCSENT"
@@ -421,26 +421,26 @@
    {
     "d": "2027-04-28",
     "pre": 4.497,
-    "post": 4.56,
-    "move_bp": 6.3,
+    "post": 4.555,
+    "move_bp": 5.8,
     "p_cut": 0,
-    "p_hike": 25
+    "p_hike": 23
    },
    {
     "d": "2027-06-09",
-    "pre": 4.56,
-    "post": 4.646,
-    "move_bp": 8.6,
+    "pre": 4.555,
+    "post": 4.648,
+    "move_bp": 9.3,
     "p_cut": 0,
-    "p_hike": 34
+    "p_hike": 37
    },
    {
     "d": "2027-07-28",
-    "pre": 4.646,
+    "pre": 4.648,
     "post": 4.665,
-    "move_bp": 1.9,
+    "move_bp": 1.7,
     "p_cut": 0,
-    "p_hike": 8
+    "p_hike": 7
    },
    {
     "d": "2027-09-15",
@@ -453,17 +453,17 @@
    {
     "d": "2027-10-27",
     "pre": 4.685,
-    "post": 4.67,
-    "move_bp": -1.5,
-    "p_cut": 6,
+    "post": 4.675,
+    "move_bp": -1.0,
+    "p_cut": 4,
     "p_hike": 0
    },
    {
     "d": "2027-12-08",
-    "pre": 4.67,
-    "post": 4.636,
-    "move_bp": -3.4,
-    "p_cut": 13,
+    "pre": 4.675,
+    "post": 4.635,
+    "move_bp": -4.0,
+    "p_cut": 16,
     "p_hike": 0
    }
   ],
