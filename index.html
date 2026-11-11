@@ -2034,7 +2034,11 @@ return b; }
 function termMsg(t){ const e=document.getElementById('msgline'); if(e) e.textContent=t; }
 function wireGP(el, sym){ const g=id=>el.querySelector('#'+id); if(!g('gpfrom')) return;
 const redraw=()=>{ if(SEC.bars) drawCandles(); };
-g('gpfrom').onchange=g('gpto').onchange=()=>{ SEC.from=g('gpfrom').value||null; SEC.to=g('gpto').value||null; if(SEC.from&&SEC.to&&SEC.to<SEC.from){ termMsg('Invalid range: the end date is before the start date.'); return; } termMsg(SEC.from?`Range ${SEC.from} → ${SEC.to||'today'}.`:'Custom range removed.'); viewSecurity(); };
+// plage : on attend une année complète (≥ 1900) et une pause de frappe avant de recharger la vue, sinon la saisie de l'année s'interrompt au premier chiffre
+const okD=v=>!v||(+v.slice(0,4)>=1900&&+v.slice(0,4)<=2100);
+const applyRange=()=>{ clearTimeout(SEC.rangeT); const f=g('gpfrom').value||null, t=g('gpto').value||null; if(!okD(f)||!okD(t)) return; if(f===(SEC.from||null)&&t===(SEC.to||null)) return;
+SEC.from=f; SEC.to=t; if(f&&t&&t<f){ termMsg('Invalid range: the end date is before the start date.'); return; } termMsg(f?`Range ${f} → ${t||'today'}.`:'Custom range removed.'); viewSecurity(); };
+for(const id of ['gpfrom','gpto']){ const e=g(id); e.onchange=e.oninput=()=>{ clearTimeout(SEC.rangeT); SEC.rangeT=setTimeout(applyRange,1200); }; e.onblur=applyRange; e.onkeydown=ev=>{ if(ev.key==='Enter') applyRange(); }; }
 g('gpup').onchange=()=>{ SEC.style=g('gpup').value; viewSecurity(); };
 const ma=()=>{ SEC.ma1=+g('gpma1').value||0; SEC.ma2=+g('gpma2').value||0; SEC.ma=!!(SEC.ma1||SEC.ma2); redraw(); };
 g('gpma1').onchange=g('gpma2').onchange=ma;
