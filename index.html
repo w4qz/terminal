@@ -284,6 +284,8 @@ body.bbg #msgline{display:block;flex:none;background:#000;color:#2ee05f;padding:
 .gpr label{color:var(--txt2);font-size:11px;margin-left:6px}.gpr label:first-child{margin-left:0}
 .gpr input,.gpr select{font:inherit;font-size:11px;background:var(--raised);color:var(--txt);border:1px solid var(--line);padding:1px 6px;height:20px}
 .gpr input[type=number]{width:52px}.gpr input[type=date]{width:128px}
+.gpst{font:inherit;font-size:11px;height:20px;padding:0 8px;background:var(--raised);color:var(--txt2);border:1px solid var(--line);cursor:pointer}.gpst.on{color:var(--txt);border-color:var(--acc,#4d8fd6)}
+body.bbg .gpst{background:#000;color:#fb8b1e;border-color:#fb8b1e;border-radius:0}body.bbg .gpst.on{background:#fb8b1e;color:#000}
 body.bbg .gph{background:#c8102e!important;color:#fff!important;border-bottom:none!important}
 body.bbg .gph .gpt{background:#000;color:#ffb000;padding:0 6px}
 body.bbg .gph .gpb{background:#000;color:#ffb000;border:1px solid #000;border-radius:0}
@@ -1966,6 +1968,7 @@ el.innerHTML=`
 <div class="gpr"><label>Period</label><select id="gpper">${[['D','Daily'],['W','Weekly'],['M','Monthly']].map(([v,l])=>`<option value="${v}"${SEC.per===v?' selected':''}>${l}</option>`).join('')}</select>
 <label>Lower</label><select id="gplow"><option value="vol"${SEC.vol?' selected':''}>Volume</option><option value="none"${SEC.vol?'':' selected'}>None</option></select>
 <label>Mov. Avg</label><input type="number" min="1" max="200" id="gpvma" value="${SEC.vma}">
+<label>Studies</label><button type="button" class="gpst${SEC.rsi?' on':''}" data-study="rsi" aria-pressed="${!!SEC.rsi}">RSI 14</button><button type="button" class="gpst${SEC.macd?' on':''}" data-study="macd" aria-pressed="${!!SEC.macd}">MACD 12,26,9</button>
 <div class="rng" role="group" aria-label="Quick period" style="margin-left:auto">${Object.keys(RANGE_CFG).map(r=>`<button type="button" data-r="${r}" class="${!SEC.from&&r===SEC.range?'on':''}">${RL(r)}</button>`).join('')}</div>
 <span class="mut" style="font-size:10px" id="secperf"></span></div></div>
 <div class="pbody" style="position:relative"><canvas id="seccv" height="380" role="img" aria-label="Price chart of ${esc(sym)}"></canvas>
@@ -2006,7 +2009,8 @@ if(WORKER_URL) loadCandles(sym, F, px);
 
 const RANGE_CFG={'1J':{f:'1d',n:9999},'1M':{f:'1y',n:22},'3M':{f:'1y',n:66},'6M':{f:'2y',n:128},'1A':{f:'2y',n:252},'2A':{f:'2y',n:520},'5A':{f:'5y',n:9999}};
 const SEC={range:'6M', ma:true, vol:true, bars:null, sym:null, cache:new Map(), style:null,
-  from:null, to:null, per:'D', ccy:'local', ma1:50, ma2:200, vma:15, fx:null, hide:false};   // paramètres GP (Range, Period, Currency, Mov. Avgs…)   // style : null = selon le thème (Bloomberg → ligne)
+  from:null, to:null, per:'D', ccy:'local', ma1:50, ma2:200, vma:15, fx:null, hide:false,
+  ...(()=>{ try{ return JSON.parse(localStorage.getItem('terminal.studies.v1')||'null')||{rsi:true,macd:true}; }catch(e){ return {rsi:true,macd:true}; } })()};   // études RSI(14) et MACD(12,26,9)   // paramètres GP (Range, Period, Currency, Mov. Avgs…)   // style : null = selon le thème (Bloomberg → ligne)
 const secLine=()=>SEC.style?SEC.style==='line':document.body.classList.contains('bbg');
 // Données à demander au relais : période rapide (1J…5A) ou plage de dates personnalisée (Range)
 function secFetchCfg(){ if(!SEC.from) return RANGE_CFG[SEC.range];
@@ -2037,6 +2041,8 @@ g('gpma1').onchange=g('gpma2').onchange=ma;
 g('gpccy').onchange=()=>{ SEC.ccy=g('gpccy').value; termMsg(SEC.ccy==='local'?'Chart in local currency.':'Converted to '+SEC.ccy+' at the daily FX rate (Yahoo Finance).'); viewSecurity(); };
 g('gpper').onchange=()=>{ SEC.per=g('gpper').value; redraw(); };
 g('gplow').onchange=()=>{ SEC.vol=g('gplow').value==='vol'; redraw(); };
+el.querySelectorAll('[data-study]').forEach(b=>b.onclick=()=>{ const k=b.dataset.study; SEC[k]=!SEC[k]; b.classList.toggle('on',SEC[k]); b.setAttribute('aria-pressed',SEC[k]);
+try{ localStorage.setItem('terminal.studies.v1',JSON.stringify({rsi:!!SEC.rsi,macd:!!SEC.macd})); }catch(e){} termMsg((k==='rsi'?'RSI (14)':'MACD (12, 26, 9)')+(LANG==='fr'?(SEC[k]?' ajouté au graphique.':' retiré du graphique.'):(SEC[k]?' added to the chart.':' removed from the chart.'))); redraw(); });
 g('gpvma').onchange=()=>{ SEC.vma=Math.max(1,+g('gpvma').value||15); redraw(); };
 g('gphide').onclick=()=>{ SEC.hide=!SEC.hide; el.querySelector('.gpp').hidden=SEC.hide; g('gphide').textContent=SEC.hide?'Show':'Hide'; };
 g('gpsave').onclick=()=>{ const cv=document.getElementById('seccv'); if(!cv) return; const a=document.createElement('a'); a.download=`${sym}_GP_${new Date().toISOString().slice(0,10)}.png`; a.href=cv.toDataURL('image/png'); a.click(); termMsg(`${sym} chart saved (${a.download}).`); }; }
@@ -2057,7 +2063,7 @@ if(cfg.f==='1d'&&res.meta.dataGranularity!=='5m') throw new Error('intraday unav
 bars.meta=res.meta; if(cfg.f!=='1d') SEC.cache.set(key,bars);
 }
 if(S.focus!==sym||S.view!=='sec') return;
-try{ await secLoadFx((bars.meta||{}).currency,cfg); }catch(e){ SEC.fx=null; termMsg('Conversion impossible : '+e.message+' — graphique en devise locale.'); }
+try{ await secLoadFx((bars.meta||{}).currency,cfg); }catch(e){ SEC.fx=null; termMsg('Conversion failed: '+e.message+' — chart shown in local currency.'); }
 SEC.bars=bars; SEC.sym=sym;
 const m=bars.meta||{};
 if(px==null&&m.regularMarketPrice!=null){
@@ -2082,6 +2088,14 @@ let h=Math.max(b.h,top), l=Math.min(b.l,bot);
 if(cap>0){ h=Math.min(h,top+cap); l=Math.max(l,bot-cap); }
 return {...b,o,h,l,adj:1}; });
 out.cleaned=true; return out; }
+/** RSI de Wilder et MACD (EMA 12 − EMA 26, signal EMA 9) sur toute la série, découpés ensuite sur la fenêtre affichée. */
+function rsiOf(c,n=14){ const o=new Array(c.length).fill(null); if(c.length<=n) return o; let g=0,l=0;
+for(let i=1;i<=n;i++){ const d=c[i]-c[i-1]; if(d>0) g+=d; else l-=d; } g/=n; l/=n; o[n]=l?100-100/(1+g/l):100;
+for(let i=n+1;i<c.length;i++){ const d=c[i]-c[i-1]; g=(g*(n-1)+Math.max(d,0))/n; l=(l*(n-1)+Math.max(-d,0))/n; o[i]=l?100-100/(1+g/l):100; } return o; }
+function emaOf(c,n){ const k=2/(n+1), o=new Array(c.length).fill(null); let e=null; for(let i=0;i<c.length;i++){ const v=c[i]; if(v==null) continue; e=e==null?v:v*k+e*(1-k); if(i>=n-1) o[i]=e; } return o; }
+function macdOf(c){ const a=emaOf(c,12), b=emaOf(c,26), m=c.map((_,i)=>a[i]!=null&&b[i]!=null?a[i]-b[i]:null);
+const first=m.findIndex(v=>v!=null), sg=new Array(c.length).fill(null); if(first>=0){ const e=emaOf(m.slice(first),9); e.forEach((v,j)=>sg[first+j]=v); }
+return {m, s:sg, h:m.map((v,i)=>v!=null&&sg[i]!=null?v-sg[i]:null)}; }
 function sma(arr,n){ const out=new Array(arr.length).fill(null); let s=0;
 for(let i=0;i<arr.length;i++){ s+=arr[i]; if(i>=n) s-=arr[i-n]; if(i>=n-1) out[i]=s/n; } return out; }
 function drawCandles(hover){
@@ -2091,10 +2105,11 @@ if(SEC.from){ const f=Date.parse(SEC.from), t=SEC.to?Date.parse(SEC.to)+864e5:In
 else { n=Math.min(cfg.n, all.length); off=all.length-n; }
 const bars=all.slice(off,off+n);
 const closes=all.map(b=>b.c), m50=sma(closes,SEC.ma1||1).slice(off,off+n), m200=sma(closes,SEC.ma2||1).slice(off,off+n);
-const r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1, W=r.width, H=380;
-cv.width=W*dpr; cv.height=H*dpr; const x=cv.getContext('2d'); x.scale(dpr,dpr);
+const ST=SEC.range==='1J'?[]:[SEC.rsi&&'rsi',SEC.macd&&'macd'].filter(Boolean), STH=92;   // panneaux d'études sous le volume
+const r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1, W=r.width, H=380+ST.length*STH;
+cv.style.height=H+'px'; cv.width=W*dpr; cv.height=H*dpr; const x=cv.getContext('2d'); x.scale(dpr,dpr);
 const LINE=secLine();
-const hasVol=SEC.bars.some(b=>b.v>0), pr=64, pt=28, volH=SEC.vol&&hasVol?70:0, gap=SEC.vol&&hasVol?14:0, pb=18, priceH=H-pt-pb-volH-gap;
+const hasVol=SEC.bars.some(b=>b.v>0), pr=64, pt=28, volH=SEC.vol&&hasVol?70:0, gap=SEC.vol&&hasVol?14:0, pb=18, priceH=380-pt-pb-volH-gap;
 // Échelle calée sur les bougies : une moyenne mobile éloignée ne doit pas écraser le graphique.
 let lo=Math.min(...bars.map(b=>b.l)), hi=Math.max(...bars.map(b=>b.h));
 const padY=(hi-lo)*0.06||Math.abs(hi)*0.002||1; lo-=padY; hi+=padY;
@@ -2138,11 +2153,34 @@ x.strokeStyle=col; x.lineWidth=1.3; x.beginPath(); let s=false; a.forEach((v,i)=
 const C50=LINE?'#ffd200':'#e8a33d', C200=LINE?'#ff433d':'#bb98e6';
 if(SEC.ma&&SEC.range!=='1J'){ if(SEC.ma1) line(m50,C50); if(SEC.ma2) line(m200,C200); }
 const lastMA=a=>{ for(let k=a.length-1;k>=0;k--) if(a[k]!=null) return a[k]; return null; };
-const out=(v)=>v!=null&&(v<lo||v>hi)?` ${v>hi?'↑':'↓'} ${dd(v)} hors cadre`:'';
+const out=(v)=>v!=null&&(v<lo||v>hi)?` ${v>hi?'↑':'↓'} ${dd(v)} off scale`:'';
 const unit=SEC.per==='M'?'months':SEC.per==='W'||(!SEC.from&&SEC.range==='5A')||(SEC.from&&secFetchCfg().f!=='2y')?'weeks':'sessions';
-if(SEC.ma&&SEC.range!=='1J'){ const l200=SEC.ma2?'— MM'+SEC.ma2+' ('+unit+')'+out(lastMA(m200)):'', l50=SEC.ma1?'— MM'+SEC.ma1+out(lastMA(m50)):'';
+if(SEC.ma&&SEC.range!=='1J'){ const l200=SEC.ma2?'— SMA '+SEC.ma2+' ('+unit+')'+out(lastMA(m200)):'', l50=SEC.ma1?'— SMA '+SEC.ma1+out(lastMA(m50)):'';
 x.textAlign='right'; x.fillStyle=C200; x.fillText(l200,W-pr-4,pt-6);
 x.fillStyle=C50; x.fillText(l50,W-pr-4-x.measureText(l200).width-12,pt-6); }
+// études techniques : RSI (14) et MACD (12, 26, 9)
+if(ST.length){ const rsi=rsiOf(closes).slice(off,off+n), md=macdOf(closes), M=md.m.slice(off,off+n), Sg=md.s.slice(off,off+n), Hs=md.h.slice(off,off+n);
+const at=hover&&hover.i>=0&&hover.i<n?hover.i:n-1, B=CT().B, axc=B?'#dddddd':CT().ax, gc=B?'#2e2e2e':CT().grid;
+ST.forEach((k,j)=>{ const t0=pt+priceH+gap+volH+12+j*STH, t1=t0+STH-24, ph=t1-t0;
+x.setLineDash([]); x.strokeStyle=B?'#5a5a5a':CT().grid; x.lineWidth=1; x.strokeRect(8.5,t0+.5,W-pr-8,ph);
+x.font=CT().f9;
+if(k==='rsi'){ const Yr=v=>t0+(1-v/100)*ph;
+x.setLineDash([2,3]); x.strokeStyle=gc; for(const v of [30,50,70]){ x.beginPath(); x.moveTo(8,Yr(v)); x.lineTo(W-pr,Yr(v)); x.stroke(); x.fillStyle=axc; x.textAlign='left'; x.fillText(String(v),W-pr+4,Yr(v)+3); } x.setLineDash([]);
+x.fillStyle='rgba(224,74,74,.08)'; x.fillRect(9,t0+1,W-pr-9,Yr(70)-t0); x.fillStyle='rgba(47,191,107,.08)'; x.fillRect(9,Yr(30),W-pr-9,t1-Yr(30)-1);
+x.save(); x.beginPath(); x.rect(8,t0,W-pr-8,ph); x.clip(); x.strokeStyle=B?'#d46bff':'#bb98e6'; x.lineWidth=1.3; x.beginPath(); let s0=false;
+rsi.forEach((v,i)=>{ if(v==null) return; s0?x.lineTo(X(i),Yr(v)):x.moveTo(X(i),Yr(v)); s0=true; }); x.stroke(); x.restore();
+const v=rsi[at]; x.font=CT().f10; x.textAlign='left'; x.fillStyle=B?'#d46bff':'#bb98e6'; x.fillText('■ RSI (14)',14,t0+13);
+x.fillStyle=v==null?axc:v>=70?'#ff433d':v<=30?'#2ee05f':'#fff'; x.fillText(v==null?'—':nf(v,1)+(v>=70?(LANG==='fr'?'  suracheté':'  overbought'):v<=30?(LANG==='fr'?'  survendu':'  oversold'):''),92,t0+13);
+if(v!=null&&!hover){ x.fillStyle=B?'#d46bff':'#bb98e6'; x.fillRect(W-pr+1,Yr(v)-7,pr-2,14); x.fillStyle='#000'; x.font=CT().fb9; x.fillText(nf(v,1),W-pr+5,Yr(v)+3); } }
+else { const vals=[...M,...Sg,...Hs].filter(v=>v!=null); const mx=Math.max(1e-9,...vals.map(Math.abs)); const Ym=v=>t0+ph/2-v/mx*(ph/2-4);
+x.setLineDash([2,3]); x.strokeStyle=gc; x.beginPath(); x.moveTo(8,Ym(0)); x.lineTo(W-pr,Ym(0)); x.stroke(); x.setLineDash([]);
+x.fillStyle=axc; x.textAlign='left'; x.fillText(nf(mx,mx<1?3:2),W-pr+4,Ym(mx)+3); x.fillText('0',W-pr+4,Ym(0)+3); x.fillText(nf(-mx,mx<1?3:2),W-pr+4,Ym(-mx)+3);
+const bw=Math.max(1,Math.min(10,step*0.6)); Hs.forEach((v,i)=>{ if(v==null) return; x.fillStyle=v>=0?'rgba(46,224,95,.75)':'rgba(255,67,61,.75)'; const y=Ym(v); x.fillRect(X(i)-bw/2,Math.min(y,Ym(0)),bw,Math.max(1,Math.abs(y-Ym(0)))); });
+const ln=(a,c)=>{ x.strokeStyle=c; x.lineWidth=1.3; x.beginPath(); let s0=false; a.forEach((v,i)=>{ if(v==null) return; s0?x.lineTo(X(i),Ym(v)):x.moveTo(X(i),Ym(v)); s0=true; }); x.stroke(); };
+ln(M,B?'#ffffff':'#6ba3e0'); ln(Sg,B?'#fb8b1e':'#e8a33d');
+const f=v=>v==null?'—':nf(v,Math.abs(v)<1?3:2); x.font=CT().f10; x.textAlign='left';
+let lx=14; for(const [t,c] of [['■ MACD (12, 26, 9) '+f(M[at]),B?'#ffffff':'#6ba3e0'],['■ Signal '+f(Sg[at]),B?'#fb8b1e':'#e8a33d'],['■ Hist. '+f(Hs[at]),Hs[at]>=0?'#2ee05f':'#ff433d']]){ x.fillStyle=c; x.fillText(t,lx,t0+13); lx+=x.measureText(t).width+18; } } });
+x.font=CT().f9; }
 // survol
 const tip=document.getElementById('sectip'), i=hover?hover.i:null, my=hover?hover.y:null;
 if(i!=null&&i>=0&&i<n){ const b=bars[i];
@@ -2159,10 +2197,10 @@ x.font=CT().f9; x.textAlign='right'; x.fillStyle=dv>=0?'#2fbf6b':'#e04a4a';
 x.fillText(`${dv>=0?'+':''}${nf(dv,2)}% vs last`,W-pr-6,my-5); }
 tag(SEC.range==='1J'?new Date(b.t).toLocaleTimeString(LOC(),{hour:'2-digit',minute:'2-digit'}):new Date(b.t).toLocaleDateString(LOC(),{day:'2-digit',month:'short',year:'2-digit'}),X(i),H-pb+9,'center');
 const chg=i>0?(b.c/bars[i-1].c-1)*100:null;
-tip.innerHTML=`<b style="color:var(--txt)">${SEC.range==='1J'?new Date(b.t).toLocaleString(LOC(),{weekday:'short',hour:'2-digit',minute:'2-digit'}):new Date(b.t).toLocaleDateString(LOC(),{weekday:'short',day:'2-digit',month:'short',year:'numeric'})}</b> &nbsp; O ${dd(b.o)} &nbsp; H ${dd(b.h)} &nbsp; B ${dd(b.l)} &nbsp; C <b style="color:var(--txt)">${dd(b.c)}</b> ${chg!=null?`&nbsp; <span class="${cls(chg)}">${pct(chg)}</span>`:''} ${b.v?'&nbsp; Vol. '+big(b.v):''}${SEC.ma&&m50[i]?` &nbsp; <span style="color:#e8a33d">MM50 ${dd(m50[i])}</span>`:''}${SEC.ma&&m200[i]?` &nbsp; <span style="color:#bb98e6">MM200 ${dd(m200[i])}</span>`:''}`;
+tip.innerHTML=`<b style="color:var(--txt)">${SEC.range==='1J'?new Date(b.t).toLocaleString(LOC(),{weekday:'short',hour:'2-digit',minute:'2-digit'}):new Date(b.t).toLocaleDateString(LOC(),{weekday:'short',day:'2-digit',month:'short',year:'numeric'})}</b> &nbsp; O ${dd(b.o)} &nbsp; H ${dd(b.h)} &nbsp; ${LANG==='fr'?'B':'L'} ${dd(b.l)} &nbsp; C <b style="color:var(--txt)">${dd(b.c)}</b> ${chg!=null?`&nbsp; <span class="${cls(chg)}">${pct(chg)}</span>`:''} ${b.v?'&nbsp; Vol. '+big(b.v):''}${SEC.ma&&m50[i]?` &nbsp; <span style="color:#e8a33d">${LANG==='fr'?'MM':'SMA '}${SEC.ma1} ${dd(m50[i])}</span>`:''}${SEC.ma&&m200[i]?` &nbsp; <span style="color:#bb98e6">${LANG==='fr'?'MM':'SMA '}${SEC.ma2} ${dd(m200[i])}</span>`:''}`;
 } else if(tip){ tip.innerHTML=''; }
 const perf=(bars[n-1].c/bars[0].o-1)*100, pe=document.getElementById('secperf');
-if(pe) pe.innerHTML=`${SEC.from?'Plage':SEC.range} : <span class="${cls(perf)}">${pct(perf,1)}</span> · ${n} ${unit}${SEC.fx&&SEC.fx.lbl?' · en '+SEC.fx.lbl:''}`;
+if(pe) pe.innerHTML=`${SEC.from?'Range':RL(SEC.range)}: <span class="${cls(perf)}">${pct(perf,1)}</span> · ${n} ${unit}${SEC.fx&&SEC.fx.lbl?' · in '+SEC.fx.lbl:''}`;
 cv.onmousemove=ev=>{ const rr=cv.getBoundingClientRect(); const k=Math.floor((ev.clientX-rr.left-8)/step); drawCandles(k>=0&&k<n?{i:k,y:ev.clientY-rr.top}:null); };
 cv.style.cursor='crosshair';
 cv.onmouseleave=()=>drawCandles(null);
@@ -4229,7 +4267,7 @@ const THEME_KEY='terminal.theme';
 function setTheme(t,redraw){ if(t!=='bbg') t='blue'; document.body.classList.toggle('bbg',t==='bbg'); const b=document.getElementById('themebtn');
 b.textContent='Theme: '+(t==='bbg'?'Bloomberg':'blue'); b.setAttribute('aria-pressed',t==='bbg');
 try{ localStorage.setItem(THEME_KEY,t); }catch(e){} if(redraw&&S.view) go(S.view); }
-setTheme((()=>{ try{ return localStorage.getItem(THEME_KEY)||'blue'; }catch(e){ return 'blue'; } })());
+setTheme((()=>{ try{ return localStorage.getItem(THEME_KEY)||'bbg'; }catch(e){ return 'bbg'; } })());   // Bloomberg par défaut
 document.getElementById('helpbtn').onclick=openHelp;
 document.getElementById('themebtn').onclick=()=>setTheme(document.body.classList.contains('bbg')?'blue':'bbg',true);
 
