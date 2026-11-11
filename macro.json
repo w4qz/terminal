@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-11T11:59:51.060447Z",
+ "generated_at": "2026-11-11T13:05:54.051612Z",
  "eco": {
   "prints": [
    {
@@ -8,7 +8,7 @@
     "prev": null,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-10",
+    "pub": "2026-11-11",
     "freq": "M",
     "src": "FRED CPIAUCSL",
     "url": "https://fred.stlouisfed.org/series/CPIAUCSL"
@@ -19,7 +19,7 @@
     "prev": null,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-10",
+    "pub": "2026-11-11",
     "freq": "M",
     "src": "FRED CPILFESL",
     "url": "https://fred.stlouisfed.org/series/CPILFESL"
@@ -30,7 +30,7 @@
     "prev": 3.03,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-10",
+    "pub": "2026-11-11",
     "freq": "M",
     "src": "FRED PCEPILFE",
     "url": "https://fred.stlouisfed.org/series/PCEPILFE"
@@ -41,7 +41,7 @@
     "prev": 60.0,
     "fmt": "k",
     "ts": "2026-10-01",
-    "pub": "2026-11-10",
+    "pub": "2026-11-11",
     "freq": "M",
     "src": "FRED PAYEMS",
     "url": "https://fred.stlouisfed.org/series/PAYEMS"
@@ -52,7 +52,7 @@
     "prev": 4.2,
     "fmt": "%",
     "ts": "2026-10-01",
-    "pub": "2026-11-10",
+    "pub": "2026-11-11",
     "freq": "M",
     "src": "FRED UNRATE",
     "url": "https://fred.stlouisfed.org/series/UNRATE"
@@ -63,7 +63,7 @@
     "prev": 195000.0,
     "fmt": "n",
     "ts": "2026-10-31",
-    "pub": "2026-11-10",
+    "pub": "2026-11-11",
     "freq": "W",
     "src": "FRED ICSA",
     "url": "https://fred.stlouisfed.org/series/ICSA"
@@ -74,7 +74,7 @@
     "prev": 2.2,
     "fmt": "%",
     "ts": "2026-07-01",
-    "pub": "2026-11-10",
+    "pub": "2026-11-11",
     "freq": "Q",
     "src": "FRED A191RL1Q225SBEA",
     "url": "https://fred.stlouisfed.org/series/A191RL1Q225SBEA"
@@ -85,7 +85,7 @@
     "prev": 1.29,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-10",
+    "pub": "2026-11-11",
     "freq": "M",
     "src": "FRED RSAFS",
     "url": "https://fred.stlouisfed.org/series/RSAFS"
@@ -96,7 +96,7 @@
     "prev": 51.7,
     "fmt": "n",
     "ts": "2026-09-01",
-    "pub": "2026-11-10",
+    "pub": "2026-11-11",
     "freq": "M",
     "src": "FRED UMCSENT",
     "url": "https://fred.stlouisfed.org/series/UMCSENT"
@@ -110,6 +110,16 @@
     "freq": "M",
     "src": "Eurostat prc_hicp_minr",
     "url": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table"
+   },
+   {
+    "k": "Unemployment rate (euro area)",
+    "v": 6.6,
+    "prev": 6.5,
+    "fmt": "%",
+    "ts": "2026-09-01",
+    "freq": "M",
+    "src": "BCE LFSI",
+    "url": "https://data.ecb.europa.eu/data/datasets/LFSI"
    }
   ],
   "calendar": [
@@ -395,65 +405,65 @@
    {
     "d": "2027-01-27",
     "pre": 4.169,
-    "post": 4.325,
-    "move_bp": 15.6,
+    "post": 4.33,
+    "move_bp": 16.1,
     "p_cut": 0,
-    "p_hike": 62
+    "p_hike": 64
    },
    {
     "d": "2027-03-17",
-    "pre": 4.325,
-    "post": 4.491,
+    "pre": 4.33,
+    "post": 4.496,
     "move_bp": 16.6,
     "p_cut": 0,
     "p_hike": 66
    },
    {
     "d": "2027-04-28",
-    "pre": 4.491,
-    "post": 4.555,
+    "pre": 4.496,
+    "post": 4.56,
     "move_bp": 6.4,
     "p_cut": 0,
     "p_hike": 26
    },
    {
     "d": "2027-06-09",
-    "pre": 4.555,
-    "post": 4.634,
+    "pre": 4.56,
+    "post": 4.639,
     "move_bp": 7.9,
     "p_cut": 0,
     "p_hike": 31
    },
    {
     "d": "2027-07-28",
-    "pre": 4.634,
-    "post": 4.645,
+    "pre": 4.639,
+    "post": 4.65,
     "move_bp": 1.1,
     "p_cut": 0,
     "p_hike": 5
    },
    {
     "d": "2027-09-15",
-    "pre": 4.645,
-    "post": 4.655,
-    "move_bp": 1.0,
+    "pre": 4.65,
+    "post": 4.67,
+    "move_bp": 2.0,
     "p_cut": 0,
-    "p_hike": 4
+    "p_hike": 8
    },
    {
     "d": "2027-10-27",
-    "pre": 4.655,
-    "post": 4.65,
-    "move_bp": -0.5,
-    "p_cut": 2,
+    "pre": 4.67,
+    "post": 4.66,
+    "move_bp": -1.0,
+    "p_cut": 4,
     "p_hike": 0
    },
    {
     "d": "2027-12-08",
-    "pre": 4.65,
-    "post": 4.61,
-    "move_bp": -4.0,
-    "p_cut": 16,
+    "pre": 4.66,
+    "post": 4.626,
+    "move_bp": -3.4,
+    "p_cut": 13,
     "p_hike": 0
    }
   ],
@@ -650,7 +660,7 @@
    "v": 4.0,
    "prev": 4.0,
    "fmt": "%",
-   "ts": "2026-11-10",
+   "ts": "2026-11-11",
    "src": "FRED DFEDTARU"
   },
   {
@@ -658,7 +668,7 @@
    "v": 3.75,
    "prev": 3.75,
    "fmt": "%",
-   "ts": "2026-11-10",
+   "ts": "2026-11-11",
    "src": "FRED DFEDTARL"
   },
   {
