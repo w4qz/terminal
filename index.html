@@ -211,6 +211,8 @@ details.nfo p{line-height:1.55}
 #secbar{position:sticky;top:-10px;z-index:20;margin:-10px -10px 9px;padding:7px 12px;background:rgba(13,15,17,.97);
 border-bottom:1px solid var(--line);display:flex;align-items:center;gap:16px}
 #secbar .t{font-weight:700;font-size:15px;color:var(--hot)}
+#secext{font-size:12px;white-space:nowrap;border-left:1px solid var(--line);padding-left:9px}#secext .k{color:var(--txt2);font-size:10px;letter-spacing:.04em;margin-right:5px}
+body.bbg #secext .k{color:#fb8b1e}
 #secbar .px{font-size:15px;font-weight:600}
 #secbar .nm{color:var(--txt2);font-size:11px;max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 #secbar nav{margin-left:auto;display:flex;gap:2px}
@@ -1947,7 +1949,7 @@ const nws=SNAPSHOT.news.filter(n=>(n.syms||[]).includes(sym)||(n.h||'').toLowerC
 const fundTs=F.ts?ago(F.ts):'—';
 
 el.innerHTML=`
-<div id="secbar"><span class="t">${esc(sym)}</span><span class="px">${px!=null?npx(px,sym):'—'}</span><span class="${cls(pc)}" style="font-weight:600">${pc!=null?pct(pc):''}</span><span class="nm">${esc(name)}</span>${(()=>{ const b=bbgCode(sym); return b?`<span style="font-size:10px;color:var(--txt2);border:1px solid var(--line);padding:1px 6px;white-space:nowrap" title="${b.ok?'Bloomberg code and FIGI from OpenFIGI: '+esc(b.figi||''):'Bloomberg code inferred from the listing venue (not yet confirmed by OpenFIGI)'}">${esc(b.c)}${b.ok?' ✓':''}</span>`:''; })()}
+<div id="secbar"><span class="t">${esc(sym)}</span><span class="px">${px!=null?npx(px,sym):'—'}</span><span class="${cls(pc)}" style="font-weight:600">${pc!=null?pct(pc):''}</span><span id="secext" hidden></span><span class="nm">${esc(name)}</span>${(()=>{ const b=bbgCode(sym); return b?`<span style="font-size:10px;color:var(--txt2);border:1px solid var(--line);padding:1px 6px;white-space:nowrap" title="${b.ok?'Bloomberg code and FIGI from OpenFIGI: '+esc(b.figi||''):'Bloomberg code inferred from the listing venue (not yet confirmed by OpenFIGI)'}">${esc(b.c)}${b.ok?' ✓':''}</span>`:''; })()}
 <nav aria-label="Security sections">${[['GP','sec-gp','Chart'],['DES','sec-des','Description'],['RV','sec-rv','Relative value'],['FA','sec-fa','Financials'],['DVD','sec-dvd','Dividends'],['CN','sec-cn','News'],...(/[.=^]/.test(sym)?[]:[['CF','sec-cf','SEC filings'],['ERN','sec-ern','Earnings']]),...(/[.=^]/.test(sym)?[]:[['OMON','sec-omon','Options']])].map(([k,a,l])=>`<button type="button" data-jump="${a}" title="${l} (${k})">${l} <span style="color:var(--txt3);font-size:9px">${k}</span></button>`).join('')}</nav></div>
 <div class="pnl" id="sec-des" style="margin-bottom:9px"><div class="statrow">
 <div class="stat"><span class="l">${esc(sym)}${F.sector?' · '+esc(SECT_FR[F.sector]||F.sector):''}</span><span class="n" id="secpx">${px!=null?npx(px,sym):'—'}${badge(st)}</span><span class="s">${esc(name)}</span></div>
@@ -1999,7 +2001,7 @@ Fundamentals: ${Object.keys(F).length>3?'Yahoo Finance via yfinance, refreshed b
 Chart: ${SEC.range==='5A'?'weekly':'daily'} Yahoo Finance closes, delayed prices.</div></div></div>
 </div>`;
 el.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{ SEC.range=b.dataset.r; SEC.from=SEC.to=null; viewSecurity(); });
-wireGP(el, sym);
+wireGP(el, sym); secExt(sym);
 el.querySelectorAll('[data-cs]').forEach(b=>b.onclick=()=>{ SEC.style=b.dataset.cs; viewSecurity(); });
 el.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{ SEC[b.dataset.t]=!SEC[b.dataset.t]; viewSecurity(); });
 el.querySelectorAll('[data-jump]').forEach(b=>b.onclick=()=>{ const t=document.getElementById(b.dataset.jump); if(t){ const m=document.getElementById('main'); m.scrollTo({top:t.offsetTop-52,behavior:'smooth'}); } });
@@ -2031,6 +2033,22 @@ if(SEC.fx) b=b.map(x=>{ const k=secFxAt(x.t); return {...x,o:x.o*k,h:x.h*k,l:x.l
 if(SEC.per!=='D'&&SEC.range!=='1J'){ const key=t=>{ const d=new Date(t); if(SEC.per==='M') return d.getFullYear()*100+d.getMonth(); const m=new Date(d); m.setHours(0,0,0,0); m.setDate(m.getDate()-((m.getDay()+6)%7)); return +m; };
 const out=[]; for(const x of b){ const k=key(x.t), L=out[out.length-1]; if(L&&L.k===k){ L.h=Math.max(L.h,x.h); L.l=Math.min(L.l,x.l); L.c=x.c; L.v=(L.v||0)+(x.v||0); } else out.push({...x,k}); } b=out; }
 return b; }
+/** Pré-marché et après-Bourse (actions américaines) : dernière bougie de 5 min hors séance, d'après les horaires
+    renvoyés par Yahoo (currentTradingPeriod). Variation calculée contre le dernier cours de séance, comme Bloomberg. */
+function extOf(res){ const m=res&&res.meta, P=m&&m.currentTradingPeriod, ts=res&&res.timestamp, c=res&&res.indicators&&res.indicators.quote[0].close;
+if(!P||!P.pre||!P.post||!ts||!c||m.regularMarketPrice==null) return null;
+let i=ts.length-1; while(i>=0&&c[i]==null) i--; if(i<0) return null; const t=ts[i];
+const kind=t>=P.post.start&&t<P.post.end?'post':t>=P.pre.start&&t<P.regular.start?'pre':null; if(!kind) return null;
+if(Date.now()/1e3-t>16*3600) return null;   // séance prolongée trop ancienne (week-end, jour férié)
+const p=+c[i], ref=+m.regularMarketPrice; return {kind, p, chg:p-ref, pct:(p/ref-1)*100, t:t*1000}; }
+function extHtml(e,sym){ if(!e) return ''; const k=e.kind==='pre'?(LANG==='fr'?'PRÉ-MARCHÉ':'PRE-MARKET'):(LANG==='fr'?'APRÈS-BOURSE':'AFTER HOURS');
+const tm=new Date(e.t).toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',timeZone:'America/New_York',hour12:false});
+return `<span class="k">${k}</span><b>${npx(e.p,sym)}</b> <span class="${cls(e.pct)}">${e.chg>=0?'+':''}${nf(e.chg,2)} (${pct(e.pct)})</span> <span class="mut" style="font-size:10px">${tm} ET</span>`; }
+async function secExt(sym){ const el=document.getElementById('secext'); if(!el||!WORKER_URL||/[.=^]/.test(ySym(sym))) return;
+try{ const r=await fetch(`${WORKER_URL}/chart?s=${encodeURIComponent(ySym(sym))}&range=1d&pp=1`); if(!r.ok) return;
+const d=await r.json(), e=extOf(d.chart&&d.chart.result&&d.chart.result[0]); if(S.focus!==sym) return;
+const q=SNAPSHOT.quotes&&SNAPSHOT.quotes[sym]; if(q) q.ext=e;
+el.hidden=!e; el.innerHTML=extHtml(e,sym); }catch(e){} }
 function termMsg(t){ const e=document.getElementById('msgline'); if(e) e.textContent=t; }
 function wireGP(el, sym){ const g=id=>el.querySelector('#'+id); if(!g('gpfrom')) return;
 const redraw=()=>{ if(SEC.bars) drawCandles(); };
@@ -2055,12 +2073,13 @@ const cfg=secFetchCfg(), key=sym+'|'+cfg.f, msg=document.getElementById('secmsg'
 try{
 let bars=SEC.cache.get(key);
 if(!bars){
-const r=await fetch(`${WORKER_URL}/chart?s=${encodeURIComponent(ySym(sym))}&range=${cfg.f}`);
+const r=await fetch(`${WORKER_URL}/chart?s=${encodeURIComponent(ySym(sym))}&range=${cfg.f}${cfg.f==='1d'?'&pp=1':''}`);
 const d=await r.json();
 const res=d.chart&&d.chart.result&&d.chart.result[0];
 if(!r.ok||!res) throw new Error((d.chart&&d.chart.error&&d.chart.error.description)||d.error||'no data');
 const qq=res.indicators.quote[0];
-bars=(res.timestamp||[]).map((t,i)=>({t:t*1000,o:qq.open[i],h:qq.high[i],l:qq.low[i],c:qq.close[i],v:qq.volume?qq.volume[i]:null}))
+const RP=cfg.f==='1d'&&res.meta.currentTradingPeriod&&res.meta.currentTradingPeriod.regular;   // séance régulière : le reste est pré/post-marché
+bars=(res.timestamp||[]).map((t,i)=>({t:t*1000,o:qq.open[i],h:qq.high[i],l:qq.low[i],c:qq.close[i],v:qq.volume?qq.volume[i]:null,x:RP?(t<RP.start||t>=RP.end):false}))
 .filter(b=>b.c!=null&&b.o!=null&&b.h!=null&&b.l!=null);
 if(isFX(sym)) bars=cleanFX(bars);
 if(cfg.f==='1d'&&res.meta.dataGranularity!=='5m') throw new Error('intraday unavailable: update the Cloudflare relay (worker.js)');
@@ -2122,6 +2141,9 @@ const step=(W-pr-8)/n, cw=Math.max(1,Math.min(14,step*0.7));
 const X=i=>8+step*(i+0.5), Y=v=>pt+(1-(v-lo)/(hi-lo))*priceH;
 x.font=CT().f9; x.strokeStyle=LINE?'#2e2e2e':CT().grid; x.fillStyle=LINE?'#dddddd':CT().ax; x.textAlign='left'; if(LINE) x.setLineDash([2,3]);
 for(let k=0;k<=4;k++){ const v=lo+(hi-lo)*k/4, y=Y(v); x.beginPath(); x.moveTo(8,y); x.lineTo(W-pr,y); x.stroke(); x.fillText(dd(v),W-pr+4,y+3); } x.setLineDash([]);
+if(SEC.range==='1J'&&bars.some(b=>b.x)){ x.fillStyle=CT().B?'rgba(255,255,255,.07)':'rgba(128,140,160,.10)'; let a=-1;
+for(let i=0;i<=n;i++){ const e=i<n&&bars[i].x; if(e&&a<0) a=i; if(!e&&a>=0){ x.fillRect(X(a)-step/2,pt,step*(i-a),priceH+gap+volH);
+x.fillStyle=CT().B?'#fb8b1e':CT().ax; x.textAlign='left'; x.fillText(a===0?(LANG==='fr'?'PRÉ-MARCHÉ':'PRE-MARKET'):(LANG==='fr'?'APRÈS-BOURSE':'AFTER HOURS'),X(a)-step/2+4,pt+priceH-6); x.fillStyle=CT().B?'rgba(255,255,255,.07)':'rgba(128,140,160,.10)'; a=-1; } } x.fillStyle=LINE?'#dddddd':CT().ax; }
 const ticks=Math.min(6,n); x.textAlign='center';
 for(let k=0;k<ticks;k++){ const i=Math.round(k*(n-1)/Math.max(1,ticks-1));
 x.fillText(SEC.range==='1J'?new Date(bars[i].t).toLocaleTimeString(LOC(),{hour:'2-digit',minute:'2-digit'}):new Date(bars[i].t).toLocaleDateString(LOC(),{day:'2-digit',month:'short',year:SEC.range==='1M'||SEC.range==='3M'?undefined:'2-digit'}),X(i),H-5); }
@@ -2203,7 +2225,7 @@ tag(SEC.range==='1J'?new Date(b.t).toLocaleTimeString(LOC(),{hour:'2-digit',minu
 const chg=i>0?(b.c/bars[i-1].c-1)*100:null;
 tip.innerHTML=`<b style="color:var(--txt)">${SEC.range==='1J'?new Date(b.t).toLocaleString(LOC(),{weekday:'short',hour:'2-digit',minute:'2-digit'}):new Date(b.t).toLocaleDateString(LOC(),{weekday:'short',day:'2-digit',month:'short',year:'numeric'})}</b> &nbsp; O ${dd(b.o)} &nbsp; H ${dd(b.h)} &nbsp; ${LANG==='fr'?'B':'L'} ${dd(b.l)} &nbsp; C <b style="color:var(--txt)">${dd(b.c)}</b> ${chg!=null?`&nbsp; <span class="${cls(chg)}">${pct(chg)}</span>`:''} ${b.v?'&nbsp; Vol. '+big(b.v):''}${SEC.ma&&m50[i]?` &nbsp; <span style="color:#e8a33d">${LANG==='fr'?'MM':'SMA '}${SEC.ma1} ${dd(m50[i])}</span>`:''}${SEC.ma&&m200[i]?` &nbsp; <span style="color:#bb98e6">${LANG==='fr'?'MM':'SMA '}${SEC.ma2} ${dd(m200[i])}</span>`:''}`;
 } else if(tip){ tip.innerHTML=''; }
-const perf=(bars[n-1].c/bars[0].o-1)*100, pe=document.getElementById('secperf');
+const b0=SEC.range==='1J'?(bars.find(b=>!b.x)||bars[0]):bars[0], bR=SEC.range==='1J'?([...bars].reverse().find(b=>!b.x)||bars[n-1]):bars[n-1], perf=(bR.c/b0.o-1)*100, pe=document.getElementById('secperf');
 if(pe) pe.innerHTML=`${SEC.from?'Range':RL(SEC.range)}: <span class="${cls(perf)}">${pct(perf,1)}</span> · ${n} ${unit}${SEC.fx&&SEC.fx.lbl?' · in '+SEC.fx.lbl:''}`;
 cv.onmousemove=ev=>{ const rr=cv.getBoundingClientRect(); const k=Math.floor((ev.clientX-rr.left-8)/step); drawCandles(k>=0&&k<n?{i:k,y:ev.clientY-rr.top}:null); };
 cv.style.cursor='crosshair';
@@ -4313,7 +4335,7 @@ else go('mkt');
 let RT_TS=null, RT_BUSY=false;
 const RT_SYMS=()=>[...Object.keys(YAHOO_OF),'NVDA','ASTS'];
 async function rtOne(sym){
-const r=await fetch(`${WORKER_URL}/chart?s=${encodeURIComponent(ySym(sym))}&range=1d`); if(!r.ok) return false;
+const r=await fetch(`${WORKER_URL}/chart?s=${encodeURIComponent(ySym(sym))}&range=1d&pp=1`); if(!r.ok) return false;
 const d=await r.json(), m=d&&d.chart&&d.chart.result&&d.chart.result[0]&&d.chart.result[0].meta; if(!m||m.regularMarketPrice==null) return false;
 const p=+m.regularMarketPrice, prev=m.chartPreviousClose??m.previousClose, t=m.regularMarketTime?new Date(m.regularMarketTime*1000):null;
 const old=SNAPSHOT.quotes[sym]||{};
@@ -4329,7 +4351,9 @@ if(ref){ q.prev=ref; q.chg=p-ref; q.pct=Math.round((p/ref-1)*1e4)/100; }
 if(m.regularMarketDayHigh) q.hi=m.regularMarketDayHigh; if(m.regularMarketDayLow) q.lo=m.regularMarketDayLow;
 if(m.regularMarketVolume) q.vol=m.regularMarketVolume;
 if(Array.isArray(q.h)&&q.h.length) q.h=[...q.h.slice(0,-1),p];
-SNAPSHOT.quotes[sym]=q; return true;
+q.ext=extOf(d.chart.result[0]); SNAPSHOT.quotes[sym]=q;
+if(S.view==='sec'&&S.focus===sym){ const el=document.getElementById('secext'); if(el){ el.hidden=!q.ext; el.innerHTML=extHtml(q.ext,sym); } }
+return true;
 }
 async function liveQuotes(){
 if(!WORKER_URL||RT_BUSY||document.hidden) return; RT_BUSY=true;
