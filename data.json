@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-12T23:51:30.395867Z",
+ "generated_at": "2026-11-13T00:58:30.123937Z",
  "quotes": {
   "NVDA": {
    "p": 166.19,
@@ -47,7 +47,7 @@
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-11-12T21:00:00Z",
    "open": 34.71,
-   "lo": 34.46,
+   "lo": 34.45,
    "hi": 36.46,
    "vol": 9886668,
    "h": [
@@ -259,16 +259,16 @@
    ]
   },
   "N225": {
-   "p": 60798.8398,
+   "p": 61689.4805,
    "prev": 61248.5898,
-   "chg": -449.75,
-   "pct": -0.73,
-   "st": "EOD",
+   "chg": 440.8906,
+   "pct": 0.72,
+   "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^N225)",
-   "ts": "2026-11-12T06:30:00Z",
-   "open": 61475.1094,
-   "lo": 60643.7891,
-   "hi": 61788.4414,
+   "ts": "2026-11-13T00:45:00Z",
+   "open": 61223.4102,
+   "lo": 61201.8789,
+   "hi": 61796.1992,
    "h": [
     67777.52,
     67744.29,
@@ -290,7 +290,8 @@
     57434.77,
     58775.5,
     60459.58,
-    61248.59
+    61248.59,
+    61680.61
    ]
   },
   "HSI": {
@@ -403,10 +404,10 @@
    ]
   },
   "UKX": {
-   "p": 10863.0898,
+   "p": 10867.29,
    "prev": 10835.5,
-   "chg": 27.5898,
-   "pct": 0.25,
+   "chg": 31.79,
+   "pct": 0.29,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^FTSE)",
    "ts": "2026-11-12T16:30:00Z",
@@ -414,6 +415,7 @@
    "lo": 10820.6104,
    "hi": 10886.0596,
    "h": [
+    10650.3,
     10724.9,
     10840.4,
     10881.9,
@@ -434,8 +436,7 @@
     10673.9,
     10782.9,
     10751.6,
-    10835.5,
-    10863.09
+    10835.5
    ]
   },
   "DAX": {
@@ -548,18 +549,17 @@
    ]
   },
   "EURUSD": {
-   "p": 1.1052,
-   "prev": 1.1169,
-   "chg": -0.0117,
-   "pct": -1.05,
+   "p": 1.1055,
+   "prev": 1.1095,
+   "chg": -0.0041,
+   "pct": -0.37,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (EURUSD=X)",
-   "ts": "2026-11-12T23:51:30.395867Z",
+   "ts": "2026-11-13T00:58:30.123937Z",
    "open": 1.1059,
-   "lo": 1.1052,
+   "lo": 1.1051,
    "hi": 1.1059,
    "h": [
-    1.120448,
     1.119507,
     1.121315,
     1.122549,
@@ -580,22 +580,22 @@
     1.114728,
     1.122246,
     1.116894,
-    1.105339
+    1.109521,
+    1.105461
    ]
   },
   "USDJPY": {
-   "p": 159.856,
-   "prev": 158.705,
-   "chg": 1.151,
-   "pct": 0.73,
+   "p": 159.837,
+   "prev": 159.734,
+   "chg": 0.103,
+   "pct": 0.06,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (JPY=X)",
-   "ts": "2026-11-12T23:51:30.395867Z",
+   "ts": "2026-11-13T00:58:30.123937Z",
    "open": 159.819,
-   "lo": 159.795,
-   "hi": 159.882,
+   "lo": 159.782,
+   "hi": 159.92,
    "h": [
-    158.32,
     157.96,
     158.14,
     157.81,
@@ -616,22 +616,22 @@
     158.29,
     157.98,
     158.71,
-    159.86
+    159.73,
+    159.84
    ]
   },
   "GBPUSD": {
-   "p": 1.323,
-   "prev": 1.3349,
-   "chg": -0.0118,
-   "pct": -0.89,
+   "p": 1.3231,
+   "prev": 1.3277,
+   "chg": -0.0045,
+   "pct": -0.34,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
-   "ts": "2026-11-12T23:51:30.395867Z",
+   "ts": "2026-11-13T00:58:30.123937Z",
    "open": 1.3237,
-   "lo": 1.323,
+   "lo": 1.3229,
    "hi": 1.3238,
    "h": [
-    1.325732,
     1.323014,
     1.327316,
     1.333565,
@@ -652,20 +652,21 @@
     1.336041,
     1.344176,
     1.334864,
-    1.323049
+    1.327669,
+    1.323119
    ]
   },
   "DXY": {
-   "p": 103.17,
-   "prev": 102.91,
-   "chg": 0.26,
-   "pct": 0.25,
+   "p": 103.193,
+   "prev": 103.193,
+   "chg": 0.0,
+   "pct": 0.0,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (DX-Y.NYB)",
-   "ts": "2026-11-12T23:15:00Z",
-   "open": 102.862,
-   "lo": 102.801,
-   "hi": 103.242,
+   "ts": "2026-11-13T00:58:30.123937Z",
+   "open": 103.23,
+   "lo": 103.192,
+   "hi": 103.206,
    "h": [
     102.55,
     102.0,
@@ -688,21 +689,21 @@
     101.65,
     102.23,
     102.91,
-    103.17
+    103.19
    ]
   },
   "XAU": {
-   "p": 3882.7,
-   "prev": 4000.5,
-   "chg": -117.8,
-   "pct": -2.94,
+   "p": 3892.3,
+   "prev": 3892.3,
+   "chg": 0.0,
+   "pct": 0.0,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GC=F)",
-   "ts": "2026-11-12T23:45:00Z",
+   "ts": "2026-11-13T00:58:30.123937Z",
    "open": 3883.3,
    "lo": 3879.1001,
-   "hi": 3884.8999,
-   "vol": 1615,
+   "hi": 3892.8999,
+   "vol": 8557,
    "h": [
     4107.9,
     4170.1,
@@ -725,21 +726,21 @@
     4114.5,
     4030.2,
     4000.5,
-    3882.3
+    3892.3
    ]
   },
   "CL": {
-   "p": 88.8,
-   "prev": 86.53,
-   "chg": 2.27,
-   "pct": 2.62,
+   "p": 88.39,
+   "prev": 88.39,
+   "chg": 0.0,
+   "pct": 0.0,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (CL=F)",
-   "ts": "2026-11-12T23:45:00Z",
+   "ts": "2026-11-13T00:58:30.123937Z",
    "open": 88.79,
-   "lo": 88.7,
+   "lo": 88.35,
    "hi": 88.92,
-   "vol": 883,
+   "vol": 3251,
    "h": [
     95.09,
     97.97,
@@ -762,21 +763,21 @@
     86.85,
     86.04,
     86.53,
-    88.8
+    88.39
    ]
   },
   "BRENT": {
-   "p": 95.86,
-   "prev": 92.76,
-   "chg": 3.1,
-   "pct": 3.34,
+   "p": 95.53,
+   "prev": 95.53,
+   "chg": 0.0,
+   "pct": 0.0,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BZ=F)",
-   "ts": "2026-11-12T23:45:00Z",
+   "ts": "2026-11-13T00:58:30.123937Z",
    "open": 95.89,
-   "lo": 95.86,
+   "lo": 95.48,
    "hi": 95.92,
-   "vol": 10,
+   "vol": 60,
    "h": [
     106.06,
     105.92,
@@ -799,21 +800,21 @@
     92.57,
     91.49,
     92.76,
-    95.86
+    95.53
    ]
   },
   "BTC": {
-   "p": 71261.25,
+   "p": 71044.6562,
    "prev": 73964.4688,
-   "chg": -2703.2188,
-   "pct": -3.65,
+   "chg": -2919.8125,
+   "pct": -3.95,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-12T23:51:30.395867Z",
-   "open": 73925.1875,
-   "lo": 71159.7578,
-   "hi": 74072.2891,
-   "vol": 27484796928,
+   "ts": "2026-11-13T00:58:30.123937Z",
+   "open": 71371.7656,
+   "lo": 70854.4531,
+   "hi": 71386.0,
+   "vol": 28516030464,
    "h": [
     81311.89,
     81074.19,
@@ -836,7 +837,7 @@
     75223.15,
     73720.12,
     73964.47,
-    71261.25
+    71040.06
    ]
   }
  },
@@ -875,7 +876,7 @@
    "fcf": 105658376192,
    "w52lo": 243.42,
    "w52hi": 359.3684,
-   "evEbitda": 30.357,
+   "evEbitda": 30.297,
    "earnTs": 1793653200,
    "earnStart": 1801170000,
    "earnEnd": 1801170000,
@@ -893,9 +894,9 @@
    "ccy": "USD",
    "mcap": 4012989743104,
    "pe": 21.0101,
-   "fpe": 10.4941,
+   "fpe": 10.4854,
    "eps": 7.91,
-   "feps": 15.8366,
+   "feps": 15.8496,
    "revTTM": 302970011648,
    "netIncome": 192880001024,
    "shares": 24147000000,
@@ -919,7 +920,7 @@
    "fcf": 41809874944,
    "w52lo": 148.8,
    "w52hi": 243.37,
-   "evEbitda": 20.685,
+   "evEbitda": 19.783,
    "earnTs": 1794949200,
    "earnStart": 1794949200,
    "earnEnd": 1794949200,
@@ -1049,7 +1050,7 @@
    "fcf": -34731749376,
    "w52lo": 196.0,
    "w52hi": 287.2,
-   "evEbitda": 16.703,
+   "evEbitda": 16.778,
    "earnTs": 1793304000,
    "earnStart": 1793304000,
    "earnEnd": 1793304000,
@@ -1090,7 +1091,7 @@
    "fcf": 1203071877120,
    "w52lo": 266.82,
    "w52hi": 487.47,
-   "evEbitda": 3.863,
+   "evEbitda": 3.773,
    "earnTs": 1792067400,
    "earnStart": 1799933400,
    "earnEnd": 1799933400,
@@ -1107,9 +1108,9 @@
    "industry": "Aerospace & Defense",
    "ccy": "USD",
    "mcap": 1900534169600,
-   "fpe": 51.0296,
+   "fpe": 52.5397,
    "eps": 0.23,
-   "feps": 2.7423,
+   "feps": 2.6635,
    "revTTM": 32042999808,
    "netIncome": -3431000064,
    "shares": 8246541218,
@@ -1127,7 +1128,7 @@
    "debt": 39217999872,
    "w52lo": 104.83,
    "w52hi": 225.64,
-   "evEbitda": 157.406,
+   "evEbitda": 157.626,
    "earnTs": 1792526400,
    "earnStart": 1792526400,
    "earnEnd": 1792526400,
@@ -1253,7 +1254,7 @@
    "fcf": 4967249920,
    "w52lo": 297.38,
    "w52hi": 498.83,
-   "evEbitda": 154.147,
+   "evEbitda": 156.802,
    "earnTs": 1792612800,
    "earnStart": 1801083600,
    "earnEnd": 1801083600,
@@ -1295,7 +1296,7 @@
    "fcf": 30596499456,
    "w52lo": 289.77,
    "w52hi": 495.0,
-   "evEbitda": 32.212,
+   "evEbitda": 33.96,
    "earnTs": 1796850000,
    "earnStart": 1796850000,
    "earnEnd": 1796850000,
@@ -1311,14 +1312,14 @@
    "sector": "Technology",
    "industry": "Consumer Electronics",
    "ccy": "KRW",
-   "mcap": 1354480884908032,
-   "fpe": 2.69,
+   "mcap": 1383784507244544,
+   "fpe": 2.7482,
    "revTTM": 594479375450112,
    "netIncome": 212962144944128,
    "shares": 5709556199,
    "beta": 1.594,
    "div": 18404.0,
-   "divYield": 8.848,
+   "divYield": 8.661,
    "target": 475628.56,
    "targetHi": 690000.0,
    "targetLo": 290000.0,
@@ -1334,7 +1335,7 @@
    "cash": 214822905970688,
    "debt": 17191200096256,
    "fcf": 83820791463936,
-   "w52lo": 0.0,
+   "w52lo": 94500.0,
    "w52hi": 374500.0,
    "evEbitda": 3.605,
    "earnTs": 1793167200,
@@ -1378,7 +1379,7 @@
    "fcf": 9343699968,
    "w52lo": 850.51,
    "w52hi": 1460.0,
-   "evEbitda": 28.499,
+   "evEbitda": 28.307,
    "earnTs": 1793277000,
    "earnStart": 1793277000,
    "earnEnd": 1793277000,
@@ -1433,14 +1434,14 @@
    "sector": "Technology",
    "industry": "Semiconductors",
    "ccy": "KRW",
-   "mcap": 884287326912512,
-   "fpe": 2.3407,
+   "mcap": 905442523873280,
+   "fpe": 2.3986,
    "revTTM": 269336677711872,
    "netIncome": 189262280523776,
    "shares": 705173324,
    "beta": 2.466,
    "div": 3000.0,
-   "divYield": 0.239,
+   "divYield": 0.233,
    "target": 3097152.2,
    "targetHi": 4700000.0,
    "targetLo": 1575000.0,
@@ -1455,7 +1456,7 @@
    "debtEq": 5.111,
    "cash": 114459997634560,
    "debt": 15799000498176,
-   "w52lo": 0.0,
+   "w52lo": 501000.0,
    "w52hi": 2987000.0,
    "evEbitda": 3.731,
    "earnTs": 1793080800,
@@ -1499,7 +1500,7 @@
    "fcf": 29140250624,
    "w52lo": 192.59,
    "w52hi": 1255.0,
-   "evEbitda": 8.082,
+   "evEbitda": 7.948,
    "earnTs": 1790798400,
    "earnStart": 1798059600,
    "earnEnd": 1798059600,
@@ -1515,14 +1516,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1004230017024,
+   "mcap": 1001159458816,
    "pe": 45.721,
    "fpe": 39.1672,
    "eps": 2.76,
    "feps": 3.2218,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.785,
@@ -1543,7 +1544,7 @@
    "fcf": 7127625216,
    "w52lo": 98.88,
    "w52hi": 135.16,
-   "evEbitda": 24.213,
+   "evEbitda": 24.307,
    "earnTs": 1795095000,
    "earnStart": 1795095000,
    "earnEnd": 1795095000,
@@ -1668,7 +1669,7 @@
    "fcf": 20983375872,
    "w52lo": 293.89,
    "w52hi": 442.23,
-   "evEbitda": 24.773,
+   "evEbitda": 24.472,
    "earnTs": 1793131200,
    "earnStart": 1800997200,
    "earnEnd": 1800997200,
@@ -1712,7 +1713,7 @@
    "fcf": 28318750720,
    "w52lo": 114.19,
    "w52hi": 188.5,
-   "evEbitda": 9.092,
+   "evEbitda": 9.253,
    "earnTs": 1793363400,
    "earnStart": 1801229400,
    "earnEnd": 1801229400,
@@ -1756,7 +1757,7 @@
    "fcf": 18501875712,
    "w52lo": 193.45,
    "w52hi": 286.07,
-   "evEbitda": 20.36,
+   "evEbitda": 20.577,
    "earnTs": 1800970200,
    "earnStart": 1800970200,
    "earnEnd": 1800970200,
@@ -1843,7 +1844,7 @@
    "fcf": 16629250048,
    "w52lo": 464.52,
    "w52hi": 681.99,
-   "evEbitda": 25.58,
+   "evEbitda": 25.272,
    "earnTs": 1793277000,
    "earnStart": 1801143000,
    "earnEnd": 1801143000,
@@ -1885,7 +1886,7 @@
    "fcf": 17693124608,
    "w52lo": 190.75,
    "w52hi": 302.93,
-   "evEbitda": 18.587,
+   "evEbitda": 18.559,
    "earnTs": 1793363400,
    "earnStart": 1793363400,
    "earnEnd": 1793363400,
@@ -1903,9 +1904,9 @@
    "ccy": "USD",
    "mcap": 422153748480,
    "pe": 15.8847,
-   "fpe": 13.0594,
+   "fpe": 13.1158,
    "eps": 13.62,
-   "feps": 16.5666,
+   "feps": 16.4954,
    "revTTM": 226256994304,
    "netIncome": 26976000000,
    "shares": 1951253686,
@@ -1929,7 +1930,7 @@
    "fcf": 26048374784,
    "w52lo": 146.49,
    "w52hi": 236.48,
-   "evEbitda": 7.618,
+   "evEbitda": 7.732,
    "earnTs": 1793363400,
    "earnStart": 1801229400,
    "earnEnd": 1801229400,
@@ -1973,7 +1974,7 @@
    "fcf": 6752750080,
    "w52lo": 844.06,
    "w52hi": 1102.84,
-   "evEbitda": 33.192,
+   "evEbitda": 33.339,
    "earnTs": 1796936400,
    "earnStart": 1796936400,
    "earnEnd": 1796936400,
@@ -1991,9 +1992,9 @@
    "ccy": "USD",
    "mcap": 413421600768,
    "pe": 120.831,
-   "fpe": 67.5839,
+   "fpe": 67.6786,
    "eps": 1.42,
-   "feps": 2.5388,
+   "feps": 2.5352,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
@@ -2015,7 +2016,7 @@
    "fcf": 2652487680,
    "w52lo": 106.37,
    "w52hi": 212.94,
-   "evEbitda": 120.758,
+   "evEbitda": 120.169,
    "earnTs": 1793653200,
    "earnStart": 1801515600,
    "earnEnd": 1801515600,
@@ -2056,7 +2057,7 @@
    "fcf": 11182624768,
    "w52lo": 72.8,
    "w52hi": 130.37,
-   "evEbitda": 22.129,
+   "evEbitda": 22.366,
    "earnTs": 1794517200,
    "earnStart": 1794517200,
    "earnEnd": 1794517200,
@@ -2074,9 +2075,9 @@
    "ccy": "USD",
    "mcap": 419177365504,
    "pe": 28.7434,
-   "fpe": 27.6116,
+   "fpe": 27.6207,
    "eps": 3.39,
-   "feps": 3.529,
+   "feps": 3.5278,
    "revTTM": 51053998080,
    "netIncome": 14629000192,
    "shares": 4301902335,
@@ -2100,7 +2101,7 @@
    "fcf": 4349000192,
    "w52lo": 67.27,
    "w52hi": 98.38,
-   "evEbitda": 25.67,
+   "evEbitda": 25.638,
    "earnTs": 1793104200,
    "earnStart": 1793104200,
    "earnEnd": 1793104200,
@@ -2160,8 +2161,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 121.4541,
+   "shares": 572600000,
+   "divYield": 2.604,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2213,6 +2219,125 @@
  ],
  "news": [
   {
+   "h": "Un dirigeant de MediaAlpha vend des actions pour 613.564$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-13T00:47:12Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-de-mediaalpha-vend-des-actions-pour-613564-93CH-3694173"
+  },
+  {
+   "h": "Un cadre de Quest Diagnostics cède des actions pour 3,01 millions $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-13T00:46:59Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-cadre-de-quest-diagnostics-cede-des-actions-pour-301-millions--93CH-3694172"
+  },
+  {
+   "h": "Un administrateur d’Innospec achète pour 27.493$ d’actions IOSP",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-13T00:46:32Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-dinnospec-achete-pour-27493-dactions-iosp-93CH-3694171"
+  },
+  {
+   "h": "Pourquoi l’action Samsung Electronics est-elle en hausse aujourd’hui ?",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-13T00:40:53Z",
+   "url": "https://fr.investing.com/news/stock-market-news/pourquoi-laction-samsung-electronics-estelle-en-hausse-aujourdhui--93CH-3694169"
+  },
+  {
+   "h": "Pourquoi l’action Modine Manufacturing s’envole-t-elle après la clôture ?",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-13T00:40:52Z",
+   "url": "https://fr.investing.com/news/stock-market-news/pourquoi-laction-modine-manufacturing-senvoletelle-apres-la-cloture--93CH-3694168"
+  },
+  {
+   "h": "Martinrea dépasse les prévisions de chiffre d’affaires au T3 2026, le titre recule",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-13T00:40:24Z",
+   "url": "https://fr.investing.com/news/transcripts/martinrea-depasse-les-previsions-de-chiffre-daffaires-au-t3-2026-le-titre-recule-93CH-3694167"
+  },
+  {
+   "h": "McGraw Hill à la conférence BMO : l’IA et les marges améliorent les perspectives",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-13T00:38:31Z",
+   "url": "https://fr.investing.com/news/transcripts/mcgraw-hill-a-la-conference-bmo--lia-et-les-marges-ameliorent-les-perspectives-93CH-3694166"
+  },
+  {
+   "h": "Le BPA de Bolt a dépassé les attentes de 1,27$, le CA a surpassé les prévisions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-13T00:34:42Z",
+   "url": "https://fr.investing.com/news/earnings/le-bpa-de-bolt-a-depasse-les-attentes-de-127-le-ca--a-surpasse-les-previsions-3694165"
+  },
+  {
+   "h": "Le BPA de Neuropace a dépassé les attentes, le CA en dessous des prévisions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-13T00:34:34Z",
+   "url": "https://fr.investing.com/news/earnings/le-bpa-de-neuropace-a-depasse-les-attentes-le-ca--en-dessous-des-previsions-3694164"
+  },
+  {
+   "h": "Le BPA de Lineage Cell Therapeutics a dépassé les attentes, le CA a surpassé les prévisions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-13T00:34:27Z",
+   "url": "https://fr.investing.com/news/earnings/le-bpa-de-lineage-cell-therapeutics-a-depasse-les-attentes-le-ca--a-surpasse-les-previsions-3694163"
+  },
+  {
+   "h": "Jensen Huang resigns as Nvidia chief executive",
+   "w": "Shares in chipmaker slide after group says chief financial officer Colette Kress to take over as interim head",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "myFT — companies",
+   "ts": "2026-11-13T00:17:59Z",
+   "url": "https://www.ft.com/content/b4a0f3d9-f075-47ea-9a85-77cdade9a06f?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "The rise of 'housefishing' - when does using AI go from enhancing to misleading?",
+   "w": "Experts warn that using AI to enhance property images can go too far and mislead prospective buyers.",
+   "syms": [],
+   "src": "BBC — Business",
+   "ts": "2026-11-13T00:13:35Z",
+   "url": "https://www.bbc.co.uk/news/articles/cm62y0wrnz9zo?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "Nvidia chief Jensen Huang toppled by revelations of extramarital affairs",
+   "w": "Departure marks stunning end to three-decade tenure of executive who built chip company into an engine of the AI boom",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "myFT — world",
+   "ts": "2026-11-13T00:07:33Z",
+   "url": "https://www.ft.com/content/83474218-387c-4f93-a27b-ffdfee624029?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "US cannot reach a deal to end Ukraine war without Europe, says Kushner",
+   "w": "American envoy’s comments come as European leaders reject Russian push to overhaul continent’s security",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-13T00:00:30Z",
+   "url": "https://www.ft.com/content/8d28a5be-af56-421f-a33d-779a0fcc7ad4?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "Une panne mondiale d’Outlook perturbe l’accès aux e-mails",
    "w": "Microsoft affirme travailler « sans relâche » pour régler la panne qui influence également certaines fonctions des assistants d’intelligence artificielle, dont Copilot, son propre assistant IA, mais aussi Claude et ChatGPT.",
    "syms": [],
@@ -2221,70 +2346,25 @@
    "url": "https://www.lemonde.fr/pixels/article/2026/11/13/une-panne-mondiale-d-outlook-empeche-des-dizaines-de-milliers-d-utilisateurs-d-acceder-a-leurs-e-mails_6809171_4408996.html"
   },
   {
+   "h": "US lawmakers pile pressure on Howard Lutnick as Nvidia scandal widens",
+   "w": "Legislators demand Trump’s commerce secretary explain why he allowed chip sales to company linked to alleged Chinese spy",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "myFT — world",
+   "ts": "2026-11-12T23:35:11Z",
+   "url": "https://www.ft.com/content/190e5eea-7461-4b26-8b69-17a3288e31d4?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "Scandal-hit Nvidia CEO Jensen Huang quits, plunging AI chipmaking giant into turmoil",
-   "w": "US lawmakers now want to question Huang over whether one of his alleged relationships was with a Chinese spy.",
+   "w": "US lawmakers now want to question him over whether one of his alleged relationships was with a Chinese spy.",
    "syms": [
     "NVDA"
    ],
    "src": "BBC — Business",
    "ts": "2026-11-12T23:34:05Z",
    "url": "https://www.bbc.co.uk/news/articles/cmq5vd1wdgz6o?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "Tamboran Resources enregistre ses premières ventes de gaz au T1 2026",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-12T23:32:34Z",
-   "url": "https://fr.investing.com/news/transcripts/tamboran-resources-enregistre-ses-premieres-ventes-de-gaz-au-t1-2026-93CH-3694105"
-  },
-  {
-   "h": "Jefferson Capital dépasse les attentes au T3 2026, l’action monte après clôture",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-12T23:32:00Z",
-   "url": "https://fr.investing.com/news/transcripts/jefferson-capital-depasse-les-attentes-au-t3-2026-laction-monte-apres-cloture-93CH-3694102"
-  },
-  {
-   "h": "Nektar Therapeutics dépasse les attentes de BPA au T3 2026 malgré une baisse du titre",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-12T23:31:57Z",
-   "url": "https://fr.investing.com/news/transcripts/nektar-therapeutics-depasse-les-attentes-de-bpa-au-t3-2026-malgre-une-baisse-du-titre-93CH-3694101"
-  },
-  {
-   "h": "Compte rendu de résultats : Nu Holdings rate les estimations du T3 2026, l’action monte",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-12T23:30:11Z",
-   "url": "https://fr.investing.com/news/transcripts/compte-rendu-de-resultats--nu-holdings-rate-les-estimations-du-t3-2026-laction-monte-93CH-3694099"
-  },
-  {
-   "h": "NeuroPace chute après des résultats du T3 2026 décevants et une révision à la baisse des prévisions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-12T23:28:54Z",
-   "url": "https://fr.investing.com/news/transcripts/neuropace-chute-apres-des-resultats-du-t3-2026-decevants-et-une-revision-a-la-baisse-des-previsions-93CH-3694098"
-  },
-  {
-   "h": "Liftoff dépasse ses prévisions du T3 2026, l’action bondit de 15%",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-12T23:28:25Z",
-   "url": "https://fr.investing.com/news/transcripts/liftoff-depasse-ses-previsions-du-t3-2026-laction-bondit-de-15-93CH-3694097"
-  },
-  {
-   "h": "Andersen Group affiche une forte croissance au T3 2026, mais l’action recule",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-12T23:27:53Z",
-   "url": "https://fr.investing.com/news/transcripts/andersen-group-affiche-une-forte-croissance-au-t3-2026-mais-laction-recule-93CH-3694096"
   },
   {
    "h": "AI boom will lift Nvidia even after Huang’s exit, investors say",
@@ -2298,28 +2378,14 @@
    "mine": 1
   },
   {
-   "h": "Verrica dépasse les prévisions de chiffre d’affaires au T3 2026, l’action bondit",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-12T23:25:54Z",
-   "url": "https://fr.investing.com/news/transcripts/verrica-depasse-les-previsions-de-chiffre-daffaires-au-t3-2026-laction-bondit-93CH-3694095"
-  },
-  {
-   "h": "Solesence affiche un bénéfice record au T3 2026, l’action bondit de 35%",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-12T23:24:26Z",
-   "url": "https://fr.investing.com/news/transcripts/solesence-affiche-un-benefice-record-au-t3-2026-laction-bondit-de-35-93CH-3694094"
-  },
-  {
-   "h": "Compte rendu d’appel aux résultats : Virgin Galactic dépasse les prévisions du T3 2026 malgré une baisse du titre",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-12T23:24:20Z",
-   "url": "https://fr.investing.com/news/transcripts/compte-rendu-dappel-aux-resultats--virgin-galactic-depasse-les-previsions-du-t3-2026-malgre-une-baisse-du-titre-93CH-3694092"
+   "h": "Cramer says Jensen Huang betrayed Nvidia shareholders. How to pick up the pieces",
+   "w": "Without Huang, Cramer said Thursday, \"There won't be a better Nvidia, just a different one.\"",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-12T23:14:56Z",
+   "url": "https://www.cnbc.com/2026/11/12/nvidia-jensen-huang-exit-cramer.html"
   },
   {
    "h": "Who can replace Jensen Huang as Nvidia CEO? These four names are buzzing in AI circles.",
@@ -2529,31 +2595,12 @@
    "mine": 1
   },
   {
-   "h": "Jensen Huang's exit from Nvidia raises critical questions about the future of AI",
-   "w": "Nvidia CEO Jensen Huang has been a singular figure in the development of the AI industry, which suddenly has to survive without him.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-12T20:32:21Z",
-   "url": "https://www.cnbc.com/2026/11/12/jensen-huangs-exit-from-nvidia-raises-questions-about-future-of-ai.html"
-  },
-  {
-   "h": "European leaders reject Russian push to overhaul continent’s security",
-   "w": "‘Europe needs to pay attention’, warns Zelenskyy after Abu Dhabi talks",
+   "h": "Microsoft users report outages amid tech giant 'connectivity issues'",
+   "w": "Users worldwide report issues after tech giant says its infrastructure has been hit by \"elevated load\"",
    "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-12T20:30:14Z",
-   "url": "https://www.ft.com/content/8d28a5be-af56-421f-a33d-779a0fcc7ad4?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "United Airlines won’t let AI agents book your flight. Expert says you shouldn't let a bot do that for you, anyway",
-   "w": "AI agents can save you time, but an expert says decisions involving your health, wealth and privacy still need human input.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-12T20:24:59Z",
-   "url": "https://www.cnbc.com/make-it/2026/11/12/ai-agents-human-in-loop.html"
+   "src": "BBC — Business",
+   "ts": "2026-11-12T20:25:29Z",
+   "url": "https://www.bbc.co.uk/news/articles/c5gm3g9ldz8xo?at_medium=RSS&at_campaign=rss"
   },
   {
    "h": "I’m 17 and will be a first-generation college student. Is law school worth being $200,000 in debt?",
@@ -2590,6 +2637,50 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-12T19:58:11Z",
    "url": "https://www.cnbc.com/2026/11/12/nvidia-jensen-huang-joon-kim-wachtell-china-spy.html"
+  },
+  {
+   "h": "Here's what Nvidia interim CEO Colette Kress and board chair Harvey Jones wrote to Nvidia employees",
+   "w": "Interim CEO Colette Kress and board chair Harvey Jones emailed Nvidia employees, expressing gratitude for \"resilience, professionalism and continued dedication",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-12T19:42:41Z",
+   "url": "https://www.cnbc.com/2026/11/12/nvidia-kress-jones-employee-emails.html"
+  },
+  {
+   "h": "Roblox uses Japan playbook to grow in Asia-Pacific gaming market",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-12T18:58:30.123937Z",
+   "url": "https://asia.nikkei.com/spotlight/global-management-dialogue/global-management-dialogue-2026/roblox-uses-japan-playbook-to-grow-in-asia-pacific-gaming-market"
+  },
+  {
+   "h": "Buffer or crutch? Nepal clings to 'least developed country' perks",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-12T18:58:30.123937Z",
+   "url": "https://asia.nikkei.com/spotlight/policy-asia/buffer-or-crutch-nepal-clings-to-least-developed-country-perks"
+  },
+  {
+   "h": "'Used in Japan' reseller to make US debut in New York's SoHo",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-12T18:58:30.123937Z",
+   "url": "https://asia.nikkei.com/business/consumer/used-in-japan-reseller-to-make-us-debut-in-new-york-s-soho"
+  },
+  {
+   "h": "Nvidia crisis exposes downside of rockstar founders",
+   "w": "",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-12T18:58:30.123937Z",
+   "url": "https://asia.nikkei.com/business/technology/nvidia-crisis-exposes-downside-of-rockstar-founders"
   },
   {
    "h": "Italian banks may cut sovereign debt holdings in tax battle, warns Intesa chief",
@@ -2727,14 +2818,6 @@
    "url": "https://www.lemonde.fr/les-decodeurs/article/2026/11/12/les-cles-pour-comprendre-le-debat-sur-les-gros-heritages_6809137_4355770.html"
   },
   {
-   "h": "The rise and fall of Jensen Huang - how the tech superstar became mired in scandal",
-   "w": "Within days, Huang's status as a seemingly untouchable figure leading the global tech race has crumbled.",
-   "syms": [],
-   "src": "BBC — Business",
-   "ts": "2026-11-12T17:11:48Z",
-   "url": "https://www.bbc.co.uk/news/articles/cmze750zg0jeo?at_medium=RSS&at_campaign=rss"
-  },
-  {
    "h": "Starbucks in China eyes growth through quality over quantity",
    "w": "",
    "syms": [],
@@ -2780,7 +2863,7 @@
    "h": "Can Britain afford to lead European defence?",
    "w": "A special show recorded on board HMS Prince of Wales",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — world uk",
    "ts": "2026-11-12T16:30:17Z",
    "url": "https://www.ft.com/content/33b29893-8283-4a7d-acfc-bb758e3587e2?syn-25a6b1a6=1",
    "mine": 1
@@ -2810,36 +2893,10 @@
    "url": "https://asia.nikkei.com/politics/international-relations/tokyo-seeks-takaichi-putin-talks-after-russia-seizes-japan-tobacco-units"
   },
   {
-   "h": "Australia miner Tivan teams with Sumitomo on tungsten, other key minerals",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-12T16:17:16.378102Z",
-   "url": "https://asia.nikkei.com/business/materials/australia-miner-tivan-teams-with-sumitomo-on-tungsten-other-key-minerals"
-  },
-  {
-   "h": "Japan oil companies keep profits growing despite Hormuz closure",
-   "w": "",
-   "syms": [
-    "BRENT"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-12T16:17:16.378102Z",
-   "url": "https://asia.nikkei.com/business/energy/japan-oil-companies-keep-profits-growing-despite-hormuz-closure"
-  },
-  {
-   "h": "Takaichi looks to meet with Trump to head off defense spending demands",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-12T16:17:16.378102Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/takaichi-looks-to-meet-with-trump-to-head-off-defense-spending-demands"
-  },
-  {
    "h": "We need to get older people back into work too",
    "w": "The Milburn review shows the government is taking the Neet crisis seriously. Underemployed over-fifties deserve the same attention",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — world uk",
    "ts": "2026-11-12T16:05:07Z",
    "url": "https://www.ft.com/content/21462c5b-0770-49ee-a248-9c01f03ddffe",
    "mine": 1
@@ -2875,36 +2932,9 @@
    "syms": [
     "NVDA"
    ],
-   "src": "myFT — companies",
+   "src": "myFT — technology",
    "ts": "2026-11-12T15:56:31Z",
    "url": "https://www.ft.com/content/42bfcbcb-7121-492b-8e1d-0aceacd093e2?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Meta, chat app Line help Taiwan combat online fraud",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-12T15:25:39.921823Z",
-   "url": "https://asia.nikkei.com/spotlight/society/crime/meta-chat-app-line-help-taiwan-combat-online-fraud"
-  },
-  {
-   "h": "Who is Nvidia's interim CEO Colette Kress - and who could take over permanently?",
-   "w": "Chief financial officer Colette Kress in in charge of Nvidia for now, but several others are in the frame as potential successors.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "BBC — Business",
-   "ts": "2026-11-12T15:10:32Z",
-   "url": "https://www.bbc.co.uk/news/articles/cqgm37dv20e8o?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "Burnham cannot rescue Poundland",
-   "w": "The UK discounter suffers from rising competition and changes in shopping habits, not predatory capitalism",
-   "syms": [],
-   "src": "myFT — companies",
-   "ts": "2026-11-12T14:48:31Z",
-   "url": "https://www.ft.com/content/7ec8ad82-a581-40eb-b8df-4767a0432425?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2913,7 +2943,7 @@
    "syms": [
     "NVDA"
    ],
-   "src": "myFT — companies",
+   "src": "myFT — technology",
    "ts": "2026-11-12T14:32:51Z",
    "url": "https://www.ft.com/content/fa23a8ad-29bf-4971-aa44-6b25b247c193?syn-25a6b1a6=1",
    "mine": 1
@@ -2967,17 +2997,6 @@
    "src": "myFT — us",
    "ts": "2026-11-12T14:05:07Z",
    "url": "https://www.ft.com/content/ea6c8ce6-3144-4554-ab41-c752d1dad49e?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Jensen Huang resigns as Nvidia chief executive",
-   "w": "Shares in chipmaker slide after group says chief financial officer Colette Kress to take over as interim head",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "myFT — technology",
-   "ts": "2026-11-12T13:51:15Z",
-   "url": "https://www.ft.com/content/b4a0f3d9-f075-47ea-9a85-77cdade9a06f?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -3038,7 +3057,7 @@
    "h": "Can green cement decarbonise the data centre building boom?",
    "w": "Scrutiny has mostly focused on electricity consumption, but their construction also creates significant emissions",
    "syms": [],
-   "src": "myFT — us",
+   "src": "myFT — technology",
    "ts": "2026-11-12T12:00:03Z",
    "url": "https://www.ft.com/content/7f3822b6-b0a1-4fa3-9b9c-fae8ca862afa?syn-25a6b1a6=1",
    "mine": 1
@@ -3070,7 +3089,7 @@
    "syms": [
     "NVDA"
    ],
-   "src": "myFT — us",
+   "src": "myFT — technology sector",
    "ts": "2026-11-12T11:08:31Z",
    "url": "https://www.ft.com/content/d3838274-a055-4d5d-a1ff-48f2979a08f0?syn-25a6b1a6=1",
    "mine": 1
@@ -3082,15 +3101,6 @@
    "src": "myFT — economy",
    "ts": "2026-11-12T11:00:04Z",
    "url": "https://www.ft.com/content/ee4176cc-5f08-47a4-909c-caa0cd54e113?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Maga architects blame Big Tech and AI data centres for midterms rout",
-   "w": "Head of Heritage Foundation admits Republicans’ embrace of Silicon Valley and the effect of Donald Trump’s Iran war cost them votes",
-   "syms": [],
-   "src": "myFT — technology",
-   "ts": "2026-11-12T11:00:04Z",
-   "url": "https://www.ft.com/content/43da75e5-e8fd-4aea-8afb-e3d75c9f176f?syn-25a6b1a6=1",
    "mine": 1
   },
   {
