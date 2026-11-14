@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T15:34:01.611415Z",
+ "generated_at": "2026-11-14T16:17:30.735277Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -774,10 +774,10 @@
    ]
   },
   "BRENT": {
-   "p": 95.84,
+   "p": 96.08,
    "prev": 95.82,
-   "chg": 0.02,
-   "pct": 0.02,
+   "chg": 0.26,
+   "pct": 0.27,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-13T22:00:00Z",
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 65167.7188,
+   "p": 65358.6914,
    "prev": 68249.2734,
-   "chg": -3081.5547,
-   "pct": -4.52,
+   "chg": -2890.582,
+   "pct": -4.24,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-14T15:34:01.611415Z",
+   "ts": "2026-11-14T16:17:30.735277Z",
    "open": 68238.2109,
-   "lo": 65065.9102,
+   "lo": 65136.0977,
    "hi": 68360.7109,
-   "vol": 32363243520,
+   "vol": 32463540224,
    "h": [
     80790.84,
     80024.01,
@@ -844,7 +844,7 @@
     73964.47,
     71342.97,
     68249.27,
-    65167.72
+    65358.69
    ]
   }
  },
@@ -1104,7 +1104,7 @@
    "earnEnd": 1799933400,
    "earnEst": true,
    "exDiv": 1796860800,
-   "divDate": 1799280000,
+   "divDate": 1807142400,
    "lastDiv": 1.107,
    "trailDiv": 6.0
   },
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1656497373184,
    "pe": 44.318,
-   "fpe": 17.8742,
+   "fpe": 17.8273,
    "eps": 7.83,
-   "feps": 19.414,
+   "feps": 19.4651,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1019350286336,
+   "mcap": 1016233525248,
    "pe": 46.4094,
    "fpe": 39.7569,
    "eps": 2.76,
    "feps": 3.2218,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.773,
@@ -1868,9 +1868,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 521499836416,
-   "pe": 50.6924,
+   "pe": 50.6055,
    "fpe": 18.216,
-   "eps": 5.82,
+   "eps": 5.83,
    "feps": 16.1962,
    "revTTM": 66013999104,
    "netIncome": 10302999552,
@@ -1911,9 +1911,9 @@
    "ccy": "USD",
    "mcap": 429061144576,
    "pe": 16.1446,
-   "fpe": 13.2731,
+   "fpe": 13.3304,
    "eps": 13.62,
-   "feps": 16.5666,
+   "feps": 16.4954,
    "revTTM": 226256994304,
    "netIncome": 26976000000,
    "shares": 1951253686,
@@ -1999,9 +1999,9 @@
    "ccy": "USD",
    "mcap": 404771504128,
    "pe": 118.3028,
-   "fpe": 66.1698,
+   "fpe": 66.2625,
    "eps": 1.42,
-   "feps": 2.5388,
+   "feps": 2.5352,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
@@ -2082,9 +2082,9 @@
    "ccy": "USD",
    "mcap": 426963795968,
    "pe": 29.2773,
-   "fpe": 28.1245,
+   "fpe": 28.1338,
    "eps": 3.39,
-   "feps": 3.529,
+   "feps": 3.5278,
    "revTTM": 51053998080,
    "netIncome": 14629000192,
    "shares": 4301902335,
@@ -2168,8 +2168,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 121.2883,
+   "shares": 572600000,
+   "divYield": 2.608,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2221,12 +2226,56 @@
  ],
  "news": [
   {
-   "h": "Flight disruptions continue after FAA lifts ground stop, some college football games delayed",
+   "h": "‘I’m sick of flying’: I paid for priority boarding, but the overhead bins were full. Was I duped?",
+   "w": "“Maybe next time I’ll try the other approach: I’ll board whenever I feel like it and drop my suitcase in the first open slot I see.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-14T16:15:00Z",
+   "url": "https://www.marketwatch.com/story/im-sick-of-flying-i-paid-for-priority-boarding-but-the-overhead-bins-were-full-was-i-duped-0badcc80?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Ground stop followed updates to older L3Harris communication system: DOT’s Duffy",
    "w": "U.S. flights are resuming after the FAA ground stop, but delays and cancellations are still piling up.",
    "syms": [],
    "src": "CNBC — Markets",
-   "ts": "2026-11-14T15:32:27Z",
+   "ts": "2026-11-14T16:11:57Z",
    "url": "https://www.cnbc.com/2026/11/14/faa-ground-stop-flights-resume-delays.html"
+  },
+  {
+   "h": "‘It leaves me with a sour taste’: My elderly mother gave our cousin $800 for a car repair. Should I be worried?",
+   "w": "“I know older people can easily feel patronized, and I don’t want that to happen.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-14T16:04:00Z",
+   "url": "https://www.marketwatch.com/story/it-leaves-me-with-a-sour-taste-my-elderly-mother-gave-our-cousin-800-for-a-car-repair-should-i-be-worried-88dbd188?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Lunettes connectées : « Où est donc l’Europe, qui aime tant se présenter comme la championne mondiale de la protection de la vie privée ? »",
+   "w": "Les usages prétendument récréatifs des lunettes munies de caméras et de microphones ne justifient pas de faire peser sur l’ensemble de la population le risque d’une surveillance diffuse, dénonce un collectif de chercheurs dans une tribune au « Monde ».",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-14T16:00:18Z",
+   "url": "https://www.lemonde.fr/idees/article/2026/11/14/lunettes-connectees-ou-est-donc-l-europe-qui-aime-tant-se-presenter-comme-la-championne-mondiale-de-la-protection-de-la-vie-privee_6810448_3232.html"
+  },
+  {
+   "h": "How Nvidia turmoil and a Democratic Congress could reshape the AI trade, according to ETF experts",
+   "w": "ETF experts say Nvidia’s leadership turmoil and Democratic control of Congress could shift AI demand to the benefit of other Big Tech stocks, rival chipmakers.",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-14T15:50:43Z",
+   "url": "https://www.cnbc.com/2026/11/14/nvidia-ai-trade-data-centers-congress.html"
+  },
+  {
+   "h": "Trump doesn’t plan to raise Nvidia, spy issue during China trip: U.S. officials",
+   "w": "Nvidia CEO Jensen Huang resigned this week after reports of multiple affairs, including one with a suspected Chinese spy, Alice Huang.",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-14T15:36:47Z",
+   "url": "https://www.cnbc.com/2026/11/13/trump-nvidia-huang-china.html"
   },
   {
    "h": "Suspension des vols aux Etats-Unis : des annulations et des retards de vols persistent samedi",
@@ -2559,6 +2608,30 @@
    "mine": 1
   },
   {
+   "h": "Osaka landmark to be centerpiece of area's redevelopment",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T10:17:30.735277Z",
+   "url": "https://asia.nikkei.com/business/travel-leisure/osaka-landmark-to-be-centerpiece-of-area-s-redevelopment"
+  },
+  {
+   "h": "South Koreans show their love for once-taboo Japan pop culture",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T10:17:30.735277Z",
+   "url": "https://asia.nikkei.com/business/media-entertainment/south-koreans-show-their-love-for-once-taboo-japan-pop-culture"
+  },
+  {
+   "h": "Uranium price hits record as AI demand prompts nuclear comeback",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T10:17:30.735277Z",
+   "url": "https://asia.nikkei.com/business/markets/commodities/uranium-price-hits-record-as-ai-demand-prompts-nuclear-comeback"
+  },
+  {
    "h": "Hawkward timing",
    "w": "Federal Reserve policymakers have floated the idea of a bigger rate increase in December following strong jobs, growth and inflation data",
    "syms": [],
@@ -2641,14 +2714,6 @@
    "url": "https://asia.nikkei.com/business/technology/microsoft-outage-wreaks-havoc-in-asia-exposing-dependence-risk"
   },
   {
-   "h": "Microsoft apologizes for massive outage that took down Outlook and other 365 services",
-   "w": "A Microsoft outage on Thursday and Friday affected users of services like Outlook, Teams and 365.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-14T08:11:28Z",
-   "url": "https://www.cnbc.com/2026/11/12/microsoft-outage-outlook-aws-google.html"
-  },
-  {
    "h": "How Trump might be tempted to orchestrate an 'end to the Korean War'",
    "w": "",
    "syms": [],
@@ -2663,30 +2728,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-14T08:08:47.013961Z",
    "url": "https://asia.nikkei.com/spotlight/big-in-asia/us-china-truce-masks-rising-tensions-ahead-of-xi-trump-redux-at-apec"
-  },
-  {
-   "h": "Honda supplier Topre to invest $140mn in US for new plant, upgrades",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T08:08:47.013961Z",
-   "url": "https://asia.nikkei.com/business/automobiles/honda-supplier-topre-to-invest-140mn-in-us-for-new-plant-upgrades"
-  },
-  {
-   "h": "Did we really see a black hole? Australian team says 'yes'",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T07:17:57.425313Z",
-   "url": "https://asia.nikkei.com/business/science/did-we-really-see-a-black-hole-australian-team-says-yes"
-  },
-  {
-   "h": "No grass, no problem: Playing sand golf in the Australian outback",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T07:17:57.425313Z",
-   "url": "https://asia.nikkei.com/life-arts/life/no-grass-no-problem-playing-sand-golf-in-the-australian-outback"
   },
   {
    "h": "Microsoft says services fully restored after day-long global outage",
@@ -2973,16 +3014,6 @@
    "url": "https://www.marketwatch.com/story/14-dividend-stocks-selected-for-long-term-growth-0a095c0d?mod=mw_rss_topstories"
   },
   {
-   "h": "Trump doesn’t plan to raise Nvidia, spy issue during China trip: U.S. officials",
-   "w": "Nvidia CEO Jensen Huang resigned this week after reports of multiple affairs, including one with a suspected Chinese spy, Alice Huang.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-14T01:34:11Z",
-   "url": "https://www.cnbc.com/2026/11/13/trump-nvidia-huang-china.html"
-  },
-  {
    "h": "Trump will not raise Nvidia spy issue with Xi at summit, officials say",
    "w": "US president will hold trilateral meeting with Chinese leader and Russia’s Vladimir Putin next week",
    "syms": [
@@ -3009,24 +3040,6 @@
    "ts": "2026-11-14T01:00:05Z",
    "url": "https://www.ft.com/content/599cd9ab-dbd0-4c0d-818a-f6270871cd97?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "4 expert tips for signing up for Medicare",
-   "w": "A day in the life of a Medicare counselor",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-13T22:45:00Z",
-   "url": "https://www.marketwatch.com/story/what-really-happens-during-medicare-counseling-6a4f618e?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Nvidia’s stock is on a losing streak not seen in 14 years. What comes next?",
-   "w": "Nvidia wiped out $573 billion in market capitalization this week — its sixth consecutive week of stock declines.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "MarketWatch",
-   "ts": "2026-11-13T22:21:00Z",
-   "url": "https://www.marketwatch.com/story/nvidias-stock-is-on-a-losing-streak-not-seen-in-14-years-what-comes-next-a07e801e?mod=mw_rss_topstories"
   },
   {
    "h": "Agencies extend comment period for proposed third-party risk management guidance",
@@ -3085,14 +3098,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-13T16:30:04Z",
    "url": "https://www.lemonde.fr/afrique/article/2026/11/13/le-maroc-se-positionne-en-potentiel-fournisseur-d-uranium-de-la-france_6809357_3212.html"
-  },
-  {
-   "h": "« En matière de voiture électrique, des normes perçues comme contraignantes se sont révélées précieuses »",
-   "w": "Un collectif de chercheurs engagés en faveur de la transition écologique observe, dans une tribune au « Monde », que le choc pétrolier de 2026 a agi comme un puissant accélérateur pour le marché des véhicules électriques.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-13T16:15:07Z",
-   "url": "https://www.lemonde.fr/idees/article/2026/11/13/en-matiere-de-voiture-electrique-des-normes-percues-comme-contraignantes-se-sont-revelees-precieuses_6809351_3232.html"
   }
  ],
  "summary": {
