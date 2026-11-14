@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-11-14T00:11:38.782981Z",
+ "generated_at": "2026-11-14T01:28:20.932709Z",
  "quotes": {
   "NVDA": {
-   "p": 162.85,
+   "p": 162.8201,
    "prev": 166.19,
-   "chg": -3.34,
-   "pct": -2.01,
+   "chg": -3.3699,
+   "pct": -2.03,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (NVDA)",
    "ts": "2026-11-13T21:00:00Z",
@@ -14,6 +14,7 @@
    "hi": 170.0,
    "vol": 362490337,
    "h": [
+    221.3,
     217.23,
     214.13,
     217.09,
@@ -34,8 +35,7 @@
     178.67,
     168.89,
     173.73,
-    166.19,
-    162.85
+    166.19
    ]
   },
   "ASTS": {
@@ -51,6 +51,7 @@
    "hi": 34.5,
    "vol": 14315074,
    "h": [
+    42.14,
     44.46,
     40.66,
     41.87,
@@ -71,8 +72,7 @@
     36.89,
     33.69,
     36.62,
-    34.5,
-    32.6
+    34.5
    ]
   },
   "SPX": {
@@ -624,8 +624,8 @@
    "prev": 1.3277,
    "chg": -0.0068,
    "pct": -0.51,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (GBPUSD=X)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (GBPUSD=X) — last update failed",
    "ts": "2026-11-13T22:30:00Z",
    "open": 1.3231,
    "lo": 1.3209,
@@ -803,17 +803,17 @@
    ]
   },
   "BTC": {
-   "p": 68338.8594,
+   "p": 68313.4297,
    "prev": 71342.9688,
-   "chg": -3004.1094,
-   "pct": -4.21,
+   "chg": -3029.5391,
+   "pct": -4.25,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-14T00:11:38.782981Z",
+   "ts": "2026-11-14T01:28:20.932709Z",
    "open": 68238.2109,
-   "lo": 68238.2109,
-   "hi": 68356.4922,
-   "vol": 43089039360,
+   "lo": 68128.5156,
+   "hi": 68360.7109,
+   "vol": 42297622528,
    "h": [
     81074.19,
     80790.84,
@@ -836,7 +836,7 @@
     73720.12,
     73964.47,
     71342.97,
-    68338.86
+    68313.43
    ]
   }
  },
@@ -875,7 +875,7 @@
    "fcf": 105658376192,
    "w52lo": 243.42,
    "w52hi": 360.83,
-   "evEbitda": 30.294,
+   "evEbitda": 30.411,
    "earnTs": 1793653200,
    "earnStart": 1801170000,
    "earnEnd": 1801170000,
@@ -919,7 +919,7 @@
    "fcf": 41809874944,
    "w52lo": 148.8,
    "w52hi": 243.37,
-   "evEbitda": 19.783,
+   "evEbitda": 19.383,
    "earnTs": 1794949200,
    "earnStart": 1794949200,
    "earnEnd": 1794949200,
@@ -963,7 +963,7 @@
    "fcf": 2994125056,
    "w52lo": 349.2,
    "w52hi": 559.15,
-   "evEbitda": 19.22,
+   "evEbitda": 19.251,
    "earnTs": 1793217600,
    "earnStart": 1801083600,
    "earnEnd": 1801083600,
@@ -1007,7 +1007,7 @@
    "fcf": -1162499968,
    "w52lo": 270.7,
    "w52hi": 408.61,
-   "evEbitda": 19.273,
+   "evEbitda": 19.079,
    "earnTs": 1793217600,
    "earnStart": 1793217600,
    "earnEnd": 1793217600,
@@ -1049,7 +1049,7 @@
    "fcf": -34731749376,
    "w52lo": 196.0,
    "w52hi": 287.2,
-   "evEbitda": 16.778,
+   "evEbitda": 16.731,
    "earnTs": 1793304000,
    "earnStart": 1793304000,
    "earnEnd": 1793304000,
@@ -1090,7 +1090,7 @@
    "fcf": 1203071877120,
    "w52lo": 266.82,
    "w52hi": 487.47,
-   "evEbitda": 3.773,
+   "evEbitda": 3.695,
    "earnTs": 1792067400,
    "earnStart": 1799933400,
    "earnEnd": 1799933400,
@@ -1127,7 +1127,7 @@
    "debt": 39217999872,
    "w52lo": 104.83,
    "w52hi": 225.64,
-   "evEbitda": 157.626,
+   "evEbitda": 156.665,
    "earnTs": 1792526400,
    "earnStart": 1792526400,
    "earnEnd": 1792526400,
@@ -1212,7 +1212,7 @@
    "fcf": 16848499712,
    "w52lo": 520.26,
    "w52hi": 779.82,
-   "evEbitda": 13.999,
+   "evEbitda": 14.403,
    "earnTs": 1792612800,
    "earnStart": 1801083600,
    "earnEnd": 1801083600,
@@ -1253,7 +1253,7 @@
    "fcf": 4967249920,
    "w52lo": 297.38,
    "w52hi": 498.83,
-   "evEbitda": 156.802,
+   "evEbitda": 153.897,
    "earnTs": 1792612800,
    "earnStart": 1801083600,
    "earnEnd": 1801083600,
@@ -1278,9 +1278,9 @@
    "beta": 1.508,
    "div": 2.6,
    "divYield": 0.749,
-   "target": 533.4238,
+   "target": 529.2381,
    "targetHi": 660.0,
-   "targetLo": 400.0,
+   "targetLo": 398.4699,
    "rating": "Strong buy",
    "analysts": 47,
    "revGrowth": 85.5,
@@ -1295,7 +1295,7 @@
    "fcf": 30596499456,
    "w52lo": 289.77,
    "w52hi": 495.0,
-   "evEbitda": 33.96,
+   "evEbitda": 32.375,
    "earnTs": 1796850000,
    "earnStart": 1796850000,
    "earnEnd": 1796850000,
@@ -1378,7 +1378,7 @@
    "fcf": 9343699968,
    "w52lo": 850.51,
    "w52hi": 1460.0,
-   "evEbitda": 28.307,
+   "evEbitda": 28.618,
    "earnTs": 1793277000,
    "earnStart": 1793277000,
    "earnEnd": 1793277000,
@@ -1499,7 +1499,7 @@
    "fcf": 29140250624,
    "w52lo": 192.59,
    "w52hi": 1255.0,
-   "evEbitda": 7.948,
+   "evEbitda": 7.739,
    "earnTs": 1790798400,
    "earnStart": 1798059600,
    "earnEnd": 1798059600,
@@ -1526,7 +1526,7 @@
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.773,
-   "target": 129.9,
+   "target": 130.4,
    "targetHi": 155.0,
    "targetLo": 81.0,
    "rating": "Buy",
@@ -1543,7 +1543,7 @@
    "fcf": 7127625216,
    "w52lo": 98.88,
    "w52hi": 135.16,
-   "evEbitda": 24.307,
+   "evEbitda": 24.649,
    "earnTs": 1795095000,
    "earnStart": 1795095000,
    "earnEnd": 1795095000,
@@ -1626,7 +1626,7 @@
    "fcf": 7357125120,
    "w52lo": 188.22,
    "w52hi": 658.52,
-   "evEbitda": 85.558,
+   "evEbitda": 78.017,
    "earnTs": 1793739600,
    "earnStart": 1801602000,
    "earnEnd": 1801602000,
@@ -1668,7 +1668,7 @@
    "fcf": 20983375872,
    "w52lo": 293.89,
    "w52hi": 442.23,
-   "evEbitda": 24.472,
+   "evEbitda": 24.785,
    "earnTs": 1793131200,
    "earnStart": 1800997200,
    "earnEnd": 1800997200,
@@ -1712,7 +1712,7 @@
    "fcf": 28318750720,
    "w52lo": 114.19,
    "w52hi": 188.5,
-   "evEbitda": 9.253,
+   "evEbitda": 9.295,
    "earnTs": 1793363400,
    "earnStart": 1801229400,
    "earnEnd": 1801229400,
@@ -1756,7 +1756,7 @@
    "fcf": 18501875712,
    "w52lo": 193.55,
    "w52hi": 288.11,
-   "evEbitda": 20.577,
+   "evEbitda": 20.732,
    "earnTs": 1800970200,
    "earnStart": 1800970200,
    "earnEnd": 1800970200,
@@ -1843,7 +1843,7 @@
    "fcf": 16629250048,
    "w52lo": 464.52,
    "w52hi": 681.99,
-   "evEbitda": 25.272,
+   "evEbitda": 25.597,
    "earnTs": 1793277000,
    "earnStart": 1801143000,
    "earnEnd": 1801143000,
@@ -1885,7 +1885,7 @@
    "fcf": 17693124608,
    "w52lo": 190.75,
    "w52hi": 302.93,
-   "evEbitda": 18.557,
+   "evEbitda": 18.589,
    "earnTs": 1793363400,
    "earnStart": 1793363400,
    "earnEnd": 1793363400,
@@ -1929,7 +1929,7 @@
    "fcf": 26048374784,
    "w52lo": 146.49,
    "w52hi": 236.48,
-   "evEbitda": 7.721,
+   "evEbitda": 7.84,
    "earnTs": 1793363400,
    "earnStart": 1801229400,
    "earnEnd": 1801229400,
@@ -1973,7 +1973,7 @@
    "fcf": 6752750080,
    "w52lo": 844.06,
    "w52hi": 1109.5,
-   "evEbitda": 33.336,
+   "evEbitda": 33.773,
    "earnTs": 1796936400,
    "earnStart": 1796936400,
    "earnEnd": 1796936400,
@@ -2015,7 +2015,7 @@
    "fcf": 2652487680,
    "w52lo": 106.37,
    "w52hi": 212.94,
-   "evEbitda": 120.169,
+   "evEbitda": 117.591,
    "earnTs": 1793653200,
    "earnStart": 1801515600,
    "earnEnd": 1801515600,
@@ -2039,9 +2039,9 @@
    "beta": 1.002,
    "div": 1.68,
    "divYield": 1.757,
-   "target": 134.0,
+   "target": 132.1667,
    "targetHi": 170.0,
-   "targetLo": 110.0,
+   "targetLo": 109.0,
    "rating": "Buy",
    "analysts": 24,
    "revGrowth": 17.6,
@@ -2064,7 +2064,7 @@
    "exDiv": 1790899200,
    "divDate": 1792540800,
    "lastDiv": 0.42,
-   "trailDiv": 1.66
+   "trailDiv": 0.0
   },
   "KO": {
    "name": "The Coca-Cola Company",
@@ -2100,7 +2100,7 @@
    "fcf": 4349000192,
    "w52lo": 67.27,
    "w52hi": 99.3,
-   "evEbitda": 25.638,
+   "evEbitda": 26.084,
    "earnTs": 1793104200,
    "earnStart": 1793104200,
    "earnEnd": 1793104200,
@@ -2139,7 +2139,7 @@
    "fcf": -1892670592,
    "w52lo": 27.58,
    "w52hi": 133.86,
-   "evEbitda": -25.118,
+   "evEbitda": -23.935,
    "earnTs": 1794258000,
    "earnStart": 1794258000,
    "earnEnd": 1794258000,
@@ -2213,12 +2213,154 @@
  ],
  "news": [
   {
-   "h": "FAA grounds departing flights nationwide, citing air traffic communication system outage",
-   "w": "The Federal Aviation Administration issued a nationwide ground stop on Friday afternoon, \"due to extraordinary circumstances and for reasons of safety.\"",
+   "h": "FAA lifts ground stop after four hours, but flight cancellations will stretch into the weekend",
+   "w": "The Federal Aviation Administration issued a nationwide ground stop on Friday afternoon, disrupting thousands of departing of flights.",
    "syms": [],
    "src": "CNBC — Markets",
-   "ts": "2026-11-13T23:56:10Z",
+   "ts": "2026-11-14T01:21:50Z",
    "url": "https://www.cnbc.com/2026/11/13/faa-ground-stop.html"
+  },
+  {
+   "h": "SpaceX launches Starship in key test flight of massive rocket",
+   "w": "The test flight is SpaceX's first attempt to ​catch both the Super Heavy booster and upper stage spacecraft of the rocket at its launch site in Starbase, Texas.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-14T01:18:51Z",
+   "url": "https://www.cnbc.com/2026/11/13/spacex-launches-starship-in-key-test-flight-of-massive-rocket.html"
+  },
+  {
+   "h": "Trump doesn’t plan to raise Nvidia, spy issue during China trip: U.S. officials",
+   "w": "Nvidia CEO Jensen Huang resigned this week after reports of multiple affairs, including one with a suspected Chinese spy, Alice Huang.",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-14T01:04:32Z",
+   "url": "https://www.cnbc.com/2026/11/13/trump-nvidia-huang-china.html"
+  },
+  {
+   "h": "Un directeur de Puma Biotechnologie vend des actions pour 121.456$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T01:02:19Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-puma-biotechnologie-vend-des-actions-pour-121456-93CH-3696334"
+  },
+  {
+   "h": "Le directeur stratégique d’Accel Entertainment cède des actions pour 137.850$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T01:02:10Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-strategique-daccel-entertainment-cede-des-actions-pour-137850-93CH-3696333"
+  },
+  {
+   "h": "La directrice comptable d’Accel Entertainment vend des actions pour 49.689$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T01:02:01Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-comptable-daccel-entertainment-vend-des-actions-pour-49689-93CH-3696332"
+  },
+  {
+   "h": "India pins hopes on AI start-up to avoid becoming ‘digital colony’",
+   "w": "Sarvam has received government backing to build native models in world’s most populous country",
+   "syms": [],
+   "src": "myFT — asia pacific",
+   "ts": "2026-11-14T01:00:05Z",
+   "url": "https://www.ft.com/content/599cd9ab-dbd0-4c0d-818a-f6270871cd97?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Un administrateur de Centuri Holdings achète pour 249.920$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T00:46:48Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-centuri-holdings-achete-pour-249920-dactions-93CH-3696331"
+  },
+  {
+   "h": "US aviation regulator grounds flights across the country",
+   "w": "Airports ordered by Federal Aviation Administration to halt take-offs because of ‘telecommunications outage’",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-14T00:45:56Z",
+   "url": "https://www.ft.com/content/c9b119ff-d1da-46a7-b2b3-4ad0544fff6b?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "One night in Bangkok: Eurovision goes global with Asian spin-off",
+   "w": "Eleven nations including South Korea and Vietnam are competing in Saturday’s grand final in Thailand",
+   "syms": [],
+   "src": "myFT — followed topic",
+   "ts": "2026-11-14T00:45:54Z",
+   "url": "https://www.ft.com/content/2fd24c04-135f-4b0d-92b3-05587180bb01?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "FAA declares rare nationwide ground stop on flights, with more than 10,000 delayed so far",
+   "w": "Agency cites “extraordinary circumstances,” while Homeland Security Secretary Mullin says no indication of attack. Reduced flights amid fuel-cost surge may curtail rebooking options.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-14T00:40:00Z",
+   "url": "https://www.marketwatch.com/story/faa-declares-rare-widespread-ground-outage-bdc46393?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Le directeur de Sinclair Robert E. Smith cède des actions pour 2,73 millions $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T00:32:19Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-de-sinclair-robert-e-smith-cede-des-actions-pour-273-millions--93CH-3696330"
+  },
+  {
+   "h": "Un directeur de Septerna vend des actions SEPN pour 3,93M$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T00:31:58Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-septerna-vend-des-actions-sepn-pour-393m-93CH-3696329"
+  },
+  {
+   "h": "Le directeur financier de Snap Inc. vend des actions pour 75.274$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T00:31:54Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-de-snap-inc-vend-des-actions-pour-75274-93CH-3696328"
+  },
+  {
+   "h": "Le SVP finances d’Ameren, Ryan Martin, cède des actions pour 91.296$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T00:31:49Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-svp-finances-dameren-ryan-martin-cede-des-actions-pour-91296-93CH-3696327"
+  },
+  {
+   "h": "Le directeur financier de PubMatic, Pantelick, cède des actions pour 935.551$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T00:17:18Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-de-pubmatic-pantelick-cede-des-actions-pour-935551-93CH-3696326"
+  },
+  {
+   "h": "Le SVP d’Enpro, Steven Bower, cède des actions pour 279.660$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T00:17:01Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-svp-denpro-steven-bower-cede-des-actions-pour-279660-93CH-3696325"
+  },
+  {
+   "h": "Colorado Democrat beats Maga firebrand Lauren Boebert in House race",
+   "w": "Former ally of Donald Trump loses to centrist retired admiral Eileen Laubacher",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-13T23:56:06Z",
+   "url": "https://www.ft.com/content/ed6db87e-829a-41b4-a687-554847d6f904?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "Nvidia is done with Jensen Huang. The fallout in Washington is just beginning",
@@ -2231,44 +2373,13 @@
    "url": "https://www.cnbc.com/2026/11/13/nvidia-jensen-huang-washington-congress.html"
   },
   {
-   "h": "FAA declares rare nationwide ground stop on flights, with more than 10,000 delayed so far",
-   "w": "Agency cites “extraordinary circumstances,” while Homeland Security Secretary Mullin says no indication of attack.",
+   "h": "SpaceX aborts attempt to catch Starship booster rocket",
+   "w": "Elon Musk suffers setback in efforts to develop a completely reusable megarocket system",
    "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-13T23:54:00Z",
-   "url": "https://www.marketwatch.com/story/faa-declares-rare-widespread-ground-outage-bdc46393?mod=mw_rss_topstories"
-  },
-  {
-   "h": "La directrice des opérations de Box vend des actions pour 219.394$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-13T23:47:22Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-des-operations-de-box-vend-des-actions-pour-219394-93CH-3696317"
-  },
-  {
-   "h": "La vice-présidente senior de GATX, Jennifer McManus, cède des actions pour 563.867$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-13T23:47:01Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/la-vicepresidente-senior-de-gatx-jennifer-mcmanus-cede-des-actions-pour-563867-93CH-3696316"
-  },
-  {
-   "h": "Un dirigeant de Sally Beauty Holdings cède des actions pour 291.400$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-13T23:46:57Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-de-sally-beauty-holdings-cede-des-actions-pour-291400-93CH-3696315"
-  },
-  {
-   "h": "Le PDG d’East West Bancorp vend des actions pour 4,57 millions $",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-13T23:46:55Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-deast-west-bancorp-vend-des-actions-pour-457-millions--93CH-3696314"
+   "src": "myFT — world",
+   "ts": "2026-11-13T23:43:09Z",
+   "url": "https://www.ft.com/content/ce7c8ab1-8337-4c32-8494-5142ec1697dd?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "Lutnick faces questions over Nvidia spy scandal. His sons' firm has deep ties to the chipmaker",
@@ -2281,63 +2392,15 @@
    "url": "https://www.cnbc.com/2026/11/13/howard-lutnick-nvidia-jensen-huang-china-cantor-fitzgerald.html"
   },
   {
-   "h": "Worthington Enterprises organise sa journée investisseurs et analystes",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-13T23:39:29Z",
-   "url": "https://fr.investing.com/news/sec-filings/worthington-enterprises-organise-sa-journee-investisseurs-et-analystes-93CH-3696313"
-  },
-  {
    "h": "Sam Bankman-Fried would have made nearly $40bn in Anthropic IPO",
    "w": "Jailed cryptocurrency mogul loses out on windfall from early investment in the AI lab",
    "syms": [
     "BTC"
    ],
-   "src": "myFT — financials",
+   "src": "myFT — world",
    "ts": "2026-11-13T23:39:26Z",
    "url": "https://www.ft.com/content/0ef40ac9-6d01-428f-98c8-a52bf5b9a787?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Adicet Bio annonce des changements au conseil d’administration",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-13T23:34:03Z",
-   "url": "https://fr.investing.com/news/sec-filings/adicet-bio-annonce-des-changements-au-conseil-dadministration-93CH-3696312"
-  },
-  {
-   "h": "Le directeur juridique de Q2 Holdings vend des actions pour 198.620$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-13T23:32:23Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-juridique-de-q2-holdings-vend-des-actions-pour-198620-93CH-3696311"
-  },
-  {
-   "h": "Le directeur financier de Revolution Medicines vend des actions pour 6,7 millions $",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-13T23:31:47Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-de-revolution-medicines-vend-des-actions-pour-67-millions--93CH-3696310"
-  },
-  {
-   "h": "Un administrateur de Joint Corp achète des actions pour 18.786$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-13T23:31:44Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-joint-corp-achete-des-actions-pour-18786-93CH-3696309"
-  },
-  {
-   "h": "La vice-présidente de Hope Bancorp, Angelee Harris, cède des actions pour 41.922$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-13T23:31:42Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/la-vicepresidente-de-hope-bancorp-angelee-harris-cede-des-actions-pour-41922-93CH-3696308"
   },
   {
    "h": "‘The thought of living to 100 terrifies me’: Is Social Security a giant Ponzi scheme?",
@@ -2346,15 +2409,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-13T23:12:00Z",
    "url": "https://www.marketwatch.com/story/the-thought-of-living-to-100-terrifies-me-is-social-security-a-giant-ponzi-scheme-84a64e7e?mod=mw_rss_topstories"
-  },
-  {
-   "h": "US aviation regulator grounds all departing flights",
-   "w": "Airports across the country ordered by Federal Aviation Administration to halt all take-offs",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-13T23:00:26Z",
-   "url": "https://www.ft.com/content/c9b119ff-d1da-46a7-b2b3-4ad0544fff6b?syn-25a6b1a6=1",
-   "mine": 1
   },
   {
    "h": "Reform UK pays for Nigel Farage’s security despite £5mn gift",
@@ -2412,16 +2466,6 @@
    "ts": "2026-11-13T22:12:03Z",
    "url": "https://www.ft.com/content/7bebace2-dc87-410a-ae29-ffd9f3176def?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Hackers stole $6.3 billion from Binance—2 habits that take 'a few seconds' can help you avoid similar traps",
-   "w": "Researchers from the Digital Inquiry Group say that two habits that take just \"a few seconds up front\" can help keep you from being \"duped\" online.",
-   "syms": [
-    "BTC"
-   ],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-13T22:06:55Z",
-   "url": "https://www.cnbc.com/make-it/2026/11/13/binance-hack-2-online-habits-that-can-help-you-avoid-scams-.html"
   },
   {
    "h": "Global oil supplies are suddenly flowing. Why a crude glut won’t mean cheaper diesel.",
@@ -2607,12 +2651,30 @@
    "url": "https://www.cnbc.com/2026/11/13/a-trading-strategy-to-ride-out-the-nvidia-uncertainty-and-generate-income-in-the-process.html"
   },
   {
-   "h": "Retirees sometimes tap savings for one-off expenses. Here’s what advisors say to consider first",
-   "w": "Retirees who need cash for a one-time expense may look to their 401(k) or IRA, but financial advisors say there are trade-offs to weigh first.",
+   "h": "US Treasury bought nearly $500mn in yen during joint July forex intervention",
+   "w": "",
+   "syms": [
+    "USDJPY"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-13T19:28:20.932709Z",
+   "url": "https://asia.nikkei.com/business/markets/currencies/us-treasury-bought-nearly-500mn-in-yen-during-joint-july-forex-intervention"
+  },
+  {
+   "h": "US-China truce masks rising tensions ahead of Xi-Trump redux at APEC",
+   "w": "",
    "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-13T19:01:12Z",
-   "url": "https://www.cnbc.com/2026/11/13/retirement-401k-ira-withdrawal-taxes.html"
+   "src": "Nikkei Asia",
+   "ts": "2026-11-13T19:28:20.932709Z",
+   "url": "https://asia.nikkei.com/spotlight/big-in-asia/us-china-truce-masks-rising-tensions-ahead-of-xi-trump-redux-at-apec"
+  },
+  {
+   "h": "Uranium price hits record as AI demand prompts nuclear comeback",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-13T19:28:20.932709Z",
+   "url": "https://asia.nikkei.com/business/markets/commodities/uranium-price-hits-record-as-ai-demand-prompts-nuclear-comeback"
   },
   {
    "h": "Microsoft outage exposes global reliance on core tech providers",
@@ -2777,7 +2839,7 @@
    "syms": [
     "NVDA"
    ],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-13T17:06:01Z",
    "url": "https://www.ft.com/content/ce6d292e-eaaa-4c23-b909-34276e1a1e8d?syn-25a6b1a6=1",
    "mine": 1
@@ -2810,22 +2872,6 @@
    "url": "https://asia.nikkei.com/business/media-entertainment/south-koreans-show-their-love-for-once-taboo-japan-pop-culture"
   },
   {
-   "h": "China's JD.com completes $1.5bn takeover of German appliance retailer",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-13T16:49:59.517867Z",
-   "url": "https://asia.nikkei.com/business/business-deals/china-s-jd.com-completes-1.5bn-takeover-of-german-appliance-retailer"
-  },
-  {
-   "h": "Microsoft outage wreaks havoc in Asia, exposing dependence risk",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-13T16:49:59.517867Z",
-   "url": "https://asia.nikkei.com/business/technology/microsoft-outage-wreaks-havoc-in-asia-exposing-dependence-risk"
-  },
-  {
    "h": "Le Maroc se positionne en potentiel fournisseur d’uranium de la France",
    "w": "Le groupe industriel marocain OCP étudie avec les sociétés françaises EDF et Orano les conditions d’un accord sur la production et la fourniture de concentré d’uranium. Le royaume possède de conséquentes réserves de phosphates.",
    "syms": [],
@@ -2837,7 +2883,7 @@
    "h": "Prevention is better than cure for the UK’s social ills",
    "w": "A little-noticed Budget provision could be transformative",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — world uk",
    "ts": "2026-11-13T16:15:26Z",
    "url": "https://www.ft.com/content/5b83fe51-4ce2-4a26-a9ca-7a7653eaba9a?syn-25a6b1a6=1",
    "mine": 1
@@ -2862,29 +2908,12 @@
    "url": "https://www.lemonde.fr/idees/article/2026/11/13/en-matiere-de-voiture-electrique-des-normes-percues-comme-contraignantes-se-sont-revelees-precieuses_6809351_3232.html"
   },
   {
-   "h": "Rolls-Royce puts new spin on razor-and-blade model",
-   "w": "Old-school blueprint can still make its mark in a topsy-turvy world",
-   "syms": [],
-   "src": "myFT — companies",
-   "ts": "2026-11-13T16:12:42Z",
-   "url": "https://www.ft.com/content/53908349-419a-42be-9efc-e38981c15499?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Salaires des fonctionnaires : les mesures d’urgence du gouvernement jugées « insuffisantes » par les syndicats",
    "w": "A l’issue d’une réunion à Matignon, vendredi 13 novembre, les syndicats ont dénoncé des annonces « en complet décalage avec l’urgence salariale et la colère sociale ». Dans leur viseur, notamment : le refus du gouvernement de dégeler la valeur du point d’indice. La CFDT a décidé de se joindre à l’appel à la grève du 17 novembre.",
    "syms": [],
    "src": "Le Monde — Économie",
    "ts": "2026-11-13T16:07:02Z",
    "url": "https://www.lemonde.fr/politique/article/2026/11/13/salaires-des-fonctionnaires-les-mesures-d-urgence-du-gouvernement-jugees-insuffisantes-par-les-syndicats_6809348_823448.html"
-  },
-  {
-   "h": "Bain- and GIC-backed WHI on track for Japan's largest IPO in 2026",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-13T16:04:49.311699Z",
-   "url": "https://asia.nikkei.com/business/markets/ipo/bain-and-gic-backed-whi-on-track-for-japan-s-largest-ipo-in-2026"
   },
   {
    "h": "China drops bid for future COP as climate science battle heats up",
@@ -3032,7 +3061,7 @@
    "syms": [
     "NVDA"
    ],
-   "src": "myFT — us",
+   "src": "myFT — economy",
    "ts": "2026-11-13T12:36:28Z",
    "url": "https://www.ft.com/content/3efa9733-fbb4-47c2-83ba-b01e548ef277?syn-25a6b1a6=1",
    "mine": 1
@@ -3054,15 +3083,6 @@
    "src": "myFT — europe",
    "ts": "2026-11-13T12:00:02Z",
    "url": "https://www.ft.com/content/f71ea01e-065d-4b1d-b6a5-9d8e336bcbeb",
-   "mine": 1
-  },
-  {
-   "h": "Big Sky does not want to be Aspen, OK?",
-   "w": "On the surface, the Montana resort jostles for the unofficial title of the US’s most luxurious winter-sports hideaway. But for homebuyers, the appeal often lies in its points of difference",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-13T12:00:02Z",
-   "url": "https://www.ft.com/content/71e9f090-d0f2-423e-9532-e090119464e3",
    "mine": 1
   },
   {
@@ -3092,24 +3112,6 @@
    "src": "myFT — europe",
    "ts": "2026-11-13T11:05:03Z",
    "url": "https://www.ft.com/content/2500879f-9849-45e8-8e22-082e9fa53228?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "FirstFT: Microsoft races to restore software services",
-   "w": "Also in today’s newsletter: the downfall of Jensen Huang and how Israel lost the US",
-   "syms": [],
-   "src": "myFT — economy",
-   "ts": "2026-11-13T10:46:13Z",
-   "url": "https://www.ft.com/content/fcbd27c8-aa10-455f-8917-afcb897e6eaf?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "How fat are AI trading bots’ fingers?",
-   "w": "Sizing up the risks",
-   "syms": [],
-   "src": "myFT — financials",
-   "ts": "2026-11-13T09:59:01Z",
-   "url": "https://www.ft.com/content/b2286012-26ec-4440-834e-580288f20ad0",
    "mine": 1
   }
  ],
