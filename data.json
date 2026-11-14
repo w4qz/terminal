@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T14:08:47.013961Z",
+ "generated_at": "2026-11-14T14:53:02.264720Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -774,10 +774,10 @@
    ]
   },
   "BRENT": {
-   "p": 95.84,
+   "p": 96.08,
    "prev": 95.82,
-   "chg": 0.02,
-   "pct": 0.02,
+   "chg": 0.26,
+   "pct": 0.27,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-13T22:00:00Z",
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 66472.9062,
+   "p": 65784.6719,
    "prev": 68249.2734,
-   "chg": -1776.3672,
-   "pct": -2.6,
+   "chg": -2464.6016,
+   "pct": -3.61,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-14T14:08:47.013961Z",
+   "ts": "2026-11-14T14:53:02.264720Z",
    "open": 68238.2109,
-   "lo": 66488.6953,
+   "lo": 65835.2266,
    "hi": 68360.7109,
-   "vol": 30283388928,
+   "vol": 31714430976,
    "h": [
     80790.84,
     80024.01,
@@ -844,7 +844,7 @@
     73964.47,
     71342.97,
     68249.27,
-    66472.91
+    65784.67
    ]
   }
  },
@@ -944,9 +944,9 @@
    "industry": "Software - Infrastructure",
    "ccy": "USD",
    "mcap": 3890434801664,
-   "pe": 27.3424,
+   "pe": 27.2996,
    "fpe": 21.6569,
-   "eps": 19.16,
+   "eps": 19.19,
    "feps": 24.1899,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
@@ -1104,7 +1104,7 @@
    "earnEnd": 1799933400,
    "earnEst": true,
    "exDiv": 1796860800,
-   "divDate": 1799280000,
+   "divDate": 1807142400,
    "lastDiv": 1.107,
    "trailDiv": 6.0
   },
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1656497373184,
    "pe": 44.318,
-   "fpe": 17.8742,
+   "fpe": 17.8273,
    "eps": 7.83,
-   "feps": 19.414,
+   "feps": 19.4651,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1019350286336,
-   "pe": 46.4094,
+   "mcap": 1016233525248,
+   "pe": 45.7464,
    "fpe": 39.7569,
-   "eps": 2.76,
+   "eps": 2.8,
    "feps": 3.2218,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.773,
@@ -1824,9 +1824,9 @@
    "industry": "Credit Services",
    "ccy": "USD",
    "mcap": 576012943360,
-   "pe": 34.5992,
+   "pe": 34.1524,
    "fpe": 28.5429,
-   "eps": 19.11,
+   "eps": 19.36,
    "feps": 23.1648,
    "revTTM": 36288000000,
    "netIncome": 16958000128,
@@ -1868,9 +1868,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 521499836416,
-   "pe": 50.6924,
+   "pe": 50.6055,
    "fpe": 18.216,
-   "eps": 5.82,
+   "eps": 5.83,
    "feps": 16.1962,
    "revTTM": 66013999104,
    "netIncome": 10302999552,
@@ -1911,9 +1911,9 @@
    "ccy": "USD",
    "mcap": 429061144576,
    "pe": 16.1446,
-   "fpe": 13.2731,
+   "fpe": 13.3304,
    "eps": 13.62,
-   "feps": 16.5666,
+   "feps": 16.4954,
    "revTTM": 226256994304,
    "netIncome": 26976000000,
    "shares": 1951253686,
@@ -1999,9 +1999,9 @@
    "ccy": "USD",
    "mcap": 404771504128,
    "pe": 118.3028,
-   "fpe": 66.1698,
+   "fpe": 66.2625,
    "eps": 1.42,
-   "feps": 2.5388,
+   "feps": 2.5352,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
@@ -2082,9 +2082,9 @@
    "ccy": "USD",
    "mcap": 426963795968,
    "pe": 29.2773,
-   "fpe": 28.1245,
+   "fpe": 28.1338,
    "eps": 3.39,
-   "feps": 3.529,
+   "feps": 3.5278,
    "revTTM": 51053998080,
    "netIncome": 14629000192,
    "shares": 4301902335,
@@ -2168,8 +2168,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 121.2883,
+   "shares": 572600000,
+   "divYield": 2.608,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2221,12 +2226,54 @@
  ],
  "news": [
   {
+   "h": "Flight disruptions continue after FAA lifts ground stop, some college football games delayed",
+   "w": "U.S. flights are resuming after the FAA ground stop, but delays and cancellations are still piling up.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-14T14:47:04Z",
+   "url": "https://www.cnbc.com/2026/11/14/faa-ground-stop-flights-resume-delays.html"
+  },
+  {
+   "h": "Heating oil prices are up 59% from last winter. The spike is 'crushing folks,' Maine nonprofit says",
+   "w": "With household budgets already squeezed by persistent inflation, some residents are seeking emergency help with heating oil bills before winter begins.",
+   "syms": [
+    "BRENT"
+   ],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-14T14:30:01Z",
+   "url": "https://www.cnbc.com/2026/11/14/heating-oil-price-spike-household-budgets.html"
+  },
+  {
    "h": "U.S. air travel could take days to recover after FAA’s lifting of rare nationwide ground stop",
    "w": "Homeland Security Secretary Markwayne Mullin says “zero evidence” of cyberattack, while high jet-fuel costs mean fewer flights available to travelers seeking to rebook.",
    "syms": [],
    "src": "MarketWatch",
-   "ts": "2026-11-14T14:04:00Z",
+   "ts": "2026-11-14T14:27:00Z",
    "url": "https://www.marketwatch.com/story/faa-declares-rare-widespread-ground-outage-bdc46393?mod=mw_rss_topstories"
+  },
+  {
+   "h": "MSC proche d’acquérir 80% du chantier naval allemand Meyer Werft",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T14:18:34Z",
+   "url": "https://fr.investing.com/news/stock-market-news/msc-proche-dacquerir-80-du-chantier-naval-allemand-meyer-werft-3696480"
+  },
+  {
+   "h": "Le président d’ExlService, Bhalla, cède 465.423$ d’actions EXLS",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T14:16:59Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-president-dexlservice-bhalla-cede-465423-dactions-exls-93CH-3696478"
+  },
+  {
+   "h": "Juice your growth and save on taxes in this workplace investment account",
+   "w": "High-deductible medical benefit plans with health savings accounts are on the menu at many employers as enrollment season for 2027 continues.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-14T14:08:17Z",
+   "url": "https://www.cnbc.com/2026/11/14/hsa-investing-tax-benefits.html"
   },
   {
    "h": "Berkshire breaks out to record high with fourth-quarter rally reaching 19%",
@@ -2237,19 +2284,27 @@
    "url": "https://www.cnbc.com/2026/11/14/berkshire-breaks-out-to-record-high-with-fourth-quarter-rally-reaching-19percent.html"
   },
   {
-   "h": "Flight disruptions continue after FAA lifts ground stop, some college football games delayed",
-   "w": "U.S. flights are resuming after the FAA ground stop, but delays and cancellations are still piling up.",
+   "h": "Un dirigeant d’ExlService Holdings cède des actions pour 224.400$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T14:02:23Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-dexlservice-holdings-cede-des-actions-pour-224400-93CH-3696477"
+  },
+  {
+   "h": "How Rockstar's 'GTA IV' release could reshape gaming, streaming and even paid time off",
+   "w": "\"Grand Theft Auto VI\" launches Nov. 19 with huge expectations. Its impact could reach creators, streaming, music, workplace time off, food delivery and tourism.",
    "syms": [],
    "src": "CNBC — Markets",
-   "ts": "2026-11-14T14:01:19Z",
-   "url": "https://www.cnbc.com/2026/11/14/faa-ground-stop-flights-resume-delays.html"
+   "ts": "2026-11-14T14:00:01Z",
+   "url": "https://www.cnbc.com/2026/11/14/gta-6-grand-theft-auto-launch.html"
   },
   {
    "h": "IA : comment Huawei est devenu le navire amiral de la Chine dans la bataille des puces",
-   "w": "Pour rattraper son retard dans la course à l’intelligence artificielle, Pékin mise sur son champion des télécoms Huawei. Fort de 208 000 employés dans le monde, dont 114 000 en recherche et développement, le groupe a été érigé en chef d’orchestre de l’effort chinois pour atteindre l’« autosuffisance scientifique et technologique ».",
+   "w": "Pour rattraper son retard, Pékin mise sur son champion des télécoms Huawei. Fort de 208 000 employés dans le monde, dont 114 000 en recherche et développement, le groupe a été érigé en chef d’orchestre de l’effort chinois pour atteindre l’« autosuffisance scientifique et technologique ».",
    "syms": [],
    "src": "Le Monde — Économie",
-   "ts": "2026-11-14T14:00:02Z",
+   "ts": "2026-11-14T14:00:01Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/14/ia-comment-huawei-est-devenu-le-navire-amiral-de-la-chine-dans-la-bataille-des-puces_6810315_3234.html"
   },
   {
@@ -2284,6 +2339,17 @@
    "src": "Investing.com France",
    "ts": "2026-11-14T13:29:01Z",
    "url": "https://fr.investing.com/news/stock-market-news/la-victoire-des-democrates-aux-midterms--bonne-nouvelle-pour-spacex--3696476"
+  },
+  {
+   "h": "Trump Media group stares down $1bn debt crunch as bitcoin bet fades",
+   "w": "Plunge in shares and cryptocurrency prices could force Truth Social owner to sell assets or take on costly new debt",
+   "syms": [
+    "BTC"
+   ],
+   "src": "myFT — markets",
+   "ts": "2026-11-14T13:00:09Z",
+   "url": "https://www.ft.com/content/ada459c4-5f43-4a4a-bc6c-90de8897a4f0?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "Retailers are turning to entertainment to win shoppers’ attention",
@@ -2408,14 +2474,6 @@
    "url": "https://fr.investing.com/news/investment-ideas/la-juste-valeur-dinvestingpro-sur-five-star-bancorp-genere-un-rendement-de-68-93CH-3696467"
   },
   {
-   "h": "La Juste Valeur d’InvestingPro avait prédit la chute de 46% de NextNav",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T11:03:19Z",
-   "url": "https://fr.investing.com/news/investment-ideas/la-juste-valeur-dinvestingpro-avait-predit-la-chute-de-46-de-nextnav-93CH-3696466"
-  },
-  {
    "h": "Europe Express: opening a security can of worms",
    "w": "Initiating a discussion about changing Nato before a ceasefire in Ukraine gives Moscow additional leverage",
    "syms": [],
@@ -2454,14 +2512,6 @@
    "mine": 1
   },
   {
-   "h": "Que prévoit Goldman Sachs pour les actions européennes en 2027 ?",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T10:52:51Z",
-   "url": "https://fr.investing.com/news/stock-market-news/que-prevoit-goldman-sachs-pour-les-actions-europeennes-en-2027--3696463"
-  },
-  {
    "h": "Germany suffers setback in joining fighter jet project",
    "w": "Rome rejects push to explore inviting Berlin to enter UK-Japan-Italy next-generation aircraft programme as equal partner",
    "syms": [],
@@ -2469,14 +2519,6 @@
    "ts": "2026-11-14T10:52:49Z",
    "url": "https://www.ft.com/content/3ba2bcd1-b80c-48a2-91c7-35f25366f8aa?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Les États-Unis proposent l’adhésion à l’OTAN pour l’Ukraine en échange du Donbas",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T10:51:38Z",
-   "url": "https://fr.investing.com/news/economy-news/les-etatsunis-proposent-ladhesion-a-lotan-pour-lukraine-en-echange-du-donbas-3696464"
   },
   {
    "h": "Chart of the Week: The great market rotation",
@@ -2504,6 +2546,42 @@
    "ts": "2026-11-14T09:00:08Z",
    "url": "https://www.ft.com/content/b76baec1-6b90-406a-a23a-150904837304?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "Philippines moves to secure emergency access to oil in Indonesia, Thailand",
+   "w": "",
+   "syms": [
+    "BRENT"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T08:53:02.264720Z",
+   "url": "https://asia.nikkei.com/business/energy/philippines-moves-to-secure-emergency-access-to-oil-in-indonesia-thailand"
+  },
+  {
+   "h": "US Treasury bought nearly $500mn in yen during joint July forex intervention",
+   "w": "",
+   "syms": [
+    "USDJPY"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T08:53:02.264720Z",
+   "url": "https://asia.nikkei.com/business/markets/currencies/us-treasury-bought-nearly-500mn-in-yen-during-joint-july-forex-intervention"
+  },
+  {
+   "h": "China's JD.com completes $1.5bn takeover of German appliance retailer",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T08:53:02.264720Z",
+   "url": "https://asia.nikkei.com/business/business-deals/china-s-jd.com-completes-1.5bn-takeover-of-german-appliance-retailer"
+  },
+  {
+   "h": "Microsoft outage wreaks havoc in Asia, exposing dependence risk",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T08:53:02.264720Z",
+   "url": "https://asia.nikkei.com/business/technology/microsoft-outage-wreaks-havoc-in-asia-exposing-dependence-risk"
   },
   {
    "h": "Microsoft apologizes for massive outage that took down Outlook and other 365 services",
@@ -2594,52 +2672,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-14T06:17:13.818725Z",
    "url": "https://asia.nikkei.com/business/media-entertainment/south-koreans-show-their-love-for-once-taboo-japan-pop-culture"
-  },
-  {
-   "h": "Growth beyond AI puts corporate Japan on track for 20% profit gain",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T06:17:13.818725Z",
-   "url": "https://asia.nikkei.com/business/business-trends/growth-beyond-ai-puts-corporate-japan-on-track-for-20-profit-gain"
-  },
-  {
-   "h": "Ecuador wants to monetize its biodiversity — while still drilling for oil",
-   "w": "Ecuador is planning to channel funds into its biodiversity, but faces a key challenge: its reliance on oil.",
-   "syms": [
-    "BRENT"
-   ],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-14T06:00:01Z",
-   "url": "https://www.cnbc.com/2026/11/14/ecuador-biodiversity-green-finance-oil.html"
-  },
-  {
-   "h": "China sees Nvidia chief Huang's swift downfall as political hit",
-   "w": "",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T05:34:11.016921Z",
-   "url": "https://asia.nikkei.com/business/tech/semiconductors/china-sees-nvidia-chief-huang-s-swift-downfall-as-political-hit"
-  },
-  {
-   "h": "Bain- and GIC-backed WHI on track for Japan's largest IPO in 2026",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T05:34:11.016921Z",
-   "url": "https://asia.nikkei.com/business/markets/ipo/bain-and-gic-backed-whi-on-track-for-japan-s-largest-ipo-in-2026"
-  },
-  {
-   "h": "Nvidia scandal sparks Washington blame game over China chip exports",
-   "w": "",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T05:34:11.016921Z",
-   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/nvidia-scandal-sparks-washington-blame-game-over-china-chip-exports"
   },
   {
    "h": "Transcript of an interview with Huw Pill",
@@ -2954,35 +2986,6 @@
    "ts": "2026-11-14T01:00:05Z",
    "url": "https://www.ft.com/content/599cd9ab-dbd0-4c0d-818a-f6270871cd97?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "One night in Bangkok: Eurovision goes global with Asian spin-off",
-   "w": "South Korea and Vietnam among 11 nations competing in Saturday’s grand final in Thailand",
-   "syms": [],
-   "src": "myFT — followed topic",
-   "ts": "2026-11-14T00:45:54Z",
-   "url": "https://www.ft.com/content/2fd24c04-135f-4b0d-92b3-05587180bb01?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Nvidia is done with Jensen Huang. The fallout in Washington is just beginning",
-   "w": "The Republican-led Congress wants to see Jensen Huang in Washington before Democrats take control in January.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-13T23:54:36Z",
-   "url": "https://www.cnbc.com/2026/11/13/nvidia-jensen-huang-washington-congress.html"
-  },
-  {
-   "h": "Lutnick faces questions over Nvidia spy scandal. His sons' firm has deep ties to the chipmaker",
-   "w": "Jensen Huang’s resignation as Nvidia CEO has brought renewed scrutiny to Commerce Secretary Howard Lutnick and his family's financial ties to the chipmaker.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-13T23:42:18Z",
-   "url": "https://www.cnbc.com/2026/11/13/howard-lutnick-nvidia-jensen-huang-china-cantor-fitzgerald.html"
   },
   {
    "h": "‘The thought of living to 100 terrifies me’: Is Social Security a giant Ponzi scheme?",
