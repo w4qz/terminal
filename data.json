@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T09:11:05.041518Z",
+ "generated_at": "2026-11-14T10:06:35.825404Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -700,10 +700,10 @@
    ]
   },
   "XAU": {
-   "p": 3887.6001,
+   "p": 3886.3,
    "prev": 3885.3,
-   "chg": 2.3,
-   "pct": 0.06,
+   "chg": 1.0,
+   "pct": 0.03,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (GC=F)",
    "ts": "2026-11-13T22:00:00Z",
@@ -737,10 +737,10 @@
    ]
   },
   "CL": {
-   "p": 88.92,
+   "p": 88.56,
    "prev": 88.74,
-   "chg": 0.18,
-   "pct": 0.2,
+   "chg": -0.18,
+   "pct": -0.2,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (CL=F)",
    "ts": "2026-11-13T22:15:00Z",
@@ -778,8 +778,8 @@
    "prev": 95.82,
    "chg": 0.26,
    "pct": 0.27,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (BZ=F) — last update failed",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-13T22:00:00Z",
    "open": 95.89,
    "lo": 95.07,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 67134.7109,
+   "p": 67302.0078,
    "prev": 68249.2734,
-   "chg": -1114.5625,
-   "pct": -1.63,
+   "chg": -947.2656,
+   "pct": -1.39,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-14T09:11:05.041518Z",
+   "ts": "2026-11-14T10:06:35.825404Z",
    "open": 68238.2109,
    "lo": 66535.5078,
    "hi": 68360.7109,
-   "vol": 32320837632,
+   "vol": 32107870208,
    "h": [
     80790.84,
     80024.01,
@@ -844,7 +844,7 @@
     73964.47,
     71342.97,
     68249.27,
-    67134.71
+    67303.89
    ]
   }
  },
@@ -1057,7 +1057,7 @@
    "fcf": -34731749376,
    "w52lo": 196.0,
    "w52hi": 287.2,
-   "evEbitda": 16.731,
+   "evEbitda": 16.732,
    "earnTs": 1793304000,
    "earnStart": 1793304000,
    "earnEnd": 1793304000,
@@ -1220,7 +1220,7 @@
    "fcf": 16848499712,
    "w52lo": 520.26,
    "w52hi": 779.82,
-   "evEbitda": 14.403,
+   "evEbitda": 14.396,
    "earnTs": 1792612800,
    "earnStart": 1801083600,
    "earnEnd": 1801083600,
@@ -1693,9 +1693,9 @@
    "industry": "Oil & Gas Integrated",
    "ccy": "USD",
    "mcap": 695874551808,
-   "pe": 17.4606,
+   "pe": 17.5504,
    "fpe": 13.5908,
-   "eps": 9.77,
+   "eps": 9.72,
    "feps": 12.5519,
    "revTTM": 388231987200,
    "netIncome": 40621998080,
@@ -2226,6 +2226,95 @@
  ],
  "news": [
   {
+   "h": "U.S. flights resume after FAA ground stop, but travel disruption continues",
+   "w": "U.S. flights are resuming after the FAA ground stop, but delays and cancellations are still piling up.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-14T10:04:43Z",
+   "url": "https://www.cnbc.com/2026/11/14/faa-ground-stop-flights-resume-delays.html"
+  },
+  {
+   "h": "Un administrateur de Valley National Bancorp cède des actions pour 300.188$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T09:46:59Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-valley-national-bancorp-cede-des-actions-pour-300188-93CH-3696455"
+  },
+  {
+   "h": "La stratégie d’approvisionnement en uranium de la Chine : un jeu géopolitique à long terme ?",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T09:36:17Z",
+   "url": "https://fr.investing.com/news/economy-news/la-strategie-dapprovisionnement-en-uranium-de-la-chine--un-jeu-geopolitique-a-long-terme--3696453"
+  },
+  {
+   "h": "Gator Capital Management acquiert 82.690$ d’actions de U S Global Investors",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T09:31:52Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/gator-capital-management-acquiert-82690-dactions-de-u-s-global-investors-93CH-3696452"
+  },
+  {
+   "h": "Le directeur de Weyerhaeuser Richard Beckwitt achète pour 306.600$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T09:16:52Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-de-weyerhaeuser-richard-beckwitt-achete-pour-306600-dactions-93CH-3696451"
+  },
+  {
+   "h": "La vice-présidente de Coca-Cola Nancy Quan cède 1,47 million $ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T09:02:48Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/la-vicepresidente-de-cocacola-nancy-quan-cede-147-million--dactions-93CH-3696450"
+  },
+  {
+   "h": "Le PDG de Lipocine, Mahesh Patel, achète 79.487$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T09:02:47Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-lipocine-mahesh-patel-achete-79487-dactions-93CH-3696449"
+  },
+  {
+   "h": "Un directeur d’Expensify cède des actions pour près de 989.000$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T09:02:26Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-dexpensify-cede-des-actions-pour-pres-de-989000-93CH-3696448"
+  },
+  {
+   "h": "Un administrateur de Peoples Bancorp cède des actions pour 42.840$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T09:01:41Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-peoples-bancorp-cede-des-actions-pour-42840-93CH-3696446"
+  },
+  {
+   "h": "Manchester United: a fate worse than debt",
+   "w": "Also in today’s newsletter: a big shake-up in US college sport angers fans",
+   "syms": [],
+   "src": "myFT — companies",
+   "ts": "2026-11-14T09:00:08Z",
+   "url": "https://www.ft.com/content/b76baec1-6b90-406a-a23a-150904837304?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "La Chine et les États-Unis discutent de réductions tarifaires avant la rencontre Trump-Xi",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T08:51:47Z",
+   "url": "https://fr.investing.com/news/economy-news/la-chine-et-les-etatsunis-discutent-de-reductions-tarifaires-avant-la-rencontre-trumpxi-3696444"
+  },
+  {
    "h": "Telecom Argentine dépasse les prévisions de BPA au T3 2026",
    "w": "",
    "syms": [],
@@ -2234,84 +2323,12 @@
    "url": "https://fr.investing.com/news/transcripts/telecom-argentine-depasse-les-previsions-de-bpa-au-t3-2026-93CH-3696443"
   },
   {
-   "h": "Un directeur de Natural Gas Services achète 57.790$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T08:47:22Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-natural-gas-services-achete-57790-dactions-93CH-3696442"
-  },
-  {
-   "h": "Sammaan Capital affiche une forte croissance au T2 2026, l’action stable",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T08:44:25Z",
-   "url": "https://fr.investing.com/news/transcripts/sammaan-capital-affiche-une-forte-croissance-au-t2-2026-laction-stable-93CH-3696441"
-  },
-  {
-   "h": "Un vice-président de Westinghouse Air Brake vend des actions pour 131.790$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T08:31:54Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-vicepresident-de-westinghouse-air-brake-vend-des-actions-pour-131790-93CH-3696439"
-  },
-  {
-   "h": "La Banque d’Angleterre devrait relever ses taux en 2027, selon Huw Pill",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T08:24:06Z",
-   "url": "https://fr.investing.com/news/stock-market-news/la-banque-dangleterre-devrait-relever-ses-taux-en-2027-selon-huw-pill-3696431"
-  },
-  {
    "h": "Microsoft apologizes for massive outage that took down Outlook and other 365 services",
    "w": "A Microsoft outage on Thursday and Friday affected users of services like Outlook, Teams and 365.",
    "syms": [],
    "src": "CNBC — Markets",
    "ts": "2026-11-14T08:11:28Z",
    "url": "https://www.cnbc.com/2026/11/12/microsoft-outage-outlook-aws-google.html"
-  },
-  {
-   "h": "Un administrateur de Paylocity cède des actions pour 72.016$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T07:37:09Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-paylocity-cede-des-actions-pour-72016-93CH-3696427"
-  },
-  {
-   "h": "Un administrateur de Texas Instruments vend des actions pour 2,7 M$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T07:32:11Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-texas-instruments-vend-des-actions-pour-27-m-93CH-3696426"
-  },
-  {
-   "h": "Green LTF Holdings II LP cède des actions Life Time Group pour 78,9M$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T07:32:04Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/green-ltf-holdings-ii-lp-cede-des-actions-life-time-group-pour-789m-93CH-3696425"
-  },
-  {
-   "h": "Le SVP de Talen Energy, Casulli, cède 1,26M$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T07:31:56Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-svp-de-talen-energy-casulli-cede-126m-dactions-93CH-3696424"
-  },
-  {
-   "h": "Un directeur de Kodiak Gas achète des actions pour 449.900$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T07:31:53Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-kodiak-gas-achete-des-actions-pour-449900-93CH-3696423"
   },
   {
    "h": "Analysis: Companies love a ‘rockstar’ CEO. Until they depend on one",
@@ -2342,20 +2359,23 @@
    "url": "https://www.cnbc.com/2026/11/14/ecuador-biodiversity-green-finance-oil.html"
   },
   {
-   "h": "FAA lifts ground stop after more than four hours, but flight cancellations will stretch into the weekend",
-   "w": "The Federal Aviation Administration issued a nationwide ground stop on Friday afternoon, disrupting thousands of departing of flights.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-14T05:08:24Z",
-   "url": "https://www.cnbc.com/2026/11/13/faa-ground-stop.html"
-  },
-  {
    "h": "Italy rebuffs German bid to enter joint fighter jet project",
    "w": "Rome rejects push to explore inviting Berlin to enter UK-Japan-Italy next-generation aircraft programme",
    "syms": [],
    "src": "myFT — europe",
    "ts": "2026-11-14T05:00:46Z",
    "url": "https://www.ft.com/content/3ba2bcd1-b80c-48a2-91c7-35f25366f8aa?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Transcript of an interview with Huw Pill",
+   "w": "Bank of England chief economist talks to the FT",
+   "syms": [
+    "UKX"
+   ],
+   "src": "myFT — world",
+   "ts": "2026-11-14T05:00:46Z",
+   "url": "https://www.ft.com/content/014fae08-ab39-4fa2-b9d3-f0c961a6710f",
    "mine": 1
   },
   {
@@ -2376,17 +2396,6 @@
    "src": "myFT — world",
    "ts": "2026-11-14T05:00:46Z",
    "url": "https://www.ft.com/content/806b0158-41c5-4db2-ac33-93621f72297b?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Transcript of an interview with Huw Pill",
-   "w": "Bank of England chief economist talks to the FT",
-   "syms": [
-    "UKX"
-   ],
-   "src": "myFT — economy",
-   "ts": "2026-11-14T05:00:46Z",
-   "url": "https://www.ft.com/content/014fae08-ab39-4fa2-b9d3-f0c961a6710f",
    "mine": 1
   },
   {
@@ -2609,6 +2618,38 @@
    "mine": 1
   },
   {
+   "h": "How Trump might be tempted to orchestrate an 'end to the Korean War'",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T04:06:35.825404Z",
+   "url": "https://asia.nikkei.com/spotlight/comment/how-trump-might-be-tempted-to-orchestrate-an-end-to-the-korean-war"
+  },
+  {
+   "h": "US-China truce masks rising tensions ahead of Xi-Trump redux at APEC",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T04:06:35.825404Z",
+   "url": "https://asia.nikkei.com/spotlight/big-in-asia/us-china-truce-masks-rising-tensions-ahead-of-xi-trump-redux-at-apec"
+  },
+  {
+   "h": "Honda supplier Topre to invest $140mn in US for new plant, upgrades",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T04:06:35.825404Z",
+   "url": "https://asia.nikkei.com/business/automobiles/honda-supplier-topre-to-invest-140mn-in-us-for-new-plant-upgrades"
+  },
+  {
+   "h": "Uranium price hits record as AI demand prompts nuclear comeback",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T04:06:35.825404Z",
+   "url": "https://asia.nikkei.com/business/markets/commodities/uranium-price-hits-record-as-ai-demand-prompts-nuclear-comeback"
+  },
+  {
    "h": "US plan to overhaul air traffic control system like ‘changing a tyre at 70mph’",
    "w": "Transport secretary seeks $50bn for upgrades to America’s dilapidated aviation infrastructure",
    "syms": [],
@@ -2740,18 +2781,10 @@
    "url": "https://asia.nikkei.com/business/markets/ipo/bain-and-gic-backed-whi-on-track-for-japan-s-largest-ipo-in-2026"
   },
   {
-   "h": "US wants Japan to nearly triple budget for hosting American troops",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T01:14:11.335866Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/us-wants-japan-to-nearly-triple-budget-for-hosting-american-troops"
-  },
-  {
    "h": "India pins hopes on AI start-up to avoid becoming ‘digital colony’",
    "w": "Sarvam has received government backing to build native models in world’s most populous country",
    "syms": [],
-   "src": "myFT — companies",
+   "src": "myFT — technology",
    "ts": "2026-11-14T01:00:05Z",
    "url": "https://www.ft.com/content/599cd9ab-dbd0-4c0d-818a-f6270871cd97?syn-25a6b1a6=1",
    "mine": 1
@@ -2766,32 +2799,6 @@
    "mine": 1
   },
   {
-   "h": "US Treasury bought nearly $500mn in yen during joint July forex intervention",
-   "w": "",
-   "syms": [
-    "USDJPY"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T00:08:11.140908Z",
-   "url": "https://asia.nikkei.com/business/markets/currencies/us-treasury-bought-nearly-500mn-in-yen-during-joint-july-forex-intervention"
-  },
-  {
-   "h": "China's JD.com completes $1.5bn takeover of German appliance retailer",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T00:08:11.140908Z",
-   "url": "https://asia.nikkei.com/business/business-deals/china-s-jd.com-completes-1.5bn-takeover-of-german-appliance-retailer"
-  },
-  {
-   "h": "Microsoft outage wreaks havoc in Asia, exposing dependence risk",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T00:08:11.140908Z",
-   "url": "https://asia.nikkei.com/business/technology/microsoft-outage-wreaks-havoc-in-asia-exposing-dependence-risk"
-  },
-  {
    "h": "Colorado Democrat beats Maga firebrand Lauren Boebert in House race",
    "w": "Former ally of Donald Trump loses to centrist retired admiral Eileen Laubacher",
    "syms": [],
@@ -2799,6 +2806,16 @@
    "ts": "2026-11-13T23:56:06Z",
    "url": "https://www.ft.com/content/ed6db87e-829a-41b4-a687-554847d6f904?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "Nvidia is done with Jensen Huang. The fallout in Washington is just beginning",
+   "w": "The Republican-led Congress wants to see Jensen Huang in Washington before Democrats take control in January.",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-13T23:54:36Z",
+   "url": "https://www.cnbc.com/2026/11/13/nvidia-jensen-huang-washington-congress.html"
   },
   {
    "h": "SpaceX aborts attempt to catch Starship booster rocket",
@@ -3013,27 +3030,6 @@
    "src": "BBC — Business",
    "ts": "2026-11-13T19:53:57Z",
    "url": "https://www.bbc.co.uk/news/articles/cqvg2d1eg7zro?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "After Jensen Huang’s exit, what top financial advisors are doing with Nvidia: Exclusive CNBC poll",
-   "w": "Advisors say investors should weigh their Nvidia exposure, time horizon and risk tolerance before reacting to the leadership change.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-13T19:53:38Z",
-   "url": "https://www.cnbc.com/2026/11/13/nvidia-stock-advisors-jensen-huang-exit-exclusive-poll.html"
-  },
-  {
-   "h": "Global oil markets swing to surplus as Gulf shipments rebound",
-   "w": "IEA analysts warn it will take months to rebuild stockpiles depleted by US-Iran war",
-   "syms": [
-    "BRENT"
-   ],
-   "src": "myFT — middle east north africa",
-   "ts": "2026-11-13T19:45:14Z",
-   "url": "https://www.ft.com/content/20b68fe2-9d60-4c0c-b714-1f3e03015823?syn-25a6b1a6=1",
-   "mine": 1
   },
   {
    "h": "Why is Microsoft's outage lasting so long and will emails be lost?",
