@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T06:08:11.140908Z",
+ "generated_at": "2026-11-14T07:14:11.335866Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -523,8 +523,8 @@
    "prev": 6398.98,
    "chg": -12.1201,
    "pct": -0.19,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^STOXX50E)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^STOXX50E) — last update failed",
    "ts": "2026-11-13T16:30:00Z",
    "open": 6391.0601,
    "lo": 6372.27,
@@ -811,19 +811,18 @@
    ]
   },
   "BTC": {
-   "p": 67184.8203,
-   "prev": 71342.9688,
-   "chg": -4158.1484,
-   "pct": -5.83,
+   "p": 67314.9609,
+   "prev": 68249.2734,
+   "chg": -934.3125,
+   "pct": -1.37,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-14T06:08:11.140908Z",
+   "ts": "2026-11-14T07:14:11.335866Z",
    "open": 68238.2109,
    "lo": 66535.5078,
    "hi": 68360.7109,
-   "vol": 34487648256,
+   "vol": 34173001728,
    "h": [
-    81074.19,
     80790.84,
     80024.01,
     80006.66,
@@ -844,7 +843,8 @@
     73720.12,
     73964.47,
     71342.97,
-    67184.82
+    68249.27,
+    67314.96
    ]
   }
  },
@@ -856,9 +856,9 @@
    "industry": "Consumer Electronics",
    "ccy": "USD",
    "mcap": 5177380175872,
-   "pe": 39.4978,
+   "pe": 39.6737,
    "fpe": 33.7009,
-   "eps": 9.02,
+   "eps": 8.98,
    "feps": 10.5715,
    "revTTM": 478833999872,
    "netIncome": 132175003648,
@@ -944,9 +944,9 @@
    "industry": "Software - Infrastructure",
    "ccy": "USD",
    "mcap": 3890434801664,
-   "pe": 27.2996,
+   "pe": 27.3424,
    "fpe": 21.6569,
-   "eps": 19.19,
+   "eps": 19.16,
    "feps": 24.1899,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
@@ -988,9 +988,9 @@
    "industry": "Internet Content & Information",
    "ccy": "USD",
    "mcap": 3636196016128,
-   "pe": 15.5997,
+   "pe": 15.4449,
    "fpe": 19.1622,
-   "eps": 18.96,
+   "eps": 19.15,
    "feps": 15.4351,
    "revTTM": 471097999360,
    "netIncome": 235693621248,
@@ -1032,9 +1032,9 @@
    "industry": "Internet Retail",
    "ccy": "USD",
    "mcap": 2883431432192,
-   "pe": 21.6269,
+   "pe": 21.557,
    "fpe": 24.4211,
-   "eps": 12.33,
+   "eps": 12.37,
    "feps": 10.9192,
    "revTTM": 797455024128,
    "netIncome": 134779002880,
@@ -1104,7 +1104,7 @@
    "earnEnd": 1799933400,
    "earnEst": true,
    "exDiv": 1796860800,
-   "divDate": 1807142400,
+   "divDate": 1799280000,
    "lastDiv": 1.107,
    "trailDiv": 6.0
   },
@@ -1193,9 +1193,9 @@
    "industry": "Internet Content & Information",
    "ccy": "USD",
    "mcap": 1640694153216,
-   "pe": 21.2762,
+   "pe": 21.8932,
    "fpe": 18.0312,
-   "eps": 30.16,
+   "eps": 29.31,
    "feps": 35.5879,
    "revTTM": 241605001216,
    "netIncome": 75249000448,
@@ -1238,7 +1238,7 @@
    "ccy": "USD",
    "mcap": 1542445203456,
    "fpe": 180.7227,
-   "eps": 0.89,
+   "eps": 0.91,
    "feps": 2.1592,
    "revTTM": 103569997824,
    "netIncome": 3220000000,
@@ -1267,7 +1267,7 @@
    "earnEnd": 1801083600,
    "earnEst": true,
    "trailDiv": 0.0,
-   "pe_ns": 438.4494
+   "pe_ns": 428.8132
   },
   "AVGO": {
    "name": "Broadcom Inc.",
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1656497373184,
    "pe": 44.318,
-   "fpe": 17.8273,
+   "fpe": 17.8742,
    "eps": 7.83,
-   "feps": 19.4651,
+   "feps": 19.414,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1403,9 +1403,9 @@
    "industry": "Insurance - Diversified",
    "ccy": "USD",
    "mcap": 1259712413696,
-   "pe": 16.5072,
+   "pe": 16.595,
    "fpe": 25.9872,
-   "eps": 35.92,
+   "eps": 35.73,
    "feps": 22.8166,
    "revTTM": 395362009088,
    "netIncome": 77084000256,
@@ -1480,9 +1480,9 @@
    "industry": "Semiconductors",
    "ccy": "USD",
    "mcap": 880597991424,
-   "pe": 10.7412,
+   "pe": 10.471,
    "fpe": 3.7462,
-   "eps": 72.46,
+   "eps": 74.33,
    "feps": 207.7605,
    "revTTM": 133188001792,
    "netIncome": 84968996864,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1016233525248,
-   "pe": 45.7464,
+   "mcap": 1019350286336,
+   "pe": 46.4094,
    "fpe": 39.7569,
-   "eps": 2.8,
+   "eps": 2.76,
    "feps": 3.2218,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.773,
@@ -1609,9 +1609,9 @@
    "industry": "Semiconductors",
    "ccy": "USD",
    "mcap": 875905024000,
-   "pe": 125.0726,
+   "pe": 114.1154,
    "fpe": 30.1888,
-   "eps": 4.27,
+   "eps": 4.68,
    "feps": 17.6907,
    "revTTM": 45435998208,
    "netIncome": 7725000192,
@@ -1649,9 +1649,9 @@
    "industry": "Credit Services",
    "ccy": "USD",
    "mcap": 794383024128,
-   "pe": 34.1154,
+   "pe": 34.5584,
    "fpe": 24.8395,
-   "eps": 12.48,
+   "eps": 12.32,
    "feps": 17.1404,
    "revTTM": 45902999552,
    "netIncome": 23311998976,
@@ -1693,9 +1693,9 @@
    "industry": "Oil & Gas Integrated",
    "ccy": "USD",
    "mcap": 695874551808,
-   "pe": 17.4606,
+   "pe": 17.5504,
    "fpe": 13.5908,
-   "eps": 9.77,
+   "eps": 9.72,
    "feps": 12.5519,
    "revTTM": 388231987200,
    "netIncome": 40621998080,
@@ -1781,9 +1781,9 @@
    "industry": "Semiconductor Equipment & Materials",
    "ccy": "EUR",
    "mcap": 515997270016,
-   "pe": 39.0207,
+   "pe": 37.2199,
    "fpe": 23.7232,
-   "eps": 34.31,
+   "eps": 35.97,
    "feps": 56.4342,
    "revTTM": 39473500160,
    "netIncome": 13474299904,
@@ -1824,9 +1824,9 @@
    "industry": "Credit Services",
    "ccy": "USD",
    "mcap": 576012943360,
-   "pe": 34.1524,
+   "pe": 34.5992,
    "fpe": 28.5429,
-   "eps": 19.36,
+   "eps": 19.11,
    "feps": 23.1648,
    "revTTM": 36288000000,
    "netIncome": 16958000128,
@@ -1868,9 +1868,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 521499836416,
-   "pe": 50.6055,
+   "pe": 50.6924,
    "fpe": 18.216,
-   "eps": 5.83,
+   "eps": 5.82,
    "feps": 16.1962,
    "revTTM": 66013999104,
    "netIncome": 10302999552,
@@ -1911,9 +1911,9 @@
    "ccy": "USD",
    "mcap": 429061144576,
    "pe": 16.1446,
-   "fpe": 13.3304,
+   "fpe": 13.2731,
    "eps": 13.62,
-   "feps": 16.4954,
+   "feps": 16.5666,
    "revTTM": 226256994304,
    "netIncome": 26976000000,
    "shares": 1951253686,
@@ -1954,9 +1954,9 @@
    "industry": "Discount Stores",
    "ccy": "USD",
    "mcap": 490194108416,
-   "pe": 52.6015,
+   "pe": 53.2856,
    "fpe": 44.1777,
-   "eps": 21.03,
+   "eps": 20.76,
    "feps": 25.04,
    "revTTM": 303154003968,
    "netIncome": 9226000384,
@@ -1999,9 +1999,9 @@
    "ccy": "USD",
    "mcap": 404771504128,
    "pe": 118.3028,
-   "fpe": 66.2625,
+   "fpe": 66.1698,
    "eps": 1.42,
-   "feps": 2.5352,
+   "feps": 2.5388,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
@@ -2037,9 +2037,9 @@
    "industry": "Communication Equipment",
    "ccy": "USD",
    "mcap": 377069010944,
-   "pe": 27.0935,
+   "pe": 25.4362,
    "fpe": 16.1229,
-   "eps": 3.53,
+   "eps": 3.76,
    "feps": 5.9319,
    "revTTM": 63324999680,
    "netIncome": 13267000320,
@@ -2082,9 +2082,9 @@
    "ccy": "USD",
    "mcap": 426963795968,
    "pe": 29.2773,
-   "fpe": 28.1338,
+   "fpe": 28.1245,
    "eps": 3.39,
-   "feps": 3.5278,
+   "feps": 3.529,
    "revTTM": 51053998080,
    "netIncome": 14629000192,
    "shares": 4301902335,
@@ -2125,7 +2125,7 @@
    "industry": "Communication Equipment",
    "ccy": "USD",
    "mcap": 12717574144,
-   "eps": -2.0,
+   "eps": -2.12,
    "feps": -1.5613,
    "revTTM": 142880000,
    "netIncome": -628267008,
@@ -2168,13 +2168,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 121.2883,
-   "shares": 572600000,
-   "divYield": 2.608,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2226,52 +2221,102 @@
  ],
  "news": [
   {
-   "h": "Compte rendu de résultats : Black Box enregistre un chiffre d’affaires record au T2 2027",
+   "h": "Le PDG d’Altimmune achète des actions pour 49.694$",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-14T05:45:22Z",
-   "url": "https://fr.investing.com/news/transcripts/compte-rendu-de-resultats--black-box-enregistre-un-chiffre-daffaires-record-au-t2-2027-93CH-3696398"
+   "ts": "2026-11-14T07:01:52Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-daltimmune-achete-des-actions-pour-49694-93CH-3696415"
   },
   {
-   "h": "Une directrice de Mirum Pharmaceuticals cède des actions pour 1,33M$",
+   "h": "Un directeur de CoStar Group vend des actions pour 92.049$",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-14T05:32:29Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/une-directrice-de-mirum-pharmaceuticals-cede-des-actions-pour-133m-93CH-3696397"
+   "ts": "2026-11-14T06:46:56Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-costar-group-vend-des-actions-pour-92049-93CH-3696412"
   },
   {
-   "h": "Un directeur de Vital Farms cède des actions pour 222.270$",
+   "h": "Compte rendu d’appel aux résultats : le bénéfice de Maharashtra Seamless au T2 2027 pénalisé par un ajustement d’inventaire",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-14T05:32:15Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-vital-farms-cede-des-actions-pour-222270-93CH-3696396"
+   "ts": "2026-11-14T06:45:55Z",
+   "url": "https://fr.investing.com/news/transcripts/compte-rendu-dappel-aux-resultats--le-benefice-de-maharashtra-seamless-au-t2-2027-penalise-par-un-ajustement-dinventaire-93CH-3696411"
   },
   {
-   "h": "Un dirigeant de Johnson & Johnson cède des actions pour 3,7M$",
-   "w": "",
+   "h": "Microsoft says services fully restored after for day-long global outage",
+   "w": "Efforts to address the underlying problem with Outlook, Teams and Copilot are complete, the tech firm says.",
    "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T05:31:59Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-de-johnson--johnson-cede-des-actions-pour-37m-93CH-3696395"
+   "src": "BBC — Business",
+   "ts": "2026-11-14T06:42:27Z",
+   "url": "https://www.bbc.co.uk/news/articles/c6rrg51rkz09o?at_medium=RSS&at_campaign=rss"
   },
   {
-   "h": "Le PDG de 10x Genomics, Serge Saxonov, apporte 1,95M$ en actions",
+   "h": "RHI Magnesita Inde : croissance stable au T2 2027",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-14T05:17:03Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-10x-genomics-serge-saxonov-apporte-195m-en-actions-93CH-3696393"
+   "ts": "2026-11-14T06:40:08Z",
+   "url": "https://fr.investing.com/news/transcripts/rhi-magnesita-inde--croissance-stable-au-t2-2027-93CH-3696410"
   },
   {
-   "h": "La panne de la FAA révèle des systèmes vieillissants malgré des milliards investis",
+   "h": "Le PDG d’Akamai, F. Thomson Leighton, achète pour 2,55M$ d’actions",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-14T05:13:39Z",
-   "url": "https://fr.investing.com/news/stock-market-news/la-panne-de-la-faa-revele-des-systemes-vieillissants-malgre-des-milliards-investis-3696392"
+   "ts": "2026-11-14T06:32:48Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-dakamai-f-thomson-leighton-achete-pour-255m-dactions-93CH-3696409"
+  },
+  {
+   "h": "Le directeur produit de Progyny vend des actions pour 28.181$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T06:32:42Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-produit-de-progyny-vend-des-actions-pour-28181-93CH-3696408"
+  },
+  {
+   "h": "Un directeur de Netscout vend pour 951.055$ d’actions de la société",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T06:32:31Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-netscout-vend-pour-951055-dactions-de-la-societe-93CH-3696407"
+  },
+  {
+   "h": "Une dirigeante d’Estée Lauder cède des actions pour 467.824$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T06:32:19Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/une-dirigeante-destee-lauder-cede-des-actions-pour-467824-93CH-3696406"
+  },
+  {
+   "h": "Matt McGraner de NexPoint Residential Trust achète des actions pour 99.930$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T06:17:08Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/matt-mcgraner-de-nexpoint-residential-trust-achete-des-actions-pour-99930-93CH-3696405"
+  },
+  {
+   "h": "Le conseiller juridique de Health Catalyst vend des actions pour 140.973$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T06:16:56Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-conseiller-juridique-de-health-catalyst-vend-des-actions-pour-140973-93CH-3696404"
+  },
+  {
+   "h": "Ecuador wants to monetize its biodiversity — while still drilling for oil",
+   "w": "Ecuador is planning to channel funds into its biodiversity, but faces a key challenge: its reliance on oil.",
+   "syms": [
+    "BRENT"
+   ],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-14T06:00:01Z",
+   "url": "https://www.cnbc.com/2026/11/14/ecuador-biodiversity-green-finance-oil.html"
   },
   {
    "h": "FAA lifts ground stop after more than four hours, but flight cancellations will stretch into the weekend",
@@ -2280,24 +2325,6 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-14T05:08:24Z",
    "url": "https://www.cnbc.com/2026/11/13/faa-ground-stop.html"
-  },
-  {
-   "h": "Le vice-président de Venture Global cède des actions pour 6,58 M$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T05:02:06Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-vicepresident-de-venture-global-cede-des-actions-pour-658-m-93CH-3696391"
-  },
-  {
-   "h": "Aux Etats-Unis, l’affaire Nvidia tourne à la crise politique pour Donald Trump",
-   "w": "Selon le « New York Times », le président américain aurait été mis au courant, dès le mois de mai, des risques liés à la relation entre Jensen Huang, le patron du géant des semi-conducteurs, et une entrepreneuse chinoise soupçonnée d’espionnage. Il est directement mis en cause pour son inaction.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-14T05:00:48Z",
-   "url": "https://www.lemonde.fr/international/article/2026/11/14/aux-etats-unis-l-affaire-nvidia-tourne-a-la-crise-politique-pour-donald-trump_6809696_3210.html"
   },
   {
    "h": "Italy rebuffs German bid to enter joint fighter jet project",
@@ -2329,6 +2356,16 @@
    "mine": 1
   },
   {
+   "h": "Aux Etats-Unis, l’affaire Nvidia tourne à la crise politique pour Donald Trump",
+   "w": "Selon le « New York Times », le président américain aurait été mis au courant, dès le mois de mai, des risques liés à la relation entre Jensen Huang, patron du géant des semi-conducteurs, et une entrepreneuse chinoise soupçonnée d’espionnage. Il est directement mis en cause pour son inaction.",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-14T05:00:42Z",
+   "url": "https://www.lemonde.fr/international/article/2026/11/14/aux-etats-unis-l-affaire-nvidia-tourne-a-la-crise-politique-pour-donald-trump_6809696_3210.html"
+  },
+  {
    "h": "A Vinted ban would sell young entrepreneurs short",
    "w": "Selling online is a great opportunity for teens to learn, earn and spend their money",
    "syms": [],
@@ -2341,7 +2378,7 @@
    "h": "Hedge fund woes expose the dangers of hot money once again",
    "w": "Recent stumbles have come about as a result of the pursuit of heady growth without the risk management capability and structures to deal with it",
    "syms": [],
-   "src": "myFT — companies",
+   "src": "myFT — financials",
    "ts": "2026-11-14T05:00:38Z",
    "url": "https://www.ft.com/content/7c60b026-23ff-4b50-8a2b-7e9614ef7970",
    "mine": 1
@@ -2384,6 +2421,15 @@
    "src": "myFT — companies",
    "ts": "2026-11-14T05:00:37Z",
    "url": "https://www.ft.com/content/e141a5ea-5aa4-491b-88a4-369cfc67693a",
+   "mine": 1
+  },
+  {
+   "h": "Treat prediction markets like futures trading",
+   "w": "Critics say these sites are just a form of gambling — but they said that about the Chicago Board of Trade too",
+   "syms": [],
+   "src": "myFT — markets",
+   "ts": "2026-11-14T05:00:37Z",
+   "url": "https://www.ft.com/content/b5bdf7c5-242b-4078-b3fd-a86b488d5a3a",
    "mine": 1
   },
   {
@@ -2452,7 +2498,7 @@
    "h": "New pooled pension scheme does nothing to solve finance’s ‘nastiest’ problem",
    "w": "The government has promised to ‘make pensions, pensions again’ — intergenerational risk sharing is not the answer",
    "syms": [],
-   "src": "myFT — companies",
+   "src": "myFT — financials",
    "ts": "2026-11-14T05:00:27Z",
    "url": "https://www.ft.com/content/ca6d97ba-baa0-46aa-b91e-ab12fa10b123",
    "mine": 1
@@ -2511,6 +2557,15 @@
    "mine": 1
   },
   {
+   "h": "The South African townships turning against the ANC",
+   "w": "Johannesburg may appoint its first white mayor since apartheid after longtime ANC bastions broke with the liberation party",
+   "syms": [],
+   "src": "myFT — emerging markets",
+   "ts": "2026-11-14T05:00:08Z",
+   "url": "https://www.ft.com/content/dbf8d003-aa1d-4f23-9702-45fcff4360fd?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "Martin Wolf on the US midterms: Trump loses. European populism lives on.",
    "w": "Timothy Garton Ash on why Europe’s populist right may well outlast Trump",
    "syms": [],
@@ -2518,30 +2573,6 @@
    "ts": "2026-11-14T05:00:00Z",
    "url": "https://www.ft.com/content/094acead-5c40-4609-87fd-f02b171eb42c?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "La directrice de Magnite, Diane Yu, cède des actions pour 583.400$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T04:32:04Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-de-magnite-diane-yu-cede-des-actions-pour-583400-93CH-3696390"
-  },
-  {
-   "h": "Un directeur de Molina Healthcare vend des actions pour 329.792$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T04:32:01Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-molina-healthcare-vend-des-actions-pour-329792-93CH-3696389"
-  },
-  {
-   "h": "Un dirigeant de Molina Healthcare cède des actions pour 159.481$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T04:17:03Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-de-molina-healthcare-cede-des-actions-pour-159481-93CH-3696386"
   },
   {
    "h": "US plan to overhaul air traffic control system like ‘changing a tyre at 70mph’",
@@ -2607,6 +2638,32 @@
    "url": "https://www.cnbc.com/2026/11/13/spacex-launches-starship-in-key-test-flight-of-massive-rocket.html"
   },
   {
+   "h": "China sees Nvidia chief Huang's swift downfall as political hit",
+   "w": "",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T01:14:11.335866Z",
+   "url": "https://asia.nikkei.com/business/tech/semiconductors/china-sees-nvidia-chief-huang-s-swift-downfall-as-political-hit"
+  },
+  {
+   "h": "Bain- and GIC-backed WHI on track for Japan's largest IPO in 2026",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T01:14:11.335866Z",
+   "url": "https://asia.nikkei.com/business/markets/ipo/bain-and-gic-backed-whi-on-track-for-japan-s-largest-ipo-in-2026"
+  },
+  {
+   "h": "US wants Japan to nearly triple budget for hosting American troops",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T01:14:11.335866Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/us-wants-japan-to-nearly-triple-budget-for-hosting-american-troops"
+  },
+  {
    "h": "India pins hopes on AI start-up to avoid becoming ‘digital colony’",
    "w": "Sarvam has received government backing to build native models in world’s most populous country",
    "syms": [],
@@ -2658,16 +2715,6 @@
    "ts": "2026-11-13T23:56:06Z",
    "url": "https://www.ft.com/content/ed6db87e-829a-41b4-a687-554847d6f904?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Nvidia is done with Jensen Huang. The fallout in Washington is just beginning",
-   "w": "The Republican-led Congress wants to see Jensen Huang in Washington before Democrats take control in January.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-13T23:54:36Z",
-   "url": "https://www.cnbc.com/2026/11/13/nvidia-jensen-huang-washington-congress.html"
   },
   {
    "h": "SpaceX aborts attempt to catch Starship booster rocket",
@@ -2850,32 +2897,6 @@
    "url": "https://www.marketwatch.com/story/bitcoin-could-fall-even-further-if-investors-cash-out-to-buy-into-the-anthropic-ipo-5a14f46a?mod=mw_rss_topstories"
   },
   {
-   "h": "Osaka landmark to be centerpiece of area's redevelopment",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-13T21:19:45.842843Z",
-   "url": "https://asia.nikkei.com/business/travel-leisure/osaka-landmark-to-be-centerpiece-of-area-s-redevelopment"
-  },
-  {
-   "h": "South Koreans show their love for once-taboo Japan pop culture",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-13T21:19:45.842843Z",
-   "url": "https://asia.nikkei.com/business/media-entertainment/south-koreans-show-their-love-for-once-taboo-japan-pop-culture"
-  },
-  {
-   "h": "Nvidia scandal sparks Washington blame game over China chip exports",
-   "w": "",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-13T21:19:45.842843Z",
-   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/nvidia-scandal-sparks-washington-blame-game-over-china-chip-exports"
-  },
-  {
    "h": "AI risks are the biggest threat to the financial system, Fed survey finds",
    "w": "The report comes with Wall Street on edge over high-flying AI hyperscalers, while communities are on alert for the rapid spread of data centers.",
    "syms": [
@@ -2892,14 +2913,6 @@
    "src": "Federal Reserve — press releases",
    "ts": "2026-11-13T21:15:00Z",
    "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261113a.htm"
-  },
-  {
-   "h": "Microsoft 'deeply sorry' for global outage as it reports broad recovery",
-   "w": "Experts say the event is a \"stark reminder\" of how heavily the world relies on a small group of big tech providers.",
-   "syms": [],
-   "src": "BBC — Business",
-   "ts": "2026-11-13T21:14:22Z",
-   "url": "https://www.bbc.co.uk/news/articles/c6rrg51rkz09o?at_medium=RSS&at_campaign=rss"
   },
   {
    "h": "AMD and other chip stocks slide as Wall Street rethinks the AI trade without Jensen Huang",
@@ -3014,15 +3027,6 @@
    "url": "https://www.cnbc.com/2026/11/13/a-trading-strategy-to-ride-out-the-nvidia-uncertainty-and-generate-income-in-the-process.html"
   },
   {
-   "h": "Microsoft outage exposes global reliance on core tech providers",
-   "w": "Impact of global incident affects users ranging from banks and governments to county sheriffs and pharmacies",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-13T18:55:13Z",
-   "url": "https://www.ft.com/content/f385935b-2bb4-4e34-8127-16517e8ceecb?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Why is Microsoft's outage lasting so long and will emails be lost?",
    "w": "Microsoft says it is continuing to restore services including Outlook and Teams following a global outage.",
    "syms": [],
@@ -3037,15 +3041,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-13T18:30:05Z",
    "url": "https://www.lemonde.fr/les-decodeurs/article/2026/11/13/tout-comprendre-au-smic-le-salaire-minimum-que-le-gouvernement-va-revaloriser_6809379_4355770.html"
-  },
-  {
-   "h": "Moscow tells Europe to pick an envoy if it wants a seat at the table",
-   "w": "EU top diplomat Kaja Kallas says Vladimir Putin does not want to talk to her because she is ‘strong’",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-13T18:03:20Z",
-   "url": "https://www.ft.com/content/4c1f5051-94eb-4d20-b154-c45f4538a2a2?syn-25a6b1a6=1",
-   "mine": 1
   },
   {
    "h": "La panne de Microsoft alerte entreprises et salariés sur leur dépendance aux outils numériques : « On a tous été un peu dans le même bateau que nos clients »",
