@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T18:16:08.335664Z",
+ "generated_at": "2026-11-14T19:09:55.018575Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -774,10 +774,10 @@
    ]
   },
   "BRENT": {
-   "p": 95.84,
+   "p": 96.08,
    "prev": 95.82,
-   "chg": 0.02,
-   "pct": 0.02,
+   "chg": 0.26,
+   "pct": 0.27,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-13T22:00:00Z",
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 65853.7422,
+   "p": 65610.0234,
    "prev": 68249.2734,
-   "chg": -2395.5312,
-   "pct": -3.51,
+   "chg": -2639.25,
+   "pct": -3.87,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-14T18:16:08.335664Z",
+   "ts": "2026-11-14T19:09:55.018575Z",
    "open": 68238.2109,
    "lo": 65089.7852,
    "hi": 68360.7109,
-   "vol": 34575228928,
+   "vol": 35193417728,
    "h": [
     80790.84,
     80024.01,
@@ -844,7 +844,7 @@
     73964.47,
     71342.97,
     68249.27,
-    65853.74
+    65625.46
    ]
   }
  },
@@ -910,9 +910,9 @@
    "beta": 2.247,
    "div": 1.0,
    "divYield": 0.614,
-   "target": 283.3076,
+   "target": 278.3076,
    "targetHi": 515.0,
-   "targetLo": 174.0,
+   "targetLo": 170.0,
    "rating": "Buy",
    "analysts": 53,
    "revGrowth": 105.9,
@@ -1104,7 +1104,7 @@
    "earnEnd": 1799933400,
    "earnEst": true,
    "exDiv": 1796860800,
-   "divDate": 1799280000,
+   "divDate": 1807142400,
    "lastDiv": 1.107,
    "trailDiv": 6.0
   },
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1656497373184,
    "pe": 44.318,
-   "fpe": 17.8742,
+   "fpe": 17.8273,
    "eps": 7.83,
-   "feps": 19.414,
+   "feps": 19.4651,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1019350286336,
+   "mcap": 1016233525248,
    "pe": 46.4094,
    "fpe": 39.7569,
    "eps": 2.76,
    "feps": 3.2218,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.773,
@@ -1868,9 +1868,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 521499836416,
-   "pe": 50.6924,
+   "pe": 50.6055,
    "fpe": 18.216,
-   "eps": 5.82,
+   "eps": 5.83,
    "feps": 16.1962,
    "revTTM": 66013999104,
    "netIncome": 10302999552,
@@ -1911,9 +1911,9 @@
    "ccy": "USD",
    "mcap": 429061144576,
    "pe": 16.1446,
-   "fpe": 13.2731,
+   "fpe": 13.3304,
    "eps": 13.62,
-   "feps": 16.5666,
+   "feps": 16.4954,
    "revTTM": 226256994304,
    "netIncome": 26976000000,
    "shares": 1951253686,
@@ -1999,9 +1999,9 @@
    "ccy": "USD",
    "mcap": 404771504128,
    "pe": 118.3028,
-   "fpe": 66.1698,
+   "fpe": 66.2625,
    "eps": 1.42,
-   "feps": 2.5388,
+   "feps": 2.5352,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
@@ -2082,9 +2082,9 @@
    "ccy": "USD",
    "mcap": 426963795968,
    "pe": 29.2773,
-   "fpe": 28.1245,
+   "fpe": 28.1338,
    "eps": 3.39,
-   "feps": 3.529,
+   "feps": 3.5278,
    "revTTM": 51053998080,
    "netIncome": 14629000192,
    "shares": 4301902335,
@@ -2168,8 +2168,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 121.2883,
+   "shares": 572600000,
+   "divYield": 2.608,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2221,12 +2226,76 @@
  ],
  "news": [
   {
+   "h": "Un vice-président senior de Teledyne Technologies vend pour 2,97 millions $ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T18:47:16Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-vicepresident-senior-de-teledyne-technologies-vend-pour-297-millions--dactions-93CH-3696509"
+  },
+  {
    "h": "Nationwide ground stop followed contractor upgrade to L3Harris telecommunication system: DOT’s Duffy",
    "w": "The FAA ground stop came after updates to an older communication system managed by L3Harris Technologies, Transportation Secretary Sean Duffy said Saturday.",
    "syms": [],
    "src": "CNBC — Markets",
-   "ts": "2026-11-14T18:11:51Z",
+   "ts": "2026-11-14T18:32:47Z",
    "url": "https://www.cnbc.com/2026/11/14/faa-ground-stop-flights-resume-delays.html"
+  },
+  {
+   "h": "Un administrateur d’Amdocs achète des actions pour 41.629$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T18:32:20Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-damdocs-achete-des-actions-pour-41629-93CH-3696508"
+  },
+  {
+   "h": "La directrice financière de Hasbro vend des actions pour 343.754$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T18:32:13Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-financiere-de-hasbro-vend-des-actions-pour-343754-93CH-3696507"
+  },
+  {
+   "h": "Un dirigeant d’Aura Minerals cède des actions pour 620.940$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T18:32:10Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-daura-minerals-cede-des-actions-pour-620940-93CH-3696506"
+  },
+  {
+   "h": "Should a widow leave her late partner’s home to her stepkids — or cut off contact with them?",
+   "w": "“It would be a less drastic step than selling the home now and splitting the proceeds.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-14T18:30:00Z",
+   "url": "https://www.marketwatch.com/story/she-can-always-change-her-mind-should-a-widow-leave-the-family-home-to-her-stepchildren-649b06af?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Cardano recule de 10% dans une tendance négative",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T18:19:58Z",
+   "url": "https://fr.investing.com/news/cryptocurrency-news/cardano-recule-de-10-dans-une-tendance-negative-3696504"
+  },
+  {
+   "h": "Duffy enquête sur L3Harris après la panne de la FAA qui a cloué les vols américains au sol",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T18:18:02Z",
+   "url": "https://fr.investing.com/news/stock-market-news/duffy-enquete-sur-l3harris-apres-la-panne-de-la-faa-qui-a-cloue-les-vols-americains-au-sol-3696503"
+  },
+  {
+   "h": "Une directrice d’Amdocs achète des actions de la société pour 5.535$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T18:17:05Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/une-directrice-damdocs-achete-des-actions-de-la-societe-pour-5535-93CH-3696502"
   },
   {
    "h": "‘He calls my plans a fantasy’: My husband says we can’t afford a $200,000-a-year retirement. Is he being cheap?",
@@ -2312,14 +2381,6 @@
    "url": "https://www.marketwatch.com/story/the-scandal-at-nvidia-is-exactly-whats-wrong-with-the-s-p-500-7307457e?mod=mw_rss_topstories"
   },
   {
-   "h": "The 2027 401(k) limits are here. See how much more you can save next year.",
-   "w": "Defined-contribution plans are getting a bump. IRA savers are not.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-14T17:50:00Z",
-   "url": "https://www.marketwatch.com/story/the-2027-401-k-limits-are-here-see-how-much-more-you-can-save-next-year-d525768c?mod=mw_rss_topstories"
-  },
-  {
    "h": "Le CLO de Ferguson Enterprises vend des actions pour 284.180$",
    "w": "",
    "syms": [],
@@ -2355,62 +2416,6 @@
    "url": "https://fr.investing.com/news/insider-trading-news/une-directrice-damdocs-acquiert-des-actions-ordinaires-pour-100800-93CH-3696498"
   },
   {
-   "h": "Le directeur digital de Ferguson cède des actions pour 594.757$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T17:32:18Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-digital-de-ferguson-cede-des-actions-pour-594757-93CH-3696497"
-  },
-  {
-   "h": "Le directeur comptable de Ferguson Enterprises vend des actions pour 238.315$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T17:32:06Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-comptable-de-ferguson-enterprises-vend-des-actions-pour-238315-93CH-3696496"
-  },
-  {
-   "h": "Lilly présente les résultats d’essais sur l’obésité à ObesityWeek 2026",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T17:05:51Z",
-   "url": "https://fr.investing.com/news/company-news/lilly-presente-les-resultats-dessais-sur-lobesite-a-obesityweek-2026-93CH-3696493"
-  },
-  {
-   "h": "L’essai d’avexitide d’Amylyx atteint son critère principal pour l’hypoglycémie",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T17:05:44Z",
-   "url": "https://fr.investing.com/news/company-news/lessai-davexitide-damylyx-atteint-son-critere-principal-pour-lhypoglycemie-93CH-3696492"
-  },
-  {
-   "h": "Le directeur d’Amdocs Amos Genish achète pour 149.730$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T17:02:19Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-damdocs-amos-genish-achete-pour-149730-dactions-93CH-3696491"
-  },
-  {
-   "h": "Un gérant de portefeuille de Nylim MacKay vend des parts MMD pour 46.266$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T17:01:47Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-gerant-de-portefeuille-de-nylim-mackay-vend-des-parts-mmd-pour-46266-93CH-3696490"
-  },
-  {
-   "h": "La directrice de Broadridge Maura Markus cède des actions pour 610.210$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T16:32:26Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-de-broadridge-maura-markus-cede-des-actions-pour-610210-93CH-3696488"
-  },
-  {
    "h": "Lunettes connectées : « Où est donc l’Europe, qui aime tant se présenter comme la championne mondiale de la protection de la vie privée ? »",
    "w": "Les usages prétendument récréatifs des lunettes munies de caméras et de microphones ne justifient pas de faire peser sur l’ensemble de la population le risque d’une surveillance diffuse, dénonce un collectif de chercheurs dans une tribune au « Monde ».",
    "syms": [],
@@ -2440,7 +2445,7 @@
   },
   {
    "h": "Suspension des vols aux Etats-Unis : plus de 16 000 vols annulés vendredi et samedi alors que des perturbations persistent",
-   "w": "Vendredi, les autorités américaines de l’aviation ont interdit tout décollage des avions à partir des aéroports américains de 15 h 54 (à New York) jusqu’à 20 h 15. « Les opérations retournent progressivement à la normale [samedi] matin » malgré quelques retards persistants, a fait savoir le ministre des transports.",
+   "w": "Les autorités américaines de l’aviation avaient interdit tout décollage des avions à partir des aéroports américains de 15 h 54 (à New York) jusqu’à 20 h 15. « Les opérations retournent progressivement à la normale [samedi] matin » malgré quelques retards persistants, a fait savoir le ministre des transports.",
    "syms": [],
    "src": "Le Monde — Économie",
    "ts": "2026-11-14T15:31:00Z",
@@ -2497,6 +2502,34 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-14T14:00:01Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/14/ia-comment-huawei-est-devenu-le-navire-amiral-de-la-chine-dans-la-bataille-des-puces_6810315_3234.html"
+  },
+  {
+   "h": "China sees Nvidia chief Huang's swift downfall as political hit",
+   "w": "",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T13:09:55.018575Z",
+   "url": "https://asia.nikkei.com/business/tech/semiconductors/china-sees-nvidia-chief-huang-s-swift-downfall-as-political-hit"
+  },
+  {
+   "h": "Bain- and GIC-backed WHI on track for Japan's largest IPO in 2026",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T13:09:55.018575Z",
+   "url": "https://asia.nikkei.com/business/markets/ipo/bain-and-gic-backed-whi-on-track-for-japan-s-largest-ipo-in-2026"
+  },
+  {
+   "h": "Nvidia scandal sparks Washington blame game over China chip exports",
+   "w": "",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T13:09:55.018575Z",
+   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/nvidia-scandal-sparks-washington-blame-game-over-china-chip-exports"
   },
   {
    "h": "Trump Media group stares down $1bn debt crunch as bitcoin bet fades",
@@ -2682,14 +2715,6 @@
    "url": "https://asia.nikkei.com/life-arts/life/no-grass-no-problem-playing-sand-golf-in-the-australian-outback"
   },
   {
-   "h": "Honda supplier Topre to invest $140mn in US for new plant, upgrades",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T10:59:31.547319Z",
-   "url": "https://asia.nikkei.com/business/automobiles/honda-supplier-topre-to-invest-140mn-in-us-for-new-plant-upgrades"
-  },
-  {
    "h": "Germany suffers setback in joining fighter jet project",
    "w": "Rome rejects push to explore inviting Berlin to enter UK-Japan-Italy next-generation aircraft programme as equal partner",
    "syms": [],
@@ -2706,22 +2731,6 @@
    "ts": "2026-11-14T10:30:08Z",
    "url": "https://www.ft.com/content/936376d1-4a69-4a3c-8975-3c55e9cb9d42?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Osaka landmark to be centerpiece of area's redevelopment",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T10:17:30.735277Z",
-   "url": "https://asia.nikkei.com/business/travel-leisure/osaka-landmark-to-be-centerpiece-of-area-s-redevelopment"
-  },
-  {
-   "h": "South Koreans show their love for once-taboo Japan pop culture",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T10:17:30.735277Z",
-   "url": "https://asia.nikkei.com/business/media-entertainment/south-koreans-show-their-love-for-once-taboo-japan-pop-culture"
   },
   {
    "h": "Hawkward timing",
