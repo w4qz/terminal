@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T08:17:42.483288Z",
+ "generated_at": "2026-11-14T09:11:05.041518Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -778,8 +778,8 @@
    "prev": 95.82,
    "chg": 0.26,
    "pct": 0.27,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (BZ=F)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (BZ=F) — last update failed",
    "ts": "2026-11-13T22:00:00Z",
    "open": 95.89,
    "lo": 95.07,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 67205.4062,
+   "p": 67134.7109,
    "prev": 68249.2734,
-   "chg": -1043.8672,
-   "pct": -1.53,
+   "chg": -1114.5625,
+   "pct": -1.63,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-14T08:17:42.483288Z",
+   "ts": "2026-11-14T09:11:05.041518Z",
    "open": 68238.2109,
    "lo": 66535.5078,
    "hi": 68360.7109,
-   "vol": 33214083072,
+   "vol": 32320837632,
    "h": [
     80790.84,
     80024.01,
@@ -844,7 +844,7 @@
     73964.47,
     71342.97,
     68249.27,
-    67205.41
+    67134.71
    ]
   }
  },
@@ -910,7 +910,7 @@
    "beta": 2.247,
    "div": 1.0,
    "divYield": 0.614,
-   "target": 285.3453,
+   "target": 283.3076,
    "targetHi": 515.0,
    "targetLo": 174.0,
    "rating": "Buy",
@@ -1057,7 +1057,7 @@
    "fcf": -34731749376,
    "w52lo": 196.0,
    "w52hi": 287.2,
-   "evEbitda": 16.732,
+   "evEbitda": 16.731,
    "earnTs": 1793304000,
    "earnStart": 1793304000,
    "earnEnd": 1793304000,
@@ -1135,7 +1135,7 @@
    "debt": 39217999872,
    "w52lo": 104.83,
    "w52hi": 225.64,
-   "evEbitda": 157.626,
+   "evEbitda": 156.665,
    "earnTs": 1792526400,
    "earnStart": 1792526400,
    "earnEnd": 1792526400,
@@ -1220,7 +1220,7 @@
    "fcf": 16848499712,
    "w52lo": 520.26,
    "w52hi": 779.82,
-   "evEbitda": 14.396,
+   "evEbitda": 14.403,
    "earnTs": 1792612800,
    "earnStart": 1801083600,
    "earnEnd": 1801083600,
@@ -1286,9 +1286,9 @@
    "beta": 1.508,
    "div": 2.6,
    "divYield": 0.749,
-   "target": 533.4238,
+   "target": 529.2381,
    "targetHi": 660.0,
-   "targetLo": 400.0,
+   "targetLo": 398.4699,
    "rating": "Strong buy",
    "analysts": 47,
    "revGrowth": 85.5,
@@ -1369,8 +1369,8 @@
    "beta": 0.389,
    "div": 6.92,
    "divYield": 0.479,
-   "target": 1460.298,
-   "targetHi": 1690.0,
+   "target": 1463.4014,
+   "targetHi": 1700.0,
    "targetLo": 940.0,
    "rating": "Buy",
    "analysts": 29,
@@ -1411,7 +1411,7 @@
    "netIncome": 77084000256,
    "shares": 1403805594,
    "beta": 0.571,
-   "target": 555.6667,
+   "target": 564.6667,
    "targetHi": 628.0,
    "targetLo": 510.0,
    "rating": "Buy",
@@ -1534,7 +1534,7 @@
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.773,
-   "target": 129.9,
+   "target": 130.4,
    "targetHi": 155.0,
    "targetLo": 81.0,
    "rating": "Buy",
@@ -2038,18 +2038,18 @@
    "ccy": "USD",
    "mcap": 377069010944,
    "pe": 25.4362,
-   "fpe": 16.1229,
+   "fpe": 16.0667,
    "eps": 3.76,
-   "feps": 5.9319,
+   "feps": 5.9527,
    "revTTM": 63324999680,
    "netIncome": 13267000320,
    "shares": 3942586873,
    "beta": 1.002,
    "div": 1.68,
    "divYield": 1.757,
-   "target": 134.0,
+   "target": 132.1667,
    "targetHi": 170.0,
-   "targetLo": 110.0,
+   "targetLo": 109.0,
    "rating": "Buy",
    "analysts": 24,
    "revGrowth": 17.6,
@@ -2226,6 +2226,46 @@
  ],
  "news": [
   {
+   "h": "Telecom Argentine dépasse les prévisions de BPA au T3 2026",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T08:49:25Z",
+   "url": "https://fr.investing.com/news/transcripts/telecom-argentine-depasse-les-previsions-de-bpa-au-t3-2026-93CH-3696443"
+  },
+  {
+   "h": "Un directeur de Natural Gas Services achète 57.790$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T08:47:22Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-natural-gas-services-achete-57790-dactions-93CH-3696442"
+  },
+  {
+   "h": "Sammaan Capital affiche une forte croissance au T2 2026, l’action stable",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T08:44:25Z",
+   "url": "https://fr.investing.com/news/transcripts/sammaan-capital-affiche-une-forte-croissance-au-t2-2026-laction-stable-93CH-3696441"
+  },
+  {
+   "h": "Un vice-président de Westinghouse Air Brake vend des actions pour 131.790$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T08:31:54Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-vicepresident-de-westinghouse-air-brake-vend-des-actions-pour-131790-93CH-3696439"
+  },
+  {
+   "h": "La Banque d’Angleterre devrait relever ses taux en 2027, selon Huw Pill",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T08:24:06Z",
+   "url": "https://fr.investing.com/news/stock-market-news/la-banque-dangleterre-devrait-relever-ses-taux-en-2027-selon-huw-pill-3696431"
+  },
+  {
    "h": "Microsoft apologizes for massive outage that took down Outlook and other 365 services",
    "w": "A Microsoft outage on Thursday and Friday affected users of services like Outlook, Teams and 365.",
    "syms": [],
@@ -2272,46 +2312,6 @@
    "src": "Investing.com France",
    "ts": "2026-11-14T07:31:53Z",
    "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-kodiak-gas-achete-des-actions-pour-449900-93CH-3696423"
-  },
-  {
-   "h": "Les services grand public de Microsoft rétablis après une panne mondiale",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T07:21:16Z",
-   "url": "https://fr.investing.com/news/company-news/les-services-grand-public-de-microsoft-retablis-les-entreprises-toujours-touchees-3696428"
-  },
-  {
-   "h": "Viyash Scientific affiche une forte croissance au T2 2027",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T07:19:35Z",
-   "url": "https://fr.investing.com/news/transcripts/viyash-scientific-affiche-une-forte-croissance-au-t2-2027-93CH-3696422"
-  },
-  {
-   "h": "Le président de Cavco Industries, Cira, cède 1,59 million $ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T07:18:06Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-president-de-cavco-industries-cira-cede-159-million--dactions-93CH-3696421"
-  },
-  {
-   "h": "Le directeur des opérations d’Eplus vend des actions pour 419.379$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T07:17:44Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-des-operations-deplus-vend-des-actions-pour-419379-93CH-3696420"
-  },
-  {
-   "h": "Un directeur d’Aldeyra achète pour 128.899$ d’actions de la société",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T07:17:19Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-daldeyra-achete-pour-128899-dactions-de-la-societe-93CH-3696419"
   },
   {
    "h": "Analysis: Companies love a ‘rockstar’ CEO. Until they depend on one",
@@ -2376,6 +2376,17 @@
    "src": "myFT — world",
    "ts": "2026-11-14T05:00:46Z",
    "url": "https://www.ft.com/content/806b0158-41c5-4db2-ac33-93621f72297b?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Transcript of an interview with Huw Pill",
+   "w": "Bank of England chief economist talks to the FT",
+   "syms": [
+    "UKX"
+   ],
+   "src": "myFT — economy",
+   "ts": "2026-11-14T05:00:46Z",
+   "url": "https://www.ft.com/content/014fae08-ab39-4fa2-b9d3-f0c961a6710f",
    "mine": 1
   },
   {
@@ -2536,8 +2547,8 @@
    "mine": 1
   },
   {
-   "h": "Aux Etats-Unis, après la suspension des vols, l’administration Trump politise cette panne géante et réclame 50 milliards de dollars au Congrès",
-   "w": "Un dysfonctionnement affectant les centres régionaux de contrôle aérien a conduit les autorités à clouer les avions au sol dans tout le pays, vendredi. Le secrétaire aux transports, Sean Duffy, a accusé du « vieux matériel » d’être responsable de l’incident.",
+   "h": "Suspension des vols aux Etats-Unis : une panne géante que l’administration Trump cherche déjà à politiser",
+   "w": "Un dysfonctionnement affectant les centres régionaux de contrôle aérien a conduit les autorités à clouer les avions au sol dans tout le pays, vendredi. Le secrétaire aux transports, Sean Duffy, a mis en cause du « vieux matériel » et réclame 50 milliards de dollars au Congrès.",
    "syms": [],
    "src": "Le Monde — Économie",
    "ts": "2026-11-14T05:00:20Z",
@@ -2614,6 +2625,30 @@
    "ts": "2026-11-14T03:21:57Z",
    "url": "https://www.ft.com/content/c9b119ff-d1da-46a7-b2b3-4ad0544fff6b?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "Did we really see a black hole? Australian team says 'yes'",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T03:11:05.041518Z",
+   "url": "https://asia.nikkei.com/business/science/did-we-really-see-a-black-hole-australian-team-says-yes"
+  },
+  {
+   "h": "No grass, no problem: Playing sand golf in the Australian outback",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T03:11:05.041518Z",
+   "url": "https://asia.nikkei.com/life-arts/life/no-grass-no-problem-playing-sand-golf-in-the-australian-outback"
+  },
+  {
+   "h": "Growth beyond AI puts corporate Japan on track for 20% profit gain",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T03:11:05.041518Z",
+   "url": "https://asia.nikkei.com/business/business-trends/growth-beyond-ai-puts-corporate-japan-on-track-for-20-profit-gain"
   },
   {
    "h": "FAA lifts rare nationwide ground stop on flights; air travel may take days to recover",
@@ -2794,30 +2829,6 @@
    "ts": "2026-11-13T23:39:26Z",
    "url": "https://www.ft.com/content/0ef40ac9-6d01-428f-98c8-a52bf5b9a787?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "US-China truce masks rising tensions ahead of Xi-Trump redux at APEC",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-13T23:15:15.934416Z",
-   "url": "https://asia.nikkei.com/spotlight/big-in-asia/us-china-truce-masks-rising-tensions-ahead-of-xi-trump-redux-at-apec"
-  },
-  {
-   "h": "Honda supplier Topre to invest $140mn in US for new plant, upgrades",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-13T23:15:15.934416Z",
-   "url": "https://asia.nikkei.com/business/automobiles/honda-supplier-topre-to-invest-140mn-in-us-for-new-plant-upgrades"
-  },
-  {
-   "h": "Uranium price hits record as AI demand prompts nuclear comeback",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-13T23:15:15.934416Z",
-   "url": "https://asia.nikkei.com/business/markets/commodities/uranium-price-hits-record-as-ai-demand-prompts-nuclear-comeback"
   },
   {
    "h": "‘The thought of living to 100 terrifies me’: Is Social Security a giant Ponzi scheme?",
@@ -3022,15 +3033,6 @@
    "src": "myFT — middle east north africa",
    "ts": "2026-11-13T19:45:14Z",
    "url": "https://www.ft.com/content/20b68fe2-9d60-4c0c-b714-1f3e03015823?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Anthropic’s Amodei ‘not super fussed’ about market turmoil ahead of IPO",
-   "w": "AI lab’s chief executive brushes off tech stock turbulence less than a week before planned $1.5tn listing",
-   "syms": [],
-   "src": "myFT — technology",
-   "ts": "2026-11-13T19:41:26Z",
-   "url": "https://www.ft.com/content/4b7b83d7-7fea-4ce2-bfe3-4f2cf75b1d82?syn-25a6b1a6=1",
    "mine": 1
   },
   {
