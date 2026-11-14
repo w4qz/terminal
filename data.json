@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T12:17:13.818725Z",
+ "generated_at": "2026-11-14T13:17:57.425313Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -523,8 +523,8 @@
    "prev": 6398.98,
    "chg": -12.1201,
    "pct": -0.19,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^STOXX50E) — last update failed",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^STOXX50E)",
    "ts": "2026-11-13T16:30:00Z",
    "open": 6391.0601,
    "lo": 6372.27,
@@ -774,10 +774,10 @@
    ]
   },
   "BRENT": {
-   "p": 95.84,
+   "p": 96.08,
    "prev": 95.82,
-   "chg": 0.02,
-   "pct": 0.02,
+   "chg": 0.26,
+   "pct": 0.27,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-13T22:00:00Z",
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 67038.6719,
+   "p": 66690.0781,
    "prev": 68249.2734,
-   "chg": -1210.6016,
-   "pct": -1.77,
+   "chg": -1559.1953,
+   "pct": -2.28,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-14T12:17:13.818725Z",
+   "ts": "2026-11-14T13:17:57.425313Z",
    "open": 68238.2109,
    "lo": 66535.5078,
    "hi": 68360.7109,
-   "vol": 31194025984,
+   "vol": 31174508544,
    "h": [
     80790.84,
     80024.01,
@@ -844,7 +844,7 @@
     73964.47,
     71342.97,
     68249.27,
-    67038.67
+    66690.08
    ]
   }
  },
@@ -944,9 +944,9 @@
    "industry": "Software - Infrastructure",
    "ccy": "USD",
    "mcap": 3890434801664,
-   "pe": 27.3424,
+   "pe": 27.2996,
    "fpe": 21.6569,
-   "eps": 19.16,
+   "eps": 19.19,
    "feps": 24.1899,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
@@ -1104,7 +1104,7 @@
    "earnEnd": 1799933400,
    "earnEst": true,
    "exDiv": 1796860800,
-   "divDate": 1799280000,
+   "divDate": 1807142400,
    "lastDiv": 1.107,
    "trailDiv": 6.0
   },
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1656497373184,
    "pe": 44.318,
-   "fpe": 17.8742,
+   "fpe": 17.8273,
    "eps": 7.83,
-   "feps": 19.414,
+   "feps": 19.4651,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1019350286336,
-   "pe": 46.4094,
+   "mcap": 1016233525248,
+   "pe": 45.7464,
    "fpe": 39.7569,
-   "eps": 2.76,
+   "eps": 2.8,
    "feps": 3.2218,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.773,
@@ -1609,9 +1609,9 @@
    "industry": "Semiconductors",
    "ccy": "USD",
    "mcap": 875905024000,
-   "pe": 114.1154,
+   "pe": 125.0726,
    "fpe": 30.1888,
-   "eps": 4.68,
+   "eps": 4.27,
    "feps": 17.6907,
    "revTTM": 45435998208,
    "netIncome": 7725000192,
@@ -1824,9 +1824,9 @@
    "industry": "Credit Services",
    "ccy": "USD",
    "mcap": 576012943360,
-   "pe": 34.5992,
+   "pe": 34.1524,
    "fpe": 28.5429,
-   "eps": 19.11,
+   "eps": 19.36,
    "feps": 23.1648,
    "revTTM": 36288000000,
    "netIncome": 16958000128,
@@ -1868,9 +1868,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 521499836416,
-   "pe": 50.6924,
+   "pe": 50.6055,
    "fpe": 18.216,
-   "eps": 5.82,
+   "eps": 5.83,
    "feps": 16.1962,
    "revTTM": 66013999104,
    "netIncome": 10302999552,
@@ -1911,9 +1911,9 @@
    "ccy": "USD",
    "mcap": 429061144576,
    "pe": 16.1446,
-   "fpe": 13.2731,
+   "fpe": 13.3304,
    "eps": 13.62,
-   "feps": 16.5666,
+   "feps": 16.4954,
    "revTTM": 226256994304,
    "netIncome": 26976000000,
    "shares": 1951253686,
@@ -1999,9 +1999,9 @@
    "ccy": "USD",
    "mcap": 404771504128,
    "pe": 118.3028,
-   "fpe": 66.1698,
+   "fpe": 66.2625,
    "eps": 1.42,
-   "feps": 2.5388,
+   "feps": 2.5352,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
@@ -2082,9 +2082,9 @@
    "ccy": "USD",
    "mcap": 426963795968,
    "pe": 29.2773,
-   "fpe": 28.1245,
+   "fpe": 28.1338,
    "eps": 3.39,
-   "feps": 3.529,
+   "feps": 3.5278,
    "revTTM": 51053998080,
    "netIncome": 14629000192,
    "shares": 4301902335,
@@ -2168,8 +2168,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 121.2883,
+   "shares": 572600000,
+   "divYield": 2.608,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2221,12 +2226,85 @@
  ],
  "news": [
   {
+   "h": "Retailers are turning to entertainment to win shoppers’ attention",
+   "w": "Retailers are increasingly investing in and building out entertainment studios as the race for audience attention speeds up.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-14T13:00:01Z",
+   "url": "https://www.cnbc.com/2026/11/14/retailers-invest-entertainment.html"
+  },
+  {
+   "h": "These 6 battered AI stocks could bounce back big, an analyst says",
+   "w": "The postelection panic over data centers has led to a widespread tech selloff, but some stocks are more insulated than they seem, according to Bernstein.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-14T13:00:00Z",
+   "url": "https://www.marketwatch.com/story/these-6-battered-ai-stocks-could-bounce-back-big-an-analyst-says-e9f29c24?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Prix littéraires : l’hégémonie de Gallimard fait grincer des dents dans l’édition",
+   "w": "Le Goncourt, le Renaudot, le Femina et le Médicis ont couronné, en 2026, des auteurs de Madrigall, la maison mère de Gallimard, ce qui irrite les éditeurs concurrents, qui critiquent la composition des jurys.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-14T12:54:21Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/11/14/prix-litteraires-l-hegemonie-de-gallimard-fait-grincer-des-dents-dans-l-edition_6810249_3234.html"
+  },
+  {
+   "h": "Trump pourrait renoncer à de nouvelles frappes contre l’Iran sans provocation",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T12:53:08Z",
+   "url": "https://fr.investing.com/news/world-news/trump-pourrait-renoncer-a-de-nouvelles-frappes-contre-liran-sans-provocation-3696473"
+  },
+  {
+   "h": "Un administrateur d’Ohio Valley Banc achète des actions pour 2.999$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T12:46:53Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-dohio-valley-banc-achete-des-actions-pour-2999-93CH-3696472"
+  },
+  {
+   "h": "Flight disruptions continue after FAA lifts ground stop, some college football games delayed",
+   "w": "U.S. flights are resuming after the FAA ground stop, but delays and cancellations are still piling up.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-14T12:30:58Z",
+   "url": "https://www.cnbc.com/2026/11/14/faa-ground-stop-flights-resume-delays.html"
+  },
+  {
+   "h": "En Ile-de-France, les usagers de la ligne J confrontés à des incidents en série : « Quand il y a des suppressions de trains, je ne vois pas mes enfants »",
+   "w": "« Crise des essieux », caténaires arrachées… Les accidents se sont succédé en 2026 sur cette ligne du Transilien qui part de la gare Saint-Lazare, à Paris, pour parcourir 174 kilomètres jusqu’aux confins de la Normandie et des Hauts-de-France. Un calvaire pour les 277 000 voyageurs quotidiens qui vivent dans l’angoisse de voir leur train retardé ou supprimé.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-14T12:26:59Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/11/14/en-ile-de-france-les-usagers-de-la-ligne-j-confrontes-a-des-incidents-en-serie-quand-il-y-a-des-suppressions-de-trains-je-ne-vois-pas-mes-enfants_6810247_3234.html"
+  },
+  {
    "h": "Meet the seven co-founders of Anthropic",
    "w": "Four researchers, a former journalist, a public policymaker, and an engineer founded Anthropic in 2021. They're now poised to become multi-billionaires.",
    "syms": [],
    "src": "CNBC — Markets",
    "ts": "2026-11-14T12:15:01Z",
    "url": "https://www.cnbc.com/2026/11/14/meet-the-seven-co-founders-of-anthropic.html"
+  },
+  {
+   "h": "Goldman Sachs abaisse ses prévisions sur l’or pour 2027",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T12:08:40Z",
+   "url": "https://fr.investing.com/news/commodities-news/goldman-sachs-revoit-a-la-baisse-ses-previsions-sur-lor-pour-2027-3696470"
+  },
+  {
+   "h": "How Trump’s midterm gerrymandering flopped",
+   "w": "Republicans’ unprecedented redistricting drive failed to overcome the tidal wave of Democratic votes",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-14T12:00:08Z",
+   "url": "https://www.ft.com/content/d99f635f-6223-45fc-8429-2ac36b28d080?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "Eric Trump-backed robot soldier startup can't pay staff after founder borrowed $4.6 million from company to buy home",
@@ -2270,12 +2348,13 @@
    "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-babcock--wilcox-achete-pour-43500-dactions-93CH-3696468"
   },
   {
-   "h": "Flight disruptions continue after FAA lifts ground stop, some college football games delayed",
-   "w": "U.S. flights are resuming after the FAA ground stop, but delays and cancellations are still piling up.",
+   "h": "US floats Nato membership for Donbas withdrawal deal, Zelenskyy says",
+   "w": "President says he will take proposal to Ukrainian people as Washington explores terms for ending war",
    "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-14T11:34:02Z",
-   "url": "https://www.cnbc.com/2026/11/14/faa-ground-stop-flights-resume-delays.html"
+   "src": "myFT — world",
+   "ts": "2026-11-14T11:41:15Z",
+   "url": "https://www.ft.com/content/24319e2d-1a34-4a72-8c91-008d974234f9?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "La Juste Valeur d’InvestingPro sur Five Star Bancorp génère un rendement de 68%",
@@ -2365,14 +2444,6 @@
    "url": "https://fr.investing.com/news/transcripts/patanjali-foods-affiche-une-forte-croissance-au-t2-malgre-un-recul-de-23-en-bourse-93CH-3696460"
   },
   {
-   "h": "Le PDG de Live Nation vend des actions pour 35,4 millions de dollars",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T10:32:49Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-live-nation-vend-des-actions-pour-354-millions-de-dollars-93CH-3696459"
-  },
-  {
    "h": "Chart of the Week: The great market rotation",
    "w": "Defensive sectors are the new winners",
    "syms": [],
@@ -2391,24 +2462,6 @@
    "mine": 1
   },
   {
-   "h": "Binance vise à rétablir tous les retraits la semaine prochaine après un piratage de 6,3 milliards $",
-   "w": "",
-   "syms": [
-    "BTC"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T10:03:13Z",
-   "url": "https://fr.investing.com/news/company-news/binance-vise-a-retablir-tous-les-retraits-la-semaine-prochaine-apres-un-piratage-de-63-milliards--3696458"
-  },
-  {
-   "h": "Le fondateur de Cloudastructure Bentley cède des actions pour 2.370$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T10:02:14Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-fondateur-de-cloudastructure-bentley-cede-des-actions-pour-2370-93CH-3696457"
-  },
-  {
    "h": "Manchester United: a fate worse than debt",
    "w": "Also in today’s newsletter: a big shake-up in US college sport angers fans",
    "syms": [],
@@ -2424,6 +2477,30 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-14T08:11:28Z",
    "url": "https://www.cnbc.com/2026/11/12/microsoft-outage-outlook-aws-google.html"
+  },
+  {
+   "h": "Did we really see a black hole? Australian team says 'yes'",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T07:17:57.425313Z",
+   "url": "https://asia.nikkei.com/business/science/did-we-really-see-a-black-hole-australian-team-says-yes"
+  },
+  {
+   "h": "No grass, no problem: Playing sand golf in the Australian outback",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T07:17:57.425313Z",
+   "url": "https://asia.nikkei.com/life-arts/life/no-grass-no-problem-playing-sand-golf-in-the-australian-outback"
+  },
+  {
+   "h": "Uranium price hits record as AI demand prompts nuclear comeback",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T07:17:57.425313Z",
+   "url": "https://asia.nikkei.com/business/markets/commodities/uranium-price-hits-record-as-ai-demand-prompts-nuclear-comeback"
   },
   {
    "h": "Analysis: Companies love a ‘rockstar’ CEO. Until they depend on one",
@@ -2640,15 +2717,6 @@
    "mine": 1
   },
   {
-   "h": "$500mn Hindu epic Ramayana targets global success on a wing and a prayer",
-   "w": "The most expensive film in Bollywood history favours CGI spectacle over spiritual impact — but it may take a miracle for it to recoup",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-14T05:00:27Z",
-   "url": "https://www.ft.com/content/c29f7a62-cc73-4583-8961-d1898f694785?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Marilynne Robinson: America’s new dawn",
    "w": "The acclaimed novelist on why the US midterm elections represented a ‘spectacular’ affirmation of people power",
    "syms": [],
@@ -2691,6 +2759,15 @@
    "src": "myFT — companies",
    "ts": "2026-11-14T05:00:27Z",
    "url": "https://www.ft.com/content/2645c02e-b3e1-4a0e-80d1-e848ecc1acf0?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "$500mn Hindu epic Ramayana targets global success on a wing and a prayer",
+   "w": "The most expensive film in Bollywood history favours CGI spectacle over spiritual impact — but it may take a miracle for it to recoup",
+   "syms": [],
+   "src": "myFT — emerging markets",
+   "ts": "2026-11-14T05:00:27Z",
+   "url": "https://www.ft.com/content/c29f7a62-cc73-4583-8961-d1898f694785?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2782,30 +2859,6 @@
    "url": "https://asia.nikkei.com/business/technology/microsoft-outage-wreaks-havoc-in-asia-exposing-dependence-risk"
   },
   {
-   "h": "How Trump might be tempted to orchestrate an 'end to the Korean War'",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T04:06:35.825404Z",
-   "url": "https://asia.nikkei.com/spotlight/comment/how-trump-might-be-tempted-to-orchestrate-an-end-to-the-korean-war"
-  },
-  {
-   "h": "US-China truce masks rising tensions ahead of Xi-Trump redux at APEC",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T04:06:35.825404Z",
-   "url": "https://asia.nikkei.com/spotlight/big-in-asia/us-china-truce-masks-rising-tensions-ahead-of-xi-trump-redux-at-apec"
-  },
-  {
-   "h": "Honda supplier Topre to invest $140mn in US for new plant, upgrades",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T04:06:35.825404Z",
-   "url": "https://asia.nikkei.com/business/automobiles/honda-supplier-topre-to-invest-140mn-in-us-for-new-plant-upgrades"
-  },
-  {
    "h": "US plan to overhaul air traffic control system like ‘changing a tyre at 70mph’",
    "w": "Transport secretary seeks $50bn for upgrades to America’s dilapidated aviation infrastructure",
    "syms": [],
@@ -2887,15 +2940,6 @@
    "mine": 1
   },
   {
-   "h": "Colorado Democrat beats Maga firebrand Lauren Boebert in House race",
-   "w": "Former ally of Donald Trump loses to centrist retired admiral Eileen Laubacher",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-13T23:56:06Z",
-   "url": "https://www.ft.com/content/ed6db87e-829a-41b4-a687-554847d6f904?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Nvidia is done with Jensen Huang. The fallout in Washington is just beginning",
    "w": "The Republican-led Congress wants to see Jensen Huang in Washington before Democrats take control in January.",
    "syms": [
@@ -2904,15 +2948,6 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-13T23:54:36Z",
    "url": "https://www.cnbc.com/2026/11/13/nvidia-jensen-huang-washington-congress.html"
-  },
-  {
-   "h": "SpaceX aborts attempt to catch Starship booster rocket",
-   "w": "Elon Musk suffers setback in efforts to develop a completely reusable megarocket system",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-13T23:43:09Z",
-   "url": "https://www.ft.com/content/ce7c8ab1-8337-4c32-8494-5142ec1697dd?syn-25a6b1a6=1",
-   "mine": 1
   },
   {
    "h": "Lutnick faces questions over Nvidia spy scandal. His sons' firm has deep ties to the chipmaker",
@@ -2951,14 +2986,14 @@
    "url": "https://www.marketwatch.com/story/nvidias-stock-is-on-a-losing-streak-not-seen-in-14-years-what-comes-next-a07e801e?mod=mw_rss_topstories"
   },
   {
-   "h": "Nvidia stock suffers longest weekly losing streak since 2012 as market value sinks by $1.7 trillion",
-   "w": "Jensen Huang's resignation added to Nvidia's market woes, with the stock already in a downward slide since early October.",
+   "h": "Hackers stole $6.3 billion from Binance—2 habits that take 'a few seconds' can help you avoid similar traps",
+   "w": "Researchers from the Digital Inquiry Group say that two habits that take just \"a few seconds up front\" can help keep you from being \"duped\" online.",
    "syms": [
-    "NVDA"
+    "BTC"
    ],
    "src": "CNBC — Markets",
-   "ts": "2026-11-13T22:18:43Z",
-   "url": "https://www.cnbc.com/2026/11/13/nvidia-stock-jensen-affair-ai.html"
+   "ts": "2026-11-13T22:06:55Z",
+   "url": "https://www.cnbc.com/make-it/2026/11/13/binance-hack-2-online-habits-that-can-help-you-avoid-scams-.html"
   },
   {
    "h": "Global oil supplies are suddenly flowing. Why a crude glut won’t mean cheaper diesel.",
@@ -2986,26 +3021,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-13T21:32:00Z",
    "url": "https://www.marketwatch.com/story/she-has-a-history-of-financial-mismanagement-my-brother-cut-my-sister-out-of-his-will-im-getting-everything-do-i-tell-her-3e537851?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Bitcoin is now below $69,000 and could fall even further if investors cash out to buy into the Anthropic IPO",
-   "w": "Investors may have to sell some of their existing bets in crypto to make room in their portfolio for what could be one of the most sought-after stock offerings in history.",
-   "syms": [
-    "BTC"
-   ],
-   "src": "MarketWatch",
-   "ts": "2026-11-13T21:26:00Z",
-   "url": "https://www.marketwatch.com/story/bitcoin-could-fall-even-further-if-investors-cash-out-to-buy-into-the-anthropic-ipo-5a14f46a?mod=mw_rss_topstories"
-  },
-  {
-   "h": "AI risks are the biggest threat to the financial system, Fed survey finds",
-   "w": "The report comes with Wall Street on edge over high-flying AI hyperscalers, while communities are on alert for the rapid spread of data centers.",
-   "syms": [
-    "SPX"
-   ],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-13T21:18:30Z",
-   "url": "https://www.cnbc.com/2026/11/13/ai-risks-financial-system-federal-reserve.html"
   },
   {
    "h": "Agencies extend comment period for proposed third-party risk management guidance",
@@ -3090,24 +3105,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-13T15:28:23Z",
    "url": "https://www.lemonde.fr/international/article/2026/11/13/nvidia-le-secretaire-au-tresor-des-etats-unis-rejette-sur-le-ministere-du-commerce-la-responsabilite-de-la-fuite-des-puces-vers-la-chine_6809341_3210.html"
-  },
-  {
-   "h": "Du Moyen-Orient à l’Asie, la grande course au stockage du pétrole",
-   "w": "La crise du détroit d’Ormuz pousse les producteurs du Golfe et les importateurs asiatiques à créer de nouvelles capacités de réserve pour mieux surmonter de futurs chocs d’approvisionnement.",
-   "syms": [
-    "BRENT"
-   ],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-13T15:00:06Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/11/13/du-moyen-orient-en-asie-la-grande-course-au-stockage-du-petrole_6809338_3234.html"
-  },
-  {
-   "h": "Mercedes-Benz : le comité d’entreprise et le syndicat IG Metall dénoncent des menaces de fermetures d’usines en Allemagne",
-   "w": "Sous la pression de la concurrence chinoise, le constructeur allemand a gelé tout nouvel investissement national et envisage d’allonger le temps de travail de ses employés sans hausse de salaire. Une ligne rouge pour le syndicat IG Metall qui refuse de céder « à la pression et aux menaces ».",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-13T13:30:11Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/11/13/mercedes-benz-le-comite-d-entreprise-et-le-syndicat-ig-metall-denoncent-des-menaces-de-fermetures-d-usines-en-allemagne_6809327_3234.html"
   }
  ],
  "summary": {
