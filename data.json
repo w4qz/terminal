@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T02:24:34.889086Z",
+ "generated_at": "2026-11-14T03:19:45.842843Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -46,12 +46,11 @@
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-11-13T21:00:00Z",
-   "open": 33.98,
+   "open": 33.91,
    "lo": 31.34,
    "hi": 34.5,
-   "vol": 14315074,
+   "vol": 14375500,
    "h": [
-    42.14,
     44.46,
     40.66,
     41.87,
@@ -72,7 +71,8 @@
     36.89,
     33.69,
     36.62,
-    34.5
+    34.5,
+    32.6
    ]
   },
   "SPX": {
@@ -229,7 +229,7 @@
    "pct": 3.21,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^VIX)",
-   "ts": "2026-11-13T21:15:00Z",
+   "ts": "2026-11-13T21:00:00Z",
    "open": 18.78,
    "lo": 17.64,
    "hi": 20.92,
@@ -810,17 +810,17 @@
    ]
   },
   "BTC": {
-   "p": 67730.4297,
+   "p": 67335.9922,
    "prev": 71342.9688,
-   "chg": -3612.5391,
-   "pct": -5.06,
+   "chg": -4006.9766,
+   "pct": -5.62,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-14T02:24:34.889086Z",
+   "ts": "2026-11-14T03:19:45.842843Z",
    "open": 68238.2109,
-   "lo": 67774.0469,
+   "lo": 67208.4609,
    "hi": 68360.7109,
-   "vol": 41098051584,
+   "vol": 39185043456,
    "h": [
     81074.19,
     80790.84,
@@ -843,7 +843,7 @@
     73720.12,
     73964.47,
     71342.97,
-    67705.49
+    67335.99
    ]
   }
  },
@@ -856,9 +856,9 @@
    "ccy": "USD",
    "mcap": 5177380175872,
    "pe": 39.6737,
-   "fpe": 33.7842,
+   "fpe": 33.7009,
    "eps": 8.98,
-   "feps": 10.5455,
+   "feps": 10.5715,
    "revTTM": 478833999872,
    "netIncome": 132175003648,
    "shares": 14532182000,
@@ -2220,35 +2220,67 @@
  ],
  "news": [
   {
-   "h": "Le PDG de FRP Holdings achète 930$ d’actions ordinaires",
+   "h": "Un administrateur d’Exagen vend des actions XGN pour 745.794$",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-14T02:01:55Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-frp-holdings-achete-930-dactions-ordinaires-93CH-3696349"
+   "ts": "2026-11-14T03:02:18Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-dexagen-vend-des-actions-xgn-pour-745794-93CH-3696363"
   },
   {
-   "h": "FAA lifts rare nationwide ground stop; flights may take days to recover",
+   "h": "Carl Icahn vend des actions Centuri Holdings pour 33,7 millions $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T03:02:00Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/carl-icahn-vend-des-actions-centuri-holdings-pour-337-millions--93CH-3696362"
+  },
+  {
+   "h": "Le directeur commercial de Vivani Medical achète pour 19.645$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T03:01:42Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-commercial-de-vivani-medical-achete-pour-19645-dactions-93CH-3696360"
+  },
+  {
+   "h": "Le co-fondateur de Natera, Sheena, cède des actions pour 478.944$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T02:47:15Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-cofondateur-de-natera-sheena-cede-des-actions-pour-478944-93CH-3696359"
+  },
+  {
+   "h": "Le directeur juridique de LifeStance Health vend des actions pour 40,89M$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T02:47:06Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-juridique-de-lifestance-health-vend-des-actions-pour-4089m-93CH-3696358"
+  },
+  {
+   "h": "FAA lifts rare nationwide ground stop on flights; air travel may take days to recover",
    "w": "Homeland Security Secretary Mullin said that there was ‘zero evidence’ of cyberattack as fewer flights amid fuel-cost surge may hamper rebookings.",
    "syms": [],
    "src": "MarketWatch",
-   "ts": "2026-11-14T02:00:00Z",
+   "ts": "2026-11-14T02:42:00Z",
    "url": "https://www.marketwatch.com/story/faa-declares-rare-widespread-ground-outage-bdc46393?mod=mw_rss_topstories"
   },
   {
-   "h": "14 dividend stocks selected for long-term growth",
-   "w": "These stocks feature attractive dividend payouts and are trading low to the companies’ intrinsic value, according to John Buckingham of Value87 Investment Partners.",
+   "h": "Elon Musk face à un examen du Congrès sur les restrictions Starlink en Ukraine",
+   "w": "",
    "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-14T01:58:00Z",
-   "url": "https://www.marketwatch.com/story/14-dividend-stocks-selected-for-long-term-growth-0a095c0d?mod=mw_rss_topstories"
+   "src": "Investing.com France",
+   "ts": "2026-11-14T02:39:15Z",
+   "url": "https://fr.investing.com/news/stock-market-news/elon-musk-face-a-un-examen-du-congres-sur-les-restrictions-starlink-en-ukraine-3696356"
   },
   {
    "h": "US aviation regulator lifts order that grounded thousands of flights",
    "w": "Airports had halted take-offs because of a temporary ‘telecommunications outage’",
    "syms": [],
    "src": "myFT — world",
-   "ts": "2026-11-14T01:57:52Z",
+   "ts": "2026-11-14T02:37:04Z",
    "url": "https://www.ft.com/content/c9b119ff-d1da-46a7-b2b3-4ad0544fff6b?syn-25a6b1a6=1",
    "mine": 1
   },
@@ -2257,48 +2289,48 @@
    "w": "The Federal Aviation Administration issued a nationwide ground stop on Friday afternoon, disrupting thousands of departing of flights.",
    "syms": [],
    "src": "CNBC — Markets",
-   "ts": "2026-11-14T01:54:38Z",
+   "ts": "2026-11-14T02:33:48Z",
    "url": "https://www.cnbc.com/2026/11/13/faa-ground-stop.html"
   },
   {
-   "h": "La directrice technique de MediaAlpha vend 12.000 actions pour 176.235$",
+   "h": "Le PDG de Fair Isaac vend des actions pour environ 14,8 millions $",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-14T01:46:55Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-technique-de-mediaalpha-vend-12000-actions-pour-176235-93CH-3696348"
+   "ts": "2026-11-14T02:33:07Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-fair-isaac-vend-des-actions-pour-environ-148-millions--93CH-3696355"
   },
   {
-   "h": "Un administrateur d’indie Semiconductor achète pour 299.000$ d’actions",
+   "h": "Le PDG de Fair Isaac vend des actions pour 183.750$",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-14T01:36:45Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-dindie-semiconductor-achete-pour-299000-dactions-93CH-3696346"
+   "ts": "2026-11-14T02:32:42Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-fair-isaac-vend-des-actions-pour-183750-93CH-3696354"
   },
   {
-   "h": "Le SVP d’Oruka Therapeutics cède des actions pour 1,05M$",
+   "h": "Un administrateur de Starwood Property Trust achète pour 2,01M$ d’actions",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-14T01:36:31Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-svp-doruka-therapeutics-cede-des-actions-pour-105m-93CH-3696345"
+   "ts": "2026-11-14T02:32:37Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-starwood-property-trust-achete-pour-201m-dactions-93CH-3696353"
   },
   {
-   "h": "Le PDG de CrowdStrike George Kurtz cède des actions pour 6,26M$",
+   "h": "Le PDG de Starwood Property Trust achète pour 14,7M$ d’actions ordinaires",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-14T01:36:30Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-crowdstrike-george-kurtz-cede-des-actions-pour-626m-93CH-3696344"
+   "ts": "2026-11-14T02:32:23Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-starwood-property-trust-achete-pour-147m-dactions-ordinaires-93CH-3696352"
   },
   {
-   "h": "Le PDG de CrowdStrike George Kurtz cède des actions pour 582.471$",
-   "w": "",
+   "h": "14 dividend stocks selected for long-term growth",
+   "w": "These stocks feature attractive dividend payouts and are trading low to the companies’ intrinsic value, according to John Buckingham of Value87 Investment Partners.",
    "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T01:36:07Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-crowdstrike-george-kurtz-cede-des-actions-pour-582471-93CH-3696343"
+   "src": "MarketWatch",
+   "ts": "2026-11-14T01:58:00Z",
+   "url": "https://www.marketwatch.com/story/14-dividend-stocks-selected-for-long-term-growth-0a095c0d?mod=mw_rss_topstories"
   },
   {
    "h": "Trump doesn’t plan to raise Nvidia, spy issue during China trip: U.S. officials",
@@ -2311,40 +2343,8 @@
    "url": "https://www.cnbc.com/2026/11/13/trump-nvidia-huang-china.html"
   },
   {
-   "h": "Combien de temps la politique budgétaire peut-elle rester accommodante face à la hausse des rendements ?",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T01:33:35Z",
-   "url": "https://fr.investing.com/news/economy-news/combien-de-temps-la-politique-budgetaire-peutelle-rester-accommodante-face-a-la-hausse-des-rendements--3696342"
-  },
-  {
-   "h": "Le directeur technique de Palantir, Shyam Sankar, cède 64,9M$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T01:32:23Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-technique-de-palantir-shyam-sankar-cede-649m-dactions-93CH-3696341"
-  },
-  {
-   "h": "Une directrice d’Oruka Therapeutics cède des actions pour 1,89M$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T01:32:00Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/une-directrice-doruka-therapeutics-cede-des-actions-pour-189m-93CH-3696340"
-  },
-  {
-   "h": "La directrice des opérations d’Adaptive Biotechnologies vend 1M$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T01:31:55Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-des-operations-dadaptive-biotechnologies-vend-1m-dactions-93CH-3696339"
-  },
-  {
    "h": "Trump will not raise Nvidia spy issue with Xi at summit, officials say",
-   "w": "US president will hold trilateral meeting with Chinese president and Russia’s Vladimir Putin next week",
+   "w": "US president will hold trilateral meeting with Chinese leader and Russia’s Vladimir Putin next week",
    "syms": [
     "NVDA"
    ],
@@ -2531,6 +2531,40 @@
    "url": "https://www.marketwatch.com/story/bitcoin-could-fall-even-further-if-investors-cash-out-to-buy-into-the-anthropic-ipo-5a14f46a?mod=mw_rss_topstories"
   },
   {
+   "h": "Osaka landmark to be centerpiece of area's redevelopment",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-13T21:19:45.842843Z",
+   "url": "https://asia.nikkei.com/business/travel-leisure/osaka-landmark-to-be-centerpiece-of-area-s-redevelopment"
+  },
+  {
+   "h": "South Koreans show their love for once-taboo Japan pop culture",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-13T21:19:45.842843Z",
+   "url": "https://asia.nikkei.com/business/media-entertainment/south-koreans-show-their-love-for-once-taboo-japan-pop-culture"
+  },
+  {
+   "h": "Nvidia scandal sparks Washington blame game over China chip exports",
+   "w": "",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-13T21:19:45.842843Z",
+   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/nvidia-scandal-sparks-washington-blame-game-over-china-chip-exports"
+  },
+  {
+   "h": "US wants Japan to nearly triple budget for hosting American troops",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-13T21:19:45.842843Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/us-wants-japan-to-nearly-triple-budget-for-hosting-american-troops"
+  },
+  {
    "h": "AI risks are the biggest threat to the financial system, Fed survey finds",
    "w": "The report comes with Wall Street on edge over high-flying AI hyperscalers, while communities are on alert for the rapid spread of data centers.",
    "syms": [
@@ -2549,7 +2583,7 @@
    "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261113a.htm"
   },
   {
-   "h": "Microsoft 'deeply sorry' for global outage after almost 24 hours of disruption",
+   "h": "Microsoft 'deeply sorry' for global outage as it reports broad recovery",
    "w": "Experts say the event is a \"stark reminder\" of how heavily the world relies on a small group of big tech providers.",
    "syms": [],
    "src": "BBC — Business",
@@ -2762,22 +2796,6 @@
    "url": "https://asia.nikkei.com/business/automobiles/honda-supplier-topre-to-invest-140mn-in-us-for-new-plant-upgrades"
   },
   {
-   "h": "Growth beyond AI puts corporate Japan on track for 20% profit gain",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-13T18:11:38.782981Z",
-   "url": "https://asia.nikkei.com/business/business-trends/growth-beyond-ai-puts-corporate-japan-on-track-for-20-profit-gain"
-  },
-  {
-   "h": "Quad leaders eye Manila meeting on economic, strategic security",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-13T18:11:38.782981Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/indo-pacific/quad-leaders-eye-manila-meeting-on-economic-strategic-security"
-  },
-  {
    "h": "Moscow tells Europe to pick an envoy if it wants a seat at the table",
    "w": "EU top diplomat Kaja Kallas says Vladimir Putin does not want to talk to her because she is ‘strong’",
    "syms": [],
@@ -2833,22 +2851,6 @@
    "ts": "2026-11-13T17:45:54Z",
    "url": "https://www.ft.com/content/2a64f698-46dd-4178-a3f4-4c5f4c0a0926?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Did we really see a black hole? Australian team says 'yes'",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-13T17:29:35.350952Z",
-   "url": "https://asia.nikkei.com/business/science/did-we-really-see-a-black-hole-australian-team-says-yes"
-  },
-  {
-   "h": "No grass, no problem: Playing sand golf in the Australian outback",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-13T17:29:35.350952Z",
-   "url": "https://asia.nikkei.com/life-arts/life/no-grass-no-problem-playing-sand-golf-in-the-australian-outback"
   },
   {
    "h": "Scott Colom: the Democrat who conquered the reddest of red states",
