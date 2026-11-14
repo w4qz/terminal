@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T10:06:35.825404Z",
+ "generated_at": "2026-11-14T10:50:30.038789Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 67302.0078,
+   "p": 67218.7812,
    "prev": 68249.2734,
-   "chg": -947.2656,
-   "pct": -1.39,
+   "chg": -1030.4922,
+   "pct": -1.51,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-14T10:06:35.825404Z",
+   "ts": "2026-11-14T10:50:30.038789Z",
    "open": 68238.2109,
    "lo": 66535.5078,
    "hi": 68360.7109,
-   "vol": 32107870208,
+   "vol": 31647895552,
    "h": [
     80790.84,
     80024.01,
@@ -844,7 +844,7 @@
     73964.47,
     71342.97,
     68249.27,
-    67303.89
+    67221.07
    ]
   }
  },
@@ -2226,12 +2226,55 @@
  ],
  "news": [
   {
+   "h": "Chart of the Week: The great market rotation",
+   "w": "Defensive sectors are the new winners",
+   "syms": [],
+   "src": "myFT — equities",
+   "ts": "2026-11-14T10:30:08Z",
+   "url": "https://www.ft.com/content/936376d1-4a69-4a3c-8975-3c55e9cb9d42?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Passengers face widespread disruption after US air traffic control outage",
+   "w": "Thousands of flights set to be delayed or cancelled over the weekend",
+   "syms": [],
+   "src": "myFT — companies",
+   "ts": "2026-11-14T10:19:03Z",
+   "url": "https://www.ft.com/content/f66f9811-59a2-4e52-a944-c7ed81dabc50?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Hawkward timing",
+   "w": "Federal Reserve policymakers have floated the idea of a bigger rate increase in December following strong jobs, growth and inflation data",
+   "syms": [],
+   "src": "myFT — global economy",
+   "ts": "2026-11-14T10:05:05Z",
+   "url": "https://www.ft.com/content/8c2639dc-e5d5-430d-a641-11776ac26f9c",
+   "mine": 1
+  },
+  {
    "h": "U.S. flights resume after FAA ground stop, but travel disruption continues",
    "w": "U.S. flights are resuming after the FAA ground stop, but delays and cancellations are still piling up.",
    "syms": [],
    "src": "CNBC — Markets",
    "ts": "2026-11-14T10:04:43Z",
    "url": "https://www.cnbc.com/2026/11/14/faa-ground-stop-flights-resume-delays.html"
+  },
+  {
+   "h": "Le fondateur de Cloudastructure Bentley cède des actions pour 2.370$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T10:02:14Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-fondateur-de-cloudastructure-bentley-cede-des-actions-pour-2370-93CH-3696457"
+  },
+  {
+   "h": "CMS Info Systems enregistre un chiffre d’affaires services record au T2 2027",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T09:56:13Z",
+   "url": "https://fr.investing.com/news/transcripts/cms-info-systems-enregistre-un-chiffre-daffaires-services-record-au-t2-2027-93CH-3696456"
   },
   {
    "h": "Un administrateur de Valley National Bancorp cède des actions pour 300.188$",
@@ -2305,22 +2348,6 @@
    "ts": "2026-11-14T09:00:08Z",
    "url": "https://www.ft.com/content/b76baec1-6b90-406a-a23a-150904837304?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "La Chine et les États-Unis discutent de réductions tarifaires avant la rencontre Trump-Xi",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T08:51:47Z",
-   "url": "https://fr.investing.com/news/economy-news/la-chine-et-les-etatsunis-discutent-de-reductions-tarifaires-avant-la-rencontre-trumpxi-3696444"
-  },
-  {
-   "h": "Telecom Argentine dépasse les prévisions de BPA au T3 2026",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T08:49:25Z",
-   "url": "https://fr.investing.com/news/transcripts/telecom-argentine-depasse-les-previsions-de-bpa-au-t3-2026-93CH-3696443"
   },
   {
    "h": "Microsoft apologizes for massive outage that took down Outlook and other 365 services",
@@ -2399,7 +2426,7 @@
    "mine": 1
   },
   {
-   "h": "Aux Etats-Unis, l’affaire Nvidia tourne à la crise politique pour Donald Trump",
+   "h": "L’affaire Nvidia tourne à la crise politique pour Donald Trump",
    "w": "Selon le « New York Times », le président américain aurait été mis au courant, dès le mois de mai, des risques liés à la relation entre Jensen Huang, patron du géant des semi-conducteurs, et une entrepreneuse chinoise soupçonnée d’espionnage. Il est directement mis en cause pour son inaction.",
    "syms": [
     "NVDA"
@@ -2548,7 +2575,7 @@
   },
   {
    "h": "Will we soon cure cancer?",
-   "w": "A recent revolution in drug-based prevention and treatment has brought scientists tantalisingly close to defeating these most feared diseases — but stubborn challenges remain",
+   "w": "A revolution in drug-based prevention and treatment has brought scientists tantalisingly close to defeating these most feared diseases — but stubborn challenges remain",
    "syms": [],
    "src": "myFT — companies",
    "ts": "2026-11-14T05:00:27Z",
@@ -2616,6 +2643,32 @@
    "ts": "2026-11-14T05:00:00Z",
    "url": "https://www.ft.com/content/094acead-5c40-4609-87fd-f02b171eb42c?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "US Treasury bought nearly $500mn in yen during joint July forex intervention",
+   "w": "",
+   "syms": [
+    "USDJPY"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T04:50:30.038789Z",
+   "url": "https://asia.nikkei.com/business/markets/currencies/us-treasury-bought-nearly-500mn-in-yen-during-joint-july-forex-intervention"
+  },
+  {
+   "h": "China's JD.com completes $1.5bn takeover of German appliance retailer",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T04:50:30.038789Z",
+   "url": "https://asia.nikkei.com/business/business-deals/china-s-jd.com-completes-1.5bn-takeover-of-german-appliance-retailer"
+  },
+  {
+   "h": "Microsoft outage wreaks havoc in Asia, exposing dependence risk",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T04:50:30.038789Z",
+   "url": "https://asia.nikkei.com/business/technology/microsoft-outage-wreaks-havoc-in-asia-exposing-dependence-risk"
   },
   {
    "h": "How Trump might be tempted to orchestrate an 'end to the Korean War'",
@@ -2716,16 +2769,6 @@
    "url": "https://asia.nikkei.com/business/media-entertainment/south-koreans-show-their-love-for-once-taboo-japan-pop-culture"
   },
   {
-   "h": "Nvidia scandal sparks Washington blame game over China chip exports",
-   "w": "",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T02:17:42.483288Z",
-   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/nvidia-scandal-sparks-washington-blame-game-over-china-chip-exports"
-  },
-  {
    "h": "14 dividend stocks selected for long-term growth",
    "w": "These stocks feature attractive dividend payouts and are trading low to the companies’ intrinsic value, according to John Buckingham of Value87 Investment Partners.",
    "syms": [],
@@ -2761,24 +2804,6 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-14T01:18:51Z",
    "url": "https://www.cnbc.com/2026/11/13/spacex-launches-starship-in-key-test-flight-of-massive-rocket.html"
-  },
-  {
-   "h": "China sees Nvidia chief Huang's swift downfall as political hit",
-   "w": "",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T01:14:11.335866Z",
-   "url": "https://asia.nikkei.com/business/tech/semiconductors/china-sees-nvidia-chief-huang-s-swift-downfall-as-political-hit"
-  },
-  {
-   "h": "Bain- and GIC-backed WHI on track for Japan's largest IPO in 2026",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T01:14:11.335866Z",
-   "url": "https://asia.nikkei.com/business/markets/ipo/bain-and-gic-backed-whi-on-track-for-japan-s-largest-ipo-in-2026"
   },
   {
    "h": "India pins hopes on AI start-up to avoid becoming ‘digital colony’",
@@ -2987,39 +3012,12 @@
    "url": "https://www.cnbc.com/make-it/2026/11/13/honeypot-scam-red-flags.html"
   },
   {
-   "h": "Amazon revives deal with troubled data centre venture backed by Rick Perry",
-   "w": "Tech giant agrees to be Fermi’s anchor tenant after failed talks and boardroom turmoil sent data centre group’s shares south",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-13T20:40:40Z",
-   "url": "https://www.ft.com/content/692fbfe8-da52-42c0-b436-9c4aff21fbdb?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Hassett denies report he's leaving White House: 'Not true'",
    "w": "National Economic Council Director Kevin Hassett poured cold water on a report that he's expected to leave the White House in the coming weeks.",
    "syms": [],
    "src": "CNBC — Markets",
    "ts": "2026-11-13T20:27:47Z",
    "url": "https://www.cnbc.com/2026/11/13/kevin-hassett-white-house-nec.html"
-  },
-  {
-   "h": "Microsoft says services experiencing ‘broad recovery’ after global outage",
-   "w": "German government says it ‘anticipates a very big impact’ on economy",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-13T20:17:46Z",
-   "url": "https://www.ft.com/content/025b2769-bca8-4a74-b9f5-5d7ad7da32c7?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "US securities watchdog plans to loosen rules for executive pay disclosure",
-   "w": "Only CEOs and CFOs would be required to disclose pay packages under Securities and Exchange Commission’s proposal",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-13T20:03:01Z",
-   "url": "https://www.ft.com/content/de634392-47bd-4a21-938a-77620aeb3d17?syn-25a6b1a6=1",
-   "mine": 1
   },
   {
    "h": "Pressure grows on Trump's Commerce Secretary Lutnick in fallout from Nvidia scandal",
