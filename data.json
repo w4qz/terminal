@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T16:17:30.735277Z",
+ "generated_at": "2026-11-14T16:59:31.547319Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -774,10 +774,10 @@
    ]
   },
   "BRENT": {
-   "p": 96.08,
+   "p": 95.84,
    "prev": 95.82,
-   "chg": 0.26,
-   "pct": 0.27,
+   "chg": 0.02,
+   "pct": 0.02,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-13T22:00:00Z",
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 65358.6914,
+   "p": 65299.8516,
    "prev": 68249.2734,
-   "chg": -2890.582,
-   "pct": -4.24,
+   "chg": -2949.4219,
+   "pct": -4.32,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-14T16:17:30.735277Z",
+   "ts": "2026-11-14T16:59:31.547319Z",
    "open": 68238.2109,
    "lo": 65136.0977,
    "hi": 68360.7109,
-   "vol": 32463540224,
+   "vol": 33081073664,
    "h": [
     80790.84,
     80024.01,
@@ -844,7 +844,7 @@
     73964.47,
     71342.97,
     68249.27,
-    65358.69
+    65299.85
    ]
   }
  },
@@ -1104,7 +1104,7 @@
    "earnEnd": 1799933400,
    "earnEst": true,
    "exDiv": 1796860800,
-   "divDate": 1807142400,
+   "divDate": 1799280000,
    "lastDiv": 1.107,
    "trailDiv": 6.0
   },
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1656497373184,
    "pe": 44.318,
-   "fpe": 17.8273,
+   "fpe": 17.8742,
    "eps": 7.83,
-   "feps": 19.4651,
+   "feps": 19.414,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1016233525248,
+   "mcap": 1019350286336,
    "pe": 46.4094,
    "fpe": 39.7569,
    "eps": 2.76,
    "feps": 3.2218,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.773,
@@ -1868,9 +1868,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 521499836416,
-   "pe": 50.6055,
+   "pe": 50.6924,
    "fpe": 18.216,
-   "eps": 5.83,
+   "eps": 5.82,
    "feps": 16.1962,
    "revTTM": 66013999104,
    "netIncome": 10302999552,
@@ -1911,9 +1911,9 @@
    "ccy": "USD",
    "mcap": 429061144576,
    "pe": 16.1446,
-   "fpe": 13.3304,
+   "fpe": 13.2731,
    "eps": 13.62,
-   "feps": 16.4954,
+   "feps": 16.5666,
    "revTTM": 226256994304,
    "netIncome": 26976000000,
    "shares": 1951253686,
@@ -1999,9 +1999,9 @@
    "ccy": "USD",
    "mcap": 404771504128,
    "pe": 118.3028,
-   "fpe": 66.2625,
+   "fpe": 66.1698,
    "eps": 1.42,
-   "feps": 2.5352,
+   "feps": 2.5388,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
@@ -2082,9 +2082,9 @@
    "ccy": "USD",
    "mcap": 426963795968,
    "pe": 29.2773,
-   "fpe": 28.1338,
+   "fpe": 28.1245,
    "eps": 3.39,
-   "feps": 3.5278,
+   "feps": 3.529,
    "revTTM": 51053998080,
    "netIncome": 14629000192,
    "shares": 4301902335,
@@ -2168,13 +2168,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 121.2883,
-   "shares": 572600000,
-   "divYield": 2.608,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2226,20 +2221,44 @@
  ],
  "news": [
   {
+   "h": "Ground stop followed updates to older L3Harris communication system: DOT’s Duffy",
+   "w": "The FAA ground stop came after updates to an older communication system managed by L3Harris Technologies, Transportation Secretary Sean Duffy said Saturday.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-14T16:46:11Z",
+   "url": "https://www.cnbc.com/2026/11/14/faa-ground-stop-flights-resume-delays.html"
+  },
+  {
+   "h": "La directrice de Broadridge Maura Markus cède des actions pour 610.210$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T16:32:26Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-de-broadridge-maura-markus-cede-des-actions-pour-610210-93CH-3696488"
+  },
+  {
+   "h": "Le directeur de Neostellar Capital, Mazur, achète 30.500$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T16:32:26Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-de-neostellar-capital-mazur-achete-30500-dactions-93CH-3696489"
+  },
+  {
+   "h": "La Fed Collins soutient des hausses graduelles des taux d’intérêt",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T16:23:42Z",
+   "url": "https://fr.investing.com/news/world-news/la-fed-collins-soutient-des-hausses-graduelles-des-taux-dinteret-3696487"
+  },
+  {
    "h": "‘I’m sick of flying’: I paid for priority boarding, but the overhead bins were full. Was I duped?",
    "w": "“Maybe next time I’ll try the other approach: I’ll board whenever I feel like it and drop my suitcase in the first open slot I see.”",
    "syms": [],
    "src": "MarketWatch",
    "ts": "2026-11-14T16:15:00Z",
    "url": "https://www.marketwatch.com/story/im-sick-of-flying-i-paid-for-priority-boarding-but-the-overhead-bins-were-full-was-i-duped-0badcc80?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Ground stop followed updates to older L3Harris communication system: DOT’s Duffy",
-   "w": "U.S. flights are resuming after the FAA ground stop, but delays and cancellations are still piling up.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-14T16:11:57Z",
-   "url": "https://www.cnbc.com/2026/11/14/faa-ground-stop-flights-resume-delays.html"
   },
   {
    "h": "‘It leaves me with a sour taste’: My elderly mother gave our cousin $800 for a car repair. Should I be worried?",
@@ -2278,7 +2297,7 @@
    "url": "https://www.cnbc.com/2026/11/13/trump-nvidia-huang-china.html"
   },
   {
-   "h": "Suspension des vols aux Etats-Unis : des annulations et des retards de vols persistent samedi",
+   "h": "Suspension des vols aux Etats-Unis : plus de 16 000 vols annulés vendredi et samedi alors que des perturbations persistent",
    "w": "Vendredi, les autorités américaines de l’aviation ont interdit tout décollage des avions à partir des aéroports américains de 15 h 54 (à New York) jusqu’à 20 h 15. « Les opérations retournent progressivement à la normale [samedi] matin » malgré quelques retards persistants, a fait savoir le ministre des transports.",
    "syms": [],
    "src": "Le Monde — Économie",
@@ -2478,22 +2497,6 @@
    "url": "https://www.lemonde.fr/economie/article/2026/11/14/prix-litteraires-l-hegemonie-de-gallimard-fait-grincer-des-dents-dans-l-edition_6810249_3234.html"
   },
   {
-   "h": "Trump pourrait renoncer à de nouvelles frappes contre l’Iran sans provocation",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T12:53:08Z",
-   "url": "https://fr.investing.com/news/world-news/trump-pourrait-renoncer-a-de-nouvelles-frappes-contre-liran-sans-provocation-3696473"
-  },
-  {
-   "h": "Un administrateur d’Ohio Valley Banc achète des actions pour 2.999$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T12:46:53Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-dohio-valley-banc-achete-des-actions-pour-2999-93CH-3696472"
-  },
-  {
    "h": "En Ile-de-France, les usagers de la ligne J confrontés à des incidents en série : « Quand il y a des suppressions de trains, je ne vois pas mes enfants »",
    "w": "« Crise des essieux », caténaires arrachées… Les accidents se sont succédé en 2026 sur cette ligne du Transilien qui part de la gare Saint-Lazare, à Paris, pour parcourir 174 kilomètres jusqu’aux confins de la Normandie et des Hauts-de-France. Un calvaire pour les 277 000 voyageurs quotidiens qui vivent dans l’angoisse de voir leur train retardé ou supprimé.",
    "syms": [],
@@ -2508,14 +2511,6 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-14T12:15:01Z",
    "url": "https://www.cnbc.com/2026/11/14/meet-the-seven-co-founders-of-anthropic.html"
-  },
-  {
-   "h": "Goldman Sachs abaisse ses prévisions sur l’or pour 2027",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T12:08:40Z",
-   "url": "https://fr.investing.com/news/commodities-news/goldman-sachs-revoit-a-la-baisse-ses-previsions-sur-lor-pour-2027-3696470"
   },
   {
    "h": "How Trump’s midterm gerrymandering flopped",
@@ -2588,6 +2583,30 @@
    "ts": "2026-11-14T11:00:09Z",
    "url": "https://www.ft.com/content/acca0ba8-913d-4a8a-8d3b-a5521ed1cfc2?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "Did we really see a black hole? Australian team says 'yes'",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T10:59:31.547319Z",
+   "url": "https://asia.nikkei.com/business/science/did-we-really-see-a-black-hole-australian-team-says-yes"
+  },
+  {
+   "h": "No grass, no problem: Playing sand golf in the Australian outback",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T10:59:31.547319Z",
+   "url": "https://asia.nikkei.com/life-arts/life/no-grass-no-problem-playing-sand-golf-in-the-australian-outback"
+  },
+  {
+   "h": "Honda supplier Topre to invest $140mn in US for new plant, upgrades",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T10:59:31.547319Z",
+   "url": "https://asia.nikkei.com/business/automobiles/honda-supplier-topre-to-invest-140mn-in-us-for-new-plant-upgrades"
   },
   {
    "h": "Germany suffers setback in joining fighter jet project",
@@ -2704,30 +2723,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-14T08:53:02.264720Z",
    "url": "https://asia.nikkei.com/business/business-deals/china-s-jd.com-completes-1.5bn-takeover-of-german-appliance-retailer"
-  },
-  {
-   "h": "Microsoft outage wreaks havoc in Asia, exposing dependence risk",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T08:53:02.264720Z",
-   "url": "https://asia.nikkei.com/business/technology/microsoft-outage-wreaks-havoc-in-asia-exposing-dependence-risk"
-  },
-  {
-   "h": "How Trump might be tempted to orchestrate an 'end to the Korean War'",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T08:08:47.013961Z",
-   "url": "https://asia.nikkei.com/spotlight/comment/how-trump-might-be-tempted-to-orchestrate-an-end-to-the-korean-war"
-  },
-  {
-   "h": "US-China truce masks rising tensions ahead of Xi-Trump redux at APEC",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T08:08:47.013961Z",
-   "url": "https://asia.nikkei.com/spotlight/big-in-asia/us-china-truce-masks-rising-tensions-ahead-of-xi-trump-redux-at-apec"
   },
   {
    "h": "Microsoft says services fully restored after day-long global outage",
