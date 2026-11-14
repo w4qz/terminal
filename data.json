@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T11:34:11.016921Z",
+ "generated_at": "2026-11-14T12:17:13.818725Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -523,8 +523,8 @@
    "prev": 6398.98,
    "chg": -12.1201,
    "pct": -0.19,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^STOXX50E)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^STOXX50E) — last update failed",
    "ts": "2026-11-13T16:30:00Z",
    "open": 6391.0601,
    "lo": 6372.27,
@@ -774,10 +774,10 @@
    ]
   },
   "BRENT": {
-   "p": 96.08,
+   "p": 95.84,
    "prev": 95.82,
-   "chg": 0.26,
-   "pct": 0.27,
+   "chg": 0.02,
+   "pct": 0.02,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-13T22:00:00Z",
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 67107.7969,
+   "p": 67038.6719,
    "prev": 68249.2734,
-   "chg": -1141.4766,
-   "pct": -1.67,
+   "chg": -1210.6016,
+   "pct": -1.77,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-14T11:34:11.016921Z",
+   "ts": "2026-11-14T12:17:13.818725Z",
    "open": 68238.2109,
    "lo": 66535.5078,
    "hi": 68360.7109,
-   "vol": 31423684608,
+   "vol": 31194025984,
    "h": [
     80790.84,
     80024.01,
@@ -844,7 +844,7 @@
     73964.47,
     71342.97,
     68249.27,
-    67107.8
+    67038.67
    ]
   }
  },
@@ -944,9 +944,9 @@
    "industry": "Software - Infrastructure",
    "ccy": "USD",
    "mcap": 3890434801664,
-   "pe": 27.2996,
+   "pe": 27.3424,
    "fpe": 21.6569,
-   "eps": 19.19,
+   "eps": 19.16,
    "feps": 24.1899,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
@@ -1013,7 +1013,7 @@
    "cash": 265098002432,
    "debt": 150330998784,
    "fcf": -1162499968,
-   "w52lo": 270.7,
+   "w52lo": 272.11,
    "w52hi": 408.61,
    "evEbitda": 19.079,
    "earnTs": 1793217600,
@@ -1032,9 +1032,9 @@
    "industry": "Internet Retail",
    "ccy": "USD",
    "mcap": 2883431432192,
-   "pe": 21.6269,
+   "pe": 21.557,
    "fpe": 24.4211,
-   "eps": 12.33,
+   "eps": 12.37,
    "feps": 10.9192,
    "revTTM": 797455024128,
    "netIncome": 134779002880,
@@ -1104,7 +1104,7 @@
    "earnEnd": 1799933400,
    "earnEst": true,
    "exDiv": 1796860800,
-   "divDate": 1807142400,
+   "divDate": 1799280000,
    "lastDiv": 1.107,
    "trailDiv": 6.0
   },
@@ -1192,14 +1192,14 @@
    "sector": "Communication Services",
    "industry": "Internet Content & Information",
    "ccy": "USD",
-   "mcap": 1640694153216,
-   "pe": 21.2762,
+   "mcap": 1640314437632,
+   "pe": 21.8932,
    "fpe": 18.0312,
-   "eps": 30.16,
+   "eps": 29.31,
    "feps": 35.5879,
    "revTTM": 241605001216,
    "netIncome": 75249000448,
-   "shares": 2214455318,
+   "shares": 2214472367,
    "beta": 1.279,
    "div": 2.1,
    "divYield": 0.327,
@@ -1238,7 +1238,7 @@
    "ccy": "USD",
    "mcap": 1542445203456,
    "fpe": 180.7227,
-   "eps": 0.89,
+   "eps": 0.91,
    "feps": 2.1592,
    "revTTM": 103569997824,
    "netIncome": 3220000000,
@@ -1267,7 +1267,7 @@
    "earnEnd": 1801083600,
    "earnEst": true,
    "trailDiv": 0.0,
-   "pe_ns": 438.4494
+   "pe_ns": 428.8132
   },
   "AVGO": {
    "name": "Broadcom Inc.",
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1656497373184,
    "pe": 44.318,
-   "fpe": 17.8273,
+   "fpe": 17.8742,
    "eps": 7.83,
-   "feps": 19.4651,
+   "feps": 19.414,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1016233525248,
-   "pe": 45.7464,
+   "mcap": 1019350286336,
+   "pe": 46.4094,
    "fpe": 39.7569,
-   "eps": 2.8,
+   "eps": 2.76,
    "feps": 3.2218,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.773,
@@ -1549,7 +1549,7 @@
    "cash": 11528999936,
    "debt": 75092000768,
    "fcf": 7127625216,
-   "w52lo": 98.88,
+   "w52lo": 99.68,
    "w52hi": 135.16,
    "evEbitda": 24.649,
    "earnTs": 1795095000,
@@ -1609,9 +1609,9 @@
    "industry": "Semiconductors",
    "ccy": "USD",
    "mcap": 875905024000,
-   "pe": 125.0726,
+   "pe": 114.1154,
    "fpe": 30.1888,
-   "eps": 4.27,
+   "eps": 4.68,
    "feps": 17.6907,
    "revTTM": 45435998208,
    "netIncome": 7725000192,
@@ -1649,9 +1649,9 @@
    "industry": "Credit Services",
    "ccy": "USD",
    "mcap": 794383024128,
-   "pe": 34.1154,
+   "pe": 34.5584,
    "fpe": 24.8395,
-   "eps": 12.48,
+   "eps": 12.32,
    "feps": 17.1404,
    "revTTM": 45902999552,
    "netIncome": 23311998976,
@@ -1762,7 +1762,7 @@
    "cash": 17227999232,
    "debt": 44650999808,
    "fcf": 18501875712,
-   "w52lo": 193.55,
+   "w52lo": 195.9,
    "w52hi": 288.11,
    "evEbitda": 20.732,
    "earnTs": 1800970200,
@@ -1781,9 +1781,9 @@
    "industry": "Semiconductor Equipment & Materials",
    "ccy": "EUR",
    "mcap": 515997270016,
-   "pe": 39.0207,
+   "pe": 38.2733,
    "fpe": 23.7232,
-   "eps": 34.31,
+   "eps": 34.98,
    "feps": 56.4342,
    "revTTM": 39473500160,
    "netIncome": 13474299904,
@@ -1824,9 +1824,9 @@
    "industry": "Credit Services",
    "ccy": "USD",
    "mcap": 576012943360,
-   "pe": 34.1524,
+   "pe": 34.5992,
    "fpe": 28.5429,
-   "eps": 19.36,
+   "eps": 19.11,
    "feps": 23.1648,
    "revTTM": 36288000000,
    "netIncome": 16958000128,
@@ -1868,9 +1868,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 521499836416,
-   "pe": 50.6055,
+   "pe": 50.6924,
    "fpe": 18.216,
-   "eps": 5.83,
+   "eps": 5.82,
    "feps": 16.1962,
    "revTTM": 66013999104,
    "netIncome": 10302999552,
@@ -1911,9 +1911,9 @@
    "ccy": "USD",
    "mcap": 429061144576,
    "pe": 16.1446,
-   "fpe": 13.3304,
+   "fpe": 13.2731,
    "eps": 13.62,
-   "feps": 16.4954,
+   "feps": 16.5666,
    "revTTM": 226256994304,
    "netIncome": 26976000000,
    "shares": 1951253686,
@@ -1954,10 +1954,10 @@
    "industry": "Discount Stores",
    "ccy": "USD",
    "mcap": 490194108416,
-   "pe": 52.6015,
-   "fpe": 44.1777,
-   "eps": 21.03,
-   "feps": 25.04,
+   "pe": 53.2856,
+   "fpe": 44.1838,
+   "eps": 20.76,
+   "feps": 25.0365,
    "revTTM": 303154003968,
    "netIncome": 9226000384,
    "shares": 443129349,
@@ -1999,9 +1999,9 @@
    "ccy": "USD",
    "mcap": 404771504128,
    "pe": 118.3028,
-   "fpe": 66.2625,
+   "fpe": 66.1698,
    "eps": 1.42,
-   "feps": 2.5352,
+   "feps": 2.5388,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
@@ -2036,14 +2036,14 @@
    "sector": "Technology",
    "industry": "Communication Equipment",
    "ccy": "USD",
-   "mcap": 377069010944,
+   "mcap": 376532795392,
    "pe": 25.4362,
    "fpe": 16.0667,
    "eps": 3.76,
    "feps": 5.9527,
    "revTTM": 63324999680,
    "netIncome": 13267000320,
-   "shares": 3942586873,
+   "shares": 3936980098,
    "beta": 1.002,
    "div": 1.68,
    "divYield": 1.757,
@@ -2082,9 +2082,9 @@
    "ccy": "USD",
    "mcap": 426963795968,
    "pe": 29.2773,
-   "fpe": 28.1338,
+   "fpe": 28.1245,
    "eps": 3.39,
-   "feps": 3.5278,
+   "feps": 3.529,
    "revTTM": 51053998080,
    "netIncome": 14629000192,
    "shares": 4301902335,
@@ -2125,7 +2125,7 @@
    "industry": "Communication Equipment",
    "ccy": "USD",
    "mcap": 12717574144,
-   "eps": -2.0,
+   "eps": -2.12,
    "feps": -1.5613,
    "revTTM": 142880000,
    "netIncome": -628267008,
@@ -2168,13 +2168,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 121.2883,
-   "shares": 572600000,
-   "divYield": 2.608,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2225,6 +2220,55 @@
   }
  ],
  "news": [
+  {
+   "h": "Meet the seven co-founders of Anthropic",
+   "w": "Four researchers, a former journalist, a public policymaker, and an engineer founded Anthropic in 2021. They're now poised to become multi-billionaires.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-14T12:15:01Z",
+   "url": "https://www.cnbc.com/2026/11/14/meet-the-seven-co-founders-of-anthropic.html"
+  },
+  {
+   "h": "Eric Trump-backed robot soldier startup can't pay staff after founder borrowed $4.6 million from company to buy home",
+   "w": "Eric Trump-backed robot startup Foundation Future Industries has run low on cash and missed payroll, as CEO Sankaet Pathak faces scrutiny over a $4.6 million company loan.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-14T12:00:01Z",
+   "url": "https://www.cnbc.com/2026/11/14/foundation-payroll-ceo-loan.html"
+  },
+  {
+   "h": "China’s hottest stocks these days have one thing in common: names that sound like sheep",
+   "w": "Shares of fish processors, lighting manufacturers and appliance makers have soared ahead of the Year of the Sheep. Investor appetite has had little to do with the status of their businesses.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-14T12:00:00Z",
+   "url": "https://www.marketwatch.com/story/chinas-hottest-stocks-these-days-have-one-thing-in-common-names-that-sound-like-sheep-6176e521?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Passengers face widespread disruption after US air traffic control outage",
+   "w": "Thousands of flights set to be delayed or cancelled over the weekend",
+   "syms": [],
+   "src": "myFT — companies",
+   "ts": "2026-11-14T11:58:02Z",
+   "url": "https://www.ft.com/content/f66f9811-59a2-4e52-a944-c7ed81dabc50?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Un directeur de Fifth District Bancorp vend des actions pour 39.013$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T11:47:08Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-fifth-district-bancorp-vend-des-actions-pour-39013-93CH-3696469"
+  },
+  {
+   "h": "Le PDG de Babcock & Wilcox achète pour 43.500$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T11:47:05Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-babcock--wilcox-achete-pour-43500-dactions-93CH-3696468"
+  },
   {
    "h": "Flight disruptions continue after FAA lifts ground stop, some college football games delayed",
    "w": "U.S. flights are resuming after the FAA ground stop, but delays and cancellations are still piling up.",
@@ -2279,6 +2323,15 @@
    "mine": 1
   },
   {
+   "h": "Makers of obesity drugs hit back at claims of negative side effects",
+   "w": "Novo and Eli Lilly respond to concerns that their blockbuster GLP-1 medicines can lead to problems including poor nutrition",
+   "syms": [],
+   "src": "myFT — companies",
+   "ts": "2026-11-14T11:00:09Z",
+   "url": "https://www.ft.com/content/acca0ba8-913d-4a8a-8d3b-a5521ed1cfc2?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "Que prévoit Goldman Sachs pour les actions européennes en 2027 ?",
    "w": "",
    "syms": [],
@@ -2329,15 +2382,6 @@
    "mine": 1
   },
   {
-   "h": "Passengers face widespread disruption after US air traffic control outage",
-   "w": "Thousands of flights set to be delayed or cancelled over the weekend",
-   "syms": [],
-   "src": "myFT — companies",
-   "ts": "2026-11-14T10:19:03Z",
-   "url": "https://www.ft.com/content/f66f9811-59a2-4e52-a944-c7ed81dabc50?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Hawkward timing",
    "w": "Federal Reserve policymakers have floated the idea of a bigger rate increase in December following strong jobs, growth and inflation data",
    "syms": [],
@@ -2363,22 +2407,6 @@
    "src": "Investing.com France",
    "ts": "2026-11-14T10:02:14Z",
    "url": "https://fr.investing.com/news/insider-trading-news/le-fondateur-de-cloudastructure-bentley-cede-des-actions-pour-2370-93CH-3696457"
-  },
-  {
-   "h": "CMS Info Systems enregistre un chiffre d’affaires services record au T2 2027",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T09:56:13Z",
-   "url": "https://fr.investing.com/news/transcripts/cms-info-systems-enregistre-un-chiffre-daffaires-services-record-au-t2-2027-93CH-3696456"
-  },
-  {
-   "h": "Un administrateur de Valley National Bancorp cède des actions pour 300.188$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T09:46:59Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-valley-national-bancorp-cede-des-actions-pour-300188-93CH-3696455"
   },
   {
    "h": "Manchester United: a fate worse than debt",
@@ -2414,6 +2442,30 @@
    "src": "BBC — Business",
    "ts": "2026-11-14T06:42:27Z",
    "url": "https://www.bbc.co.uk/news/articles/c6rrg51rkz09o?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "Osaka landmark to be centerpiece of area's redevelopment",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T06:17:13.818725Z",
+   "url": "https://asia.nikkei.com/business/travel-leisure/osaka-landmark-to-be-centerpiece-of-area-s-redevelopment"
+  },
+  {
+   "h": "South Koreans show their love for once-taboo Japan pop culture",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T06:17:13.818725Z",
+   "url": "https://asia.nikkei.com/business/media-entertainment/south-koreans-show-their-love-for-once-taboo-japan-pop-culture"
+  },
+  {
+   "h": "Growth beyond AI puts corporate Japan on track for 20% profit gain",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T06:17:13.818725Z",
+   "url": "https://asia.nikkei.com/business/business-trends/growth-beyond-ai-puts-corporate-japan-on-track-for-20-profit-gain"
   },
   {
    "h": "Ecuador wants to monetize its biodiversity — while still drilling for oil",
@@ -2754,14 +2806,6 @@
    "url": "https://asia.nikkei.com/business/automobiles/honda-supplier-topre-to-invest-140mn-in-us-for-new-plant-upgrades"
   },
   {
-   "h": "Uranium price hits record as AI demand prompts nuclear comeback",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T04:06:35.825404Z",
-   "url": "https://asia.nikkei.com/business/markets/commodities/uranium-price-hits-record-as-ai-demand-prompts-nuclear-comeback"
-  },
-  {
    "h": "US plan to overhaul air traffic control system like ‘changing a tyre at 70mph’",
    "w": "Transport secretary seeks $50bn for upgrades to America’s dilapidated aviation infrastructure",
    "syms": [],
@@ -2778,22 +2822,6 @@
    "ts": "2026-11-14T03:21:57Z",
    "url": "https://www.ft.com/content/c9b119ff-d1da-46a7-b2b3-4ad0544fff6b?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Did we really see a black hole? Australian team says 'yes'",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T03:11:05.041518Z",
-   "url": "https://asia.nikkei.com/business/science/did-we-really-see-a-black-hole-australian-team-says-yes"
-  },
-  {
-   "h": "No grass, no problem: Playing sand golf in the Australian outback",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T03:11:05.041518Z",
-   "url": "https://asia.nikkei.com/life-arts/life/no-grass-no-problem-playing-sand-golf-in-the-australian-outback"
   },
   {
    "h": "FAA lifts rare nationwide ground stop on flights; air travel may take days to recover",
@@ -2897,17 +2925,6 @@
    "url": "https://www.cnbc.com/2026/11/13/howard-lutnick-nvidia-jensen-huang-china-cantor-fitzgerald.html"
   },
   {
-   "h": "Sam Bankman-Fried would have made nearly $40bn in Anthropic IPO",
-   "w": "Jailed cryptocurrency mogul loses out on windfall from early investment in the AI lab",
-   "syms": [
-    "BTC"
-   ],
-   "src": "myFT — us",
-   "ts": "2026-11-13T23:39:26Z",
-   "url": "https://www.ft.com/content/0ef40ac9-6d01-428f-98c8-a52bf5b9a787?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "‘The thought of living to 100 terrifies me’: Is Social Security a giant Ponzi scheme?",
    "w": "There is already a demographic ‘run’ on Social Security.",
    "syms": [],
@@ -2997,33 +3014,6 @@
    "src": "Federal Reserve — press releases",
    "ts": "2026-11-13T21:15:00Z",
    "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261113a.htm"
-  },
-  {
-   "h": "AMD and other chip stocks slide as Wall Street rethinks the AI trade without Jensen Huang",
-   "w": "At first, it looked like Nvidia’s pain might be the rest of the chip sector’s gain. But now, investors aren’t so sure.",
-   "syms": [
-    "NVDA",
-    "SPX"
-   ],
-   "src": "MarketWatch",
-   "ts": "2026-11-13T21:10:00Z",
-   "url": "https://www.marketwatch.com/story/amd-and-other-chip-stocks-slide-as-wall-street-rethinks-the-ai-trade-without-jensen-huang-2fb74547?mod=mw_rss_topstories"
-  },
-  {
-   "h": "They train people to avoid 'honeypot' scams—here are the common red flags they spot: 'It feels so good to be wanted'",
-   "w": "Corporate security firms train companies and their employees on strategies for being vigilant against honeypots, and other social engineering attacks.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-13T21:06:25Z",
-   "url": "https://www.cnbc.com/make-it/2026/11/13/honeypot-scam-red-flags.html"
-  },
-  {
-   "h": "Hassett denies report he's leaving White House: 'Not true'",
-   "w": "National Economic Council Director Kevin Hassett poured cold water on a report that he's expected to leave the White House in the coming weeks.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-13T20:27:47Z",
-   "url": "https://www.cnbc.com/2026/11/13/kevin-hassett-white-house-nec.html"
   },
   {
    "h": "Pressure grows on Trump's Commerce Secretary Lutnick in fallout from Nvidia scandal",
