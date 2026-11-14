@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T10:50:30.038789Z",
+ "generated_at": "2026-11-14T11:34:11.016921Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 67218.7812,
+   "p": 67107.7969,
    "prev": 68249.2734,
-   "chg": -1030.4922,
-   "pct": -1.51,
+   "chg": -1141.4766,
+   "pct": -1.67,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-14T10:50:30.038789Z",
+   "ts": "2026-11-14T11:34:11.016921Z",
    "open": 68238.2109,
    "lo": 66535.5078,
    "hi": 68360.7109,
-   "vol": 31647895552,
+   "vol": 31423684608,
    "h": [
     80790.84,
     80024.01,
@@ -844,7 +844,7 @@
     73964.47,
     71342.97,
     68249.27,
-    67221.07
+    67107.8
    ]
   }
  },
@@ -2226,10 +2226,104 @@
  ],
  "news": [
   {
+   "h": "Flight disruptions continue after FAA lifts ground stop, some college football games delayed",
+   "w": "U.S. flights are resuming after the FAA ground stop, but delays and cancellations are still piling up.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-14T11:34:02Z",
+   "url": "https://www.cnbc.com/2026/11/14/faa-ground-stop-flights-resume-delays.html"
+  },
+  {
+   "h": "La Juste Valeur d’InvestingPro sur Five Star Bancorp génère un rendement de 68%",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T11:11:29Z",
+   "url": "https://fr.investing.com/news/investment-ideas/la-juste-valeur-dinvestingpro-sur-five-star-bancorp-genere-un-rendement-de-68-93CH-3696467"
+  },
+  {
+   "h": "La Juste Valeur d’InvestingPro avait prédit la chute de 46% de NextNav",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T11:03:19Z",
+   "url": "https://fr.investing.com/news/investment-ideas/la-juste-valeur-dinvestingpro-avait-predit-la-chute-de-46-de-nextnav-93CH-3696466"
+  },
+  {
+   "h": "Europe Express: opening a security can of worms",
+   "w": "Initiating a discussion about changing Nato before a ceasefire in Ukraine gives Moscow additional leverage",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-14T11:00:09Z",
+   "url": "https://www.ft.com/content/4f951f7e-5ea7-41bf-91f0-d550f2231a33?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Argentina’s Milei clashes with his government’s most popular leader",
+   "w": "Tensions between the libertarian president and his senate chief test rightwing unity ahead of 2027 elections",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-14T11:00:09Z",
+   "url": "https://www.ft.com/content/eb3613fa-81ec-4cad-884d-39a20400e147?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Nvidia exposed to possible lawsuits after Jensen Huang’s downfall",
+   "w": "Chip group lacks full insurance coverage for damages stemming from the conduct of executives",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "myFT — world",
+   "ts": "2026-11-14T11:00:09Z",
+   "url": "https://www.ft.com/content/4aba8386-35cc-463b-a79c-a0c85c362c89?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Que prévoit Goldman Sachs pour les actions européennes en 2027 ?",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T10:52:51Z",
+   "url": "https://fr.investing.com/news/stock-market-news/que-prevoit-goldman-sachs-pour-les-actions-europeennes-en-2027--3696463"
+  },
+  {
+   "h": "Germany suffers setback in joining fighter jet project",
+   "w": "Rome rejects push to explore inviting Berlin to enter UK-Japan-Italy next-generation aircraft programme as equal partner",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-14T10:52:49Z",
+   "url": "https://www.ft.com/content/3ba2bcd1-b80c-48a2-91c7-35f25366f8aa?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Les États-Unis proposent l’adhésion à l’OTAN pour l’Ukraine en échange du Donbas",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T10:51:38Z",
+   "url": "https://fr.investing.com/news/economy-news/les-etatsunis-proposent-ladhesion-a-lotan-pour-lukraine-en-echange-du-donbas-3696464"
+  },
+  {
+   "h": "Patanjali Foods affiche une forte croissance au T2 malgré un recul de 2,3% en Bourse",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T10:32:50Z",
+   "url": "https://fr.investing.com/news/transcripts/patanjali-foods-affiche-une-forte-croissance-au-t2-malgre-un-recul-de-23-en-bourse-93CH-3696460"
+  },
+  {
+   "h": "Le PDG de Live Nation vend des actions pour 35,4 millions de dollars",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T10:32:49Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-live-nation-vend-des-actions-pour-354-millions-de-dollars-93CH-3696459"
+  },
+  {
    "h": "Chart of the Week: The great market rotation",
    "w": "Defensive sectors are the new winners",
    "syms": [],
-   "src": "myFT — equities",
+   "src": "myFT — world",
    "ts": "2026-11-14T10:30:08Z",
    "url": "https://www.ft.com/content/936376d1-4a69-4a3c-8975-3c55e9cb9d42?syn-25a6b1a6=1",
    "mine": 1
@@ -2247,18 +2341,20 @@
    "h": "Hawkward timing",
    "w": "Federal Reserve policymakers have floated the idea of a bigger rate increase in December following strong jobs, growth and inflation data",
    "syms": [],
-   "src": "myFT — global economy",
+   "src": "myFT — world",
    "ts": "2026-11-14T10:05:05Z",
    "url": "https://www.ft.com/content/8c2639dc-e5d5-430d-a641-11776ac26f9c",
    "mine": 1
   },
   {
-   "h": "U.S. flights resume after FAA ground stop, but travel disruption continues",
-   "w": "U.S. flights are resuming after the FAA ground stop, but delays and cancellations are still piling up.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-14T10:04:43Z",
-   "url": "https://www.cnbc.com/2026/11/14/faa-ground-stop-flights-resume-delays.html"
+   "h": "Binance vise à rétablir tous les retraits la semaine prochaine après un piratage de 6,3 milliards $",
+   "w": "",
+   "syms": [
+    "BTC"
+   ],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T10:03:13Z",
+   "url": "https://fr.investing.com/news/company-news/binance-vise-a-retablir-tous-les-retraits-la-semaine-prochaine-apres-un-piratage-de-63-milliards--3696458"
   },
   {
    "h": "Le fondateur de Cloudastructure Bentley cède des actions pour 2.370$",
@@ -2283,62 +2379,6 @@
    "src": "Investing.com France",
    "ts": "2026-11-14T09:46:59Z",
    "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-valley-national-bancorp-cede-des-actions-pour-300188-93CH-3696455"
-  },
-  {
-   "h": "La stratégie d’approvisionnement en uranium de la Chine : un jeu géopolitique à long terme ?",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T09:36:17Z",
-   "url": "https://fr.investing.com/news/economy-news/la-strategie-dapprovisionnement-en-uranium-de-la-chine--un-jeu-geopolitique-a-long-terme--3696453"
-  },
-  {
-   "h": "Gator Capital Management acquiert 82.690$ d’actions de U S Global Investors",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T09:31:52Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/gator-capital-management-acquiert-82690-dactions-de-u-s-global-investors-93CH-3696452"
-  },
-  {
-   "h": "Le directeur de Weyerhaeuser Richard Beckwitt achète pour 306.600$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T09:16:52Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-de-weyerhaeuser-richard-beckwitt-achete-pour-306600-dactions-93CH-3696451"
-  },
-  {
-   "h": "La vice-présidente de Coca-Cola Nancy Quan cède 1,47 million $ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T09:02:48Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/la-vicepresidente-de-cocacola-nancy-quan-cede-147-million--dactions-93CH-3696450"
-  },
-  {
-   "h": "Le PDG de Lipocine, Mahesh Patel, achète 79.487$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T09:02:47Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-lipocine-mahesh-patel-achete-79487-dactions-93CH-3696449"
-  },
-  {
-   "h": "Un directeur d’Expensify cède des actions pour près de 989.000$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T09:02:26Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-dexpensify-cede-des-actions-pour-pres-de-989000-93CH-3696448"
-  },
-  {
-   "h": "Un administrateur de Peoples Bancorp cède des actions pour 42.840$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T09:01:41Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-peoples-bancorp-cede-des-actions-pour-42840-93CH-3696446"
   },
   {
    "h": "Manchester United: a fate worse than debt",
@@ -2386,13 +2426,32 @@
    "url": "https://www.cnbc.com/2026/11/14/ecuador-biodiversity-green-finance-oil.html"
   },
   {
-   "h": "Italy rebuffs German bid to enter joint fighter jet project",
-   "w": "Rome rejects push to explore inviting Berlin to enter UK-Japan-Italy next-generation aircraft programme",
+   "h": "China sees Nvidia chief Huang's swift downfall as political hit",
+   "w": "",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T05:34:11.016921Z",
+   "url": "https://asia.nikkei.com/business/tech/semiconductors/china-sees-nvidia-chief-huang-s-swift-downfall-as-political-hit"
+  },
+  {
+   "h": "Bain- and GIC-backed WHI on track for Japan's largest IPO in 2026",
+   "w": "",
    "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-14T05:00:46Z",
-   "url": "https://www.ft.com/content/3ba2bcd1-b80c-48a2-91c7-35f25366f8aa?syn-25a6b1a6=1",
-   "mine": 1
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T05:34:11.016921Z",
+   "url": "https://asia.nikkei.com/business/markets/ipo/bain-and-gic-backed-whi-on-track-for-japan-s-largest-ipo-in-2026"
+  },
+  {
+   "h": "Nvidia scandal sparks Washington blame game over China chip exports",
+   "w": "",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T05:34:11.016921Z",
+   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/nvidia-scandal-sparks-washington-blame-game-over-china-chip-exports"
   },
   {
    "h": "Transcript of an interview with Huw Pill",
@@ -2538,28 +2597,28 @@
    "mine": 1
   },
   {
-   "h": "Burnham thinks Britain should talk about Brexit — but are his constituents keen?",
-   "w": "Fresh from a council by-election victory for Labour, Makerfield voters give their views on the prime minister as he heads to Brussels with plans for an initial EU ‘reset’",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-14T05:00:27Z",
-   "url": "https://www.ft.com/content/d8dec32d-0110-49c8-8ab0-9f711a9c79f1",
-   "mine": 1
-  },
-  {
    "h": "Marilynne Robinson: America’s new dawn",
    "w": "The acclaimed novelist on why the US midterm elections represented a ‘spectacular’ affirmation of people power",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-14T05:00:27Z",
    "url": "https://www.ft.com/content/d37b89e9-a473-46f2-8f99-48ae63cebe45",
+   "mine": 1
+  },
+  {
+   "h": "Burnham thinks Britain should talk about Brexit — but are his constituents keen?",
+   "w": "Fresh from a council by-election victory for Labour, Makerfield voters give their views on the prime minister as he heads to Brussels with plans for an initial EU ‘reset’",
+   "syms": [],
+   "src": "myFT — world uk",
+   "ts": "2026-11-14T05:00:27Z",
+   "url": "https://www.ft.com/content/d8dec32d-0110-49c8-8ab0-9f711a9c79f1",
    "mine": 1
   },
   {
    "h": "UK housing wealth owned by over-65s tops £2.25tn",
    "w": "Research shows how ‘boomer’ property owners have benefited from an exceptional stretch of house price growth — underlining the UK’s generational divide",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — world uk",
    "ts": "2026-11-14T05:00:27Z",
    "url": "https://www.ft.com/content/85cddf9b-fd9d-4b4a-9f9f-e12961a8af98?syn-25a6b1a6=1",
    "mine": 1
@@ -2737,36 +2796,12 @@
    "url": "https://asia.nikkei.com/life-arts/life/no-grass-no-problem-playing-sand-golf-in-the-australian-outback"
   },
   {
-   "h": "Growth beyond AI puts corporate Japan on track for 20% profit gain",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T03:11:05.041518Z",
-   "url": "https://asia.nikkei.com/business/business-trends/growth-beyond-ai-puts-corporate-japan-on-track-for-20-profit-gain"
-  },
-  {
    "h": "FAA lifts rare nationwide ground stop on flights; air travel may take days to recover",
    "w": "Homeland Security Secretary Mullin said that there was ‘zero evidence’ of cyberattack as fewer flights amid fuel-cost surge may hamper rebookings.",
    "syms": [],
    "src": "MarketWatch",
    "ts": "2026-11-14T02:42:00Z",
    "url": "https://www.marketwatch.com/story/faa-declares-rare-widespread-ground-outage-bdc46393?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Osaka landmark to be centerpiece of area's redevelopment",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T02:17:42.483288Z",
-   "url": "https://asia.nikkei.com/business/travel-leisure/osaka-landmark-to-be-centerpiece-of-area-s-redevelopment"
-  },
-  {
-   "h": "South Koreans show their love for once-taboo Japan pop culture",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T02:17:42.483288Z",
-   "url": "https://asia.nikkei.com/business/media-entertainment/south-koreans-show-their-love-for-once-taboo-japan-pop-culture"
   },
   {
    "h": "14 dividend stocks selected for long-term growth",
@@ -2881,32 +2916,12 @@
    "url": "https://www.marketwatch.com/story/the-thought-of-living-to-100-terrifies-me-is-social-security-a-giant-ponzi-scheme-84a64e7e?mod=mw_rss_topstories"
   },
   {
-   "h": "Reform UK pays for Nigel Farage’s security despite £5mn gift",
-   "w": "Party leader had claimed that undeclared donation from crypto billionaire was needed to ensure his protection",
-   "syms": [
-    "BTC"
-   ],
-   "src": "myFT — world uk",
-   "ts": "2026-11-13T22:52:09Z",
-   "url": "https://www.ft.com/content/a088c380-216e-4fc3-8b76-483504fd18c2?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "4 expert tips for signing up for Medicare",
    "w": "A day in the life of a Medicare counselor",
    "syms": [],
    "src": "MarketWatch",
    "ts": "2026-11-13T22:45:00Z",
    "url": "https://www.marketwatch.com/story/what-really-happens-during-medicare-counseling-6a4f618e?mod=mw_rss_topstories"
-  },
-  {
-   "h": "US military responds to ‘suspicious drone activity’ at UK air base",
-   "w": "RAF Lakenheath incident is fourth recent security alert related to a UK air base being used by the American military",
-   "syms": [],
-   "src": "myFT — world uk",
-   "ts": "2026-11-13T22:30:00Z",
-   "url": "https://www.ft.com/content/cf902a58-b694-4357-b1b0-07cf8e36c94e?syn-25a6b1a6=1",
-   "mine": 1
   },
   {
    "h": "Nvidia’s stock is on a losing streak not seen in 14 years. What comes next?",
@@ -2927,15 +2942,6 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-13T22:18:43Z",
    "url": "https://www.cnbc.com/2026/11/13/nvidia-stock-jensen-affair-ai.html"
-  },
-  {
-   "h": "US Treasuries record worst week since Trump’s ‘liberation day’",
-   "w": "Higher than expected inflation and hawkish remarks by Fed officials have stung investors who bet a global bond rout was over",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-13T22:12:03Z",
-   "url": "https://www.ft.com/content/7bebace2-dc87-410a-ae29-ffd9f3176def?syn-25a6b1a6=1",
-   "mine": 1
   },
   {
    "h": "Global oil supplies are suddenly flowing. Why a crude glut won’t mean cheaper diesel.",
