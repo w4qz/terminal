@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T19:40:57.189804Z",
+ "generated_at": "2026-11-15T20:22:47.009164Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -600,7 +600,7 @@
    "src": "Yahoo Finance via yfinance (JPY=X)",
    "ts": "2026-11-13T22:00:00Z",
    "open": 159.56,
-   "lo": 159.56,
+   "lo": 159.545,
    "hi": 159.622,
    "h": [
     158.14,
@@ -624,7 +624,7 @@
     158.71,
     159.73,
     159.88,
-    159.58
+    159.54
    ]
   },
   "GBPUSD": {
@@ -660,7 +660,7 @@
     1.334864,
     1.327669,
     1.323136,
-    1.322139
+    1.322262
    ]
   },
   "DXY": {
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 64920.2891,
+   "p": 64778.2305,
    "prev": 64128.0508,
-   "chg": 792.2383,
-   "pct": 1.24,
+   "chg": 650.1797,
+   "pct": 1.01,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-15T19:40:57.189804Z",
+   "ts": "2026-11-15T20:22:47.009164Z",
    "open": 64119.7812,
    "lo": 62093.5156,
    "hi": 65889.2344,
-   "vol": 48066572288,
+   "vol": 47678005248,
    "h": [
     80024.01,
     80006.66,
@@ -844,7 +844,7 @@
     71342.97,
     68249.27,
     64128.05,
-    64920.29
+    64778.23
    ]
   }
  },
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1656497373184,
    "pe": 44.318,
-   "fpe": 17.8273,
+   "fpe": 17.8742,
    "eps": 7.83,
-   "feps": 19.4651,
+   "feps": 19.414,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1016233525248,
+   "mcap": 1019350286336,
    "pe": 46.4094,
-   "fpe": 39.7569,
+   "fpe": 39.7422,
    "eps": 2.76,
-   "feps": 3.2218,
+   "feps": 3.223,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.773,
@@ -1868,9 +1868,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 521499836416,
-   "pe": 50.6055,
+   "pe": 50.6924,
    "fpe": 18.216,
-   "eps": 5.83,
+   "eps": 5.82,
    "feps": 16.1962,
    "revTTM": 66013999104,
    "netIncome": 10302999552,
@@ -1911,9 +1911,9 @@
    "ccy": "USD",
    "mcap": 429061144576,
    "pe": 16.1446,
-   "fpe": 13.3304,
+   "fpe": 13.3049,
    "eps": 13.62,
-   "feps": 16.4954,
+   "feps": 16.527,
    "revTTM": 226256994304,
    "netIncome": 26976000000,
    "shares": 1951253686,
@@ -1999,9 +1999,9 @@
    "ccy": "USD",
    "mcap": 404771504128,
    "pe": 118.3028,
-   "fpe": 66.2625,
+   "fpe": 66.1698,
    "eps": 1.42,
-   "feps": 2.5352,
+   "feps": 2.5388,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
@@ -2082,9 +2082,9 @@
    "ccy": "USD",
    "mcap": 426963795968,
    "pe": 29.2773,
-   "fpe": 28.1338,
+   "fpe": 28.1245,
    "eps": 3.39,
-   "feps": 3.5278,
+   "feps": 3.529,
    "revTTM": 51053998080,
    "netIncome": 14629000192,
    "shares": 4301902335,
@@ -2168,13 +2168,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 121.2883,
-   "shares": 572600000,
-   "divYield": 2.608,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2225,6 +2220,46 @@
   }
  ],
  "news": [
+  {
+   "h": "‘It leaves me with a sour taste’: My elderly mother gave our cousin $800 for a car repair. Should I be worried?",
+   "w": "“I know older people can easily feel patronized, and I don’t want that to happen.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-15T20:01:00Z",
+   "url": "https://www.marketwatch.com/story/it-leaves-me-with-a-sour-taste-my-elderly-mother-gave-our-cousin-800-for-a-car-repair-should-i-be-worried-88dbd188?mod=mw_rss_topstories"
+  },
+  {
+   "h": "‘He calls my plans a fantasy’: My husband says we can’t afford a $200,000-a-year retirement. Is he being cheap?",
+   "w": "“We have $2 million saved in our retirement accounts and a house worth $1.3 million.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-15T20:00:00Z",
+   "url": "https://www.marketwatch.com/story/he-calls-my-plans-a-fantasy-my-husband-says-we-cant-afford-our-200-000-a-year-dream-retirement-i-think-hes-cheap-45bc5b4e?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Silver Lake Partners V DE cède des actions Dell pour 23,15M$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T19:47:45Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/silver-lake-partners-v-de-cede-des-actions-dell-pour-2315m-93CH-3696699"
+  },
+  {
+   "h": "Le président exécutif de Mission Produce vend pour 1,06M$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T19:47:27Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-president-executif-de-mission-produce-vend-pour-106m-dactions-93CH-3696698"
+  },
+  {
+   "h": "Un dirigeant de Dell Technologies cède des actions pour 904.000$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T19:47:18Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-de-dell-technologies-cede-des-actions-pour-904000-93CH-3696697"
+  },
   {
    "h": "Jensen Huang discusses comeback as Nvidia CEO with allies",
    "w": "Tech supporters lobby chipmaker’s board to reinstate former CEO after he resigned following affair with alleged Chinese spy",
@@ -2420,30 +2455,6 @@
    "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-de-teradyne-marilyn-matz-cede-270264-dactions-93CH-3696687"
   },
   {
-   "h": "Le directeur financier d’Amtech Systems achète pour 28.270$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T16:47:04Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-damtech-systems-achete-pour-28270-dactions-93CH-3696686"
-  },
-  {
-   "h": "Le directeur financier de Bread Financial acquiert des actions pour 1.718$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T16:16:58Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-de-bread-financial-acquiert-des-actions-pour-1718-93CH-3696685"
-  },
-  {
-   "h": "Le VP d’Intuitive Surgical Fredrik Widman cède des actions pour 407.765$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T16:02:37Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-vp-dintuitive-surgical-fredrik-widman-cede-des-actions-pour-407765-93CH-3696684"
-  },
-  {
    "h": "Alice Ekman, sinologue : « Malgré ses difficultés, la Chine veut accélérer la restructuration de la gouvernance mondiale et marginaliser les pays occidentaux »",
    "w": "Pékin entend faire du sommet de la Coopération économique Asie-Pacifique (APEC), qui doit se tenir les 18 et 19 novembre, une vitrine de sa puissance dans le but de bâtir « un nouveau type de mondialisation sous son égide », assure la spécialiste de la Chine, dans un entretien au « Monde ».",
    "syms": [],
@@ -2543,6 +2554,38 @@
    "mine": 1
   },
   {
+   "h": "Toward a stronger and more prosperous Indo-Pacific, together",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T14:22:47.009164Z",
+   "url": "https://asia.nikkei.com/opinion/toward-a-stronger-and-more-prosperous-indo-pacific-together"
+  },
+  {
+   "h": "Gaming emerges as a new corporate networking tool in Japan",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T14:22:47.009164Z",
+   "url": "https://asia.nikkei.com/business/business-trends/gaming-emerges-as-a-new-corporate-networking-tool-in-japan"
+  },
+  {
+   "h": "Sri Lanka reality contrasts with new World Bank upper-middle-income status",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T14:22:47.009164Z",
+   "url": "https://asia.nikkei.com/economy/sri-lanka-reality-contrasts-with-new-world-bank-upper-middle-income-status"
+  },
+  {
+   "h": "Footloose in Vientiane: A capital in no great hurry",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T14:22:47.009164Z",
+   "url": "https://asia.nikkei.com/life-arts/life/destinations/footloose-in-vientiane-a-capital-in-no-great-hurry"
+  },
+  {
    "h": "Tout savoir sur la fermeture de l’autoroute A13 entre Paris et Caen : durée des travaux, itinéraire de substitution et craintes de congestion",
    "w": "Une portion de cette autoroute qui relie Paris à Caen doit fermer durant huit mois, dès lundi 16 novembre, pour permettre de consolider un tunnel.",
    "syms": [],
@@ -2581,14 +2624,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-15T13:40:57.189804Z",
    "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/digital-realty-trust-to-spend-10bn-more-on-japan-data-centers-ceo"
-  },
-  {
-   "h": "How Trump might be tempted to orchestrate an 'end to the Korean War'",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T13:40:57.189804Z",
-   "url": "https://asia.nikkei.com/spotlight/comment/how-trump-might-be-tempted-to-orchestrate-an-end-to-the-korean-war"
   },
   {
    "h": "Should a widow leave her late partner’s home to her stepkids — or cut off contact with them?",
@@ -2649,14 +2684,6 @@
    "url": "https://www.cnbc.com/2026/11/15/rivian-lucid-scout-arent-counting-on-dems-to-restore-ev-incentives.html"
   },
   {
-   "h": "‘It leaves me with a sour taste’: My elderly mother gave our cousin $800 for a car repair. Should I be worried?",
-   "w": "“I know older people can easily feel patronized, and I don’t want that to happen.”",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-15T13:00:00Z",
-   "url": "https://www.marketwatch.com/story/it-leaves-me-with-a-sour-taste-my-elderly-mother-gave-our-cousin-800-for-a-car-repair-should-i-be-worried-88dbd188?mod=mw_rss_topstories"
-  },
-  {
    "h": "APEC summit in Shenzhen, Indonesia monetary policy, ASEAN diplomacy",
    "w": "",
    "syms": [],
@@ -2700,16 +2727,6 @@
    "mine": 1
   },
   {
-   "h": "Gold and silver are supposed to protect against inflation. So why are both metals tumbling instead?",
-   "w": "Charts show the potential for more pain ahead",
-   "syms": [
-    "XAU"
-   ],
-   "src": "MarketWatch",
-   "ts": "2026-11-15T12:30:00Z",
-   "url": "https://www.marketwatch.com/story/gold-and-silver-are-supposed-to-protect-against-inflation-so-why-are-both-metals-tumbling-instead-1735eca7?mod=mw_rss_topstories"
-  },
-  {
    "h": "Japan shipping group ONE transits Red Sea choke point for 1st time in 3 years",
    "w": "",
    "syms": [],
@@ -2732,16 +2749,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-15T12:05:38.327936Z",
    "url": "https://asia.nikkei.com/politics/international-relations/eyeing-his-legacy-trump-seizes-chance-for-arms-talks-with-xi-and-putin"
-  },
-  {
-   "h": "Philippines moves to secure emergency access to oil in Indonesia, Thailand",
-   "w": "",
-   "syms": [
-    "BRENT"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T12:05:38.327936Z",
-   "url": "https://asia.nikkei.com/business/energy/philippines-moves-to-secure-emergency-access-to-oil-in-indonesia-thailand"
   },
   {
    "h": "Britain’s self-inflicted housebuilding crunch",
@@ -2779,22 +2786,6 @@
    "ts": "2026-11-15T11:40:44Z",
    "url": "https://www.ft.com/content/bc8ac781-9837-46de-b7ed-958886ba43af?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "How Japan's defense bases are exposed by smartphone data",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T11:24:06.511300Z",
-   "url": "https://asia.nikkei.com/politics/defense/how-japan-s-defense-bases-are-exposed-by-smartphone-data"
-  },
-  {
-   "h": "Hong Kong's New World proposes $3.2bn rights issue for capital 'reset'",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T11:24:06.511300Z",
-   "url": "https://asia.nikkei.com/business/markets/property/hong-kong-s-new-world-proposes-3.2bn-rights-issue-for-capital-reset"
   },
   {
    "h": "From culture war to class war: US Democrats ditch woke politics",
@@ -2882,14 +2873,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-15T06:09:22Z",
    "url": "https://www.lemonde.fr/argent/article/2026/11/15/immobilier-les-sommes-recues-des-promoteurs-en-echange-du-desistement-d-un-recours-contre-leur-permis-de-construire-doivent-elles-etre-declarees-au-fisc_6810993_1657007.html"
-  },
-  {
-   "h": "Could Budapest be the next digital nomad hotspot?",
-   "w": "With its mix of sights, cafés and culture, Hungary's capital Budapest has become popular with those embracing the \"work from anywhere\" trend.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-15T06:00:01Z",
-   "url": "https://www.cnbc.com/2026/11/15/budapest-europes-next-digital-nomad-hotspot.html"
   },
   {
    "h": "Le lent déclin économique de la France face au reste de l’Europe",
@@ -3087,6 +3070,14 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-14T15:31:00Z",
    "url": "https://www.lemonde.fr/international/article/2026/11/14/suspension-des-vols-aux-etats-unis-des-annulations-et-des-retards-de-vols-persistent-samedi_6810445_3210.html"
+  },
+  {
+   "h": "How Rockstar's 'GTA VI' release could reshape gaming, streaming and even paid time off",
+   "w": "\"Grand Theft Auto VI\" launches Nov. 19 with huge expectations. Its impact could reach creators, streaming, music, workplace time off, food delivery and tourism.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-14T14:54:22Z",
+   "url": "https://www.cnbc.com/2026/11/14/gta-6-grand-theft-auto-launch.html"
   },
   {
    "h": "Microsoft says services fully restored after day-long global outage",
