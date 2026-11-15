@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T21:12:00.717353Z",
+ "generated_at": "2026-11-15T21:57:04.949997Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -624,7 +624,7 @@
     158.71,
     159.73,
     159.88,
-    159.59
+    159.62
    ]
   },
   "GBPUSD": {
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 65003.3594,
+   "p": 65052.7109,
    "prev": 64128.0508,
-   "chg": 875.3086,
-   "pct": 1.36,
+   "chg": 924.6602,
+   "pct": 1.44,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-15T21:12:00.717353Z",
+   "ts": "2026-11-15T21:57:04.949997Z",
    "open": 64119.7812,
    "lo": 62093.5156,
    "hi": 65889.2344,
-   "vol": 45143740416,
+   "vol": 43932524544,
    "h": [
     80024.01,
     80006.66,
@@ -844,7 +844,7 @@
     71342.97,
     68249.27,
     64128.05,
-    65003.36
+    65052.71
    ]
   }
  },
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1656497373184,
    "pe": 44.318,
-   "fpe": 17.8742,
+   "fpe": 17.8273,
    "eps": 7.83,
-   "feps": 19.414,
+   "feps": 19.4651,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1019350286336,
+   "mcap": 1016233525248,
    "pe": 46.4094,
-   "fpe": 39.7422,
+   "fpe": 39.7569,
    "eps": 2.76,
-   "feps": 3.223,
+   "feps": 3.2218,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.773,
@@ -1868,9 +1868,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 521499836416,
-   "pe": 50.6924,
+   "pe": 50.6055,
    "fpe": 18.216,
-   "eps": 5.82,
+   "eps": 5.83,
    "feps": 16.1962,
    "revTTM": 66013999104,
    "netIncome": 10302999552,
@@ -1911,9 +1911,9 @@
    "ccy": "USD",
    "mcap": 429061144576,
    "pe": 16.1446,
-   "fpe": 13.3049,
+   "fpe": 13.3304,
    "eps": 13.62,
-   "feps": 16.527,
+   "feps": 16.4954,
    "revTTM": 226256994304,
    "netIncome": 26976000000,
    "shares": 1951253686,
@@ -1999,9 +1999,9 @@
    "ccy": "USD",
    "mcap": 404771504128,
    "pe": 118.3028,
-   "fpe": 66.1698,
+   "fpe": 66.2625,
    "eps": 1.42,
-   "feps": 2.5388,
+   "feps": 2.5352,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
@@ -2082,9 +2082,9 @@
    "ccy": "USD",
    "mcap": 426963795968,
    "pe": 29.2773,
-   "fpe": 28.1245,
+   "fpe": 28.1338,
    "eps": 3.39,
-   "feps": 3.529,
+   "feps": 3.5278,
    "revTTM": 51053998080,
    "netIncome": 14629000192,
    "shares": 4301902335,
@@ -2168,8 +2168,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 121.2883,
+   "shares": 572600000,
+   "divYield": 2.608,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2220,6 +2225,83 @@
   }
  ],
  "news": [
+  {
+   "h": "'We slept here': Flight delays linger but schedule is back on track for Monday",
+   "w": "Flight disruptions lingered two days after the Federal Aviation Administration grounded departures nationwide for more than four hours.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-15T21:48:16Z",
+   "url": "https://www.cnbc.com/2026/11/15/flight-delays-ground-faa-stop.html"
+  },
+  {
+   "h": "Le directeur d’Evergy Jonathan Rolph achète 133.610$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T21:32:20Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-devergy-jonathan-rolph-achete-133610-dactions-93CH-3696710"
+  },
+  {
+   "h": "Nvidia is gearing up for one of Wall Street’s most anticipated earnings calls in years",
+   "w": "Jensen Huang’s sudden departure has made Tuesday’s earnings call “the most important in the company’s history.”",
+   "syms": [
+    "NVDA",
+    "SPX"
+   ],
+   "src": "MarketWatch",
+   "ts": "2026-11-15T21:32:00Z",
+   "url": "https://www.marketwatch.com/story/nvidia-is-gearing-up-for-one-of-wall-streets-most-anticipated-earnings-calls-in-years-91855b1e?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Budget airlines are going upscale with first-class seats and faster wifi",
+   "w": "Forget no-frills: Frontier and JetBlue are chasing luxury flyers, and Wall Street is buying in.",
+   "syms": [
+    "SPX"
+   ],
+   "src": "MarketWatch",
+   "ts": "2026-11-15T21:31:00Z",
+   "url": "https://www.marketwatch.com/story/budget-airlines-are-going-upscale-with-first-class-seats-and-faster-wifi-999868ab?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Le directeur des ventes de Datadog vend pour 2,59 M$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T21:17:39Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-des-ventes-de-datadog-vend-pour-259-m-dactions-93CH-3696708"
+  },
+  {
+   "h": "Le directeur produit de Datadog vend des actions pour 2,81 millions $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T21:17:37Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-produit-de-datadog-vend-des-actions-pour-281-millions--93CH-3696707"
+  },
+  {
+   "h": "Le directeur RH de West Pharma cède des actions pour 2,67 M$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T21:17:13Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-rh-de-west-pharma-cede-des-actions-pour-267-m-93CH-3696706"
+  },
+  {
+   "h": "Silver Lake Partners IV cède des actions Dell Technologies pour 45,2 millions $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T21:02:51Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/silver-lake-partners-iv-cede-des-actions-dell-technologies-pour-452-millions--93CH-3696705"
+  },
+  {
+   "h": "Un administrateur de Cooper Companies achète pour 541.640$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T21:02:40Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-cooper-companies-achete-pour-541640-dactions-93CH-3696704"
+  },
   {
    "h": "Estonia to close border with Russia after second alleged sabotage attempt",
    "w": "Tallinn accuses Russian military intelligence unit GRU of being behind a failed explosion at dronemaker",
@@ -2288,22 +2370,6 @@
    "url": "https://fr.investing.com/news/insider-trading-news/silver-lake-partners-v-de-cede-des-actions-dell-pour-2315m-93CH-3696699"
   },
   {
-   "h": "Le président exécutif de Mission Produce vend pour 1,06M$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T19:47:27Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-president-executif-de-mission-produce-vend-pour-106m-dactions-93CH-3696698"
-  },
-  {
-   "h": "Un dirigeant de Dell Technologies cède des actions pour 904.000$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T19:47:18Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-de-dell-technologies-cede-des-actions-pour-904000-93CH-3696697"
-  },
-  {
    "h": "Jensen Huang discusses comeback as Nvidia CEO with allies",
    "w": "Tech supporters lobby chipmaker’s board to reinstate former CEO after he resigned following affair with alleged Chinese spy",
    "syms": [
@@ -2313,22 +2379,6 @@
    "ts": "2026-11-15T19:03:41Z",
    "url": "https://www.ft.com/content/45383d86-33c4-4d99-86e5-5e058d3567c1?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Un administrateur de Gaia achète pour 13.647$ d’actions de la société",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T19:02:12Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-gaia-achete-pour-13647-dactions-de-la-societe-93CH-3696696"
-  },
-  {
-   "h": "La Fed de Kansas City affirme avoir du travail à faire sur l’inflation",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T18:58:14Z",
-   "url": "https://fr.investing.com/news/economy-news/la-fed-de-kansas-city-affirme-avoir-du-travail-a-faire-sur-linflation-3696694"
   },
   {
    "h": "Young Britons out of work or training for a year to be guaranteed jobs",
@@ -2369,14 +2419,6 @@
    "ts": "2026-11-15T18:27:27Z",
    "url": "https://www.ft.com/content/a56fc76f-af32-45b2-8ae1-d5e211cb9643?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "'We slept here': Flight delays linger but schedule is back on track for Monday",
-   "w": "Flight disruptions lingered two days after the Federal Aviation Administration grounded departures nationwide for more than four hours.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-15T18:22:23Z",
-   "url": "https://www.cnbc.com/2026/11/15/flight-delays-ground-faa-stop.html"
   },
   {
    "h": "Suspension des vols aux Etats-Unis : retour à la normale du trafic aérien espéré lundi ; Donald Trump qualifie la gestion de l’aviation par Joe Biden de « désastre »",
@@ -2423,14 +2465,6 @@
    "mine": 1
   },
   {
-   "h": "Le président de VIVOS acquiert des actions ordinaires pour 1.231$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T17:47:04Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-president-de-vivos-acquiert-des-actions-ordinaires-pour-1231-93CH-3696693"
-  },
-  {
    "h": "Decision to move Shakespeare Institute out of Stratford sparks outcry",
    "w": "Study centre’s director quits after University of Birmingham says it will relocate to Edgbaston",
    "syms": [],
@@ -2447,14 +2481,6 @@
    "ts": "2026-11-15T17:07:06Z",
    "url": "https://www.ft.com/content/390948a3-429c-410a-b5fe-54cc5a380b99?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Les perturbations aériennes aux États-Unis entrent dans leur troisième jour",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T17:05:51Z",
-   "url": "https://fr.investing.com/news/economy-news/les-perturbations-aeriennes-aux-etatsunis-entrent-dans-leur-troisieme-jour-3696690"
   },
   {
    "h": "Neighbours of China’s London ‘mega’ embassy struggle to sell flats",
@@ -2488,6 +2514,30 @@
    "src": "MarketWatch",
    "ts": "2026-11-15T16:00:00Z",
    "url": "https://www.marketwatch.com/story/we-had-the-worst-fight-weve-ever-had-i-want-my-husband-to-retire-at-65-but-i-dont-want-to-lose-his-280-000-salary-48511469?mod=mw_rss_topstories"
+  },
+  {
+   "h": "China central bank hikes foreign reserve requirement for 1st time in 5 years",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T15:57:04.949997Z",
+   "url": "https://asia.nikkei.com/economy/china-central-bank-hikes-foreign-reserve-requirement-for-1st-time-in-5-years"
+  },
+  {
+   "h": "Japan shipping group ONE transits Red Sea choke point for 1st time in 3 years",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T15:57:04.949997Z",
+   "url": "https://asia.nikkei.com/business/transportation/japan-shipping-group-one-transits-red-sea-choke-point-for-1st-time-in-3-years"
+  },
+  {
+   "h": "Subaru retools boxer engine for fuel economy, with eye on hybrids",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T15:57:04.949997Z",
+   "url": "https://asia.nikkei.com/business/automobiles/subaru-retools-boxer-engine-for-fuel-economy-with-eye-on-hybrids"
   },
   {
    "h": "Sadiq Khan backs keeping City of London police independent from the Met",
@@ -2557,17 +2607,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-15T15:00:00Z",
    "url": "https://www.marketwatch.com/story/im-sick-of-flying-i-paid-for-priority-boarding-but-the-overhead-bins-were-full-was-i-duped-0badcc80?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Nvidia is gearing up for one of Wall Street’s most anticipated earnings calls in years",
-   "w": "Jensen Huang’s sudden departure has made Tuesday’s earnings call “the most important in the company’s history.”",
-   "syms": [
-    "NVDA",
-    "SPX"
-   ],
-   "src": "MarketWatch",
-   "ts": "2026-11-15T15:00:00Z",
-   "url": "https://www.marketwatch.com/story/nvidia-is-gearing-up-for-one-of-wall-streets-most-anticipated-earnings-calls-in-years-91855b1e?mod=mw_rss_topstories"
   },
   {
    "h": "Suspected China spy linked to Nvidia's ex-boss left in 2025, Megaspeed says",
@@ -2669,14 +2708,6 @@
    "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/digital-realty-trust-to-spend-10bn-more-on-japan-data-centers-ceo"
   },
   {
-   "h": "Should a widow leave her late partner’s home to her stepkids — or cut off contact with them?",
-   "w": "“It would be a less drastic step than selling the home now and splitting the proceeds.”",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-15T13:30:00Z",
-   "url": "https://www.marketwatch.com/story/she-can-always-change-her-mind-should-a-widow-leave-the-family-home-to-her-stepchildren-649b06af?mod=mw_rss_topstories"
-  },
-  {
    "h": "Minister backs legal right to job support for young people",
    "w": "The work and pensions secretary said the level of support currently on offer was too vague.",
    "syms": [],
@@ -2717,30 +2748,6 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-15T13:00:02Z",
    "url": "https://www.cnbc.com/2026/11/15/rivian-lucid-scout-arent-counting-on-dems-to-restore-ev-incentives.html"
-  },
-  {
-   "h": "APEC summit in Shenzhen, Indonesia monetary policy, ASEAN diplomacy",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T12:51:27.321974Z",
-   "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/apec-summit-in-shenzhen-indonesia-monetary-policy-asean-diplomacy"
-  },
-  {
-   "h": "China's century-old 'porcelain capital' eyes global luxury",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T12:51:27.321974Z",
-   "url": "https://asia.nikkei.com/life-arts/arts/china-s-century-old-porcelain-capital-eyes-global-luxury"
-  },
-  {
-   "h": "Japan to require online authorization for some transit passengers",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T12:51:27.321974Z",
-   "url": "https://asia.nikkei.com/spotlight/japan-immigration/japan-to-require-online-authorization-for-some-transit-passengers"
   },
   {
    "h": "Top Wall Street analysts are bullish on these 3 stocks for the long term",
