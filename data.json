@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T21:57:04.949997Z",
+ "generated_at": "2026-11-15T22:38:39.253755Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -564,7 +564,7 @@
    "src": "Yahoo Finance via yfinance (EURUSD=X)",
    "ts": "2026-11-13T22:30:00Z",
    "open": 1.1038,
-   "lo": 1.1031,
+   "lo": 1.1025,
    "hi": 1.1038,
    "h": [
     1.121315,
@@ -588,7 +588,7 @@
     1.116894,
     1.109521,
     1.105021,
-    1.103144
+    1.102657
    ]
   },
   "USDJPY": {
@@ -600,8 +600,8 @@
    "src": "Yahoo Finance via yfinance (JPY=X)",
    "ts": "2026-11-13T22:00:00Z",
    "open": 159.56,
-   "lo": 159.545,
-   "hi": 159.622,
+   "lo": 159.539,
+   "hi": 159.659,
    "h": [
     158.14,
     157.81,
@@ -624,7 +624,7 @@
     158.71,
     159.73,
     159.88,
-    159.62
+    159.61
    ]
   },
   "GBPUSD": {
@@ -660,22 +660,21 @@
     1.334864,
     1.327669,
     1.323136,
-    1.322262
+    1.321458
    ]
   },
   "DXY": {
    "p": 103.411,
-   "prev": 103.17,
-   "chg": 0.241,
-   "pct": 0.23,
-   "st": "EOD",
+   "prev": 103.41,
+   "chg": 0.001,
+   "pct": 0.0,
+   "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (DX-Y.NYB)",
-   "ts": "2026-11-13T22:00:00Z",
-   "open": 103.23,
-   "lo": 103.06,
-   "hi": 103.44,
+   "ts": "2026-11-15T22:15:00Z",
+   "open": 103.411,
+   "lo": 103.056,
+   "hi": 103.436,
    "h": [
-    102.0,
     101.84,
     101.98,
     101.73,
@@ -696,6 +695,7 @@
     102.23,
     102.91,
     103.17,
+    103.41,
     103.41
    ]
   },
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 65052.7109,
+   "p": 65138.0781,
    "prev": 64128.0508,
-   "chg": 924.6602,
-   "pct": 1.44,
+   "chg": 1010.0273,
+   "pct": 1.58,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-15T21:57:04.949997Z",
+   "ts": "2026-11-15T22:38:39.253755Z",
    "open": 64119.7812,
    "lo": 62093.5156,
    "hi": 65889.2344,
-   "vol": 43932524544,
+   "vol": 41205981184,
    "h": [
     80024.01,
     80006.66,
@@ -844,7 +844,7 @@
     71342.97,
     68249.27,
     64128.05,
-    65052.71
+    65138.08
    ]
   }
  },
@@ -2230,8 +2230,97 @@
    "w": "Flight disruptions lingered two days after the Federal Aviation Administration grounded departures nationwide for more than four hours.",
    "syms": [],
    "src": "CNBC — Markets",
-   "ts": "2026-11-15T21:48:16Z",
+   "ts": "2026-11-15T22:33:26Z",
    "url": "https://www.cnbc.com/2026/11/15/flight-delays-ground-faa-stop.html"
+  },
+  {
+   "h": "Iran attacks Bahrain in escalation of Gulf hostilities",
+   "w": "Bahrain says it has intercepted two Iranian barrages this week after months of relative calm",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-15T22:33:15Z",
+   "url": "https://www.ft.com/content/fc7ccc23-c051-49e6-85e5-8d8ba0a83ef9?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Cut national insurance for under-25s to create jobs, Milburn report to say",
+   "w": "The report being launched this week will suggest gradually reducing employment costs over five years.",
+   "syms": [],
+   "src": "BBC — Business",
+   "ts": "2026-11-15T22:30:03Z",
+   "url": "https://www.bbc.co.uk/news/articles/c6p9dzmj514ko?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "Suspected China spy linked to Nvidia's ex-boss left in 2025, Megaspeed says",
+   "w": "The Nvidia scandal has raised questions over whether advanced AI chips ended up in China, despite US restrictions.",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "BBC — Business",
+   "ts": "2026-11-15T22:24:20Z",
+   "url": "https://www.bbc.co.uk/news/articles/cmdx1vpprk9vo?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "Diamondback Energy proche d’un accord de 5 milliards $ avec Double Eagle",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T22:20:32Z",
+   "url": "https://fr.investing.com/news/stock-market-news/diamondback-energy-proche-dun-accord-de-5-milliards--avec-double-eagle-3696715"
+  },
+  {
+   "h": "Le SVP de Designer Brands, Mark Haley, cède 123.520$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T22:17:13Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-svp-de-designer-brands-mark-haley-cede-123520-dactions-93CH-3696713"
+  },
+  {
+   "h": "My older brother, who has no children, cut our only sister out of his will. I’ll get everything. Do I tell her?",
+   "w": "“I’m torn between respecting my brother’s wishes and being fair to my sister.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-15T22:15:00Z",
+   "url": "https://www.marketwatch.com/story/she-has-a-history-of-financial-mismanagement-my-brother-cut-my-sister-out-of-his-will-im-getting-everything-do-i-tell-her-3e537851?mod=mw_rss_topstories"
+  },
+  {
+   "h": "EU banking watchdog veers away from single deposit insurance scheme",
+   "w": "Chair of European Banking Authority working on alternative ways to free up more cross-border lending",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-15T22:07:45Z",
+   "url": "https://www.ft.com/content/016ce22d-1e09-4f1d-a7e6-9acf183e757f?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "UBS prévoit un Brent à 110 $ avec des réserves d’offre limitées",
+   "w": "",
+   "syms": [
+    "BRENT"
+   ],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T22:06:00Z",
+   "url": "https://fr.investing.com/news/commodities-news/ubs-prevoit-un-brent-a-110--avec-des-reserves-doffre-limitees-3696712"
+  },
+  {
+   "h": "UK will have 'voice' but no vote on EU food rules in Brexit reset",
+   "w": "EU minister Hamish Falconer insists Britain would have some influence on policy as part of a new deal.",
+   "syms": [],
+   "src": "BBC — Business",
+   "ts": "2026-11-15T22:00:24Z",
+   "url": "https://www.bbc.co.uk/news/articles/c6wy4l8nl42wo?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "FirstFT: Jensen Huang discusses comeback as Nvidia chief with allies",
+   "w": "Also in today’s newsletter: data centre construction stocks lose $4.2tn and the FDA rejects a cancer drug invented in China",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "myFT — technology",
+   "ts": "2026-11-15T21:53:53Z",
+   "url": "https://www.ft.com/content/0f30a230-4d66-481b-a4fd-3a4ed0c45855?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "Le directeur d’Evergy Jonathan Rolph achète 133.610$ d’actions",
@@ -2306,7 +2395,7 @@
    "h": "Estonia to close border with Russia after second alleged sabotage attempt",
    "w": "Tallinn accuses Russian military intelligence unit GRU of being behind a failed explosion at dronemaker",
    "syms": [],
-   "src": "myFT — emerging markets",
+   "src": "myFT — europe",
    "ts": "2026-11-15T20:58:12Z",
    "url": "https://www.ft.com/content/4dbb2c30-1649-4d0f-b1b6-3ca91c64e250?syn-25a6b1a6=1",
    "mine": 1
@@ -2322,28 +2411,12 @@
    "url": "https://fr.investing.com/news/stock-market-news/jensen-huang-envisage-un-retour-a-la-tete-de-nvidia-3696702"
   },
   {
-   "h": "Un administrateur de Cooper Companies achète pour 539.150$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T20:32:19Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-cooper-companies-achete-pour-539150-dactions-93CH-3696701"
-  },
-  {
    "h": "I inherited $1.4 million from my father. Am I wrong to ask my husband of 25 years for a postnuptial agreement?",
    "w": "“He has always said he wants his daughter to inherit a chunk of his estate, and I’ve never objected to that.”",
    "syms": [],
    "src": "MarketWatch",
    "ts": "2026-11-15T20:30:00Z",
    "url": "https://www.marketwatch.com/story/i-inherited-1-4-million-from-my-father-am-i-wrong-to-ask-my-husband-of-25-years-for-a-postnuptial-agreement-b739c51d?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Le directeur de Zedge Elliot Gibber achète 649.880$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T20:17:17Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-de-zedge-elliot-gibber-achete-649880-dactions-93CH-3696700"
   },
   {
    "h": "‘It leaves me with a sour taste’: My elderly mother gave our cousin $800 for a car repair. Should I be worried?",
@@ -2360,14 +2433,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-15T20:00:00Z",
    "url": "https://www.marketwatch.com/story/he-calls-my-plans-a-fantasy-my-husband-says-we-cant-afford-our-200-000-a-year-dream-retirement-i-think-hes-cheap-45bc5b4e?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Silver Lake Partners V DE cède des actions Dell pour 23,15M$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T19:47:45Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/silver-lake-partners-v-de-cede-des-actions-dell-pour-2315m-93CH-3696699"
   },
   {
    "h": "Jensen Huang discusses comeback as Nvidia CEO with allies",
@@ -2500,6 +2565,30 @@
    "url": "https://www.cnbc.com/2026/11/15/trump-breaks-silence-on-faa-nationwide-ground-stop-blames-biden-.html"
   },
   {
+   "h": "APEC summit in Shenzhen, Indonesia monetary policy, ASEAN diplomacy",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T16:38:39.253755Z",
+   "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/apec-summit-in-shenzhen-indonesia-monetary-policy-asean-diplomacy"
+  },
+  {
+   "h": "China's century-old 'porcelain capital' eyes global luxury",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T16:38:39.253755Z",
+   "url": "https://asia.nikkei.com/life-arts/arts/china-s-century-old-porcelain-capital-eyes-global-luxury"
+  },
+  {
+   "h": "Japan to require online authorization for some transit passengers",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T16:38:39.253755Z",
+   "url": "https://asia.nikkei.com/spotlight/japan-immigration/japan-to-require-online-authorization-for-some-transit-passengers"
+  },
+  {
    "h": "Alice Ekman, sinologue : « Malgré ses difficultés, la Chine veut accélérer la restructuration de la gouvernance mondiale et marginaliser les pays occidentaux »",
    "w": "Pékin entend faire du sommet de la Coopération économique Asie-Pacifique (APEC), qui doit se tenir les 18 et 19 novembre, une vitrine de sa puissance dans le but de bâtir « un nouveau type de mondialisation sous son égide », assure la spécialiste de la Chine, dans un entretien au « Monde ».",
    "syms": [],
@@ -2609,16 +2698,6 @@
    "url": "https://www.marketwatch.com/story/im-sick-of-flying-i-paid-for-priority-boarding-but-the-overhead-bins-were-full-was-i-duped-0badcc80?mod=mw_rss_topstories"
   },
   {
-   "h": "Suspected China spy linked to Nvidia's ex-boss left in 2025, Megaspeed says",
-   "w": "The Nvidia scandal has raised questions over whether advanced AI chips ended up in China, despite US restrictions.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "BBC — Business",
-   "ts": "2026-11-15T14:56:21Z",
-   "url": "https://www.bbc.co.uk/news/articles/cmdx1vpprk9vo?at_medium=RSS&at_campaign=rss"
-  },
-  {
    "h": "Social Security and the blue wave: What could happen to payroll taxes and senior tax breaks",
    "w": "Democrats advocated taxing high earners to shore up Social Security in the runup to the midterms. Plus, a senior deduction is slated to expire in two years.",
    "syms": [],
@@ -2660,14 +2739,6 @@
    "url": "https://asia.nikkei.com/economy/sri-lanka-reality-contrasts-with-new-world-bank-upper-middle-income-status"
   },
   {
-   "h": "Footloose in Vientiane: A capital in no great hurry",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T14:22:47.009164Z",
-   "url": "https://asia.nikkei.com/life-arts/life/destinations/footloose-in-vientiane-a-capital-in-no-great-hurry"
-  },
-  {
    "h": "Tout savoir sur la fermeture de l’autoroute A13 entre Paris et Caen : durée des travaux, itinéraire de substitution et craintes de congestion",
    "w": "Une portion de cette autoroute qui relie Paris à Caen doit fermer durant huit mois, dès lundi 16 novembre, pour permettre de consolider un tunnel.",
    "syms": [],
@@ -2682,30 +2753,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-15T14:00:00Z",
    "url": "https://www.marketwatch.com/story/the-thought-of-living-to-100-terrifies-me-is-social-security-a-giant-ponzi-scheme-84a64e7e?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Will the Anthropic IPO create a disturbance in the broader U.S. equity market, like SpaceX did?",
-   "w": "SpaceX’s offering coincided with the June peak in semiconductors.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-15T14:00:00Z",
-   "url": "https://www.marketwatch.com/story/will-the-anthropic-ipo-create-a-disturbance-in-the-broader-u-s-equity-market-like-spacex-did-05ba4351?mod=mw_rss_topstories"
-  },
-  {
-   "h": "ASEAN falls short on Myanmar crisis, South China Sea pact at Manila summit",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T13:40:57.189804Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/asean-falls-short-on-myanmar-crisis-south-china-sea-pact-at-manila-summit"
-  },
-  {
-   "h": "Digital Realty Trust to spend $10bn more on Japan data centers: CEO",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T13:40:57.189804Z",
-   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/digital-realty-trust-to-spend-10bn-more-on-japan-data-centers-ceo"
   },
   {
    "h": "Minister backs legal right to job support for young people",
@@ -2728,7 +2775,7 @@
    "h": "Republicans blame everyone but Trump for midterm drubbing",
    "w": "The party faithful avoid mentioning their leader as they lick their wounds at Heritage Foundation postmortem",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-15T13:00:05Z",
    "url": "https://www.ft.com/content/d21caa78-65c1-4570-bec8-2ef71b5d65e7?syn-25a6b1a6=1",
    "mine": 1
@@ -2763,7 +2810,7 @@
    "h": "Saudi-backed Yemeni forces retreat from Red Sea in win for Houthis",
    "w": "Yemen announces withdrawal from areas around Bab al-Mandeb Strait in order to protect de facto capital Aden from Iran-linked militants",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — middle east north africa",
    "ts": "2026-11-15T12:32:21Z",
    "url": "https://www.ft.com/content/2e7028ba-987c-4874-9426-fe38a8753c67?syn-25a6b1a6=1",
    "mine": 1
@@ -2823,15 +2870,6 @@
    "src": "myFT — us",
    "ts": "2026-11-15T11:00:04Z",
    "url": "https://www.ft.com/content/3062790a-553d-41b8-9c7d-bae17b9d2e29?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Iran attacks Bahrain in escalation of Gulf hostilities",
-   "w": "Bahrain says it has intercepted two Iranian barrages this week after months of relative calm",
-   "syms": [],
-   "src": "myFT — middle east north africa",
-   "ts": "2026-11-15T10:50:05Z",
-   "url": "https://www.ft.com/content/fc7ccc23-c051-49e6-85e5-8d8ba0a83ef9?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2909,15 +2947,6 @@
    "src": "myFT — us",
    "ts": "2026-11-15T05:00:14Z",
    "url": "https://www.ft.com/content/0e2720d7-ba0a-4469-a854-30931f907bd3",
-   "mine": 1
-  },
-  {
-   "h": "EU banking watchdog veers away from single deposit insurance scheme",
-   "w": "Chair of European Banking Authority working on alternative ways to free up more cross-border lending",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-15T05:00:13Z",
-   "url": "https://www.ft.com/content/016ce22d-1e09-4f1d-a7e6-9acf183e757f?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -3022,15 +3051,6 @@
    "mine": 1
   },
   {
-   "h": "The world according to China",
-   "w": "The Apec summit in Shenzhen this week will showcase China’s ambition to reshape the global order on its own terms",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-15T03:00:02Z",
-   "url": "https://www.ft.com/content/fb667289-ae81-42c7-8eb8-ebda09dceff7?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Beauty advent calendars can cost hundreds but are they value for money?",
    "w": "Beauty calendars have become a Christmas staple and have become particularly popular with female shoppers.",
    "syms": [],
@@ -3079,22 +3099,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-14T15:31:00Z",
    "url": "https://www.lemonde.fr/international/article/2026/11/14/suspension-des-vols-aux-etats-unis-des-annulations-et-des-retards-de-vols-persistent-samedi_6810445_3210.html"
-  },
-  {
-   "h": "How Rockstar's 'GTA VI' release could reshape gaming, streaming and even paid time off",
-   "w": "\"Grand Theft Auto VI\" launches Nov. 19 with huge expectations. Its impact could reach creators, streaming, music, workplace time off, food delivery and tourism.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-14T14:54:22Z",
-   "url": "https://www.cnbc.com/2026/11/14/gta-6-grand-theft-auto-launch.html"
-  },
-  {
-   "h": "Microsoft says services fully restored after day-long global outage",
-   "w": "Efforts to address the underlying problem with Outlook, Teams and Copilot are complete, the tech firm says.",
-   "syms": [],
-   "src": "BBC — Business",
-   "ts": "2026-11-14T06:42:27Z",
-   "url": "https://www.bbc.co.uk/news/articles/c6rrg51rkz09o?at_medium=RSS&at_campaign=rss"
   }
  ],
  "summary": {
