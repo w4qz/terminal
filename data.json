@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T04:41:40.521312Z",
+ "generated_at": "2026-11-15T05:38:27.801698Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -710,7 +710,7 @@
    "open": 3883.3,
    "lo": 3871.1001,
    "hi": 3927.2,
-   "vol": 229442,
+   "vol": 151010,
    "h": [
     4170.1,
     4181.1,
@@ -747,7 +747,7 @@
    "open": 88.79,
    "lo": 87.8,
    "hi": 89.64,
-   "vol": 270072,
+   "vol": 181210,
    "h": [
     97.97,
     101.41,
@@ -784,7 +784,7 @@
    "open": 95.89,
    "lo": 95.07,
    "hi": 97.12,
-   "vol": 35151,
+   "vol": 22079,
    "h": [
     105.92,
     109.86,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 64763.5586,
+   "p": 64773.2109,
    "prev": 68249.2734,
-   "chg": -3485.7148,
-   "pct": -5.11,
+   "chg": -3476.0625,
+   "pct": -5.09,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-15T04:41:40.521312Z",
+   "ts": "2026-11-15T05:38:27.801698Z",
    "open": 64119.7812,
    "lo": 62093.5156,
    "hi": 65289.0078,
-   "vol": 50020573184,
+   "vol": 49852497920,
    "h": [
     80790.84,
     80024.01,
@@ -844,7 +844,7 @@
     73964.47,
     71342.97,
     68249.27,
-    64763.56
+    64773.21
    ]
   }
  },
@@ -1104,7 +1104,7 @@
    "earnEnd": 1799933400,
    "earnEst": true,
    "exDiv": 1796860800,
-   "divDate": 1799280000,
+   "divDate": 1807142400,
    "lastDiv": 1.107,
    "trailDiv": 6.0
   },
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1656497373184,
    "pe": 44.318,
-   "fpe": 17.8742,
+   "fpe": 17.8273,
    "eps": 7.83,
-   "feps": 19.414,
+   "feps": 19.4651,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1019350286336,
+   "mcap": 1016233525248,
    "pe": 46.4094,
    "fpe": 39.7569,
    "eps": 2.76,
    "feps": 3.2218,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.773,
@@ -1868,9 +1868,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 521499836416,
-   "pe": 50.6924,
+   "pe": 50.6055,
    "fpe": 18.216,
-   "eps": 5.82,
+   "eps": 5.83,
    "feps": 16.1962,
    "revTTM": 66013999104,
    "netIncome": 10302999552,
@@ -1911,9 +1911,9 @@
    "ccy": "USD",
    "mcap": 429061144576,
    "pe": 16.1446,
-   "fpe": 13.2731,
+   "fpe": 13.3304,
    "eps": 13.62,
-   "feps": 16.5666,
+   "feps": 16.4954,
    "revTTM": 226256994304,
    "netIncome": 26976000000,
    "shares": 1951253686,
@@ -1999,9 +1999,9 @@
    "ccy": "USD",
    "mcap": 404771504128,
    "pe": 118.3028,
-   "fpe": 66.1698,
+   "fpe": 66.2625,
    "eps": 1.42,
-   "feps": 2.5388,
+   "feps": 2.5352,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
@@ -2082,9 +2082,9 @@
    "ccy": "USD",
    "mcap": 426963795968,
    "pe": 29.2773,
-   "fpe": 28.1245,
+   "fpe": 28.1338,
    "eps": 3.39,
-   "feps": 3.529,
+   "feps": 3.5278,
    "revTTM": 51053998080,
    "netIncome": 14629000192,
    "shares": 4301902335,
@@ -2168,8 +2168,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 121.2883,
+   "shares": 572600000,
+   "divYield": 2.608,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2220,6 +2225,70 @@
   }
  ],
  "news": [
+  {
+   "h": "Le lent déclin économique de la France face au reste de l’Europe",
+   "w": "L’Hexagone affiche l’une des plus faibles croissances européennes cette année. Un phénomène qui accentue la chute du pays dans le classement européen en PIB par habitant, désormais en dessous de la moyenne.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-15T05:15:07Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/11/15/le-lent-declin-economique-de-la-france-face-au-reste-de-l-europe_6810984_3234.html"
+  },
+  {
+   "h": "What will Nvidia’s post-Huang era look like?",
+   "w": "The chip company has only itself to blame for a long list of adversaries",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "myFT — economy",
+   "ts": "2026-11-15T05:00:14Z",
+   "url": "https://www.ft.com/content/0e2720d7-ba0a-4469-a854-30931f907bd3",
+   "mine": 1
+  },
+  {
+   "h": "‘Low fire, low hire’ job market hurts US and UK productivity",
+   "w": "Sluggish rates of hiring, resignations and job-switching may lead to long-term damage, say economists",
+   "syms": [],
+   "src": "myFT — economy",
+   "ts": "2026-11-15T05:00:13Z",
+   "url": "https://www.ft.com/content/44c1fdc6-bc51-46e5-8a7c-c10096a25496?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "EU banking watchdog veers away from single deposit insurance scheme",
+   "w": "Chair of European Banking Authority working on alternative ways to free up more cross-border lending",
+   "syms": [],
+   "src": "myFT — financials",
+   "ts": "2026-11-15T05:00:13Z",
+   "url": "https://www.ft.com/content/016ce22d-1e09-4f1d-a7e6-9acf183e757f?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "The long and winding road to Dubai’s supermarket shelves",
+   "w": "The United Arab Emirates’ shipping woes stemming from Iran war stoke dreams of farming in the desert",
+   "syms": [],
+   "src": "myFT — economy",
+   "ts": "2026-11-15T05:00:04Z",
+   "url": "https://www.ft.com/content/8e13baf8-fce7-4ebd-ac05-5692181f6d7e?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Brookfield and KKR vie over $700mn deal for Gulf retailer Eyewa",
+   "w": "Private capital firms in advanced talks to acquire majority stake in eyewear chain after Middle East deal drought",
+   "syms": [],
+   "src": "myFT — financials",
+   "ts": "2026-11-15T05:00:04Z",
+   "url": "https://www.ft.com/content/a240f6b7-724c-4ad5-a4b1-2e04897e2fe8?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "HSBC’s bet on bots could reshape the wealth wars",
+   "w": "The UK bank ventures into a high-stakes experiment",
+   "syms": [],
+   "src": "myFT — financials",
+   "ts": "2026-11-15T05:00:04Z",
+   "url": "https://www.ft.com/content/6b928d2e-cfe9-49a1-8da6-18d7113d636f?syn-25a6b1a6=1",
+   "mine": 1
+  },
   {
    "h": "Des avions de Copa Airlines et UPS entrent en collision à Miami",
    "w": "",
@@ -2352,6 +2421,32 @@
    "url": "https://www.bbc.co.uk/news/articles/cqn83l442724o?at_medium=RSS&at_campaign=rss"
   },
   {
+   "h": "Subaru retools boxer engine for fuel economy, with eye on hybrids",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T23:38:27.801698Z",
+   "url": "https://asia.nikkei.com/business/automobiles/subaru-retools-boxer-engine-for-fuel-economy-with-eye-on-hybrids"
+  },
+  {
+   "h": "Eyeing his legacy, Trump seizes chance for arms talks with Xi and Putin",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T23:38:27.801698Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/eyeing-his-legacy-trump-seizes-chance-for-arms-talks-with-xi-and-putin"
+  },
+  {
+   "h": "Philippines moves to secure emergency access to oil in Indonesia, Thailand",
+   "w": "",
+   "syms": [
+    "BRENT"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T23:38:27.801698Z",
+   "url": "https://asia.nikkei.com/business/energy/philippines-moves-to-secure-emergency-access-to-oil-in-indonesia-thailand"
+  },
+  {
    "h": "Passengers face widespread disruption after US air traffic control outage",
    "w": "Thousands of flights delayed or cancelled as political blame game mounts",
    "syms": [],
@@ -2481,32 +2576,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-14T20:55:21.059541Z",
    "url": "https://asia.nikkei.com/politics/international-relations/asean-leaders-kick-off-manila-summits-as-friction-persists-on-myanmar-haze"
-  },
-  {
-   "h": "China's century-old 'porcelain capital' eyes global luxury",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T20:55:21.059541Z",
-   "url": "https://asia.nikkei.com/life-arts/arts/china-s-century-old-porcelain-capital-eyes-global-luxury"
-  },
-  {
-   "h": "Japan to require online authorization for some transit passengers",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T20:55:21.059541Z",
-   "url": "https://asia.nikkei.com/spotlight/japan-immigration/japan-to-require-online-authorization-for-some-transit-passengers"
-  },
-  {
-   "h": "China sees Nvidia chief Huang's swift downfall as political hit",
-   "w": "",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T20:55:21.059541Z",
-   "url": "https://asia.nikkei.com/business/tech/semiconductors/china-sees-nvidia-chief-huang-s-swift-downfall-as-political-hit"
   },
   {
    "h": "‘It leaves me with a sour taste’: My elderly mother gave our cousin $800 for a car repair. Should I be worried?",
@@ -2983,60 +3052,6 @@
    "url": "https://www.lemonde.fr/economie/article/2026/11/14/aux-etats-unis-apres-la-suspension-des-vols-l-administration-trump-politise-cette-panne-geante-et-reclame-50-milliards-de-dollars_6809689_3234.html"
   },
   {
-   "h": "Why 21st-century luxury looks like 1974",
-   "w": "Once a shorthand for dreariness and bad taste, 1970s interior design is being recast as the height of hotel style",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-14T05:00:17Z",
-   "url": "https://www.ft.com/content/b01a8c49-cf3b-478b-a6e6-511f791ae34f?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "What Europe’s rising public debt means for your portfolio",
-   "w": "How do you invest when hard-up governments are looking for cuts and tax raids?",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-14T05:00:17Z",
-   "url": "https://www.ft.com/content/45684ea3-dba8-476b-8667-2cdbdb5dfd8d",
-   "mine": 1
-  },
-  {
-   "h": "Composer Yudania Gómez Heredia’s guide to Nuremberg",
-   "w": "The conductor leads a tour of the city’s churches, concert halls and salsa bars",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-14T05:00:09Z",
-   "url": "https://www.ft.com/content/f86213c1-72a4-4928-bfa5-c2a80761f174",
-   "mine": 1
-  },
-  {
-   "h": "Consumer giants summon armies of influencers to win over Gen Z",
-   "w": "Global brand owners dramatically increase influencer marketing spend to stem market share losses",
-   "syms": [],
-   "src": "myFT — technology",
-   "ts": "2026-11-14T05:00:09Z",
-   "url": "https://www.ft.com/content/d0d18617-0a59-4435-b659-7a50f6f7aba2?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "The South African townships turning against the ANC",
-   "w": "Johannesburg may appoint its first white mayor since apartheid after longtime ANC bastions broke with the liberation party",
-   "syms": [],
-   "src": "myFT — emerging markets",
-   "ts": "2026-11-14T05:00:08Z",
-   "url": "https://www.ft.com/content/dbf8d003-aa1d-4f23-9702-45fcff4360fd?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Martin Wolf on the US midterms: Trump loses. European populism lives on.",
-   "w": "Timothy Garton Ash on why Europe’s populist right may well outlast Trump",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-14T05:00:00Z",
-   "url": "https://www.ft.com/content/094acead-5c40-4609-87fd-f02b171eb42c?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "How the Jensen Huang scandal created a headache for business-friendly Singapore",
    "w": "The scandal has cast a spotlight on Singapore's success as a chip hub - and a location for alleged illicit trade.",
    "syms": [],
@@ -3077,14 +3092,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-13T18:30:05Z",
    "url": "https://www.lemonde.fr/les-decodeurs/article/2026/11/13/tout-comprendre-au-smic-le-salaire-minimum-que-le-gouvernement-va-revaloriser_6809379_4355770.html"
-  },
-  {
-   "h": "La panne de Microsoft alerte entreprises et salariés sur leur dépendance aux outils numériques : « On a tous été un peu dans le même bateau que nos clients »",
-   "w": "L’arrêt des services du groupe américain entre jeudi 12 novembre et vendredi midi restant malgré tout limité, l’impact sur les entreprises est à relativiser.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-13T17:48:12Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/11/13/la-panne-de-microsoft-alerte-entreprises-et-salaries-sur-leur-dependance-aux-outils-numeriques-on-a-tous-un-peu-ete-dans-le-meme-bateau-que-nos-clients_6809369_3234.html"
   }
  ],
  "summary": {
