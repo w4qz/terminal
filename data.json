@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T09:27:58.729573Z",
+ "generated_at": "2026-11-15T10:19:24.204978Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -191,8 +191,8 @@
    "prev": 2799.0601,
    "chg": -8.5701,
    "pct": -0.31,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^RUT) — last update failed",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^RUT)",
    "ts": "2026-11-13T21:00:00Z",
    "open": 2805.8999,
    "lo": 2763.72,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 65582.9297,
+   "p": 65438.6719,
    "prev": 64128.0508,
-   "chg": 1454.8789,
-   "pct": 2.27,
+   "chg": 1310.6211,
+   "pct": 2.04,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-15T09:27:58.729573Z",
+   "ts": "2026-11-15T10:19:24.204978Z",
    "open": 64119.7812,
    "lo": 62093.5156,
    "hi": 65889.2344,
-   "vol": 53449654272,
+   "vol": 54424403968,
    "h": [
     80024.01,
     80006.66,
@@ -844,7 +844,7 @@
     71342.97,
     68249.27,
     64128.05,
-    65582.93
+    65438.67
    ]
   }
  },
@@ -1104,7 +1104,7 @@
    "earnEnd": 1799933400,
    "earnEst": true,
    "exDiv": 1796860800,
-   "divDate": 1799280000,
+   "divDate": 1807142400,
    "lastDiv": 1.107,
    "trailDiv": 6.0
   },
@@ -1149,9 +1149,9 @@
    "sector": "Energy",
    "industry": "Oil & Gas Integrated",
    "ccy": "SAR",
-   "mcap": 6444412829696,
-   "pe": 14.3226,
-   "fpe": 15.9521,
+   "mcap": 6449251483648,
+   "pe": 14.3333,
+   "fpe": 15.9641,
    "eps": 1.86,
    "feps": 1.67,
    "revTTM": 1932166955008,
@@ -1159,7 +1159,7 @@
    "shares": 241907400000,
    "beta": -0.022,
    "div": 1.36,
-   "divYield": 5.105,
+   "divYield": 5.101,
    "target": 29.9778,
    "targetHi": 34.0,
    "targetLo": 27.0,
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1656497373184,
    "pe": 44.318,
-   "fpe": 17.8742,
+   "fpe": 17.8273,
    "eps": 7.83,
-   "feps": 19.414,
+   "feps": 19.4651,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1019350286336,
+   "mcap": 1016233525248,
    "pe": 46.4094,
    "fpe": 39.7569,
    "eps": 2.76,
    "feps": 3.2218,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.773,
@@ -1868,9 +1868,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 521499836416,
-   "pe": 50.6924,
+   "pe": 50.6055,
    "fpe": 18.216,
-   "eps": 5.82,
+   "eps": 5.83,
    "feps": 16.1962,
    "revTTM": 66013999104,
    "netIncome": 10302999552,
@@ -1911,9 +1911,9 @@
    "ccy": "USD",
    "mcap": 429061144576,
    "pe": 16.1446,
-   "fpe": 13.3049,
+   "fpe": 13.3304,
    "eps": 13.62,
-   "feps": 16.527,
+   "feps": 16.4954,
    "revTTM": 226256994304,
    "netIncome": 26976000000,
    "shares": 1951253686,
@@ -1999,9 +1999,9 @@
    "ccy": "USD",
    "mcap": 404771504128,
    "pe": 118.3028,
-   "fpe": 66.1698,
+   "fpe": 66.2625,
    "eps": 1.42,
-   "feps": 2.5388,
+   "feps": 2.5352,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
@@ -2041,8 +2041,8 @@
    "fpe": 15.9227,
    "eps": 3.76,
    "feps": 6.0065,
-   "revTTM": 63324999680,
-   "netIncome": 13267000320,
+   "revTTM": 66958999552,
+   "netIncome": 14958999552,
    "shares": 3936980098,
    "beta": 1.002,
    "div": 1.68,
@@ -2052,24 +2052,24 @@
    "targetLo": 109.0,
    "rating": "Buy",
    "analysts": 24,
-   "revGrowth": 17.6,
-   "epsGrowth": 52.1,
-   "grossMargin": 64.524,
-   "opMargin": 25.391,
-   "netMargin": 20.951,
-   "roe": 27.319,
-   "debtEq": 62.017,
-   "cash": 15918000128,
-   "debt": 31185000448,
-   "fcf": 11182624768,
+   "revGrowth": 24.4,
+   "epsGrowth": 58.3,
+   "grossMargin": 64.066,
+   "opMargin": 27.166,
+   "netMargin": 22.341,
+   "roe": 30.38,
+   "debtEq": 57.742,
+   "cash": 15845000192,
+   "debt": 29799000064,
+   "fcf": 10818750464,
    "w52lo": 72.8,
    "w52hi": 130.37,
-   "evEbitda": 22.393,
+   "evEbitda": 18.92,
    "earnTs": 1802293200,
    "earnStart": 1802293200,
    "earnEnd": 1802293200,
    "earnEst": false,
-   "exDiv": 1790899200,
+   "exDiv": 1799020800,
    "divDate": 1792540800,
    "lastDiv": 0.42,
    "trailDiv": 0.0
@@ -2082,9 +2082,9 @@
    "ccy": "USD",
    "mcap": 426963795968,
    "pe": 29.2773,
-   "fpe": 28.1245,
+   "fpe": 28.1338,
    "eps": 3.39,
-   "feps": 3.529,
+   "feps": 3.5278,
    "revTTM": 51053998080,
    "netIncome": 14629000192,
    "shares": 4301902335,
@@ -2168,8 +2168,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 121.2883,
+   "shares": 572600000,
+   "divYield": 2.608,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2221,6 +2226,111 @@
  ],
  "news": [
   {
+   "h": "Les revalorisations du smic et des « bas salaires » des fonctionnaires coûteront « un peu plus de 1 milliard d’euros » aux finances publiques, selon le gouvernement",
+   "w": "L’exécutif avait annoncé cette semaine, en pleines mobilisations sociales, la revalorisation du salaire minimal de 1,6 % à partir du 1ᵉʳ décembre et celle des « bas salaires » de plus d’un million d’agents de la fonction publique.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-15T10:09:59Z",
+   "url": "https://www.lemonde.fr/politique/article/2026/11/15/les-revalorisations-du-smic-et-des-bas-salaires-des-fonctionnaires-couteront-un-peu-plus-de-1-milliard-d-euros-aux-finances-publiques-selon-le-gouvernement_6811009_823448.html"
+  },
+  {
+   "h": "Le directeur financier de Datadog vend des actions pour 5,46 millions $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T10:02:06Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-de-datadog-vend-des-actions-pour-546-millions--93CH-3696603"
+  },
+  {
+   "h": "Le directeur financier de Datadog vend des actions pour 9,1 M$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T10:02:04Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-de-datadog-vend-des-actions-pour-91-m-93CH-3696602"
+  },
+  {
+   "h": "Pension funds raise alarm on systemic risk from climate events",
+   "w": "Asset managers, insurers and central bankers gather at COP31 to discuss financial stability concerns as temperatures rise",
+   "syms": [],
+   "src": "myFT — financials",
+   "ts": "2026-11-15T10:00:04Z",
+   "url": "https://www.ft.com/content/fcce6df7-7040-4c83-84ea-30f8fbac1239?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "« Nier les discriminations tout en cultivant les stéréotypes sur lesquels elles prolifèrent, c’est casser le thermomètre en attisant la fièvre »",
+   "w": "Contrairement aux affirmations répétées par le Rassemblement national, l’expérience des discriminations, solidement établie par les sciences, est omniprésente dans notre société, dénonce un collectif de chercheurs dans une tribune au « Monde ».",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-15T09:49:47Z",
+   "url": "https://www.lemonde.fr/idees/article/2026/11/15/nier-les-discriminations-tout-en-cultivant-les-stereotypes-sur-lesquels-elles-proliferent-c-est-casser-le-thermometre-en-attisant-la-fievre_6811003_3232.html"
+  },
+  {
+   "h": "Le PDG d’EquipmentShare, Jabbok Schlacks, achète pour 444.504$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T09:47:15Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-dequipmentshare-jabbok-schlacks-achete-pour-444504-dactions-93CH-3696601"
+  },
+  {
+   "h": "Le directeur juridique de Datadog vend des actions pour 1.208.327$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T09:46:58Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-juridique-de-datadog-vend-des-actions-pour-1208327-93CH-3696600"
+  },
+  {
+   "h": "Le directeur comptable de Five Below cède des actions pour 1.369.445$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T09:46:43Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-comptable-de-five-below-cede-des-actions-pour-1369445-93CH-3696599"
+  },
+  {
+   "h": "Un administrateur d’AAON achète des actions pour 74.660$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T09:46:37Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-daaon-achete-des-actions-pour-74660-93CH-3696598"
+  },
+  {
+   "h": "L’essor des centres de données IA en Irlande contesté en justice",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T09:37:57Z",
+   "url": "https://fr.investing.com/news/stock-market-news/lessor-des-centres-de-donnees-ia-en-irlande-conteste-en-justice-3696596"
+  },
+  {
+   "h": "La PDG d’United Therapeutics vend des actions pour 4,77 millions $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T09:32:52Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/la-pdg-dunited-therapeutics-vend-des-actions-pour-477-millions--93CH-3696595"
+  },
+  {
+   "h": "Le PDG de VSE Corp John Cuomo cède des actions pour 293.614$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T09:32:44Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-vse-corp-john-cuomo-cede-des-actions-pour-293614-93CH-3696594"
+  },
+  {
+   "h": "Le directeur de Globus Medical, Tobin, cède des actions pour 2,2 M$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T09:32:29Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-de-globus-medical-tobin-cede-des-actions-pour-22-m-93CH-3696593"
+  },
+  {
    "h": "« Les citoyens s’apprêtent à n’être qu’une simple ressource gérée par des patrons de la tech tels que Musk, Thiel et Zuckerberg »",
    "w": "Dans une tribune au « Monde », Katharina Pistor, professeure de droit, compare la domination exercée par la « confrérie de la tech » sur les citoyens à l’approche adoptée autrefois par les colons envers les peuples autochtones.",
    "syms": [],
@@ -2237,42 +2347,6 @@
    "url": "https://www.lemonde.fr/economie/article/2026/11/15/sans-les-thermes-royat-est-morte-le-possible-deremboursement-des-cures-thermales-menace-un-modele-deja-fragilise_6811001_3234.html"
   },
   {
-   "h": "5 grands mouvements d’analystes sur l’IA : Nvidia touché par des dégradations après le départ de Huang",
-   "w": "",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T09:00:02Z",
-   "url": "https://fr.investing.com/news/stock-market-news/5-grands-mouvements-danalystes-sur-lia--nvidia-touche-par-des-degradations-apres-le-depart-de-huang-3696590"
-  },
-  {
-   "h": "La BCE ne peut pas remplacer une politique budgétaire saine, avertit Knot",
-   "w": "",
-   "syms": [
-    "EURUSD"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T08:56:54Z",
-   "url": "https://fr.investing.com/news/stock-market-news/la-bce-ne-peut-pas-remplacer-une-politique-budgetaire-saine-avertit-knot-3696588"
-  },
-  {
-   "h": "Le PDG de Health Catalyst, Simeon Kohl, acquiert 105.438$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T08:47:35Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-health-catalyst-simeon-kohl-acquiert-105438-dactions-93CH-3696587"
-  },
-  {
-   "h": "Un administrateur de First Busey vend des actions BUSE pour 43.878$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T08:47:01Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-first-busey-vend-des-actions-buse-pour-43878-93CH-3696586"
-  },
-  {
    "h": "Megaspeed says Alice Huang left in 2025 as it launches internal probe into reports about its business",
    "w": "The Singapore-based cloud computing company has faced heightened scrutiny since reports linked Nvidia's Jensen Huang to former Megaspeed executive Alice Huang.",
    "syms": [
@@ -2281,54 +2355,6 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-15T08:34:46Z",
    "url": "https://www.cnbc.com/2026/11/15/megaspeed-alice-huang-probe-nvidia-scandal.html"
-  },
-  {
-   "h": "Le président de Moderna vend des actions pour environ 11,7 millions $",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T08:32:26Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-president-de-moderna-vend-des-actions-pour-environ-117-millions--93CH-3696585"
-  },
-  {
-   "h": "Le directeur stratégique d’Airbnb, Blecharczyk, cède des actions pour 2,35M$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T08:17:03Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-strategique-dairbnb-blecharczyk-cede-des-actions-pour-235m-93CH-3696584"
-  },
-  {
-   "h": "Le co-directeur des opérations de TransDigm vend des actions pour 4,27 millions $",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T08:02:18Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-codirecteur-des-operations-de-transdigm-vend-des-actions-pour-427-millions--93CH-3696581"
-  },
-  {
-   "h": "Le directeur d’Ibex, Mingzhe Zhuang, cède 221.444$ d’actions ordinaires",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T08:02:05Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-dibex-mingzhe-zhuang-cede-221444-dactions-ordinaires-93CH-3696580"
-  },
-  {
-   "h": "Le directeur des ventes d’Iridium cède des actions pour 267.393$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T08:01:59Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-des-ventes-diridium-cede-des-actions-pour-267393-93CH-3696579"
-  },
-  {
-   "h": "Un directeur de NetApp, Deepak Ahuja, cède des actions pour 684.185$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T07:47:15Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-netapp-deepak-ahuja-cede-des-actions-pour-684185-93CH-3696578"
   },
   {
    "h": "Immobilier : les sommes reçues des promoteurs en échange du désistement d’un recours contre leur permis de construire doivent-elles être déclarées au fisc ?",
@@ -2485,6 +2511,32 @@
    "mine": 1
   },
   {
+   "h": "Subaru retools boxer engine for fuel economy, with eye on hybrids",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T04:19:24.204978Z",
+   "url": "https://asia.nikkei.com/business/automobiles/subaru-retools-boxer-engine-for-fuel-economy-with-eye-on-hybrids"
+  },
+  {
+   "h": "Eyeing his legacy, Trump seizes chance for arms talks with Xi and Putin",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T04:19:24.204978Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/eyeing-his-legacy-trump-seizes-chance-for-arms-talks-with-xi-and-putin"
+  },
+  {
+   "h": "Philippines moves to secure emergency access to oil in Indonesia, Thailand",
+   "w": "",
+   "syms": [
+    "BRENT"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T04:19:24.204978Z",
+   "url": "https://asia.nikkei.com/business/energy/philippines-moves-to-secure-emergency-access-to-oil-in-indonesia-thailand"
+  },
+  {
    "h": "Gaming emerges as a new corporate networking tool in Japan",
    "w": "",
    "syms": [],
@@ -2592,32 +2644,6 @@
    "url": "https://asia.nikkei.com/life-arts/life/no-grass-no-problem-playing-sand-golf-in-the-australian-outback"
   },
   {
-   "h": "China's century-old 'porcelain capital' eyes global luxury",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T00:37:39.316315Z",
-   "url": "https://asia.nikkei.com/life-arts/arts/china-s-century-old-porcelain-capital-eyes-global-luxury"
-  },
-  {
-   "h": "Japan to require online authorization for some transit passengers",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T00:37:39.316315Z",
-   "url": "https://asia.nikkei.com/spotlight/japan-immigration/japan-to-require-online-authorization-for-some-transit-passengers"
-  },
-  {
-   "h": "China sees Nvidia chief Huang's swift downfall as political hit",
-   "w": "",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T00:37:39.316315Z",
-   "url": "https://asia.nikkei.com/business/tech/semiconductors/china-sees-nvidia-chief-huang-s-swift-downfall-as-political-hit"
-  },
-  {
    "h": "SpaceX successfully catches Starship rocket in huge milestone for the space industry",
    "w": "The historic first gets SpaceX closer to “rapid reusability” of rockets.",
    "syms": [],
@@ -2626,7 +2652,7 @@
    "url": "https://www.marketwatch.com/story/spacex-successfully-catches-starship-rocket-in-huge-milestone-for-the-space-industry-f42c136c?mod=mw_rss_topstories"
   },
   {
-   "h": "Beauty advent calendars can cost hundreds - but are they value for money?",
+   "h": "Beauty advent calendars can cost hundreds but are they value for money?",
    "w": "Beauty calendars have become a Christmas staple and have become particularly popular with female shoppers.",
    "syms": [],
    "src": "BBC — Business",
@@ -2651,7 +2677,7 @@
    "url": "https://www.cnbc.com/2026/11/14/spacex-plans-to-try-first-ever-catch-of-starship-rocket-from-orbit.html"
   },
   {
-   "h": "US air travel chaos exposes system held together by ‘string and duct tape’",
+   "h": "One router overload brought US air travel to a standstill",
    "w": "Decades of bipartisan neglect have left America’s aviation infrastructure unfit for purpose, say experts",
    "syms": [],
    "src": "myFT — world",
@@ -3050,31 +3076,6 @@
    "ts": "2026-11-14T05:00:37Z",
    "url": "https://www.ft.com/content/b5bdf7c5-242b-4078-b3fd-a86b488d5a3a",
    "mine": 1
-  },
-  {
-   "h": "La plus-value immobilière est-elle exonérée en cas de départ volontaire de l’entreprise ?",
-   "w": "Lorsqu’un contribuable fait l’objet d’une rupture de son contrat de travail, il peut bénéficier, sous certaines conditions, d’une exonération de la plus-value réalisée lors de la vente d’un logement, explique Audrey Andrisse, avocate chez CMS Francis Lefebvre.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-14T05:00:30Z",
-   "url": "https://www.lemonde.fr/argent/article/2026/11/14/la-plus-value-immobiliere-est-elle-exoneree-en-cas-de-depart-volontaire-de-l-entreprise_6809690_1657007.html"
-  },
-  {
-   "h": "Where jazz goes to church",
-   "w": "For a decade, an east London church has hosted some of the world’s most adventurous jazz musicians. Now Church of Sound is taking its worship to the Barbican for this week’s London Jazz Festival",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-14T05:00:27Z",
-   "url": "https://www.ft.com/content/7ca2bfec-3679-486a-b2e4-a436c4970328",
-   "mine": 1
-  },
-  {
-   "h": "Suspension des vols aux Etats-Unis : une panne géante que l’administration Trump cherche déjà à politiser",
-   "w": "Un dysfonctionnement affectant les centres régionaux de contrôle aérien a conduit les autorités à clouer les avions au sol dans tout le pays, vendredi. Le secrétaire aux transports, Sean Duffy, a mis en cause du « vieux matériel » et réclame 50 milliards de dollars au Congrès.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-14T05:00:20Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/11/14/aux-etats-unis-apres-la-suspension-des-vols-l-administration-trump-politise-cette-panne-geante-et-reclame-50-milliards-de-dollars_6809689_3234.html"
   },
   {
    "h": "How the Jensen Huang scandal created a headache for business-friendly Singapore",
