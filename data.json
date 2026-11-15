@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T08:38:30.537285Z",
+ "generated_at": "2026-11-15T09:27:58.729573Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -191,8 +191,8 @@
    "prev": 2799.0601,
    "chg": -8.5701,
    "pct": -0.31,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^RUT)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^RUT) — last update failed",
    "ts": "2026-11-13T21:00:00Z",
    "open": 2805.8999,
    "lo": 2763.72,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 64574.4609,
+   "p": 65582.9297,
    "prev": 64128.0508,
-   "chg": 446.4102,
-   "pct": 0.7,
+   "chg": 1454.8789,
+   "pct": 2.27,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-15T08:38:30.537285Z",
+   "ts": "2026-11-15T09:27:58.729573Z",
    "open": 64119.7812,
    "lo": 62093.5156,
-   "hi": 65289.0078,
-   "vol": 52150435840,
+   "hi": 65889.2344,
+   "vol": 53449654272,
    "h": [
     80024.01,
     80006.66,
@@ -844,7 +844,7 @@
     71342.97,
     68249.27,
     64128.05,
-    64574.46
+    65582.93
    ]
   }
  },
@@ -2221,6 +2221,58 @@
  ],
  "news": [
   {
+   "h": "« Les citoyens s’apprêtent à n’être qu’une simple ressource gérée par des patrons de la tech tels que Musk, Thiel et Zuckerberg »",
+   "w": "Dans une tribune au « Monde », Katharina Pistor, professeure de droit, compare la domination exercée par la « confrérie de la tech » sur les citoyens à l’approche adoptée autrefois par les colons envers les peuples autochtones.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-15T09:00:28Z",
+   "url": "https://www.lemonde.fr/idees/article/2026/11/15/les-citoyens-s-appretent-a-n-etre-qu-une-simple-ressource-geree-par-des-patrons-de-la-tech-tels-que-musk-thiel-et-zuckerberg_6811002_3232.html"
+  },
+  {
+   "h": "« Sans les thermes, Royat est morte » : le possible déremboursement des cures thermales menace un modèle déjà fragilisé",
+   "w": "Dans la petite ville du Puy-de-Dôme, comme dans les autres stations, le thermalisme est essentiel aux hôtels et aux commerces. En proposant de transférer 200 millions d’euros de prise en charge des cures aux complémentaires de santé, le gouvernement a provoqué une fronde chez les professionnels et les communes concernés.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-15T09:00:17Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/11/15/sans-les-thermes-royat-est-morte-le-possible-deremboursement-des-cures-thermales-menace-un-modele-deja-fragilise_6811001_3234.html"
+  },
+  {
+   "h": "5 grands mouvements d’analystes sur l’IA : Nvidia touché par des dégradations après le départ de Huang",
+   "w": "",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T09:00:02Z",
+   "url": "https://fr.investing.com/news/stock-market-news/5-grands-mouvements-danalystes-sur-lia--nvidia-touche-par-des-degradations-apres-le-depart-de-huang-3696590"
+  },
+  {
+   "h": "La BCE ne peut pas remplacer une politique budgétaire saine, avertit Knot",
+   "w": "",
+   "syms": [
+    "EURUSD"
+   ],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T08:56:54Z",
+   "url": "https://fr.investing.com/news/stock-market-news/la-bce-ne-peut-pas-remplacer-une-politique-budgetaire-saine-avertit-knot-3696588"
+  },
+  {
+   "h": "Le PDG de Health Catalyst, Simeon Kohl, acquiert 105.438$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T08:47:35Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-health-catalyst-simeon-kohl-acquiert-105438-dactions-93CH-3696587"
+  },
+  {
+   "h": "Un administrateur de First Busey vend des actions BUSE pour 43.878$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T08:47:01Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-first-busey-vend-des-actions-buse-pour-43878-93CH-3696586"
+  },
+  {
    "h": "Megaspeed says Alice Huang left in 2025 as it launches internal probe into reports about its business",
    "w": "The Singapore-based cloud computing company has faced heightened scrutiny since reports linked Nvidia's Jensen Huang to former Megaspeed executive Alice Huang.",
    "syms": [
@@ -2229,6 +2281,14 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-15T08:34:46Z",
    "url": "https://www.cnbc.com/2026/11/15/megaspeed-alice-huang-probe-nvidia-scandal.html"
+  },
+  {
+   "h": "Le président de Moderna vend des actions pour environ 11,7 millions $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T08:32:26Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-president-de-moderna-vend-des-actions-pour-environ-117-millions--93CH-3696585"
   },
   {
    "h": "Le directeur stratégique d’Airbnb, Blecharczyk, cède des actions pour 2,35M$",
@@ -2269,46 +2329,6 @@
    "src": "Investing.com France",
    "ts": "2026-11-15T07:47:15Z",
    "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-netapp-deepak-ahuja-cede-des-actions-pour-684185-93CH-3696578"
-  },
-  {
-   "h": "Le PDG de NetApp George Kurian cède des actions pour 7,6 M$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T07:47:09Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-netapp-george-kurian-cede-des-actions-pour-76-m-93CH-3696577"
-  },
-  {
-   "h": "Le directeur des ressources humaines d’Ibex cède des actions pour 100.164$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T07:31:49Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-des-ressources-humaines-dibex-cede-des-actions-pour-100164-93CH-3696576"
-  },
-  {
-   "h": "Le directeur administratif de Marqeta, Sumner Crystal, cède des actions pour 20.487$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T07:16:59Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-administratif-de-marqeta-sumner-crystal-cede-des-actions-pour-20487-93CH-3696575"
-  },
-  {
-   "h": "Novelis cède deux filiales en Chine pour 265 millions $",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T07:09:52Z",
-   "url": "https://fr.investing.com/news/company-news/novelis-cede-deux-filiales-en-chine-pour-265-millions--3696573"
-  },
-  {
-   "h": "Steven Conine, directeur de Wayfair, cède des actions pour 7,13 millions $",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T06:47:17Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/steven-conine-directeur-de-wayfair-cede-des-actions-pour-713-millions--93CH-3696572"
   },
   {
    "h": "Immobilier : les sommes reçues des promoteurs en échange du désistement d’un recours contre leur permis de construire doivent-elles être déclarées au fisc ?",
@@ -2465,6 +2485,30 @@
    "mine": 1
   },
   {
+   "h": "Gaming emerges as a new corporate networking tool in Japan",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T03:27:58.729573Z",
+   "url": "https://asia.nikkei.com/business/business-trends/gaming-emerges-as-a-new-corporate-networking-tool-in-japan"
+  },
+  {
+   "h": "Footloose in Vientiane: A capital in no great hurry",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T03:27:58.729573Z",
+   "url": "https://asia.nikkei.com/life-arts/life/destinations/footloose-in-vientiane-a-capital-in-no-great-hurry"
+  },
+  {
+   "h": "How Trump might be tempted to orchestrate an 'end to the Korean War'",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T03:27:58.729573Z",
+   "url": "https://asia.nikkei.com/spotlight/comment/how-trump-might-be-tempted-to-orchestrate-an-end-to-the-korean-war"
+  },
+  {
    "h": "The world according to China",
    "w": "The Apec summit in Shenzhen this week will showcase China’s ambition to reshape the global order on its own terms",
    "syms": [],
@@ -2588,32 +2632,6 @@
    "src": "BBC — Business",
    "ts": "2026-11-15T00:01:07Z",
    "url": "https://www.bbc.co.uk/news/articles/cqn83l442724o?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "Subaru retools boxer engine for fuel economy, with eye on hybrids",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T23:38:27.801698Z",
-   "url": "https://asia.nikkei.com/business/automobiles/subaru-retools-boxer-engine-for-fuel-economy-with-eye-on-hybrids"
-  },
-  {
-   "h": "Eyeing his legacy, Trump seizes chance for arms talks with Xi and Putin",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T23:38:27.801698Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/eyeing-his-legacy-trump-seizes-chance-for-arms-talks-with-xi-and-putin"
-  },
-  {
-   "h": "Philippines moves to secure emergency access to oil in Indonesia, Thailand",
-   "w": "",
-   "syms": [
-    "BRENT"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T23:38:27.801698Z",
-   "url": "https://asia.nikkei.com/business/energy/philippines-moves-to-secure-emergency-access-to-oil-in-indonesia-thailand"
   },
   {
    "h": "Passengers face widespread disruption after US air traffic control outage",
@@ -3073,24 +3091,6 @@
    "src": "Federal Reserve — press releases",
    "ts": "2026-11-13T21:15:00Z",
    "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261113a.htm"
-  },
-  {
-   "h": "Pressure grows on Trump's Commerce Secretary Lutnick in fallout from Nvidia scandal",
-   "w": "Scott Bessent told CNBC that several government agencies \"were in favour of putting Megaspeed on the entity list for months\".",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "BBC — Business",
-   "ts": "2026-11-13T19:53:57Z",
-   "url": "https://www.bbc.co.uk/news/articles/cqvg2d1eg7zro?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "Why is Microsoft's outage lasting so long and will emails be lost?",
-   "w": "Microsoft says it is continuing to restore services including Outlook and Teams following a global outage.",
-   "syms": [],
-   "src": "BBC — Business",
-   "ts": "2026-11-13T18:36:57Z",
-   "url": "https://www.bbc.co.uk/news/articles/cwvg238zrnm5o?at_medium=RSS&at_campaign=rss"
   }
  ],
  "summary": {
