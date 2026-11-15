@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T14:25:24.697124Z",
+ "generated_at": "2026-11-15T15:14:08.341973Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -704,8 +704,8 @@
    "prev": 3885.3,
    "chg": 1.0,
    "pct": 0.03,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (GC=F)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (GC=F) — last update failed",
    "ts": "2026-11-13T22:00:00Z",
    "open": 3883.3,
    "lo": 3871.1001,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 65264.1914,
+   "p": 64618.6211,
    "prev": 64128.0508,
-   "chg": 1136.1406,
-   "pct": 1.77,
+   "chg": 490.5703,
+   "pct": 0.76,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-15T14:25:24.697124Z",
+   "ts": "2026-11-15T15:14:08.341973Z",
    "open": 64119.7812,
    "lo": 62093.5156,
    "hi": 65889.2344,
-   "vol": 53523075072,
+   "vol": 52256628736,
    "h": [
     80024.01,
     80006.66,
@@ -844,7 +844,7 @@
     71342.97,
     68249.27,
     64128.05,
-    65268.43
+    64618.62
    ]
   }
  },
@@ -866,11 +866,11 @@
    "beta": 1.089,
    "div": 1.08,
    "divYield": 0.303,
-   "target": 346.3655,
+   "target": 345.6313,
    "targetHi": 425.0,
    "targetLo": 250.0,
    "rating": "Buy",
-   "analysts": 40,
+   "analysts": 39,
    "revGrowth": 11.7,
    "epsGrowth": 14.1,
    "grossMargin": 48.786,
@@ -1203,9 +1203,9 @@
    "beta": 1.279,
    "div": 2.1,
    "divYield": 0.327,
-   "target": 850.1025,
+   "target": 851.1249,
    "targetHi": 1050.0,
-   "targetLo": 629.06,
+   "targetLo": 650.0,
    "rating": "Strong buy",
    "analysts": 57,
    "revGrowth": 26.1,
@@ -1442,7 +1442,7 @@
    "industry": "Semiconductors",
    "ccy": "KRW",
    "mcap": 857490757517312,
-   "fpe": 2.2698,
+   "fpe": 2.2639,
    "revTTM": 269336677711872,
    "netIncome": 189262280523776,
    "shares": 705173324,
@@ -1534,7 +1534,7 @@
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.773,
-   "target": 130.4,
+   "target": 130.775,
    "targetHi": 155.0,
    "targetLo": 81.0,
    "rating": "Buy",
@@ -1703,7 +1703,7 @@
    "beta": 0.141,
    "div": 4.28,
    "divYield": 2.509,
-   "target": 184.3182,
+   "target": 184.1818,
    "targetHi": 213.0,
    "targetLo": 160.0,
    "rating": "Buy",
@@ -2221,6 +2221,108 @@
  ],
  "news": [
   {
+   "h": "‘I’m sick of flying’: I paid for priority boarding, but the overhead bins were full. Was I duped?",
+   "w": "“Maybe next time I’ll try the other approach: I’ll board whenever I feel like it and drop my suitcase in the first open slot I see.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-15T15:00:00Z",
+   "url": "https://www.marketwatch.com/story/im-sick-of-flying-i-paid-for-priority-boarding-but-the-overhead-bins-were-full-was-i-duped-0badcc80?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Nvidia is gearing up for one of Wall Street’s most anticipated earnings calls in years",
+   "w": "Jensen Huang’s sudden departure has made Tuesday’s earnings call “the most important in the company’s history.”",
+   "syms": [
+    "NVDA",
+    "SPX"
+   ],
+   "src": "MarketWatch",
+   "ts": "2026-11-15T15:00:00Z",
+   "url": "https://www.marketwatch.com/story/nvidia-is-gearing-up-for-one-of-wall-streets-most-anticipated-earnings-calls-in-years-91855b1e?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Suspected China spy linked to Nvidia's ex-boss left in 2025, Megaspeed says",
+   "w": "The Nvidia scandal has raised questions over whether advanced AI chips ended up in China, despite US restrictions.",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "BBC — Business",
+   "ts": "2026-11-15T14:56:21Z",
+   "url": "https://www.bbc.co.uk/news/articles/cmdx1vpprk9vo?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "Horizon Kinetics Gestion d’actifs achète pour 2.305$ d’actions RENN Fund",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T14:46:33Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/horizon-kinetics-gestion-dactifs-achete-pour-2305-dactions-renn-fund-93CH-3696666"
+  },
+  {
+   "h": "Les investisseurs de Savara se préparent avant une décision clé de la FDA",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T14:42:44Z",
+   "url": "https://fr.investing.com/news/earnings/les-investisseurs-de-savara-se-preparent-avant-une-decision-cle-de-la-fda-93CH-3696665"
+  },
+  {
+   "h": "Driven Brands : résultats attendus dans un contexte de retraitements comptables",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T14:40:16Z",
+   "url": "https://fr.investing.com/news/earnings/driven-brands--resultats-attendus-dans-un-contexte-de-retraitements-comptables-93CH-3696664"
+  },
+  {
+   "h": "Hub Group : les résultats du T3 sous le signe des problèmes comptables",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T14:40:13Z",
+   "url": "https://fr.investing.com/news/earnings/hub-group--les-resultats-du-t3-sous-le-signe-des-problemes-comptables-93CH-3696663"
+  },
+  {
+   "h": "Jefferies réitère sa note sur Summit Therapeutics après un revers de la FDA",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T14:38:14Z",
+   "url": "https://fr.investing.com/news/analyst-ratings/jefferies-reitere-sa-note-sur-summit-therapeutics-apres-un-revers-de-la-fda-93CH-3696661"
+  },
+  {
+   "h": "Texas Pacific Land : Horizon Kinetics achète une action à 370$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T14:32:33Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/texas-pacific-land--horizon-kinetics-achete-une-action-a-370-93CH-3696657"
+  },
+  {
+   "h": "Le vice-président exécutif de Verizon Kyle Malady cède des actions pour 56.309$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T14:32:30Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-vicepresident-executif-de-verizon-kyle-malady-cede-des-actions-pour-56309-93CH-3696656"
+  },
+  {
+   "h": "Social Security and the blue wave: What could happen to payroll taxes and senior tax breaks",
+   "w": "Democrats advocated taxing high earners to shore up Social Security in the runup to the midterms. Plus, a senior deduction is slated to expire in two years.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-15T14:30:01Z",
+   "url": "https://www.cnbc.com/2026/11/15/social-security-tax-changes-midterm-election.html"
+  },
+  {
+   "h": "UK businesses facing big rise in electricity bills by end of decade",
+   "w": "Estimated increase of about 13% is largely driven by the cost of investment in electricity networks",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-15T14:29:01Z",
+   "url": "https://www.ft.com/content/51ce4dd5-d726-41fd-b46c-a378dce14b69?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "'We slept here.' Flight delays linger as airlines scramble to recover from ground stop",
    "w": "Flight disruptions lingered two days after the Federal Aviation Administration grounded departures nationwide for more than four hours.",
    "syms": [],
@@ -2229,12 +2331,29 @@
    "url": "https://www.cnbc.com/2026/11/15/flight-delays-ground-faa-stop.html"
   },
   {
-   "h": "Fermeture de l’A13 : derrière les travaux indispensables, la crainte de congestion sur les routes des Hauts-de-Seine",
-   "w": "Une portion de cette autoroute qui relie Paris à Caen doit fermer durant huit mois pour permettre de consolider un tunnel.",
+   "h": "Le PDG de M&T Bank Corp, Rene Jones, cède des actions pour 4,64 millions $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T14:17:25Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-mt-bank-corp-rene-jones-cede-des-actions-pour-464-millions--93CH-3696655"
+  },
+  {
+   "h": "Tout savoir sur la fermeture de l’autoroute A13 entre Paris et Caen : durée des travaux, itinéraire de substitution et craintes de congestion",
+   "w": "Une portion de cette autoroute qui relie Paris à Caen doit fermer durant huit mois, dès lundi 16 novembre, pour permettre de consolider un tunnel.",
    "syms": [],
    "src": "Le Monde — Économie",
    "ts": "2026-11-15T14:06:48Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/15/fermeture-de-l-a13-derriere-les-travaux-indispensables-la-crainte-de-congestion-sur-les-routes-des-hauts-de-seine_6811023_3234.html"
+  },
+  {
+   "h": "Young Britons out of work or training for a year to be guaranteed jobs",
+   "w": "Work and pensions secretary lays out plan to address ‘lost generation’ ahead of changes to unemployment support",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-15T14:03:29Z",
+   "url": "https://www.ft.com/content/7fa20d99-0085-445d-95c9-b2cfe80cd8e1?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "La SVP et directrice des ressources humaines de Consumers Bancorp achète des actions pour 3.708$",
@@ -2261,36 +2380,12 @@
    "url": "https://www.marketwatch.com/story/will-the-anthropic-ipo-create-a-disturbance-in-the-broader-u-s-equity-market-like-spacex-did-05ba4351?mod=mw_rss_topstories"
   },
   {
-   "h": "I'm a psychologist who studies couples—5 signs you've fallen into a common rut: 'It builds through small habits that each look harmless'",
-   "w": "Couples today are vulnerable to \"coexistence without contact,\" says psychologist Mark Travers. Here are the symptoms — and what you can do to counteract them.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-15T13:48:01Z",
-   "url": "https://www.cnbc.com/make-it/2026/11/15/couples-coexisting-without-connecting.html"
-  },
-  {
    "h": "Une directrice de Take-Two vend des actions TTWO pour 73.323$",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
    "ts": "2026-11-15T13:47:29Z",
    "url": "https://fr.investing.com/news/insider-trading-news/une-directrice-de-taketwo-vend-des-actions-ttwo-pour-73323-93CH-3696653"
-  },
-  {
-   "h": "Le directeur des opérations d’Alliance Laundry Holdings cède des actions pour 1,58 M$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T13:47:23Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-des-operations-dalliance-laundry-holdings-cede-des-actions-pour-158-m-93CH-3696652"
-  },
-  {
-   "h": "Le PDG de Synopsys, Sassine Ghazi, cède des actions pour 5,47 M$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T13:32:27Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-synopsys-sassine-ghazi-cede-des-actions-pour-547-m-93CH-3696651"
   },
   {
    "h": "Should a widow leave her late partner’s home to her stepkids — or cut off contact with them?",
@@ -2309,52 +2404,12 @@
    "url": "https://www.marketwatch.com/story/the-u-s-is-turning-more-socialist-under-trump-2-0-one-analyst-says-what-could-change-with-a-democratic-run-congress-95d7ff17?mod=mw_rss_topstories"
   },
   {
-   "h": "Un directeur de Riskified vend des actions pour 588.479$",
-   "w": "",
+   "h": "Minister backs legal right to job support for young people",
+   "w": "The work and pensions secretary said the level of support currently on offer was too vague.",
    "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T13:16:59Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-riskified-vend-des-actions-pour-588479-93CH-3696650"
-  },
-  {
-   "h": "Un directeur de Curbline Properties vend des actions pour 24.767$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T13:16:45Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-curbline-properties-vend-des-actions-pour-24767-93CH-3696649"
-  },
-  {
-   "h": "Pourquoi la baisse des prix des tokens IA n’est pas forcément néfaste",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T13:05:31Z",
-   "url": "https://fr.investing.com/news/stock-market-news/pourquoi-la-baisse-des-prix-des-tokens-ia-nest-pas-forcement-nefaste-3696647"
-  },
-  {
-   "h": "La directrice informatique de StoneX Group vend des actions pour 614.218$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T13:02:09Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-informatique-de-stonex-group-vend-des-actions-pour-614218-93CH-3696646"
-  },
-  {
-   "h": "Le PDG d’Intapp John Hall cède des actions pour 113.795$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T13:02:06Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-dintapp-john-hall-cede-des-actions-pour-113795-93CH-3696645"
-  },
-  {
-   "h": "Un administrateur de Veracyte cède des actions pour 204.747$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T13:02:03Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-veracyte-cede-des-actions-pour-204747-93CH-3696644"
+   "src": "BBC — Business",
+   "ts": "2026-11-15T13:06:15Z",
+   "url": "https://www.bbc.co.uk/news/articles/cqr7gn1zmlj1o?at_medium=RSS&at_campaign=rss"
   },
   {
    "h": "Europe needs to talk to Russia",
@@ -2503,7 +2558,7 @@
    "mine": 1
   },
   {
-   "h": "La hausse de 1,6 % du smic et des « bas salaires » des fonctionnaires coûteront « un peu plus de 1 milliard d’euros », selon le gouvernement",
+   "h": "La hausse de 1,6 % du smic et des « bas salaires » des fonctionnaires coûtera « un peu plus de 1 milliard d’euros », selon le gouvernement",
    "w": "L’exécutif avait annoncé cette semaine, en pleines mobilisations sociales, la revalorisation du salaire minimal de 1,6 % à partir du 1ᵉʳ décembre et celle des « bas salaires » de plus d’un million d’agents de la fonction publique.",
    "syms": [],
    "src": "Le Monde — Économie",
@@ -2526,6 +2581,32 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-15T09:49:45Z",
    "url": "https://www.lemonde.fr/idees/article/2026/11/15/nier-les-discriminations-tout-en-cultivant-les-stereotypes-sur-lesquels-elles-proliferent-c-est-casser-le-thermometre-en-attisant-la-fievre_6811003_3232.html"
+  },
+  {
+   "h": "China's century-old 'porcelain capital' eyes global luxury",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T09:14:08.341973Z",
+   "url": "https://asia.nikkei.com/life-arts/arts/china-s-century-old-porcelain-capital-eyes-global-luxury"
+  },
+  {
+   "h": "Japan to require online authorization for some transit passengers",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T09:14:08.341973Z",
+   "url": "https://asia.nikkei.com/spotlight/japan-immigration/japan-to-require-online-authorization-for-some-transit-passengers"
+  },
+  {
+   "h": "China sees Nvidia chief Huang's swift downfall as political hit",
+   "w": "",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T09:14:08.341973Z",
+   "url": "https://asia.nikkei.com/business/tech/semiconductors/china-sees-nvidia-chief-huang-s-swift-downfall-as-political-hit"
   },
   {
    "h": "Katharina Pistor, professeure de droit : « Les citoyens s’apprêtent à n’être qu’une simple ressource gérée par des patrons de la tech tels que Musk, Thiel et Zuckerberg »",
@@ -2644,30 +2725,6 @@
    "url": "https://www.cnbc.com/2026/11/15/budapest-europes-next-digital-nomad-hotspot.html"
   },
   {
-   "h": "ASEAN falls short on Myanmar crisis, South China Sea pact at Manila summit",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T05:48:54.912194Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/asean-falls-short-on-myanmar-crisis-south-china-sea-pact-at-manila-summit"
-  },
-  {
-   "h": "APEC summit in Shenzhen, Indonesia monetary policy, ASEAN diplomacy",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T05:48:54.912194Z",
-   "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/apec-summit-in-shenzhen-indonesia-monetary-policy-asean-diplomacy"
-  },
-  {
-   "h": "Osaka landmark to be centerpiece of area's redevelopment",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T05:48:54.912194Z",
-   "url": "https://asia.nikkei.com/business/travel-leisure/osaka-landmark-to-be-centerpiece-of-area-s-redevelopment"
-  },
-  {
    "h": "Le lent déclin économique de la France face au reste de l’Europe",
    "w": "L’Hexagone affiche l’une des plus faibles croissances européennes cette année. Un phénomène qui accentue la chute du pays dans le classement européen en PIB par habitant, désormais en dessous de la moyenne.",
    "syms": [],
@@ -2717,7 +2774,7 @@
    "h": "‘Low fire, low hire’ job market hurts US and UK productivity",
    "w": "Sluggish rates of hiring, resignations and job-switching may lead to long-term damage, say economists",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-15T05:00:13Z",
    "url": "https://www.ft.com/content/44c1fdc6-bc51-46e5-8a7c-c10096a25496?syn-25a6b1a6=1",
    "mine": 1
@@ -2916,22 +2973,6 @@
    "url": "https://www.marketwatch.com/story/im-63-and-want-to-spend-95-000-on-a-roof-deck-for-my-500-000-home-is-that-a-good-investment-f1a59c27?mod=mw_rss_topstories"
   },
   {
-   "h": "I inherited $1.4 million from my father. Am I wrong to ask my husband of 25 years for a postnuptial agreement?",
-   "w": "“He has always said he wants his daughter to inherit a chunk of his estate, and I’ve never objected to that.”",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-14T21:00:00Z",
-   "url": "https://www.marketwatch.com/story/i-inherited-1-4-million-from-my-father-am-i-wrong-to-ask-my-husband-of-25-years-for-a-postnuptial-agreement-b739c51d?mod=mw_rss_topstories"
-  },
-  {
-   "h": "‘I’m sick of flying’: I paid for priority boarding, but the overhead bins were full. Was I duped?",
-   "w": "“Maybe next time I’ll try the other approach: I’ll board whenever I feel like it and drop my suitcase in the first open slot I see.”",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-14T19:30:00Z",
-   "url": "https://www.marketwatch.com/story/im-sick-of-flying-i-paid-for-priority-boarding-but-the-overhead-bins-were-full-was-i-duped-0badcc80?mod=mw_rss_topstories"
-  },
-  {
    "h": "Lunettes connectées : « Où est donc l’Europe, qui aime tant se présenter comme la championne mondiale de la protection de la vie privée ? »",
    "w": "Les usages prétendument récréatifs des lunettes munies de caméras et de microphones ne justifient pas de faire peser sur l’ensemble de la population le risque d’une surveillance diffuse, dénonce un collectif de chercheurs dans une tribune au « Monde ».",
    "syms": [],
@@ -3041,46 +3082,12 @@
    "mine": 1
   },
   {
-   "h": "Chart of the Week: The great market rotation",
-   "w": "Defensive sectors are the new winners",
-   "syms": [],
-   "src": "myFT — markets",
-   "ts": "2026-11-14T10:30:08Z",
-   "url": "https://www.ft.com/content/936376d1-4a69-4a3c-8975-3c55e9cb9d42?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Hawkward timing",
-   "w": "Federal Reserve policymakers have floated the idea of a bigger rate increase in December following strong jobs, growth and inflation data",
-   "syms": [],
-   "src": "myFT — economy",
-   "ts": "2026-11-14T10:05:05Z",
-   "url": "https://www.ft.com/content/8c2639dc-e5d5-430d-a641-11776ac26f9c",
-   "mine": 1
-  },
-  {
    "h": "Microsoft says services fully restored after day-long global outage",
    "w": "Efforts to address the underlying problem with Outlook, Teams and Copilot are complete, the tech firm says.",
    "syms": [],
    "src": "BBC — Business",
    "ts": "2026-11-14T06:42:27Z",
    "url": "https://www.bbc.co.uk/news/articles/c6rrg51rkz09o?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "How the Jensen Huang scandal created a headache for business-friendly Singapore",
-   "w": "The scandal has cast a spotlight on Singapore's success as a chip hub - and a location for alleged illicit trade.",
-   "syms": [],
-   "src": "BBC — Business",
-   "ts": "2026-11-13T23:00:31Z",
-   "url": "https://www.bbc.co.uk/news/articles/ck1exevgql4qo?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "Agencies extend comment period for proposed third-party risk management guidance",
-   "w": "Agencies extend comment period for proposed third-party risk management guidance",
-   "syms": [],
-   "src": "Federal Reserve — press releases",
-   "ts": "2026-11-13T21:15:00Z",
-   "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261113a.htm"
   }
  ],
  "summary": {
