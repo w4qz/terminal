@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T02:55:21.059541Z",
+ "generated_at": "2026-11-15T03:49:13.687350Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -449,8 +449,8 @@
    "prev": 26771.8809,
    "chg": -21.9316,
    "pct": -0.08,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^GDAXI)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^GDAXI) — last update failed",
    "ts": "2026-11-13T16:30:00Z",
    "open": 26697.0293,
    "lo": 26678.3496,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 64767.1484,
+   "p": 64923.5117,
    "prev": 68249.2734,
-   "chg": -3482.125,
-   "pct": -5.1,
+   "chg": -3325.7617,
+   "pct": -4.87,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-15T02:55:21.059541Z",
+   "ts": "2026-11-15T03:49:13.687350Z",
    "open": 64119.7812,
    "lo": 62093.5156,
-   "hi": 64797.2305,
-   "vol": 50826502144,
+   "hi": 65289.0078,
+   "vol": 49003237376,
    "h": [
     80790.84,
     80024.01,
@@ -844,7 +844,7 @@
     73964.47,
     71342.97,
     68249.27,
-    64811.34
+    64923.51
    ]
   }
  },
@@ -1175,7 +1175,7 @@
    "cash": 247142006784,
    "debt": 360191000576,
    "fcf": 343484628992,
-   "w52lo": 23.29,
+   "w52lo": 0.0,
    "w52hi": 27.96,
    "evEbitda": 7.485,
    "earnTs": 1793707200,
@@ -2221,6 +2221,39 @@
  ],
  "news": [
   {
+   "h": "Le PDG de Neonc Technologies achète des actions pour 294.500$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T03:17:04Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-neonc-technologies-achete-des-actions-pour-294500-93CH-3696553"
+  },
+  {
+   "h": "Les prix du diesel américain tombent sous 6$ le gallon, au plus bas depuis deux mois",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T03:02:25Z",
+   "url": "https://fr.investing.com/news/economy-news/les-prix-du-diesel-americain-tombent-sous-6-le-gallon-au-plus-bas-depuis-deux-mois-3696551"
+  },
+  {
+   "h": "KDT Ibotta Holdings, propriétaire à 10%, cède pour 11,7M$ d’actions Ibotta",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T03:02:12Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/kdt-ibotta-holdings-proprietaire-a-10-cede-pour-117m-dactions-ibotta-93CH-3696550"
+  },
+  {
+   "h": "The world according to China",
+   "w": "The Apec summit in Shenzhen this week will showcase China’s ambition to reshape the global order on its own terms",
+   "syms": [],
+   "src": "myFT — emerging markets",
+   "ts": "2026-11-15T03:00:02Z",
+   "url": "https://www.ft.com/content/fb667289-ae81-42c7-8eb8-ebda09dceff7?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "Nationwide ground stop followed contractor upgrade to L3Harris telecommunication system: DOT’s Duffy",
    "w": "The FAA ground stop came after updates to an older communication system managed by L3Harris Technologies, Transportation Secretary Sean Duffy said Saturday.",
    "syms": [],
@@ -2303,36 +2336,12 @@
    "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-mbx-biosciences-vend-des-actions-pour-268234-93CH-3696539"
   },
   {
-   "h": "Hamas confirme la mort d’un commandant senior tué dans une frappe israélienne à Gaza",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T01:00:19Z",
-   "url": "https://fr.investing.com/news/economy-news/hamas-confirme-la-mort-dun-commandant-senior-tue-dans-une-frappe-israelienne-a-gaza-3696540"
-  },
-  {
    "h": "SpaceX successfully catches Starship rocket in huge milestone for the space industry",
    "w": "The historic first gets SpaceX closer to “rapid reusability” of rockets.",
    "syms": [],
    "src": "MarketWatch",
    "ts": "2026-11-15T00:33:00Z",
    "url": "https://www.marketwatch.com/story/spacex-successfully-catches-starship-rocket-in-huge-milestone-for-the-space-industry-f42c136c?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Un administrateur de Scotts Miracle-Gro vend des actions pour 176.345$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T00:16:31Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-scotts-miraclegro-vend-des-actions-pour-176345-93CH-3696538"
-  },
-  {
-   "h": "SpaceX récupère le vaisseau Starship malgré l’échec du propulseur",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T00:06:46Z",
-   "url": "https://fr.investing.com/news/company-news/spacex-recupere-le-vaisseau-starship-malgre-lechec-du-propulseur-3696536"
   },
   {
    "h": "Beauty advent calendars can cost hundreds - but are they value for money?",
@@ -2384,6 +2393,38 @@
    "ts": "2026-11-14T22:33:56Z",
    "url": "https://www.ft.com/content/ce7c8ab1-8337-4c32-8494-5142ec1697dd?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "Sri Lanka reality contrasts with new World Bank upper-middle-income status",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T21:49:13.687350Z",
+   "url": "https://asia.nikkei.com/economy/sri-lanka-reality-contrasts-with-new-world-bank-upper-middle-income-status"
+  },
+  {
+   "h": "Digital Realty Trust to spend $10bn more on Japan data centers: CEO",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T21:49:13.687350Z",
+   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/digital-realty-trust-to-spend-10bn-more-on-japan-data-centers-ceo"
+  },
+  {
+   "h": "Osaka landmark to be centerpiece of area's redevelopment",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T21:49:13.687350Z",
+   "url": "https://asia.nikkei.com/business/travel-leisure/osaka-landmark-to-be-centerpiece-of-area-s-redevelopment"
+  },
+  {
+   "h": "No grass, no problem: Playing sand golf in the Australian outback",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T21:49:13.687350Z",
+   "url": "https://asia.nikkei.com/life-arts/life/no-grass-no-problem-playing-sand-golf-in-the-australian-outback"
   },
   {
    "h": "I’m 63 and spending $95,000 on a roof deck for my $500,000 home. Is that a good investment?",
@@ -2462,14 +2503,6 @@
    "url": "https://asia.nikkei.com/business/energy/philippines-moves-to-secure-emergency-access-to-oil-in-indonesia-thailand"
   },
   {
-   "h": "Bain- and GIC-backed WHI on track for Japan's largest IPO in 2026",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T20:00:56.056697Z",
-   "url": "https://asia.nikkei.com/business/markets/ipo/bain-and-gic-backed-whi-on-track-for-japan-s-largest-ipo-in-2026"
-  },
-  {
    "h": "‘It leaves me with a sour taste’: My elderly mother gave our cousin $800 for a car repair. Should I be worried?",
    "w": "“I know older people can easily feel patronized, and I don’t want that to happen.”",
    "syms": [],
@@ -2494,14 +2527,6 @@
    "url": "https://asia.nikkei.com/politics/international-relations/eyeing-his-legacy-trump-seizes-chance-for-arms-talks-with-xi-and-putin"
   },
   {
-   "h": "How Trump might be tempted to orchestrate an 'end to the Korean War'",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T18:55:42.795536Z",
-   "url": "https://asia.nikkei.com/spotlight/comment/how-trump-might-be-tempted-to-orchestrate-an-end-to-the-korean-war"
-  },
-  {
    "h": "Should a widow leave her late partner’s home to her stepkids — or cut off contact with them?",
    "w": "“It would be a less drastic step than selling the home now and splitting the proceeds.”",
    "syms": [],
@@ -2516,22 +2541,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-14T18:00:00Z",
    "url": "https://www.marketwatch.com/story/he-calls-my-plans-a-fantasy-my-husband-says-we-cant-afford-our-200-000-a-year-dream-retirement-i-think-hes-cheap-45bc5b4e?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Footloose in Vientiane: A capital in no great hurry",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T17:54:54.906614Z",
-   "url": "https://asia.nikkei.com/life-arts/life/destinations/footloose-in-vientiane-a-capital-in-no-great-hurry"
-  },
-  {
-   "h": "Did we really see a black hole? Australian team says 'yes'",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T17:54:54.906614Z",
-   "url": "https://asia.nikkei.com/business/science/did-we-really-see-a-black-hole-australian-team-says-yes"
   },
   {
    "h": "Here’s how Bernie Sanders wants to keep Social Security solvent ‘for generations’",
@@ -2596,8 +2605,8 @@
    "url": "https://www.cnbc.com/2026/11/13/trump-nvidia-huang-china.html"
   },
   {
-   "h": "Suspension des vols aux Etats-Unis : plus de 17 000 vols annulés vendredi et samedi alors que des perturbations persistent",
-   "w": "Après l’annulation de 12 000 vols vendredi, ce sont plus de 5 000 qui ont connu le même sort samedi. Les autorités, qui imputent la panne à des travaux sur des infrastructures vétustes, s’attendent à un retour à la normale d’ici dimanche soir.",
+   "h": "Suspension des vols aux Etats-Unis : plus de 18 400 vols annulés vendredi et samedi alors que des perturbations persistent",
+   "w": "Après l’annulation de 12 000 vols vendredi, ce sont plus de 6 400 trajets qui ont connu le même sort samedi. Les autorités, qui imputent la panne à des travaux sur des infrastructures vétustes, s’attendent à un retour à la normale d’ici dimanche soir.",
    "syms": [],
    "src": "Le Monde — Économie",
    "ts": "2026-11-14T15:31:00Z",
@@ -3027,15 +3036,6 @@
    "src": "myFT — europe",
    "ts": "2026-11-14T05:00:00Z",
    "url": "https://www.ft.com/content/094acead-5c40-4609-87fd-f02b171eb42c?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "US plan to overhaul air traffic control system like ‘changing a tyre at 70mph’",
-   "w": "Transport secretary seeks $50bn for upgrades to America’s dilapidated aviation infrastructure",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-14T03:41:46Z",
-   "url": "https://www.ft.com/content/1cbee3e3-b4cf-4831-bd4e-ac1653c7c7c7?syn-25a6b1a6=1",
    "mine": 1
   },
   {
