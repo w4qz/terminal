@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T17:24:06.511300Z",
+ "generated_at": "2026-11-15T18:05:38.327936Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -43,8 +43,8 @@
    "prev": 34.5,
    "chg": -1.9,
    "pct": -5.51,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (ASTS) — last update failed",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-11-13T21:00:00Z",
    "open": 33.91,
    "lo": 31.34,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 64803.3008,
+   "p": 64603.5312,
    "prev": 64128.0508,
-   "chg": 675.25,
-   "pct": 1.05,
+   "chg": 475.4805,
+   "pct": 0.74,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-15T17:24:06.511300Z",
+   "ts": "2026-11-15T18:05:38.327936Z",
    "open": 64119.7812,
    "lo": 62093.5156,
    "hi": 65889.2344,
-   "vol": 48537305088,
+   "vol": 48035639296,
    "h": [
     80024.01,
     80006.66,
@@ -844,7 +844,7 @@
     71342.97,
     68249.27,
     64128.05,
-    64803.3
+    64603.53
    ]
   }
  },
@@ -1194,9 +1194,9 @@
    "ccy": "USD",
    "mcap": 1640314437632,
    "pe": 21.8932,
-   "fpe": 18.086,
+   "fpe": 17.987,
    "eps": 29.31,
-   "feps": 35.4799,
+   "feps": 35.6752,
    "revTTM": 241605001216,
    "netIncome": 75249000448,
    "shares": 2214472367,
@@ -2221,6 +2221,31 @@
  ],
  "news": [
   {
+   "h": "DOT Sec. Duffy blames router for issues that lead to nationwide ground stop",
+   "w": "The FAA ground stop came after updates to an older communication system managed by L3Harris Technologies, Transportation Secretary Sean Duffy said.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-15T17:47:40Z",
+   "url": "https://www.cnbc.com/2026/11/14/faa-ground-stop-flights-resume-delays.html"
+  },
+  {
+   "h": "Le président de VIVOS acquiert des actions ordinaires pour 1.231$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T17:47:04Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-president-de-vivos-acquiert-des-actions-ordinaires-pour-1231-93CH-3696693"
+  },
+  {
+   "h": "Decision to move Shakespeare Institute out of Stratford sparks outcry",
+   "w": "Study centre’s director quits after University of Birmingham says it will relocate to Edgbaston",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-15T17:28:56Z",
+   "url": "https://www.ft.com/content/eb45ef82-94b0-4775-9f79-025fdb27db6a?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "Bessent says Nvidia needs ‘shake-up’ with external CEO",
    "w": "US Treasury secretary demands to know if chipmaker is complying with restrictions on exports to China",
    "syms": [
@@ -2354,14 +2379,6 @@
    "src": "Investing.com France",
    "ts": "2026-11-15T15:47:04Z",
    "url": "https://fr.investing.com/news/insider-trading-news/kevin-miller-dumh-properties-achete-pour-1000-dactions-93CH-3696673"
-  },
-  {
-   "h": "Un administrateur de RGC Resources acquiert des actions pour 2.374$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T15:46:52Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-rgc-resources-acquiert-des-actions-pour-2374-93CH-3696671"
   },
   {
    "h": "Sadiq Khan backs keeping City of London police independent from the Met",
@@ -2583,6 +2600,40 @@
    "url": "https://www.marketwatch.com/story/gold-and-silver-are-supposed-to-protect-against-inflation-so-why-are-both-metals-tumbling-instead-1735eca7?mod=mw_rss_topstories"
   },
   {
+   "h": "Japan shipping group ONE transits Red Sea choke point for 1st time in 3 years",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T12:05:38.327936Z",
+   "url": "https://asia.nikkei.com/business/transportation/japan-shipping-group-one-transits-red-sea-choke-point-for-1st-time-in-3-years"
+  },
+  {
+   "h": "Subaru retools boxer engine for fuel economy, with eye on hybrids",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T12:05:38.327936Z",
+   "url": "https://asia.nikkei.com/business/automobiles/subaru-retools-boxer-engine-for-fuel-economy-with-eye-on-hybrids"
+  },
+  {
+   "h": "Eyeing his legacy, Trump seizes chance for arms talks with Xi and Putin",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T12:05:38.327936Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/eyeing-his-legacy-trump-seizes-chance-for-arms-talks-with-xi-and-putin"
+  },
+  {
+   "h": "Philippines moves to secure emergency access to oil in Indonesia, Thailand",
+   "w": "",
+   "syms": [
+    "BRENT"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T12:05:38.327936Z",
+   "url": "https://asia.nikkei.com/business/energy/philippines-moves-to-secure-emergency-access-to-oil-in-indonesia-thailand"
+  },
+  {
    "h": "Britain’s self-inflicted housebuilding crunch",
    "w": "The state encumbers construction, then commits public funds to offset the damage",
    "syms": [],
@@ -2684,7 +2735,7 @@
    "h": "The rich find ways to escape climate change. Their emissions have not.",
    "w": "Growing body of research shows the contribution to greenhouse gases between wealthy and poor varies greatly even within nations",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — economy",
    "ts": "2026-11-15T10:43:31Z",
    "url": "https://www.ft.com/content/d42f1b8e-42ea-4018-8d1c-5d9c85a7fbc4?syn-25a6b1a6=1",
    "mine": 1
@@ -2739,44 +2790,12 @@
    "url": "https://asia.nikkei.com/politics/international-relations/asean-falls-short-on-myanmar-crisis-south-china-sea-pact-at-manila-summit"
   },
   {
-   "h": "APEC summit in Shenzhen, Indonesia monetary policy, ASEAN diplomacy",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T09:59:02.941634Z",
-   "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/apec-summit-in-shenzhen-indonesia-monetary-policy-asean-diplomacy"
-  },
-  {
-   "h": "Osaka landmark to be centerpiece of area's redevelopment",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T09:59:02.941634Z",
-   "url": "https://asia.nikkei.com/business/travel-leisure/osaka-landmark-to-be-centerpiece-of-area-s-redevelopment"
-  },
-  {
    "h": "« Nier les discriminations tout en cultivant les stéréotypes sur lesquels elles prolifèrent, c’est casser le thermomètre en attisant la fièvre »",
    "w": "Contrairement aux affirmations répétées par le Rassemblement national, l’expérience des discriminations, solidement établie par les sciences, est omniprésente dans notre société, dénonce un collectif de chercheurs dans une tribune au « Monde ».",
    "syms": [],
    "src": "Le Monde — Économie",
    "ts": "2026-11-15T09:49:45Z",
    "url": "https://www.lemonde.fr/idees/article/2026/11/15/nier-les-discriminations-tout-en-cultivant-les-stereotypes-sur-lesquels-elles-proliferent-c-est-casser-le-thermometre-en-attisant-la-fievre_6811003_3232.html"
-  },
-  {
-   "h": "China's century-old 'porcelain capital' eyes global luxury",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T09:14:08.341973Z",
-   "url": "https://asia.nikkei.com/life-arts/arts/china-s-century-old-porcelain-capital-eyes-global-luxury"
-  },
-  {
-   "h": "Japan to require online authorization for some transit passengers",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T09:14:08.341973Z",
-   "url": "https://asia.nikkei.com/spotlight/japan-immigration/japan-to-require-online-authorization-for-some-transit-passengers"
   },
   {
    "h": "Katharina Pistor, professeure de droit : « Les citoyens s’apprêtent à n’être qu’une simple ressource gérée par des patrons de la tech tels que Musk, Thiel et Zuckerberg »",
@@ -2824,7 +2843,7 @@
    "syms": [
     "NVDA"
    ],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-15T05:00:14Z",
    "url": "https://www.ft.com/content/0e2720d7-ba0a-4469-a854-30931f907bd3",
    "mine": 1
@@ -2949,14 +2968,6 @@
    "mine": 1
   },
   {
-   "h": "Nationwide ground stop followed contractor upgrade to L3Harris telecommunication system: DOT’s Duffy",
-   "w": "The FAA ground stop came after updates to an older communication system managed by L3Harris Technologies, Transportation Secretary Sean Duffy said Saturday.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-15T02:53:59Z",
-   "url": "https://www.cnbc.com/2026/11/14/faa-ground-stop-flights-resume-delays.html"
-  },
-  {
    "h": "‘Red caviar’ slips off Japan’s sushi menus as roe prices soar",
    "w": "Collapse in wild salmon harvests put prized delicacy at risk as warming seas disrupt supply",
    "syms": [],
@@ -3068,15 +3079,6 @@
    "src": "myFT — us",
    "ts": "2026-11-14T12:00:08Z",
    "url": "https://www.ft.com/content/d99f635f-6223-45fc-8429-2ac36b28d080?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "US floats Nato membership for Donbas withdrawal deal, Zelenskyy says",
-   "w": "President says he will take proposal to Ukrainian people as Washington explores terms for ending war",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-14T11:41:15Z",
-   "url": "https://www.ft.com/content/24319e2d-1a34-4a72-8c91-008d974234f9?syn-25a6b1a6=1",
    "mine": 1
   },
   {
