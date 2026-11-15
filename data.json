@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T06:37:39.316315Z",
+ "generated_at": "2026-11-15T07:49:05.036529Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -117,8 +117,8 @@
    "prev": 28289.1895,
    "chg": -345.4492,
    "pct": -1.22,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^NDX) — last update failed",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^NDX)",
    "ts": "2026-11-13T21:00:00Z",
    "open": 28265.5391,
    "lo": 27609.7109,
@@ -811,19 +811,18 @@
    ]
   },
   "BTC": {
-   "p": 64313.3086,
-   "prev": 68249.2734,
-   "chg": -3935.9648,
-   "pct": -5.77,
+   "p": 63918.7617,
+   "prev": 64128.0508,
+   "chg": -209.2891,
+   "pct": -0.33,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-15T06:37:39.316315Z",
+   "ts": "2026-11-15T07:49:05.036529Z",
    "open": 64119.7812,
    "lo": 62093.5156,
    "hi": 65289.0078,
-   "vol": 51071803392,
+   "vol": 50983768064,
    "h": [
-    80790.84,
     80024.01,
     80006.66,
     80805.08,
@@ -844,7 +843,8 @@
     73964.47,
     71342.97,
     68249.27,
-    64313.31
+    64128.05,
+    63918.76
    ]
   }
  },
@@ -1104,7 +1104,7 @@
    "earnEnd": 1799933400,
    "earnEst": true,
    "exDiv": 1796860800,
-   "divDate": 1807142400,
+   "divDate": 1799280000,
    "lastDiv": 1.107,
    "trailDiv": 6.0
   },
@@ -1149,9 +1149,9 @@
    "sector": "Energy",
    "industry": "Oil & Gas Integrated",
    "ccy": "SAR",
-   "mcap": 6386355273728,
-   "pe": 14.1935,
-   "fpe": 15.8084,
+   "mcap": 6434737094656,
+   "pe": 14.3011,
+   "fpe": 15.9281,
    "eps": 1.86,
    "feps": 1.67,
    "revTTM": 1932166955008,
@@ -1159,7 +1159,7 @@
    "shares": 241907400000,
    "beta": -0.022,
    "div": 1.36,
-   "divYield": 5.152,
+   "divYield": 5.113,
    "target": 29.9778,
    "targetHi": 34.0,
    "targetLo": 27.0,
@@ -1175,7 +1175,7 @@
    "cash": 247142006784,
    "debt": 360191000576,
    "fcf": 343484628992,
-   "w52lo": 0.0,
+   "w52lo": 23.29,
    "w52hi": 27.96,
    "evEbitda": 7.485,
    "earnTs": 1793707200,
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1656497373184,
    "pe": 44.318,
-   "fpe": 17.8273,
+   "fpe": 17.8742,
    "eps": 7.83,
-   "feps": 19.4651,
+   "feps": 19.414,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1016233525248,
+   "mcap": 1019350286336,
    "pe": 46.4094,
    "fpe": 39.7569,
    "eps": 2.76,
    "feps": 3.2218,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.773,
@@ -1868,9 +1868,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 521499836416,
-   "pe": 50.6055,
+   "pe": 50.6924,
    "fpe": 18.216,
-   "eps": 5.83,
+   "eps": 5.82,
    "feps": 16.1962,
    "revTTM": 66013999104,
    "netIncome": 10302999552,
@@ -1911,9 +1911,9 @@
    "ccy": "USD",
    "mcap": 429061144576,
    "pe": 16.1446,
-   "fpe": 13.3304,
+   "fpe": 13.3049,
    "eps": 13.62,
-   "feps": 16.4954,
+   "feps": 16.527,
    "revTTM": 226256994304,
    "netIncome": 26976000000,
    "shares": 1951253686,
@@ -1999,9 +1999,9 @@
    "ccy": "USD",
    "mcap": 404771504128,
    "pe": 118.3028,
-   "fpe": 66.2625,
+   "fpe": 66.1698,
    "eps": 1.42,
-   "feps": 2.5352,
+   "feps": 2.5388,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
@@ -2082,9 +2082,9 @@
    "ccy": "USD",
    "mcap": 426963795968,
    "pe": 29.2773,
-   "fpe": 28.1338,
+   "fpe": 28.1245,
    "eps": 3.39,
-   "feps": 3.5278,
+   "feps": 3.529,
    "revTTM": 51053998080,
    "netIncome": 14629000192,
    "shares": 4301902335,
@@ -2168,13 +2168,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 121.2883,
-   "shares": 572600000,
-   "divYield": 2.608,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2225,6 +2220,70 @@
   }
  ],
  "news": [
+  {
+   "h": "Le directeur administratif de Marqeta, Sumner Crystal, cède des actions pour 20.487$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T07:16:59Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-administratif-de-marqeta-sumner-crystal-cede-des-actions-pour-20487-93CH-3696575"
+  },
+  {
+   "h": "Novelis cède deux filiales en Chine pour 265 millions $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T07:09:52Z",
+   "url": "https://fr.investing.com/news/company-news/novelis-cede-deux-filiales-en-chine-pour-265-millions--3696573"
+  },
+  {
+   "h": "Steven Conine, directeur de Wayfair, cède des actions pour 7,13 millions $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T06:47:17Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/steven-conine-directeur-de-wayfair-cede-des-actions-pour-713-millions--93CH-3696572"
+  },
+  {
+   "h": "Le directeur des opérations d’ePlus, Darren Raiguel, cède des actions pour 79.542$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T06:47:02Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-des-operations-deplus-darren-raiguel-cede-des-actions-pour-79542-93CH-3696571"
+  },
+  {
+   "h": "Le directeur juridique d’Ibex cède des actions pour 370.583$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T06:46:59Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-juridique-dibex-cede-des-actions-pour-370583-93CH-3696570"
+  },
+  {
+   "h": "Le président de Carvana Thomas Taira vend plus de 1,18 million $ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T06:32:13Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-president-de-carvana-thomas-taira-vend-plus-de-118-million--dactions-93CH-3696567"
+  },
+  {
+   "h": "Le PDG de Wayfair, Niraj Shah, cède 7,13M$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T06:32:13Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-wayfair-niraj-shah-cede-713m-dactions-93CH-3696568"
+  },
+  {
+   "h": "L’Iran revendique une nouvelle frappe sur une base américaine au Bahreïn",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T06:29:31Z",
+   "url": "https://fr.investing.com/news/economy-news/liran-revendique-une-nouvelle-frappe-contre-une-base-americaine-au-bahrein-3696566"
+  },
   {
    "h": "Le directeur d’Acacia Research Isaac Kohlberg cède des actions pour 109.200$",
    "w": "",
@@ -2398,62 +2457,6 @@
    "mine": 1
   },
   {
-   "h": "Des avions de Copa Airlines et UPS entrent en collision à Miami",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T04:23:54Z",
-   "url": "https://fr.investing.com/news/economy-news/des-avions-de-copa-airlines-et-ups-entrent-en-collision-a-miami-3696559"
-  },
-  {
-   "h": "Le BPA de Greenland Acquisition a dépassé les attentes de 0,08$, le CA a surpassé les prévisions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T04:17:20Z",
-   "url": "https://fr.investing.com/news/earnings/le-bpa-de-greenland-acquisition-a-depasse-les-attentes-de-008-le-ca--a-surpasse-les-previsions-3696558"
-  },
-  {
-   "h": "Le directeur d’ACNB, Frank Elsner III, achète des actions et reçoit une rémunération",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T03:46:50Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-dacnb-frank-elsner-iii-achete-des-actions-et-recoit-une-remuneration-93CH-3696557"
-  },
-  {
-   "h": "Saba Capital vend pour 406.836$ d’actions du fonds PIMCO Dynamic Income Strategy",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T03:31:42Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/saba-capital-vend-pour-406836-dactions-du-fonds-pimco-dynamic-income-strategy-93CH-3696554"
-  },
-  {
-   "h": "Le PDG de Neonc Technologies achète des actions pour 294.500$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T03:17:04Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-neonc-technologies-achete-des-actions-pour-294500-93CH-3696553"
-  },
-  {
-   "h": "Les prix du diesel américain tombent sous 6$ le gallon, au plus bas depuis deux mois",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T03:02:25Z",
-   "url": "https://fr.investing.com/news/economy-news/les-prix-du-diesel-americain-tombent-sous-6-le-gallon-au-plus-bas-depuis-deux-mois-3696551"
-  },
-  {
-   "h": "KDT Ibotta Holdings, propriétaire à 10%, cède pour 11,7M$ d’actions Ibotta",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T03:02:12Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/kdt-ibotta-holdings-proprietaire-a-10-cede-pour-117m-dactions-ibotta-93CH-3696550"
-  },
-  {
    "h": "The world according to China",
    "w": "The Apec summit in Shenzhen this week will showcase China’s ambition to reshape the global order on its own terms",
    "syms": [],
@@ -2469,14 +2472,6 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-15T02:53:59Z",
    "url": "https://www.cnbc.com/2026/11/14/faa-ground-stop-flights-resume-delays.html"
-  },
-  {
-   "h": "Un directeur de San Juan Basin Royalty Trust achète pour 1,4M$ d’unités",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T02:47:04Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-san-juan-basin-royalty-trust-achete-pour-14m-dunites-93CH-3696549"
   },
   {
    "h": "‘Red caviar’ slips off Japan’s sushi menus as roe prices soar",
@@ -2495,6 +2490,30 @@
    "ts": "2026-11-15T01:52:51Z",
    "url": "https://www.ft.com/content/3f1fd9f6-8f96-4178-bf5a-8fce8954b811?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "ASEAN leaders kick off Manila summits as friction persists on Myanmar, haze",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T01:49:05.036529Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/asean-leaders-kick-off-manila-summits-as-friction-persists-on-myanmar-haze"
+  },
+  {
+   "h": "Osaka landmark to be centerpiece of area's redevelopment",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T01:49:05.036529Z",
+   "url": "https://asia.nikkei.com/business/travel-leisure/osaka-landmark-to-be-centerpiece-of-area-s-redevelopment"
+  },
+  {
+   "h": "No grass, no problem: Playing sand golf in the Australian outback",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T01:49:05.036529Z",
+   "url": "https://asia.nikkei.com/life-arts/life/no-grass-no-problem-playing-sand-golf-in-the-australian-outback"
   },
   {
    "h": "China's century-old 'porcelain capital' eyes global luxury",
@@ -2615,14 +2634,6 @@
    "url": "https://asia.nikkei.com/spotlight/comment/how-trump-might-be-tempted-to-orchestrate-an-end-to-the-korean-war"
   },
   {
-   "h": "Did we really see a black hole? Australian team says 'yes'",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T22:41:40.521312Z",
-   "url": "https://asia.nikkei.com/business/science/did-we-really-see-a-black-hole-australian-team-says-yes"
-  },
-  {
    "h": "$180 million Van Gogh tests the art market and collector confidence",
    "w": "The art auctions in New York next week could top $2 billion, as a treasure trove of masterpieces comes to the market for the first time in decades.",
    "syms": [],
@@ -2638,22 +2649,6 @@
    "ts": "2026-11-14T22:33:56Z",
    "url": "https://www.ft.com/content/ce7c8ab1-8337-4c32-8494-5142ec1697dd?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Sri Lanka reality contrasts with new World Bank upper-middle-income status",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T21:49:13.687350Z",
-   "url": "https://asia.nikkei.com/economy/sri-lanka-reality-contrasts-with-new-world-bank-upper-middle-income-status"
-  },
-  {
-   "h": "Digital Realty Trust to spend $10bn more on Japan data centers: CEO",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T21:49:13.687350Z",
-   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/digital-realty-trust-to-spend-10bn-more-on-japan-data-centers-ceo"
   },
   {
    "h": "I’m 63 and spending $95,000 on a roof deck for my $500,000 home. Is that a good investment?",
