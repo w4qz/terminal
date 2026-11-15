@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T00:55:42.795536Z",
+ "generated_at": "2026-11-15T02:00:56.056697Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -117,8 +117,8 @@
    "prev": 28289.1895,
    "chg": -345.4492,
    "pct": -1.22,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^NDX)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^NDX) — last update failed",
    "ts": "2026-11-13T21:00:00Z",
    "open": 28265.5391,
    "lo": 27609.7109,
@@ -774,10 +774,10 @@
    ]
   },
   "BRENT": {
-   "p": 95.84,
+   "p": 96.08,
    "prev": 95.82,
-   "chg": 0.02,
-   "pct": 0.02,
+   "chg": 0.26,
+   "pct": 0.27,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-13T22:00:00Z",
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 63480.0,
+   "p": 62780.7891,
    "prev": 68249.2734,
-   "chg": -4769.2734,
-   "pct": -6.99,
+   "chg": -5468.4844,
+   "pct": -8.01,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-15T00:55:42.795536Z",
+   "ts": "2026-11-15T02:00:56.056697Z",
    "open": 64119.7812,
-   "lo": 63494.582,
+   "lo": 62093.5156,
    "hi": 64378.2383,
-   "vol": 45076893696,
+   "vol": 48812503040,
    "h": [
     80790.84,
     80024.01,
@@ -844,7 +844,7 @@
     73964.47,
     71342.97,
     68249.27,
-    63496.07
+    62780.79
    ]
   }
  },
@@ -945,9 +945,9 @@
    "ccy": "USD",
    "mcap": 3890434801664,
    "pe": 27.3424,
-   "fpe": 21.6518,
+   "fpe": 21.6569,
    "eps": 19.16,
-   "feps": 24.1957,
+   "feps": 24.1899,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -1104,7 +1104,7 @@
    "earnEnd": 1799933400,
    "earnEst": true,
    "exDiv": 1796860800,
-   "divDate": 1799280000,
+   "divDate": 1807142400,
    "lastDiv": 1.107,
    "trailDiv": 6.0
   },
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1656497373184,
    "pe": 44.318,
-   "fpe": 17.8742,
+   "fpe": 17.8273,
    "eps": 7.83,
-   "feps": 19.414,
+   "feps": 19.4651,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1019350286336,
+   "mcap": 1016233525248,
    "pe": 46.4094,
    "fpe": 39.7569,
    "eps": 2.76,
    "feps": 3.2218,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.773,
@@ -1868,9 +1868,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 521499836416,
-   "pe": 50.6924,
+   "pe": 50.6055,
    "fpe": 18.216,
-   "eps": 5.82,
+   "eps": 5.83,
    "feps": 16.1962,
    "revTTM": 66013999104,
    "netIncome": 10302999552,
@@ -1911,9 +1911,9 @@
    "ccy": "USD",
    "mcap": 429061144576,
    "pe": 16.1446,
-   "fpe": 13.2731,
+   "fpe": 13.3304,
    "eps": 13.62,
-   "feps": 16.5666,
+   "feps": 16.4954,
    "revTTM": 226256994304,
    "netIncome": 26976000000,
    "shares": 1951253686,
@@ -1955,9 +1955,9 @@
    "ccy": "USD",
    "mcap": 490194108416,
    "pe": 53.2856,
-   "fpe": 44.2089,
+   "fpe": 44.1838,
    "eps": 20.76,
-   "feps": 25.0223,
+   "feps": 25.0365,
    "revTTM": 303154003968,
    "netIncome": 9226000384,
    "shares": 443129349,
@@ -1999,9 +1999,9 @@
    "ccy": "USD",
    "mcap": 404771504128,
    "pe": 118.3028,
-   "fpe": 66.1698,
+   "fpe": 66.2625,
    "eps": 1.42,
-   "feps": 2.5388,
+   "feps": 2.5352,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
@@ -2082,9 +2082,9 @@
    "ccy": "USD",
    "mcap": 426963795968,
    "pe": 29.2773,
-   "fpe": 28.1245,
+   "fpe": 28.1338,
    "eps": 3.39,
-   "feps": 3.529,
+   "feps": 3.5278,
    "revTTM": 51053998080,
    "netIncome": 14629000192,
    "shares": 4301902335,
@@ -2168,8 +2168,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 121.2883,
+   "shares": 572600000,
+   "divYield": 2.608,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2220,6 +2225,54 @@
   }
  ],
  "news": [
+  {
+   "h": "Evercore explique pourquoi Apple est bien placé pour dominer les agents IA personnels",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T01:38:04Z",
+   "url": "https://fr.investing.com/news/stock-market-news/evercore-explique-pourquoi-apple-est-bien-place-pour-dominer-les-agents-ia-personnels-3696545"
+  },
+  {
+   "h": "La PDG d’Orion Energy Systems achète des actions pour 9.906$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T01:32:11Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/la-pdg-dorion-energy-systems-achete-des-actions-pour-9906-93CH-3696544"
+  },
+  {
+   "h": "La directrice financière de Figs, Inc. cède des actions pour 1,97M$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T01:16:52Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-financiere-de-figs-inc-cede-des-actions-pour-197m-93CH-3696543"
+  },
+  {
+   "h": "Ethereum affiche un recul de 10% face à la domination des vendeurs",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T01:04:04Z",
+   "url": "https://fr.investing.com/news/cryptocurrency-news/ethereum-affiche-un-recul-de-10-face-a-la-domination-des-vendeurs-3696541"
+  },
+  {
+   "h": "Le PDG de MBX Biosciences vend des actions pour 268.234$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T01:02:20Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-mbx-biosciences-vend-des-actions-pour-268234-93CH-3696539"
+  },
+  {
+   "h": "Hamas confirme la mort d’un commandant senior tué dans une frappe israélienne à Gaza",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T01:00:19Z",
+   "url": "https://fr.investing.com/news/economy-news/hamas-confirme-la-mort-dun-commandant-senior-tue-dans-une-frappe-israelienne-a-gaza-3696540"
+  },
   {
    "h": "SpaceX successfully catches Starship rocket in huge milestone for the space industry",
    "w": "The historic first gets SpaceX closer to “rapid reusability” of rockets.",
@@ -2278,36 +2331,12 @@
    "mine": 1
   },
   {
-   "h": "Un dirigeant de WEC Energy Group cède des actions pour 2,16 M$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T23:32:04Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-de-wec-energy-group-cede-des-actions-pour-216-m-93CH-3696532"
-  },
-  {
    "h": "Nationwide ground stop followed contractor upgrade to L3Harris telecommunication system: DOT’s Duffy",
    "w": "The FAA ground stop came after updates to an older communication system managed by L3Harris Technologies, Transportation Secretary Sean Duffy said Saturday.",
    "syms": [],
    "src": "CNBC — Markets",
    "ts": "2026-11-14T23:21:21Z",
    "url": "https://www.cnbc.com/2026/11/14/faa-ground-stop-flights-resume-delays.html"
-  },
-  {
-   "h": "Donegal Mutual Insurance acquiert 424.497$ d’actions Donegal Group",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T23:17:08Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/donegal-mutual-insurance-acquiert-424497-dactions-donegal-group-93CH-3696531"
-  },
-  {
-   "h": "Le directeur général de Donegal Group vend des actions pour 114.043$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T23:16:53Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-general-de-donegal-group-vend-des-actions-pour-114043-93CH-3696530"
   },
   {
    "h": "SpaceX catches upper stage of Starship rocket in historic first",
@@ -2327,14 +2356,6 @@
    "mine": 1
   },
   {
-   "h": "Un administrateur de DraftKings achète pour 98.800$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T22:46:52Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-draftkings-achete-pour-98800-dactions-93CH-3696529"
-  },
-  {
    "h": "$180 million Van Gogh tests the art market and collector confidence",
    "w": "The art auctions in New York next week could top $2 billion, as a treasure trove of masterpieces comes to the market for the first time in decades.",
    "syms": [],
@@ -2352,22 +2373,6 @@
    "mine": 1
   },
   {
-   "h": "Le directeur informatique de Riley Exploration Permian vend des actions pour 143.428$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T22:01:57Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-informatique-de-riley-exploration-permian-vend-des-actions-pour-143428-93CH-3696528"
-  },
-  {
-   "h": "Le PDG de Beta Technologies vend des actions pour 563.525$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T21:47:21Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-beta-technologies-vend-des-actions-pour-563525-93CH-3696527"
-  },
-  {
    "h": "I’m 63 and spending $95,000 on a roof deck for my $500,000 home. Is that a good investment?",
    "w": "“I have a net worth of $2.3 million and my only debt is a 15-year mortgage.”",
    "syms": [],
@@ -2382,6 +2387,42 @@
    "src": "MarketWatch",
    "ts": "2026-11-14T21:00:00Z",
    "url": "https://www.marketwatch.com/story/i-inherited-1-4-million-from-my-father-am-i-wrong-to-ask-my-husband-of-25-years-for-a-postnuptial-agreement-b739c51d?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Subaru retools boxer engine for fuel economy, with eye on hybrids",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T20:00:56.056697Z",
+   "url": "https://asia.nikkei.com/business/automobiles/subaru-retools-boxer-engine-for-fuel-economy-with-eye-on-hybrids"
+  },
+  {
+   "h": "Philippines moves to secure emergency access to oil in Indonesia, Thailand",
+   "w": "",
+   "syms": [
+    "BRENT"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T20:00:56.056697Z",
+   "url": "https://asia.nikkei.com/business/energy/philippines-moves-to-secure-emergency-access-to-oil-in-indonesia-thailand"
+  },
+  {
+   "h": "Bain- and GIC-backed WHI on track for Japan's largest IPO in 2026",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T20:00:56.056697Z",
+   "url": "https://asia.nikkei.com/business/markets/ipo/bain-and-gic-backed-whi-on-track-for-japan-s-largest-ipo-in-2026"
+  },
+  {
+   "h": "Nvidia scandal sparks Washington blame game over China chip exports",
+   "w": "",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T20:00:56.056697Z",
+   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/nvidia-scandal-sparks-washington-blame-game-over-china-chip-exports"
   },
   {
    "h": "‘It leaves me with a sour taste’: My elderly mother gave our cousin $800 for a car repair. Should I be worried?",
@@ -2466,14 +2507,6 @@
    "url": "https://asia.nikkei.com/life-arts/life/no-grass-no-problem-playing-sand-golf-in-the-australian-outback"
   },
   {
-   "h": "US-China truce masks rising tensions ahead of Xi-Trump redux at APEC",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T17:54:54.906614Z",
-   "url": "https://asia.nikkei.com/spotlight/big-in-asia/us-china-truce-masks-rising-tensions-ahead-of-xi-trump-redux-at-apec"
-  },
-  {
    "h": "Here’s how Bernie Sanders wants to keep Social Security solvent ‘for generations’",
    "w": "The Vermont senator aims to eliminate the taxable maximum, making the wealthy pay more in taxes",
    "syms": [],
@@ -2522,32 +2555,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-14T17:16:39.659837Z",
    "url": "https://asia.nikkei.com/business/travel-leisure/osaka-landmark-to-be-centerpiece-of-area-s-redevelopment"
-  },
-  {
-   "h": "South Koreans show their love for once-taboo Japan pop culture",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T17:16:39.659837Z",
-   "url": "https://asia.nikkei.com/business/media-entertainment/south-koreans-show-their-love-for-once-taboo-japan-pop-culture"
-  },
-  {
-   "h": "Japan to require online authorization for some transit passengers",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T16:37:09.499493Z",
-   "url": "https://asia.nikkei.com/spotlight/japan-immigration/japan-to-require-online-authorization-for-some-transit-passengers"
-  },
-  {
-   "h": "China sees Nvidia chief Huang's swift downfall as political hit",
-   "w": "",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T16:37:09.499493Z",
-   "url": "https://asia.nikkei.com/business/tech/semiconductors/china-sees-nvidia-chief-huang-s-swift-downfall-as-political-hit"
   },
   {
    "h": "Lunettes connectées : « Où est donc l’Europe, qui aime tant se présenter comme la championne mondiale de la protection de la vie privée ? »",
