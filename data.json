@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T05:38:27.801698Z",
+ "generated_at": "2026-11-15T06:37:39.316315Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -117,8 +117,8 @@
    "prev": 28289.1895,
    "chg": -345.4492,
    "pct": -1.22,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^NDX)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^NDX) — last update failed",
    "ts": "2026-11-13T21:00:00Z",
    "open": 28265.5391,
    "lo": 27609.7109,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 64773.2109,
+   "p": 64313.3086,
    "prev": 68249.2734,
-   "chg": -3476.0625,
-   "pct": -5.09,
+   "chg": -3935.9648,
+   "pct": -5.77,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-15T05:38:27.801698Z",
+   "ts": "2026-11-15T06:37:39.316315Z",
    "open": 64119.7812,
    "lo": 62093.5156,
    "hi": 65289.0078,
-   "vol": 49852497920,
+   "vol": 51071803392,
    "h": [
     80790.84,
     80024.01,
@@ -844,7 +844,7 @@
     73964.47,
     71342.97,
     68249.27,
-    64773.21
+    64313.31
    ]
   }
  },
@@ -2226,6 +2226,40 @@
  ],
  "news": [
   {
+   "h": "Le directeur d’Acacia Research Isaac Kohlberg cède des actions pour 109.200$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T06:16:48Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-dacacia-research-isaac-kohlberg-cede-des-actions-pour-109200-93CH-3696565"
+  },
+  {
+   "h": "Immobilier : les sommes reçues des promoteurs en échange du désistement d’un recours contre leur permis de construire doivent-elles être déclarées au fisc ?",
+   "w": "Bercy affirme que les indemnités sont toujours taxables. Mais la jurisprudence distingue celles qui compensent un véritable préjudice de celles qui rémunèrent un service rendu.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-15T06:09:22Z",
+   "url": "https://www.lemonde.fr/argent/article/2026/11/15/immobilier-les-sommes-recues-des-promoteurs-en-echange-du-desistement-d-un-recours-contre-leur-permis-de-construire-doivent-elles-etre-declarees-au-fisc_6810993_1657007.html"
+  },
+  {
+   "h": "Could Budapest be the next digital nomad hotspot?",
+   "w": "With its mix of sights, cafés and culture, Hungary's capital Budapest has become popular with those embracing the \"work from anywhere\" trend.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-15T06:00:01Z",
+   "url": "https://www.cnbc.com/2026/11/15/budapest-europes-next-digital-nomad-hotspot.html"
+  },
+  {
+   "h": "Le Bitcoin glisse vers 60.000$ alors que les sorties d’ETF et les liquidations s’intensifient",
+   "w": "",
+   "syms": [
+    "BTC"
+   ],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T05:40:35Z",
+   "url": "https://fr.investing.com/news/cryptocurrency-news/le-bitcoin-glisse-vers-60000-alors-que-les-sorties-detf-et-les-liquidations-sintensifient-3696563"
+  },
+  {
    "h": "Le lent déclin économique de la France face au reste de l’Europe",
    "w": "L’Hexagone affiche l’une des plus faibles croissances européennes cette année. Un phénomène qui accentue la chute du pays dans le classement européen en PIB par habitant, désormais en dessous de la moyenne.",
    "syms": [],
@@ -2239,34 +2273,61 @@
    "syms": [
     "NVDA"
    ],
-   "src": "myFT — economy",
+   "src": "myFT — world",
    "ts": "2026-11-15T05:00:14Z",
    "url": "https://www.ft.com/content/0e2720d7-ba0a-4469-a854-30931f907bd3",
-   "mine": 1
-  },
-  {
-   "h": "‘Low fire, low hire’ job market hurts US and UK productivity",
-   "w": "Sluggish rates of hiring, resignations and job-switching may lead to long-term damage, say economists",
-   "syms": [],
-   "src": "myFT — economy",
-   "ts": "2026-11-15T05:00:13Z",
-   "url": "https://www.ft.com/content/44c1fdc6-bc51-46e5-8a7c-c10096a25496?syn-25a6b1a6=1",
    "mine": 1
   },
   {
    "h": "EU banking watchdog veers away from single deposit insurance scheme",
    "w": "Chair of European Banking Authority working on alternative ways to free up more cross-border lending",
    "syms": [],
-   "src": "myFT — financials",
+   "src": "myFT — europe",
    "ts": "2026-11-15T05:00:13Z",
    "url": "https://www.ft.com/content/016ce22d-1e09-4f1d-a7e6-9acf183e757f?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Martin Wolf on the US midterms: Trump loses. European populism lives on",
+   "w": "The FT’s chief economics commentator speaks to Timothy Garton Ash, professor of European Studies emeritus at the University of Oxford",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-15T05:00:13Z",
+   "url": "https://www.ft.com/content/7b3ba864-75ca-4862-b54d-abd088444bd3?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Sadiq Khan backs keeping City of London police independent from the Met",
+   "w": "London mayor opposes merger backed by Met commissioner Sir Mark Rowley",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-15T05:00:13Z",
+   "url": "https://www.ft.com/content/85b04bb4-1135-4cc7-a7d8-4e62ab9630db?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "‘Low fire, low hire’ job market hurts US and UK productivity",
+   "w": "Sluggish rates of hiring, resignations and job-switching may lead to long-term damage, say economists",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-15T05:00:13Z",
+   "url": "https://www.ft.com/content/44c1fdc6-bc51-46e5-8a7c-c10096a25496?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "France’s once best hope of stopping Marine Le Pen is losing ground",
+   "w": "Former prime minister Édouard Philippe struggles in a crowded field as the far-right candidate leads race for the Élysée",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-15T05:00:04Z",
+   "url": "https://www.ft.com/content/3d951137-cba3-47d5-a78c-0d82b9fd84e7?syn-25a6b1a6=1",
    "mine": 1
   },
   {
    "h": "The long and winding road to Dubai’s supermarket shelves",
    "w": "The United Arab Emirates’ shipping woes stemming from Iran war stoke dreams of farming in the desert",
    "syms": [],
-   "src": "myFT — economy",
+   "src": "myFT — world",
    "ts": "2026-11-15T05:00:04Z",
    "url": "https://www.ft.com/content/8e13baf8-fce7-4ebd-ac05-5692181f6d7e?syn-25a6b1a6=1",
    "mine": 1
@@ -2275,18 +2336,65 @@
    "h": "Brookfield and KKR vie over $700mn deal for Gulf retailer Eyewa",
    "w": "Private capital firms in advanced talks to acquire majority stake in eyewear chain after Middle East deal drought",
    "syms": [],
-   "src": "myFT — financials",
+   "src": "myFT — world",
    "ts": "2026-11-15T05:00:04Z",
    "url": "https://www.ft.com/content/a240f6b7-724c-4ad5-a4b1-2e04897e2fe8?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "We must make parliament’s historic buildings safe — but not like this",
+   "w": "Soaring costs and delays should be tackled with a swift review and clearer objections",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-15T05:00:04Z",
+   "url": "https://www.ft.com/content/9bbefade-8ca7-4efe-b287-eda0a9c40c84",
+   "mine": 1
+  },
+  {
+   "h": "Samsung conquered AI chips. Now it wants to build data centres",
+   "w": "South Korean conglomerate hopes to replicate success with semiconductors across its sprawling portfolio of businesses",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-15T05:00:04Z",
+   "url": "https://www.ft.com/content/ee5b23b3-89b3-41f7-9158-56c1586759c2?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Data centre construction stocks lose $4.2tn as boom in AI trade unravels",
+   "w": "Shares in AI ‘picks and shovels’ companies hit hard by tech sell-off",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-15T05:00:04Z",
+   "url": "https://www.ft.com/content/d5adde7e-68cc-455b-ba78-b39cc3676b7a?syn-25a6b1a6=1",
    "mine": 1
   },
   {
    "h": "HSBC’s bet on bots could reshape the wealth wars",
    "w": "The UK bank ventures into a high-stakes experiment",
    "syms": [],
-   "src": "myFT — financials",
+   "src": "myFT — banks",
    "ts": "2026-11-15T05:00:04Z",
    "url": "https://www.ft.com/content/6b928d2e-cfe9-49a1-8da6-18d7113d636f?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "European energy groups hire security experts after wave of sabotage",
+   "w": "Rise of so-called hybrid warfare brings greater focus to grid and refinery protection",
+   "syms": [],
+   "src": "myFT — companies",
+   "ts": "2026-11-15T05:00:04Z",
+   "url": "https://www.ft.com/content/77630912-9e8c-42ab-a7d5-937f3704cc74?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Huang’s downfall shows human judgment is not all it’s cracked up to be",
+   "w": "The quality that sets us apart from machines has been absent during implosion by former Nvidia boss",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "myFT — technology",
+   "ts": "2026-11-15T05:00:04Z",
+   "url": "https://www.ft.com/content/f8dffb89-99e3-4e9d-ac62-4eb59da4f007?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2371,14 +2479,6 @@
    "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-san-juan-basin-royalty-trust-achete-pour-14m-dunites-93CH-3696549"
   },
   {
-   "h": "Le Royaume-Uni va élargir son programme de garantie d’emploi pour les jeunes",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T02:16:30Z",
-   "url": "https://fr.investing.com/news/economy-news/le-royaumeuni-va-elargir-son-programme-de-garantie-demploi-pour-les-jeunes-3696547"
-  },
-  {
    "h": "‘Red caviar’ slips off Japan’s sushi menus as roe prices soar",
    "w": "Collapse in wild salmon harvests put prized delicacy at risk as warming seas disrupt supply",
    "syms": [],
@@ -2397,12 +2497,30 @@
    "mine": 1
   },
   {
-   "h": "Evercore explique pourquoi Apple est bien placé pour dominer les agents IA personnels",
+   "h": "China's century-old 'porcelain capital' eyes global luxury",
    "w": "",
    "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T01:38:04Z",
-   "url": "https://fr.investing.com/news/stock-market-news/evercore-explique-pourquoi-apple-est-bien-place-pour-dominer-les-agents-ia-personnels-3696545"
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T00:37:39.316315Z",
+   "url": "https://asia.nikkei.com/life-arts/arts/china-s-century-old-porcelain-capital-eyes-global-luxury"
+  },
+  {
+   "h": "Japan to require online authorization for some transit passengers",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T00:37:39.316315Z",
+   "url": "https://asia.nikkei.com/spotlight/japan-immigration/japan-to-require-online-authorization-for-some-transit-passengers"
+  },
+  {
+   "h": "China sees Nvidia chief Huang's swift downfall as political hit",
+   "w": "",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T00:37:39.316315Z",
+   "url": "https://asia.nikkei.com/business/tech/semiconductors/china-sees-nvidia-chief-huang-s-swift-downfall-as-political-hit"
   },
   {
    "h": "SpaceX successfully catches Starship rocket in huge milestone for the space industry",
@@ -2516,7 +2634,7 @@
    "h": "SpaceX catches returning Starship rocket in breakthrough for Musk",
    "w": "Successful landing of upper stage is key to founder’s aim of sending reusable manned rockets to Mars",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-14T22:33:56Z",
    "url": "https://www.ft.com/content/ce7c8ab1-8337-4c32-8494-5142ec1697dd?syn-25a6b1a6=1",
    "mine": 1
@@ -2538,22 +2656,6 @@
    "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/digital-realty-trust-to-spend-10bn-more-on-japan-data-centers-ceo"
   },
   {
-   "h": "Osaka landmark to be centerpiece of area's redevelopment",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T21:49:13.687350Z",
-   "url": "https://asia.nikkei.com/business/travel-leisure/osaka-landmark-to-be-centerpiece-of-area-s-redevelopment"
-  },
-  {
-   "h": "No grass, no problem: Playing sand golf in the Australian outback",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T21:49:13.687350Z",
-   "url": "https://asia.nikkei.com/life-arts/life/no-grass-no-problem-playing-sand-golf-in-the-australian-outback"
-  },
-  {
    "h": "I’m 63 and spending $95,000 on a roof deck for my $500,000 home. Is that a good investment?",
    "w": "“I have a net worth of $2.3 million and my only debt is a 15-year mortgage.”",
    "syms": [],
@@ -2568,14 +2670,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-14T21:00:00Z",
    "url": "https://www.marketwatch.com/story/i-inherited-1-4-million-from-my-father-am-i-wrong-to-ask-my-husband-of-25-years-for-a-postnuptial-agreement-b739c51d?mod=mw_rss_topstories"
-  },
-  {
-   "h": "ASEAN leaders kick off Manila summits as friction persists on Myanmar, haze",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T20:55:21.059541Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/asean-leaders-kick-off-manila-summits-as-friction-persists-on-myanmar-haze"
   },
   {
    "h": "‘It leaves me with a sour taste’: My elderly mother gave our cousin $800 for a car repair. Should I be worried?",
@@ -2673,7 +2767,7 @@
   },
   {
    "h": "Suspension des vols aux Etats-Unis : plus de 18 400 vols annulés vendredi et samedi alors que des perturbations persistent",
-   "w": "Après l’annulation de 12 000 vols vendredi, ce sont plus de 6 400 trajets qui ont connu le même sort samedi. Les autorités, qui imputent la panne à des travaux sur des infrastructures vétustes, s’attendent à un retour à la normale d’ici dimanche soir.",
+   "w": "Après l’annulation de 12 000 vols vendredi, ce sont plus de 6 400 trajets qui ont connu le même sort samedi. Les autorités, qui imputent la panne à des travaux sur des infrastructures vétustes, s’attendent à un retour à la normale d’ici à dimanche soir.",
    "syms": [],
    "src": "Le Monde — Économie",
    "ts": "2026-11-14T15:31:00Z",
@@ -2757,18 +2851,10 @@
    "url": "https://www.lemonde.fr/economie/article/2026/11/14/en-ile-de-france-les-usagers-de-la-ligne-j-confrontes-a-des-incidents-en-serie-quand-il-y-a-des-suppressions-de-trains-je-ne-vois-pas-mes-enfants_6810247_3234.html"
   },
   {
-   "h": "Meet the seven co-founders of Anthropic",
-   "w": "Four researchers, a former journalist, a public policymaker, and an engineer founded Anthropic in 2021. They're now poised to become multi-billionaires.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-14T12:15:01Z",
-   "url": "https://www.cnbc.com/2026/11/14/meet-the-seven-co-founders-of-anthropic.html"
-  },
-  {
    "h": "How Trump’s midterm gerrymandering flopped",
    "w": "Republicans’ unprecedented redistricting drive failed to overcome the tidal wave of Democratic votes",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-14T12:00:08Z",
    "url": "https://www.ft.com/content/d99f635f-6223-45fc-8429-2ac36b28d080?syn-25a6b1a6=1",
    "mine": 1
@@ -2792,21 +2878,12 @@
    "mine": 1
   },
   {
-   "h": "Argentina’s Milei clashes with his government’s most popular leader",
-   "w": "Tensions between the libertarian president and his senate chief test rightwing unity ahead of 2027 elections",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-14T11:00:09Z",
-   "url": "https://www.ft.com/content/eb3613fa-81ec-4cad-884d-39a20400e147?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Nvidia exposed to possible lawsuits after Jensen Huang’s downfall",
    "w": "Chip group lacks full insurance coverage for damages stemming from the conduct of executives",
    "syms": [
     "NVDA"
    ],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-14T11:00:09Z",
    "url": "https://www.ft.com/content/4aba8386-35cc-463b-a79c-a0c85c362c89?syn-25a6b1a6=1",
    "mine": 1
@@ -2818,6 +2895,15 @@
    "src": "myFT — companies",
    "ts": "2026-11-14T11:00:09Z",
    "url": "https://www.ft.com/content/acca0ba8-913d-4a8a-8d3b-a5521ed1cfc2?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Argentina’s Milei clashes with his government’s most popular leader",
+   "w": "Tensions between the libertarian president and his senate chief test rightwing unity ahead of 2027 elections",
+   "syms": [],
+   "src": "myFT — emerging markets",
+   "ts": "2026-11-14T11:00:09Z",
+   "url": "https://www.ft.com/content/eb3613fa-81ec-4cad-884d-39a20400e147?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2833,7 +2919,7 @@
    "h": "Chart of the Week: The great market rotation",
    "w": "Defensive sectors are the new winners",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-14T10:30:08Z",
    "url": "https://www.ft.com/content/936376d1-4a69-4a3c-8975-3c55e9cb9d42?syn-25a6b1a6=1",
    "mine": 1
@@ -2842,18 +2928,9 @@
    "h": "Hawkward timing",
    "w": "Federal Reserve policymakers have floated the idea of a bigger rate increase in December following strong jobs, growth and inflation data",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — economy",
    "ts": "2026-11-14T10:05:05Z",
    "url": "https://www.ft.com/content/8c2639dc-e5d5-430d-a641-11776ac26f9c",
-   "mine": 1
-  },
-  {
-   "h": "Manchester United: a fate worse than debt",
-   "w": "Also in today’s newsletter: a big shake-up in US college sport angers fans",
-   "syms": [],
-   "src": "myFT — companies",
-   "ts": "2026-11-14T09:00:08Z",
-   "url": "https://www.ft.com/content/b76baec1-6b90-406a-a23a-150904837304?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2865,21 +2942,10 @@
    "url": "https://www.bbc.co.uk/news/articles/c6rrg51rkz09o?at_medium=RSS&at_campaign=rss"
   },
   {
-   "h": "Transcript of an interview with Huw Pill",
-   "w": "Bank of England chief economist talks to the FT",
-   "syms": [
-    "UKX"
-   ],
-   "src": "myFT — world",
-   "ts": "2026-11-14T05:00:46Z",
-   "url": "https://www.ft.com/content/014fae08-ab39-4fa2-b9d3-f0c961a6710f",
-   "mine": 1
-  },
-  {
    "h": "Milburn review to call for tens of thousands of further education places",
    "w": "Plan to be targeted at under-25-year-olds who are not in education, employment or training and could cost more than £1bn a year",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — world uk",
    "ts": "2026-11-14T05:00:46Z",
    "url": "https://www.ft.com/content/5f2242d2-4fb3-4d9c-aa23-ed0c1253f7ab?syn-25a6b1a6=1",
    "mine": 1
@@ -2893,6 +2959,17 @@
    "src": "myFT — world uk",
    "ts": "2026-11-14T05:00:46Z",
    "url": "https://www.ft.com/content/806b0158-41c5-4db2-ac33-93621f72297b?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Transcript of an interview with Huw Pill",
+   "w": "Bank of England chief economist talks to the FT",
+   "syms": [
+    "UKX"
+   ],
+   "src": "myFT — economy",
+   "ts": "2026-11-14T05:00:46Z",
+   "url": "https://www.ft.com/content/014fae08-ab39-4fa2-b9d3-f0c961a6710f",
    "mine": 1
   },
   {
@@ -2944,21 +3021,10 @@
    "mine": 1
   },
   {
-   "h": "The Nvidia board’s artificial independence",
-   "w": "Bored of governance",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "myFT — companies",
-   "ts": "2026-11-14T05:00:37Z",
-   "url": "https://www.ft.com/content/e141a5ea-5aa4-491b-88a4-369cfc67693a",
-   "mine": 1
-  },
-  {
    "h": "China’s beaten-down tech stocks could offer AI with a little less drama",
    "w": "Opportunities in China lie as much in the picks and shovels of the AI supply chain",
    "syms": [],
-   "src": "myFT — companies",
+   "src": "myFT — technology",
    "ts": "2026-11-14T05:00:37Z",
    "url": "https://www.ft.com/content/1505df5d-14e0-4095-8a88-fd23a165a821?syn-25a6b1a6=1",
    "mine": 1
@@ -2987,60 +3053,6 @@
    "src": "myFT — europe",
    "ts": "2026-11-14T05:00:27Z",
    "url": "https://www.ft.com/content/7ca2bfec-3679-486a-b2e4-a436c4970328",
-   "mine": 1
-  },
-  {
-   "h": "How bonds got interesting again",
-   "w": "Despite the short-term volatility, for those approaching retirement, fixed income products are not the rank outsider they used to be",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-14T05:00:27Z",
-   "url": "https://www.ft.com/content/3f89c87c-4bc4-40db-8c15-1957079917f3?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Marilynne Robinson: America’s new dawn",
-   "w": "The acclaimed novelist on why the US midterm elections represented a ‘spectacular’ affirmation of people power",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-14T05:00:27Z",
-   "url": "https://www.ft.com/content/d37b89e9-a473-46f2-8f99-48ae63cebe45",
-   "mine": 1
-  },
-  {
-   "h": "Burnham thinks Britain should talk about Brexit — but are his constituents keen?",
-   "w": "Fresh from a council by-election victory for Labour, Makerfield voters give their views on the prime minister as he heads to Brussels with plans for an initial EU ‘reset’",
-   "syms": [],
-   "src": "myFT — world uk",
-   "ts": "2026-11-14T05:00:27Z",
-   "url": "https://www.ft.com/content/d8dec32d-0110-49c8-8ab0-9f711a9c79f1",
-   "mine": 1
-  },
-  {
-   "h": "UK housing wealth owned by over-65s tops £2.25tn",
-   "w": "Research shows how ‘boomer’ property owners have benefited from an exceptional stretch of house price growth — underlining the UK’s generational divide",
-   "syms": [],
-   "src": "myFT — world uk",
-   "ts": "2026-11-14T05:00:27Z",
-   "url": "https://www.ft.com/content/85cddf9b-fd9d-4b4a-9f9f-e12961a8af98?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "New pooled pension scheme does nothing to solve finance’s ‘nastiest’ problem",
-   "w": "The government has promised to ‘make pensions, pensions again’ — intergenerational risk sharing is not the answer",
-   "syms": [],
-   "src": "myFT — financials",
-   "ts": "2026-11-14T05:00:27Z",
-   "url": "https://www.ft.com/content/ca6d97ba-baa0-46aa-b91e-ab12fa10b123",
-   "mine": 1
-  },
-  {
-   "h": "$500mn Hindu epic Ramayana targets global success on a wing and a prayer",
-   "w": "The most expensive film in Bollywood history favours CGI spectacle over spiritual impact — but it may take a miracle for it to recoup",
-   "syms": [],
-   "src": "myFT — emerging markets",
-   "ts": "2026-11-14T05:00:27Z",
-   "url": "https://www.ft.com/content/c29f7a62-cc73-4583-8961-d1898f694785?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -3084,14 +3096,6 @@
    "src": "BBC — Business",
    "ts": "2026-11-13T18:36:57Z",
    "url": "https://www.bbc.co.uk/news/articles/cwvg238zrnm5o?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "Tout comprendre au smic, le salaire minimum que le gouvernement va revaloriser",
-   "w": "L’exécutif a annoncé, lundi 9 novembre, une augmentation du smic à partir du 1ᵉʳ décembre. Près de 12 % des salariés du privé sont concernés, et les variations de leur rémunération ne sont pas sans effet sur la compétitivité des entreprises.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-13T18:30:05Z",
-   "url": "https://www.lemonde.fr/les-decodeurs/article/2026/11/13/tout-comprendre-au-smic-le-salaire-minimum-que-le-gouvernement-va-revaloriser_6809379_4355770.html"
   }
  ],
  "summary": {
