@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T23:16:39.659837Z",
+ "generated_at": "2026-11-14T23:54:54.906614Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -449,8 +449,8 @@
    "prev": 26771.8809,
    "chg": -21.9316,
    "pct": -0.08,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^GDAXI)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^GDAXI) — last update failed",
    "ts": "2026-11-13T16:30:00Z",
    "open": 26697.0293,
    "lo": 26678.3496,
@@ -774,10 +774,10 @@
    ]
   },
   "BRENT": {
-   "p": 95.84,
+   "p": 96.08,
    "prev": 95.82,
-   "chg": 0.02,
-   "pct": 0.02,
+   "chg": 0.26,
+   "pct": 0.27,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-13T22:00:00Z",
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 63640.6484,
+   "p": 64135.8984,
    "prev": 68249.2734,
-   "chg": -4608.625,
-   "pct": -6.75,
+   "chg": -4113.375,
+   "pct": -6.03,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-14T23:16:39.659837Z",
+   "ts": "2026-11-14T23:54:54.906614Z",
    "open": 68238.2109,
-   "lo": 63506.3398,
+   "lo": 63342.5312,
    "hi": 68360.7109,
-   "vol": 42928992256,
+   "vol": 41918259200,
    "h": [
     80790.84,
     80024.01,
@@ -844,7 +844,7 @@
     73964.47,
     71342.97,
     68249.27,
-    63640.65
+    64135.9
    ]
   }
  },
@@ -945,9 +945,9 @@
    "ccy": "USD",
    "mcap": 3890434801664,
    "pe": 27.3424,
-   "fpe": 21.6518,
+   "fpe": 21.6569,
    "eps": 19.16,
-   "feps": 24.1957,
+   "feps": 24.1899,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -1104,7 +1104,7 @@
    "earnEnd": 1799933400,
    "earnEst": true,
    "exDiv": 1796860800,
-   "divDate": 1799280000,
+   "divDate": 1807142400,
    "lastDiv": 1.107,
    "trailDiv": 6.0
   },
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1656497373184,
    "pe": 44.318,
-   "fpe": 17.8742,
+   "fpe": 17.8273,
    "eps": 7.83,
-   "feps": 19.414,
+   "feps": 19.4651,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1019350286336,
+   "mcap": 1016233525248,
    "pe": 46.4094,
    "fpe": 39.7569,
    "eps": 2.76,
    "feps": 3.2218,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.773,
@@ -1868,9 +1868,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 521499836416,
-   "pe": 50.6924,
+   "pe": 50.6055,
    "fpe": 18.216,
-   "eps": 5.82,
+   "eps": 5.83,
    "feps": 16.1962,
    "revTTM": 66013999104,
    "netIncome": 10302999552,
@@ -1911,9 +1911,9 @@
    "ccy": "USD",
    "mcap": 429061144576,
    "pe": 16.1446,
-   "fpe": 13.2731,
+   "fpe": 13.3304,
    "eps": 13.62,
-   "feps": 16.5666,
+   "feps": 16.4954,
    "revTTM": 226256994304,
    "netIncome": 26976000000,
    "shares": 1951253686,
@@ -1999,9 +1999,9 @@
    "ccy": "USD",
    "mcap": 404771504128,
    "pe": 118.3028,
-   "fpe": 66.1698,
+   "fpe": 66.2625,
    "eps": 1.42,
-   "feps": 2.5388,
+   "feps": 2.5352,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
@@ -2082,9 +2082,9 @@
    "ccy": "USD",
    "mcap": 426963795968,
    "pe": 29.2773,
-   "fpe": 28.1245,
+   "fpe": 28.1338,
    "eps": 3.39,
-   "feps": 3.529,
+   "feps": 3.5278,
    "revTTM": 51053998080,
    "netIncome": 14629000192,
    "shares": 4301902335,
@@ -2168,8 +2168,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 121.2883,
+   "shares": 572600000,
+   "divYield": 2.608,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2221,12 +2226,78 @@
  ],
  "news": [
   {
+   "h": "Un directeur de SEI Investments vend des actions pour 882.400$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T23:46:50Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-sei-investments-vend-des-actions-pour-882400-93CH-3696533"
+  },
+  {
+   "h": "SpaceX successfully catches Starship rocket in huge milestone for the space industry",
+   "w": "The historic first gets SpaceX closer to “rapid reusability” of rockets.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-14T23:34:00Z",
+   "url": "https://www.marketwatch.com/story/spacex-successfully-catches-starship-rocket-in-huge-milestone-for-the-space-industry-f42c136c?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Passengers face widespread disruption after US air traffic control outage",
+   "w": "Thousands of flights delayed or cancelled as political blame game mounts",
+   "syms": [],
+   "src": "myFT — companies",
+   "ts": "2026-11-14T23:32:08Z",
+   "url": "https://www.ft.com/content/f66f9811-59a2-4e52-a944-c7ed81dabc50?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Un dirigeant de WEC Energy Group cède des actions pour 2,16 M$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T23:32:04Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-de-wec-energy-group-cede-des-actions-pour-216-m-93CH-3696532"
+  },
+  {
+   "h": "Nationwide ground stop followed contractor upgrade to L3Harris telecommunication system: DOT’s Duffy",
+   "w": "The FAA ground stop came after updates to an older communication system managed by L3Harris Technologies, Transportation Secretary Sean Duffy said Saturday.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-14T23:21:21Z",
+   "url": "https://www.cnbc.com/2026/11/14/faa-ground-stop-flights-resume-delays.html"
+  },
+  {
+   "h": "Donegal Mutual Insurance acquiert 424.497$ d’actions Donegal Group",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T23:17:08Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/donegal-mutual-insurance-acquiert-424497-dactions-donegal-group-93CH-3696531"
+  },
+  {
+   "h": "Le directeur général de Donegal Group vend des actions pour 114.043$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-14T23:16:53Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-general-de-donegal-group-vend-des-actions-pour-114043-93CH-3696530"
+  },
+  {
    "h": "SpaceX catches upper stage of Starship rocket in historic first",
    "w": "Starship Test Flight 15 marked the first time Elon Musk's company tried to catch both the booster and upper stage of the rocket.",
    "syms": [],
    "src": "CNBC — Markets",
    "ts": "2026-11-14T23:10:14Z",
    "url": "https://www.cnbc.com/2026/11/14/spacex-plans-to-try-first-ever-catch-of-starship-rocket-from-orbit.html"
+  },
+  {
+   "h": "US air travel chaos exposes system held together by ‘string and duct tape’",
+   "w": "Decades of bipartisan neglect have left America’s aviation infrastructure unfit for purpose, say experts",
+   "syms": [],
+   "src": "myFT — companies",
+   "ts": "2026-11-14T22:57:26Z",
+   "url": "https://www.ft.com/content/9df17e1c-c77a-4f67-b5b4-1adb64bcd063?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "Un administrateur de DraftKings achète pour 98.800$ d’actions",
@@ -2302,53 +2373,12 @@
    "url": "https://www.marketwatch.com/story/im-63-and-want-to-spend-95-000-on-a-roof-deck-for-my-500-000-home-is-that-a-good-investment-f1a59c27?mod=mw_rss_topstories"
   },
   {
-   "h": "L’action GFL Environmental notée Surperformance par William Blair",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T21:04:15Z",
-   "url": "https://fr.investing.com/news/analyst-ratings/laction-gfl-environmental-notee-surperformance-par-william-blair-93CH-3696522"
-  },
-  {
-   "h": "Passengers face widespread disruption after US air traffic control outage",
-   "w": "Thousands of flights delayed or cancelled as political blame game mounts",
-   "syms": [],
-   "src": "myFT — companies",
-   "ts": "2026-11-14T21:02:31Z",
-   "url": "https://www.ft.com/content/f66f9811-59a2-4e52-a944-c7ed81dabc50?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "I inherited $1.4 million from my father. Am I wrong to ask my husband of 25 years for a postnuptial agreement?",
    "w": "“He has always said he wants his daughter to inherit a chunk of his estate, and I’ve never objected to that.”",
    "syms": [],
    "src": "MarketWatch",
    "ts": "2026-11-14T21:00:00Z",
    "url": "https://www.marketwatch.com/story/i-inherited-1-4-million-from-my-father-am-i-wrong-to-ask-my-husband-of-25-years-for-a-postnuptial-agreement-b739c51d?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Litecoin décline de 11% dans un marché baissier",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T20:56:01Z",
-   "url": "https://fr.investing.com/news/cryptocurrency-news/litecoin-decline-de-11-dans-un-marche-baissier-3696520"
-  },
-  {
-   "h": "EOS affiche un déclin de 13% dans une tendance négative",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T20:53:02Z",
-   "url": "https://fr.investing.com/news/cryptocurrency-news/eos-affiche-un-declin-de-13-dans-une-tendance-negative-3696519"
-  },
-  {
-   "h": "David Deming achète pour 10.066$ d’actions Phio Pharmaceuticals",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T20:46:44Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/david-deming-achete-pour-10066-dactions-phio-pharmaceuticals-93CH-3696518"
   },
   {
    "h": "‘It leaves me with a sour taste’: My elderly mother gave our cousin $800 for a car repair. Should I be worried?",
@@ -2367,14 +2397,6 @@
    "url": "https://www.marketwatch.com/story/im-sick-of-flying-i-paid-for-priority-boarding-but-the-overhead-bins-were-full-was-i-duped-0badcc80?mod=mw_rss_topstories"
   },
   {
-   "h": "Nationwide ground stop followed contractor upgrade to L3Harris telecommunication system: DOT’s Duffy",
-   "w": "The FAA ground stop came after updates to an older communication system managed by L3Harris Technologies, Transportation Secretary Sean Duffy said Saturday.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-14T18:32:47Z",
-   "url": "https://www.cnbc.com/2026/11/14/faa-ground-stop-flights-resume-delays.html"
-  },
-  {
    "h": "Should a widow leave her late partner’s home to her stepkids — or cut off contact with them?",
    "w": "“It would be a less drastic step than selling the home now and splitting the proceeds.”",
    "syms": [],
@@ -2389,6 +2411,38 @@
    "src": "MarketWatch",
    "ts": "2026-11-14T18:00:00Z",
    "url": "https://www.marketwatch.com/story/he-calls-my-plans-a-fantasy-my-husband-says-we-cant-afford-our-200-000-a-year-dream-retirement-i-think-hes-cheap-45bc5b4e?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Footloose in Vientiane: A capital in no great hurry",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T17:54:54.906614Z",
+   "url": "https://asia.nikkei.com/life-arts/life/destinations/footloose-in-vientiane-a-capital-in-no-great-hurry"
+  },
+  {
+   "h": "Did we really see a black hole? Australian team says 'yes'",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T17:54:54.906614Z",
+   "url": "https://asia.nikkei.com/business/science/did-we-really-see-a-black-hole-australian-team-says-yes"
+  },
+  {
+   "h": "No grass, no problem: Playing sand golf in the Australian outback",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T17:54:54.906614Z",
+   "url": "https://asia.nikkei.com/life-arts/life/no-grass-no-problem-playing-sand-golf-in-the-australian-outback"
+  },
+  {
+   "h": "US-China truce masks rising tensions ahead of Xi-Trump redux at APEC",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T17:54:54.906614Z",
+   "url": "https://asia.nikkei.com/spotlight/big-in-asia/us-china-truce-masks-rising-tensions-ahead-of-xi-trump-redux-at-apec"
   },
   {
    "h": "Here’s how Bernie Sanders wants to keep Social Security solvent ‘for generations’",
@@ -2413,14 +2467,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-14T17:50:00Z",
    "url": "https://www.marketwatch.com/story/retirees-should-be-big-beneficiaries-of-the-midterms-democrats-will-hold-every-gavel-that-matters-for-aging-and-public-policy-71e966f0?mod=mw_rss_topstories"
-  },
-  {
-   "h": "The lonely labor of caregiving: ‘You shouldn’t have to be rich to take care of the people you love’",
-   "w": "“Take Me Home” offers a view of how one family faces caregiving issues and finds solutions.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-14T17:50:00Z",
-   "url": "https://www.marketwatch.com/story/if-you-could-change-one-thing-about-caregiving-what-would-it-be-8b20be29?mod=mw_rss_topstories"
   },
   {
    "h": "Nvidia board urged to consider 'potential return of Jensen Huang' by two major investors",
@@ -2483,14 +2529,6 @@
    "url": "https://asia.nikkei.com/business/markets/ipo/bain-and-gic-backed-whi-on-track-for-japan-s-largest-ipo-in-2026"
   },
   {
-   "h": "Honda supplier Topre to invest $140mn in US for new plant, upgrades",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T16:37:09.499493Z",
-   "url": "https://asia.nikkei.com/business/automobiles/honda-supplier-topre-to-invest-140mn-in-us-for-new-plant-upgrades"
-  },
-  {
    "h": "Lunettes connectées : « Où est donc l’Europe, qui aime tant se présenter comme la championne mondiale de la protection de la vie privée ? »",
    "w": "Les usages prétendument récréatifs des lunettes munies de caméras et de microphones ne justifient pas de faire peser sur l’ensemble de la population le risque d’une surveillance diffuse, dénonce un collectif de chercheurs dans une tribune au « Monde ».",
    "syms": [],
@@ -2519,16 +2557,6 @@
    "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/nvidia-scandal-sparks-washington-blame-game-over-china-chip-exports"
   },
   {
-   "h": "US Treasury bought nearly $500mn in yen during joint July forex intervention",
-   "w": "",
-   "syms": [
-    "USDJPY"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T15:56:53.333568Z",
-   "url": "https://asia.nikkei.com/business/markets/currencies/us-treasury-bought-nearly-500mn-in-yen-during-joint-july-forex-intervention"
-  },
-  {
    "h": "How Nvidia turmoil and a Democratic Congress could reshape the AI trade, according to ETF experts",
    "w": "ETF experts say Nvidia’s leadership turmoil and Democratic control of Congress could shift AI demand to the benefit of other Big Tech stocks, rival chipmakers.",
    "syms": [
@@ -2555,22 +2583,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-14T15:31:00Z",
    "url": "https://www.lemonde.fr/international/article/2026/11/14/suspension-des-vols-aux-etats-unis-des-annulations-et-des-retards-de-vols-persistent-samedi_6810445_3210.html"
-  },
-  {
-   "h": "Eyeing his legacy, Trump seizes chance for arms talks with Xi and Putin",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T15:16:03.196511Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/eyeing-his-legacy-trump-seizes-chance-for-arms-talks-with-xi-and-putin"
-  },
-  {
-   "h": "How Trump might be tempted to orchestrate an 'end to the Korean War'",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T15:16:03.196511Z",
-   "url": "https://asia.nikkei.com/spotlight/comment/how-trump-might-be-tempted-to-orchestrate-an-end-to-the-korean-war"
   },
   {
    "h": "How Rockstar's 'GTA VI' release could reshape gaming, streaming and even paid time off",
@@ -2925,15 +2937,6 @@
    "src": "myFT — financials",
    "ts": "2026-11-14T05:00:27Z",
    "url": "https://www.ft.com/content/ca6d97ba-baa0-46aa-b91e-ab12fa10b123",
-   "mine": 1
-  },
-  {
-   "h": "Will we soon cure cancer?",
-   "w": "A revolution in drug-based prevention and treatment has brought scientists tantalisingly close to defeating these most feared diseases — but stubborn challenges remain",
-   "syms": [],
-   "src": "myFT — companies",
-   "ts": "2026-11-14T05:00:27Z",
-   "url": "https://www.ft.com/content/2645c02e-b3e1-4a0e-80d1-e848ecc1acf0?syn-25a6b1a6=1",
    "mine": 1
   },
   {
