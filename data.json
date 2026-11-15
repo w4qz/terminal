@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T03:49:13.687350Z",
+ "generated_at": "2026-11-15T04:41:40.521312Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -449,8 +449,8 @@
    "prev": 26771.8809,
    "chg": -21.9316,
    "pct": -0.08,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^GDAXI) — last update failed",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^GDAXI)",
    "ts": "2026-11-13T16:30:00Z",
    "open": 26697.0293,
    "lo": 26678.3496,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 64923.5117,
+   "p": 64763.5586,
    "prev": 68249.2734,
-   "chg": -3325.7617,
-   "pct": -4.87,
+   "chg": -3485.7148,
+   "pct": -5.11,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-15T03:49:13.687350Z",
+   "ts": "2026-11-15T04:41:40.521312Z",
    "open": 64119.7812,
    "lo": 62093.5156,
    "hi": 65289.0078,
-   "vol": 49003237376,
+   "vol": 50020573184,
    "h": [
     80790.84,
     80024.01,
@@ -844,7 +844,7 @@
     73964.47,
     71342.97,
     68249.27,
-    64923.51
+    64763.56
    ]
   }
  },
@@ -2221,6 +2221,38 @@
  ],
  "news": [
   {
+   "h": "Des avions de Copa Airlines et UPS entrent en collision à Miami",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T04:23:54Z",
+   "url": "https://fr.investing.com/news/economy-news/des-avions-de-copa-airlines-et-ups-entrent-en-collision-a-miami-3696559"
+  },
+  {
+   "h": "Le BPA de Greenland Acquisition a dépassé les attentes de 0,08$, le CA a surpassé les prévisions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T04:17:20Z",
+   "url": "https://fr.investing.com/news/earnings/le-bpa-de-greenland-acquisition-a-depasse-les-attentes-de-008-le-ca--a-surpasse-les-previsions-3696558"
+  },
+  {
+   "h": "Le directeur d’ACNB, Frank Elsner III, achète des actions et reçoit une rémunération",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T03:46:50Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-dacnb-frank-elsner-iii-achete-des-actions-et-recoit-une-remuneration-93CH-3696557"
+  },
+  {
+   "h": "Saba Capital vend pour 406.836$ d’actions du fonds PIMCO Dynamic Income Strategy",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T03:31:42Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/saba-capital-vend-pour-406836-dactions-du-fonds-pimco-dynamic-income-strategy-93CH-3696554"
+  },
+  {
    "h": "Le PDG de Neonc Technologies achète des actions pour 294.500$",
    "w": "",
    "syms": [],
@@ -2248,7 +2280,7 @@
    "h": "The world according to China",
    "w": "The Apec summit in Shenzhen this week will showcase China’s ambition to reshape the global order on its own terms",
    "syms": [],
-   "src": "myFT — emerging markets",
+   "src": "myFT — world",
    "ts": "2026-11-15T03:00:02Z",
    "url": "https://www.ft.com/content/fb667289-ae81-42c7-8eb8-ebda09dceff7?syn-25a6b1a6=1",
    "mine": 1
@@ -2304,38 +2336,6 @@
    "url": "https://fr.investing.com/news/stock-market-news/evercore-explique-pourquoi-apple-est-bien-place-pour-dominer-les-agents-ia-personnels-3696545"
   },
   {
-   "h": "La PDG d’Orion Energy Systems achète des actions pour 9.906$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T01:32:11Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/la-pdg-dorion-energy-systems-achete-des-actions-pour-9906-93CH-3696544"
-  },
-  {
-   "h": "La directrice financière de Figs, Inc. cède des actions pour 1,97M$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T01:16:52Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-financiere-de-figs-inc-cede-des-actions-pour-197m-93CH-3696543"
-  },
-  {
-   "h": "Ethereum affiche un recul de 10% face à la domination des vendeurs",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T01:04:04Z",
-   "url": "https://fr.investing.com/news/cryptocurrency-news/ethereum-affiche-un-recul-de-10-face-a-la-domination-des-vendeurs-3696541"
-  },
-  {
-   "h": "Le PDG de MBX Biosciences vend des actions pour 268.234$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T01:02:20Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-mbx-biosciences-vend-des-actions-pour-268234-93CH-3696539"
-  },
-  {
    "h": "SpaceX successfully catches Starship rocket in huge milestone for the space industry",
    "w": "The historic first gets SpaceX closer to “rapid reusability” of rockets.",
    "syms": [],
@@ -2376,6 +2376,38 @@
    "ts": "2026-11-14T22:57:26Z",
    "url": "https://www.ft.com/content/9df17e1c-c77a-4f67-b5b4-1adb64bcd063?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "Gaming emerges as a new corporate networking tool in Japan",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T22:41:40.521312Z",
+   "url": "https://asia.nikkei.com/business/business-trends/gaming-emerges-as-a-new-corporate-networking-tool-in-japan"
+  },
+  {
+   "h": "Footloose in Vientiane: A capital in no great hurry",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T22:41:40.521312Z",
+   "url": "https://asia.nikkei.com/life-arts/life/destinations/footloose-in-vientiane-a-capital-in-no-great-hurry"
+  },
+  {
+   "h": "How Trump might be tempted to orchestrate an 'end to the Korean War'",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T22:41:40.521312Z",
+   "url": "https://asia.nikkei.com/spotlight/comment/how-trump-might-be-tempted-to-orchestrate-an-end-to-the-korean-war"
+  },
+  {
+   "h": "Did we really see a black hole? Australian team says 'yes'",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T22:41:40.521312Z",
+   "url": "https://asia.nikkei.com/business/science/did-we-really-see-a-black-hole-australian-team-says-yes"
   },
   {
    "h": "$180 million Van Gogh tests the art market and collector confidence",
@@ -2477,32 +2509,6 @@
    "url": "https://asia.nikkei.com/business/tech/semiconductors/china-sees-nvidia-chief-huang-s-swift-downfall-as-political-hit"
   },
   {
-   "h": "South Koreans show their love for once-taboo Japan pop culture",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T20:55:21.059541Z",
-   "url": "https://asia.nikkei.com/business/media-entertainment/south-koreans-show-their-love-for-once-taboo-japan-pop-culture"
-  },
-  {
-   "h": "Subaru retools boxer engine for fuel economy, with eye on hybrids",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T20:00:56.056697Z",
-   "url": "https://asia.nikkei.com/business/automobiles/subaru-retools-boxer-engine-for-fuel-economy-with-eye-on-hybrids"
-  },
-  {
-   "h": "Philippines moves to secure emergency access to oil in Indonesia, Thailand",
-   "w": "",
-   "syms": [
-    "BRENT"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T20:00:56.056697Z",
-   "url": "https://asia.nikkei.com/business/energy/philippines-moves-to-secure-emergency-access-to-oil-in-indonesia-thailand"
-  },
-  {
    "h": "‘It leaves me with a sour taste’: My elderly mother gave our cousin $800 for a car repair. Should I be worried?",
    "w": "“I know older people can easily feel patronized, and I don’t want that to happen.”",
    "syms": [],
@@ -2517,14 +2523,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-14T19:30:00Z",
    "url": "https://www.marketwatch.com/story/im-sick-of-flying-i-paid-for-priority-boarding-but-the-overhead-bins-were-full-was-i-duped-0badcc80?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Eyeing his legacy, Trump seizes chance for arms talks with Xi and Putin",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T18:55:42.795536Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/eyeing-his-legacy-trump-seizes-chance-for-arms-talks-with-xi-and-putin"
   },
   {
    "h": "Should a widow leave her late partner’s home to her stepkids — or cut off contact with them?",
@@ -2823,7 +2821,7 @@
    "syms": [
     "UKX"
    ],
-   "src": "myFT — world",
+   "src": "myFT — world uk",
    "ts": "2026-11-14T05:00:46Z",
    "url": "https://www.ft.com/content/806b0158-41c5-4db2-ac33-93621f72297b?syn-25a6b1a6=1",
    "mine": 1
