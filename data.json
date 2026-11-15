@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T16:42:32.082577Z",
+ "generated_at": "2026-11-15T17:24:06.511300Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -43,8 +43,8 @@
    "prev": 34.5,
    "chg": -1.9,
    "pct": -5.51,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (ASTS)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (ASTS) — last update failed",
    "ts": "2026-11-13T21:00:00Z",
    "open": 33.91,
    "lo": 31.34,
@@ -710,7 +710,7 @@
    "open": 3883.3,
    "lo": 3871.1001,
    "hi": 3927.2,
-   "vol": 229442,
+   "vol": 151010,
    "h": [
     4170.1,
     4181.1,
@@ -747,7 +747,7 @@
    "open": 88.79,
    "lo": 87.8,
    "hi": 89.64,
-   "vol": 270072,
+   "vol": 181210,
    "h": [
     97.97,
     101.41,
@@ -784,7 +784,7 @@
    "open": 95.89,
    "lo": 95.07,
    "hi": 97.12,
-   "vol": 35151,
+   "vol": 22079,
    "h": [
     105.92,
     109.86,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 64519.6719,
+   "p": 64803.3008,
    "prev": 64128.0508,
-   "chg": 391.6211,
-   "pct": 0.61,
+   "chg": 675.25,
+   "pct": 1.05,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-15T16:42:32.082577Z",
+   "ts": "2026-11-15T17:24:06.511300Z",
    "open": 64119.7812,
    "lo": 62093.5156,
    "hi": 65889.2344,
-   "vol": 49332109312,
+   "vol": 48537305088,
    "h": [
     80024.01,
     80006.66,
@@ -844,7 +844,7 @@
     71342.97,
     68249.27,
     64128.05,
-    64519.67
+    64803.3
    ]
   }
  },
@@ -1104,7 +1104,7 @@
    "earnEnd": 1799933400,
    "earnEst": true,
    "exDiv": 1796860800,
-   "divDate": 1807142400,
+   "divDate": 1799280000,
    "lastDiv": 1.107,
    "trailDiv": 6.0
   },
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1656497373184,
    "pe": 44.318,
-   "fpe": 17.8273,
+   "fpe": 17.8742,
    "eps": 7.83,
-   "feps": 19.4651,
+   "feps": 19.414,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1342,7 +1342,7 @@
    "cash": 214822905970688,
    "debt": 17191200096256,
    "fcf": 83820791463936,
-   "w52lo": 94500.0,
+   "w52lo": 0.0,
    "w52hi": 374500.0,
    "evEbitda": 3.565,
    "earnTs": 1793167200,
@@ -1463,7 +1463,7 @@
    "debtEq": 5.111,
    "cash": 114459997634560,
    "debt": 15799000498176,
-   "w52lo": 501000.0,
+   "w52lo": 0.0,
    "w52hi": 2987000.0,
    "evEbitda": 3.604,
    "earnTs": 1793080800,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1016233525248,
+   "mcap": 1019350286336,
    "pe": 46.4094,
-   "fpe": 39.7569,
+   "fpe": 39.7422,
    "eps": 2.76,
-   "feps": 3.2218,
+   "feps": 3.223,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.773,
@@ -1694,9 +1694,9 @@
    "ccy": "USD",
    "mcap": 695874551808,
    "pe": 17.5504,
-   "fpe": 13.5908,
+   "fpe": 13.6084,
    "eps": 9.72,
-   "feps": 12.5519,
+   "feps": 12.5357,
    "revTTM": 388231987200,
    "netIncome": 40621998080,
    "shares": 4079222444,
@@ -1868,9 +1868,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 521499836416,
-   "pe": 50.6055,
+   "pe": 50.6924,
    "fpe": 18.216,
-   "eps": 5.83,
+   "eps": 5.82,
    "feps": 16.1962,
    "revTTM": 66013999104,
    "netIncome": 10302999552,
@@ -1911,9 +1911,9 @@
    "ccy": "USD",
    "mcap": 429061144576,
    "pe": 16.1446,
-   "fpe": 13.3304,
+   "fpe": 13.3049,
    "eps": 13.62,
-   "feps": 16.4954,
+   "feps": 16.527,
    "revTTM": 226256994304,
    "netIncome": 26976000000,
    "shares": 1951253686,
@@ -1999,9 +1999,9 @@
    "ccy": "USD",
    "mcap": 404771504128,
    "pe": 118.3028,
-   "fpe": 66.2625,
+   "fpe": 66.1698,
    "eps": 1.42,
-   "feps": 2.5352,
+   "feps": 2.5388,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
@@ -2082,9 +2082,9 @@
    "ccy": "USD",
    "mcap": 426963795968,
    "pe": 29.2773,
-   "fpe": 28.1338,
+   "fpe": 28.1245,
    "eps": 3.39,
-   "feps": 3.5278,
+   "feps": 3.529,
    "revTTM": 51053998080,
    "netIncome": 14629000192,
    "shares": 4301902335,
@@ -2168,13 +2168,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 121.2883,
-   "shares": 572600000,
-   "divYield": 2.608,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2225,6 +2220,93 @@
   }
  ],
  "news": [
+  {
+   "h": "Bessent says Nvidia needs ‘shake-up’ with external CEO",
+   "w": "US Treasury secretary demands to know if chipmaker is complying with restrictions on exports to China",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "myFT — companies",
+   "ts": "2026-11-15T17:15:23Z",
+   "url": "https://www.ft.com/content/24edbb84-7520-4ef0-a57c-30359e12ccc5?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "FDA rejects cancer drug invented in China in blow to Beijing’s biotech sector",
+   "w": "Summit’s Ivonescimab was seen as a test case for whether the country’s medicine could pass scrutiny in the US",
+   "syms": [],
+   "src": "myFT — companies",
+   "ts": "2026-11-15T17:07:06Z",
+   "url": "https://www.ft.com/content/390948a3-429c-410a-b5fe-54cc5a380b99?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Les perturbations aériennes aux États-Unis entrent dans leur troisième jour",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T17:05:51Z",
+   "url": "https://fr.investing.com/news/economy-news/les-perturbations-aeriennes-aux-etatsunis-entrent-dans-leur-troisieme-jour-3696690"
+  },
+  {
+   "h": "Helus Pharma présentera les résultats de son essai de phase 3 contre la dépression lundi",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T17:05:23Z",
+   "url": "https://fr.investing.com/news/company-news/helus-pharma-presentera-les-resultats-de-son-essai-de-phase-3-contre-la-depression-lundi-93CH-3696689"
+  },
+  {
+   "h": "Neighbours of China’s London ‘mega’ embassy struggle to sell flats",
+   "w": "Beijing owns freehold to about 100 flats near the Tower of London, provoking fears of surveillance, nuisance and leasehold problems",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-15T17:00:06Z",
+   "url": "https://www.ft.com/content/38f869f7-2523-4f4f-b1ea-9e0b2ced8c74?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Trump breaks silence about FAA nationwide ground stop, blames Biden administration",
+   "w": "Trump blamed the Biden administration for the FAA’s aging system after a nationwide ground stop disrupted air travel and urged Congress to approve more funding.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-15T16:56:40Z",
+   "url": "https://www.cnbc.com/2026/11/15/trump-breaks-silence-on-faa-nationwide-ground-stop-blames-biden-.html"
+  },
+  {
+   "h": "Bessent calls for ‘dramatic shakeup’ at Nvidia, urges outside CEO",
+   "w": "Bessent has criticized Howard Lutnick’s department over suspected chip diversion to China while defending President Donald Trump’s handling of the matter.",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-15T16:49:11Z",
+   "url": "https://www.cnbc.com/2026/11/15/bessent-nvidia-ceo-lutnick-megaspeed.html"
+  },
+  {
+   "h": "Le PDG de Teradyne Gregory Smith cède des actions pour 1,35 M$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T16:47:33Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-teradyne-gregory-smith-cede-des-actions-pour-135-m-93CH-3696688"
+  },
+  {
+   "h": "La directrice de Teradyne Marilyn Matz cède 270.264$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T16:47:25Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-de-teradyne-marilyn-matz-cede-270264-dactions-93CH-3696687"
+  },
+  {
+   "h": "Le directeur financier d’Amtech Systems achète pour 28.270$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T16:47:04Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-damtech-systems-achete-pour-28270-dactions-93CH-3696686"
+  },
   {
    "h": "Le directeur financier de Bread Financial acquiert des actions pour 1.718$",
    "w": "",
@@ -2291,24 +2373,6 @@
    "mine": 1
   },
   {
-   "h": "Bessent appelle à une refonte radicale de la direction de Nvidia",
-   "w": "",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T15:39:58Z",
-   "url": "https://fr.investing.com/news/stock-market-news/bessent-affirme-que-nvidia-a-besoin-dune-refonte-majeure-de-sa-direction-3696669"
-  },
-  {
-   "h": "Le président de Redwood Trust achète des actions pour 251.580$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T15:32:25Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-president-de-redwood-trust-achete-des-actions-pour-251580-93CH-3696668"
-  },
-  {
    "h": "Hong Kong developer New World unveils $3.2bn rights issue",
    "w": "Cheng family’s property firm prices share offer at 82% discount as it moves to slash debts",
    "syms": [],
@@ -2364,30 +2428,6 @@
    "src": "BBC — Business",
    "ts": "2026-11-15T14:56:21Z",
    "url": "https://www.bbc.co.uk/news/articles/cmdx1vpprk9vo?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "Horizon Kinetics Gestion d’actifs achète pour 2.305$ d’actions RENN Fund",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T14:46:33Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/horizon-kinetics-gestion-dactifs-achete-pour-2305-dactions-renn-fund-93CH-3696666"
-  },
-  {
-   "h": "Les investisseurs de Savara se préparent avant une décision clé de la FDA",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T14:42:44Z",
-   "url": "https://fr.investing.com/news/earnings/les-investisseurs-de-savara-se-preparent-avant-une-decision-cle-de-la-fda-93CH-3696665"
-  },
-  {
-   "h": "Driven Brands : résultats attendus dans un contexte de retraitements comptables",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T14:40:16Z",
-   "url": "https://fr.investing.com/news/earnings/driven-brands--resultats-attendus-dans-un-contexte-de-retraitements-comptables-93CH-3696664"
   },
   {
    "h": "Social Security and the blue wave: What could happen to payroll taxes and senior tax breaks",
@@ -2580,6 +2620,38 @@
    "mine": 1
   },
   {
+   "h": "How Japan's defense bases are exposed by smartphone data",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T11:24:06.511300Z",
+   "url": "https://asia.nikkei.com/politics/defense/how-japan-s-defense-bases-are-exposed-by-smartphone-data"
+  },
+  {
+   "h": "Hong Kong's New World proposes $3.2bn rights issue for capital 'reset'",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T11:24:06.511300Z",
+   "url": "https://asia.nikkei.com/business/markets/property/hong-kong-s-new-world-proposes-3.2bn-rights-issue-for-capital-reset"
+  },
+  {
+   "h": "Gaming emerges as a new corporate networking tool in Japan",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T11:24:06.511300Z",
+   "url": "https://asia.nikkei.com/business/business-trends/gaming-emerges-as-a-new-corporate-networking-tool-in-japan"
+  },
+  {
+   "h": "Footloose in Vientiane: A capital in no great hurry",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T11:24:06.511300Z",
+   "url": "https://asia.nikkei.com/life-arts/life/destinations/footloose-in-vientiane-a-capital-in-no-great-hurry"
+  },
+  {
    "h": "From culture war to class war: US Democrats ditch woke politics",
    "w": "The newly emboldened party shifts gears after its sweeping midterm election victory",
    "syms": [],
@@ -2707,16 +2779,6 @@
    "url": "https://asia.nikkei.com/spotlight/japan-immigration/japan-to-require-online-authorization-for-some-transit-passengers"
   },
   {
-   "h": "China sees Nvidia chief Huang's swift downfall as political hit",
-   "w": "",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T09:14:08.341973Z",
-   "url": "https://asia.nikkei.com/business/tech/semiconductors/china-sees-nvidia-chief-huang-s-swift-downfall-as-political-hit"
-  },
-  {
    "h": "Katharina Pistor, professeure de droit : « Les citoyens s’apprêtent à n’être qu’une simple ressource gérée par des patrons de la tech tels que Musk, Thiel et Zuckerberg »",
    "w": "Dans une tribune au « Monde », Katharina Pistor, professeure de droit, compare la domination exercée par la « confrérie de la tech » sur les citoyens à l’approche adoptée autrefois par les colons envers les peuples autochtones.",
    "syms": [],
@@ -2731,42 +2793,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-15T09:00:10Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/15/sans-les-thermes-royat-est-morte-le-possible-deremboursement-des-cures-thermales-menace-un-modele-deja-fragilise_6811001_3234.html"
-  },
-  {
-   "h": "Megaspeed says Alice Huang left in 2025 as it launches internal probe into reports about its business",
-   "w": "The Singapore-based cloud computing company has faced heightened scrutiny since reports linked Nvidia's Jensen Huang to former Megaspeed executive Alice Huang.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-15T08:34:46Z",
-   "url": "https://www.cnbc.com/2026/11/15/megaspeed-alice-huang-probe-nvidia-scandal.html"
-  },
-  {
-   "h": "Subaru retools boxer engine for fuel economy, with eye on hybrids",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T08:25:24.697124Z",
-   "url": "https://asia.nikkei.com/business/automobiles/subaru-retools-boxer-engine-for-fuel-economy-with-eye-on-hybrids"
-  },
-  {
-   "h": "Eyeing his legacy, Trump seizes chance for arms talks with Xi and Putin",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T08:25:24.697124Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/eyeing-his-legacy-trump-seizes-chance-for-arms-talks-with-xi-and-putin"
-  },
-  {
-   "h": "Philippines moves to secure emergency access to oil in Indonesia, Thailand",
-   "w": "",
-   "syms": [
-    "BRENT"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T08:25:24.697124Z",
-   "url": "https://asia.nikkei.com/business/energy/philippines-moves-to-secure-emergency-access-to-oil-in-indonesia-thailand"
   },
   {
    "h": "Immobilier : les sommes reçues des promoteurs en échange du désistement d’un recours contre leur permis de construire doivent-elles être déclarées au fisc ?",
@@ -2894,15 +2920,6 @@
    "mine": 1
   },
   {
-   "h": "European energy groups hire security experts after wave of sabotage",
-   "w": "Rise of so-called hybrid warfare brings greater focus to grid and refinery protection",
-   "syms": [],
-   "src": "myFT — companies",
-   "ts": "2026-11-15T05:00:04Z",
-   "url": "https://www.ft.com/content/77630912-9e8c-42ab-a7d5-937f3704cc74?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "When human judgment is not all it’s cracked up to be",
    "w": "The quality that sets us apart from machines has been absent during implosion by former Nvidia boss Jensen Huang",
    "syms": [
@@ -2911,6 +2928,15 @@
    "src": "myFT — technology",
    "ts": "2026-11-15T05:00:04Z",
    "url": "https://www.ft.com/content/f8dffb89-99e3-4e9d-ac62-4eb59da4f007?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "European energy groups hire security experts after wave of sabotage",
+   "w": "Rise of so-called hybrid warfare brings greater focus to grid and refinery protection",
+   "syms": [],
+   "src": "myFT — technology",
+   "ts": "2026-11-15T05:00:04Z",
+   "url": "https://www.ft.com/content/77630912-9e8c-42ab-a7d5-937f3704cc74?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2934,7 +2960,7 @@
    "h": "‘Red caviar’ slips off Japan’s sushi menus as roe prices soar",
    "w": "Collapse in wild salmon harvests put prized delicacy at risk as warming seas disrupt supply",
    "syms": [],
-   "src": "myFT — companies",
+   "src": "myFT — markets",
    "ts": "2026-11-15T02:00:02Z",
    "url": "https://www.ft.com/content/921b3589-6f88-44a6-b162-a13f5cc7e5e9?syn-25a6b1a6=1",
    "mine": 1
@@ -2974,14 +3000,6 @@
    "mine": 1
   },
   {
-   "h": "'Root cause’ of nationwide ground stop is unknown, FAA says",
-   "w": "Routers and networking equipment may be involved in the problems that led to the ground stop, but a definitive cause has not been established, officials said.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-14T22:54:47Z",
-   "url": "https://www.cnbc.com/2026/11/14/root-cause-of-nationwide-ground-stop-is-unknown-faa-says.html"
-  },
-  {
    "h": "$180 million Van Gogh tests the art market and collector confidence",
    "w": "The art auctions in New York next week could top $2 billion, as a treasure trove of masterpieces comes to the market for the first time in decades.",
    "syms": [],
@@ -2999,22 +3017,22 @@
    "mine": 1
   },
   {
+   "h": "Nvidia board urged to consider 'potential return of Jensen Huang' by two major investors",
+   "w": "Two Nvidia investors with about $2.13 billion of stock disclosed as of June 30 are calling for a deliberate leadership search after Huang’s resignation.",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-14T17:46:06Z",
+   "url": "https://www.cnbc.com/2026/11/14/nvidia-investors-jensen-huang-return-board-letter.html"
+  },
+  {
    "h": "Lunettes connectées : « Où est donc l’Europe, qui aime tant se présenter comme la championne mondiale de la protection de la vie privée ? »",
    "w": "Les usages prétendument récréatifs des lunettes munies de caméras et de microphones ne justifient pas de faire peser sur l’ensemble de la population le risque d’une surveillance diffuse, dénonce un collectif de chercheurs dans une tribune au « Monde ».",
    "syms": [],
    "src": "Le Monde — Économie",
    "ts": "2026-11-14T16:00:18Z",
    "url": "https://www.lemonde.fr/idees/article/2026/11/14/lunettes-connectees-ou-est-donc-l-europe-qui-aime-tant-se-presenter-comme-la-championne-mondiale-de-la-protection-de-la-vie-privee_6810448_3232.html"
-  },
-  {
-   "h": "How Nvidia turmoil and a Democratic Congress could reshape the AI trade, according to ETF experts",
-   "w": "ETF experts say Nvidia’s leadership turmoil and Democratic control of Congress could shift AI demand to the benefit of other Big Tech stocks, rival chipmakers.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-14T15:50:43Z",
-   "url": "https://www.cnbc.com/2026/11/14/nvidia-ai-trade-data-centers-congress.html"
   },
   {
    "h": "Suspension des vols aux Etats-Unis : plus de 18 400 vols annulés vendredi et samedi alors que des perturbations persistent",
@@ -3062,35 +3080,6 @@
    "mine": 1
   },
   {
-   "h": "Europe Express: opening a security can of worms",
-   "w": "Initiating a discussion about changing Nato before a ceasefire in Ukraine gives Moscow additional leverage",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-14T11:00:09Z",
-   "url": "https://www.ft.com/content/4f951f7e-5ea7-41bf-91f0-d550f2231a33?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Nvidia exposed to possible lawsuits after Jensen Huang’s downfall",
-   "w": "Chip group lacks full insurance coverage for damages stemming from the conduct of executives",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "myFT — financials",
-   "ts": "2026-11-14T11:00:09Z",
-   "url": "https://www.ft.com/content/4aba8386-35cc-463b-a79c-a0c85c362c89?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Argentina’s Milei clashes with his government’s most popular leader",
-   "w": "Tensions between the libertarian president and his senate chief test rightwing unity ahead of 2027 elections",
-   "syms": [],
-   "src": "myFT — emerging markets",
-   "ts": "2026-11-14T11:00:09Z",
-   "url": "https://www.ft.com/content/eb3613fa-81ec-4cad-884d-39a20400e147?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Microsoft says services fully restored after day-long global outage",
    "w": "Efforts to address the underlying problem with Outlook, Teams and Copilot are complete, the tech firm says.",
    "syms": [],
@@ -3100,9 +3089,9 @@
   }
  ],
  "summary": {
-  "text": "Global equities diverged as US indices retreated, led lower by the Russell 2000 falling 1.66% and the S&P 500 shedding 0.35%, while the VIX jumped 6.92% to 18.7. Sentiment was weighed down by a 4.34% drop in Nvidia to 166.19 and a 7.33% slide in Bitcoin to 68541.8828. Conversely, European bourses gained, with the DAX rising 0.41% and the CAC adding 0.34%.\n\nIn currencies and commodities, the dollar index hovered at 103.176, as EURUSD declined 0.32% to 1.1059 and GBPUSD slipped 0.39% to 1.3225, while USDJPY gained 0.13% to 159.941. Gold advanced 0.81% to 3916.8. Oil softened, with WTI crude down 0.61% to 88.2 and Brent down 0.24% to 95.59.\n\nMarket participants are watching the vVARDIS NYSE initial public offering priced at 18.00 dollars per share, RedCloud's 100-for-1 share consolidation on Tuesday, and proposals being studied for a strategic gas reserve to anticipate future crises.",
+  "text": "Technology shares weighed on global sentiment, with the Nasdaq falling 1.22% and the S&P 500 down 0.40%, while volatility climbed as the VIX rose 3.21% to 19.3. Nvidia lost 2.01% following calls from Bessent for an external CEO shake-up. In Asia, the Hang Seng fell 1.55% after the FDA rejected a Chinese cancer drug, while US airline disruptions entered their third day.\n\nThe US dollar index firmed 0.23% to 103.411, pulling EUR/USD down 0.61% to 1.1028 and GBP/USD down 0.51% to 1.3209, while USD/JPY slipped 0.03% to 159.686. Commodities were mixed: Brent edged up 0.02% to 95.84, WTI fell 0.20% to 88.56, and gold held flat at 3886.3. Bitcoin gained 1.05% to 64803.3008.\n\nFocus turns to Helus Pharma presenting phase 3 trial results for its depression treatment on Monday, alongside the evolution of US flight disruptions following nationwide ground stops.",
   "model": "gemini-flash-latest",
   "lang": "en",
-  "ts": "2026-11-13T05:45:22.440964Z"
+  "ts": "2026-11-15T17:24:06.511300Z"
  }
 }
