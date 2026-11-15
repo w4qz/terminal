@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T18:51:27.321974Z",
+ "generated_at": "2026-11-15T19:40:57.189804Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -563,11 +563,10 @@
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (EURUSD=X)",
    "ts": "2026-11-13T22:30:00Z",
-   "open": 1.1049,
-   "lo": 1.1027,
-   "hi": 1.1072,
+   "open": 1.1038,
+   "lo": 1.1031,
+   "hi": 1.1038,
    "h": [
-    1.119507,
     1.121315,
     1.122549,
     1.121579,
@@ -588,7 +587,8 @@
     1.122246,
     1.116894,
     1.109521,
-    1.105021
+    1.105021,
+    1.103144
    ]
   },
   "USDJPY": {
@@ -624,7 +624,7 @@
     158.71,
     159.73,
     159.88,
-    159.59
+    159.58
    ]
   },
   "GBPUSD": {
@@ -636,8 +636,8 @@
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
    "ts": "2026-11-13T22:30:00Z",
    "open": 1.3212,
-   "lo": 1.3212,
-   "hi": 1.3212,
+   "lo": 1.3206,
+   "hi": 1.3224,
    "h": [
     1.327316,
     1.333565,
@@ -660,7 +660,7 @@
     1.334864,
     1.327669,
     1.323136,
-    1.321213
+    1.322139
    ]
   },
   "DXY": {
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 64596.5898,
+   "p": 64920.2891,
    "prev": 64128.0508,
-   "chg": 468.5391,
-   "pct": 0.73,
+   "chg": 792.2383,
+   "pct": 1.24,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-15T18:51:27.321974Z",
+   "ts": "2026-11-15T19:40:57.189804Z",
    "open": 64119.7812,
    "lo": 62093.5156,
    "hi": 65889.2344,
-   "vol": 48006705152,
+   "vol": 48066572288,
    "h": [
     80024.01,
     80006.66,
@@ -844,7 +844,7 @@
     71342.97,
     68249.27,
     64128.05,
-    64596.59
+    64920.29
    ]
   }
  },
@@ -2226,6 +2226,51 @@
  ],
  "news": [
   {
+   "h": "Jensen Huang discusses comeback as Nvidia CEO with allies",
+   "w": "Tech supporters lobby chipmaker’s board to reinstate former CEO after he resigned following affair with alleged Chinese spy",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "myFT — us",
+   "ts": "2026-11-15T19:03:41Z",
+   "url": "https://www.ft.com/content/45383d86-33c4-4d99-86e5-5e058d3567c1?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Un administrateur de Gaia achète pour 13.647$ d’actions de la société",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T19:02:12Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-gaia-achete-pour-13647-dactions-de-la-societe-93CH-3696696"
+  },
+  {
+   "h": "La Fed de Kansas City affirme avoir du travail à faire sur l’inflation",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T18:58:14Z",
+   "url": "https://fr.investing.com/news/economy-news/la-fed-de-kansas-city-affirme-avoir-du-travail-a-faire-sur-linflation-3696694"
+  },
+  {
+   "h": "Young Britons out of work or training for a year to be guaranteed jobs",
+   "w": "Work and pensions secretary lays out plan to address ‘lost generation’ ahead of changes to unemployment support",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-15T18:52:51Z",
+   "url": "https://www.ft.com/content/7fa20d99-0085-445d-95c9-b2cfe80cd8e1?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Viktor Orbán’s party reels from $20mn hidden cash discovery",
+   "w": "Hungarian police said money was recovered in forests, barns and warehouses as part of investigation into former prime minister’s ally",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-15T18:44:15Z",
+   "url": "https://www.ft.com/content/f05cfe6d-758e-4b14-b150-acc9f3fc9321?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "Bessent says Nvidia needs ‘shake-up’ with external CEO",
    "w": "US Treasury secretary demands to know if chipmaker is complying with restrictions on exports to China",
    "syms": [
@@ -2242,7 +2287,7 @@
    "syms": [
     "BRENT"
    ],
-   "src": "myFT — companies",
+   "src": "myFT — world",
    "ts": "2026-11-15T18:27:27Z",
    "url": "https://www.ft.com/content/a56fc76f-af32-45b2-8ae1-d5e211cb9643?syn-25a6b1a6=1",
    "mine": 1
@@ -2260,7 +2305,7 @@
    "w": "Encore plus de 1 500 vols ont été supprimés dimanche matin aux Etats-Unis, après que plus de 18 000 l’avaient déjà été vendredi et samedi. « Nous allons sans doute voir les choses revenir complètement à la normale lundi », a estimé le secrétaire aux transports.",
    "syms": [],
    "src": "Le Monde — Économie",
-   "ts": "2026-11-15T18:20:29Z",
+   "ts": "2026-11-15T18:20:27Z",
    "url": "https://www.lemonde.fr/international/article/2026/11/15/suspension-des-vols-aux-etats-unis-retour-a-la-normale-du-trafic-aerien-espere-lundi-donald-trump-qualifie-la-gestion-de-l-aviation-par-joe-biden-de-desastre_6811046_3210.html"
   },
   {
@@ -2275,7 +2320,7 @@
    "h": "Anthropic IPO to further fuel the AI news cycle",
    "w": "New York listing date arrives, Trump, Xi and Putin in Shenzhen, a UK-EU entente cordiale",
    "syms": [],
-   "src": "myFT — global economy",
+   "src": "myFT — world",
    "ts": "2026-11-15T18:15:07Z",
    "url": "https://www.ft.com/content/3c7c1b7a-541d-47a3-b074-b8e17e7b050c?syn-25a6b1a6=1",
    "mine": 1
@@ -2294,7 +2339,7 @@
    "h": "US and allies sign accord to protect AI supply chains from China",
    "w": "Pact comes ahead of Donald Trump’s meeting with Xi Jinping at the Asia-Pacific Economic Cooperation forum in Shenzhen",
    "syms": [],
-   "src": "myFT — technology",
+   "src": "myFT — world",
    "ts": "2026-11-15T17:47:43Z",
    "url": "https://www.ft.com/content/3c2197fc-9618-4838-91e6-522ce1a96a22?syn-25a6b1a6=1",
    "mine": 1
@@ -2415,22 +2460,6 @@
    "url": "https://www.marketwatch.com/story/we-had-the-worst-fight-weve-ever-had-i-want-my-husband-to-retire-at-65-but-i-dont-want-to-lose-his-280-000-salary-48511469?mod=mw_rss_topstories"
   },
   {
-   "h": "Mizuho relève la note de Viking Holdings après une normalisation de la valorisation",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T15:57:56Z",
-   "url": "https://fr.investing.com/news/analyst-ratings/mizuho-releve-la-note-de-viking-holdings-apres-une-normalisation-de-la-valorisation-93CH-3696682"
-  },
-  {
-   "h": "Kevin Miller d’UMH Properties achète pour 1.000$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T15:47:04Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/kevin-miller-dumh-properties-achete-pour-1000-dactions-93CH-3696673"
-  },
-  {
    "h": "Sadiq Khan backs keeping City of London police independent from the Met",
    "w": "London mayor opposes merger backed by Met commissioner Sir Mark Rowley",
    "syms": [],
@@ -2522,15 +2551,6 @@
    "url": "https://www.lemonde.fr/economie/article/2026/11/15/fermeture-de-l-a13-derriere-les-travaux-indispensables-la-crainte-de-congestion-sur-les-routes-des-hauts-de-seine_6811023_3234.html"
   },
   {
-   "h": "Young Britons out of work or training for a year to be guaranteed jobs",
-   "w": "Work and pensions secretary lays out plan to address ‘lost generation’ ahead of changes to unemployment support",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-15T14:03:29Z",
-   "url": "https://www.ft.com/content/7fa20d99-0085-445d-95c9-b2cfe80cd8e1?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "‘The thought of living to 100 terrifies me’: Is Social Security a giant Ponzi scheme?",
    "w": "There is already a demographic ‘run’ on Social Security.",
    "syms": [],
@@ -2545,6 +2565,30 @@
    "src": "MarketWatch",
    "ts": "2026-11-15T14:00:00Z",
    "url": "https://www.marketwatch.com/story/will-the-anthropic-ipo-create-a-disturbance-in-the-broader-u-s-equity-market-like-spacex-did-05ba4351?mod=mw_rss_topstories"
+  },
+  {
+   "h": "ASEAN falls short on Myanmar crisis, South China Sea pact at Manila summit",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T13:40:57.189804Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/asean-falls-short-on-myanmar-crisis-south-china-sea-pact-at-manila-summit"
+  },
+  {
+   "h": "Digital Realty Trust to spend $10bn more on Japan data centers: CEO",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T13:40:57.189804Z",
+   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/digital-realty-trust-to-spend-10bn-more-on-japan-data-centers-ceo"
+  },
+  {
+   "h": "How Trump might be tempted to orchestrate an 'end to the Korean War'",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T13:40:57.189804Z",
+   "url": "https://asia.nikkei.com/spotlight/comment/how-trump-might-be-tempted-to-orchestrate-an-end-to-the-korean-war"
   },
   {
    "h": "Should a widow leave her late partner’s home to her stepkids — or cut off contact with them?",
@@ -2714,7 +2758,7 @@
    "syms": [
     "NVDA"
    ],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-15T12:00:05Z",
    "url": "https://www.ft.com/content/3ccb1761-a0cd-43ba-a3e7-e19d00950ae3?syn-25a6b1a6=1",
    "mine": 1
@@ -2753,26 +2797,10 @@
    "url": "https://asia.nikkei.com/business/markets/property/hong-kong-s-new-world-proposes-3.2bn-rights-issue-for-capital-reset"
   },
   {
-   "h": "Gaming emerges as a new corporate networking tool in Japan",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T11:24:06.511300Z",
-   "url": "https://asia.nikkei.com/business/business-trends/gaming-emerges-as-a-new-corporate-networking-tool-in-japan"
-  },
-  {
-   "h": "Footloose in Vientiane: A capital in no great hurry",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T11:24:06.511300Z",
-   "url": "https://asia.nikkei.com/life-arts/life/destinations/footloose-in-vientiane-a-capital-in-no-great-hurry"
-  },
-  {
    "h": "From culture war to class war: US Democrats ditch woke politics",
    "w": "The newly emboldened party shifts gears after its sweeping midterm election victory",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-15T11:00:04Z",
    "url": "https://www.ft.com/content/82e2d624-65aa-4a8c-86ec-f99c0ce785ac?syn-25a6b1a6=1",
    "mine": 1
@@ -2783,7 +2811,7 @@
    "syms": [
     "NVDA"
    ],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-15T11:00:04Z",
    "url": "https://www.ft.com/content/3062790a-553d-41b8-9c7d-bae17b9d2e29?syn-25a6b1a6=1",
    "mine": 1
@@ -2792,7 +2820,7 @@
    "h": "Iran attacks Bahrain in escalation of Gulf hostilities",
    "w": "Bahrain says it has intercepted two Iranian barrages this week after months of relative calm",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — middle east north africa",
    "ts": "2026-11-15T10:50:05Z",
    "url": "https://www.ft.com/content/fc7ccc23-c051-49e6-85e5-8d8ba0a83ef9?syn-25a6b1a6=1",
    "mine": 1
@@ -2805,14 +2833,6 @@
    "ts": "2026-11-15T10:43:31Z",
    "url": "https://www.ft.com/content/d42f1b8e-42ea-4018-8d1c-5d9c85a7fbc4?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Sri Lanka reality contrasts with new World Bank upper-middle-income status",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T10:42:32.082577Z",
-   "url": "https://asia.nikkei.com/economy/sri-lanka-reality-contrasts-with-new-world-bank-upper-middle-income-status"
   },
   {
    "h": "La hausse de 1,6 % du smic et des « bas salaires » des fonctionnaires coûtera « un peu plus de 1 milliard d’euros », selon le gouvernement",
@@ -3019,15 +3039,6 @@
    "mine": 1
   },
   {
-   "h": "New York socialists back Alexandria Ocasio-Cortez for 2028 presidential race",
-   "w": "Democratic congresswoman has been touted as a possible candidate but not said if she will run",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-15T01:52:51Z",
-   "url": "https://www.ft.com/content/3f1fd9f6-8f96-4178-bf5a-8fce8954b811?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Beauty advent calendars can cost hundreds but are they value for money?",
    "w": "Beauty calendars have become a Christmas staple and have become particularly popular with female shoppers.",
    "syms": [],
@@ -3042,15 +3053,6 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-14T23:10:14Z",
    "url": "https://www.cnbc.com/2026/11/14/spacex-plans-to-try-first-ever-catch-of-starship-rocket-from-orbit.html"
-  },
-  {
-   "h": "One router overload brought US air travel to a standstill",
-   "w": "Decades of bipartisan neglect have left America’s aviation infrastructure unfit for purpose, say experts",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-14T22:57:26Z",
-   "url": "https://www.ft.com/content/9df17e1c-c77a-4f67-b5b4-1adb64bcd063?syn-25a6b1a6=1",
-   "mine": 1
   },
   {
    "h": "$180 million Van Gogh tests the art market and collector confidence",
