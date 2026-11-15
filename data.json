@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T23:54:54.906614Z",
+ "generated_at": "2026-11-15T00:55:42.795536Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -449,8 +449,8 @@
    "prev": 26771.8809,
    "chg": -21.9316,
    "pct": -0.08,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^GDAXI) — last update failed",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^GDAXI)",
    "ts": "2026-11-13T16:30:00Z",
    "open": 26697.0293,
    "lo": 26678.3496,
@@ -635,11 +635,10 @@
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
    "ts": "2026-11-13T22:30:00Z",
-   "open": 1.3231,
-   "lo": 1.3209,
-   "hi": 1.325,
+   "open": 1.3212,
+   "lo": 1.3212,
+   "hi": 1.3212,
    "h": [
-    1.323014,
     1.327316,
     1.333565,
     1.330849,
@@ -660,7 +659,8 @@
     1.344176,
     1.334864,
     1.327669,
-    1.323136
+    1.323136,
+    1.321213
    ]
   },
   "DXY": {
@@ -774,10 +774,10 @@
    ]
   },
   "BRENT": {
-   "p": 96.08,
+   "p": 95.84,
    "prev": 95.82,
-   "chg": 0.26,
-   "pct": 0.27,
+   "chg": 0.02,
+   "pct": 0.02,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-13T22:00:00Z",
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 64135.8984,
+   "p": 63480.0,
    "prev": 68249.2734,
-   "chg": -4113.375,
-   "pct": -6.03,
+   "chg": -4769.2734,
+   "pct": -6.99,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-14T23:54:54.906614Z",
-   "open": 68238.2109,
-   "lo": 63342.5312,
-   "hi": 68360.7109,
-   "vol": 41918259200,
+   "ts": "2026-11-15T00:55:42.795536Z",
+   "open": 64119.7812,
+   "lo": 63494.582,
+   "hi": 64378.2383,
+   "vol": 45076893696,
    "h": [
     80790.84,
     80024.01,
@@ -844,7 +844,7 @@
     73964.47,
     71342.97,
     68249.27,
-    64135.9
+    63496.07
    ]
   }
  },
@@ -945,9 +945,9 @@
    "ccy": "USD",
    "mcap": 3890434801664,
    "pe": 27.3424,
-   "fpe": 21.6569,
+   "fpe": 21.6518,
    "eps": 19.16,
-   "feps": 24.1899,
+   "feps": 24.1957,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -1104,7 +1104,7 @@
    "earnEnd": 1799933400,
    "earnEst": true,
    "exDiv": 1796860800,
-   "divDate": 1807142400,
+   "divDate": 1799280000,
    "lastDiv": 1.107,
    "trailDiv": 6.0
   },
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1656497373184,
    "pe": 44.318,
-   "fpe": 17.8273,
+   "fpe": 17.8742,
    "eps": 7.83,
-   "feps": 19.4651,
+   "feps": 19.414,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1016233525248,
+   "mcap": 1019350286336,
    "pe": 46.4094,
    "fpe": 39.7569,
    "eps": 2.76,
    "feps": 3.2218,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.773,
@@ -1868,9 +1868,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 521499836416,
-   "pe": 50.6055,
+   "pe": 50.6924,
    "fpe": 18.216,
-   "eps": 5.83,
+   "eps": 5.82,
    "feps": 16.1962,
    "revTTM": 66013999104,
    "netIncome": 10302999552,
@@ -1911,9 +1911,9 @@
    "ccy": "USD",
    "mcap": 429061144576,
    "pe": 16.1446,
-   "fpe": 13.3304,
+   "fpe": 13.2731,
    "eps": 13.62,
-   "feps": 16.4954,
+   "feps": 16.5666,
    "revTTM": 226256994304,
    "netIncome": 26976000000,
    "shares": 1951253686,
@@ -1955,9 +1955,9 @@
    "ccy": "USD",
    "mcap": 490194108416,
    "pe": 53.2856,
-   "fpe": 44.1838,
+   "fpe": 44.2089,
    "eps": 20.76,
-   "feps": 25.0365,
+   "feps": 25.0223,
    "revTTM": 303154003968,
    "netIncome": 9226000384,
    "shares": 443129349,
@@ -1999,9 +1999,9 @@
    "ccy": "USD",
    "mcap": 404771504128,
    "pe": 118.3028,
-   "fpe": 66.2625,
+   "fpe": 66.1698,
    "eps": 1.42,
-   "feps": 2.5352,
+   "feps": 2.5388,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
@@ -2082,9 +2082,9 @@
    "ccy": "USD",
    "mcap": 426963795968,
    "pe": 29.2773,
-   "fpe": 28.1338,
+   "fpe": 28.1245,
    "eps": 3.39,
-   "feps": 3.5278,
+   "feps": 3.529,
    "revTTM": 51053998080,
    "netIncome": 14629000192,
    "shares": 4301902335,
@@ -2168,13 +2168,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 121.2883,
-   "shares": 572600000,
-   "divYield": 2.608,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2226,20 +2221,52 @@
  ],
  "news": [
   {
+   "h": "SpaceX successfully catches Starship rocket in huge milestone for the space industry",
+   "w": "The historic first gets SpaceX closer to “rapid reusability” of rockets.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-15T00:33:00Z",
+   "url": "https://www.marketwatch.com/story/spacex-successfully-catches-starship-rocket-in-huge-milestone-for-the-space-industry-f42c136c?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Un administrateur de Scotts Miracle-Gro vend des actions pour 176.345$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T00:16:31Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-scotts-miraclegro-vend-des-actions-pour-176345-93CH-3696538"
+  },
+  {
+   "h": "SpaceX récupère le vaisseau Starship malgré l’échec du propulseur",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T00:06:46Z",
+   "url": "https://fr.investing.com/news/company-news/spacex-recupere-le-vaisseau-starship-malgre-lechec-du-propulseur-3696536"
+  },
+  {
+   "h": "Un dirigeant d’Intuitive Surgical cède des actions pour 183.260$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T00:02:12Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-dintuitive-surgical-cede-des-actions-pour-183260-93CH-3696535"
+  },
+  {
+   "h": "Beauty advent calendars can cost hundreds - but are they value for money?",
+   "w": "Beauty calendars have become a Christmas staple and have become particularly popular with female shoppers.",
+   "syms": [],
+   "src": "BBC — Business",
+   "ts": "2026-11-15T00:01:07Z",
+   "url": "https://www.bbc.co.uk/news/articles/cqn83l442724o?at_medium=RSS&at_campaign=rss"
+  },
+  {
    "h": "Un directeur de SEI Investments vend des actions pour 882.400$",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
    "ts": "2026-11-14T23:46:50Z",
    "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-sei-investments-vend-des-actions-pour-882400-93CH-3696533"
-  },
-  {
-   "h": "SpaceX successfully catches Starship rocket in huge milestone for the space industry",
-   "w": "The historic first gets SpaceX closer to “rapid reusability” of rockets.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-14T23:34:00Z",
-   "url": "https://www.marketwatch.com/story/spacex-successfully-catches-starship-rocket-in-huge-milestone-for-the-space-industry-f42c136c?mod=mw_rss_topstories"
   },
   {
    "h": "Passengers face widespread disruption after US air traffic control outage",
@@ -2294,7 +2321,7 @@
    "h": "US air travel chaos exposes system held together by ‘string and duct tape’",
    "w": "Decades of bipartisan neglect have left America’s aviation infrastructure unfit for purpose, say experts",
    "syms": [],
-   "src": "myFT — companies",
+   "src": "myFT — world",
    "ts": "2026-11-14T22:57:26Z",
    "url": "https://www.ft.com/content/9df17e1c-c77a-4f67-b5b4-1adb64bcd063?syn-25a6b1a6=1",
    "mine": 1
@@ -2341,30 +2368,6 @@
    "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-beta-technologies-vend-des-actions-pour-563525-93CH-3696527"
   },
   {
-   "h": "Un directeur d’Investors Title Co achète des actions pour 133.000$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T21:46:46Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-dinvestors-title-co-achete-des-actions-pour-133000-93CH-3696526"
-  },
-  {
-   "h": "XRP décline de 10% face aux craintes des investisseurs",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T21:34:04Z",
-   "url": "https://fr.investing.com/news/cryptocurrency-news/xrp-decline-de-10-face-aux-craintes-des-investisseurs-3696525"
-  },
-  {
-   "h": "Le directeur juridique de Humana, Joseph Ventura, cède des actions pour 2,38 M$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T21:32:05Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-juridique-de-humana-joseph-ventura-cede-des-actions-pour-238-m-93CH-3696524"
-  },
-  {
    "h": "I’m 63 and spending $95,000 on a roof deck for my $500,000 home. Is that a good investment?",
    "w": "“I have a net worth of $2.3 million and my only debt is a 15-year mortgage.”",
    "syms": [],
@@ -2395,6 +2398,32 @@
    "src": "MarketWatch",
    "ts": "2026-11-14T19:30:00Z",
    "url": "https://www.marketwatch.com/story/im-sick-of-flying-i-paid-for-priority-boarding-but-the-overhead-bins-were-full-was-i-duped-0badcc80?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Eyeing his legacy, Trump seizes chance for arms talks with Xi and Putin",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T18:55:42.795536Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/eyeing-his-legacy-trump-seizes-chance-for-arms-talks-with-xi-and-putin"
+  },
+  {
+   "h": "How Trump might be tempted to orchestrate an 'end to the Korean War'",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T18:55:42.795536Z",
+   "url": "https://asia.nikkei.com/spotlight/comment/how-trump-might-be-tempted-to-orchestrate-an-end-to-the-korean-war"
+  },
+  {
+   "h": "US Treasury bought nearly $500mn in yen during joint July forex intervention",
+   "w": "",
+   "syms": [
+    "USDJPY"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T18:55:42.795536Z",
+   "url": "https://asia.nikkei.com/business/markets/currencies/us-treasury-bought-nearly-500mn-in-yen-during-joint-july-forex-intervention"
   },
   {
    "h": "Should a widow leave her late partner’s home to her stepkids — or cut off contact with them?",
@@ -2521,40 +2550,12 @@
    "url": "https://asia.nikkei.com/business/tech/semiconductors/china-sees-nvidia-chief-huang-s-swift-downfall-as-political-hit"
   },
   {
-   "h": "Bain- and GIC-backed WHI on track for Japan's largest IPO in 2026",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T16:37:09.499493Z",
-   "url": "https://asia.nikkei.com/business/markets/ipo/bain-and-gic-backed-whi-on-track-for-japan-s-largest-ipo-in-2026"
-  },
-  {
    "h": "Lunettes connectées : « Où est donc l’Europe, qui aime tant se présenter comme la championne mondiale de la protection de la vie privée ? »",
    "w": "Les usages prétendument récréatifs des lunettes munies de caméras et de microphones ne justifient pas de faire peser sur l’ensemble de la population le risque d’une surveillance diffuse, dénonce un collectif de chercheurs dans une tribune au « Monde ».",
    "syms": [],
    "src": "Le Monde — Économie",
    "ts": "2026-11-14T16:00:18Z",
    "url": "https://www.lemonde.fr/idees/article/2026/11/14/lunettes-connectees-ou-est-donc-l-europe-qui-aime-tant-se-presenter-comme-la-championne-mondiale-de-la-protection-de-la-vie-privee_6810448_3232.html"
-  },
-  {
-   "h": "Philippines moves to secure emergency access to oil in Indonesia, Thailand",
-   "w": "",
-   "syms": [
-    "BRENT"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T15:56:53.333568Z",
-   "url": "https://asia.nikkei.com/business/energy/philippines-moves-to-secure-emergency-access-to-oil-in-indonesia-thailand"
-  },
-  {
-   "h": "Nvidia scandal sparks Washington blame game over China chip exports",
-   "w": "",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T15:56:53.333568Z",
-   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/nvidia-scandal-sparks-washington-blame-game-over-china-chip-exports"
   },
   {
    "h": "How Nvidia turmoil and a Democratic Congress could reshape the AI trade, according to ETF experts",
@@ -2838,15 +2839,6 @@
    "mine": 1
   },
   {
-   "h": "China’s beaten-down tech stocks could offer AI with a little less drama",
-   "w": "Opportunities in China lie as much in the picks and shovels of the AI supply chain",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-14T05:00:37Z",
-   "url": "https://www.ft.com/content/1505df5d-14e0-4095-8a88-fd23a165a821?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Nvidia’s cult of personality was bound to end badly",
    "w": "It is worth paying attention to the warning signs of corporate hubris — they often mean something bad is about to happen",
    "syms": [
@@ -2866,6 +2858,15 @@
    "src": "myFT — companies",
    "ts": "2026-11-14T05:00:37Z",
    "url": "https://www.ft.com/content/e141a5ea-5aa4-491b-88a4-369cfc67693a",
+   "mine": 1
+  },
+  {
+   "h": "China’s beaten-down tech stocks could offer AI with a little less drama",
+   "w": "Opportunities in China lie as much in the picks and shovels of the AI supply chain",
+   "syms": [],
+   "src": "myFT — companies",
+   "ts": "2026-11-14T05:00:37Z",
+   "url": "https://www.ft.com/content/1505df5d-14e0-4095-8a88-fd23a165a821?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -3040,6 +3041,14 @@
    "mine": 1
   },
   {
+   "h": "How the Jensen Huang scandal created a headache for business-friendly Singapore",
+   "w": "The scandal has cast a spotlight on Singapore's success as a chip hub - and a location for alleged illicit trade.",
+   "syms": [],
+   "src": "BBC — Business",
+   "ts": "2026-11-13T23:00:31Z",
+   "url": "https://www.bbc.co.uk/news/articles/ck1exevgql4qo?at_medium=RSS&at_campaign=rss"
+  },
+  {
    "h": "Agencies extend comment period for proposed third-party risk management guidance",
    "w": "Agencies extend comment period for proposed third-party risk management guidance",
    "syms": [],
@@ -3080,22 +3089,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-13T17:48:12Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/13/la-panne-de-microsoft-alerte-entreprises-et-salaries-sur-leur-dependance-aux-outils-numeriques-on-a-tous-un-peu-ete-dans-le-meme-bateau-que-nos-clients_6809369_3234.html"
-  },
-  {
-   "h": "Les effets de la hausse du smic sur le marché du travail suscitent des interrogations",
-   "w": "La hausse du salaire minimum mensuel net à temps plein à 1 502 euros détruira mécaniquement des emplois. Mais l’impact est jugé limité par le gouvernement et par plusieurs économistes.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-13T17:04:31Z",
-   "url": "https://www.lemonde.fr/politique/article/2026/11/13/les-effets-de-la-hausse-du-smic-sur-le-marche-du-travail-suscitent-des-interrogations_6809363_823448.html"
-  },
-  {
-   "h": "Le Maroc se positionne en potentiel fournisseur d’uranium de la France",
-   "w": "Le groupe industriel marocain OCP étudie avec les sociétés françaises EDF et Orano les conditions d’un accord sur la production et la fourniture de concentré d’uranium. Le royaume possède de conséquentes réserves de phosphates.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-13T16:30:04Z",
-   "url": "https://www.lemonde.fr/afrique/article/2026/11/13/le-maroc-se-positionne-en-potentiel-fournisseur-d-uranium-de-la-france_6809357_3212.html"
   }
  ],
  "summary": {
