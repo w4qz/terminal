@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T15:14:08.341973Z",
+ "generated_at": "2026-11-15T15:59:02.941634Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -704,8 +704,8 @@
    "prev": 3885.3,
    "chg": 1.0,
    "pct": 0.03,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (GC=F) — last update failed",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (GC=F)",
    "ts": "2026-11-13T22:00:00Z",
    "open": 3883.3,
    "lo": 3871.1001,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 64618.6211,
+   "p": 64708.9492,
    "prev": 64128.0508,
-   "chg": 490.5703,
-   "pct": 0.76,
+   "chg": 580.8984,
+   "pct": 0.91,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-15T15:14:08.341973Z",
+   "ts": "2026-11-15T15:59:02.941634Z",
    "open": 64119.7812,
    "lo": 62093.5156,
    "hi": 65889.2344,
-   "vol": 52256628736,
+   "vol": 50152787968,
    "h": [
     80024.01,
     80006.66,
@@ -844,7 +844,7 @@
     71342.97,
     68249.27,
     64128.05,
-    64618.62
+    64708.95
    ]
   }
  },
@@ -1104,7 +1104,7 @@
    "earnEnd": 1799933400,
    "earnEst": true,
    "exDiv": 1796860800,
-   "divDate": 1799280000,
+   "divDate": 1807142400,
    "lastDiv": 1.107,
    "trailDiv": 6.0
   },
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1656497373184,
    "pe": 44.318,
-   "fpe": 17.8742,
+   "fpe": 17.8273,
    "eps": 7.83,
-   "feps": 19.414,
+   "feps": 19.4651,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1019350286336,
+   "mcap": 1016233525248,
    "pe": 46.4094,
-   "fpe": 39.7422,
+   "fpe": 39.7569,
    "eps": 2.76,
-   "feps": 3.223,
+   "feps": 3.2218,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.773,
@@ -1694,9 +1694,9 @@
    "ccy": "USD",
    "mcap": 695874551808,
    "pe": 17.5504,
-   "fpe": 13.6084,
+   "fpe": 13.5908,
    "eps": 9.72,
-   "feps": 12.5357,
+   "feps": 12.5519,
    "revTTM": 388231987200,
    "netIncome": 40621998080,
    "shares": 4079222444,
@@ -1868,9 +1868,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 521499836416,
-   "pe": 50.6924,
+   "pe": 50.6055,
    "fpe": 18.216,
-   "eps": 5.82,
+   "eps": 5.83,
    "feps": 16.1962,
    "revTTM": 66013999104,
    "netIncome": 10302999552,
@@ -1911,9 +1911,9 @@
    "ccy": "USD",
    "mcap": 429061144576,
    "pe": 16.1446,
-   "fpe": 13.3049,
+   "fpe": 13.3304,
    "eps": 13.62,
-   "feps": 16.527,
+   "feps": 16.4954,
    "revTTM": 226256994304,
    "netIncome": 26976000000,
    "shares": 1951253686,
@@ -1999,9 +1999,9 @@
    "ccy": "USD",
    "mcap": 404771504128,
    "pe": 118.3028,
-   "fpe": 66.1698,
+   "fpe": 66.2625,
    "eps": 1.42,
-   "feps": 2.5388,
+   "feps": 2.5352,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
@@ -2082,9 +2082,9 @@
    "ccy": "USD",
    "mcap": 426963795968,
    "pe": 29.2773,
-   "fpe": 28.1245,
+   "fpe": 28.1338,
    "eps": 3.39,
-   "feps": 3.529,
+   "feps": 3.5278,
    "revTTM": 51053998080,
    "netIncome": 14629000192,
    "shares": 4301902335,
@@ -2168,8 +2168,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 121.2883,
+   "shares": 572600000,
+   "divYield": 2.608,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2220,6 +2225,77 @@
   }
  ],
  "news": [
+  {
+   "h": "Kevin Miller d’UMH Properties achète pour 1.000$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T15:47:04Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/kevin-miller-dumh-properties-achete-pour-1000-dactions-93CH-3696673"
+  },
+  {
+   "h": "Un administrateur de RGC Resources acquiert des actions pour 2.374$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T15:46:52Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-rgc-resources-acquiert-des-actions-pour-2374-93CH-3696671"
+  },
+  {
+   "h": "Sadiq Khan backs keeping City of London police independent from the Met",
+   "w": "London mayor opposes merger backed by Met commissioner Sir Mark Rowley",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-15T15:43:04Z",
+   "url": "https://www.ft.com/content/85b04bb4-1135-4cc7-a7d8-4e62ab9630db?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Bessent affirme que Nvidia a besoin d’une refonte majeure de sa direction",
+   "w": "",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T15:39:58Z",
+   "url": "https://fr.investing.com/news/stock-market-news/bessent-affirme-que-nvidia-a-besoin-dune-refonte-majeure-de-sa-direction-3696669"
+  },
+  {
+   "h": "Le président de Redwood Trust achète des actions pour 251.580$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T15:32:25Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-president-de-redwood-trust-achete-des-actions-pour-251580-93CH-3696668"
+  },
+  {
+   "h": "Hong Kong developer New World unveils $3.2bn rights issue",
+   "w": "Cheng family’s property firm prices share offer at 82% discount as it moves to slash debts",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-15T15:24:52Z",
+   "url": "https://www.ft.com/content/9daa3a26-c49c-4c94-91af-0d4c2116d2e4?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "China’s hottest stocks these days have one thing in common: names that sound like sheep",
+   "w": "Shares of fish processors, lighting manufacturers and appliance makers have soared ahead of the Year of the Sheep. Investor appetite has had little to do with the status of their businesses.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-15T15:22:00Z",
+   "url": "https://www.marketwatch.com/story/chinas-hottest-stocks-these-days-have-one-thing-in-common-names-that-sound-like-sheep-6176e521?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Gold rush turns deadly in Guinea",
+   "w": "High gold prices have driven a wave of fresh mining, and Conakry is cracking down",
+   "syms": [
+    "XAU"
+   ],
+   "src": "myFT — world",
+   "ts": "2026-11-15T15:13:38Z",
+   "url": "https://www.ft.com/content/0d0d8fae-14f4-410f-8597-8e58f1172ad7?syn-25a6b1a6=1",
+   "mine": 1
+  },
   {
    "h": "‘I’m sick of flying’: I paid for priority boarding, but the overhead bins were full. Was I duped?",
    "w": "“Maybe next time I’ll try the other approach: I’ll board whenever I feel like it and drop my suitcase in the first open slot I see.”",
@@ -2298,14 +2374,6 @@
    "url": "https://fr.investing.com/news/insider-trading-news/texas-pacific-land--horizon-kinetics-achete-une-action-a-370-93CH-3696657"
   },
   {
-   "h": "Le vice-président exécutif de Verizon Kyle Malady cède des actions pour 56.309$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T14:32:30Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-vicepresident-executif-de-verizon-kyle-malady-cede-des-actions-pour-56309-93CH-3696656"
-  },
-  {
    "h": "Social Security and the blue wave: What could happen to payroll taxes and senior tax breaks",
    "w": "Democrats advocated taxing high earners to shore up Social Security in the runup to the midterms. Plus, a senior deduction is slated to expire in two years.",
    "syms": [],
@@ -2331,14 +2399,6 @@
    "url": "https://www.cnbc.com/2026/11/15/flight-delays-ground-faa-stop.html"
   },
   {
-   "h": "Le PDG de M&T Bank Corp, Rene Jones, cède des actions pour 4,64 millions $",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T14:17:25Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-mt-bank-corp-rene-jones-cede-des-actions-pour-464-millions--93CH-3696655"
-  },
-  {
    "h": "Tout savoir sur la fermeture de l’autoroute A13 entre Paris et Caen : durée des travaux, itinéraire de substitution et craintes de congestion",
    "w": "Une portion de cette autoroute qui relie Paris à Caen doit fermer durant huit mois, dès lundi 16 novembre, pour permettre de consolider un tunnel.",
    "syms": [],
@@ -2356,14 +2416,6 @@
    "mine": 1
   },
   {
-   "h": "La SVP et directrice des ressources humaines de Consumers Bancorp achète des actions pour 3.708$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T14:01:57Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/la-svp-et-directrice-des-ressources-humaines-de-consumers-bancorp-achete-des-actions-pour-3708-93CH-3696654"
-  },
-  {
    "h": "‘The thought of living to 100 terrifies me’: Is Social Security a giant Ponzi scheme?",
    "w": "There is already a demographic ‘run’ on Social Security.",
    "syms": [],
@@ -2378,14 +2430,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-15T14:00:00Z",
    "url": "https://www.marketwatch.com/story/will-the-anthropic-ipo-create-a-disturbance-in-the-broader-u-s-equity-market-like-spacex-did-05ba4351?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Une directrice de Take-Two vend des actions TTWO pour 73.323$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T13:47:29Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/une-directrice-de-taketwo-vend-des-actions-ttwo-pour-73323-93CH-3696653"
   },
   {
    "h": "Should a widow leave her late partner’s home to her stepkids — or cut off contact with them?",
@@ -2575,6 +2619,30 @@
    "mine": 1
   },
   {
+   "h": "ASEAN falls short on Myanmar crisis, South China Sea pact at Manila summit",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T09:59:02.941634Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/asean-falls-short-on-myanmar-crisis-south-china-sea-pact-at-manila-summit"
+  },
+  {
+   "h": "APEC summit in Shenzhen, Indonesia monetary policy, ASEAN diplomacy",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T09:59:02.941634Z",
+   "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/apec-summit-in-shenzhen-indonesia-monetary-policy-asean-diplomacy"
+  },
+  {
+   "h": "Osaka landmark to be centerpiece of area's redevelopment",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T09:59:02.941634Z",
+   "url": "https://asia.nikkei.com/business/travel-leisure/osaka-landmark-to-be-centerpiece-of-area-s-redevelopment"
+  },
+  {
    "h": "« Nier les discriminations tout en cultivant les stéréotypes sur lesquels elles prolifèrent, c’est casser le thermomètre en attisant la fièvre »",
    "w": "Contrairement aux affirmations répétées par le Rassemblement national, l’expérience des discriminations, solidement établie par les sciences, est omniprésente dans notre société, dénonce un collectif de chercheurs dans une tribune au « Monde ».",
    "syms": [],
@@ -2685,30 +2753,6 @@
    "url": "https://asia.nikkei.com/life-arts/life/destinations/footloose-in-vientiane-a-capital-in-no-great-hurry"
   },
   {
-   "h": "How Trump might be tempted to orchestrate an 'end to the Korean War'",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T07:31:07.382483Z",
-   "url": "https://asia.nikkei.com/spotlight/comment/how-trump-might-be-tempted-to-orchestrate-an-end-to-the-korean-war"
-  },
-  {
-   "h": "Sri Lanka reality contrasts with new World Bank upper-middle-income status",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T06:29:48.576739Z",
-   "url": "https://asia.nikkei.com/economy/sri-lanka-reality-contrasts-with-new-world-bank-upper-middle-income-status"
-  },
-  {
-   "h": "Digital Realty Trust to spend $10bn more on Japan data centers: CEO",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T06:29:48.576739Z",
-   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/digital-realty-trust-to-spend-10bn-more-on-japan-data-centers-ceo"
-  },
-  {
    "h": "Immobilier : les sommes reçues des promoteurs en échange du désistement d’un recours contre leur permis de construire doivent-elles être déclarées au fisc ?",
    "w": "Bercy affirme que les indemnités sont toujours taxables. Mais la jurisprudence distingue celles qui compensent un véritable préjudice de celles qui rémunèrent un service rendu.",
    "syms": [],
@@ -2759,15 +2803,6 @@
    "src": "myFT — europe",
    "ts": "2026-11-15T05:00:13Z",
    "url": "https://www.ft.com/content/7b3ba864-75ca-4862-b54d-abd088444bd3?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Sadiq Khan backs keeping City of London police independent from the Met",
-   "w": "London mayor opposes merger backed by Met commissioner Sir Mark Rowley",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-15T05:00:13Z",
-   "url": "https://www.ft.com/content/85b04bb4-1135-4cc7-a7d8-4e62ab9630db?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2965,14 +3000,6 @@
    "mine": 1
   },
   {
-   "h": "I’m 63 and spending $95,000 on a roof deck for my $500,000 home. Is that a good investment?",
-   "w": "“I have a net worth of $2.3 million and my only debt is a 15-year mortgage.”",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-14T21:31:00Z",
-   "url": "https://www.marketwatch.com/story/im-63-and-want-to-spend-95-000-on-a-roof-deck-for-my-500-000-home-is-that-a-good-investment-f1a59c27?mod=mw_rss_topstories"
-  },
-  {
    "h": "Lunettes connectées : « Où est donc l’Europe, qui aime tant se présenter comme la championne mondiale de la protection de la vie privée ? »",
    "w": "Les usages prétendument récréatifs des lunettes munies de caméras et de microphones ne justifient pas de faire peser sur l’ensemble de la population le risque d’une surveillance diffuse, dénonce un collectif de chercheurs dans une tribune au « Monde ».",
    "syms": [],
@@ -3061,24 +3088,6 @@
    "src": "myFT — financials",
    "ts": "2026-11-14T11:00:09Z",
    "url": "https://www.ft.com/content/4aba8386-35cc-463b-a79c-a0c85c362c89?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Argentina’s Milei clashes with his government’s most popular leader",
-   "w": "Tensions between the libertarian president and his senate chief test rightwing unity ahead of 2027 elections",
-   "syms": [],
-   "src": "myFT — emerging markets",
-   "ts": "2026-11-14T11:00:09Z",
-   "url": "https://www.ft.com/content/eb3613fa-81ec-4cad-884d-39a20400e147?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Germany suffers setback in joining fighter jet project",
-   "w": "Rome rejects push to explore inviting Berlin to enter UK-Japan-Italy next-generation aircraft programme as equal partner",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-14T10:52:49Z",
-   "url": "https://www.ft.com/content/3ba2bcd1-b80c-48a2-91c7-35f25366f8aa?syn-25a6b1a6=1",
    "mine": 1
   },
   {
