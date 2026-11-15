@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T18:05:38.327936Z",
+ "generated_at": "2026-11-15T18:51:27.321974Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -599,11 +599,10 @@
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (JPY=X)",
    "ts": "2026-11-13T22:00:00Z",
-   "open": 159.87,
-   "lo": 159.71,
-   "hi": 160.176,
+   "open": 159.56,
+   "lo": 159.56,
+   "hi": 159.622,
    "h": [
-    157.96,
     158.14,
     157.81,
     158.52,
@@ -624,7 +623,8 @@
     157.98,
     158.71,
     159.73,
-    159.88
+    159.88,
+    159.59
    ]
   },
   "GBPUSD": {
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 64603.5312,
+   "p": 64596.5898,
    "prev": 64128.0508,
-   "chg": 475.4805,
-   "pct": 0.74,
+   "chg": 468.5391,
+   "pct": 0.73,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-15T18:05:38.327936Z",
+   "ts": "2026-11-15T18:51:27.321974Z",
    "open": 64119.7812,
    "lo": 62093.5156,
    "hi": 65889.2344,
-   "vol": 48035639296,
+   "vol": 48006705152,
    "h": [
     80024.01,
     80006.66,
@@ -844,7 +844,7 @@
     71342.97,
     68249.27,
     64128.05,
-    64603.53
+    64596.59
    ]
   }
  },
@@ -1104,7 +1104,7 @@
    "earnEnd": 1799933400,
    "earnEst": true,
    "exDiv": 1796860800,
-   "divDate": 1799280000,
+   "divDate": 1807142400,
    "lastDiv": 1.107,
    "trailDiv": 6.0
   },
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1656497373184,
    "pe": 44.318,
-   "fpe": 17.8742,
+   "fpe": 17.8273,
    "eps": 7.83,
-   "feps": 19.414,
+   "feps": 19.4651,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1019350286336,
+   "mcap": 1016233525248,
    "pe": 46.4094,
-   "fpe": 39.7422,
+   "fpe": 39.7569,
    "eps": 2.76,
-   "feps": 3.223,
+   "feps": 3.2218,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.773,
@@ -1868,9 +1868,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 521499836416,
-   "pe": 50.6924,
+   "pe": 50.6055,
    "fpe": 18.216,
-   "eps": 5.82,
+   "eps": 5.83,
    "feps": 16.1962,
    "revTTM": 66013999104,
    "netIncome": 10302999552,
@@ -1911,9 +1911,9 @@
    "ccy": "USD",
    "mcap": 429061144576,
    "pe": 16.1446,
-   "fpe": 13.3049,
+   "fpe": 13.3304,
    "eps": 13.62,
-   "feps": 16.527,
+   "feps": 16.4954,
    "revTTM": 226256994304,
    "netIncome": 26976000000,
    "shares": 1951253686,
@@ -1987,7 +1987,7 @@
    "earnEnd": 1796936400,
    "earnEst": false,
    "exDiv": 1795478400,
-   "divDate": 1794528000,
+   "divDate": 1796342400,
    "lastDiv": 1.47,
    "trailDiv": 5.54
   },
@@ -1999,9 +1999,9 @@
    "ccy": "USD",
    "mcap": 404771504128,
    "pe": 118.3028,
-   "fpe": 66.1698,
+   "fpe": 66.2625,
    "eps": 1.42,
-   "feps": 2.5388,
+   "feps": 2.5352,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
@@ -2070,7 +2070,7 @@
    "earnEnd": 1802293200,
    "earnEst": false,
    "exDiv": 1799020800,
-   "divDate": 1792540800,
+   "divDate": 1800403200,
    "lastDiv": 0.42,
    "trailDiv": 1.67
   },
@@ -2082,9 +2082,9 @@
    "ccy": "USD",
    "mcap": 426963795968,
    "pe": 29.2773,
-   "fpe": 28.1245,
+   "fpe": 28.1338,
    "eps": 3.39,
-   "feps": 3.529,
+   "feps": 3.5278,
    "revTTM": 51053998080,
    "netIncome": 14629000192,
    "shares": 4301902335,
@@ -2168,8 +2168,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 121.2883,
+   "shares": 572600000,
+   "divYield": 2.608,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2221,12 +2226,78 @@
  ],
  "news": [
   {
-   "h": "DOT Sec. Duffy blames router for issues that lead to nationwide ground stop",
+   "h": "Bessent says Nvidia needs ‘shake-up’ with external CEO",
+   "w": "US Treasury secretary demands to know if chipmaker is complying with restrictions on exports to China",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "myFT — companies",
+   "ts": "2026-11-15T18:28:25Z",
+   "url": "https://www.ft.com/content/24edbb84-7520-4ef0-a57c-30359e12ccc5?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Diamondback nears $5bn deal to expand drilling in oil-rich Permian Basin",
+   "w": "Acquisition would be latest in the heartland of the US shale boom amid volatile energy prices caused by Iran war",
+   "syms": [
+    "BRENT"
+   ],
+   "src": "myFT — companies",
+   "ts": "2026-11-15T18:27:27Z",
+   "url": "https://www.ft.com/content/a56fc76f-af32-45b2-8ae1-d5e211cb9643?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "'We slept here': Flight delays linger but schedule is back on track for Monday",
+   "w": "Flight disruptions lingered two days after the Federal Aviation Administration grounded departures nationwide for more than four hours.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-15T18:22:23Z",
+   "url": "https://www.cnbc.com/2026/11/15/flight-delays-ground-faa-stop.html"
+  },
+  {
+   "h": "Suspension des vols aux Etats-Unis : retour à la normale du trafic aérien espéré lundi ; Donald Trump qualifie la gestion de l’aviation par Joe Biden de « désastre »",
+   "w": "Encore plus de 1 500 vols ont été supprimés dimanche matin aux Etats-Unis, après que plus de 18 000 l’avaient déjà été vendredi et samedi. « Nous allons sans doute voir les choses revenir complètement à la normale lundi », a estimé le secrétaire aux transports.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-15T18:20:29Z",
+   "url": "https://www.lemonde.fr/international/article/2026/11/15/suspension-des-vols-aux-etats-unis-retour-a-la-normale-du-trafic-aerien-espere-lundi-donald-trump-qualifie-la-gestion-de-l-aviation-par-joe-biden-de-desastre_6811046_3210.html"
+  },
+  {
+   "h": "DOT Sec. Duffy ties router in southern Arkansas to issues that led to nationwide ground stop",
    "w": "The FAA ground stop came after updates to an older communication system managed by L3Harris Technologies, Transportation Secretary Sean Duffy said.",
    "syms": [],
    "src": "CNBC — Markets",
-   "ts": "2026-11-15T17:47:40Z",
+   "ts": "2026-11-15T18:15:14Z",
    "url": "https://www.cnbc.com/2026/11/14/faa-ground-stop-flights-resume-delays.html"
+  },
+  {
+   "h": "Anthropic IPO to further fuel the AI news cycle",
+   "w": "New York listing date arrives, Trump, Xi and Putin in Shenzhen, a UK-EU entente cordiale",
+   "syms": [],
+   "src": "myFT — global economy",
+   "ts": "2026-11-15T18:15:07Z",
+   "url": "https://www.ft.com/content/3c7c1b7a-541d-47a3-b074-b8e17e7b050c?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Bessent calls for ‘dramatic shakeup’ at Nvidia, urges outside CEO",
+   "w": "Bessent has criticized Howard Lutnick’s department over suspected chip diversion to China while defending President Donald Trump’s handling of the matter.",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-15T18:10:18Z",
+   "url": "https://www.cnbc.com/2026/11/15/bessent-nvidia-ceo-lutnick-megaspeed.html"
+  },
+  {
+   "h": "US and allies sign accord to protect AI supply chains from China",
+   "w": "Pact comes ahead of Donald Trump’s meeting with Xi Jinping at the Asia-Pacific Economic Cooperation forum in Shenzhen",
+   "syms": [],
+   "src": "myFT — technology",
+   "ts": "2026-11-15T17:47:43Z",
+   "url": "https://www.ft.com/content/3c2197fc-9618-4838-91e6-522ce1a96a22?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "Le président de VIVOS acquiert des actions ordinaires pour 1.231$",
@@ -2243,17 +2314,6 @@
    "src": "myFT — world",
    "ts": "2026-11-15T17:28:56Z",
    "url": "https://www.ft.com/content/eb45ef82-94b0-4775-9f79-025fdb27db6a?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Bessent says Nvidia needs ‘shake-up’ with external CEO",
-   "w": "US Treasury secretary demands to know if chipmaker is complying with restrictions on exports to China",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "myFT — companies",
-   "ts": "2026-11-15T17:15:23Z",
-   "url": "https://www.ft.com/content/24edbb84-7520-4ef0-a57c-30359e12ccc5?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2297,16 +2357,6 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-15T16:56:40Z",
    "url": "https://www.cnbc.com/2026/11/15/trump-breaks-silence-on-faa-nationwide-ground-stop-blames-biden-.html"
-  },
-  {
-   "h": "Bessent calls for ‘dramatic shakeup’ at Nvidia, urges outside CEO",
-   "w": "Bessent has criticized Howard Lutnick’s department over suspected chip diversion to China while defending President Donald Trump’s handling of the matter.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-15T16:49:11Z",
-   "url": "https://www.cnbc.com/2026/11/15/bessent-nvidia-ceo-lutnick-megaspeed.html"
   },
   {
    "h": "Le PDG de Teradyne Gregory Smith cède des actions pour 1,35 M$",
@@ -2464,14 +2514,6 @@
    "mine": 1
   },
   {
-   "h": "'We slept here.' Flight delays linger as airlines scramble to recover from ground stop",
-   "w": "Flight disruptions lingered two days after the Federal Aviation Administration grounded departures nationwide for more than four hours.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-15T14:24:18Z",
-   "url": "https://www.cnbc.com/2026/11/15/flight-delays-ground-faa-stop.html"
-  },
-  {
    "h": "Tout savoir sur la fermeture de l’autoroute A13 entre Paris et Caen : durée des travaux, itinéraire de substitution et craintes de congestion",
    "w": "Une portion de cette autoroute qui relie Paris à Caen doit fermer durant huit mois, dès lundi 16 novembre, pour permettre de consolider un tunnel.",
    "syms": [],
@@ -2569,6 +2611,30 @@
    "src": "MarketWatch",
    "ts": "2026-11-15T13:00:00Z",
    "url": "https://www.marketwatch.com/story/it-leaves-me-with-a-sour-taste-my-elderly-mother-gave-our-cousin-800-for-a-car-repair-should-i-be-worried-88dbd188?mod=mw_rss_topstories"
+  },
+  {
+   "h": "APEC summit in Shenzhen, Indonesia monetary policy, ASEAN diplomacy",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T12:51:27.321974Z",
+   "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/apec-summit-in-shenzhen-indonesia-monetary-policy-asean-diplomacy"
+  },
+  {
+   "h": "China's century-old 'porcelain capital' eyes global luxury",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T12:51:27.321974Z",
+   "url": "https://asia.nikkei.com/life-arts/arts/china-s-century-old-porcelain-capital-eyes-global-luxury"
+  },
+  {
+   "h": "Japan to require online authorization for some transit passengers",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-15T12:51:27.321974Z",
+   "url": "https://asia.nikkei.com/spotlight/japan-immigration/japan-to-require-online-authorization-for-some-transit-passengers"
   },
   {
    "h": "Top Wall Street analysts are bullish on these 3 stocks for the long term",
@@ -2749,22 +2815,6 @@
    "url": "https://asia.nikkei.com/economy/sri-lanka-reality-contrasts-with-new-world-bank-upper-middle-income-status"
   },
   {
-   "h": "Digital Realty Trust to spend $10bn more on Japan data centers: CEO",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T10:42:32.082577Z",
-   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/digital-realty-trust-to-spend-10bn-more-on-japan-data-centers-ceo"
-  },
-  {
-   "h": "How Trump might be tempted to orchestrate an 'end to the Korean War'",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T10:42:32.082577Z",
-   "url": "https://asia.nikkei.com/spotlight/comment/how-trump-might-be-tempted-to-orchestrate-an-end-to-the-korean-war"
-  },
-  {
    "h": "La hausse de 1,6 % du smic et des « bas salaires » des fonctionnaires coûtera « un peu plus de 1 milliard d’euros », selon le gouvernement",
    "w": "L’exécutif avait annoncé cette semaine, en pleines mobilisations sociales, la revalorisation du salaire minimal de 1,6 % à partir du 1ᵉʳ décembre et celle des « bas salaires » de plus d’un million d’agents de la fonction publique.",
    "syms": [],
@@ -2780,14 +2830,6 @@
    "ts": "2026-11-15T10:00:04Z",
    "url": "https://www.ft.com/content/fcce6df7-7040-4c83-84ea-30f8fbac1239?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "ASEAN falls short on Myanmar crisis, South China Sea pact at Manila summit",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-15T09:59:02.941634Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/asean-falls-short-on-myanmar-crisis-south-china-sea-pact-at-manila-summit"
   },
   {
    "h": "« Nier les discriminations tout en cultivant les stéréotypes sur lesquels elles prolifèrent, c’est casser le thermomètre en attisant la fièvre »",
@@ -3019,15 +3061,6 @@
    "url": "https://www.cnbc.com/2026/11/14/180-million-van-gogh-tests-the-art-market-and-collector-confidence-.html"
   },
   {
-   "h": "SpaceX catches returning Starship rocket in breakthrough for Musk",
-   "w": "Successful landing of upper stage is key to founder’s aim of sending reusable manned rockets to Mars",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-14T22:33:56Z",
-   "url": "https://www.ft.com/content/ce7c8ab1-8337-4c32-8494-5142ec1697dd?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Nvidia board urged to consider 'potential return of Jensen Huang' by two major investors",
    "w": "Two Nvidia investors with about $2.13 billion of stock disclosed as of June 30 are calling for a deliberate leadership search after Huang’s resignation.",
    "syms": [
@@ -3052,34 +3085,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-14T15:31:00Z",
    "url": "https://www.lemonde.fr/international/article/2026/11/14/suspension-des-vols-aux-etats-unis-des-annulations-et-des-retards-de-vols-persistent-samedi_6810445_3210.html"
-  },
-  {
-   "h": "IA : comment Huawei est devenu le navire amiral de la Chine dans la bataille des puces",
-   "w": "Pour rattraper son retard, Pékin mise sur son champion des télécoms Huawei. Fort de 208 000 employés dans le monde, dont 114 000 en recherche et développement, le groupe a été érigé en chef d’orchestre de l’effort chinois pour atteindre l’« autosuffisance scientifique et technologique ».",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-14T14:00:01Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/11/14/ia-comment-huawei-est-devenu-le-navire-amiral-de-la-chine-dans-la-bataille-des-puces_6810315_3234.html"
-  },
-  {
-   "h": "Trump Media group stares down $1bn debt crunch as bitcoin bet fades",
-   "w": "Plunge in shares and cryptocurrency prices could force Truth Social owner to sell assets or take on costly new debt",
-   "syms": [
-    "BTC"
-   ],
-   "src": "myFT — markets",
-   "ts": "2026-11-14T13:00:09Z",
-   "url": "https://www.ft.com/content/ada459c4-5f43-4a4a-bc6c-90de8897a4f0?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "How Trump’s midterm gerrymandering flopped",
-   "w": "Republicans’ unprecedented redistricting drive failed to overcome the tidal wave of Democratic votes",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-14T12:00:08Z",
-   "url": "https://www.ft.com/content/d99f635f-6223-45fc-8429-2ac36b28d080?syn-25a6b1a6=1",
-   "mine": 1
   },
   {
    "h": "Microsoft says services fully restored after day-long global outage",
