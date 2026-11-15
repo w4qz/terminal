@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T02:00:56.056697Z",
+ "generated_at": "2026-11-15T02:55:21.059541Z",
  "quotes": {
   "NVDA": {
    "p": 162.85,
@@ -117,8 +117,8 @@
    "prev": 28289.1895,
    "chg": -345.4492,
    "pct": -1.22,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^NDX) — last update failed",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^NDX)",
    "ts": "2026-11-13T21:00:00Z",
    "open": 28265.5391,
    "lo": 27609.7109,
@@ -774,10 +774,10 @@
    ]
   },
   "BRENT": {
-   "p": 96.08,
+   "p": 95.84,
    "prev": 95.82,
-   "chg": 0.26,
-   "pct": 0.27,
+   "chg": 0.02,
+   "pct": 0.02,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-13T22:00:00Z",
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 62780.7891,
+   "p": 64767.1484,
    "prev": 68249.2734,
-   "chg": -5468.4844,
-   "pct": -8.01,
+   "chg": -3482.125,
+   "pct": -5.1,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-15T02:00:56.056697Z",
+   "ts": "2026-11-15T02:55:21.059541Z",
    "open": 64119.7812,
    "lo": 62093.5156,
-   "hi": 64378.2383,
-   "vol": 48812503040,
+   "hi": 64797.2305,
+   "vol": 50826502144,
    "h": [
     80790.84,
     80024.01,
@@ -844,7 +844,7 @@
     73964.47,
     71342.97,
     68249.27,
-    62780.79
+    64811.34
    ]
   }
  },
@@ -945,9 +945,9 @@
    "ccy": "USD",
    "mcap": 3890434801664,
    "pe": 27.3424,
-   "fpe": 21.6569,
+   "fpe": 21.6518,
    "eps": 19.16,
-   "feps": 24.1899,
+   "feps": 24.1957,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -1104,7 +1104,7 @@
    "earnEnd": 1799933400,
    "earnEst": true,
    "exDiv": 1796860800,
-   "divDate": 1807142400,
+   "divDate": 1799280000,
    "lastDiv": 1.107,
    "trailDiv": 6.0
   },
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1656497373184,
    "pe": 44.318,
-   "fpe": 17.8273,
+   "fpe": 17.8742,
    "eps": 7.83,
-   "feps": 19.4651,
+   "feps": 19.414,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1016233525248,
+   "mcap": 1019350286336,
    "pe": 46.4094,
    "fpe": 39.7569,
    "eps": 2.76,
    "feps": 3.2218,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.773,
@@ -1868,9 +1868,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 521499836416,
-   "pe": 50.6055,
+   "pe": 50.6924,
    "fpe": 18.216,
-   "eps": 5.83,
+   "eps": 5.82,
    "feps": 16.1962,
    "revTTM": 66013999104,
    "netIncome": 10302999552,
@@ -1911,9 +1911,9 @@
    "ccy": "USD",
    "mcap": 429061144576,
    "pe": 16.1446,
-   "fpe": 13.3304,
+   "fpe": 13.2731,
    "eps": 13.62,
-   "feps": 16.4954,
+   "feps": 16.5666,
    "revTTM": 226256994304,
    "netIncome": 26976000000,
    "shares": 1951253686,
@@ -1955,9 +1955,9 @@
    "ccy": "USD",
    "mcap": 490194108416,
    "pe": 53.2856,
-   "fpe": 44.1838,
+   "fpe": 44.2089,
    "eps": 20.76,
-   "feps": 25.0365,
+   "feps": 25.0223,
    "revTTM": 303154003968,
    "netIncome": 9226000384,
    "shares": 443129349,
@@ -1999,9 +1999,9 @@
    "ccy": "USD",
    "mcap": 404771504128,
    "pe": 118.3028,
-   "fpe": 66.2625,
+   "fpe": 66.1698,
    "eps": 1.42,
-   "feps": 2.5352,
+   "feps": 2.5388,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
@@ -2082,9 +2082,9 @@
    "ccy": "USD",
    "mcap": 426963795968,
    "pe": 29.2773,
-   "fpe": 28.1338,
+   "fpe": 28.1245,
    "eps": 3.39,
-   "feps": 3.5278,
+   "feps": 3.529,
    "revTTM": 51053998080,
    "netIncome": 14629000192,
    "shares": 4301902335,
@@ -2168,13 +2168,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 121.2883,
-   "shares": 572600000,
-   "divYield": 2.608,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2225,6 +2220,48 @@
   }
  ],
  "news": [
+  {
+   "h": "Nationwide ground stop followed contractor upgrade to L3Harris telecommunication system: DOT’s Duffy",
+   "w": "The FAA ground stop came after updates to an older communication system managed by L3Harris Technologies, Transportation Secretary Sean Duffy said Saturday.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-15T02:53:59Z",
+   "url": "https://www.cnbc.com/2026/11/14/faa-ground-stop-flights-resume-delays.html"
+  },
+  {
+   "h": "Un directeur de San Juan Basin Royalty Trust achète pour 1,4M$ d’unités",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T02:47:04Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-san-juan-basin-royalty-trust-achete-pour-14m-dunites-93CH-3696549"
+  },
+  {
+   "h": "Le Royaume-Uni va élargir son programme de garantie d’emploi pour les jeunes",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-15T02:16:30Z",
+   "url": "https://fr.investing.com/news/economy-news/le-royaumeuni-va-elargir-son-programme-de-garantie-demploi-pour-les-jeunes-3696547"
+  },
+  {
+   "h": "‘Red caviar’ slips off Japan’s sushi menus as roe prices soar",
+   "w": "Collapse in wild salmon harvests put prized delicacy at risk as warming seas disrupt supply",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-15T02:00:02Z",
+   "url": "https://www.ft.com/content/921b3589-6f88-44a6-b162-a13f5cc7e5e9?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "New York socialists back Alexandria Ocasio-Cortez for 2028 presidential race",
+   "w": "Democratic congresswoman has been touted as a possible candidate but not said if she will run",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-15T01:52:51Z",
+   "url": "https://www.ft.com/content/3f1fd9f6-8f96-4178-bf5a-8fce8954b811?syn-25a6b1a6=1",
+   "mine": 1
+  },
   {
    "h": "Evercore explique pourquoi Apple est bien placé pour dominer les agents IA personnels",
    "w": "",
@@ -2298,28 +2335,12 @@
    "url": "https://fr.investing.com/news/company-news/spacex-recupere-le-vaisseau-starship-malgre-lechec-du-propulseur-3696536"
   },
   {
-   "h": "Un dirigeant d’Intuitive Surgical cède des actions pour 183.260$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-15T00:02:12Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-dintuitive-surgical-cede-des-actions-pour-183260-93CH-3696535"
-  },
-  {
    "h": "Beauty advent calendars can cost hundreds - but are they value for money?",
    "w": "Beauty calendars have become a Christmas staple and have become particularly popular with female shoppers.",
    "syms": [],
    "src": "BBC — Business",
    "ts": "2026-11-15T00:01:07Z",
    "url": "https://www.bbc.co.uk/news/articles/cqn83l442724o?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "Un directeur de SEI Investments vend des actions pour 882.400$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-14T23:46:50Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-sei-investments-vend-des-actions-pour-882400-93CH-3696533"
   },
   {
    "h": "Passengers face widespread disruption after US air traffic control outage",
@@ -2329,14 +2350,6 @@
    "ts": "2026-11-14T23:32:08Z",
    "url": "https://www.ft.com/content/f66f9811-59a2-4e52-a944-c7ed81dabc50?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Nationwide ground stop followed contractor upgrade to L3Harris telecommunication system: DOT’s Duffy",
-   "w": "The FAA ground stop came after updates to an older communication system managed by L3Harris Technologies, Transportation Secretary Sean Duffy said Saturday.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-14T23:21:21Z",
-   "url": "https://www.cnbc.com/2026/11/14/faa-ground-stop-flights-resume-delays.html"
   },
   {
    "h": "SpaceX catches upper stage of Starship rocket in historic first",
@@ -2389,6 +2402,48 @@
    "url": "https://www.marketwatch.com/story/i-inherited-1-4-million-from-my-father-am-i-wrong-to-ask-my-husband-of-25-years-for-a-postnuptial-agreement-b739c51d?mod=mw_rss_topstories"
   },
   {
+   "h": "ASEAN leaders kick off Manila summits as friction persists on Myanmar, haze",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T20:55:21.059541Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/asean-leaders-kick-off-manila-summits-as-friction-persists-on-myanmar-haze"
+  },
+  {
+   "h": "China's century-old 'porcelain capital' eyes global luxury",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T20:55:21.059541Z",
+   "url": "https://asia.nikkei.com/life-arts/arts/china-s-century-old-porcelain-capital-eyes-global-luxury"
+  },
+  {
+   "h": "Japan to require online authorization for some transit passengers",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T20:55:21.059541Z",
+   "url": "https://asia.nikkei.com/spotlight/japan-immigration/japan-to-require-online-authorization-for-some-transit-passengers"
+  },
+  {
+   "h": "China sees Nvidia chief Huang's swift downfall as political hit",
+   "w": "",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T20:55:21.059541Z",
+   "url": "https://asia.nikkei.com/business/tech/semiconductors/china-sees-nvidia-chief-huang-s-swift-downfall-as-political-hit"
+  },
+  {
+   "h": "South Koreans show their love for once-taboo Japan pop culture",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-14T20:55:21.059541Z",
+   "url": "https://asia.nikkei.com/business/media-entertainment/south-koreans-show-their-love-for-once-taboo-japan-pop-culture"
+  },
+  {
    "h": "Subaru retools boxer engine for fuel economy, with eye on hybrids",
    "w": "",
    "syms": [],
@@ -2413,16 +2468,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-14T20:00:56.056697Z",
    "url": "https://asia.nikkei.com/business/markets/ipo/bain-and-gic-backed-whi-on-track-for-japan-s-largest-ipo-in-2026"
-  },
-  {
-   "h": "Nvidia scandal sparks Washington blame game over China chip exports",
-   "w": "",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T20:00:56.056697Z",
-   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/nvidia-scandal-sparks-washington-blame-game-over-china-chip-exports"
   },
   {
    "h": "‘It leaves me with a sour taste’: My elderly mother gave our cousin $800 for a car repair. Should I be worried?",
@@ -2457,16 +2502,6 @@
    "url": "https://asia.nikkei.com/spotlight/comment/how-trump-might-be-tempted-to-orchestrate-an-end-to-the-korean-war"
   },
   {
-   "h": "US Treasury bought nearly $500mn in yen during joint July forex intervention",
-   "w": "",
-   "syms": [
-    "USDJPY"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T18:55:42.795536Z",
-   "url": "https://asia.nikkei.com/business/markets/currencies/us-treasury-bought-nearly-500mn-in-yen-during-joint-july-forex-intervention"
-  },
-  {
    "h": "Should a widow leave her late partner’s home to her stepkids — or cut off contact with them?",
    "w": "“It would be a less drastic step than selling the home now and splitting the proceeds.”",
    "syms": [],
@@ -2497,14 +2532,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-14T17:54:54.906614Z",
    "url": "https://asia.nikkei.com/business/science/did-we-really-see-a-black-hole-australian-team-says-yes"
-  },
-  {
-   "h": "No grass, no problem: Playing sand golf in the Australian outback",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T17:54:54.906614Z",
-   "url": "https://asia.nikkei.com/life-arts/life/no-grass-no-problem-playing-sand-golf-in-the-australian-outback"
   },
   {
    "h": "Here’s how Bernie Sanders wants to keep Social Security solvent ‘for generations’",
@@ -2539,22 +2566,6 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-14T17:46:06Z",
    "url": "https://www.cnbc.com/2026/11/14/nvidia-investors-jensen-huang-return-board-letter.html"
-  },
-  {
-   "h": "Digital Realty Trust to spend $10bn more on Japan data centers: CEO",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T17:16:39.659837Z",
-   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/digital-realty-trust-to-spend-10bn-more-on-japan-data-centers-ceo"
-  },
-  {
-   "h": "Osaka landmark to be centerpiece of area's redevelopment",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-14T17:16:39.659837Z",
-   "url": "https://asia.nikkei.com/business/travel-leisure/osaka-landmark-to-be-centerpiece-of-area-s-redevelopment"
   },
   {
    "h": "Lunettes connectées : « Où est donc l’Europe, qui aime tant se présenter comme la championne mondiale de la protection de la vie privée ? »",
@@ -2822,7 +2833,7 @@
    "h": "A Vinted ban would sell young entrepreneurs short",
    "w": "Selling online is a great opportunity for teens to learn, earn and spend their money",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — world uk",
    "ts": "2026-11-14T05:00:38Z",
    "url": "https://www.ft.com/content/1ce0667f-1ff9-4d82-bf85-5d112f77310a?syn-25a6b1a6=1",
    "mine": 1
@@ -2837,15 +2848,6 @@
    "mine": 1
   },
   {
-   "h": "Does your child have a side hustle?",
-   "w": "Enterprising young people are coming up with smart moneymaking ideas. FT Money wants to hear about them",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-14T05:00:37Z",
-   "url": "https://www.ft.com/content/d309eebb-21b7-4b8e-bebd-83de96b0a184",
-   "mine": 1
-  },
-  {
    "h": "Nvidia’s cult of personality was bound to end badly",
    "w": "It is worth paying attention to the warning signs of corporate hubris — they often mean something bad is about to happen",
    "syms": [
@@ -2854,6 +2856,15 @@
    "src": "myFT — us",
    "ts": "2026-11-14T05:00:37Z",
    "url": "https://www.ft.com/content/546ec5eb-fbc2-4600-9794-12b1749c1a04",
+   "mine": 1
+  },
+  {
+   "h": "Does your child have a side hustle?",
+   "w": "Enterprising young people are coming up with smart moneymaking ideas. FT Money wants to hear about them",
+   "syms": [],
+   "src": "myFT — world uk",
+   "ts": "2026-11-14T05:00:37Z",
+   "url": "https://www.ft.com/content/d309eebb-21b7-4b8e-bebd-83de96b0a184",
    "mine": 1
   },
   {
@@ -3025,26 +3036,6 @@
    "src": "myFT — us",
    "ts": "2026-11-14T03:41:46Z",
    "url": "https://www.ft.com/content/1cbee3e3-b4cf-4831-bd4e-ac1653c7c7c7?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "US aviation regulator lifts order that grounded thousands of flights",
-   "w": "Airports had halted take-offs because of a temporary ‘telecommunications outage’",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-14T03:21:57Z",
-   "url": "https://www.ft.com/content/c9b119ff-d1da-46a7-b2b3-4ad0544fff6b?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Trump will not raise Nvidia spy issue with Xi at summit, officials say",
-   "w": "US president will hold trilateral meeting with Chinese leader and Russia’s Vladimir Putin next week",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "myFT — us",
-   "ts": "2026-11-14T01:28:36Z",
-   "url": "https://www.ft.com/content/6034dd16-8c7d-4b3e-bc4e-942a6c8529dd?syn-25a6b1a6=1",
    "mine": 1
   },
   {
