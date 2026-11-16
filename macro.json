@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-16T20:22:53.345830Z",
+ "generated_at": "2026-11-16T21:24:20.446517Z",
  "eco": {
   "prints": [
    {
@@ -458,7 +458,7 @@
     }
    ],
    "feeds": {
-    "semaine en cours": "ok (json, 120 événements)",
+    "semaine en cours": "ok (json, 123 événements)",
     "semaine suivante": "indisponible (404 Client Error: Not Found for url: https://nfs.faireconomy)"
    },
    "src": "Consensus and prior: Forex Factory (unofficial compilation, personal use). Actual: Bureau of Labor Statistics (on release), FRED (BEA, Fed), ECB, Bank of England and SNB. Other releases (ISM, S&P Global PMI…) have no free source: marked \"not covered\"."
@@ -499,47 +499,47 @@
    {
     "d": "2027-04-28",
     "pre": 4.497,
-    "post": 4.565,
-    "move_bp": 6.8,
+    "post": 4.575,
+    "move_bp": 7.8,
     "p_cut": 0,
-    "p_hike": 27
+    "p_hike": 31
    },
    {
     "d": "2027-06-09",
-    "pre": 4.565,
-    "post": 4.665,
+    "pre": 4.575,
+    "post": 4.675,
     "move_bp": 10.0,
     "p_cut": 0,
     "p_hike": 40
    },
    {
     "d": "2027-07-28",
-    "pre": 4.665,
-    "post": 4.69,
-    "move_bp": 2.5,
+    "pre": 4.675,
+    "post": 4.705,
+    "move_bp": 3.0,
     "p_cut": 0,
-    "p_hike": 10
+    "p_hike": 12
    },
    {
     "d": "2027-09-15",
-    "pre": 4.69,
-    "post": 4.72,
+    "pre": 4.705,
+    "post": 4.735,
     "move_bp": 3.0,
     "p_cut": 0,
     "p_hike": 12
    },
    {
     "d": "2027-10-27",
-    "pre": 4.72,
-    "post": 4.705,
-    "move_bp": -1.5,
-    "p_cut": 6,
+    "pre": 4.735,
+    "post": 4.715,
+    "move_bp": -2.0,
+    "p_cut": 8,
     "p_hike": 0
    },
    {
     "d": "2027-11-17",
-    "pre": 4.705,
-    "post": 4.705,
+    "pre": 4.715,
+    "post": 4.715,
     "move_bp": 0.0,
     "p_cut": 0,
     "p_hike": 0
@@ -552,7 +552,7 @@
    "pts": [
     {
      "t": "1M",
-     "y": 4.015,
+     "y": 4.012,
      "y1m": 4.12,
      "ts": "2026-11-16",
      "live": true
@@ -573,56 +573,56 @@
     },
     {
      "t": "1A",
-     "y": 4.602,
+     "y": 4.616,
      "y1m": 4.46,
      "ts": "2026-11-16",
      "live": true
     },
     {
      "t": "2A",
-     "y": 4.821,
+     "y": 4.834,
      "y1m": 4.74,
      "ts": "2026-11-16",
      "live": true
     },
     {
      "t": "3A",
-     "y": 4.87,
+     "y": 4.882,
      "y1m": 4.82,
      "ts": "2026-11-16",
      "live": true
     },
     {
      "t": "5A",
-     "y": 4.929,
+     "y": 4.94,
      "y1m": 4.89,
      "ts": "2026-11-16",
      "live": true
     },
     {
      "t": "7A",
-     "y": 5.009,
+     "y": 5.021,
      "y1m": 4.98,
      "ts": "2026-11-16",
      "live": true
     },
     {
      "t": "10A",
-     "y": 5.117,
+     "y": 5.129,
      "y1m": 5.09,
      "ts": "2026-11-16",
      "live": true
     },
     {
      "t": "20A",
-     "y": 5.509,
+     "y": 5.522,
      "y1m": 5.47,
      "ts": "2026-11-16",
      "live": true
     },
     {
      "t": "30A",
-     "y": 5.463,
+     "y": 5.474,
      "y1m": 5.43,
      "ts": "2026-11-16",
      "live": true
@@ -775,34 +775,34 @@
   },
   {
    "k": "3-month T-bill",
-   "v": 4.14,
-   "prev": 4.12,
+   "v": 4.13,
+   "prev": 4.14,
    "fmt": "%",
-   "ts": "2026-11-12",
+   "ts": "2026-11-13",
    "src": "FRED DTB3"
   },
   {
    "k": "6-month T-bill",
-   "v": 4.3,
-   "prev": 4.26,
+   "v": 4.31,
+   "prev": 4.3,
    "fmt": "%",
-   "ts": "2026-11-12",
+   "ts": "2026-11-13",
    "src": "FRED DTB6"
   },
   {
    "k": "2-year Treasury",
-   "v": 4.86,
-   "prev": 4.73,
+   "v": 4.88,
+   "prev": 4.86,
    "fmt": "%",
-   "ts": "2026-11-12",
+   "ts": "2026-11-13",
    "src": "FRED DGS2"
   },
   {
    "k": "10-year Treasury",
-   "v": 5.1,
-   "prev": 4.98,
+   "v": 5.15,
+   "prev": 5.1,
    "fmt": "%",
-   "ts": "2026-11-12",
+   "ts": "2026-11-13",
    "src": "FRED DGS10"
   },
   {
