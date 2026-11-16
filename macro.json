@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-16T21:24:20.446517Z",
+ "generated_at": "2026-11-16T22:22:58.460471Z",
  "eco": {
   "prints": [
    {
@@ -8,7 +8,7 @@
     "prev": null,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-15",
+    "pub": "2026-11-16",
     "freq": "M",
     "src": "FRED CPIAUCSL",
     "url": "https://fred.stlouisfed.org/series/CPIAUCSL"
@@ -19,7 +19,7 @@
     "prev": null,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-15",
+    "pub": "2026-11-16",
     "freq": "M",
     "src": "FRED CPILFESL",
     "url": "https://fred.stlouisfed.org/series/CPILFESL"
@@ -30,7 +30,7 @@
     "prev": 3.03,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-15",
+    "pub": "2026-11-16",
     "freq": "M",
     "src": "FRED PCEPILFE",
     "url": "https://fred.stlouisfed.org/series/PCEPILFE"
@@ -52,7 +52,7 @@
     "prev": 4.2,
     "fmt": "%",
     "ts": "2026-10-01",
-    "pub": "2026-11-15",
+    "pub": "2026-11-16",
     "freq": "M",
     "src": "FRED UNRATE",
     "url": "https://fred.stlouisfed.org/series/UNRATE"
@@ -281,7 +281,7 @@
      "ev": "Retail Sales m/m",
      "ev_en": "Retail Sales m/m",
      "imp": 3,
-     "cons": "0.2%",
+     "cons": "0.1%",
      "prev": "0.8%",
      "act": null,
      "cov": true,
@@ -458,7 +458,7 @@
     }
    ],
    "feeds": {
-    "semaine en cours": "ok (json, 123 événements)",
+    "semaine en cours": "ok (json, 124 événements)",
     "semaine suivante": "indisponible (404 Client Error: Not Found for url: https://nfs.faireconomy)"
    },
    "src": "Consensus and prior: Forex Factory (unofficial compilation, personal use). Actual: Bureau of Labor Statistics (on release), FRED (BEA, Fed), ECB, Bank of England and SNB. Other releases (ISM, S&P Global PMI…) have no free source: marked \"not covered\"."
@@ -507,33 +507,33 @@
    {
     "d": "2027-06-09",
     "pre": 4.575,
-    "post": 4.675,
-    "move_bp": 10.0,
+    "post": 4.668,
+    "move_bp": 9.3,
     "p_cut": 0,
-    "p_hike": 40
+    "p_hike": 37
    },
    {
     "d": "2027-07-28",
-    "pre": 4.675,
+    "pre": 4.668,
     "post": 4.705,
-    "move_bp": 3.0,
+    "move_bp": 3.7,
     "p_cut": 0,
-    "p_hike": 12
+    "p_hike": 15
    },
    {
     "d": "2027-09-15",
     "pre": 4.705,
-    "post": 4.735,
-    "move_bp": 3.0,
+    "post": 4.725,
+    "move_bp": 2.0,
     "p_cut": 0,
-    "p_hike": 12
+    "p_hike": 8
    },
    {
     "d": "2027-10-27",
-    "pre": 4.735,
+    "pre": 4.725,
     "post": 4.715,
-    "move_bp": -2.0,
-    "p_cut": 8,
+    "move_bp": -1.0,
+    "p_cut": 4,
     "p_hike": 0
    },
    {
@@ -573,35 +573,35 @@
     },
     {
      "t": "1A",
-     "y": 4.616,
+     "y": 4.61,
      "y1m": 4.46,
      "ts": "2026-11-16",
      "live": true
     },
     {
      "t": "2A",
-     "y": 4.834,
+     "y": 4.831,
      "y1m": 4.74,
      "ts": "2026-11-16",
      "live": true
     },
     {
      "t": "3A",
-     "y": 4.882,
+     "y": 4.879,
      "y1m": 4.82,
      "ts": "2026-11-16",
      "live": true
     },
     {
      "t": "5A",
-     "y": 4.94,
+     "y": 4.936,
      "y1m": 4.89,
      "ts": "2026-11-16",
      "live": true
     },
     {
      "t": "7A",
-     "y": 5.021,
+     "y": 5.02,
      "y1m": 4.98,
      "ts": "2026-11-16",
      "live": true
@@ -615,14 +615,14 @@
     },
     {
      "t": "20A",
-     "y": 5.522,
+     "y": 5.521,
      "y1m": 5.47,
      "ts": "2026-11-16",
      "live": true
     },
     {
      "t": "30A",
-     "y": 5.474,
+     "y": 5.473,
      "y1m": 5.43,
      "ts": "2026-11-16",
      "live": true
@@ -807,18 +807,18 @@
   },
   {
    "k": "2s10s slope",
-   "v": 27.0,
-   "prev": 24.0,
+   "v": 29.0,
+   "prev": 27.0,
    "fmt": "pb",
-   "ts": "2026-11-13",
+   "ts": "2026-11-16",
    "src": "FRED T10Y2Y"
   },
   {
    "k": "3m10y slope",
-   "v": 83.0,
-   "prev": 78.0,
+   "v": 78.0,
+   "prev": 83.0,
    "fmt": "pb",
-   "ts": "2026-11-13",
+   "ts": "2026-11-16",
    "src": "FRED T10Y3M"
   },
   {
