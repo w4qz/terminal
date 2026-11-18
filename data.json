@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-17T23:30:31.707918Z",
+ "generated_at": "2026-11-18T00:30:57.160627Z",
  "quotes": {
   "NVDA": {
    "p": 155.46,
@@ -259,16 +259,16 @@
    ]
   },
   "N225": {
-   "p": 58965.4805,
+   "p": 59410.8594,
    "prev": 59662.0195,
-   "chg": -696.5391,
-   "pct": -1.17,
-   "st": "EOD",
+   "chg": -251.1602,
+   "pct": -0.42,
+   "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^N225)",
-   "ts": "2026-11-17T06:30:00Z",
-   "open": 59295.8008,
-   "lo": 58691.1094,
-   "hi": 59369.1406,
+   "ts": "2026-11-18T00:30:00Z",
+   "open": 59007.3984,
+   "lo": 58936.8516,
+   "hi": 59630.9492,
    "h": [
     64916.7,
     64075.42,
@@ -289,7 +289,8 @@
     61248.59,
     60819.36,
     61142.35,
-    59662.02
+    59662.02,
+    59410.86
    ]
   },
   "HSI": {
@@ -397,10 +398,10 @@
    ]
   },
   "UKX": {
-   "p": 10689.8701,
+   "p": 10697.2695,
    "prev": 10881.5996,
-   "chg": -191.7295,
-   "pct": -1.76,
+   "chg": -184.3301,
+   "pct": -1.69,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^FTSE)",
    "ts": "2026-11-17T16:30:00Z",
@@ -428,8 +429,7 @@
     10835.5,
     10863.1,
     10902.6,
-    10881.6,
-    10689.87
+    10881.6
    ]
   },
   "DAX": {
@@ -539,18 +539,17 @@
    ]
   },
   "EURUSD": {
-   "p": 1.0999,
-   "prev": 1.1025,
-   "chg": -0.0026,
-   "pct": -0.24,
+   "p": 1.0991,
+   "prev": 1.0998,
+   "chg": -0.0007,
+   "pct": -0.06,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (EURUSD=X)",
-   "ts": "2026-11-17T23:30:00Z",
+   "ts": "2026-11-18T00:30:57.160627Z",
    "open": 1.1001,
-   "lo": 1.0997,
+   "lo": 1.0988,
    "hi": 1.1004,
    "h": [
-    1.122549,
     1.121579,
     1.122675,
     1.123469,
@@ -571,22 +570,22 @@
     1.109521,
     1.105021,
     1.102487,
-    1.099868
+    1.09982,
+    1.099143
    ]
   },
   "USDJPY": {
-   "p": 159.473,
-   "prev": 159.78,
-   "chg": -0.307,
-   "pct": -0.19,
+   "p": 159.512,
+   "prev": 159.523,
+   "chg": -0.011,
+   "pct": -0.01,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (JPY=X)",
-   "ts": "2026-11-17T23:30:31.707918Z",
+   "ts": "2026-11-18T00:30:57.160627Z",
    "open": 159.39,
    "lo": 159.39,
-   "hi": 159.501,
+   "hi": 159.568,
    "h": [
-    157.81,
     158.52,
     158.27,
     158.13,
@@ -607,22 +606,22 @@
     159.73,
     159.88,
     159.78,
-    159.47
+    159.52,
+    159.51
    ]
   },
   "GBPUSD": {
-   "p": 1.3208,
-   "prev": 1.3216,
-   "chg": -0.0009,
-   "pct": -0.07,
+   "p": 1.3203,
+   "prev": 1.3185,
+   "chg": 0.0019,
+   "pct": 0.14,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
-   "ts": "2026-11-17T23:30:00Z",
+   "ts": "2026-11-18T00:30:57.160627Z",
    "open": 1.3209,
-   "lo": 1.3204,
+   "lo": 1.3199,
    "hi": 1.321,
    "h": [
-    1.333565,
     1.330849,
     1.337327,
     1.339567,
@@ -643,7 +642,8 @@
     1.327669,
     1.323136,
     1.32165,
-    1.320777
+    1.318461,
+    1.320341
    ]
   },
   "DXY": {
@@ -683,17 +683,17 @@
    ]
   },
   "XAU": {
-   "p": 3855.1001,
-   "prev": 3853.0,
-   "chg": 2.1001,
-   "pct": 0.05,
+   "p": 3843.6001,
+   "prev": 3843.5,
+   "chg": 0.1001,
+   "pct": 0.0,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GC=F)",
-   "ts": "2026-11-17T23:30:00Z",
+   "ts": "2026-11-18T00:30:00Z",
    "open": 3855.2,
-   "lo": 3852.3,
-   "hi": 3858.0,
-   "vol": 1646,
+   "lo": 3840.7,
+   "hi": 3859.3,
+   "vol": 7520,
    "h": [
     4160.1,
     4142.6,
@@ -716,21 +716,21 @@
     3885.3,
     3886.3,
     3853.0,
-    3855.1
+    3843.5
    ]
   },
   "CL": {
-   "p": 85.78,
-   "prev": 85.72,
-   "chg": 0.06,
-   "pct": 0.07,
+   "p": 85.59,
+   "prev": 85.59,
+   "chg": 0.0,
+   "pct": 0.0,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (CL=F)",
-   "ts": "2026-11-17T23:30:00Z",
+   "ts": "2026-11-18T00:30:00Z",
    "open": 85.75,
-   "lo": 85.7,
-   "hi": 85.92,
-   "vol": 458,
+   "lo": 85.51,
+   "hi": 85.95,
+   "vol": 987,
    "h": [
     103.66,
     101.79,
@@ -753,21 +753,21 @@
     88.74,
     88.56,
     85.72,
-    85.78
+    85.59
    ]
   },
   "BRENT": {
-   "p": 93.36,
-   "prev": 92.44,
-   "chg": 0.92,
-   "pct": 1.0,
+   "p": 93.14,
+   "prev": 93.14,
+   "chg": 0.0,
+   "pct": 0.0,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BZ=F)",
-   "ts": "2026-11-17T23:30:00Z",
+   "ts": "2026-11-18T00:30:00Z",
    "open": 93.25,
-   "lo": 93.18,
-   "hi": 93.42,
-   "vol": 140,
+   "lo": 93.14,
+   "hi": 93.47,
+   "vol": 219,
    "h": [
     109.55,
     108.79,
@@ -790,21 +790,21 @@
     95.82,
     95.84,
     92.44,
-    93.36
+    93.14
    ]
   },
   "BTC": {
-   "p": 64898.2188,
+   "p": 64775.9688,
    "prev": 64855.8438,
-   "chg": 42.375,
-   "pct": 0.07,
+   "chg": -79.875,
+   "pct": -0.12,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-17T23:30:31.707918Z",
-   "open": 64828.375,
-   "lo": 63382.7305,
-   "hi": 65220.5547,
-   "vol": 34294298624,
+   "ts": "2026-11-18T00:30:57.160627Z",
+   "open": 64875.8047,
+   "lo": 64673.3438,
+   "hi": 64884.8086,
+   "vol": 33651634176,
    "h": [
     80805.08,
     81267.59,
@@ -827,7 +827,7 @@
     64128.05,
     65305.06,
     64855.84,
-    64902.27
+    64775.97
    ]
   }
  },
@@ -1302,14 +1302,14 @@
    "sector": "Technology",
    "industry": "Consumer Electronics",
    "ccy": "KRW",
-   "mcap": 1239219800375296,
-   "fpe": 2.4468,
+   "mcap": 1295873506017280,
+   "fpe": 2.5587,
    "revTTM": 594479375450112,
    "netIncome": 212962144944128,
    "shares": 5709556199,
    "beta": 1.594,
    "div": 18404.0,
-   "divYield": 9.671,
+   "divYield": 9.248,
    "target": 467638.88,
    "targetHi": 690000.0,
    "targetLo": 290000.0,
@@ -1325,7 +1325,7 @@
    "cash": 214822905970688,
    "debt": 17191200096256,
    "fcf": 83820791463936,
-   "w52lo": 0.0,
+   "w52lo": 94500.0,
    "w52hi": 374500.0,
    "evEbitda": 3.247,
    "earnTs": 1793167200,
@@ -1424,14 +1424,14 @@
    "sector": "Technology",
    "industry": "Semiconductors",
    "ccy": "KRW",
-   "mcap": 774280329560064,
-   "fpe": 2.0412,
+   "mcap": 821174326001664,
+   "fpe": 2.1649,
    "revTTM": 269336677711872,
    "netIncome": 189262280523776,
    "shares": 705173324,
    "beta": 2.466,
    "div": 3000.0,
-   "divYield": 0.273,
+   "divYield": 0.258,
    "target": 3056126.8,
    "targetHi": 4700000.0,
    "targetLo": 1575000.0,
@@ -1446,7 +1446,7 @@
    "debtEq": 5.111,
    "cash": 114459997634560,
    "debt": 15799000498176,
-   "w52lo": 0.0,
+   "w52lo": 501000.0,
    "w52hi": 2987000.0,
    "evEbitda": 3.21,
    "earnTs": 1793080800,
@@ -1506,14 +1506,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1011711279104,
+   "mcap": 1014814212096,
    "pe": 46.2029,
    "fpe": 39.5216,
    "eps": 2.76,
    "feps": 3.2266,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.776,
@@ -1851,10 +1851,10 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 517593399296,
-   "pe": 50.2264,
-   "fpe": 18.0796,
-   "eps": 5.83,
-   "feps": 16.1962,
+   "pe": 50.3993,
+   "fpe": 18.0751,
+   "eps": 5.81,
+   "feps": 16.2002,
    "revTTM": 66013999104,
    "netIncome": 10302999552,
    "shares": 1767616306,
@@ -1894,9 +1894,9 @@
    "ccy": "USD",
    "mcap": 421724454912,
    "pe": 15.8686,
-   "fpe": 13.0728,
+   "fpe": 13.0534,
    "eps": 13.62,
-   "feps": 16.5328,
+   "feps": 16.5574,
    "revTTM": 226256994304,
    "netIncome": 26976000000,
    "shares": 1951253686,
@@ -1982,9 +1982,9 @@
    "ccy": "USD",
    "mcap": 377230950400,
    "pe": 110.2535,
-   "fpe": 61.754,
+   "fpe": 61.6677,
    "eps": 1.42,
-   "feps": 2.5352,
+   "feps": 2.5388,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
@@ -2065,9 +2065,9 @@
    "ccy": "USD",
    "mcap": 424984936448,
    "pe": 29.1416,
-   "fpe": 28.0034,
+   "fpe": 27.9907,
    "eps": 3.39,
-   "feps": 3.5278,
+   "feps": 3.5294,
    "revTTM": 51053998080,
    "netIncome": 14629000192,
    "shares": 4301902335,
@@ -2151,13 +2151,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 121.5051,
-   "shares": 572600000,
-   "divYield": 2.603,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2209,104 +2204,158 @@
  ],
  "news": [
   {
+   "h": "Nvidia says it won't reinstate Huang as firm reports bumper results",
+   "w": "The AI chip giant reported strong quarterly earnings on Tuesday after the dramatic exit of Jensen Huang.",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "BBC — Business",
+   "ts": "2026-11-18T00:28:01Z",
+   "url": "https://www.bbc.co.uk/news/articles/cm2kl50vkwkdo?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "APi Group fixe le prix de 500 millions € de billets de premier rang à échéance 2032",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-18T00:09:04Z",
+   "url": "https://fr.investing.com/news/company-news/api-group-fixe-le-prix-de-500-millions--de-billets-de-premier-rang-a-echeance-2032-93CH-3701490"
+  },
+  {
+   "h": "Saluda Medical à la conférence Bell Potter Healthcare : croissance, mais consommation de trésorerie élevée",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-18T00:07:43Z",
+   "url": "https://fr.investing.com/news/transcripts/saluda-medical-a-la-conference-bell-potter-healthcare--croissance-mais-consommation-de-tresorerie-elevee-93CH-3701489"
+  },
+  {
+   "h": "Japan exports in October surge 20.5%, beating estimates on robust chip shipments",
+   "w": "Semiconductor shipments spiked almost 50% year on year.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-18T00:06:25Z",
+   "url": "https://www.cnbc.com/2026/11/18/japan-exports-october-imports-chips.html"
+  },
+  {
+   "h": "Shionogi finalise l’acquisition d’IntraBio pour 2,0 milliards $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-18T00:05:15Z",
+   "url": "https://fr.investing.com/news/company-news/shionogi-finalise-lacquisition-dintrabio-pour-20-milliards--93CH-3701487"
+  },
+  {
+   "h": "Les futures américains bondissent après les résultats de Nvidia",
+   "w": "",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Investing.com France",
+   "ts": "2026-11-18T00:02:24Z",
+   "url": "https://fr.investing.com/news/stock-market-news/les-futures-americains-bondissent-apres-les-resultats-de-nvidia-3701486"
+  },
+  {
+   "h": "Un directeur de StubHub Inc vend des actions pour 1,5 million $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-18T00:02:21Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-stubhub-inc-vend-des-actions-pour-15-million--93CH-3701482"
+  },
+  {
+   "h": "Le conjoint du PDG d’Amplitude Inc vend des actions pour 265$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-18T00:02:19Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-conjoint-du-pdg-damplitude-inc-vend-des-actions-pour-265-93CH-3701481"
+  },
+  {
+   "h": "Un administrateur de StubHub Inc achète pour 2,05 millions $ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-18T00:02:01Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-stubhub-inc-achete-pour-205-millions--dactions-93CH-3701480"
+  },
+  {
+   "h": "Le directeur commercial de Bloom Energy, Joshi, cède des actions pour 919K$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-18T00:01:44Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-commercial-de-bloom-energy-joshi-cede-des-actions-pour-919k-93CH-3701479"
+  },
+  {
+   "h": "Climate adviser urges UK government to ‘stand firm’ on electric vehicle targets",
+   "w": "Climate Change Committee chair warns that watering down the ZEV mandate would put Britain’s green targets at risk and drive up costs for motorists",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-18T00:01:04Z",
+   "url": "https://www.ft.com/content/52c034e5-ec65-4aa1-b693-77705c57ec23?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "AI might be a reason why the yen is back on intervention watch",
+   "w": "Surge in buying of Japanese stocks creates a demand for currency hedging",
+   "syms": [
+    "USDJPY",
+    "N225"
+   ],
+   "src": "myFT — world",
+   "ts": "2026-11-18T00:01:04Z",
+   "url": "https://www.ft.com/content/f5e91cd6-ee54-49ad-83d4-4dec29cb13a7?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Europe plans to catch the next computer chip wave",
+   "w": "Europe hopes to be a leader in a new generation of computer chips which use light to process data.",
+   "syms": [],
+   "src": "BBC — Business",
+   "ts": "2026-11-18T00:00:24Z",
+   "url": "https://www.bbc.co.uk/news/articles/cqglwjd450k0o?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "Le COO de Bloom Energy Corp vend des actions pour 403.138$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-17T23:47:10Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-coo-de-bloom-energy-corp-vend-des-actions-pour-403138-93CH-3701478"
+  },
+  {
+   "h": "Le PDG de Tyler Technologies vend des actions pour 12,8 millions de dollars",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-17T23:46:59Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-tyler-technologies-vend-des-actions-pour-128-millions-de-dollars-93CH-3701477"
+  },
+  {
+   "h": "Burnham pledges sweeping overhaul of welfare for young Britons",
+   "w": "Prime minister also hints at changes affecting older benefit claimants after author of review makes case for extending the reforms to over-24s",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-17T23:45:47Z",
+   "url": "https://www.ft.com/content/05aee3d8-9231-425a-b6d7-1849fcb99cad?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "My husband is happily retired at 64 and thinks I should keep working. Is he being fair?",
+   "w": "“I’m exhausted. My alarm goes off at 6 a.m., and I have a 50-minute commute.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-17T23:30:00Z",
+   "url": "https://www.marketwatch.com/story/my-husband-is-happily-retired-at-64-and-thinks-i-should-keep-working-is-he-being-fair-325c5f38?mod=mw_rss_topstories"
+  },
+  {
    "h": "I’m in my 40s. Should I accept a lower pension in exchange for naming my husband or child as a beneficiary?",
    "w": "“If I die before my husband, he will receive a lifetime pension equal to 50%–66% of my monthly benefit.”",
    "syms": [],
    "src": "MarketWatch",
    "ts": "2026-11-17T23:15:00Z",
    "url": "https://www.marketwatch.com/story/im-in-my-40s-should-i-accept-a-lower-pension-in-exchange-for-naming-my-husband-or-child-as-a-beneficiary-b2352059?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Radiopharm Theranostics à la conférence Bell Potter Healthcare : avancées du pipeline",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-17T23:09:00Z",
-   "url": "https://fr.investing.com/news/transcripts/radiopharm-theranostics-a-la-conference-bell-potter-healthcare--avancees-du-pipeline-93CH-3701456"
-  },
-  {
-   "h": "Dolby Laboratories bat les estimations du T4 2026, mais le titre chute sur des perspectives prudentes",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-17T23:06:11Z",
-   "url": "https://fr.investing.com/news/transcripts/dolby-laboratories-bat-les-estimations-du-t4-2026-mais-le-titre-chute-sur-des-perspectives-prudentes-93CH-3701455"
-  },
-  {
-   "h": "Compte rendu des résultats : NVIDIA dépasse les prévisions du T3 2026",
-   "w": "",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-11-17T23:03:56Z",
-   "url": "https://fr.investing.com/news/transcripts/compte-rendu-des-resultats--nvidia-depasse-les-previsions-du-t3-2026-93CH-3701454"
-  },
-  {
-   "h": "Nvidia reports bumper results as firm says it's not reinstating Huang",
-   "w": "Nvidia reported strong quarterly earnings on Tuesday amid the dramatic exit of ex-CEO Jensen Huang.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "BBC — Business",
-   "ts": "2026-11-17T23:03:39Z",
-   "url": "https://www.bbc.co.uk/news/articles/cm2kl50vkwkdo?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "Le directeur comptable de Samsara Inc vend des actions pour 91.010$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-17T23:02:33Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-comptable-de-samsara-inc-vend-des-actions-pour-91010-93CH-3701453"
-  },
-  {
-   "h": "Vivos Therapeutics dépasse les prévisions du T3 2026 avec des pertes réduites",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-17T23:02:02Z",
-   "url": "https://fr.investing.com/news/transcripts/vivos-therapeutics-depasse-les-previsions-du-t3-2026-avec-des-pertes-reduites-93CH-3701452"
-  },
-  {
-   "h": "Webjet Group Ltd publie de faibles résultats pour le 1er semestre 2026",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-17T23:00:11Z",
-   "url": "https://fr.investing.com/news/transcripts/webjet-group-ltd-publie-de-faibles-resultats-pour-le-1er-semestre-2026-93CH-3701451"
-  },
-  {
-   "h": "Pioneer Pow élit ses administrateurs et fixe la fréquence du vote sur la rémunération",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-17T22:59:49Z",
-   "url": "https://fr.investing.com/news/sec-filings/pioneer-pow-elit-ses-administrateurs-et-fixe-la-frequence-du-vote-sur-la-remuneration-93CH-3701450"
-  },
-  {
-   "h": "Surgepays Inc change d’auditeur et signale un problème comptable",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-17T22:55:04Z",
-   "url": "https://fr.investing.com/news/sec-filings/surgepays-inc-change-dauditeur-et-signale-un-probleme-comptable-93CH-3701447"
-  },
-  {
-   "h": "Le BPA de IRIDEX a manqué les attentes de 0,06$, le CA en dessous des prévisions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-17T22:54:04Z",
-   "url": "https://fr.investing.com/news/earnings/le-bpa-de-iridex-a-manque-les-attentes-de-006-le-ca--en-dessous-des-previsions-3701446"
-  },
-  {
-   "h": "Stablecoin Development Corp élargit son programme d’offre ATM de 100 millions $",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-17T22:50:34Z",
-   "url": "https://fr.investing.com/news/sec-filings/stablecoin-development-corp-elargit-son-programme-doffre-atm-de-100-millions--93CH-3701444"
   },
   {
    "h": "Costco is benefiting from ‘apocalyptic concerns’ as customers stock up on goods, analysts say",
@@ -2317,7 +2366,7 @@
    "url": "https://www.marketwatch.com/story/costco-is-benefiting-from-apocalyptic-concerns-as-customers-stock-up-on-goods-analysts-say-24f611ab?mod=mw_rss_topstories"
   },
   {
-   "h": "Israeli opposition succeeds in electing a new parliamentary speaker",
+   "h": "Israeli opposition succeeds in electing a new parliamentary Speaker",
    "w": "Appointment of Matan Kahana is a setback for Benjamin Netanyahu’s far-right coalition",
    "syms": [],
    "src": "myFT — world",
@@ -2453,14 +2502,6 @@
    "url": "https://www.marketwatch.com/story/it-leaves-me-with-a-sour-taste-my-elderly-mother-gave-our-cousin-800-for-a-car-repair-should-i-be-worried-88dbd188?mod=mw_rss_topstories"
   },
   {
-   "h": "Summit Therapeutics’ stock tumbles again as FDA recommends new trial for lung-cancer drug",
-   "w": "The U.S. regulator’s disclosure was more extensive than what the biotech company had announced Sunday.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-17T20:58:00Z",
-   "url": "https://www.marketwatch.com/story/summit-therapeutics-stock-tumbles-again-as-fda-recommends-new-trial-for-lung-cancer-drug-dcb8ff55?mod=mw_rss_topstories"
-  },
-  {
    "h": "FAA pauses installation of new routers after ground stop",
    "w": "Problems with the overwhelmed technology led the agency to issue a rare nationwide ground stop on Friday.",
    "syms": [],
@@ -2547,15 +2588,6 @@
    "mine": 1
   },
   {
-   "h": "UK government backs call for separate youth welfare system",
-   "w": "Author of official review into youth employment says ministers should consider extending proposals to over-24s",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-17T18:49:10Z",
-   "url": "https://www.ft.com/content/05aee3d8-9231-425a-b6d7-1849fcb99cad?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Government backs welfare shake-up to prevent 'lost generation'",
    "w": "Ex-minister Alan Milburn has set out plans to divert spending from benefits towards job support.",
    "syms": [],
@@ -2588,6 +2620,38 @@
    "ts": "2026-11-17T18:34:53Z",
    "url": "https://www.ft.com/content/437d5cbb-ee07-43bd-8db6-e3c9cf8c8eb5?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "Japan logs trade deficit for 6th-straight month in October",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-17T18:30:57.160627Z",
+   "url": "https://asia.nikkei.com/economy/trade/japan-logs-trade-deficit-for-6th-straight-month-in-october"
+  },
+  {
+   "h": "Yamaha to acquire UK tech firm behind Taylor Swift, Beyonce tours",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-17T18:30:57.160627Z",
+   "url": "https://asia.nikkei.com/business/business-deals/yamaha-to-acquire-uk-tech-firm-behind-taylor-swift-beyonce-tours2"
+  },
+  {
+   "h": "Trump meets Quad leaders, says 4 nations agree on 'critical mineral deals'",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-17T18:30:57.160627Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/indo-pacific/trump-meets-quad-leaders-says-4-nations-agree-on-critical-mineral-deals"
+  },
+  {
+   "h": "Russia appears open to Putin-Takaichi talks after Japan airspace incident",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-17T18:30:57.160627Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/russia-appears-open-to-putin-takaichi-talks-after-japan-airspace-incident"
   },
   {
    "h": "Philip R. Lane: The practice and science of monetary policy communication: the ECB experience",
@@ -2674,14 +2738,6 @@
    "url": "https://www.lemonde.fr/economie/article/2026/11/17/banque-centrale-europeenne-l-allemagne-propose-l-economiste-markus-brunnermeier-au-directoire-la-presidence-de-pablo-hernandez-de-cos-se-profile_6813020_3234.html"
   },
   {
-   "h": "Samsung chip testing supplier Micronics Japan poised to ramp up capacity",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-17T17:30:31.707918Z",
-   "url": "https://asia.nikkei.com/business/tech/semiconductors/samsung-chip-testing-supplier-micronics-japan-poised-to-ramp-up-capacity"
-  },
-  {
    "h": "Nvidia board says Jensen Huang will not return as CEO",
    "w": "",
    "syms": [
@@ -2690,6 +2746,14 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-17T17:30:31.707918Z",
    "url": "https://asia.nikkei.com/business/tech/semiconductors/nvidia-board-says-jensen-huang-will-not-return-as-ceo"
+  },
+  {
+   "h": "Samsung chip testing supplier Micronics Japan poised to ramp up capacity",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-17T17:30:31.707918Z",
+   "url": "https://asia.nikkei.com/business/tech/semiconductors/samsung-chip-testing-supplier-micronics-japan-poised-to-ramp-up-capacity"
   },
   {
    "h": "Breach of Japan's Fugaku supercomputer exposes security spending gap",
@@ -2809,30 +2873,6 @@
    "url": "https://asia.nikkei.com/business/agriculture/el-nino-lifts-crop-prices-in-domino-effect-across-india-southeast-asia"
   },
   {
-   "h": "Japan's ammonia-powered carrier unveiled as shipping goes low carbon",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-17T16:32:44.077604Z",
-   "url": "https://asia.nikkei.com/spotlight/environment/climate-change/japan-s-ammonia-powered-carrier-unveiled-as-shipping-goes-low-carbon"
-  },
-  {
-   "h": "Anthropic's IPO fireworks may light fuse for Asia's AI startups",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-17T16:32:44.077604Z",
-   "url": "https://asia.nikkei.com/business/technology/tech-asia/anthropic-s-ipo-fireworks-may-light-fuse-for-asia-s-ai-startups"
-  },
-  {
-   "h": "KKR wins preferred bidder status for Japan curry chain Ichibanya",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-17T16:32:44.077604Z",
-   "url": "https://asia.nikkei.com/business/business-deals/kkr-wins-preferred-bidder-status-for-japan-curry-chain-ichibanya"
-  },
-  {
    "h": "Manifestations du 17 novembre : entre 146 000, selon le gouvernement, et 500 000 personnes, selon la CGT, ont défilé en France ; revivez la journée de mobilisation",
    "w": "A Paris, le cortège qui a relié la place de la Nation à la place d’Italie a réuni 28 000 personnes, mardi, selon la Préfecture de police, et 175 000, selon la CGT.",
    "syms": [],
@@ -2842,7 +2882,7 @@
   },
   {
    "h": "Ukraine destroys section of Crimea bridge in fierce exchange",
-   "w": "Part of key Russian road crossing collapses and parallel rail bridge damaged while Moscow hits infrastructure in Ukrainian capital",
+   "w": "Part of critical Russian road crossing collapses and parallel rail bridge damaged while Moscow hits infrastructure in Ukrainian capital",
    "syms": [],
    "src": "myFT — europe",
    "ts": "2026-11-17T16:24:55Z",
@@ -2867,28 +2907,12 @@
    "url": "https://www.lemonde.fr/societe/article/2026/11/17/patrick-et-isabelle-balkany-retrouvent-leur-moulin-de-giverny-dont-ils-avaient-ete-expulses-fin-octobre-apres-un-accord-avec-l-etat_6813006_3224.html"
   },
   {
-   "h": "Lisa Cook lawyer signals Fed governor won't attend Trump committee's hearing",
-   "w": "Cook's attorney sounded more hostile than ever in his first known letter to be sent in the matter since the GOP's drubbing in the Nov. 3 midterm elections.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-17T16:03:38Z",
-   "url": "https://www.cnbc.com/2026/11/17/lisa-cook-trump-fed-committee-hearing.html"
-  },
-  {
    "h": "La présidentielle de 2027 et ses enjeux : l’immigration face à la réalité des chiffres",
    "w": "Les mouvements migratoires sont constitutifs de l’histoire de la France, mais restent au cœur des crispations. Qui arrive ? D’où vient-on ? Où travaille-t-on ? Comment s’intègre-t-on ? Une plongée dans les réalités de l’immigration, loin des seules perceptions.",
    "syms": [],
    "src": "Le Monde — Économie",
    "ts": "2026-11-17T16:00:07Z",
    "url": "https://www.lemonde.fr/election-presidentielle-2027/article/2026/11/17/la-presidentielle-de-2027-et-ses-enjeux-l-immigration-face-a-la-realite-des-chiffres_6813002_6205049.html"
-  },
-  {
-   "h": "We can't afford to hire under-25s, say firms. Will Milburn plans help?",
-   "w": "The proposal to cut employers' National Insurance costs is \"essential\" to tackling the Neet problem, one business group says.",
-   "syms": [],
-   "src": "BBC — Business",
-   "ts": "2026-11-17T15:56:04Z",
-   "url": "https://www.bbc.co.uk/news/articles/c6d01e8m15mko?at_medium=RSS&at_campaign=rss"
   },
   {
    "h": "Nvidia’s crisis creates an opportunity for newbie chipmakers",
@@ -2900,14 +2924,6 @@
    "ts": "2026-11-17T15:55:41Z",
    "url": "https://www.ft.com/content/af2519b0-d0de-409b-b2eb-3c6f2ff3caf1?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Homebuilder sentiment plunges to 14-year low, leading more builders to drop prices",
-   "w": "Homebuilder sentiment fell to a 14-year low amid high mortgage rates and higher prices for energy, labor and materials. That caused more builder price cuts.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-17T15:36:43Z",
-   "url": "https://www.cnbc.com/2026/11/17/homebuilder-sentiment-plunges-to-14-year-low-leading-more-builders-to-drop-prices.html"
   },
   {
    "h": "How Jensen Huang’s family shaped Nvidia’s Megaspeed dealings",
@@ -3081,26 +3097,6 @@
    "src": "myFT — us",
    "ts": "2026-11-17T11:32:39Z",
    "url": "https://www.ft.com/content/6a0efb61-a756-4794-90db-3d591f42f17f?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "In brief: Milburn’s 267-page report",
-   "w": "Report will test Andy Burnham’s appetite for contentious reform",
-   "syms": [],
-   "src": "myFT — world uk",
-   "ts": "2026-11-17T11:30:04Z",
-   "url": "https://www.ft.com/content/3d1308a7-e10b-462a-aaca-5378d79d14f5?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Nvidia creates committee to oversee compliance with US chip export controls",
-   "w": "Move comes as US chipmaker faces criticism in Washington over its ambition to increase revenues in China",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "myFT — technology",
-   "ts": "2026-11-17T11:24:44Z",
-   "url": "https://www.ft.com/content/aeacbf89-5511-4d1c-81c2-b4c227bdfceb?syn-25a6b1a6=1",
    "mine": 1
   }
  ],
