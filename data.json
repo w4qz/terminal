@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-19T06:49:34.840728Z",
+ "generated_at": "2026-11-19T08:13:15.509701Z",
  "quotes": {
   "NVDA": {
    "p": 150.96,
@@ -260,11 +260,11 @@
    ]
   },
   "N225": {
-   "p": 59542.4102,
+   "p": 59444.2109,
    "prev": 59024.2812,
-   "chg": 518.1289,
-   "pct": 0.88,
-   "st": "DELAYED_15M",
+   "chg": 419.9297,
+   "pct": 0.71,
+   "st": "EOD",
    "src": "Yahoo Finance via yfinance (^N225)",
    "ts": "2026-11-19T06:30:00Z",
    "open": 59025.1914,
@@ -296,15 +296,15 @@
    ]
   },
   "HSI": {
-   "p": 22796.7793,
+   "p": 22829.0195,
    "prev": 23294.75,
-   "chg": -497.9707,
-   "pct": -2.14,
+   "chg": -465.7305,
+   "pct": -2.0,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^HSI)",
-   "ts": "2026-11-19T06:45:00Z",
+   "ts": "2026-11-19T08:00:00Z",
    "open": 23049.6504,
-   "lo": 22775.8809,
+   "lo": 22772.2109,
    "hi": 23049.6504,
    "h": [
     23651.87,
@@ -328,21 +328,21 @@
     23753.84,
     23508.17,
     23294.75,
-    22796.78
+    22828.94
    ]
   },
   "SHCOMP": {
-   "p": 3560.2212,
+   "p": 3575.7903,
    "prev": 3587.832,
-   "chg": -27.6108,
-   "pct": -0.77,
+   "chg": -12.0417,
+   "pct": -0.34,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (000001.SS)",
-   "ts": "2026-11-19T06:45:00Z",
+   "ts": "2026-11-19T07:00:00Z",
    "open": 3583.1208,
    "lo": 3547.9397,
-   "hi": 3583.1208,
-   "vol": 924316932,
+   "hi": 3584.2815,
+   "vol": 2636569836,
    "h": [
     3713.03,
     3658.03,
@@ -365,17 +365,17 @@
     3602.57,
     3584.58,
     3587.83,
-    3560.22
+    3577.62
    ]
   },
   "STI": {
-   "p": 5064.2798,
+   "p": 5077.8599,
    "prev": 5054.8901,
-   "chg": 9.3896,
-   "pct": 0.19,
+   "chg": 22.9697,
+   "pct": 0.45,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^STI)",
-   "ts": "2026-11-19T06:45:00Z",
+   "ts": "2026-11-19T08:00:00Z",
    "open": 5054.8901,
    "lo": 5045.27,
    "hi": 5082.8198,
@@ -401,7 +401,7 @@
     5183.18,
     5109.13,
     5054.89,
-    5064.28
+    5078.56
    ]
   },
   "UKX": {
@@ -409,8 +409,8 @@
    "prev": 10689.9004,
    "chg": -138.7002,
    "pct": -1.3,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^FTSE) — last update failed",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^FTSE)",
    "ts": "2026-11-18T16:30:00Z",
    "open": 10690.5996,
    "lo": 10537.5,
@@ -553,16 +553,16 @@
    ]
   },
   "EURUSD": {
-   "p": 1.0971,
+   "p": 1.0989,
    "prev": 1.0993,
-   "chg": -0.0022,
-   "pct": -0.2,
+   "chg": -0.0004,
+   "pct": -0.04,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (EURUSD=X)",
-   "ts": "2026-11-19T06:49:34.840728Z",
+   "ts": "2026-11-19T08:13:15.509701Z",
    "open": 1.0978,
    "lo": 1.0959,
-   "hi": 1.0982,
+   "hi": 1.0989,
    "h": [
     1.122675,
     1.123469,
@@ -585,20 +585,20 @@
     1.102487,
     1.09982,
     1.099288,
-    1.097093
+    1.098901
    ]
   },
   "USDJPY": {
-   "p": 159.519,
+   "p": 159.756,
    "prev": 159.504,
-   "chg": 0.015,
-   "pct": 0.01,
+   "chg": 0.252,
+   "pct": 0.16,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (JPY=X)",
-   "ts": "2026-11-19T06:49:34.840728Z",
+   "ts": "2026-11-19T08:13:15.509701Z",
    "open": 159.297,
    "lo": 159.265,
-   "hi": 159.632,
+   "hi": 159.785,
    "h": [
     158.27,
     158.13,
@@ -621,20 +621,20 @@
     159.78,
     159.52,
     159.5,
-    159.51
+    159.76
    ]
   },
   "GBPUSD": {
-   "p": 1.3141,
+   "p": 1.3155,
    "prev": 1.3205,
-   "chg": -0.0064,
-   "pct": -0.48,
+   "chg": -0.005,
+   "pct": -0.38,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
-   "ts": "2026-11-19T06:49:34.840728Z",
+   "ts": "2026-11-19T08:13:15.509701Z",
    "open": 1.3153,
    "lo": 1.3121,
-   "hi": 1.3154,
+   "hi": 1.3158,
    "h": [
     1.337327,
     1.339567,
@@ -657,19 +657,19 @@
     1.32165,
     1.318461,
     1.320498,
-    1.314095
+    1.315512
    ]
   },
   "DXY": {
-   "p": 103.874,
+   "p": 103.786,
    "prev": 103.86,
-   "chg": 0.014,
-   "pct": 0.01,
+   "chg": -0.074,
+   "pct": -0.07,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (DX-Y.NYB)",
-   "ts": "2026-11-19T06:45:00Z",
+   "ts": "2026-11-19T08:13:15.509701Z",
    "open": 103.807,
-   "lo": 103.77,
+   "lo": 103.747,
    "hi": 103.974,
    "h": [
     101.78,
@@ -693,21 +693,21 @@
     103.55,
     103.49,
     103.86,
-    103.87
+    103.79
    ]
   },
   "XAU": {
-   "p": 3731.8999,
+   "p": 3739.5,
    "prev": 3741.8999,
-   "chg": -10.0,
-   "pct": -0.27,
+   "chg": -2.3999,
+   "pct": -0.06,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GC=F)",
-   "ts": "2026-11-19T06:45:00Z",
-   "open": 3730.3,
+   "ts": "2026-11-19T08:13:15.509701Z",
+   "open": 3855.2,
    "lo": 3694.5,
    "hi": 3759.5,
-   "vol": 52457,
+   "vol": 59164,
    "h": [
     4150.0,
     4060.4,
@@ -730,21 +730,21 @@
     3853.0,
     3864.2,
     3741.9,
-    3731.9
+    3739.1
    ]
   },
   "CL": {
-   "p": 82.48,
+   "p": 82.21,
    "prev": 83.26,
-   "chg": -0.78,
-   "pct": -0.94,
+   "chg": -1.05,
+   "pct": -1.26,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (CL=F)",
-   "ts": "2026-11-19T06:45:00Z",
+   "ts": "2026-11-19T08:13:15.509701Z",
    "open": 81.85,
    "lo": 81.69,
-   "hi": 83.11,
-   "vol": 21168,
+   "hi": 83.08,
+   "vol": 25772,
    "h": [
     97.15,
     99.47,
@@ -767,21 +767,21 @@
     85.72,
     86.01,
     83.26,
-    82.48
+    82.21
    ]
   },
   "BRENT": {
-   "p": 89.6,
+   "p": 89.3,
    "prev": 91.95,
-   "chg": -2.35,
-   "pct": -2.56,
+   "chg": -2.65,
+   "pct": -2.88,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BZ=F)",
-   "ts": "2026-11-19T06:45:00Z",
+   "ts": "2026-11-19T08:13:15.509701Z",
    "open": 88.64,
    "lo": 88.51,
    "hi": 90.21,
-   "vol": 2302,
+   "vol": 2987,
    "h": [
     108.82,
     113.17,
@@ -804,23 +804,22 @@
     92.44,
     93.14,
     91.95,
-    89.6
+    89.3
    ]
   },
   "BTC": {
-   "p": 63439.3398,
-   "prev": 64893.9453,
-   "chg": -1454.6055,
-   "pct": -2.24,
+   "p": 63643.5,
+   "prev": 62987.2656,
+   "chg": 656.2344,
+   "pct": 1.04,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-19T06:49:34.840728Z",
+   "ts": "2026-11-19T08:13:15.509701Z",
    "open": 62987.2852,
    "lo": 62382.4844,
-   "hi": 63559.0898,
-   "vol": 31634313216,
+   "hi": 63692.3555,
+   "vol": 31916355584,
    "h": [
-    81267.59,
     77775.11,
     77198.21,
     77434.75,
@@ -841,7 +840,8 @@
     65305.06,
     64855.84,
     64893.95,
-    63439.34
+    62987.27,
+    63643.5
    ]
   }
  },
@@ -942,9 +942,9 @@
    "ccy": "USD",
    "mcap": 3774660476928,
    "pe": 26.5287,
-   "fpe": 21.003,
+   "fpe": 21.0005,
    "eps": 19.16,
-   "feps": 24.2008,
+   "feps": 24.2038,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -1146,9 +1146,9 @@
    "sector": "Energy",
    "industry": "Oil & Gas Integrated",
    "ccy": "SAR",
-   "mcap": 6396032057344,
-   "pe": 14.2151,
-   "fpe": 15.8323,
+   "mcap": 6381517144064,
+   "pe": 14.1828,
+   "fpe": 15.7964,
    "eps": 1.86,
    "feps": 1.67,
    "revTTM": 1932166955008,
@@ -1156,7 +1156,7 @@
    "shares": 241907400000,
    "beta": -0.022,
    "div": 1.36,
-   "divYield": 5.144,
+   "divYield": 5.155,
    "target": 29.9778,
    "targetHi": 34.0,
    "targetLo": 27.0,
@@ -1316,14 +1316,14 @@
    "sector": "Technology",
    "industry": "Consumer Electronics",
    "ccy": "KRW",
-   "mcap": 1264616344649728,
-   "fpe": 2.497,
+   "mcap": 1282198464364544,
+   "fpe": 2.5317,
    "revTTM": 594479375450112,
    "netIncome": 212962144944128,
    "shares": 5709556199,
    "beta": 1.594,
    "div": 18404.0,
-   "divYield": 9.477,
+   "divYield": 9.347,
    "target": 467638.88,
    "targetHi": 690000.0,
    "targetLo": 290000.0,
@@ -1438,14 +1438,14 @@
    "sector": "Technology",
    "industry": "Semiconductors",
    "ccy": "KRW",
-   "mcap": 822232095916032,
-   "fpe": 2.1676,
+   "mcap": 834220020727808,
+   "fpe": 2.1992,
    "revTTM": 269337164251136,
    "netIncome": 188904590278656,
    "shares": 705173324,
    "beta": 2.466,
    "div": 3000.0,
-   "divYield": 0.257,
+   "divYield": 0.254,
    "target": 3056126.8,
    "targetHi": 4700000.0,
    "targetLo": 1575000.0,
@@ -1520,14 +1520,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1010441912320,
+   "mcap": 1013540913152,
    "pe": 46.1449,
    "fpe": 39.4511,
    "eps": 2.76,
    "feps": 3.2283,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.777,
@@ -2165,13 +2165,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 121.8495,
-   "shares": 572600000,
-   "divYield": 2.596,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2223,12 +2218,166 @@
  ],
  "news": [
   {
-   "h": "Husqvarna dépose une plainte antidumping contre les robots tondeuses chinois",
+   "h": "Russia says Putin in ‘excellent mood’ after Trump meeting, ahead of trilateral with Xi in China",
+   "w": "U.S. President Donald Trump met individually on Thursday with Russian President Vladimir Putin, as well as Chinese President Xi Jinping.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-19T08:11:29Z",
+   "url": "https://www.cnbc.com/2026/11/19/trump-xi-putin-china-apec-.html"
+  },
+  {
+   "h": "Wise Group A à la conférence Morgan Stanley : croissance via des prix plus bas",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-19T06:40:36Z",
-   "url": "https://fr.investing.com/news/stock-market-news/husqvarna-depose-une-plainte-antidumping-contre-les-robots-tondeuses-chinois-93CH-3703934"
+   "ts": "2026-11-19T07:57:07Z",
+   "url": "https://fr.investing.com/news/transcripts/wise-group-a-a-la-conference-morgan-stanley--croissance-via-des-prix-plus-bas-93CH-3704059"
+  },
+  {
+   "h": "Sortie de GTA 6 : 1,5 million d’arrêts maladie et 1 milliard de dollars perdus ?",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-19T07:56:09Z",
+   "url": "https://fr.investing.com/news/economy-news/sortie-de-gta-6--15-million-darrets-maladie-et-1-milliard-de-dollars-perdus--3704057"
+  },
+  {
+   "h": "Pourquoi l’indice boursier Taiwan Weighted plonge-t-il aujourd’hui ?",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-19T07:56:09Z",
+   "url": "https://fr.investing.com/news/stock-market-news/pourquoi-lindice-boursier-taiwan-weighted-plongetil-aujourdhui--93CH-3704058"
+  },
+  {
+   "h": "Pourquoi le titre A2 Milk Company Ltd chute-t-il aujourd’hui ?",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-19T07:54:54Z",
+   "url": "https://fr.investing.com/news/stock-market-news/pourquoi-le-titre-a2-milk-company-ltd-chutetil-aujourdhui--93CH-3704056"
+  },
+  {
+   "h": "Virtual ‘Jensanity’ rocks Taipei in support for Nvidia chief",
+   "w": "The inside story on the Asia tech trends that matter, from Nikkei Asia and the Financial Times",
+   "syms": [
+    "NVDA",
+    "N225"
+   ],
+   "src": "myFT — technology",
+   "ts": "2026-11-19T07:51:34Z",
+   "url": "https://www.ft.com/content/7196517d-ad99-4436-af89-787214b35d2c?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Le directeur exécutif de Hewlett Packard Enterprise vend pour 1,18 M$ d’actions HPE",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-19T07:47:20Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-executif-de-hewlett-packard-enterprise-vend-pour-118-m-dactions-hpe-93CH-3704018"
+  },
+  {
+   "h": "La PDG de Si-Bone Inc vend des actions pour 392.877$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-19T07:47:17Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/la-pdg-de-sibone-inc-vend-des-actions-pour-392877-93CH-3704017"
+  },
+  {
+   "h": "Une directrice de Loar Holdings LLC vend des actions pour 182,8 millions $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-19T07:47:07Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/une-directrice-de-loar-holdings-llc-vend-des-actions-pour-1828-millions--93CH-3704016"
+  },
+  {
+   "h": "Le bénéfice sous-jacent de Babcock en hausse de 13% grâce au nucléaire et à l’aviation",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-19T07:46:21Z",
+   "url": "https://fr.investing.com/news/stock-market-news/le-benefice-sousjacent-de-babcock-en-hausse-de-13-grace-au-nucleaire-et-a-laviation-3704023"
+  },
+  {
+   "h": "Elliptic Lab : le chiffre d’affaires du T3 2026 en hausse, mais le titre recule",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-19T07:46:06Z",
+   "url": "https://fr.investing.com/news/transcripts/elliptic-lab--le-chiffre-daffaires-du-t3-2026-en-hausse-mais-le-titre-recule-93CH-3704009"
+  },
+  {
+   "h": "La production industrielle suisse progresse de 0,8% au troisième trimestre",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-19T07:45:31Z",
+   "url": "https://fr.investing.com/news/economic-indicators/la-production-industrielle-suisse-progresse-de-08-au-troisieme-trimestre-93CH-3704008"
+  },
+  {
+   "h": "Trump greets ‘my friend’ Putin ahead of historic trilateral with Xi",
+   "w": "Meeting of three leaders looms in southern Chinese city of Shenzhen during week of high-stakes diplomacy",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-19T07:43:13Z",
+   "url": "https://www.ft.com/content/fcf6d27b-a04c-4cef-8b03-ce2423566f1f",
+   "mine": 1
+  },
+  {
+   "h": "Takaichi gets chilly reception in China on first Japan leader visit since 2019",
+   "w": "Takaichi received a subdued welcome on her trip to attend the APEC summit, as Beijing shows limited appetite for repairing ties strained by Taiwan dispute.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-19T07:38:29Z",
+   "url": "https://www.cnbc.com/2026/11/19/japan-china-trump-takaichi-taiwan-.html"
+  },
+  {
+   "h": "APEC final day in photos: Trump, Xi and Putin shake hands; Takaichi kept at a distance",
+   "w": "Leaders gathered Thursday for the second day of the economic summit, ahead of a historic trilateral meeting between the U.S., Russia and China.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-19T07:32:56Z",
+   "url": "https://www.cnbc.com/2026/11/19/trump-xi-putin-photos-us-china-russia-trilateral-.html"
+  },
+  {
+   "h": "Anthropic raises $81bn in record IPO",
+   "w": "Shares in AI giant set to begin trading on Thursday after company sells shares at $1.5tn valuation in blockbuster listing",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-19T07:04:26Z",
+   "url": "https://www.ft.com/content/62c0510b-ca65-441e-9baf-675b93903b9e?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Régularisation des sans-papiers : « Nous ne pouvons pas bénéficier de leur travail et leur refuser la stabilité administrative qui leur permettrait de vivre dignement »",
+   "w": "Trente-sept chercheurs soutiennent, dans une tribune au « Monde », la proposition de loi visant à créer un dispositif de régularisation des étrangers en situation irrégulière présents sur notre territoire, examinée à l’Assemblée nationale le 19 novembre.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-19T07:00:13Z",
+   "url": "https://www.lemonde.fr/idees/article/2026/11/19/regularisation-des-sans-papiers-nous-ne-pouvons-pas-beneficier-de-leur-travail-et-leur-refuser-la-stabilite-administrative-qui-leur-permettrait-de-vivre-dignement_6813248_3232.html"
+  },
+  {
+   "h": "Agnelli family doubles stake in French diagnostics company BioMérieux",
+   "w": "Italian business dynasty’s holding company Exor is expanding its push into the healthcare sector",
+   "syms": [],
+   "src": "myFT — companies",
+   "ts": "2026-11-19T07:00:07Z",
+   "url": "https://www.ft.com/content/51ff14c8-5482-4be3-9579-bd96d29624cb?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "EU delays methane emission rules on fossil fuel imports",
+   "w": "New rules will not be implemented for at least two years after sustained lobbying by the US, Qatar and the wider oil and gas sector",
+   "syms": [
+    "BRENT"
+   ],
+   "src": "myFT — europe",
+   "ts": "2026-11-19T06:41:33Z",
+   "url": "https://www.ft.com/content/e871493f-920c-4ece-94d4-9d14317047fe?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "Trains de nuit : l’Etat renonce à commander des rames neuves et opte pour la rénovation des voitures Corail",
@@ -2237,62 +2386,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-19T06:40:17Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/19/trains-de-nuit-l-etat-renonce-a-commander-des-rames-neuves-et-opte-pour-la-renovation-des-voitures-corail_6813244_3234.html"
-  },
-  {
-   "h": "Takaichi gets chilly reception in China on first Japan leader visit since 2019",
-   "w": "Takaichi received a subdued welcome on her trip to attend the APEC summit, as Beijing shows limited appetite for repairing ties strained by Taiwan dispute.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-19T06:39:53Z",
-   "url": "https://www.cnbc.com/2026/11/19/japan-china-trump-takaichi-taiwan-.html"
-  },
-  {
-   "h": "UniCredit et l’Allemagne s’accordent sur le rachat de Commerzbank",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-19T06:36:56Z",
-   "url": "https://fr.investing.com/news/stock-market-news/unicredit-et-lallemagne-saccordent-sur-le-rachat-de-commerzbank-93CH-3703930"
-  },
-  {
-   "h": "Pourquoi l’action Lenovo Group Ltd chute-t-elle aujourd’hui ?",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-19T06:35:46Z",
-   "url": "https://fr.investing.com/news/stock-market-news/pourquoi-laction-lenovo-group-ltd-chutetelle-aujourdhui--93CH-3703929"
-  },
-  {
-   "h": "Bernstein abaisse la note de Michelin en raison de pressions sur les prix",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-19T06:33:51Z",
-   "url": "https://fr.investing.com/news/analyst-ratings/bernstein-abaisse-la-note-de-michelin-en-raison-de-pressions-sur-les-prix-93CH-3703926"
-  },
-  {
-   "h": "Novartis prévoit une croissance annuelle des ventes de 5% jusqu’en 2031",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-19T06:32:33Z",
-   "url": "https://fr.investing.com/news/stock-market-news/novartis-prevoit-une-croissance-annuelle-des-ventes-de-5-jusquen-2031-3703925"
-  },
-  {
-   "h": "Le PDG de VSE Corporation vend des actions pour 338.964$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-19T06:31:56Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-vse-corporation-vend-des-actions-pour-338964-93CH-3703924"
-  },
-  {
-   "h": "Le président exécutif de Morningstar Inc cède des actions pour 1,8M$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-19T06:31:42Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-president-executif-de-morningstar-inc-cede-des-actions-pour-18m-93CH-3703923"
   },
   {
    "h": "Anthropic revenue target: $600bn, soonish",
@@ -2304,40 +2397,8 @@
    "mine": 1
   },
   {
-   "h": "Genus Power Infrastructures affiche un bon S1 2027, le titre recule sur la faiblesse du T2",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-19T06:30:04Z",
-   "url": "https://fr.investing.com/news/transcripts/genus-power-infrastructures-affiche-un-bon-s1-2027-le-titre-recule-sur-la-faiblesse-du-t2-93CH-3703922"
-  },
-  {
-   "h": "Trump holds talks separately with Putin and Xi ahead of their historic trilateral meeting",
-   "w": "U.S. President Donald Trump met individually on Thursday with Russian President Vladimir Putin, as well as Chinese President Xi Jinping.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-19T06:29:34Z",
-   "url": "https://www.cnbc.com/2026/11/19/trump-xi-putin-china-apec-.html"
-  },
-  {
-   "h": "Le directeur comptable de Motorsport Games achète pour 9.918$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-19T06:20:54Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-comptable-de-motorsport-games-achete-pour-9918-dactions-93CH-3703913"
-  },
-  {
-   "h": "Oncosil Medical Ltd à la conférence Bell Potter Healthcare : le lancement se précise",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-19T06:20:39Z",
-   "url": "https://fr.investing.com/news/transcripts/oncosil-medical-ltd-a-la-conference-bell-potter-healthcare--le-lancement-se-precise-93CH-3703912"
-  },
-  {
    "h": "Gilts v kilts: What is happening with Scottish government bonds?",
-   "w": "MSPs have heard both the pros and cons of the government's plan to launch its first ever bond to the market?",
+   "w": "MSPs have heard both the pros and cons of the government's plan to launch its first ever bond to the market.",
    "syms": [],
    "src": "BBC — Business",
    "ts": "2026-11-19T06:15:57Z",
@@ -2390,8 +2451,17 @@
    "mine": 1
   },
   {
+   "h": "Apollo scraps planned $2bn loan to Man City owner after rule breaches",
+   "w": "Football club was found guilty of breaking 114 financial rules, raising the prospect of a significant punishment",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-19T05:00:28Z",
+   "url": "https://www.ft.com/content/e2cfb9c4-a642-4ca9-9e78-32afc2549d9d?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "Energy markets can ‘manage without’ the Strait of Hormuz, says IEA",
-   "w": "Watchdog says it is possible to rebalance oil markets without restoring flows through the strait, but will take investment",
+   "w": "Watchdog says it is possible to balance oil markets without restoring flows through the strait, but will take time and investment",
    "syms": [
     "BRENT"
    ],
@@ -2419,17 +2489,8 @@
    "mine": 1
   },
   {
-   "h": "Apollo scraps planned $2bn loan to Man City owner after rule breaches",
-   "w": "Football club was found guilty of breaking 114 financial rules, raising the prospect of a significant punishment",
-   "syms": [],
-   "src": "myFT — financials",
-   "ts": "2026-11-19T05:00:28Z",
-   "url": "https://www.ft.com/content/e2cfb9c4-a642-4ca9-9e78-32afc2549d9d?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "La crise du détroit d’Ormuz favorise « une étroite convergence entre sécurité énergétique et objectifs climatiques », selon le directeur de l’AIE, Fatih Birol",
-   "w": "L’Agence internationale de l’énergie publie, jeudi 19 novembre, son rapport annuel. Son directeur exécutif souligne, dans un entretien au « Monde », comment la guerre au Moyen-Orient accélère le déploiement des renouvelables, du nucléaire et de l’électrification.",
+   "h": "La crise dans le détroit d’Ormuz favorise une « étroite convergence entre sécurité énergétique et objectifs climatiques », selon le directeur de l’AIE, Fatih Birol",
+   "w": "L’Agence internationale de l’énergie devait publier son rapport annuel, jeudi 19 novembre. Le directeur exécutif de l’organisation souligne, dans un entretien au « Monde », comment la guerre au Moyen-Orient accélère le développement des renouvelables, du nucléaire et de l’électrification.",
    "syms": [],
    "src": "Le Monde — Économie",
    "ts": "2026-11-19T05:00:28Z",
@@ -2463,7 +2524,7 @@
    "mine": 1
   },
   {
-   "h": "Anthropic retail investors face squeeze in blockbuster IPO",
+   "h": "Retail investors face squeeze in blockbuster Anthropic IPO",
    "w": "Frenzy for AI stocks is testing how far Wall Street will go to accommodate a new army of individual investors",
    "syms": [
     "SPX"
@@ -2479,29 +2540,29 @@
    "syms": [
     "XAU"
    ],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-19T05:00:17Z",
    "url": "https://www.ft.com/content/86aaff9a-0d0f-49dd-81fc-4c96bcbf2f32?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Palm oil’s rise will put packaged-food producers in the shade",
-   "w": "Higher prices should boost earnings for producers in the coming year, and prove a drag for large consumer goods companies",
-   "syms": [
-    "BRENT"
-   ],
-   "src": "myFT — world",
-   "ts": "2026-11-19T05:00:17Z",
-   "url": "https://www.ft.com/content/9d07e7c5-38db-4b39-b355-80976df01208?syn-25a6b1a6=1",
    "mine": 1
   },
   {
    "h": "How real is Britain’s productivity revival?",
    "w": "A crucial question for ministers is whether people are working shorter hours by preference, or because of other factors",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — world uk",
    "ts": "2026-11-19T05:00:17Z",
    "url": "https://www.ft.com/content/295c180f-05a4-477e-bbfa-ee6532ec070f?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Anthropic retail investors face squeeze in blockbuster IPO",
+   "w": "Frenzy for AI stocks is testing how far Wall Street will go to accommodate a new army of individual investors",
+   "syms": [
+    "SPX"
+   ],
+   "src": "myFT — financials",
+   "ts": "2026-11-19T05:00:17Z",
+   "url": "https://www.ft.com/content/38c122d6-b533-4595-9554-3852c52e580f?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2529,6 +2590,26 @@
    "src": "myFT — companies",
    "ts": "2026-11-19T05:00:17Z",
    "url": "https://www.ft.com/content/d8be4655-211c-49a8-bfe4-18a00b8e8619?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "AI advances at Anthropic trigger new safety fears on eve of IPO",
+   "w": "Group disclosed it had activated part of ‘responsible scaling policy’ it set up to ensure AI did not develop so quickly that it caused ‘catastrophic risks’",
+   "syms": [],
+   "src": "myFT — technology",
+   "ts": "2026-11-19T05:00:17Z",
+   "url": "https://www.ft.com/content/d8be4655-211c-49a8-bfe4-18a00b8e8619?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Palm oil’s rise will put packaged-food producers in the shade",
+   "w": "Higher prices should boost earnings for producers in the coming year, and prove a drag for large consumer goods companies",
+   "syms": [
+    "BRENT"
+   ],
+   "src": "myFT — markets",
+   "ts": "2026-11-19T05:00:17Z",
+   "url": "https://www.ft.com/content/9d07e7c5-38db-4b39-b355-80976df01208?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2604,11 +2685,11 @@
    "url": "https://www.lemonde.fr/videos/video/2026/11/19/anthropic-pourquoi-son-introduction-en-bourse-est-elle-si-attendue_6813229_1669088.html"
   },
   {
-   "h": "Intelligence artificielle : comment Anthropic a détrôné OpenAI",
-   "w": "L’entrée en Bourse de la start-up californienne qui a créé le modèle Claude, attendue jeudi 19 novembre, doit couronner le succès d’une entreprise parvenue à s’imposer en dépassant son grand rival OpenAI, précurseur du marché.",
+   "h": "IA : comment Anthropic et son modèle Claude ont détrôné ChatGPT, l’assistant d’OpenAI",
+   "w": "L’entrée en Bourse de la start-up californienne, attendue jeudi 19 novembre, doit couronner le succès d’une entreprise parvenue à s’imposer en dépassant son grand rival OpenAI, précurseur du marché de l’intelligence artificielle.",
    "syms": [],
    "src": "Le Monde — Économie",
-   "ts": "2026-11-19T04:45:10Z",
+   "ts": "2026-11-19T04:45:08Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/19/intelligence-artificielle-comment-anthropic-a-detrone-openai_6813227_3234.html"
   },
   {
@@ -2678,8 +2759,8 @@
    "url": "https://www.cnbc.com/2026/11/19/elon-musk-jensen-huang-midterms.html"
   },
   {
-   "h": "AI giant Anthropic valued at up to $1.5tn ahead of stock market debut",
-   "w": "The firm started just five years ago and is now one of the biggest names in artificial intelligence.",
+   "h": "AI giant Anthropic valued at $1.5 trillion ahead of stock market debut",
+   "w": "The company behind the Claude chatbot will become one of the most valuable firms in the world.",
    "syms": [],
    "src": "BBC — Business",
    "ts": "2026-11-19T02:20:15Z",
@@ -2687,7 +2768,7 @@
   },
   {
    "h": "Musk says he feels ‘foolish’ for donating nearly $500mn to Republicans",
-   "w": "SpaceX CEO backs away from Maga after monetary support for Donald Trump’s party in midterm elections fails to sway voters",
+   "w": "SpaceX CEO backs away from Maga after monetary support for Trump’s party in midterm elections fails to sway voters",
    "syms": [],
    "src": "myFT — us",
    "ts": "2026-11-19T02:19:32Z",
@@ -2695,13 +2776,62 @@
    "mine": 1
   },
   {
-   "h": "Trump meets Xi after aside with ‘my friend’ Putin",
-   "w": "Historic trilateral summit looms in southern Chinese city of Shenzhen after week of high-stakes diplomacy",
+   "h": "Virtual 'Jensanity' rocks Taipei in support for Nvidia chief",
+   "w": "",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-19T02:13:15.509701Z",
+   "url": "https://asia.nikkei.com/techasia/virtual-jensanity-rocks-taipei-in-support-for-nvidia-chief"
+  },
+  {
+   "h": "APEC live: Takaichi says Japan's position on Taiwan remains the same",
+   "w": "",
    "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-19T01:31:05Z",
-   "url": "https://www.ft.com/content/fcf6d27b-a04c-4cef-8b03-ce2423566f1f",
-   "mine": 1
+   "src": "Nikkei Asia",
+   "ts": "2026-11-19T02:13:15.509701Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/apec/apec-live-takaichi-says-japan-s-position-on-taiwan-remains-the-same"
+  },
+  {
+   "h": "Japan Tobacco cuts profit forecast by $8.7bn due to asset seizure in Russia",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-19T02:13:15.509701Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/japan-tobacco-cuts-profit-forecast-by-8.7bn-due-to-asset-seizure-in-russia"
+  },
+  {
+   "h": "South Korea rides AI boom to new height as exports hit $1 trillion",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-19T02:13:15.509701Z",
+   "url": "https://asia.nikkei.com/economy/south-korea-rides-ai-boom-to-new-height-as-exports-hit-1-trillion"
+  },
+  {
+   "h": "BlackRock CEO warns tighter AI regulations could lead to US recession",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-19T02:13:15.509701Z",
+   "url": "https://asia.nikkei.com/editor-s-picks/interview/blackrock-ceo-warns-tighter-ai-regulations-could-lead-to-us-recession"
+  },
+  {
+   "h": "Commodity data firm Kpler bets global turmoil to sustain trade data demand",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-19T02:13:15.509701Z",
+   "url": "https://asia.nikkei.com/business/markets/commodities/commodity-data-firm-kpler-bets-global-turmoil-to-sustain-trade-data-demand"
+  },
+  {
+   "h": "Uniqlo's Yanai looks beyond goal of becoming world's top apparel company",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-19T02:13:15.509701Z",
+   "url": "https://asia.nikkei.com/business/retail/uniqlo-s-yanai-looks-beyond-goal-of-becoming-world-s-top-apparel-company"
   },
   {
    "h": "A decade after demonetisation in India, rules still change overnight",
@@ -2747,44 +2877,12 @@
    "url": "https://asia.nikkei.com/politics/international-relations/apec/trump-touts-balanced-china-ties-as-xi-highlights-stability"
   },
   {
-   "h": "APEC live: Trump says US-China trade is balanced",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-19T00:49:34.840728Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/apec/apec-live-trump-says-us-china-trade-is-balanced"
-  },
-  {
-   "h": "BlackRock CEO warns tighter US AI regulations risk recession",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-19T00:49:34.840728Z",
-   "url": "https://asia.nikkei.com/editor-s-picks/interview/blackrock-ceo-warns-tighter-us-ai-regulations-risk-recession"
-  },
-  {
    "h": "Vietnam courts European investment, but regulatory hurdles loom",
    "w": "",
    "syms": [],
    "src": "Nikkei Asia",
    "ts": "2026-11-19T00:49:34.840728Z",
    "url": "https://asia.nikkei.com/politics/international-relations/vietnam-courts-european-investment-but-regulatory-hurdles-loom"
-  },
-  {
-   "h": "Japan's Orix to buy Recruit's Study Sapuri online learning service",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-19T00:49:34.840728Z",
-   "url": "https://asia.nikkei.com/business/business-deals/japan-s-orix-to-buy-recruit-s-study-sapuri-online-learning-service"
-  },
-  {
-   "h": "Japan developer Hulic casts wide M&A net, from cram schools to bananas",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-19T00:49:34.840728Z",
-   "url": "https://asia.nikkei.com/business/companies/japan-developer-hulic-casts-wide-m-a-net-from-cram-schools-to-bananas"
   },
   {
    "h": "‘Nvidia’s turmoil has me spooked’: Should I sell my stocks and buy real estate — or ride out the storm?",
@@ -2949,22 +3047,6 @@
    "url": "https://asia.nikkei.com/business/telecommunication/vietnam-s-new-asean-internet-cable-part-of-1bn-japan-partnership"
   },
   {
-   "h": "China carmakers outmaneuver Japan rivals in Myanmar with EV policy",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-18T22:41:39.187637Z",
-   "url": "https://asia.nikkei.com/business/automobiles/china-carmakers-outmaneuver-japan-rivals-in-myanmar-with-ev-policy"
-  },
-  {
-   "h": "Retail investor enthusiasm for Anthropic IPO to rival SpaceX debut",
-   "w": "Anthropic is gearing up for a blockbuster initial public offering this week, and excitement among retail investors looks to be off the charts.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-18T22:37:00Z",
-   "url": "https://www.cnbc.com/2026/11/18/anthropic-ipo-retail-investors.html"
-  },
-  {
    "h": "Nvidia’s booming demand is ‘hard to ignore,’ but these four questions loom over the stock",
    "w": "Nvidia investors face uncertainty around CEO succession, the AI ecosystem, export controls and China.",
    "syms": [
@@ -2973,15 +3055,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-18T22:31:00Z",
    "url": "https://www.marketwatch.com/story/what-wall-street-analysts-are-now-saying-after-nvidias-beat-and-raise-quarter-9311c85d?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Anthropic raises $81bn in record IPO",
-   "w": "AI giant’s enlarged deal will surpass SpaceX to become world’s biggest public listing",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-18T22:04:50Z",
-   "url": "https://www.ft.com/content/62c0510b-ca65-441e-9baf-675b93903b9e?syn-25a6b1a6=1",
-   "mine": 1
   },
   {
    "h": "Is Social Security a Ponzi scheme? No, but fear is fueling such talk.",
@@ -3001,22 +3074,6 @@
    "mine": 1
   },
   {
-   "h": "Trump, Xi and Putin gear up for first-ever trilateral meeting",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-18T21:34:43.254239Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/apec/trump-xi-and-putin-gear-up-for-first-ever-trilateral-meeting"
-  },
-  {
-   "h": "China using Trump-Xi 'stability' to build strategic edge, US panel warns",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-18T21:34:43.254239Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/us-china-tensions/china-using-trump-xi-stability-to-build-strategic-edge-us-panel-warns"
-  },
-  {
    "h": "Can Anthropic's record-breaking IPO stop the AI bubble bursting?",
    "w": "Anthropic's hotly anticipated IPO is expected to put it in the top 10 most valuable US companies, but the future is uncertain.",
    "syms": [],
@@ -3031,65 +3088,6 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-18T21:07:14Z",
    "url": "https://www.cnbc.com/2026/11/18/fda-canarx-case-informant.html"
-  },
-  {
-   "h": "‘Bigger, better’ ‘Grand Theft Auto’ set to smash entertainment records",
-   "w": "Hopes of video game industry resting on much-delayed title from Rockstar Games",
-   "syms": [],
-   "src": "myFT — technology",
-   "ts": "2026-11-18T21:00:04Z",
-   "url": "https://www.ft.com/content/444ff3e0-08b9-4a48-b935-a8cf65311ea0?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "UK plans to resist EU request to match tariffs on Chinese goods",
-   "w": "Move reduces chance Britain will be able to access subsidies and contracts under ‘Made in Europe’ rules",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-18T20:53:13Z",
-   "url": "https://www.ft.com/content/6b278daf-6fdf-4951-af8a-227f25c4e0b7?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Nvidia accelerates pay rises as interim CEO seeks to lift staff morale",
-   "w": "Colette Kress addresses ‘all-hands’ meeting as departed founder Jensen Huang manoeuvres for a return",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "myFT — us",
-   "ts": "2026-11-18T20:40:19Z",
-   "url": "https://www.ft.com/content/9ee78a67-fcab-4e43-bee7-09c9244e76b8?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Les grands patrons entre séduction et effroi : le récit d’un dîner mémorable avec Jean-Luc Mélenchon",
-   "w": "Le leader de La France insoumise a débattu deux heures durant, mardi 17 novembre, avec une douzaine de ténors du CAC 40. L’occasion de mettre en avant son projet d’économie collectiviste et son patriotisme.",
-   "syms": [
-    "CAC"
-   ],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-18T20:24:01Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/11/18/les-grands-patrons-entre-seduction-et-effroi-le-recit-d-un-diner-memorable-avec-jean-luc-melenchon_6813208_3234.html"
-  },
-  {
-   "h": "‘Situational Awareness 2.0’: Leopold Aschenbrenner plots comeback",
-   "w": "The 25-year-old AI trader has held talks about employing leverage again and raising funds after wipeout nearly toppled firm",
-   "syms": [],
-   "src": "myFT — financials",
-   "ts": "2026-11-18T20:15:44Z",
-   "url": "https://www.ft.com/content/1fcbc6ea-1be3-44d2-b564-8ebf91181639?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "US tech stocks oscillate after Nvidia results",
-   "w": "Chip group raises forecast and new chief says ‘it’s business as usual’ after news of Huang’s affairs triggered sell-off",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "myFT — technology",
-   "ts": "2026-11-18T19:44:27Z",
-   "url": "https://www.ft.com/content/f085b811-fc20-425f-88d8-9f98e178636a?syn-25a6b1a6=1",
-   "mine": 1
   }
  ],
  "summary": {
