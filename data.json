@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-19T03:34:43.254239Z",
+ "generated_at": "2026-11-19T04:41:39.187637Z",
  "quotes": {
   "NVDA": {
    "p": 150.96,
@@ -154,8 +154,8 @@
    "prev": 50759.4219,
    "chg": -561.25,
    "pct": -1.11,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^DJI)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^DJI) — last update failed",
    "ts": "2026-11-18T21:00:00Z",
    "open": 50627.3594,
    "lo": 50029.3516,
@@ -259,13 +259,13 @@
    ]
   },
   "N225": {
-   "p": 59140.8711,
+   "p": 59440.5781,
    "prev": 59024.2812,
-   "chg": 116.5898,
-   "pct": 0.2,
+   "chg": 416.2969,
+   "pct": 0.71,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^N225)",
-   "ts": "2026-11-19T02:45:00Z",
+   "ts": "2026-11-19T04:30:00Z",
    "open": 59025.1914,
    "lo": 58750.5312,
    "hi": 59660.6094,
@@ -291,17 +291,17 @@
     59662.02,
     58860.43,
     59024.28,
-    59140.87
+    59440.58
    ]
   },
   "HSI": {
-   "p": 22825.3691,
+   "p": 22855.4609,
    "prev": 23294.75,
-   "chg": -469.3809,
-   "pct": -2.01,
+   "chg": -439.2891,
+   "pct": -1.89,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^HSI)",
-   "ts": "2026-11-19T03:30:00Z",
+   "ts": "2026-11-19T04:15:00Z",
    "open": 23049.6504,
    "lo": 22802.2109,
    "hi": 23049.6504,
@@ -327,21 +327,21 @@
     23753.84,
     23508.17,
     23294.75,
-    22825.37
+    22855.46
    ]
   },
   "SHCOMP": {
-   "p": 3556.6279,
+   "p": 3571.9858,
    "prev": 3587.832,
-   "chg": -31.2041,
-   "pct": -0.87,
+   "chg": -15.8462,
+   "pct": -0.44,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (000001.SS)",
-   "ts": "2026-11-19T03:30:00Z",
+   "ts": "2026-11-19T03:45:00Z",
    "open": 3583.1208,
    "lo": 3547.9397,
    "hi": 3583.1208,
-   "vol": 1658673320,
+   "vol": 3223878720,
    "h": [
     3713.03,
     3658.03,
@@ -364,17 +364,17 @@
     3602.57,
     3584.58,
     3587.83,
-    3556.63
+    3571.99
    ]
   },
   "STI": {
-   "p": 5052.5298,
+   "p": 5066.96,
    "prev": 5054.8901,
-   "chg": -2.3604,
-   "pct": -0.05,
+   "chg": 12.0698,
+   "pct": 0.24,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^STI)",
-   "ts": "2026-11-19T03:30:00Z",
+   "ts": "2026-11-19T04:30:00Z",
    "open": 5054.8901,
    "lo": 5045.27,
    "hi": 5082.8198,
@@ -400,7 +400,7 @@
     5183.18,
     5109.13,
     5054.89,
-    5052.53
+    5066.96
    ]
   },
   "UKX": {
@@ -552,13 +552,13 @@
    ]
   },
   "EURUSD": {
-   "p": 1.0961,
+   "p": 1.0966,
    "prev": 1.0993,
-   "chg": -0.0032,
-   "pct": -0.29,
+   "chg": -0.0027,
+   "pct": -0.24,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (EURUSD=X)",
-   "ts": "2026-11-19T03:34:43.254239Z",
+   "ts": "2026-11-19T04:41:39.187637Z",
    "open": 1.0978,
    "lo": 1.0959,
    "hi": 1.0982,
@@ -584,20 +584,20 @@
     1.102487,
     1.09982,
     1.099288,
-    1.096131
+    1.096611
    ]
   },
   "USDJPY": {
-   "p": 159.54,
+   "p": 159.55,
    "prev": 159.504,
-   "chg": 0.036,
-   "pct": 0.02,
+   "chg": 0.046,
+   "pct": 0.03,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (JPY=X)",
-   "ts": "2026-11-19T03:34:43.254239Z",
+   "ts": "2026-11-19T04:41:39.187637Z",
    "open": 159.297,
    "lo": 159.265,
-   "hi": 159.548,
+   "hi": 159.632,
    "h": [
     158.27,
     158.13,
@@ -624,13 +624,13 @@
    ]
   },
   "GBPUSD": {
-   "p": 1.3129,
+   "p": 1.3131,
    "prev": 1.3205,
-   "chg": -0.0076,
-   "pct": -0.58,
+   "chg": -0.0074,
+   "pct": -0.56,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
-   "ts": "2026-11-19T03:34:43.254239Z",
+   "ts": "2026-11-19T04:41:39.187637Z",
    "open": 1.3153,
    "lo": 1.3121,
    "hi": 1.3154,
@@ -656,20 +656,20 @@
     1.32165,
     1.318461,
     1.320498,
-    1.312905
+    1.313146
    ]
   },
   "DXY": {
-   "p": 103.944,
-   "prev": 103.945,
-   "chg": -0.001,
-   "pct": -0.0,
+   "p": 103.926,
+   "prev": 103.925,
+   "chg": 0.001,
+   "pct": 0.0,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (DX-Y.NYB)",
-   "ts": "2026-11-19T03:30:00Z",
+   "ts": "2026-11-19T04:41:39.187637Z",
    "open": 103.807,
    "lo": 103.77,
-   "hi": 103.969,
+   "hi": 103.974,
    "h": [
     101.73,
     101.78,
@@ -692,21 +692,21 @@
     103.41,
     103.55,
     103.49,
-    103.94
+    103.93
    ]
   },
   "XAU": {
-   "p": 3711.2,
-   "prev": 3711.2,
+   "p": 3728.0,
+   "prev": 3728.0,
    "chg": 0.0,
    "pct": 0.0,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GC=F)",
-   "ts": "2026-11-19T03:30:00Z",
-   "open": 3855.2,
+   "ts": "2026-11-19T04:41:39.187637Z",
+   "open": 3730.3,
    "lo": 3694.5,
    "hi": 3759.5,
-   "vol": 35623,
+   "vol": 41668,
    "h": [
     4142.6,
     4150.0,
@@ -729,21 +729,21 @@
     3886.3,
     3853.0,
     3864.2,
-    3711.2
+    3728.0
    ]
   },
   "CL": {
-   "p": 81.82,
-   "prev": 81.81,
-   "chg": 0.01,
-   "pct": 0.01,
+   "p": 82.11,
+   "prev": 82.11,
+   "chg": 0.0,
+   "pct": 0.0,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (CL=F)",
-   "ts": "2026-11-19T03:30:00Z",
+   "ts": "2026-11-19T04:41:39.187637Z",
    "open": 81.85,
    "lo": 81.69,
-   "hi": 83.08,
-   "vol": 16116,
+   "hi": 83.11,
+   "vol": 17798,
    "h": [
     101.79,
     97.15,
@@ -766,21 +766,21 @@
     88.56,
     85.72,
     86.01,
-    81.81
+    82.11
    ]
   },
   "BRENT": {
-   "p": 88.99,
-   "prev": 88.99,
+   "p": 89.22,
+   "prev": 89.22,
    "chg": 0.0,
    "pct": 0.0,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BZ=F)",
-   "ts": "2026-11-19T03:30:00Z",
+   "ts": "2026-11-19T04:30:00Z",
    "open": 88.64,
    "lo": 88.51,
    "hi": 90.21,
-   "vol": 1736,
+   "vol": 1867,
    "h": [
     108.79,
     108.82,
@@ -803,21 +803,21 @@
     95.84,
     92.44,
     93.14,
-    88.99
+    89.22
    ]
   },
   "BTC": {
-   "p": 62935.3594,
+   "p": 63395.4805,
    "prev": 64893.9453,
-   "chg": -1958.5859,
-   "pct": -3.02,
+   "chg": -1498.4648,
+   "pct": -2.31,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-19T03:34:43.254239Z",
+   "ts": "2026-11-19T04:41:39.187637Z",
    "open": 62987.2852,
    "lo": 62382.4844,
-   "hi": 63210.6133,
-   "vol": 30719145984,
+   "hi": 63443.9609,
+   "vol": 31356999680,
    "h": [
     81267.59,
     77775.11,
@@ -840,7 +840,7 @@
     65305.06,
     64855.84,
     64893.95,
-    62935.36
+    63396.82
    ]
   }
  },
@@ -940,9 +940,9 @@
    "industry": "Software - Infrastructure",
    "ccy": "USD",
    "mcap": 3774660476928,
-   "pe": 26.5287,
+   "pe": 26.4184,
    "fpe": 21.0064,
-   "eps": 19.16,
+   "eps": 19.24,
    "feps": 24.1969,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
@@ -984,9 +984,9 @@
    "industry": "Internet Content & Information",
    "ccy": "USD",
    "mcap": 3472317218816,
-   "pe": 14.7488,
+   "pe": 14.6342,
    "fpe": 18.4633,
-   "eps": 19.15,
+   "eps": 19.3,
    "feps": 15.2974,
    "revTTM": 471097999360,
    "netIncome": 235693621248,
@@ -1028,9 +1028,9 @@
    "industry": "Internet Retail",
    "ccy": "USD",
    "mcap": 2895109423104,
-   "pe": 21.6443,
+   "pe": 20.852,
    "fpe": 24.5047,
-   "eps": 12.37,
+   "eps": 12.84,
    "feps": 10.9261,
    "revTTM": 797455024128,
    "netIncome": 134779002880,
@@ -1067,9 +1067,9 @@
    "industry": "Semiconductors",
    "ccy": "USD",
    "mcap": 1880718835712,
-   "pe": 23.3046,
+   "pe": 23.501,
    "fpe": 15.5063,
-   "eps": 15.56,
+   "eps": 15.43,
    "feps": 23.3853,
    "revTTM": 4944817553408,
    "netIncome": 2527571476480,
@@ -1189,9 +1189,9 @@
    "industry": "Internet Content & Information",
    "ccy": "USD",
    "mcap": 1575615987712,
-   "pe": 21.0297,
+   "pe": 21.1161,
    "fpe": 17.2776,
-   "eps": 29.31,
+   "eps": 29.19,
    "feps": 35.6752,
    "revTTM": 241605001216,
    "netIncome": 75249000448,
@@ -1234,7 +1234,7 @@
    "ccy": "USD",
    "mcap": 1516752338944,
    "fpe": 177.7123,
-   "eps": 0.91,
+   "eps": 0.92,
    "feps": 2.1592,
    "revTTM": 103569997824,
    "netIncome": 3220000000,
@@ -1263,7 +1263,7 @@
    "earnEnd": 1801083600,
    "earnEst": true,
    "trailDiv": 0.0,
-   "pe_ns": 421.6703
+   "pe_ns": 417.0869
   },
   "AVGO": {
    "name": "Broadcom Inc.",
@@ -1315,14 +1315,14 @@
    "sector": "Technology",
    "industry": "Consumer Electronics",
    "ccy": "KRW",
-   "mcap": 1243126878437376,
-   "fpe": 2.4545,
+   "mcap": 1271128186159104,
+   "fpe": 2.5098,
    "revTTM": 594479375450112,
    "netIncome": 212962144944128,
    "shares": 5709556199,
    "beta": 1.594,
    "div": 18404.0,
-   "divYield": 9.641,
+   "divYield": 9.428,
    "target": 467638.88,
    "targetHi": 690000.0,
    "targetLo": 290000.0,
@@ -1355,9 +1355,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 1231677685760,
-   "pe": 45.9385,
+   "pe": 44.8799,
    "fpe": 27.221,
-   "eps": 30.1,
+   "eps": 30.81,
    "feps": 50.7972,
    "revTTM": 86461997056,
    "netIncome": 27580000256,
@@ -1437,14 +1437,14 @@
    "sector": "Technology",
    "industry": "Semiconductors",
    "ccy": "KRW",
-   "mcap": 792614806749184,
-   "fpe": 2.0896,
+   "mcap": 821526915973120,
+   "fpe": 2.1658,
    "revTTM": 269337164251136,
    "netIncome": 188904590278656,
    "shares": 705173324,
    "beta": 2.466,
    "div": 3000.0,
-   "divYield": 0.267,
+   "divYield": 0.258,
    "target": 3056126.8,
    "targetHi": 4700000.0,
    "targetLo": 1575000.0,
@@ -1519,14 +1519,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1013540913152,
+   "mcap": 1010441912320,
    "pe": 46.1449,
    "fpe": 39.4511,
    "eps": 2.76,
    "feps": 3.2283,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.777,
@@ -1564,9 +1564,9 @@
    "industry": "Banks - Diversified",
    "ccy": "USD",
    "mcap": 860709584896,
-   "pe": 13.839,
+   "pe": 13.5952,
    "fpe": 12.6739,
-   "eps": 23.42,
+   "eps": 23.84,
    "feps": 25.5731,
    "revTTM": 190732992512,
    "netIncome": 64526999552,
@@ -1605,9 +1605,9 @@
    "industry": "Semiconductors",
    "ccy": "USD",
    "mcap": 877416480768,
-   "pe": 113.2778,
+   "pe": 107.5335,
    "fpe": 30.0563,
-   "eps": 4.68,
+   "eps": 4.93,
    "feps": 17.6382,
    "revTTM": 45435998208,
    "netIncome": 7725000192,
@@ -1645,9 +1645,9 @@
    "industry": "Credit Services",
    "ccy": "USD",
    "mcap": 774717505536,
-   "pe": 33.7029,
+   "pe": 33.8403,
    "fpe": 24.2246,
-   "eps": 12.32,
+   "eps": 12.27,
    "feps": 17.1404,
    "revTTM": 45902999552,
    "netIncome": 23311998976,
@@ -1733,9 +1733,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 656473587712,
-   "pe": 42.2791,
+   "pe": 41.3809,
    "fpe": 23.4982,
-   "eps": 6.45,
+   "eps": 6.59,
    "feps": 11.6051,
    "revTTM": 99334995968,
    "netIncome": 16094999552,
@@ -1820,9 +1820,9 @@
    "industry": "Credit Services",
    "ccy": "USD",
    "mcap": 560488579072,
-   "pe": 33.6667,
+   "pe": 33.7904,
    "fpe": 27.7782,
-   "eps": 19.11,
+   "eps": 19.04,
    "feps": 23.1609,
    "revTTM": 36288000000,
    "netIncome": 16958000128,
@@ -1950,9 +1950,9 @@
    "industry": "Discount Stores",
    "ccy": "USD",
    "mcap": 485944492032,
-   "pe": 52.8237,
+   "pe": 53.4676,
    "fpe": 43.7887,
-   "eps": 20.76,
+   "eps": 20.51,
    "feps": 25.0435,
    "revTTM": 303154003968,
    "netIncome": 9226000384,
@@ -2033,9 +2033,9 @@
    "industry": "Communication Equipment",
    "ccy": "USD",
    "mcap": 382595727360,
-   "pe": 25.8457,
+   "pe": 25.3073,
    "fpe": 16.0446,
-   "eps": 3.76,
+   "eps": 3.84,
    "feps": 6.0568,
    "revTTM": 66958999552,
    "netIncome": 14958999552,
@@ -2121,7 +2121,7 @@
    "industry": "Communication Equipment",
    "ccy": "USD",
    "mcap": 9943895040,
-   "eps": -2.12,
+   "eps": -1.96,
    "feps": -1.5613,
    "revTTM": 142880000,
    "netIncome": -628267008,
@@ -2164,8 +2164,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 121.8495,
+   "shares": 572600000,
+   "divYield": 2.596,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2217,6 +2222,114 @@
  ],
  "news": [
   {
+   "h": "Le BPA de Algorhythm Holdings a manqué les attentes de 0,52$, le CA en dessous des prévisions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-19T04:20:35Z",
+   "url": "https://fr.investing.com/news/earnings/le-bpa-de-algorhythm-holdings-a-manque-les-attentes-de-052-le-ca--en-dessous-des-previsions-3703819"
+  },
+  {
+   "h": "La directrice médicale d’Edgewise Therapeutics vend des actions pour 38.839$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-19T04:16:52Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-medicale-dedgewise-therapeutics-vend-des-actions-pour-38839-93CH-3703817"
+  },
+  {
+   "h": "Un directeur de Battalion Oil Corp achète des actions BATL pour 18.192$",
+   "w": "",
+   "syms": [
+    "BRENT"
+   ],
+   "src": "Investing.com France",
+   "ts": "2026-11-19T04:16:40Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-battalion-oil-corp-achete-des-actions-batl-pour-18192-93CH-3703816"
+  },
+  {
+   "h": "Le dollar atteint un sommet de 19 mois ; le dollar australien chute après des données d’emploi décevantes",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-19T04:15:58Z",
+   "url": "https://fr.investing.com/news/forex-news/le-dollar-atteint-un-sommet-de-19-mois--le-dollar-australien-chute-apres-des-donnees-demploi-decevantes-3703818"
+  },
+  {
+   "h": "La promesse de 500 milliards $ de Wall St à Nvidia pas encore mobilisée",
+   "w": "",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Investing.com France",
+   "ts": "2026-11-19T04:15:04Z",
+   "url": "https://fr.investing.com/news/stock-market-news/la-promesse-de-500-milliards--de-wall-st-a-nvidia-pas-encore-mobilisee-3703813"
+  },
+  {
+   "h": "Cybersécurité : 17 actions US à surveiller alors que les cyberattaques se multiplient",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-19T04:13:31Z",
+   "url": "https://fr.investing.com/news/stock-market-news/cybersecurite--17-actions-us-a-surveiller-alors-que-les-cyberattaques-se-multiplient-3703812"
+  },
+  {
+   "h": "Hyster-Yale fixe le prix d’une offre d’obligations convertibles de 135 millions $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-19T04:13:30Z",
+   "url": "https://fr.investing.com/news/company-news/hysteryale-fixe-le-prix-dune-offre-dobligations-convertibles-de-135-millions--93CH-3703811"
+  },
+  {
+   "h": "Le BPA de Generation a manqué les attentes de 2,91$, le CA en dessous des prévisions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-19T04:12:01Z",
+   "url": "https://fr.investing.com/news/earnings/le-bpa-de-generation-a-manque-les-attentes-de-291-le-ca--en-dessous-des-previsions-3703810"
+  },
+  {
+   "h": "Un cadre de Jack Henry & Associates vend des actions pour 159.695$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-19T04:02:38Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-cadre-de-jack-henry--associates-vend-des-actions-pour-159695-93CH-3703808"
+  },
+  {
+   "h": "Le conseiller principal de Revolution Med vend pour 4,5 M$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-19T04:02:22Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-conseiller-principal-de-revolution-med-vend-pour-45-m-93CH-3703807"
+  },
+  {
+   "h": "My husband is happily retired at 64 and thinks I should keep working. Is he being fair?",
+   "w": "“I’m exhausted. My alarm goes off at 6 a.m., and I have a 50-minute commute.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-19T03:45:00Z",
+   "url": "https://www.marketwatch.com/story/my-husband-is-happily-retired-at-64-and-thinks-i-should-keep-working-is-he-being-fair-325c5f38?mod=mw_rss_topstories"
+  },
+  {
+   "h": "‘It’s downright dirty’: My brother took over our ailing mother’s life and finances. What can I do?",
+   "w": "“It is devastating when the people you should be able to trust become the very people you have to protect yourself from.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-19T03:45:00Z",
+   "url": "https://www.marketwatch.com/story/it-is-heartbreaking-exhausting-and-downright-dirty-my-brother-took-over-our-ailing-mothers-life-and-finances-what-can-i-do-b4d48817?mod=mw_rss_topstories"
+  },
+  {
+   "h": "'Parasite' backer and other South Korean media, gaming and travel stocks rally on China trade deal",
+   "w": "Korean media, gaming and travel stocks surged on hopes of greater access to China.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-19T03:43:38Z",
+   "url": "https://www.cnbc.com/2026/11/19/china-south-korea-trade-deal-films-gaming.html"
+  },
+  {
    "h": "‘I’ve been a stay-at-home mom’: I’m 50 and have a chronic illness. My husband lost his job. Should he raid his 401(k)?",
    "w": "“Our financial and healthcare situation has become increasingly concerning.”",
    "syms": [],
@@ -2234,62 +2347,6 @@
    "mine": 1
   },
   {
-   "h": "Un actionnaire à 10% de Constellation Brands cède des actions pour 10,88 millions $",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-19T03:17:07Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-actionnaire-a-10-de-constellation-brands-cede-des-actions-pour-1088-millions--93CH-3703789"
-  },
-  {
-   "h": "La directrice de Figma Inc Lynn Radakovich cède des actions pour 395.000$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-19T03:17:05Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-de-figma-inc-lynn-radakovich-cede-des-actions-pour-395000-93CH-3703787"
-  },
-  {
-   "h": "Zachary Stern cède des actions Constellation Brands pour 10,88M$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-19T03:17:05Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/zachary-stern-cede-des-actions-constellation-brands-pour-1088m-93CH-3703788"
-  },
-  {
-   "h": "JOYY Inc dépasse les prévisions de chiffre d’affaires au T3 2026",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-19T03:14:17Z",
-   "url": "https://fr.investing.com/news/transcripts/joyy-inc-depasse-les-previsions-de-chiffre-daffaires-au-t3-2026-93CH-3703786"
-  },
-  {
-   "h": "Racura à la conférence Bell Potter Healthcare : le pari MYC avance",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-19T03:09:31Z",
-   "url": "https://fr.investing.com/news/transcripts/racura-a-la-conference-bell-potter-healthcare--le-pari-myc-avance-93CH-3703784"
-  },
-  {
-   "h": "+27%, +20%, +17% : quelles entreprises profitent quand la Fed secoue les marchés",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-19T03:08:48Z",
-   "url": "https://fr.investing.com/news/stock-market-news/27-20-17--quelles-entreprises-profitent-quand-la-fed-secoue-les-marches-3703785"
-  },
-  {
-   "h": "Les actions de Tencent tombent à leur plus bas depuis 2,5 ans",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-19T03:05:36Z",
-   "url": "https://fr.investing.com/news/stock-market-news/les-actions-de-tencent-tombent-a-leur-plus-bas-depuis-25-ans-3703782"
-  },
-  {
    "h": "Hong Kong trading house Jardines weighs first private equity fund",
    "w": "194-year-old conglomerate is transitioning from owner-operator of Asian businesses to investment group",
    "syms": [],
@@ -2299,44 +2356,12 @@
    "mine": 1
   },
   {
-   "h": "Abigail Bennett cède pour 10,88 M$ d’actions Constellation Brands",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-19T03:02:10Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/abigail-bennett-cede-pour-1088-m-dactions-constellation-brands-93CH-3703780"
-  },
-  {
-   "h": "Le directeur financier de Fold Holdings Inc vend 867$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-19T03:01:50Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-de-fold-holdings-inc-vend-867-dactions-93CH-3703779"
-  },
-  {
-   "h": "Un administrateur de Stereotaxis Inc achète des actions pour 24.870$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-19T03:01:43Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-stereotaxis-inc-achete-des-actions-pour-24870-93CH-3703778"
-  },
-  {
    "h": "Elon Musk says record spending on US midterms was 'pretty foolish'",
    "w": "The multi-billionaire also said he was \"not Maga\", distancing himself from the political movement linked to Trump.",
    "syms": [],
    "src": "BBC — Business",
    "ts": "2026-11-19T02:59:06Z",
    "url": "https://www.bbc.co.uk/news/articles/cm9q8j2z3gg8o?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "'Parasite' backer and other South Korean media, gaming and travel stocks rally on China trade deal",
-   "w": "Korean media, gaming and travel stocks surged on hopes of greater access to China.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-19T02:54:37Z",
-   "url": "https://www.cnbc.com/2026/11/19/china-south-korea-trade-deal-films-gaming.html"
   },
   {
    "h": "Musk says Jensen Huang is irreplaceable, regrets midterm spending",
@@ -2571,6 +2596,38 @@
    "url": "https://www.marketwatch.com/story/the-stock-market-is-being-rocked-by-the-biggest-shake-up-in-a-generation-as-tech-falls-behind-66c1f281?mod=mw_rss_topstories"
   },
   {
+   "h": "Vietnam's new ASEAN internet cable part of $1bn Japan partnership",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-18T22:41:39.187637Z",
+   "url": "https://asia.nikkei.com/business/telecommunication/vietnam-s-new-asean-internet-cable-part-of-1bn-japan-partnership"
+  },
+  {
+   "h": "APEC live: Plenary session ends; stage set for Trump-Xi-Putin trilateral",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-18T22:41:39.187637Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/apec/apec-live-plenary-session-ends-stage-set-for-trump-xi-putin-trilateral"
+  },
+  {
+   "h": "China carmakers outmaneuver Japan rivals in Myanmar with EV policy",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-18T22:41:39.187637Z",
+   "url": "https://asia.nikkei.com/business/automobiles/china-carmakers-outmaneuver-japan-rivals-in-myanmar-with-ev-policy"
+  },
+  {
+   "h": "Analysis: The making of new social media darling Alice Huang",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-18T22:41:39.187637Z",
+   "url": "https://asia.nikkei.com/editor-s-picks/china-up-close/analysis-the-making-of-new-social-media-darling-alice-huang"
+  },
+  {
    "h": "Retail investor enthusiasm for Anthropic IPO to rival SpaceX debut",
    "w": "Anthropic is gearing up for a blockbuster initial public offering this week, and excitement among retail investors looks to be off the charts.",
    "syms": [],
@@ -2617,14 +2674,6 @@
    "url": "https://www.marketwatch.com/story/the-thought-of-living-to-100-terrifies-me-is-social-security-a-giant-ponzi-scheme-84a64e7e?mod=mw_rss_topstories"
   },
   {
-   "h": "Has the stock market’s slump hit bottom yet? Here’s what these contrarian indicators say.",
-   "w": "Contrarian buy signals typically don’t come until sentiment has dropped further than they have so far",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-18T21:58:00Z",
-   "url": "https://www.marketwatch.com/story/has-the-stock-markets-correction-hit-bottom-yet-heres-what-these-contrarian-indicators-say-f9104879?mod=mw_rss_topstories"
-  },
-  {
    "h": "Russian accused of spying on Palantir over assistance to Ukraine",
    "w": "Prosecutors say suspect entered US from Mexico and stalked employees at Silicon Valley tech group",
    "syms": [],
@@ -2632,14 +2681,6 @@
    "ts": "2026-11-18T21:44:59Z",
    "url": "https://www.ft.com/content/4972f4c7-fe8d-4fdd-b0fd-0db2360cda2a?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "APEC live: Trump says US has been 'Pacific power for hundreds of years'",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-18T21:34:43.254239Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/apec/apec-live-trump-says-us-has-been-pacific-power-for-hundreds-of-years"
   },
   {
    "h": "Trump, Xi and Putin gear up for first-ever trilateral meeting",
@@ -2672,16 +2713,6 @@
    "src": "BBC — Business",
    "ts": "2026-11-18T21:28:08Z",
    "url": "https://www.bbc.co.uk/news/articles/cj4gnpzll020o?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "What’s next for the AI trade after Nvidia’s blowout results are met with a shrug",
-   "w": "Nvidia delivered a strong performance, but questions remain amid growing scrutiny of the company and macroeconomic factors",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "MarketWatch",
-   "ts": "2026-11-18T21:19:00Z",
-   "url": "https://www.marketwatch.com/story/whats-next-for-the-ai-trade-after-nvidias-blowout-results-are-met-with-a-shrug-853c7abe?mod=mw_rss_topstories"
   },
   {
    "h": "CEO turned informant: How the FDA built a case against executives promising cheap medications",
@@ -2807,22 +2838,6 @@
    "url": "https://www.cnbc.com/2026/11/18/fed-minutes-october-2026.html"
   },
   {
-   "h": "Japan's NTT looks to data center business as next profit driver",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-18T19:28:29.997776Z",
-   "url": "https://asia.nikkei.com/business/technology/japan-s-ntt-looks-to-data-center-business-as-next-profit-driver"
-  },
-  {
-   "h": "From 'APEC blue' to new Yalta: China's rise highlights Japan's isolation",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-18T19:28:29.997776Z",
-   "url": "https://asia.nikkei.com/spotlight/comment/from-apec-blue-to-new-yalta-china-s-rise-highlights-japan-s-isolation"
-  },
-  {
    "h": "Meet the European Central Bank’s new squad",
    "w": "A Spaniard, a German and a Frenchwoman",
    "syms": [],
@@ -2872,14 +2887,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-18T18:09:23Z",
    "url": "https://www.lemonde.fr/politique/article/2026/11/18/le-rejet-du-statut-de-lanceuse-d-alerte-de-l-ex-directrice-nationale-du-regime-de-garantie-des-salaires-annule-par-la-cour-de-cassation_6813189_823448.html"
-  },
-  {
-   "h": "US visa denials hit Xpeng, other Chinese robot makers ahead of CES",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-18T18:09:18.912585Z",
-   "url": "https://asia.nikkei.com/business/technology/us-visa-denials-hit-xpeng-other-chinese-robot-makers-ahead-of-ces"
   },
   {
    "h": "Putin’s delusions of a ‘new Yalta’",
