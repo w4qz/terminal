@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-20T18:44:18.125072Z",
+ "generated_at": "2026-11-20T19:48:58.639371Z",
  "eco": {
   "prints": [
    {
@@ -8,7 +8,7 @@
     "prev": null,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-19",
+    "pub": "2026-11-20",
     "freq": "M",
     "src": "FRED CPIAUCSL",
     "url": "https://fred.stlouisfed.org/series/CPIAUCSL"
@@ -19,7 +19,7 @@
     "prev": null,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-19",
+    "pub": "2026-11-20",
     "freq": "M",
     "src": "FRED CPILFESL",
     "url": "https://fred.stlouisfed.org/series/CPILFESL"
@@ -30,7 +30,7 @@
     "prev": 3.03,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-19",
+    "pub": "2026-11-20",
     "freq": "M",
     "src": "FRED PCEPILFE",
     "url": "https://fred.stlouisfed.org/series/PCEPILFE"
@@ -41,7 +41,7 @@
     "prev": 60.0,
     "fmt": "k",
     "ts": "2026-10-01",
-    "pub": "2026-11-19",
+    "pub": "2026-11-20",
     "freq": "M",
     "src": "FRED PAYEMS",
     "url": "https://fred.stlouisfed.org/series/PAYEMS"
@@ -52,7 +52,7 @@
     "prev": 4.2,
     "fmt": "%",
     "ts": "2026-10-01",
-    "pub": "2026-11-19",
+    "pub": "2026-11-20",
     "freq": "M",
     "src": "FRED UNRATE",
     "url": "https://fred.stlouisfed.org/series/UNRATE"
@@ -63,7 +63,7 @@
     "prev": 202000.0,
     "fmt": "n",
     "ts": "2026-11-14",
-    "pub": "2026-11-19",
+    "pub": "2026-11-20",
     "freq": "W",
     "src": "FRED ICSA",
     "url": "https://fred.stlouisfed.org/series/ICSA"
@@ -74,7 +74,7 @@
     "prev": 2.2,
     "fmt": "%",
     "ts": "2026-07-01",
-    "pub": "2026-11-19",
+    "pub": "2026-11-20",
     "freq": "Q",
     "src": "FRED A191RL1Q225SBEA",
     "url": "https://fred.stlouisfed.org/series/A191RL1Q225SBEA"
@@ -85,7 +85,7 @@
     "prev": 0.83,
     "fmt": "%",
     "ts": "2026-10-01",
-    "pub": "2026-11-19",
+    "pub": "2026-11-20",
     "freq": "M",
     "src": "FRED RSAFS",
     "url": "https://fred.stlouisfed.org/series/RSAFS"
@@ -506,72 +506,72 @@
    {
     "d": "2026-12-09",
     "pre": 3.88,
-    "post": 4.12,
-    "move_bp": 24.0,
+    "post": 4.112,
+    "move_bp": 23.2,
     "p_cut": 0,
-    "p_hike": 96
+    "p_hike": 93
    },
    {
     "d": "2027-01-27",
-    "pre": 4.12,
-    "post": 4.275,
-    "move_bp": 15.5,
+    "pre": 4.112,
+    "post": 4.255,
+    "move_bp": 14.3,
     "p_cut": 0,
-    "p_hike": 62
+    "p_hike": 57
    },
    {
     "d": "2027-03-17",
-    "pre": 4.275,
-    "post": 4.419,
-    "move_bp": 14.4,
+    "pre": 4.255,
+    "post": 4.388,
+    "move_bp": 13.3,
     "p_cut": 0,
-    "p_hike": 58
+    "p_hike": 53
    },
    {
     "d": "2027-04-28",
-    "pre": 4.419,
-    "post": 4.455,
-    "move_bp": 3.6,
+    "pre": 4.388,
+    "post": 4.42,
+    "move_bp": 3.2,
     "p_cut": 0,
-    "p_hike": 14
+    "p_hike": 13
    },
    {
     "d": "2027-06-09",
-    "pre": 4.455,
-    "post": 4.512,
-    "move_bp": 5.7,
+    "pre": 4.42,
+    "post": 4.47,
+    "move_bp": 5.0,
     "p_cut": 0,
-    "p_hike": 23
+    "p_hike": 20
    },
    {
     "d": "2027-07-28",
-    "pre": 4.512,
-    "post": 4.52,
-    "move_bp": 0.8,
+    "pre": 4.47,
+    "post": 4.48,
+    "move_bp": 1.0,
     "p_cut": 0,
-    "p_hike": 3
+    "p_hike": 4
    },
    {
     "d": "2027-09-15",
-    "pre": 4.52,
-    "post": 4.52,
-    "move_bp": 0.0,
-    "p_cut": 0,
+    "pre": 4.48,
+    "post": 4.47,
+    "move_bp": -1.0,
+    "p_cut": 4,
     "p_hike": 0
    },
    {
     "d": "2027-10-27",
-    "pre": 4.52,
-    "post": 4.505,
+    "pre": 4.47,
+    "post": 4.455,
     "move_bp": -1.5,
     "p_cut": 6,
     "p_hike": 0
    },
    {
     "d": "2027-11-17",
-    "pre": 4.505,
-    "post": 4.505,
-    "move_bp": 0.0,
+    "pre": 4.455,
+    "post": 4.455,
+    "move_bp": -0.0,
     "p_cut": 0,
     "p_hike": 0
    }
@@ -583,77 +583,77 @@
    "pts": [
     {
      "t": "1M",
-     "y": 4.104,
+     "y": 4.106,
      "y1m": 4.09,
      "ts": "2026-11-20",
      "live": true
     },
     {
      "t": "3M",
-     "y": 4.243,
+     "y": 4.235,
      "y1m": 4.25,
      "ts": "2026-11-20",
      "live": true
     },
     {
      "t": "6M",
-     "y": 4.431,
+     "y": 4.412,
      "y1m": 4.35,
      "ts": "2026-11-20",
      "live": true
     },
     {
      "t": "1A",
-     "y": 4.519,
+     "y": 4.497,
      "y1m": 4.52,
      "ts": "2026-11-20",
      "live": true
     },
     {
      "t": "2A",
-     "y": 4.66,
+     "y": 4.613,
      "y1m": 4.81,
      "ts": "2026-11-20",
      "live": true
     },
     {
      "t": "3A",
-     "y": 4.687,
+     "y": 4.644,
      "y1m": 4.89,
      "ts": "2026-11-20",
      "live": true
     },
     {
      "t": "5A",
-     "y": 4.742,
+     "y": 4.706,
      "y1m": 4.95,
      "ts": "2026-11-20",
      "live": true
     },
     {
      "t": "7A",
-     "y": 4.824,
+     "y": 4.789,
      "y1m": 5.03,
      "ts": "2026-11-20",
      "live": true
     },
     {
      "t": "10A",
-     "y": 4.944,
+     "y": 4.914,
      "y1m": 5.13,
      "ts": "2026-11-20",
      "live": true
     },
     {
      "t": "20A",
-     "y": 5.367,
+     "y": 5.345,
      "y1m": 5.47,
      "ts": "2026-11-20",
      "live": true
     },
     {
      "t": "30A",
-     "y": 5.32,
+     "y": 5.301,
      "y1m": 5.42,
      "ts": "2026-11-20",
      "live": true
@@ -854,10 +854,10 @@
   },
   {
    "k": "Fed reverse repo ($bn)",
-   "v": 0.405,
-   "prev": 0.331,
+   "v": 0.401,
+   "prev": 0.405,
    "fmt": "Md",
-   "ts": "2026-11-19",
+   "ts": "2026-11-20",
    "src": "FRED RRPONTSYD"
   },
   {
