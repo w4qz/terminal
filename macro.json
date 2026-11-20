@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-19T23:18:54.820061Z",
+ "generated_at": "2026-11-20T00:05:07.346858Z",
  "eco": {
   "prints": [
    {
@@ -8,7 +8,7 @@
     "prev": null,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-18",
+    "pub": "2026-11-19",
     "freq": "M",
     "src": "FRED CPIAUCSL",
     "url": "https://fred.stlouisfed.org/series/CPIAUCSL"
@@ -19,7 +19,7 @@
     "prev": null,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-18",
+    "pub": "2026-11-19",
     "freq": "M",
     "src": "FRED CPILFESL",
     "url": "https://fred.stlouisfed.org/series/CPILFESL"
@@ -30,7 +30,7 @@
     "prev": 3.03,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-18",
+    "pub": "2026-11-19",
     "freq": "M",
     "src": "FRED PCEPILFE",
     "url": "https://fred.stlouisfed.org/series/PCEPILFE"
@@ -41,7 +41,7 @@
     "prev": 60.0,
     "fmt": "k",
     "ts": "2026-10-01",
-    "pub": "2026-11-18",
+    "pub": "2026-11-19",
     "freq": "M",
     "src": "FRED PAYEMS",
     "url": "https://fred.stlouisfed.org/series/PAYEMS"
@@ -52,7 +52,7 @@
     "prev": 4.2,
     "fmt": "%",
     "ts": "2026-10-01",
-    "pub": "2026-11-18",
+    "pub": "2026-11-19",
     "freq": "M",
     "src": "FRED UNRATE",
     "url": "https://fred.stlouisfed.org/series/UNRATE"
@@ -74,7 +74,7 @@
     "prev": 2.2,
     "fmt": "%",
     "ts": "2026-07-01",
-    "pub": "2026-11-18",
+    "pub": "2026-11-19",
     "freq": "Q",
     "src": "FRED A191RL1Q225SBEA",
     "url": "https://fred.stlouisfed.org/series/A191RL1Q225SBEA"
@@ -85,7 +85,7 @@
     "prev": 0.83,
     "fmt": "%",
     "ts": "2026-10-01",
-    "pub": "2026-11-18",
+    "pub": "2026-11-19",
     "freq": "M",
     "src": "FRED RSAFS",
     "url": "https://fred.stlouisfed.org/series/RSAFS"
@@ -96,7 +96,7 @@
     "prev": 51.7,
     "fmt": "n",
     "ts": "2026-09-01",
-    "pub": "2026-11-18",
+    "pub": "2026-11-19",
     "freq": "M",
     "src": "FRED UMCSENT",
     "url": "https://fred.stlouisfed.org/series/UMCSENT"
@@ -123,12 +123,6 @@
    }
   ],
   "calendar": [
-   {
-    "d": "2026-11-12",
-    "ev": "Weekly jobless claims",
-    "ctry": "US",
-    "src": "FRED"
-   },
    {
     "d": "2026-11-13",
     "ev": "PPI producer prices",
@@ -247,6 +241,12 @@
    {
     "d": "2026-12-17",
     "ev": "Weekly jobless claims",
+    "ctry": "US",
+    "src": "FRED"
+   },
+   {
+    "d": "2026-12-18",
+    "ev": "U. Michigan sentiment",
     "ctry": "US",
     "src": "FRED"
    }
@@ -541,17 +541,17 @@
    {
     "d": "2027-09-15",
     "pre": 4.615,
-    "post": 4.645,
-    "move_bp": 3.0,
+    "post": 4.635,
+    "move_bp": 2.0,
     "p_cut": 0,
-    "p_hike": 12
+    "p_hike": 8
    },
    {
     "d": "2027-10-27",
-    "pre": 4.645,
+    "pre": 4.635,
     "post": 4.62,
-    "move_bp": -2.5,
-    "p_cut": 10,
+    "move_bp": -1.5,
+    "p_cut": 6,
     "p_hike": 0
    },
    {
@@ -570,77 +570,77 @@
    "pts": [
     {
      "t": "1M",
-     "y": 4.003,
-     "y1m": 4.1,
+     "y": 4.117,
+     "y1m": 4.09,
      "ts": "2026-11-19",
      "live": true
     },
     {
      "t": "3M",
-     "y": 4.257,
-     "y1m": 4.26,
+     "y": 4.261,
+     "y1m": 4.25,
      "ts": "2026-11-19",
      "live": true
     },
     {
      "t": "6M",
-     "y": 4.464,
-     "y1m": 4.36,
+     "y": 4.473,
+     "y1m": 4.35,
      "ts": "2026-11-19",
      "live": true
     },
     {
      "t": "1A",
-     "y": 4.582,
-     "y1m": 4.51,
+     "y": 4.594,
+     "y1m": 4.52,
      "ts": "2026-11-19",
      "live": true
     },
     {
      "t": "2A",
-     "y": 4.77,
-     "y1m": 4.79,
+     "y": 4.769,
+     "y1m": 4.81,
      "ts": "2026-11-19",
      "live": true
     },
     {
      "t": "3A",
-     "y": 4.812,
-     "y1m": 4.86,
+     "y": 4.808,
+     "y1m": 4.89,
      "ts": "2026-11-19",
      "live": true
     },
     {
      "t": "5A",
-     "y": 4.863,
-     "y1m": 4.94,
+     "y": 4.857,
+     "y1m": 4.95,
      "ts": "2026-11-19",
      "live": true
     },
     {
      "t": "7A",
-     "y": 4.942,
-     "y1m": 5.02,
+     "y": 4.935,
+     "y1m": 5.03,
      "ts": "2026-11-19",
      "live": true
     },
     {
      "t": "10A",
-     "y": 5.05,
-     "y1m": 5.12,
+     "y": 5.044,
+     "y1m": 5.13,
      "ts": "2026-11-19",
      "live": true
     },
     {
      "t": "20A",
-     "y": 5.453,
+     "y": 5.446,
      "y1m": 5.47,
      "ts": "2026-11-19",
      "live": true
     },
     {
      "t": "30A",
-     "y": 5.406,
+     "y": 5.399,
      "y1m": 5.42,
      "ts": "2026-11-19",
      "live": true
@@ -788,7 +788,7 @@
    "v": 3.9,
    "prev": 3.9,
    "fmt": "%",
-   "ts": "2026-11-19",
+   "ts": "2026-11-20",
    "src": "FRED IORB"
   },
   {
