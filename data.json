@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-20T04:20:51.929921Z",
+ "generated_at": "2026-11-20T05:32:42.033889Z",
  "quotes": {
   "NVDA": {
    "p": 145.98,
@@ -80,13 +80,13 @@
    "prev": 7323.6299,
    "chg": -147.7998,
    "pct": -2.02,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^GSPC) — last update failed",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^GSPC)",
    "ts": "2026-11-19T21:00:00Z",
    "open": 7389.2598,
    "lo": 7173.6299,
    "hi": 7415.6401,
-   "vol": 3341008000,
+   "vol": 5692800000,
    "h": [
     7757.17,
     7663.43,
@@ -120,10 +120,10 @@
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^NDX)",
    "ts": "2026-11-19T21:00:00Z",
-   "open": 27574.2363,
-   "lo": 26481.8184,
-   "hi": 27749.3477,
-   "vol": 1711655000,
+   "open": 27574.2305,
+   "lo": 26481.8203,
+   "hi": 27749.3496,
+   "vol": 10558810000,
    "h": [
     29822.52,
     28958.69,
@@ -150,9 +150,9 @@
    ]
   },
   "DJI": {
-   "p": 49097.1016,
+   "p": 49097.0586,
    "prev": 50198.1719,
-   "chg": -1101.0703,
+   "chg": -1101.1133,
    "pct": -2.19,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^DJI)",
@@ -160,7 +160,7 @@
    "open": 50432.3203,
    "lo": 49091.9219,
    "hi": 50454.8086,
-   "vol": 729407417,
+   "vol": 723230000,
    "h": [
     52856.09,
     52867.98,
@@ -183,20 +183,21 @@
     51608.17,
     50759.42,
     50198.17,
-    49097.1
+    49097.06
    ]
   },
   "RUT": {
-   "p": 2655.1052,
+   "p": 2655.1101,
    "prev": 2714.3101,
-   "chg": -59.2048,
+   "chg": -59.2,
    "pct": -2.18,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^RUT)",
    "ts": "2026-11-19T21:00:00Z",
-   "open": 2720.2554,
-   "lo": 2653.9185,
-   "hi": 2730.0139,
+   "open": 2720.26,
+   "lo": 2653.9199,
+   "hi": 2730.01,
+   "vol": 5692800000,
    "h": [
     2781.02,
     2784.03,
@@ -230,9 +231,6 @@
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^VIX)",
    "ts": "2026-11-19T21:15:00Z",
-   "open": 22.06,
-   "lo": 21.84,
-   "hi": 29.13,
    "h": [
     16.68,
     19.03,
@@ -259,15 +257,15 @@
    ]
   },
   "N225": {
-   "p": 56823.5195,
+   "p": 56494.7109,
    "prev": 59444.2109,
-   "chg": -2620.6914,
-   "pct": -4.41,
+   "chg": -2949.5,
+   "pct": -4.96,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^N225)",
-   "ts": "2026-11-20T04:15:00Z",
+   "ts": "2026-11-20T05:30:00Z",
    "open": 58551.5586,
-   "lo": 56594.9414,
+   "lo": 56482.9414,
    "hi": 58707.4805,
    "h": [
     64621.24,
@@ -291,17 +289,17 @@
     58860.43,
     59024.28,
     59444.21,
-    56823.52
+    56494.71
    ]
   },
   "HSI": {
-   "p": 22451.9102,
+   "p": 22365.5195,
    "prev": 22841.6191,
-   "chg": -389.709,
-   "pct": -1.71,
+   "chg": -476.0996,
+   "pct": -2.08,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^HSI)",
-   "ts": "2026-11-20T04:15:00Z",
+   "ts": "2026-11-20T05:30:00Z",
    "open": 22482.3906,
    "lo": 22333.4102,
    "hi": 22593.5098,
@@ -327,23 +325,22 @@
     23508.17,
     23294.75,
     22841.62,
-    22451.91
+    22365.52
    ]
   },
   "SHCOMP": {
-   "p": 3577.6169,
-   "prev": 3587.832,
-   "chg": -10.2151,
-   "pct": -0.28,
-   "st": "EOD",
+   "p": 3506.9202,
+   "prev": 3577.6169,
+   "chg": -70.6968,
+   "pct": -1.98,
+   "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (000001.SS)",
-   "ts": "2026-11-19T07:00:00Z",
-   "open": 3583.1211,
-   "lo": 3547.9399,
-   "hi": 3584.281,
-   "vol": 412900,
+   "ts": "2026-11-20T05:30:00Z",
+   "open": 3527.3037,
+   "lo": 3500.8843,
+   "hi": 3534.147,
+   "vol": 2055116028,
    "h": [
-    3713.03,
     3658.03,
     3690.48,
     3697.52,
@@ -364,19 +361,20 @@
     3602.57,
     3584.58,
     3587.83,
-    3577.62
+    3577.62,
+    3506.92
    ]
   },
   "STI": {
-   "p": 4991.5098,
+   "p": 4974.5801,
    "prev": 5079.4902,
-   "chg": -87.9805,
-   "pct": -1.73,
+   "chg": -104.9102,
+   "pct": -2.07,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^STI)",
-   "ts": "2026-11-20T04:15:00Z",
+   "ts": "2026-11-20T05:30:00Z",
    "open": 5024.9902,
-   "lo": 4980.8101,
+   "lo": 4973.2798,
    "hi": 5030.5,
    "h": [
     5437.99,
@@ -400,7 +398,7 @@
     5109.13,
     5054.89,
     5079.49,
-    4991.54
+    4974.58
    ]
   },
   "UKX": {
@@ -552,16 +550,16 @@
    ]
   },
   "EURUSD": {
-   "p": 1.0979,
+   "p": 1.0981,
    "prev": 1.0972,
-   "chg": 0.0007,
-   "pct": 0.07,
+   "chg": 0.0009,
+   "pct": 0.08,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (EURUSD=X)",
-   "ts": "2026-11-20T04:20:51.929921Z",
+   "ts": "2026-11-20T05:32:42.033889Z",
    "open": 1.0971,
    "lo": 1.0965,
-   "hi": 1.0981,
+   "hi": 1.0984,
    "h": [
     1.123469,
     1.122146,
@@ -584,19 +582,19 @@
     1.09982,
     1.099288,
     1.097201,
-    1.097936
+    1.098056
    ]
   },
   "USDJPY": {
-   "p": 159.194,
+   "p": 159.14,
    "prev": 159.381,
-   "chg": -0.187,
-   "pct": -0.12,
+   "chg": -0.241,
+   "pct": -0.15,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (JPY=X)",
-   "ts": "2026-11-20T04:20:51.929921Z",
+   "ts": "2026-11-20T05:32:42.033889Z",
    "open": 159.622,
-   "lo": 159.103,
+   "lo": 159.04,
    "hi": 159.841,
    "h": [
     158.13,
@@ -620,7 +618,7 @@
     159.52,
     159.5,
     159.38,
-    159.2
+    159.14
    ]
   },
   "GBPUSD": {
@@ -630,10 +628,10 @@
    "pct": -0.31,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
-   "ts": "2026-11-20T04:20:51.929921Z",
+   "ts": "2026-11-20T05:32:42.033889Z",
    "open": 1.3094,
    "lo": 1.3081,
-   "hi": 1.3107,
+   "hi": 1.311,
    "h": [
     1.339567,
     1.340393,
@@ -660,18 +658,17 @@
    ]
   },
   "DXY": {
-   "p": 103.814,
-   "prev": 103.814,
-   "chg": 0.0,
-   "pct": 0.0,
+   "p": 103.785,
+   "prev": 103.9,
+   "chg": -0.115,
+   "pct": -0.11,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (DX-Y.NYB)",
-   "ts": "2026-11-20T04:15:00Z",
+   "ts": "2026-11-20T05:30:00Z",
    "open": 103.886,
-   "lo": 103.813,
+   "lo": 103.763,
    "hi": 103.953,
    "h": [
-    101.78,
     101.61,
     101.81,
     101.96,
@@ -692,23 +689,23 @@
     103.55,
     103.49,
     103.86,
-    103.81
+    103.9,
+    103.79
    ]
   },
   "XAU": {
-   "p": 3539.5,
-   "prev": 3539.5,
-   "chg": 0.0,
-   "pct": 0.0,
+   "p": 3523.8,
+   "prev": 3685.5,
+   "chg": -161.7,
+   "pct": -4.39,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GC=F)",
-   "ts": "2026-11-20T04:15:00Z",
+   "ts": "2026-11-20T05:30:00Z",
    "open": 3633.8,
-   "lo": 3518.5,
+   "lo": 3515.0,
    "hi": 3638.1001,
-   "vol": 85697,
+   "vol": 98231,
    "h": [
-    4150.0,
     4060.4,
     4007.9,
     4038.4,
@@ -729,23 +726,23 @@
     3853.0,
     3864.2,
     3741.9,
-    3539.5
+    3685.5,
+    3523.8
    ]
   },
   "CL": {
-   "p": 83.01,
-   "prev": 83.01,
-   "chg": 0.0,
-   "pct": 0.0,
+   "p": 82.85,
+   "prev": 83.21,
+   "chg": -0.36,
+   "pct": -0.43,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (CL=F)",
-   "ts": "2026-11-20T04:15:00Z",
+   "ts": "2026-11-20T05:30:00Z",
    "open": 83.1,
    "lo": 82.37,
    "hi": 83.25,
-   "vol": 14243,
+   "vol": 15602,
    "h": [
-    97.15,
     99.47,
     103.27,
     101.76,
@@ -766,23 +763,23 @@
     85.72,
     86.01,
     83.26,
-    83.01
+    83.21,
+    82.85
    ]
   },
   "BRENT": {
-   "p": 90.04,
-   "prev": 90.04,
-   "chg": 0.0,
-   "pct": 0.0,
+   "p": 89.87,
+   "prev": 91.98,
+   "chg": -2.11,
+   "pct": -2.29,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BZ=F)",
-   "ts": "2026-11-20T04:15:00Z",
+   "ts": "2026-11-20T05:30:00Z",
    "open": 90.02,
    "lo": 89.33,
    "hi": 90.25,
-   "vol": 1235,
+   "vol": 1344,
    "h": [
-    108.82,
     113.17,
     116.72,
     115.81,
@@ -803,21 +800,22 @@
     92.44,
     93.14,
     91.95,
-    90.04
+    91.98,
+    89.87
    ]
   },
   "BTC": {
-   "p": 61685.8984,
+   "p": 61571.4102,
    "prev": 62987.2656,
-   "chg": -1301.3672,
-   "pct": -2.07,
+   "chg": -1415.8555,
+   "pct": -2.25,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-20T04:20:51.929921Z",
+   "ts": "2026-11-20T05:32:42.033889Z",
    "open": 61904.7617,
    "lo": 61326.0352,
    "hi": 62437.6953,
-   "vol": 36074156032,
+   "vol": 36763484160,
    "h": [
     77775.11,
     77198.21,
@@ -840,7 +838,7 @@
     64855.84,
     64893.95,
     62987.27,
-    61685.9
+    61571.41
    ]
   }
  },
@@ -928,7 +926,7 @@
    "earnStart": 1794949200,
    "earnEnd": 1794949200,
    "earnEst": false,
-   "exDiv": 1788998400,
+   "exDiv": 1796169600,
    "divDate": 1790812800,
    "lastDiv": 0.25,
    "trailDiv": 0.52
@@ -941,9 +939,9 @@
    "ccy": "USD",
    "mcap": 3700472676352,
    "pe": 26.0073,
-   "fpe": 20.5877,
+   "fpe": 20.5902,
    "eps": 19.16,
-   "feps": 24.2038,
+   "feps": 24.2008,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -1067,9 +1065,9 @@
    "industry": "Semiconductors",
    "ccy": "USD",
    "mcap": 1826105196544,
-   "pe": 23.504,
+   "pe": 22.8185,
    "fpe": 15.056,
-   "eps": 14.98,
+   "eps": 15.43,
    "feps": 23.3853,
    "revTTM": 4944817553408,
    "netIncome": 2527571476480,
@@ -1315,14 +1313,14 @@
    "sector": "Technology",
    "industry": "Consumer Electronics",
    "ccy": "KRW",
-   "mcap": 1202752977895424,
-   "fpe": 2.3748,
+   "mcap": 1189729160658944,
+   "fpe": 2.3491,
    "revTTM": 594479375450112,
    "netIncome": 212962144944128,
    "shares": 5709556199,
    "beta": 1.594,
    "div": 18404.0,
-   "divYield": 9.964,
+   "divYield": 10.073,
    "target": 467638.88,
    "targetHi": 690000.0,
    "targetLo": 290000.0,
@@ -1355,9 +1353,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 1203503366144,
-   "pe": 44.8728,
+   "pe": 43.8533,
    "fpe": 26.56,
-   "eps": 30.11,
+   "eps": 30.81,
    "feps": 50.8704,
    "revTTM": 86461997056,
    "netIncome": 27580000256,
@@ -1399,9 +1397,9 @@
    "industry": "Insurance - Diversified",
    "ccy": "USD",
    "mcap": 1215309938688,
-   "pe": 16.0101,
+   "pe": 16.0821,
    "fpe": 25.0712,
-   "eps": 35.73,
+   "eps": 35.57,
    "feps": 22.8166,
    "revTTM": 395362009088,
    "netIncome": 77084000256,
@@ -1437,14 +1435,14 @@
    "sector": "Technology",
    "industry": "Semiconductors",
    "ccy": "KRW",
-   "mcap": 784152714543104,
-   "fpe": 2.0673,
+   "mcap": 779216522051584,
+   "fpe": 2.0542,
    "revTTM": 269337164251136,
    "netIncome": 188904590278656,
    "shares": 705173324,
    "beta": 2.466,
    "div": 3000.0,
-   "divYield": 0.27,
+   "divYield": 0.271,
    "target": 3056126.8,
    "targetHi": 4700000.0,
    "targetLo": 1575000.0,
@@ -1476,9 +1474,9 @@
    "industry": "Semiconductors",
    "ccy": "USD",
    "mcap": 781179879424,
-   "pe": 9.2888,
+   "pe": 9.488,
    "fpe": 3.3232,
-   "eps": 74.33,
+   "eps": 72.77,
    "feps": 207.7605,
    "revTTM": 133188001792,
    "netIncome": 84968996864,
@@ -1519,14 +1517,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 999969390592,
+   "mcap": 1003036278784,
    "pe": 45.6667,
    "fpe": 39.0422,
    "eps": 2.76,
    "feps": 3.2283,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.785,
@@ -1564,9 +1562,9 @@
    "industry": "Banks - Diversified",
    "ccy": "USD",
    "mcap": 850379341824,
-   "pe": 13.5975,
+   "pe": 13.432,
    "fpe": 12.5218,
-   "eps": 23.55,
+   "eps": 23.84,
    "feps": 25.5731,
    "revTTM": 190732992512,
    "netIncome": 64526999552,
@@ -1605,9 +1603,9 @@
    "industry": "Semiconductors",
    "ccy": "USD",
    "mcap": 809641574400,
-   "pe": 113.2384,
+   "pe": 104.5278,
    "fpe": 27.7346,
-   "eps": 4.32,
+   "eps": 4.68,
    "feps": 17.6382,
    "revTTM": 45435998208,
    "netIncome": 7725000192,
@@ -1733,9 +1731,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 643088908288,
-   "pe": 41.3529,
+   "pe": 40.5372,
    "fpe": 23.0023,
-   "eps": 6.46,
+   "eps": 6.59,
    "feps": 11.6136,
    "revTTM": 99334995968,
    "netIncome": 16094999552,
@@ -2130,7 +2128,7 @@
    "target": 63.35,
    "targetHi": 108.0,
    "targetLo": 39.0,
-   "rating": "Hold",
+   "rating": "Buy",
    "analysts": 12,
    "revGrowth": 187.1,
    "grossMargin": 37.05,
@@ -2164,20 +2162,15 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 121.8878,
-   "shares": 572600000,
-   "divYield": 2.595,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
    "name": "SPDR Gold Shares",
    "ccy": "USD",
    "shares": 260300000,
-   "w52lo": 335.055,
+   "w52lo": 335.05,
    "w52hi": 509.7,
    "trailDiv": 0.0,
    "sector": "Funds and trusts"
@@ -2222,10 +2215,382 @@
  ],
  "news": [
   {
+   "h": "FirstFT: UK and EU poised to finalise deal to ‘reset’ ties",
+   "w": "Also in today’s newsletter: Anthropic IPO and oil-bonds correlation unwinds",
+   "syms": [
+    "BRENT"
+   ],
+   "src": "myFT — europe",
+   "ts": "2026-11-20T05:31:18Z",
+   "url": "https://www.ft.com/content/5fbbe806-37d7-42e4-8235-ce9cbb3f2cdb?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Asian tech stocks fall after Anthropic IPO",
+   "w": "Region’s markets follow Wall Street lower despite Claude AI maker’s record listing",
+   "syms": [
+    "SPX"
+   ],
+   "src": "myFT — companies",
+   "ts": "2026-11-20T05:22:50Z",
+   "url": "https://www.ft.com/content/c7ad2e0c-efd1-40c2-a5a8-819ced8acf5b?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "So, Anthropic is finally a public company. What now?",
+   "w": "A blockbuster IPO postmortem",
+   "syms": [],
+   "src": "myFT — companies",
+   "ts": "2026-11-20T05:19:35Z",
+   "url": "https://www.ft.com/content/017044a9-76dc-4cb4-9259-a844a96f2757",
+   "mine": 1
+  },
+  {
+   "h": "Les actions SoftBank chutent de 15% dans la débâcle de l’IA",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-20T05:16:57Z",
+   "url": "https://fr.investing.com/news/stock-market-news/les-actions-softbank-chutent-de-15-dans-la-debacle-de-lia-3705991"
+  },
+  {
+   "h": "Le directeur technique de Braze Inc vend des actions pour 746.566$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-20T05:16:56Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-technique-de-braze-inc-vend-des-actions-pour-746566-93CH-3705989"
+  },
+  {
+   "h": "U.K.-India trade deal faces a stiff test over Scotch whisky import taxes",
+   "w": "In the global spirits markets, while the U.S., Europe, and China are facing volume contraction, India will add nearly 100 million consumers in the next five years.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-20T05:09:52Z",
+   "url": "https://www.cnbc.com/2026/11/20/uk-india-trade-scotch-whisky-tariffs.html"
+  },
+  {
+   "h": "La directrice médicale d’Enliven Therapeutics vend des actions pour 234.203$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-20T05:06:28Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-medicale-denliven-therapeutics-vend-des-actions-pour-234203-93CH-3705988"
+  },
+  {
+   "h": "Les devises asiatiques sous pression, le dollar proche d’un sommet de 19 mois",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-20T05:03:24Z",
+   "url": "https://fr.investing.com/news/forex-news/les-devises-asiatiques-sous-pression-le-dollar-proche-dun-sommet-de-19-mois-3705987"
+  },
+  {
+   "h": "Vaisselle, poubelles, draps... Les nouvelles règles d’Airbnb suscitent la colère des petits propriétaires",
+   "w": "Des dizaines de milliers d’hôtes dénoncent l’encadrement des consignes sur les tâches ménagères et la modification des commissions. Certains quittent la plateforme, accusée de se rapprocher du modèle hôtelier.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-20T05:03:14Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/11/20/vaisselle-poubelles-draps-les-nouvelles-regles-d-airbnb-suscitent-la-colere-des-petits-proprietaires_6813590_3234.html"
+  },
+  {
+   "h": "La directrice des opérations de Hippo Holdings vend des actions pour 84.371$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-20T05:02:40Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-des-operations-de-hippo-holdings-vend-des-actions-pour-84371-93CH-3705985"
+  },
+  {
+   "h": "Le PDG d’Hippo Holdings Ostergaard cède des actions pour 44.570$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-20T05:02:22Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-dhippo-holdings-ostergaard-cede-des-actions-pour-44570-93CH-3705984"
+  },
+  {
+   "h": "Le PDG de CME Group vend des actions pour 8,35 millions de dollars",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-20T05:02:09Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-cme-group-vend-des-actions-pour-835-millions-de-dollars-93CH-3705982"
+  },
+  {
+   "h": "CAC 40 : 4 séances de baisse, les 8 000 pts en vue - On repasse à l’achat ?",
+   "w": "",
+   "syms": [
+    "CAC"
+   ],
+   "src": "Investing.com France",
+   "ts": "2026-11-20T05:02:09Z",
+   "url": "https://fr.investing.com/news/stock-market-news/cac-40--4-seances-de-baisse-les-8-000-pts-en-vue--on-repasse-a-lachat--3705983"
+  },
+  {
+   "h": "Le directeur juridique de CME Group vend des actions pour 203.541$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-20T05:02:03Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-juridique-de-cme-group-vend-des-actions-pour-203541-93CH-3705981"
+  },
+  {
+   "h": "Pourquoi l’action NetEase Inc s’effondre-t-elle aujourd’hui ?",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-20T05:00:54Z",
+   "url": "https://fr.investing.com/news/stock-market-news/pourquoi-laction-netease-inc-seffondretelle-aujourdhui--93CH-3705980"
+  },
+  {
+   "h": "Brussels to favour EU companies in quantum technology race",
+   "w": "Domestic groups will be prioritised for public contracts under plans to be presented next week",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-20T05:00:27Z",
+   "url": "https://www.ft.com/content/7966c474-a62f-4d90-9cff-66c02ca309bb?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Trump to host memecoin dinner as Democrats take aim at ‘conflicts of interest’",
+   "w": "Token’s price has plunged from high of $75 shortly after launch in January last year to $0.95 as investor interest has waned",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-20T05:00:27Z",
+   "url": "https://www.ft.com/content/0cb87e56-2b97-4c91-bfa7-a7ab616fd58e?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Former Corbyn ally emerging as favourite to succeed Khan as London mayor",
+   "w": "Dawn Butler, MP for Brent East, would face a fight to win the Labour nomination",
+   "syms": [
+    "BRENT"
+   ],
+   "src": "myFT — world",
+   "ts": "2026-11-20T05:00:27Z",
+   "url": "https://www.ft.com/content/3e81a203-6421-4469-8f1f-fb8adfb6465a?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Labour measures fail to shield UK households from sharp energy bill rises",
+   "w": "Government initiatives offset only a third of the rise in energy bills for poorer families, according to new analysis",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-20T05:00:26Z",
+   "url": "https://www.ft.com/content/91cee968-66d0-4c48-b453-47b17f7443d2?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Number of Britons working beyond age 67 up 18% in four years",
+   "w": "People are having to work longer to help offset higher living costs",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-20T05:00:26Z",
+   "url": "https://www.ft.com/content/44370d09-92cd-4a84-890f-4d0f0d046d96",
+   "mine": 1
+  },
+  {
+   "h": "Oil loses grip on bond markets as inflation ‘virus’ spreads",
+   "w": "Tight correlation between crude prices and borrowing costs has broken down",
+   "syms": [
+    "BRENT",
+    "CL"
+   ],
+   "src": "myFT — world",
+   "ts": "2026-11-20T05:00:26Z",
+   "url": "https://www.ft.com/content/562e278e-1e12-49d2-b7f7-91a289ffd660?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Anthropic’s Wall Street stimulus fades",
+   "w": "Shares of some banks and private capital groups tying their fortunes to AI have fallen this year",
+   "syms": [
+    "SPX"
+   ],
+   "src": "myFT — world",
+   "ts": "2026-11-20T05:00:26Z",
+   "url": "https://www.ft.com/content/4f7cf30e-5c9a-489f-bd01-2283a6c9d0e9?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Timms review to defend cash payments for disability benefit claimants",
+   "w": "Recommendations pose dilemma for UK ministers keen to implement the potentially conflicting plan by Alan Milburn to cut welfare bill",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-20T05:00:26Z",
+   "url": "https://www.ft.com/content/b6af48fd-6074-46a6-8be4-fb0b9d05189b?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Comment le problème oligarchique s’est imposé dans le débat démocratique",
+   "w": "Samedi 21 novembre doit se tenir à Paris un sommet contre l’oligarchie internationale avec la participation de plusieurs Prix Nobel. Car s’il y a encore quinze ans, le mot « oligarque » visait surtout les ultrariches russes corrompus, les milliardaires sont aujourd’hui sortis de leur invisibilité.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-20T05:00:23Z",
+   "url": "https://www.lemonde.fr/idees/article/2026/11/20/comment-le-probleme-oligarchique-s-est-impose-dans-le-debat-democratique_6813586_3232.html"
+  },
+  {
+   "h": "Why Britons can feel smugger than the French",
+   "w": "It’s not a competition, but if it were, the UK economy would be winning",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-20T05:00:17Z",
+   "url": "https://www.ft.com/content/b9b16f2f-f88e-454e-aa85-c131256310fe?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Rejoining the EU would boost UK economy twice as much as Swiss-style deal",
+   "w": "Much of the benefit would come from a rebound in business investment, which was damaged by Brexit-related uncertainty",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-20T05:00:17Z",
+   "url": "https://www.ft.com/content/22c052bf-a9dc-49f3-a18b-02b5dc490635?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "The rift between the US and EU on banks is widening",
+   "w": "The ECB should not be content with marginal adjustments — it needs to be bolder in reforms",
+   "syms": [
+    "EURUSD"
+   ],
+   "src": "myFT — world",
+   "ts": "2026-11-20T05:00:17Z",
+   "url": "https://www.ft.com/content/cf6e81b6-e3aa-4475-8d5b-04eb8809d5ce?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Can Nvidia learn from AIG’s mistakes?",
+   "w": "The chip giant’s role as the quasi-central bank of AI is reminiscent of the insurance company’s position before the subprime mortgage bubble",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "myFT — world",
+   "ts": "2026-11-20T05:00:17Z",
+   "url": "https://www.ft.com/content/c1f1c0d2-466e-46b9-b346-5ce4677c55ea?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Worldline bolstered cash flow through delayed payments and early receipts",
+   "w": "French fintech repeatedly withheld money from suppliers and sought advances from customers ahead of its results in the years leading up to 2023 profit warning",
+   "syms": [],
+   "src": "myFT — companies",
+   "ts": "2026-11-20T05:00:17Z",
+   "url": "https://www.ft.com/content/81d9e216-c04f-43f2-a221-d1da2a53ee50?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "How Russian money launderers and Italian mobsters put Revolut in the regulatory crosshairs",
+   "w": "The fintech faces increased scrutiny as it grows from an upstart payments company into a sprawling global bank",
+   "syms": [],
+   "src": "myFT — companies",
+   "ts": "2026-11-20T05:00:17Z",
+   "url": "https://www.ft.com/content/221a6fc4-01ac-48fd-95e8-1efb094c3e8d?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Europe’s bid to make flying green could leave passengers seeing red",
+   "w": "Airlines refuelling in the region must use an increasing share of sustainable aviation fuel, which is pricier and getting scarce",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-20T05:00:16Z",
+   "url": "https://www.ft.com/content/9b60a6d4-7dab-44f5-8848-d01fd3f1bb2d?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "How pensions ate the state",
+   "w": "Retirees are more affluent than ever in high-income countries. Why are states still giving them so much?",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-20T05:00:08Z",
+   "url": "https://www.ft.com/content/6986a3b5-12ed-4aad-ac61-f86ded3e6fa3?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Gideon Rachman’s best books on politics to read this year",
+   "w": "Gideon Rachman selects his must-read titles",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-20T05:00:08Z",
+   "url": "https://www.ft.com/content/bc88b8d1-8531-42e8-b2d9-5072578e825e?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Artist and designer Luigi Serafini talks taste",
+   "w": "The Codex Seraphinianus author loves sunflowers, Caran d’Ache pencils and Saint Francis",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-20T05:00:07Z",
+   "url": "https://www.ft.com/content/b3643a75-8c44-49fb-8f6f-450c7565457e",
+   "mine": 1
+  },
+  {
+   "h": "China prepares to restart US private equity investments after pullback",
+   "w": "Beijing’s flagship sovereign wealth fund leading push for special terms to protect against disaster scenarios to unlock funding",
+   "syms": [],
+   "src": "myFT — us",
+   "ts": "2026-11-20T05:00:07Z",
+   "url": "https://www.ft.com/content/73e7d386-c5d1-4422-8abb-adbfaf92aa0d?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Is Britain’s state wealth fund putting its billions in the right places?",
+   "w": "Critics warn lender risks crowding out commercial rivals and is putting money into projects that can be funded privately",
+   "syms": [],
+   "src": "myFT — world uk",
+   "ts": "2026-11-20T05:00:07Z",
+   "url": "https://www.ft.com/content/4c501172-405a-4719-8010-b846383e3e3f?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Deutsche Bank executive was reprimanded over treatment of whistleblower",
+   "w": "Probe raised concerns over Stefan Hoops’ dealings with employee who exposed mis-selling scandal",
+   "syms": [],
+   "src": "myFT — european banks",
+   "ts": "2026-11-20T05:00:07Z",
+   "url": "https://www.ft.com/content/5dfbc0ec-3027-4ca2-8603-ba75e7500356?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Anthropic’s splashy public market debut",
+   "w": "AI giant shares closed up 17% in its Wall Street debut",
+   "syms": [
+    "SPX"
+   ],
+   "src": "myFT — us",
+   "ts": "2026-11-20T05:00:00Z",
+   "url": "https://www.ft.com/content/01eec320-3e2d-4887-8774-04803702b8d6?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Anthropic IPO 'exactly what the markets need,' but analysts warn of volatility",
+   "w": "The Anthropic IPO is \"what the markets need.\" However, analysts say its shares will be volatile in the coming weeks.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-20T04:51:28Z",
+   "url": "https://www.cnbc.com/2026/11/20/anthropic-ipo-stocks-market.html"
+  },
+  {
+   "h": "Comment la France a échoué à enrayer sa désindustrialisation : « Plus de 3 000 usines ont fermé depuis 2009 »",
+   "w": "En cinq décennies, la France, longtemps pays de production, est devenue un pays de consommation de biens produits à l’étranger. L’ensemble des filières a été touché par ce mouvement, avec des répercussions sociales et territoriales profondes.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-20T04:45:11Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/11/20/comment-la-france-a-echoue-a-enrayer-sa-desindustrialisation-plus-de-3-000-usines-ont-ferme-depuis-2009_6813580_3234.html"
+  },
+  {
+   "h": "En Lozère, au sommet d’une montagne, un radar traque les trajectoires suspectes de satellites",
+   "w": "Face à l’explosion du nombre de satellites et à la montée des menaces en orbite, Look Up, une start-up fondée par le général Michel Friedling, premier chef du commandement de l’espace, a mis en service, à Monts-de-Randon, le premier radar d’un réseau permettant de surveiller le trafic spatial.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-20T04:30:04Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/11/20/en-lozere-au-sommet-d-une-montagne-un-radar-traque-les-trajectoires-suspectes-de-satellites_6813556_3234.html"
+  },
+  {
    "h": "Australia PM and China’s Xi hail ‘turnaround’ despite iron ore tensions",
    "w": "Beijing’s increasing influence over commodity’s price has stoked concerns ahead of Apec summit",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — economy",
    "ts": "2026-11-20T04:20:16Z",
    "url": "https://www.ft.com/content/ddbf0f75-047a-421a-87c0-3e60bf42ed22?syn-25a6b1a6=1",
    "mine": 1
@@ -2237,89 +2602,6 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-20T03:56:17Z",
    "url": "https://www.cnbc.com/2026/11/20/baaja-bill-senate-passes-permitting-reform.html"
-  },
-  {
-   "h": "Pourquoi l’action SoftBank Group Corp. s’effondre-t-elle aujourd’hui ?",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-20T03:51:35Z",
-   "url": "https://fr.investing.com/news/stock-market-news/pourquoi-laction-softbank-group-corp-seffondretelle-aujourdhui--93CH-3705964"
-  },
-  {
-   "h": "Tech stocks fall as Anthropic IPO fails to stem broader AI sell-off",
-   "w": "Asian markets follow Wall Street lower despite Claude AI maker’s record listing",
-   "syms": [
-    "SPX"
-   ],
-   "src": "myFT — companies",
-   "ts": "2026-11-20T03:51:30Z",
-   "url": "https://www.ft.com/content/c7ad2e0c-efd1-40c2-a5a8-819ced8acf5b?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Pourquoi l’action Alibaba est-elle en hausse aujourd’hui ?",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-20T03:51:28Z",
-   "url": "https://fr.investing.com/news/stock-market-news/pourquoi-laction-alibaba-estelle-en-hausse-aujourdhui--93CH-3705963"
-  },
-  {
-   "h": "Le président exécutif de Black Stone Minerals achète pour 337.587$ d’unités",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-20T03:46:57Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-president-executif-de-black-stone-minerals-achete-pour-337587-dunites-93CH-3705962"
-  },
-  {
-   "h": "Anthropic IPO 'exactly what the markets need,' but analysts warn of volatility",
-   "w": "The Anthropic IPO is \"what the markets need.\" However, analysts say its shares will be volatile in the coming weeks.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-20T03:38:07Z",
-   "url": "https://www.cnbc.com/2026/11/20/anthropic-ipo-stocks-market.html"
-  },
-  {
-   "h": "Les actions Alibaba à Hong-Kong progressent après des résultats trimestriels solides",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-20T03:37:22Z",
-   "url": "https://fr.investing.com/news/stock-market-news/les-actions-alibaba-a-hongkong-progressent-apres-des-resultats-trimestriels-solides-3705961"
-  },
-  {
-   "h": "Le PDG de Five Star Bancorp cède des actions pour 60.687$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-20T03:32:02Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-five-star-bancorp-cede-des-actions-pour-60687-93CH-3705959"
-  },
-  {
-   "h": "Le directeur financier de Fortress Biotech Inc acquiert des actions pour 87.813$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-20T03:31:49Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-de-fortress-biotech-inc-acquiert-des-actions-pour-87813-93CH-3705957"
-  },
-  {
-   "h": "Le PDG de Roadzen Inc achète des actions RDZN pour 17.454$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-20T03:31:49Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-roadzen-inc-achete-des-actions-rdzn-pour-17454-93CH-3705958"
-  },
-  {
-   "h": "Un directeur d’Energous Co vend des actions pour 2.949$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-20T03:31:29Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-denergous-co-vend-des-actions-pour-2949-93CH-3705956"
   },
   {
    "h": "‘Nvidia’s turmoil has me spooked’: Should I sell my stocks and buy real estate — or ride out the storm?",
@@ -2343,22 +2625,6 @@
    "url": "https://www.cnbc.com/2026/11/20/softbank-ai-tech-stocks-slide-anthropic-debut.html"
   },
   {
-   "h": "Un administrateur de Proficient Auto Logistics achète des actions pour 78.120$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-20T03:20:57Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-proficient-auto-logistics-achete-des-actions-pour-78120-93CH-3705954"
-  },
-  {
-   "h": "Le PDG d’Appfolio Inc cède des actions pour 442.942$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-20T03:20:50Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-dappfolio-inc-cede-des-actions-pour-442942-93CH-3705953"
-  },
-  {
    "h": "GTA 6 breaks records as sales top $2.3bn - industry estimate",
    "w": "Rockstar Games ended a 13-year wait with what is expected to be the biggest entertainment launch ever.",
    "syms": [],
@@ -2378,7 +2644,7 @@
    "h": "A thaw in India’s ties with Pakistan?",
    "w": "Plus, Amazon’s $7bn investment",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — economy",
    "ts": "2026-11-20T01:30:02Z",
    "url": "https://www.ft.com/content/c27362fd-e138-4b32-8875-1e52ce4a4e05?syn-25a6b1a6=1",
    "mine": 1
@@ -2413,7 +2679,7 @@
    "syms": [
     "NVDA"
    ],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-20T00:42:44Z",
    "url": "https://www.ft.com/content/76342072-2781-4b16-ba3b-816a25214483?syn-25a6b1a6=1",
    "mine": 1
@@ -2422,7 +2688,7 @@
    "h": "Lenders aim to bar SpaceX from launching $40bn of chips into orbit",
    "w": "Investors in latest semiconductor financing demand legal protection for coveted collateral",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-20T00:15:12Z",
    "url": "https://www.ft.com/content/33b5643c-2957-4d42-9116-5e34a3c54e29?syn-25a6b1a6=1",
    "mine": 1
@@ -2471,18 +2737,9 @@
    "h": "British investors put ‘a quarter’ of their assets in UK stocks",
    "w": "New report shows clear home bias for UK investors",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — world uk",
    "ts": "2026-11-20T00:01:02Z",
    "url": "https://www.ft.com/content/ad00213f-865e-4eb6-9a52-e054f5c6a46a?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Boisterous bosses, sprawling empires: Hong Kong got there first",
-   "w": "Swire Pacific has more in common with the sprawling tech conglomerates than might be imagined",
-   "syms": [],
-   "src": "myFT — companies",
-   "ts": "2026-11-20T00:01:02Z",
-   "url": "https://www.ft.com/content/4c87f714-93a1-47c9-87bf-7cfe36ee6ae7?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2508,6 +2765,64 @@
    "src": "BBC — Business",
    "ts": "2026-11-19T23:33:51Z",
    "url": "https://www.bbc.co.uk/news/articles/c3x29ggenz12o?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "Chip supply chain warns of broader disruption from new US export controls",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-19T23:32:42.033889Z",
+   "url": "https://asia.nikkei.com/business/tech/semiconductors/chip-supply-chain-warns-of-broader-disruption-from-new-us-export-controls"
+  },
+  {
+   "h": "Japan Tobacco shares fall 10% as Russia seizure jolts 900,000 retail holders",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-19T23:32:42.033889Z",
+   "url": "https://asia.nikkei.com/business/markets/equities/japan-tobacco-shares-fall-10-as-russia-seizure-jolts-900-000-retail-holders"
+  },
+  {
+   "h": "Through the Lens: From ASEAN in Manila to APEC in Shenzhen",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-19T23:32:42.033889Z",
+   "url": "https://asia.nikkei.com/photos/through-the-lens-from-asean-in-manila-to-apec-in-shenzhen"
+  },
+  {
+   "h": "India's weak monsoon, El Nino highlight industry's growing water issues",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-19T23:32:42.033889Z",
+   "url": "https://asia.nikkei.com/spotlight/environment/india-s-weak-monsoon-el-nino-highlight-industry-s-growing-water-issues"
+  },
+  {
+   "h": "Singapore banks put tokenization to practical use with gold, bonds",
+   "w": "",
+   "syms": [
+    "XAU"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-19T23:32:42.033889Z",
+   "url": "https://asia.nikkei.com/business/finance/singapore-banks-put-tokenization-to-practical-use-with-gold-bonds"
+  },
+  {
+   "h": "Anthropic IPO draws rush of Japan retail investors",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-19T23:32:42.033889Z",
+   "url": "https://asia.nikkei.com/business/markets/ipo/anthropic-ipo-draws-rush-of-japan-retail-investors"
+  },
+  {
+   "h": "U.S. Steel agrees with union to raise wages 19.25% over 4 years",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-19T23:32:42.033889Z",
+   "url": "https://asia.nikkei.com/business/companies/u.s.-steel-agrees-with-union-to-raise-wages-19.25-over-4-years"
   },
   {
    "h": "Intelligence artificielle : l’action Anthropic finit sa première journée en hausse de 17 % et valorise l’entreprise à 1 280 milliards de dollars",
@@ -2599,22 +2914,6 @@
    "url": "https://asia.nikkei.com/business/companies/global-goodwill-assets-hit-10.5tn-on-m-a-boom-but-interest-rate-risk-looms"
   },
   {
-   "h": "Itochu, Sony partner to market artist-branded merchandise in IP push",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-19T22:20:51.929921Z",
-   "url": "https://asia.nikkei.com/business/media-entertainment/itochu-sony-partner-to-market-artist-branded-merchandise-in-ip-push"
-  },
-  {
-   "h": "Japan ethylene output depressed despite normal naphtha supplies",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-19T22:20:51.929921Z",
-   "url": "https://asia.nikkei.com/business/materials/japan-ethylene-output-depressed-despite-normal-naphtha-supplies2"
-  },
-  {
    "h": "Anthropic’s stock surges in its debut — and the rest of the market dives anyway",
    "w": "All four major U.S. stock indexes are now on pace for their worst week since President Trump’s “liberation day” tariffs of April 2025",
    "syms": [],
@@ -2631,17 +2930,6 @@
    "url": "https://www.marketwatch.com/story/markets-are-sending-troubling-signals-about-the-state-of-the-economy-8043f20e?mod=mw_rss_topstories"
   },
   {
-   "h": "FirstFT: Anthropic shares jump 17% after record Wall Street debut",
-   "w": "Also in today’s newsletter: Xi hails ‘groundbreaking’ trilateral meeting and Houthi air strike hits Saudi sovereign wealth fund headquarters",
-   "syms": [
-    "SPX"
-   ],
-   "src": "myFT — technology",
-   "ts": "2026-11-19T21:50:06Z",
-   "url": "https://www.ft.com/content/5fbbe806-37d7-42e4-8235-ce9cbb3f2cdb?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Nvidia’s stock falls further. It has lost $669 billion in six trading days.",
    "w": "There are only 20 companies in the world with a market capitalization of $669 billion or higher",
    "syms": [
@@ -2650,6 +2938,17 @@
    "src": "MarketWatch",
    "ts": "2026-11-19T21:45:00Z",
    "url": "https://www.marketwatch.com/story/nvidias-stock-falls-further-it-has-lost-611-billion-in-six-trading-days-434af231?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Anthropic’s rocketing IPO",
+   "w": "The AI lab’s shares pop on day one even as the Nasdaq continues to slide",
+   "syms": [
+    "NDX"
+   ],
+   "src": "myFT — technology",
+   "ts": "2026-11-19T21:44:32Z",
+   "url": "https://www.ft.com/content/a7e598c1-90b2-41c8-917c-f6fca2dfe5ea?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "Intuit to sell Mailchimp to Bending Spoons for $3.68 billion",
@@ -2677,14 +2976,6 @@
    "url": "https://asia.nikkei.com/politics/international-relations/apec/apec-live-how-events-in-shenzhen-unfolded"
   },
   {
-   "h": "India's weak monsoon, El Nino highlight industry's water growing issues",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-19T21:18:19.827808Z",
-   "url": "https://asia.nikkei.com/spotlight/environment/india-s-weak-monsoon-el-nino-highlight-industry-s-water-growing-issues"
-  },
-  {
    "h": "International students in Japan face language hurdles when seeking jobs",
    "w": "",
    "syms": [],
@@ -2701,20 +2992,12 @@
    "url": "https://asia.nikkei.com/business/markets/ipo/anthropic-closes-17-above-ipo-price-after-34-opening-surge"
   },
   {
-   "h": "AI volatility 'expected' as winners, losers emerge: JPMorgan co-president",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-19T21:18:19.827808Z",
-   "url": "https://asia.nikkei.com/editor-s-picks/interview/ai-volatility-expected-as-winners-losers-emerge-jpmorgan-co-president"
-  },
-  {
    "h": "Anthropic shares jump 17% after record Wall Street listing",
    "w": "AI group led by Dario Amodei raises $81bn in upsized public offering",
    "syms": [
     "SPX"
    ],
-   "src": "myFT — companies",
+   "src": "myFT — technology",
    "ts": "2026-11-19T21:02:09Z",
    "url": "https://www.ft.com/content/2b203097-7c61-464f-810f-962912a133dd?syn-25a6b1a6=1",
    "mine": 1
@@ -2723,32 +3006,16 @@
    "h": "Law firms that caved to Trump brace for scrutiny from new Congress",
    "w": "Firms are hiring outside lawyers as Democrats probe deals they struck with the president",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-19T20:35:00Z",
    "url": "https://www.ft.com/content/4e712188-9dfc-4e2a-b997-3dacde95bf08?syn-25a6b1a6=1",
    "mine": 1
   },
   {
-   "h": "Japanese automakers brace for 3rd year of global sales decline",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-19T20:25:56.725455Z",
-   "url": "https://asia.nikkei.com/business/automobiles/japanese-automakers-brace-for-3rd-year-of-global-sales-decline"
-  },
-  {
-   "h": "Rural Japan fears new visas will divert foreign workers to Tokyo",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-19T20:25:56.725455Z",
-   "url": "https://asia.nikkei.com/spotlight/policy-asia/rural-japan-fears-new-visas-will-divert-foreign-workers-to-tokyo"
-  },
-  {
    "h": "‘Frustrated’ regulator vows to tackle electricity grid delays",
    "w": "Attempts to accelerate connections may have backfired",
    "syms": [],
-   "src": "myFT — companies",
+   "src": "myFT — energy",
    "ts": "2026-11-19T20:18:30Z",
    "url": "https://www.ft.com/content/81b74d04-1289-4e87-8777-9eec66d9ae10?syn-25a6b1a6=1",
    "mine": 1
@@ -2762,16 +3029,6 @@
    "url": "https://www.cnbc.com/2026/11/19/walmart-wmt-q3-2026-earnings.html"
   },
   {
-   "h": "Trump bought Nvidia, Palantir, SpaceX in September as federal deals, White House ties grew",
-   "w": "President Trump disclosed purchases of Nvidia stock, SpaceX debt and Tesla shares in September, alongside millions of dollars in other investments.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-19T19:43:08Z",
-   "url": "https://www.cnbc.com/2026/11/19/trump-nvidia-spacex-palantir-stock-trades-september.html"
-  },
-  {
    "h": "Présidentielle 2027 : les créateurs de contenu auront des obligations de pluralisme dans leur traitement de l’élection",
    "w": "L’Autorité de régulation de la communication audiovisuelle et numérique a annoncé, jeudi 19 novembre, que les influenceurs et podcasteurs qui reçoivent des personnalités politiques devront, comme les télévisions et les radios, se soumettre à des règles de temps de parole et de déontologie.",
    "syms": [],
@@ -2783,27 +3040,10 @@
    "h": "Brazil’s central bank steps in to stem real’s slide since Lula’s re-election",
    "w": "Currency has slipped from R$5 to R$5.90 to the dollar following leftwinger’s victory last month",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — economy",
    "ts": "2026-11-19T19:25:18Z",
    "url": "https://www.ft.com/content/94379926-211c-4ca6-a53a-f7e4df1a2675?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "The Xi, Trump, Putin meeting and the dawn of a post-western world",
-   "w": "The symbolism was the substance in Shenzhen",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-19T19:19:44Z",
-   "url": "https://www.ft.com/content/01dde30c-977c-4f21-8838-4c3955dfacb7?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Asian tech stocks fall sharply after Anthropic's blockbuster IPO",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-19T19:12:25.808144Z",
-   "url": "https://asia.nikkei.com/business/markets/asian-tech-stocks-fall-sharply-after-anthropic-s-blockbuster-ipo"
   },
   {
    "h": "Putin invites European leaders to Moscow for talks on Ukraine",
@@ -2818,7 +3058,7 @@
    "h": "Sage maps out the attractions of the UK’s tech hinterland",
    "w": "By embedding AI into its products, the software group hopes it can dissuade its small business clients from looking elsewhere",
    "syms": [],
-   "src": "myFT — companies",
+   "src": "myFT — technology",
    "ts": "2026-11-19T18:44:09Z",
    "url": "https://www.ft.com/content/0918d3ec-f398-4508-8027-33c0f7327a50?syn-25a6b1a6=1",
    "mine": 1
@@ -2829,27 +3069,9 @@
    "syms": [
     "NVDA"
    ],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-19T18:40:23Z",
    "url": "https://www.ft.com/content/69fd7870-a2cf-4e75-88bc-a1c4036efded?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Leaked files shine a harsh light on Deutsche Bank",
-   "w": "Revelations about Germany’s biggest lender carry lessons for European peers",
-   "syms": [],
-   "src": "myFT — banks",
-   "ts": "2026-11-19T18:30:01Z",
-   "url": "https://www.ft.com/content/e444203b-c639-4cb5-b35a-75829d2d62de?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Climate talks drop fossil fuel phaseout and pivot to carbon capture",
-   "w": "Final COP31 sessions focusing on energy security rather than climate change",
-   "syms": [],
-   "src": "myFT — companies",
-   "ts": "2026-11-19T18:16:58Z",
-   "url": "https://www.ft.com/content/134dcef4-9453-48bd-bcbd-4180818d3aca?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2861,15 +3083,6 @@
    "url": "https://www.lemonde.fr/economie/article/2026/11/19/l-union-europeenne-reporte-l-entree-en-vigueur-de-son-reglement-pionnier-sur-le-methane-au-nom-de-la-securite-energetique_6813359_3234.html"
   },
   {
-   "h": "UK’s long-delayed pensions dashboard now due to launch next year",
-   "w": "Pensions minister says hub allowing people to view all their retirement pots in one place will go live in 2027",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-19T17:14:53Z",
-   "url": "https://www.ft.com/content/64822545-cd35-44d0-b267-b6231893666b?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "En cette fin d’année, le commerce de l’habillement s’alarme de la conjoncture",
    "w": "Les manifestations, qui se déroulent depuis fin septembre dans les rues des grandes villes françaises, compliquent l’activité des commerçants. L’année 2026 devrait s’achever sur un recul des ventes d’habillement de 2,2 %.",
    "syms": [],
@@ -2878,220 +3091,12 @@
    "url": "https://www.lemonde.fr/economie/article/2026/11/19/en-cette-fin-d-annee-le-commerce-de-l-habillement-s-alarme-de-la-conjoncture_6813351_3234.html"
   },
   {
-   "h": "Trump administration plans further cuts at US audit regulator",
-   "w": "Watchdog to scale back inspections and enforcement against accounting firms while investing in AI tools",
-   "syms": [],
-   "src": "myFT — markets",
-   "ts": "2026-11-19T16:54:41Z",
-   "url": "https://www.ft.com/content/9c07ad42-0778-4a1c-b30b-f561f672f92e?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Central banks ❤️ US dollars",
-   "w": "A tour of central bank foreign exchange reserve policy, in 248 charts",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-19T16:50:48Z",
-   "url": "https://www.ft.com/content/cb01773d-32ae-424c-a5be-a0b960d353ce",
-   "mine": 1
-  },
-  {
    "h": "Le dispositif « Territoires zéro chômeur de longue durée », expérimenté depuis dix ans, pérennisé par les députés",
    "w": "Le mécanisme visant à accompagner les personnes durablement éloignées du marché de l’emploi sera inscrit dans le droit commun à partir du 1ᵉʳ janvier 2027. Une adoption obtenue jeudi sur initiative du Parti socialiste.",
    "syms": [],
    "src": "Le Monde — Économie",
    "ts": "2026-11-19T16:45:44Z",
    "url": "https://www.lemonde.fr/politique/article/2026/11/19/le-dispositif-territoires-zero-chomeur-de-longue-duree-experimente-depuis-dix-ans-perennise-par-les-deputes_6813347_823448.html"
-  },
-  {
-   "h": "Houthi air strike hits Saudi sovereign wealth fund headquarters",
-   "w": "Attack on powerful Public Investment Fund follows near-daily barrages on the kingdom by Houthi rebels",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-19T16:38:08Z",
-   "url": "https://www.ft.com/content/05ed47a5-7cc1-402f-ad0d-826ba09a05c8?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "US stocks end more than 2% lower in wake of Anthropic debut",
-   "w": "AI group led by Dario Amodei begins trading on Nasdaq after raising $81bn in upsized public offering",
-   "syms": [
-    "SPX",
-    "NDX"
-   ],
-   "src": "myFT — world",
-   "ts": "2026-11-19T16:19:06Z",
-   "url": "https://www.ft.com/content/7a6b211d-c73b-4953-97ee-ed92dab8ee07?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "A Lyon, le promoteur immobilier Nexity livre des logements innovants conçus sans climatisation ni chauffage",
-   "w": "L’entreprise française a inauguré, mardi 17 novembre, à Lyon, le premier immeuble en France élaboré selon un concept d’isolation et de ventilation automatisée, permettant d’assurer aux logements une température d’environ 20 °C à 22 °C en hiver et au maximum 26 °C en été, sans utilisation de chauffage ni de climatisation.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-19T16:00:21Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/11/19/a-lyon-le-promoteur-immobilier-nexity-livre-des-logements-concus-sans-climatisation-ni-chauffage_6813342_3234.html"
-  },
-  {
-   "h": "Federal Reserve Board issues enforcement action with former employee of First Security Bancorp",
-   "w": "Federal Reserve Board issues enforcement action with former employee of First Security Bancorp",
-   "syms": [],
-   "src": "Federal Reserve — press releases",
-   "ts": "2026-11-19T16:00:00Z",
-   "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261119a.htm"
-  },
-  {
-   "h": "UK loses bid to keep Apple ‘backdoor’ order secret",
-   "w": "Privacy rights campaigners laud a ‘big win for accountability, transparency and online security’",
-   "syms": [],
-   "src": "myFT — world uk",
-   "ts": "2026-11-19T15:50:37Z",
-   "url": "https://www.ft.com/content/46a5cf3c-a827-477f-b72f-e7415565e729?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Walmart boosted by grocery sales as US consumers search for lower prices",
-   "w": "Retailer said it took greater share of Americans’ spending on groceries in third quarter",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-19T15:47:13Z",
-   "url": "https://www.ft.com/content/55ca051f-af14-48e9-94cc-b700b3097e2f?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "South Africa’s ‘Iron Lady’ tells allies her Johannesburg mayor bid is over",
-   "w": "Veteran politician Helen Zille’s Democratic Alliance finished first in local elections but is not expected to take power in economic capital after days of coalition horse-trading",
-   "syms": [],
-   "src": "myFT — emerging markets",
-   "ts": "2026-11-19T15:40:19Z",
-   "url": "https://www.ft.com/content/d7f7ed3f-3399-4db4-a8d4-1e48f0ed0a15?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Going to university is not just about money",
-   "w": "The life satisfaction return on an undergraduate degree is substantially higher than it was even a quarter of a century ago",
-   "syms": [],
-   "src": "myFT — world uk",
-   "ts": "2026-11-19T15:35:43Z",
-   "url": "https://www.ft.com/content/18735981-fabf-41a7-a9c4-ed9f1002b8e9",
-   "mine": 1
-  },
-  {
-   "h": "Milbank swoops on Weil Paris office as US law firms target European growth",
-   "w": "Recruitment of 87-lawyer team will give Milbank a French office for first time",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-19T15:30:08Z",
-   "url": "https://www.ft.com/content/d3f558d6-bbe3-4ba6-b831-8064579a6731?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "« Inside Deutsche Bank » : comment l’argent du clan Al-Assad a circulé en Europe, malgré les enquêtes judiciaires",
-   "w": "Près de 80 millions d’euros de flux financiers liés à Rifaat Al-Assad, oncle du dictateur syrien déchu et criminel de guerre, ont transité par la banque allemande. L’enquête « Inside Deutsche Bank » révèle qu’une large partie des transactions en cause auraient pu être identifiées dès l’origine.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-19T15:00:00Z",
-   "url": "https://www.lemonde.fr/les-decodeurs/article/2026/11/19/inside-deutsche-bank-comment-l-argent-du-clan-al-assad-a-circule-en-europe-malgre-les-enquetes-judiciaires_6813322_4355770.html"
-  },
-  {
-   "h": "Gulf flare-up stokes fears of return to Iran war",
-   "w": "A week of tit-for-tat escalation by Iran and the US has brought the countries closer to another full-scale confrontation, analysts say",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-19T14:53:28Z",
-   "url": "https://www.ft.com/content/090da02e-2ed1-491a-a2cf-3c8a6b10522e?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Nscale warns of its exposure to suppliers facing US blacklist",
-   "w": "Nvidia-backed start-up’s $35bn IPO plans hit by ties to groups at risk of being placed on Washington’s ‘entity list’",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "myFT — us",
-   "ts": "2026-11-19T14:39:18Z",
-   "url": "https://www.ft.com/content/97912585-2412-496c-a224-78e69328bcdb?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Germany hit by AI-driven surge in cyber attacks",
-   "w": "Threat level ‘critical’ as new tools make it far easier for hackers to exploit security flaws",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-19T14:28:48Z",
-   "url": "https://www.ft.com/content/cf875eb6-34a2-413e-b89d-bc609367a19e?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "UN court rules Myanmar committed genocide in landmark verdict",
-   "w": "ICJ in The Hague hands down first-ever such decision against a state over 2017 persecution of Rohingya minority",
-   "syms": [],
-   "src": "myFT — followed topic",
-   "ts": "2026-11-19T14:18:54Z",
-   "url": "https://www.ft.com/content/411d28f3-5adf-4a2f-9390-bc3372b4b3a9?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "The dangers of AI ‘handoverism’",
-   "w": "Even some of Silicon Valley’s most enthusiastic capitalists are alarmed about how far and fast the technology is moving",
-   "syms": [],
-   "src": "myFT — technology",
-   "ts": "2026-11-19T14:04:09Z",
-   "url": "https://www.ft.com/content/45194ea4-4fa7-4c38-a5b2-137eb7402d57?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Trump, Putin and Xi in historic trilateral meeting",
-   "w": "Also in today’s newsletter, US tech outages blamed on rush to fix bugs found by AI",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-19T14:00:03Z",
-   "url": "https://www.ft.com/content/3ab490ea-825a-4ef4-9239-a2905d7f7f3c?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "UK revamps renewable energy auctions in move to bring down costs",
-   "w": "Developers to be pushed into offering lowest possible prices by bidding for subsidies without knowing the levels of funding available",
-   "syms": [],
-   "src": "myFT — world uk",
-   "ts": "2026-11-19T13:58:55Z",
-   "url": "https://www.ft.com/content/c39c29f8-3141-423e-b6b9-674e40be1e66?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Kenya awards prized rare earth deposit to US group",
-   "w": "Deal is a win for the Trump administration’s efforts to counter China’s dominance of the metals used for magnets",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-19T13:53:19Z",
-   "url": "https://www.ft.com/content/913e3748-6bf2-4c59-b2b6-31bf58a166ab?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "The key to Anthropic’s value",
-   "w": "The AI company needs to become a full enterprise technology platform after IPO",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-19T13:47:00Z",
-   "url": "https://www.ft.com/content/aa8290dc-a20a-45af-97ab-1e71f97f236a?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Viagogo may have broken law on hidden fees, watchdog provisionally finds",
-   "w": "The UK's competition body says initial findings suggest the ticket-reselling website used drip pricing.",
-   "syms": [],
-   "src": "BBC — Business",
-   "ts": "2026-11-19T13:35:52Z",
-   "url": "https://www.bbc.co.uk/news/articles/cmvg2ex7j30lo?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "France and UK at loggerheads ahead of key EU summit",
-   "w": "Talks go down to the wire with haggling over whether Britain should be able to shape regulations",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-19T13:06:34Z",
-   "url": "https://www.ft.com/content/53091ded-e5c8-4c29-a3f9-48c0ea871ab9?syn-25a6b1a6=1",
-   "mine": 1
   }
  ],
  "summary": {
