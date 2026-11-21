@@ -1,20 +1,19 @@
 {
- "generated_at": "2026-11-21T02:29:02.214832Z",
+ "generated_at": "2026-11-21T03:23:16.903367Z",
  "quotes": {
   "NVDA": {
-   "p": 125.79,
+   "p": 125.53,
    "prev": 145.98,
-   "chg": -20.19,
-   "pct": -13.83,
+   "chg": -20.45,
+   "pct": -14.01,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (NVDA)",
    "ts": "2026-11-20T21:00:00Z",
-   "open": 143.57,
+   "open": 143.52,
    "lo": 124.5,
-   "hi": 143.725,
-   "vol": 626274281,
+   "hi": 143.73,
+   "vol": 626373200,
    "h": [
-    221.97,
     212.21,
     210.96,
     216.0,
@@ -35,23 +34,23 @@
     156.14,
     155.46,
     150.96,
-    145.98
+    145.98,
+    125.53
    ]
   },
   "ASTS": {
-   "p": 23.265,
+   "p": 23.27,
    "prev": 25.55,
-   "chg": -2.285,
-   "pct": -8.94,
+   "chg": -2.28,
+   "pct": -8.92,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-11-20T21:00:00Z",
-   "open": 24.965,
+   "open": 24.85,
    "lo": 22.72,
-   "hi": 25.95,
-   "vol": 24490222,
+   "hi": 25.96,
+   "vol": 24483100,
    "h": [
-    40.9,
     38.77,
     39.79,
     39.45,
@@ -72,7 +71,8 @@
     28.58,
     27.59,
     25.49,
-    25.55
+    25.55,
+    23.27
    ]
   },
   "SPX": {
@@ -191,8 +191,8 @@
    "prev": 2655.1101,
    "chg": -73.3206,
    "pct": -2.76,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^RUT)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^RUT) — last update failed",
    "ts": "2026-11-20T21:00:00Z",
    "open": 2641.1599,
    "lo": 2577.0908,
@@ -229,7 +229,7 @@
    "pct": 26.2,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^VIX)",
-   "ts": "2026-11-20T21:15:00Z",
+   "ts": "2026-11-20T21:00:00Z",
    "open": 28.63,
    "lo": 26.94,
    "hi": 40.03,
@@ -259,18 +259,18 @@
    ]
   },
   "N225": {
-   "p": 56576.4102,
+   "p": 56436.6484,
    "prev": 59444.2109,
-   "chg": -2867.8008,
-   "pct": -4.82,
+   "chg": -3007.5625,
+   "pct": -5.06,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^N225)",
    "ts": "2026-11-20T06:30:00Z",
    "open": 58551.5586,
    "lo": 56436.6484,
    "hi": 58707.4805,
+   "vol": 174600000,
    "h": [
-    64075.42,
     64621.24,
     62907.84,
     62693.16,
@@ -291,7 +291,8 @@
     59662.02,
     58860.43,
     59024.28,
-    59444.21
+    59444.21,
+    56436.65
    ]
   },
   "HSI": {
@@ -305,8 +306,8 @@
    "open": 22482.3906,
    "lo": 22307.4199,
    "hi": 22593.5098,
+   "vol": 3841700000,
    "h": [
-    23651.87,
     22934.68,
     23093.37,
     23211.81,
@@ -327,23 +328,23 @@
     23753.84,
     23508.17,
     23294.75,
-    22841.62
+    22841.62,
+    22410.8
    ]
   },
   "SHCOMP": {
-   "p": 3531.1189,
+   "p": 3533.793,
    "prev": 3577.6169,
-   "chg": -46.498,
-   "pct": -1.3,
+   "chg": -43.824,
+   "pct": -1.22,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (000001.SS)",
    "ts": "2026-11-20T07:00:00Z",
-   "open": 3527.3037,
-   "lo": 3500.8325,
-   "hi": 3538.2673,
-   "vol": 2726532444,
+   "open": 3527.304,
+   "lo": 3500.833,
+   "hi": 3538.2671,
+   "vol": 499700,
    "h": [
-    3713.03,
     3658.03,
     3690.48,
     3697.52,
@@ -364,22 +365,23 @@
     3602.57,
     3584.58,
     3587.83,
-    3577.62
+    3577.62,
+    3533.79
    ]
   },
   "STI": {
-   "p": 4972.23,
+   "p": 4975.1699,
    "prev": 5079.4902,
-   "chg": -107.2603,
-   "pct": -2.11,
+   "chg": -104.3203,
+   "pct": -2.05,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^STI)",
    "ts": "2026-11-20T09:00:00Z",
    "open": 5024.9902,
    "lo": 4968.0298,
    "hi": 5030.5,
+   "vol": 419127700,
    "h": [
-    5404.02,
     5437.99,
     5415.14,
     5422.16,
@@ -400,22 +402,23 @@
     5183.18,
     5109.13,
     5054.89,
-    5079.49
+    5079.49,
+    4975.17
    ]
   },
   "UKX": {
-   "p": 10360.9404,
+   "p": 10346.2998,
    "prev": 10452.7002,
-   "chg": -91.7598,
-   "pct": -0.88,
+   "chg": -106.4004,
+   "pct": -1.02,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^FTSE)",
    "ts": "2026-11-20T16:30:00Z",
-   "open": 10452.7695,
-   "lo": 10330.04,
-   "hi": 10452.7695,
+   "open": 10452.7998,
+   "lo": 10330.0,
+   "hi": 10452.7998,
+   "vol": 699167100,
    "h": [
-    10752.9,
     10725.0,
     10690.4,
     10767.3,
@@ -436,22 +439,23 @@
     10881.6,
     10689.9,
     10551.2,
-    10452.7
+    10452.7,
+    10346.3
    ]
   },
   "DAX": {
-   "p": 24839.4707,
+   "p": 24802.7793,
    "prev": 25463.8105,
-   "chg": -624.3398,
-   "pct": -2.45,
+   "chg": -661.0312,
+   "pct": -2.6,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^GDAXI)",
    "ts": "2026-11-20T16:30:00Z",
    "open": 25187.5098,
    "lo": 24801.2207,
    "hi": 25194.6406,
+   "vol": 79848300,
    "h": [
-    25645.04,
     25371.75,
     25181.65,
     25410.84,
@@ -472,22 +476,23 @@
     26598.64,
     26045.37,
     25736.24,
-    25463.81
+    25463.81,
+    24802.78
    ]
   },
   "CAC": {
-   "p": 7940.0698,
+   "p": 7927.75,
    "prev": 8080.7402,
-   "chg": -140.6704,
-   "pct": -1.74,
+   "chg": -152.9902,
+   "pct": -1.89,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^FCHI)",
    "ts": "2026-11-20T16:30:00Z",
    "open": 8020.1899,
    "lo": 7927.75,
    "hi": 8029.0801,
+   "vol": 74077400,
    "h": [
-    7921.68,
     7811.26,
     7782.82,
     7847.32,
@@ -508,22 +513,23 @@
     8352.0,
     8216.78,
     8146.83,
-    8080.74
+    8080.74,
+    7927.75
    ]
   },
   "SX5E": {
-   "p": 5951.9702,
+   "p": 5941.9502,
    "prev": 6113.8599,
-   "chg": -161.8896,
-   "pct": -2.65,
+   "chg": -171.9097,
+   "pct": -2.81,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^STOXX50E)",
    "ts": "2026-11-20T16:30:00Z",
    "open": 6064.7598,
    "lo": 5941.9502,
    "hi": 6064.7598,
+   "vol": 31142000,
    "h": [
-    6207.52,
     6087.01,
     6068.22,
     6116.23,
@@ -544,7 +550,8 @@
     6348.35,
     6212.11,
     6154.39,
-    6113.86
+    6113.86,
+    5941.95
    ]
   },
   "EURUSD": {
@@ -803,17 +810,17 @@
    ]
   },
   "BTC": {
-   "p": 58824.25,
+   "p": 58190.4883,
    "prev": 61901.8203,
-   "chg": -3077.5703,
-   "pct": -4.97,
+   "chg": -3711.332,
+   "pct": -6.0,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-21T02:29:02.214832Z",
+   "ts": "2026-11-21T03:23:16.903367Z",
    "open": 58802.6016,
-   "lo": 58790.2383,
+   "lo": 58135.4609,
    "hi": 59081.543,
-   "vol": 59572191232,
+   "vol": 59756949504,
    "h": [
     77198.21,
     77434.75,
@@ -836,7 +843,7 @@
     64893.95,
     62987.27,
     61901.82,
-    58824.25
+    58190.49
    ]
   }
  },
@@ -963,7 +970,7 @@
    "fcf": 2994125056,
    "w52lo": 349.2,
    "w52hi": 559.15,
-   "evEbitda": 17.847,
+   "evEbitda": 17.83,
    "earnTs": 1793217600,
    "earnStart": 1801083600,
    "earnEnd": 1801083600,
@@ -1063,9 +1070,9 @@
    "industry": "Semiconductors",
    "ccy": "USD",
    "mcap": 1652980711424,
-   "pe": 20.6552,
+   "pe": 22.8139,
    "fpe": 13.6287,
-   "eps": 15.43,
+   "eps": 13.97,
    "feps": 23.3853,
    "revTTM": 4944817553408,
    "netIncome": 2527571476480,
@@ -1127,7 +1134,7 @@
    "debt": 39217999872,
    "w52lo": 104.83,
    "w52hi": 225.64,
-   "evEbitda": 143.907,
+   "evEbitda": 143.566,
    "earnTs": 1792526400,
    "earnStart": 1792526400,
    "earnEnd": 1792526400,
@@ -1295,7 +1302,7 @@
    "fcf": 30596499456,
    "w52lo": 289.77,
    "w52hi": 495.0,
-   "evEbitda": 28.506,
+   "evEbitda": 28.484,
    "earnTs": 1796850000,
    "earnStart": 1796850000,
    "earnEnd": 1796850000,
@@ -1351,9 +1358,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 1199931523072,
-   "pe": 43.7231,
+   "pe": 43.8512,
    "fpe": 26.4812,
-   "eps": 30.81,
+   "eps": 30.72,
    "feps": 50.8704,
    "revTTM": 86461997056,
    "netIncome": 27580000256,
@@ -1560,9 +1567,9 @@
    "industry": "Banks - Diversified",
    "ccy": "USD",
    "mcap": 824646434816,
-   "pe": 13.0256,
+   "pe": 13.4312,
    "fpe": 12.1429,
-   "eps": 23.84,
+   "eps": 23.12,
    "feps": 25.5731,
    "revTTM": 190732992512,
    "netIncome": 64526999552,
@@ -1729,9 +1736,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 651105206272,
-   "pe": 41.0425,
+   "pe": 40.5502,
    "fpe": 23.2924,
-   "eps": 6.59,
+   "eps": 6.67,
    "feps": 11.612,
    "revTTM": 99334995968,
    "netIncome": 16094999552,
@@ -2015,7 +2022,7 @@
    "fcf": 2652487680,
    "w52lo": 106.37,
    "w52hi": 212.94,
-   "evEbitda": 100.083,
+   "evEbitda": 99.997,
    "earnTs": 1793653200,
    "earnStart": 1801515600,
    "earnEnd": 1801515600,
@@ -2218,90 +2225,98 @@
  ],
  "news": [
   {
-   "h": "Un administrateur d’Ondas Holdings Inc vend des actions pour 21.032$",
-   "w": "",
+   "h": "Tech outages are rattling Americans so much that they’re stockpiling cash and supplies",
+   "w": "A lack of clarity from world leaders is prompting some people to prepare for the worst.",
    "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T02:17:03Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-dondas-holdings-inc-vend-des-actions-pour-21032-93CH-3707751"
+   "src": "MarketWatch",
+   "ts": "2026-11-21T03:20:00Z",
+   "url": "https://www.marketwatch.com/story/why-are-these-tech-outages-rattling-americans-so-much-that-theyre-stockpiling-cash-and-supplies-07516bdd?mod=mw_rss_topstories"
   },
   {
-   "h": "Le directeur des opérations d’Ondas Holdings Inc vend des actions pour 18.784$",
+   "h": "Le directeur commercial de Peloton vend des actions pour 519.264$",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-21T02:16:58Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-des-operations-dondas-holdings-inc-vend-des-actions-pour-18784-93CH-3707750"
+   "ts": "2026-11-21T03:16:53Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-commercial-de-peloton-vend-des-actions-pour-519264-93CH-3707769"
   },
   {
-   "h": "Le directeur des risques de Home Bancorp Inc achète pour 315.013$ d’actions",
+   "h": "Un directeur de Cross Timbers Royalty Trust achète pour 72.264$ d’unités",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-21T02:02:24Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-des-risques-de-home-bancorp-inc-achete-pour-315013-dactions-93CH-3707747"
+   "ts": "2026-11-21T03:16:41Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-cross-timbers-royalty-trust-achete-pour-72264-dunites-93CH-3707768"
   },
   {
-   "h": "Le PDG de Virtuix Holdings Inc achète des actions pour 9.740$",
+   "h": "Le PDG de Fold Holdings Inc vend des actions pour 4.950$",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-21T02:01:53Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-virtuix-holdings-inc-achete-des-actions-pour-9740-93CH-3707746"
+   "ts": "2026-11-21T03:01:56Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-fold-holdings-inc-vend-des-actions-pour-4950-93CH-3707766"
   },
   {
-   "h": "Le directeur comptable d’Upstart Holdings vend des actions pour 9.156$",
+   "h": "Le PDG de ThredUp Inc vend des actions pour 84.665$",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-21T01:51:58Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-comptable-dupstart-holdings-vend-des-actions-pour-9156-93CH-3707745"
+   "ts": "2026-11-21T03:01:50Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-thredup-inc-vend-des-actions-pour-84665-93CH-3707765"
   },
   {
-   "h": "Le directeur juridique d’Upstart Holdings vend des actions pour 120.142$",
+   "h": "Le directeur comptable de Regency Centers vend des actions pour 109.539$",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-21T01:51:49Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-juridique-dupstart-holdings-vend-des-actions-pour-120142-93CH-3707744"
+   "ts": "2026-11-21T03:01:37Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-comptable-de-regency-centers-vend-des-actions-pour-109539-93CH-3707764"
   },
   {
-   "h": "Le président d’Upstart cède des actions pour 139.609$",
+   "h": "Un administrateur d’Eagle Montana cède des actions pour 33.130$",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-21T01:51:44Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-president-dupstart-cede-des-actions-pour-139609-93CH-3707743"
+   "ts": "2026-11-21T02:50:35Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-deagle-montana-cede-des-actions-pour-33130-93CH-3707763"
   },
   {
-   "h": "Le PDG d’Upstart Holdings Inc achète pour 860.065$ d’actions",
+   "h": "Un directeur d’ICU Medical Inc vend des actions pour 155.513$",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-21T01:47:36Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-dupstart-holdings-inc-achete-pour-860065-dactions-93CH-3707742"
+   "ts": "2026-11-21T02:46:56Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-dicu-medical-inc-vend-des-actions-pour-155513-93CH-3707762"
   },
   {
-   "h": "Le directeur d’Upstart Holdings Dave Girouard achète pour 950.988$ d’actions",
+   "h": "Un administrateur de Walt Disney Company vend des actions DIS pour 39,5 millions $",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-21T01:47:27Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-dupstart-holdings-dave-girouard-achete-pour-950988-dactions-93CH-3707741"
+   "ts": "2026-11-21T02:46:51Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-walt-disney-company-vend-des-actions-dis-pour-395-millions--93CH-3707761"
   },
   {
-   "h": "Le directeur financier d’Upstart Holdings Inc vend des actions pour 55.050$",
+   "h": "Le directeur Paul Roeder de Walt Disney Company vend des actions pour 597.818$",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-21T01:47:19Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-dupstart-holdings-inc-vend-des-actions-pour-55050-93CH-3707740"
+   "ts": "2026-11-21T02:46:39Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-paul-roeder-de-walt-disney-company-vend-des-actions-pour-597818-93CH-3707760"
+  },
+  {
+   "h": "Saba Capital Management acquiert 162.998$ dans Ellsworth Convertible Growth & IF",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T02:46:29Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/saba-capital-management-acquiert-162998-dans-ellsworth-convertible-growth--if-93CH-3707759"
   },
   {
    "h": "‘Sandpapergate’ fallout gives Australian cricket a rough time",
    "w": "Fresh allegations over 2018 cheating scandal spark wider national debate over sport",
    "syms": [],
-   "src": "myFT — asia pacific",
+   "src": "myFT — world",
    "ts": "2026-11-21T01:11:23Z",
    "url": "https://www.ft.com/content/21e99fa9-325d-4294-a459-97393c0d107f?syn-25a6b1a6=1",
    "mine": 1
@@ -2479,6 +2494,40 @@
    "url": "https://www.marketwatch.com/story/anthropics-stock-slides-closer-to-ipo-price-and-drags-down-the-ai-trade-cc43a0c4?mod=mw_rss_topstories"
   },
   {
+   "h": "Indonesian leader chases Sukarno's phantom with defiant posture",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-20T21:23:16.903367Z",
+   "url": "https://asia.nikkei.com/spotlight/comment/indonesian-leader-chases-sukarno-s-phantom-with-defiant-posture"
+  },
+  {
+   "h": "Chinese 3D printer maker Bambu Lab scales up production in Shenzhen",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-20T21:23:16.903367Z",
+   "url": "https://asia.nikkei.com/business/china-tech/chinese-3d-printer-maker-bambu-lab-scales-up-production-in-shenzhen"
+  },
+  {
+   "h": "Japan sovereign AI project faces $5bn cost surge on chip prices, weak yen",
+   "w": "",
+   "syms": [
+    "USDJPY"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-20T21:23:16.903367Z",
+   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/japan-sovereign-ai-project-faces-5bn-cost-surge-on-chip-prices-weak-yen"
+  },
+  {
+   "h": "Hyundai, Honda feature US hybrids at auto show amid investment wave",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-20T21:23:16.903367Z",
+   "url": "https://asia.nikkei.com/business/automobiles/hyundai-honda-feature-us-hybrids-at-auto-show-amid-investment-wave"
+  },
+  {
    "h": "Inside Anthropic’s historic IPO",
    "w": "Can the low-key company preserve its idiosyncratic culture in the glare of public markets?",
    "syms": [],
@@ -2519,14 +2568,6 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-20T21:04:48Z",
    "url": "https://www.cnbc.com/2026/11/19/gap-gap-q3-2026-earnings.html"
-  },
-  {
-   "h": "Here’s what’s been proven to help GLP-1 users from losing too much muscle from the drug",
-   "w": "People taking Zepbound who engage in consistent resistance training can still get stronger even if they lose some of their muscle, according to a new study.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-20T21:01:00Z",
-   "url": "https://www.marketwatch.com/story/heres-whats-been-proven-to-help-glp-1-users-who-have-lost-muscle-from-the-drug-2c71cdbf?mod=mw_rss_topstories"
   },
   {
    "h": "Trump threatens ban on US firms building AI data centres overseas",
@@ -2672,14 +2713,6 @@
    "url": "https://asia.nikkei.com/business/food-beverage/sushiro-opens-in-new-york-s-times-square-hoping-5-sushi-will-make-a-splash"
   },
   {
-   "h": "Japan to transfer H3 rocket launch operations to Mitsubishi Heavy",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-20T19:26:37.518464Z",
-   "url": "https://asia.nikkei.com/business/aerospace-defense-industries/japan-to-transfer-h3-rocket-launch-operations-to-mitsubishi-heavy"
-  },
-  {
    "h": "« L’entrée en Bourse d’Anthropic est probablement davantage dictée par la peur que par la foi en l’avenir de l’IA »",
    "w": "La décision du créateur de Claude ne répond pas à un besoin de financement ou de liquidité mais trahit plutôt la volonté de ses dirigeants de transférer les risques du secteur de l’intelligence artificielle vers les épargnants et la société, estime l’entrepreneur Guy Halfteck, dans une tribune au « Monde ».",
    "syms": [],
@@ -2760,18 +2793,10 @@
    "url": "https://asia.nikkei.com/business/companies/japan-tobacco-s-russia-freezeout-threatens-its-pursuit-of-philip-morris-bti"
   },
   {
-   "h": "Asahi pours $85mn into AI cybersecurity upgrades after ransomware attack",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-20T18:08:57.967588Z",
-   "url": "https://asia.nikkei.com/spotlight/cybersecurity/asahi-pours-85mn-into-ai-cybersecurity-upgrades-after-ransomware-attack"
-  },
-  {
    "h": "Anthropic shares slide as tech stocks tumble",
    "w": "Blockbuster debut from developer of Claude fails to ease concerns over AI capex spending boom",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-20T18:03:21Z",
    "url": "https://www.ft.com/content/c7ad2e0c-efd1-40c2-a5a8-819ced8acf5b?syn-25a6b1a6=1",
    "mine": 1
@@ -2852,22 +2877,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-20T17:21:08Z",
    "url": "https://www.lemonde.fr/international/article/2026/11/20/bernabe-malacalza-geopolitologue-il-existe-une-construction-narrative-complotiste-autour-de-l-influence-chinoise-en-amerique-latine_6813679_3210.html"
-  },
-  {
-   "h": "Japan's listening bars find a global audience",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-20T17:18:02.263662Z",
-   "url": "https://asia.nikkei.com/life-arts/life/japan-s-listening-bars-find-a-global-audience"
-  },
-  {
-   "h": "Peru can be Japan's gateway for South America investment, president says",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-20T17:18:02.263662Z",
-   "url": "https://asia.nikkei.com/editor-s-picks/interview/peru-can-be-japan-s-gateway-for-south-america-investment-president-says"
   },
   {
    "h": "Jamie Dimon vows to claw back ‘unfair’ UK bank tax",
