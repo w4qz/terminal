@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-21T20:14:06.538711Z",
+ "generated_at": "2026-11-21T21:01:57.121949Z",
  "quotes": {
   "NVDA": {
    "p": 125.53,
@@ -523,8 +523,8 @@
    "prev": 6113.8599,
    "chg": -171.9097,
    "pct": -2.81,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^STOXX50E)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^STOXX50E) — last update failed",
    "ts": "2026-11-20T16:30:00Z",
    "open": 6064.7598,
    "lo": 5941.9502,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 60214.0898,
+   "p": 60365.5391,
    "prev": 58798.9805,
-   "chg": 1415.1094,
-   "pct": 2.41,
+   "chg": 1566.5586,
+   "pct": 2.66,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-21T20:14:06.538711Z",
+   "ts": "2026-11-21T21:01:57.121949Z",
    "open": 58802.6016,
    "lo": 55631.5742,
    "hi": 60619.1836,
-   "vol": 61695500288,
+   "vol": 59651342336,
    "h": [
     77434.75,
     78248.45,
@@ -844,7 +844,7 @@
     62987.27,
     61901.82,
     58798.98,
-    60214.09
+    60359.49
    ]
   }
  },
@@ -2221,6 +2221,30 @@
  ],
  "news": [
   {
+   "h": "Un administrateur d’Origin Bancorp Inc achète des actions pour 78.660$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T20:46:52Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-dorigin-bancorp-inc-achete-des-actions-pour-78660-93CH-3707886"
+  },
+  {
+   "h": "‘It’s downright dirty’: My brother moved in with our ailing mother and closed her bank account. What can I do?",
+   "w": "“It is devastating when the people you should be able to trust become the very people you have to protect yourself from.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-21T20:15:00Z",
+   "url": "https://www.marketwatch.com/story/it-is-heartbreaking-exhausting-and-downright-dirty-my-brother-took-over-our-ailing-mothers-life-and-finances-what-can-i-do-b4d48817?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Un administrateur de Clene Inc. achète pour 34.240$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T20:01:47Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-clene-inc-achete-pour-34240-dactions-93CH-3707885"
+  },
+  {
    "h": "‘I’ve been a stay-at-home mom’: I’m 50 and have a chronic illness. My husband lost his job. Should he raid his 401(k)?",
    "w": "“Our financial and healthcare situation has become increasingly concerning.”",
    "syms": [],
@@ -2362,22 +2386,6 @@
    "mine": 1
   },
   {
-   "h": "Le directeur comptable de MSA Safety cède des actions pour 231.823$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T17:01:57Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-comptable-de-msa-safety-cede-des-actions-pour-231823-93CH-3707872"
-  },
-  {
-   "h": "Désobéir au pouvoir politique : le débat resurgit dans la fonction publique",
-   "w": "Le collectif Nos services publics a lancé, jeudi 19 novembre, une formation consacrée aux droits et responsabilités des agents publics. Dans la fonction publique, le principe d’obéissance hiérarchique reste la règle et la désobéissance une rare exception.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-21T17:00:16Z",
-   "url": "https://www.lemonde.fr/politique/article/2026/11/21/desobeir-au-pouvoir-politique-le-debat-resurgit-dans-la-fonction-publique_6814050_823448.html"
-  },
-  {
    "h": "Alice Huang’s links to the chip underworld",
    "w": "Chinese executive in romantic relationship with former Nvidia CEO Jensen Huang had connections to the lucrative trade moving chips to China",
    "syms": [
@@ -2387,6 +2395,14 @@
    "ts": "2026-11-21T17:00:10Z",
    "url": "https://www.ft.com/content/f3ad8a81-3890-4a8a-8853-ff0a94b08ba9?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "Désobéir au pouvoir politique : le débat resurgit dans la fonction publique",
+   "w": "Le collectif Nos services publics a lancé, jeudi 19 novembre, une formation consacrée aux droits et responsabilités des agents publics. Dans la fonction publique, le principe d’obéissance hiérarchique reste la règle et la désobéissance une rare exception.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-21T17:00:07Z",
+   "url": "https://www.lemonde.fr/politique/article/2026/11/21/desobeir-au-pouvoir-politique-le-debat-resurgit-dans-la-fonction-publique_6814050_823448.html"
   },
   {
    "h": "Trump says there could be a 'positive spin' from the latest FBI database hack",
@@ -2411,14 +2427,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-21T16:50:00Z",
    "url": "https://www.marketwatch.com/story/im-sick-of-flying-i-paid-for-priority-boarding-but-the-overhead-bins-were-full-was-i-duped-0badcc80?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Nexstar Media Group : Gary Weitman cède pour 205.727$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T16:46:58Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/nexstar-media-group--gary-weitman-cede-pour-205727-dactions-93CH-3707871"
   },
   {
    "h": "Anthropic’s record IPO collides with tech’s worst week on Wall Street since 2020",
@@ -2468,20 +2476,36 @@
    "url": "https://www.marketwatch.com/story/nvidia-spooked-me-should-i-sell-my-stocks-or-ride-out-the-market-turmoil-560583c6?mod=mw_rss_topstories"
   },
   {
-   "h": "I’m terrified of a market crash. Should I put $400,000 of my $1 million retirement savings into an annuity?",
-   "w": "“We have a house worth $450,000. Our combined annual income is $125,000.”",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-21T15:15:00Z",
-   "url": "https://www.marketwatch.com/story/were-in-our-50s-and-terrified-of-a-market-crash-should-we-put-400-000-of-our-1-million-retirement-savings-into-an-annuity-1943f240?mod=mw_rss_topstories"
-  },
-  {
    "h": "Tech outages are fueling a new doomsday economy",
    "w": "Recent technology outages have left some worried about AI cyberattacks and the U.S. electricity grid. The doomsday economy is heating up as a result.",
    "syms": [],
    "src": "CNBC — Markets",
    "ts": "2026-11-21T15:04:56Z",
    "url": "https://www.cnbc.com/2026/11/21/emergency-prep-spending-tech-outages.html"
+  },
+  {
+   "h": "Japan stamp maker stomps into AI realm by authenticating videos on X",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-21T15:01:57.121949Z",
+   "url": "https://asia.nikkei.com/business/companies/japan-stamp-maker-stomps-into-ai-realm-by-authenticating-videos-on-x"
+  },
+  {
+   "h": "US, Japan should lead next-gen transportation: Trump's ex-transport chief",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-21T15:01:57.121949Z",
+   "url": "https://asia.nikkei.com/editor-s-picks/interview/us-japan-should-lead-next-gen-transportation-trump-s-ex-transport-chief"
+  },
+  {
+   "h": "Battery maker GS Yuasa targets defense, space as growth fields: CEO",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-21T15:01:57.121949Z",
+   "url": "https://asia.nikkei.com/editor-s-picks/interview/battery-maker-gs-yuasa-targets-defense-space-as-growth-fields-ceo"
   },
   {
    "h": "I never wanted the American Dream and I felt like something was wrong with me—until I moved abroad",
@@ -2498,6 +2522,16 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-21T14:30:02Z",
    "url": "https://www.cnbc.com/2026/11/21/rmd-deadline-penalty-2026.html"
+  },
+  {
+   "h": "During Wall Street's worst week in over a year, we put money to work. What we're buying",
+   "w": "The brutal sell-off is creating opportunities for us to put cash to work.",
+   "syms": [
+    "SPX"
+   ],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-21T14:22:04Z",
+   "url": "https://www.cnbc.com/investingclub/2026/11/21/during-wall-streets-worst-week-in-over-a-year-we-put-money-to-work-what-were-buying.html"
   },
   {
    "h": "Bro hugs, no deals: Why Shenzhen was a win for Beijing",
@@ -2594,14 +2628,6 @@
    "url": "https://www.lemonde.fr/economie/article/2026/11/21/le-boom-des-embauches-dans-le-secteur-medico-social-cache-les-fragilites-de-l-economie-sociale-et-solidaire_6814018_3234.html"
   },
   {
-   "h": "An early breakdown in the polar vortex is threatening already depleted gas stocks",
-   "w": "Colder weather and low wind speeds could strain Europe’s gas market, where storage started winter at its lowest level in more than a decade.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-21T12:47:25Z",
-   "url": "https://www.cnbc.com/2026/11/21/polar-vortex-europe-gas-prices.html"
-  },
-  {
    "h": "Japan's listening bars find a global audience",
    "w": "",
    "syms": [],
@@ -2616,14 +2642,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-21T12:22:35.039405Z",
    "url": "https://asia.nikkei.com/editor-s-picks/interview/peru-can-be-japan-s-gateway-for-south-america-investment-president-says"
-  },
-  {
-   "h": "Asahi pours $85mn into AI cybersecurity upgrades after ransomware attack",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-21T12:22:35.039405Z",
-   "url": "https://asia.nikkei.com/spotlight/cybersecurity/asahi-pours-85mn-into-ai-cybersecurity-upgrades-after-ransomware-attack"
   },
   {
    "h": "Traders start to move US copper to China as Trump tariff fears ease",
@@ -2650,22 +2668,6 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-21T12:00:01Z",
    "url": "https://www.cnbc.com/2026/11/21/us-airlines-first-class-business-class.html"
-  },
-  {
-   "h": "Indonesian leader chases Sukarno's phantom with defiant posture",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-21T11:40:09.208582Z",
-   "url": "https://asia.nikkei.com/spotlight/comment/indonesian-leader-chases-sukarno-s-phantom-with-defiant-posture"
-  },
-  {
-   "h": "Chinese 3D printer maker Bambu Lab scales up production in Shenzhen",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-21T11:40:09.208582Z",
-   "url": "https://asia.nikkei.com/business/china-tech/chinese-3d-printer-maker-bambu-lab-scales-up-production-in-shenzhen"
   },
   {
    "h": "Costa revives EU digital tax proposal in bid to reach agreement on budget",
@@ -3090,9 +3092,9 @@
   }
  ],
  "summary": {
-  "text": "Global equity markets retreated sharply, led by heavy tech losses as Nvidia dropped 14.01% and the Nasdaq 100 slid 5.61%. The S&P 500 fell 3.7% and the Nikkei 225 declined 5.06%, while the VIX jumped 26.2% to 35.89 amid debate over who really profits from AI, even as Amazon nears a 7.5 billion dollar deal to buy startup Decart.\n\nIn currencies, the dollar index softened 0.06% to 103.84, with USD/JPY down 0.55% to 158.512 and EUR/USD up 0.02% to 1.0975. Commodities saw gold drop 4.62% to 3515.3999, echoing UBS notes of gold weakness before rate cut expectations return. Brent fell 2.21% to 89.95, while WTI rose 0.24% to 83.41, and Bitcoin added 2.41% to 60214.0898.\n\nInvestors are watching climate negotiations after the European Union raised the prospect of no deal at COP31, alongside political directives following Trump ordering federal contractors to report congressional requests.",
+  "text": "Global equities fell sharply, led by heavy tech selling as NVDA plunged 14.01%, pulling the NDX down 5.61% and the SPX down 3.7%, while the VIX jumped 26.2% to 35.89. Losses spread globally, with the N225 dropping 5.06% and the DAX falling 2.6%. Market sentiment was shaped by scrutiny over who truly profits from AI, alongside news that Amazon nears a 7.5 billion dollar acquisition of startup Decart.\n\nThe DXY dipped 0.06% to 103.84, with USDJPY down 0.55% to 158.512 and EURUSD holding at 1.0975. Gold dropped 4.62% to 3515.3999, consistent with UBS highlighting weakness in bullion prior to returning rate-cut expectations. Brent fell 2.21% to 89.95, WTI crude gained 0.24% to 83.41, and Bitcoin rose 2.66% to 60365.5391.\n\nInvestors should watch COP31 developments after the EU warned of a potential no-deal outcome, political responses to Trump ordering federal contractors to report congressional requests, and fallout from record-low home sales.",
   "model": "gemini-flash-latest",
   "lang": "en",
-  "ts": "2026-11-21T20:14:06.538711Z"
+  "ts": "2026-11-21T21:01:57.121949Z"
  }
 }
