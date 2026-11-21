@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-21T03:23:16.903367Z",
+ "generated_at": "2026-11-21T04:29:21.335314Z",
  "quotes": {
   "NVDA": {
    "p": 125.53,
@@ -191,8 +191,8 @@
    "prev": 2655.1101,
    "chg": -73.3206,
    "pct": -2.76,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^RUT) — last update failed",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^RUT)",
    "ts": "2026-11-20T21:00:00Z",
    "open": 2641.1599,
    "lo": 2577.0908,
@@ -229,7 +229,7 @@
    "pct": 26.2,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^VIX)",
-   "ts": "2026-11-20T21:00:00Z",
+   "ts": "2026-11-20T21:15:00Z",
    "open": 28.63,
    "lo": 26.94,
    "hi": 40.03,
@@ -707,7 +707,7 @@
    "src": "Yahoo Finance via yfinance (GC=F)",
    "ts": "2026-11-20T22:00:00Z",
    "open": 3633.8,
-   "lo": 3503.2,
+   "lo": 3502.8999,
    "hi": 3638.1001,
    "vol": 323896,
    "h": [
@@ -736,10 +736,10 @@
    ]
   },
   "CL": {
-   "p": 83.62,
+   "p": 83.41,
    "prev": 83.21,
-   "chg": 0.41,
-   "pct": 0.49,
+   "chg": 0.2,
+   "pct": 0.24,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (CL=F)",
    "ts": "2026-11-20T22:00:00Z",
@@ -769,14 +769,14 @@
     86.01,
     83.26,
     83.21,
-    83.62
+    83.41
    ]
   },
   "BRENT": {
-   "p": 89.87,
+   "p": 89.95,
    "prev": 91.98,
-   "chg": -2.11,
-   "pct": -2.29,
+   "chg": -2.03,
+   "pct": -2.21,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-20T22:00:00Z",
@@ -806,21 +806,21 @@
     93.14,
     91.95,
     91.98,
-    89.87
+    89.95
    ]
   },
   "BTC": {
-   "p": 58190.4883,
+   "p": 55741.9297,
    "prev": 61901.8203,
-   "chg": -3711.332,
-   "pct": -6.0,
+   "chg": -6159.8906,
+   "pct": -9.95,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-21T03:23:16.903367Z",
+   "ts": "2026-11-21T04:29:21.335314Z",
    "open": 58802.6016,
-   "lo": 58135.4609,
+   "lo": 55643.9062,
    "hi": 59081.543,
-   "vol": 59756949504,
+   "vol": 67433013248,
    "h": [
     77198.21,
     77434.75,
@@ -843,7 +843,7 @@
     64893.95,
     62987.27,
     61901.82,
-    58190.49
+    55741.93
    ]
   }
  },
@@ -855,9 +855,9 @@
    "industry": "Consumer Electronics",
    "ccy": "USD",
    "mcap": 4978144444416,
-   "pe": 38.147,
+   "pe": 38.8831,
    "fpe": 32.4003,
-   "eps": 8.98,
+   "eps": 8.81,
    "feps": 10.5727,
    "revTTM": 478833999872,
    "netIncome": 132175003648,
@@ -882,7 +882,7 @@
    "fcf": 105658376192,
    "w52lo": 243.42,
    "w52hi": 360.83,
-   "evEbitda": 29.274,
+   "evEbitda": 29.25,
    "earnTs": 1793653200,
    "earnStart": 1801170000,
    "earnEnd": 1801170000,
@@ -899,9 +899,9 @@
    "industry": "Semiconductors",
    "ccy": "USD",
    "mcap": 3031172907008,
-   "pe": 13.4834,
+   "pe": 15.6717,
    "fpe": 7.5596,
-   "eps": 9.31,
+   "eps": 8.01,
    "feps": 16.6053,
    "revTTM": 361808003072,
    "netIncome": 226256994304,
@@ -926,7 +926,7 @@
    "fcf": 99241377792,
    "w52lo": 124.5,
    "w52hi": 243.37,
-   "evEbitda": 12.224,
+   "evEbitda": 12.194,
    "earnTs": 1794949200,
    "earnStart": 1794949200,
    "earnEnd": 1794949200,
@@ -944,9 +944,9 @@
    "ccy": "USD",
    "mcap": 3598139523072,
    "pe": 25.2881,
-   "fpe": 20.0184,
+   "fpe": 20.0208,
    "eps": 19.16,
-   "feps": 24.2038,
+   "feps": 24.2008,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -1014,7 +1014,7 @@
    "fcf": -1162499968,
    "w52lo": 264.22,
    "w52hi": 408.61,
-   "evEbitda": 17.086,
+   "evEbitda": 17.059,
    "earnTs": 1793217600,
    "earnStart": 1793217600,
    "earnEnd": 1793217600,
@@ -1056,7 +1056,7 @@
    "fcf": -34731749376,
    "w52lo": 196.0,
    "w52hi": 287.2,
-   "evEbitda": 15.583,
+   "evEbitda": 15.565,
    "earnTs": 1793304000,
    "earnStart": 1793304000,
    "earnEnd": 1793304000,
@@ -1219,7 +1219,7 @@
    "fcf": 16848499712,
    "w52lo": 520.26,
    "w52hi": 779.82,
-   "evEbitda": 12.628,
+   "evEbitda": 12.618,
    "earnTs": 1792612800,
    "earnStart": 1801083600,
    "earnEnd": 1801083600,
@@ -1260,7 +1260,7 @@
    "fcf": 4967249920,
    "w52lo": 297.38,
    "w52hi": 498.83,
-   "evEbitda": 136.205,
+   "evEbitda": 136.058,
    "earnTs": 1792612800,
    "earnStart": 1801083600,
    "earnEnd": 1801083600,
@@ -1276,9 +1276,9 @@
    "ccy": "USD",
    "mcap": 1453140738048,
    "pe": 38.8774,
-   "fpe": 15.6799,
+   "fpe": 15.7026,
    "eps": 7.83,
-   "feps": 19.414,
+   "feps": 19.386,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1402,9 +1402,9 @@
    "industry": "Insurance - Diversified",
    "ccy": "USD",
    "mcap": 1210976043008,
-   "pe": 15.953,
+   "pe": 16.0067,
    "fpe": 24.9818,
-   "eps": 35.73,
+   "eps": 35.61,
    "feps": 22.8166,
    "revTTM": 395362009088,
    "netIncome": 77084000256,
@@ -1479,9 +1479,9 @@
    "industry": "Semiconductors",
    "ccy": "USD",
    "mcap": 672642433024,
-   "pe": 7.9983,
+   "pe": 9.2892,
    "fpe": 2.8469,
-   "eps": 74.33,
+   "eps": 64.0,
    "feps": 208.8288,
    "revTTM": 133188001792,
    "netIncome": 84968996864,
@@ -1506,7 +1506,7 @@
    "fcf": 29140250624,
    "w52lo": 192.59,
    "w52hi": 1255.0,
-   "evEbitda": 5.831,
+   "evEbitda": 5.828,
    "earnTs": 1797541200,
    "earnStart": 1797541200,
    "earnEnd": 1797541200,
@@ -1522,14 +1522,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1015122821120,
+   "mcap": 1018236174336,
    "pe": 46.3587,
    "fpe": 39.6339,
    "eps": 2.76,
    "feps": 3.2283,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.774,
@@ -1608,9 +1608,9 @@
    "industry": "Semiconductors",
    "ccy": "USD",
    "mcap": 702393286656,
-   "pe": 98.2384,
+   "pe": 90.6816,
    "fpe": 24.0608,
-   "eps": 4.32,
+   "eps": 4.68,
    "feps": 17.6382,
    "revTTM": 45435998208,
    "netIncome": 7725000192,
@@ -1633,7 +1633,7 @@
    "fcf": 7357125120,
    "w52lo": 188.22,
    "w52hi": 658.52,
-   "evEbitda": 61.864,
+   "evEbitda": 61.875,
    "earnTs": 1793739600,
    "earnStart": 1801602000,
    "earnEnd": 1801602000,
@@ -1980,7 +1980,7 @@
    "fcf": 6752750080,
    "w52lo": 844.06,
    "w52hi": 1123.67,
-   "evEbitda": 33.715,
+   "evEbitda": 33.646,
    "earnTs": 1796936400,
    "earnStart": 1796936400,
    "earnEnd": 1796936400,
@@ -2063,7 +2063,7 @@
    "fcf": 10410250240,
    "w52lo": 72.8,
    "w52hi": 130.37,
-   "evEbitda": 18.031,
+   "evEbitda": 18.018,
    "earnTs": 1802293200,
    "earnStart": 1802293200,
    "earnEnd": 1802293200,
@@ -2146,7 +2146,7 @@
    "fcf": -1892670592,
    "w52lo": 22.72,
    "w52hi": 133.86,
-   "evEbitda": -18.122,
+   "evEbitda": -18.125,
    "earnTs": 1794258000,
    "earnStart": 1794258000,
    "earnEnd": 1794258000,
@@ -2167,13 +2167,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 122.6403,
-   "shares": 572600000,
-   "divYield": 2.579,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2225,92 +2220,105 @@
  ],
  "news": [
   {
+   "h": "Le CAC 40 sous 8000 pts, -5% en 1 semaine : Céder à la panique ou profiter des soldes?",
+   "w": "",
+   "syms": [
+    "CAC"
+   ],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T04:18:31Z",
+   "url": "https://fr.investing.com/news/stock-market-news/le-cac-40-sous-8000-pts-5-en-1-semaine--ceder-a-la-panique-ou-profiter-des-soldes-3707782"
+  },
+  {
+   "h": "Le BPA de Oxford Lane a manqué les attentes de 0,35$, le CA a surpassé les prévisions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T04:17:20Z",
+   "url": "https://fr.investing.com/news/earnings/le-bpa-de-oxford-lane-a-manque-les-attentes-de-035-le-ca--a-surpasse-les-previsions-3707781"
+  },
+  {
+   "h": "Déroute des actions tech US : 12 opportunités massacrées, potentiel jusqu’à +213%",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T04:14:23Z",
+   "url": "https://fr.investing.com/news/stock-market-news/deroute-des-actions-tech-us--12-opportunites-massacrees-potentiel-jusqua-213-3707779"
+  },
+  {
+   "h": "Un administrateur de Lipocine Inc achète pour 225.225$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T04:01:44Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-lipocine-inc-achete-pour-225225-dactions-93CH-3707777"
+  },
+  {
+   "h": "Nvidia affair puts Chinese spies in spotlight",
+   "w": "Western officials and analysts say China’s Ministry of State Security is formidable in scale and technological capability",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "myFT — technology",
+   "ts": "2026-11-21T03:58:46Z",
+   "url": "https://www.ft.com/content/77a283dd-b7af-4e72-8d83-9b53ab86f3e0?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Le krach se poursuit : Voici comment garder la tête froide face à la déroute boursière",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T03:49:37Z",
+   "url": "https://fr.investing.com/news/stock-market-news/investingpro-a-55--tout-ce-que-vous-obtenez-pour-moins-de-8mois-explique-3694883"
+  },
+  {
+   "h": "Un administrateur de Silgans cède des actions pour 2,64 millions $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T03:46:40Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-silgans-cede-des-actions-pour-264-millions--93CH-3707776"
+  },
+  {
+   "h": "Panique sur les marchés : Trouvez rapidement les meilleures opportunités en soldes ICI",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T03:40:06Z",
+   "url": "https://fr.investing.com/news/stock-market-news/actions-en-soldes--4-idees-pour-reperer-les-meilleures-opportunites-dans-la-panique-3706178"
+  },
+  {
+   "h": "Le président de Home Depot Inc vend des actions pour 6,55 M$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T03:32:04Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-president-de-home-depot-inc-vend-des-actions-pour-655-m-93CH-3707775"
+  },
+  {
+   "h": "Le directeur comptable de Peloton, Saqib Baig, cède des actions pour 14.582$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T03:31:47Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-comptable-de-peloton-saqib-baig-cede-des-actions-pour-14582-93CH-3707774"
+  },
+  {
+   "h": "Le directeur des opérations de Peloton vend des actions PTON pour 35.736$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T03:31:40Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-des-operations-de-peloton-vend-des-actions-pton-pour-35736-93CH-3707773"
+  },
+  {
    "h": "Tech outages are rattling Americans so much that they’re stockpiling cash and supplies",
    "w": "A lack of clarity from world leaders is prompting some people to prepare for the worst.",
    "syms": [],
    "src": "MarketWatch",
    "ts": "2026-11-21T03:20:00Z",
    "url": "https://www.marketwatch.com/story/why-are-these-tech-outages-rattling-americans-so-much-that-theyre-stockpiling-cash-and-supplies-07516bdd?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Le directeur commercial de Peloton vend des actions pour 519.264$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T03:16:53Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-commercial-de-peloton-vend-des-actions-pour-519264-93CH-3707769"
-  },
-  {
-   "h": "Un directeur de Cross Timbers Royalty Trust achète pour 72.264$ d’unités",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T03:16:41Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-cross-timbers-royalty-trust-achete-pour-72264-dunites-93CH-3707768"
-  },
-  {
-   "h": "Le PDG de Fold Holdings Inc vend des actions pour 4.950$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T03:01:56Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-fold-holdings-inc-vend-des-actions-pour-4950-93CH-3707766"
-  },
-  {
-   "h": "Le PDG de ThredUp Inc vend des actions pour 84.665$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T03:01:50Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-thredup-inc-vend-des-actions-pour-84665-93CH-3707765"
-  },
-  {
-   "h": "Le directeur comptable de Regency Centers vend des actions pour 109.539$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T03:01:37Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-comptable-de-regency-centers-vend-des-actions-pour-109539-93CH-3707764"
-  },
-  {
-   "h": "Un administrateur d’Eagle Montana cède des actions pour 33.130$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T02:50:35Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-deagle-montana-cede-des-actions-pour-33130-93CH-3707763"
-  },
-  {
-   "h": "Un directeur d’ICU Medical Inc vend des actions pour 155.513$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T02:46:56Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-dicu-medical-inc-vend-des-actions-pour-155513-93CH-3707762"
-  },
-  {
-   "h": "Un administrateur de Walt Disney Company vend des actions DIS pour 39,5 millions $",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T02:46:51Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-walt-disney-company-vend-des-actions-dis-pour-395-millions--93CH-3707761"
-  },
-  {
-   "h": "Le directeur Paul Roeder de Walt Disney Company vend des actions pour 597.818$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T02:46:39Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-paul-roeder-de-walt-disney-company-vend-des-actions-pour-597818-93CH-3707760"
-  },
-  {
-   "h": "Saba Capital Management acquiert 162.998$ dans Ellsworth Convertible Growth & IF",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T02:46:29Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/saba-capital-management-acquiert-162998-dans-ellsworth-convertible-growth--if-93CH-3707759"
   },
   {
    "h": "‘Sandpapergate’ fallout gives Australian cricket a rough time",
@@ -2401,6 +2409,30 @@
    "src": "BBC — Business",
    "ts": "2026-11-20T22:42:47Z",
    "url": "https://www.bbc.co.uk/news/articles/c6808ym10vzgo?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "Japan's listening bars find a global audience",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-20T22:29:21.335314Z",
+   "url": "https://asia.nikkei.com/life-arts/life/japan-s-listening-bars-find-a-global-audience"
+  },
+  {
+   "h": "Peru can be Japan's gateway for South America investment, president says",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-20T22:29:21.335314Z",
+   "url": "https://asia.nikkei.com/editor-s-picks/interview/peru-can-be-japan-s-gateway-for-south-america-investment-president-says"
+  },
+  {
+   "h": "Asahi pours $85mn into AI cybersecurity upgrades after ransomware attack",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-20T22:29:21.335314Z",
+   "url": "https://asia.nikkei.com/spotlight/cybersecurity/asahi-pours-85mn-into-ai-cybersecurity-upgrades-after-ransomware-attack"
   },
   {
    "h": "Trump says he discussed Jensen Huang with Xi; Bessent tells CNBC Nvidia chip export policy is unchanged",
@@ -2705,14 +2737,6 @@
    "url": "https://asia.nikkei.com/business/fisheries/japan-wins-25-quota-increase-for-large-bluefin-tuna-from-20272"
   },
   {
-   "h": "Sushiro opens in New York's Times Square, hoping $5 sushi will make a splash",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-20T19:26:37.518464Z",
-   "url": "https://asia.nikkei.com/business/food-beverage/sushiro-opens-in-new-york-s-times-square-hoping-5-sushi-will-make-a-splash"
-  },
-  {
    "h": "« L’entrée en Bourse d’Anthropic est probablement davantage dictée par la peur que par la foi en l’avenir de l’IA »",
    "w": "La décision du créateur de Claude ne répond pas à un besoin de financement ou de liquidité mais trahit plutôt la volonté de ses dirigeants de transférer les risques du secteur de l’intelligence artificielle vers les épargnants et la société, estime l’entrepreneur Guy Halfteck, dans une tribune au « Monde ».",
    "syms": [],
@@ -2773,24 +2797,6 @@
    "ts": "2026-11-20T18:11:30Z",
    "url": "https://www.ft.com/content/fa8eeb49-2cb4-4286-8131-03db15383d87?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Nvidia server suppliers halt Southeast Asia shipments over US curbs",
-   "w": "",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-20T18:08:57.967588Z",
-   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/nvidia-server-suppliers-halt-southeast-asia-shipments-over-us-curbs"
-  },
-  {
-   "h": "Japan Tobacco's Russia freezeout threatens its pursuit of Philip Morris, BTI",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-20T18:08:57.967588Z",
-   "url": "https://asia.nikkei.com/business/companies/japan-tobacco-s-russia-freezeout-threatens-its-pursuit-of-philip-morris-bti"
   },
   {
    "h": "Anthropic shares slide as tech stocks tumble",
@@ -3081,15 +3087,6 @@
    "src": "myFT — markets",
    "ts": "2026-11-20T11:57:35Z",
    "url": "https://www.ft.com/content/67938df3-a9ce-4eb8-9299-af0ab80db87b",
-   "mine": 1
-  },
-  {
-   "h": "Russian missile barrage damages Kyiv bridges",
-   "w": "Waves of attacks targeting Ukraine come on heels of trilateral meeting between US, Chinese and Russian leaders",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-20T11:36:38Z",
-   "url": "https://www.ft.com/content/d76c0ce7-ba3b-42b3-8efa-7724cc0900d7?syn-25a6b1a6=1",
    "mine": 1
   }
  ],
