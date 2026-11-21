@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-21T14:22:14.328446Z",
+ "generated_at": "2026-11-21T15:17:09.992556Z",
  "quotes": {
   "NVDA": {
    "p": 125.53,
@@ -636,7 +636,7 @@
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
    "ts": "2026-11-20T22:30:00Z",
    "open": 1.3086,
-   "lo": 1.3086,
+   "lo": 1.3082,
    "hi": 1.3086,
    "h": [
     1.340393,
@@ -660,7 +660,7 @@
     1.320498,
     1.314665,
     1.308644,
-    1.308627
+    1.308181
    ]
   },
   "DXY": {
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 60385.5391,
+   "p": 59869.7109,
    "prev": 58798.9805,
-   "chg": 1586.5586,
-   "pct": 2.7,
+   "chg": 1070.7305,
+   "pct": 1.82,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-21T14:22:14.328446Z",
+   "ts": "2026-11-21T15:17:09.992556Z",
    "open": 58802.6016,
    "lo": 55631.5742,
    "hi": 60619.1836,
-   "vol": 80230858752,
+   "vol": 78242422784,
    "h": [
     77434.75,
     78248.45,
@@ -844,7 +844,7 @@
     62987.27,
     61901.82,
     58798.98,
-    60385.54
+    59869.71
    ]
   }
  },
@@ -945,9 +945,9 @@
    "ccy": "USD",
    "mcap": 3598139523072,
    "pe": 25.2881,
-   "fpe": 20.0208,
+   "fpe": 20.0184,
    "eps": 19.16,
-   "feps": 24.2008,
+   "feps": 24.2038,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1453140738048,
    "pe": 38.8774,
-   "fpe": 15.7026,
+   "fpe": 15.6799,
    "eps": 7.83,
-   "feps": 19.386,
+   "feps": 19.414,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1018236174336,
+   "mcap": 1015122821120,
    "pe": 46.3587,
    "fpe": 39.6339,
    "eps": 2.76,
    "feps": 3.2283,
    "revTTM": 745178988544,
    "netIncome": 20878000128,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.774,
@@ -2126,7 +2126,7 @@
    "ccy": "USD",
    "mcap": 9324940288,
    "eps": -2.12,
-   "feps": -1.5613,
+   "feps": -1.3642,
    "revTTM": 142880000,
    "netIncome": -628267008,
    "shares": 311349798,
@@ -2153,7 +2153,7 @@
    "earnEnd": 1794258000,
    "earnEst": false,
    "trailDiv": 0.0,
-   "fpe_ns": -14.9046
+   "fpe_ns": -17.058
   },
   "ACWI": {
    "name": "iShares MSCI ACWI ETF",
@@ -2168,8 +2168,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 122.6403,
+   "shares": 572600000,
+   "divYield": 2.579,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2220,6 +2225,88 @@
   }
  ],
  "news": [
+  {
+   "h": "‘Nvidia’s turmoil has me spooked’: Is it time to sell my stocks?",
+   "w": "If you are tempted to ditch stocks for property or CDs, take a deep breath before making any sudden moves.",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "MarketWatch",
+   "ts": "2026-11-21T15:15:00Z",
+   "url": "https://www.marketwatch.com/story/nvidia-spooked-me-should-i-sell-my-stocks-or-ride-out-the-market-turmoil-560583c6?mod=mw_rss_topstories"
+  },
+  {
+   "h": "I’m terrified of a market crash. Should I put $400,000 of my $1 million retirement savings into an annuity?",
+   "w": "“We have a house worth $450,000. Our combined annual income is $125,000.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-21T15:15:00Z",
+   "url": "https://www.marketwatch.com/story/were-in-our-50s-and-terrified-of-a-market-crash-should-we-put-400-000-of-our-1-million-retirement-savings-into-an-annuity-1943f240?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Tech outages are fueling a new doomsday economy",
+   "w": "Recent technology outages have left some worried about AI cyberattacks and the U.S. electricity grid. The doomsday economy is heating up as a result.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-21T15:04:56Z",
+   "url": "https://www.cnbc.com/2026/11/21/emergency-prep-spending-tech-outages.html"
+  },
+  {
+   "h": "Here’s what’s been proven to help GLP-1 users from losing too much muscle from the drug",
+   "w": "People taking Zepbound who engage in consistent resistance training can still get stronger even if they lose some of their muscle, according to a new study.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-21T15:03:00Z",
+   "url": "https://www.marketwatch.com/story/heres-whats-been-proven-to-help-glp-1-users-who-have-lost-muscle-from-the-drug-2c71cdbf?mod=mw_rss_topstories"
+  },
+  {
+   "h": "One thing Thanksgiving travelers can be thankful for: Gas prices are down 75 cents from this year’s peak",
+   "w": "Travelers preparing for Thanksgiving trips will find cheaper gasoline prices at the pump after months of elevated fuel prices.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-21T15:01:00Z",
+   "url": "https://www.marketwatch.com/story/one-thing-thanksgiving-travelers-can-be-thankful-for-gas-prices-are-down-75-cents-from-this-years-peak-efac1809?mod=mw_rss_topstories"
+  },
+  {
+   "h": "I never wanted the American Dream and I felt like something was wrong with me—until I moved abroad",
+   "w": "\"I realized it was okay to want something different,\" says Cepee Tabibian, who moved to Spain in 2015 at age 35.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-21T15:00:02Z",
+   "url": "https://www.cnbc.com/make-it/2026/11/21/never-wanted-american-dream-moving-abroad-redefine-success.html"
+  },
+  {
+   "h": "‘Never too late to start’: Practical investing advice from some of the top women in finance",
+   "w": "There are plenty of rich and influential women in the U.S. Their time may be coming.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-21T15:00:00Z",
+   "url": "https://www.marketwatch.com/story/never-too-late-to-start-practical-investing-advice-from-some-of-the-top-women-in-finance-e01f0755?mod=mw_rss_topstories"
+  },
+  {
+   "h": "My husband spent $80,000 on a boat, yet says my plans for a $100,000 pottery studio are irresponsible. Who’s right?",
+   "w": "“We have $2.9 million in retirement accounts. That includes some money that we inherited about 10 years ago.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-21T14:42:00Z",
+   "url": "https://www.marketwatch.com/story/my-husband-spent-80-000-on-a-boat-yet-says-my-plans-for-a-100-000-pottery-studio-are-irresponsible-whos-right-1a69436a?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Le PDG de 5E Advanced Materials Inc achète 745 $ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T14:32:08Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-5e-advanced-materials-inc-achete-745--dactions-93CH-3707862"
+  },
+  {
+   "h": "Retirees face a looming deadline for required withdrawals — missing it could trigger a tax penalty",
+   "w": "The busy holiday season may lead retirees to miss a key deadline for retirement account withdrawals.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-21T14:30:02Z",
+   "url": "https://www.cnbc.com/2026/11/21/rmd-deadline-penalty-2026.html"
+  },
   {
    "h": "How a brutal week for stocks almost wiped out their gains for the entire year",
    "w": "Investors are now more focused on protecting their portfolios than looking for bargains",
@@ -2337,14 +2424,6 @@
    "url": "https://www.lemonde.fr/economie/article/2026/11/21/le-boom-des-embauches-dans-le-secteur-medico-social-cache-les-fragilites-de-l-economie-sociale-et-solidaire_6814018_3234.html"
   },
   {
-   "h": "Tech outages are fueling a new doomsday economy",
-   "w": "Recent technology outages have left some worried about AI cyberattacks and the U.S. electricity grid. The doomsday economy is heating up as a result.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-21T13:00:01Z",
-   "url": "https://www.cnbc.com/2026/11/21/emergency-prep-spending-tech-outages.html"
-  },
-  {
    "h": "America is definitely rich enough to fix Social Security and Medicare. Here’s how.",
    "w": "This one, simple, low-pain tax solves all the problems.",
    "syms": [],
@@ -2383,22 +2462,6 @@
    "src": "Investing.com France",
    "ts": "2026-11-21T12:32:14Z",
    "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-medifast-inc-achete-pour-plus-de-113m-dactions-93CH-3707851"
-  },
-  {
-   "h": "Un administrateur de The York Water achète des actions pour 999$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T12:31:46Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-the-york-water-achete-des-actions-pour-999-93CH-3707850"
-  },
-  {
-   "h": "Larry McDonald survived Lehman’s collapse. Now he warns the credit market is signaling a growth shock for stocks.",
-   "w": "Bear Traps Report founder explains why he sees stagflation coming, how much artificial-intelligence risk sits in S&amp;P 500 index funds and why he favors hard assets",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-21T12:31:00Z",
-   "url": "https://www.marketwatch.com/story/larry-mcdonald-survived-lehmans-collapse-now-he-warns-the-credit-market-is-signaling-a-growth-shock-for-stocks-5c3a62ef?mod=mw_rss_topstories"
   },
   {
    "h": "Navy budget pick has family investments in Trump Jr-linked contractor",
@@ -2487,6 +2550,32 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-21T10:00:13Z",
    "url": "https://www.lemonde.fr/la-chronique-de-thomas-piketty/article/2026/11/21/thomas-piketty-le-projet-de-convention-fiscale-de-l-onu-a-le-potentiel-de-changer-la-face-du-monde_6813978_6649149.html"
+  },
+  {
+   "h": "Nvidia server suppliers halt Southeast Asia shipments over US curbs",
+   "w": "",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-21T09:17:09.992556Z",
+   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/nvidia-server-suppliers-halt-southeast-asia-shipments-over-us-curbs"
+  },
+  {
+   "h": "Japan Tobacco's Russia freezeout threatens its pursuit of Philip Morris, BTI",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-21T09:17:09.992556Z",
+   "url": "https://asia.nikkei.com/business/companies/japan-tobacco-s-russia-freezeout-threatens-its-pursuit-of-philip-morris-bti"
+  },
+  {
+   "h": "Japan wins 25% quota increase for large bluefin tuna from 2027",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-21T09:17:09.992556Z",
+   "url": "https://asia.nikkei.com/business/fisheries/japan-wins-25-quota-increase-for-large-bluefin-tuna-from-20272"
   },
   {
    "h": "Behind Manchester City’s Apollo talks",
@@ -2581,20 +2670,20 @@
    "url": "https://asia.nikkei.com/editor-s-picks/interview/battery-maker-gs-yuasa-targets-defense-space-as-growth-fields-ceo"
   },
   {
-   "h": "A Agen, les irréductibles opposants à la ligne à grande vitesse Bordeaux-Toulouse : « On a un pays qui est superbe et ils vont venir le massacrer. Qu’est-ce qu’on va laisser à nos enfants ? »",
-   "w": "Dans le Lot-et-Garonne, les déboisements préalables au chantier de la ligne à grande vitesse Bordeaux-Toulouse sont sur le point de commencer. Autour d’Agen, les opposants à ce projet, lancé en 2009, balaient les arguments d’attractivité économique et de gain de temps pour dénoncer son coût exorbitant et son impact désastreux sur l’environnement.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-21T06:00:11Z",
-   "url": "https://www.lemonde.fr/m-le-mag/article/2026/11/21/a-agen-les-irreductibles-opposants-a-la-ligne-a-grande-vitesse-bordeaux-toulouse-on-a-un-pays-qui-est-superbe-et-ils-vont-venir-le-massacrer-qu-est-ce-qu-on-va-laisser-a-nos-enfants_6813947_4500055.html"
-  },
-  {
    "h": "Téléphonie mobile par satellite : le chemin tortueux des opérateurs européens vers une constellation souveraine",
    "w": "Face à Starlink, Orange, Deutsche Telekom, Telefonica et Vodafone veulent créer un service mobile par satellite européen et souverain. Mais les délais, le coût et le manque de solutions disponibles compliquent leur projet.",
    "syms": [],
    "src": "Le Monde — Économie",
    "ts": "2026-11-21T06:00:05Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/21/telephonie-mobile-par-satellite-le-chemin-tortueux-des-operateurs-europeens-vers-une-constellation-souveraine_6813948_3234.html"
+  },
+  {
+   "h": "A Agen, les irréductibles opposants à la ligne à grande vitesse Bordeaux-Toulouse : « On a un pays qui est superbe et ils vont venir le massacrer. Qu’est-ce qu’on va laisser à nos enfants ? »",
+   "w": "Dans le Lot-et-Garonne, les déboisements préalables au chantier de la ligne à grande vitesse Bordeaux-Toulouse sont sur le point de commencer. Autour d’Agen, les opposants à ce projet, lancé en 2009, balaient les arguments d’attractivité économique et de gain de temps pour dénoncer son coût exorbitant et son impact désastreux sur l’environnement.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-21T06:00:05Z",
+   "url": "https://www.lemonde.fr/m-le-mag/article/2026/11/21/a-agen-les-irreductibles-opposants-a-la-ligne-a-grande-vitesse-bordeaux-toulouse-on-a-un-pays-qui-est-superbe-et-ils-vont-venir-le-massacrer-qu-est-ce-qu-on-va-laisser-a-nos-enfants_6813947_4500055.html"
   },
   {
    "h": "How China is using summits to expand its global influence",
@@ -2611,30 +2700,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-21T05:25:05Z",
    "url": "https://www.lemonde.fr/idees/article/2026/11/21/l-explosion-de-l-extreme-richesse-constitue-le-fait-social-majeur-de-notre-temps-le-manifeste-de-plus-de-110-intellectuels-contre-l-oligarchie_6813943_3232.html"
-  },
-  {
-   "h": "How to save your dragon: Japan zoo joins quest to breed Komodo lizards",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-21T05:23:08.012633Z",
-   "url": "https://asia.nikkei.com/spotlight/big-in-asia/how-to-save-your-dragon-japan-zoo-joins-quest-to-breed-komodo-lizards"
-  },
-  {
-   "h": "Japan weighs early funding to ICC before US sanctions cutoff",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-21T05:23:08.012633Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/japan-weighs-early-funding-to-icc-before-us-sanctions-cutoff"
-  },
-  {
-   "h": "Hyundai, Honda feature US hybrids at auto show amid investment wave",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-21T05:23:08.012633Z",
-   "url": "https://asia.nikkei.com/business/automobiles/hyundai-honda-feature-us-hybrids-at-auto-show-amid-investment-wave"
   },
   {
    "h": "Milburn’s £5.8bn youth employment plan rests on ‘leap of faith’",
@@ -2874,7 +2939,7 @@
   },
   {
    "h": "Manifestations du 21 novembre : un sixième samedi de mobilisations contre la vie chère en France, dans un contexte de ralentissement du mouvement",
-   "w": "L’ampleur de cette nouvelle journée de protestation reste difficile à anticiper. Cet « acte VI » s’inscrit aussi dans le cadre d’un appel européen de syndicats et associations de défense du droit au logement à des actions coordonnées sur trois jours, de vendredi à dimanche.",
+   "w": "Cette nouvelle journée de protestation, moins suivie, est pour le moment « globalement calme ». Cet « acte VI » s’inscrit aussi dans le cadre d’un appel européen de syndicats et d’associations de défense du droit au logement à des actions coordonnées sur trois jours, de vendredi à dimanche.",
    "syms": [],
    "src": "Le Monde — Économie",
    "ts": "2026-11-21T04:30:08Z",
@@ -2890,14 +2955,6 @@
    "ts": "2026-11-21T03:58:46Z",
    "url": "https://www.ft.com/content/77a283dd-b7af-4e72-8d83-9b53ab86f3e0?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Tech outages are rattling Americans so much that they’re stockpiling cash and supplies",
-   "w": "A lack of clarity from world leaders is prompting some people to prepare for the worst.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-21T03:20:00Z",
-   "url": "https://www.marketwatch.com/story/why-are-these-tech-outages-rattling-americans-so-much-that-theyre-stockpiling-cash-and-supplies-07516bdd?mod=mw_rss_topstories"
   },
   {
    "h": "‘Sandpapergate’ fallout gives Australian cricket a rough time",
@@ -2955,33 +3012,6 @@
    "url": "https://www.bbc.co.uk/news/articles/c9zr5nyv5dj2o?at_medium=RSS&at_campaign=rss"
   },
   {
-   "h": "Dow, S&P 500 enter correction as Nasdaq suffers worst week since 2020",
-   "w": "All 11 S&amp;P 500 sectors finished more than 1% lower this week for the first time since April 2025.",
-   "syms": [
-    "SPX",
-    "NDX"
-   ],
-   "src": "MarketWatch",
-   "ts": "2026-11-20T22:46:00Z",
-   "url": "https://www.marketwatch.com/story/dow-s-p-500-enter-correction-as-nasdaq-suffers-worst-week-since-2020-bd74dadf?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Chip stocks see $2.3 trillion weekly wipeout as panic grips the AI trade",
-   "w": "A major semiconductor index just posted its worst weekly performance in 25 years.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-20T22:44:00Z",
-   "url": "https://www.marketwatch.com/story/chip-stocks-see-2-3-trillion-weekly-wipeout-as-panic-grips-the-ai-trade-371f2f03?mod=mw_rss_topstories"
-  },
-  {
-   "h": "These stocks were crushed the most this week as the tech wreck accelerated",
-   "w": "94% of stocks in the S&amp;P 500 declined for the week, 11 of them by at least 20%. But for now, analysts still think you can make a lot of money if you buy them.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-20T22:44:00Z",
-   "url": "https://www.marketwatch.com/story/these-stocks-were-crushed-the-most-this-week-as-the-tech-wreck-accelerated-8d6f7323?mod=mw_rss_topstories"
-  },
-  {
    "h": "Tech stock sell-off drags markets down as Anthropic shares slide",
    "w": "Pressures weighed on US markets, with the S&amp;P 500 and the Dow Jones Industrial Average pushed into correction territory.",
    "syms": [],
@@ -3001,16 +3031,6 @@
    "mine": 1
   },
   {
-   "h": "Nvidia’s stock clinches a stretch of weekly losses not seen since 2008",
-   "w": "One fund manager says the continued uncertainty makes Nvidia vulnerable to more selling, even as the stock has erased $1.16 trillion in market value in the past seven trading sessions.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "MarketWatch",
-   "ts": "2026-11-20T21:58:00Z",
-   "url": "https://www.marketwatch.com/story/nvidias-stock-heads-for-a-stretch-of-weekly-losses-unseen-since-2008-91aba9a6?mod=mw_rss_topstories"
-  },
-  {
    "h": "US tech stocks plunge into bear market in worst week since Covid-19 crisis",
    "w": "Shares in Anthropic and Nvidia tumble as fears over the AI spending boom grip Wall Street",
    "syms": [
@@ -3021,14 +3041,6 @@
    "ts": "2026-11-20T21:52:25Z",
    "url": "https://www.ft.com/content/9f3c6ed6-c08f-4710-9683-ee2f5eb25841?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Zscaler stock jumps 18% on report that CrowdStrike in talks to buy security vendor",
-   "w": "Cybersecurity companies have been hunting for acquisitions in the AI era.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-20T21:35:24Z",
-   "url": "https://www.cnbc.com/2026/11/20/zscaler-crowdstrike-deal.html"
   },
   {
    "h": "Inside Anthropic’s historic IPO",
@@ -3063,14 +3075,6 @@
    "src": "BBC — Business",
    "ts": "2026-11-20T20:54:12Z",
    "url": "https://www.bbc.co.uk/news/articles/cmde1lw9y54ko?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "Trump says he still has confidence in Lutnick",
-   "w": "President Donald Trump, when asked by CNBC's Eamon Javers, said he has not lost confidence in Commerce Secretary Howard Lutnick.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-20T20:52:08Z",
-   "url": "https://www.cnbc.com/2026/11/20/trump-lutnick-commerce-china-ai.html"
   },
   {
    "h": "Trump considering new Iran strikes as US military warns of strain on forces",
