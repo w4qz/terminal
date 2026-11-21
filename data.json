@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-21T05:30:21.105369Z",
+ "generated_at": "2026-11-21T06:32:47.892475Z",
  "quotes": {
   "NVDA": {
    "p": 125.53,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 56092.9297,
+   "p": 56106.9414,
    "prev": 61901.8203,
-   "chg": -5808.8906,
-   "pct": -9.38,
+   "chg": -5794.8789,
+   "pct": -9.36,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-21T05:30:21.105369Z",
+   "ts": "2026-11-21T06:32:47.892475Z",
    "open": 58802.6016,
-   "lo": 55659.4688,
+   "lo": 55631.5742,
    "hi": 59081.543,
-   "vol": 69939314688,
+   "vol": 72447336448,
    "h": [
     77198.21,
     77434.75,
@@ -844,7 +844,7 @@
     64893.95,
     62987.27,
     61901.82,
-    56092.93
+    56106.94
    ]
   }
  },
@@ -945,9 +945,9 @@
    "ccy": "USD",
    "mcap": 3598139523072,
    "pe": 25.2881,
-   "fpe": 20.0208,
+   "fpe": 20.0184,
    "eps": 19.16,
-   "feps": 24.2008,
+   "feps": 24.2038,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -1071,9 +1071,9 @@
    "industry": "Semiconductors",
    "ccy": "USD",
    "mcap": 1652980711424,
-   "pe": 22.8139,
+   "pe": 20.6552,
    "fpe": 13.6287,
-   "eps": 13.97,
+   "eps": 15.43,
    "feps": 23.3853,
    "revTTM": 4944817553408,
    "netIncome": 2527571476480,
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1453140738048,
    "pe": 38.8774,
-   "fpe": 15.7026,
+   "fpe": 15.6799,
    "eps": 7.83,
-   "feps": 19.386,
+   "feps": 19.414,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1359,9 +1359,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 1199931523072,
-   "pe": 43.8512,
+   "pe": 43.7231,
    "fpe": 26.4812,
-   "eps": 30.72,
+   "eps": 30.81,
    "feps": 50.8704,
    "revTTM": 86461997056,
    "netIncome": 27580000256,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1018236174336,
+   "mcap": 1015122821120,
    "pe": 46.3587,
    "fpe": 39.6339,
    "eps": 2.76,
    "feps": 3.2283,
    "revTTM": 735839977472,
    "netIncome": 22076000256,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.774,
@@ -1568,9 +1568,9 @@
    "industry": "Banks - Diversified",
    "ccy": "USD",
    "mcap": 824646434816,
-   "pe": 13.4312,
+   "pe": 13.0256,
    "fpe": 12.1429,
-   "eps": 23.12,
+   "eps": 23.84,
    "feps": 25.5731,
    "revTTM": 190732992512,
    "netIncome": 64526999552,
@@ -1609,9 +1609,9 @@
    "industry": "Semiconductors",
    "ccy": "USD",
    "mcap": 702393286656,
-   "pe": 90.6816,
+   "pe": 98.2384,
    "fpe": 24.0608,
-   "eps": 4.68,
+   "eps": 4.32,
    "feps": 17.6382,
    "revTTM": 45435998208,
    "netIncome": 7725000192,
@@ -1737,9 +1737,9 @@
    "industry": "Drug Manufacturers - General",
    "ccy": "USD",
    "mcap": 651105206272,
-   "pe": 40.5502,
+   "pe": 41.0425,
    "fpe": 23.2924,
-   "eps": 6.67,
+   "eps": 6.59,
    "feps": 11.612,
    "revTTM": 99334995968,
    "netIncome": 16094999552,
@@ -2168,8 +2168,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 122.6403,
+   "shares": 572600000,
+   "divYield": 2.579,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2221,44 +2226,112 @@
  ],
  "news": [
   {
+   "h": "Le directeur RH d’Avis Budget Group cède des actions pour 925.530$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T06:17:09Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-rh-davis-budget-group-cede-des-actions-pour-925530-93CH-3707803"
+  },
+  {
+   "h": "Un directeur de Riskified Ltd vend des actions pour 253.781$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T06:17:08Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-riskified-ltd-vend-des-actions-pour-253781-93CH-3707802"
+  },
+  {
+   "h": "Le directeur financier de Figma Inc vend des actions pour 2,5 millions de dollars",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T06:02:22Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-de-figma-inc-vend-des-actions-pour-25-millions-de-dollars-93CH-3707801"
+  },
+  {
+   "h": "Saba Capital Management achète 485.007$ de BNY Mellon Strategic Municipals",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T06:02:11Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/saba-capital-management-achete-485007-de-bny-mellon-strategic-municipals-93CH-3707800"
+  },
+  {
+   "h": "Bitcoin affiche un recul de 10% dans un marché baissier",
+   "w": "",
+   "syms": [
+    "BTC"
+   ],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T06:02:05Z",
+   "url": "https://fr.investing.com/news/cryptocurrency-news/bitcoin-affiche-un-recul-de-10-dans-un-marche-baissier-3707799"
+  },
+  {
+   "h": "La SVP d’MACOM Tech Ambra Roth cède des actions pour 130.500$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T06:01:55Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/la-svp-dmacom-tech-ambra-roth-cede-des-actions-pour-130500-93CH-3707798"
+  },
+  {
+   "h": "A Agen, les irréductibles opposants à la ligne à grande vitesse Bordeaux-Toulouse : « On a un pays qui est superbe et ils vont venir le massacrer. Qu’est-ce qu’on va laisser à nos enfants ? »",
+   "w": "Dans le Lot-et-Garonne, les déboisements préalables au chantier de la ligne à grande vitesse Bordeaux-Toulouse sont sur le point de commencer. Autour d’Agen, les opposants à ce projet, lancé en 2009, balaient les arguments d’attractivité économique et de gain de temps pour dénoncer son coût exorbitant et son impact désastreux sur l’environnement.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-21T06:00:11Z",
+   "url": "https://www.lemonde.fr/m-le-mag/article/2026/11/21/a-agen-les-irreductibles-opposants-a-la-ligne-a-grande-vitesse-bordeaux-toulouse-on-a-un-pays-qui-est-superbe-et-ils-vont-venir-le-massacrer-qu-est-ce-qu-on-va-laisser-a-nos-enfants_6813947_4500055.html"
+  },
+  {
+   "h": "Téléphonie mobile par satellite : le chemin tortueux des opérateurs européens vers une constellation souveraine",
+   "w": "Face à Starlink, Orange, Deutsche Telekom, Telefonica et Vodafone veulent créer un service mobile par satellite européen et souverain. Mais les délais, le coût et le manque de solutions disponibles compliquent leur projet.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-21T06:00:05Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/11/21/telephonie-mobile-par-satellite-le-chemin-tortueux-des-operateurs-europeens-vers-une-constellation-souveraine_6813948_3234.html"
+  },
+  {
+   "h": "Cardano abandonne 10% dans un marché baissier",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T05:57:59Z",
+   "url": "https://fr.investing.com/news/cryptocurrency-news/cardano-abandonne-10-dans-un-marche-baissier-3707796"
+  },
+  {
+   "h": "Le conseiller juridique d’Oruka Therapeutics cède des actions pour 853.985$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T05:47:30Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-conseiller-juridique-doruka-therapeutics-cede-des-actions-pour-853985-93CH-3707794"
+  },
+  {
+   "h": "Le directeur comptable de Sailpoint Inc vend des actions pour 151.317$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T05:46:55Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-comptable-de-sailpoint-inc-vend-des-actions-pour-151317-93CH-3707793"
+  },
+  {
+   "h": "Le Bitcoin s’effondre sous 56.000$ alors que la crise de liquidités s’intensifie",
+   "w": "",
+   "syms": [
+    "BTC"
+   ],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T05:46:26Z",
+   "url": "https://fr.investing.com/news/cryptocurrency-news/le-bitcoin-seffondre-sous-56000-alors-que-la-crise-de-liquidite-sintensifie-3707795"
+  },
+  {
    "h": "« L’explosion de l’extrême richesse constitue le fait social majeur de notre temps » : le manifeste de plus de 110 intellectuels contre l’oligarchie",
    "w": "Pour contrer le club des milliardaires dont la puissance ne cesse de croître, et à l’heure où se tient à Paris un colloque sur le sujet, des penseurs dont quatre Prix Nobel (Daron Acemoglu, Esther Duflo, Paul Krugman et Joseph Stiglitz) appellent, dans une tribune au « Monde », à créer une « internationale démocratique ».",
    "syms": [],
    "src": "Le Monde — Économie",
-   "ts": "2026-11-21T05:25:07Z",
+   "ts": "2026-11-21T05:25:05Z",
    "url": "https://www.lemonde.fr/idees/article/2026/11/21/l-explosion-de-l-extreme-richesse-constitue-le-fait-social-majeur-de-notre-temps-le-manifeste-de-plus-de-110-intellectuels-contre-l-oligarchie_6813943_3232.html"
-  },
-  {
-   "h": "Le directeur juridique d’Aeon Biopharma achète des actions pour 17.478$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T05:16:58Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-juridique-daeon-biopharma-achete-des-actions-pour-17478-93CH-3707791"
-  },
-  {
-   "h": "Le président exécutif de Morningstar Inc cède des actions pour 1,7 M$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T05:16:57Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-president-executif-de-morningstar-inc-cede-des-actions-pour-17-m-93CH-3707790"
-  },
-  {
-   "h": "Le PDG d’Aeon Biopharma Robert Bancroft achète 19.590$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T05:01:43Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-daeon-biopharma-robert-bancroft-achete-19590-dactions-93CH-3707789"
-  },
-  {
-   "h": "La directrice comptable d’Aeon Biopharma achète pour 19.984$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T05:01:40Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-comptable-daeon-biopharma-achete-pour-19984-dactions-93CH-3707788"
   },
   {
    "h": "Milburn’s £5.8bn youth employment plan rests on ‘leap of faith’",
@@ -2327,12 +2400,30 @@
    "mine": 1
   },
   {
+   "h": "My mother’s murder and the verdict that shocked a nation",
+   "w": "My mother, the journalist Daphne Caruana Galizia, was murdered in 2017. In September, the man on trial for her killing was acquitted in a verdict that horrified my family. Then we looked closer",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-21T05:00:26Z",
+   "url": "https://www.ft.com/content/6327680d-ac00-4ab5-841a-420517a05e30?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "A Turner masterpiece returns to Rome",
    "w": "‘Rome, from Mount Aventine’, valued at £50mn when it comes to auction in December, offers a window into the artist’s fascination with Italy",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — europe",
    "ts": "2026-11-21T05:00:26Z",
    "url": "https://www.ft.com/content/de019b18-9dab-470f-bdc4-d44b7156a957",
+   "mine": 1
+  },
+  {
+   "h": "Google DeepMind’s Henry Shevlin: ‘This is the most important part of being human’",
+   "w": "The in-house philosopher on the problem of consciousness and what it might feel like to be an AI agent",
+   "syms": [],
+   "src": "myFT — technology",
+   "ts": "2026-11-21T05:00:26Z",
+   "url": "https://www.ft.com/content/6f807d57-f0ea-4251-9f4d-75a6edc8d49a?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2374,7 +2465,7 @@
    "h": "An interior designer’s guide to Kenmare, County Kerry",
    "w": "Bryan O’Sullivan on the best pubs, breakfast sambos and seaweed baths in his hometown",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — europe",
    "ts": "2026-11-21T05:00:08Z",
    "url": "https://www.ft.com/content/f719ae89-b343-4ae1-945c-6bd52411d90a",
    "mine": 1
@@ -2383,9 +2474,36 @@
    "h": "Russia and Ukraine’s drone war sends optical fibre prices soaring",
    "w": "Kyiv’s drone advantage is threatened by sixfold price surge in key anti-jamming commodity",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — europe",
    "ts": "2026-11-21T05:00:08Z",
    "url": "https://www.ft.com/content/339c3a72-bce5-44ed-bc6c-c8a8199cfb40?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "A first look at Experimental Porto",
+   "w": "The new hotel combines quirk, colour — and cool",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-21T05:00:07Z",
+   "url": "https://www.ft.com/content/4f567dee-79a3-4529-8a6b-4c6aa9d8c750",
+   "mine": 1
+  },
+  {
+   "h": "Builders bet on €620bn defence infrastructure boom in Europe",
+   "w": "Construction companies target military projects to develop bases, airports and bridges in bid to offset weak residential market",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-21T05:00:07Z",
+   "url": "https://www.ft.com/content/b647fcba-e5e6-4ca2-8417-8c9146eac39e?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "How to host a local food festival in Piedmont",
+   "w": "Laila Gohar celebrates the growers and farmers in Italy",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-21T05:00:07Z",
+   "url": "https://www.ft.com/content/768df9cc-1e82-4c09-8ac8-cd9f82e7e44b",
    "mine": 1
   },
   {
@@ -2398,15 +2516,6 @@
    "mine": 1
   },
   {
-   "h": "Builders bet on €620bn defence infrastructure boom in Europe",
-   "w": "Construction companies target military projects to develop bases, airports and bridges in bid to offset weak residential market",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-21T05:00:07Z",
-   "url": "https://www.ft.com/content/b647fcba-e5e6-4ca2-8417-8c9146eac39e?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Martin Wolf on the US midterms: Could history help predict the next two years of US politics?",
    "w": "Historian Heather Cox Richardson on how Democrats should take the fight to Trump",
    "syms": [],
@@ -2416,62 +2525,12 @@
    "mine": 1
   },
   {
-   "h": "Comment investir dans l’innovation de rupture",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T04:52:37Z",
-   "url": "https://fr.investing.com/news/stock-market-news/comment-investir-dans-linnovation-de-rupture-3707786"
-  },
-  {
-   "h": "Le PDG de Spok Holdings Inc vend des actions ordinaires pour 426.534$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T04:47:09Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-spok-holdings-inc-vend-des-actions-ordinaires-pour-426534-93CH-3707785"
-  },
-  {
    "h": "Sixième samedi de manifestations contre la vie chère en France, dans un contexte de baisse de la mobilisation",
    "w": "L’ampleur de cette nouvelle journée de protestation reste difficile à anticiper. Cet « acte VI » s’inscrit aussi dans le cadre d’un appel européen de syndicats et associations de défense du droit au logement à des actions coordonnées sur trois jours, de vendredi à dimanche.",
    "syms": [],
    "src": "Le Monde — Économie",
    "ts": "2026-11-21T04:30:08Z",
    "url": "https://www.lemonde.fr/societe/article/2026/11/21/sixieme-samedi-de-manifestations-contre-la-vie-chere-en-france-dans-un-contexte-de-baisse-de-la-mobilisation_6813913_3224.html"
-  },
-  {
-   "h": "Le FBI enquête sur une possible violation de sa base de données criminelle nationale",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T04:21:38Z",
-   "url": "https://fr.investing.com/news/economy-news/le-fbi-enquete-sur-une-possible-violation-de-sa-base-de-donnees-criminelle-nationale-3707783"
-  },
-  {
-   "h": "Le CAC 40 sous 8000 pts, -5% en 1 semaine : Céder à la panique ou profiter des soldes?",
-   "w": "",
-   "syms": [
-    "CAC"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T04:18:31Z",
-   "url": "https://fr.investing.com/news/stock-market-news/le-cac-40-sous-8000-pts-5-en-1-semaine--ceder-a-la-panique-ou-profiter-des-soldes-3707782"
-  },
-  {
-   "h": "Le BPA de Oxford Lane a manqué les attentes de 0,35$, le CA a surpassé les prévisions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T04:17:20Z",
-   "url": "https://fr.investing.com/news/earnings/le-bpa-de-oxford-lane-a-manque-les-attentes-de-035-le-ca--a-surpasse-les-previsions-3707781"
-  },
-  {
-   "h": "Déroute des actions tech US : 12 opportunités massacrées, potentiel jusqu’à +213%",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T04:14:23Z",
-   "url": "https://fr.investing.com/news/stock-market-news/deroute-des-actions-tech-us--12-opportunites-massacrees-potentiel-jusqua-213-3707779"
   },
   {
    "h": "Nvidia affair puts Chinese spies in spotlight",
@@ -2511,6 +2570,30 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-21T00:33:30Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/21/aux-etats-unis-wall-street-en-deroute-apres-la-degringolade-des-societes-liees-a-l-intelligence-artificielle_6813811_3234.html"
+  },
+  {
+   "h": "How to save your dragon: Japan zoo joins quest to breed Komodo lizards",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-21T00:32:47.892475Z",
+   "url": "https://asia.nikkei.com/spotlight/big-in-asia/how-to-save-your-dragon-japan-zoo-joins-quest-to-breed-komodo-lizards"
+  },
+  {
+   "h": "Japan weighs early funding to ICC before US sanctions cutoff",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-21T00:32:47.892475Z",
+   "url": "https://asia.nikkei.com/politics/international-relations/japan-weighs-early-funding-to-icc-before-us-sanctions-cutoff"
+  },
+  {
+   "h": "Japan wins 25% quota increase for large bluefin tuna from 2027",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-21T00:32:47.892475Z",
+   "url": "https://asia.nikkei.com/business/fisheries/japan-wins-25-quota-increase-for-large-bluefin-tuna-from-20272"
   },
   {
    "h": "« GTA VI » s’offre un lancement record avec 3,79 milliards de dollars de ventes dès le premier jour",
@@ -2750,14 +2833,6 @@
    "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/japan-sovereign-ai-project-faces-5bn-cost-surge-on-chip-prices-weak-yen"
   },
   {
-   "h": "Hyundai, Honda feature US hybrids at auto show amid investment wave",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-20T21:23:16.903367Z",
-   "url": "https://asia.nikkei.com/business/automobiles/hyundai-honda-feature-us-hybrids-at-auto-show-amid-investment-wave"
-  },
-  {
    "h": "Inside Anthropic’s historic IPO",
    "w": "Can the low-key company preserve its idiosyncratic culture in the glare of public markets?",
    "syms": [],
@@ -2822,22 +2897,6 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-20T20:47:58Z",
    "url": "https://www.cnbc.com/2026/11/20/trump-data-centers-ai-companies-tax.html"
-  },
-  {
-   "h": "US, Japan should lead next-gen transportation: Trump's ex-transport chief",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-20T20:29:02.214832Z",
-   "url": "https://asia.nikkei.com/editor-s-picks/interview/us-japan-should-lead-next-gen-transportation-trump-s-ex-transport-chief"
-  },
-  {
-   "h": "Battery maker GS Yuasa targets defense, space as growth fields: CEO",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-20T20:29:02.214832Z",
-   "url": "https://asia.nikkei.com/editor-s-picks/interview/battery-maker-gs-yuasa-targets-defense-space-as-growth-fields-ceo"
   },
   {
    "h": "Trump considering new Iran strikes as US military warns of strain on forces",
@@ -3007,48 +3066,12 @@
    "mine": 1
   },
   {
-   "h": "Stockpickers: Sirius Real Estate, Gear4Music, Trifast",
-   "w": "Our experts discuss which companies to buy, sell or hold this week",
-   "syms": [],
-   "src": "myFT — companies",
-   "ts": "2026-11-20T18:00:04Z",
-   "url": "https://www.ft.com/content/eb859639-46ce-4399-adb0-dd0b442ca151",
-   "mine": 1
-  },
-  {
-   "h": "Fossil fuel fightback drives COP31 climate talks into overtime",
-   "w": "Negotiations continue into the night as groups of countries remain far apart on key issues to tackle global warming",
-   "syms": [],
-   "src": "myFT — companies",
-   "ts": "2026-11-20T17:59:41Z",
-   "url": "https://www.ft.com/content/fb459525-6978-40f3-a079-4e59047858bd?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "UK to explore even closer ties with EU after agreeing deal, says Burnham",
    "w": "The UK-EU deal agreed on Friday covers British food exports, emissions trading and a youth experience scheme.",
    "syms": [],
    "src": "BBC — Business",
    "ts": "2026-11-20T17:49:48Z",
    "url": "https://www.bbc.co.uk/news/articles/c6jreyqgw4e9o?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "Grand Transitory Assumptions",
-   "w": "Questions are increasingly being asked about the arrival of second-round inflation effects",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-20T17:48:06Z",
-   "url": "https://www.ft.com/content/b81ae370-254c-48a7-8a19-8cce53e4e2bb",
-   "mine": 1
-  },
-  {
-   "h": "Putin was the real winner at the trilateral summit",
-   "w": "The Shenzhen meeting only emboldened the Russian leader. Now Europe must lay the groundwork for serious diplomacy",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-20T17:33:46Z",
-   "url": "https://www.ft.com/content/8f24b313-1b9a-401d-88e6-089aedc72519",
-   "mine": 1
   },
   {
    "h": "Bernabé Malacalza, géopolitologue : « Il existe une construction narrative complotiste autour de l’influence chinoise en Amérique latine »",
@@ -3065,22 +3088,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-20T17:00:12Z",
    "url": "https://www.lemonde.fr/idees/article/2026/11/20/dominique-david-ifri-la-puissance-d-un-etat-se-prouve-d-abord-a-l-interieur-avant-de-s-exporter_6813671_3232.html"
-  },
-  {
-   "h": "Chez Accor, le premier actionnaire exige le départ du PDG Sébastien Bazin",
-   "w": "Le fonds britannique Parvus, qui possède 14,1 % du géant français de l’hôtellerie, réclame l’éviction de Sébastien Bazin, menaçant de demander sa révocation lors de la prochaine assemblée générale.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-20T17:00:02Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/11/20/chez-accor-le-premier-actionnaire-exige-le-depart-du-pdg_6813670_3234.html"
-  },
-  {
-   "h": "Thomas Saunier, patron du poids lourd de l’assurance Malakoff Humanis, démis de ses fonctions",
-   "w": "En poste depuis dix ans, Thomas Saunier est visé par une enquête judiciaire ouverte au printemps et avait perdu la confiance des syndicats.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-20T16:54:18Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/11/20/thomas-saunier-patron-du-poids-lourd-de-l-assurance-malakoff-humanis-demis-de-ses-fonctions_6813668_3234.html"
   },
   {
    "h": "Data center construction costs soar 13% in 2026",
