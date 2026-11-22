@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-21T23:13:52.549124Z",
+ "generated_at": "2026-11-21T23:57:01.777983Z",
  "quotes": {
   "NVDA": {
    "p": 125.53,
@@ -523,8 +523,8 @@
    "prev": 6113.8599,
    "chg": -171.9097,
    "pct": -2.81,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^STOXX50E)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^STOXX50E) — last update failed",
    "ts": "2026-11-20T16:30:00Z",
    "open": 6064.7598,
    "lo": 5941.9502,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 60170.3008,
+   "p": 60136.3906,
    "prev": 58798.9805,
-   "chg": 1371.3203,
-   "pct": 2.33,
+   "chg": 1337.4102,
+   "pct": 2.27,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-21T23:13:52.549124Z",
+   "ts": "2026-11-21T23:57:01.777983Z",
    "open": 58802.6016,
    "lo": 55631.5742,
    "hi": 60619.1836,
-   "vol": 57785081856,
+   "vol": 58131144704,
    "h": [
     77434.75,
     78248.45,
@@ -844,7 +844,7 @@
     62987.27,
     61901.82,
     58798.98,
-    60170.3
+    60136.39
    ]
   }
  },
@@ -945,9 +945,9 @@
    "ccy": "USD",
    "mcap": 3598139523072,
    "pe": 25.2881,
-   "fpe": 20.0208,
+   "fpe": 20.0184,
    "eps": 19.16,
-   "feps": 24.2008,
+   "feps": 24.2038,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1453140738048,
    "pe": 38.8774,
-   "fpe": 15.7026,
+   "fpe": 15.6799,
    "eps": 7.83,
-   "feps": 19.386,
+   "feps": 19.414,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1018236174336,
+   "mcap": 1015122821120,
    "pe": 46.3587,
    "fpe": 39.6339,
    "eps": 2.76,
    "feps": 3.2283,
    "revTTM": 745178988544,
    "netIncome": 20878000128,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.774,
@@ -2126,7 +2126,7 @@
    "ccy": "USD",
    "mcap": 9324940288,
    "eps": -2.12,
-   "feps": -1.5613,
+   "feps": -1.3642,
    "revTTM": 142880000,
    "netIncome": -628267008,
    "shares": 311349798,
@@ -2153,7 +2153,7 @@
    "earnEnd": 1794258000,
    "earnEst": false,
    "trailDiv": 0.0,
-   "fpe_ns": -14.9046
+   "fpe_ns": -17.058
   },
   "ACWI": {
    "name": "iShares MSCI ACWI ETF",
@@ -2168,8 +2168,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 122.6403,
+   "shares": 572600000,
+   "divYield": 2.579,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2220,6 +2225,55 @@
   }
  ],
  "news": [
+  {
+   "h": "Le directeur financier d’EPAM vend des actions pour 545.607$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T23:47:17Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-depam-vend-des-actions-pour-545607-93CH-3707900"
+  },
+  {
+   "h": "Le directeur comptable d’Altimmune Inc achète des actions pour 14.187$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T23:46:59Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-comptable-daltimmune-inc-achete-des-actions-pour-14187-93CH-3707899"
+  },
+  {
+   "h": "Un dirigeant de Global Self Storage Inc achète des actions pour 4.815$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T23:46:49Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-de-global-self-storage-inc-achete-des-actions-pour-4815-93CH-3707898"
+  },
+  {
+   "h": "COP31 negotiators try to break impasse after EU raises prospect of ‘no deal’",
+   "w": "Talks run into second day of overtime as Saudi Arabia leads opposition to inclusion of fossil fuel phase out in final agreement",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-21T23:34:24Z",
+   "url": "https://www.ft.com/content/b3ba64e9-9482-4525-acc7-49825f3daace?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Un administrateur de Starwood Property Trust achète pour 2,02 millions $ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T23:32:10Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-starwood-property-trust-achete-pour-202-millions--dactions-93CH-3707897"
+  },
+  {
+   "h": "La SEVP de CNB Financial Corporation, Leanne Kassab, cède des actions pour 44.653$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-21T23:31:56Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/la-sevp-de-cnb-financial-corporation-leanne-kassab-cede-des-actions-pour-44653-93CH-3707896"
+  },
   {
    "h": "I’m in my 40s. Should I accept a lower pension in exchange for naming my husband or child as a beneficiary?",
    "w": "“If I die before my husband, he will receive a lifetime pension equal to 50%–66% of my monthly benefit.”",
@@ -2278,14 +2332,6 @@
    "url": "https://fr.investing.com/news/insider-trading-news/le-conseiller-juridique-de-tecogen-inc-achete-des-actions-pour-19600-93CH-3707889"
   },
   {
-   "h": "Le directeur de Tecogen Inc achète des actions pour 19.556$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T21:17:12Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-de-tecogen-inc-achete-des-actions-pour-19556-93CH-3707888"
-  },
-  {
    "h": "Dream of gas-powered vehicles falters in China’s hydrogen capital",
    "w": "High costs and dwindling subsidies leave rows of hydrogen-powered buggies sitting idle in the southern city of Foshan",
    "syms": [],
@@ -2295,28 +2341,12 @@
    "mine": 1
   },
   {
-   "h": "Un administrateur d’Origin Bancorp Inc achète des actions pour 78.660$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T20:46:52Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-dorigin-bancorp-inc-achete-des-actions-pour-78660-93CH-3707886"
-  },
-  {
    "h": "‘It’s downright dirty’: My brother moved in with our ailing mother and closed her bank account. What can I do?",
    "w": "“It is devastating when the people you should be able to trust become the very people you have to protect yourself from.”",
    "syms": [],
    "src": "MarketWatch",
    "ts": "2026-11-21T20:15:00Z",
    "url": "https://www.marketwatch.com/story/it-is-heartbreaking-exhausting-and-downright-dirty-my-brother-took-over-our-ailing-mothers-life-and-finances-what-can-i-do-b4d48817?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Un administrateur de Clene Inc. achète pour 34.240$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T20:01:47Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-clene-inc-achete-pour-34240-dactions-93CH-3707885"
   },
   {
    "h": "‘I’ve been a stay-at-home mom’: I’m 50 and have a chronic illness. My husband lost his job. Should he raid his 401(k)?",
@@ -2335,28 +2365,12 @@
    "url": "https://www.marketwatch.com/story/buyers-are-out-for-blood-as-housing-market-finally-hits-rock-bottom-fa5093a6?mod=mw_rss_topstories"
   },
   {
-   "h": "Terrance Ford, directeur de First Community Corporation, achète des actions pour 20.928$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T19:32:44Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/terrance-ford-directeur-de-first-community-corporation-achete-des-actions-pour-20928-93CH-3707884"
-  },
-  {
    "h": "My husband is happily retired at 64 and thinks I should keep working. Is he being fair?",
    "w": "“I’m exhausted. My alarm goes off at 6 a.m., and I have a 50-minute commute.”",
    "syms": [],
    "src": "MarketWatch",
    "ts": "2026-11-21T19:23:00Z",
    "url": "https://www.marketwatch.com/story/my-husband-is-happily-retired-at-64-and-thinks-i-should-keep-working-is-he-being-fair-325c5f38?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Trump ordonne aux contractants fédéraux de signaler les demandes du Congrès",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T19:00:57Z",
-   "url": "https://fr.investing.com/news/economy-news/trump-ordonne-aux-contractants-federaux-de-signaler-les-demandes-du-congres-3707883"
   },
   {
    "h": "America is definitely rich enough to fix Social Security and Medicare. Here’s how.",
@@ -2375,13 +2389,30 @@
    "url": "https://www.marketwatch.com/story/never-too-late-to-start-practical-investing-advice-from-some-of-the-top-women-in-finance-e01f0755?mod=mw_rss_topstories"
   },
   {
-   "h": "EU raises prospect of ‘no deal’ at COP31",
-   "w": "Escalation in tactics comes as Saudi Arabia leads opposition to inclusion of fossil fuel phase out in final agreement",
+   "h": "Bro hugs, no deals: Why Shenzhen was a win for Beijing",
+   "w": "",
    "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-21T18:07:02Z",
-   "url": "https://www.ft.com/content/b3ba64e9-9482-4525-acc7-49825f3daace?syn-25a6b1a6=1",
-   "mine": 1
+   "src": "Nikkei Asia",
+   "ts": "2026-11-21T17:57:01.777983Z",
+   "url": "https://asia.nikkei.com/opinion/bro-hugs-no-deals-why-shenzhen-was-a-win-for-beijing"
+  },
+  {
+   "h": "Global crude exports hit record high despite Hormuz closure",
+   "w": "",
+   "syms": [
+    "CL"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-21T17:57:01.777983Z",
+   "url": "https://asia.nikkei.com/business/energy/global-crude-exports-hit-record-high-despite-hormuz-closure"
+  },
+  {
+   "h": "How to save your dragon: Japan zoo joins quest to breed Komodo lizards",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-21T17:57:01.777983Z",
+   "url": "https://asia.nikkei.com/spotlight/big-in-asia/how-to-save-your-dragon-japan-zoo-joins-quest-to-breed-komodo-lizards"
   },
   {
    "h": "Paolo Bulgari, président du groupe de joaillerie racheté par LVMH, est mort à 89 ans",
@@ -2563,30 +2594,6 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-21T15:04:56Z",
    "url": "https://www.cnbc.com/2026/11/21/emergency-prep-spending-tech-outages.html"
-  },
-  {
-   "h": "Japan stamp maker stomps into AI realm by authenticating videos on X",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-21T15:01:57.121949Z",
-   "url": "https://asia.nikkei.com/business/companies/japan-stamp-maker-stomps-into-ai-realm-by-authenticating-videos-on-x"
-  },
-  {
-   "h": "US, Japan should lead next-gen transportation: Trump's ex-transport chief",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-21T15:01:57.121949Z",
-   "url": "https://asia.nikkei.com/editor-s-picks/interview/us-japan-should-lead-next-gen-transportation-trump-s-ex-transport-chief"
-  },
-  {
-   "h": "Battery maker GS Yuasa targets defense, space as growth fields: CEO",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-21T15:01:57.121949Z",
-   "url": "https://asia.nikkei.com/editor-s-picks/interview/battery-maker-gs-yuasa-targets-defense-space-as-growth-fields-ceo"
   },
   {
    "h": "I never wanted the American Dream and I felt like something was wrong with me—until I moved abroad",
