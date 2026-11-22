@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T18:54:57.313769Z",
+ "generated_at": "2026-11-22T19:47:18.598419Z",
  "quotes": {
   "NVDA": {
    "p": 125.53,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 60688.1094,
+   "p": 60645.0,
    "prev": 60094.0898,
-   "chg": 594.0195,
-   "pct": 0.99,
+   "chg": 550.9102,
+   "pct": 0.92,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-22T18:54:57.313769Z",
+   "ts": "2026-11-22T19:47:18.598419Z",
    "open": 60093.0078,
    "lo": 58680.2148,
    "hi": 61328.9453,
-   "vol": 28547213312,
+   "vol": 28074641408,
    "h": [
     78248.45,
     76677.3,
@@ -844,7 +844,7 @@
     61901.82,
     58798.98,
     60094.09,
-    60688.11
+    60645.0
    ]
   }
  },
@@ -945,9 +945,9 @@
    "ccy": "USD",
    "mcap": 3598139523072,
    "pe": 25.2881,
-   "fpe": 20.0208,
+   "fpe": 20.0184,
    "eps": 19.16,
-   "feps": 24.2008,
+   "feps": 24.2038,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1453140738048,
    "pe": 38.8774,
-   "fpe": 15.7026,
+   "fpe": 15.6799,
    "eps": 7.83,
-   "feps": 19.386,
+   "feps": 19.414,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1018236174336,
+   "mcap": 1015122821120,
    "pe": 46.3587,
    "fpe": 39.6339,
    "eps": 2.76,
    "feps": 3.2283,
    "revTTM": 745178988544,
    "netIncome": 20878000128,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.774,
@@ -2126,7 +2126,7 @@
    "ccy": "USD",
    "mcap": 9324940288,
    "eps": -2.12,
-   "feps": -1.5613,
+   "feps": -1.3642,
    "revTTM": 142880000,
    "netIncome": -628267008,
    "shares": 311349798,
@@ -2153,7 +2153,7 @@
    "earnEnd": 1794258000,
    "earnEst": false,
    "trailDiv": 0.0,
-   "fpe_ns": -14.9046
+   "fpe_ns": -17.058
   },
   "ACWI": {
    "name": "iShares MSCI ACWI ETF",
@@ -2168,8 +2168,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 122.6403,
+   "shares": 572600000,
+   "divYield": 2.579,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2221,6 +2226,68 @@
  ],
  "news": [
   {
+   "h": "Delta flight delays add to concerns about US air travel system",
+   "w": "FAA said technical problems at airline’s Atlanta hub were not related to countrywide outage this month",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-22T19:25:06Z",
+   "url": "https://www.ft.com/content/14566557-3f63-4eeb-b589-6cb1144dc918?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Medicare beneficiaries could skip the nursing home for cheaper care at home under new bill",
+   "w": "The plan would free up hospital and nursing-home beds — and lower costs.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-22T19:24:00Z",
+   "url": "https://www.marketwatch.com/story/medicare-beneficiaries-could-skip-the-nursing-home-for-cheaper-care-at-home-under-new-bill-e289c8d0?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Bessent refuses to rule out Huang’s return to Nvidia",
+   "w": "Treasury secretary says it depends ‘where the buck stops’ as US president calls for former chief’s reinstatement",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "myFT — world",
+   "ts": "2026-11-22T19:08:31Z",
+   "url": "https://www.ft.com/content/91b7a3a6-8ac5-4327-ad03-6d951f287346?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Gregory M. Shepard cède pour 2,19 M$ d’actions Atlas Energy Solutions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T19:02:11Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/gregory-m-shepard-cede-pour-219-m-dactions-atlas-energy-solutions-93CH-3708004"
+  },
+  {
+   "h": "Employees at Eric Trump-backed robot startup lose health benefits as company's cash crunch deepens",
+   "w": "Foundation is pursuing an emergency bridge loan and has been in talks with VC firms as it waits for a $150 million investment from South Korea's Base Group.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-22T18:55:05Z",
+   "url": "https://www.cnbc.com/2026/11/22/foundation-future-industries-health-benefits-payroll-base-group.html"
+  },
+  {
+   "h": "Emmanuel Macron envisage de réunir le Congrès à Versailles pour faire adopter une « règle d’or » budgétaire, une procédure inédite à plus d’un titre",
+   "w": "Devant le dérapage des finances publiques et de l’endettement, le chef de l’Etat évoque l’idée d’une mesure contraignante dans la Constitution. Le Rassemblement national, favorable au principe, devrait jouer les arbitres sur les modalités.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-22T18:53:29Z",
+   "url": "https://www.lemonde.fr/politique/article/2026/11/22/emmanuel-macron-envisage-de-reunir-le-congres-a-versailles-pour-faire-adopter-une-regle-d-or-budgetaire-une-procedure-inedite-a-plus-d-un-titre_6814241_823448.html"
+  },
+  {
+   "h": "Bessent affirme que l’administration Trump attend des réponses de Nvidia",
+   "w": "",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T18:48:04Z",
+   "url": "https://fr.investing.com/news/company-news/bessent-affirme-que-ladministration-trump-attend-des-reponses-de-nvidia-3708002"
+  },
+  {
    "h": "Choose France : 273 projets industriels seront présentés lors de ce sommet dévolu aux entreprises tricolores",
    "w": "Cette édition, réservée aux entreprises françaises qui investissent dans le pays, décompte 14,9 milliards d’euros d’investissements nouveaux, soit 81 projets inédits, notamment dans les secteurs de la santé, de la cosmétique, ou des biocarburants.",
    "syms": [],
@@ -2248,14 +2315,12 @@
    "url": "https://www.marketwatch.com/story/these-little-known-investments-could-be-among-the-best-bargains-in-a-crash-78a379b4?mod=mw_rss_topstories"
   },
   {
-   "h": "Bessent refuses to rule out Huang’s return to Nvidia",
-   "w": "Treasury secretary says it depends ‘where the buck stops’ as US president calls for former chief’s reinstatement",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "myFT — companies",
-   "ts": "2026-11-22T18:11:01Z",
-   "url": "https://www.ft.com/content/91b7a3a6-8ac5-4327-ad03-6d951f287346?syn-25a6b1a6=1",
+   "h": "Spain’s likely rightward shift",
+   "w": "Spanish head to the polls, US markets close for Thanksgiving, London gets a new museum",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-22T18:15:08Z",
+   "url": "https://www.ft.com/content/e1e08be8-da07-44c3-abe6-9873991ee91a?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2421,14 +2486,6 @@
    "url": "https://fr.investing.com/news/earnings/chipmos-technologies--le-specialiste-du-packaging-peutil-maintenir-sa-croissance--93CH-3707990"
   },
   {
-   "h": "Organon & Co publie ses résultats du T3 avant son rachat par Sun Pharma",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T14:39:19Z",
-   "url": "https://fr.investing.com/news/earnings/organon--co-publie-ses-resultats-du-t3-avant-son-rachat-par-sun-pharma-93CH-3707989"
-  },
-  {
    "h": "Social Security benefits are rising in 2027, but other changes could affect what you keep",
    "w": "A 3.6% Social Security cost-of-living adjustment for 2027 will increase benefits across the board. But Medicare and tax changes will also affect retirees.",
    "syms": [],
@@ -2455,22 +2512,6 @@
    "mine": 1
   },
   {
-   "h": "26-year-old Google worker earns $323,000 a year—but lives on less than minimum wage",
-   "w": "Charles Broomfield set a post-college goal of reaching $750,000 in investments by age 30. Now 26, he expects to get there within the next year.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-22T14:00:01Z",
-   "url": "https://www.cnbc.com/make-it/2026/11/22/google-worker-earns-323000-a-yearbut-he-lives-on-minimum-wage.html"
-  },
-  {
-   "h": "Stocks are in a correction heading into the Thanksgiving holiday. What to brace for next.",
-   "w": "Other stocks are in a bear market, which could be bad timing with the crucial holiday shopping period ahead",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-22T14:00:00Z",
-   "url": "https://www.marketwatch.com/story/stocks-are-in-a-correction-heading-into-the-thanksgiving-holiday-what-to-brace-for-next-a1e82491?mod=mw_rss_topstories"
-  },
-  {
    "h": "COP31 climate talks fail after stand-off over fossil fuels",
    "w": "Geopolitical divides laid bare in fracture between Arab group and EU-led coalition",
    "syms": [],
@@ -2488,12 +2529,28 @@
    "url": "https://www.bbc.co.uk/news/articles/c6jre7gpdw13o?at_medium=RSS&at_campaign=rss"
   },
   {
-   "h": "Le président de Marriott Int pour la Grande Chine vend des actions pour 2,57M$",
+   "h": "Restored Okinawa castle to reopen with extensive fire safety measures",
    "w": "",
    "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T13:47:21Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-president-de-marriott-int-pour-la-grande-chine-vend-des-actions-pour-257m-93CH-3707988"
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T13:47:18.598419Z",
+   "url": "https://asia.nikkei.com/business/travel-leisure/restored-okinawa-castle-to-reopen-with-extensive-fire-safety-measures"
+  },
+  {
+   "h": "AI good for business but may sap joy of creation: game creator Hideo Kojima",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T13:47:18.598419Z",
+   "url": "https://asia.nikkei.com/business/media-entertainment/ai-good-for-business-but-may-sap-joy-of-creation-game-creator-hideo-kojima"
+  },
+  {
+   "h": "Indonesian leader chases Sukarno's phantom with defiant posture",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T13:47:18.598419Z",
+   "url": "https://asia.nikkei.com/spotlight/comment/indonesian-leader-chases-sukarno-s-phantom-with-defiant-posture"
   },
   {
    "h": "Saudi Arabia, Bahrain report new attacks as Iran says it remains open to a deal with U.S.",
@@ -2670,16 +2727,6 @@
    "url": "https://asia.nikkei.com/politics/defense/japan-weighs-scaling-back-missile-and-warship-purchases"
   },
   {
-   "h": "Global crude exports hit record high despite Hormuz closure",
-   "w": "",
-   "syms": [
-    "CL"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T11:18:33.566790Z",
-   "url": "https://asia.nikkei.com/business/energy/global-crude-exports-hit-record-high-despite-hormuz-closure"
-  },
-  {
    "h": "Climate talks on the brink as EU rejects deal that ‘green washes fossil fuels’",
    "w": "Group of countries refuses to endorse proposed agreement in direct clash with Saudi Arabia",
    "syms": [],
@@ -2722,22 +2769,6 @@
    "ts": "2026-11-22T11:00:05Z",
    "url": "https://www.ft.com/content/d501198c-14a4-4b96-8880-c3997545902e",
    "mine": 1
-  },
-  {
-   "h": "Laos 'least-developed' status shift, Tata meeting, Taiwan local elections",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T10:26:29.101179Z",
-   "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/laos-least-developed-status-shift-tata-meeting-taiwan-local-elections"
-  },
-  {
-   "h": "Hello Kitty owner Sanrio bets on games to expand global reach",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T10:26:29.101179Z",
-   "url": "https://asia.nikkei.com/business/media-entertainment/hello-kitty-owner-sanrio-bets-on-games-to-expand-global-reach"
   },
   {
    "h": "« Le paradoxe est saisissant : les Français réclament plus de services publics ? On leur propose moins d’Etat »",
@@ -2817,18 +2848,9 @@
    "h": "How misinformation helped measles make its comeback",
    "w": "Vaccine misinformation, austerity and aid cuts have led to the resurgence of a disease once regarded as eliminated in rich countries",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-22T05:00:14Z",
    "url": "https://www.ft.com/content/a71192b7-708c-4bd4-abb6-31c82113794a?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Argentina’s borrowing costs jump as Milei’s falling popularity rattles investors",
-   "w": "Libertarian’s financing plans and declining approval ratings damp spirits ahead of re-election bid",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-22T05:00:14Z",
-   "url": "https://www.ft.com/content/f3ecede4-74a3-431a-89c5-a06fcd30812a?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2847,6 +2869,15 @@
    "src": "myFT — world uk",
    "ts": "2026-11-22T05:00:14Z",
    "url": "https://www.ft.com/content/2b2824e2-16b9-4621-85a0-7dad220644d5?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Argentina’s borrowing costs jump as Milei’s falling popularity rattles investors",
+   "w": "Libertarian’s financing plans and declining approval ratings damp spirits ahead of re-election bid",
+   "syms": [],
+   "src": "myFT — markets",
+   "ts": "2026-11-22T05:00:14Z",
+   "url": "https://www.ft.com/content/f3ecede4-74a3-431a-89c5-a06fcd30812a?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -3023,14 +3054,6 @@
    "mine": 1
   },
   {
-   "h": "Manifestations du 21 novembre : entre 80 000 et 150 000 personnes se sont mobilisées en France",
-   "w": "Cette nouvelle journée de protestation, moins suivie, s’est déroulée dans le calme à Paris, mais avec des tensions dans l’après-midi à Marseille et à Lyon. Cet « acte VI » de la mobilisation contre la vie chère s’inscrit aussi dans le cadre d’un appel européen.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-21T16:04:58Z",
-   "url": "https://www.lemonde.fr/societe/article/2026/11/21/manifestations-du-21-novembre-le-nombre-de-personnes-mobilisees-en-baisse-dans-l-apres-midi-le-cortege-parisien-est-arrive-place-de-la-nation_6813913_3225.html"
-  },
-  {
    "h": "An ‘illusion of glitz and glamour’: Inside California’s modern-day gold rush, where miners can bring in millions",
    "w": "The price of gold has sparked a modern-day gold rush in California. Small-scale miners are investing time, physical labor and money to unearth the yellow metal.",
    "syms": [
@@ -3065,24 +3088,6 @@
    "src": "myFT — europe",
    "ts": "2026-11-21T11:38:04Z",
    "url": "https://www.ft.com/content/2e9c54a8-e2c5-4334-8141-9791267ae3c3?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Going public, but only a little",
-   "w": "Big IPOs, small floats",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-21T10:30:07Z",
-   "url": "https://www.ft.com/content/c5bcb64e-35b8-40b8-842e-e4b5c9b3150d?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "The dead hand of history weighs on Deutsche Bank",
-   "w": "Bankers might do well to remember from time to time that they are making decisions that will stick around",
-   "syms": [],
-   "src": "myFT — banks",
-   "ts": "2026-11-21T06:32:26Z",
-   "url": "https://www.ft.com/content/bfa66957-73d4-44f1-bea5-6b141c197920",
    "mine": 1
   }
  ],
