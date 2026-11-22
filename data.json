@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T08:37:27.974731Z",
+ "generated_at": "2026-11-22T09:29:55.518975Z",
  "quotes": {
   "NVDA": {
    "p": 125.53,
@@ -486,8 +486,8 @@
    "prev": 8080.7402,
    "chg": -152.9902,
    "pct": -1.89,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^FCHI)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^FCHI) — last update failed",
    "ts": "2026-11-20T16:30:00Z",
    "open": 8020.1899,
    "lo": 7927.75,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 60226.0586,
+   "p": 59809.1016,
    "prev": 60094.0898,
-   "chg": 131.9688,
-   "pct": 0.22,
+   "chg": -284.9883,
+   "pct": -0.47,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-22T08:37:27.974731Z",
+   "ts": "2026-11-22T09:29:55.518975Z",
    "open": 60093.0078,
    "lo": 58680.2148,
    "hi": 60204.9961,
-   "vol": 35780263936,
+   "vol": 35728482304,
    "h": [
     78248.45,
     76677.3,
@@ -844,7 +844,7 @@
     61901.82,
     58798.98,
     60094.09,
-    60226.06
+    59809.1
    ]
   }
  },
@@ -2221,6 +2221,62 @@
  ],
  "news": [
   {
+   "h": "Le directeur financier de Serve Robotics Inc vend des actions SERV pour 18.430$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T09:02:56Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-de-serve-robotics-inc-vend-des-actions-serv-pour-18430-93CH-3707958"
+  },
+  {
+   "h": "Le président et COO de Serve Robotics vend des actions pour 66.006$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T09:02:48Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-president-et-coo-de-serve-robotics-vend-des-actions-pour-66006-93CH-3707957"
+  },
+  {
+   "h": "Le vice-président d’Oklo cède des actions pour 121.433$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T09:02:27Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-vicepresident-doklo-cede-des-actions-pour-121433-93CH-3707956"
+  },
+  {
+   "h": "Le PDG de Serve Robotics vend des actions pour 147.248$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T09:02:10Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-serve-robotics-vend-des-actions-pour-147248-93CH-3707955"
+  },
+  {
+   "h": "L’inflation suisse s’accélère et la BNS s’inquiète des pressions sur les prix",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T08:51:37Z",
+   "url": "https://fr.investing.com/news/stock-market-news/linflation-suisse-saccelere-et-la-bns-sinquiete-des-pressions-sur-les-prix-3707952"
+  },
+  {
+   "h": "La directrice produit d’Oklo Inc vend des actions pour 12.575$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T08:47:07Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-produit-doklo-inc-vend-des-actions-pour-12575-93CH-3707951"
+  },
+  {
+   "h": "Donegal Mutual Insurance achète pour 263.297$ d’actions Donegal Group",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T08:32:04Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/donegal-mutual-insurance-achete-pour-263297-dactions-donegal-group-93CH-3707950"
+  },
+  {
    "h": "Le VP et CFO de Park Ohio Holdings Corp vend des actions pour 79.441€",
    "w": "",
    "syms": [],
@@ -2262,32 +2318,6 @@
    "url": "https://www.lemonde.fr/idees/article/2026/11/22/le-paradoxe-est-saisissant-les-francais-reclament-plus-de-services-publics-on-leur-propose-moins-d-etat_6814195_3232.html"
   },
   {
-   "h": "Le PDG d’Ellington Financial achète des actions pour 106.540$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T07:32:33Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-dellington-financial-achete-des-actions-pour-106540-93CH-3707944"
-  },
-  {
-   "h": "Le président de B. Riley Financial achète pour 116.767$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T07:32:15Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-president-de-b-riley-financial-achete-pour-116767-dactions-93CH-3707943"
-  },
-  {
-   "h": "Le Bitcoin peine sous 60.000$ alors que les profits des mineurs s’effondrent",
-   "w": "",
-   "syms": [
-    "BTC"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T07:29:58Z",
-   "url": "https://fr.investing.com/news/cryptocurrency-news/le-bitcoin-peine-sous-60000-alors-que-la-rentabilite-miniere-seffondre-3707942"
-  },
-  {
    "h": "MP criticises Guernsey and Jersey company ownership register plans",
    "w": "Sir Andrew Mitchell says access should be easier for people tackling financial crime.",
    "syms": [],
@@ -2302,38 +2332,6 @@
    "src": "BBC — Business",
    "ts": "2026-11-22T07:12:41Z",
    "url": "https://www.bbc.co.uk/news/articles/c8e39qk5vrpdo?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "L’économie continuera-t-elle à primer sur la géopolitique ?",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T06:57:01Z",
-   "url": "https://fr.investing.com/news/stock-market-news/leconomie-continueratelle-a-lemporter-sur-la-geopolitique--3707940"
-  },
-  {
-   "h": "L’Australie rejette les inquiétudes américaines sur l’accord AUKUS",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T06:43:55Z",
-   "url": "https://fr.investing.com/news/economy-news/laustralie-rejette-les-inquietudes-americaines-sur-laccord-aukus-3707938"
-  },
-  {
-   "h": "La Chine demande aux États-Unis de lever les restrictions sur les numéros de téléphone",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T06:17:23Z",
-   "url": "https://fr.investing.com/news/economy-news/la-chine-demande-aux-etatsunis-de-lever-les-restrictions-sur-les-numeros-de-telephone-3707936"
-  },
-  {
-   "h": "Le boom de l’IA perd-il son emprise sur les économies émergentes ?",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T06:04:20Z",
-   "url": "https://fr.investing.com/news/stock-market-news/le-boom-de-lia-perdil-son-emprise-sur-les-economies-emergentes--3707934"
   },
   {
    "h": "Quantum computing’s first real-world payoff may come in energy, not drug discovery",
@@ -2502,6 +2500,32 @@
    "url": "https://www.lemonde.fr/economie/article/2026/11/22/au-sein-du-geant-des-boissons-castel-une-crise-de-gouvernance-amplifiee-par-une-architecture-complexe-de-holdings-de-fonds-et-de-trusts_6814144_3234.html"
   },
   {
+   "h": "The ramen lectures: Japan company tries new expansion strategy",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T03:29:55.518975Z",
+   "url": "https://asia.nikkei.com/business/food-beverage/the-ramen-lectures-japan-company-tries-new-expansion-strategy"
+  },
+  {
+   "h": "Bro hugs, no deals: Why Shenzhen was a win for Beijing",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T03:29:55.518975Z",
+   "url": "https://asia.nikkei.com/opinion/bro-hugs-no-deals-why-shenzhen-was-a-win-for-beijing"
+  },
+  {
+   "h": "Global crude exports hit record high despite Hormuz closure",
+   "w": "",
+   "syms": [
+    "CL"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T03:29:55.518975Z",
+   "url": "https://asia.nikkei.com/business/energy/global-crude-exports-hit-record-high-despite-hormuz-closure"
+  },
+  {
    "h": "Bangkok revisited: Fresh finds and old favorites",
    "w": "",
    "syms": [],
@@ -2605,30 +2629,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-22T00:03:00Z",
    "url": "https://www.marketwatch.com/story/my-wife-pays-thousands-of-dollars-for-her-family-to-visit-from-argentina-how-can-i-convince-her-to-stop-9381351c?mod=mw_rss_topstories"
-  },
-  {
-   "h": "World Bank's India poverty estimates questioned over scale of gains",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-21T23:22:23.895000Z",
-   "url": "https://asia.nikkei.com/economy/demography/world-bank-s-india-poverty-estimates-questioned-over-scale-of-gains"
-  },
-  {
-   "h": "Japan stamp maker stomps into AI realm by authenticating videos on X",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-21T23:22:23.895000Z",
-   "url": "https://asia.nikkei.com/business/companies/japan-stamp-maker-stomps-into-ai-realm-by-authenticating-videos-on-x"
-  },
-  {
-   "h": "US, Japan should lead next-gen transportation: Trump's ex-transport chief",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-21T23:22:23.895000Z",
-   "url": "https://asia.nikkei.com/editor-s-picks/interview/us-japan-should-lead-next-gen-transportation-trump-s-ex-transport-chief"
   },
   {
    "h": "I’m in my 40s. Should I accept a lower pension in exchange for naming my husband or child as a beneficiary?",
