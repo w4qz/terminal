@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T19:47:18.598419Z",
+ "generated_at": "2026-11-22T20:31:46.865932Z",
  "quotes": {
   "NVDA": {
    "p": 125.53,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 60645.0,
+   "p": 60526.9805,
    "prev": 60094.0898,
-   "chg": 550.9102,
-   "pct": 0.92,
+   "chg": 432.8906,
+   "pct": 0.72,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-22T19:47:18.598419Z",
+   "ts": "2026-11-22T20:31:46.865932Z",
    "open": 60093.0078,
    "lo": 58680.2148,
    "hi": 61328.9453,
-   "vol": 28074641408,
+   "vol": 27526492160,
    "h": [
     78248.45,
     76677.3,
@@ -844,7 +844,7 @@
     61901.82,
     58798.98,
     60094.09,
-    60645.0
+    60526.98
    ]
   }
  },
@@ -945,9 +945,9 @@
    "ccy": "USD",
    "mcap": 3598139523072,
    "pe": 25.2881,
-   "fpe": 20.0184,
+   "fpe": 20.0208,
    "eps": 19.16,
-   "feps": 24.2038,
+   "feps": 24.2008,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1453140738048,
    "pe": 38.8774,
-   "fpe": 15.6799,
+   "fpe": 15.7026,
    "eps": 7.83,
-   "feps": 19.414,
+   "feps": 19.386,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1015122821120,
+   "mcap": 1018236174336,
    "pe": 46.3587,
    "fpe": 39.6339,
    "eps": 2.76,
    "feps": 3.2283,
    "revTTM": 745178988544,
    "netIncome": 20878000128,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.774,
@@ -2126,7 +2126,7 @@
    "ccy": "USD",
    "mcap": 9324940288,
    "eps": -2.12,
-   "feps": -1.3642,
+   "feps": -1.5613,
    "revTTM": 142880000,
    "netIncome": -628267008,
    "shares": 311349798,
@@ -2153,7 +2153,7 @@
    "earnEnd": 1794258000,
    "earnEst": false,
    "trailDiv": 0.0,
-   "fpe_ns": -17.058
+   "fpe_ns": -14.9046
   },
   "ACWI": {
    "name": "iShares MSCI ACWI ETF",
@@ -2168,13 +2168,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 122.6403,
-   "shares": 572600000,
-   "divYield": 2.579,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2226,10 +2221,34 @@
  ],
  "news": [
   {
-   "h": "Delta flight delays add to concerns about US air travel system",
-   "w": "FAA said technical problems at airline’s Atlanta hub were not related to countrywide outage this month",
+   "h": "Social Security should be shut down, this Republican senator says",
+   "w": "The program’s trust funds are forecast to run out of money in the next six years.",
    "syms": [],
-   "src": "myFT — world",
+   "src": "MarketWatch",
+   "ts": "2026-11-22T20:26:00Z",
+   "url": "https://www.marketwatch.com/story/social-security-should-be-shut-down-this-republican-senator-says-8f7fef81?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Le directeur financier de UMH Properties Inc achète 999$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T20:17:02Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-de-umh-properties-inc-achete-999-dactions-93CH-3708008"
+  },
+  {
+   "h": "Un analyste explique pourquoi SpaceX est « dix ans en avance »",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T19:50:26Z",
+   "url": "https://fr.investing.com/news/analyst-ratings/un-analyste-explique-pourquoi-spacex-est--dix-ans-en-avance--3708005"
+  },
+  {
+   "h": "Delta flight delays add to concerns about US air travel systems",
+   "w": "FAA says technical problems at airline’s Atlanta hub are not related to countrywide outage this month",
+   "syms": [],
+   "src": "myFT — companies",
    "ts": "2026-11-22T19:25:06Z",
    "url": "https://www.ft.com/content/14566557-3f63-4eeb-b589-6cb1144dc918?syn-25a6b1a6=1",
    "mine": 1
@@ -2462,28 +2481,38 @@
    "url": "https://fr.investing.com/news/stock-market-news/les-pays-asiatiques-soutiennent-leurs-marches-boursiers-apres-la-chute-de-lia-3707993"
   },
   {
-   "h": "Le directeur de Crimson Wine acquiert des actions pour 100.680$",
+   "h": "Japan's new spy bureau faces a long road to Five Eyes",
    "w": "",
    "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T15:01:53Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-de-crimson-wine-acquiert-des-actions-pour-100680-93CH-3707992"
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T14:31:46.865932Z",
+   "url": "https://asia.nikkei.com/opinion/japan-s-new-spy-bureau-faces-a-long-road-to-five-eyes"
   },
   {
-   "h": "Corporate America hunts for ‘generational’ growth in AI, trading cards and the L.A. airport",
-   "w": "There’s been no shortage of trends deemed once-in-a-generation by executives on earnings calls.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-22T15:01:00Z",
-   "url": "https://www.marketwatch.com/story/corporate-america-hunts-for-generational-growth-in-ai-trading-cards-and-the-l-a-airport-3072eb1a?mod=mw_rss_topstories"
-  },
-  {
-   "h": "ChipMOS Technologies : le spécialiste du packaging peut-il maintenir sa croissance ?",
+   "h": "Laos 'least-developed' status shift, Tata meeting, Taiwan local elections",
    "w": "",
    "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T14:39:29Z",
-   "url": "https://fr.investing.com/news/earnings/chipmos-technologies--le-specialiste-du-packaging-peutil-maintenir-sa-croissance--93CH-3707990"
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T14:31:46.865932Z",
+   "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/laos-least-developed-status-shift-tata-meeting-taiwan-local-elections"
+  },
+  {
+   "h": "Hello Kitty owner Sanrio bets on games to expand global reach",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T14:31:46.865932Z",
+   "url": "https://asia.nikkei.com/business/media-entertainment/hello-kitty-owner-sanrio-bets-on-games-to-expand-global-reach"
+  },
+  {
+   "h": "Global crude exports hit record high despite Hormuz closure",
+   "w": "",
+   "syms": [
+    "CL"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T14:31:46.865932Z",
+   "url": "https://asia.nikkei.com/business/energy/global-crude-exports-hit-record-high-despite-hormuz-closure"
   },
   {
    "h": "Social Security benefits are rising in 2027, but other changes could affect what you keep",
@@ -2665,22 +2694,6 @@
    "url": "https://asia.nikkei.com/business/food-beverage/the-ramen-lectures-japan-company-tries-new-expansion-strategy"
   },
   {
-   "h": "Bro hugs, no deals: Why Shenzhen was a win for Beijing",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T12:01:29.747816Z",
-   "url": "https://asia.nikkei.com/opinion/bro-hugs-no-deals-why-shenzhen-was-a-win-for-beijing"
-  },
-  {
-   "h": "US, Japan should lead next-gen transportation: Trump's ex-transport chief",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T12:01:29.747816Z",
-   "url": "https://asia.nikkei.com/editor-s-picks/interview/us-japan-should-lead-next-gen-transportation-trump-s-ex-transport-chief"
-  },
-  {
    "h": "Will Anthropic’s IPO buck the tech sell-off?",
    "w": "Market Questions is the FT’s guide to the week ahead",
    "syms": [],
@@ -2709,22 +2722,6 @@
    "ts": "2026-11-22T11:32:52Z",
    "url": "https://www.ft.com/content/98f5aa90-5581-45ed-8e9b-d72217c56df8",
    "mine": 1
-  },
-  {
-   "h": "Bangkok revisited: Fresh finds and old favorites",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T11:18:33.566790Z",
-   "url": "https://asia.nikkei.com/life-arts/life/destinations/bangkok-revisited-fresh-finds-and-old-favorites"
-  },
-  {
-   "h": "Japan weighs scaling back missile and warship purchases",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T11:18:33.566790Z",
-   "url": "https://asia.nikkei.com/politics/defense/japan-weighs-scaling-back-missile-and-warship-purchases"
   },
   {
    "h": "Climate talks on the brink as EU rejects deal that ‘green washes fossil fuels’",
@@ -2848,7 +2845,7 @@
    "h": "How misinformation helped measles make its comeback",
    "w": "Vaccine misinformation, austerity and aid cuts have led to the resurgence of a disease once regarded as eliminated in rich countries",
    "syms": [],
-   "src": "myFT — us",
+   "src": "myFT — world",
    "ts": "2026-11-22T05:00:14Z",
    "url": "https://www.ft.com/content/a71192b7-708c-4bd4-abb6-31c82113794a?syn-25a6b1a6=1",
    "mine": 1
