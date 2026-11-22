@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T13:02:03.428234Z",
+ "generated_at": "2026-11-22T13:59:33.294777Z",
  "eco": {
   "prints": [
    {
@@ -8,7 +8,7 @@
     "prev": null,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-22",
+    "pub": "2026-11-21",
     "freq": "M",
     "src": "FRED CPIAUCSL",
     "url": "https://fred.stlouisfed.org/series/CPIAUCSL"
@@ -19,7 +19,7 @@
     "prev": null,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-22",
+    "pub": "2026-11-21",
     "freq": "M",
     "src": "FRED CPILFESL",
     "url": "https://fred.stlouisfed.org/series/CPILFESL"
@@ -30,7 +30,7 @@
     "prev": 3.03,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-22",
+    "pub": "2026-11-21",
     "freq": "M",
     "src": "FRED PCEPILFE",
     "url": "https://fred.stlouisfed.org/series/PCEPILFE"
@@ -41,7 +41,7 @@
     "prev": 60.0,
     "fmt": "k",
     "ts": "2026-10-01",
-    "pub": "2026-11-22",
+    "pub": "2026-11-21",
     "freq": "M",
     "src": "FRED PAYEMS",
     "url": "https://fred.stlouisfed.org/series/PAYEMS"
@@ -52,7 +52,7 @@
     "prev": 4.2,
     "fmt": "%",
     "ts": "2026-10-01",
-    "pub": "2026-11-22",
+    "pub": "2026-11-21",
     "freq": "M",
     "src": "FRED UNRATE",
     "url": "https://fred.stlouisfed.org/series/UNRATE"
@@ -63,7 +63,7 @@
     "prev": 202000.0,
     "fmt": "n",
     "ts": "2026-11-14",
-    "pub": "2026-11-22",
+    "pub": "2026-11-21",
     "freq": "W",
     "src": "FRED ICSA",
     "url": "https://fred.stlouisfed.org/series/ICSA"
@@ -74,7 +74,7 @@
     "prev": 2.2,
     "fmt": "%",
     "ts": "2026-07-01",
-    "pub": "2026-11-22",
+    "pub": "2026-11-21",
     "freq": "Q",
     "src": "FRED A191RL1Q225SBEA",
     "url": "https://fred.stlouisfed.org/series/A191RL1Q225SBEA"
@@ -85,7 +85,7 @@
     "prev": 0.83,
     "fmt": "%",
     "ts": "2026-10-01",
-    "pub": "2026-11-22",
+    "pub": "2026-11-21",
     "freq": "M",
     "src": "FRED RSAFS",
     "url": "https://fred.stlouisfed.org/series/RSAFS"
@@ -96,7 +96,7 @@
     "prev": 48.1,
     "fmt": "n",
     "ts": "2026-10-01",
-    "pub": "2026-11-22",
+    "pub": "2026-11-21",
     "freq": "M",
     "src": "FRED UMCSENT",
     "url": "https://fred.stlouisfed.org/series/UMCSENT"
@@ -438,87 +438,7 @@
   }
  },
  "wirp": {
-  "effr": 3.88,
-  "effr_ts": "2026-11-19",
-  "range": [
-   3.75,
-   4.0
-  ],
-  "meetings": [
-   {
-    "d": "2026-12-09",
-    "pre": 3.88,
-    "post": 4.105,
-    "move_bp": 22.5,
-    "p_cut": 0,
-    "p_hike": 90
-   },
-   {
-    "d": "2027-01-27",
-    "pre": 4.105,
-    "post": 4.245,
-    "move_bp": 14.0,
-    "p_cut": 0,
-    "p_hike": 56
-   },
-   {
-    "d": "2027-03-17",
-    "pre": 4.245,
-    "post": 4.367,
-    "move_bp": 12.2,
-    "p_cut": 0,
-    "p_hike": 49
-   },
-   {
-    "d": "2027-04-28",
-    "pre": 4.367,
-    "post": 4.405,
-    "move_bp": 3.8,
-    "p_cut": 0,
-    "p_hike": 15
-   },
-   {
-    "d": "2027-06-09",
-    "pre": 4.405,
-    "post": 4.455,
-    "move_bp": 5.0,
-    "p_cut": 0,
-    "p_hike": 20
-   },
-   {
-    "d": "2027-07-28",
-    "pre": 4.455,
-    "post": 4.46,
-    "move_bp": 0.5,
-    "p_cut": 0,
-    "p_hike": 2
-   },
-   {
-    "d": "2027-09-15",
-    "pre": 4.46,
-    "post": 4.47,
-    "move_bp": 1.0,
-    "p_cut": 0,
-    "p_hike": 4
-   },
-   {
-    "d": "2027-10-27",
-    "pre": 4.47,
-    "post": 4.445,
-    "move_bp": -2.5,
-    "p_cut": 10,
-    "p_hike": 0
-   },
-   {
-    "d": "2027-11-17",
-    "pre": 4.445,
-    "post": 4.445,
-    "move_bp": 0.0,
-    "p_cut": 0,
-    "p_hike": 0
-   }
-  ],
-  "src": "CBOT 30-day fed funds futures (Yahoo) + EFFR (FRED) — simplified FedWatch method"
+  "error": "taux effectif (EFFR) indisponible"
  },
  "gc": {
   "us": {
@@ -554,7 +474,6 @@
     {
      "t": "2A",
      "y": 4.649,
-     "y1m": 4.69,
      "ts": "2026-11-20",
      "live": true
     },

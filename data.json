@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T12:59:06.636754Z",
+ "generated_at": "2026-11-22T13:58:16.037150Z",
  "quotes": {
   "NVDA": {
    "p": 125.53,
@@ -741,8 +741,8 @@
    "prev": 83.21,
    "chg": 0.2,
    "pct": 0.24,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (CL=F) — last update failed",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (CL=F)",
    "ts": "2026-11-20T22:00:00Z",
    "open": 83.1,
    "lo": 80.78,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 60726.9219,
+   "p": 60721.7812,
    "prev": 60094.0898,
-   "chg": 632.832,
-   "pct": 1.05,
+   "chg": 627.6914,
+   "pct": 1.04,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-22T12:59:06.636754Z",
+   "ts": "2026-11-22T13:58:16.037150Z",
    "open": 60093.0078,
    "lo": 58680.2148,
    "hi": 61328.9453,
-   "vol": 35841929216,
+   "vol": 32245223424,
    "h": [
     78248.45,
     76677.3,
@@ -844,7 +844,7 @@
     61901.82,
     58798.98,
     60094.09,
-    60726.92
+    60721.78
    ]
   }
  },
@@ -2226,6 +2226,72 @@
  ],
  "news": [
   {
+   "h": "Centrica boss 'hugely concerned' over impact of soaring energy bills",
+   "w": "Chris O'Shea says the number of people unable or unwilling to pay their energy bills will increase when prices jump in the new year.",
+   "syms": [],
+   "src": "BBC — Business",
+   "ts": "2026-11-22T13:50:21Z",
+   "url": "https://www.bbc.co.uk/news/articles/c6jre7gpdw13o?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "Saudi Arabia, Bahrain report new attacks as Iran says it remains open to a deal with U.S.",
+   "w": "Saudi Arabia said it destroyed a drone launched by Iran-backed Houthis, while Bahrain said an industrial facility was hit by Iranian projectiles.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-22T13:25:47Z",
+   "url": "https://www.cnbc.com/2026/11/22/saudi-houthi-bahrain-iran-attacks-araghchi-talks.html"
+  },
+  {
+   "h": "South Africa takes the low road after the ANC’s humiliation",
+   "w": "Former liberation party is ignoring voters and jeopardising the national coalition",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-22T13:23:33Z",
+   "url": "https://www.ft.com/content/26ba0881-5865-433e-8389-fa98f0b28e31?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Le PDG de Teradyne Inc vend des actions pour 942.880$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T13:02:10Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-teradyne-inc-vend-des-actions-pour-942880-93CH-3707987"
+  },
+  {
+   "h": "Xi needs Trump more than ever",
+   "w": "The Shenzhen summit shows the high stakes for Beijing as many in Washington call for tougher measures",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-22T13:00:06Z",
+   "url": "https://www.ft.com/content/4dbdecf6-396d-4629-8600-8a55034a9827",
+   "mine": 1
+  },
+  {
+   "h": "Pizza chains are under pressure. GLP-1 use is only one part of the problem",
+   "w": "Domino's, Papa Johns and Pizza Hut face weaker demand, more delivery competition and changing eating habits, including GLP-1 use.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-22T13:00:01Z",
+   "url": "https://www.cnbc.com/2026/11/22/pizza-chains-sales-glp-1-demand.html"
+  },
+  {
+   "h": "Un administrateur de Marsh & McLennan vend des actions pour 101.049$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T12:47:17Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-marsh--mclennan-vend-des-actions-pour-101049-93CH-3707986"
+  },
+  {
+   "h": "Le directeur d’United States Antimony Corporation achète pour 12.375$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T12:46:58Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-dunited-states-antimony-corporation-achete-pour-12375-dactions-93CH-3707985"
+  },
+  {
    "h": "Un administrateur de Galaxy Digital Inc acquiert des actions pour 200.850$",
    "w": "",
    "syms": [],
@@ -2240,6 +2306,24 @@
    "src": "MarketWatch",
    "ts": "2026-11-22T12:30:00Z",
    "url": "https://www.marketwatch.com/story/can-stocks-bounce-back-after-a-brutal-week-this-timing-model-says-history-is-on-the-markets-side-beff1753?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Sanctioned Russian vessel ablaze in Finnish waters after drone attack",
+   "w": "Finland’s prime minister attributes attack on cargo ship to Ukraine and says ‘war is spilling over into our immediate vicinity’",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-22T12:24:41Z",
+   "url": "https://www.ft.com/content/2c959c95-97a5-4957-9eb2-8436c34ba374?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Former Italian police chief found dead after mafia cover-up claims",
+   "w": "Gianni De Gennaro had faced claims from magistrates that he obstructed investigation into notorious 1990s bombing",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-22T12:19:35Z",
+   "url": "https://www.ft.com/content/31da6694-7a66-47a0-b44c-23b9a2ee5622?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "Top Wall Street analysts favor these 3 dividend stocks for strong returns",
@@ -2289,9 +2373,18 @@
    "h": "Adoption, not innovation, holds Britain back",
    "w": "Once the world’s most innovative country, the UK now struggles to embrace new technologies",
    "syms": [],
-   "src": "myFT — world uk",
+   "src": "myFT — world",
    "ts": "2026-11-22T12:02:25Z",
    "url": "https://www.ft.com/content/b89dbb74-af6c-492e-8d18-c0e83c64efd8?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Will Anthropic’s IPO buck the tech sell-off?",
+   "w": "Market Questions is the FT’s guide to the week ahead",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-22T12:00:06Z",
+   "url": "https://www.ft.com/content/1dc8290b-8100-434d-963c-79002c15f244?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2301,18 +2394,9 @@
     "BRENT",
     "CL"
    ],
-   "src": "myFT — us",
+   "src": "myFT — world",
    "ts": "2026-11-22T12:00:06Z",
    "url": "https://www.ft.com/content/c269cf3e-2275-4244-9a86-f412c8521b4f?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Will Anthropic’s IPO buck the tech sell-off?",
-   "w": "Market Questions is the FT’s guide to the week ahead",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-22T12:00:06Z",
-   "url": "https://www.ft.com/content/1dc8290b-8100-434d-963c-79002c15f244?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2332,36 +2416,21 @@
    "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-dangel-studios-inc-acquiert-46m-dactions-de-la-societe-93CH-3707978"
   },
   {
+   "h": "Nscale slows hiring and curtails spending ahead of planned $35bn IPO",
+   "w": "UK data centre operator pauses hiring for all but critical roles",
+   "syms": [],
+   "src": "myFT — companies",
+   "ts": "2026-11-22T11:32:52Z",
+   "url": "https://www.ft.com/content/98f5aa90-5581-45ed-8e9b-d72217c56df8",
+   "mine": 1
+  },
+  {
    "h": "La directrice financière de Fortinet Inc vend des actions pour 27.223 $",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
    "ts": "2026-11-22T11:32:17Z",
    "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-financiere-de-fortinet-inc-vend-des-actions-pour-27223--93CH-3707977"
-  },
-  {
-   "h": "Un cadre d’Incyte Corporation vend des actions pour 1,29 million $",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T11:18:13Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-cadre-dincyte-corporation-vend-des-actions-pour-129-million--93CH-3707976"
-  },
-  {
-   "h": "Le PDG de Qualys Inc vend des actions pour 567.271$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T11:17:31Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-qualys-inc-vend-des-actions-pour-567271-93CH-3707975"
-  },
-  {
-   "h": "Le PDG de Sensus Healthcare Inc achète des actions pour 72.108$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T11:17:20Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-sensus-healthcare-inc-achete-des-actions-pour-72108-93CH-3707974"
   },
   {
    "h": "Climate talks on the brink as EU rejects deal that ‘green washes fossil fuels’",
@@ -2414,6 +2483,30 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-22T08:00:06Z",
    "url": "https://www.lemonde.fr/idees/article/2026/11/22/le-paradoxe-est-saisissant-les-francais-reclament-plus-de-services-publics-on-leur-propose-moins-d-etat_6814195_3232.html"
+  },
+  {
+   "h": "The ramen lectures: Japan company tries new expansion strategy",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T07:58:16.037150Z",
+   "url": "https://asia.nikkei.com/business/food-beverage/the-ramen-lectures-japan-company-tries-new-expansion-strategy"
+  },
+  {
+   "h": "Bro hugs, no deals: Why Shenzhen was a win for Beijing",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T07:58:16.037150Z",
+   "url": "https://asia.nikkei.com/opinion/bro-hugs-no-deals-why-shenzhen-was-a-win-for-beijing"
+  },
+  {
+   "h": "US, Japan should lead next-gen transportation: Trump's ex-transport chief",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T07:58:16.037150Z",
+   "url": "https://asia.nikkei.com/editor-s-picks/interview/us-japan-should-lead-next-gen-transportation-trump-s-ex-transport-chief"
   },
   {
    "h": "MP criticises Guernsey and Jersey company ownership register plans",
@@ -2586,7 +2679,7 @@
    "h": "Cheap Chinese ecommerce parcels flood the UK",
    "w": "Value of small imported packages rose fourfold in the past two years as purchases from Asian online retail groups and platforms boomed",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — world uk",
    "ts": "2026-11-22T05:00:14Z",
    "url": "https://www.ft.com/content/2b2824e2-16b9-4621-85a0-7dad220644d5?syn-25a6b1a6=1",
    "mine": 1
@@ -2619,19 +2712,10 @@
    "mine": 1
   },
   {
-   "h": "Khartoum goes on the offensive in Sudan war",
-   "w": "Wave of defections from paramilitary rivals aids government advance",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-22T05:00:06Z",
-   "url": "https://www.ft.com/content/90cec5dc-f699-4966-886d-6277cc289ed0?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Tech suppliers raise AI server prices up to 45% months after deals are signed",
    "w": "Dell, HPE, Lenovo and Supermicro demand more for equipment, with the increased costs hitting trading firms",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-22T05:00:06Z",
    "url": "https://www.ft.com/content/dd2a6594-6146-4ff1-ac8e-54749c1fc99f?syn-25a6b1a6=1",
    "mine": 1
@@ -2640,27 +2724,27 @@
    "h": "Private equity backers flag fresh concerns about sell-to-yourself deals",
    "w": "Co-investors in buyout funds frustrated at being forced out when assets are sold into continuation vehicles",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-22T05:00:06Z",
    "url": "https://www.ft.com/content/d299785f-dc83-4850-95b8-e08b9a643f98?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Heathrow’s biggest investor confident airport will build a third runway",
-   "w": "Private capital firm Ardian highlights benefits of expanding the hub to the UK economy",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-22T05:00:06Z",
-   "url": "https://www.ft.com/content/5f83965d-e74d-4088-af9f-b59f2fa5e8f1?syn-25a6b1a6=1",
    "mine": 1
   },
   {
    "h": "Amazon’s AI resistance: workers ready for battle over data centres",
    "w": "Tech company’s plans for rapid expansion face opposition from the public and its own employees",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-22T05:00:06Z",
    "url": "https://www.ft.com/content/d194e93b-8d3c-42eb-85dd-46d58c4f2a80?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Heathrow’s biggest investor confident airport will build a third runway",
+   "w": "Private capital firm Ardian highlights benefits of expanding the hub to the UK economy",
+   "syms": [],
+   "src": "myFT — world uk",
+   "ts": "2026-11-22T05:00:06Z",
+   "url": "https://www.ft.com/content/5f83965d-e74d-4088-af9f-b59f2fa5e8f1?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2670,30 +2754,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-22T04:30:07Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/22/au-sein-du-geant-des-boissons-castel-une-crise-de-gouvernance-amplifiee-par-une-architecture-complexe-de-holdings-de-fonds-et-de-trusts_6814144_3234.html"
-  },
-  {
-   "h": "Corporate Japan races to revive rare-earth supply chain amid China curbs",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T04:24:36.993691Z",
-   "url": "https://asia.nikkei.com/business/materials/corporate-japan-races-to-revive-rare-earth-supply-chain-amid-china-curbs"
-  },
-  {
-   "h": "World Bank's India poverty estimates questioned over scale of gains",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T04:24:36.993691Z",
-   "url": "https://asia.nikkei.com/economy/demography/world-bank-s-india-poverty-estimates-questioned-over-scale-of-gains"
-  },
-  {
-   "h": "Japan stamp maker stomps into AI realm by authenticating videos on X",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T04:24:36.993691Z",
-   "url": "https://asia.nikkei.com/business/companies/japan-stamp-maker-stomps-into-ai-realm-by-authenticating-videos-on-x"
   },
   {
    "h": "India’s $126bn insurance sector slams proposed commission cap",
@@ -2749,7 +2809,7 @@
    "h": "Dream of gas-powered vehicles falters in China’s hydrogen capital",
    "w": "High costs and dwindling subsidies leave rows of hydrogen-powered buggies sitting idle in the southern city of Foshan",
    "syms": [],
-   "src": "myFT — companies",
+   "src": "myFT — emerging markets",
    "ts": "2026-11-21T21:00:02Z",
    "url": "https://www.ft.com/content/91d25e77-efa2-4ced-a9e1-92f53fa18e4d?syn-25a6b1a6=1",
    "mine": 1
@@ -2819,7 +2879,7 @@
    "syms": [
     "NVDA"
    ],
-   "src": "myFT — companies",
+   "src": "myFT — technology",
    "ts": "2026-11-21T17:00:10Z",
    "url": "https://www.ft.com/content/f3ad8a81-3890-4a8a-8853-ff0a94b08ba9?syn-25a6b1a6=1",
    "mine": 1
@@ -2884,14 +2944,6 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-21T15:04:56Z",
    "url": "https://www.cnbc.com/2026/11/21/emergency-prep-spending-tech-outages.html"
-  },
-  {
-   "h": "I never wanted the American Dream and I felt like something was wrong with me—until I moved abroad",
-   "w": "\"I realized it was okay to want something different,\" says Cepee Tabibian, who moved to Spain in 2015 at age 35.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-21T15:00:02Z",
-   "url": "https://www.cnbc.com/make-it/2026/11/21/never-wanted-american-dream-moving-abroad-redefine-success.html"
   },
   {
    "h": "An ‘illusion of glitz and glamour’: Inside California’s modern-day gold rush, where miners can bring in millions",
@@ -2963,17 +3015,6 @@
    "mine": 1
   },
   {
-   "h": "S&P 500 correction: Five forces behind the market sell-off",
-   "w": "The S&amp;P 500 and Dow Jones Industrial Average closed in correction territory, off 10% from their records. The Nasdaq Composite lost its gain for the year.",
-   "syms": [
-    "SPX",
-    "NDX"
-   ],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-21T11:29:25Z",
-   "url": "https://www.cnbc.com/2026/11/20/sp-500-correction-market-sell-off.html"
-  },
-  {
    "h": "Budget de l’UE : Antonio Costa, le président du Conseil européen, propose 204 milliards d’euros d’économies et une taxe numérique",
    "w": "La France a rejeté la nouvelle proposition du dirigeant européen. M. Costa soumettra sa proposition de compromis aux dirigeants de l’Union européenne lors d’un sommet organisé jeudi et vendredi à Bruxelles.",
    "syms": [],
@@ -2997,14 +3038,6 @@
    "ts": "2026-11-21T10:30:07Z",
    "url": "https://www.ft.com/content/c5bcb64e-35b8-40b8-842e-e4b5c9b3150d?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Thomas Piketty : « Le projet de convention fiscale de l’ONU a le potentiel de changer la face du monde »",
-   "w": "Les négociations aux Nations unies autour d’une convention-cadre sur la coopération fiscale reprennent à Nairobi le 30 novembre. Les Occidentaux seraient bien inspirés de s’y intéresser, faute de quoi ils risquent de passer à côté de l’histoire, explique l’économiste dans sa chronique.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-21T10:00:13Z",
-   "url": "https://www.lemonde.fr/la-chronique-de-thomas-piketty/article/2026/11/21/thomas-piketty-le-projet-de-convention-fiscale-de-l-onu-a-le-potentiel-de-changer-la-face-du-monde_6813978_6649149.html"
   },
   {
    "h": "The dead hand of history weighs on Deutsche Bank",
@@ -3049,45 +3082,6 @@
    "src": "myFT — us",
    "ts": "2026-11-21T05:00:35Z",
    "url": "https://www.ft.com/content/a8a45cf2-f096-4f33-8df5-46a689bde104?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Tourist tax leaves Scouts facing £1mn bill for camping trips",
-   "w": "Ministers reject calls for a blanket exemption",
-   "syms": [],
-   "src": "myFT — world uk",
-   "ts": "2026-11-21T05:00:35Z",
-   "url": "https://www.ft.com/content/101e75db-97db-40e0-9897-d751aaf7f492?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Oil shipped through Hormuz falls as Iranian strikes increase",
-   "w": "Recovery in Middle Eastern crude exports looks ‘increasingly fragile’, analyst says",
-   "syms": [
-    "BRENT",
-    "CL"
-   ],
-   "src": "myFT — middle east north africa",
-   "ts": "2026-11-21T05:00:35Z",
-   "url": "https://www.ft.com/content/5fbc2b9d-0360-4a1f-9e4a-3e86168cbbc5?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "My mother’s murder and the verdict that shocked a nation",
-   "w": "My mother, the journalist Daphne Caruana Galizia, was murdered in 2017. In September, the man on trial for her killing was acquitted in a verdict that horrified my family. Then we looked closer",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-21T05:00:26Z",
-   "url": "https://www.ft.com/content/6327680d-ac00-4ab5-841a-420517a05e30?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "A Turner masterpiece returns to Rome",
-   "w": "‘Rome, from Mount Aventine’, valued at £50mn when it comes to auction in December, offers a window into the artist’s fascination with Italy",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-21T05:00:26Z",
-   "url": "https://www.ft.com/content/de019b18-9dab-470f-bdc4-d44b7156a957",
    "mine": 1
   }
  ],
