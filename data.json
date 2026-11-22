@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T23:03:57.582635Z",
+ "generated_at": "2026-11-22T23:49:27.981847Z",
  "quotes": {
   "NVDA": {
    "p": 125.53,
@@ -43,8 +43,8 @@
    "prev": 25.55,
    "chg": -2.28,
    "pct": -8.92,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (ASTS) — last update failed",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-11-20T21:00:00Z",
    "open": 24.85,
    "lo": 22.72,
@@ -560,8 +560,8 @@
    "prev": 1.0972,
    "chg": 0.0003,
    "pct": 0.02,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (EURUSD=X)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (EURUSD=X) — last update failed",
    "ts": "2026-11-20T22:30:00Z",
    "open": 1.0965,
    "lo": 1.0965,
@@ -601,7 +601,7 @@
    "ts": "2026-11-20T22:00:00Z",
    "open": 158.601,
    "lo": 158.474,
-   "hi": 158.684,
+   "hi": 158.882,
    "h": [
     156.49,
     156.83,
@@ -624,7 +624,7 @@
     159.5,
     159.38,
     159.71,
-    158.68
+    158.81
    ]
   },
   "GBPUSD": {
@@ -660,20 +660,20 @@
     1.320498,
     1.314665,
     1.308644,
-    1.309295
+    1.309672
    ]
   },
   "DXY": {
-   "p": 103.84,
+   "p": 103.832,
    "prev": 103.81,
-   "chg": 0.03,
-   "pct": 0.03,
+   "chg": 0.022,
+   "pct": 0.02,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (DX-Y.NYB)",
-   "ts": "2026-11-22T22:15:00Z",
+   "ts": "2026-11-22T23:45:00Z",
    "open": 103.84,
-   "lo": 103.582,
-   "hi": 103.953,
+   "lo": 103.794,
+   "hi": 103.853,
    "h": [
     101.81,
     101.96,
@@ -696,23 +696,22 @@
     103.86,
     103.9,
     103.81,
-    103.84
+    103.83
    ]
   },
   "XAU": {
-   "p": 3515.3999,
-   "prev": 3685.5,
-   "chg": -170.1001,
-   "pct": -4.62,
-   "st": "EOD",
+   "p": 3573.3,
+   "prev": 3515.3999,
+   "chg": 57.9001,
+   "pct": 1.65,
+   "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GC=F)",
-   "ts": "2026-11-20T22:00:00Z",
-   "open": 3633.8,
-   "lo": 3502.8999,
-   "hi": 3638.1001,
-   "vol": 323896,
+   "ts": "2026-11-22T23:45:00Z",
+   "open": 3570.5,
+   "lo": 3552.3,
+   "hi": 3588.0,
+   "vol": 7408,
    "h": [
-    4060.4,
     4007.9,
     4038.4,
     4074.6,
@@ -733,23 +732,23 @@
     3864.2,
     3741.9,
     3685.5,
-    3515.4
+    3515.4,
+    3573.3
    ]
   },
   "CL": {
-   "p": 83.41,
-   "prev": 83.21,
-   "chg": 0.2,
-   "pct": 0.24,
-   "st": "EOD",
+   "p": 82.93,
+   "prev": 83.98,
+   "chg": -1.05,
+   "pct": -1.25,
+   "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (CL=F)",
-   "ts": "2026-11-20T22:00:00Z",
-   "open": 83.1,
-   "lo": 80.78,
-   "hi": 84.07,
-   "vol": 275335,
+   "ts": "2026-11-22T23:45:00Z",
+   "open": 83.67,
+   "lo": 82.63,
+   "hi": 83.73,
+   "vol": 4735,
    "h": [
-    99.47,
     103.27,
     101.76,
     99.9,
@@ -770,23 +769,23 @@
     86.01,
     83.26,
     83.21,
-    83.41
+    83.98,
+    82.93
    ]
   },
   "BRENT": {
-   "p": 89.95,
-   "prev": 91.98,
-   "chg": -2.03,
-   "pct": -2.21,
-   "st": "EOD",
+   "p": 89.38,
+   "prev": 92.57,
+   "chg": -3.19,
+   "pct": -3.45,
+   "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BZ=F)",
-   "ts": "2026-11-20T22:00:00Z",
-   "open": 90.02,
-   "lo": 87.7,
-   "hi": 90.38,
-   "vol": 25582,
+   "ts": "2026-11-22T23:45:00Z",
+   "open": 89.61,
+   "lo": 89.05,
+   "hi": 89.94,
+   "vol": 350,
    "h": [
-    113.17,
     116.72,
     115.81,
     113.88,
@@ -807,21 +806,22 @@
     93.14,
     91.95,
     91.98,
-    89.95
+    92.57,
+    89.38
    ]
   },
   "BTC": {
-   "p": 61084.5,
+   "p": 61113.8906,
    "prev": 60094.0898,
-   "chg": 990.4102,
-   "pct": 1.65,
+   "chg": 1019.8008,
+   "pct": 1.7,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-22T23:03:57.582635Z",
+   "ts": "2026-11-22T23:49:27.981847Z",
    "open": 60093.0078,
    "lo": 58680.2148,
    "hi": 61328.9453,
-   "vol": 25772124160,
+   "vol": 25872873472,
    "h": [
     78248.45,
     76677.3,
@@ -844,7 +844,7 @@
     61901.82,
     58798.98,
     60094.09,
-    61089.42
+    61113.89
    ]
   }
  },
@@ -945,9 +945,9 @@
    "ccy": "USD",
    "mcap": 3598139523072,
    "pe": 25.2881,
-   "fpe": 20.0184,
+   "fpe": 20.0208,
    "eps": 19.16,
-   "feps": 24.2038,
+   "feps": 24.2008,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1453140738048,
    "pe": 38.8774,
-   "fpe": 15.6799,
+   "fpe": 15.7026,
    "eps": 7.83,
-   "feps": 19.414,
+   "feps": 19.386,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1015122821120,
+   "mcap": 1018236174336,
    "pe": 46.3587,
    "fpe": 39.6339,
    "eps": 2.76,
    "feps": 3.2283,
    "revTTM": 745178988544,
    "netIncome": 20878000128,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.774,
@@ -2126,7 +2126,7 @@
    "ccy": "USD",
    "mcap": 9324940288,
    "eps": -2.12,
-   "feps": -1.3642,
+   "feps": -1.5613,
    "revTTM": 142880000,
    "netIncome": -628267008,
    "shares": 311349798,
@@ -2153,7 +2153,7 @@
    "earnEnd": 1794258000,
    "earnEst": false,
    "trailDiv": 0.0,
-   "fpe_ns": -17.058
+   "fpe_ns": -14.9046
   },
   "ACWI": {
    "name": "iShares MSCI ACWI ETF",
@@ -2168,13 +2168,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 122.6403,
-   "shares": 572600000,
-   "divYield": 2.579,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2258,12 +2253,30 @@
    "url": "https://fr.investing.com/news/stock-market-news/les-perspectives-economiques-de-goldman-sachs-pour-2027-3708018"
   },
   {
+   "h": "Could history help predict the next two years of US politics? | Martin Wolf on the US midterms",
+   "w": "The Democrats swept the midterms. Donald Trump is still president. What will the next two years look like?",
+   "syms": [],
+   "src": "myFT — us",
+   "ts": "2026-11-22T22:21:31Z",
+   "url": "https://www.ft.com/video/06206392-4100-4aa2-86e7-e38e4ceb9138?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "House Democrats to start new Congress with largest majority this century",
+   "w": "Lawmakers plan to use powers to investigate claims of corruption levelled at Trump administration",
+   "syms": [],
+   "src": "myFT — us",
+   "ts": "2026-11-22T22:10:45Z",
+   "url": "https://www.ft.com/content/9d2983a7-196d-4164-a0c1-e262f32fd8c9?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "FirstFT: Scott Bessent refuses to rule out Jensen Huang’s return to Nvidia",
    "w": "Also in today’s newsletter: COP31 climate talks fail and sanctioned Russian vessel attacked by drones near Finland",
    "syms": [
     "NVDA"
    ],
-   "src": "myFT — economy",
+   "src": "myFT — global economy",
    "ts": "2026-11-22T22:07:25Z",
    "url": "https://www.ft.com/content/67014244-a737-4be5-ac81-97b77a6912ff?syn-25a6b1a6=1",
    "mine": 1
@@ -2399,7 +2412,7 @@
    "w": "Cette édition, réservée aux entreprises françaises qui investissent dans le pays, décompte 14,9 milliards d’euros d’investissements nouveaux, soit 81 projets inédits, notamment dans les secteurs de la santé, de la cosmétique, ou des biocarburants.",
    "syms": [],
    "src": "Le Monde — Économie",
-   "ts": "2026-11-22T18:42:12Z",
+   "ts": "2026-11-22T18:42:11Z",
    "url": "https://www.lemonde.fr/economie-francaise/article/2026/11/22/choose-france-273-projets-industriels-seront-presentes-lors-de-ce-sommet-devolu-aux-entreprises-tricolores_6814240_1656968.html"
   },
   {
@@ -2429,6 +2442,32 @@
    "ts": "2026-11-22T18:15:08Z",
    "url": "https://www.ft.com/content/e1e08be8-da07-44c3-abe6-9873991ee91a?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "Laos 'least-developed' status shift, Tata meeting, Taiwan local elections",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T17:49:27.981847Z",
+   "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/laos-least-developed-status-shift-tata-meeting-taiwan-local-elections"
+  },
+  {
+   "h": "Hello Kitty owner Sanrio bets on games to expand global reach",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T17:49:27.981847Z",
+   "url": "https://asia.nikkei.com/business/media-entertainment/hello-kitty-owner-sanrio-bets-on-games-to-expand-global-reach"
+  },
+  {
+   "h": "Global crude exports hit record high despite Hormuz closure",
+   "w": "",
+   "syms": [
+    "CL"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T17:49:27.981847Z",
+   "url": "https://asia.nikkei.com/business/energy/global-crude-exports-hit-record-high-despite-hormuz-closure"
   },
   {
    "h": "Private equity has been buying up hospice centers — with striking consequences",
@@ -2577,30 +2616,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-22T15:24:50.887773Z",
    "url": "https://asia.nikkei.com/life-arts/life/destinations/bangkok-revisited-fresh-finds-and-old-favorites"
-  },
-  {
-   "h": "Bro hugs, no deals: Why Shenzhen was a win for Beijing",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T15:24:50.887773Z",
-   "url": "https://asia.nikkei.com/opinion/bro-hugs-no-deals-why-shenzhen-was-a-win-for-beijing"
-  },
-  {
-   "h": "Japan weighs scaling back missile and warship purchases",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T15:24:50.887773Z",
-   "url": "https://asia.nikkei.com/politics/defense/japan-weighs-scaling-back-missile-and-warship-purchases"
-  },
-  {
-   "h": "Japan's new spy bureau faces a long road to Five Eyes",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T14:31:46.865932Z",
-   "url": "https://asia.nikkei.com/opinion/japan-s-new-spy-bureau-faces-a-long-road-to-five-eyes"
   },
   {
    "h": "Social Security benefits are rising in 2027, but other changes could affect what you keep",
@@ -3072,24 +3087,6 @@
    "src": "myFT — us",
    "ts": "2026-11-21T16:19:19Z",
    "url": "https://www.ft.com/content/145e6fab-d93a-412d-8670-0554064fdf98?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Traders start to move US copper to China as Trump tariff fears ease",
-   "w": "Acute Chinese shortage and high local premium create lucrative arbitrage",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-21T12:00:08Z",
-   "url": "https://www.ft.com/content/b84dbcb1-f216-422e-89c7-f203e0ab2757?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Strong sales point to happy holiday season for US retailers",
-   "w": "Store chains rake in billions in extra revenue in defiance of gloomy consumer sentiment surveys",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-21T12:00:08Z",
-   "url": "https://www.ft.com/content/c893d0fa-ba27-4a3c-bfb6-4df3ccb7e6cc?syn-25a6b1a6=1",
    "mine": 1
   }
  ],
