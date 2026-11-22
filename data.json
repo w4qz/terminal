@@ -1,13 +1,13 @@
 {
- "generated_at": "2026-11-22T22:17:26.753042Z",
+ "generated_at": "2026-11-22T23:03:57.582635Z",
  "quotes": {
   "NVDA": {
    "p": 125.53,
    "prev": 145.98,
    "chg": -20.45,
    "pct": -14.01,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (NVDA) — last update failed",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (NVDA)",
    "ts": "2026-11-20T21:00:00Z",
    "open": 143.52,
    "lo": 124.5,
@@ -43,8 +43,8 @@
    "prev": 25.55,
    "chg": -2.28,
    "pct": -8.92,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (ASTS)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (ASTS) — last update failed",
    "ts": "2026-11-20T21:00:00Z",
    "open": 24.85,
    "lo": 22.72,
@@ -565,7 +565,7 @@
    "ts": "2026-11-20T22:30:00Z",
    "open": 1.0965,
    "lo": 1.0965,
-   "hi": 1.0976,
+   "hi": 1.0978,
    "h": [
     1.122146,
     1.121755,
@@ -588,7 +588,7 @@
     1.099288,
     1.097201,
     1.096972,
-    1.097213
+    1.097574
    ]
   },
   "USDJPY": {
@@ -600,8 +600,8 @@
    "src": "Yahoo Finance via yfinance (JPY=X)",
    "ts": "2026-11-20T22:00:00Z",
    "open": 158.601,
-   "lo": 158.495,
-   "hi": 158.641,
+   "lo": 158.474,
+   "hi": 158.684,
    "h": [
     156.49,
     156.83,
@@ -624,7 +624,7 @@
     159.5,
     159.38,
     159.71,
-    158.59
+    158.68
    ]
   },
   "GBPUSD": {
@@ -660,7 +660,7 @@
     1.320498,
     1.314665,
     1.308644,
-    1.309569
+    1.309295
    ]
   },
   "DXY": {
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 60858.4492,
+   "p": 61084.5,
    "prev": 60094.0898,
-   "chg": 764.3594,
-   "pct": 1.27,
+   "chg": 990.4102,
+   "pct": 1.65,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-22T22:17:26.753042Z",
+   "ts": "2026-11-22T23:03:57.582635Z",
    "open": 60093.0078,
    "lo": 58680.2148,
    "hi": 61328.9453,
-   "vol": 26487117824,
+   "vol": 25772124160,
    "h": [
     78248.45,
     76677.3,
@@ -844,7 +844,7 @@
     61901.82,
     58798.98,
     60094.09,
-    60858.45
+    61089.42
    ]
   }
  },
@@ -945,9 +945,9 @@
    "ccy": "USD",
    "mcap": 3598139523072,
    "pe": 25.2881,
-   "fpe": 20.0208,
+   "fpe": 20.0184,
    "eps": 19.16,
-   "feps": 24.2008,
+   "feps": 24.2038,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1453140738048,
    "pe": 38.8774,
-   "fpe": 15.7026,
+   "fpe": 15.6799,
    "eps": 7.83,
-   "feps": 19.386,
+   "feps": 19.414,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1018236174336,
+   "mcap": 1015122821120,
    "pe": 46.3587,
    "fpe": 39.6339,
    "eps": 2.76,
    "feps": 3.2283,
    "revTTM": 745178988544,
    "netIncome": 20878000128,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.774,
@@ -2126,7 +2126,7 @@
    "ccy": "USD",
    "mcap": 9324940288,
    "eps": -2.12,
-   "feps": -1.5613,
+   "feps": -1.3642,
    "revTTM": 142880000,
    "netIncome": -628267008,
    "shares": 311349798,
@@ -2153,7 +2153,7 @@
    "earnEnd": 1794258000,
    "earnEst": false,
    "trailDiv": 0.0,
-   "fpe_ns": -14.9046
+   "fpe_ns": -17.058
   },
   "ACWI": {
    "name": "iShares MSCI ACWI ETF",
@@ -2168,8 +2168,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 122.6403,
+   "shares": 572600000,
+   "divYield": 2.579,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2220,6 +2225,38 @@
   }
  ],
  "news": [
+  {
+   "h": "Gentrack H2 2026 : les résultats correspondent aux prévisions, le chiffre d’affaires récurrent progresse",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T22:43:55Z",
+   "url": "https://fr.investing.com/news/transcripts/gentrack-h2-2026--les-resultats-correspondent-aux-previsions-le-chiffre-daffaires-recurrent-progresse-93CH-3708022"
+  },
+  {
+   "h": "Le PDG de Diodes Incorporated, Gary Yu, vend des actions pour 525.780$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T22:32:18Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-diodes-incorporated-gary-yu-vend-des-actions-pour-525780-93CH-3708021"
+  },
+  {
+   "h": "Le PDG de Natural Gas Services Group achète pour 85.806$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T22:32:16Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-natural-gas-services-group-achete-pour-85806-dactions-93CH-3708020"
+  },
+  {
+   "h": "Les perspectives économiques de Goldman Sachs pour 2027",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T22:24:42Z",
+   "url": "https://fr.investing.com/news/stock-market-news/les-perspectives-economiques-de-goldman-sachs-pour-2027-3708018"
+  },
   {
    "h": "FirstFT: Scott Bessent refuses to rule out Jensen Huang’s return to Nvidia",
    "w": "Also in today’s newsletter: COP31 climate talks fail and sanctioned Russian vessel attacked by drones near Finland",
@@ -2306,14 +2343,6 @@
    "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-de-umh-properties-inc-achete-999-dactions-93CH-3708008"
   },
   {
-   "h": "Pourquoi SpaceX est « environ dix ans en avance sur ses concurrents »",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T19:50:26Z",
-   "url": "https://fr.investing.com/news/analyst-ratings/un-analyste-explique-pourquoi-spacex-est--dix-ans-en-avance--3708005"
-  },
-  {
    "h": "How much more air can come out of the AI trade?",
    "w": "Markets are troubled—for good reason",
    "syms": [],
@@ -2350,14 +2379,6 @@
    "mine": 1
   },
   {
-   "h": "Gregory M. Shepard cède pour 2,19 M$ d’actions Atlas Energy Solutions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T19:02:11Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/gregory-m-shepard-cede-pour-219-m-dactions-atlas-energy-solutions-93CH-3708004"
-  },
-  {
    "h": "Employees at Eric Trump-backed robot startup lose health benefits as company's cash crunch deepens",
    "w": "Foundation is pursuing an emergency bridge loan and has been in talks with VC firms as it waits for a $150 million investment from South Korea's Base Group.",
    "syms": [],
@@ -2372,16 +2393,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-22T18:53:29Z",
    "url": "https://www.lemonde.fr/politique/article/2026/11/22/emmanuel-macron-envisage-de-reunir-le-congres-a-versailles-pour-faire-adopter-une-regle-d-or-budgetaire-une-procedure-inedite-a-plus-d-un-titre_6814241_823448.html"
-  },
-  {
-   "h": "Bessent affirme que l’administration Trump attend des réponses de Nvidia",
-   "w": "",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T18:48:04Z",
-   "url": "https://fr.investing.com/news/company-news/bessent-affirme-que-ladministration-trump-attend-des-reponses-de-nvidia-3708002"
   },
   {
    "h": "Choose France : 273 projets industriels seront présentés lors de ce sommet dévolu aux entreprises tricolores",
@@ -2420,14 +2431,6 @@
    "mine": 1
   },
   {
-   "h": "Quelle est la valeur d’Oracle sans l’essor de l’IA ?",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T17:57:03Z",
-   "url": "https://fr.investing.com/news/analyst-ratings/quelle-est-la-valeur-doracle-sans-lia--3708001"
-  },
-  {
    "h": "Private equity has been buying up hospice centers — with striking consequences",
    "w": "Medicare costs are higher and patients stay longer at hospice providers owned by private-equity firms, new research has found.",
    "syms": [],
@@ -2442,6 +2445,30 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-22T17:14:03Z",
    "url": "https://www.cnbc.com/2026/11/22/jay-clayton-tech-outages-faa-microsoft-thanksgiving.html"
+  },
+  {
+   "h": "Chinese automakers lead Japanese rivals in 39 markets, aided by EVs",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T17:03:57.582635Z",
+   "url": "https://asia.nikkei.com/business/automobiles/chinese-automakers-lead-japanese-rivals-in-39-markets-aided-by-evs"
+  },
+  {
+   "h": "Restored Okinawa castle to reopen with extensive fire safety measures",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T17:03:57.582635Z",
+   "url": "https://asia.nikkei.com/business/travel-leisure/restored-okinawa-castle-to-reopen-with-extensive-fire-safety-measures"
+  },
+  {
+   "h": "AI good for business but may sap joy of creation: game creator Hideo Kojima",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T17:03:57.582635Z",
+   "url": "https://asia.nikkei.com/business/media-entertainment/ai-good-for-business-but-may-sap-joy-of-creation-game-creator-hideo-kojima"
   },
   {
    "h": "En Martinique, tous les chemins mènent au rhum",
@@ -2574,32 +2601,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-22T14:31:46.865932Z",
    "url": "https://asia.nikkei.com/opinion/japan-s-new-spy-bureau-faces-a-long-road-to-five-eyes"
-  },
-  {
-   "h": "Laos 'least-developed' status shift, Tata meeting, Taiwan local elections",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T14:31:46.865932Z",
-   "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/laos-least-developed-status-shift-tata-meeting-taiwan-local-elections"
-  },
-  {
-   "h": "Hello Kitty owner Sanrio bets on games to expand global reach",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T14:31:46.865932Z",
-   "url": "https://asia.nikkei.com/business/media-entertainment/hello-kitty-owner-sanrio-bets-on-games-to-expand-global-reach"
-  },
-  {
-   "h": "Global crude exports hit record high despite Hormuz closure",
-   "w": "",
-   "syms": [
-    "CL"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T14:31:46.865932Z",
-   "url": "https://asia.nikkei.com/business/energy/global-crude-exports-hit-record-high-despite-hormuz-closure"
   },
   {
    "h": "Social Security benefits are rising in 2027, but other changes could affect what you keep",
