@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T04:18:22.452810Z",
+ "generated_at": "2026-11-22T05:22:23.895000Z",
  "quotes": {
   "NVDA": {
    "p": 125.53,
@@ -710,7 +710,7 @@
    "open": 3633.8,
    "lo": 3502.8999,
    "hi": 3638.1001,
-   "vol": 203702,
+   "vol": 323896,
    "h": [
     4060.4,
     4007.9,
@@ -744,10 +744,10 @@
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (CL=F)",
    "ts": "2026-11-20T22:00:00Z",
-   "open": 83.68,
-   "lo": 81.55,
-   "hi": 84.35,
-   "vol": 92362,
+   "open": 83.1,
+   "lo": 80.78,
+   "hi": 84.07,
+   "vol": 275335,
    "h": [
     99.47,
     103.27,
@@ -770,7 +770,7 @@
     86.01,
     83.26,
     83.21,
-    83.98
+    83.41
    ]
   },
   "BRENT": {
@@ -781,10 +781,10 @@
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (BZ=F)",
    "ts": "2026-11-20T22:00:00Z",
-   "open": 92.52,
-   "lo": 90.06,
-   "hi": 93.05,
-   "vol": 22334,
+   "open": 90.02,
+   "lo": 87.7,
+   "hi": 90.38,
+   "vol": 25582,
    "h": [
     113.17,
     116.72,
@@ -807,21 +807,21 @@
     93.14,
     91.95,
     91.98,
-    92.57
+    89.95
    ]
   },
   "BTC": {
-   "p": 59324.0195,
+   "p": 58900.6289,
    "prev": 58798.9805,
-   "chg": 525.0391,
-   "pct": 0.89,
+   "chg": 101.6484,
+   "pct": 0.17,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-22T04:18:22.452810Z",
+   "ts": "2026-11-22T05:22:23.895000Z",
    "open": 60093.0078,
-   "lo": 59006.9219,
+   "lo": 58717.5469,
    "hi": 60204.9961,
-   "vol": 47982952448,
+   "vol": 44009738240,
    "h": [
     77434.75,
     78248.45,
@@ -844,7 +844,7 @@
     62987.27,
     61901.82,
     58798.98,
-    59324.02
+    58900.63
    ]
   }
  },
@@ -945,9 +945,9 @@
    "ccy": "USD",
    "mcap": 3598139523072,
    "pe": 25.2881,
-   "fpe": 20.0208,
+   "fpe": 20.0184,
    "eps": 19.16,
-   "feps": 24.2008,
+   "feps": 24.2038,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1453140738048,
    "pe": 38.8774,
-   "fpe": 15.7026,
+   "fpe": 15.6799,
    "eps": 7.83,
-   "feps": 19.386,
+   "feps": 19.414,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1018236174336,
+   "mcap": 1015122821120,
    "pe": 46.3587,
    "fpe": 39.6339,
    "eps": 2.76,
    "feps": 3.2283,
    "revTTM": 745178988544,
    "netIncome": 20878000128,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.774,
@@ -2126,7 +2126,7 @@
    "ccy": "USD",
    "mcap": 9324940288,
    "eps": -2.12,
-   "feps": -1.5613,
+   "feps": -1.3642,
    "revTTM": 142880000,
    "netIncome": -628267008,
    "shares": 311349798,
@@ -2153,7 +2153,7 @@
    "earnEnd": 1794258000,
    "earnEst": false,
    "trailDiv": 0.0,
-   "fpe_ns": -14.9046
+   "fpe_ns": -17.058
   },
   "ACWI": {
    "name": "iShares MSCI ACWI ETF",
@@ -2168,8 +2168,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 122.6403,
+   "shares": 572600000,
+   "divYield": 2.579,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2220,6 +2225,62 @@
   }
  ],
  "news": [
+  {
+   "h": "Comme aux Etats-Unis, les victimes françaises d’accidents de la route sont de plus en plus courtisées par les avocats",
+   "w": "En France, l’indemnisation des accidentés de la route coûte trois fois plus cher qu’il y a vingt ans. Les victimes y gagnent, mais les assureurs dénoncent une judiciarisation malsaine.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-22T05:20:07Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/11/22/comme-aux-etats-unis-les-victimes-francaises-d-accidents-de-la-route-sont-de-plus-en-plus-courtisees-par-les-avocats_6814181_3234.html"
+  },
+  {
+   "h": "Un administrateur d’Allspring Global Dividend Opportunity Fund achète des actions pour 1.039$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T05:01:54Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-dallspring-global-dividend-opportunity-fund-achete-des-actions-pour-1039-93CH-3707930"
+  },
+  {
+   "h": "Une directrice d’Allspring Multi Sector Income Fund achète 1.040$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T05:01:53Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/une-directrice-dallspring-multi-sector-income-fund-achete-1040-dactions-93CH-3707929"
+  },
+  {
+   "h": "Le Groupe Castel, empire discret de la bière et du vin, secoué par une guerre de pouvoir",
+   "w": "Un âpre conflit de gouvernance tourmente le géant des boissons, où l’on se dispute l’héritage, spirituel comme financier, de son charismatique fondateur, Pierre Castel. La 11ᵉ fortune française vient d’avoir 100 ans.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-22T05:00:31Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/11/22/le-groupe-castel-empire-discret-de-la-biere-et-du-vin-secoue-par-une-guerre-de-pouvoir_6814179_3234.html"
+  },
+  {
+   "h": "Le parcours de Mylène pour acheter une maison au Plessis-Pâté, dans l’Essonne",
+   "w": "Enseignante dans un collège du secteur et mère de trois enfants, la quadragénaire a fait le choix de devenir propriétaire après son divorce.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-22T05:00:15Z",
+   "url": "https://www.lemonde.fr/argent/article/2026/11/22/le-parcours-de-mylene-pour-acheter-une-maison-au-plessis-pate-dans-l-essonne_6814176_1657007.html"
+  },
+  {
+   "h": "Un administrateur d’Allspring Income Opportunities Fund achète pour 1.037$ d’actions ordinaires",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T04:31:48Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-dallspring-income-opportunities-fund-achete-pour-1037-dactions-ordinaires-93CH-3707928"
+  },
+  {
+   "h": "Au sein du géant des boissons Castel, une crise de gouvernance amplifiée par une architecture complexe de holdings, de fonds et de trusts",
+   "w": "La fille du fondateur de l’empire de la bière et du vin, Romy Castel, s’efforce d’évincer le directeur général opérationnel, protégé par une structure juridique et capitalistique complexe. Elle a remporté, en octobre, une importante victoire judiciaire.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-22T04:30:07Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/11/22/au-sein-du-geant-des-boissons-castel-une-crise-de-gouvernance-amplifiee-par-une-architecture-complexe-de-holdings-de-fonds-et-de-trusts_6814144_3234.html"
+  },
   {
    "h": "Un administrateur de German American Bancorp Inc achète 1.200$ d’actions",
    "w": "",
@@ -2277,22 +2338,6 @@
    "url": "https://fr.investing.com/news/insider-trading-news/le-dirigeant-de-wabtec-gregory-sbrocco-cede-280782-dactions-93CH-3707918"
   },
   {
-   "h": "Le directeur de C&F Financial Corporation vend des actions pour 46.800$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T01:46:25Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-de-cf-financial-corporation-vend-des-actions-pour-46800-93CH-3707917"
-  },
-  {
-   "h": "Un administrateur de Stereotaxis Inc acquiert des actions STXS pour 10.900$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T01:32:14Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-stereotaxis-inc-acquiert-des-actions-stxs-pour-10900-93CH-3707916"
-  },
-  {
    "h": "India’s $126bn insurance sector slams proposed commission cap",
    "w": "Industry argues regulation would hamper growth of a market that only recently opened up fully to foreign investment",
    "syms": [],
@@ -2300,14 +2345,6 @@
    "ts": "2026-11-22T01:30:02Z",
    "url": "https://www.ft.com/content/2e67313b-d6c5-4e62-bd50-14639fe5ef95?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Sean Feeley achète pour 12.370$ d’actions Barings Global (BGH)",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T01:16:33Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/sean-feeley-achete-pour-12370-dactions-barings-global-bgh-93CH-3707915"
   },
   {
    "h": "My husband is happily retired at 64 and thinks I should keep working. Is he being fair?",
@@ -2333,6 +2370,30 @@
    "ts": "2026-11-21T23:34:24Z",
    "url": "https://www.ft.com/content/b3ba64e9-9482-4525-acc7-49825f3daace?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "World Bank's India poverty estimates questioned over scale of gains",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-21T23:22:23.895000Z",
+   "url": "https://asia.nikkei.com/economy/demography/world-bank-s-india-poverty-estimates-questioned-over-scale-of-gains"
+  },
+  {
+   "h": "Japan stamp maker stomps into AI realm by authenticating videos on X",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-21T23:22:23.895000Z",
+   "url": "https://asia.nikkei.com/business/companies/japan-stamp-maker-stomps-into-ai-realm-by-authenticating-videos-on-x"
+  },
+  {
+   "h": "US, Japan should lead next-gen transportation: Trump's ex-transport chief",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-21T23:22:23.895000Z",
+   "url": "https://asia.nikkei.com/editor-s-picks/interview/us-japan-should-lead-next-gen-transportation-trump-s-ex-transport-chief"
   },
   {
    "h": "I’m in my 40s. Should I accept a lower pension in exchange for naming my husband or child as a beneficiary?",
@@ -2443,22 +2504,6 @@
    "url": "https://asia.nikkei.com/spotlight/comment/indonesian-leader-chases-sukarno-s-phantom-with-defiant-posture"
   },
   {
-   "h": "Peru can be Japan's gateway for South America investment, president says",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-21T20:10:43.150502Z",
-   "url": "https://asia.nikkei.com/editor-s-picks/interview/peru-can-be-japan-s-gateway-for-south-america-investment-president-says"
-  },
-  {
-   "h": "Chinese 3D printer maker Bambu Lab scales up production in Shenzhen",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-21T20:10:43.150502Z",
-   "url": "https://asia.nikkei.com/business/china-tech/chinese-3d-printer-maker-bambu-lab-scales-up-production-in-shenzhen"
-  },
-  {
    "h": "‘I’ve been a stay-at-home mom’: I’m 50 and have a chronic illness. My husband lost his job. Should he raid his 401(k)?",
    "w": "“Our financial and healthcare situation has become increasingly concerning.”",
    "syms": [],
@@ -2473,14 +2518,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-21T19:45:00Z",
    "url": "https://www.marketwatch.com/story/buyers-are-out-for-blood-as-housing-market-finally-hits-rock-bottom-fa5093a6?mod=mw_rss_topstories"
-  },
-  {
-   "h": "AI good for business but may sap joy of creation: game creator Hideo Kojima",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-21T19:00:18.025178Z",
-   "url": "https://asia.nikkei.com/business/media-entertainment/ai-good-for-business-but-may-sap-joy-of-creation-game-creator-hideo-kojima"
   },
   {
    "h": "America is definitely rich enough to fix Social Security and Medicare. Here’s how.",
@@ -2752,28 +2789,12 @@
    "url": "https://www.lemonde.fr/economie/article/2026/11/21/telephonie-mobile-par-satellite-le-chemin-tortueux-des-operateurs-europeens-vers-une-constellation-souveraine_6813948_3234.html"
   },
   {
-   "h": "A Agen, les irréductibles opposants à la ligne à grande vitesse Bordeaux-Toulouse : « On a un pays qui est superbe et ils vont venir le massacrer. Qu’est-ce qu’on va laisser à nos enfants ? »",
-   "w": "Dans le Lot-et-Garonne, les déboisements préalables au chantier de la ligne à grande vitesse Bordeaux-Toulouse sont sur le point de commencer. Autour d’Agen, les opposants à ce projet, lancé en 2009, balaient les arguments d’attractivité économique et de gain de temps pour dénoncer son coût exorbitant et son impact désastreux sur l’environnement.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-21T06:00:05Z",
-   "url": "https://www.lemonde.fr/m-le-mag/article/2026/11/21/a-agen-les-irreductibles-opposants-a-la-ligne-a-grande-vitesse-bordeaux-toulouse-on-a-un-pays-qui-est-superbe-et-ils-vont-venir-le-massacrer-qu-est-ce-qu-on-va-laisser-a-nos-enfants_6813947_4500055.html"
-  },
-  {
    "h": "How China is using summits to expand its global influence",
    "w": "Chinese President Xi Jinping has helped coordinate yet another photo-op of global significance.",
    "syms": [],
    "src": "CNBC — Markets",
    "ts": "2026-11-21T06:00:02Z",
    "url": "https://www.cnbc.com/2026/11/21/china-xi-trump-putin-global-diplomacy-shenzhen.html"
-  },
-  {
-   "h": "« L’explosion de l’extrême richesse constitue le fait social majeur de notre temps » : le manifeste de plus de 110 intellectuels contre l’oligarchie",
-   "w": "Pour contrer le club des milliardaires dont la puissance ne cesse de croître, et à l’heure où se tient à Paris un colloque sur le sujet, des penseurs dont quatre Prix Nobel (Daron Acemoglu, Esther Duflo, Paul Krugman et Joseph Stiglitz) appellent, dans une tribune au « Monde », à créer une « internationale démocratique ».",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-21T05:25:05Z",
-   "url": "https://www.lemonde.fr/idees/article/2026/11/21/l-explosion-de-l-extreme-richesse-constitue-le-fait-social-majeur-de-notre-temps-le-manifeste-de-plus-de-110-intellectuels-contre-l-oligarchie_6813943_3232.html"
   },
   {
    "h": "Milburn’s £5.8bn youth employment plan rests on ‘leap of faith’",
@@ -2923,14 +2944,6 @@
    "mine": 1
   },
   {
-   "h": "Quelles précautions prendre quand on prête une somme d’argent à un proche ?",
-   "w": "Il est prudent d’établir un contrat, explique Stéphane Jacquin, responsable de l’ingénierie patrimoniale chez Lazard Frères Gestion.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-21T05:00:21Z",
-   "url": "https://www.lemonde.fr/argent/article/2026/11/21/quelles-precautions-prendre-quand-on-prete-une-somme-d-argent-a-un-proche_6813921_1657007.html"
-  },
-  {
    "h": "The AI cyber threat is already here",
    "w": "The freezer war is just a start",
    "syms": [],
@@ -3030,17 +3043,6 @@
    "ts": "2026-11-21T01:11:23Z",
    "url": "https://www.ft.com/content/21e99fa9-325d-4294-a459-97393c0d107f?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Aux Etats-Unis, Wall Street en déroute après la dégringolade des sociétés liées à l’IA",
-   "w": "Les inquiétudes sur le modèle économique des entreprises d’intelligence artificielle, les incertitudes sur l’avenir des data centers et les déboires du champion Nvidia ont effacé des milliards de dollars de capitalisation. La Bourse américaine a vécu l’une de ses pires semaines depuis la crise liée à la pandémie de Covid-19.",
-   "syms": [
-    "NVDA",
-    "SPX"
-   ],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-21T00:33:30Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/11/21/aux-etats-unis-wall-street-en-deroute-apres-la-degringolade-des-societes-liees-a-l-intelligence-artificielle_6813811_3234.html"
   },
   {
    "h": "Nvidia stock plunges 14%, wraps up longest weekly losing streak since 2008 financial crisis",
