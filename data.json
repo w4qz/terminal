@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T03:10:29.606391Z",
+ "generated_at": "2026-11-22T04:18:22.452810Z",
  "quotes": {
   "NVDA": {
    "p": 125.53,
@@ -264,8 +264,8 @@
    "prev": 59444.2109,
    "chg": -3007.5625,
    "pct": -5.06,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^N225) — last update failed",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^N225)",
    "ts": "2026-11-20T06:30:00Z",
    "open": 58551.5586,
    "lo": 56436.6484,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 59232.6211,
+   "p": 59324.0195,
    "prev": 58798.9805,
-   "chg": 433.6406,
-   "pct": 0.74,
+   "chg": 525.0391,
+   "pct": 0.89,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-22T03:10:29.606391Z",
+   "ts": "2026-11-22T04:18:22.452810Z",
    "open": 60093.0078,
-   "lo": 59200.1445,
+   "lo": 59006.9219,
    "hi": 60204.9961,
-   "vol": 55401140224,
+   "vol": 47982952448,
    "h": [
     77434.75,
     78248.45,
@@ -844,7 +844,7 @@
     62987.27,
     61901.82,
     58798.98,
-    59247.98
+    59324.02
    ]
   }
  },
@@ -1175,7 +1175,7 @@
    "cash": 247142006784,
    "debt": 360191000576,
    "fcf": 343484628992,
-   "w52lo": 23.29,
+   "w52lo": 0.0,
    "w52hi": 27.96,
    "evEbitda": 7.507,
    "earnTs": 1793707200,
@@ -2221,6 +2221,46 @@
  ],
  "news": [
   {
+   "h": "Un administrateur de German American Bancorp Inc achète 1.200$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T03:46:26Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-german-american-bancorp-inc-achete-1200-dactions-93CH-3707927"
+  },
+  {
+   "h": "Les arrestations de ICE à l’aéroport de Seattle suscitent l’indignation",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T03:32:33Z",
+   "url": "https://fr.investing.com/news/economy-news/les-arrestations-de-ice-a-laeroport-de-seattle-suscitent-lindignation-3707925"
+  },
+  {
+   "h": "Un administrateur de Richardson Electronics Ltd vend des actions pour 26.608$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T03:16:47Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-richardson-electronics-ltd-vend-des-actions-pour-26608-93CH-3707924"
+  },
+  {
+   "h": "Un administrateur de Freightcar America Inc achète pour 227.790$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T03:02:02Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-freightcar-america-inc-achete-pour-227790-dactions-93CH-3707923"
+  },
+  {
+   "h": "Un dirigeant de Reaves Utility IF achète 240.825$ de parts",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T03:01:33Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-de-reaves-utility-if-achete-240825-de-parts-93CH-3707921"
+  },
+  {
    "h": "Les grèves industrielles s’élargissent en Allemagne : IG Metall mobilise 23.000 travailleurs",
    "w": "",
    "syms": [],
@@ -2278,46 +2318,6 @@
    "url": "https://www.marketwatch.com/story/my-husband-is-happily-retired-at-64-and-thinks-i-should-keep-working-is-he-being-fair-325c5f38?mod=mw_rss_topstories"
   },
   {
-   "h": "Les actions IA chinoises perdent 1.700 milliards $ depuis fin juin",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T01:09:28Z",
-   "url": "https://fr.investing.com/news/stock-market-news/les-actions-ia-chinoises-perdent-1700-milliards--depuis-fin-juin-3707913"
-  },
-  {
-   "h": "Le PDG de Filana Therapeutics achète 206.896$ d’actions de la société",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T00:46:45Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-filana-therapeutics-achete-206896-dactions-de-la-societe-93CH-3707912"
-  },
-  {
-   "h": "Le directeur des opérations de Texas Community Bancshares Inc vend des actions pour 14.911$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T00:31:33Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-des-operations-de-texas-community-bancshares-inc-vend-des-actions-pour-14911-93CH-3707910"
-  },
-  {
-   "h": "Le directeur financier d’Amphastar P vend des actions pour 329.890$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T00:16:55Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-damphastar-p-vend-des-actions-pour-329890-93CH-3707909"
-  },
-  {
-   "h": "Le directeur financier de Park Ohio Holdings vend des actions pour 99.213$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T00:16:51Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-de-park-ohio-holdings-vend-des-actions-pour-99213-93CH-3707908"
-  },
-  {
    "h": "My wife is bankrolling her family’s trips to New York and it’s draining our savings. Should I ask her to stop?",
    "w": "“Hotel rooms can cost as much as $400 per night.”",
    "syms": [],
@@ -2341,6 +2341,32 @@
    "src": "MarketWatch",
    "ts": "2026-11-21T23:05:00Z",
    "url": "https://www.marketwatch.com/story/im-in-my-40s-should-i-accept-a-lower-pension-in-exchange-for-naming-my-husband-or-child-as-a-beneficiary-b2352059?mod=mw_rss_topstories"
+  },
+  {
+   "h": "The ramen lectures: Japan company tries new expansion strategy",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-21T22:18:22.452810Z",
+   "url": "https://asia.nikkei.com/business/food-beverage/the-ramen-lectures-japan-company-tries-new-expansion-strategy"
+  },
+  {
+   "h": "Bro hugs, no deals: Why Shenzhen was a win for Beijing",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-21T22:18:22.452810Z",
+   "url": "https://asia.nikkei.com/opinion/bro-hugs-no-deals-why-shenzhen-was-a-win-for-beijing"
+  },
+  {
+   "h": "Global crude exports hit record high despite Hormuz closure",
+   "w": "",
+   "syms": [
+    "CL"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-21T22:18:22.452810Z",
+   "url": "https://asia.nikkei.com/business/energy/global-crude-exports-hit-record-high-despite-hormuz-closure"
   },
   {
    "h": "Violence erupts in Sinaloa after Mexico captures alleged drug trafficker",
@@ -2455,30 +2481,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-21T19:00:18.025178Z",
    "url": "https://asia.nikkei.com/business/media-entertainment/ai-good-for-business-but-may-sap-joy-of-creation-game-creator-hideo-kojima"
-  },
-  {
-   "h": "Japan stamp maker stomps into AI realm by authenticating videos on X",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-21T19:00:18.025178Z",
-   "url": "https://asia.nikkei.com/business/companies/japan-stamp-maker-stomps-into-ai-realm-by-authenticating-videos-on-x"
-  },
-  {
-   "h": "US, Japan should lead next-gen transportation: Trump's ex-transport chief",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-21T19:00:18.025178Z",
-   "url": "https://asia.nikkei.com/editor-s-picks/interview/us-japan-should-lead-next-gen-transportation-trump-s-ex-transport-chief"
-  },
-  {
-   "h": "Battery maker GS Yuasa targets defense, space as growth fields: CEO",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-21T19:00:18.025178Z",
-   "url": "https://asia.nikkei.com/editor-s-picks/interview/battery-maker-gs-yuasa-targets-defense-space-as-growth-fields-ceo"
   },
   {
    "h": "America is definitely rich enough to fix Social Security and Medicare. Here’s how.",
