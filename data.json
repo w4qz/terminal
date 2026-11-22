@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T18:01:29.747816Z",
+ "generated_at": "2026-11-22T18:54:57.313769Z",
  "quotes": {
   "NVDA": {
    "p": 125.53,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 60732.8398,
+   "p": 60688.1094,
    "prev": 60094.0898,
-   "chg": 638.75,
-   "pct": 1.06,
+   "chg": 594.0195,
+   "pct": 0.99,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-22T18:01:29.747816Z",
+   "ts": "2026-11-22T18:54:57.313769Z",
    "open": 60093.0078,
    "lo": 58680.2148,
    "hi": 61328.9453,
-   "vol": 28672356352,
+   "vol": 28547213312,
    "h": [
     78248.45,
     76677.3,
@@ -844,7 +844,7 @@
     61901.82,
     58798.98,
     60094.09,
-    60732.84
+    60688.11
    ]
   }
  },
@@ -945,9 +945,9 @@
    "ccy": "USD",
    "mcap": 3598139523072,
    "pe": 25.2881,
-   "fpe": 20.0184,
+   "fpe": 20.0208,
    "eps": 19.16,
-   "feps": 24.2038,
+   "feps": 24.2008,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1453140738048,
    "pe": 38.8774,
-   "fpe": 15.6799,
+   "fpe": 15.7026,
    "eps": 7.83,
-   "feps": 19.414,
+   "feps": 19.386,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1015122821120,
+   "mcap": 1018236174336,
    "pe": 46.3587,
    "fpe": 39.6339,
    "eps": 2.76,
    "feps": 3.2283,
    "revTTM": 745178988544,
    "netIncome": 20878000128,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.774,
@@ -2126,7 +2126,7 @@
    "ccy": "USD",
    "mcap": 9324940288,
    "eps": -2.12,
-   "feps": -1.3642,
+   "feps": -1.5613,
    "revTTM": 142880000,
    "netIncome": -628267008,
    "shares": 311349798,
@@ -2153,7 +2153,7 @@
    "earnEnd": 1794258000,
    "earnEst": false,
    "trailDiv": 0.0,
-   "fpe_ns": -17.058
+   "fpe_ns": -14.9046
   },
   "ACWI": {
    "name": "iShares MSCI ACWI ETF",
@@ -2168,13 +2168,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 122.6403,
-   "shares": 572600000,
-   "divYield": 2.579,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2226,6 +2221,52 @@
  ],
  "news": [
   {
+   "h": "Choose France : 273 projets industriels seront présentés lors de ce sommet dévolu aux entreprises tricolores",
+   "w": "Cette édition, réservée aux entreprises françaises qui investissent dans le pays, décompte 14,9 milliards d’euros d’investissements nouveaux, soit 81 projets inédits, notamment dans les secteurs de la santé, de la cosmétique, ou des biocarburants.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-22T18:42:12Z",
+   "url": "https://www.lemonde.fr/economie-francaise/article/2026/11/22/choose-france-273-projets-industriels-seront-presentes-lors-de-ce-sommet-devolu-aux-entreprises-tricolores_6814240_1656968.html"
+  },
+  {
+   "h": "FTSE 100 catering giant Compass plans to move main listing to New York",
+   "w": "£43bn group set to announce intention to move as soon as Tuesday",
+   "syms": [
+    "UKX"
+   ],
+   "src": "myFT — companies",
+   "ts": "2026-11-22T18:28:00Z",
+   "url": "https://www.ft.com/content/7b48ea5e-6372-4bb7-ae5c-8b7ddd020883?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "These little-known investments could be among the best bargains in a crash",
+   "w": "If this stock market turmoil turns into a full-blown crash, look for low-risk investment bargains among closed-end funds.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-22T18:23:00Z",
+   "url": "https://www.marketwatch.com/story/these-little-known-investments-could-be-among-the-best-bargains-in-a-crash-78a379b4?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Bessent refuses to rule out Huang’s return to Nvidia",
+   "w": "Treasury secretary says it depends ‘where the buck stops’ as US president calls for former chief’s reinstatement",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "myFT — companies",
+   "ts": "2026-11-22T18:11:01Z",
+   "url": "https://www.ft.com/content/91b7a3a6-8ac5-4327-ad03-6d951f287346?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Que vaut Oracle si l’on ne croit pas à l’essor des centres de données IA ?",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T17:57:03Z",
+   "url": "https://fr.investing.com/news/analyst-ratings/quelle-est-la-valeur-doracle-sans-lia--3708001"
+  },
+  {
    "h": "Private equity has been buying up hospice centers — with striking consequences",
    "w": "Medicare costs are higher and patients stay longer at hospice providers owned by private-equity firms, new research has found.",
    "syms": [],
@@ -2266,17 +2307,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-22T17:00:00Z",
    "url": "https://www.marketwatch.com/story/nvidia-spooked-me-should-i-sell-my-stocks-or-ride-out-the-market-turmoil-560583c6?mod=mw_rss_topstories"
-  },
-  {
-   "h": "FTSE 100 catering giant Compass plans to move main listing to New York",
-   "w": "£43bn group set to announce intention to move as soon as Tuesday",
-   "syms": [
-    "UKX"
-   ],
-   "src": "myFT — companies",
-   "ts": "2026-11-22T16:43:09Z",
-   "url": "https://www.ft.com/content/7b48ea5e-6372-4bb7-ae5c-8b7ddd020883?syn-25a6b1a6=1",
-   "mine": 1
   },
   {
    "h": "I’m terrified of a market crash. Should I put $400,000 of my $1 million retirement savings into an annuity?",
@@ -2483,14 +2513,6 @@
    "mine": 1
   },
   {
-   "h": "Le PDG de Teradyne Inc vend des actions pour 942.880$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T13:02:10Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-teradyne-inc-vend-des-actions-pour-942880-93CH-3707987"
-  },
-  {
    "h": "Xi needs Trump more than ever",
    "w": "The Shenzhen summit shows the high stakes for Beijing as many in Washington call for tougher measures",
    "syms": [],
@@ -2508,12 +2530,36 @@
    "url": "https://www.cnbc.com/2026/11/22/pizza-chains-sales-glp-1-demand.html"
   },
   {
-   "h": "Can stocks bounce back after a brutal week? This timing model says history is on the market’s side.",
-   "w": "Norm Fosback’s ‘Seasonality Timing System’ has one of the very best long-term track records, and suggests the market has an upside bias for the next two weeks",
+   "h": "Chinese automakers lead Japanese rivals in 39 markets, aided by EVs",
+   "w": "",
    "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-22T12:30:00Z",
-   "url": "https://www.marketwatch.com/story/can-stocks-bounce-back-after-a-brutal-week-this-timing-model-says-history-is-on-the-markets-side-beff1753?mod=mw_rss_topstories"
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T12:54:57.313769Z",
+   "url": "https://asia.nikkei.com/business/automobiles/chinese-automakers-lead-japanese-rivals-in-39-markets-aided-by-evs"
+  },
+  {
+   "h": "Corporate Japan races to revive rare-earth supply chain amid China curbs",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T12:54:57.313769Z",
+   "url": "https://asia.nikkei.com/business/materials/corporate-japan-races-to-revive-rare-earth-supply-chain-amid-china-curbs"
+  },
+  {
+   "h": "World Bank's India poverty estimates questioned over scale of gains",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T12:54:57.313769Z",
+   "url": "https://asia.nikkei.com/economy/demography/world-bank-s-india-poverty-estimates-questioned-over-scale-of-gains"
+  },
+  {
+   "h": "Japan stamp maker stomps into AI realm by authenticating videos on X",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T12:54:57.313769Z",
+   "url": "https://asia.nikkei.com/business/companies/japan-stamp-maker-stomps-into-ai-realm-by-authenticating-videos-on-x"
   },
   {
    "h": "Former Italian police chief found dead after mafia cover-up claims",
@@ -2692,38 +2738,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-22T10:26:29.101179Z",
    "url": "https://asia.nikkei.com/business/media-entertainment/hello-kitty-owner-sanrio-bets-on-games-to-expand-global-reach"
-  },
-  {
-   "h": "Japan's listening bars find a global audience",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T10:26:29.101179Z",
-   "url": "https://asia.nikkei.com/life-arts/life/japan-s-listening-bars-find-a-global-audience"
-  },
-  {
-   "h": "Restored Okinawa castle to reopen with extensive fire safety measures",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T09:35:15.286102Z",
-   "url": "https://asia.nikkei.com/business/travel-leisure/restored-okinawa-castle-to-reopen-with-extensive-fire-safety-measures"
-  },
-  {
-   "h": "AI good for business but may sap joy of creation: game creator Hideo Kojima",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T09:35:15.286102Z",
-   "url": "https://asia.nikkei.com/business/media-entertainment/ai-good-for-business-but-may-sap-joy-of-creation-game-creator-hideo-kojima"
-  },
-  {
-   "h": "Indonesian leader chases Sukarno's phantom with defiant posture",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T09:35:15.286102Z",
-   "url": "https://asia.nikkei.com/spotlight/comment/indonesian-leader-chases-sukarno-s-phantom-with-defiant-posture"
   },
   {
    "h": "« Le paradoxe est saisissant : les Français réclament plus de services publics ? On leur propose moins d’Etat »",
@@ -3027,14 +3041,6 @@
    "url": "https://www.cnbc.com/make-it/2026/11/21/california-mining-modern-gold-rush.html"
   },
   {
-   "h": "State and federal battle over prediction markets regulation heats up after midterms",
-   "w": "States, Congress and the CFTC are escalating the fight over prediction market regulation after the midterms.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-21T13:12:41Z",
-   "url": "https://www.cnbc.com/2026/11/21/prediction-market-regulation-kalshi-cftc.html"
-  },
-  {
    "h": "Traders start to move US copper to China as Trump tariff fears ease",
    "w": "Acute Chinese shortage and high local premium create lucrative arbitrage",
    "syms": [],
@@ -3077,15 +3083,6 @@
    "src": "myFT — banks",
    "ts": "2026-11-21T06:32:26Z",
    "url": "https://www.ft.com/content/bfa66957-73d4-44f1-bea5-6b141c197920",
-   "mine": 1
-  },
-  {
-   "h": "Milburn’s £5.8bn youth employment plan rests on ‘leap of faith’",
-   "w": "Reforms would have to be three times as effective as previous schemes to hit their goals, analysts warn",
-   "syms": [],
-   "src": "myFT — world uk",
-   "ts": "2026-11-21T05:00:45Z",
-   "url": "https://www.ft.com/content/41bcd148-4e1f-4071-940e-ba21dc3700df?syn-25a6b1a6=1",
    "mine": 1
   }
  ],
