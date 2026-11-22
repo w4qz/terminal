@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T17:18:33.566790Z",
+ "generated_at": "2026-11-22T18:01:29.747816Z",
  "quotes": {
   "NVDA": {
    "p": 125.53,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 60728.5117,
+   "p": 60732.8398,
    "prev": 60094.0898,
-   "chg": 634.4219,
+   "chg": 638.75,
    "pct": 1.06,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-22T17:18:33.566790Z",
+   "ts": "2026-11-22T18:01:29.747816Z",
    "open": 60093.0078,
    "lo": 58680.2148,
    "hi": 61328.9453,
-   "vol": 28704028672,
+   "vol": 28672356352,
    "h": [
     78248.45,
     76677.3,
@@ -844,7 +844,7 @@
     61901.82,
     58798.98,
     60094.09,
-    60728.51
+    60732.84
    ]
   }
  },
@@ -1342,7 +1342,7 @@
    "cash": 214822889193472,
    "debt": 17191232602112,
    "fcf": 118200394055680,
-   "w52lo": 96200.0,
+   "w52lo": 0.0,
    "w52hi": 374500.0,
    "evEbitda": 3.108,
    "earnTs": 1793167200,
@@ -1463,7 +1463,7 @@
    "debtEq": 5.865,
    "cash": 114464946913280,
    "debt": 18127760916480,
-   "w52lo": 501000.0,
+   "w52lo": 0.0,
    "w52hi": 2987000.0,
    "evEbitda": 3.218,
    "earnTs": 1793080800,
@@ -2226,12 +2226,28 @@
  ],
  "news": [
   {
+   "h": "Private equity has been buying up hospice centers — with striking consequences",
+   "w": "Medicare costs are higher and patients stay longer at hospice providers owned by private-equity firms, new research has found.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-22T17:22:00Z",
+   "url": "https://www.marketwatch.com/story/private-equity-has-been-buying-up-hospice-centers-with-striking-consequences-63642545?mod=mw_rss_topstories"
+  },
+  {
    "h": "Director of National Intelligence Jay Clayton warns Americans of 'bumps in the road' after tech outages",
    "w": "Clayton’s warning comes ahead of Thanksgiving travel, after separate outages disrupted air travel, Microsoft 365 and some bank transactions.",
    "syms": [],
    "src": "CNBC — Markets",
    "ts": "2026-11-22T17:14:03Z",
    "url": "https://www.cnbc.com/2026/11/22/jay-clayton-tech-outages-faa-microsoft-thanksgiving.html"
+  },
+  {
+   "h": "Le président du groupe Air Products and Chemicals Inc cède des actions pour 142.584$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T17:01:54Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-president-du-groupe-air-products-and-chemicals-inc-cede-des-actions-pour-142584-93CH-3707999"
   },
   {
    "h": "En Martinique, tous les chemins mènent au rhum",
@@ -2250,6 +2266,17 @@
    "src": "MarketWatch",
    "ts": "2026-11-22T17:00:00Z",
    "url": "https://www.marketwatch.com/story/nvidia-spooked-me-should-i-sell-my-stocks-or-ride-out-the-market-turmoil-560583c6?mod=mw_rss_topstories"
+  },
+  {
+   "h": "FTSE 100 catering giant Compass plans to move main listing to New York",
+   "w": "£43bn group set to announce intention to move as soon as Tuesday",
+   "syms": [
+    "UKX"
+   ],
+   "src": "myFT — companies",
+   "ts": "2026-11-22T16:43:09Z",
+   "url": "https://www.ft.com/content/7b48ea5e-6372-4bb7-ae5c-8b7ddd020883?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "I’m terrified of a market crash. Should I put $400,000 of my $1 million retirement savings into an annuity?",
@@ -2389,8 +2416,8 @@
    "mine": 1
   },
   {
-   "h": "Sanctioned Russian vessel ablaze in Finnish waters after drone attack",
-   "w": "Finland’s prime minister says ‘war is spilling over into our immediate vicinity’",
+   "h": "Sanctioned Russian vessel attacked by drones near Finland",
+   "w": "Finland’s prime minister says ‘war is spilling over into our immediate vicinity’ as ship is salvaged",
    "syms": [],
    "src": "myFT — europe",
    "ts": "2026-11-22T14:15:40Z",
@@ -2414,7 +2441,7 @@
    "url": "https://www.marketwatch.com/story/stocks-are-in-a-correction-heading-into-the-thanksgiving-holiday-what-to-brace-for-next-a1e82491?mod=mw_rss_topstories"
   },
   {
-   "h": "Climate talks fail after stand-off over fossil fuels",
+   "h": "COP31 climate talks fail after stand-off over fossil fuels",
    "w": "Geopolitical divides laid bare in fracture between Arab group and EU-led coalition",
    "syms": [],
    "src": "myFT — europe",
@@ -2481,14 +2508,6 @@
    "url": "https://www.cnbc.com/2026/11/22/pizza-chains-sales-glp-1-demand.html"
   },
   {
-   "h": "Un administrateur de Marsh & McLennan vend des actions pour 101.049$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T12:47:17Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-marsh--mclennan-vend-des-actions-pour-101049-93CH-3707986"
-  },
-  {
    "h": "Can stocks bounce back after a brutal week? This timing model says history is on the market’s side.",
    "w": "Norm Fosback’s ‘Seasonality Timing System’ has one of the very best long-term track records, and suggests the market has an upside bias for the next two weeks",
    "syms": [],
@@ -2533,6 +2552,30 @@
    "ts": "2026-11-22T12:02:25Z",
    "url": "https://www.ft.com/content/b89dbb74-af6c-492e-8d18-c0e83c64efd8?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "The ramen lectures: Japan company tries new expansion strategy",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T12:01:29.747816Z",
+   "url": "https://asia.nikkei.com/business/food-beverage/the-ramen-lectures-japan-company-tries-new-expansion-strategy"
+  },
+  {
+   "h": "Bro hugs, no deals: Why Shenzhen was a win for Beijing",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T12:01:29.747816Z",
+   "url": "https://asia.nikkei.com/opinion/bro-hugs-no-deals-why-shenzhen-was-a-win-for-beijing"
+  },
+  {
+   "h": "US, Japan should lead next-gen transportation: Trump's ex-transport chief",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T12:01:29.747816Z",
+   "url": "https://asia.nikkei.com/editor-s-picks/interview/us-japan-should-lead-next-gen-transportation-trump-s-ex-transport-chief"
   },
   {
    "h": "Will Anthropic’s IPO buck the tech sell-off?",
@@ -2681,30 +2724,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-22T09:35:15.286102Z",
    "url": "https://asia.nikkei.com/spotlight/comment/indonesian-leader-chases-sukarno-s-phantom-with-defiant-posture"
-  },
-  {
-   "h": "Corporate Japan races to revive rare-earth supply chain amid China curbs",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T08:50:14.961970Z",
-   "url": "https://asia.nikkei.com/business/materials/corporate-japan-races-to-revive-rare-earth-supply-chain-amid-china-curbs"
-  },
-  {
-   "h": "World Bank's India poverty estimates questioned over scale of gains",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T08:50:14.961970Z",
-   "url": "https://asia.nikkei.com/economy/demography/world-bank-s-india-poverty-estimates-questioned-over-scale-of-gains"
-  },
-  {
-   "h": "Japan stamp maker stomps into AI realm by authenticating videos on X",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T08:50:14.961970Z",
-   "url": "https://asia.nikkei.com/business/companies/japan-stamp-maker-stomps-into-ai-realm-by-authenticating-videos-on-x"
   },
   {
    "h": "« Le paradoxe est saisissant : les Français réclament plus de services publics ? On leur propose moins d’Etat »",
@@ -2897,14 +2916,6 @@
    "mine": 1
   },
   {
-   "h": "My husband is happily retired at 64 and thinks I should keep working. Is he being fair?",
-   "w": "“I’m exhausted. My alarm goes off at 6 a.m., and I have a 50-minute commute.”",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-22T01:15:00Z",
-   "url": "https://www.marketwatch.com/story/my-husband-is-happily-retired-at-64-and-thinks-i-should-keep-working-is-he-being-fair-325c5f38?mod=mw_rss_topstories"
-  },
-  {
    "h": "Employers are being asked to give interview feedback - here's what applicants want",
    "w": "People say they often hear nothing back after applying for jobs. But could employers be forced to respond to every applicant?",
    "syms": [],
@@ -3075,15 +3086,6 @@
    "src": "myFT — world uk",
    "ts": "2026-11-21T05:00:45Z",
    "url": "https://www.ft.com/content/41bcd148-4e1f-4071-940e-ba21dc3700df?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "The chip war’s next battleground",
-   "w": "As the US and China’s AI rivalry intensifies, focus is moving to supply chains",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-21T05:00:36Z",
-   "url": "https://www.ft.com/content/cd4ecaf3-0ded-4830-94a8-4d9c24098c07?syn-25a6b1a6=1",
    "mine": 1
   }
  ],
