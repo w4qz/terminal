@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T11:15:06.056005Z",
+ "generated_at": "2026-11-22T12:00:23.619528Z",
  "quotes": {
   "NVDA": {
    "p": 125.53,
@@ -704,8 +704,8 @@
    "prev": 3685.5,
    "chg": -170.1001,
    "pct": -4.62,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (GC=F)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (GC=F) — last update failed",
    "ts": "2026-11-20T22:00:00Z",
    "open": 3633.8,
    "lo": 3502.8999,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 60876.5898,
+   "p": 60977.8086,
    "prev": 60094.0898,
-   "chg": 782.5,
-   "pct": 1.3,
+   "chg": 883.7188,
+   "pct": 1.47,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-22T11:15:06.056005Z",
+   "ts": "2026-11-22T12:00:23.619528Z",
    "open": 60093.0078,
    "lo": 58680.2148,
    "hi": 61094.2734,
-   "vol": 36582264832,
+   "vol": 35439722496,
    "h": [
     78248.45,
     76677.3,
@@ -844,7 +844,7 @@
     61901.82,
     58798.98,
     60094.09,
-    60876.59
+    60977.81
    ]
   }
  },
@@ -1149,9 +1149,9 @@
    "sector": "Energy",
    "industry": "Oil & Gas Integrated",
    "ccy": "SAR",
-   "mcap": 6371840884736,
-   "pe": 14.1613,
-   "fpe": 15.7725,
+   "mcap": 6367002755072,
+   "pe": 14.1505,
+   "fpe": 15.7605,
    "eps": 1.86,
    "feps": 1.67,
    "revTTM": 1932166955008,
@@ -1159,7 +1159,7 @@
    "shares": 241907400000,
    "beta": -0.022,
    "div": 1.36,
-   "divYield": 5.163,
+   "divYield": 5.167,
    "target": 29.9778,
    "targetHi": 34.0,
    "targetLo": 27.0,
@@ -2221,6 +2221,63 @@
  ],
  "news": [
   {
+   "h": "La directrice financière de Fortinet Inc vend des actions pour 27.223 $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T11:32:17Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-financiere-de-fortinet-inc-vend-des-actions-pour-27223--93CH-3707977"
+  },
+  {
+   "h": "Un cadre d’Incyte Corporation vend des actions pour 1,29 million $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T11:18:13Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-cadre-dincyte-corporation-vend-des-actions-pour-129-million--93CH-3707976"
+  },
+  {
+   "h": "Le PDG de Qualys Inc vend des actions pour 567.271$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T11:17:31Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-qualys-inc-vend-des-actions-pour-567271-93CH-3707975"
+  },
+  {
+   "h": "Le PDG de Sensus Healthcare Inc achète des actions pour 72.108$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T11:17:20Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-sensus-healthcare-inc-achete-des-actions-pour-72108-93CH-3707974"
+  },
+  {
+   "h": "Climate talks on the brink as EU rejects deal that ‘green washes fossil fuels’",
+   "w": "Group of countries refuses to endorse proposed agreement in direct clash with Saudi Arabia",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-22T11:15:48Z",
+   "url": "https://www.ft.com/content/b3ba64e9-9482-4525-acc7-49825f3daace?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Saudi Arabia’s $1trn wealth pot suffers an identity crisis",
+   "w": "The Public Investment Fund is distracted, and not just by war",
+   "syms": [],
+   "src": "The Economist — Finance",
+   "ts": "2026-11-22T11:13:42Z",
+   "url": "https://www.economist.com/finance-and-economics/2026/11/22/saudi-arabias-1trn-wealth-pot-suffers-an-identity-crisis"
+  },
+  {
+   "h": "Compass Diversified Holdings génère un rendement de 64% après un signal de Juste Valeur",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T11:11:37Z",
+   "url": "https://fr.investing.com/news/investment-ideas/compass-diversified-holdings-genere-un-rendement-de-64-apres-un-signal-de-juste-valeur-93CH-3707973"
+  },
+  {
    "h": "Solaris Res chute de 51% après l’alerte de surévaluation d’InvestingPro",
    "w": "",
    "syms": [],
@@ -2235,6 +2292,33 @@
    "src": "Investing.com France",
    "ts": "2026-11-22T11:02:17Z",
    "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-executif-de-vivmark-residential-vend-des-actions-pour-129m-93CH-3707971"
+  },
+  {
+   "h": "The American dream of home ownership recedes as mortgage rates surge",
+   "w": "Donald Trump pledged to lower homeowners’ borrowing costs to 3% but the benchmark rate has surged to over 7%",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-22T11:00:06Z",
+   "url": "https://www.ft.com/content/168a7d3f-6e70-44da-9860-623bcf4fc023?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Democrats will seek to unwind Trump’s tax and tariff policies",
+   "w": "Top lawmaker Richard Neal vows hearings into the president’s flagship economic measures",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-22T11:00:05Z",
+   "url": "https://www.ft.com/content/8af97161-2ae0-4655-9f8b-a560f9227359?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Did Anthropic and its bankers get a key call wrong after IPO?",
+   "w": "Share price weakness raises questions about hasty exercise of ‘greenshoe’ option to issue more stock",
+   "syms": [],
+   "src": "myFT — companies",
+   "ts": "2026-11-22T11:00:05Z",
+   "url": "https://www.ft.com/content/d501198c-14a4-4b96-8880-c3997545902e",
+   "mine": 1
   },
   {
    "h": "Tower Records Japon signale une violation de données touchant 10,2 millions de comptes",
@@ -2261,55 +2345,6 @@
    "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-juridique-de-legalzoomcom-inc-vend-des-actions-pour-158316-93CH-3707965"
   },
   {
-   "h": "Le directeur CDO de Vivmark Residential vend des actions pour 482.100$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T10:02:04Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-cdo-de-vivmark-residential-vend-des-actions-pour-482100-93CH-3707964"
-  },
-  {
-   "h": "Un administrateur de Frp Holdings Ord achète 103.430$ d’actions ordinaires",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T09:47:17Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-frp-holdings-ord-achete-103430-dactions-ordinaires-93CH-3707962"
-  },
-  {
-   "h": "Une frappe de drone russe piège 14 personnes près de Kyiv",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T09:43:25Z",
-   "url": "https://fr.investing.com/news/economy-news/une-frappe-de-drone-russe-piege-14-personnes-pres-de-kyiv-3707961"
-  },
-  {
-   "h": "Faut-il acheter le repli du cuivre ? UBS privilégie les positions longues",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T09:09:20Z",
-   "url": "https://fr.investing.com/news/stock-market-news/fautil-acheter-le-repli-du-cuivre--ubs-privilegie-les-positions-longues-3707959"
-  },
-  {
-   "h": "Le directeur financier de Serve Robotics Inc vend des actions SERV pour 18.430$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T09:02:56Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-de-serve-robotics-inc-vend-des-actions-serv-pour-18430-93CH-3707958"
-  },
-  {
-   "h": "COP31 negotiators try to break impasse after EU raises prospect of ‘no deal’",
-   "w": "Talks run into second day of overtime as Saudi Arabia leads opposition to inclusion of fossil fuel phase out in final agreement",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-22T08:15:27Z",
-   "url": "https://www.ft.com/content/b3ba64e9-9482-4525-acc7-49825f3daace?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "« Le paradoxe est saisissant : les Français réclament plus de services publics ? On leur propose moins d’Etat »",
    "w": "L’urbaniste Julien Moulard, qui a dirigé le groupement d’intérêt public L’Europe des projets architecturaux et urbains, dissout en juillet, s’alarme, dans une tribune au « Monde », d’une politique de réforme de l’Etat qui, sous couvert d’efficacité, fragilise des services publics déjà exangues.",
    "syms": [],
@@ -2332,6 +2367,30 @@
    "src": "BBC — Business",
    "ts": "2026-11-22T07:12:41Z",
    "url": "https://www.bbc.co.uk/news/articles/c8e39qk5vrpdo?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "Laos 'least-developed' status shift, Tata meeting, Taiwan local elections",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T06:00:23.619528Z",
+   "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/laos-least-developed-status-shift-tata-meeting-taiwan-local-elections"
+  },
+  {
+   "h": "Hello Kitty owner Sanrio bets on games to expand global reach",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T06:00:23.619528Z",
+   "url": "https://asia.nikkei.com/business/media-entertainment/hello-kitty-owner-sanrio-bets-on-games-to-expand-global-reach"
+  },
+  {
+   "h": "Japan's listening bars find a global audience",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T06:00:23.619528Z",
+   "url": "https://asia.nikkei.com/life-arts/life/japan-s-listening-bars-find-a-global-audience"
   },
   {
    "h": "Quantum computing’s first real-world payoff may come in energy, not drug discovery",
@@ -2572,36 +2631,10 @@
    "url": "https://asia.nikkei.com/opinion/bro-hugs-no-deals-why-shenzhen-was-a-win-for-beijing"
   },
   {
-   "h": "Global crude exports hit record high despite Hormuz closure",
-   "w": "",
-   "syms": [
-    "CL"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T03:29:55.518975Z",
-   "url": "https://asia.nikkei.com/business/energy/global-crude-exports-hit-record-high-despite-hormuz-closure"
-  },
-  {
-   "h": "Bangkok revisited: Fresh finds and old favorites",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T02:37:27.974731Z",
-   "url": "https://asia.nikkei.com/life-arts/life/destinations/bangkok-revisited-fresh-finds-and-old-favorites"
-  },
-  {
-   "h": "Japan weighs scaling back missile and warship purchases",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T02:37:27.974731Z",
-   "url": "https://asia.nikkei.com/politics/defense/japan-weighs-scaling-back-missile-and-warship-purchases"
-  },
-  {
    "h": "India’s $126bn insurance sector slams proposed commission cap",
    "w": "Industry argues regulation would hamper growth of a market that only recently opened up fully to foreign investment",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — financials",
    "ts": "2026-11-22T01:30:02Z",
    "url": "https://www.ft.com/content/2e67313b-d6c5-4e62-bd50-14639fe5ef95?syn-25a6b1a6=1",
    "mine": 1
@@ -2804,24 +2837,6 @@
    "url": "https://www.cnbc.com/make-it/2026/11/21/never-wanted-american-dream-moving-abroad-redefine-success.html"
   },
   {
-   "h": "Retirees face a looming deadline for required withdrawals — missing it could trigger a tax penalty",
-   "w": "The busy holiday season may lead retirees to miss a key deadline for retirement account withdrawals.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-21T14:30:02Z",
-   "url": "https://www.cnbc.com/2026/11/21/rmd-deadline-penalty-2026.html"
-  },
-  {
-   "h": "During Wall Street's worst week in over a year, we put money to work. What we're buying",
-   "w": "The brutal sell-off is creating opportunities for us to put cash to work.",
-   "syms": [
-    "SPX"
-   ],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-21T14:22:04Z",
-   "url": "https://www.cnbc.com/investingclub/2026/11/21/during-wall-streets-worst-week-in-over-a-year-we-put-money-to-work-what-were-buying.html"
-  },
-  {
    "h": "An ‘illusion of glitz and glamour’: Inside California’s modern-day gold rush, where miners can bring in millions",
    "w": "The price of gold has sparked a modern-day gold rush in California. Small-scale miners are investing time, physical labor and money to unearth the yellow metal.",
    "syms": [
@@ -2891,6 +2906,17 @@
    "mine": 1
   },
   {
+   "h": "S&P 500 correction: Five forces behind the market sell-off",
+   "w": "The S&amp;P 500 and Dow Jones Industrial Average closed in correction territory, off 10% from their records. The Nasdaq Composite lost its gain for the year.",
+   "syms": [
+    "SPX",
+    "NDX"
+   ],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-21T11:29:25Z",
+   "url": "https://www.cnbc.com/2026/11/20/sp-500-correction-market-sell-off.html"
+  },
+  {
    "h": "Budget de l’UE : Antonio Costa, le président du Conseil européen, propose 204 milliards d’euros d’économies et une taxe numérique",
    "w": "La France a rejeté la nouvelle proposition du dirigeant européen. M. Costa soumettra sa proposition de compromis aux dirigeants de l’Union européenne lors d’un sommet organisé jeudi et vendredi à Bruxelles.",
    "syms": [],
@@ -2922,15 +2948,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-21T10:00:13Z",
    "url": "https://www.lemonde.fr/la-chronique-de-thomas-piketty/article/2026/11/21/thomas-piketty-le-projet-de-convention-fiscale-de-l-onu-a-le-potentiel-de-changer-la-face-du-monde_6813978_6649149.html"
-  },
-  {
-   "h": "Behind Manchester City’s Apollo talks",
-   "w": "Also in today’s newsletter: Nike and Formula 1, Premier League club valuations and more",
-   "syms": [],
-   "src": "myFT — companies",
-   "ts": "2026-11-21T09:00:06Z",
-   "url": "https://www.ft.com/content/4ee4411d-3159-4f36-9b03-86f006ee0f1b?syn-25a6b1a6=1",
-   "mine": 1
   },
   {
    "h": "The dead hand of history weighs on Deutsche Bank",
@@ -3049,24 +3066,6 @@
    "src": "myFT — world uk",
    "ts": "2026-11-21T05:00:25Z",
    "url": "https://www.ft.com/content/4cf7587f-a408-42af-9f8f-b3dd814db5c0?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "The AI cyber threat is already here",
-   "w": "The freezer war is just a start",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-21T05:00:16Z",
-   "url": "https://www.ft.com/content/3cf882c6-0be6-43f5-b01e-b6f765686c8b?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "How can investors succeed in markets today?",
-   "w": "Firstly, unlearn all the lessons from the past 20 years — when it comes to inflation, bonds and stocks, we’re in a different world from the one that followed the financial crisis",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-21T05:00:16Z",
-   "url": "https://www.ft.com/content/22b3765d-ff3d-4f07-8982-5a222dbb862e?syn-25a6b1a6=1",
    "mine": 1
   },
   {
