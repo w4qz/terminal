@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T01:00:18.025178Z",
+ "generated_at": "2026-11-22T02:10:43.150502Z",
  "quotes": {
   "NVDA": {
    "p": 125.53,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 60054.7617,
+   "p": 59948.8281,
    "prev": 58798.9805,
-   "chg": 1255.7812,
-   "pct": 2.14,
+   "chg": 1149.8477,
+   "pct": 1.96,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-22T01:00:18.025178Z",
+   "ts": "2026-11-22T02:10:43.150502Z",
    "open": 60093.0078,
-   "lo": 60076.5391,
+   "lo": 59902.3711,
    "hi": 60204.9961,
-   "vol": 57472929792,
+   "vol": 56769642496,
    "h": [
     77434.75,
     78248.45,
@@ -844,7 +844,7 @@
     62987.27,
     61901.82,
     58798.98,
-    60054.76
+    59948.83
    ]
   }
  },
@@ -945,9 +945,9 @@
    "ccy": "USD",
    "mcap": 3598139523072,
    "pe": 25.2881,
-   "fpe": 20.0208,
+   "fpe": 20.0184,
    "eps": 19.16,
-   "feps": 24.2008,
+   "feps": 24.2038,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1453140738048,
    "pe": 38.8774,
-   "fpe": 15.7026,
+   "fpe": 15.6799,
    "eps": 7.83,
-   "feps": 19.386,
+   "feps": 19.414,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1018236174336,
+   "mcap": 1015122821120,
    "pe": 46.3587,
    "fpe": 39.6339,
    "eps": 2.76,
    "feps": 3.2283,
    "revTTM": 745178988544,
    "netIncome": 20878000128,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.774,
@@ -2126,7 +2126,7 @@
    "ccy": "USD",
    "mcap": 9324940288,
    "eps": -2.12,
-   "feps": -1.5613,
+   "feps": -1.3642,
    "revTTM": 142880000,
    "netIncome": -628267008,
    "shares": 311349798,
@@ -2153,7 +2153,7 @@
    "earnEnd": 1794258000,
    "earnEst": false,
    "trailDiv": 0.0,
-   "fpe_ns": -14.9046
+   "fpe_ns": -17.058
   },
   "ACWI": {
    "name": "iShares MSCI ACWI ETF",
@@ -2168,8 +2168,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 122.6403,
+   "shares": 572600000,
+   "divYield": 2.579,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2221,6 +2226,71 @@
  ],
  "news": [
   {
+   "h": "Les grèves industrielles s’élargissent en Allemagne : IG Metall mobilise 23.000 travailleurs",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T01:48:54Z",
+   "url": "https://fr.investing.com/news/stock-market-news/les-greves-industrielles-selargissent-en-allemagne--ig-metall-mobilise-23000-travailleurs-3707919"
+  },
+  {
+   "h": "Le dirigeant de Wabtec Gregory Sbrocco cède 280.782$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T01:46:57Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-dirigeant-de-wabtec-gregory-sbrocco-cede-280782-dactions-93CH-3707918"
+  },
+  {
+   "h": "Le directeur de C&F Financial Corporation vend des actions pour 46.800$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T01:46:25Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-de-cf-financial-corporation-vend-des-actions-pour-46800-93CH-3707917"
+  },
+  {
+   "h": "Un administrateur de Stereotaxis Inc acquiert des actions STXS pour 10.900$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T01:32:14Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-stereotaxis-inc-acquiert-des-actions-stxs-pour-10900-93CH-3707916"
+  },
+  {
+   "h": "India’s $126bn insurance sector slams proposed commission cap",
+   "w": "Industry argues regulation would hamper growth of a market that only recently opened up fully to foreign investment",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-22T01:30:02Z",
+   "url": "https://www.ft.com/content/2e67313b-d6c5-4e62-bd50-14639fe5ef95?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Sean Feeley achète pour 12.370$ d’actions Barings Global (BGH)",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T01:16:33Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/sean-feeley-achete-pour-12370-dactions-barings-global-bgh-93CH-3707915"
+  },
+  {
+   "h": "My husband is happily retired at 64 and thinks I should keep working. Is he being fair?",
+   "w": "“I’m exhausted. My alarm goes off at 6 a.m., and I have a 50-minute commute.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-22T01:15:00Z",
+   "url": "https://www.marketwatch.com/story/my-husband-is-happily-retired-at-64-and-thinks-i-should-keep-working-is-he-being-fair-325c5f38?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Les actions IA chinoises perdent 1.700 milliards $ depuis fin juin",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T01:09:28Z",
+   "url": "https://fr.investing.com/news/stock-market-news/les-actions-ia-chinoises-perdent-1700-milliards--depuis-fin-juin-3707913"
+  },
+  {
    "h": "Le PDG de Filana Therapeutics achète 206.896$ d’actions de la société",
    "w": "",
    "syms": [],
@@ -2253,60 +2323,12 @@
    "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-de-park-ohio-holdings-vend-des-actions-pour-99213-93CH-3707908"
   },
   {
-   "h": "Le vice-président senior de GE Aerospace vend des actions pour 657.151$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T00:06:33Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-vicepresident-senior-de-ge-aerospace-vend-des-actions-pour-657151-93CH-3707907"
-  },
-  {
-   "h": "Le directeur financier de Filana Therapeutics achète des actions pour 8.400$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T00:03:04Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-de-filana-therapeutics-achete-des-actions-pour-8400-93CH-3707906"
-  },
-  {
    "h": "My wife is bankrolling her family’s trips to New York and it’s draining our savings. Should I ask her to stop?",
    "w": "“Hotel rooms can cost as much as $400 per night.”",
    "syms": [],
    "src": "MarketWatch",
    "ts": "2026-11-22T00:03:00Z",
    "url": "https://www.marketwatch.com/story/my-wife-pays-thousands-of-dollars-for-her-family-to-visit-from-argentina-how-can-i-convince-her-to-stop-9381351c?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Un directeur de Riskified Ltd vend des actions pour 720.000$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T00:02:54Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-riskified-ltd-vend-des-actions-pour-720000-93CH-3707905"
-  },
-  {
-   "h": "Marion McCourt, EVP de Regeneron Pharma, cède des actions pour 543.504$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T00:02:30Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/marion-mccourt-evp-de-regeneron-pharma-cede-des-actions-pour-543504-93CH-3707904"
-  },
-  {
-   "h": "La directrice financière de Runway Growth Finance Corp achète des actions pour 6.670$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T00:02:02Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-financiere-de-runway-growth-finance-corp-achete-des-actions-pour-6670-93CH-3707902"
-  },
-  {
-   "h": "Voici ce qu’il faut attendre des élections anticipées en Espagne",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-21T23:57:24Z",
-   "url": "https://fr.investing.com/news/stock-market-news/voici-ce-quil-faut-attendre-des-elections-anticipees-en-espagne-3707901"
   },
   {
    "h": "COP31 negotiators try to break impasse after EU raises prospect of ‘no deal’",
@@ -2352,6 +2374,46 @@
    "url": "https://www.marketwatch.com/story/it-is-heartbreaking-exhausting-and-downright-dirty-my-brother-took-over-our-ailing-mothers-life-and-finances-what-can-i-do-b4d48817?mod=mw_rss_topstories"
   },
   {
+   "h": "Hello Kitty owner Sanrio bets on games to expand global reach",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-21T20:10:43.150502Z",
+   "url": "https://asia.nikkei.com/business/media-entertainment/hello-kitty-owner-sanrio-bets-on-games-to-expand-global-reach"
+  },
+  {
+   "h": "Restored Okinawa castle to reopen with extensive fire safety measures",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-21T20:10:43.150502Z",
+   "url": "https://asia.nikkei.com/business/travel-leisure/restored-okinawa-castle-to-reopen-with-extensive-fire-safety-measures"
+  },
+  {
+   "h": "Indonesian leader chases Sukarno's phantom with defiant posture",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-21T20:10:43.150502Z",
+   "url": "https://asia.nikkei.com/spotlight/comment/indonesian-leader-chases-sukarno-s-phantom-with-defiant-posture"
+  },
+  {
+   "h": "Peru can be Japan's gateway for South America investment, president says",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-21T20:10:43.150502Z",
+   "url": "https://asia.nikkei.com/editor-s-picks/interview/peru-can-be-japan-s-gateway-for-south-america-investment-president-says"
+  },
+  {
+   "h": "Chinese 3D printer maker Bambu Lab scales up production in Shenzhen",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-21T20:10:43.150502Z",
+   "url": "https://asia.nikkei.com/business/china-tech/chinese-3d-printer-maker-bambu-lab-scales-up-production-in-shenzhen"
+  },
+  {
    "h": "‘I’ve been a stay-at-home mom’: I’m 50 and have a chronic illness. My husband lost his job. Should he raid his 401(k)?",
    "w": "“Our financial and healthcare situation has become increasingly concerning.”",
    "syms": [],
@@ -2366,14 +2428,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-21T19:45:00Z",
    "url": "https://www.marketwatch.com/story/buyers-are-out-for-blood-as-housing-market-finally-hits-rock-bottom-fa5093a6?mod=mw_rss_topstories"
-  },
-  {
-   "h": "My husband is happily retired at 64 and thinks I should keep working. Is he being fair?",
-   "w": "“I’m exhausted. My alarm goes off at 6 a.m., and I have a 50-minute commute.”",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-21T19:23:00Z",
-   "url": "https://www.marketwatch.com/story/my-husband-is-happily-retired-at-64-and-thinks-i-should-keep-working-is-he-being-fair-325c5f38?mod=mw_rss_topstories"
   },
   {
    "h": "AI good for business but may sap joy of creation: game creator Hideo Kojima",
@@ -2469,40 +2523,6 @@
    "mine": 1
   },
   {
-   "h": "Bangkok revisited: Fresh finds and old favorites",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-21T17:13:52.549124Z",
-   "url": "https://asia.nikkei.com/life-arts/life/destinations/bangkok-revisited-fresh-finds-and-old-favorites"
-  },
-  {
-   "h": "Japan weighs scaling back missile and warship purchases",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-21T17:13:52.549124Z",
-   "url": "https://asia.nikkei.com/politics/defense/japan-weighs-scaling-back-missile-and-warship-purchases"
-  },
-  {
-   "h": "Japan weighs early funding to ICC before US sanctions cutoff",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-21T17:13:52.549124Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/japan-weighs-early-funding-to-icc-before-us-sanctions-cutoff"
-  },
-  {
-   "h": "Nvidia server suppliers halt Southeast Asia shipments over US curbs",
-   "w": "",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-21T17:13:52.549124Z",
-   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/nvidia-server-suppliers-halt-southeast-asia-shipments-over-us-curbs"
-  },
-  {
    "h": "Alice Huang’s links to the chip underworld",
    "w": "Chinese executive in romantic relationship with former Nvidia CEO Jensen Huang had connections to the lucrative trade moving chips to China",
    "syms": [
@@ -2556,14 +2576,6 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-21T16:40:05Z",
    "url": "https://www.cnbc.com/2026/11/21/anthropic-ipo-tech-selloff.html"
-  },
-  {
-   "h": "Japan's listening bars find a global audience",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-21T16:26:19.959090Z",
-   "url": "https://asia.nikkei.com/life-arts/life/japan-s-listening-bars-find-a-global-audience"
   },
   {
    "h": "Navy budget pick has family investments in Trump Jr-linked contractor",
@@ -2832,18 +2844,6 @@
    "mine": 1
   },
   {
-   "h": "Oil shipped through Hormuz falls as Iranian strikes increase",
-   "w": "Recovery in Middle Eastern crude exports looks ‘increasingly fragile’, analyst says",
-   "syms": [
-    "BRENT",
-    "CL"
-   ],
-   "src": "myFT — world",
-   "ts": "2026-11-21T05:00:35Z",
-   "url": "https://www.ft.com/content/5fbc2b9d-0360-4a1f-9e4a-3e86168cbbc5?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "US watchdogs pick a bad time to cut disclosure on executive pay",
    "w": "The Securities and Exchange Commission has decided a more ‘principles-based’ regime is needed",
    "syms": [],
@@ -2859,6 +2859,18 @@
    "src": "myFT — world uk",
    "ts": "2026-11-21T05:00:35Z",
    "url": "https://www.ft.com/content/101e75db-97db-40e0-9897-d751aaf7f492?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Oil shipped through Hormuz falls as Iranian strikes increase",
+   "w": "Recovery in Middle Eastern crude exports looks ‘increasingly fragile’, analyst says",
+   "syms": [
+    "BRENT",
+    "CL"
+   ],
+   "src": "myFT — middle east north africa",
+   "ts": "2026-11-21T05:00:35Z",
+   "url": "https://www.ft.com/content/5fbc2b9d-0360-4a1f-9e4a-3e86168cbbc5?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -3036,15 +3048,6 @@
    "url": "https://www.lemonde.fr/economie/article/2026/11/21/aux-etats-unis-wall-street-en-deroute-apres-la-degringolade-des-societes-liees-a-l-intelligence-artificielle_6813811_3234.html"
   },
   {
-   "h": "Bayer’s $7.25bn settlement over cancer cases approved by US judge",
-   "w": "Ruling will help German chemicals group contain legal bills after years of court battles",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-20T23:16:28Z",
-   "url": "https://www.ft.com/content/e7d36416-9eb7-4479-a217-d593545499df?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "Nvidia stock plunges 14%, wraps up longest weekly losing streak since 2008 financial crisis",
    "w": "Once the most valuable company in the world, Nvidia now ranks fourth behind Apple, Microsoft and Alphabet.",
    "syms": [
@@ -3088,9 +3091,9 @@
   }
  ],
  "summary": {
-  "text": "Global equities tumbled as tech led broad declines, with Nvidia plunging 14.01% to 125.53 and the Nasdaq dropping 5.61% to 25028.9805. The S&P 500 fell 3.7% to 6910.3901, the Nikkei 225 sank 5.06%, and the VIX surged 26.2% to 35.89. Meanwhile, violence erupted in Sinaloa after Mexico captured an alleged drug trafficker, and Donald Trump ordered federal contractors to report congressional inquiries.\n\nIn FX and commodities, the dollar index slipped 0.06% to 103.84, with EURUSD at 1.0975 and USDJPY declining 0.55% to 158.512. Gold dropped 4.62% to 3515.3999. Brent crude fell 2.21% to 89.95, while WTI gained 0.24% to 83.41. Bitcoin advanced 2.33% to 60170.3008.\n\nLooking ahead, focus remains on the European Union raising the prospect of a no-deal outcome at COP31, talks between British and Dutch leaders regarding security and Ukraine support, and housing developments amid record-low home sales.",
+  "text": "Global equity markets fell sharply, led by a heavy tech retreat as Nvidia tumbled 14.01% and the Nasdaq dropped 5.61%. The S&P 500 declined 3.7% while the VIX surged 26.2% to 35.89. Broad declines hit international bourses, with the Nikkei down 5.06% and the DAX losing 2.6%, amid reports that Chinese AI shares have lost $1.7 trillion since late June.\n\nIn currencies and commodities, the US dollar index edged down 0.06% to 103.84, with EUR/USD flat at 1.0975 and USD/JPY dropping 0.55% to 158.512. Gold slid 4.62% to 3515.3999. Brent crude fell 2.21% to 89.95, while WTI ticked up 0.24% to 83.41. Bitcoin advanced 1.96% to 59948.8281.\n\nKey factors to monitor include widening industrial strikes across Germany mobilizing 23,000 workers, alongside COP31 climate negotiations as envoys attempt to break an impasse following the EU raising the prospect of no deal.",
   "model": "gemini-flash-latest",
   "lang": "en",
-  "ts": "2026-11-21T23:13:52.549124Z"
+  "ts": "2026-11-22T02:10:43.150502Z"
  }
 }
