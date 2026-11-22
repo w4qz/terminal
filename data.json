@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T12:00:23.619528Z",
+ "generated_at": "2026-11-22T12:59:06.636754Z",
  "quotes": {
   "NVDA": {
    "p": 125.53,
@@ -704,8 +704,8 @@
    "prev": 3685.5,
    "chg": -170.1001,
    "pct": -4.62,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (GC=F) — last update failed",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (GC=F)",
    "ts": "2026-11-20T22:00:00Z",
    "open": 3633.8,
    "lo": 3502.8999,
@@ -741,8 +741,8 @@
    "prev": 83.21,
    "chg": 0.2,
    "pct": 0.24,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (CL=F)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (CL=F) — last update failed",
    "ts": "2026-11-20T22:00:00Z",
    "open": 83.1,
    "lo": 80.78,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 60977.8086,
+   "p": 60726.9219,
    "prev": 60094.0898,
-   "chg": 883.7188,
-   "pct": 1.47,
+   "chg": 632.832,
+   "pct": 1.05,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-22T12:00:23.619528Z",
+   "ts": "2026-11-22T12:59:06.636754Z",
    "open": 60093.0078,
    "lo": 58680.2148,
-   "hi": 61094.2734,
-   "vol": 35439722496,
+   "hi": 61328.9453,
+   "vol": 35841929216,
    "h": [
     78248.45,
     76677.3,
@@ -844,7 +844,7 @@
     61901.82,
     58798.98,
     60094.09,
-    60977.81
+    60726.92
    ]
   }
  },
@@ -945,9 +945,9 @@
    "ccy": "USD",
    "mcap": 3598139523072,
    "pe": 25.2881,
-   "fpe": 20.0208,
+   "fpe": 20.0184,
    "eps": 19.16,
-   "feps": 24.2008,
+   "feps": 24.2038,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -1149,9 +1149,9 @@
    "sector": "Energy",
    "industry": "Oil & Gas Integrated",
    "ccy": "SAR",
-   "mcap": 6367002755072,
-   "pe": 14.1505,
-   "fpe": 15.7605,
+   "mcap": 6352488366080,
+   "pe": 14.1183,
+   "fpe": 15.7246,
    "eps": 1.86,
    "feps": 1.67,
    "revTTM": 1932166955008,
@@ -1159,7 +1159,7 @@
    "shares": 241907400000,
    "beta": -0.022,
    "div": 1.36,
-   "divYield": 5.167,
+   "divYield": 5.179,
    "target": 29.9778,
    "targetHi": 34.0,
    "targetLo": 27.0,
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1453140738048,
    "pe": 38.8774,
-   "fpe": 15.7026,
+   "fpe": 15.6799,
    "eps": 7.83,
-   "feps": 19.386,
+   "feps": 19.414,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1018236174336,
+   "mcap": 1015122821120,
    "pe": 46.3587,
    "fpe": 39.6339,
    "eps": 2.76,
    "feps": 3.2283,
    "revTTM": 745178988544,
    "netIncome": 20878000128,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.774,
@@ -2126,7 +2126,7 @@
    "ccy": "USD",
    "mcap": 9324940288,
    "eps": -2.12,
-   "feps": -1.5613,
+   "feps": -1.3642,
    "revTTM": 142880000,
    "netIncome": -628267008,
    "shares": 311349798,
@@ -2153,7 +2153,7 @@
    "earnEnd": 1794258000,
    "earnEst": false,
    "trailDiv": 0.0,
-   "fpe_ns": -14.9046
+   "fpe_ns": -17.058
   },
   "ACWI": {
    "name": "iShares MSCI ACWI ETF",
@@ -2168,8 +2168,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 122.6403,
+   "shares": 572600000,
+   "divYield": 2.579,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2221,6 +2226,112 @@
  ],
  "news": [
   {
+   "h": "Un administrateur de Galaxy Digital Inc acquiert des actions pour 200.850$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T12:32:23Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-galaxy-digital-inc-acquiert-des-actions-pour-200850-93CH-3707983"
+  },
+  {
+   "h": "Can stocks bounce back after a brutal week? This timing model says history is on the market’s side.",
+   "w": "Norm Fosback’s ‘Seasonality Timing System’ has one of the very best long-term track records, and suggests the market has an upside bias for the next two weeks",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-22T12:30:00Z",
+   "url": "https://www.marketwatch.com/story/can-stocks-bounce-back-after-a-brutal-week-this-timing-model-says-history-is-on-the-markets-side-beff1753?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Top Wall Street analysts favor these 3 dividend stocks for strong returns",
+   "w": "Wall Street analysts can help shortlist attractive dividend-paying stocks, as their recommendations are backed by thorough analysis of a company's financials.",
+   "syms": [
+    "SPX"
+   ],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-22T12:13:56Z",
+   "url": "https://www.cnbc.com/2026/11/22/top-wall-street-analysts-favor-these-stocks-for-strong-returns.html"
+  },
+  {
+   "h": "The Nasdaq is in freefall. Here's one stock to look at",
+   "w": "Elevated options premiums are creating an opportunity in Amazon",
+   "syms": [
+    "NDX"
+   ],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-22T12:10:39Z",
+   "url": "https://www.cnbc.com/2026/11/22/the-nasdaq-is-in-freefall-heres-one-stock-to-look-at.html"
+  },
+  {
+   "h": "Un directeur de Jfrog Ltd vend des actions ordinaires pour 4,45 millions $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T12:03:10Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-jfrog-ltd-vend-des-actions-ordinaires-pour-445-millions--93CH-3707982"
+  },
+  {
+   "h": "Le directeur des opérations d’US Physicalrapy Inc vend des actions pour 178.000$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T12:03:02Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-des-operations-dus-physicalrapy-inc-vend-des-actions-pour-178000-93CH-3707981"
+  },
+  {
+   "h": "Un directeur de Grindr cède des actions pour 50.995$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T12:02:38Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-grindr-cede-des-actions-pour-50995-93CH-3707980"
+  },
+  {
+   "h": "Adoption, not innovation, holds Britain back",
+   "w": "Once the world’s most innovative country, the UK now struggles to embrace new technologies",
+   "syms": [],
+   "src": "myFT — world uk",
+   "ts": "2026-11-22T12:02:25Z",
+   "url": "https://www.ft.com/content/b89dbb74-af6c-492e-8d18-c0e83c64efd8?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "US ports face cyber attack onslaught as hackers target vital trade routes",
+   "w": "America’s biggest crude oil export hub reports thousands of attempted hacks each day as shipping companies battle breaches",
+   "syms": [
+    "BRENT",
+    "CL"
+   ],
+   "src": "myFT — us",
+   "ts": "2026-11-22T12:00:06Z",
+   "url": "https://www.ft.com/content/c269cf3e-2275-4244-9a86-f412c8521b4f?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Will Anthropic’s IPO buck the tech sell-off?",
+   "w": "Market Questions is the FT’s guide to the week ahead",
+   "syms": [],
+   "src": "myFT — us",
+   "ts": "2026-11-22T12:00:06Z",
+   "url": "https://www.ft.com/content/1dc8290b-8100-434d-963c-79002c15f244?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Le CLO de Grindr Zachary Katz cède des actions pour 190.313$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T11:47:36Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-clo-de-grindr-zachary-katz-cede-des-actions-pour-190313-93CH-3707979"
+  },
+  {
+   "h": "Le directeur d’Angel Studios Inc acquiert 4,6M$ d’actions de la société",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T11:47:13Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-dangel-studios-inc-acquiert-46m-dactions-de-la-societe-93CH-3707978"
+  },
+  {
    "h": "La directrice financière de Fortinet Inc vend des actions pour 27.223 $",
    "w": "",
    "syms": [],
@@ -2270,30 +2381,6 @@
    "url": "https://www.economist.com/finance-and-economics/2026/11/22/saudi-arabias-1trn-wealth-pot-suffers-an-identity-crisis"
   },
   {
-   "h": "Compass Diversified Holdings génère un rendement de 64% après un signal de Juste Valeur",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T11:11:37Z",
-   "url": "https://fr.investing.com/news/investment-ideas/compass-diversified-holdings-genere-un-rendement-de-64-apres-un-signal-de-juste-valeur-93CH-3707973"
-  },
-  {
-   "h": "Solaris Res chute de 51% après l’alerte de surévaluation d’InvestingPro",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T11:03:53Z",
-   "url": "https://fr.investing.com/news/investment-ideas/solaris-res-chute-de-51-apres-lalerte-de-surevaluation-dinvestingpro-93CH-3707972"
-  },
-  {
-   "h": "Le directeur exécutif de Vivmark Residential vend des actions pour 1,29M$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T11:02:17Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-executif-de-vivmark-residential-vend-des-actions-pour-129m-93CH-3707971"
-  },
-  {
    "h": "The American dream of home ownership recedes as mortgage rates surge",
    "w": "Donald Trump pledged to lower homeowners’ borrowing costs to 3% but the benchmark rate has surged to over 7%",
    "syms": [],
@@ -2321,30 +2408,6 @@
    "mine": 1
   },
   {
-   "h": "Tower Records Japon signale une violation de données touchant 10,2 millions de comptes",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T10:21:23Z",
-   "url": "https://fr.investing.com/news/company-news/tower-records-japon-signale-une-violation-de-donnees-touchant-102-millions-de-comptes-3707967"
-  },
-  {
-   "h": "Le directeur financier de Qualys Inc vend des actions pour 369.440$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T10:16:48Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-de-qualys-inc-vend-des-actions-pour-369440-93CH-3707966"
-  },
-  {
-   "h": "La directrice juridique de LegalZoom.com Inc vend des actions pour 158.316$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T10:02:07Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-juridique-de-legalzoomcom-inc-vend-des-actions-pour-158316-93CH-3707965"
-  },
-  {
    "h": "« Le paradoxe est saisissant : les Français réclament plus de services publics ? On leur propose moins d’Etat »",
    "w": "L’urbaniste Julien Moulard, qui a dirigé le groupement d’intérêt public L’Europe des projets architecturaux et urbains, dissout en juillet, s’alarme, dans une tribune au « Monde », d’une politique de réforme de l’Etat qui, sous couvert d’efficacité, fragilise des services publics déjà exangues.",
    "syms": [],
@@ -2367,6 +2430,32 @@
    "src": "BBC — Business",
    "ts": "2026-11-22T07:12:41Z",
    "url": "https://www.bbc.co.uk/news/articles/c8e39qk5vrpdo?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "Bangkok revisited: Fresh finds and old favorites",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T06:59:06.636754Z",
+   "url": "https://asia.nikkei.com/life-arts/life/destinations/bangkok-revisited-fresh-finds-and-old-favorites"
+  },
+  {
+   "h": "Japan weighs scaling back missile and warship purchases",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T06:59:06.636754Z",
+   "url": "https://asia.nikkei.com/politics/defense/japan-weighs-scaling-back-missile-and-warship-purchases"
+  },
+  {
+   "h": "Global crude exports hit record high despite Hormuz closure",
+   "w": "",
+   "syms": [
+    "CL"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T06:59:06.636754Z",
+   "url": "https://asia.nikkei.com/business/energy/global-crude-exports-hit-record-high-despite-hormuz-closure"
   },
   {
    "h": "Laos 'least-developed' status shift, Tata meeting, Taiwan local elections",
@@ -2607,30 +2696,6 @@
    "url": "https://asia.nikkei.com/business/companies/japan-stamp-maker-stomps-into-ai-realm-by-authenticating-videos-on-x"
   },
   {
-   "h": "US, Japan should lead next-gen transportation: Trump's ex-transport chief",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T04:24:36.993691Z",
-   "url": "https://asia.nikkei.com/editor-s-picks/interview/us-japan-should-lead-next-gen-transportation-trump-s-ex-transport-chief"
-  },
-  {
-   "h": "The ramen lectures: Japan company tries new expansion strategy",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T03:29:55.518975Z",
-   "url": "https://asia.nikkei.com/business/food-beverage/the-ramen-lectures-japan-company-tries-new-expansion-strategy"
-  },
-  {
-   "h": "Bro hugs, no deals: Why Shenzhen was a win for Beijing",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T03:29:55.518975Z",
-   "url": "https://asia.nikkei.com/opinion/bro-hugs-no-deals-why-shenzhen-was-a-win-for-beijing"
-  },
-  {
    "h": "India’s $126bn insurance sector slams proposed commission cap",
    "w": "Industry argues regulation would hamper growth of a market that only recently opened up fully to foreign investment",
    "syms": [],
@@ -2782,14 +2847,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-21T16:50:00Z",
    "url": "https://www.marketwatch.com/story/the-thought-of-living-to-100-terrifies-me-is-social-security-a-giant-ponzi-scheme-84a64e7e?mod=mw_rss_topstories"
-  },
-  {
-   "h": "‘I’m sick of flying’: I paid for priority boarding, but the overhead bins were full. Was I duped?",
-   "w": "“Maybe next time I’ll try the other approach: I’ll board whenever I feel like it and drop my suitcase in the first open slot I see.”",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-21T16:50:00Z",
-   "url": "https://www.marketwatch.com/story/im-sick-of-flying-i-paid-for-priority-boarding-but-the-overhead-bins-were-full-was-i-duped-0badcc80?mod=mw_rss_topstories"
   },
   {
    "h": "Anthropic’s record IPO collides with tech’s worst week on Wall Street since 2020",
@@ -2959,14 +3016,6 @@
    "mine": 1
   },
   {
-   "h": "How China is using summits to expand its global influence",
-   "w": "Chinese President Xi Jinping has helped coordinate yet another photo-op of global significance.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-21T06:00:02Z",
-   "url": "https://www.cnbc.com/2026/11/21/china-xi-trump-putin-global-diplomacy-shenzhen.html"
-  },
-  {
    "h": "Milburn’s £5.8bn youth employment plan rests on ‘leap of faith’",
    "w": "Reforms would have to be three times as effective as previous schemes to hit their goals, analysts warn",
    "syms": [],
@@ -3040,41 +3089,6 @@
    "ts": "2026-11-21T05:00:26Z",
    "url": "https://www.ft.com/content/de019b18-9dab-470f-bdc4-d44b7156a957",
    "mine": 1
-  },
-  {
-   "h": "Google DeepMind’s Henry Shevlin: ‘This is the most important part of being human’",
-   "w": "The in-house philosopher on the problem of consciousness and what it might feel like to be an AI agent",
-   "syms": [],
-   "src": "myFT — technology",
-   "ts": "2026-11-21T05:00:26Z",
-   "url": "https://www.ft.com/content/6f807d57-f0ea-4251-9f4d-75a6edc8d49a?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "CVC claims accounting manipulation in €3bn Advent pastry ingredients deal",
-   "w": "US firm denies allegations that Irca’s financial performance was overstated before it agreed to sell Italian business",
-   "syms": [],
-   "src": "myFT — markets",
-   "ts": "2026-11-21T05:00:26Z",
-   "url": "https://www.ft.com/content/06999b01-07f1-44a1-8eab-a5d5e7ecd70f?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "The Bank of Mum and Dad has a ‘Neets’ problem",
-   "w": "Young adults’ reliance on parental wealth is warping family finances",
-   "syms": [],
-   "src": "myFT — world uk",
-   "ts": "2026-11-21T05:00:25Z",
-   "url": "https://www.ft.com/content/4cf7587f-a408-42af-9f8f-b3dd814db5c0?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Can AI really help spot Black Friday deals? We put it to the test",
-   "w": "We put four AI models to the test to see if they could save us money on a new TV.",
-   "syms": [],
-   "src": "BBC — Business",
-   "ts": "2026-11-21T00:06:11Z",
-   "url": "https://www.bbc.co.uk/news/articles/cw8dv4jmnle2o?at_medium=RSS&at_campaign=rss"
   }
  ],
  "summary": {
