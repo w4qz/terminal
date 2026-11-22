@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T06:24:48.402547Z",
+ "generated_at": "2026-11-22T07:44:18.883118Z",
  "quotes": {
   "NVDA": {
    "p": 125.53,
@@ -811,19 +811,18 @@
    ]
   },
   "BTC": {
-   "p": 58875.8086,
-   "prev": 58798.9805,
-   "chg": 76.8281,
-   "pct": 0.13,
+   "p": 58917.0586,
+   "prev": 60094.0898,
+   "chg": -1177.0312,
+   "pct": -1.96,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-22T06:24:48.402547Z",
+   "ts": "2026-11-22T07:44:18.883118Z",
    "open": 60093.0078,
    "lo": 58680.2148,
    "hi": 60204.9961,
-   "vol": 40537796608,
+   "vol": 36300558336,
    "h": [
-    77434.75,
     78248.45,
     76677.3,
     77345.05,
@@ -844,7 +843,8 @@
     62987.27,
     61901.82,
     58798.98,
-    58896.25
+    60094.09,
+    58917.06
    ]
   }
  },
@@ -1149,9 +1149,9 @@
    "sector": "Energy",
    "industry": "Oil & Gas Integrated",
    "ccy": "SAR",
-   "mcap": 6405707792384,
-   "pe": 14.2366,
-   "fpe": 15.8563,
+   "mcap": 6371840884736,
+   "pe": 14.1613,
+   "fpe": 15.7725,
    "eps": 1.86,
    "feps": 1.67,
    "revTTM": 1932166955008,
@@ -1159,7 +1159,7 @@
    "shares": 241907400000,
    "beta": -0.022,
    "div": 1.36,
-   "divYield": 5.136,
+   "divYield": 5.163,
    "target": 29.9778,
    "targetHi": 34.0,
    "targetLo": 27.0,
@@ -1175,7 +1175,7 @@
    "cash": 247142006784,
    "debt": 360191000576,
    "fcf": 343484628992,
-   "w52lo": 0.0,
+   "w52lo": 23.29,
    "w52hi": 27.96,
    "evEbitda": 7.507,
    "earnTs": 1793707200,
@@ -2226,12 +2226,60 @@
  ],
  "news": [
   {
+   "h": "MP criticises Guernsey and Jersey company ownership register plans",
+   "w": "Sir Andrew Mitchell says access should be easier for people tackling financial crime.",
+   "syms": [],
+   "src": "BBC — Business",
+   "ts": "2026-11-22T07:22:05Z",
+   "url": "https://www.bbc.co.uk/news/articles/cqkgmy2nxy4lo?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "Italian jeweller and businessman Paolo Bulgari dies aged 89",
+   "w": "In a statement to Italian media, his family remember him as \"the greatest jeweller of our time\".",
+   "syms": [],
+   "src": "BBC — Business",
+   "ts": "2026-11-22T07:12:41Z",
+   "url": "https://www.bbc.co.uk/news/articles/c8e39qk5vrpdo?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "L’économie continuera-t-elle à primer sur la géopolitique ?",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T06:57:01Z",
+   "url": "https://fr.investing.com/news/stock-market-news/leconomie-continueratelle-a-lemporter-sur-la-geopolitique--3707940"
+  },
+  {
+   "h": "L’Australie rejette les inquiétudes américaines sur l’accord AUKUS",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T06:43:55Z",
+   "url": "https://fr.investing.com/news/economy-news/laustralie-rejette-les-inquietudes-americaines-sur-laccord-aukus-3707938"
+  },
+  {
+   "h": "La Chine demande aux États-Unis de lever les restrictions sur les numéros de téléphone",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T06:17:23Z",
+   "url": "https://fr.investing.com/news/economy-news/la-chine-demande-aux-etatsunis-de-lever-les-restrictions-sur-les-numeros-de-telephone-3707936"
+  },
+  {
    "h": "Le boom de l’IA perd-il son emprise sur les économies émergentes ?",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
    "ts": "2026-11-22T06:04:20Z",
    "url": "https://fr.investing.com/news/stock-market-news/le-boom-de-lia-perdil-son-emprise-sur-les-economies-emergentes--3707934"
+  },
+  {
+   "h": "Quantum computing’s first real-world payoff may come in energy, not drug discovery",
+   "w": "Quantum computing firms are testing energy-grid optimization, solar materials and hydrogen catalysts as they pursue practical uses.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-22T06:00:01Z",
+   "url": "https://www.cnbc.com/2026/11/22/quantum-computing-energy-applications.html"
   },
   {
    "h": "Le directeur EVP de Southern Missouri Bancorp vend des actions pour 245.280$",
@@ -2440,28 +2488,36 @@
    "url": "https://www.lemonde.fr/economie/article/2026/11/22/au-sein-du-geant-des-boissons-castel-une-crise-de-gouvernance-amplifiee-par-une-architecture-complexe-de-holdings-de-fonds-et-de-trusts_6814144_3234.html"
   },
   {
-   "h": "Un administrateur de German American Bancorp Inc achète 1.200$ d’actions",
+   "h": "Laos 'least-developed' status shift, Tata meeting, Taiwan local elections",
    "w": "",
    "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T03:46:26Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-german-american-bancorp-inc-achete-1200-dactions-93CH-3707927"
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T01:44:18.883118Z",
+   "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/laos-least-developed-status-shift-tata-meeting-taiwan-local-elections"
   },
   {
-   "h": "Les arrestations d’ICE à l’aéroport de Seattle suscitent l’indignation",
+   "h": "Hello Kitty owner Sanrio bets on games to expand global reach",
    "w": "",
    "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T03:32:33Z",
-   "url": "https://fr.investing.com/news/economy-news/les-arrestations-de-ice-a-laeroport-de-seattle-suscitent-lindignation-3707925"
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T01:44:18.883118Z",
+   "url": "https://asia.nikkei.com/business/media-entertainment/hello-kitty-owner-sanrio-bets-on-games-to-expand-global-reach"
   },
   {
-   "h": "Un administrateur de Richardson Electronics Ltd vend des actions pour 26.608$",
+   "h": "Restored Okinawa castle to reopen with extensive fire safety measures",
    "w": "",
    "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T03:16:47Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-richardson-electronics-ltd-vend-des-actions-pour-26608-93CH-3707924"
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T01:44:18.883118Z",
+   "url": "https://asia.nikkei.com/business/travel-leisure/restored-okinawa-castle-to-reopen-with-extensive-fire-safety-measures"
+  },
+  {
+   "h": "Indonesian leader chases Sukarno's phantom with defiant posture",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T01:44:18.883118Z",
+   "url": "https://asia.nikkei.com/spotlight/comment/indonesian-leader-chases-sukarno-s-phantom-with-defiant-posture"
   },
   {
    "h": "India’s $126bn insurance sector slams proposed commission cap",
@@ -2495,14 +2551,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-22T00:24:48.402547Z",
    "url": "https://asia.nikkei.com/editor-s-picks/interview/peru-can-be-japan-s-gateway-for-south-america-investment-president-says"
-  },
-  {
-   "h": "Chinese 3D printer maker Bambu Lab scales up production in Shenzhen",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T00:24:48.402547Z",
-   "url": "https://asia.nikkei.com/business/china-tech/chinese-3d-printer-maker-bambu-lab-scales-up-production-in-shenzhen"
   },
   {
    "h": "My wife is bankrolling her family’s trips to New York and it’s draining our savings. Should I ask her to stop?",
@@ -2587,30 +2635,6 @@
    "ts": "2026-11-21T21:28:05Z",
    "url": "https://www.ft.com/content/90a8d0bd-32c8-471a-8696-e95555e41b78?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Bangkok revisited: Fresh finds and old favorites",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-21T21:10:29.606391Z",
-   "url": "https://asia.nikkei.com/life-arts/life/destinations/bangkok-revisited-fresh-finds-and-old-favorites"
-  },
-  {
-   "h": "Japan weighs scaling back missile and warship purchases",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-21T21:10:29.606391Z",
-   "url": "https://asia.nikkei.com/politics/defense/japan-weighs-scaling-back-missile-and-warship-purchases"
-  },
-  {
-   "h": "Japan's listening bars find a global audience",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-21T21:10:29.606391Z",
-   "url": "https://asia.nikkei.com/life-arts/life/japan-s-listening-bars-find-a-global-audience"
   },
   {
    "h": "Dream of gas-powered vehicles falters in China’s hydrogen capital",
@@ -3043,16 +3067,6 @@
    "mine": 1
   },
   {
-   "h": "Nvidia stock plunges 14%, wraps up longest weekly losing streak since 2008 financial crisis",
-   "w": "Once the most valuable company in the world, Nvidia now ranks fourth behind Apple, Microsoft and Alphabet.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-20T22:59:33Z",
-   "url": "https://www.cnbc.com/2026/11/20/nvidias-7-week-losing-streak-is-longest-since-2008-financial-crisis.html"
-  },
-  {
    "h": "GTA 6 sales hit $3.8bn in a single day - the biggest entertainment launch in history",
    "w": "The mammoth figure surpasses every video game launch and single-day film box office record.",
    "syms": [],
@@ -3067,22 +3081,6 @@
    "src": "BBC — Business",
    "ts": "2026-11-20T22:42:47Z",
    "url": "https://www.bbc.co.uk/news/articles/c6808ym10vzgo?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "Federal Reserve announces College Fed Challenge winners",
-   "w": "Federal Reserve announces College Fed Challenge winners",
-   "syms": [],
-   "src": "Federal Reserve — press releases",
-   "ts": "2026-11-20T21:15:00Z",
-   "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20261120b.htm"
-  },
-  {
-   "h": "Trump threatens ban on US firms building AI data centres overseas",
-   "w": "The US president provided little detail on the potential policy, saying others in his team were hearing about it for the first time.",
-   "syms": [],
-   "src": "BBC — Business",
-   "ts": "2026-11-20T20:54:12Z",
-   "url": "https://www.bbc.co.uk/news/articles/cmde1lw9y54ko?at_medium=RSS&at_campaign=rss"
   }
  ],
  "summary": {
