@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T16:26:29.101179Z",
+ "generated_at": "2026-11-22T17:18:33.566790Z",
  "quotes": {
   "NVDA": {
    "p": 125.53,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 61121.2812,
+   "p": 60728.5117,
    "prev": 60094.0898,
-   "chg": 1027.1914,
-   "pct": 1.71,
+   "chg": 634.4219,
+   "pct": 1.06,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-22T16:26:29.101179Z",
+   "ts": "2026-11-22T17:18:33.566790Z",
    "open": 60093.0078,
    "lo": 58680.2148,
    "hi": 61328.9453,
-   "vol": 28740689920,
+   "vol": 28704028672,
    "h": [
     78248.45,
     76677.3,
@@ -844,7 +844,7 @@
     61901.82,
     58798.98,
     60094.09,
-    61121.28
+    60728.51
    ]
   }
  },
@@ -945,9 +945,9 @@
    "ccy": "USD",
    "mcap": 3598139523072,
    "pe": 25.2881,
-   "fpe": 20.0208,
+   "fpe": 20.0184,
    "eps": 19.16,
-   "feps": 24.2008,
+   "feps": 24.2038,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1453140738048,
    "pe": 38.8774,
-   "fpe": 15.7026,
+   "fpe": 15.6799,
    "eps": 7.83,
-   "feps": 19.386,
+   "feps": 19.414,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1018236174336,
+   "mcap": 1015122821120,
    "pe": 46.3587,
    "fpe": 39.6339,
    "eps": 2.76,
    "feps": 3.2283,
    "revTTM": 745178988544,
    "netIncome": 20878000128,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.774,
@@ -2126,7 +2126,7 @@
    "ccy": "USD",
    "mcap": 9324940288,
    "eps": -2.12,
-   "feps": -1.5613,
+   "feps": -1.3642,
    "revTTM": 142880000,
    "netIncome": -628267008,
    "shares": 311349798,
@@ -2153,7 +2153,7 @@
    "earnEnd": 1794258000,
    "earnEst": false,
    "trailDiv": 0.0,
-   "fpe_ns": -14.9046
+   "fpe_ns": -17.058
   },
   "ACWI": {
    "name": "iShares MSCI ACWI ETF",
@@ -2168,8 +2168,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 122.6403,
+   "shares": 572600000,
+   "divYield": 2.579,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2225,8 +2230,42 @@
    "w": "Clayton’s warning comes ahead of Thanksgiving travel, after separate outages disrupted air travel, Microsoft 365 and some bank transactions.",
    "syms": [],
    "src": "CNBC — Markets",
-   "ts": "2026-11-22T16:18:09Z",
+   "ts": "2026-11-22T17:14:03Z",
    "url": "https://www.cnbc.com/2026/11/22/jay-clayton-tech-outages-faa-microsoft-thanksgiving.html"
+  },
+  {
+   "h": "En Martinique, tous les chemins mènent au rhum",
+   "w": "En obtenant son appellation d’origine contrôlée il y a trente ans, le rhum produit sur l’île antillaise a fait du passage dans les distilleries une étape incontournable pour les touristes. Un engouement qui profite à tous les établissements, des plus connus aux plus confidentiels.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-22T17:00:11Z",
+   "url": "https://www.lemonde.fr/m-styles/article/2026/11/22/en-martinique-tous-les-chemins-menent-au-rhum_6814232_4497319.html"
+  },
+  {
+   "h": "‘Nvidia’s turmoil has me spooked’: Is it time to sell my stocks and buy real estate?",
+   "w": "If you are tempted to ditch stocks for property or CDs, take a deep breath before making any sudden moves.",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "MarketWatch",
+   "ts": "2026-11-22T17:00:00Z",
+   "url": "https://www.marketwatch.com/story/nvidia-spooked-me-should-i-sell-my-stocks-or-ride-out-the-market-turmoil-560583c6?mod=mw_rss_topstories"
+  },
+  {
+   "h": "I’m terrified of a market crash. Should I put $400,000 of my $1 million retirement savings into an annuity?",
+   "w": "“We have a house worth $450,000. Our combined annual income is $125,000.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-22T16:32:00Z",
+   "url": "https://www.marketwatch.com/story/were-in-our-50s-and-terrified-of-a-market-crash-should-we-put-400-000-of-our-1-million-retirement-savings-into-an-annuity-1943f240?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Un administrateur de Crimson Wine achète pour 100.676$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-22T16:31:46Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-crimson-wine-achete-pour-100676-dactions-93CH-3707998"
   },
   {
    "h": "‘I felt so seen’: Why families across America are laughing — and crying — over SNL’s ‘Sister’ sketch",
@@ -2277,11 +2316,11 @@
    "url": "https://www.lemonde.fr/idees/article/2026/11/22/la-revue-herodote-cartographie-la-geopolitique-des-infrastructures-numeriques_6814227_3232.html"
   },
   {
-   "h": "Dans le Nord, Vanderschooten fait le pari de relancer le linge de maison « made in France »",
+   "h": "Dans le Nord, Vanderschooten fait le pari de relancer le linge de maison made in France",
    "w": "Dans ce département, où la filière textile a été balayée par les importations asiatiques, une entreprise familiale installée à Nieppe s’emploie à relancer du linge de maison entièrement fabriqué en France. Un pari, alors que les produits tricolores pâtissent de la crise du pouvoir d’achat.",
    "syms": [],
    "src": "Le Monde — Économie",
-   "ts": "2026-11-22T16:00:09Z",
+   "ts": "2026-11-22T16:00:02Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/22/dans-le-nord-vanderschooten-fait-le-pari-de-relancer-le-linge-de-maison-made-in-france_6814226_3234.html"
   },
   {
@@ -2450,14 +2489,6 @@
    "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-marsh--mclennan-vend-des-actions-pour-101049-93CH-3707986"
   },
   {
-   "h": "Le directeur d’United States Antimony Corporation achète pour 12.375$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-22T12:46:58Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-dunited-states-antimony-corporation-achete-pour-12375-dactions-93CH-3707985"
-  },
-  {
    "h": "Can stocks bounce back after a brutal week? This timing model says history is on the market’s side.",
    "w": "Norm Fosback’s ‘Seasonality Timing System’ has one of the very best long-term track records, and suggests the market has an upside bias for the next two weeks",
    "syms": [],
@@ -2532,6 +2563,32 @@
    "ts": "2026-11-22T11:32:52Z",
    "url": "https://www.ft.com/content/98f5aa90-5581-45ed-8e9b-d72217c56df8",
    "mine": 1
+  },
+  {
+   "h": "Bangkok revisited: Fresh finds and old favorites",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T11:18:33.566790Z",
+   "url": "https://asia.nikkei.com/life-arts/life/destinations/bangkok-revisited-fresh-finds-and-old-favorites"
+  },
+  {
+   "h": "Japan weighs scaling back missile and warship purchases",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T11:18:33.566790Z",
+   "url": "https://asia.nikkei.com/politics/defense/japan-weighs-scaling-back-missile-and-warship-purchases"
+  },
+  {
+   "h": "Global crude exports hit record high despite Hormuz closure",
+   "w": "",
+   "syms": [
+    "CL"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-22T11:18:33.566790Z",
+   "url": "https://asia.nikkei.com/business/energy/global-crude-exports-hit-record-high-despite-hormuz-closure"
   },
   {
    "h": "Climate talks on the brink as EU rejects deal that ‘green washes fossil fuels’",
@@ -2656,30 +2713,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-22T08:00:06Z",
    "url": "https://www.lemonde.fr/idees/article/2026/11/22/le-paradoxe-est-saisissant-les-francais-reclament-plus-de-services-publics-on-leur-propose-moins-d-etat_6814195_3232.html"
-  },
-  {
-   "h": "The ramen lectures: Japan company tries new expansion strategy",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T07:58:16.037150Z",
-   "url": "https://asia.nikkei.com/business/food-beverage/the-ramen-lectures-japan-company-tries-new-expansion-strategy"
-  },
-  {
-   "h": "Bro hugs, no deals: Why Shenzhen was a win for Beijing",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T07:58:16.037150Z",
-   "url": "https://asia.nikkei.com/opinion/bro-hugs-no-deals-why-shenzhen-was-a-win-for-beijing"
-  },
-  {
-   "h": "US, Japan should lead next-gen transportation: Trump's ex-transport chief",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-22T07:58:16.037150Z",
-   "url": "https://asia.nikkei.com/editor-s-picks/interview/us-japan-should-lead-next-gen-transportation-trump-s-ex-transport-chief"
   },
   {
    "h": "MP criticises Guernsey and Jersey company ownership register plans",
@@ -2848,10 +2881,10 @@
   },
   {
    "h": "Au sein du géant des boissons Castel, une crise de gouvernance amplifiée par une architecture complexe de holdings, de fonds et de trusts",
-   "w": "La fille du fondateur de l’empire de la bière et du vin, Romy Castel, s’efforce d’évincer le directeur général opérationnel, protégé par une structure juridique et capitalistique complexe. Elle a remporté, en octobre, une importante victoire judiciaire.",
+   "w": "La fille du fondateur de l’empire de la bière et du vin, Romy Castel, s’efforce d’évincer le directeur général, protégé par une structure juridique et capitalistique complexe. Elle a remporté, en octobre, une importante victoire judiciaire.",
    "syms": [],
    "src": "Le Monde — Économie",
-   "ts": "2026-11-22T04:30:07Z",
+   "ts": "2026-11-22T04:30:03Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/22/au-sein-du-geant-des-boissons-castel-une-crise-de-gouvernance-amplifiee-par-une-architecture-complexe-de-holdings-de-fonds-et-de-trusts_6814144_3234.html"
   },
   {
@@ -2878,22 +2911,6 @@
    "src": "BBC — Business",
    "ts": "2026-11-22T00:04:07Z",
    "url": "https://www.bbc.co.uk/news/articles/cm2d94le23xyo?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "My wife is bankrolling her family’s trips to New York and it’s draining our savings. Should I ask her to stop?",
-   "w": "“Hotel rooms can cost as much as $400 per night.”",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-22T00:03:00Z",
-   "url": "https://www.marketwatch.com/story/my-wife-pays-thousands-of-dollars-for-her-family-to-visit-from-argentina-how-can-i-convince-her-to-stop-9381351c?mod=mw_rss_topstories"
-  },
-  {
-   "h": "I’m in my 40s. Should I accept a lower pension in exchange for naming my husband or child as a beneficiary?",
-   "w": "“If I die before my husband, he will receive a lifetime pension equal to 50%–66% of my monthly benefit.”",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-21T23:05:00Z",
-   "url": "https://www.marketwatch.com/story/im-in-my-40s-should-i-accept-a-lower-pension-in-exchange-for-naming-my-husband-or-child-as-a-beneficiary-b2352059?mod=mw_rss_topstories"
   },
   {
    "h": "Violence erupts in Sinaloa after Mexico captures alleged drug trafficker",
@@ -3005,14 +3022,6 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-21T13:12:41Z",
    "url": "https://www.cnbc.com/2026/11/21/prediction-market-regulation-kalshi-cftc.html"
-  },
-  {
-   "h": "Le boom des embauches dans le secteur médico-social cache les fragilités de l’économie sociale et solidaire",
-   "w": "Sans les créations d’emplois nécessaires pour accompagner le vieillissement de la population et le soin aux personnes âgées, l’ESS aurait perdu des postes sur un an.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-21T13:00:16Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/11/21/le-boom-des-embauches-dans-le-secteur-medico-social-cache-les-fragilites-de-l-economie-sociale-et-solidaire_6814018_3234.html"
   },
   {
    "h": "Traders start to move US copper to China as Trump tariff fears ease",
