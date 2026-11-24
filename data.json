@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T08:43:54.707684Z",
+ "generated_at": "2026-11-24T09:52:04.748775Z",
  "quotes": {
   "NVDA": {
    "p": 165.05,
@@ -218,16 +218,16 @@
    ]
   },
   "VIX": {
-   "p": 26.75,
+   "p": 27.5,
    "prev": 26.62,
-   "chg": 0.13,
-   "pct": 0.49,
+   "chg": 0.88,
+   "pct": 3.31,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^VIX)",
-   "ts": "2026-11-24T08:30:00Z",
+   "ts": "2026-11-24T09:45:00Z",
    "open": 26.52,
    "lo": 26.26,
-   "hi": 26.75,
+   "hi": 27.73,
    "h": [
     18.39,
     17.52,
@@ -250,7 +250,7 @@
     28.44,
     35.89,
     26.62,
-    26.75
+    27.5
    ]
   },
   "N225": {
@@ -292,7 +292,7 @@
    "prev": 22383.7402,
    "chg": -164.0898,
    "pct": -0.73,
-   "st": "DELAYED_15M",
+   "st": "EOD",
    "src": "Yahoo Finance via yfinance (^HSI)",
    "ts": "2026-11-24T08:15:00Z",
    "open": 22627.2891,
@@ -365,8 +365,8 @@
    "prev": 4953.8101,
    "chg": 16.0098,
    "pct": 0.32,
-   "st": "DELAYED_15M",
-   "src": "Yahoo Finance via yfinance (^STI)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^STI) — last update failed",
    "ts": "2026-11-24T08:30:00Z",
    "open": 5006.9199,
    "lo": 4969.2202,
@@ -396,16 +396,16 @@
    ]
   },
   "UKX": {
-   "p": 10466.2695,
+   "p": 10479.21,
    "prev": 10480.7998,
-   "chg": -14.5303,
-   "pct": -0.14,
+   "chg": -1.5898,
+   "pct": -0.02,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^FTSE)",
-   "ts": "2026-11-24T08:30:00Z",
+   "ts": "2026-11-24T09:45:00Z",
    "open": 10480.4697,
-   "lo": 10465.9502,
-   "hi": 10491.8896,
+   "lo": 10461.6504,
+   "hi": 10494.1699,
    "h": [
     10767.3,
     10686.5,
@@ -428,19 +428,19 @@
     10452.7,
     10346.3,
     10480.8,
-    10466.23
+    10479.14
    ]
   },
   "DAX": {
-   "p": 25215.6699,
+   "p": 25236.9902,
    "prev": 25337.2695,
-   "chg": -121.5996,
-   "pct": -0.48,
+   "chg": -100.2793,
+   "pct": -0.4,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^GDAXI)",
-   "ts": "2026-11-24T08:30:00Z",
+   "ts": "2026-11-24T09:45:00Z",
    "open": 25308.3105,
-   "lo": 25215.6699,
+   "lo": 25176.0391,
    "hi": 25330.3203,
    "h": [
     25410.84,
@@ -464,20 +464,20 @@
     25463.81,
     24802.78,
     25337.27,
-    25215.67
+    25236.99
    ]
   },
   "CAC": {
-   "p": 8049.1401,
+   "p": 8066.5298,
    "prev": 8044.8398,
-   "chg": 4.3003,
-   "pct": 0.05,
+   "chg": 21.6899,
+   "pct": 0.27,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^FCHI)",
-   "ts": "2026-11-24T08:30:00Z",
+   "ts": "2026-11-24T09:45:00Z",
    "open": 8062.0098,
-   "lo": 8048.7002,
-   "hi": 8074.2598,
+   "lo": 8045.2402,
+   "hi": 8079.4502,
    "h": [
     7847.32,
     7887.14,
@@ -500,19 +500,19 @@
     8080.74,
     7927.75,
     8044.84,
-    8049.14
+    8066.53
    ]
   },
   "SX5E": {
-   "p": 6052.5698,
+   "p": 6055.4702,
    "prev": 6074.4702,
-   "chg": -21.9004,
-   "pct": -0.36,
+   "chg": -19.0,
+   "pct": -0.31,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^STOXX50E)",
-   "ts": "2026-11-24T08:30:00Z",
+   "ts": "2026-11-24T09:45:00Z",
    "open": 6076.4199,
-   "lo": 6052.5698,
+   "lo": 6044.6299,
    "hi": 6078.8901,
    "h": [
     6116.23,
@@ -536,20 +536,20 @@
     6113.86,
     5941.95,
     6074.47,
-    6052.57
+    6055.47
    ]
   },
   "EURUSD": {
-   "p": 1.0918,
+   "p": 1.0929,
    "prev": 1.0972,
-   "chg": -0.0053,
-   "pct": -0.49,
+   "chg": -0.0043,
+   "pct": -0.39,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (EURUSD=X)",
-   "ts": "2026-11-24T08:43:54.707684Z",
+   "ts": "2026-11-24T09:52:04.748775Z",
    "open": 1.0904,
    "lo": 1.0899,
-   "hi": 1.0922,
+   "hi": 1.093,
    "h": [
     1.121755,
     1.117381,
@@ -572,20 +572,20 @@
     1.097201,
     1.096972,
     1.097153,
-    1.091822
+    1.092896
    ]
   },
   "USDJPY": {
-   "p": 159.275,
+   "p": 159.444,
    "prev": 158.931,
-   "chg": 0.344,
-   "pct": 0.22,
+   "chg": 0.513,
+   "pct": 0.32,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (JPY=X)",
-   "ts": "2026-11-24T08:43:54.707684Z",
+   "ts": "2026-11-24T09:52:04.748775Z",
    "open": 158.988,
    "lo": 158.746,
-   "hi": 159.403,
+   "hi": 159.448,
    "h": [
     156.83,
     157.53,
@@ -608,20 +608,20 @@
     159.38,
     159.71,
     158.93,
-    159.28
+    159.44
    ]
   },
   "GBPUSD": {
-   "p": 1.3049,
+   "p": 1.3062,
    "prev": 1.3095,
-   "chg": -0.0046,
-   "pct": -0.35,
+   "chg": -0.0032,
+   "pct": -0.25,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
-   "ts": "2026-11-24T08:43:54.707684Z",
+   "ts": "2026-11-24T09:52:04.748775Z",
    "open": 1.3036,
    "lo": 1.303,
-   "hi": 1.3053,
+   "hi": 1.3066,
    "h": [
     1.337775,
     1.334508,
@@ -644,17 +644,17 @@
     1.314665,
     1.308644,
     1.309466,
-    1.304853
+    1.306233
    ]
   },
   "DXY": {
-   "p": 104.249,
+   "p": 104.254,
    "prev": 104.32,
-   "chg": -0.071,
-   "pct": -0.07,
+   "chg": -0.066,
+   "pct": -0.06,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (DX-Y.NYB)",
-   "ts": "2026-11-24T08:43:54.707684Z",
+   "ts": "2026-11-24T09:45:00Z",
    "open": 104.308,
    "lo": 104.183,
    "hi": 104.403,
@@ -684,17 +684,17 @@
    ]
   },
   "XAU": {
-   "p": 3613.7,
+   "p": 3622.1001,
    "prev": 3651.3999,
-   "chg": -37.7,
-   "pct": -1.03,
+   "chg": -29.2998,
+   "pct": -0.8,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GC=F)",
-   "ts": "2026-11-24T08:43:54.707684Z",
+   "ts": "2026-11-24T09:45:00Z",
    "open": 3636.3999,
    "lo": 3606.3999,
    "hi": 3676.7,
-   "vol": 60296,
+   "vol": 68699,
    "h": [
     4038.4,
     4074.6,
@@ -717,21 +717,21 @@
     3685.5,
     3515.4,
     3651.4,
-    3613.7
+    3621.9
    ]
   },
   "CL": {
-   "p": 79.7,
+   "p": 80.03,
    "prev": 80.17,
-   "chg": -0.47,
-   "pct": -0.59,
+   "chg": -0.14,
+   "pct": -0.17,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (CL=F)",
-   "ts": "2026-11-24T08:43:54.707684Z",
+   "ts": "2026-11-24T09:45:00Z",
    "open": 80.36,
-   "lo": 79.2,
+   "lo": 79.1,
    "hi": 80.61,
-   "vol": 27130,
+   "vol": 37333,
    "h": [
     101.76,
     99.9,
@@ -754,21 +754,21 @@
     83.21,
     83.98,
     80.17,
-    79.7
+    80.03
    ]
   },
   "BRENT": {
-   "p": 86.24,
+   "p": 86.7,
    "prev": 89.37,
-   "chg": -3.13,
-   "pct": -3.5,
+   "chg": -2.67,
+   "pct": -2.99,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BZ=F)",
-   "ts": "2026-11-24T08:43:54.707684Z",
+   "ts": "2026-11-24T09:45:00Z",
    "open": 86.83,
-   "lo": 85.69,
+   "lo": 85.65,
    "hi": 87.1,
-   "vol": 3520,
+   "vol": 4905,
    "h": [
     115.81,
     113.88,
@@ -791,21 +791,21 @@
     91.98,
     92.57,
     89.37,
-    86.24
+    86.7
    ]
   },
   "BTC": {
-   "p": 60240.1289,
+   "p": 59986.6602,
    "prev": 61210.9844,
-   "chg": -970.8555,
-   "pct": -1.59,
+   "chg": -1224.3242,
+   "pct": -2.0,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-24T08:43:54.707684Z",
+   "ts": "2026-11-24T09:52:04.748775Z",
    "open": 61211.1484,
    "lo": 59587.1836,
    "hi": 61502.6641,
-   "vol": 45631913984,
+   "vol": 46207332352,
    "h": [
     77345.05,
     80405.29,
@@ -828,7 +828,7 @@
     60094.09,
     61161.91,
     61210.98,
-    60240.13
+    59986.66
    ]
   }
  },
@@ -1133,9 +1133,9 @@
    "sector": "Energy",
    "industry": "Oil & Gas Integrated",
    "ccy": "SAR",
-   "mcap": 6357326495744,
-   "pe": 14.0535,
-   "fpe": 15.7365,
+   "mcap": 6362164625408,
+   "pe": 14.0642,
+   "fpe": 15.7485,
    "eps": 1.87,
    "feps": 1.67,
    "revTTM": 1932166955008,
@@ -1143,7 +1143,7 @@
    "shares": 241907400000,
    "beta": -0.022,
    "div": 1.36,
-   "divYield": 5.175,
+   "divYield": 5.171,
    "target": 30.0389,
    "targetHi": 34.0,
    "targetLo": 27.0,
@@ -1764,9 +1764,9 @@
    "sector": "Technology",
    "industry": "Semiconductor Equipment & Materials",
    "ccy": "EUR",
-   "mcap": 488324268032,
-   "pe": 36.2207,
-   "fpe": 22.4509,
+   "mcap": 485009686528,
+   "pe": 35.9748,
+   "fpe": 22.2985,
    "eps": 34.98,
    "feps": 56.4342,
    "revTTM": 39473500160,
@@ -1774,7 +1774,7 @@
    "shares": 385417742,
    "beta": 1.333,
    "div": 7.52,
-   "divYield": 0.594,
+   "divYield": 0.598,
    "target": 2095.9395,
    "targetHi": 2507.0,
    "targetLo": 1288.0,
@@ -2205,14 +2205,120 @@
  ],
  "news": [
   {
-   "h": "Jensen Huang is ‘too big to fire,’ putting Nvidia’s governance in focus: analysts",
-   "w": "Jensen Huang’s return has underscored Nvidia’s deep reliance on its founder, putting the company's board oversight and corporate governance under scrutiny.",
+   "h": "Nvidia shares fall 4% in premarket after Huang comeback rally",
+   "w": "Jensen Huang was reinstated as CEO of Nvidia after he resigned following an acknowledgement of an extramarital affair.",
    "syms": [
     "NVDA"
    ],
    "src": "CNBC — Markets",
-   "ts": "2026-11-24T08:35:16Z",
-   "url": "https://www.cnbc.com/2026/11/24/nvidia-jensen-huang-governance.html"
+   "ts": "2026-11-24T09:49:11Z",
+   "url": "https://www.cnbc.com/2026/11/24/nvidia-stock-jensen-huang-return.html"
+  },
+  {
+   "h": "Trump faces backlash after saying he 'convinced' Nvidia to reinstate CEO Jensen Huang",
+   "w": "Nvidia had come under pressure from President Trump to reappoint Huang, whose comeback helped add $1tn to the company's stock value.",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "BBC — Business",
+   "ts": "2026-11-24T09:42:54Z",
+   "url": "https://www.bbc.co.uk/news/articles/cq5y1k8ez407o?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "La difficile quête de souveraineté de la filière drones, dépendante de composants critiques chinois",
+   "w": "Moteurs, batteries, hélices… De nombreux appareils, y compris destinés à des usages militaires, ne peuvent pas voler sans ces pièces produites en Chine. Les industriels cherchent à développer une filière européenne pour viser l’indépendance.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-24T09:30:05Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/11/24/la-difficile-quete-de-souverainete-de-la-filiere-drones-dependante-de-composants-critiques-chinois_6814731_3234.html"
+  },
+  {
+   "h": "JPMorgan abaisse son objectif de cours sur Meta Platforms Inc en raison de préoccupations sur les dépenses 2027",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-24T09:27:50Z",
+   "url": "https://fr.investing.com/news/analyst-ratings/jpmorgan-abaisse-son-objectif-de-cours-sur-meta-platforms-inc-en-raison-de-preoccupations-sur-les-depenses-2027-93CH-3710355"
+  },
+  {
+   "h": "Pourquoi l’action Semtech Corporation chute-t-elle aujourd’hui ?",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-24T09:23:35Z",
+   "url": "https://fr.investing.com/news/stock-market-news/pourquoi-laction-semtech-corporation-chutetelle-aujourdhui--93CH-3710353"
+  },
+  {
+   "h": "Pourquoi l’action Symbotic Inc recule-t-elle aujourd’hui ?",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-24T09:22:38Z",
+   "url": "https://fr.investing.com/news/stock-market-news/pourquoi-laction-symbotic-inc-reculetelle-aujourdhui--93CH-3710352"
+  },
+  {
+   "h": "Pourquoi l’action Fluence Energy Inc bondit-elle aujourd’hui ?",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-24T09:20:03Z",
+   "url": "https://fr.investing.com/news/stock-market-news/pourquoi-laction-fluence-energy-inc-bonditelle-aujourdhui--93CH-3710351"
+  },
+  {
+   "h": "Le PDG de Matador Resources Company achète des actions pour 98.400$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-24T09:16:53Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-matador-resources-company-achete-des-actions-pour-98400-93CH-3710350"
+  },
+  {
+   "h": "The biggest biotech deal in nearly three years carries a hefty $41 billion price tag",
+   "w": "French drugmaker Sanofi on Tuesday agreed to pay $41 billion for U.S. biotech Insmed, a hefty price that will help the pharma giant offset the patent expiration on a key drug.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-24T09:14:00Z",
+   "url": "https://www.marketwatch.com/story/the-biggest-biotech-deal-in-nearly-three-years-carries-a-hefty-41-billion-price-tag-dd7fa228?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Pourquoi l’action Hewlett Packard Enterprise chute-t-elle aujourd’hui ?",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-24T09:13:42Z",
+   "url": "https://fr.investing.com/news/stock-market-news/pourquoi-laction-hewlett-packard-enterprise-chutetelle-aujourdhui--93CH-3710348"
+  },
+  {
+   "h": "Pourquoi l’action Clariant recule-t-elle aujourd’hui ?",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-24T09:13:02Z",
+   "url": "https://fr.investing.com/news/stock-market-news/pourquoi-laction-clariant-reculetelle-aujourdhui--93CH-3710347"
+  },
+  {
+   "h": "Nederman Holding à Stora Aktiedagarna 2026 : un plan de croissance fondé sur l’échelle",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-24T09:12:51Z",
+   "url": "https://fr.investing.com/news/transcripts/nederman-holding-a-stora-aktiedagarna-2026--un-plan-de-croissance-fonde-sur-lechelle-93CH-3710346"
+  },
+  {
+   "h": "Pourquoi l’action Insmed bondit-elle aujourd’hui ?",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-24T09:10:12Z",
+   "url": "https://fr.investing.com/news/stock-market-news/pourquoi-laction-insmed-bonditelle-aujourdhui--93CH-3710342"
+  },
+  {
+   "h": "Deutsche Bank signale un ton de plus en plus restrictif de la Fed",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-24T09:09:43Z",
+   "url": "https://fr.investing.com/news/economy-news/deutsche-bank-signale-un-ton-de-plus-en-plus-restrictif-de-la-fed-3710344"
   },
   {
    "h": "Tech stocks surge on Jensen Huang’s return",
@@ -2222,98 +2328,44 @@
     "SPX"
    ],
    "src": "myFT — world",
-   "ts": "2026-11-24T08:29:57Z",
+   "ts": "2026-11-24T09:00:26Z",
    "url": "https://www.ft.com/content/c0cb932a-076e-4471-8009-91749fde5f47?syn-25a6b1a6=1",
    "mine": 1
   },
   {
-   "h": "Pourquoi l’action Cranswick PLC chute-t-elle aujourd’hui ?",
-   "w": "",
+   "h": "Photovoltaïque : en Moselle, le projet de méga-usine Holosolis cherche à ressusciter l’industrie française des panneaux solaires",
+   "w": "Alors que la Chine domine le secteur photovoltaïque mondial, le consortium Holosolis ambitionne de produire 10 millions de panneaux solaires par an d’ici à 2029. Mais le projet reste suspendu à des financements supplémentaires et à l’évolution de la réglementation européenne, selon son directeur général, Henri Poupart-Lafarge.",
    "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-24T08:28:19Z",
-   "url": "https://fr.investing.com/news/stock-market-news/pourquoi-laction-cranswick-plc-chutetelle-aujourdhui--93CH-3710288"
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-24T09:00:07Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/11/24/photovoltaique-en-moselle-le-projet-de-mega-usine-holosolis-cherche-a-ressusciter-l-industrie-francaise-des-panneaux-solaires_6814729_3234.html"
   },
   {
-   "h": "Pourquoi l’action Compass Group PLC s’envole-t-elle aujourd’hui ?",
-   "w": "",
+   "h": "PAC : Emmanuel Macron recevra les syndicats agricoles mercredi pour faire le point sur le prochain budget européen",
+   "w": "La dernière proposition budgétaire européenne pour la période 2028-2034 sera discutée jeudi et vendredi lors d’un sommet à Bruxelles. Cette proposition « est très décevante », a réagi samedi la présidence française, où l’on estime que « le compte n’y est pas, en particulier sur la PAC ».",
    "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-24T08:26:44Z",
-   "url": "https://fr.investing.com/news/stock-market-news/pourquoi-laction-compass-group-plc-senvoletelle-aujourdhui--93CH-3710287"
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-24T08:52:32Z",
+   "url": "https://www.lemonde.fr/politique/article/2026/11/24/pac-emmanuel-macron-recevra-les-syndicats-agricoles-mercredi-pour-faire-le-point-sur-le-prochain-budget-europeen_6814725_823448.html"
   },
   {
-   "h": "La conseillère juridique de Zomedica Corp achète des actions pour 2.451$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-24T08:21:30Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/la-conseillere-juridique-de-zomedica-corp-achete-des-actions-pour-2451-93CH-3710286"
-  },
-  {
-   "h": "Un dirigeant d’Itron Inc cède des actions pour 27.581$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-24T08:17:31Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-ditron-inc-cede-des-actions-pour-27581-93CH-3710266"
-  },
-  {
-   "h": "Le directeur financier par intérim de Gemini Space Station vend des actions pour 16.180$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-24T08:17:11Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-par-interim-de-gemini-space-station-vend-des-actions-pour-16180-93CH-3710265"
-  },
-  {
-   "h": "Global GP acquiert des parts de Global Partners LP pour 423.790$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-24T08:17:03Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/global-gp-acquiert-des-parts-de-global-partners-lp-pour-423790-93CH-3710253"
-  },
-  {
-   "h": "Un administrateur de First American Corporation cède des actions pour 162.200$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-24T08:16:59Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-first-american-corporation-cede-des-actions-pour-162200-93CH-3710252"
-  },
-  {
-   "h": "Barclays initie la couverture de l’action Volaris avec une note Equalweight",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-24T08:15:58Z",
-   "url": "https://fr.investing.com/news/analyst-ratings/barclays-initie-la-couverture-de-laction-volaris-avec-une-note-equalweight-93CH-3710250"
-  },
-  {
-   "h": "JPMorgan initie une couverture de Ionic Digital avec une note Neutre",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-24T08:15:56Z",
-   "url": "https://fr.investing.com/news/analyst-ratings/jpmorgan-initie-une-couverture-de-ionic-digital-avec-une-note-neutre-93CH-3710249"
-  },
-  {
-   "h": "L’action Bombardier initiée à Surpondérer par Barclays grâce à la demande défense",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-24T08:10:37Z",
-   "url": "https://fr.investing.com/news/analyst-ratings/laction-bombardier-initiee-a-surponderer-par-barclays-grace-a-la-demande-defense-93CH-3710246"
-  },
-  {
-   "h": "Sanofi strikes $41bn deal to buy US biotech Insmed",
-   "w": "French drugmaker looking for ready-made additions to commercial drug stable as it approaches patent cliff",
+   "h": "Sanofi strikes $41bn deal for US biotech Insmed",
+   "w": "French drugmaker secures two commercial drugs in its hunt for tie-ups to offset looming patent cliff",
    "syms": [],
    "src": "myFT — world",
-   "ts": "2026-11-24T07:43:49Z",
+   "ts": "2026-11-24T08:44:41Z",
    "url": "https://www.ft.com/content/94e3ca43-cf90-4566-90df-86dd6a1554b2?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "Jensen Huang is ‘too big to fire,’ putting Nvidia’s governance in focus: analysts",
+   "w": "Jensen Huang’s return has underscored Nvidia’s deep reliance on its founder, putting the company's board oversight and corporate governance under scrutiny.",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-24T08:35:16Z",
+   "url": "https://www.cnbc.com/2026/11/24/nvidia-jensen-huang-governance.html"
   },
   {
    "h": "Compass reignites City exodus fears",
@@ -2649,16 +2701,6 @@
    "mine": 1
   },
   {
-   "h": "Trump faces backlash after saying he 'convinced' Nvidia to reinstate CEO Jensen Huang",
-   "w": "Nvidia had come under pressure from President Trump to reappoint Huang, whose comeback helped add $1tn to the company's stock value.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "BBC — Business",
-   "ts": "2026-11-24T04:36:31Z",
-   "url": "https://www.bbc.co.uk/news/articles/cq5y1k8ez407o?at_medium=RSS&at_campaign=rss"
-  },
-  {
    "h": "Le come-back spectaculaire de Jensen Huang à la tête de Nvidia, sous la pression de Donald Trump et des marchés financiers",
    "w": "Poussé à la démission le 12 novembre après la révélation de sa relation extraconjugale avec une femme soupçonnée de transmettre des informations aux services secrets chinois, le PDG a été réintégré, lundi, par le conseil d’administration du géant des semi-conducteurs.",
    "syms": [
@@ -2685,6 +2727,40 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-24T04:00:12Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/24/inflation-pourquoi-la-hausse-des-cours-de-l-energie-tarde-a-se-repercuter-sur-l-ensemble-des-prix-en-france_6814604_3234.html"
+  },
+  {
+   "h": "Asahi taps Australian brand to cultivate Japan's premium gin market",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-24T03:52:04.748775Z",
+   "url": "https://asia.nikkei.com/business/food-beverage/asahi-taps-australian-brand-to-cultivate-japan-s-premium-gin-market"
+  },
+  {
+   "h": "US to place Megaspeed on trade blacklist amid Nvidia scandal",
+   "w": "",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-24T03:52:04.748775Z",
+   "url": "https://asia.nikkei.com/business/tech/semiconductors/us-to-place-megaspeed-on-trade-blacklist-amid-nvidia-scandal"
+  },
+  {
+   "h": "Anthropic IPO raises the bar for Asia's AI labs",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-24T03:52:04.748775Z",
+   "url": "https://asia.nikkei.com/spotlight/podcasts/podcast-tech-latest/anthropic-ipo-raises-the-bar-for-asia-s-ai-labs"
+  },
+  {
+   "h": "Singapore GDP grows 6.1% in Q3 as AI demand stays strong",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-24T03:52:04.748775Z",
+   "url": "https://asia.nikkei.com/economy/singapore-gdp-grows-6.1-in-q3-as-ai-demand-stays-strong"
   },
   {
    "h": "U.S. court orders to proceed with planned ammunition detonation in Iowa",
@@ -2747,6 +2823,16 @@
    "mine": 1
   },
   {
+   "h": "Asian stocks leap on return of Nvidia's Jensen Huang",
+   "w": "",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-24T01:27:51.612952Z",
+   "url": "https://asia.nikkei.com/business/markets/asian-stocks-leap-on-return-of-nvidia-s-jensen-huang"
+  },
+  {
    "h": "Indonesia-EU trade deal sparks 'ambitious' hopes and transition concerns",
    "w": "",
    "syms": [],
@@ -2763,16 +2849,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-24T01:27:51.612952Z",
    "url": "https://asia.nikkei.com/spotlight/supply-chain/asia-s-nvidia-suppliers-give-cautious-welcome-to-huang-return"
-  },
-  {
-   "h": "Asian stocks leap on return of Nvidia's Jensen Huang",
-   "w": "",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-24T01:27:51.612952Z",
-   "url": "https://asia.nikkei.com/business/markets/asian-stocks-leap-on-return-of-nvidia-s-jensen-huang"
   },
   {
    "h": "Huang's Nvidia return sets up clash with China hawks in Congress",
@@ -2818,8 +2894,8 @@
    "mine": 1
   },
   {
-   "h": "Britain's landlords are getting bigger. A two-tier rental market may follow",
-   "w": "Increasing numbers of corporate landlords could usher in big changes for renters",
+   "h": "Why the rise of the corporate landlord could lead to a two-tier rental market",
+   "w": "Companies building flats that they then rent out could usher in big changes for renters",
    "syms": [],
    "src": "BBC — Business",
    "ts": "2026-11-24T00:28:48Z",
@@ -2850,40 +2926,6 @@
    "ts": "2026-11-24T00:10:03Z",
    "url": "https://www.ft.com/content/45c49a84-53cc-44ed-9aab-0dc79f564278?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Vietnam awards $400m high-speed rail study to French-led consortium",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-24T00:06:05.257358Z",
-   "url": "https://asia.nikkei.com/business/transportation/vietnam-awards-400m-high-speed-rail-study-to-french-led-consortium"
-  },
-  {
-   "h": "Nikkei Asia Forum 'The Global Chip Game: Our predictions for 2027'",
-   "w": "",
-   "syms": [
-    "N225"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-24T00:06:05.257358Z",
-   "url": "https://asia.nikkei.com/business/technology/nikkei-asia-forum-the-global-chip-game-our-predictions-for-2027"
-  },
-  {
-   "h": "Japan's defense spending pitted against sales tax cut in budget tug-of-war",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-24T00:06:05.257358Z",
-   "url": "https://asia.nikkei.com/politics/japan-s-defense-spending-pitted-against-sales-tax-cut-in-budget-tug-of-war"
-  },
-  {
-   "h": "Japan backs Kawasaki Heavy's sea drone trial for offshore wind inspections",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-24T00:06:05.257358Z",
-   "url": "https://asia.nikkei.com/business/technology/japan-backs-kawasaki-heavy-s-sea-drone-trial-for-offshore-wind-inspections"
   },
   {
    "h": "I pay £250 a month for someone else to do my life admin - it's worth it",
@@ -2949,16 +2991,6 @@
    "ts": "2026-11-23T22:46:14Z",
    "url": "https://www.ft.com/content/82d3be02-8ac7-4acb-aefa-6e3722ee05cc?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Nvidia surge: What investors should do with the stock and the AI trade now",
-   "w": "The market is loving the return of Jensen Huang, but investors and lawmakers have their guards up.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-23T22:43:38Z",
-   "url": "https://www.cnbc.com/2026/11/23/nvidia-stock-jensen-huang-ai-trade.html"
   },
   {
    "h": "Trump made up to $15mn on Nvidia shares after Huang’s return",
@@ -3054,22 +3086,12 @@
    "url": "https://www.bbc.co.uk/news/articles/cq62pn6j42jko?at_medium=RSS&at_campaign=rss"
   },
   {
-   "h": "Short sellers get smoked as Nvidia tallies biggest one-day gain in stock-market history",
-   "w": "Two products aiming to profit off daily declines in Nvidia shares were nearly wiped out as the stock rallied more than 30%.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "MarketWatch",
-   "ts": "2026-11-23T21:19:00Z",
-   "url": "https://www.marketwatch.com/story/short-sellers-get-smoked-as-nvidia-tallies-biggest-one-day-gain-in-stock-market-history-e9dc6e9c?mod=mw_rss_topstories"
-  },
-  {
    "h": "Nvidia gains nearly $1tn in value after Jensen Huang reinstated",
    "w": "Interim chief and senior management were unaware of the discussions over the weekend",
    "syms": [
     "NVDA"
    ],
-   "src": "myFT — technology",
+   "src": "myFT — us",
    "ts": "2026-11-23T21:05:44Z",
    "url": "https://www.ft.com/content/20d2ebe3-e945-4659-a122-31bf85a4e4e5?syn-25a6b1a6=1",
    "mine": 1
@@ -3081,30 +3103,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-23T20:43:40Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/23/la-france-va-creer-des-stocks-strategiques-de-terres-rares-et-de-metaux-prioritaires-pour-reduire-sa-dependance-a-la-chine-d-ici-a-2027_6814452_3234.html"
-  },
-  {
-   "h": "Grand Paris Express : l’ouverture de la nouvelle ligne 18 du métro compromise et sans doute reportée à 2027",
-   "w": "Valérie Pécresse, présidente de la région Ile-de-France, a convoqué une réunion d’urgence avec les acteurs concernés et enjoint à Alstom, concepteur du système d’automatisation, de trouver « des solutions pour fiabiliser son logiciel ».",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-23T19:57:39Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/11/23/grand-paris-express-l-ouverture-de-la-nouvelle-ligne-18-du-metro-plus-compromise-que-jamais_6814446_3234.html"
-  },
-  {
-   "h": "« 60 millions de consommateurs » : l’offre de reprise par Xavier Niel validée par l’Etat",
-   "w": "Après des mois d’incertitude, le magazine va passer sous pavillon privé. Vingt-neuf salariés conserveront leur emploi, tandis qu’une vingtaine seront licenciés.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-23T18:13:02Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/11/23/60-millions-de-consommateurs-l-offre-de-reprise-par-xavier-niel-validee-par-l-etat_6814438_3234.html"
-  },
-  {
-   "h": "Pip assessments need 'fundamental overhaul', report to say",
-   "w": "Disability Minister Sir Stephen Timms says he will recommend major reforms to the personal independence payment.",
-   "syms": [],
-   "src": "BBC — Business",
-   "ts": "2026-11-23T17:59:55Z",
-   "url": "https://www.bbc.co.uk/news/articles/cvlyj3rn201xo?at_medium=RSS&at_campaign=rss"
   }
  ],
  "summary": {
