@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-25T14:06:19.044050Z",
+ "generated_at": "2026-11-25T15:16:14.075345Z",
  "eco": {
   "prints": [
    {
@@ -8,7 +8,7 @@
     "prev": null,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-25",
+    "pub": "2026-11-24",
     "freq": "M",
     "src": "FRED CPIAUCSL",
     "url": "https://fred.stlouisfed.org/series/CPIAUCSL"
@@ -19,7 +19,7 @@
     "prev": null,
     "fmt": "%",
     "ts": "2026-09-01",
-    "pub": "2026-11-25",
+    "pub": "2026-11-24",
     "freq": "M",
     "src": "FRED CPILFESL",
     "url": "https://fred.stlouisfed.org/series/CPILFESL"
@@ -41,7 +41,7 @@
     "prev": 60.0,
     "fmt": "k",
     "ts": "2026-10-01",
-    "pub": "2026-11-25",
+    "pub": "2026-11-24",
     "freq": "M",
     "src": "FRED PAYEMS",
     "url": "https://fred.stlouisfed.org/series/PAYEMS"
@@ -52,7 +52,7 @@
     "prev": 4.2,
     "fmt": "%",
     "ts": "2026-10-01",
-    "pub": "2026-11-25",
+    "pub": "2026-11-24",
     "freq": "M",
     "src": "FRED UNRATE",
     "url": "https://fred.stlouisfed.org/series/UNRATE"
@@ -85,7 +85,7 @@
     "prev": 0.83,
     "fmt": "%",
     "ts": "2026-10-01",
-    "pub": "2026-11-25",
+    "pub": "2026-11-24",
     "freq": "M",
     "src": "FRED RSAFS",
     "url": "https://fred.stlouisfed.org/series/RSAFS"
@@ -96,7 +96,7 @@
     "prev": 48.1,
     "fmt": "n",
     "ts": "2026-10-01",
-    "pub": "2026-11-25",
+    "pub": "2026-11-24",
     "freq": "M",
     "src": "FRED UMCSENT",
     "url": "https://fred.stlouisfed.org/series/UMCSENT"
@@ -149,6 +149,12 @@
    },
    {
     "d": "2026-11-25",
+    "ev": "Housing starts",
+    "ctry": "US",
+    "src": "FRED"
+   },
+   {
+    "d": "2026-11-25",
     "ev": "Personal income and outlays (PCE)",
     "ctry": "US",
     "src": "FRED"
@@ -156,12 +162,6 @@
    {
     "d": "2026-11-25",
     "ev": "Weekly jobless claims",
-    "ctry": "US",
-    "src": "FRED"
-   },
-   {
-    "d": "2026-11-25",
-    "ev": "Housing starts",
     "ctry": "US",
     "src": "FRED"
    },
@@ -416,6 +416,19 @@
      "surp": null
     },
     {
+     "ts": "2026-11-25T14:15:00Z",
+     "ctry": "UK",
+     "cur": "GBP",
+     "ev": "Monetary Policy Report Hearings",
+     "ev_en": "Monetary Policy Report Hearings",
+     "imp": 2,
+     "cons": null,
+     "prev": null,
+     "act": null,
+     "cov": false,
+     "surp": null
+    },
+    {
      "ts": "2026-11-26T23:30:00Z",
      "ctry": "Japan",
      "cur": "JPY",
@@ -430,7 +443,7 @@
     }
    ],
    "feeds": {
-    "semaine en cours": "ok (json, 75 événements)",
+    "semaine en cours": "ok (json, 76 événements)",
     "semaine suivante": "indisponible (404 Client Error: Not Found for url: https://nfs.faireconomy)"
    },
    "src": "Consensus and prior: Forex Factory (unofficial compilation, personal use). Actual: Bureau of Labor Statistics (on release), FRED (BEA, Fed), ECB, Bank of England and SNB. Other releases (ISM, S&P Global PMI…) have no free source: marked \"not covered\"."
@@ -447,72 +460,72 @@
    {
     "d": "2026-12-09",
     "pre": 3.88,
-    "post": 4.127,
-    "move_bp": 24.7,
+    "post": 4.112,
+    "move_bp": 23.2,
     "p_cut": 0,
-    "p_hike": 99
+    "p_hike": 93
    },
    {
     "d": "2027-01-27",
-    "pre": 4.127,
-    "post": 4.275,
-    "move_bp": 14.8,
+    "pre": 4.112,
+    "post": 4.265,
+    "move_bp": 15.2,
     "p_cut": 0,
-    "p_hike": 59
+    "p_hike": 61
    },
    {
     "d": "2027-03-17",
-    "pre": 4.275,
-    "post": 4.419,
+    "pre": 4.265,
+    "post": 4.409,
     "move_bp": 14.4,
     "p_cut": 0,
     "p_hike": 58
    },
    {
     "d": "2027-04-28",
-    "pre": 4.419,
-    "post": 4.465,
-    "move_bp": 4.6,
+    "pre": 4.409,
+    "post": 4.45,
+    "move_bp": 4.1,
     "p_cut": 0,
-    "p_hike": 18
+    "p_hike": 16
    },
    {
     "d": "2027-06-09",
-    "pre": 4.465,
-    "post": 4.522,
-    "move_bp": 5.7,
+    "pre": 4.45,
+    "post": 4.514,
+    "move_bp": 6.4,
     "p_cut": 0,
-    "p_hike": 23
+    "p_hike": 26
    },
    {
     "d": "2027-07-28",
-    "pre": 4.522,
-    "post": 4.51,
-    "move_bp": -1.2,
-    "p_cut": 5,
+    "pre": 4.514,
+    "post": 4.505,
+    "move_bp": -0.9,
+    "p_cut": 4,
     "p_hike": 0
    },
    {
     "d": "2027-09-15",
-    "pre": 4.51,
-    "post": 4.5,
+    "pre": 4.505,
+    "post": 4.495,
     "move_bp": -1.0,
     "p_cut": 4,
     "p_hike": 0
    },
    {
     "d": "2027-10-27",
-    "pre": 4.5,
-    "post": 4.465,
-    "move_bp": -3.5,
-    "p_cut": 14,
+    "pre": 4.495,
+    "post": 4.455,
+    "move_bp": -4.0,
+    "p_cut": 16,
     "p_hike": 0
    },
    {
     "d": "2027-11-17",
-    "pre": 4.465,
-    "post": 4.465,
-    "move_bp": 0.0,
+    "pre": 4.455,
+    "post": 4.455,
+    "move_bp": -0.0,
     "p_cut": 0,
     "p_hike": 0
    }
@@ -524,77 +537,77 @@
    "pts": [
     {
      "t": "1M",
-     "y": 4.128,
+     "y": 4.131,
      "y1m": 4.11,
      "ts": "2026-11-25",
      "live": true
     },
     {
      "t": "3M",
-     "y": 4.265,
+     "y": 4.262,
      "y1m": 4.22,
      "ts": "2026-11-25",
      "live": true
     },
     {
      "t": "6M",
-     "y": 4.467,
+     "y": 4.461,
      "y1m": 4.35,
      "ts": "2026-11-25",
      "live": true
     },
     {
      "t": "1A",
-     "y": 4.542,
+     "y": 4.534,
      "y1m": 4.47,
      "ts": "2026-11-25",
      "live": true
     },
     {
      "t": "2A",
-     "y": 4.606,
+     "y": 4.594,
      "y1m": 4.68,
      "ts": "2026-11-25",
      "live": true
     },
     {
      "t": "3A",
-     "y": 4.6,
+     "y": 4.589,
      "y1m": 4.79,
      "ts": "2026-11-25",
      "live": true
     },
     {
      "t": "5A",
-     "y": 4.63,
+     "y": 4.618,
      "y1m": 4.84,
      "ts": "2026-11-25",
      "live": true
     },
     {
      "t": "7A",
-     "y": 4.713,
+     "y": 4.7,
      "y1m": 4.91,
      "ts": "2026-11-25",
      "live": true
     },
     {
      "t": "10A",
-     "y": 4.836,
+     "y": 4.824,
      "y1m": 5.0,
      "ts": "2026-11-25",
      "live": true
     },
     {
      "t": "20A",
-     "y": 5.287,
+     "y": 5.274,
      "y1m": 5.35,
      "ts": "2026-11-25",
      "live": true
     },
     {
      "t": "30A",
-     "y": 5.247,
+     "y": 5.233,
      "y1m": 5.31,
      "ts": "2026-11-25",
      "live": true
