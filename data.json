@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T23:48:01.218640Z",
+ "generated_at": "2026-11-25T00:38:43.951032Z",
  "quotes": {
   "NVDA": {
    "p": 155.38,
@@ -117,8 +117,8 @@
    "prev": 26746.0996,
    "chg": -531.9316,
    "pct": -1.99,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^NDX)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^NDX) — last update failed",
    "ts": "2026-11-24T21:00:00Z",
    "open": 26298.1426,
    "lo": 25935.4648,
@@ -259,16 +259,16 @@
    ]
   },
   "N225": {
-   "p": 58576.5,
+   "p": 57296.6719,
    "prev": 56436.6484,
-   "chg": 2139.8516,
-   "pct": 3.79,
-   "st": "EOD",
+   "chg": 860.0234,
+   "pct": 1.52,
+   "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (^N225)",
-   "ts": "2026-11-24T06:30:00Z",
-   "open": 57009.9883,
-   "lo": 57009.9883,
-   "hi": 59262.5703,
+   "ts": "2026-11-25T00:30:00Z",
+   "open": 58383.4883,
+   "lo": 56982.6602,
+   "hi": 58472.5586,
    "h": [
     62189.65,
     63268.37,
@@ -288,7 +288,8 @@
     58860.43,
     59024.28,
     59444.21,
-    56436.65
+    56436.65,
+    57296.67
    ]
   },
   "HSI": {
@@ -397,9 +398,9 @@
    ]
   },
   "UKX": {
-   "p": 10467.0703,
+   "p": 10467.5098,
    "prev": 10480.7998,
-   "chg": -13.7295,
+   "chg": -13.29,
    "pct": -0.13,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^FTSE)",
@@ -428,8 +429,7 @@
     10551.2,
     10452.7,
     10346.3,
-    10480.8,
-    10467.07
+    10480.8
    ]
   },
   "DAX": {
@@ -539,18 +539,17 @@
    ]
   },
   "EURUSD": {
-   "p": 1.0966,
-   "prev": 1.0972,
-   "chg": -0.0005,
-   "pct": -0.05,
+   "p": 1.0965,
+   "prev": 1.0908,
+   "chg": 0.0057,
+   "pct": 0.52,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (EURUSD=X)",
-   "ts": "2026-11-24T23:48:01.218640Z",
+   "ts": "2026-11-25T00:38:43.951032Z",
    "open": 1.0969,
-   "lo": 1.0964,
+   "lo": 1.0963,
    "hi": 1.097,
    "h": [
-    1.121755,
     1.117381,
     1.112966,
     1.115573,
@@ -571,22 +570,22 @@
     1.097201,
     1.096972,
     1.097153,
-    1.096611
+    1.09081,
+    1.096491
    ]
   },
   "USDJPY": {
-   "p": 159.266,
-   "prev": 158.931,
-   "chg": 0.335,
-   "pct": 0.21,
+   "p": 159.273,
+   "prev": 159.009,
+   "chg": 0.264,
+   "pct": 0.17,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (JPY=X)",
-   "ts": "2026-11-24T23:48:01.218640Z",
+   "ts": "2026-11-25T00:38:43.951032Z",
    "open": 159.268,
-   "lo": 159.217,
+   "lo": 159.163,
    "hi": 159.338,
    "h": [
-    156.83,
     157.53,
     157.99,
     157.83,
@@ -607,22 +606,22 @@
     159.38,
     159.71,
     158.93,
-    159.27
+    159.01,
+    159.28
    ]
   },
   "GBPUSD": {
-   "p": 1.3115,
-   "prev": 1.3095,
-   "chg": 0.002,
-   "pct": 0.15,
+   "p": 1.311,
+   "prev": 1.3035,
+   "chg": 0.0076,
+   "pct": 0.58,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
-   "ts": "2026-11-24T23:48:01.218640Z",
+   "ts": "2026-11-25T00:38:43.951032Z",
    "open": 1.3116,
-   "lo": 1.311,
+   "lo": 1.3109,
    "hi": 1.3117,
    "h": [
-    1.337775,
     1.334508,
     1.33063,
     1.3328,
@@ -643,7 +642,8 @@
     1.314665,
     1.308644,
     1.309466,
-    1.311475
+    1.303475,
+    1.311046
    ]
   },
   "DXY": {
@@ -683,17 +683,17 @@
    ]
   },
   "XAU": {
-   "p": 3558.3,
-   "prev": 3651.3999,
-   "chg": -93.0999,
-   "pct": -2.55,
+   "p": 3539.6001,
+   "prev": 3539.6001,
+   "chg": 0.0,
+   "pct": 0.0,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GC=F)",
-   "ts": "2026-11-24T23:45:00Z",
+   "ts": "2026-11-25T00:30:00Z",
    "open": 3559.3,
-   "lo": 3554.6001,
-   "hi": 3566.7,
-   "vol": 2556,
+   "lo": 3538.3999,
+   "hi": 3566.8,
+   "vol": 4948,
    "h": [
     4038.4,
     4074.6,
@@ -716,21 +716,21 @@
     3685.5,
     3515.4,
     3651.4,
-    3558.1
+    3539.6
    ]
   },
   "CL": {
-   "p": 81.62,
-   "prev": 80.17,
-   "chg": 1.45,
-   "pct": 1.81,
+   "p": 81.68,
+   "prev": 81.68,
+   "chg": 0.0,
+   "pct": 0.0,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (CL=F)",
-   "ts": "2026-11-24T23:45:00Z",
+   "ts": "2026-11-25T00:30:00Z",
    "open": 81.68,
    "lo": 81.42,
    "hi": 81.72,
-   "vol": 873,
+   "vol": 1480,
    "h": [
     101.76,
     99.9,
@@ -753,21 +753,21 @@
     83.21,
     83.98,
     80.17,
-    81.62
+    81.68
    ]
   },
   "BRENT": {
-   "p": 88.41,
-   "prev": 89.37,
-   "chg": -0.96,
-   "pct": -1.07,
+   "p": 88.51,
+   "prev": 88.51,
+   "chg": 0.0,
+   "pct": 0.0,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BZ=F)",
-   "ts": "2026-11-24T23:45:00Z",
+   "ts": "2026-11-25T00:30:00Z",
    "open": 88.38,
    "lo": 88.32,
-   "hi": 88.42,
-   "vol": 15,
+   "hi": 88.52,
+   "vol": 25,
    "h": [
     115.81,
     113.88,
@@ -790,21 +790,21 @@
     91.98,
     92.57,
     89.37,
-    88.41
+    88.51
    ]
   },
   "BTC": {
-   "p": 59700.0117,
+   "p": 59516.1094,
    "prev": 61210.9844,
-   "chg": -1510.9727,
-   "pct": -2.47,
+   "chg": -1694.875,
+   "pct": -2.77,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-24T23:48:01.218640Z",
-   "open": 61211.1484,
-   "lo": 59261.0625,
-   "hi": 61502.6641,
-   "vol": 32869027840,
+   "ts": "2026-11-25T00:38:43.951032Z",
+   "open": 59745.6523,
+   "lo": 59421.4062,
+   "hi": 59745.6523,
+   "vol": 32602439680,
    "h": [
     77345.05,
     80405.29,
@@ -827,7 +827,7 @@
     60094.09,
     61161.91,
     61210.98,
-    59700.01
+    59516.11
    ]
   }
  },
@@ -866,7 +866,7 @@
    "fcf": 105658376192,
    "w52lo": 243.42,
    "w52hi": 360.83,
-   "evEbitda": 29.802,
+   "evEbitda": 30.225,
    "earnTs": 1793653200,
    "earnStart": 1801170000,
    "earnEnd": 1801170000,
@@ -910,7 +910,7 @@
    "fcf": 99241377792,
    "w52lo": 124.5,
    "w52hi": 243.37,
-   "evEbitda": 16.109,
+   "evEbitda": 15.151,
    "earnTs": 1794949200,
    "earnStart": 1794949200,
    "earnEnd": 1794949200,
@@ -928,9 +928,9 @@
    "ccy": "USD",
    "mcap": 3684357898240,
    "pe": 25.8941,
-   "fpe": 20.4981,
+   "fpe": 20.5005,
    "eps": 19.16,
-   "feps": 24.2038,
+   "feps": 24.2008,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -954,7 +954,7 @@
    "fcf": 2994125056,
    "w52lo": 349.2,
    "w52hi": 559.15,
-   "evEbitda": 18.119,
+   "evEbitda": 18.265,
    "earnTs": 1793217600,
    "earnStart": 1801083600,
    "earnEnd": 1801083600,
@@ -972,9 +972,9 @@
    "ccy": "USD",
    "mcap": 3430640517120,
    "pe": 14.5718,
-   "fpe": 18.2445,
+   "fpe": 18.2417,
    "eps": 19.15,
-   "feps": 15.295,
+   "feps": 15.2974,
    "revTTM": 471097999360,
    "netIncome": 235693621248,
    "shares": 5888000000,
@@ -998,7 +998,7 @@
    "fcf": -1162499968,
    "w52lo": 264.22,
    "w52hi": 408.61,
-   "evEbitda": 18.173,
+   "evEbitda": 17.97,
    "earnTs": 1793217600,
    "earnStart": 1801688400,
    "earnEnd": 1801688400,
@@ -1040,11 +1040,11 @@
    "fcf": -34731749376,
    "w52lo": 196.0,
    "w52hi": 287.2,
-   "evEbitda": 16.069,
+   "evEbitda": 15.887,
    "earnTs": 1793304000,
    "earnStart": 1801774800,
    "earnEnd": 1801774800,
-   "earnEst": false,
+   "earnEst": true,
    "trailDiv": 0.0
   },
   "TSM": {
@@ -1081,7 +1081,7 @@
    "fcf": 1042594725888,
    "w52lo": 273.08,
    "w52hi": 487.47,
-   "evEbitda": 3.384,
+   "evEbitda": 3.218,
    "earnTs": 1792067400,
    "earnStart": 1799933400,
    "earnEnd": 1799933400,
@@ -1118,7 +1118,7 @@
    "debt": 39217999872,
    "w52lo": 104.83,
    "w52hi": 225.64,
-   "evEbitda": 150.0,
+   "evEbitda": 141.274,
    "earnTs": 1792526400,
    "earnStart": 1802206800,
    "earnEnd": 1802206800,
@@ -1203,7 +1203,7 @@
    "fcf": 16848499712,
    "w52lo": 520.26,
    "w52hi": 779.82,
-   "evEbitda": 13.426,
+   "evEbitda": 13.265,
    "earnTs": 1792612800,
    "earnStart": 1801083600,
    "earnEnd": 1801083600,
@@ -1244,7 +1244,7 @@
    "fcf": 4967249920,
    "w52lo": 297.38,
    "w52hi": 498.83,
-   "evEbitda": 151.985,
+   "evEbitda": 151.672,
    "earnTs": 1792612800,
    "earnStart": 1801083600,
    "earnEnd": 1801083600,
@@ -1260,9 +1260,9 @@
    "ccy": "USD",
    "mcap": 1437244456960,
    "pe": 38.4521,
-   "fpe": 15.5738,
+   "fpe": 15.5308,
    "eps": 7.83,
-   "feps": 19.3325,
+   "feps": 19.386,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1286,7 +1286,7 @@
    "fcf": 30596499456,
    "w52lo": 289.77,
    "w52hi": 495.0,
-   "evEbitda": 29.319,
+   "evEbitda": 28.18,
    "earnTs": 1796850000,
    "earnStart": 1796850000,
    "earnEnd": 1796850000,
@@ -1302,14 +1302,14 @@
    "sector": "Technology",
    "industry": "Consumer Electronics",
    "ccy": "KRW",
-   "mcap": 1233359049064448,
-   "fpe": 2.4314,
+   "mcap": 1142192059973632,
+   "fpe": 2.2516,
    "revTTM": 594463470649344,
    "netIncome": 212870843334656,
    "shares": 5709556199,
    "beta": 1.576,
    "div": 18404.0,
-   "divYield": 9.717,
+   "divYield": 10.493,
    "target": 465285.72,
    "targetHi": 690000.0,
    "targetLo": 290000.0,
@@ -1325,7 +1325,7 @@
    "cash": 214822889193472,
    "debt": 17191232602112,
    "fcf": 118200394055680,
-   "w52lo": 0.0,
+   "w52lo": 97800.0,
    "w52hi": 374500.0,
    "evEbitda": 3.235,
    "earnTs": 1793167200,
@@ -1369,7 +1369,7 @@
    "fcf": 9343699968,
    "w52lo": 850.51,
    "w52hi": 1475.25,
-   "evEbitda": 27.106,
+   "evEbitda": 27.93,
    "earnTs": 1793277000,
    "earnStart": 1801661400,
    "earnEnd": 1801661400,
@@ -1424,14 +1424,14 @@
    "sector": "Technology",
    "industry": "Semiconductors",
    "ccy": "KRW",
-   "mcap": 816590723481600,
-   "fpe": 2.1538,
+   "mcap": 760176797810688,
+   "fpe": 2.005,
    "revTTM": 269337164251136,
    "netIncome": 188904590278656,
    "shares": 705173324,
    "beta": 2.466,
    "div": 3000.0,
-   "divYield": 0.259,
+   "divYield": 0.278,
    "target": 3003049.8,
    "targetHi": 4700000.0,
    "targetLo": 1575000.0,
@@ -1446,7 +1446,7 @@
    "debtEq": 5.865,
    "cash": 114464946913280,
    "debt": 18127760916480,
-   "w52lo": 0.0,
+   "w52lo": 501000.0,
    "w52hi": 2987000.0,
    "evEbitda": 3.366,
    "earnTs": 1793080800,
@@ -1490,7 +1490,7 @@
    "fcf": 29140250624,
    "w52lo": 216.0,
    "w52hi": 1255.0,
-   "evEbitda": 7.005,
+   "evEbitda": 6.198,
    "earnTs": 1797541200,
    "earnStart": 1797541200,
    "earnEnd": 1797541200,
@@ -1506,14 +1506,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1049713967104,
+   "mcap": 1052933423104,
    "pe": 47.9384,
    "fpe": 40.9844,
    "eps": 2.76,
    "feps": 3.2283,
    "revTTM": 745178988544,
    "netIncome": 20878000128,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.748,
@@ -1534,7 +1534,7 @@
    "fcf": 6343374848,
    "w52lo": 102.15,
    "w52hi": 135.16,
-   "evEbitda": 22.635,
+   "evEbitda": 23.08,
    "earnTs": 1802957400,
    "earnStart": 1802957400,
    "earnEnd": 1802957400,
@@ -1593,9 +1593,9 @@
    "ccy": "USD",
    "mcap": 683988942848,
    "pe": 88.3056,
-   "fpe": 23.4603,
+   "fpe": 23.4303,
    "eps": 4.68,
-   "feps": 17.6157,
+   "feps": 17.6382,
    "revTTM": 45435998208,
    "netIncome": 7725000192,
    "shares": 1655065573,
@@ -1617,7 +1617,7 @@
    "fcf": 7357125120,
    "w52lo": 188.22,
    "w52hi": 658.52,
-   "evEbitda": 66.154,
+   "evEbitda": 60.238,
    "earnTs": 1793739600,
    "earnStart": 1801602000,
    "earnEnd": 1801602000,
@@ -1642,7 +1642,7 @@
    "beta": 0.786,
    "div": 3.12,
    "divYield": 0.749,
-   "target": 450.9562,
+   "target": 453.2151,
    "targetHi": 500.0,
    "targetLo": 330.0,
    "rating": "Strong buy",
@@ -1659,7 +1659,7 @@
    "fcf": 20983375872,
    "w52lo": 293.89,
    "w52hi": 442.23,
-   "evEbitda": 23.844,
+   "evEbitda": 24.269,
    "earnTs": 1793131200,
    "earnStart": 1800997200,
    "earnEnd": 1800997200,
@@ -1703,7 +1703,7 @@
    "fcf": 28318750720,
    "w52lo": 114.19,
    "w52hi": 188.5,
-   "evEbitda": 8.579,
+   "evEbitda": 8.649,
    "earnTs": 1793363400,
    "earnStart": 1801229400,
    "earnEnd": 1801229400,
@@ -1747,7 +1747,7 @@
    "fcf": 18501875712,
    "w52lo": 199.91,
    "w52hi": 290.25,
-   "evEbitda": 19.637,
+   "evEbitda": 20.084,
    "earnTs": 1800970200,
    "earnStart": 1800970200,
    "earnEnd": 1800970200,
@@ -1764,9 +1764,9 @@
    "industry": "Semiconductor Equipment & Materials",
    "ccy": "EUR",
    "mcap": 462963769344,
-   "pe": 37.3973,
+   "pe": 34.3396,
    "fpe": 21.285,
-   "eps": 32.12,
+   "eps": 34.98,
    "feps": 56.4342,
    "revTTM": 39473500160,
    "netIncome": 13474299904,
@@ -1834,7 +1834,7 @@
    "fcf": 16629250048,
    "w52lo": 464.52,
    "w52hi": 681.99,
-   "evEbitda": 24.624,
+   "evEbitda": 25.077,
    "earnTs": 1793277000,
    "earnStart": 1801143000,
    "earnEnd": 1801143000,
@@ -1920,7 +1920,7 @@
    "fcf": 26048374784,
    "w52lo": 146.49,
    "w52hi": 236.48,
-   "evEbitda": 7.379,
+   "evEbitda": 7.465,
    "earnTs": 1793363400,
    "earnStart": 1801229400,
    "earnEnd": 1801229400,
@@ -1964,7 +1964,7 @@
    "fcf": 6752750080,
    "w52lo": 844.06,
    "w52hi": 1123.67,
-   "evEbitda": 33.514,
+   "evEbitda": 33.32,
    "earnTs": 1796936400,
    "earnStart": 1796936400,
    "earnEnd": 1796936400,
@@ -2006,7 +2006,7 @@
    "fcf": 2652487680,
    "w52lo": 106.37,
    "w52hi": 212.94,
-   "evEbitda": 111.394,
+   "evEbitda": 112.701,
    "earnTs": 1793653200,
    "earnStart": 1801515600,
    "earnEnd": 1801515600,
@@ -2047,7 +2047,7 @@
    "fcf": 10410250240,
    "w52lo": 72.8,
    "w52hi": 130.37,
-   "evEbitda": 19.191,
+   "evEbitda": 18.665,
    "earnTs": 1802293200,
    "earnStart": 1802293200,
    "earnEnd": 1802293200,
@@ -2091,7 +2091,7 @@
    "fcf": 4349000192,
    "w52lo": 67.27,
    "w52hi": 100.56,
-   "evEbitda": 25.253,
+   "evEbitda": 25.682,
    "earnTs": 1793104200,
    "earnStart": 1802179800,
    "earnEnd": 1802179800,
@@ -2109,7 +2109,7 @@
    "ccy": "USD",
    "mcap": 9457180672,
    "eps": -2.12,
-   "feps": -1.3642,
+   "feps": -1.5613,
    "revTTM": 142880000,
    "netIncome": -628267008,
    "shares": 311349798,
@@ -2130,13 +2130,13 @@
    "fcf": -1892670592,
    "w52lo": 22.52,
    "w52hi": 133.86,
-   "evEbitda": -19.62,
+   "evEbitda": -18.331,
    "earnTs": 1794258000,
    "earnStart": 1794258000,
    "earnEnd": 1794258000,
    "earnEst": false,
    "trailDiv": 0.0,
-   "fpe_ns": -17.2999
+   "fpe_ns": -15.116
   },
   "ACWI": {
    "name": "iShares MSCI ACWI ETF",
@@ -2151,13 +2151,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 122.6786,
-   "shares": 572600000,
-   "divYield": 2.578,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2209,6 +2204,153 @@
  ],
  "news": [
   {
+   "h": "Why tiny cars are taking off across Europe",
+   "w": "Once seen as a car for elderly, rural people, tiny cars are being embraced by a younger demographic.",
+   "syms": [],
+   "src": "BBC — Business",
+   "ts": "2026-11-25T00:34:05Z",
+   "url": "https://www.bbc.co.uk/news/articles/cmwy9jne0g7qo?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "I’m in my 70s and buying a new BMW X1. Should I put my only son on the title?",
+   "w": "“Given my age, I never make a major new purchase without thinking about the future.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-25T00:30:00Z",
+   "url": "https://www.marketwatch.com/story/im-in-my-70s-and-buying-a-new-bmw-x1-should-i-put-my-only-son-on-the-title-25731040?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Households braced for soaring energy bills with new price cap to be announced",
+   "w": "Domestic gas prices will rise significantly in January under regulator Ofgem's new price cap.",
+   "syms": [],
+   "src": "BBC — Business",
+   "ts": "2026-11-25T00:29:58Z",
+   "url": "https://www.bbc.co.uk/news/articles/cm20qnq33e90o?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "Le PDG d’Amazon.com Inc vend des actions pour 5,13 millions $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-25T00:17:21Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-damazoncom-inc-vend-des-actions-pour-513-millions--93CH-3711882"
+  },
+  {
+   "h": "Un dirigeant de Lindblad Expeditions cède des actions pour 12,4 M$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-25T00:17:02Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-de-lindblad-expeditions-cede-des-actions-pour-124-m-93CH-3711881"
+  },
+  {
+   "h": "Un cadre de Mirum Pharmaceuticals cède des actions pour 61.600$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-25T00:16:56Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-cadre-de-mirum-pharmaceuticals-cede-des-actions-pour-61600-93CH-3711880"
+  },
+  {
+   "h": "Un administrateur d’Amplify Energy vend des actions pour 925.649$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-25T00:16:36Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-damplify-energy-vend-des-actions-pour-925649-93CH-3711879"
+  },
+  {
+   "h": "Judge grants bail to OpenAI engineer accused of bugging start-up",
+   "w": "Prosecutors told they failed to provide sufficient evidence of wrongdoing",
+   "syms": [],
+   "src": "myFT — technology sector",
+   "ts": "2026-11-25T00:14:41Z",
+   "url": "https://www.ft.com/content/95057819-cbcc-407a-83a7-953fb100a837?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "My husband secretly sends his ex-wife $1,500 a month after she lost her job. We have $2.4 million saved. Has he lied by omission?",
+   "w": "“He explained that he wasn’t trying to hide the payment, but his former wife lost her job in a medical billing company.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-25T00:05:00Z",
+   "url": "https://www.marketwatch.com/story/my-husband-secretly-sends-his-ex-wife-1-500-a-month-after-she-lost-her-job-we-have-2-4-million-saved-has-he-lied-by-omission-ede1972a?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Le PDG d’Amazon Stores Douglas Herrington cède des actions pour 1,6 M$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-25T00:02:31Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-damazon-stores-douglas-herrington-cede-des-actions-pour-16-m-93CH-3711878"
+  },
+  {
+   "h": "Un vice-président d’Amazon.com Inc vend des actions pour 3,9 millions $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-25T00:02:15Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-vicepresident-damazoncom-inc-vend-des-actions-pour-39-millions--93CH-3711877"
+  },
+  {
+   "h": "AI powers double-digit jump in ‘authorised’ fraud",
+   "w": "‘Industrialised nature’ of scams sees criminals extract £659mn from UK victims in first half of 2026",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-25T00:01:10Z",
+   "url": "https://www.ft.com/content/eb6f11e6-f16a-4a2c-92db-0e4731731018?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Un directeur de Korro Bio Inc cède des actions pour 187.563$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-24T23:51:18Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-korro-bio-inc-cede-des-actions-pour-187563-93CH-3711876"
+  },
+  {
+   "h": "Un administrateur de Centene Corp vend des actions pour 194$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-24T23:51:01Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-centene-corp-vend-des-actions-pour-194-93CH-3711875"
+  },
+  {
+   "h": "Le géant chinois Huawei reconnu coupable de vol de secrets industriels aux Etats-Unis, après huit ans de procédure",
+   "w": "Le champion de la tech chinoise était notamment accusé d’avoir tenté de recruter des salariés d’entreprises de télécommunications américaines, obtenant d’eux, au passage, des informations technologiques.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-24T23:49:03Z",
+   "url": "https://www.lemonde.fr/international/article/2026/11/25/le-geant-chinois-huawei-reconnu-coupable-de-vol-de-secrets-industriels-aux-etats-unis-apres-huit-ans-de-procedure_6814902_3210.html"
+  },
+  {
+   "h": "Shein to pay $100mn to resolve US allegations it deceived customers",
+   "w": "Federal Trade Commission claims cotton that the retailer’s suppliers said was US-grown was harvested in China.",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-24T23:48:33Z",
+   "url": "https://www.ft.com/content/0128d44e-8ca1-49b8-868b-b8fe0e4824c6?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Un vice-président d’Amazon.com Inc cède des actions pour 597.863$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-24T23:47:16Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-vicepresident-damazoncom-inc-cede-des-actions-pour-597863-93CH-3711874"
+  },
+  {
+   "h": "Le directeur financier d’Amazon.com Inc vend pour 1,6 million $ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-24T23:47:04Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-financier-damazoncom-inc-vend-pour-16-million--dactions-93CH-3711873"
+  },
+  {
    "h": "Dell’s stock rises as the AI boom helps sales more than double",
    "w": "Dell says its backlog is “rigorously vetted for customer quality and access to capital, land and power.”",
    "syms": [],
@@ -2217,84 +2359,13 @@
    "url": "https://www.marketwatch.com/story/dells-stock-rises-as-the-ai-boom-helps-sales-more-than-double-cfb8cf65?mod=mw_rss_topstories"
   },
   {
-   "h": "Un administrateur d’Alamo Group Inc achète des actions pour 132.580$",
-   "w": "",
+   "h": "Contraceptive pill use plunges among young British women",
+   "w": "Survey finds young females are less likely to use any contraception or to want children, while overall the nation is having less sex",
    "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-24T23:31:40Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-dalamo-group-inc-achete-des-actions-pour-132580-93CH-3711869"
-  },
-  {
-   "h": "Le directeur de Carter’s Inc, Jevin S. Eagle, quittera le conseil en 2027",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-24T23:30:26Z",
-   "url": "https://fr.investing.com/news/sec-filings/le-directeur-de-carters-inc-jevin-s-eagle-quittera-le-conseil-en-2027-93CH-3711868"
-  },
-  {
-   "h": "Le directeur de Bioventus Inc, Guy P. Nohra, démissionne du conseil d’administration",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-24T23:26:41Z",
-   "url": "https://fr.investing.com/news/sec-filings/le-directeur-de-bioventus-inc-guy-p-nohra-demissionne-du-conseil-dadministration-93CH-3711867"
-  },
-  {
-   "h": "Ryman Healthcare Ltd affiche une forte croissance des bénéfices au S1 2026",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-24T23:22:22Z",
-   "url": "https://fr.investing.com/news/transcripts/ryman-healthcare-ltd-affiche-une-forte-croissance-des-benefices-au-s1-2026-93CH-3711866"
-  },
-  {
-   "h": "Restaurant Brands Int finalise une émission d’obligations sécurisées d’1 milliard $",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-24T23:22:20Z",
-   "url": "https://fr.investing.com/news/sec-filings/restaurant-brands-int-finalise-une-emission-dobligations-securisees-d1-milliard--93CH-3711865"
-  },
-  {
-   "h": "DTE Energy Company et ses filiales prolongent leurs accords de crédit et augmentent leurs engagements",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-24T23:17:45Z",
-   "url": "https://fr.investing.com/news/sec-filings/dte-energy-company-et-ses-filiales-prolongent-leurs-accords-de-credit-et-augmentent-leurs-engagements-93CH-3711864"
-  },
-  {
-   "h": "Un dirigeant de Chime Financial vend pour 1,6 M$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-24T23:17:11Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-de-chime-financial-vend-pour-16-m-dactions-93CH-3711863"
-  },
-  {
-   "h": "Le directeur juridique de Qualys Inc vend des actions pour 250.000$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-24T23:16:47Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-juridique-de-qualys-inc-vend-des-actions-pour-250000-93CH-3711862"
-  },
-  {
-   "h": "Web Travel Group Ltd affiche une forte croissance au S1 2027 malgré un impact fiscal",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-24T23:16:46Z",
-   "url": "https://fr.investing.com/news/transcripts/web-travel-group-ltd-affiche-une-forte-croissance-au-s1-2027-malgre-un-impact-fiscal-93CH-3711861"
-  },
-  {
-   "h": "Saba Capital achète pour 265.442$ dans Highland Floating Rate Opport Fund",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-24T23:16:31Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/saba-capital-achete-pour-265442-dans-highland-floating-rate-opport-fund-93CH-3711860"
+   "src": "myFT — world",
+   "ts": "2026-11-24T23:30:10Z",
+   "url": "https://www.ft.com/content/48727f80-4ab3-4485-aa9b-07aabcf71f71?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "Jensen Huang tells staff that Nvidia doesn't need a succession plan",
@@ -2426,14 +2497,6 @@
    "url": "https://www.marketwatch.com/story/microns-stock-falls-as-an-analyst-warns-about-a-future-supply-glut-f7fbeefb?mod=mw_rss_topstories"
   },
   {
-   "h": "The stock market is hardly cheap, even taking recent declines into account",
-   "w": "Equities are still extremely overvalued, notwithstanding the stock market’s steep declines over the past several weeks.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-24T21:22:00Z",
-   "url": "https://www.marketwatch.com/story/the-stock-market-is-hardly-cheap-even-taking-recent-declines-into-account-fe0a7989?mod=mw_rss_topstories"
-  },
-  {
    "h": "US attorney general dodges questions about Nvidia investigation",
    "w": "Nvidia's share price have fallen 7% as lawmakers demand answers about President Donald Trump's involvement in Huang's reinstatement.",
    "syms": [
@@ -2442,14 +2505,6 @@
    "src": "BBC — Business",
    "ts": "2026-11-24T21:19:42Z",
    "url": "https://www.bbc.co.uk/news/articles/crpdw1qx7jgxo?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "I’ve been married for 58 years. It’s ‘our’ money, not ‘his’ and ‘hers.’ Why do so many couples keep their finances separate?",
-   "w": "“My wife stopped working outside the home in 1970.”",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-24T21:15:00Z",
-   "url": "https://www.marketwatch.com/story/ive-been-married-for-58-years-its-our-money-not-his-and-hers-why-dont-others-feel-the-same-c5745889?mod=mw_rss_topstories"
   },
   {
    "h": "Trump wanted Jensen Huang back. Now, the president is all alone in Washington",
@@ -2570,14 +2625,6 @@
    "url": "https://www.bbc.co.uk/news/articles/c35yn8x748e9o?at_medium=RSS&at_campaign=rss"
   },
   {
-   "h": "Anthropic shares fall below IPO price. Traders see even more pain",
-   "w": "Anthropic shares fell below the $83 IPO price as options activity surged, with large put buys, call buys and put sales pointing to a divided market.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-24T19:47:42Z",
-   "url": "https://www.cnbc.com/2026/11/24/anthropic-options-trading-ipo-price.html"
-  },
-  {
    "h": "Retail turnarounds are taking hold just in time for the holiday season",
    "w": "Retail earnings reports on Tuesday pointed to a mix of factors behind the strong results, including a resilient consumer and stronger execution.",
    "syms": [],
@@ -2620,6 +2667,42 @@
    "url": "https://www.lemonde.fr/economie/article/2026/11/24/la-commission-europeenne-se-montre-indulgente-sur-la-situation-budgetaire-francaise_6814840_3234.html"
   },
   {
+   "h": "China sends first foreign national, a Pakistani pilot, to its space station",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-24T18:38:43.951032Z",
+   "url": "https://asia.nikkei.com/business/aerospace-defense-industries/china-sends-first-foreign-national-a-pakistani-pilot-to-its-space-station"
+  },
+  {
+   "h": "Corporate Japan logs record first-half profit on AI demand, soft yen",
+   "w": "",
+   "syms": [
+    "USDJPY"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-24T18:38:43.951032Z",
+   "url": "https://asia.nikkei.com/business/companies/corporate-japan-logs-record-first-half-profit-on-ai-demand-soft-yen"
+  },
+  {
+   "h": "ICC judge says sanctions 'overcompliance' aids US intimidation against court",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-24T18:38:43.951032Z",
+   "url": "https://asia.nikkei.com/editor-s-picks/interview/icc-judge-says-sanctions-overcompliance-aids-us-intimidation-against-court"
+  },
+  {
+   "h": "Jensen Huang's return to Nvidia tests America's AI strategy",
+   "w": "",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-24T18:38:43.951032Z",
+   "url": "https://asia.nikkei.com/opinion/jensen-huang-s-return-to-nvidia-tests-america-s-ai-strategy"
+  },
+  {
    "h": "The expanding boundaries of the Ukraine war",
    "w": "Kyiv has a right to strike Russian targets but needs to choose them with care",
    "syms": [],
@@ -2636,6 +2719,14 @@
    "ts": "2026-11-24T18:36:10Z",
    "url": "https://www.ft.com/content/770ea8b8-e272-492b-81f9-72b726d8487e?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "Consumer confidence shoots up after Democrats' midterm victories — though inflation worries persist",
+   "w": "The Conference Board survey released Tuesday showed improvement across the board, with the headline confidence index jumping to 103.3.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-24T18:34:43Z",
+   "url": "https://www.cnbc.com/2026/11/24/consumer-confidence-november-election-midterm.html"
   },
   {
    "h": "Faisal Islam: Fears over the AI boom haven't gone away",
@@ -2751,7 +2842,7 @@
    "h": "Court ruling hands African football trophy back to Senegal",
    "w": "Decision by Cas, the highest judicial body in world sport, comes after the country’s contentious victory over Morocco was overturned earlier this year",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — middle east north africa",
    "ts": "2026-11-24T17:02:35Z",
    "url": "https://www.ft.com/content/fb58a7d8-d3f5-427e-bbb8-8488e6b7dfca?syn-25a6b1a6=1",
    "mine": 1
@@ -2803,7 +2894,7 @@
    "h": "Trump readies raft of new tariffs on major economies",
    "w": "China, the EU, Japan and South Korea expected to be hit by levies as US president doubles down on trade strategy",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-24T16:30:35Z",
    "url": "https://www.ft.com/content/335b593d-1478-4550-ab0a-71fec6280eb0?syn-25a6b1a6=1",
    "mine": 1
@@ -2826,55 +2917,13 @@
    "mine": 1
   },
   {
-   "h": "China ramps up campaign to electrify the world's trucking fleet",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-24T15:55:57.219954Z",
-   "url": "https://asia.nikkei.com/business/business-asia/china-ramps-up-campaign-to-electrify-the-world-s-trucking-fleet"
-  },
-  {
-   "h": "Japan life insurers' profits climb 20% on strong investment returns",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-24T15:55:57.219954Z",
-   "url": "https://asia.nikkei.com/business/insurance/japan-life-insurers-profits-climb-20-on-strong-investment-returns"
-  },
-  {
-   "h": "Tokyo existing condo prices post 1st year-on-year drop in over 13 years",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-24T15:55:57.219954Z",
-   "url": "https://asia.nikkei.com/business/markets/property/tokyo-existing-condo-prices-post-1st-year-on-year-drop-in-over-13-years"
-  },
-  {
-   "h": "China's Huawei says it has homegrown answer to US chip design tool curbs",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-24T15:55:57.219954Z",
-   "url": "https://asia.nikkei.com/spotlight/huawei-crackdown/china-s-huawei-says-it-has-homegrown-answer-to-us-chip-design-tool-curbs"
-  },
-  {
    "h": "Shanghai’s powerful Communist Party boss toppled as Xi escalates purge",
    "w": "Chen Jining under investigation over suspected ‘severe violations of discipline and laws’",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — emerging markets",
    "ts": "2026-11-24T15:55:20Z",
    "url": "https://www.ft.com/content/02240d42-ccd8-4b4d-b0e3-49a04c950eea?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Derrière l’affaire Nvidia, un vaste réseau de détournement de puces d’IA au service de la Chine",
-   "w": "Alors que Jensen Huang a repris la tête du géant des processeurs américain, lundi 23 novembre, la presse financière mondiale retrace les méthodes qui ont permis d’expédier les puces vers le territoire chinois, malgré les restrictions des Etats-Unis.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-24T15:49:52Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/11/24/derriere-l-affaire-nvidia-un-vaste-reseau-de-detournement-de-puces-d-ia-au-service-de-la-chine_6814811_3234.html"
   },
   {
    "h": "Iraqi government to take control of Kurdish-held oilfields",
@@ -2902,14 +2951,6 @@
    "ts": "2026-11-24T15:14:22Z",
    "url": "https://www.ft.com/content/a175e762-4114-42e0-8d97-3631a26fb66b?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Toshiba, Hitachi bolster critical infrastructure cyberdefense teams",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-24T14:56:15.520046Z",
-   "url": "https://asia.nikkei.com/spotlight/cybersecurity/toshiba-hitachi-bolster-critical-infrastructure-cyberdefense-teams"
   },
   {
    "h": "Banks regain some ground in the private credit tug of war",
@@ -2948,14 +2989,6 @@
    "ts": "2026-11-24T14:00:02Z",
    "url": "https://www.ft.com/content/98ec6911-bb0c-42c1-8c5e-5eebf40dc918?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "World Cup drove profits surge, says Marston's",
-   "w": "The company says an \"excellent World Cup\" helped drive strong trading as annual profits rose by 18%.",
-   "syms": [],
-   "src": "BBC — Business",
-   "ts": "2026-11-24T13:03:20Z",
-   "url": "https://www.bbc.co.uk/news/articles/cm7523pyk75lo?at_medium=RSS&at_campaign=rss"
   },
   {
    "h": "The Rohingya need more than a court judgment",
@@ -3040,42 +3073,6 @@
    "src": "myFT — economy",
    "ts": "2026-11-24T12:00:05Z",
    "url": "https://www.ft.com/content/94863aab-4c10-4e93-b3d8-63a764efa409",
-   "mine": 1
-  },
-  {
-   "h": "Iran flogs singer who performed without hijab",
-   "w": "Sentence of 74 lashes carried out on female performer Parastoo Ahmadi and male members of her band",
-   "syms": [],
-   "src": "myFT — middle east north africa",
-   "ts": "2026-11-24T11:59:09Z",
-   "url": "https://www.ft.com/content/d4902274-2e3d-447a-83b8-312cf7306d56?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Russian navy licks its wounds as another warship is sunk",
-   "w": "Ukrainian drones have struck Moscow’s warships and freighters in the Black Sea, Baltic and Mediterranean",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-24T11:51:27Z",
-   "url": "https://www.ft.com/content/ef3cfa29-4613-426c-9b87-dd76664e6859?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "FirstFT: Investors welcome Jensen Huang’s return",
-   "w": "Also in today’s newsletter: Britain’s purchase of fake explosives and a $41bn pharma deal",
-   "syms": [],
-   "src": "myFT — economy",
-   "ts": "2026-11-24T11:21:08Z",
-   "url": "https://www.ft.com/content/5fd14979-e239-4eaf-bbfb-cde969afb514?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Sanofi strikes $41bn deal as patent cliff looms",
-   "w": "French drugmaker secures two commercial drugs in its hunt for tie-ups to offset falling revenue from Dupixent",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-24T11:05:33Z",
-   "url": "https://www.ft.com/content/94e3ca43-cf90-4566-90df-86dd6a1554b2?syn-25a6b1a6=1",
    "mine": 1
   }
  ],
