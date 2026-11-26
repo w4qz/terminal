@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-26T18:54:51.044929Z",
+ "generated_at": "2026-11-26T20:00:20.834823Z",
  "quotes": {
   "NVDA": {
    "p": 149.3,
@@ -12,7 +12,7 @@
    "open": 144.06,
    "lo": 141.17,
    "hi": 150.37,
-   "vol": 363377300,
+   "vol": 366571900,
    "h": [
     217.94,
     215.38,
@@ -49,7 +49,7 @@
    "open": 22.64,
    "lo": 22.5,
    "hi": 26.665,
-   "vol": 26439000,
+   "vol": 26659000,
    "h": [
     41.96,
     42.3,
@@ -228,8 +228,8 @@
    "prev": 28.29,
    "chg": -1.49,
    "pct": -5.27,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^VIX)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^VIX) — last update failed",
    "ts": "2026-11-26T16:45:00Z",
    "open": 27.18,
    "lo": 26.57,
@@ -548,13 +548,13 @@
    ]
   },
   "EURUSD": {
-   "p": 1.0973,
+   "p": 1.0975,
    "prev": 1.0962,
-   "chg": 0.0011,
-   "pct": 0.1,
+   "chg": 0.0012,
+   "pct": 0.11,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (EURUSD=X)",
-   "ts": "2026-11-26T18:54:51.044929Z",
+   "ts": "2026-11-26T20:00:00Z",
    "open": 1.0978,
    "lo": 1.096,
    "hi": 1.0991,
@@ -580,17 +580,17 @@
     1.097153,
     1.09081,
     1.096227,
-    1.097333
+    1.097454
    ]
   },
   "USDJPY": {
-   "p": 159.274,
+   "p": 159.254,
    "prev": 159.262,
-   "chg": 0.012,
-   "pct": 0.01,
+   "chg": -0.008,
+   "pct": -0.01,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (JPY=X)",
-   "ts": "2026-11-26T18:54:51.044929Z",
+   "ts": "2026-11-26T20:00:20.834823Z",
    "open": 159.116,
    "lo": 158.946,
    "hi": 159.338,
@@ -616,17 +616,17 @@
     158.93,
     159.01,
     159.26,
-    159.27
+    159.25
    ]
   },
   "GBPUSD": {
-   "p": 1.3108,
+   "p": 1.3109,
    "prev": 1.3112,
    "chg": -0.0003,
-   "pct": -0.03,
+   "pct": -0.02,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
-   "ts": "2026-11-26T18:54:51.044929Z",
+   "ts": "2026-11-26T20:00:00Z",
    "open": 1.3119,
    "lo": 1.3096,
    "hi": 1.3123,
@@ -652,7 +652,7 @@
     1.309466,
     1.303475,
     1.311183,
-    1.310839
+    1.310874
    ]
   },
   "DXY": {
@@ -688,7 +688,7 @@
     104.32,
     103.81,
     103.67,
-    103.77
+    103.78
    ]
   },
   "XAU": {
@@ -702,7 +702,7 @@
    "open": 3619.8,
    "lo": 3578.8,
    "hi": 3634.7,
-   "vol": 80908,
+   "vol": 81328,
    "h": [
     4051.6,
     4031.4,
@@ -725,7 +725,7 @@
     3651.4,
     3561.9,
     3535.8,
-    3595.2
+    3593.4
    ]
   },
   "CL": {
@@ -738,8 +738,8 @@
    "ts": "2026-11-26T05:00:00Z",
    "open": 84.09,
    "lo": 83.16,
-   "hi": 85.21,
-   "vol": 90337,
+   "hi": 85.23,
+   "vol": 91029,
    "h": [
     102.78,
     102.0,
@@ -762,7 +762,7 @@
     80.17,
     82.05,
     83.68,
-    84.9
+    84.91
    ]
   },
   "BRENT": {
@@ -775,8 +775,8 @@
    "ts": "2026-11-26T05:00:00Z",
    "open": 90.57,
    "lo": 89.77,
-   "hi": 92.03,
-   "vol": 17788,
+   "hi": 92.04,
+   "vol": 17818,
    "h": [
     115.32,
     114.88,
@@ -799,21 +799,21 @@
     89.37,
     91.4,
     94.61,
-    91.65
+    91.73
    ]
   },
   "BTC": {
-   "p": 60365.3711,
+   "p": 60622.9805,
    "prev": 60378.1992,
-   "chg": -12.8281,
-   "pct": -0.02,
+   "chg": 244.7812,
+   "pct": 0.41,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-26T18:54:51.044929Z",
+   "ts": "2026-11-26T20:00:20.834823Z",
    "open": 60378.5703,
    "lo": 60040.082,
    "hi": 61040.9453,
-   "vol": 25893844992,
+   "vol": 24614973440,
    "h": [
     75942.12,
     75746.93,
@@ -836,7 +836,7 @@
     61210.98,
     59747.77,
     60378.2,
-    60365.37
+    60622.98
    ]
   }
  },
@@ -937,9 +937,9 @@
    "ccy": "USD",
    "mcap": 3638315450368,
    "pe": 25.5705,
-   "fpe": 20.2419,
+   "fpe": 20.2443,
    "eps": 19.16,
-   "feps": 24.2038,
+   "feps": 24.2008,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -981,9 +981,9 @@
    "ccy": "USD",
    "mcap": 3357491331072,
    "pe": 14.2611,
-   "fpe": 17.8555,
+   "fpe": 17.8527,
    "eps": 19.15,
-   "feps": 15.295,
+   "feps": 15.2974,
    "revTTM": 471097999360,
    "netIncome": 235693621248,
    "shares": 5888000000,
@@ -1053,7 +1053,7 @@
    "earnTs": 1793304000,
    "earnStart": 1801774800,
    "earnEnd": 1801774800,
-   "earnEst": false,
+   "earnEst": true,
    "trailDiv": 0.0
   },
   "TSM": {
@@ -1184,10 +1184,10 @@
    "industry": "Internet Content & Information",
    "ccy": "USD",
    "mcap": 1559025942528,
-   "pe": 20.8083,
-   "fpe": 17.0956,
-   "eps": 29.31,
-   "feps": 35.6752,
+   "pe": 20.1217,
+   "fpe": 17.152,
+   "eps": 30.31,
+   "feps": 35.558,
    "revTTM": 241605001216,
    "netIncome": 75249000448,
    "shares": 2214472367,
@@ -1228,9 +1228,9 @@
    "industry": "Auto Manufacturers",
    "ccy": "USD",
    "mcap": 1502601543680,
-   "fpe": 175.6833,
+   "fpe": 176.0543,
    "eps": 0.91,
-   "feps": 2.1638,
+   "feps": 2.1592,
    "revTTM": 103569997824,
    "netIncome": 3220000000,
    "shares": 3952757946,
@@ -1268,9 +1268,9 @@
    "ccy": "USD",
    "mcap": 1436194177024,
    "pe": 38.424,
-   "fpe": 15.5624,
+   "fpe": 15.5194,
    "eps": 7.83,
-   "feps": 19.3325,
+   "feps": 19.386,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1514,14 +1514,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1046778478592,
+   "mcap": 1049988956160,
    "pe": 47.8043,
    "fpe": 40.8698,
    "eps": 2.76,
    "feps": 3.2283,
    "revTTM": 745178988544,
    "netIncome": 20878000128,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.75,
@@ -1601,9 +1601,9 @@
    "ccy": "USD",
    "mcap": 672006275072,
    "pe": 86.7585,
-   "fpe": 23.0493,
+   "fpe": 23.0199,
    "eps": 4.68,
-   "feps": 17.6157,
+   "feps": 17.6382,
    "revTTM": 45435998208,
    "netIncome": 7725000192,
    "shares": 1655065573,
@@ -1772,9 +1772,9 @@
    "industry": "Semiconductor Equipment & Materials",
    "ccy": "EUR",
    "mcap": 450244968448,
-   "pe": 36.3699,
+   "pe": 33.3962,
    "fpe": 20.7002,
-   "eps": 32.12,
+   "eps": 34.98,
    "feps": 56.4342,
    "revTTM": 39473500160,
    "netIncome": 13474299904,
@@ -1946,9 +1946,9 @@
    "ccy": "USD",
    "mcap": 481597423616,
    "pe": 52.3512,
-   "fpe": 43.3683,
+   "fpe": 43.397,
    "eps": 20.76,
-   "feps": 25.06,
+   "feps": 25.0435,
    "revTTM": 303154003968,
    "netIncome": 9226000384,
    "shares": 443129349,
@@ -2029,9 +2029,9 @@
    "ccy": "USD",
    "mcap": 371378585600,
    "pe": 25.0532,
-   "fpe": 15.5719,
+   "fpe": 15.5526,
    "eps": 3.76,
-   "feps": 6.0493,
+   "feps": 6.0568,
    "revTTM": 66958999552,
    "netIncome": 14958999552,
    "shares": 3942448184,
@@ -2159,13 +2159,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 123.1505,
-   "shares": 572600000,
-   "divYield": 2.569,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2216,6 +2211,63 @@
   }
  ],
  "news": [
+  {
+   "h": "Faisal Islam: Why Trump's new tariffs are less of a threat",
+   "w": "Other countries have rerouted trade in response to his first tariff salvo, now they are looking beyond Trump's tenure.",
+   "syms": [],
+   "src": "BBC — Business",
+   "ts": "2026-11-26T19:55:58Z",
+   "url": "https://www.bbc.co.uk/news/articles/c6r7g4e3yep1o?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "h": "Le PDG de Kodiak AI Inc achète pour 2,2 millions $ d’actions ordinaires",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-26T19:02:01Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-kodiak-ai-inc-achete-pour-22-millions--dactions-ordinaires-93CH-3714098"
+  },
+  {
+   "h": "Le président de Saul Centers Inc acquiert pour 100k$ d’actions ordinaires",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-26T19:01:34Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-president-de-saul-centers-inc-acquiert-pour-100k-dactions-ordinaires-93CH-3714097"
+  },
+  {
+   "h": "A 66-year-old nurse is facing down retirement with just $500 saved. Who’s to blame?",
+   "w": "“Retirement is a financial status, not an age.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-26T19:00:00Z",
+   "url": "https://www.marketwatch.com/story/a-66-year-old-nurse-faces-retirement-with-just-500-saved-whos-to-blame-4249a0fd?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Minesto AB à Stora Aktiedagarna 2026 : l’énergie marémotrice progresse",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-26T18:58:53Z",
+   "url": "https://fr.investing.com/news/transcripts/minesto-ab-a-stora-aktiedagarna-2026--lenergie-maremotrice-progresse-93CH-3714096"
+  },
+  {
+   "h": "UK to pay additional ‘participation fee’ as price of EU reset deal",
+   "w": "Terms of agreement signed with Brussels last week include what EU diplomats call a ‘pay-to-play’ financial settlement",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-26T18:57:50Z",
+   "url": "https://www.ft.com/content/00e41702-b11f-4a28-9233-16ce4cff99c7?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Un dirigeant de Vistance Networks, Inc. achète pour 98 000$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-26T18:47:09Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-de-vistance-networks-inc-achete-pour-98-000-dactions-93CH-3714095"
+  },
   {
    "h": "Trump demands probe into ‘record setting error’ after third-quarter GDP data gets massive revision higher",
    "w": "President Donald Trump on Thursday deemed the latest gross domestic product revision a mistake, claiming that it should be \"immediately investigated.\"",
@@ -2286,7 +2338,7 @@
    "h": "Italy’s PM rebukes Ukraine for attacks on Russian ships in Mediterranean",
    "w": "‘This war must not, cannot spread to the Mediterranean,’ Giorgia Meloni says at EU summit",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — europe",
    "ts": "2026-11-26T18:28:26Z",
    "url": "https://www.ft.com/content/7461793f-6983-45ea-8ba2-8b1824df9379?syn-25a6b1a6=1",
    "mine": 1
@@ -2306,6 +2358,15 @@
    "src": "myFT — companies",
    "ts": "2026-11-26T18:24:34Z",
    "url": "https://www.ft.com/content/ef05b4ab-7944-44ae-ad00-15475f8c1ec9?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Sweden’s PM to stay in power without far-right ministers",
+   "w": "Ulf Kristersson has managed to secure a four-party coalition despite winning fewer seats than the opposition",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-26T18:11:44Z",
+   "url": "https://www.ft.com/content/12e2cbc3-df17-4a10-94f6-ad121d8b5eeb?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2404,14 +2465,6 @@
    "url": "https://www.lemonde.fr/politique/article/2026/11/26/presidentielle-2027-marine-le-pen-courtise-les-pme-avec-un-nouveau-projet-de-reforme-fiscale_6815572_823448.html"
   },
   {
-   "h": "En Direct : Découvrez comment dénicher les meilleures actions du moment",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-26T16:59:30Z",
-   "url": "https://fr.investing.com/news/stock-market-news/webinaire--decouvrez-comment-denicher-les-meilleures-actions-du-moment-3713087"
-  },
-  {
    "h": "Two Italians killed in Iranian strike on Kuwait",
    "w": "Rheinmetall workers are the first reported deaths from Iranian attacks since Washington and Tehran restarted exchanging fire this month",
    "syms": [],
@@ -2439,16 +2492,6 @@
    "mine": 1
   },
   {
-   "h": "Compte de résultats : Sierra Madre Gold and Silver Ltd manque le BPA du T3 malgré une hausse de la production",
-   "w": "",
-   "syms": [
-    "XAU"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-11-26T16:40:29Z",
-   "url": "https://fr.investing.com/news/transcripts/compte-de-resultats--sierra-madre-gold-and-silver-ltd-manque-le-bpa-du-t3-malgre-une-hausse-de-la-production-93CH-3714075"
-  },
-  {
    "h": "We’re stuck in a bonfire of the quangos doom loop",
    "w": "Labour’s belated decision to scrap these dated organisations is a necessary — and regular — part of state renewal",
    "syms": [],
@@ -2466,22 +2509,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-26T16:30:00Z",
    "url": "https://www.marketwatch.com/story/i-hate-that-jensen-huang-is-back-at-nvidia-but-i-love-what-its-done-for-my-401-k-am-i-a-hypocrite-f63c0303?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Un dirigeant de Verizon cède des actions pour 51.480$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-26T16:17:14Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-de-verizon-cede-des-actions-pour-51480-93CH-3714072"
-  },
-  {
-   "h": "Le PDG de Comstock Inc achète des actions pour 12.200$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-26T16:16:58Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-comstock-inc-achete-des-actions-pour-12200-93CH-3714071"
   },
   {
    "h": "Do voters want vision or concision from politicians?",
@@ -2632,18 +2659,9 @@
    "h": "Mandelson softened China speech on advice from firm he founded",
    "w": "Files show British politician kept close links with Global Counsel when he was ambassador to US",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — world uk",
    "ts": "2026-11-26T14:58:05Z",
    "url": "https://www.ft.com/content/2f5970e6-fe6c-416c-aff8-3f8b889802de?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "UK to pay additional ‘participation fee’ as price of EU reset deal",
-   "w": "Terms of agreement signed with Brussels last week include what EU diplomats call a ‘pay-to-play’ financial settlement",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-26T14:57:48Z",
-   "url": "https://www.ft.com/content/00e41702-b11f-4a28-9233-16ce4cff99c7?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2718,6 +2736,30 @@
    "url": "https://www.bbc.co.uk/news/articles/cwg5r02zel9qo?at_medium=RSS&at_campaign=rss"
   },
   {
+   "h": "Taiwan weathers wave of cyberattacks ahead of Saturday's elections",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-26T14:00:20.834823Z",
+   "url": "https://asia.nikkei.com/spotlight/cybersecurity/taiwan-weathers-wave-of-cyberattacks-ahead-of-saturday-s-elections"
+  },
+  {
+   "h": "Bank of Korea hikes rate to 3.25% against backdrop of strong economy",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-26T14:00:20.834823Z",
+   "url": "https://asia.nikkei.com/economy/central-banks/bank-of-korea-hikes-rate-to-3.25-against-backdrop-of-strong-economy"
+  },
+  {
+   "h": "Fall of Shanghai party chief clouds China's leadership reset in 2027",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-26T14:00:20.834823Z",
+   "url": "https://asia.nikkei.com/politics/fall-of-shanghai-party-chief-clouds-china-s-leadership-reset-in-2027"
+  },
+  {
    "h": "Nvidia and the whole AI trade aren’t out of the woods — not by a long shot",
    "w": "The ‘Bank of AI’ faces a host of troubles ahead.",
    "syms": [
@@ -2777,14 +2819,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-26T13:24:00Z",
    "url": "https://www.marketwatch.com/story/roth-ira-conversions-arent-free-money-watch-out-for-these-5-costly-mistakes-39b182d3?mod=mw_rss_topstories"
-  },
-  {
-   "h": "‘I felt so seen’: Why families across America are laughing — and crying — over SNL’s ‘Sister’ sketch",
-   "w": "The late-night comedy sketch does the impossible by making female caregivers feel seen.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-26T13:06:00Z",
-   "url": "https://www.marketwatch.com/story/so-sad-and-so-true-has-your-family-talked-about-snls-sister-sketch-yet-19bf9d67?mod=mw_rss_topstories"
   },
   {
    "h": "Planes, trains and automobiles: The best ways to beat travel fatigue—so you can come home feeling rested and fulfilled",
@@ -2994,16 +3028,6 @@
    "url": "https://asia.nikkei.com/economy/fires/hong-kong-fire-survivors-and-families-mark-anniversary-as-questions-linger"
   },
   {
-   "h": "Nvidia turmoil casts pall over high-flying global AI chip industry",
-   "w": "",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-26T11:52:47.182681Z",
-   "url": "https://asia.nikkei.com/business/tech/semiconductors/nvidia-turmoil-casts-pall-over-high-flying-global-ai-chip-industry"
-  },
-  {
    "h": "Drivers over 70 face eye tests every three years under new plans",
    "w": "The changes could see drivers over 70 stripped of licences if they do not meet standards.",
    "syms": [],
@@ -3055,39 +3079,6 @@
    "src": "myFT — us",
    "ts": "2026-11-26T11:00:06Z",
    "url": "https://www.ft.com/content/0278cbea-a0b6-4a30-80f2-f31ac6657f11?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Airbags Takata : Stellantis et l’équipementier Joyson Safety Systems France ont été perquisitionnés, selon le parquet de Paris",
-   "w": "Un juge d’instruction enquête à Paris depuis avril 2025, notamment pour mise en danger de la vie d’autrui, après une plainte de l’association UFC-Que choisir et de propriétaires de véhicules de Stellantis. Le constructeur est soupçonné d’avoir manqué de réactivité à remplacer les airbags Takata défaillants, causes d’explosions mortelles.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-26T10:56:30Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/11/26/airbags-takata-stellantis-et-l-equipementier-joyson-safety-systems-france-ont-ete-perquisitionnes-selon-le-parquet-de-paris_6815521_3234.html"
-  },
-  {
-   "h": "AI firms with poor safeguards face inspections under Japan draft law",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-26T10:52:20.622802Z",
-   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/ai-firms-with-poor-safeguards-face-inspections-under-japan-draft-law"
-  },
-  {
-   "h": "36% minimum wage hike tests Bangladesh garment sector's low-cost model",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-26T10:52:20.622802Z",
-   "url": "https://asia.nikkei.com/spotlight/work/36-minimum-wage-hike-tests-bangladesh-garment-sector-s-low-cost-model"
-  },
-  {
-   "h": "Franco-German clash over ‘Made in Europe’ in EU defence budget",
-   "w": "Berlin leads pushback against French demands for European preference in buying military equipment",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-26T10:11:49Z",
-   "url": "https://www.ft.com/content/c9e569cd-d9c7-43ea-877e-7fa6d1e91ea7?syn-25a6b1a6=1",
    "mine": 1
   }
  ],
