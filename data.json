@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-26T20:00:20.834823Z",
+ "generated_at": "2026-11-26T20:57:52.836978Z",
  "quotes": {
   "NVDA": {
    "p": 149.3,
@@ -228,8 +228,8 @@
    "prev": 28.29,
    "chg": -1.49,
    "pct": -5.27,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^VIX) — last update failed",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^VIX)",
    "ts": "2026-11-26T16:45:00Z",
    "open": 27.18,
    "lo": 26.57,
@@ -548,13 +548,13 @@
    ]
   },
   "EURUSD": {
-   "p": 1.0975,
+   "p": 1.0973,
    "prev": 1.0962,
-   "chg": 0.0012,
-   "pct": 0.11,
+   "chg": 0.0011,
+   "pct": 0.1,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (EURUSD=X)",
-   "ts": "2026-11-26T20:00:00Z",
+   "ts": "2026-11-26T20:57:52.836978Z",
    "open": 1.0978,
    "lo": 1.096,
    "hi": 1.0991,
@@ -580,17 +580,17 @@
     1.097153,
     1.09081,
     1.096227,
-    1.097454
+    1.097333
    ]
   },
   "USDJPY": {
-   "p": 159.254,
+   "p": 159.261,
    "prev": 159.262,
-   "chg": -0.008,
-   "pct": -0.01,
+   "chg": -0.001,
+   "pct": -0.0,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (JPY=X)",
-   "ts": "2026-11-26T20:00:20.834823Z",
+   "ts": "2026-11-26T20:57:52.836978Z",
    "open": 159.116,
    "lo": 158.946,
    "hi": 159.338,
@@ -616,17 +616,17 @@
     158.93,
     159.01,
     159.26,
-    159.25
+    159.26
    ]
   },
   "GBPUSD": {
-   "p": 1.3109,
+   "p": 1.3107,
    "prev": 1.3112,
-   "chg": -0.0003,
-   "pct": -0.02,
+   "chg": -0.0005,
+   "pct": -0.04,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
-   "ts": "2026-11-26T20:00:00Z",
+   "ts": "2026-11-26T20:57:52.836978Z",
    "open": 1.3119,
    "lo": 1.3096,
    "hi": 1.3123,
@@ -652,7 +652,7 @@
     1.309466,
     1.303475,
     1.311183,
-    1.310874
+    1.310668
    ]
   },
   "DXY": {
@@ -688,7 +688,7 @@
     104.32,
     103.81,
     103.67,
-    103.78
+    103.77
    ]
   },
   "XAU": {
@@ -803,17 +803,17 @@
    ]
   },
   "BTC": {
-   "p": 60622.9805,
+   "p": 60684.5898,
    "prev": 60378.1992,
-   "chg": 244.7812,
-   "pct": 0.41,
+   "chg": 306.3906,
+   "pct": 0.51,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-26T20:00:20.834823Z",
+   "ts": "2026-11-26T20:57:52.836978Z",
    "open": 60378.5703,
    "lo": 60040.082,
    "hi": 61040.9453,
-   "vol": 24614973440,
+   "vol": 23384342528,
    "h": [
     75942.12,
     75746.93,
@@ -836,7 +836,7 @@
     61210.98,
     59747.77,
     60378.2,
-    60622.98
+    60690.06
    ]
   }
  },
@@ -2212,6 +2212,47 @@
  ],
  "news": [
   {
+   "h": "Trump demands probe into ‘record setting error’ after third-quarter GDP data gets massive revision higher",
+   "w": "President Donald Trump on Thursday deemed the latest gross domestic product revision a mistake, claiming that it should be \"immediately investigated.\"",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-26T20:25:28Z",
+   "url": "https://www.cnbc.com/2026/11/26/trump-gdp-revision-investigation.html"
+  },
+  {
+   "h": "Two Italians killed in drone strike on Kuwait",
+   "w": "Workers are the first reported deaths in the Gulf since the US and Iran restarted exchanging fire this month",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-26T20:23:24Z",
+   "url": "https://www.ft.com/content/e5f3128d-5f8b-416c-90d1-2549175cb091?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "SAP envisage de supprimer au moins 10.000 postes dans le cadre d’une restructuration liée à l’IA",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-26T20:22:52Z",
+   "url": "https://fr.investing.com/news/company-news/sap-envisage-de-supprimer-au-moins-10000-postes-dans-le-cadre-dune-restructuration-liee-a-lia-3714113"
+  },
+  {
+   "h": "Un administrateur de California Water Service Group cède des actions pour 29$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-26T20:02:15Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-california-water-service-group-cede-des-actions-pour-29-93CH-3714111"
+  },
+  {
+   "h": "Un administrateur d’Auburn National Bancorporation achète pour 5.050$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-26T20:01:44Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-dauburn-national-bancorporation-achete-pour-5050-dactions-93CH-3714110"
+  },
+  {
    "h": "Faisal Islam: Why Trump's new tariffs are less of a threat",
    "w": "Other countries have rerouted trade in response to his first tariff salvo, now they are looking beyond Trump's tenure.",
    "syms": [],
@@ -2269,14 +2310,6 @@
    "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-de-vistance-networks-inc-achete-pour-98-000-dactions-93CH-3714095"
   },
   {
-   "h": "Trump demands probe into ‘record setting error’ after third-quarter GDP data gets massive revision higher",
-   "w": "President Donald Trump on Thursday deemed the latest gross domestic product revision a mistake, claiming that it should be \"immediately investigated.\"",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-26T18:44:15Z",
-   "url": "https://www.cnbc.com/2026/11/26/trump-gdp-revision-investigation.html"
-  },
-  {
    "h": "Les grandes enseignes américaines proposent des offres pour Thanksgiving malgré la hausse des prix",
    "w": "",
    "syms": [],
@@ -2308,14 +2341,6 @@
    "src": "Investing.com France",
    "ts": "2026-11-26T18:32:43Z",
    "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-marketing-dintapp-inc-vend-des-actions-pour-303750-93CH-3714091"
-  },
-  {
-   "h": "Le PDG de Tronox achète pour 139.320$ d’actions de la société",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-26T18:32:38Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-tronox-achete-pour-139320-dactions-de-la-societe-93CH-3714090"
   },
   {
    "h": "Trump doubles down on his tariff agenda",
@@ -2388,14 +2413,6 @@
    "url": "https://www.cnbc.com/2026/11/26/semiconductor-chips-are-the-new-oil-heres-why.html"
   },
   {
-   "h": "Pila Pharma à Stora Aktiedagarna 2026 : retour aux essais humains",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-26T17:48:53Z",
-   "url": "https://fr.investing.com/news/transcripts/pila-pharma-a-stora-aktiedagarna-2026--retour-aux-essais-humains-93CH-3714087"
-  },
-  {
    "h": "Altria explores takeover bid for Imperial Brands",
    "w": "Deal would remove another of the UK’s large listed companies from the London stock market",
    "syms": [],
@@ -2422,14 +2439,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-26T17:35:04Z",
    "url": "https://www.lemonde.fr/international/article/2026/11/26/le-virage-au-forceps-des-allies-de-l-otan-vers-des-operations-militaires-dopees-a-l-ia-de-palantir_6815581_3210.html"
-  },
-  {
-   "h": "Un directeur de Mueller Industries Inc vend des actions pour 103.020$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-26T17:32:48Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-mueller-industries-inc-vend-des-actions-pour-103020-93CH-3714086"
   },
   {
    "h": "When will Poundland shops close? Five key questions answered",
@@ -2463,15 +2472,6 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-26T17:00:09Z",
    "url": "https://www.lemonde.fr/politique/article/2026/11/26/presidentielle-2027-marine-le-pen-courtise-les-pme-avec-un-nouveau-projet-de-reforme-fiscale_6815572_823448.html"
-  },
-  {
-   "h": "Two Italians killed in Iranian strike on Kuwait",
-   "w": "Rheinmetall workers are the first reported deaths from Iranian attacks since Washington and Tehran restarted exchanging fire this month",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-26T16:57:26Z",
-   "url": "https://www.ft.com/content/e5f3128d-5f8b-416c-90d1-2549175cb091?syn-25a6b1a6=1",
-   "mine": 1
   },
   {
    "h": "Israel’s Eisenkot takes steps towards replacing Netanyahu",
@@ -2553,6 +2553,16 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-26T16:00:03Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/26/la-vente-du-diamantaire-de-beers-se-dessine-dans-un-secteur-ebranle-par-les-pierres-de-synthese_6815560_3234.html"
+  },
+  {
+   "h": "Buyer beware? Nvidia's volatile swings expose risks of single-stock ETFs",
+   "w": "ETF Action founding partner Mike Akins and GraniteShares CEO Will Rhind react to Nvidia's sharp losses and latest comeback.",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-26T16:00:01Z",
+   "url": "https://www.cnbc.com/2026/11/26/nvidias-volatile-swings-expose-risks-of-single-stock-etfs.html"
   },
   {
    "h": "I’m in my 70s and buying a new BMW X1. Should I put my only son on the title?",
@@ -2665,6 +2675,30 @@
    "mine": 1
   },
   {
+   "h": "Trump-Xi summits unlikely to solve China's rare-earth licensing maze",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-26T14:57:52.836978Z",
+   "url": "https://asia.nikkei.com/opinion/trump-xi-summits-unlikely-to-solve-china-s-rare-earth-licensing-maze"
+  },
+  {
+   "h": "AI firms with poor safeguards face inspections under Japan draft law",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-26T14:57:52.836978Z",
+   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/ai-firms-with-poor-safeguards-face-inspections-under-japan-draft-law"
+  },
+  {
+   "h": "36% minimum wage hike tests Bangladesh garment sector's low-cost model",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-26T14:57:52.836978Z",
+   "url": "https://asia.nikkei.com/spotlight/work/36-minimum-wage-hike-tests-bangladesh-garment-sector-s-low-cost-model"
+  },
+  {
    "h": "Babcock secures record £8.7bn contract to support Royal Navy submarines",
    "w": "Five-year deal comes amid concerns over fleet’s readiness and increased Russian activity in north Atlantic",
    "syms": [],
@@ -2750,14 +2784,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-26T14:00:20.834823Z",
    "url": "https://asia.nikkei.com/economy/central-banks/bank-of-korea-hikes-rate-to-3.25-against-backdrop-of-strong-economy"
-  },
-  {
-   "h": "Fall of Shanghai party chief clouds China's leadership reset in 2027",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-26T14:00:20.834823Z",
-   "url": "https://asia.nikkei.com/politics/fall-of-shanghai-party-chief-clouds-china-s-leadership-reset-in-2027"
   },
   {
    "h": "Nvidia and the whole AI trade aren’t out of the woods — not by a long shot",
@@ -3012,36 +3038,12 @@
    "url": "https://asia.nikkei.com/economy/trade-war/trump-tariffs/asia-rejects-basis-of-new-trump-tariffs-as-us-gathers-china-ammunition"
   },
   {
-   "h": "FSB flags leverage risks in sovereign bond markets amid public debt rise",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-26T11:52:47.182681Z",
-   "url": "https://asia.nikkei.com/business/markets/fsb-flags-leverage-risks-in-sovereign-bond-markets-amid-public-debt-rise"
-  },
-  {
-   "h": "Hong Kong fire survivors and families mark anniversary as questions linger",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-26T11:52:47.182681Z",
-   "url": "https://asia.nikkei.com/economy/fires/hong-kong-fire-survivors-and-families-mark-anniversary-as-questions-linger"
-  },
-  {
    "h": "Drivers over 70 face eye tests every three years under new plans",
    "w": "The changes could see drivers over 70 stripped of licences if they do not meet standards.",
    "syms": [],
    "src": "BBC — Business",
    "ts": "2026-11-26T11:21:45Z",
    "url": "https://www.bbc.co.uk/news/articles/cjqlqerzv1eyo?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "h": "Switzerland’s biggest bank set for showdown with lawmakers as capital fight intensifies amid crisis planning",
-   "w": "Swiss regulator FINMA said UBS can execute its preferred crisis-resolution strategy, even as the bank faces a separate parliamentary fight over tougher capital requirements.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-26T11:17:39Z",
-   "url": "https://www.cnbc.com/2026/11/26/ubs-swiss-capital-rules-finma-crisis-plan.html"
   },
   {
    "h": "UK government has ‘failed’ to make case for third Heathrow runway, say MPs",
