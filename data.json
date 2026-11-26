@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-26T21:55:48.763837Z",
+ "generated_at": "2026-11-26T22:54:57.709374Z",
  "quotes": {
   "NVDA": {
    "p": 149.3,
@@ -519,9 +519,6 @@
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^STOXX50E)",
    "ts": "2026-11-26T16:30:00Z",
-   "open": 5920.8901,
-   "lo": 5920.8901,
-   "hi": 6037.2202,
    "h": [
     6167.81,
     6207.07,
@@ -548,13 +545,13 @@
    ]
   },
   "EURUSD": {
-   "p": 1.0972,
+   "p": 1.0975,
    "prev": 1.0962,
-   "chg": 0.001,
-   "pct": 0.09,
+   "chg": 0.0012,
+   "pct": 0.11,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (EURUSD=X)",
-   "ts": "2026-11-26T21:55:48.763837Z",
+   "ts": "2026-11-26T22:54:57.709374Z",
    "open": 1.0978,
    "lo": 1.096,
    "hi": 1.0991,
@@ -580,17 +577,17 @@
     1.097153,
     1.09081,
     1.096227,
-    1.097213
+    1.097454
    ]
   },
   "USDJPY": {
-   "p": 159.267,
+   "p": 159.224,
    "prev": 159.262,
-   "chg": 0.005,
-   "pct": 0.0,
+   "chg": -0.038,
+   "pct": -0.02,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (JPY=X)",
-   "ts": "2026-11-26T21:55:48.763837Z",
+   "ts": "2026-11-26T22:54:57.709374Z",
    "open": 159.116,
    "lo": 158.946,
    "hi": 159.338,
@@ -616,17 +613,17 @@
     158.93,
     159.01,
     159.26,
-    159.27
+    159.21
    ]
   },
   "GBPUSD": {
-   "p": 1.3107,
+   "p": 1.3111,
    "prev": 1.3112,
-   "chg": -0.0004,
-   "pct": -0.03,
+   "chg": -0.0001,
+   "pct": -0.01,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
-   "ts": "2026-11-26T21:55:48.763837Z",
+   "ts": "2026-11-26T22:54:57.709374Z",
    "open": 1.3119,
    "lo": 1.3096,
    "hi": 1.3123,
@@ -652,7 +649,7 @@
     1.309466,
     1.303475,
     1.311183,
-    1.310736
+    1.31108
    ]
   },
   "DXY": {
@@ -688,7 +685,7 @@
     104.32,
     103.81,
     103.67,
-    103.78
+    103.75
    ]
   },
   "XAU": {
@@ -696,8 +693,8 @@
    "prev": 3535.8,
    "chg": 84.5999,
    "pct": 2.39,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (GC=F) — last update failed",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (GC=F)",
    "ts": "2026-11-26T05:00:00Z",
    "open": 3619.8,
    "lo": 3578.8,
@@ -803,17 +800,17 @@
    ]
   },
   "BTC": {
-   "p": 60793.4102,
+   "p": 60551.4219,
    "prev": 60378.1992,
-   "chg": 415.2109,
-   "pct": 0.69,
+   "chg": 173.2227,
+   "pct": 0.29,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-26T21:55:48.763837Z",
+   "ts": "2026-11-26T22:54:57.709374Z",
    "open": 60378.5703,
    "lo": 60040.082,
    "hi": 61040.9453,
-   "vol": 22501883904,
+   "vol": 22184386560,
    "h": [
     75942.12,
     75746.93,
@@ -836,7 +833,7 @@
     61210.98,
     59747.77,
     60378.2,
-    60793.41
+    60551.42
    ]
   }
  },
@@ -1799,7 +1796,7 @@
    "fcf": 10374124544,
    "w52lo": 866.4,
    "w52hi": 1741.0,
-   "evEbitda": 26.126,
+   "evEbitda": 26.992,
    "earnTs": 1801067400,
    "earnStart": 1801067400,
    "earnEnd": 1801067400,
@@ -2212,12 +2209,44 @@
  ],
  "news": [
   {
+   "h": "Allegiance Resources nomme un nouveau PDG et un membre du conseil",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-26T22:05:20Z",
+   "url": "https://fr.investing.com/news/company-news/allegiance-resources-nomme-un-nouveau-pdg-et-un-membre-du-conseil-93CH-3714125"
+  },
+  {
+   "h": "‘I’ve been a stay-at-home mom’: I’m 50 and have a chronic illness. My husband lost his job. Should he raid his 401(k)?",
+   "w": "“Our financial and healthcare situation has become increasingly concerning.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-26T22:00:00Z",
+   "url": "https://www.marketwatch.com/story/ive-been-a-stay-at-home-mom-im-50-and-have-a-chronic-illness-my-husband-lost-his-job-should-he-raid-his-401-k-63e59123?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Le dollar canadien recule durant la trêve de Thanksgiving américain",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-26T21:58:03Z",
+   "url": "https://fr.investing.com/news/forex-news/le-dollar-canadien-recule-durant-la-treve-de-thanksgiving-americain-3714123"
+  },
+  {
    "h": "I’m terrified of a market crash. Should I put $400,000 of my $1 million retirement savings into an annuity?",
    "w": "“We have a house worth $450,000. Our combined annual income is $125,000.”",
    "syms": [],
    "src": "MarketWatch",
    "ts": "2026-11-26T21:45:00Z",
    "url": "https://www.marketwatch.com/story/were-in-our-50s-and-terrified-of-a-market-crash-should-we-put-400-000-of-our-1-million-retirement-savings-into-an-annuity-1943f240?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Les obligations canadiennes prolongent leur hausse malgré les turbulences de l’IA",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-26T21:41:16Z",
+   "url": "https://fr.investing.com/news/stock-market-news/les-obligations-canadiennes-prolongent-leur-hausse-malgre-les-inquietudes-liees-a-lia-3714122"
   },
   {
    "h": "I hate that Jensen Huang is back at Nvidia, but I love what it’s done for my 401(k). Am I a hypocrite?",
@@ -2328,22 +2357,6 @@
    "mine": 1
   },
   {
-   "h": "Un dirigeant de Vistance Networks, Inc. achète pour 98 000$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-26T18:47:09Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-de-vistance-networks-inc-achete-pour-98-000-dactions-93CH-3714095"
-  },
-  {
-   "h": "Les grandes enseignes américaines proposent des offres pour Thanksgiving malgré la hausse des prix",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-26T18:37:18Z",
-   "url": "https://fr.investing.com/news/economy-news/les-grandes-enseignes-americaines-proposent-des-offres-pour-thanksgiving-malgre-la-hausse-des-prix-3714094"
-  },
-  {
    "h": "Britain’s electricity grid operator makes record number of calls for extra power",
    "w": "Issue driven by colder weather and constraints in getting electricity from wind farms in Scotland to consumers in England",
    "syms": [],
@@ -2351,14 +2364,6 @@
    "ts": "2026-11-26T18:36:59Z",
    "url": "https://www.ft.com/content/21a1331c-c201-4333-b312-ab87b7fd994f?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Un administrateur d’UMH Properties achète des actions pour 35.700$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-26T18:32:47Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-dumh-properties-achete-des-actions-pour-35700-93CH-3714092"
   },
   {
    "h": "Trump doubles down on his tariff agenda",
@@ -2490,6 +2495,24 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-26T17:00:09Z",
    "url": "https://www.lemonde.fr/politique/article/2026/11/26/presidentielle-2027-marine-le-pen-courtise-les-pme-avec-un-nouveau-projet-de-reforme-fiscale_6815572_823448.html"
+  },
+  {
+   "h": "Nvidia, Kioxia team on AI server memory as alternative to South Korean chips",
+   "w": "",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-26T16:54:57.709374Z",
+   "url": "https://asia.nikkei.com/business/tech/semiconductors/nvidia-kioxia-team-on-ai-server-memory-as-alternative-to-south-korean-chips"
+  },
+  {
+   "h": "Asia rejects basis of new Trump tariffs as US gathers China ammunition",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-26T16:54:57.709374Z",
+   "url": "https://asia.nikkei.com/economy/trade-war/trump-tariffs/asia-rejects-basis-of-new-trump-tariffs-as-us-gathers-china-ammunition"
   },
   {
    "h": "Israel’s Eisenkot takes steps towards replacing Netanyahu",
@@ -2828,16 +2851,6 @@
    "url": "https://www.lemonde.fr/economie/article/2026/11/26/un-jouet-sur-trois-qui-est-vendu-en-ligne-est-dangereux-alertent-serge-papin-et-la-dgccrf-avant-les-fetes-de-fin-d-annee_6815540_3234.html"
   },
   {
-   "h": "Futures point to Black Friday gains on Wall Street as global markets welcome U.S. resilience",
-   "w": "A rebound off lows for the S&amp;P 500 on Wednesday calms bourses after the tech washout.",
-   "syms": [
-    "SPX"
-   ],
-   "src": "MarketWatch",
-   "ts": "2026-11-26T13:41:00Z",
-   "url": "https://www.marketwatch.com/story/futures-point-to-black-friday-gains-for-wall-street-as-global-markets-welcome-u-s-resilience-ad6bcef2?mod=mw_rss_topstories"
-  },
-  {
    "h": "Simon Jack: Is Poundland's US owner to blame for its collapse?",
    "w": "Poundland's management and MPs blame the retailer's owners, Gordon Brothers, but the US firm says without them the chain would have collapsed last year.",
    "syms": [],
@@ -2904,24 +2917,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-26T12:54:51.044929Z",
    "url": "https://asia.nikkei.com/politics/international-relations/wife-of-japanese-journalist-held-in-russia-pleads-for-his-release"
-  },
-  {
-   "h": "Humanoid robots meet factory reality on Toyota's home turf",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-26T12:54:51.044929Z",
-   "url": "https://asia.nikkei.com/business/automobiles/humanoid-robots-meet-factory-reality-on-toyota-s-home-turf"
-  },
-  {
-   "h": "Pakistan-US economic ties to grow further, with exception of crypto",
-   "w": "",
-   "syms": [
-    "BTC"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-26T12:54:51.044929Z",
-   "url": "https://asia.nikkei.com/economy/trade/pakistan-us-economic-ties-to-grow-further-with-exception-of-crypto2"
   },
   {
    "h": "Corse : le tourisme reste une locomotive de la croissance, malgré des résultats contrastés",
