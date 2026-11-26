@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-26T20:57:52.836978Z",
+ "generated_at": "2026-11-26T21:55:48.763837Z",
  "quotes": {
   "NVDA": {
    "p": 149.3,
@@ -548,13 +548,13 @@
    ]
   },
   "EURUSD": {
-   "p": 1.0973,
+   "p": 1.0972,
    "prev": 1.0962,
-   "chg": 0.0011,
-   "pct": 0.1,
+   "chg": 0.001,
+   "pct": 0.09,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (EURUSD=X)",
-   "ts": "2026-11-26T20:57:52.836978Z",
+   "ts": "2026-11-26T21:55:48.763837Z",
    "open": 1.0978,
    "lo": 1.096,
    "hi": 1.0991,
@@ -580,17 +580,17 @@
     1.097153,
     1.09081,
     1.096227,
-    1.097333
+    1.097213
    ]
   },
   "USDJPY": {
-   "p": 159.261,
+   "p": 159.267,
    "prev": 159.262,
-   "chg": -0.001,
-   "pct": -0.0,
+   "chg": 0.005,
+   "pct": 0.0,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (JPY=X)",
-   "ts": "2026-11-26T20:57:52.836978Z",
+   "ts": "2026-11-26T21:55:48.763837Z",
    "open": 159.116,
    "lo": 158.946,
    "hi": 159.338,
@@ -616,17 +616,17 @@
     158.93,
     159.01,
     159.26,
-    159.26
+    159.27
    ]
   },
   "GBPUSD": {
    "p": 1.3107,
    "prev": 1.3112,
-   "chg": -0.0005,
-   "pct": -0.04,
+   "chg": -0.0004,
+   "pct": -0.03,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
-   "ts": "2026-11-26T20:57:52.836978Z",
+   "ts": "2026-11-26T21:55:48.763837Z",
    "open": 1.3119,
    "lo": 1.3096,
    "hi": 1.3123,
@@ -652,7 +652,7 @@
     1.309466,
     1.303475,
     1.311183,
-    1.310668
+    1.310736
    ]
   },
   "DXY": {
@@ -688,7 +688,7 @@
     104.32,
     103.81,
     103.67,
-    103.77
+    103.78
    ]
   },
   "XAU": {
@@ -696,8 +696,8 @@
    "prev": 3535.8,
    "chg": 84.5999,
    "pct": 2.39,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (GC=F)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (GC=F) — last update failed",
    "ts": "2026-11-26T05:00:00Z",
    "open": 3619.8,
    "lo": 3578.8,
@@ -803,17 +803,17 @@
    ]
   },
   "BTC": {
-   "p": 60684.5898,
+   "p": 60793.4102,
    "prev": 60378.1992,
-   "chg": 306.3906,
-   "pct": 0.51,
+   "chg": 415.2109,
+   "pct": 0.69,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-26T20:57:52.836978Z",
+   "ts": "2026-11-26T21:55:48.763837Z",
    "open": 60378.5703,
    "lo": 60040.082,
    "hi": 61040.9453,
-   "vol": 23384342528,
+   "vol": 22501883904,
    "h": [
     75942.12,
     75746.93,
@@ -836,7 +836,7 @@
     61210.98,
     59747.77,
     60378.2,
-    60690.06
+    60793.41
    ]
   }
  },
@@ -2212,12 +2212,38 @@
  ],
  "news": [
   {
+   "h": "I’m terrified of a market crash. Should I put $400,000 of my $1 million retirement savings into an annuity?",
+   "w": "“We have a house worth $450,000. Our combined annual income is $125,000.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-26T21:45:00Z",
+   "url": "https://www.marketwatch.com/story/were-in-our-50s-and-terrified-of-a-market-crash-should-we-put-400-000-of-our-1-million-retirement-savings-into-an-annuity-1943f240?mod=mw_rss_topstories"
+  },
+  {
+   "h": "I hate that Jensen Huang is back at Nvidia, but I love what it’s done for my 401(k). Am I a hypocrite?",
+   "w": "Doing nothing and maintaining an even temperament is often the work of gods.",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "MarketWatch",
+   "ts": "2026-11-26T21:30:00Z",
+   "url": "https://www.marketwatch.com/story/i-hate-that-jensen-huang-is-back-at-nvidia-but-i-love-what-its-done-for-my-401-k-am-i-a-hypocrite-f63c0303?mod=mw_rss_topstories"
+  },
+  {
    "h": "Trump demands probe into ‘record setting error’ after third-quarter GDP data gets massive revision higher",
    "w": "President Donald Trump on Thursday deemed the latest gross domestic product revision a mistake, claiming that it should be \"immediately investigated.\"",
    "syms": [],
    "src": "CNBC — Markets",
-   "ts": "2026-11-26T20:25:28Z",
+   "ts": "2026-11-26T21:13:17Z",
    "url": "https://www.cnbc.com/2026/11/26/trump-gdp-revision-investigation.html"
+  },
+  {
+   "h": "Le directeur de Kennametal Inc achète des actions pour 45.700$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-26T21:02:04Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-de-kennametal-inc-achete-des-actions-pour-45700-93CH-3714115"
   },
   {
    "h": "Two Italians killed in drone strike on Kuwait",
@@ -2333,14 +2359,6 @@
    "src": "Investing.com France",
    "ts": "2026-11-26T18:32:47Z",
    "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-dumh-properties-achete-des-actions-pour-35700-93CH-3714092"
-  },
-  {
-   "h": "Le directeur marketing d’Intapp Inc vend des actions pour 303.750$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-26T18:32:43Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-marketing-dintapp-inc-vend-des-actions-pour-303750-93CH-3714091"
   },
   {
    "h": "Trump doubles down on his tariff agenda",
@@ -2501,16 +2519,6 @@
    "mine": 1
   },
   {
-   "h": "I hate that Jensen Huang is back at Nvidia, but I love what it’s done for my 401(k). Am I a hypocrite?",
-   "w": "Doing nothing and maintaining an even temperament is often the work of gods.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "MarketWatch",
-   "ts": "2026-11-26T16:30:00Z",
-   "url": "https://www.marketwatch.com/story/i-hate-that-jensen-huang-is-back-at-nvidia-but-i-love-what-its-done-for-my-401-k-am-i-a-hypocrite-f63c0303?mod=mw_rss_topstories"
-  },
-  {
    "h": "Do voters want vision or concision from politicians?",
    "w": "Their flowery flights of rhetoric used to go on forever. Now they keep it brief",
    "syms": [],
@@ -2571,6 +2579,30 @@
    "src": "MarketWatch",
    "ts": "2026-11-26T16:00:00Z",
    "url": "https://www.marketwatch.com/story/im-in-my-70s-and-buying-a-new-bmw-x1-should-i-put-my-only-son-on-the-title-25731040?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Japan's JERA aims to build Anthropic, Meta data centers near power plants",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-26T15:55:48.763837Z",
+   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/japan-s-jera-aims-to-build-anthropic-meta-data-centers-near-power-plants"
+  },
+  {
+   "h": "Indonesia pays high price to keep fuel cheap under Prabowo's blanket subsidy",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-26T15:55:48.763837Z",
+   "url": "https://asia.nikkei.com/spotlight/policy-asia/indonesia-pays-high-price-to-keep-fuel-cheap-under-prabowo-s-blanket-subsidy"
+  },
+  {
+   "h": "FSB flags leverage risks in sovereign bond markets amid public debt rise",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-26T15:55:48.763837Z",
+   "url": "https://asia.nikkei.com/business/markets/fsb-flags-leverage-risks-in-sovereign-bond-markets-amid-public-debt-rise"
   },
   {
    "h": "European airlines brace for more bankruptcies after Norse suspends flights",
@@ -2778,14 +2810,6 @@
    "url": "https://asia.nikkei.com/spotlight/cybersecurity/taiwan-weathers-wave-of-cyberattacks-ahead-of-saturday-s-elections"
   },
   {
-   "h": "Bank of Korea hikes rate to 3.25% against backdrop of strong economy",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-26T14:00:20.834823Z",
-   "url": "https://asia.nikkei.com/economy/central-banks/bank-of-korea-hikes-rate-to-3.25-against-backdrop-of-strong-economy"
-  },
-  {
    "h": "Nvidia and the whole AI trade aren’t out of the woods — not by a long shot",
    "w": "The ‘Bank of AI’ faces a host of troubles ahead.",
    "syms": [
@@ -2837,14 +2861,6 @@
    "ts": "2026-11-26T13:32:02Z",
    "url": "https://www.ft.com/content/022fcf0c-9a7a-4bf0-b853-4de8b2ba88b9",
    "mine": 1
-  },
-  {
-   "h": "Roth IRA conversions aren’t free money. Watch out for these 5 costly mistakes.",
-   "w": "Do it poorly, and you trigger taxes you didn’t even know existed.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-26T13:24:00Z",
-   "url": "https://www.marketwatch.com/story/roth-ira-conversions-arent-free-money-watch-out-for-these-5-costly-mistakes-39b182d3?mod=mw_rss_topstories"
   },
   {
    "h": "Planes, trains and automobiles: The best ways to beat travel fatigue—so you can come home feeling rested and fulfilled",
@@ -3018,24 +3034,6 @@
    "ts": "2026-11-26T11:59:32Z",
    "url": "https://www.ft.com/content/2e618ea7-e91f-40f3-903e-9ce355b0308c?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Nvidia, Kioxia team on AI server memory as alternative to South Korean chips",
-   "w": "",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-26T11:52:47.182681Z",
-   "url": "https://asia.nikkei.com/business/tech/semiconductors/nvidia-kioxia-team-on-ai-server-memory-as-alternative-to-south-korean-chips"
-  },
-  {
-   "h": "Asia rejects basis of new Trump tariffs as US gathers China ammunition",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-26T11:52:47.182681Z",
-   "url": "https://asia.nikkei.com/economy/trade-war/trump-tariffs/asia-rejects-basis-of-new-trump-tariffs-as-us-gathers-china-ammunition"
   },
   {
    "h": "Drivers over 70 face eye tests every three years under new plans",
