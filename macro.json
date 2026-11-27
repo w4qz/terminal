@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-27T15:13:17.753721Z",
+ "generated_at": "2026-11-27T16:28:13.166846Z",
  "eco": {
   "prints": [
    {
@@ -103,13 +103,13 @@
    },
    {
     "k": "HICP inflation (euro area, y/y)",
-    "v": 4.0,
-    "prev": 3.8,
+    "v": 1.9,
+    "prev": 2.1,
     "fmt": "%",
-    "ts": "2026-10-01",
+    "ts": "2025-12-01",
     "freq": "M",
-    "src": "Eurostat prc_hicp_minr",
-    "url": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table"
+    "src": "BCE ICP",
+    "url": "https://data.ecb.europa.eu/data/datasets/ICP"
    },
    {
     "k": "Unemployment rate (euro area)",
@@ -462,63 +462,63 @@
    {
     "d": "2027-01-27",
     "pre": 4.127,
-    "post": 4.285,
-    "move_bp": 15.8,
+    "post": 4.29,
+    "move_bp": 16.3,
     "p_cut": 0,
-    "p_hike": 63
+    "p_hike": 65
    },
    {
     "d": "2027-03-17",
-    "pre": 4.285,
-    "post": 4.44,
+    "pre": 4.29,
+    "post": 4.445,
     "move_bp": 15.5,
     "p_cut": 0,
     "p_hike": 62
    },
    {
     "d": "2027-04-28",
-    "pre": 4.44,
-    "post": 4.495,
-    "move_bp": 5.5,
+    "pre": 4.445,
+    "post": 4.505,
+    "move_bp": 6.0,
     "p_cut": 0,
-    "p_hike": 22
+    "p_hike": 24
    },
    {
     "d": "2027-06-09",
-    "pre": 4.495,
-    "post": 4.559,
-    "move_bp": 6.4,
+    "pre": 4.505,
+    "post": 4.576,
+    "move_bp": 7.1,
     "p_cut": 0,
-    "p_hike": 26
+    "p_hike": 29
    },
    {
     "d": "2027-07-28",
-    "pre": 4.559,
-    "post": 4.56,
-    "move_bp": 0.1,
-    "p_cut": 0,
+    "pre": 4.576,
+    "post": 4.575,
+    "move_bp": -0.1,
+    "p_cut": 1,
     "p_hike": 0
    },
    {
     "d": "2027-09-15",
-    "pre": 4.56,
-    "post": 4.56,
+    "pre": 4.575,
+    "post": 4.575,
     "move_bp": 0.0,
     "p_cut": 0,
     "p_hike": 0
    },
    {
     "d": "2027-10-27",
-    "pre": 4.56,
-    "post": 4.525,
-    "move_bp": -3.5,
-    "p_cut": 14,
+    "pre": 4.575,
+    "post": 4.545,
+    "move_bp": -3.0,
+    "p_cut": 12,
     "p_hike": 0
    },
    {
     "d": "2027-11-17",
-    "pre": 4.525,
-    "post": 4.525,
+    "pre": 4.545,
+    "post": 4.545,
     "move_bp": 0.0,
     "p_cut": 0,
     "p_hike": 0
@@ -531,14 +531,14 @@
    "pts": [
     {
      "t": "1M",
-     "y": 4.18,
+     "y": 4.183,
      "y1m": 4.07,
      "ts": "2026-11-27",
      "live": true
     },
     {
      "t": "3M",
-     "y": 4.268,
+     "y": 4.263,
      "y1m": 4.18,
      "ts": "2026-11-27",
      "live": true
@@ -559,49 +559,49 @@
     },
     {
      "t": "2A",
-     "y": 4.681,
+     "y": 4.687,
      "y1m": 4.67,
      "ts": "2026-11-27",
      "live": true
     },
     {
      "t": "3A",
-     "y": 4.683,
+     "y": 4.691,
      "y1m": 4.8,
      "ts": "2026-11-27",
      "live": true
     },
     {
      "t": "5A",
-     "y": 4.717,
+     "y": 4.726,
      "y1m": 4.85,
      "ts": "2026-11-27",
      "live": true
     },
     {
      "t": "7A",
-     "y": 4.8,
+     "y": 4.811,
      "y1m": 4.95,
      "ts": "2026-11-27",
      "live": true
     },
     {
      "t": "10A",
-     "y": 4.91,
+     "y": 4.922,
      "y1m": 5.05,
      "ts": "2026-11-27",
      "live": true
     },
     {
      "t": "20A",
-     "y": 5.353,
+     "y": 5.362,
      "y1m": 5.41,
      "ts": "2026-11-27",
      "live": true
     },
     {
      "t": "30A",
-     "y": 5.309,
+     "y": 5.32,
      "y1m": 5.37,
      "ts": "2026-11-27",
      "live": true
