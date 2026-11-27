@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-27T22:37:15.162015Z",
+ "generated_at": "2026-11-27T23:33:49.230163Z",
  "quotes": {
   "NVDA": {
    "p": 150.49,
@@ -263,8 +263,8 @@
    "prev": 57499.1602,
    "chg": 1218.3203,
    "pct": 2.12,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^N225) — last update failed",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^N225)",
    "ts": "2026-11-27T06:30:00Z",
    "open": 57669.7891,
    "lo": 57447.1602,
@@ -439,10 +439,10 @@
    ]
   },
   "DAX": {
-   "p": 25441.2402,
+   "p": 25431.3496,
    "prev": 25215.5195,
-   "chg": 225.7207,
-   "pct": 0.9,
+   "chg": 215.8301,
+   "pct": 0.86,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^GDAXI)",
    "ts": "2026-11-27T16:30:00Z",
@@ -450,6 +450,7 @@
    "lo": 25292.7598,
    "hi": 25472.1797,
    "h": [
+    25704.02,
     26039.68,
     25818.21,
     25981.09,
@@ -470,15 +471,14 @@
     25337.27,
     25017.81,
     24702.13,
-    25215.52,
-    25441.24
+    25215.52
    ]
   },
   "CAC": {
-   "p": 8156.0898,
+   "p": 8159.29,
    "prev": 8108.7402,
-   "chg": 47.3496,
-   "pct": 0.58,
+   "chg": 50.5498,
+   "pct": 0.62,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^FCHI)",
    "ts": "2026-11-27T16:30:00Z",
@@ -486,6 +486,7 @@
    "lo": 8106.5698,
    "hi": 8172.46,
    "h": [
+    7886.96,
     7970.0,
     7969.42,
     8047.69,
@@ -506,15 +507,14 @@
     8044.84,
     8040.49,
     7980.57,
-    8108.74,
-    8156.09
+    8108.74
    ]
   },
   "SX5E": {
-   "p": 6089.2002,
+   "p": 6086.6699,
    "prev": 6014.7402,
-   "chg": 74.46,
-   "pct": 1.24,
+   "chg": 71.9297,
+   "pct": 1.2,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^STOXX50E)",
    "ts": "2026-11-27T16:30:00Z",
@@ -522,6 +522,7 @@
    "lo": 6029.4199,
    "hi": 6098.04,
    "h": [
+    6167.81,
     6207.07,
     6131.31,
     6176.06,
@@ -542,8 +543,7 @@
     6074.47,
     6003.76,
     5894.46,
-    6014.74,
-    6089.2
+    6014.74
    ]
   },
   "EURUSD": {
@@ -802,17 +802,17 @@
    ]
   },
   "BTC": {
-   "p": 59650.3008,
+   "p": 59783.3984,
    "prev": 60494.7109,
-   "chg": -844.4102,
-   "pct": -1.4,
+   "chg": -711.3125,
+   "pct": -1.18,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-27T22:37:15.162015Z",
+   "ts": "2026-11-27T23:33:49.230163Z",
    "open": 60495.9492,
    "lo": 59007.8906,
    "hi": 62085.707,
-   "vol": 32067471360,
+   "vol": 31934543872,
    "h": [
     75746.93,
     75747.58,
@@ -835,7 +835,7 @@
     59747.77,
     60378.2,
     60494.71,
-    59649.12
+    59783.4
    ]
   }
  },
@@ -2122,9 +2122,9 @@
    "netIncome": -628267008,
    "shares": 311349798,
    "beta": 2.847,
-   "target": 63.35,
+   "target": 58.1833,
    "targetHi": 108.0,
-   "targetLo": 39.0,
+   "targetLo": 30.0,
    "rating": "Buy",
    "analysts": 12,
    "revGrowth": 187.1,
@@ -2212,66 +2212,120 @@
  ],
  "news": [
   {
-   "h": "60 Degrees Pharmaceuticals reçoit un avis du Nasdaq pour insuffisance de capitaux propres",
-   "w": "",
+   "h": "I hate that Jensen Huang is back at Nvidia, but I love what it’s done for my 401(k). Am I a hypocrite?",
+   "w": "Doing nothing and maintaining an even temperament is often the work of gods.",
    "syms": [
-    "NDX"
+    "NVDA"
    ],
-   "src": "Investing.com France",
-   "ts": "2026-11-27T22:15:43Z",
-   "url": "https://fr.investing.com/news/sec-filings/60-degrees-pharmaceuticals-recoit-un-avis-du-nasdaq-pour-insuffisance-de-capitaux-propres-93CH-3714857"
+   "src": "MarketWatch",
+   "ts": "2026-11-27T23:30:00Z",
+   "url": "https://www.marketwatch.com/story/i-hate-that-jensen-huang-is-back-at-nvidia-but-i-love-what-its-done-for-my-401-k-am-i-a-hypocrite-f63c0303?mod=mw_rss_topstories"
   },
   {
-   "h": "Les actionnaires de Distribution Solutions Group approuvent la fusion avec Eclipse Parent Acquisitions",
+   "h": "Saba Capital vend 8.031$ de parts du Pimco Dynamic Income Strategy Fund",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-27T22:11:46Z",
-   "url": "https://fr.investing.com/news/sec-filings/les-actionnaires-de-distribution-solutions-group-approuvent-la-fusion-avec-eclipse-parent-acquisitions-93CH-3714856"
+   "ts": "2026-11-27T23:20:28Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/saba-capital-vend-8031-de-parts-du-pimco-dynamic-income-strategy-fund-93CH-3714880"
   },
   {
-   "h": "Les actions de Vivos Therapeutics suspendues du NASDAQ",
-   "w": "",
-   "syms": [
-    "NDX"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-11-27T22:07:27Z",
-   "url": "https://fr.investing.com/news/sec-filings/les-actions-de-vivos-therapeutics-suspendues-du-nasdaq-93CH-3714855"
-  },
-  {
-   "h": "Frontière Nuclear reçoit un avis de non-conformité du NASDAQ sur le prix minimum",
-   "w": "",
-   "syms": [
-    "NDX"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-11-27T22:05:21Z",
-   "url": "https://fr.investing.com/news/company-news/frontiere-nuclear-recoit-un-avis-de-nonconformite-du-nasdaq-sur-le-prix-minimum-93CH-3714854"
-  },
-  {
-   "h": "GoGo AI Network procède à un regroupement d’actions de 10 pour 1 en décembre",
+   "h": "Le PDG de Vaxcyte Inc, Grant Pickering, cède pour 2,27 millions $ d’actions",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-27T22:05:13Z",
-   "url": "https://fr.investing.com/news/company-news/gogo-ai-network-procede-a-un-regroupement-dactions-de-10-pour-1-en-decembre-93CH-3714853"
+   "ts": "2026-11-27T23:17:29Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-vaxcyte-inc-grant-pickering-cede-pour-227-millions--dactions-93CH-3714879"
   },
   {
-   "h": "A SPAC II Acquisition Corp émet un billet à ordre de 500.000$ à son sponsor",
+   "h": "Le président exécutif d’Universal Insurance vend pour 966.432$ d’actions",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-27T22:03:20Z",
-   "url": "https://fr.investing.com/news/sec-filings/a-spac-ii-acquisition-corp-emet-un-billet-a-ordre-de-500000-a-son-sponsor-93CH-3714852"
+   "ts": "2026-11-27T23:16:48Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-president-executif-duniversal-insurance-vend-pour-966432-dactions-93CH-3714878"
   },
   {
-   "h": "Une administratrice de LENSAR Inc vend des actions pour 90.640$",
+   "h": "Un dirigeant de Geospace Technologies achète pour 10.844$ d’actions ordinaires",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-27T22:01:35Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/une-administratrice-de-lensar-inc-vend-des-actions-pour-90640-93CH-3714851"
+   "ts": "2026-11-27T23:16:43Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-de-geospace-technologies-achete-pour-10844-dactions-ordinaires-93CH-3714877"
+  },
+  {
+   "h": "Saba Capital achète 14.196$ de Gabelli Healthcare & WellnessRx",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-27T23:16:20Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/saba-capital-achete-14196-de-gabelli-healthcare--wellnessrx-93CH-3714876"
+  },
+  {
+   "h": "Clearing out my parents’ house was a legal nightmare. How can I downsize without putting my kids through the same ordeal?",
+   "w": "Some countercultural advice this Black Friday: stop buying stuff, plus other rules for downsizing.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-27T23:15:00Z",
+   "url": "https://www.marketwatch.com/story/clearing-out-my-parents-house-was-a-legal-nightmare-how-can-i-downsize-without-putting-my-children-through-the-same-ordeal-6537d804?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Casdin Partners achète pour 2,1 millions $ d’actions Standard Biotools Inc",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-27T23:06:20Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/casdin-partners-achete-pour-21-millions--dactions-standard-biotools-inc-93CH-3714875"
+  },
+  {
+   "h": "Un administrateur de BETA Technologies achète pour 1,6M$ d’actions ordinaires",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-27T23:02:16Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-beta-technologies-achete-pour-16m-dactions-ordinaires-93CH-3714873"
+  },
+  {
+   "h": "Le PDG de Post Holdings Inc vend des actions pour 427.581$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-27T23:01:56Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-post-holdings-inc-vend-des-actions-pour-427581-93CH-3714872"
+  },
+  {
+   "h": "Un cadre de Dolby Laboratories cède des actions pour 166.881$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-27T23:01:47Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-cadre-de-dolby-laboratories-cede-des-actions-pour-166881-93CH-3714871"
+  },
+  {
+   "h": "Saba Capital achète 147.823$ dans Ellsworth Convertible Growth & IF",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-27T23:01:23Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/saba-capital-achete-147823-dans-ellsworth-convertible-growth--if-93CH-3714870"
+  },
+  {
+   "h": "OpenAI countersues Apple for stealing trade secrets",
+   "w": "The ChatGPT maker also accuses the tech giant of ‘coercing and threatening’ suppliers who work with both companies, as legal battle escalates",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-27T23:00:08Z",
+   "url": "https://www.ft.com/content/af599e07-d44c-4068-ab84-6ee3c85551d4?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "S&P cuts France outlook to negative",
+   "w": "Rating agency says political instability will make it harder for the country to tackle its public deficit",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-27T22:45:36Z",
+   "url": "https://www.ft.com/content/4e16110a-9604-4455-8557-4edece5df01a?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "Inflation has shoppers hunting for value. That bodes well for Black Friday",
@@ -2282,45 +2336,12 @@
    "url": "https://www.cnbc.com/2026/11/27/black-friday-2026-inflation-value-deals.html"
   },
   {
-   "h": "Le directeur financier d’Aspire Biopharma Holdings Inc démissionne",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-27T21:59:45Z",
-   "url": "https://fr.investing.com/news/sec-filings/le-directeur-financier-daspire-biopharma-holdings-inc-demissionne-93CH-3714850"
-  },
-  {
-   "h": "Gossan Resources finalise un placement privé de 641.875 $ CA",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-27T21:57:22Z",
-   "url": "https://fr.investing.com/news/company-news/gossan-resources-finalise-un-placement-prive-de-641875--ca-93CH-3714849"
-  },
-  {
-   "h": "Constellation Acquisition lève 5.000$ pour prolonger son délai de regroupement",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-27T21:54:41Z",
-   "url": "https://fr.investing.com/news/sec-filings/constellation-acquisition-leve-5000-pour-prolonger-son-delai-de-regroupement-93CH-3714848"
-  },
-  {
    "h": "OpenAI accuse Apple de vol de secrets et de pressions sur ses fournisseurs",
    "w": "Les deux partenaires se rapprochent de mois en mois d’une situation de rivaux, et se rendent désormais coup pour coup devant la justice.",
    "syms": [],
    "src": "Le Monde — Économie",
    "ts": "2026-11-27T21:49:36Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/27/openai-accuse-apple-de-vol-de-secrets-et-de-pressions-sur-ses-fournisseurs_6815936_3234.html"
-  },
-  {
-   "h": "S&P cuts France outlook to negative",
-   "w": "Rating agency says political instability will make it harder for the country to tackle its public deficit",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-27T21:34:13Z",
-   "url": "https://www.ft.com/content/4e16110a-9604-4455-8557-4edece5df01a?syn-25a6b1a6=1",
-   "mine": 1
   },
   {
    "h": "L’agence S&P menace de dégrader encore la note de la France, entrée en récession",
@@ -2419,15 +2440,6 @@
    "url": "https://www.cnbc.com/2026/11/27/norse-atlantic-bankruptcy-fuel-costs.html"
   },
   {
-   "h": "OpenAI countersues Apple for stealing trade secrets",
-   "w": "The ChatGPT maker also accuses the tech giant of ‘coercing and threatening’ suppliers who work with both companies, as legal battle escalates",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-27T18:20:05Z",
-   "url": "https://www.ft.com/content/af599e07-d44c-4068-ab84-6ee3c85551d4?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "AI and the decryption nightmare",
    "w": "New breakthroughs call for faster upgrades to security, not panic",
    "syms": [],
@@ -2480,6 +2492,30 @@
    "url": "https://www.lemonde.fr/economie/article/2026/11/27/les-distributeurs-independants-de-sfr-qui-craignent-de-ne-pas-survivre-au-rachat-de-l-operateur-l-attaquent-en-justice_6815915_3234.html"
   },
   {
+   "h": "China's auto exports to rise 50% amid intensifying competition at home",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-27T17:33:49.230163Z",
+   "url": "https://asia.nikkei.com/business/automobiles/china-s-auto-exports-to-rise-50-amid-intensifying-competition-at-home"
+  },
+  {
+   "h": "Taiwan elections: 5 things to know about city races eyed by China and US",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-27T17:33:49.230163Z",
+   "url": "https://asia.nikkei.com/politics/taiwan-elections-5-things-to-know-about-city-races-eyed-by-china-and-us"
+  },
+  {
+   "h": "Trump's 'double Kissinger' can reduce global nuclear risks",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-27T17:33:49.230163Z",
+   "url": "https://asia.nikkei.com/opinion/trump-s-double-kissinger-can-reduce-global-nuclear-risks"
+  },
+  {
    "h": "Thames Water seeks to delay debt repayments to secure £2.4bn emergency loan",
    "w": "Fresh funding will keep the embattled utility afloat but pile on hundreds of millions of pounds in additional financing costs",
    "syms": [],
@@ -2487,14 +2523,6 @@
    "ts": "2026-11-27T17:33:17Z",
    "url": "https://www.ft.com/content/f7c0d928-ed8b-4835-9a60-1acf098a98c1?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Clearing out my parents’ house was a legal nightmare. How can I downsize without putting my kids through the same ordeal?",
-   "w": "Some countercultural advice this Black Friday: stop buying stuff, plus other rules for downsizing.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-27T17:31:00Z",
-   "url": "https://www.marketwatch.com/story/clearing-out-my-parents-house-was-a-legal-nightmare-how-can-i-downsize-without-putting-my-children-through-the-same-ordeal-6537d804?mod=mw_rss_topstories"
   },
   {
    "h": "Verizon in talks over $6bn deal for Fidium to boost broadband footprint",
@@ -2726,14 +2754,6 @@
    "url": "https://www.marketwatch.com/story/my-friends-play-credit-card-roulette-to-see-who-pays-for-dinner-but-one-winner-still-venmoed-me-afterward-should-i-say-something-0a657eee?mod=mw_rss_topstories"
   },
   {
-   "h": "Artificial intelligence usage is exploding, yet spending is stalling. Why a foundational rule of economics is breaking.",
-   "w": "For frontier model lab developers, the increased consumption of AI tokens (the means by which they get paid for their compute) is a positive. However, they don’t seem to be generating revenues from it at the same rate.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-27T15:01:00Z",
-   "url": "https://www.marketwatch.com/story/artificial-intelligence-usage-is-exploding-yet-spending-is-stalling-why-a-foundational-rule-of-economics-is-breaking-9c7ad4b3?mod=mw_rss_topstories"
-  },
-  {
    "h": "Elections législatives en Espagne : les graphiques pour comprendre le dynamisme économique du pays et ses limites",
    "w": "« Le modèle espagnol sous pression » (2/3). Dopée par l’immigration, le tourisme et les fonds européens, la croissance espagnole surclasse celle de ses voisins. Malgré ces bonnes performances, le chômage reste élevé.",
    "syms": [],
@@ -2766,14 +2786,6 @@
    "url": "https://asia.nikkei.com/business/business-trends/breguet-other-swiss-watch-brands-make-time-for-young-wealthy-thais"
   },
   {
-   "h": "Indonesia, Philippines and UAE to begin talks on joining CPTPP trade pact",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-27T14:33:40.320315Z",
-   "url": "https://asia.nikkei.com/economy/indonesia-philippines-and-uae-to-begin-talks-on-joining-cptpp-trade-pact"
-  },
-  {
    "h": "EU leaders fail to break $1.7 trillion budget deadlock as political pressure mounts",
    "w": "EU leaders failed to break a deadlock over the bloc’s budget, with talks set to resume in December as a key deadline looms.",
    "syms": [],
@@ -2799,22 +2811,6 @@
    "ts": "2026-11-27T13:39:05Z",
    "url": "https://www.ft.com/content/088d3368-bb8b-4ff3-9df7-a7680d4d81b2?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Japan auto parts makers lose global lead as China drives EV transition",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-27T13:30:36.899156Z",
-   "url": "https://asia.nikkei.com/business/automobiles/japan-auto-parts-makers-lose-global-lead-as-china-drives-ev-transition"
-  },
-  {
-   "h": "Toyota starts China comeback bid with extended-range EV",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-27T13:30:36.899156Z",
-   "url": "https://asia.nikkei.com/spotlight/electric-cars-in-china/toyota-starts-china-comeback-bid-with-extended-range-ev"
   },
   {
    "h": "The reforms the NHS needs (and those it doesn’t)",
@@ -3078,9 +3074,9 @@
   }
  ],
  "summary": {
-  "text": "Global equity markets rallied, led by US tech with the Nasdaq gaining 2.61% and the S&P 500 rising 1.6%, while the VIX fell 11.16% to 23.81. Sentiment was driven by tech swings, Jensen Huang's return to Nvidia, and OpenAI accusing Apple of trade secret theft, while European markets absorbed S&P cutting France's outlook to negative amid recession.\n\nThe US Dollar Index rose 0.33% to 104.014, with the euro falling 0.29% to 1.0939 and sterling down 0.11% to 1.3099. In commodities, gold jumped 3.93% to 3,674.6001, whereas Brent dropped 4.77% to 90.1 and crude fell 1.03% to 82.82. Bitcoin declined 1.4% to 59,650.3008.\n\nLooking ahead, market participants are monitoring warnings behind the recent rally alongside persistent artificial intelligence jitters. Attention also focuses on Black Friday retail strength as inflation drives shoppers toward value, as well as potential further sovereign rating downgrades for France.",
+  "text": "Global equities rallied, driven by a rebound in US technology shares where the NDX rose 2.61% to 26726.3887 and NVDA gained 0.8% to 150.49. Market volatility retreated with the VIX dropping 11.16% to 23.81. Meanwhile, OpenAI countersued Apple over alleged trade secret theft, and S&P lowered France's credit outlook to negative as the country entered recession, though the CAC gained 0.62% to 8159.29.\n\nIn currencies, the DXY gained 0.33% to 104.014, pushing EURUSD down 0.29% to 1.0939 and USDJPY up 0.19% to 159.515. Commodities diverged sharply: gold surged 3.93% to 3674.6001, while Brent tumbled 4.77% to 90.1 and CL declined 1.03% to 82.82. Bitcoin dropped 1.18% to 59783.3984.\n\nLooking ahead, investors are watching consumer inflation trends heading into Black Friday, fallout from the OpenAI-Apple legal dispute, and France's fiscal outlook following S&P's warning.",
   "model": "gemini-flash-latest",
   "lang": "en",
-  "ts": "2026-11-27T22:37:15.162015Z"
+  "ts": "2026-11-27T23:33:49.230163Z"
  }
 }
