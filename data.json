@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-26T22:54:57.709374Z",
+ "generated_at": "2026-11-26T23:53:15.008138Z",
  "quotes": {
   "NVDA": {
    "p": 149.3,
@@ -444,8 +444,8 @@
    "prev": 24702.1309,
    "chg": 513.3887,
    "pct": 2.08,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^GDAXI)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^GDAXI) — last update failed",
    "ts": "2026-11-26T16:30:00Z",
    "open": 25153.1094,
    "lo": 25114.25,
@@ -476,10 +476,10 @@
    ]
   },
   "CAC": {
-   "p": 8108.7402,
+   "p": 8119.3301,
    "prev": 7980.5698,
-   "chg": 128.1704,
-   "pct": 1.61,
+   "chg": 138.7603,
+   "pct": 1.74,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^FCHI)",
    "ts": "2026-11-26T16:30:00Z",
@@ -487,6 +487,7 @@
    "lo": 8093.2402,
    "hi": 8144.54,
    "h": [
+    7887.14,
     7886.96,
     7970.0,
     7969.42,
@@ -507,19 +508,23 @@
     7927.75,
     8044.84,
     8040.49,
-    7980.57,
-    8108.74
+    7980.57
    ]
   },
   "SX5E": {
-   "p": 6014.7402,
+   "p": 6020.4702,
    "prev": 5894.46,
-   "chg": 120.2803,
-   "pct": 2.04,
+   "chg": 126.0103,
+   "pct": 2.14,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (^STOXX50E)",
    "ts": "2026-11-26T16:30:00Z",
+   "open": 6000.6401,
+   "lo": 5894.46,
+   "hi": 6038.75,
+   "vol": 24801900,
    "h": [
+    6164.69,
     6167.81,
     6207.07,
     6131.31,
@@ -540,21 +545,20 @@
     5941.95,
     6074.47,
     6003.76,
-    5894.46,
-    6014.74
+    5894.46
    ]
   },
   "EURUSD": {
-   "p": 1.0975,
+   "p": 1.0973,
    "prev": 1.0962,
-   "chg": 0.0012,
-   "pct": 0.11,
+   "chg": 0.0011,
+   "pct": 0.1,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (EURUSD=X)",
-   "ts": "2026-11-26T22:54:57.709374Z",
-   "open": 1.0978,
-   "lo": 1.096,
-   "hi": 1.0991,
+   "ts": "2026-11-26T23:53:15.008138Z",
+   "open": 1.0977,
+   "lo": 1.0972,
+   "hi": 1.0977,
    "h": [
     1.112966,
     1.115573,
@@ -577,20 +581,20 @@
     1.097153,
     1.09081,
     1.096227,
-    1.097454
+    1.097333
    ]
   },
   "USDJPY": {
-   "p": 159.224,
+   "p": 159.297,
    "prev": 159.262,
-   "chg": -0.038,
-   "pct": -0.02,
+   "chg": 0.035,
+   "pct": 0.02,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (JPY=X)",
-   "ts": "2026-11-26T22:54:57.709374Z",
-   "open": 159.116,
-   "lo": 158.946,
-   "hi": 159.338,
+   "ts": "2026-11-26T23:53:15.008138Z",
+   "open": 159.226,
+   "lo": 159.204,
+   "hi": 159.301,
    "h": [
     157.99,
     157.83,
@@ -613,20 +617,20 @@
     158.93,
     159.01,
     159.26,
-    159.21
+    159.29
    ]
   },
   "GBPUSD": {
-   "p": 1.3111,
+   "p": 1.3107,
    "prev": 1.3112,
-   "chg": -0.0001,
-   "pct": -0.01,
+   "chg": -0.0005,
+   "pct": -0.04,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
-   "ts": "2026-11-26T22:54:57.709374Z",
-   "open": 1.3119,
-   "lo": 1.3096,
-   "hi": 1.3123,
+   "ts": "2026-11-26T23:53:15.008138Z",
+   "open": 1.3108,
+   "lo": 1.3104,
+   "hi": 1.311,
    "h": [
     1.33063,
     1.3328,
@@ -649,7 +653,7 @@
     1.309466,
     1.303475,
     1.311183,
-    1.31108
+    1.310668
    ]
   },
   "DXY": {
@@ -685,7 +689,7 @@
     104.32,
     103.81,
     103.67,
-    103.75
+    103.78
    ]
   },
   "XAU": {
@@ -699,7 +703,7 @@
    "open": 3619.8,
    "lo": 3578.8,
    "hi": 3634.7,
-   "vol": 81328,
+   "vol": 82885,
    "h": [
     4051.6,
     4031.4,
@@ -722,7 +726,7 @@
     3651.4,
     3561.9,
     3535.8,
-    3593.4
+    3593.1
    ]
   },
   "CL": {
@@ -736,7 +740,7 @@
    "open": 84.09,
    "lo": 83.16,
    "hi": 85.23,
-   "vol": 91029,
+   "vol": 91843,
    "h": [
     102.78,
     102.0,
@@ -759,7 +763,7 @@
     80.17,
     82.05,
     83.68,
-    84.91
+    84.94
    ]
   },
   "BRENT": {
@@ -773,7 +777,7 @@
    "open": 90.57,
    "lo": 89.77,
    "hi": 92.04,
-   "vol": 17818,
+   "vol": 17898,
    "h": [
     115.32,
     114.88,
@@ -796,21 +800,21 @@
     89.37,
     91.4,
     94.61,
-    91.73
+    91.58
    ]
   },
   "BTC": {
-   "p": 60551.4219,
+   "p": 60450.9688,
    "prev": 60378.1992,
-   "chg": 173.2227,
-   "pct": 0.29,
+   "chg": 72.7695,
+   "pct": 0.12,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-26T22:54:57.709374Z",
+   "ts": "2026-11-26T23:53:15.008138Z",
    "open": 60378.5703,
    "lo": 60040.082,
    "hi": 61040.9453,
-   "vol": 22184386560,
+   "vol": 21790736384,
    "h": [
     75942.12,
     75746.93,
@@ -833,7 +837,7 @@
     61210.98,
     59747.77,
     60378.2,
-    60551.42
+    60450.97
    ]
   }
  },
@@ -2209,6 +2213,57 @@
  ],
  "news": [
   {
+   "h": "Tribunal upholds decision to ban two Iran-linked figures from UK charities",
+   "w": "Judgments mark a victory for the Charity Commission’s efforts to combat alleged Iranian state support for extremism in Britain",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-26T23:36:58Z",
+   "url": "https://www.ft.com/content/fb39f67c-cdd4-4322-895f-e069c95a6166?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Musk annonce un don annuel supplémentaire d’actions SpaceX aux enfants américains",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-26T23:31:47Z",
+   "url": "https://fr.investing.com/news/stock-market-news/musk-annonce-un-don-annuel-supplementaire-dactions-spacex-aux-enfants-americains-3714130"
+  },
+  {
+   "h": "Le directeur technique d’eBay Inc vend des actions pour 4,8 millions $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-26T23:17:52Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-technique-debay-inc-vend-des-actions-pour-48-millions--93CH-3714128"
+  },
+  {
+   "h": "Un dirigeant d’eBay Inc vend des actions pour 8,48 millions $",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-26T23:17:50Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-debay-inc-vend-des-actions-pour-848-millions--93CH-3714127"
+  },
+  {
+   "h": "Un dirigeant de BKV Corp vend des actions pour 86.835$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-26T23:17:06Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-de-bkv-corp-vend-des-actions-pour-86835-93CH-3714126"
+  },
+  {
+   "h": "Asia made a big AI bet on Nvidia. What happens now?",
+   "w": "Asian stocks have been on a rollercoaster ride after Jensen Huang's shock return as Nvidia CEO.",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "BBC — Business",
+   "ts": "2026-11-26T23:08:12Z",
+   "url": "https://www.bbc.co.uk/news/articles/cqevr4lnd1nxo?at_medium=RSS&at_campaign=rss"
+  },
+  {
    "h": "Allegiance Resources nomme un nouveau PDG et un membre du conseil",
    "w": "",
    "syms": [],
@@ -2300,14 +2355,6 @@
    "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-california-water-service-group-cede-des-actions-pour-29-93CH-3714111"
   },
   {
-   "h": "Un administrateur d’Auburn National Bancorporation achète pour 5.050$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-26T20:01:44Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-dauburn-national-bancorporation-achete-pour-5050-dactions-93CH-3714110"
-  },
-  {
    "h": "Faisal Islam: Why Trump's new tariffs are less of a threat",
    "w": "Other countries have rerouted trade in response to his first tariff salvo, now they are looking beyond Trump's tenure.",
    "syms": [],
@@ -2316,36 +2363,12 @@
    "url": "https://www.bbc.co.uk/news/articles/c6r7g4e3yep1o?at_medium=RSS&at_campaign=rss"
   },
   {
-   "h": "Le PDG de Kodiak AI Inc achète pour 2,2 millions $ d’actions ordinaires",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-26T19:02:01Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-kodiak-ai-inc-achete-pour-22-millions--dactions-ordinaires-93CH-3714098"
-  },
-  {
-   "h": "Le président de Saul Centers Inc acquiert pour 100k$ d’actions ordinaires",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-26T19:01:34Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-president-de-saul-centers-inc-acquiert-pour-100k-dactions-ordinaires-93CH-3714097"
-  },
-  {
    "h": "A 66-year-old nurse is facing down retirement with just $500 saved. Who’s to blame?",
    "w": "“Retirement is a financial status, not an age.”",
    "syms": [],
    "src": "MarketWatch",
    "ts": "2026-11-26T19:00:00Z",
    "url": "https://www.marketwatch.com/story/a-66-year-old-nurse-faces-retirement-with-just-500-saved-whos-to-blame-4249a0fd?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Minesto AB à Stora Aktiedagarna 2026 : l’énergie marémotrice progresse",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-26T18:58:53Z",
-   "url": "https://fr.investing.com/news/transcripts/minesto-ab-a-stora-aktiedagarna-2026--lenergie-maremotrice-progresse-93CH-3714096"
   },
   {
    "h": "UK to pay additional ‘participation fee’ as price of EU reset deal",
@@ -2424,6 +2447,24 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-26T18:00:14Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/26/rtl-les-journalistes-denoncent-le-management-de-la-direction-de-la-redaction-sur-fond-d-inquietudes-sur-la-baisse-des-moyens-alloues_6815588_3234.html"
+  },
+  {
+   "h": "Humanoid robots meet factory reality on Toyota's home turf",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-26T17:53:15.008138Z",
+   "url": "https://asia.nikkei.com/business/automobiles/humanoid-robots-meet-factory-reality-on-toyota-s-home-turf"
+  },
+  {
+   "h": "Pakistan-US economic ties to grow further, with exception of crypto",
+   "w": "",
+   "syms": [
+    "BTC"
+   ],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-26T17:53:15.008138Z",
+   "url": "https://asia.nikkei.com/economy/trade/pakistan-us-economic-ties-to-grow-further-with-exception-of-crypto2"
   },
   {
    "h": "Semiconductor chips are the new oil. Here's why",
@@ -2715,7 +2756,7 @@
    "h": "Hawkish Fed poised to raise rates despite stock market turmoil",
    "w": "Inflation is top concern for US central bank officials even as tech-led sell-off triggers fears for economy",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — us",
    "ts": "2026-11-26T14:58:45Z",
    "url": "https://www.ft.com/content/3890f725-66dd-4613-8a60-d9e3ea38d25a?syn-25a6b1a6=1",
    "mine": 1
@@ -2859,14 +2900,6 @@
    "url": "https://www.bbc.co.uk/news/articles/c62klzxvyzyqo?at_medium=RSS&at_campaign=rss"
   },
   {
-   "h": "What is ‘texture-maxxing’? The food trend putting crunch on the menu",
-   "w": "Texture-maxxing is the latest food trend taking social media by storm as consumers, driven by aesthetics and taste, are now looking for a sensory experience too.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-26T13:34:51Z",
-   "url": "https://www.cnbc.com/2026/11/26/texture-maxxing-food-trends-gen-z.html"
-  },
-  {
    "h": "British and European banks have taken on a lot of France risk",
    "w": "Toulouse or not Toulouse",
    "syms": [],
@@ -2903,28 +2936,20 @@
    "url": "https://asia.nikkei.com/business/automobiles/nissan-poised-to-import-cars-from-china-to-japan-for-first-time"
   },
   {
-   "h": "Suzuki turns to rare metal-free batteries amid China supply risks",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-26T12:54:51.044929Z",
-   "url": "https://asia.nikkei.com/business/automobiles/electric-vehicles/suzuki-turns-to-rare-metal-free-batteries-amid-china-supply-risks"
-  },
-  {
-   "h": "Wife of Japanese journalist held in Russia pleads for his release",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-26T12:54:51.044929Z",
-   "url": "https://asia.nikkei.com/politics/international-relations/wife-of-japanese-journalist-held-in-russia-pleads-for-his-release"
-  },
-  {
    "h": "Corse : le tourisme reste une locomotive de la croissance, malgré des résultats contrastés",
    "w": "Entre 2000 et 2023, le PIB insulaire a augmenté de 2,4 % par an, soit deux fois plus vite qu’en France hexagonale, notamment grâce à 2 milliards d’euros d’investissements publics. Le secteur touristique, stratégique, présente pour sa part des fragilités.",
    "syms": [],
    "src": "Le Monde — Économie",
    "ts": "2026-11-26T12:49:04Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/26/corse-le-tourisme-reste-une-locomotive-de-la-croissance-malgre-des-resultats-contrastes_6815532_3234.html"
+  },
+  {
+   "h": "U.S. tariff-hike threats pile pressure on partners to sign trade deals",
+   "w": "The U.S. planned a fresh tariff salvo on 14 trading partners, while offering some countries lower rates if they secure trade deals with Washington.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-26T12:46:55Z",
+   "url": "https://www.cnbc.com/2026/11/26/us-tariffs-hike-trade-agreement.html"
   },
   {
    "h": "Elon Musk promet d’offrir deux actions de SpaceX à « chaque enfant » aux Etats-Unis",
@@ -2959,14 +2984,6 @@
    "ts": "2026-11-26T12:23:57Z",
    "url": "https://www.ft.com/content/3f577839-deed-40f4-af9f-bf8fb54890e3?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Global stocks rally as investors shrug off U.S. tariffs and AI jitters to 'fish for bargains'",
-   "w": "Investors appeared to have shrugged off a fresh set of tariffs unveiled by the White House on Wednesday, targeting more than a dozen major trading partners.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-26T12:22:25Z",
-   "url": "https://www.cnbc.com/2026/11/26/stock-markets-today-.html"
   },
   {
    "h": "New boss appointed to lead Travelodge",
@@ -3066,21 +3083,12 @@
    "ts": "2026-11-26T11:00:06Z",
    "url": "https://www.ft.com/content/1f4095cb-c032-414f-9858-554c8b82b145?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "VC investors dump old funds at steep discounts to chase AI riches",
-   "w": "Pension funds and endowments ditch legacy stakes at knockdown prices to free up cash for next-generation tech start-ups",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-26T11:00:06Z",
-   "url": "https://www.ft.com/content/0278cbea-a0b6-4a30-80f2-f31ac6657f11?syn-25a6b1a6=1",
-   "mine": 1
   }
  ],
  "summary": {
-  "text": "Global equities faced broad declines, with the Nikkei 225 falling 2.6% to 57117.1094 and the DAX sliding 1.12% to 24736.9902. In the US, the Nasdaq 100 slipped 0.64% to 26046.8965, weighed down by Nvidia dropping 3.91% to 149.3, which helped drive the VIX up 7.32% to 28.29. Conversely, the Dow Jones added 0.33% to 50182.9492, and AST SpaceMobile surged 10.25% to 26.02 following US approval of a SpaceX satellite initiative.\n\nThe dollar index slipped 0.11% to 103.696, with EUR/USD rising 0.1% to 1.0973 and USD/JPY edging down to 159.112. Energy was unchanged, with Brent at 90.67 and WTI at 84.05, while gold sat flat at 3602.2. Bitcoin gained 1.99% to 60934.8906.\n\nAttention turns to the French 2027 budget after the Senate approved a five-billion-euro levy on large corporations, while Crown PropTech shareholders approved a merger with Mkango Rare Earths.",
+  "text": "European bourses gained strongly, with the Euro Stoxx 50 up 2.14% and the DAX advancing 2.08%, while US equities were weighed down by tech weakness as Nvidia dropped 3.91% and SAP weighed cutting at least 10,000 jobs. The S&P 500 shed 0.25%, despite a massive upward revision to third-quarter GDP that prompted calls for an inquiry.\n\nIn rates, Canadian bonds extended their rise despite AI turbulence. The dollar index edged up 0.14% to 103.81, with EURUSD at 1.0973 and USDJPY at 159.297. Commodities were highlighted by gold jumping 2.39% to 3620.40, while oil diverged as WTI crude gained 0.88% to 84.42 and Brent fell 3.64% to 91.17.\n\nGoing forward, monitor the debate around Trump's tariff policies, geopolitical developments following a fatal drone strike in Kuwait, and terms of the UK-EU reset agreement.",
   "model": "gemini-flash-latest",
   "lang": "en",
-  "ts": "2026-11-26T00:23:10.947856Z"
+  "ts": "2026-11-26T23:53:15.008138Z"
  }
 }
