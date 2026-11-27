@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-27T19:30:36.899156Z",
+ "generated_at": "2026-11-27T20:33:40.320315Z",
  "quotes": {
   "NVDA": {
    "p": 150.49,
@@ -123,7 +123,7 @@
    "open": 26479.9707,
    "lo": 26166.8652,
    "hi": 26757.1973,
-   "vol": 1001848000,
+   "vol": 1013752000,
    "h": [
     29813.16,
     29402.51,
@@ -191,8 +191,8 @@
    "prev": 2704.0601,
    "chg": 46.2371,
    "pct": 1.71,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^RUT)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^RUT) — last update failed",
    "ts": "2026-11-27T18:00:00Z",
    "open": 2721.3926,
    "lo": 2721.3926,
@@ -227,7 +227,7 @@
    "prev": 26.8,
    "chg": -2.99,
    "pct": -11.16,
-   "st": "DELAYED_15M",
+   "st": "EOD",
    "src": "Yahoo Finance via yfinance (^VIX)",
    "ts": "2026-11-27T18:30:00Z",
    "open": 24.89,
@@ -547,13 +547,13 @@
    ]
   },
   "EURUSD": {
-   "p": 1.0936,
+   "p": 1.0939,
    "prev": 1.097,
-   "chg": -0.0034,
-   "pct": -0.31,
+   "chg": -0.0032,
+   "pct": -0.29,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (EURUSD=X)",
-   "ts": "2026-11-27T19:30:00Z",
+   "ts": "2026-11-27T20:33:40.320315Z",
    "open": 1.0977,
    "lo": 1.0935,
    "hi": 1.0988,
@@ -579,17 +579,17 @@
     1.09081,
     1.096227,
     1.097008,
-    1.093613
+    1.093853
    ]
   },
   "USDJPY": {
-   "p": 159.564,
+   "p": 159.551,
    "prev": 159.215,
-   "chg": 0.349,
-   "pct": 0.22,
+   "chg": 0.336,
+   "pct": 0.21,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (JPY=X)",
-   "ts": "2026-11-27T19:30:36.899156Z",
+   "ts": "2026-11-27T20:33:40.320315Z",
    "open": 159.226,
    "lo": 159.135,
    "hi": 159.595,
@@ -615,17 +615,17 @@
     159.01,
     159.26,
     159.21,
-    159.56
+    159.55
    ]
   },
   "GBPUSD": {
-   "p": 1.3092,
+   "p": 1.3097,
    "prev": 1.3113,
-   "chg": -0.0021,
-   "pct": -0.16,
+   "chg": -0.0016,
+   "pct": -0.12,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (GBPUSD=X)",
-   "ts": "2026-11-27T19:30:00Z",
+   "ts": "2026-11-27T20:33:40.320315Z",
    "open": 1.3108,
    "lo": 1.3092,
    "hi": 1.3135,
@@ -651,7 +651,7 @@
     1.303475,
     1.311183,
     1.311303,
-    1.309209
+    1.309672
    ]
   },
   "DXY": {
@@ -687,7 +687,7 @@
     104.32,
     103.81,
     103.67,
-    104.05
+    104.04
    ]
   },
   "XAU": {
@@ -701,7 +701,7 @@
    "open": 3619.8,
    "lo": 3578.8,
    "hi": 3712.8,
-   "vol": 226824,
+   "vol": 228331,
    "h": [
     4051.6,
     4031.4,
@@ -738,7 +738,7 @@
    "open": 84.09,
    "lo": 82.57,
    "hi": 86.6,
-   "vol": 246019,
+   "vol": 254754,
    "h": [
     102.78,
     102.0,
@@ -761,7 +761,7 @@
     80.17,
     82.05,
     83.68,
-    83.01
+    83.08
    ]
   },
   "BRENT": {
@@ -775,7 +775,7 @@
    "open": 90.57,
    "lo": 89.77,
    "hi": 93.14,
-   "vol": 39266,
+   "vol": 40534,
    "h": [
     115.32,
     114.88,
@@ -798,21 +798,21 @@
     89.37,
     91.4,
     94.61,
-    90.51
+    90.84
    ]
   },
   "BTC": {
-   "p": 59898.4609,
+   "p": 59737.4688,
    "prev": 60494.7109,
-   "chg": -596.25,
-   "pct": -0.99,
+   "chg": -757.2422,
+   "pct": -1.25,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-27T19:30:36.899156Z",
+   "ts": "2026-11-27T20:33:40.320315Z",
    "open": 60495.9492,
    "lo": 59007.8906,
    "hi": 62085.707,
-   "vol": 31718762496,
+   "vol": 32029333504,
    "h": [
     75746.93,
     75747.58,
@@ -835,7 +835,7 @@
     59747.77,
     60378.2,
     60494.71,
-    59900.96
+    59737.47
    ]
   }
  },
@@ -2211,6 +2211,90 @@
  ],
  "news": [
   {
+   "h": "These stocks soared the most during a wild week highlighted by Huang’s return to Nvidia",
+   "w": "Nvidia’s stock soared this week, but was still down nearly 28% for November and 21% for 2026.",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "MarketWatch",
+   "ts": "2026-11-27T20:16:00Z",
+   "url": "https://www.marketwatch.com/story/these-stocks-soared-the-most-during-a-wild-week-highlighted-by-huangs-return-to-nvidia-578b3f9a?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Le directeur financier d’AI Financial Corp rejoint une filiale tandis que la société modifie son exercice fiscal",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-27T20:13:42Z",
+   "url": "https://fr.investing.com/news/sec-filings/le-directeur-financier-dai-financial-corp-rejoint-une-filiale-tandis-que-la-societe-modifie-son-exercice-fiscal-93CH-3714821"
+  },
+  {
+   "h": "US tech stocks rise in latest market swing",
+   "w": "All-powerful AI trade has been eclipsed by wild moves in a market struggling to price future earnings",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-27T20:08:09Z",
+   "url": "https://www.ft.com/content/b80e6259-dca8-4da3-962d-402106a3cd81?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Un administrateur de Granite Ridge Resources achète pour 11.140$ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-27T20:01:51Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-granite-ridge-resources-achete-pour-11140-dactions-93CH-3714820"
+  },
+  {
+   "h": "Athos Metals finalise un placement privé d’actions accréditives de 1 M$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-27T20:01:26Z",
+   "url": "https://fr.investing.com/news/company-news/athos-metals-finalise-un-placement-prive-dactions-accreditives-de-1-m-93CH-3714819"
+  },
+  {
+   "h": "Coming next year: Medicare Advantage plans without drug coverage for almost 640,000 people and fewer choices for the rest",
+   "w": "Medicare Advantage is starting to lose its all-in-one benefit.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-27T19:55:00Z",
+   "url": "https://www.marketwatch.com/story/coming-next-year-medicare-advantage-plans-without-drug-coverage-for-almost-640-000-people-and-fewer-choices-for-the-rest-25242d69?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Un dirigeant de MGM Resorts International cède des actions pour 695.722$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-27T19:47:01Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-de-mgm-resorts-international-cede-des-actions-pour-695722-93CH-3714818"
+  },
+  {
+   "h": "Canada upholds law barring public sector workers from wearing religious symbols",
+   "w": "National Council of Canadian Muslims says ruling is a ‘significant setback’ for rights",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-27T19:33:28Z",
+   "url": "https://www.ft.com/content/240e1fe6-6c82-4d18-b73d-b0b52e7edae4?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "Quantum Corporation licencie son directeur des ventes et confirme ses prévisions T3",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-27T19:28:08Z",
+   "url": "https://fr.investing.com/news/sec-filings/quantum-corporation-licencie-son-directeur-des-ventes-et-confirme-ses-previsions-t3-93CH-3714813"
+  },
+  {
+   "h": "Malibu Boats accepte un accord de principe avec la SEC pour 300.000$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-27T19:23:49Z",
+   "url": "https://fr.investing.com/news/sec-filings/malibu-boats-accepte-un-accord-de-principe-avec-la-sec-pour-300000-93CH-3714812"
+  },
+  {
    "h": "Un actionnaire majeur acquiert pour 54.000$ d’actions Outset Medical",
    "w": "",
    "syms": [],
@@ -2233,16 +2317,6 @@
    "src": "Investing.com France",
    "ts": "2026-11-27T19:02:22Z",
    "url": "https://fr.investing.com/news/insider-trading-news/le-directeur-des-operations-de-spok-holdings-inc-vend-plus-de-211000-dactions-93CH-3714809"
-  },
-  {
-   "h": "These stocks soared the most during a wild week highlighted by Huang’s return to Nvidia",
-   "w": "Nvidia’s stock soared this week, but was still down nearly 28% for November and 21% for 2026.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "MarketWatch",
-   "ts": "2026-11-27T18:53:00Z",
-   "url": "https://www.marketwatch.com/story/these-stocks-soared-the-most-during-a-wild-week-highlighted-by-huangs-return-to-nvidia-578b3f9a?mod=mw_rss_topstories"
   },
   {
    "h": "Un administrateur de Vericel Corp Ord vend des actions pour 605.300$",
@@ -2269,34 +2343,6 @@
    "url": "https://www.marketwatch.com/story/the-warnings-behind-this-weeks-stock-market-rally-86e5319c?mod=mw_rss_topstories"
   },
   {
-   "h": "Chai Trust cède des actions Ardent Health Partners LLC pour 14,67 millions $",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-27T18:32:05Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/chai-trust-cede-des-actions-ardent-health-partners-llc-pour-1467-millions--93CH-3714804"
-  },
-  {
-   "h": "Eightco Holdings reçoit un avis du Nasdaq pour prix d’offre minimum insuffisant",
-   "w": "",
-   "syms": [
-    "NDX"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-11-27T18:31:34Z",
-   "url": "https://fr.investing.com/news/sec-filings/eightco-holdings-recoit-un-avis-du-nasdaq-pour-prix-doffre-minimum-insuffisant-93CH-3714802"
-  },
-  {
-   "h": "Cardiff Oncology reçoit un avis du NASDAQ pour non-conformité au prix minimum",
-   "w": "",
-   "syms": [
-    "NDX"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-11-27T18:27:33Z",
-   "url": "https://fr.investing.com/news/sec-filings/cardiff-oncology-recoit-un-avis-du-nasdaq-pour-nonconformite-au-prix-minimum-93CH-3714800"
-  },
-  {
    "h": "Trump’s Nvidia intervention has a cost for US stocks",
    "w": "Political meddling has already rubbed some of the gloss off the dollar and US Treasuries. Now it is hitting equities",
    "syms": [
@@ -2315,16 +2361,6 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-27T18:24:06Z",
    "url": "https://www.cnbc.com/2026/11/27/spacex-shares-musk-donations.html"
-  },
-  {
-   "h": "Metagenomi Inc reçoit un avis du Nasdaq pour prix d’offre insuffisant",
-   "w": "",
-   "syms": [
-    "NDX"
-   ],
-   "src": "Investing.com France",
-   "ts": "2026-11-27T18:22:41Z",
-   "url": "https://fr.investing.com/news/sec-filings/metagenomi-inc-recoit-un-avis-du-nasdaq-pour-prix-doffre-insuffisant-93CH-3714799"
   },
   {
    "h": "Comment BYD a remporté la bataille entre constructeurs chinois pour racheter l’usine d’Ineos Automotive en Moselle",
@@ -2352,18 +2388,10 @@
    "mine": 1
   },
   {
-   "h": "National Healthcare Properties finalise la vente de 40 établissements pour 531,4 millions $",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-27T18:18:32Z",
-   "url": "https://fr.investing.com/news/sec-filings/national-healthcare-properties-finalise-la-vente-de-40-etablissements-pour-5314-millions--93CH-3714798"
-  },
-  {
    "h": "AI and the decryption nightmare",
    "w": "New breakthroughs call for faster upgrades to security, not panic",
    "syms": [],
-   "src": "myFT — technology",
+   "src": "myFT — companies",
    "ts": "2026-11-27T18:18:27Z",
    "url": "https://www.ft.com/content/4114d053-de5e-46a5-8b46-758726abdcb7?syn-25a6b1a6=1",
    "mine": 1
@@ -2372,7 +2400,7 @@
    "h": "Can AI crack encryption?",
    "w": "New models’ advancing capabilities raise concerns over the risks of data leaks in banking and commerce",
    "syms": [],
-   "src": "myFT — technology",
+   "src": "myFT — companies",
    "ts": "2026-11-27T18:16:51Z",
    "url": "https://www.ft.com/content/1a29e62d-b18d-4bad-937d-34f3eae0587a?syn-25a6b1a6=1",
    "mine": 1
@@ -2387,12 +2415,13 @@
    "mine": 1
   },
   {
-   "h": "Carnival Corporation modifie l’attribution d’actions 2022 de son PDG Weinstein",
-   "w": "",
+   "h": "Directors’ Deals: M&S chief offloads shares after they hit multiyear peak",
+   "w": "£4mn sale follows encouraging interim results",
    "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-27T18:14:12Z",
-   "url": "https://fr.investing.com/news/sec-filings/carnival-corporation-modifie-lattribution-dactions-2022-de-son-pdg-weinstein-93CH-3714796"
+   "src": "myFT — companies",
+   "ts": "2026-11-27T18:00:05Z",
+   "url": "https://www.ft.com/content/ca9f958e-40a4-4fc4-b300-866343f9228f",
+   "mine": 1
   },
   {
    "h": "Le tourisme français sommé de se réinventer pour respecter l’accord de Paris sur le climat",
@@ -2434,15 +2463,6 @@
    "src": "myFT — world",
    "ts": "2026-11-27T17:29:29Z",
    "url": "https://www.ft.com/content/19c8508b-0dc6-492c-9f68-497da516a398?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "US tech stocks rise in latest market swing",
-   "w": "All-powerful AI trade has been eclipsed by wild moves in a market struggling to price future earnings",
-   "syms": [],
-   "src": "myFT — world",
-   "ts": "2026-11-27T17:27:23Z",
-   "url": "https://www.ft.com/content/b80e6259-dca8-4da3-962d-402106a3cd81?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -2634,16 +2654,6 @@
    "url": "https://www.marketwatch.com/story/artificial-intelligence-usage-is-exploding-yet-spending-is-stalling-why-a-foundational-rule-of-economics-is-breaking-9c7ad4b3?mod=mw_rss_topstories"
   },
   {
-   "h": "Nvidia’s stock has tumbled 28% over one chaotic month. The next big test lies in the week ahead",
-   "w": "Jensen Huang faces tough questions from Congress this week. Good luck pinning him down, one analyst says.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "MarketWatch",
-   "ts": "2026-11-27T14:56:00Z",
-   "url": "https://www.marketwatch.com/story/nvidias-stock-has-tumbled-27-over-one-chaotic-month-the-next-big-test-lies-in-the-week-ahead-06449777?mod=mw_rss_topstories"
-  },
-  {
    "h": "Elections législatives en Espagne : les graphiques pour comprendre le dynamisme économique du pays et ses limites",
    "w": "« Le modèle espagnol sous pression » (2/3). Dopée par l’immigration, le tourisme et les fonds européens, la croissance espagnole surclasse celle de ses voisins. Malgré ces bonnes performances, le chômage reste élevé.",
    "syms": [],
@@ -2658,6 +2668,38 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-27T14:37:40Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/27/les-syndicats-reformistes-sortent-renforces-des-elections-professionnelles-a-la-sncf_6815874_3234.html"
+  },
+  {
+   "h": "Japan's Happy Nuts Day bets on US taste for premium peanut butter",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-27T14:33:40.320315Z",
+   "url": "https://asia.nikkei.com/business/food-beverage/japan-s-happy-nuts-day-bets-on-us-taste-for-premium-peanut-butter"
+  },
+  {
+   "h": "Japan's data center subsidies to weigh local impact as backlash grows",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-27T14:33:40.320315Z",
+   "url": "https://asia.nikkei.com/business/technology/japan-s-data-center-subsidies-to-weigh-local-impact-as-backlash-grows"
+  },
+  {
+   "h": "Breguet, other Swiss watch brands make time for young, wealthy Thais",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-27T14:33:40.320315Z",
+   "url": "https://asia.nikkei.com/business/business-trends/breguet-other-swiss-watch-brands-make-time-for-young-wealthy-thais"
+  },
+  {
+   "h": "Indonesia, Philippines and UAE to begin talks on joining CPTPP trade pact",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-27T14:33:40.320315Z",
+   "url": "https://asia.nikkei.com/economy/indonesia-philippines-and-uae-to-begin-talks-on-joining-cptpp-trade-pact"
   },
   {
    "h": "Au procès d’un gérant de brasserie et de l’entreprise Otis après l’accident mortel d’un jeune apprenti, la banalité de l’absence de prévention",
@@ -2727,14 +2769,6 @@
    "url": "https://asia.nikkei.com/politics/taiwan-elections-5-things-to-know-about-city-races-eyed-by-china-and-us"
   },
   {
-   "h": "New Zealand ruling coalition misses majority as election results announced",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-27T13:30:36.899156Z",
-   "url": "https://asia.nikkei.com/politics/new-zealand-ruling-coalition-misses-majority-as-election-results-announced"
-  },
-  {
    "h": "The reforms the NHS needs (and those it doesn’t)",
    "w": "Different age groups make totally different demands on healthcare — here’s what I learnt in adapting how the London Ambulance Service responds",
    "syms": [],
@@ -2800,7 +2834,7 @@
    "h": "Former UK Supreme Court justice Jonathan Sumption: ‘We never got back control’",
    "w": "The barrister and medieval historian on the fragility of democracy, the folly of Brexit and why politicians need to learn from the past",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — world uk",
    "ts": "2026-11-27T12:30:04Z",
    "url": "https://www.ft.com/content/97f1dda5-2219-4e14-a716-569aab163e08?syn-25a6b1a6=1",
    "mine": 1
@@ -2891,30 +2925,6 @@
    "url": "https://asia.nikkei.com/business/travel-leisure/china-targets-overseas-tourist-dollars-with-relaxed-duty-free-lodging-rules"
   },
   {
-   "h": "China's Sany pushes AI into heavy machinery as overseas sales grow",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-27T11:30:01.111567Z",
-   "url": "https://asia.nikkei.com/business/technology/china-s-sany-pushes-ai-into-heavy-machinery-as-overseas-sales-grow"
-  },
-  {
-   "h": "Editor's Choice: How will the global chip game unfold in 2027?",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-27T11:30:01.111567Z",
-   "url": "https://asia.nikkei.com/editor-s-picks/editor-in-chief-s-picks/editor-s-choice-how-will-the-global-chip-game-unfold-in-2027"
-  },
-  {
-   "h": "Australian LNG exporters must reserve some supply to lower domestic prices",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-27T11:30:01.111567Z",
-   "url": "https://asia.nikkei.com/business/energy/australian-lng-exporters-must-reserve-some-supply-to-lower-domestic-prices"
-  },
-  {
    "h": "Hostility to immigration threatens Europe’s future",
    "w": "A defeat for Pedro Sánchez in Spain’s election will remove the EU’s last loud voice in favour of liberal policy",
    "syms": [],
@@ -2962,7 +2972,7 @@
    "h": "Ladbrokes owner to settle Australia money laundering case",
    "w": "Entain agrees preliminary settlement with financial crimes watchdog for $124mn over breaches of rules ahead of court hearing",
    "syms": [],
-   "src": "myFT — companies",
+   "src": "myFT — markets",
    "ts": "2026-11-27T09:51:44Z",
    "url": "https://www.ft.com/content/5fe8a858-6ed2-40f0-a0f3-e8742b7656aa?syn-25a6b1a6=1",
    "mine": 1
@@ -3052,28 +3062,6 @@
    "mine": 1
   },
   {
-   "h": "FirstFT: BoE’s Bailey warns of AI threat to encrypted financial data",
-   "w": "Also in today’s newsletter: tech sell-off and Meloni’s rebuke",
-   "syms": [
-    "UKX"
-   ],
-   "src": "myFT — economy",
-   "ts": "2026-11-27T05:30:19Z",
-   "url": "https://www.ft.com/content/f1669703-4e86-4ab0-b4d8-f43a40cb0294?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Bank of England to defy market pricing and stick with gradual tightening",
-   "w": "Read the BoE’s November forecast from the FT’s Monetary Policy Radar team",
-   "syms": [
-    "UKX"
-   ],
-   "src": "myFT — world uk",
-   "ts": "2026-11-27T05:30:02Z",
-   "url": "https://www.ft.com/content/e5d08f5e-3f0a-43af-a6d7-06f2ad93370e",
-   "mine": 1
-  },
-  {
    "h": "From £250 job to £9,000 bill: Inside the rogue trader networks scamming customers at scale",
    "w": "Networks of plumbers and electricians are scamming people on a large scale, the BBC reveals.",
    "syms": [],
@@ -3083,9 +3071,9 @@
   }
  ],
  "summary": {
-  "text": "Global equities were mixed as European and Asian markets advanced, supported by easing trade tensions and China's October industrial profits surging 20.1%. The DAX climbed 2.08% and the Nikkei 225 rose 1.85%. In the US, the Dow gained 0.33%, while the Nasdaq dropped 0.64% as Nvidia fell 3.91% despite Singapore not confirming halted chip shipments. A fatal Kuwait drone attack also drew geopolitical attention.\n\nThe US dollar index rose 0.14% to 103.81, with EURUSD at 1.0976. Gold advanced 2.39% to 3620.3999. In commodities, WTI crude added 0.88% to 84.42, while Brent tumbled 3.64% to 91.17. Bitcoin gained 1.75% to 61433.7891, and equity volatility receded with the VIX falling 5.27% to 26.8.\n\nLooking ahead, market participants are monitoring the IMF urging the Reserve Bank of Australia to maintain its monetary tightening bias, the market reaction to Brazil's new finance minister appointment, and developments in Middle East tensions.",
+  "text": "Global equities rallied, led by US technology shares. The Nasdaq gained 2.61% to 26726.39 and the S&P 500 rose 1.6% to 7297.49, while the VIX fell 11.16% to 23.81. Market swings were driven by tech sentiment and Jensen Huang’s return to Nvidia, alongside corporate news such as Norse Atlantic filing for bankruptcy in Europe.\n\nThe US Dollar Index advanced 0.33% to 104.014 as the greenback gained against the euro (EUR/USD down 0.29% to 1.0939) and the yen (USD/JPY up 0.21% to 159.551). In commodities, gold surged 3.93% to 3674.60, while crude retreated, with Brent dropping 4.77% to 90.10 and WTI falling 1.03% to 82.82. Bitcoin fell 1.25% to 59737.47.\n\nMarkets are monitoring warnings behind this week's equity rally, the fallout from Trump's Nvidia intervention, persistent AI jitters, and BYD acquiring the Ineos Automotive factory in Moselle.",
   "model": "gemini-flash-latest",
   "lang": "en",
-  "ts": "2026-11-27T04:44:41.991192Z"
+  "ts": "2026-11-27T20:33:40.320315Z"
  }
 }
