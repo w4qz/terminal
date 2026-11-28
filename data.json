@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-28T07:09:41.977168Z",
+ "generated_at": "2026-11-28T08:22:02.448311Z",
  "quotes": {
   "NVDA": {
    "p": 150.49,
@@ -700,9 +700,9 @@
    ]
   },
   "XAU": {
-   "p": 3674.6001,
+   "p": 3674.7,
    "prev": 3535.8,
-   "chg": 138.8,
+   "chg": 138.8999,
    "pct": 3.93,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (GC=F)",
@@ -811,19 +811,18 @@
    ]
   },
   "BTC": {
-   "p": 59408.4883,
-   "prev": 60494.7109,
-   "chg": -1086.2227,
-   "pct": -1.8,
+   "p": 59560.3398,
+   "prev": 59866.3711,
+   "chg": -306.0312,
+   "pct": -0.51,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-28T07:09:41.977168Z",
+   "ts": "2026-11-28T08:22:02.448311Z",
    "open": 59866.0664,
-   "lo": 59296.4219,
+   "lo": 59494.8828,
    "hi": 60164.1914,
-   "vol": 28094402560,
+   "vol": 27605921792,
    "h": [
-    75746.93,
     75747.58,
     74584.65,
     75223.15,
@@ -844,7 +843,8 @@
     59747.77,
     60378.2,
     60494.71,
-    59408.49
+    59866.37,
+    59567.52
    ]
   }
  },
@@ -945,9 +945,9 @@
    "ccy": "USD",
    "mcap": 3660000002048,
    "pe": 25.7229,
-   "fpe": 20.3423,
+   "fpe": 20.3625,
    "eps": 19.16,
-   "feps": 24.2278,
+   "feps": 24.2038,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -989,9 +989,9 @@
    "ccy": "USD",
    "mcap": 3380358152192,
    "pe": 14.3582,
-   "fpe": 17.9743,
+   "fpe": 17.9771,
    "eps": 19.15,
-   "feps": 15.2974,
+   "feps": 15.295,
    "revTTM": 471097999360,
    "netIncome": 235693621248,
    "shares": 5888000000,
@@ -1061,7 +1061,7 @@
    "earnTs": 1793304000,
    "earnStart": 1801774800,
    "earnEnd": 1801774800,
-   "earnEst": true,
+   "earnEst": false,
    "trailDiv": 0.0
   },
   "TSM": {
@@ -1193,10 +1193,10 @@
    "industry": "Internet Content & Information",
    "ccy": "USD",
    "mcap": 1607773454336,
-   "pe": 20.7509,
-   "fpe": 17.6883,
-   "eps": 30.31,
-   "feps": 35.558,
+   "pe": 21.4589,
+   "fpe": 17.6302,
+   "eps": 29.31,
+   "feps": 35.6752,
    "revTTM": 241605001216,
    "netIncome": 75249000448,
    "shares": 2214472367,
@@ -1237,9 +1237,9 @@
    "industry": "Auto Manufacturers",
    "ccy": "USD",
    "mcap": 1581103185920,
-   "fpe": 185.2521,
+   "fpe": 184.8617,
    "eps": 0.91,
-   "feps": 2.1592,
+   "feps": 2.1638,
    "revTTM": 103569997824,
    "netIncome": 3220000000,
    "shares": 3952757946,
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1490995511296,
    "pe": 39.8902,
-   "fpe": 16.1612,
+   "fpe": 16.1562,
    "eps": 7.83,
-   "feps": 19.3265,
+   "feps": 19.3325,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1059459104768,
+   "mcap": 1056219660288,
    "pe": 48.2355,
    "fpe": 41.2384,
    "eps": 2.76,
    "feps": 3.2283,
    "revTTM": 745178988544,
    "netIncome": 20878000128,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.744,
@@ -1610,9 +1610,9 @@
    "ccy": "USD",
    "mcap": 702641537024,
    "pe": 90.7137,
-   "fpe": 24.0693,
+   "fpe": 24.1121,
    "eps": 4.68,
-   "feps": 17.6382,
+   "feps": 17.607,
    "revTTM": 45435998208,
    "netIncome": 7725000192,
    "shares": 1655065573,
@@ -1650,9 +1650,9 @@
    "ccy": "USD",
    "mcap": 801473101824,
    "pe": 34.8669,
-   "fpe": 25.0613,
+   "fpe": 25.0727,
    "eps": 12.32,
-   "feps": 17.1404,
+   "feps": 17.1326,
    "revTTM": 45902999552,
    "netIncome": 23311998976,
    "shares": 1724473215,
@@ -1781,9 +1781,9 @@
    "industry": "Semiconductor Equipment & Materials",
    "ccy": "EUR",
    "mcap": 461730447360,
-   "pe": 34.2481,
+   "pe": 37.2976,
    "fpe": 21.2283,
-   "eps": 34.98,
+   "eps": 32.12,
    "feps": 56.4342,
    "revTTM": 39473500160,
    "netIncome": 13474299904,
@@ -1911,9 +1911,9 @@
    "ccy": "USD",
    "mcap": 414543839232,
    "pe": 15.5984,
-   "fpe": 12.8964,
+   "fpe": 12.8751,
    "eps": 13.62,
-   "feps": 16.4736,
+   "feps": 16.5009,
    "revTTM": 226256994304,
    "netIncome": 26976000000,
    "shares": 1951253686,
@@ -1955,9 +1955,9 @@
    "ccy": "USD",
    "mcap": 486471860224,
    "pe": 52.881,
-   "fpe": 43.8362,
+   "fpe": 43.8073,
    "eps": 20.76,
-   "feps": 25.0435,
+   "feps": 25.06,
    "revTTM": 303154003968,
    "netIncome": 9226000384,
    "shares": 443129349,
@@ -1999,9 +1999,9 @@
    "ccy": "USD",
    "mcap": 414843207680,
    "pe": 121.2465,
-   "fpe": 67.8163,
+   "fpe": 67.653,
    "eps": 1.42,
-   "feps": 2.5388,
+   "feps": 2.5449,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
@@ -2038,9 +2038,9 @@
    "ccy": "USD",
    "mcap": 382575181824,
    "pe": 25.8085,
-   "fpe": 16.0215,
+   "fpe": 16.0414,
    "eps": 3.76,
-   "feps": 6.0568,
+   "feps": 6.0493,
    "revTTM": 66958999552,
    "netIncome": 14958999552,
    "shares": 3942448184,
@@ -2126,7 +2126,7 @@
    "ccy": "USD",
    "mcap": 10759546880,
    "eps": -2.12,
-   "feps": -1.3642,
+   "feps": -1.6142,
    "revTTM": 142880000,
    "netIncome": -628267008,
    "shares": 311349798,
@@ -2153,7 +2153,7 @@
    "earnEnd": 1794258000,
    "earnEst": false,
    "trailDiv": 0.0,
-   "fpe_ns": -19.6823
+   "fpe_ns": -16.6339
   },
   "ACWI": {
    "name": "iShares MSCI ACWI ETF",
@@ -2168,8 +2168,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 122.7551,
+   "shares": 572600000,
+   "divYield": 2.577,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2220,6 +2225,62 @@
   }
  ],
  "news": [
+  {
+   "h": "« Après avoir appris à mieux gérer nos déchets, veillons à rallonger la durée de vie de nos biens »",
+   "w": "Réparation, reconditionnement et location ont fait leurs preuves, mais ces activités marginales dans notre économie doivent devenir une industrie, affirment, dans une tribune au « Monde », Grégory Blanc, sénateur (Place publique) de Maine-et-Loire, et Alain Di Crescenzo, président de CCI France, qui représente les chambres de commerce et d’industrie.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-28T08:00:11Z",
+   "url": "https://www.lemonde.fr/idees/article/2026/11/28/apres-avoir-appris-a-mieux-gerer-nos-dechets-veillons-a-rallonger-la-duree-de-vie-de-nos-biens_6816086_3232.html"
+  },
+  {
+   "h": "En Gironde, des viticulteurs se diversifient dans la culture de chanvre",
+   "w": "Dans un département dominé par la vigne, des exploitants, déjà fragilisés par le recul de la consommation de vin bordelais et le réchauffement climatique, expérimentent la culture du chanvre. Si ses débouchés, notamment dans la construction, suscitent des espoirs, la filière reste à structurer.",
+   "syms": [],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-28T08:00:04Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/11/28/en-gironde-des-viticulteurs-se-diversifient-dans-la-culture-de-chanvre_6816084_3234.html"
+  },
+  {
+   "h": "Boris Vujčić: Interview with Kurier",
+   "w": "",
+   "syms": [],
+   "src": "ECB — press releases",
+   "ts": "2026-11-28T08:00:00Z",
+   "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261128~10e11f78f1.en.html"
+  },
+  {
+   "h": "Un dirigeant de BV Financial Inc cède des actions pour 16.754$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-28T07:47:12Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-de-bv-financial-inc-cede-des-actions-pour-16754-93CH-3714941"
+  },
+  {
+   "h": "Le mur tarifaire américain est-il là pour durer ? ING analyse",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-28T07:47:12Z",
+   "url": "https://fr.investing.com/news/economy-news/le-mur-tarifaire-americain-estil-la-pour-durer--ing-analyse-3714942"
+  },
+  {
+   "h": "Un administrateur d’Artesian Rsc A vend des actions ordinaires pour 63.554$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-28T07:46:37Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-dartesian-rsc-a-vend-des-actions-ordinaires-pour-63554-93CH-3714940"
+  },
+  {
+   "h": "Le PDG de Natural Gas Services Group achète des actions pour 8.250$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-28T07:02:24Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-natural-gas-services-group-achete-des-actions-pour-8250-93CH-3714939"
+  },
   {
    "h": "« “GTA VI” joue un rôle de déclencheur » : pourquoi la PlayStation 5 est en rupture de stock",
    "w": "Entre le succès du titre de Rockstar Games et la hausse des prix des composants informatiques, les consoles de jeux vidéo les plus récentes sont quasiment introuvables en magasin à l’approche des fêtes de fin d’année.",
@@ -2309,38 +2370,6 @@
    "src": "Investing.com France",
    "ts": "2026-11-28T05:28:23Z",
    "url": "https://fr.investing.com/news/stock-market-news/actions-en-soldes--4-idees-pour-reperer-les-meilleures-opportunites-dans-la-panique-3706178"
-  },
-  {
-   "h": "Ces nouveaux avantages InvestingPro sont à -60% ce weekend : Découvrez le plan Max",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-28T05:26:59Z",
-   "url": "https://fr.investing.com/news/stock-market-news/nouveau--investingpro-max--decouvrez-les-avantages-et-obtenezle-a-60-aujourdhui-3714184"
-  },
-  {
-   "h": "3 portefeuilles idéalement positionnés pour la grande rotation boursière qui a démarré",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-28T05:03:12Z",
-   "url": "https://fr.investing.com/news/stock-market-news/rotation-boursiere--pas-de-panique-voici-3-strategies-deja-idealement-positionnees-3711981"
-  },
-  {
-   "h": "La demande logistique d’importation de la Chine recule de 0,6% sur janvier-octobre",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-28T05:02:55Z",
-   "url": "https://fr.investing.com/news/economy-news/la-demande-logistique-dimportation-de-la-chine-recule-de-06-sur-janvieroctobre-3714929"
-  },
-  {
-   "h": "La PDG d’Arista Networks, Jayshree Ullal, cède des actions pour 2,18M$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-28T05:02:42Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/la-pdg-darista-networks-jayshree-ullal-cede-des-actions-pour-218m-93CH-3714928"
   },
   {
    "h": "England’s post-Brexit fishing windfall swept up by Dutch tycoon",
@@ -2443,6 +2472,15 @@
    "mine": 1
   },
   {
+   "h": "The mathematicians living through an AI revolution",
+   "w": "Startling digitally assisted discoveries have raised questions about the future of human experts in the field",
+   "syms": [],
+   "src": "myFT — technology",
+   "ts": "2026-11-28T05:00:32Z",
+   "url": "https://www.ft.com/content/f27646d1-d8f2-4592-8d0e-bcce6c6da061?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "Millions of pension scheme members eye growing UK plan surpluses",
    "w": "Defined benefit scheme trustees to be given new options",
    "syms": [],
@@ -2505,6 +2543,15 @@
    "mine": 1
   },
   {
+   "h": "The power of clicking ‘cancel’",
+   "w": "Why do companies offer discounts and deals the moment you threaten to leave? And can customers use this information to their advantage?",
+   "syms": [],
+   "src": "myFT — technology",
+   "ts": "2026-11-28T05:00:13Z",
+   "url": "https://www.ft.com/content/bafa0748-8762-4810-8441-bbf32ccbe4dc",
+   "mine": 1
+  },
+  {
    "h": "‘I learnt more about profit and loss from Championship Manager than my degree’",
    "w": "Football shirt retailer Doug Bierton has sold more than 900,000 units in the past year",
    "syms": [],
@@ -2528,6 +2575,38 @@
    "src": "Le Monde — Économie",
    "ts": "2026-11-28T04:00:17Z",
    "url": "https://www.lemonde.fr/politique/article/2026/11/28/partir-ou-rester-en-cas-de-victoire-du-rn-a-la-presidentielle-2027-le-dilemme-des-hauts-fonctionnaires_6816058_823448.html"
+  },
+  {
+   "h": "Taiwan polls close with all eyes on Taipei mayor races",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-28T02:22:02.448311Z",
+   "url": "https://asia.nikkei.com/politics/taiwan-polls-close-with-all-eyes-on-taipei-mayor-races"
+  },
+  {
+   "h": "Japan's recruitment of foreign truck drivers at just 4% of goal",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-28T02:22:02.448311Z",
+   "url": "https://asia.nikkei.com/spotlight/japan-immigration/japan-s-recruitment-of-foreign-truck-drivers-at-just-4-of-goal"
+  },
+  {
+   "h": "Linear thinking: Can Japan's fastest train speed up inland economies?",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-28T02:22:02.448311Z",
+   "url": "https://asia.nikkei.com/spotlight/big-in-asia/linear-thinking-can-japan-s-fastest-train-speed-up-inland-economies"
+  },
+  {
+   "h": "Itochu poised for Southeast Asian cloud services growth with Malaysia deal",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-28T02:22:02.448311Z",
+   "url": "https://asia.nikkei.com/business/business-deals/itochu-poised-for-southeast-asian-cloud-services-growth-with-malaysia-deal"
   },
   {
    "h": "Japan looks to space for security with defense force update",
@@ -2578,14 +2657,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-28T00:00:00Z",
    "url": "https://www.marketwatch.com/story/im-in-my-70s-and-buying-a-new-bmw-x1-should-i-put-my-only-son-on-the-title-25731040?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Taiwan votes for thousands of officials with all eyes on Taipei mayor races",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-27T23:57:08.986977Z",
-   "url": "https://asia.nikkei.com/politics/taiwan-votes-for-thousands-of-officials-with-all-eyes-on-taipei-mayor-races"
   },
   {
    "h": "Century-old Hong Kong teahouse reinvents 'yum cha' after dark",
@@ -2688,30 +2759,6 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-27T22:00:57Z",
    "url": "https://www.cnbc.com/2026/11/27/black-friday-2026-inflation-value-deals.html"
-  },
-  {
-   "h": "Hitachi shares stagnate as investors seek fresher growth story",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-27T21:53:27.729253Z",
-   "url": "https://asia.nikkei.com/business/markets/equities/hitachi-shares-stagnate-as-investors-seek-fresher-growth-story"
-  },
-  {
-   "h": "Tokyo leads world in office rent, price growth as employers vie for prime space",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-27T21:53:27.729253Z",
-   "url": "https://asia.nikkei.com/business/markets/property/tokyo-leads-world-in-office-rent-price-growth-as-employers-vie-for-prime-space"
-  },
-  {
-   "h": "China targets overseas tourist dollars with relaxed duty-free, lodging rules",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-27T21:53:27.729253Z",
-   "url": "https://asia.nikkei.com/business/travel-leisure/china-targets-overseas-tourist-dollars-with-relaxed-duty-free-lodging-rules"
   },
   {
    "h": "OpenAI accuse Apple de vol de secrets et de pressions sur ses fournisseurs",
@@ -2834,22 +2881,6 @@
    "ts": "2026-11-27T18:15:16Z",
    "url": "https://www.ft.com/content/9cdc5817-0c7f-42d0-a6ae-bfd7006e4c9b?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Le tourisme français sommé de se réinventer pour respecter l’accord de Paris sur le climat",
-   "w": "Alors que la France a accueilli un nombre record de 102 millions de visiteurs en 2025, les Acteurs du tourisme durable, qui fédèrent près de 300 professionnels du secteur, appellent à changer de boussole. Ils déclinent des propositions pour réduire l’empreinte environnementale, démocratiser l’accès aux vacances et mieux répartir les retombées économiques.",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-27T17:59:03Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/11/27/le-tourisme-francais-somme-de-se-reinventer-pour-respecter-l-accord-de-paris-sur-le-climat_6815916_3234.html"
-  },
-  {
-   "h": "Les distributeurs indépendants de SFR, qui craignent de ne pas survivre au rachat de l’opérateur, l’attaquent en justice",
-   "w": "Les revendeurs indépendants du numéro deux français des télécoms, qui représentent environ 250 boutiques et 1 500 employés, déplorent l’« absence de toute perspective » et la « dégradation de leurs activités ».",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-27T17:39:21Z",
-   "url": "https://www.lemonde.fr/economie/article/2026/11/27/les-distributeurs-independants-de-sfr-qui-craignent-de-ne-pas-survivre-au-rachat-de-l-operateur-l-attaquent-en-justice_6815915_3234.html"
   },
   {
    "h": "Thames Water seeks to delay debt repayments to secure £2.4bn emergency loan",
@@ -3012,15 +3043,6 @@
    "mine": 1
   },
   {
-   "h": "EU weighs tighter export controls to prevent battery waste going to China",
-   "w": "‘Black mass’ containing key minerals is often processed abroad and the extracted metals re-exported to Europe",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-27T13:26:26Z",
-   "url": "https://www.ft.com/content/a8ecccda-f986-4ae9-9f45-9470d2be8c65?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
    "h": "The S&P 500 is in a correction. Bear markets and recessions don't always follow",
    "w": "The November sell-off has so far pushed the S&amp;P 500 into a correction. History shows that a correction doesn't always lead to a bear market, or a recession.",
    "syms": [
@@ -3037,15 +3059,6 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-27T13:15:01Z",
    "url": "https://www.cnbc.com/2026/11/27/new-car-buying-deals-buying-tips.html"
-  },
-  {
-   "h": "Brexit bear traps for Labour, Tories and Reform",
-   "w": "Plus, influencer row engulfs No 10",
-   "syms": [],
-   "src": "myFT — world uk",
-   "ts": "2026-11-27T13:13:04Z",
-   "url": "https://www.ft.com/content/8de00d12-8965-41e0-929a-76e80b1ada8e?syn-25a6b1a6=1",
-   "mine": 1
   },
   {
    "h": "Spain’s election could pull Madrid closer to Trump’s Washington",
@@ -3072,14 +3085,6 @@
    "src": "ECB — press releases",
    "ts": "2026-11-27T09:00:00Z",
    "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261127~2e53af695e.en.html"
-  },
-  {
-   "h": "From £250 job to £9,000 bill: Inside the rogue trader networks scamming customers at scale",
-   "w": "Networks of plumbers and electricians are scamming people on a large scale, the BBC reveals.",
-   "syms": [],
-   "src": "BBC — Business",
-   "ts": "2026-11-27T00:58:49Z",
-   "url": "https://www.bbc.co.uk/news/articles/c65yme31k7m2o?at_medium=RSS&at_campaign=rss"
   }
  ],
  "summary": {
