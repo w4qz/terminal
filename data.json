@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-28T13:29:28.559511Z",
+ "generated_at": "2026-11-28T14:24:46.074973Z",
  "quotes": {
   "NVDA": {
    "p": 150.49,
@@ -191,8 +191,8 @@
    "prev": 2704.0601,
    "chg": 46.24,
    "pct": 1.71,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^RUT) — last update failed",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^RUT)",
    "ts": "2026-11-27T18:00:00Z",
    "open": 2721.3899,
    "lo": 2721.3899,
@@ -700,9 +700,9 @@
    ]
   },
   "XAU": {
-   "p": 3674.6001,
+   "p": 3674.7,
    "prev": 3535.8,
-   "chg": 138.8,
+   "chg": 138.8999,
    "pct": 3.93,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (GC=F)",
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 59165.3398,
+   "p": 59196.1992,
    "prev": 59866.3711,
-   "chg": -701.0312,
-   "pct": -1.17,
+   "chg": -670.1719,
+   "pct": -1.12,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-28T13:29:28.559511Z",
+   "ts": "2026-11-28T14:24:46.074973Z",
    "open": 59866.0664,
-   "lo": 59086.8477,
+   "lo": 58906.4453,
    "hi": 60164.1914,
-   "vol": 26139652096,
+   "vol": 25630785536,
    "h": [
     75747.58,
     74584.65,
@@ -844,7 +844,7 @@
     60378.2,
     60494.71,
     59866.37,
-    59165.34
+    59204.14
    ]
   }
  },
@@ -856,9 +856,9 @@
    "industry": "Consumer Electronics",
    "ccy": "USD",
    "mcap": 5210368901120,
-   "pe": 39.9265,
+   "pe": 39.6177,
    "fpe": 33.9118,
-   "eps": 8.98,
+   "eps": 9.05,
    "feps": 10.5727,
    "revTTM": 478833999872,
    "netIncome": 132175003648,
@@ -945,9 +945,9 @@
    "ccy": "USD",
    "mcap": 3660000002048,
    "pe": 25.7229,
-   "fpe": 20.3423,
+   "fpe": 20.3625,
    "eps": 19.16,
-   "feps": 24.2278,
+   "feps": 24.2038,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -989,9 +989,9 @@
    "ccy": "USD",
    "mcap": 3380358152192,
    "pe": 14.3582,
-   "fpe": 17.9743,
+   "fpe": 17.9771,
    "eps": 19.15,
-   "feps": 15.2974,
+   "feps": 15.295,
    "revTTM": 471097999360,
    "netIncome": 235693621248,
    "shares": 5888000000,
@@ -1061,7 +1061,7 @@
    "earnTs": 1793304000,
    "earnStart": 1801774800,
    "earnEnd": 1801774800,
-   "earnEst": true,
+   "earnEst": false,
    "trailDiv": 0.0
   },
   "TSM": {
@@ -1193,10 +1193,10 @@
    "industry": "Internet Content & Information",
    "ccy": "USD",
    "mcap": 1607773454336,
-   "pe": 20.7509,
-   "fpe": 17.6883,
-   "eps": 30.31,
-   "feps": 35.558,
+   "pe": 21.4589,
+   "fpe": 17.6302,
+   "eps": 29.31,
+   "feps": 35.6752,
    "revTTM": 241605001216,
    "netIncome": 75249000448,
    "shares": 2214472367,
@@ -1237,9 +1237,9 @@
    "industry": "Auto Manufacturers",
    "ccy": "USD",
    "mcap": 1581103185920,
-   "fpe": 185.2521,
+   "fpe": 184.8617,
    "eps": 0.91,
-   "feps": 2.1592,
+   "feps": 2.1638,
    "revTTM": 103569997824,
    "netIncome": 3220000000,
    "shares": 3952757946,
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1490995511296,
    "pe": 39.8902,
-   "fpe": 16.1612,
+   "fpe": 16.1562,
    "eps": 7.83,
-   "feps": 19.3265,
+   "feps": 19.3325,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1059459104768,
+   "mcap": 1056219660288,
    "pe": 48.2355,
    "fpe": 41.2384,
    "eps": 2.76,
    "feps": 3.2283,
    "revTTM": 745178988544,
    "netIncome": 20878000128,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.744,
@@ -1610,9 +1610,9 @@
    "ccy": "USD",
    "mcap": 702641537024,
    "pe": 90.7137,
-   "fpe": 24.0693,
+   "fpe": 24.1121,
    "eps": 4.68,
-   "feps": 17.6382,
+   "feps": 17.607,
    "revTTM": 45435998208,
    "netIncome": 7725000192,
    "shares": 1655065573,
@@ -1650,9 +1650,9 @@
    "ccy": "USD",
    "mcap": 801473101824,
    "pe": 34.8669,
-   "fpe": 25.0613,
+   "fpe": 25.0727,
    "eps": 12.32,
-   "feps": 17.1404,
+   "feps": 17.1326,
    "revTTM": 45902999552,
    "netIncome": 23311998976,
    "shares": 1724473215,
@@ -1781,9 +1781,9 @@
    "industry": "Semiconductor Equipment & Materials",
    "ccy": "EUR",
    "mcap": 461730447360,
-   "pe": 34.2481,
+   "pe": 37.2976,
    "fpe": 21.2283,
-   "eps": 34.98,
+   "eps": 32.12,
    "feps": 56.4342,
    "revTTM": 39473500160,
    "netIncome": 13474299904,
@@ -1911,9 +1911,9 @@
    "ccy": "USD",
    "mcap": 414543839232,
    "pe": 15.5984,
-   "fpe": 12.8964,
+   "fpe": 12.8751,
    "eps": 13.62,
-   "feps": 16.4736,
+   "feps": 16.5009,
    "revTTM": 226256994304,
    "netIncome": 26976000000,
    "shares": 1951253686,
@@ -1955,9 +1955,9 @@
    "ccy": "USD",
    "mcap": 486471860224,
    "pe": 52.881,
-   "fpe": 43.8362,
+   "fpe": 43.8073,
    "eps": 20.76,
-   "feps": 25.0435,
+   "feps": 25.06,
    "revTTM": 303154003968,
    "netIncome": 9226000384,
    "shares": 443129349,
@@ -1999,9 +1999,9 @@
    "ccy": "USD",
    "mcap": 414843207680,
    "pe": 121.2465,
-   "fpe": 67.8163,
+   "fpe": 67.653,
    "eps": 1.42,
-   "feps": 2.5388,
+   "feps": 2.5449,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
@@ -2038,9 +2038,9 @@
    "ccy": "USD",
    "mcap": 382575181824,
    "pe": 25.8085,
-   "fpe": 16.0215,
+   "fpe": 16.0414,
    "eps": 3.76,
-   "feps": 6.0568,
+   "feps": 6.0493,
    "revTTM": 66958999552,
    "netIncome": 14958999552,
    "shares": 3942448184,
@@ -2126,7 +2126,7 @@
    "ccy": "USD",
    "mcap": 10759546880,
    "eps": -2.12,
-   "feps": -1.3642,
+   "feps": -1.6142,
    "revTTM": 142880000,
    "netIncome": -628267008,
    "shares": 311349798,
@@ -2153,7 +2153,7 @@
    "earnEnd": 1794258000,
    "earnEst": false,
    "trailDiv": 0.0,
-   "fpe_ns": -19.6823
+   "fpe_ns": -16.6339
   },
   "ACWI": {
    "name": "iShares MSCI ACWI ETF",
@@ -2168,8 +2168,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 122.7551,
+   "shares": 572600000,
+   "divYield": 2.577,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2221,6 +2226,69 @@
  ],
  "news": [
   {
+   "h": "The Iran war could shatter rising expectations of surplus oil supply in coming months",
+   "w": "Oil prices have sold off in November as investors see a recovery in Middle East exports leading to surpluses for the first time since the war began.",
+   "syms": [
+    "BRENT"
+   ],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-28T14:11:10Z",
+   "url": "https://www.cnbc.com/2026/11/28/oil-price-iran-war-strait-hormuz-surplus.html"
+  },
+  {
+   "h": "Argentina loses bid to halt Falklands oil drilling",
+   "w": "UN-backed court rejects Javier Milei’s attempt to stymie the islands’ nascent offshore oil industry",
+   "syms": [
+    "BRENT"
+   ],
+   "src": "myFT — markets",
+   "ts": "2026-11-28T14:07:00Z",
+   "url": "https://www.ft.com/content/b9308f74-c823-4144-83ce-7229836bbe59?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "My husband secretly sends his ex-wife $1,500 a month after she lost her job. We have $2.4 million saved. Has he lied by omission?",
+   "w": "“He explained that he wasn’t trying to hide the payment, but his former wife lost her job in a medical billing company.”",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-28T14:01:00Z",
+   "url": "https://www.marketwatch.com/story/my-husband-secretly-sends-his-ex-wife-1-500-a-month-after-she-lost-her-job-we-have-2-4-million-saved-has-he-lied-by-omission-ede1972a?mod=mw_rss_topstories"
+  },
+  {
+   "h": "AI data center boom strains construction labor across the U.S.",
+   "w": "CNBC traveled to Abilene, Texas to see how the AI data center construction boom is impacting the local economy in both positive and negative ways.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-28T14:00:01Z",
+   "url": "https://www.cnbc.com/2026/11/28/ai-data-center-construction-worker-shortage-texas.html"
+  },
+  {
+   "h": "Billions on the line for Berkshire utility as Oregon's high court reviews wildfire claims",
+   "w": "Berkshire Hathaway's PacifiCorp and attorneys for thousands of plaintiffs are welcoming a decision by Oregon's Supreme Court to widen its review of a 2023 lower court trial in which a jury awarded more than one billion in damages over four wildfires in 2020.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-28T13:46:46Z",
+   "url": "https://www.cnbc.com/2026/11/28/berkshire-utility-wildfire-claims.html"
+  },
+  {
+   "h": "I hate that Jensen Huang is back at Nvidia, but I love what it’s done for my 401(k). Am I a hypocrite?",
+   "w": "Doing nothing and maintaining an even temperament is often the work of gods.",
+   "syms": [
+    "NVDA"
+   ],
+   "src": "MarketWatch",
+   "ts": "2026-11-28T13:30:00Z",
+   "url": "https://www.marketwatch.com/story/i-hate-that-jensen-huang-is-back-at-nvidia-but-i-love-what-its-done-for-my-401-k-am-i-a-hypocrite-f63c0303?mod=mw_rss_topstories"
+  },
+  {
+   "h": "La SEBI envisage une plateforme d’échange pour les actions pré-IPO",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-28T13:29:07Z",
+   "url": "https://fr.investing.com/news/stock-market-news/la-sebi-envisage-une-plateforme-dechange-pour-les-actions-preipo-3714970"
+  },
+  {
    "h": "Où se situe le repli de la semaine dernière dans l’histoire des marchés ?",
    "w": "",
    "syms": [],
@@ -2271,11 +2339,11 @@
    "url": "https://fr.investing.com/news/commodities-news/des-obligations-a-lor--ubs-explique-comment-batir-des-portefeuilles-resilients-dici-2027-3714966"
   },
   {
-   "h": "A un banquet du Canon français à Biarritz, des manifestants bloquent les participants, qu’ils accusent de véhiculer des idées d’extrême droite",
+   "h": "A un banquet du Canon français, à Biarritz, des manifestants bloquent les participants, qu’ils accusent de véhiculer des idées d’extrême droite",
    "w": "Des convives de cet événement cofinancé par le milliardaire Pierre-Edouard Stérin ont été pris à partie par les manifestants, qui avaient annoncé un « rempart humain » pour empêcher les 1 500 participants attendus de rejoindre le site.",
    "syms": [],
    "src": "Le Monde — Économie",
-   "ts": "2026-11-28T12:00:17Z",
+   "ts": "2026-11-28T12:00:14Z",
    "url": "https://www.lemonde.fr/societe/article/2026/11/28/a-un-banquet-du-canon-francais-a-biarritz-des-manifestants-bloquent-les-participants-qu-ils-accusent-de-vehiculer-des-idees-d-extreme-droite_6816103_3224.html"
   },
   {
@@ -2369,14 +2437,6 @@
    "mine": 1
   },
   {
-   "h": "Le fonds souverain norvégien votera à nouveau contre la rémunération de Musk chez Tesla",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-28T10:58:43Z",
-   "url": "https://fr.investing.com/news/company-news/le-fonds-souverain-norvegien-votera-a-nouveau-contre-la-remuneration-de-musk-chez-tesla-3714956"
-  },
-  {
    "h": "Israeli strike kills two Médecins Sans Frontières workers in Gaza",
    "w": "Medical charity calls for accountability as Israeli military claims men were involved in Hamas",
    "syms": [],
@@ -2401,6 +2461,30 @@
    "ts": "2026-11-28T09:13:37Z",
    "url": "https://www.ft.com/content/d65da83d-afec-4f32-8e25-65a8a566d649?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "Hitachi shares stagnate as investors seek fresher growth story",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-28T08:24:46.074973Z",
+   "url": "https://asia.nikkei.com/business/markets/equities/hitachi-shares-stagnate-as-investors-seek-fresher-growth-story"
+  },
+  {
+   "h": "Tokyo leads world in office rent, price growth as employers vie for prime space",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-28T08:24:46.074973Z",
+   "url": "https://asia.nikkei.com/business/markets/property/tokyo-leads-world-in-office-rent-price-growth-as-employers-vie-for-prime-space"
+  },
+  {
+   "h": "China's auto exports to rise 50% amid intensifying competition at home",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-28T08:24:46.074973Z",
+   "url": "https://asia.nikkei.com/business/automobiles/china-s-auto-exports-to-rise-50-amid-intensifying-competition-at-home"
   },
   {
    "h": "« Après avoir appris à mieux gérer nos déchets, veillons à rallonger la durée de vie de nos biens »",
@@ -2537,14 +2621,6 @@
    "src": "Nikkei Asia",
    "ts": "2026-11-28T05:20:21.839722Z",
    "url": "https://asia.nikkei.com/business/food-beverage/century-old-hong-kong-teahouse-reinvents-yum-cha-after-dark"
-  },
-  {
-   "h": "Australian state election provides 'dry run' for federal contest",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-28T05:20:21.839722Z",
-   "url": "https://asia.nikkei.com/politics/australian-state-election-provides-dry-run-for-federal-contest"
   },
   {
    "h": "England’s post-Brexit fishing windfall swept up by Dutch tycoon",
@@ -2736,22 +2812,6 @@
    "mine": 1
   },
   {
-   "h": "Japan auto parts makers lose global lead as China drives EV transition",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-28T04:23:59.616130Z",
-   "url": "https://asia.nikkei.com/business/automobiles/japan-auto-parts-makers-lose-global-lead-as-china-drives-ev-transition"
-  },
-  {
-   "h": "Toyota starts China comeback bid with extended-range EV",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-28T04:23:59.616130Z",
-   "url": "https://asia.nikkei.com/spotlight/electric-cars-in-china/toyota-starts-china-comeback-bid-with-extended-range-ev"
-  },
-  {
    "h": "Copper thieves prey on Japan’s ancient shrines in AI frenzy",
    "w": "Priests forced to abandon tradition and favour cheaper steel to repair roofs",
    "syms": [],
@@ -2785,16 +2845,6 @@
    "ts": "2026-11-27T23:50:03Z",
    "url": "https://www.ft.com/content/1953fdc7-b061-4a0c-86c5-5ffd00ebcec4?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "I hate that Jensen Huang is back at Nvidia, but I love what it’s done for my 401(k). Am I a hypocrite?",
-   "w": "Doing nothing and maintaining an even temperament is often the work of gods.",
-   "syms": [
-    "NVDA"
-   ],
-   "src": "MarketWatch",
-   "ts": "2026-11-27T23:30:00Z",
-   "url": "https://www.marketwatch.com/story/i-hate-that-jensen-huang-is-back-at-nvidia-but-i-love-what-its-done-for-my-401-k-am-i-a-hypocrite-f63c0303?mod=mw_rss_topstories"
   },
   {
    "h": "South Africa’s credit rating upgraded after years of economic stagnation",
@@ -2887,14 +2937,6 @@
    "mine": 1
   },
   {
-   "h": "SpaceX shares jump over 4% amid tech rally and after Musk says he will expand on Trump Account share donations",
-   "w": "SpaceX shares jumped in trading Friday after Elon Musk said on X that he would donate shares to American children every year.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-27T18:24:06Z",
-   "url": "https://www.cnbc.com/2026/11/27/spacex-shares-musk-donations.html"
-  },
-  {
    "h": "Budget airline Norse Atlantic files for bankruptcy in Europe after failing to secure funding",
    "w": "Budget carrier Norse Atlantic filed for bankruptcy Friday, saying it failed to secure funding after soaring fuel costs strained the company's operations.",
    "syms": [],
@@ -2974,21 +3016,20 @@
    "mine": 1
   },
   {
+   "h": "AI shopping agents are having a moment, but Amazon and a growing number of sites threaten to stunt their growth",
+   "w": "AI shopping agents from OpenAI, Meta, Google and Instinct promise to help users shop, but they're hitting roadblocks at Amazon and other retailers.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-27T16:43:14Z",
+   "url": "https://www.cnbc.com/2026/11/27/ai-shopping-agents-retailer-blocks.html"
+  },
+  {
    "h": "AI caramba",
    "w": "We may need to start thinking about the impact a bear market in US tech stocks would have on the real economy",
    "syms": [],
    "src": "myFT — us",
    "ts": "2026-11-27T16:30:05Z",
    "url": "https://www.ft.com/content/9c54e827-3786-4bad-ae06-f9a3f31fcab5",
-   "mine": 1
-  },
-  {
-   "h": "Wave of cyber incidents rattles western economies",
-   "w": "UK Department for Work and Pensions, Fifa and the US Treasury among institutions hit by outages as concerns grow over threat from AI",
-   "syms": [],
-   "src": "myFT — technology",
-   "ts": "2026-11-27T16:19:21Z",
-   "url": "https://www.ft.com/content/6ab1172b-4f27-49f5-ad53-b384df82da77?syn-25a6b1a6=1",
    "mine": 1
   },
   {
@@ -3006,22 +3047,6 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-27T15:52:00Z",
    "url": "https://www.cnbc.com/2026/11/26/trump-gdp-revision-investigation.html"
-  },
-  {
-   "h": "I’ve been married for 58 years. It’s ‘our’ money, not ‘his’ and ‘hers.’ Why do so many couples keep their finances separate?",
-   "w": "“My wife stopped working outside the home in 1970.”",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-27T15:45:00Z",
-   "url": "https://www.marketwatch.com/story/ive-been-married-for-58-years-its-our-money-not-his-and-hers-why-dont-others-feel-the-same-c5745889?mod=mw_rss_topstories"
-  },
-  {
-   "h": "EU leaders fail to break $1.7 trillion budget deadlock as political pressure mounts",
-   "w": "EU leaders failed to break a deadlock over the bloc’s budget, with talks set to resume in December as a key deadline looms.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-27T14:12:55Z",
-   "url": "https://www.cnbc.com/2026/11/27/eu-budget-2028-2034-deadlock.html"
   },
   {
    "h": "Decisions taken by the Governing Council of the ECB (in addition to decisions setting interest rates)",
@@ -3042,22 +3067,6 @@
    "src": "CNBC — Markets",
    "ts": "2026-11-27T13:21:56Z",
    "url": "https://www.cnbc.com/2026/11/27/the-sp-500-is-in-a-correction-bear-markets-and-recessions-dont-always-follow.html"
-  },
-  {
-   "h": "New car prices are at a record high. Here's where to look for deals",
-   "w": "While the average price of a new car hit $51,109 in October, according to Kelley Blue Book, many buyers are spending far less on their purchase. Here's how.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-27T13:15:01Z",
-   "url": "https://www.cnbc.com/2026/11/27/new-car-buying-deals-buying-tips.html"
-  },
-  {
-   "h": "Spain’s election could pull Madrid closer to Trump’s Washington",
-   "w": "Spanish voters head to the polls on Sunday for a snap election that could bring socialist Prime Minister Pedro Sánchez's eight years in power to an end.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-27T13:00:42Z",
-   "url": "https://www.cnbc.com/2026/11/27/spain-election-trump-sanchez.html"
   },
   {
    "h": "My self-care ritual is a meal at a fancy restaurant - on my own",
