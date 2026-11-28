@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-11-28T00:31:23.658433Z",
+ "generated_at": "2026-11-28T01:58:09.939304Z",
  "quotes": {
   "NVDA": {
-   "p": 150.49,
+   "p": 150.62,
    "prev": 149.3,
-   "chg": 1.19,
-   "pct": 0.8,
+   "chg": 1.32,
+   "pct": 0.88,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (NVDA)",
    "ts": "2026-11-27T18:00:00Z",
@@ -34,15 +34,14 @@
     125.53,
     165.05,
     155.38,
-    149.3,
-    150.49
+    149.3
    ]
   },
   "ASTS": {
-   "p": 26.85,
+   "p": 26.86,
    "prev": 26.02,
-   "chg": 0.83,
-   "pct": 3.19,
+   "chg": 0.84,
+   "pct": 3.23,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (ASTS)",
    "ts": "2026-11-27T18:00:00Z",
@@ -71,8 +70,7 @@
     23.27,
     25.67,
     23.6,
-    26.02,
-    26.85
+    26.02
    ]
   },
   "SPX": {
@@ -802,17 +800,17 @@
    ]
   },
   "BTC": {
-   "p": 59906.25,
+   "p": 60127.6016,
    "prev": 60494.7109,
-   "chg": -588.4609,
-   "pct": -0.97,
+   "chg": -367.1094,
+   "pct": -0.61,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-28T00:31:23.658433Z",
+   "ts": "2026-11-28T01:58:09.939304Z",
    "open": 59866.0664,
-   "lo": 59866.0664,
-   "hi": 59938.6094,
-   "vol": 31936172032,
+   "lo": 59838.6523,
+   "hi": 60151.8984,
+   "vol": 31835848704,
    "h": [
     75746.93,
     75747.58,
@@ -835,7 +833,7 @@
     59747.77,
     60378.2,
     60494.71,
-    59906.25
+    60127.64
    ]
   }
  },
@@ -962,7 +960,7 @@
    "fcf": 2994125056,
    "w52lo": 349.2,
    "w52hi": 559.15,
-   "evEbitda": 18.15,
+   "evEbitda": 18.131,
    "earnTs": 1793217600,
    "earnStart": 1801083600,
    "earnEnd": 1801083600,
@@ -1006,7 +1004,7 @@
    "fcf": -1162499968,
    "w52lo": 262.73,
    "w52hi": 408.61,
-   "evEbitda": 17.689,
+   "evEbitda": 17.7,
    "earnTs": 1793217600,
    "earnStart": 1801688400,
    "earnEnd": 1801688400,
@@ -1211,7 +1209,7 @@
    "fcf": 16848499712,
    "w52lo": 520.26,
    "w52hi": 779.82,
-   "evEbitda": 14.14,
+   "evEbitda": 14.116,
    "earnTs": 1792612800,
    "earnStart": 1801083600,
    "earnEnd": 1801083600,
@@ -1625,7 +1623,7 @@
    "fcf": 7357125120,
    "w52lo": 188.22,
    "w52hi": 658.52,
-   "evEbitda": 61.932,
+   "evEbitda": 61.897,
    "earnTs": 1793739600,
    "earnStart": 1801602000,
    "earnEnd": 1801602000,
@@ -1972,7 +1970,7 @@
    "fcf": 6752750080,
    "w52lo": 844.06,
    "w52hi": 1123.67,
-   "evEbitda": 33.53,
+   "evEbitda": 33.511,
    "earnTs": 1796936400,
    "earnStart": 1796936400,
    "earnEnd": 1796936400,
@@ -2055,7 +2053,7 @@
    "fcf": 10410250240,
    "w52lo": 72.8,
    "w52hi": 130.37,
-   "evEbitda": 19.246,
+   "evEbitda": 19.237,
    "earnTs": 1802293200,
    "earnStart": 1802293200,
    "earnEnd": 1802293200,
@@ -2217,20 +2215,104 @@
  ],
  "news": [
   {
-   "h": "Perspectives 2027 : Apple surpasse le marché malgré une baisse des ventes",
+   "h": "Un administrateur d’IES Holdings Inc achète pour 653.000$ d’actions",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-28T00:03:22Z",
-   "url": "https://fr.investing.com/news/stock-market-news/perspectives-2027-pour-les-smartphones--apple-en-tete-malgre-une-baisse-de-5-3714887"
+   "ts": "2026-11-28T01:46:44Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-dies-holdings-inc-achete-pour-653000-dactions-93CH-3714904"
   },
   {
-   "h": "Un administrateur d’Opportunity Bancorp vend 25.000$ d’actions",
+   "h": "Les responsables de la BCE signalent de nouvelles hausses de taux face à l’inflation",
+   "w": "",
+   "syms": [
+    "EURUSD"
+   ],
+   "src": "Investing.com France",
+   "ts": "2026-11-28T01:40:11Z",
+   "url": "https://fr.investing.com/news/stock-market-news/les-responsables-de-la-bce-signalent-de-nouvelles-hausses-de-taux-3714902"
+  },
+  {
+   "h": "L’ARK de Cathie Wood achète SPCX, réduit SHOP et ILMN",
    "w": "",
    "syms": [],
    "src": "Investing.com France",
-   "ts": "2026-11-28T00:02:04Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-dopportunity-bancorp-vend-25000-dactions-93CH-3714886"
+   "ts": "2026-11-28T01:19:21Z",
+   "url": "https://fr.investing.com/news/company-news/lark-de-cathie-wood-achete-spcx-reduit-shop-et-ilmn-93CH-3714901"
+  },
+  {
+   "h": "Un dirigeant de Tyler Technologies vend pour 1,3 million $ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-28T01:18:03Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-de-tyler-technologies-vend-pour-13-million--dactions-93CH-3714900"
+  },
+  {
+   "h": "Un dirigeant de Samsara Inc vend pour plus de 9,8 millions $ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-28T01:17:58Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-de-samsara-inc-vend-pour-plus-de-98-millions--dactions-93CH-3714899"
+  },
+  {
+   "h": "Le PDG de Samsara Inc vend pour plus de 9,8 millions $ d’actions",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-28T01:17:56Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-samsara-inc-vend-pour-plus-de-98-millions--dactions-93CH-3714898"
+  },
+  {
+   "h": "Un dirigeant de StubHub vend des actions pour 60.000$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-28T01:17:32Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-de-stubhub-vend-des-actions-pour-60000-93CH-3714897"
+  },
+  {
+   "h": "Un dirigeant d’Eversource Energy cède des actions pour 312.053$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-28T01:02:26Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-deversource-energy-cede-des-actions-pour-312053-93CH-3714896"
+  },
+  {
+   "h": "Le PDG de Venu Holding achète 7.817$ d’actions de la société",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-28T01:02:11Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-venu-holding-achete-7817-dactions-de-la-societe-93CH-3714894"
+  },
+  {
+   "h": "Un directeur de BJs Restaurants Inc vend des actions pour 545.910$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-28T01:02:02Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/un-directeur-de-bjs-restaurants-inc-vend-des-actions-pour-545910-93CH-3714893"
+  },
+  {
+   "h": "Copper thieves prey on Japan’s ancient shrines in AI frenzy",
+   "w": "Priests forced to abandon tradition and favour cheaper steel to repair roofs",
+   "syms": [],
+   "src": "myFT — asia pacific",
+   "ts": "2026-11-28T01:01:26Z",
+   "url": "https://www.ft.com/content/98b72508-3d41-4f03-9a9a-bfb345e3a902?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "The Chinese car champion turning to police and nurse robots",
+   "w": "Jaecoo owner Chery tries to make up lost ground after coming late to EV revolution",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-28T01:00:07Z",
+   "url": "https://www.ft.com/content/f83dd2dc-f51e-4151-9139-cf1918eb9d0a?syn-25a6b1a6=1",
+   "mine": 1
   },
   {
    "h": "I’m in my 70s and buying a new BMW X1. Should I put my only son on the title?",
@@ -2241,53 +2323,13 @@
    "url": "https://www.marketwatch.com/story/im-in-my-70s-and-buying-a-new-bmw-x1-should-i-put-my-only-son-on-the-title-25731040?mod=mw_rss_topstories"
   },
   {
-   "h": "Grupo Aeroportuario del Pacifico finalise l’introduction en bourse de FIBRA GAP à 7,82 milliards Ps.",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-27T23:58:01Z",
-   "url": "https://fr.investing.com/news/stock-market-news/grupo-aeroportuario-del-pacifico-finalise-lintroduction-en-bourse-de-fibra-gap-a-782-milliards-ps-432SI-3714885"
-  },
-  {
    "h": "The ‘diehard separatist’ shaking up Taipei’s election",
    "w": "Local polls across Taiwan are a test of support for the governing DPP ahead of crucial presidential vote in 2028",
    "syms": [],
-   "src": "myFT — followed topic",
+   "src": "myFT — world",
    "ts": "2026-11-27T23:50:03Z",
    "url": "https://www.ft.com/content/1953fdc7-b061-4a0c-86c5-5ffd00ebcec4?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Un administrateur de Kymera Therapeutics Inc vend pour 132,4 M$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-27T23:33:26Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-de-kymera-therapeutics-inc-vend-pour-1324-m-dactions-93CH-3714884"
-  },
-  {
-   "h": "Un dirigeant d’Alarm.com cède des actions pour 691.100$",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-27T23:32:21Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-dirigeant-dalarmcom-cede-des-actions-pour-691100-93CH-3714883"
-  },
-  {
-   "h": "Un administrateur d’Enphase Energy vend des actions pour 3,5 millions $",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-27T23:32:02Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-administrateur-denphase-energy-vend-des-actions-pour-35-millions--93CH-3714882"
-  },
-  {
-   "h": "Le PDG d’Aardvark Therapeutics achète 48.300$ d’actions ordinaires",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-27T23:31:44Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-daardvark-therapeutics-achete-48300-dactions-ordinaires-93CH-3714881"
   },
   {
    "h": "I hate that Jensen Huang is back at Nvidia, but I love what it’s done for my 401(k). Am I a hypocrite?",
@@ -2298,30 +2340,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-27T23:30:00Z",
    "url": "https://www.marketwatch.com/story/i-hate-that-jensen-huang-is-back-at-nvidia-but-i-love-what-its-done-for-my-401-k-am-i-a-hypocrite-f63c0303?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Saba Capital vend 8.031$ de parts du Pimco Dynamic Income Strategy Fund",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-27T23:20:28Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/saba-capital-vend-8031-de-parts-du-pimco-dynamic-income-strategy-fund-93CH-3714880"
-  },
-  {
-   "h": "Le PDG de Vaxcyte Inc, Grant Pickering, cède pour 2,27 millions $ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-27T23:17:29Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-pdg-de-vaxcyte-inc-grant-pickering-cede-pour-227-millions--dactions-93CH-3714879"
-  },
-  {
-   "h": "Le président exécutif d’Universal Insurance vend pour 966.432$ d’actions",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-27T23:16:48Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/le-president-executif-duniversal-insurance-vend-pour-966432-dactions-93CH-3714878"
   },
   {
    "h": "Clearing out my parents’ house was a legal nightmare. How can I downsize without putting my kids through the same ordeal?",
@@ -2335,7 +2353,7 @@
    "h": "South Africa’s credit rating upgraded after years of economic stagnation",
    "w": "S&amp;P says Pretoria’s ‘fiscal performance has consistently outperformed budget targets’",
    "syms": [],
-   "src": "myFT — emerging markets",
+   "src": "myFT — world",
    "ts": "2026-11-27T23:13:58Z",
    "url": "https://www.ft.com/content/892ffe2f-1641-4e3d-b0d6-2693ca15cc95?syn-25a6b1a6=1",
    "mine": 1
@@ -2371,7 +2389,7 @@
    "w": "Les deux partenaires se rapprochent de mois en mois d’une situation de rivaux, et se rendent désormais coup pour coup devant la justice.",
    "syms": [],
    "src": "Le Monde — Économie",
-   "ts": "2026-11-27T21:49:36Z",
+   "ts": "2026-11-27T21:49:34Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/27/openai-accuse-apple-de-vol-de-secrets-et-de-pressions-sur-ses-fournisseurs_6815936_3234.html"
   },
   {
@@ -2400,6 +2418,30 @@
    "ts": "2026-11-27T20:08:09Z",
    "url": "https://www.ft.com/content/b80e6259-dca8-4da3-962d-402106a3cd81?syn-25a6b1a6=1",
    "mine": 1
+  },
+  {
+   "h": "Japan looks to space for security with defense force update",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-27T19:58:09.939304Z",
+   "url": "https://asia.nikkei.com/business/aerospace-defense-industries/japan-looks-to-space-for-security-with-defense-force-update"
+  },
+  {
+   "h": "Japan's Happy Nuts Day bets on US taste for premium peanut butter",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-27T19:58:09.939304Z",
+   "url": "https://asia.nikkei.com/business/food-beverage/japan-s-happy-nuts-day-bets-on-us-taste-for-premium-peanut-butter"
+  },
+  {
+   "h": "Japan's data center subsidies to weigh local impact as backlash grows",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-27T19:58:09.939304Z",
+   "url": "https://asia.nikkei.com/business/technology/japan-s-data-center-subsidies-to-weigh-local-impact-as-backlash-grows"
   },
   {
    "h": "Coming next year: Medicare Advantage plans without drug coverage for almost 640,000 people and fewer choices for the rest",
@@ -2731,30 +2773,6 @@
    "url": "https://www.lemonde.fr/economie/article/2026/11/27/tour-montparnasse-une-feuille-de-route-votee-pour-travailler-a-un-nouveau-projet-de-renovation-plus-sobre-de-nombreuses-incertitudes-demeurent_6815891_3234.html"
   },
   {
-   "h": "Japan's recruitment of foreign truck drivers at just 4% of goal",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-27T15:36:02.373443Z",
-   "url": "https://asia.nikkei.com/spotlight/japan-immigration/japan-s-recruitment-of-foreign-truck-drivers-at-just-4-of-goal"
-  },
-  {
-   "h": "Linear thinking: Can Japan's fastest train speed up inland economies?",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-27T15:36:02.373443Z",
-   "url": "https://asia.nikkei.com/spotlight/big-in-asia/linear-thinking-can-japan-s-fastest-train-speed-up-inland-economies"
-  },
-  {
-   "h": "Itochu poised for Southeast Asian cloud services growth with Malaysia deal",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-27T15:36:02.373443Z",
-   "url": "https://asia.nikkei.com/business/business-deals/itochu-poised-for-southeast-asian-cloud-services-growth-with-malaysia-deal"
-  },
-  {
    "h": "My husband secretly sends his ex-wife $1,500 a month after she lost her job. We have $2.4 million saved. Has he lied by omission?",
    "w": "“He explained that he wasn’t trying to hide the payment, but his former wife lost her job in a medical billing company.”",
    "syms": [],
@@ -2839,7 +2857,7 @@
    "h": "The reforms the NHS needs (and those it doesn’t)",
    "w": "Different age groups make totally different demands on healthcare — here’s what I learnt in adapting how the London Ambulance Service responds",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — world uk",
    "ts": "2026-11-27T13:27:45Z",
    "url": "https://www.ft.com/content/901cc148-f3ed-460b-b2ed-8024f9ddff1d",
    "mine": 1
@@ -2954,7 +2972,7 @@
    "h": "Japanese carmakers’ sales collapse amid China market plunge",
    "w": "Nissan’s October sales in the country tumbled 67%, the lowest monthly figure since the Covid-19 pandemic",
    "syms": [],
-   "src": "myFT — companies",
+   "src": "myFT — emerging markets",
    "ts": "2026-11-27T11:31:30Z",
    "url": "https://www.ft.com/content/f627ff39-58e4-4def-8e79-794d3dc2996b?syn-25a6b1a6=1",
    "mine": 1
@@ -3047,24 +3065,6 @@
    "src": "myFT — us",
    "ts": "2026-11-27T07:11:05Z",
    "url": "https://www.ft.com/content/8a8d973e-e476-4578-80a9-26e9c6e5f912?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Hong Kong seeks to lure sovereign wealth funds with tax breaks",
-   "w": "Move comes after some global investors pulled out or scaled back teams in Asian financial hub",
-   "syms": [],
-   "src": "myFT — financials",
-   "ts": "2026-11-27T06:47:12Z",
-   "url": "https://www.ft.com/content/0285a2eb-5312-443d-bd60-b094af9575b1?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "‘It’s not nation versus nation. It’s hyperscaler versus hyperscaler’",
-   "w": "Mining billionaire Robert Friedland on copper and war",
-   "syms": [],
-   "src": "myFT — us",
-   "ts": "2026-11-27T06:30:02Z",
-   "url": "https://www.ft.com/content/698d29bd-490b-41ef-a3e3-20edc2b591f7?syn-25a6b1a6=1",
    "mine": 1
   },
   {
