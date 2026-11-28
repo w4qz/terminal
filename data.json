@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-28T17:10:45.296351Z",
+ "generated_at": "2026-11-28T18:03:22.198392Z",
  "quotes": {
   "NVDA": {
    "p": 150.49,
@@ -117,8 +117,8 @@
    "prev": 26046.9004,
    "chg": 679.4902,
    "pct": 2.61,
-   "st": "STALE",
-   "src": "Yahoo Finance via yfinance (^NDX) — last update failed",
+   "st": "EOD",
+   "src": "Yahoo Finance via yfinance (^NDX)",
    "ts": "2026-11-27T18:00:00Z",
    "open": 26479.9707,
    "lo": 26166.8691,
@@ -700,9 +700,9 @@
    ]
   },
   "XAU": {
-   "p": 3674.6001,
+   "p": 3674.7,
    "prev": 3535.8,
-   "chg": 138.8,
+   "chg": 138.8999,
    "pct": 3.93,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (GC=F)",
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 59550.0703,
+   "p": 59339.8516,
    "prev": 59866.3711,
-   "chg": -316.3008,
-   "pct": -0.53,
+   "chg": -526.5195,
+   "pct": -0.88,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-28T17:10:45.296351Z",
+   "ts": "2026-11-28T18:03:22.198392Z",
    "open": 59866.0664,
    "lo": 58906.4453,
    "hi": 60164.1914,
-   "vol": 14747325440,
+   "vol": 14218974208,
    "h": [
     75747.58,
     74584.65,
@@ -844,7 +844,7 @@
     60378.2,
     60494.71,
     59866.37,
-    59550.07
+    59339.85
    ]
   }
  },
@@ -856,9 +856,9 @@
    "industry": "Consumer Electronics",
    "ccy": "USD",
    "mcap": 5210368901120,
-   "pe": 39.9265,
+   "pe": 39.6177,
    "fpe": 33.9118,
-   "eps": 8.98,
+   "eps": 9.05,
    "feps": 10.5727,
    "revTTM": 478833999872,
    "netIncome": 132175003648,
@@ -945,9 +945,9 @@
    "ccy": "USD",
    "mcap": 3660000002048,
    "pe": 25.7229,
-   "fpe": 20.3423,
+   "fpe": 20.3625,
    "eps": 19.16,
-   "feps": 24.2278,
+   "feps": 24.2038,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -989,9 +989,9 @@
    "ccy": "USD",
    "mcap": 3380358152192,
    "pe": 14.3582,
-   "fpe": 17.9743,
+   "fpe": 17.9771,
    "eps": 19.15,
-   "feps": 15.2974,
+   "feps": 15.295,
    "revTTM": 471097999360,
    "netIncome": 235693621248,
    "shares": 5888000000,
@@ -1061,7 +1061,7 @@
    "earnTs": 1793304000,
    "earnStart": 1801774800,
    "earnEnd": 1801774800,
-   "earnEst": true,
+   "earnEst": false,
    "trailDiv": 0.0
   },
   "TSM": {
@@ -1193,10 +1193,10 @@
    "industry": "Internet Content & Information",
    "ccy": "USD",
    "mcap": 1607773454336,
-   "pe": 20.7509,
-   "fpe": 17.6883,
-   "eps": 30.31,
-   "feps": 35.558,
+   "pe": 21.4589,
+   "fpe": 17.6302,
+   "eps": 29.31,
+   "feps": 35.6752,
    "revTTM": 241605001216,
    "netIncome": 75249000448,
    "shares": 2214472367,
@@ -1237,9 +1237,9 @@
    "industry": "Auto Manufacturers",
    "ccy": "USD",
    "mcap": 1581103185920,
-   "fpe": 185.2521,
+   "fpe": 184.8617,
    "eps": 0.91,
-   "feps": 2.1592,
+   "feps": 2.1638,
    "revTTM": 103569997824,
    "netIncome": 3220000000,
    "shares": 3952757946,
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1490995511296,
    "pe": 39.8902,
-   "fpe": 16.1612,
+   "fpe": 16.1562,
    "eps": 7.83,
-   "feps": 19.3265,
+   "feps": 19.3325,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1059459104768,
+   "mcap": 1056219660288,
    "pe": 48.2355,
    "fpe": 41.2384,
    "eps": 2.76,
    "feps": 3.2283,
    "revTTM": 745178988544,
    "netIncome": 20878000128,
-   "shares": 7958079155,
+   "shares": 7933746241,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.744,
@@ -1610,9 +1610,9 @@
    "ccy": "USD",
    "mcap": 702641537024,
    "pe": 90.7137,
-   "fpe": 24.0693,
+   "fpe": 24.1121,
    "eps": 4.68,
-   "feps": 17.6382,
+   "feps": 17.607,
    "revTTM": 45435998208,
    "netIncome": 7725000192,
    "shares": 1655065573,
@@ -1650,9 +1650,9 @@
    "ccy": "USD",
    "mcap": 801473101824,
    "pe": 34.8669,
-   "fpe": 25.0613,
+   "fpe": 25.0727,
    "eps": 12.32,
-   "feps": 17.1404,
+   "feps": 17.1326,
    "revTTM": 45902999552,
    "netIncome": 23311998976,
    "shares": 1724473215,
@@ -1781,9 +1781,9 @@
    "industry": "Semiconductor Equipment & Materials",
    "ccy": "EUR",
    "mcap": 461730447360,
-   "pe": 34.2481,
+   "pe": 37.2976,
    "fpe": 21.2283,
-   "eps": 34.98,
+   "eps": 32.12,
    "feps": 56.4342,
    "revTTM": 39473500160,
    "netIncome": 13474299904,
@@ -1911,9 +1911,9 @@
    "ccy": "USD",
    "mcap": 414543839232,
    "pe": 15.5984,
-   "fpe": 12.8964,
+   "fpe": 12.8751,
    "eps": 13.62,
-   "feps": 16.4736,
+   "feps": 16.5009,
    "revTTM": 226256994304,
    "netIncome": 26976000000,
    "shares": 1951253686,
@@ -1955,9 +1955,9 @@
    "ccy": "USD",
    "mcap": 486471860224,
    "pe": 52.881,
-   "fpe": 43.8362,
+   "fpe": 43.8073,
    "eps": 20.76,
-   "feps": 25.0435,
+   "feps": 25.06,
    "revTTM": 303154003968,
    "netIncome": 9226000384,
    "shares": 443129349,
@@ -1999,9 +1999,9 @@
    "ccy": "USD",
    "mcap": 414843207680,
    "pe": 121.2465,
-   "fpe": 67.8163,
+   "fpe": 67.653,
    "eps": 1.42,
-   "feps": 2.5388,
+   "feps": 2.5449,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
@@ -2038,9 +2038,9 @@
    "ccy": "USD",
    "mcap": 382575181824,
    "pe": 25.8085,
-   "fpe": 16.0215,
+   "fpe": 16.0414,
    "eps": 3.76,
-   "feps": 6.0568,
+   "feps": 6.0493,
    "revTTM": 66958999552,
    "netIncome": 14958999552,
    "shares": 3942448184,
@@ -2126,7 +2126,7 @@
    "ccy": "USD",
    "mcap": 10759546880,
    "eps": -2.12,
-   "feps": -1.3642,
+   "feps": -1.6142,
    "revTTM": 142880000,
    "netIncome": -628267008,
    "shares": 311349798,
@@ -2153,7 +2153,7 @@
    "earnEnd": 1794258000,
    "earnEst": false,
    "trailDiv": 0.0,
-   "fpe_ns": -19.6823
+   "fpe_ns": -16.6339
   },
   "ACWI": {
    "name": "iShares MSCI ACWI ETF",
@@ -2168,8 +2168,13 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
+   "pe": 122.7551,
+   "shares": 572600000,
+   "divYield": 2.577,
    "w52lo": 93.84,
    "w52hi": 101.46,
+   "trailDiv": 2.48,
+   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2220,6 +2225,31 @@
   }
  ],
  "news": [
+  {
+   "h": "UK Department for Work and Pensions hit by cyber attack",
+   "w": "Agency says it has taken most of its online services down while it investigates",
+   "syms": [],
+   "src": "myFT — world",
+   "ts": "2026-11-28T17:33:49Z",
+   "url": "https://www.ft.com/content/59a87442-51ad-47b7-ba11-e36876456fd4?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "La directrice financière de Kohl’s Corp vend des actions pour 325.000$",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-28T17:31:58Z",
+   "url": "https://fr.investing.com/news/insider-trading-news/la-directrice-financiere-de-kohls-corp-vend-des-actions-pour-325000-93CH-3714985"
+  },
+  {
+   "h": "S&P révise à la baisse les perspectives de crédit de la France",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-28T17:22:41Z",
+   "url": "https://fr.investing.com/news/economy-news/sp-revise-a-la-baisse-les-perspectives-de-credit-de-la-france-3714984"
+  },
   {
    "h": "The Russian billionaire with a secret stake in Tether",
    "w": "Little-known venture capitalist Vitaly Bezrodnykh was an early investor in the private crypto giant",
@@ -2412,14 +2442,6 @@
    "url": "https://fr.investing.com/news/stock-market-news/la-sebi-envisage-une-plateforme-dechange-pour-les-actions-preipo-3714970"
   },
   {
-   "h": "Où se situe le repli de la semaine dernière dans l’histoire des marchés ?",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-28T13:13:15Z",
-   "url": "https://fr.investing.com/news/stock-market-news/ou-se-situe-le-repli-de-la-semaine-derniere-dans-lhistoire-des-marches--3714968"
-  },
-  {
    "h": "Binance, géant mondial des cryptomonnaies, prépare sa sortie de l’Europe, faute de visa des régulateurs",
    "w": "La plateforme d’échange de cryptoactifs n’a pas obtenu l’agrément devenu indispensable pour opérer dans l’Union européenne. Avant de fermer ses serveurs le 31 décembre, elle facture désormais des commissions à ses clients européens, ainsi incités à clôturer leurs comptes.",
    "syms": [
@@ -2454,12 +2476,28 @@
    "url": "https://www.marketwatch.com/story/these-tech-stocks-may-let-you-play-defense-without-giving-up-on-ai-523ce26d?mod=mw_rss_topstories"
   },
   {
-   "h": "Des obligations à l’or : UBS explique comment bâtir des portefeuilles résilients d’ici 2027",
+   "h": "Taiwan's KMT holds Taipei mayorships, suffers shock defeat in central city",
    "w": "",
    "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-28T12:20:46Z",
-   "url": "https://fr.investing.com/news/commodities-news/des-obligations-a-lor--ubs-explique-comment-batir-des-portefeuilles-resilients-dici-2027-3714966"
+   "src": "Nikkei Asia",
+   "ts": "2026-11-28T12:03:22.198392Z",
+   "url": "https://asia.nikkei.com/politics/taiwan-s-kmt-holds-taipei-mayorships-suffers-shock-defeat-in-central-city"
+  },
+  {
+   "h": "Tokyo leads world in office rent, price growth as employers vie for prime space",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-28T12:03:22.198392Z",
+   "url": "https://asia.nikkei.com/business/markets/property/tokyo-leads-world-in-office-rent-price-growth-as-employers-vie-for-prime-space"
+  },
+  {
+   "h": "Japan's recruitment of foreign truck drivers at just 4% of goal",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-28T12:03:22.198392Z",
+   "url": "https://asia.nikkei.com/spotlight/japan-immigration/japan-s-recruitment-of-foreign-truck-drivers-at-just-4-of-goal"
   },
   {
    "h": "The outsider from Cannes shaking up France’s presidential race",
@@ -2585,22 +2623,6 @@
    "url": "https://asia.nikkei.com/politics/australian-state-election-provides-dry-run-for-federal-contest"
   },
   {
-   "h": "Japan auto parts makers lose global lead as China drives EV transition",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-28T09:18:01.455317Z",
-   "url": "https://asia.nikkei.com/business/automobiles/japan-auto-parts-makers-lose-global-lead-as-china-drives-ev-transition"
-  },
-  {
-   "h": "Toyota starts China comeback bid with extended-range EV",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-28T09:18:01.455317Z",
-   "url": "https://asia.nikkei.com/spotlight/electric-cars-in-china/toyota-starts-china-comeback-bid-with-extended-range-ev"
-  },
-  {
    "h": "The NBA sets sights on Europe’s arenas",
    "w": "Plus, the executive trying to heal French football, and more",
    "syms": [],
@@ -2608,14 +2630,6 @@
    "ts": "2026-11-28T09:13:37Z",
    "url": "https://www.ft.com/content/d65da83d-afec-4f32-8e25-65a8a566d649?syn-25a6b1a6=1",
    "mine": 1
-  },
-  {
-   "h": "Hitachi shares stagnate as investors seek fresher growth story",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-28T08:24:46.074973Z",
-   "url": "https://asia.nikkei.com/business/markets/equities/hitachi-shares-stagnate-as-investors-seek-fresher-growth-story"
   },
   {
    "h": "« Après avoir appris à mieux gérer nos déchets, veillons à rallonger la durée de vie de nos biens »",
@@ -3030,15 +3044,6 @@
    "src": "myFT — us",
    "ts": "2026-11-27T17:29:29Z",
    "url": "https://www.ft.com/content/19c8508b-0dc6-492c-9f68-497da516a398?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "Mélenchon takes aim at Germany in Berlin campaign stop",
-   "w": "Far-left presidential candidate has increased his attacks on France’s neighbour and closest ally",
-   "syms": [],
-   "src": "myFT — europe",
-   "ts": "2026-11-27T16:45:39Z",
-   "url": "https://www.ft.com/content/6689598a-47f2-41b3-92d7-e5c234914c5b?syn-25a6b1a6=1",
    "mine": 1
   },
   {
