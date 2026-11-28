@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-28T12:19:33.023597Z",
+ "generated_at": "2026-11-28T13:29:28.559511Z",
  "quotes": {
   "NVDA": {
    "p": 150.49,
@@ -191,8 +191,8 @@
    "prev": 2704.0601,
    "chg": 46.24,
    "pct": 1.71,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^RUT)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^RUT) — last update failed",
    "ts": "2026-11-27T18:00:00Z",
    "open": 2721.3899,
    "lo": 2721.3899,
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 59282.8281,
+   "p": 59165.3398,
    "prev": 59866.3711,
-   "chg": -583.543,
-   "pct": -0.97,
+   "chg": -701.0312,
+   "pct": -1.17,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-28T12:19:33.023597Z",
+   "ts": "2026-11-28T13:29:28.559511Z",
    "open": 59866.0664,
    "lo": 59086.8477,
    "hi": 60164.1914,
-   "vol": 26530539520,
+   "vol": 26139652096,
    "h": [
     75747.58,
     74584.65,
@@ -844,7 +844,7 @@
     60378.2,
     60494.71,
     59866.37,
-    59282.83
+    59165.34
    ]
   }
  },
@@ -2221,6 +2221,56 @@
  ],
  "news": [
   {
+   "h": "Où se situe le repli de la semaine dernière dans l’histoire des marchés ?",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-28T13:13:15Z",
+   "url": "https://fr.investing.com/news/stock-market-news/ou-se-situe-le-repli-de-la-semaine-derniere-dans-lhistoire-des-marches--3714968"
+  },
+  {
+   "h": "Binance, géant mondial des cryptomonnaies, prépare sa sortie de l’Europe, faute de visa des régulateurs",
+   "w": "La plateforme d’échange de cryptoactifs n’a pas obtenu l’agrément devenu indispensable pour opérer dans l’Union européenne. Avant de fermer ses serveurs le 31 décembre, elle facture désormais des commissions à ses clients européens, ainsi incités à clôturer leurs comptes.",
+   "syms": [
+    "BTC"
+   ],
+   "src": "Le Monde — Économie",
+   "ts": "2026-11-28T13:00:12Z",
+   "url": "https://www.lemonde.fr/economie/article/2026/11/28/binance-geant-mondial-des-cryptomonnaies-prepare-sa-sortie-de-l-europe-faute-de-visa-des-regulateurs_6816107_3234.html"
+  },
+  {
+   "h": "The doctor, the patient and the smartwatch: What physicians think of the third voice at your appointment",
+   "w": "Many Americans use a smartwatch or fitness tracker to collect their health data, and doctors say the devices are increasingly becoming part of annual checkups.",
+   "syms": [],
+   "src": "CNBC — Markets",
+   "ts": "2026-11-28T13:00:02Z",
+   "url": "https://www.cnbc.com/make-it/2026/11/28/wearable-health-trackers-doctors.html"
+  },
+  {
+   "h": "Clearing out my parents’ house was a legal nightmare. How can I downsize without putting my kids through the same ordeal?",
+   "w": "Some countercultural advice this Black Friday: stop buying stuff, plus other rules for downsizing.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-28T13:00:00Z",
+   "url": "https://www.marketwatch.com/story/clearing-out-my-parents-house-was-a-legal-nightmare-how-can-i-downsize-without-putting-my-children-through-the-same-ordeal-6537d804?mod=mw_rss_topstories"
+  },
+  {
+   "h": "These tech stocks may let you play defense without giving up on AI",
+   "w": "Amphenol, CDW, Sensata Technologies and TE Connectivity stood out when an Evercore analyst did a stress test of the hardware-related stocks he covers.",
+   "syms": [],
+   "src": "MarketWatch",
+   "ts": "2026-11-28T12:30:00Z",
+   "url": "https://www.marketwatch.com/story/these-tech-stocks-may-let-you-play-defense-without-giving-up-on-ai-523ce26d?mod=mw_rss_topstories"
+  },
+  {
+   "h": "Des obligations à l’or : UBS explique comment bâtir des portefeuilles résilients d’ici 2027",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-28T12:20:46Z",
+   "url": "https://fr.investing.com/news/commodities-news/des-obligations-a-lor--ubs-explique-comment-batir-des-portefeuilles-resilients-dici-2027-3714966"
+  },
+  {
    "h": "A un banquet du Canon français à Biarritz, des manifestants bloquent les participants, qu’ils accusent de véhiculer des idées d’extrême droite",
    "w": "Des convives de cet événement cofinancé par le milliardaire Pierre-Edouard Stérin ont été pris à partie par les manifestants, qui avaient annoncé un « rempart humain » pour empêcher les 1 500 participants attendus de rejoindre le site.",
    "syms": [],
@@ -2229,11 +2279,20 @@
    "url": "https://www.lemonde.fr/societe/article/2026/11/28/a-un-banquet-du-canon-francais-a-biarritz-des-manifestants-bloquent-les-participants-qu-ils-accusent-de-vehiculer-des-idees-d-extreme-droite_6816103_3224.html"
   },
   {
+   "h": "The outsider from Cannes shaking up France’s presidential race",
+   "w": "Rightwing mayor David Lisnard has surged in polls with punchy attacks on the bloated state and promises of radical spending cuts",
+   "syms": [],
+   "src": "myFT — europe",
+   "ts": "2026-11-28T12:00:03Z",
+   "url": "https://www.ft.com/content/7f3900c2-bce6-495e-a6c4-e1133a3c46e9?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
    "h": "L’horlogerie suisse rattrapée par les faiblesses de sa stratégie de montée en gamme",
    "w": "Les plans sociaux se multiplient dans les manufactures, alors que les exportations affichent pourtant cinq mois de hausse consécutifs. Derrière ce paradoxe, le secteur paie le prix d’une brutale réorganisation vers l’ultraluxe pour compenser la baisse des ventes en Chine et au Moyen-Orient.",
    "syms": [],
    "src": "Le Monde — Économie",
-   "ts": "2026-11-28T12:00:06Z",
+   "ts": "2026-11-28T12:00:03Z",
    "url": "https://www.lemonde.fr/economie/article/2026/11/28/l-horlogerie-suisse-rattrapee-par-les-faiblesses-de-sa-strategie-de-montee-en-gamme_6816102_3234.html"
   },
   {
@@ -2304,7 +2363,7 @@
    "h": "El Guapo’s last gasp?",
    "w": "The polls look grim for Pedro Sánchez — but a rightwing coalition won’t be smooth sailing if his opponents triumph",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — europe",
    "ts": "2026-11-28T11:00:02Z",
    "url": "https://www.ft.com/content/19dd970c-6258-49ad-8f2d-df90bff90ef2?syn-25a6b1a6=1",
    "mine": 1
@@ -2318,22 +2377,6 @@
    "url": "https://fr.investing.com/news/company-news/le-fonds-souverain-norvegien-votera-a-nouveau-contre-la-remuneration-de-musk-chez-tesla-3714956"
   },
   {
-   "h": "Un actionnaire majeur achète 395.576$ d’actions LENZ Therapeutics",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-28T10:32:24Z",
-   "url": "https://fr.investing.com/news/insider-trading-news/un-actionnaire-majeur-achete-395576-dactions-lenz-therapeutics-93CH-3714955"
-  },
-  {
-   "h": "La Russie signale une attaque massive de drones ukrainiens",
-   "w": "",
-   "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-28T10:23:08Z",
-   "url": "https://fr.investing.com/news/economy-news/la-russie-signale-une-attaque-massive-de-drones-ukrainiens-3714953"
-  },
-  {
    "h": "Israeli strike kills two Médecins Sans Frontières workers in Gaza",
    "w": "Medical charity calls for accountability as Israeli military claims men were involved in Hamas",
    "syms": [],
@@ -2343,7 +2386,7 @@
    "mine": 1
   },
   {
-   "h": "Avec sa marque Arket, H&M mise sur la montée en gamme pour tenter d’enrayer la concurrence de Shein",
+   "h": "Avec sa marque Arket, H&M mise sur le premium pour tenter d’enrayer la concurrence de Shein",
    "w": "En dépit de la crise que traverse le marché français de l’habillement, la marque premium du groupe suédois a ouvert un deuxième magasin à Paris.",
    "syms": [],
    "src": "Le Monde — Économie",
@@ -2382,6 +2425,38 @@
    "src": "ECB — press releases",
    "ts": "2026-11-28T08:00:00Z",
    "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261128~10e11f78f1.en.html"
+  },
+  {
+   "h": "Taiwan's KMT holds Taipei mayorships, suffers shock defeat in central city",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-28T07:29:28.559511Z",
+   "url": "https://asia.nikkei.com/politics/taiwan-s-kmt-holds-taipei-mayorships-suffers-shock-defeat-in-central-city"
+  },
+  {
+   "h": "Japan's recruitment of foreign truck drivers at just 4% of goal",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-28T07:29:28.559511Z",
+   "url": "https://asia.nikkei.com/spotlight/japan-immigration/japan-s-recruitment-of-foreign-truck-drivers-at-just-4-of-goal"
+  },
+  {
+   "h": "Linear thinking: Can Japan's fastest train speed up inland economies?",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-28T07:29:28.559511Z",
+   "url": "https://asia.nikkei.com/spotlight/big-in-asia/linear-thinking-can-japan-s-fastest-train-speed-up-inland-economies"
+  },
+  {
+   "h": "China targets overseas tourist dollars with relaxed duty-free, lodging rules",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-28T07:29:28.559511Z",
+   "url": "https://asia.nikkei.com/business/travel-leisure/china-targets-overseas-tourist-dollars-with-relaxed-duty-free-lodging-rules"
   },
   {
    "h": "« “GTA VI” joue un rôle de déclencheur » : pourquoi la PlayStation 5 est en rupture de stock",
@@ -2677,50 +2752,10 @@
    "url": "https://asia.nikkei.com/spotlight/electric-cars-in-china/toyota-starts-china-comeback-bid-with-extended-range-ev"
   },
   {
-   "h": "China's auto exports to rise 50% amid intensifying competition at home",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-28T04:23:59.616130Z",
-   "url": "https://asia.nikkei.com/business/automobiles/china-s-auto-exports-to-rise-50-amid-intensifying-competition-at-home"
-  },
-  {
-   "h": "Plongée dans le monde des IA débridées, ces intelligences artificielles déchaînées pouvant servir des desseins illégaux",
-   "w": "Accessibles en quelques clics sur Internet, les intelligences artificielles dites « ablitérées », auxquelles on a retiré les garde-fous, répondent à la plupart des questions dangereuses que leurs concurrentes commerciales repoussent. Qui les conçoit, et pour quelles raisons ?",
-   "syms": [],
-   "src": "Le Monde — Économie",
-   "ts": "2026-11-28T04:00:26Z",
-   "url": "https://www.lemonde.fr/pixels/article/2026/11/28/plongee-dans-le-monde-des-ia-debridees-ces-intelligences-artificielles-dechainees-pouvant-servir-des-desseins-illegaux_6816059_4408996.html"
-  },
-  {
-   "h": "Taiwan counts votes with all eyes on Taipei mayor races",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-28T03:21:13.935240Z",
-   "url": "https://asia.nikkei.com/politics/taiwan-counts-votes-with-all-eyes-on-taipei-mayor-races"
-  },
-  {
-   "h": "Hitachi shares stagnate as investors seek fresher growth story",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-28T03:21:13.935240Z",
-   "url": "https://asia.nikkei.com/business/markets/equities/hitachi-shares-stagnate-as-investors-seek-fresher-growth-story"
-  },
-  {
-   "h": "Tokyo leads world in office rent, price growth as employers vie for prime space",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-28T03:21:13.935240Z",
-   "url": "https://asia.nikkei.com/business/markets/property/tokyo-leads-world-in-office-rent-price-growth-as-employers-vie-for-prime-space"
-  },
-  {
    "h": "Copper thieves prey on Japan’s ancient shrines in AI frenzy",
    "w": "Priests forced to abandon tradition and favour cheaper steel to repair roofs",
    "syms": [],
-   "src": "myFT — world",
+   "src": "myFT — markets",
    "ts": "2026-11-28T01:01:26Z",
    "url": "https://www.ft.com/content/98b72508-3d41-4f03-9a9a-bfb345e3a902?syn-25a6b1a6=1",
    "mine": 1
@@ -2760,14 +2795,6 @@
    "src": "MarketWatch",
    "ts": "2026-11-27T23:30:00Z",
    "url": "https://www.marketwatch.com/story/i-hate-that-jensen-huang-is-back-at-nvidia-but-i-love-what-its-done-for-my-401-k-am-i-a-hypocrite-f63c0303?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Clearing out my parents’ house was a legal nightmare. How can I downsize without putting my kids through the same ordeal?",
-   "w": "Some countercultural advice this Black Friday: stop buying stuff, plus other rules for downsizing.",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-27T23:15:00Z",
-   "url": "https://www.marketwatch.com/story/clearing-out-my-parents-house-was-a-legal-nightmare-how-can-i-downsize-without-putting-my-children-through-the-same-ordeal-6537d804?mod=mw_rss_topstories"
   },
   {
    "h": "South Africa’s credit rating upgraded after years of economic stagnation",
@@ -2981,39 +3008,12 @@
    "url": "https://www.cnbc.com/2026/11/26/trump-gdp-revision-investigation.html"
   },
   {
-   "h": "'The Traitors' ended with a $246,300 prize—here's who won and what they told us about spending it",
-   "w": "Winning prize money can come with some big financial decisions, including how much to set aside for taxes.",
-   "syms": [],
-   "src": "CNBC — Markets",
-   "ts": "2026-11-27T15:49:29Z",
-   "url": "https://www.cnbc.com/make-it/2026/11/27/the-traitors-ends-with-246300-prize-heres-how-much-goes-to-taxes.html"
-  },
-  {
    "h": "I’ve been married for 58 years. It’s ‘our’ money, not ‘his’ and ‘hers.’ Why do so many couples keep their finances separate?",
    "w": "“My wife stopped working outside the home in 1970.”",
    "syms": [],
    "src": "MarketWatch",
    "ts": "2026-11-27T15:45:00Z",
    "url": "https://www.marketwatch.com/story/ive-been-married-for-58-years-its-our-money-not-his-and-hers-why-dont-others-feel-the-same-c5745889?mod=mw_rss_topstories"
-  },
-  {
-   "h": "My husband secretly sends his ex-wife $1,500 a month after she lost her job. We have $2.4 million saved. Has he lied by omission?",
-   "w": "“He explained that he wasn’t trying to hide the payment, but his former wife lost her job in a medical billing company.”",
-   "syms": [],
-   "src": "MarketWatch",
-   "ts": "2026-11-27T15:30:00Z",
-   "url": "https://www.marketwatch.com/story/my-husband-secretly-sends-his-ex-wife-1-500-a-month-after-she-lost-her-job-we-have-2-4-million-saved-has-he-lied-by-omission-ede1972a?mod=mw_rss_topstories"
-  },
-  {
-   "h": "Russia set to criminalise sharing information about Ukrainian strikes",
-   "w": "Moscow looks to extend wartime crackdown to pro-war bloggers and regular citizens posting about Kyiv’s drones hitting oil refineries",
-   "syms": [
-    "BRENT"
-   ],
-   "src": "myFT — europe",
-   "ts": "2026-11-27T15:16:07Z",
-   "url": "https://www.ft.com/content/53a48a14-eadf-4fe3-bd33-9facd4c90266?syn-25a6b1a6=1",
-   "mine": 1
   },
   {
    "h": "EU leaders fail to break $1.7 trillion budget deadlock as political pressure mounts",
