@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-28T16:12:27.502369Z",
+ "generated_at": "2026-11-28T17:10:45.296351Z",
  "quotes": {
   "NVDA": {
    "p": 150.49,
@@ -117,8 +117,8 @@
    "prev": 26046.9004,
    "chg": 679.4902,
    "pct": 2.61,
-   "st": "EOD",
-   "src": "Yahoo Finance via yfinance (^NDX)",
+   "st": "STALE",
+   "src": "Yahoo Finance via yfinance (^NDX) — last update failed",
    "ts": "2026-11-27T18:00:00Z",
    "open": 26479.9707,
    "lo": 26166.8691,
@@ -700,9 +700,9 @@
    ]
   },
   "XAU": {
-   "p": 3674.7,
+   "p": 3674.6001,
    "prev": 3535.8,
-   "chg": 138.8999,
+   "chg": 138.8,
    "pct": 3.93,
    "st": "EOD",
    "src": "Yahoo Finance via yfinance (GC=F)",
@@ -811,17 +811,17 @@
    ]
   },
   "BTC": {
-   "p": 59443.4414,
+   "p": 59550.0703,
    "prev": 59866.3711,
-   "chg": -422.9297,
-   "pct": -0.71,
+   "chg": -316.3008,
+   "pct": -0.53,
    "st": "DELAYED_15M",
    "src": "Yahoo Finance via yfinance (BTC-USD)",
-   "ts": "2026-11-28T16:12:27.502369Z",
+   "ts": "2026-11-28T17:10:45.296351Z",
    "open": 59866.0664,
    "lo": 58906.4453,
    "hi": 60164.1914,
-   "vol": 15925276672,
+   "vol": 14747325440,
    "h": [
     75747.58,
     74584.65,
@@ -844,7 +844,7 @@
     60378.2,
     60494.71,
     59866.37,
-    59443.44
+    59550.07
    ]
   }
  },
@@ -856,9 +856,9 @@
    "industry": "Consumer Electronics",
    "ccy": "USD",
    "mcap": 5210368901120,
-   "pe": 39.6177,
+   "pe": 39.9265,
    "fpe": 33.9118,
-   "eps": 9.05,
+   "eps": 8.98,
    "feps": 10.5727,
    "revTTM": 478833999872,
    "netIncome": 132175003648,
@@ -945,9 +945,9 @@
    "ccy": "USD",
    "mcap": 3660000002048,
    "pe": 25.7229,
-   "fpe": 20.3625,
+   "fpe": 20.3423,
    "eps": 19.16,
-   "feps": 24.2038,
+   "feps": 24.2278,
    "revTTM": 346444988416,
    "netIncome": 142630993920,
    "shares": 7426194552,
@@ -989,9 +989,9 @@
    "ccy": "USD",
    "mcap": 3380358152192,
    "pe": 14.3582,
-   "fpe": 17.9771,
+   "fpe": 17.9743,
    "eps": 19.15,
-   "feps": 15.295,
+   "feps": 15.2974,
    "revTTM": 471097999360,
    "netIncome": 235693621248,
    "shares": 5888000000,
@@ -1061,7 +1061,7 @@
    "earnTs": 1793304000,
    "earnStart": 1801774800,
    "earnEnd": 1801774800,
-   "earnEst": false,
+   "earnEst": true,
    "trailDiv": 0.0
   },
   "TSM": {
@@ -1193,10 +1193,10 @@
    "industry": "Internet Content & Information",
    "ccy": "USD",
    "mcap": 1607773454336,
-   "pe": 21.4589,
-   "fpe": 17.6302,
-   "eps": 29.31,
-   "feps": 35.6752,
+   "pe": 20.7509,
+   "fpe": 17.6883,
+   "eps": 30.31,
+   "feps": 35.558,
    "revTTM": 241605001216,
    "netIncome": 75249000448,
    "shares": 2214472367,
@@ -1237,9 +1237,9 @@
    "industry": "Auto Manufacturers",
    "ccy": "USD",
    "mcap": 1581103185920,
-   "fpe": 184.8617,
+   "fpe": 185.2521,
    "eps": 0.91,
-   "feps": 2.1638,
+   "feps": 2.1592,
    "revTTM": 103569997824,
    "netIncome": 3220000000,
    "shares": 3952757946,
@@ -1277,9 +1277,9 @@
    "ccy": "USD",
    "mcap": 1490995511296,
    "pe": 39.8902,
-   "fpe": 16.1562,
+   "fpe": 16.1612,
    "eps": 7.83,
-   "feps": 19.3325,
+   "feps": 19.3265,
    "revTTM": 89103998976,
    "netIncome": 38264999936,
    "shares": 4773629865,
@@ -1523,14 +1523,14 @@
    "sector": "Consumer Defensive",
    "industry": "Discount Stores",
    "ccy": "USD",
-   "mcap": 1056219660288,
+   "mcap": 1059459104768,
    "pe": 48.2355,
    "fpe": 41.2384,
    "eps": 2.76,
    "feps": 3.2283,
    "revTTM": 745178988544,
    "netIncome": 20878000128,
-   "shares": 7933746241,
+   "shares": 7958079155,
    "beta": 0.526,
    "div": 0.99,
    "divYield": 0.744,
@@ -1610,9 +1610,9 @@
    "ccy": "USD",
    "mcap": 702641537024,
    "pe": 90.7137,
-   "fpe": 24.1121,
+   "fpe": 24.0693,
    "eps": 4.68,
-   "feps": 17.607,
+   "feps": 17.6382,
    "revTTM": 45435998208,
    "netIncome": 7725000192,
    "shares": 1655065573,
@@ -1650,9 +1650,9 @@
    "ccy": "USD",
    "mcap": 801473101824,
    "pe": 34.8669,
-   "fpe": 25.0727,
+   "fpe": 25.0613,
    "eps": 12.32,
-   "feps": 17.1326,
+   "feps": 17.1404,
    "revTTM": 45902999552,
    "netIncome": 23311998976,
    "shares": 1724473215,
@@ -1781,9 +1781,9 @@
    "industry": "Semiconductor Equipment & Materials",
    "ccy": "EUR",
    "mcap": 461730447360,
-   "pe": 37.2976,
+   "pe": 34.2481,
    "fpe": 21.2283,
-   "eps": 32.12,
+   "eps": 34.98,
    "feps": 56.4342,
    "revTTM": 39473500160,
    "netIncome": 13474299904,
@@ -1911,9 +1911,9 @@
    "ccy": "USD",
    "mcap": 414543839232,
    "pe": 15.5984,
-   "fpe": 12.8751,
+   "fpe": 12.8964,
    "eps": 13.62,
-   "feps": 16.5009,
+   "feps": 16.4736,
    "revTTM": 226256994304,
    "netIncome": 26976000000,
    "shares": 1951253686,
@@ -1955,9 +1955,9 @@
    "ccy": "USD",
    "mcap": 486471860224,
    "pe": 52.881,
-   "fpe": 43.8073,
+   "fpe": 43.8362,
    "eps": 20.76,
-   "feps": 25.06,
+   "feps": 25.0435,
    "revTTM": 303154003968,
    "netIncome": 9226000384,
    "shares": 443129349,
@@ -1999,9 +1999,9 @@
    "ccy": "USD",
    "mcap": 414843207680,
    "pe": 121.2465,
-   "fpe": 67.653,
+   "fpe": 67.8163,
    "eps": 1.42,
-   "feps": 2.5449,
+   "feps": 2.5388,
    "revTTM": 7288260096,
    "netIncome": 3669104896,
    "shares": 2306705341,
@@ -2038,9 +2038,9 @@
    "ccy": "USD",
    "mcap": 382575181824,
    "pe": 25.8085,
-   "fpe": 16.0414,
+   "fpe": 16.0215,
    "eps": 3.76,
-   "feps": 6.0493,
+   "feps": 6.0568,
    "revTTM": 66958999552,
    "netIncome": 14958999552,
    "shares": 3942448184,
@@ -2126,7 +2126,7 @@
    "ccy": "USD",
    "mcap": 10759546880,
    "eps": -2.12,
-   "feps": -1.6142,
+   "feps": -1.3642,
    "revTTM": 142880000,
    "netIncome": -628267008,
    "shares": 311349798,
@@ -2134,7 +2134,7 @@
    "target": 58.1833,
    "targetHi": 108.0,
    "targetLo": 30.0,
-   "rating": "Buy",
+   "rating": "Hold",
    "analysts": 12,
    "revGrowth": 187.1,
    "grossMargin": 37.05,
@@ -2153,7 +2153,7 @@
    "earnEnd": 1794258000,
    "earnEst": false,
    "trailDiv": 0.0,
-   "fpe_ns": -16.6339
+   "fpe_ns": -19.6823
   },
   "ACWI": {
    "name": "iShares MSCI ACWI ETF",
@@ -2168,13 +2168,8 @@
   "AGG": {
    "name": "iShares Core U.S. Aggregate Bond ETF",
    "ccy": "USD",
-   "pe": 122.7551,
-   "shares": 572600000,
-   "divYield": 2.577,
    "w52lo": 93.84,
    "w52hi": 101.46,
-   "trailDiv": 2.48,
-   "div": 2.48,
    "sector": "Funds and trusts"
   },
   "GLD": {
@@ -2226,11 +2221,30 @@
  ],
  "news": [
   {
+   "h": "The Russian billionaire with a secret stake in Tether",
+   "w": "Little-known venture capitalist Vitaly Bezrodnykh was an early investor in the private crypto giant",
+   "syms": [
+    "BTC"
+   ],
+   "src": "myFT — companies",
+   "ts": "2026-11-28T17:00:05Z",
+   "url": "https://www.ft.com/content/260cdf2f-f878-4b00-9ea3-5253d7697d13?syn-25a6b1a6=1",
+   "mine": 1
+  },
+  {
+   "h": "L’UE envisage de reporter la mise à jour des émissions des hybrides rechargeables à 2030",
+   "w": "",
+   "syms": [],
+   "src": "Investing.com France",
+   "ts": "2026-11-28T16:04:57Z",
+   "url": "https://fr.investing.com/news/economy-news/lue-envisage-de-reporter-la-mise-a-jour-des-emissions-des-hybrides-rechargeables-a-2030-3714981"
+  },
+  {
    "h": "A un banquet du Canon français, à Biarritz, des manifestants bloquent les participants ; des policiers blessés",
    "w": "Un rassemblement contre cet événement cofinancé par le milliardaire Pierre-Edouard Stérin a tourné à l’affrontement entre les manifestants qui avaient annoncé un « rempart humain » pour empêcher les participants de rejoindre le site et les forces de l’ordre.",
    "syms": [],
    "src": "Le Monde — Économie",
-   "ts": "2026-11-28T16:00:34Z",
+   "ts": "2026-11-28T16:00:33Z",
    "url": "https://www.lemonde.fr/societe/article/2026/11/28/a-un-banquet-du-canon-francais-a-biarritz-des-manifestants-bloquent-les-participants-des-policiers-blesses_6816103_3225.html"
   },
   {
@@ -2465,12 +2479,28 @@
    "url": "https://www.lemonde.fr/economie/article/2026/11/28/l-horlogerie-suisse-rattrapee-par-les-faiblesses-de-sa-strategie-de-montee-en-gamme_6816102_3234.html"
   },
   {
-   "h": "+157% : Les actions sélectionnées par notre IA pour décembre arrivent bientôt — 60% de réduction",
+   "h": "Japan looks to space for security with defense force update",
    "w": "",
    "syms": [],
-   "src": "Investing.com France",
-   "ts": "2026-11-28T11:53:08Z",
-   "url": "https://fr.investing.com/news/stock-market-news/157--les-actions-selectionnees-par-notre-ia-pour-decembre-arrivent-bientot--60-de-reduction-3714964"
+   "src": "Nikkei Asia",
+   "ts": "2026-11-28T11:10:45.296351Z",
+   "url": "https://asia.nikkei.com/business/aerospace-defense-industries/japan-looks-to-space-for-security-with-defense-force-update"
+  },
+  {
+   "h": "Linear thinking: Can Japan's fastest train speed up inland economies?",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-28T11:10:45.296351Z",
+   "url": "https://asia.nikkei.com/spotlight/big-in-asia/linear-thinking-can-japan-s-fastest-train-speed-up-inland-economies"
+  },
+  {
+   "h": "Itochu poised for Southeast Asian cloud services growth with Malaysia deal",
+   "w": "",
+   "syms": [],
+   "src": "Nikkei Asia",
+   "ts": "2026-11-28T11:10:45.296351Z",
+   "url": "https://asia.nikkei.com/business/business-deals/itochu-poised-for-southeast-asian-cloud-services-growth-with-malaysia-deal"
   },
   {
    "h": "« Etablir une règle d’or budgétaire n’ôtera pas le besoin de relever l’âge de la retraite ou d’augmenter le temps de travail »",
@@ -2588,14 +2618,6 @@
    "url": "https://asia.nikkei.com/business/markets/equities/hitachi-shares-stagnate-as-investors-seek-fresher-growth-story"
   },
   {
-   "h": "Tokyo leads world in office rent, price growth as employers vie for prime space",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-28T08:24:46.074973Z",
-   "url": "https://asia.nikkei.com/business/markets/property/tokyo-leads-world-in-office-rent-price-growth-as-employers-vie-for-prime-space"
-  },
-  {
    "h": "« Après avoir appris à mieux gérer nos déchets, veillons à rallonger la durée de vie de nos biens »",
    "w": "Réparation, reconditionnement et location ont fait leurs preuves, mais ces activités marginales dans notre économie doivent devenir une industrie, affirment, dans une tribune au « Monde », Grégory Blanc, sénateur (Place publique) de Maine-et-Loire, et Alain Di Crescenzo, président de CCI France, qui représente les chambres de commerce et d’industrie.",
    "syms": [],
@@ -2618,22 +2640,6 @@
    "src": "ECB — press releases",
    "ts": "2026-11-28T08:00:00Z",
    "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261128~10e11f78f1.en.html"
-  },
-  {
-   "h": "Taiwan's KMT holds Taipei mayorships, suffers shock defeat in central city",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-28T07:29:28.559511Z",
-   "url": "https://asia.nikkei.com/politics/taiwan-s-kmt-holds-taipei-mayorships-suffers-shock-defeat-in-central-city"
-  },
-  {
-   "h": "Japan's recruitment of foreign truck drivers at just 4% of goal",
-   "w": "",
-   "syms": [],
-   "src": "Nikkei Asia",
-   "ts": "2026-11-28T07:29:28.559511Z",
-   "url": "https://asia.nikkei.com/spotlight/japan-immigration/japan-s-recruitment-of-foreign-truck-drivers-at-just-4-of-goal"
   },
   {
    "h": "« “GTA VI” joue un rôle de déclencheur » : pourquoi la PlayStation 5 est en rupture de stock",
@@ -3033,15 +3039,6 @@
    "src": "myFT — europe",
    "ts": "2026-11-27T16:45:39Z",
    "url": "https://www.ft.com/content/6689598a-47f2-41b3-92d7-e5c234914c5b?syn-25a6b1a6=1",
-   "mine": 1
-  },
-  {
-   "h": "UK Department for Work and Pensions hit by cyber incident",
-   "w": "Agency says it has taken most of its online services down as it investigates possible attack",
-   "syms": [],
-   "src": "myFT — world uk",
-   "ts": "2026-11-27T16:44:31Z",
-   "url": "https://www.ft.com/content/59a87442-51ad-47b7-ba11-e36876456fd4?syn-25a6b1a6=1",
    "mine": 1
   },
   {
